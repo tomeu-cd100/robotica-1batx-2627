@@ -2,6 +2,8 @@
   SA1 - blink_repte.ino  (SOLUCIO del repte)
   Repte: 3 parpellejos rapids seguits d'una pausa llarga, repetint-se.
   Mostra l'us d'un bucle for i de variables per als temps.
+  Connexions: vegeu SA1_esquemes_connexions.md (apartat 2).
+  Ampliacio posterior: blink_millis.ino (sense delay) i sos_morse.ino (funcions).
 */
 
 const int LED = 13;

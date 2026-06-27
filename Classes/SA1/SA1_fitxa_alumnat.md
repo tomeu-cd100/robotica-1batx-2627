@@ -22,7 +22,7 @@ Analitza aquests tres sistemes i completa la taula. Pensa: què *percep* (entrad
 
 ## Activitat 2 · La placa Arduino UNO
 
-Etiqueta aquestes parts a l'esquema que et donarà el professorat (o dibuixa-la):
+Etiqueta aquestes parts a l'**esquema mut** que et donarà el professorat (`SA1_esquemes_connexions.md`, apartat 1.2):
 - [ ] Microcontrolador  - [ ] Pins digitals  - [ ] Pins analògics (A0-A5)
 - [ ] Pins d'alimentació (5V, GND)  - [ ] Connector USB  - [ ] Pins PWM (~)
 
@@ -30,11 +30,13 @@ Etiqueta aquestes parts a l'esquema que et donarà el professorat (o dibuixa-la)
 
 ___________________________________________________________________
 
+> **Pista:** *digital* = només dos estats (0 o 5 V, com un interruptor); *analògic* = molts valors entre 0 i 5 V (com un comandament de volum).
+
 ---
 
 ## Activitat 3 · Normes de seguretat
 
-Llegeix les normes i **signa** el full. Escriu aquí les 2 normes que et semblen més importants:
+Llegeix les normes (`SA1_normes_seguretat.md`) i **signa** el full. Escriu aquí les 2 normes que et semblen més importants:
 
 1. ___________________________________________________________________
 2. ___________________________________________________________________
@@ -43,7 +45,13 @@ Llegeix les normes i **signa** el full. Escriu aquí les 2 normes que et semblen
 
 ## Activitat 4 · El teu primer programa (`Blink`)
 
-1. Obre `blink.ino` i identifica les parts:
+**0. PREDIU (abans d'executar res).** Mira el codi de `blink.ino` projectat i, **sense pujar-lo encara**, escriu què creus que farà el LED:
+
+___________________________________________________________________
+
+> Després l'executarem i comprovaràs si ho havies encertat. Predir abans de provar és el que fa un bon equip d'enginyeria!
+
+1. **Investiga.** Obre `blink.ino` i identifica les parts:
    - Què hi ha dins de `setup()`? _______________________________________
    - Què hi ha dins de `loop()`? ________________________________________
    - Què fa `delay(1000)`? ______________________________________________
@@ -56,10 +64,22 @@ Llegeix les normes i **signa** el full. Escriu aquí les 2 normes que et semblen
 
 ```
 
+> **+ Ampliació (opcional):** obre `blink_millis.ino` (parpelleja **sense** `delay()`, amb `millis()`) o `sos_morse.ino` (envia SOS en Morse amb **funcions**). Quin avantatge té parpellejar sense `delay()`? ________________________________________
+
+---
+
+## Producte de la SA · Fitxa-pòster
+
+Tria un **robot real** i analitza'l amb la plantilla `SA1_poster_robot_plantilla.md` (entrada-procés-sortida + dilema ètic). S'avalua amb la rúbrica **R4**.
+
 ---
 
 ## Quadern tècnic (entrada de la SA1)
+
+> El quadern tècnic és el teu **diari de bord** de tot el curs. Segueix el **mètode de projecte**: *analitzar → dissenyar → prototipar → provar → millorar.*
+
 - **Què he après:** ___________________________________________________
+- **El repte i com l'he resolt** (què havia de fer, què vaig predir, com ho vaig solucionar i què vaig millorar): ___________________________________________________
 - **Quin error he tingut i com l'he resolt:** ___________________________
 - **Reflexió ètica** (automatització i ODS): un avantatge i un risc de l'automatització:
   - Avantatge: ______________________________________________________

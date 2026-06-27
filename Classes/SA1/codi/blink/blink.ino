@@ -2,7 +2,9 @@
   SA1 - blink.ino
   El primer programa: fer parpellejar un LED.
   Maquinari: LED intern de la placa (pin 13) o LED + resistencia 220 ohm al pin 13.
+  Connexions: vegeu SA1_esquemes_connexions.md (apartat 2).
   Objectiu: entendre setup(), loop(), pinMode, digitalWrite i delay.
+  Reptes: blink_repte.ino (basic) i, com a ampliacio, blink_millis.ino i sos_morse.ino.
 */
 
 const int LED = 13;   // Numero de pin on hi ha el LED (constant: no canvia)
