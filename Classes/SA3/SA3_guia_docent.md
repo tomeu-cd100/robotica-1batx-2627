@@ -21,6 +21,11 @@
 | `03_ultrasons_funcio.ino` | Funció `mesuraDistancia()`; Serial Plotter. |
 | `04_alarma_aparcament.ino` | Producte: sensor→actuador segons distància. |
 
+## Mètode de projecte i continuïtat
+- **Cicle de treball** (com a tot el curs): *analitzar → dissenyar → prototipar → provar → millorar* (vegeu SA1). El **producte** n'és el recorregut complet i el **quadern tècnic** el documenta.
+- **Lectura de codi amb PRIMM:** a cada *modelatge* l'alumnat **prediu** què farà el sketch **abans** d'executar-lo, després l'**investiga**, el **modifica** i en **crea** un de nou.
+- **Pont (d'on venim / on anem):** ve de la **SA2** (sortides/actuadors) → portem a la **SA4** (moviment). Aquí el sistema aprèn a **percebre** (sensors); a la SA4 la percepció **mourà** servos i motors.
+
 ---
 
 ## SESSIÓ 1 (2 h) — Entrades digitals i monitor sèrie
@@ -64,6 +69,16 @@
 
 **Producte:** sistema sensor→actuador (alarma de proximitat o llum automàtic) amb codi modular (funcions).
 **Avaluació:** rúbriques **R1** (codi) i **R2** (circuit). Repte individual: escriure una funció de lectura.
+
+### Mapa d'avaluació (traçabilitat)
+| Instrument | Què evidencia | Criteri | Rúbrica |
+|---|---|---|---|
+| Producte (alarma/llum automàtic) | Percepció → acció amb codi modular | CA2.1, CA2.2 | R1, R2 |
+| Repte de codi (funció de lectura) | Funcions, `digitalRead`/`analogRead`, `map()` | CA1.1 | R1 |
+| Quadern tècnic | Taula de lectures, codi de la funció, errors | CA1.1, CA2.2 | R1 |
+| Observació + depuració sèrie | Ús del monitor/traçador, divisor de tensió | CA2.2 | R2 |
+
+*(CA1.1 = programar en C/C++; CA2.1 = dissenyar/muntar circuits amb seguretat; CA2.2 = mesurar/interpretar senyals. Vegeu `Programació didàctica/06_Avaluacio_criteris_qualificacio.md`. Comparteix R1 i R2 **abans** de començar.)*
 
 ## Errors freqüents
 | Error | Causa | Solució |

@@ -22,6 +22,11 @@
 | `04_rgb.ino` | Barreja de colors amb LED RGB. |
 | `05_panell_senyalitzacio.ino` | Producte integrador (RGB + piezo + relé). |
 
+## Mètode de projecte i continuïtat
+- **Cicle de treball** (com a tot el curs): *analitzar → dissenyar → prototipar → provar → millorar* (vegeu SA1). El **producte** de la SA n'és el recorregut complet i el **quadern tècnic** el documenta.
+- **Lectura de codi amb PRIMM:** a cada *modelatge* l'alumnat **prediu** què farà el sketch **abans** d'executar-lo, després l'**investiga**, el **modifica** i en **crea** un de nou. Predir abans de provar consolida la comprensió.
+- **Pont (d'on venim / on anem):** ve de la **SA1** (parpelleig d'un LED) → portem a la **SA3** (entrades i sensors). Aquí el sistema **actua** (sortides); a la SA3 aprendrà a **percebre** (entrades).
+
 ---
 
 ## SESSIÓ 1 (2 h) — Variables i la primera sortida
@@ -65,6 +70,16 @@
 
 **Producte:** dispositiu de senyalització programable (semàfor amb fase nocturna o panell d'estat RGB + so + càrrega).
 **Avaluació:** rúbriques **R1** (codi) i **R2** (circuit).
+
+### Mapa d'avaluació (traçabilitat)
+| Instrument | Què evidencia | Criteri | Rúbrica |
+|---|---|---|---|
+| Producte (panell/semàfor) | Sortides digitals + PWM en un sistema integrat | CA2.1, CA2.2 | R1, R2 |
+| Repte curt de codi | Variables, `for`/`if`, `analogWrite`, `map()` | CA1.1 | R1 |
+| Quadern tècnic | Esquema, codi comentat, errors i millores | CA1.1, CA2.2 | R1 |
+| Observació de muntatge | Resistència limitadora, polaritat, seguretat | CA2.1 | R2 |
+
+*(CA1.1 = programar en C/C++; CA2.1 = dissenyar/muntar circuits amb seguretat; CA2.2 = mesurar/interpretar senyals. Vegeu `Programació didàctica/06_Avaluacio_criteris_qualificacio.md`. Comparteix R1 i R2 amb l'alumnat **abans** de començar.)*
 
 ## Errors freqüents
 | Error | Causa | Solució |

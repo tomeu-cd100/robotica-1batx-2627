@@ -7,7 +7,8 @@
 ---
 
 ## Activitat 1 · LED bàsic i variables (S1)
-1. Munta un LED al pin 8 (esquema 1). Carrega `01_led_basic.ino`.
+0. **PREDIU** (abans d'executar): mirant `01_led_basic.ino`, què creus que farà el LED? ____________________
+1. Munta un LED al pin 8 (esquema 1). Carrega `01_led_basic.ino` i **comprova** la predicció.
 2. Canvia el temps d'encès/apagat usant una **variable** `temps`. Quin valor has provat? ______
 3. **Repte:** escriu el codi Morse d'una lletra (· curt / − llarg). Lletra: ____ → enganxa el codi al quadern.
 
@@ -40,6 +41,12 @@ Dissenya un panell que indiqui **estats** amb color + so + una càrrega (relé).
 
 - **Esquema** (dibuixa o enganxa): ______________________
 - **Defensa (1'):** explica què fa el teu panell i una millora possible.
+
+**Autoavaluació** (marca el teu nivell — NA/AS/AN/AE):
+| Criteri | Nivell |
+|---|---|
+| El codi funciona i està comentat (R1) | ☐ NA ☐ AS ☐ AN ☐ AE |
+| El circuit és correcte i segur (R2) | ☐ NA ☐ AS ☐ AN ☐ AE |
 
 ---
 

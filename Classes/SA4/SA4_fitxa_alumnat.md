@@ -7,7 +7,8 @@
 ---
 
 ## Activitat 1 · Servomotor (S1)
-1. Munta el servo (senyal al pin 9). Carrega `01_servo_potenciometre.ino`.
+0. **PREDIU** (abans d'executar): mirant `01_servo_potenciometre.ino`, què creus que farà el servo en girar el potenciòmetre? ____________________
+1. Munta el servo (senyal al pin 9). Carrega `01_servo_potenciometre.ino` i **comprova** la predicció.
 2. Quin rang d'angles accepta `write()`? de ____ a ____ graus.
 3. Controla l'angle amb el potenciòmetre. Quina funció reescala 0-1023 → 0-180? `__________`
 4. **Repte:** vaivé automàtic 0↔180. **+ Repte:** dos servos coordinats.
@@ -44,6 +45,13 @@ Dissenya una barrera que s'obre quan arriba un vehicle i es tanca sola.
 - Distància de detecció: ____ cm
 - **Esquema** (dibuixa o enganxa): ______________________
 - **Defensa (1'):** explica el funcionament i una aplicació real.
+
+**Autoavaluació** (marca el teu nivell — NA/AS/AN/AE):
+| Criteri | Nivell |
+|---|---|
+| El codi de control és modular i comentat (R1) | ☐ NA ☐ AS ☐ AN ☐ AE |
+| El muntatge és segur (massa comuna, alimentació externa) (R2) | ☐ NA ☐ AS ☐ AN ☐ AE |
+| El sistema respon bé al sensor (control) (R3) | ☐ NA ☐ AS ☐ AN ☐ AE |
 
 ---
 

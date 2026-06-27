@@ -21,6 +21,11 @@
 | `03_sensor_velocitat.ino` | Ultrasons regula la velocitat del motor. |
 | `04_barrera_automatica.ino` | Producte: barrera amb servo activada per sensor. |
 
+## Mètode de projecte i continuïtat
+- **Cicle de treball** (com a tot el curs): *analitzar → dissenyar → prototipar → provar → millorar* (vegeu SA1). El **producte** n'és el recorregut complet i el **quadern tècnic** el documenta.
+- **Lectura de codi amb PRIMM:** a cada *modelatge* l'alumnat **prediu** què farà el sketch **abans** d'executar-lo, després l'**investiga**, el **modifica** i en **crea** un de nou.
+- **Pont (d'on venim / on anem):** ve de la **SA3** (sensors) → portem a la **SA5** (micro:bit + MicroPython, **canvi de plataforma i llenguatge**). El control sensor→moviment d'aquí és la llavor del **control** (SA6) i la **robòtica mòbil** (SA7).
+
 ---
 
 ## SESSIÓ 1 (2 h) — El servomotor
@@ -64,6 +69,16 @@
 
 **Producte:** mecanisme motoritzat controlat per sensor (barrera, braç o ventilador regulable).
 **Avaluació:** rúbriques **R1** (codi), **R2** (circuit), **R3** parcial (control).
+
+### Mapa d'avaluació (traçabilitat)
+| Instrument | Què evidencia | Criteri | Rúbrica |
+|---|---|---|---|
+| Producte (barrera/braç/ventilador) | Control de posició i velocitat sensor→actuador | CA3.1 | R3 (parcial), R1 |
+| Repte de codi (funcions de moviment) | `Servo.h`, lògica del pont H, `map()`, funcions | CA1.1 | R1 |
+| Quadern tècnic | Esquema del pont H, taula distància→velocitat, errors | CA1.1 | R1 |
+| Observació de muntatge segur | Massa comuna, alimentació externa, no alimentar motors des de l'Arduino | CA2.1 | R2 |
+
+*(CA1.1 = programar en C/C++; CA2.1 = dissenyar/muntar circuits amb seguretat; CA3.1 = implementar sistemes de control. Vegeu `Programació didàctica/06_Avaluacio_criteris_qualificacio.md`. Comparteix R1, R2 i R3 **abans** de començar.)*
 
 ## Errors freqüents
 | Error | Causa | Solució |

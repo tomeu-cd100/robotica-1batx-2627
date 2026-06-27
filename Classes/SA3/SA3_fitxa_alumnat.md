@@ -7,7 +7,8 @@
 ---
 
 ## Activitat 1 · Polsador i monitor sèrie (S1)
-1. Munta el polsador al pin 2 (`INPUT_PULLUP`). Carrega `01_polsador_debounce.ino` i obre el **Monitor sèrie**.
+0. **PREDIU** (abans d'executar): mirant `01_polsador_debounce.ino`, què creus que mostrarà el monitor quan premis el polsador? ____________________
+1. Munta el polsador al pin 2 (`INPUT_PULLUP`). Carrega `01_polsador_debounce.ino`, obre el **Monitor sèrie** i **comprova** la predicció.
 2. En repòs el pin llegeix ______ i en prémer llegeix ______ (HIGH/LOW).
 3. Per què cal l'**antirebot** (*debounce*)? ______________________________
 4. **Repte:** mode *toggle* (cada premuda encén/apaga un LED). **+ Repte:** comptar fins a 5 i reiniciar.
@@ -41,6 +42,12 @@ Dissenya un avís que depèn de la distància:
 
 - **Esquema** (dibuixa o enganxa): ______________________
 - **Defensa (1'):** explica el teu sistema i una aplicació real.
+
+**Autoavaluació** (marca el teu nivell — NA/AS/AN/AE):
+| Criteri | Nivell |
+|---|---|
+| El codi és modular (funcions) i comentat (R1) | ☐ NA ☐ AS ☐ AN ☐ AE |
+| El circuit del sensor és correcte i estable (R2) | ☐ NA ☐ AS ☐ AN ☐ AE |
 
 ---
 
