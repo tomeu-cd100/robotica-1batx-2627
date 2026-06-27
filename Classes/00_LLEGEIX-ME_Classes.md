@@ -10,6 +10,7 @@ Material llest per a l'aula, organitzat per situació d'aprenentatge (SA). Cada 
 
 | SA | Tema | Sessions | Codi |
 |---|---|---|---|
+| **SA0** | Vocabulari essencial i bases de programació (material transversal de suport) | — | Fragments dins els `.md` |
 | **SA1** | Introducció a la robòtica i sistemes embeguts | 3 | `blink.ino`, `blink_repte.ino` |
 | **SA2** | Sortides digitals i PWM | 4 | `01_led_basic` · `02_semafor` · `03_fade_pwm` · `04_rgb` · `05_panell_senyalitzacio` |
 | **SA3** | Entrades i sensors | 4 | `01_polsador_debounce` · `02_potenciometre_ldr` · `03_ultrasons_funcio` · `04_alarma_aparcament` |
