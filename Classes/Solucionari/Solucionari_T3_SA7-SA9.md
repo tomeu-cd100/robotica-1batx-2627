@@ -55,6 +55,41 @@ void loop(){
 ```
 > Aquesta correcció **proporcional** dona un seguiment molt més suau que el tot/res (connecta amb SA6).
 
+### + Repte: gir proporcional a la proximitat (evita-obstacles)
+Com més a prop l'obstacle, gir més tancat (gira més estona):
+```cpp
+const int DIST_MIN = 25;
+void loop(){
+  float d = distancia();
+  if (d < DIST_MIN) {
+    int gir = map((int)d, 5, DIST_MIN, 600, 150);  // mes a prop -> gir mes llarg
+    gir = constrain(gir, 150, 600);
+    atura();      delay(100);
+    gira_dreta(); delay(gir);
+    atura();      delay(100);
+  } else {
+    endavant();
+  }
+  delay(30);
+}
+```
+
+### + Repte: tornar al punt de sortida
+Per a un recorregut en "L", fes el camí d'anada, fes mitja volta i refes-lo:
+```cpp
+void anada(){ endavant(); delay(1200); gira_dreta(); delay(600); endavant(); delay(1200); }
+void mitja_volta(){ gira_dreta(); delay(1200); }   // ~180 graus (CALIBRAR)
+void setup(){
+  // ... pinMode dels motors ...
+  delay(1000);
+  anada();
+  mitja_volta();
+  anada();          // refa el cami per tornar a prop de l'origen
+  atura();
+}
+void loop(){}
+```
+
 ---
 
 ## SA8
@@ -75,6 +110,31 @@ def classifica(x, y, z):
 
 ### + Repte (ML real): nota
 Per a **aprenentatge automàtic** real (no regles), usar l'entorn **MakeCode "Code & AI"** (https://microbit.org/code-ai/): recollir mostres de cada gest, **entrenar** el model i exportar-lo. És una bona pràctica per discutir dades d'entrenament i biaixos.
+
+### + Repte: alerta per llindar (telemetria)
+L'emissor envia una alerta quan supera un llindar; el receptor la mostra:
+```python
+# EMISSOR
+from microbit import *
+import radio
+radio.on(); radio.config(group=10)
+LLINDAR = 28
+while True:
+    if temperature() > LLINDAR:
+        radio.send("ALERTA")
+    sleep(1000)
+```
+```python
+# RECEPTOR
+from microbit import *
+import radio, music
+radio.on(); radio.config(group=10)
+while True:
+    if radio.receive() == "ALERTA":
+        display.show(Image.SKULL)
+        music.play(music.BA_DING)
+    sleep(50)
+```
 
 ---
 
