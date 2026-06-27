@@ -18,7 +18,21 @@ Projecte de **síntesi** del curs: en equip, l'alumnat dissenya, construeix, pro
 | `Banc_de_reptes.md` | Llista de reptes amb nivells de dificultat. |
 | `Planificacio_agile_PLANTILLA.md` | Taulell de tasques (To Do / Fent / Fet) i rols. |
 | `Dossier_tecnic_PLANTILLA.md` | Estructura del dossier a lliurar. |
-| `Codi_base_PLANTILLA.ino` | Esquelet de codi modular per començar. |
+| `Codi_base_PLANTILLA/` | Esquelet de codi modular per començar (sketch en carpeta pròpia, llest per a l'Arduino IDE). |
+
+## Mètode de projecte (culminació del curs)
+Aquesta SA **tanca el mètode de projecte** introduït a la **SA1** i practicat a totes les SA: *analitzar → dissenyar → prototipar → provar → millorar*. Les cinc fases de la seqüència s'hi corresponen directament:
+
+| Fase del cicle (SA1) | Sessió SA9 |
+|---|---|
+| Analitzar | S1 (Idear): repte, requisits, esbós |
+| Dissenyar | S1 (Idear): planificació i rols |
+| Prototipar | S2 (Prototipar): MVP i primer codi |
+| Provar | S3 (Provar): proves i 1a iteració |
+| Millorar | S4 (Millorar): 2a iteració + dossier |
+| *(Comunicar)* | S5 (Comunicar): defensa oral |
+
+> A diferència de les altres SA, aquí l'alumnat **no llegeix codi donat** (no hi ha PRIMM): **escriu el seu propi codi** a partir de `Codi_base_PLANTILLA/`, aplicant de forma autònoma tot el que ha après.
 
 ---
 
@@ -42,6 +56,17 @@ Projecte de **síntesi** del curs: en equip, l'alumnat dissenya, construeix, pro
 - **Totes les rúbriques** (R1-R5). Pes destacat dins de la dimensió "Projectes i productes" del trimestre.
 - Inclou **autoavaluació i coavaluació** (procés d'equip).
 - Lliurables: **sistema funcional + dossier tècnic + defensa oral**.
+
+### Mapa d'avaluació (traçabilitat)
+| Instrument | Què evidencia | Criteri | Rúbrica |
+|---|---|---|---|
+| Sistema funcional | Integració d'electrònica, control i robòtica | CA2.1, CA3.1, CA4.1 | R1, R2, R3 |
+| Dossier tècnic | Documentació completa i rigorosa del projecte | CA5.1, CA5.2 | R4 |
+| Defensa oral + demostració | Comunicar i defensar la solució | CA5.2 | R4 |
+| Procés (taulell, iteracions) | Gestió del projecte (anàlisi → prototip → millora) | CA5.1 | R5 |
+| Coavaluació + reflexió ètica | Cooperació i impacte ètic/sostenibilitat (ODS) | CA5.3 | R5 |
+
+*(CA5.1 = gestionar un projecte complet; CA5.2 = documentar i defensar; CA5.3 = valorar impacte ètic i cooperar. Vegeu `Programació didàctica/06_Avaluacio_criteris_qualificacio.md`. Comparteix **totes** les rúbriques **abans** de començar.)*
 
 ## Orientacions per al docent
 - Tenir el **banc de reptes amb nivells** perquè cada equip triï segons ambició (atenció a la diversitat).

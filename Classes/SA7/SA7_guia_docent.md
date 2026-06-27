@@ -25,6 +25,11 @@ La **Imagina 3dBot** és Arduino-compatible, però **els pins dels motors depene
 | `03_evita_obstacles.ino` | Comportament reactiu amb ultrasons. |
 | `04_seguidor_linia.ino` | Seguidor de línia amb sensors IR. |
 
+## Mètode de projecte i continuïtat
+- **Cicle de treball** (com a tot el curs): *analitzar → dissenyar → prototipar → provar → millorar* (vegeu SA1). Aquí la fase **provar → millorar** és central: el repte de pista s'**itera** mesurant temps i errors.
+- **Lectura de codi amb PRIMM:** a cada *modelatge* l'alumnat **prediu** què farà el robot **abans** d'executar-lo, després l'**investiga**, el **modifica** i en **crea** un de nou.
+- **Pont (d'on venim / on anem):** ve de la **SA6** (control: llaç tancat i màquines d'estats) → portem a la **SA8** (IoT i IA). L'evita-obstacles i el seguidor de línia són **control en llaç tancat** (SA6) aplicat al moviment.
+
 ---
 
 ## SESSIÓ 1 (2 h) — Moviment i cinemàtica diferencial
@@ -69,6 +74,16 @@ La **Imagina 3dBot** és Arduino-compatible, però **els pins dels motors depene
 
 **Producte:** robot mòbil que completa un repte autònom (seguir línia o evitar obstacles) amb codi modular i **registre d'iteracions de millora**.
 **Avaluació:** rúbriques **R1** (codi), **R3** (robot/control), **R4** (documentació).
+
+### Mapa d'avaluació (traçabilitat)
+| Instrument | Què evidencia | Criteri | Rúbrica |
+|---|---|---|---|
+| Demostració a la pista | Comportament autònom (trajectòria/línia/obstacles) | CA4.1 | R3 |
+| Codi del robot | Funcions de moviment, lògica de comportament | CA1.1, CA3.1 | R1, R3 |
+| Quadern (proves i iteracions) | Calibratge, mesura d'errors i millores documentades | CA4.1 | R4 |
+| Observació del procés | Treball d'equip, ús segur del robot a la pista | CA4.1 | R4 |
+
+*(CA1.1 = programar en C/C++; CA3.1 = control (llaç tancat); CA4.1 = programar un robot mòbil amb trajectòries i comportaments autònoms. Vegeu `Programació didàctica/06_Avaluacio_criteris_qualificacio.md`. Comparteix R1, R3 i R4 **abans** de començar.)*
 
 ## Errors freqüents
 | Error | Causa | Solució |

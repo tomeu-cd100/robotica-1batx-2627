@@ -7,7 +7,8 @@
 ---
 
 ## Activitat 1 · Moviment i cinemàtica (S1)
-1. Ajusta el bloc de pins de `01_moviment_basic.ino`. Quins pins has posat?
+0. **PREDIU** (abans d'executar): mirant les funcions de `01_moviment_basic.ino`, què creus que farà el robot amb `gira_dreta()`? ____________________
+1. Ajusta el bloc de pins de `01_moviment_basic.ino` i **comprova** la predicció. Quins pins has posat?
 
 | Motor esq. dir/vel | Motor dret dir/vel |
 |---|---|
@@ -36,6 +37,13 @@
 2. Temps de volta — intent 1: ____ s · intent 2: ____ s · intent 3: ____ s
 3. Quines **millores** has fet entre intents? ___________________________
 4. **+ Repte:** correcció proporcional (moviment més suau).
+
+**Autoavaluació** (marca el teu nivell — NA/AS/AN/AE):
+| Criteri | Nivell |
+|---|---|
+| El codi del robot és modular i comentat (R1) | ☐ NA ☐ AS ☐ AN ☐ AE |
+| El robot completa el repte autònom (R3) | ☐ NA ☐ AS ☐ AN ☐ AE |
+| He registrat proves i iteracions de millora (R4) | ☐ NA ☐ AS ☐ AN ☐ AE |
 
 ---
 

@@ -7,7 +7,8 @@
 ---
 
 ## Activitat 1 · Telemetria (S1)
-1. Carrega `01_telemetria_emissor.py` i `02_telemetria_receptor.py` en dues plaques (mateix `group`).
+0. **PREDIU** (abans d'executar): mirant `01_telemetria_emissor.py` i `02_telemetria_receptor.py`, què creus que mostrarà la placa receptora? ____________________
+1. Carrega `01_telemetria_emissor.py` i `02_telemetria_receptor.py` en dues plaques (mateix `group`) i **comprova** la predicció.
 2. Quines magnituds envies? __________________ Cada quant? __________
 3. Registra 5 lectures rebudes:
 
@@ -39,6 +40,13 @@ Dissenya un sistema IoT del teu entorn (hort, aula, casa...):
 4. **Reflexió ètica:** un benefici i un risc de la IA:
    - Benefici: ______________________________________________________
    - Risc: __________________________________________________________
+
+**Autoavaluació** (marca el teu nivell — NA/AS/AN/AE):
+| Criteri | Nivell |
+|---|---|
+| El sistema connectat / classificador funciona (R1, R3) | ☐ NA ☐ AS ☐ AN ☐ AE |
+| El disseny IoT considera riscos i privacitat (R3) | ☐ NA ☐ AS ☐ AN ☐ AE |
+| La reflexió ètica és argumentada (R4) | ☐ NA ☐ AS ☐ AN ☐ AE |
 
 ---
 

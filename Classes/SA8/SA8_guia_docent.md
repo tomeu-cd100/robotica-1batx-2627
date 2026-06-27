@@ -22,6 +22,11 @@
 | `03_ia_gestos.py` | Classificació de gestos amb l'acceleròmetre (IA basada en regles). |
 | `04_esp32_telemetria.ino` | *(Opcional)* ESP32 que publica dades per WiFi. |
 
+## Mètode de projecte i continuïtat
+- **Cicle de treball** (com a tot el curs): *analitzar → dissenyar → prototipar → provar → millorar* (vegeu SA1). El disseny IoT (S2) treballa especialment la fase **analitzar** (requisits, riscos).
+- **Lectura de codi amb PRIMM:** també en Python. A cada *modelatge* l'alumnat **prediu** què farà el programa **abans** d'executar-lo, després l'**investiga**, el **modifica** i en **crea** un de nou.
+- **Pont (d'on venim / on anem):** ve de la **SA7** (robot mòbil) → portem a la **SA9** (projecte final). Reprèn el **fil dels dos llenguatges** (Python/C++) obert a la **SA5**; les peces d'aquí (dades, connexió, decisió) es poden **integrar** al projecte final.
+
 ---
 
 ## SESSIÓ 1 (2 h) — Telemetria: el robot que informa
@@ -57,6 +62,16 @@
 
 **Producte:** sistema connectat que recull/transmet dades (telemetria) **o** classifica un gest/patró amb IA, + **reflexió escrita** sobre ètica i privacitat.
 **Avaluació:** rúbriques **R1** (codi), **R3** (sistema/decisió), **R4** (documentació/reflexió).
+
+### Mapa d'avaluació (traçabilitat)
+| Instrument | Què evidencia | Criteri | Rúbrica |
+|---|---|---|---|
+| Producte (telemetria o IA de gestos) | Integrar tecnologia emergent (IoT/IA) en un sistema | CA4.2 | R3, R1 |
+| Fitxa de disseny IoT | Arquitectura, riscos de privacitat/seguretat | CA4.2 | R4 |
+| Quadern (dades + reflexió ètica) | Registre de dades i valoració ètica (ODS) | CA4.2 | R4 |
+| Coavaluació | Treball d'equip i decisions de disseny responsable | CA3.1 | R4 |
+
+*(CA3.1 = control/decisió; CA4.2 = integrar tecnologies emergents (IoT/telemetria/IA) en un sistema de control. Vegeu `Programació didàctica/06_Avaluacio_criteris_qualificacio.md`. Comparteix R1, R3 i R4 **abans** de començar.)*
 
 ## Errors freqüents
 | Error | Causa | Solució |

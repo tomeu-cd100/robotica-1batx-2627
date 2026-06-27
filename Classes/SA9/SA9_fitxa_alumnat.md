@@ -4,6 +4,8 @@
 
 > És el projecte final: dissenyareu, construireu, programareu i defensareu un sistema robòtic autònom. Useu les **plantilles** de la carpeta `plantilles/`.
 
+> 🔄 **Mètode de projecte** (el mateix de tot el curs, des de la SA1): *analitzar (§1) → dissenyar (§2-3) → prototipar → provar (§5) → millorar (§5) → comunicar (§6)*. Aquest cop el recorreu **sencer i en autonomia**.
+
 ---
 
 ## 1. El nostre repte
