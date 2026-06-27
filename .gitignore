@@ -1,0 +1,11 @@
+# Configuracio local de Claude Code (permisos, ajustos de maquina)
+.claude/
+
+# Fitxers temporals del sistema
+Thumbs.db
+desktop.ini
+~$*
+*.tmp
+
+# Fitxers temporals d'Office en obrir documents
+.~lock.*

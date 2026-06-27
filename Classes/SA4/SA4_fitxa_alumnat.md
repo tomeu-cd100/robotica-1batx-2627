@@ -1,0 +1,53 @@
+# SA4 · Fitxa d'alumnat — Moviment: servos, motors i ponts H
+
+**Nom:** ______________________  **Parella:** ______________________  **Data:** __________
+
+> Faràs moure el sistema: posició amb servo i velocitat/direcció amb motor DC. Recorda la **massa comuna** i **no alimentar motors des de l'Arduino**.
+
+---
+
+## Activitat 1 · Servomotor (S1)
+1. Munta el servo (senyal al pin 9). Carrega `01_servo_potenciometre.ino`.
+2. Quin rang d'angles accepta `write()`? de ____ a ____ graus.
+3. Controla l'angle amb el potenciòmetre. Quina funció reescala 0-1023 → 0-180? `__________`
+4. **Repte:** vaivé automàtic 0↔180. **+ Repte:** dos servos coordinats.
+
+## Activitat 2 · Motor DC i pont H (S2)
+1. Munta el motor amb el L298N (ENA=5, IN1=7, IN2=8) i **alimentació externa**.
+2. Completa la taula de la lògica del pont H:
+
+| IN1 | IN2 | Resultat |
+|---|---|---|
+| HIGH | LOW | |
+| LOW | HIGH | |
+| LOW | LOW | |
+
+3. Com es regula la **velocitat**? Per quin pin? __________________________
+4. **Repte:** funcions `endavant(vel)`, `enrere(vel)`, `atura()`. **+ Repte:** rampa d'acceleració.
+
+## Activitat 3 · Del sensor al moviment (S3)
+1. Connecta l'ultrasons i fes que la **velocitat depengui de la distància**.
+2. Completa:
+
+| Distància | Velocitat (0-255) |
+|---|---|
+| > 30 cm | |
+| 15-30 cm | |
+| < 15 cm | |
+
+3. **Repte:** atura el motor per sota d'un llindar de seguretat. Llindar: ____ cm.
+
+## Activitat 4 · Producte: barrera automàtica (S4)
+Dissenya una barrera que s'obre quan arriba un vehicle i es tanca sola.
+
+- Angle tancat: ____° · Angle obert: ____° · Temps obert: ____ s
+- Distància de detecció: ____ cm
+- **Esquema** (dibuixa o enganxa): ______________________
+- **Defensa (1'):** explica el funcionament i una aplicació real.
+
+---
+
+## Quadern tècnic (SA4)
+- **Per què cal un pont H / driver?** ____________________________________
+- **Què és la massa comuna i per què és important?** ____________________
+- **Error trobat i solució:** ___________________________________________

@@ -1,0 +1,38 @@
+# Classes — Material d'aula
+
+Material llest per a l'aula, organitzat per situació d'aprenentatge (SA). Cada SA conté:
+- **Guia docent** (`SAx_guia_docent.md`): seqüència sessió a sessió, punts clau i errors freqüents.
+- **Fitxa d'alumnat** (`SAx_fitxa_alumnat.md`): activitats, reptes i quadern tècnic.
+- **Esquemes** (`SAx_esquemes_connexions.md`): taules de connexió pin-a-pin (reproduïbles a Tinkercad/Wokwi). *(SA2 i SA3.)*
+- **Codi** (`codi/*.ino`): sketches comentats, oberts directament a l'Arduino IDE.
+
+## Contingut actual
+
+| SA | Tema | Sessions | Codi |
+|---|---|---|---|
+| **SA1** | Introducció a la robòtica i sistemes embeguts | 3 | `blink.ino`, `blink_repte.ino` |
+| **SA2** | Sortides digitals i PWM | 4 | `01_led_basic` · `02_semafor` · `03_fade_pwm` · `04_rgb` · `05_panell_senyalitzacio` |
+| **SA3** | Entrades i sensors | 4 | `01_polsador_debounce` · `02_potenciometre_ldr` · `03_ultrasons_funcio` · `04_alarma_aparcament` |
+| **SA4** | Moviment: servos, motors i ponts H | 4 | `01_servo_potenciometre` · `02_motor_pont_h` · `03_sensor_velocitat` · `04_barrera_automatica` |
+| **SA5** | micro:bit i MicroPython | 3-4 | `01_name_badge.py` · `02_passes.py` · `03_nightlight.py` · `04_radio_dau.py` |
+| **SA6** | Sistemes de control | 4 | `01_llac_obert_vs_tancat` · `02_termostat_histeresi` · `03_maquina_estats` · `04_control_proporcional` |
+| **SA7** | Robòtica mòbil (Imagina 3dBot) | 4 | `01_moviment_basic` · `02_trajectoria_quadrat` · `03_evita_obstacles` · `04_seguidor_linia` |
+| **SA8** | IoT i IA | 3 | `01_telemetria_emissor.py` · `02_telemetria_receptor.py` · `03_ia_gestos.py` · `04_esp32_telemetria.ino` |
+| **SA9** | Projecte final integrador | 5 | `plantilles/` (banc de reptes, planificació, dossier, codi base) |
+
+## Notes
+- El codi d'Arduino (`.ino`) usa **Arduino UNO** + kit Keyestudio/BQ; el de **SA5 és MicroPython (`.py`)** per a micro:bit (editor python.microbit.org / Thonny).
+- Comentaris en català sense accents als fitxers de codi per evitar problemes de codificació.
+- Els esquemes es poden muntar físicament o simular a **Tinkercad Circuits** / **Wokwi** abans del muntatge real.
+- Vincle amb la programació didàctica: vegeu `Programació didàctica/10_SA1...` fins a `18_SA9...`.
+- **SA7** (Imagina 3dBot): cal **ajustar els pins** dels motors al codi segons el manual de la placa (bloc marcat a cada `.ino`).
+- **SA8**: codi micro:bit en `.py`; l'ESP32 és **opcional/avançat**.
+- **SA9**: el codi el crea l'alumnat; es proporcionen **plantilles** de treball.
+
+## Estat
+✅ **Curs complet:** material d'aula de les 9 situacions d'aprenentatge (SA1-SA9), trimestres 1, 2 i 3.
+
+## Possibles ampliacions futures
+- Versions **DOCX/PDF** del material per imprimir/compartir.
+- Solucionari ampliat dels reptes "+ ampliació".
+- Bateria de proves pràctiques d'avaluació per trimestre.
