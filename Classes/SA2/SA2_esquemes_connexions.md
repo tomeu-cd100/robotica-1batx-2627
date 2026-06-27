@@ -85,3 +85,16 @@ Pin 6 ---------- piezo(+) ... piezo(-) -- GND
 Pin 7 ---------- IN (rele)   |   VCC=5V   GND=GND
 ```
 > ⚠️ El relé permet controlar càrregues; a l'aula es connecta a **baixa tensió** (LED de 5 V, petit motor). **No** connectar 230 V.
+
+---
+
+## Simulació interactiva (Wokwi)
+
+El circuit del **semàfor** (apartat 2) es pot **simular** de forma reproduïble:
+
+- **Projecte:** [`Simulacions/Wokwi/SA2_semafor/`](../../Simulacions/Wokwi/SA2_semafor/) (`diagram.json` + `sketch.ino`).
+- **Com simular-lo:** obre <https://wokwi.com/projects/new/arduino-uno>, enganxa el codi a la pestanya `sketch.ino` i el contingut de `diagram.json` a la seva pestanya, i prem **▶**. (Detalls a `Simulacions/Wokwi/README.md`.)
+
+![Simulació del semàfor a Wokwi — fase verda (passen els cotxes)](img/SA2_semafor_wokwi.png)
+
+> *(La imatge `Classes/SA2/img/SA2_semafor_wokwi.png` és la captura de la simulació amb el LED verd encès. Desa-hi la captura per visualitzar-la als apunts.)*
