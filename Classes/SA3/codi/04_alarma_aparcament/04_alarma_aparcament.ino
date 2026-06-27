@@ -20,7 +20,8 @@ float mesuraDistancia() {
   digitalWrite(TRIG, HIGH);
   delayMicroseconds(10);
   digitalWrite(TRIG, LOW);
-  long temps = pulseIn(ECHO, HIGH);
+  long temps = pulseIn(ECHO, HIGH, 30000);  // timeout 30 ms
+  if (temps == 0) return 400;               // sense eco: fora de rang (evita falsa alarma)
   return temps * 0.034 / 2.0;
 }
 

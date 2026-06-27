@@ -87,3 +87,4 @@
 | Lectura analògica sempre 0 o 1023 | Divisor mal connectat | Revisar la resistència de 10 kΩ i el punt mig al pin analògic. |
 | Distància sempre 0 o molt gran | TRIG/ECHO intercanviats | Verificar TRIG (sortida) i ECHO (entrada). |
 | El LED no regula amb el potenciòmetre | Pin de sortida sense PWM | LED en pin `~` i usar `map()` a 0-255. |
+| L'alarma/avís es dispara sol sense cap objecte | `pulseIn` retorna `0` quan no hi ha eco (objecte fora de rang) i `0` cm es llegeix com "molt a prop" | Posar *timeout* a `pulseIn(ECHO, HIGH, 30000)` i tractar el `0` com a "molt lluny" (p. ex. retornar 400). |

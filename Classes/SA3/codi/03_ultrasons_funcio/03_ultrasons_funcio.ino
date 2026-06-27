@@ -16,7 +16,8 @@ float mesuraDistancia() {
   delayMicroseconds(10);
   digitalWrite(TRIG, LOW);
 
-  long temps = pulseIn(ECHO, HIGH);   // temps de l'eco en us
+  long temps = pulseIn(ECHO, HIGH, 30000);  // temps de l'eco en us (timeout 30 ms)
+  if (temps == 0) return 400;               // sense eco: objecte fora de rang (molt lluny)
   float dist = temps * 0.034 / 2.0;   // cm (velocitat del so ~0.034 cm/us)
   return dist;
 }

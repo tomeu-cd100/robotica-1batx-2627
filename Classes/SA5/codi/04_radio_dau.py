@@ -8,7 +8,9 @@ import random
 import radio
 
 radio.on()
-radio.config(group=10)   # mateix numero a les dues plaques
+radio.config(group=10)   # mateix numero a les dues plaques del teu equip
+# NOTA: si hi ha mes d'un equip a l'aula, cada equip ha de triar un group
+# DIFERENT (p. ex. el numero de la taula) per evitar interferencies de radio.
 
 while True:
     # Llançar el dau en sacsejar

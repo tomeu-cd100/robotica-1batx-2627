@@ -8,17 +8,31 @@ Distribució en **3 trimestres** i **9 situacions d'aprenentatge (SA)**.
 | Trim. | Setmanes aprox. | SA | Títol | Hores |
 |---|---|---|---|---|
 | **1r** | s1-s12 | SA1 | Què és un robot? Sistemes embeguts i mètode de projecte | 6 |
-| | | SA2 | Sortides digitals i PWM: dona vida als actuadors | 8 |
+| | | SA2 * | Sortides digitals i PWM: dona vida als actuadors | 7 |
 | | | SA3 | Entrades i sensors: el robot percep | 8 |
-| **2n** | s13-s24 | SA4 | Moviment: servos, motors i ponts H | 8 |
+| **2n** | s13-s24 | SA4 * | Moviment: servos, motors i ponts H | 7 |
 | | | SA5 | micro:bit i MicroPython: un altre paradigma | 7 |
-| | | SA6 | Sistemes de control: llaç obert/tancat i màquines d'estats | 8 |
+| | | SA6 * | Sistemes de control: llaç obert/tancat i màquines d'estats | 7 |
 | **3r** | s25-s35 | SA7 | Robòtica mòbil: cinemàtica i trajectòries | 8 |
 | | | SA8 | IoT i IA: el robot connectat i intel·ligent | 6 |
 | | | SA9 | Repte final integrador (opció competició) | 10 |
-| | | | **Total** | **69 h** |
+| | | | **Subtotal SA** | **66 h** |
+| | | | **Marge (diagnòstic, avaluació, imprevistos)** | **~4 h** |
+| | | | **Total** | **70 h** |
 
-*(≈ 1 h de marge per a diagnòstic inicial/avaluacions; ajustable al calendari real del centre.)*
+> **\*** SA amb 4a sessió d'**ampliacions opcionals**: el còmput base és **7 h** i pot arribar a **8 h** segons el ritme del grup (les guies docents en detallen les 4 sessions). Aquest marge és el que absorbeix festius i imprevistos.
+
+## Marge i integració de l'avaluació
+
+Per garantir la **viabilitat real** del curs (2 h/setmana ≈ 70 h), s'apliquen dos criteris:
+
+1. **Marge efectiu de ~4 h:** les SA marcades amb **\*** (SA2, SA4, SA6) tenen un còmput base de 7 h; la 4a sessió conté activitats d'**ampliació opcionals** que es poden escurçar segons el calendari real. Així s'allibera marge per al **diagnòstic inicial** (SA1), festius i imprevistos.
+2. **Proves pràctiques integrades (sense hores extra):** les **proves pràctiques trimestrals** (`Avaluació/Prova_practica_T1/T2/T3`) **no afegeixen sessions**: s'incorporen com a **repte avaluable** dins l'última sessió de la SA de tancament de cada trimestre:
+   - **T1** → dins la SA3 (sessió 4, producte/repte).
+   - **T2** → dins la SA6 (sessió 4, repte de control).
+   - **T3** → dins la SA9 (demostració + defensa, ja prevista).
+
+> Vegeu la ponderació a `06_Avaluacio_criteris_qualificacio.md` (dimensió "Proves pràctiques", 20 %). Aquesta integració manté el pes avaluatiu sense comprometre les hores lectives.
 
 ## Fil conductor i progressió
 

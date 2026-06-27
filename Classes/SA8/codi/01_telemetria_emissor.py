@@ -6,7 +6,9 @@ from microbit import *
 import radio
 
 radio.on()
-radio.config(group=10)
+radio.config(group=10)   # emissor i receptor han de compartir group
+# NOTA: si hi ha mes d'un equip a l'aula, cada equip ha de triar un group
+# DIFERENT (p. ex. el numero de la taula) per evitar interferencies de radio.
 
 while True:
     t = temperature()                 # graus C aprox.
