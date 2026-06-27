@@ -21,6 +21,12 @@
 | `03_nightlight.py` | Llum automàtic amb el sensor de llum. |
 | `04_radio_dau.py` | Dau digital + comunicació per ràdio. |
 
+## Mètode de projecte i continuïtat
+- **Cicle de treball** (com a tot el curs): *analitzar → dissenyar → prototipar → provar → millorar* (vegeu SA1). El **producte** n'és el recorregut complet i el **quadern tècnic** el documenta.
+- **Lectura de codi amb PRIMM:** també en Python. A cada *modelatge* l'alumnat **prediu** què farà el programa **abans** d'executar-lo (al simulador o a la placa), després l'**investiga**, el **modifica** i en **crea** un de nou.
+- **Pont (d'on venim / on anem):** ve de la **SA4** (Arduino/C++) → portem a la **SA6** (control, torna a Arduino). Aquí s'obre el **fil dels dos llenguatges** (C/C++ ↔ Python, criteri **CA1.2**): els mateixos conceptes en dos paradigmes. Es reprendrà a la **SA8**.
+- **Bastida de transició:** **MakeCode** (blocs) com a pont abans del codi Python per a qui ho necessiti.
+
 ---
 
 ## SESSIÓ 1 (2 h) — Primers passos amb MicroPython
@@ -64,3 +70,13 @@
 
 **Producte:** aplicació amb micro:bit (comptapassos, nightlight o joc per ràdio) + **taula comparativa** C++/Python.
 **Avaluació:** rúbriques **R1** (codi) i **R4** (documentació/comparativa).
+
+### Mapa d'avaluació (traçabilitat)
+| Instrument | Què evidencia | Criteri | Rúbrica |
+|---|---|---|---|
+| Producte (app micro:bit) | Programa en MicroPython amb sensors i/o ràdio | CA1.2 | R1 |
+| Taula comparativa C++ ↔ Python | Comparar la mateixa solució en dos llenguatges | CA1.2 | R4 |
+| Repte de codi Python | Sintaxi (indentació), funcions, lectura de sensor | CA1.2 | R1 |
+| Quadern tècnic | Comparativa, errors i millores; decisió de disseny | CA1.2, CA3.1 | R4 |
+
+*(CA1.2 = programar en MicroPython i comparar-ho amb C/C++; CA3.1 = implementar/explicar control bàsic. Vegeu `Programació didàctica/06_Avaluacio_criteris_qualificacio.md`. Comparteix R1 i R4 **abans** de començar.)*

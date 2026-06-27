@@ -21,6 +21,11 @@
 | `03_maquina_estats.ino` | Màquina d'estats amb `enum`/`switch`. |
 | `04_control_proporcional.ino` | Regulació proporcional bàsica. |
 
+## Mètode de projecte i continuïtat
+- **Cicle de treball** (com a tot el curs): *analitzar → dissenyar → prototipar → provar → millorar* (vegeu SA1). El **producte** n'és el recorregut complet i el **quadern tècnic** el documenta.
+- **Lectura de codi amb PRIMM:** a cada *modelatge* l'alumnat **prediu** què farà el sketch **abans** d'executar-lo, després l'**investiga**, el **modifica** i en **crea** un de nou.
+- **Pont (d'on venim / on anem):** ve de la **SA5** (paradigmes de programació) → portem a la **SA7** (robòtica mòbil). El **llaç tancat** i les **màquines d'estats** d'aquí són la base dels **comportaments autònoms** del robot (evitar obstacles, seguir línia).
+
 ---
 
 ## SESSIÓ 1 (2 h) — Què és un sistema de control?
@@ -67,6 +72,16 @@
 
 **Producte:** sistema de control documentat (termòstat amb histèresi o procés amb màquina d'estats) amb **diagrama de blocs** i anàlisi de la resposta.
 **Avaluació:** rúbriques **R1** (codi), **R3** (control), **R4** (documentació).
+
+### Mapa d'avaluació (traçabilitat)
+| Instrument | Què evidencia | Criteri | Rúbrica |
+|---|---|---|---|
+| Producte (termòstat / màquina d'estats) | Implementar un sistema de control i explicar-lo | CA3.1 | R3 |
+| Repte (dissenyar una màquina d'estats) | `enum`/`switch`, transicions, no bloqueig (`millis()`) | CA1.1, CA3.1 | R1, R3 |
+| Quadern (diagrama de blocs + anàlisi) | Consigna, error, realimentació; anàlisi de la resposta | CA3.1 | R4 |
+| Observació + Serial Plotter | Histèresi, ajust de `Kp`, comparació tot/res vs proporcional | CA3.1 | R3 |
+
+*(CA1.1 = programar en C/C++; CA3.1 = implementar sistemes de control (llaç obert/tancat, màquines d'estats) i explicar-ne el funcionament. Vegeu `Programació didàctica/06_Avaluacio_criteris_qualificacio.md`. Comparteix R1, R3 i R4 **abans** de començar.)*
 
 ## Errors freqüents
 | Error | Causa | Solució |

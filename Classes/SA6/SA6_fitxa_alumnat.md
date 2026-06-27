@@ -7,7 +7,8 @@
 ---
 
 ## Activitat 1 · Llaç obert vs llaç tancat (S1)
-1. Carrega `01_llac_obert_vs_tancat.ino` i prova els dos modes.
+0. **PREDIU** (abans d'executar): mirant `01_llac_obert_vs_tancat.ino`, en quin dels dos modes creus que el sistema corregirà sol les pertorbacions? ____________________
+1. Carrega `01_llac_obert_vs_tancat.ino`, prova els dos modes i **comprova** la predicció.
 2. Completa el **diagrama de blocs** del llaç tancat:
 
 ```
@@ -42,6 +43,13 @@
 2. Com afecta la constant `Kp` a la resposta? ___________________________
 3. **Repte:** compara tot/res vs proporcional al Serial Plotter. Quin és més estable? ______
 4. **+ Repte:** què passa si `Kp` és massa gran? _________________________
+
+**Autoavaluació** (marca el teu nivell — NA/AS/AN/AE):
+| Criteri | Nivell |
+|---|---|
+| El codi de control funciona i està comentat (R1) | ☐ NA ☐ AS ☐ AN ☐ AE |
+| El sistema de control és correcte i l'explico bé (R3) | ☐ NA ☐ AS ☐ AN ☐ AE |
+| El diagrama de blocs i l'anàlisi són clars (R4) | ☐ NA ☐ AS ☐ AN ☐ AE |
 
 ---
 

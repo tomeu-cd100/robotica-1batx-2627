@@ -7,7 +7,8 @@
 ---
 
 ## Activitat 1 · Name badge (S1)
-1. Carrega `01_name_badge.py`. Quina instrucció mostra text que es desplaça? `__________`
+0. **PREDIU** (abans d'executar): mirant `01_name_badge.py`, què creus que farà la matriu de LED i els botons? ____________________
+1. Carrega `01_name_badge.py` i **comprova** la predicció. Quina instrucció mostra text que es desplaça? `__________`
 2. Diferència entre `display.show()` i `display.scroll()`: ________________
 3. **Repte:** badge d'emocions (A: contenta / B: trista). **+ Repte:** animació pròpia.
 
@@ -33,6 +34,12 @@ Completa amb un mateix programa senzill (p. ex. un comptador):
 | Mostrar un valor | `Serial.println(x)` | |
 
 **Reflexió:** quin t'ha semblat més fàcil de llegir i per què? ________________
+
+**Autoavaluació** (marca el teu nivell — NA/AS/AN/AE):
+| Criteri | Nivell |
+|---|---|
+| El programa Python funciona i està ben indentat (R1) | ☐ NA ☐ AS ☐ AN ☐ AE |
+| La taula comparativa C++/Python és clara i correcta (R4) | ☐ NA ☐ AS ☐ AN ☐ AE |
 
 ---
 
