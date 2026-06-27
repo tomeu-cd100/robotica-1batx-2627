@@ -26,8 +26,15 @@ connections:  llista de cables [ "origen:pin", "desti:pin", "color", [] ]
 Pins habituals: LED `A` (ànode) / `C` (càtode) · resistència `1` / `2` · Arduino `uno:8`, `uno:GND.1/2/3`, `uno:5V`, `uno:A0`.
 
 ## Contingut actual
-| Pràctica | Estat |
-|---|---|
-| `SA2_semafor` | ✅ Validat (diagram.json + sketch.ino) |
+| Pràctica | Projecte (text) | Simulació interactiva (Wokwi públic) |
+|---|---|---|
+| `SA1_blink` | ✅ `diagram.json` + `sketch.ino` | <https://wokwi.com/projects/468012800918599681> |
+| `SA2_semafor` | ✅ `diagram.json` + `sketch.ino` | <https://wokwi.com/projects/468009961823220737> |
 
-*(Per ampliar a la resta de pràctiques, generar una carpeta per pràctica seguint el mateix patró.)*
+*(Per ampliar a la resta de pràctiques, generar una carpeta per pràctica seguint el mateix patró i publicar el projecte a Wokwi com a públic.)*
+
+## Escalat previst (per fases)
+- **Fase 1:** SA1 (blink) · SA3 (sensors). *(SA2 fet.)*
+- **Fase 2:** SA4 (servos; motor/pont H limitat) · SA6 (control).
+- **Fase 3:** SA5 · SA8 (micro:bit, MicroPython).
+- **SA7** (Imagina 3dBot): no simulable a Wokwi (placa propietària) → es queda amb el diagrama de `Classes/SA7/SA7_esquemes_connexions.md`.
