@@ -46,6 +46,18 @@ void loop(){
 }
 ```
 
+### + Repte: dos servos coordinats
+```cpp
+#include <Servo.h>
+Servo base, pinca;
+void setup(){ base.attach(9); pinca.attach(10); }
+void loop(){
+  // moviment coordinat: la base gira i la pinca actua a cada extrem
+  base.write(0);   pinca.write(10);  delay(600);   // posicio A, pinca oberta
+  base.write(120); pinca.write(80);  delay(600);   // posicio B, pinca tancada
+}
+```
+
 ---
 
 ## SA5 (MicroPython)
@@ -93,6 +105,31 @@ while True:
     msg = radio.receive()
     if msg:
         display.scroll("R:" + msg[0])
+    sleep(50)
+```
+
+### + Repte: animació pròpia (badge)
+```python
+from microbit import *
+fotogrames = [Image.HEART_SMALL, Image.HEART]   # crea els teus fotogrames
+while True:
+    for img in fotogrames:
+        display.show(img)
+        sleep(300)
+```
+
+### + Repte: xarxa de 3+ plaques (cada placa amb un ID)
+```python
+from microbit import *
+import radio
+radio.on(); radio.config(group=10)   # mateix group per a tota la xarxa
+ID = "P1"   # canvia'l a cada placa: P1, P2, P3...
+while True:
+    if button_a.is_pressed():
+        radio.send(ID + ":hola")     # envia identificat
+    msg = radio.receive()
+    if msg:
+        display.scroll(msg)          # mostra qui ha enviat
     sleep(50)
 ```
 
@@ -146,4 +183,11 @@ void loop(){
       break;
   }
 }
+```
+
+### + Repte: què passa si Kp és massa gran? (control proporcional)
+> **Resposta:** si **Kp** és massa gran, el sistema **sobrecorregeix**: oscil·la al voltant de la consigna i pot tornar-se **inestable** (no s'estabilitza mai). Si és massa petit, respon molt lentament i no arriba a la consigna. Cal buscar un valor **intermedi**. Es veu molt bé al **Serial Plotter** comparant la lectura amb la consigna.
+```cpp
+// Sobre SA6/codi/04_control_proporcional.ino, prova diferents valors:
+const float Kp = 0.8;   // 0.2 = lent ; 0.8 = equilibrat ; 3.0 = oscil-la/inestable
 ```
