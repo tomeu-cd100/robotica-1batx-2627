@@ -1,6 +1,6 @@
 # SA6 · Guia docent — Sistemes de control: llaç obert/tancat i màquines d'estats
 
-**Durada:** 8 h (4 sessions) · **Maquinari:** Arduino UNO + NTC, LDR, LED/ventilador, polsador, (ultrasons) · **Llenguatge:** C/C++
+**Durada:** 7-8 h (4 sessions; la 4a amb ampliacions opcionals) · **Maquinari:** Arduino UNO + NTC, LDR, LED/ventilador, polsador, (ultrasons) · **Llenguatge:** C/C++
 **Referència:** `Programació didàctica/15_SA6_Sistemes_control.md` · **Esquemes:** `SA6_esquemes_connexions.md`
 
 ## Objectius de la SA

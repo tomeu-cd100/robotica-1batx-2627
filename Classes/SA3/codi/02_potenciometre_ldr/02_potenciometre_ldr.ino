@@ -25,7 +25,7 @@ void loop() {
   int brillantor = map(valorPot, 0, 1023, 0, 255);
   analogWrite(LED, brillantor);
 
-  // Mostra les lectures (descomenta per veure-les al monitor)
+  // Mostra les lectures al monitor serie (Eines > Serial Monitor)
   Serial.print("POT: ");  Serial.print(valorPot);
   Serial.print("  LDR: "); Serial.println(valorLdr);
 

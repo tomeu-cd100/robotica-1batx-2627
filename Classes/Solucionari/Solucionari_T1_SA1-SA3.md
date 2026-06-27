@@ -10,11 +10,8 @@
 
 **+ Ampliació (recerca d'un robot industrial/IA):** no té codi; s'avalua amb la rúbrica **R4** (documentació) — valorar rigor, fonts i claredat.
 
----
-
-## SA2
-
-### Morse d'una lletra ("SOS")
+### + Ampliació: SOS en Morse (`SA1/codi/sos_morse.ino`)
+> Emet "SOS" amb **funcions** per al punt i la ratlla (ampliació del Blink).
 ```cpp
 const int LED = 8;
 const int PUNT = 200;        // durada d'un punt (ms)
@@ -38,6 +35,10 @@ void loop() {
   delay(RATLLA * 2);   // pausa llarga entre paraules
 }
 ```
+
+---
+
+## SA2
 
 ### + Repte: semàfor de vianants coordinat
 ```cpp
