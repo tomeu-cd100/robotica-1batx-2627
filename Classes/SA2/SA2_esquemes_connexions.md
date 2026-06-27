@@ -90,11 +90,9 @@ Pin 7 ---------- IN (rele)   |   VCC=5V   GND=GND
 
 ## Simulació interactiva (Wokwi)
 
-El circuit del **semàfor** (apartat 2) es pot **simular** de forma reproduïble:
+El circuit del **semàfor** (apartat 2) es pot **simular en viu**:
 
-- **Projecte:** [`Simulacions/Wokwi/SA2_semafor/`](../../Simulacions/Wokwi/SA2_semafor/) (`diagram.json` + `sketch.ino`).
-- **Com simular-lo:** obre <https://wokwi.com/projects/new/arduino-uno>, enganxa el codi a la pestanya `sketch.ino` i el contingut de `diagram.json` a la seva pestanya, i prem **▶**. (Detalls a `Simulacions/Wokwi/README.md`.)
+- ▶ **Simulació interactiva:** <https://wokwi.com/projects/468009961823220737>
+- **Projecte al repositori:** [`Simulacions/Wokwi/SA2_semafor/`](../../Simulacions/Wokwi/SA2_semafor/) (`diagram.json` + `sketch.ino`), per editar-lo o tornar-lo a carregar.
 
-![Simulació del semàfor a Wokwi — fase verda (passen els cotxes)](img/SA2_semafor_wokwi.png)
-
-> *(La imatge `Classes/SA2/img/SA2_semafor_wokwi.png` és la captura de la simulació amb el LED verd encès. Desa-hi la captura per visualitzar-la als apunts.)*
+> Obre l'enllaç i prem **▶**: veuràs el semàfor funcionant (verd → groc → vermell).

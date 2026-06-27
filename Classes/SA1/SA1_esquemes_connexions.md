@@ -105,3 +105,12 @@ Pin 13 --[ 220R ]--|>|-- GND
 - [ ] Cap curtcircuit entre **5V** i **GND**.
 
 > Reproducció en simulador: a **Tinkercad** arrossega *Arduino UNO* + *LED* + *resistència de 220 Ω*, cabla com a l'esquema i prem **Iniciar simulació**.
+
+---
+
+## Simulació interactiva (Wokwi)
+
+- ▶ **Simulació interactiva (Blink, LED intern):** <https://wokwi.com/projects/468012800918599681>
+- **Projecte al repositori:** [`Simulacions/Wokwi/SA1_blink/`](../../Simulacions/Wokwi/SA1_blink/) (`diagram.json` + `sketch.ino`).
+
+> Obre l'enllaç i prem **▶**: el LED intern (pin 13) parpelleja.
