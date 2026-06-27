@@ -1,43 +1,67 @@
 # SA6 · Esquemes i connexions
 
-> Reproduïbles a **Tinkercad** o **Wokwi**. La "temperatura" es llegeix amb una **NTC** en divisor de tensió (es pot substituir per un potenciòmetre per simular).
+> Reproduïbles a **Tinkercad** o **Wokwi**. La "temperatura" es llegeix amb una **NTC** en divisor de tensió (es pot substituir per un **potenciòmetre** per simular-la).
 
-## Sensor de temperatura NTC (divisor de tensió)
+## Llegenda dels diagrames
+```
+--[ 10k ]--    resistencia (el numero indica el valor)
+|>|            LED ( |> = anode , | = catode )
++              nus de connexio comu
+[A0]           pin analogic (lectura 0..1023)
+~              pin amb PWM
+```
+
+---
+
+## 1. Sensor de temperatura NTC (divisor de tensió)
 
 ```
-5V ──[ NTC ]──┬──[ 10kΩ ]── GND
-              │
-             A0   (punt mig: lectura analògica)
+5V ---- NTC ----+---- [A0]      (punt mig: lectura analogica)
+                |
+              --[ 10k ]--
+                |
+               GND
 ```
-> Alternativa per a proves: un **potenciòmetre** al pin A0 simula el canvi de "temperatura".
+> **Alternativa per a proves:** un **potenciòmetre** al pin A0 simula el canvi de "temperatura".
 
-## Actuador (LED o ventilador)
+---
 
-| Component | Pin Arduino | Notes |
-|---|---|---|
-| LED indicador / sortida | 9 (~PWM) → 220 Ω → GND | Per a control proporcional cal PWM |
-| Ventilador petit (opcional) | via **transistor/relé** | No connectar el motor directament al pin |
+## 2. Actuador (LED o ventilador)
 
-## Entrades addicionals
+| Pin | Component | Via | Cap a |
+|---|---|---|---|
+| 9 ~ | LED indicador / sortida | 220 Ω | GND |
+| — | Ventilador petit (opcional) | via **transistor/relé** | no directament al pin |
 
-| Component | Pin |
-|---|---|
-| Polsador (esdeveniments màquina d'estats) | 2 (`INPUT_PULLUP`) |
-| LDR (alternativa de sensor) | A1 (divisor amb 10 kΩ) |
-| LED estat verd / vermell (opcional) | 7 / 8 |
+```
+Pin 9~ --[ 220R ]--|>|-- GND      (per a control proporcional cal PWM)
+```
+> ⚠️ No connectis un motor/ventilador **directament** al pin: usa transistor o relé.
+
+---
+
+## 3. Entrades i LEDs d'estat addicionals
+
+| Pin | Component | Via | Cap a |
+|---|---|---|---|
+| 2 | Polsador (màquina d'estats) | — | GND (`INPUT_PULLUP`) |
+| A1 | LDR (alternativa de sensor) | divisor 10 kΩ | — |
+| 7 / 8 | LED estat verd / vermell | 220 Ω c/u | GND |
+
+```
+Pin 2 ---- polsador ---- GND          (INPUT_PULLUP)
+Pin 7 --[ 220R ]--|>|-- GND           (LED verd)
+Pin 8 --[ 220R ]--|>|-- GND           (LED vermell)
+```
+
+---
 
 ## Resum de pins (per a tots els sketches de SA6)
+
 | Senyal | Pin |
 |---|---|
-| Sensor NTC / pot | A0 |
+| Sensor NTC / potenciòmetre | A0 |
 | Sensor LDR | A1 |
-| Sortida PWM (LED/ventilador) | 9 |
+| Sortida PWM (LED/ventilador) | 9 ~ |
 | Polsador | 2 |
 | LED verd / vermell | 7 / 8 |
-
-```
-A0 = NTC/pot   A1 = LDR
-Pin 9 = sortida PWM (--[220Ω]--|>-- GND)
-Pin 2 = polsador (a GND, INPUT_PULLUP)
-Pin 7/8 = LEDs d'estat (--[220Ω]--|>-- GND)
-```

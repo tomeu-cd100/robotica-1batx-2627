@@ -2,6 +2,14 @@
 
 > Tot reproduïble a **Tinkercad Circuits** (tinkercad.com) o **Wokwi** (wokwi.com). A la SA1 només es necessita **un LED**; si s'usa el LED **intern** (pin 13) no cal cap component extern. El LED **extern** sempre porta una **resistència de 220 Ω** en sèrie i el càtode (pota curta / costat pla) va a **GND**.
 
+## Llegenda dels diagrames de connexió
+```
+--[ 220R ]--   resistencia (el numero indica el valor en ohms)
+|>|            LED ( |> = anode/pota llarga , | = catode/pota curta )
++              nus de connexio comu (p. ex. la linia de GND)
+~              pin amb PWM
+```
+
 ---
 
 ## 1. Anatomia de la placa Arduino UNO (Activitat 2)
@@ -81,8 +89,7 @@ No cal cap component: el LED marcat amb **L** ja està connectat internament al 
 | LED (càtode −) | GND | Pota **curta** / costat pla |
 
 ```
-Pin 13 ──[220 Ω]──►|── GND
-                   LED
+Pin 13 --[ 220R ]--|>|-- GND
 ```
 
 > ⚠️ **Sempre** la resistència de 220 Ω en sèrie: sense ella el LED rep massa corrent i es pot fondre.
