@@ -40,6 +40,19 @@ Context/problema · Què treballa · **Requisit mínim** · **Ampliacions gradua
 
 Cada repte indica les rúbriques aplicables. Es comparteixen amb l'alumnat **abans** de començar (avaluació formativa). Vegeu `Programació didàctica/07_Rubriques.md`.
 
+## Com treballar els reptes (rols, depuració i coavaluació)
+
+Els reptes es resolen amb les **mateixes rutines** que les classes (pòster projectable: `Classes/00_Poster_aula_metode_DEPURA_rols.md`):
+
+- **Rols rotatius:** Coordinador/a · Programador/a · Enginyer/a de maquinari · Provador/a–Documentador/a (roteu-los a cada sessió).
+- **Quan no funcioni → rutina DEPURA:** **D**escriu · **E**xamina · **P**rova una hipòtesi cada cop · **U**bica · **R**epara · **A**punta-ho.
+- **Coavaluació "2 estrelles i un desig":** en acabar, intercanvieu el producte amb un altre equip i anoteu 2 coses ben fetes + 1 millora.
+- **Diana d'autoavaluació:** situeu-vos (NA/AS/AN/AE) en el codi, el circuit i la documentació abans de l'entrega.
+
+## Simulacions interactives (Wokwi)
+
+Els reptes de **SA1–SA4 i SA6** tenen el circuit i el codi de solució de referència muntats a Wokwi (versions **mínim** i **ampliat**): vegeu `Simulacions/Wokwi/Reptes/README.md`. Permeten provar i comparar sense maquinari. *(SA5, SA7 i la part micro:bit de SA8 no són simulables a Wokwi.)*
+
 ## Fil comú del curs
 
 Tots els reptes es resolen amb el **mètode de projecte**: *analitzar → dissenyar → prototipar → provar → millorar*, i es llegeix/escriu el codi amb **PRIMM** (Predir → Executar → Investigar → Modificar → Crear). Vocabulari i bases de programació: `Classes/SA0/`.
