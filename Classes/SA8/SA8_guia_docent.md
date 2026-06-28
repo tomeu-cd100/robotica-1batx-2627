@@ -80,3 +80,32 @@
 | Les dades arriben barrejades | Sense etiqueta | Enviar `"T:23"` i separar pel `:`. |
 | El classificador falla sempre | Llindars mal ajustats | Mesurar valors reals abans de fixar els llindars. |
 | ESP32 no connecta al WiFi | Credencials/2,4 GHz | Revisar SSID/clau; xarxa de 2,4 GHz. |
+
+---
+
+## Atenció a la diversitat (DUA)
+
+| Via | Mesura |
+|---|---|
+| **Bastida** (qui s'encalla) | Donar emissor i receptor ja fets per modificar-los; **simulador** micro:bit i Wokwi (ESP32); equips heterogenis. |
+| **+ Ampliació** (qui va sobrat) | Dues magnituds etiquetades, alerta per llindar, classe nova de gest, ML real amb MakeCode; reptes ⭐ de `Reptes/Reptes_SA8.md`. |
+| **Representació múltiple** | Dades en taula i gràfic, diagrama d'arquitectura IoT, simuladors. |
+| **Implicació** | Cada equip tria el sistema IoT del seu entorn (hort, aula, casa). |
+
+## Treball cooperatiu amb rols
+
+Equips amb **rols rotatius**: Coordinador/a · Programador/a · Enginyer/a de maquinari (plaques, ràdio/sensors) · Provador/a–Documentador/a (registra dades + quadern). Quadre per rotar a la fitxa.
+
+## Pensament computacional i depuració
+
+- **PC d'aquesta SA:** **dades** (recollir, etiquetar, transmetre) i **classificació** (decidir una categoria a partir de valors).
+- **Depuració:** rutina **DEPURA**; el registre **pel port sèrie** és l'eina clau per veure si les dades arriben i estan ben etiquetades.
+
+## Avaluació formativa (instruments)
+
+- **Diana d'autoavaluació** (fitxa) · **Coavaluació** entre equips (ja al mapa d'avaluació) · **Exit ticket** de tancament.
+
+## Context real i ODS
+
+- **Context:** ciutats intel·ligents, telemetria ambiental, salut connectada.
+- **ODS 11** (ciutats sostenibles) i **ODS 13** (acció climàtica). Reforça la reflexió sobre **ètica i privacitat de dades** ja present a la SA.

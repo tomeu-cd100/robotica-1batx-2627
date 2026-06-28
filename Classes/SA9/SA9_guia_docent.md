@@ -74,6 +74,13 @@ Aquesta SA **tanca el mètode de projecte** introduït a la **SA1** i practicat 
 - Recordar criteris d'**ètica i sostenibilitat** (reutilització de components, impacte).
 - Si s'opta per **competició**, alinear el repte amb el reglament corresponent.
 
+## Pensament computacional i depuració
+
+- **PC d'aquesta SA:** **integració** de tot el pensament computacional del curs (descomposició, abstracció, patrons, algorismes) aplicat de forma autònoma a un sistema propi.
+- **Depuració:** l'alumnat aplica la **rutina DEPURA** i prova **per parts** (cada mòdul per separat) — clau per no quedar encallat (vegeu errors freqüents).
+
+> **Síntesi de les 4 dimensions a la SA9:** la diversitat es cobreix amb el **banc de reptes amb nivells**; el cooperatiu, amb **rols i taulell àgil**; l'avaluació formativa, amb **diana, coavaluació i exit ticket final** (fitxa) a més de les rúbriques R1-R5; i el context real/ODS, amb la **tria d'un repte amb impacte** i la reflexió ètica de la defensa.
+
 ## Errors freqüents (gestió de projecte)
 | Símptoma | Causa | Acció |
 |---|---|---|

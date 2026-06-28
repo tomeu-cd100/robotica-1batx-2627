@@ -90,3 +90,32 @@
 | La màquina d'estats es "queda penjada" | Transició mal definida | Revisar condicions de cada `case`. |
 | Lectura de temperatura inestable | Soroll del sensor | Mitjana de diverses lectures. |
 | El control P oscil·la molt | `Kp` massa gran | Reduir `Kp`; limitar la sortida amb `constrain`. |
+
+---
+
+## Atenció a la diversitat (DUA)
+
+| Via | Mesura |
+|---|---|
+| **Bastida** (qui s'encalla) | Donar el **diagrama de blocs** parcialment fet; començar amb el termòstat tot/res abans del proporcional; parella heterogènia. |
+| **+ Ampliació** (qui va sobrat) | Afegir estats, comparar tot/res vs P, ajustar `Kp`; reptes ⭐ de `Reptes/Reptes_SA6.md`. |
+| **Representació múltiple** | Diagrama de blocs i d'estats, **Serial Plotter** (resposta visual), simulació Wokwi. |
+| **Implicació** | Cada parella tria el procés a controlar i la finestra d'histèresi. |
+
+## Treball cooperatiu amb rols
+
+Parelles amb **rols rotatius**: Coordinador/a · Programador/a · Enginyer/a de maquinari (sensor/actuador, seguretat) · Provador/a–Documentador/a (Serial Plotter + quadern). Quadre per rotar a la fitxa.
+
+## Pensament computacional i depuració
+
+- **PC d'aquesta SA:** **màquina d'estats** (estats + transicions) i **bucle de control** (mesurar → comparar → corregir).
+- **Depuració:** rutina **DEPURA** amb el **Serial Plotter** per visualitzar si el sistema oscil·la o s'estabilitza.
+
+## Avaluació formativa (instruments)
+
+- **Diana d'autoavaluació** (fitxa) · **Coavaluació** "2 estrelles i un desig" · **Exit ticket** de tancament.
+
+## Context real i ODS
+
+- **Context:** termòstats, climatització, control de processos industrials.
+- **ODS 7** (energia: el bon control estalvia) i **ODS 11** (edificis i ciutats sostenibles).
