@@ -47,6 +47,67 @@
 
 ---
 
+## Treball en equip · rols
+
+Repartiu-vos els rols i **roteu-los** a cada sessió:
+
+| Rol | S1 | S2 | S3 | S4 |
+|---|---|---|---|---|
+| Coordinador/a (temps, estratègia, enunciat) | | | | |
+| Programador/a (codi i lògica) | | | | |
+| Enginyer/a de maquinari (ajusta pins, robot, sensors) | | | | |
+| Pilot/a–Documentador/a (prova a la pista, cronometra, quadern) | | | | |
+
+---
+
+## Si t'encalles
+
+1. **Pista 1:** comprova el bloc `// === PINS (AJUSTAR) ===` amb el manual de la placa.
+2. **Pista 2:** prova **una funció de moviment cada cop** (`endavant`, `gira_dreta`…) abans de la trajectòria sencera.
+3. **Pista 3:** aplica la **rutina DEPURA** i demana ajuda **explicant què ja has provat**.
+
+> **DEPURA:** **D**escriu · **E**xamina (què fa el robot de debò) · **P**rova una hipòtesi cada cop · **U**bica · **R**epara · **A**punta-ho.
+
+## Vols més?
+
+- **Reptes ⭐:** `Reptes/Reptes_SA7.md` (repartidor, explorador, seguidor de línia).
+- **Repte de pista cronometrat:** millora el temps de volta iterant (registra cada intent).
+
+---
+
+## Pensament computacional d'aquesta SA
+
+Treballes **ALGORISMES** (seqüència de decisions del seguidor/evita-obstacles) i **DESCOMPOSICIÓ** (el moviment en funcions reutilitzables). Quin algorisme segueix el teu robot per no xocar? ______________________
+
+## Diana d'autoavaluació
+
+Marca el teu nivell (NA/AS/AN/AE):
+
+| Criteri | NA | AS | AN | AE |
+|---|---|---|---|---|
+| Programo moviment amb funcions (control diferencial) | ☐ | ☐ | ☐ | ☐ |
+| El robot completa un comportament autònom | ☐ | ☐ | ☐ | ☐ |
+| Registro proves i itero per millorar | ☐ | ☐ | ☐ | ☐ |
+
+## Coavaluació (2 estrelles i un desig)
+
+Mireu la demostració d'un altre equip i anoteu:
+- ⭐ Una cosa ben feta: ______________________
+- ⭐ Una altra cosa ben feta: ______________________
+- 💡 Una millora (desig): ______________________
+
+## Exit ticket (abans de marxar)
+
+1. Una cosa que he après avui: ______________________
+2. Una cosa que encara no tinc clara: ______________________
+3. On ho faria servir al món real: ______________________
+
+## Context real i ODS
+
+Els robots mòbils mouen mercaderies i persones. **ODS 9** (indústria i innovació) i **ODS 11** (mobilitat sostenible): AGV de magatzem, vehicles autònoms. Quin transport autònom milloraria la teva ciutat? ______________________
+
+---
+
 ## Quadern tècnic (SA7)
 - **Què és la cinemàtica diferencial?** _________________________________
 - **Per què el control per temps no és precís?** ________________________

@@ -92,3 +92,33 @@ La **Imagina 3dBot** és Arduino-compatible, però **els pins dels motors depene
 | Gira més/menys de 90° | Temps de gir no calibrat | Ajustar el temps; superfície i bateria afecten. |
 | No detecta la línia | Sensors IR sense calibrar / alçada | Ajustar llindar i distància al terra. |
 | Es queda encallat amb l'obstacle | Estratègia massa simple | Retrocedir abans de girar; gir més ampli. |
+
+---
+
+## Atenció a la diversitat (DUA)
+
+| Via | Mesura |
+|---|---|
+| **Bastida** (qui s'encalla) | Provar **una funció de moviment cada cop** abans de la trajectòria; donar el bloc de pins ja ajustat; equips heterogenis amb rols clars. |
+| **+ Ampliació** (qui va sobrat) | Gir proporcional a la proximitat, correcció suau del seguidor, tornar al punt de sortida; reptes ⭐ de `Reptes/Reptes_SA7.md`. |
+| **Representació múltiple** | Diagrama de decisió (percepció→acció), demostració física, vídeo de les iteracions. |
+| **Implicació** | Cada equip tria l'estratègia i el repte de pista; competició amistosa per temps. |
+
+## Treball cooperatiu amb rols
+
+Equips amb **rols rotatius**: Coordinador/a (estratègia) · Programador/a · Enginyer/a de maquinari (pins, robot, sensors) · Pilot/a–Documentador/a (prova a la pista, cronometra, quadern). Quadre per rotar a la fitxa.
+
+## Pensament computacional i depuració
+
+- **PC d'aquesta SA:** **algorismes** (lògica del seguidor/evita-obstacles) i **descomposició** (moviment en funcions).
+- **Depuració:** rutina **DEPURA**; com que el robot és físic, l'*Examina* és **observar el comportament real** i el calibratge (temps de gir, llindar IR).
+
+## Avaluació formativa (instruments)
+
+- **Diana d'autoavaluació** (fitxa) · **Coavaluació** entre equips (demostració) · **Exit ticket** de tancament.
+- El **registre d'iteracions** (temps de volta per intent) és en si mateix avaluació formativa del cicle provar→millorar.
+
+## Context real i ODS
+
+- **Context:** vehicles autònoms, AGV de logística, robots de repartiment.
+- **ODS 9** (indústria i innovació) i **ODS 11** (mobilitat urbana sostenible).

@@ -53,6 +53,67 @@
 
 ---
 
+## Treball en equip · rols de la parella
+
+Repartiu-vos els rols i **roteu-los** a cada sessió:
+
+| Rol | S1 | S2 | S3 | S4 |
+|---|---|---|---|---|
+| Coordinador/a (temps, enunciat) | | | | |
+| Programador/a (codi) | | | | |
+| Enginyer/a de maquinari (sensor/actuador, seguretat) | | | | |
+| Provador/a–Documentador/a (Serial Plotter + quadern) | | | | |
+
+---
+
+## Si t'encalles
+
+1. **Pista 1:** dibuixa el **diagrama de blocs** (consigna → error → controlador → actuador → procés → sensor) i situa on falla.
+2. **Pista 2:** mira el **Serial Plotter**: la sortida segueix la consigna o oscil·la?
+3. **Pista 3:** aplica la **rutina DEPURA** i demana ajuda **explicant què ja has provat**.
+
+> **DEPURA:** **D**escriu · **E**xamina (Serial Plotter) · **P**rova una hipòtesi cada cop · **U**bica · **R**epara · **A**punta-ho.
+
+## Vols més?
+
+- **Reptes ⭐:** `Reptes/Reptes_SA6.md` (termòstat, semàfor adaptatiu, proporcional).
+- **Simulació interactiva (Wokwi):** termòstat a `SA6_esquemes_connexions.md`.
+
+---
+
+## Pensament computacional d'aquesta SA
+
+Treballes la **MÀQUINA D'ESTATS** (organitzar comportaments en estats i transicions) i el **BUCLE DE CONTROL** (mesurar → comparar → corregir). Quins estats té el teu sistema? ______________________
+
+## Diana d'autoavaluació
+
+Marca el teu nivell (NA/AS/AN/AE):
+
+| Criteri | NA | AS | AN | AE |
+|---|---|---|---|---|
+| Distingeixo llaç obert i llaç tancat | ☐ | ☐ | ☐ | ☐ |
+| Implemento histèresi i una màquina d'estats | ☐ | ☐ | ☐ | ☐ |
+| Explico el diagrama de blocs del meu control | ☐ | ☐ | ☐ | ☐ |
+
+## Coavaluació (2 estrelles i un desig)
+
+Intercanvieu el sistema de control amb una altra parella:
+- ⭐ Una cosa ben feta: ______________________
+- ⭐ Una altra cosa ben feta: ______________________
+- 💡 Una millora (desig): ______________________
+
+## Exit ticket (abans de marxar)
+
+1. Una cosa que he après avui: ______________________
+2. Una cosa que encara no tinc clara: ______________________
+3. On ho faria servir al món real: ______________________
+
+## Context real i ODS
+
+El control automàtic regula climatització, indústria i energia. **ODS 7** (energia: un bon control estalvia) i **ODS 11** (ciutats i edificis sostenibles). On milloraria l'eficiència un control en llaç tancat? ______________________
+
+---
+
 ## Quadern tècnic (SA6)
 - **Què és la realimentació en un sistema de control?** __________________
 - **Per què serveix la histèresi?** _____________________________________

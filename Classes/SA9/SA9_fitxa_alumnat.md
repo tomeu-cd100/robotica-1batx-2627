@@ -50,6 +50,41 @@ Useu `plantilles/Planificacio_agile_PLANTILLA.md` (taulell To Do / Fent / Fet).
 
 ---
 
+## Si t'encalles (durant el projecte)
+
+Quan alguna cosa no funcioni, prova **per parts** (cada mòdul per separat) i aplica la **rutina DEPURA**:
+
+> **D**escriu · **E**xamina · **P**rova una hipòtesi cada cop · **U**bica (aïlla el mòdul) · **R**epara · **A**punta-ho al dossier.
+
+## Pensament computacional
+
+El projecte final **integra** tot el pensament computacional del curs: **descomposició** (parts del sistema), **abstracció** i **patrons** (funcions reutilitzables) i **algorismes** (lògica de control). Quina part heu descompost en mòduls independents? ______________________
+
+## Diana d'autoavaluació (equip)
+
+Marca el nivell (NA/AS/AN/AE):
+
+| Criteri | NA | AS | AN | AE |
+|---|---|---|---|---|
+| El sistema compleix els requisits mínims | ☐ | ☐ | ☐ | ☐ |
+| Hem treballat amb rols i planificació àgil | ☐ | ☐ | ☐ | ☐ |
+| Hem iterat (provar → millorar) i ho hem documentat | ☐ | ☐ | ☐ | ☐ |
+
+## Coavaluació (2 estrelles i un desig)
+
+En veure la defensa d'un altre equip, anoteu:
+- ⭐ Una cosa ben feta: ______________________
+- ⭐ Una altra cosa ben feta: ______________________
+- 💡 Una millora (desig): ______________________
+
+## Exit ticket final del curs
+
+1. El que més m'enorgulleix del projecte: ______________________
+2. El més difícil i com ho hem resolt: ______________________
+3. Què m'emporto de la robòtica: ______________________
+
+---
+
 ## Entrega final (checklist)
 - [ ] Sistema funcional
 - [ ] Dossier tècnic complet (`Dossier_tecnic_PLANTILLA.md`)
