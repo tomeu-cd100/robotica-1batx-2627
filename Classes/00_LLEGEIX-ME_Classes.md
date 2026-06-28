@@ -30,6 +30,7 @@ Material llest per a l'aula, organitzat per situació d'aprenentatge (SA). Cada 
 - **SA8**: codi micro:bit en `.py`; l'ESP32 és **opcional/avançat**.
 - **SA9**: el codi el crea l'alumnat; es proporcionen **plantilles** de treball.
 - **Recurs transversal d'aula:** `00_Poster_aula_metode_DEPURA_rols.md` (per projectar/imprimir): mètode de projecte, rutina de depuració **DEPURA**, **rols** d'equip i autoavaluació/coavaluació. Les rutines del pòster es concreten a cada fitxa i guia.
+- **Banc d'objectes per dissenyar:** `00_Banc_objectes_disseny.md` — per a cada SA, objectes reals que l'alumnat pot dissenyar i construir com a **producte** (funció, usuari, carcassa/maqueta), amb procés de disseny, pautes de fabricació i rúbrica de producte.
 
 ## Estat
 ✅ **Curs complet:** material d'aula de les 9 situacions d'aprenentatge (SA1-SA9), trimestres 1, 2 i 3.

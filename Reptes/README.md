@@ -53,6 +53,10 @@ Els reptes es resolen amb les **mateixes rutines** que les classes (pòster proj
 
 Els reptes de **SA1–SA4 i SA6** tenen el circuit i el codi de solució de referència muntats a Wokwi (versions **mínim** i **ampliat**): vegeu `Simulacions/Wokwi/Reptes/README.md`. Permeten provar i comparar sense maquinari. *(SA5, SA7 i la part micro:bit de SA8 no són simulables a Wokwi.)*
 
+## Convertir un repte en un objecte (disseny de producte)
+
+Qualsevol repte es pot portar més enllà del muntatge i convertir-lo en un **objecte real amb carcassa/maqueta**. Vegeu el **`Classes/00_Banc_objectes_disseny.md`**: per a cada SA hi ha objectes dissenyables (funció, usuari, materials) amb procés de disseny i rúbrica de producte.
+
 ## Fil comú del curs
 
 Tots els reptes es resolen amb el **mètode de projecte**: *analitzar → dissenyar → prototipar → provar → millorar*, i es llegeix/escriu el codi amb **PRIMM** (Predir → Executar → Investigar → Modificar → Crear). Vocabulari i bases de programació: `Classes/SA0/`.

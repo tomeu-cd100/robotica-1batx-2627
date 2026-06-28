@@ -70,6 +70,7 @@ Aquesta SA **tanca el mètode de projecte** introduït a la **SA1** i practicat 
 
 ## Orientacions per al docent
 - Tenir el **banc de reptes amb nivells** perquè cada equip triï segons ambició (atenció a la diversitat).
+- Oferir el **`Classes/00_Banc_objectes_disseny.md`** com a font d'idees: el projecte final pot ser un **objecte real amb carcassa/maqueta** (disseny de producte), no només un muntatge. Inclou rúbrica de producte i pautes de fabricació (cartró/impressió 3D, ecodisseny ODS 12).
 - Fixar **fites parcials** (checklist) a cada sessió per evitar deixar-ho tot per al final.
 - Recordar criteris d'**ètica i sostenibilitat** (reutilització de components, impacte).
 - Si s'opta per **competició**, alinear el repte amb el reglament corresponent.
