@@ -87,3 +87,32 @@
 | El motor no gira | Falta `ENA` en HIGH/PWM o massa no comuna | Activar `ENA`; unir GND Arduino–driver–piles. |
 | L'Arduino es reinicia en moure el motor | Pic de corrent des del 5V | Mai alimentar el motor des de l'Arduino. |
 | Gira sempre en el mateix sentit | `IN1`/`IN2` mal posats | Revisar la lògica IN1≠IN2 per a cada sentit. |
+
+---
+
+## Atenció a la diversitat (DUA)
+
+| Via | Mesura |
+|---|---|
+| **Bastida** (qui s'encalla) | Moure el servo a **angles fixos** abans del control amb potenciòmetre; donar la **taula de lògica del pont H** ja resolta; parella heterogènia. |
+| **+ Ampliació** (qui va sobrat) | Dos servos coordinats, rampa d'acceleració, invertir sentit per distància; reptes ⭐ de `Reptes/Reptes_SA4.md`. |
+| **Representació múltiple** | Esquema del pont H, simulació Wokwi (servo), vídeo del moviment, codi comentat. |
+| **Implicació** | Cada parella tria angles, temps i el mecanisme (barrera, braç, ventilador). |
+
+## Treball cooperatiu amb rols
+
+Parelles amb **rols rotatius**: Coordinador/a · Programador/a · Enginyer/a de maquinari (motor/servo, **massa comuna**, seguretat) · Provador/a–Documentador/a. Quadre per rotar a la fitxa.
+
+## Pensament computacional i depuració
+
+- **PC d'aquesta SA:** **descomposició del moviment** (partir una tasca en passos) i **abstracció** amb funcions (`endavant()`, `atura()`…).
+- **Depuració:** rutina **DEPURA**; atenció especial a la **seguretat elèctrica** en aïllar el problema (alimentació, massa comuna).
+
+## Avaluació formativa (instruments)
+
+- **Diana d'autoavaluació** (fitxa) · **Coavaluació** "2 estrelles i un desig" · **Exit ticket** de tancament.
+
+## Context real i ODS
+
+- **Context:** barreres, ascensors, braços robòtics, pròtesis, robòtica assistencial.
+- **ODS 9** (indústria i innovació) i **ODS 10** (reduir desigualtats: accessibilitat i tecnologia assistencial).

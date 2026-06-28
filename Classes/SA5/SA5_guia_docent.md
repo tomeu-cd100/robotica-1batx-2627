@@ -80,3 +80,32 @@
 | Quadern tècnic | Comparativa, errors i millores; decisió de disseny | CA1.2, CA3.1 | R4 |
 
 *(CA1.2 = programar en MicroPython i comparar-ho amb C/C++; CA3.1 = implementar/explicar control bàsic. Vegeu `Programació didàctica/06_Avaluacio_criteris_qualificacio.md`. Comparteix R1 i R4 **abans** de començar.)*
+
+---
+
+## Atenció a la diversitat (DUA)
+
+| Via | Mesura |
+|---|---|
+| **Bastida** (qui s'encalla) | **MakeCode (blocs)** com a pont abans del Python; **simulador** (python.microbit.org) per provar sense placa; donar l'esquelet `while True:` indentat. |
+| **+ Ampliació** (qui va sobrat) | Xarxa de 3+ plaques per ràdio, registre de màx/mín, animacions pròpies; reptes ⭐ de `Reptes/Reptes_SA5.md`. |
+| **Representació múltiple** | Blocs ↔ codi, simulador visual, taula comparativa C++/Python. |
+| **Implicació** | Cada parella tria el projecte (badge, comptapassos, nightlight o joc per ràdio). |
+
+## Treball cooperatiu amb rols
+
+Parelles amb **rols rotatius**: Coordinador/a · Programador/a (Python) · Enginyer/a de maquinari (prepara la micro:bit i prova els sensors/ràdio) · Provador/a–Documentador/a. Quadre per rotar a la fitxa.
+
+## Pensament computacional i depuració
+
+- **PC d'aquesta SA:** programació **per esdeveniments** (botons, gestos, ràdio) i **abstracció** (sensors integrats).
+- **Depuració:** rutina **DEPURA**; l'error més típic és l'**indentació** (`IndentationError`) → la U d'*Ubica* sovint és una línia mal sagnada.
+
+## Avaluació formativa (instruments)
+
+- **Diana d'autoavaluació** (fitxa) · **Coavaluació** "2 estrelles i un desig" · **Exit ticket** de tancament.
+
+## Context real i ODS
+
+- **Context:** *wearables*, dispositius de salut, joguines i material educatiu programable.
+- **ODS 3** (salut i benestar: comptapassos, alertes) i **ODS 4** (educació de qualitat: la micro:bit democratitza la programació).

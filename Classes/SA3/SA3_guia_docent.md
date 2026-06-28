@@ -88,3 +88,32 @@
 | Distància sempre 0 o molt gran | TRIG/ECHO intercanviats | Verificar TRIG (sortida) i ECHO (entrada). |
 | El LED no regula amb el potenciòmetre | Pin de sortida sense PWM | LED en pin `~` i usar `map()` a 0-255. |
 | L'alarma/avís es dispara sol sense cap objecte | `pulseIn` retorna `0` quan no hi ha eco (objecte fora de rang) i `0` cm es llegeix com "molt a prop" | Posar *timeout* a `pulseIn(ECHO, HIGH, 30000)` i tractar el `0` com a "molt lluny" (p. ex. retornar 400). |
+
+---
+
+## Atenció a la diversitat (DUA)
+
+| Via | Mesura |
+|---|---|
+| **Bastida** (qui s'encalla) | Començar amb el **polsador** (digital) abans de l'analògic; donar la funció `mesuraDistancia()` ja escrita per llegir-la i usar-la; parella heterogènia. |
+| **+ Ampliació** (qui va sobrat) | Mitjana de 3 mesures, detectar acostament/allunyament; reptes ⭐ de `Reptes/Reptes_SA3.md`. |
+| **Representació múltiple** | Esquema, **Serial Plotter** (dada visual), simulació Wokwi, codi comentat. |
+| **Implicació** | Cada parella tria llindars i el tipus d'avís del seu producte. |
+
+## Treball cooperatiu amb rols
+
+Parelles amb **rols rotatius** (un canvi per sessió): Coordinador/a · Programador/a · Enginyer/a de maquinari (sensor, connexions, seguretat) · Provador/a–Documentador/a (monitor sèrie + quadern). Quadre per rotar a la fitxa.
+
+## Pensament computacional i depuració
+
+- **PC d'aquesta SA:** **abstracció** (encapsular la lectura en una funció) i **condicionals** (decidir per llindar).
+- **Depuració:** la **rutina DEPURA** amb el **Monitor sèrie** com a eina central (la E d'*Examina*).
+
+## Avaluació formativa (instruments)
+
+- **Diana d'autoavaluació** (fitxa) sobre 3 criteris clau · **Coavaluació** "2 estrelles i un desig" · **Exit ticket** de tancament.
+
+## Context real i ODS
+
+- **Context:** llum automàtica, sensors d'estalvi, aparcaments intel·ligents.
+- **ODS 7** (energia) i **ODS 12** (consum responsable): els sensors redueixen el malbaratament.

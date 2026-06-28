@@ -43,6 +43,67 @@ Completa amb un mateix programa senzill (p. ex. un comptador):
 
 ---
 
+## Treball en equip · rols de la parella
+
+Repartiu-vos els rols i **roteu-los** a cada sessió:
+
+| Rol | S1 | S2 | S3 |
+|---|---|---|---|
+| Coordinador/a (temps, enunciat) | | | |
+| Programador/a (codi Python) | | | |
+| Enginyer/a de maquinari (prepara la micro:bit i prova els sensors) | | | |
+| Provador/a–Documentador/a (prova + quadern) | | | |
+
+---
+
+## Si t'encalles
+
+1. **Pista 1:** revisa la **indentació** (en Python els blocs es marquen amb espais, no amb `{ }`).
+2. **Pista 2:** comprova que el codi és al fitxer `main.py` i que la placa està ben connectada.
+3. **Pista 3:** aplica la **rutina DEPURA** i demana ajuda **explicant què ja has provat**.
+
+> **DEPURA:** **D**escriu · **E**xamina (errors de Python, indentació) · **P**rova una hipòtesi cada cop · **U**bica · **R**epara · **A**punta-ho.
+
+## Vols més?
+
+- **Reptes ⭐:** `Reptes/Reptes_SA5.md` (comptapassos, llum de nit, joc per ràdio).
+- **Simulador:** prova el codi a **python.microbit.org** (sense maquinari).
+
+---
+
+## Pensament computacional d'aquesta SA
+
+Treballes la programació **per esdeveniments** (reaccionar a botons, sacsejades, ràdio) i l'**ABSTRACCIÓ** (els sensors integrats amaguen la complexitat). Quin esdeveniment dispara una acció al teu programa? ______________________
+
+## Diana d'autoavaluació
+
+Marca el teu nivell (NA/AS/AN/AE):
+
+| Criteri | NA | AS | AN | AE |
+|---|---|---|---|---|
+| Escric Python ben indentat que funciona | ☐ | ☐ | ☐ | ☐ |
+| Faig servir sensors integrats (acceleròmetre, llum…) | ☐ | ☐ | ☐ | ☐ |
+| Comunico dues plaques per ràdio | ☐ | ☐ | ☐ | ☐ |
+
+## Coavaluació (2 estrelles i un desig)
+
+Intercanvieu el projecte micro:bit amb una altra parella:
+- ⭐ Una cosa ben feta: ______________________
+- ⭐ Una altra cosa ben feta: ______________________
+- 💡 Una millora (desig): ______________________
+
+## Exit ticket (abans de marxar)
+
+1. Una cosa que he après avui: ______________________
+2. Una cosa que encara no tinc clara: ______________________
+3. On ho faria servir al món real: ______________________
+
+## Context real i ODS
+
+Els microcontroladors portables són la base dels *wearables*. **ODS 3** (salut i benestar: comptapassos, alertes) i **ODS 4** (educació: la micro:bit acosta la programació a tothom). Quin *wearable* útil dissenyaries? ______________________
+
+---
+
 ## Quadern tècnic (SA5)
 - **Per què la indentació és important en Python?** ______________________
 - **Avantatge d'usar sensors integrats:** ________________________________
