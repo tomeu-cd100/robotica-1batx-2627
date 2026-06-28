@@ -83,3 +83,12 @@ Pin 8 --[ 220R ]--|>|-- GND          (LED)
 Pin 6 -- piezo(+) ... piezo(-) -- GND
 ```
 > El codi tracta la lectura **0** (sense eco) com a "molt lluny" (retorna 400) per evitar falses alarmes.
+
+---
+
+## Simulació interactiva (Wokwi)
+
+- ▶ **Simulació (Alarma d'aparcament: HC-SR04 + LED + brunzidor):** <https://wokwi.com/projects/468087916595757057>
+- **Projecte al repositori:** [`Simulacions/Wokwi/SA3_alarma_aparcament/`](../../Simulacions/Wokwi/SA3_alarma_aparcament/) (`diagram.json` + `sketch.ino`).
+
+> Obre l'enllaç i prem **▶**. Clica el sensor **HC-SR04** i mou el control de distància: el LED i el brunzidor s'acceleren a mesura que t'hi acostes.

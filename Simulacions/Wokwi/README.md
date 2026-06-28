@@ -30,12 +30,12 @@ Pins habituals: LED `A` (ànode) / `C` (càtode) · resistència `1` / `2` · Ar
 |---|---|---|
 | `SA1_blink` | ✅ `diagram.json` + `sketch.ino` | <https://wokwi.com/projects/468012800918599681> |
 | `SA2_semafor` | ✅ `diagram.json` + `sketch.ino` | <https://wokwi.com/projects/468009961823220737> |
-| `SA3_alarma_aparcament` | ✅ `diagram.json` + `sketch.ino` | *(pendent de publicar)* |
-| `SA4_servo_potenciometre` | ✅ `diagram.json` + `sketch.ino` | *(pendent de publicar)* |
-| `SA6_termostat_histeresi` | ✅ `diagram.json` + `sketch.ino` | *(pendent de publicar)* |
-| `SA8_telemetria_esp32` | ✅ `diagram.json` + `sketch.ino` | *(pendent de publicar)* |
+| `SA3_alarma_aparcament` | ✅ `diagram.json` + `sketch.ino` | <https://wokwi.com/projects/468087916595757057> |
+| `SA4_servo_potenciometre` | ✅ `diagram.json` + `sketch.ino` + `libraries.txt` | <https://wokwi.com/projects/468088128427008001> |
+| `SA6_termostat_histeresi` | ✅ `diagram.json` + `sketch.ino` | <https://wokwi.com/projects/468088291274023937> |
+| `SA8_telemetria_esp32` | ✅ `diagram.json` + `sketch.ino` | <https://wokwi.com/projects/468088488537422849> |
 
-*(Per publicar: obrir el projecte a wokwi.com, enganxar `sketch.ino` i `diagram.json`, simular i desar com a públic. Després substituir "pendent de publicar" per l'enllaç.)*
+> Tots simulats i desats com a públics el 2026-06-28. **SA4** necessita la llibreria **Servo** (fitxer `libraries.txt`): a wokwi.com s'instal·la sola amb el botó *Install "Servo" library* que apareix en compilar.
 
 ## Cobertura per SA (què és simulable a Wokwi)
 | SA | Plataforma de la pràctica | Wokwi |
@@ -52,6 +52,5 @@ Pins habituals: LED `A` (ànode) / `C` (càtode) · resistència `1` / `2` · Ar
 > ⚠️ **Limitació de Wokwi descoberta (2026-06-28): no simula el BBC micro:bit amb MicroPython.** Les úniques plaques que executen MicroPython a Wokwi són Raspberry Pi Pico i ESP32. Per tant, les pràctiques de **SA5** i la **part de gestos de SA8** (micro:bit) **no es poden portar a Wokwi**; es queden amb els diagrames i el codi a `Classes/`. Per a SA8 sí que es porta la pràctica **IoT amb ESP32** (`04_esp32_telemetria`), adaptada a la xarxa simulada `Wokwi-GUEST`.
 
 ## Estat de l'escalat
-- **Fet (text):** SA1, SA2, SA3, SA4, SA6, SA8 (ESP32). → 6 projectes generats al repo.
-- **Pendent:** publicar a Wokwi com a públics els 4 nous (SA3, SA4, SA6, SA8) i enganxar els enllaços aquí i als `SAx_esquemes_connexions.md`.
+- **Fet i publicat (públic):** SA1, SA2, SA3, SA4, SA6, SA8 (ESP32). → 6 projectes amb enllaç interactiu.
 - **No aplicable:** SA5 i SA7 (no simulables a Wokwi).

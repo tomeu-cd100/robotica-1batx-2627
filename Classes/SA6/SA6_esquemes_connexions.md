@@ -65,3 +65,12 @@ Pin 8 --[ 220R ]--|>|-- GND           (LED vermell)
 | Sortida PWM (LED/ventilador) | 9 ~ |
 | Polsador | 2 |
 | LED verd / vermell | 7 / 8 |
+
+---
+
+## Simulació interactiva (Wokwi)
+
+- ▶ **Simulació (Termòstat amb histèresi):** <https://wokwi.com/projects/468088291274023937>
+- **Projecte al repositori:** [`Simulacions/Wokwi/SA6_termostat_histeresi/`](../../Simulacions/Wokwi/SA6_termostat_histeresi/) (`diagram.json` + `sketch.ino`).
+
+> Obre l'enllaç i prem **▶**. El **potenciòmetre** (A0) fa de "temperatura": gira'l lentament i comprova que el LED (sortida) **no vibra** a la zona morta entre els dos llindars — això és la histèresi.

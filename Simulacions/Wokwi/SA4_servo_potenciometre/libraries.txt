@@ -1,0 +1,3 @@
+# Llibreries del projecte Wokwi (una per linia).
+# A wokwi.com s'instal-len soles amb el boto "Install ... library" en compilar.
+Servo
