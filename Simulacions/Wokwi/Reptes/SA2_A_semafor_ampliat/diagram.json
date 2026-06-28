@@ -1,0 +1,21 @@
+{ "version": 1, "author": "Robotica 1 Batx", "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 0, "left": 0, "attrs": {} },
+    { "type": "wokwi-led", "id": "lR", "top": -110, "left": 130, "attrs": { "color": "red" } },
+    { "type": "wokwi-led", "id": "lY", "top": -110, "left": 180, "attrs": { "color": "yellow" } },
+    { "type": "wokwi-led", "id": "lG", "top": -110, "left": 230, "attrs": { "color": "green" } },
+    { "type": "wokwi-led", "id": "vR", "top": -200, "left": 130, "attrs": { "color": "red" } },
+    { "type": "wokwi-led", "id": "vG", "top": -200, "left": 230, "attrs": { "color": "green" } },
+    { "type": "wokwi-resistor", "id": "rR", "top": 20, "left": 130, "attrs": { "value": "220" } },
+    { "type": "wokwi-resistor", "id": "rY", "top": 20, "left": 180, "attrs": { "value": "220" } },
+    { "type": "wokwi-resistor", "id": "rG", "top": 20, "left": 230, "attrs": { "value": "220" } },
+    { "type": "wokwi-resistor", "id": "rvR", "top": 60, "left": 130, "attrs": { "value": "220" } },
+    { "type": "wokwi-resistor", "id": "rvG", "top": 60, "left": 230, "attrs": { "value": "220" } }
+  ],
+  "connections": [
+    [ "uno:8", "rR:1", "red", [] ], [ "rR:2", "lR:A", "red", [] ], [ "lR:C", "uno:GND.1", "black", [] ],
+    [ "uno:9", "rY:1", "green", [] ], [ "rY:2", "lY:A", "green", [] ], [ "lY:C", "uno:GND.2", "black", [] ],
+    [ "uno:10", "rG:1", "green", [] ], [ "rG:2", "lG:A", "green", [] ], [ "lG:C", "uno:GND.1", "black", [] ],
+    [ "uno:11", "rvR:1", "red", [] ], [ "rvR:2", "vR:A", "red", [] ], [ "vR:C", "uno:GND.3", "black", [] ],
+    [ "uno:12", "rvG:1", "green", [] ], [ "rvG:2", "vG:A", "green", [] ], [ "vG:C", "uno:GND.2", "black", [] ]
+  ] }

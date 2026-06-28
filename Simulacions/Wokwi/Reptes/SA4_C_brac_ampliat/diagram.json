@@ -1,0 +1,14 @@
+{ "version": 1, "author": "Robotica 1 Batx", "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 0, "left": 0, "attrs": {} },
+    { "type": "wokwi-servo", "id": "base", "top": -180, "left": 220, "attrs": {} },
+    { "type": "wokwi-servo", "id": "pinca", "top": -60, "left": 220, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "pot", "top": 100, "left": 120, "attrs": {} },
+    { "type": "wokwi-pushbutton", "id": "btn", "top": 100, "left": 300, "attrs": { "color": "green" } }
+  ],
+  "connections": [
+    [ "base:PWM", "uno:9", "green", [] ], [ "base:V+", "uno:5V", "red", [] ], [ "base:GND", "uno:GND.1", "black", [] ],
+    [ "pinca:PWM", "uno:10", "green", [] ], [ "pinca:V+", "uno:5V", "red", [] ], [ "pinca:GND", "uno:GND.2", "black", [] ],
+    [ "pot:VCC", "uno:5V", "red", [] ], [ "pot:GND", "uno:GND.3", "black", [] ], [ "pot:SIG", "uno:A0", "blue", [] ],
+    [ "uno:2", "btn:1.l", "purple", [] ], [ "btn:2.l", "uno:GND.3", "black", [] ]
+  ] }

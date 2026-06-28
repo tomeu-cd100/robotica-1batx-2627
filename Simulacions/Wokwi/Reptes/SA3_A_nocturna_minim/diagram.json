@@ -1,0 +1,11 @@
+{ "version": 1, "author": "Robotica 1 Batx", "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 0, "left": 0, "attrs": {} },
+    { "type": "wokwi-photoresistor-sensor", "id": "ldr", "top": -120, "left": 200, "attrs": {} },
+    { "type": "wokwi-led", "id": "led", "top": -110, "left": 110, "attrs": { "color": "yellow" } },
+    { "type": "wokwi-resistor", "id": "r1", "top": 20, "left": 110, "attrs": { "value": "220" } }
+  ],
+  "connections": [
+    [ "ldr:VCC", "uno:5V", "red", [] ], [ "ldr:GND", "uno:GND.1", "black", [] ], [ "ldr:AO", "uno:A0", "green", [] ],
+    [ "uno:9", "r1:1", "orange", [] ], [ "r1:2", "led:A", "orange", [] ], [ "led:C", "uno:GND.2", "black", [] ]
+  ] }

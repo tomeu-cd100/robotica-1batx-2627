@@ -1,0 +1,2 @@
+# Llibreria del projecte Wokwi (s instal la sola amb el boto Install library)
+Servo

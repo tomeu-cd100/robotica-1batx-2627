@@ -1,0 +1,28 @@
+{ "version": 1, "author": "Robotica 1 Batx", "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 0, "left": 0, "attrs": {} },
+    { "type": "wokwi-led", "id": "lG", "top": -110, "left": 110, "attrs": { "color": "green" } },
+    { "type": "wokwi-led", "id": "lY", "top": -110, "left": 150, "attrs": { "color": "yellow" } },
+    { "type": "wokwi-led", "id": "lR", "top": -110, "left": 190, "attrs": { "color": "red" } },
+    { "type": "wokwi-led", "id": "sG", "top": -200, "left": 110, "attrs": { "color": "green" } },
+    { "type": "wokwi-led", "id": "sY", "top": -200, "left": 150, "attrs": { "color": "yellow" } },
+    { "type": "wokwi-led", "id": "sR", "top": -200, "left": 190, "attrs": { "color": "red" } },
+    { "type": "wokwi-resistor", "id": "rG", "top": 20, "left": 110, "attrs": { "value": "220" } },
+    { "type": "wokwi-resistor", "id": "rY", "top": 20, "left": 150, "attrs": { "value": "220" } },
+    { "type": "wokwi-resistor", "id": "rR", "top": 20, "left": 190, "attrs": { "value": "220" } },
+    { "type": "wokwi-resistor", "id": "rsG", "top": 60, "left": 110, "attrs": { "value": "220" } },
+    { "type": "wokwi-resistor", "id": "rsY", "top": 60, "left": 150, "attrs": { "value": "220" } },
+    { "type": "wokwi-resistor", "id": "rsR", "top": 60, "left": 190, "attrs": { "value": "220" } },
+    { "type": "wokwi-pushbutton", "id": "bV", "top": 130, "left": 280, "attrs": { "color": "blue" } },
+    { "type": "wokwi-pushbutton", "id": "bN", "top": 200, "left": 280, "attrs": { "color": "black" } }
+  ],
+  "connections": [
+    [ "uno:10", "rG:1", "green", [] ], [ "rG:2", "lG:A", "green", [] ], [ "lG:C", "uno:GND.1", "black", [] ],
+    [ "uno:9", "rY:1", "green", [] ], [ "rY:2", "lY:A", "green", [] ], [ "lY:C", "uno:GND.1", "black", [] ],
+    [ "uno:8", "rR:1", "red", [] ], [ "rR:2", "lR:A", "red", [] ], [ "lR:C", "uno:GND.1", "black", [] ],
+    [ "uno:A1", "rsG:1", "green", [] ], [ "rsG:2", "sG:A", "green", [] ], [ "sG:C", "uno:GND.2", "black", [] ],
+    [ "uno:A2", "rsY:1", "green", [] ], [ "rsY:2", "sY:A", "green", [] ], [ "sY:C", "uno:GND.2", "black", [] ],
+    [ "uno:A3", "rsR:1", "red", [] ], [ "rsR:2", "sR:A", "red", [] ], [ "sR:C", "uno:GND.2", "black", [] ],
+    [ "uno:2", "bV:1.l", "blue", [] ], [ "bV:2.l", "uno:GND.3", "black", [] ],
+    [ "uno:3", "bN:1.l", "purple", [] ], [ "bN:2.l", "uno:GND.3", "black", [] ]
+  ] }

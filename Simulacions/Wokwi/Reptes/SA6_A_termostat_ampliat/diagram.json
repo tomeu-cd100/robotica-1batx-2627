@@ -1,0 +1,15 @@
+{ "version": 1, "author": "Robotica 1 Batx", "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 0, "left": 0, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "pot", "top": -120, "left": 200, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "pot2", "top": 60, "left": 200, "attrs": {} },
+    { "type": "wokwi-led", "id": "led", "top": -110, "left": 110, "attrs": { "color": "red" } },
+    { "type": "wokwi-resistor", "id": "r1", "top": 20, "left": 110, "attrs": { "value": "220" } },
+    { "type": "wokwi-pushbutton", "id": "btn", "top": 150, "left": 320, "attrs": { "color": "green" } }
+  ],
+  "connections": [
+    [ "pot:VCC", "uno:5V", "red", [] ], [ "pot:GND", "uno:GND.1", "black", [] ], [ "pot:SIG", "uno:A0", "green", [] ],
+    [ "pot2:VCC", "uno:5V", "red", [] ], [ "pot2:GND", "uno:GND.1", "black", [] ], [ "pot2:SIG", "uno:A1", "blue", [] ],
+    [ "uno:9", "r1:1", "orange", [] ], [ "r1:2", "led:A", "orange", [] ], [ "led:C", "uno:GND.2", "black", [] ],
+    [ "uno:2", "btn:1.l", "purple", [] ], [ "btn:2.l", "uno:GND.3", "black", [] ]
+  ] }
