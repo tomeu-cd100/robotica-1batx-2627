@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "author": "Robotica 1 Batx",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 0, "left": 0, "attrs": {} },
+    { "type": "wokwi-servo", "id": "servo", "top": -140, "left": 200, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "pot", "top": 100, "left": 180, "attrs": {} }
+  ],
+  "connections": [
+    [ "servo:PWM", "uno:9", "green", [] ],
+    [ "servo:V+", "uno:5V", "red", [] ],
+    [ "servo:GND", "uno:GND.1", "black", [] ],
+    [ "pot:VCC", "uno:5V", "red", [] ],
+    [ "pot:SIG", "uno:A0", "blue", [] ],
+    [ "pot:GND", "uno:GND.2", "black", [] ]
+  ]
+}
