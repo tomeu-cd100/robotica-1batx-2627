@@ -42,9 +42,12 @@ Pensat per a kits **Arduino** (UNO i compatibles), **micro:bit** (amb micro:shie
 
 ## 🚀 Com usar aquest material
 
-1. Comença per `Programació didàctica/00_Index_general.md` per tenir la visió de conjunt.
-2. Per a cada sessió, obre la SA corresponent dins `Classes/` (guia docent + fitxa d'alumnat + codi).
-3. Avalua amb les proves de `Avaluació/` i les rúbriques de `Programació didàctica/07_Rubriques.md`.
+> 🟢 **És el teu primer cop amb aquest material?** Comença per **[`GUIA_INICI_DOCENT.md`](GUIA_INICI_DOCENT.md)**: engegada de l'entorn pas a pas, nivell mínim del docent + autoformació exprés i pla B per a incidències a l'aula.
+
+1. Llegeix la **`GUIA_INICI_DOCENT.md`** i fes la checklist de la primera setmana (instal·lació, comptes, kits).
+2. Mira la visió de conjunt a `Programació didàctica/00_Index_general.md`.
+3. Per a cada sessió, obre la SA corresponent dins `Classes/` (guia docent + fitxa d'alumnat + codi).
+4. Avalua amb les proves de `Avaluació/` i les rúbriques de `Programació didàctica/07_Rubriques.md`.
 
 ---
 
