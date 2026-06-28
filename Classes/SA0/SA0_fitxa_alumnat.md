@@ -119,6 +119,31 @@ while ____:
 
 ---
 
+## Si t'encalles · com depurar un error
+
+Quan un codi no fa el que esperes, segueix la **rutina DEPURA** (la faràs servir tot el curs):
+
+> **D**escriu (què esperaves vs què passa) · **E**xamina (missatge d'error, la línia) · **P**rova una hipòtesi cada cop · **U**bica el problema · **R**epara i torna a provar · **A**punta-ho.
+
+L'**Activitat 5** d'aquesta fitxa ja és una depuració: aplica-hi la **D** i la **E**.
+
+## Pensament computacional d'aquesta SA
+
+- **Abstracció:** posar nom als conceptes (sensor, actuador, sketch…) per pensar i comunicar millor.
+- **Lectura d'algorismes:** seguir un codi pas a pas i **predir-ne** el resultat (Activitats 4 i 6).
+
+## Exit ticket
+
+1. Un terme nou que ja domino: ______________________
+2. Un terme que encara em costa: ______________________
+3. Una cosa del codi que vull entendre millor: ______________________
+
+## Context real i ODS
+
+Entendre els sistemes que ens envolten és **alfabetització tecnològica**. **ODS 4** (educació de qualitat): aprendre a programar t'obre portes. Quin aparell de casa t'agradaria entendre per dins? ______________________
+
+---
+
 ## Autoavaluació (marca el teu nivell)
 
 | Ja ho sé… | 🔴 Encara no | 🟡 A mitges | 🟢 Sí |

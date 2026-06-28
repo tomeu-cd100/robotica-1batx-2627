@@ -74,6 +74,67 @@ Tria un **robot real** i analitza'l amb la plantilla `SA1_poster_robot_plantilla
 
 ---
 
+## Treball en equip · rols de la parella
+
+Repartiu-vos els rols i **roteu-los** a cada sessió (marqueu qui fa què):
+
+| Rol | Sessió 1 | Sessió 2 | Sessió 3 |
+|---|---|---|---|
+| Coordinador/a (temps, enunciat, que tothom participi) | | | |
+| Programador/a (codi / teclat) | | | |
+| Enginyer/a de maquinari (placa, connexions, seguretat) | | | |
+| Provador/a–Documentador/a (prova + quadern) | | | |
+
+---
+
+## Si t'encalles
+
+1. **Pista 1:** torna a llegir l'enunciat i digues en veu alta què ha de fer el sistema (entrada → procés → sortida).
+2. **Pista 2:** compara el teu codi i el circuit amb l'esquema; revisa pin a pin.
+3. **Pista 3:** aplica la **rutina DEPURA** i, si cal, demana ajuda **explicant què ja has provat**.
+
+> **Rutina DEPURA** (quan no funciona): **D**escriu (què esperaves vs què passa) · **E**xamina (LED, missatge d'error, Monitor Sèrie) · **P**rova una hipòtesi cada cop (canvia una sola cosa) · **U**bica el problema (aïlla'l) · **R**epara i torna a provar · **A**punta-ho al quadern.
+
+## Vols més?
+
+- **Reptes ⭐:** tria'n un a `Reptes/Reptes_SA1.md` i amplia el teu producte.
+- **Simulació interactiva (Wokwi):** prova-ho sense maquinari (vegeu `Simulacions/Wokwi/`).
+
+---
+
+## Pensament computacional d'aquesta SA
+
+Avui has practicat la **DESCOMPOSICIÓ**: partir un sistema complex en parts senzilles (entrada → procés → sortida). On l'has fet servir? ______________________
+
+## Diana d'autoavaluació
+
+Marca el teu nivell (NA = no assolit · AS = suficient · AN = notable · AE = excel·lent):
+
+| Criteri | NA | AS | AN | AE |
+|---|---|---|---|---|
+| Identifico entrada-procés-sortida d'un sistema | ☐ | ☐ | ☐ | ☐ |
+| Reconec les parts de la placa i distingeixo digital/analògic | ☐ | ☐ | ☐ | ☐ |
+| Llegeixo i modifico el codi `Blink` | ☐ | ☐ | ☐ | ☐ |
+
+## Coavaluació (2 estrelles i un desig)
+
+Intercanvieu el pòster amb una altra parella i anoteu:
+- ⭐ Una cosa ben feta: ______________________
+- ⭐ Una altra cosa ben feta: ______________________
+- 💡 Una millora (desig): ______________________
+
+## Exit ticket (abans de marxar)
+
+1. Una cosa que he après avui: ______________________
+2. Una cosa que encara no tinc clara: ______________________
+3. On ho faria servir al món real: ______________________
+
+## Context real i ODS
+
+La robòtica és a tot arreu: electrodomèstics, transport, indústria. **ODS 9** (indústria i innovació) i **ODS 12** (consum responsable). Escriu un **benefici** i un **risc** d'automatitzar una tasca quotidiana: ______________________
+
+---
+
 ## Quadern tècnic (entrada de la SA1)
 
 > El quadern tècnic és el teu **diari de bord** de tot el curs. Segueix el **mètode de projecte**: *analitzar → dissenyar → prototipar → provar → millorar.*

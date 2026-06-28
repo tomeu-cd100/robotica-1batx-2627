@@ -88,3 +88,41 @@
 | `analogWrite` no regula | Pin sense PWM | Usar pin amb `~` (3,5,6,9,10,11). |
 | RGB mostra colors estranys | Càtode/ànode comú confós | Verificar tipus de LED i pin comú a GND (càtode comú). |
 | El relé no commuta | Alimentació insuficient | Alimentar el mòdul correctament; revisar pin de senyal. |
+
+---
+
+## Atenció a la diversitat (DUA)
+
+| Via | Mesura |
+|---|---|
+| **Bastida** (qui s'encalla) | Començar amb **1 LED** abans del semàfor de 3; donar la seqüència de fases en comentaris per completar; parella heterogènia. |
+| **+ Ampliació** (qui va sobrat) | Fase nocturna, semàfor de vianants, arc de Sant Martí RGB; reptes ⭐ de `Reptes/Reptes_SA2.md`. |
+| **Representació múltiple** | Esquema de connexions, **simulació Wokwi** (semàfor), codi comentat. |
+| **Implicació** | Cada parella tria estats i colors del seu panell i quin repte amplia. |
+
+## Treball cooperatiu amb rols
+
+Parelles amb **rols rotatius** (un canvi per sessió):
+
+| Rol | Funció |
+|---|---|
+| Coordinador/a | Temps, enunciat, participació de tothom. |
+| Programador/a | Escriu i edita el codi. |
+| Enginyer/a de maquinari | Munta el circuit, comprova resistència/polaritat i seguretat. |
+| Provador/a–Documentador/a | Prova, aplica DEPURA, documenta al quadern. |
+
+## Pensament computacional i depuració
+
+- **PC d'aquesta SA:** **patrons i algorisme** (la seqüència de fases) i **abstracció** (encapsular fases en funcions).
+- **Depuració:** rutina **DEPURA** (a la fitxa) + taula d'errors freqüents de més amunt.
+
+## Avaluació formativa (instruments)
+
+- **Diana d'autoavaluació** (fitxa) sobre 3 criteris clau.
+- **Coavaluació** "2 estrelles i un desig" entre parelles.
+- **Exit ticket** de tancament; recull-lo per ajustar la sessió següent.
+
+## Context real i ODS
+
+- **Context:** senyalització urbana i industrial; eficiència lumínica.
+- **ODS 11** (ciutats sostenibles) i **ODS 7** (energia neta: LED vs bombeta).
