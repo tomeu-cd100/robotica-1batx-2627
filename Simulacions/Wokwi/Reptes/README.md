@@ -34,12 +34,12 @@ i, si cal, `libraries.txt`. Patró de nom: `SA<n>_<lletra>_<nom>_<versió>`.
 
 | Projecte | Enllaç |
 |---|---|
-| SA1_A_far_minim | *(pendent)* |
-| SA1_A_far_ampliat | *(pendent)* |
-| SA1_B_llum_minim | *(pendent)* |
-| SA1_B_llum_ampliat | *(pendent)* |
-| SA1_C_morse_minim | *(pendent)* |
-| SA1_C_morse_ampliat | *(pendent)* |
+| SA1_A_far_minim | <https://wokwi.com/projects/468091585479800833> |
+| SA1_A_far_ampliat | <https://wokwi.com/projects/468091919929463809> |
+| SA1_B_llum_minim | <https://wokwi.com/projects/468091669683614721> |
+| SA1_B_llum_ampliat | <https://wokwi.com/projects/468091733644667905> |
+| SA1_C_morse_minim | <https://wokwi.com/projects/468091789071354881> |
+| SA1_C_morse_ampliat | <https://wokwi.com/projects/468091843657078785> |
 | SA2_A_semafor_minim | *(pendent)* |
 | SA2_A_semafor_ampliat | *(pendent)* |
 | SA2_B_ambient_minim | *(pendent)* |
