@@ -52,10 +52,10 @@ i, si cal, `libraries.txt`. Patró de nom: `SA<n>_<lletra>_<nom>_<versió>`.
 | SA3_B_aparcament_ampliat | <https://wokwi.com/projects/468092730863606785> |
 | SA3_C_instrument_minim | <https://wokwi.com/projects/468092793918686209> |
 | SA3_C_instrument_ampliat | <https://wokwi.com/projects/468092893797661697> |
-| SA4_A_barrera_minim | *(pendent)* |
-| SA4_A_barrera_ampliat | *(pendent)* |
-| SA4_C_brac_minim | *(pendent)* |
-| SA4_C_brac_ampliat | *(pendent)* |
+| SA4_A_barrera_minim | <https://wokwi.com/projects/468093084646898689> |
+| SA4_A_barrera_ampliat | <https://wokwi.com/projects/468093216249486337> |
+| SA4_C_brac_minim | <https://wokwi.com/projects/468093343168096257> |
+| SA4_C_brac_ampliat | <https://wokwi.com/projects/468104666395047937> |
 | SA6_A_termostat_minim | *(pendent)* |
 | SA6_A_termostat_ampliat | *(pendent)* |
 | SA6_B_semafor_minim | *(pendent)* |
