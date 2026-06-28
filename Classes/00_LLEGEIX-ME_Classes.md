@@ -33,6 +33,7 @@ Material llest per a l'aula, organitzat per situació d'aprenentatge (SA). Cada 
 - **Banc d'objectes per dissenyar:** `00_Banc_objectes_disseny.md` — per a cada SA, objectes reals que l'alumnat pot dissenyar i construir com a **producte** (funció, usuari, carcassa/maqueta), amb procés de disseny, pautes de fabricació i rúbrica de producte.
 - **Plantilla de disseny d'objecte:** `00_Plantilla_disseny_objecte.md` — full A4 imprimible perquè l'alumnat dissenyi el seu objecte (empatitzar → definir → idear/esbós → prototipar → provar → comunicar) amb autoavaluació i coavaluació.
 - **Mapa SA → objecte:** `00_Mapa_SA_objectes.md` — vista de conjunt per projectar: què s'aprèn a cada SA i quins objectes s'hi poden dissenyar (el fil encendre → … → integrar).
+- **Galeria d'exemples resolts:** `00_Galeria_exemples_objectes.md` — dos objectes desenvolupats de punta a punta (llum d'estat d'escriptori, SA2; mini-hivernacle automàtic, SA6) com a model del nivell esperat.
 
 ## Estat
 ✅ **Curs complet:** material d'aula de les 9 situacions d'aprenentatge (SA1-SA9), trimestres 1, 2 i 3.
