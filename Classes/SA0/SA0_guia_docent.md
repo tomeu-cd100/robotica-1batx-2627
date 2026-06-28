@@ -81,3 +81,17 @@ while True:
 | **Sense maquinari** | Tots els exemples es proven a Tinkercad/Wokwi; micro:bit té simulador a python.microbit.org. |
 
 > La SA0 **no qualifica**. La seva funció és anivellar i donar autonomia de consulta. Referencia-la explícitament cada cop que un terme o concepte reaparegui a una SA.
+
+## Pensament computacional i depuració
+
+- **PC de la SA0:** **abstracció** (donar nom als conceptes) i **lectura d'algorismes** (predir el resultat d'un codi, Act. 4 i 6).
+- **Depuració:** la SA0 introdueix la **rutina DEPURA**, que s'usa a totes les SA. L'Act. 5 (detecta l'error) n'és la primera pràctica.
+
+> DEPURA: **D**escriu · **E**xamina · **P**rova una hipòtesi cada cop · **U**bica · **R**epara · **A**punta.
+
+## Context real i ODS
+
+- **Context:** alfabetització tecnològica — entendre els sistemes que ens envolten.
+- **ODS 4** (educació de qualitat): la SA0 garanteix que tothom arrenca amb la mateixa base, atenent la diversitat de punts de partida.
+
+> Els **rols cooperatius** i la **coavaluació** s'introdueixen a partir de la SA1 (la SA0 és material de consulta individual o en parella, sense producte avaluable).

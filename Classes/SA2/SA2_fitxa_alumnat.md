@@ -50,6 +50,67 @@ Dissenya un panell que indiqui **estats** amb color + so + una càrrega (relé).
 
 ---
 
+## Treball en equip · rols de la parella
+
+Repartiu-vos els rols i **roteu-los** a cada sessió:
+
+| Rol | S1 | S2 | S3 | S4 |
+|---|---|---|---|---|
+| Coordinador/a (temps, enunciat) | | | | |
+| Programador/a (codi) | | | | |
+| Enginyer/a de maquinari (circuit, seguretat) | | | | |
+| Provador/a–Documentador/a (prova + quadern) | | | | |
+
+---
+
+## Si t'encalles
+
+1. **Pista 1:** descriu la **seqüència** que ha de fer el sistema (quin LED, quan, quant temps).
+2. **Pista 2:** revisa pin a pin amb l'esquema; comprova la **resistència** i la **polaritat** de cada LED.
+3. **Pista 3:** aplica la **rutina DEPURA** i demana ajuda **explicant què ja has provat**.
+
+> **Rutina DEPURA:** **D**escriu (què esperaves vs què passa) · **E**xamina (LED, error, Monitor Sèrie) · **P**rova una hipòtesi cada cop · **U**bica el problema · **R**epara i torna a provar · **A**punta-ho al quadern.
+
+## Vols més?
+
+- **Reptes ⭐:** `Reptes/Reptes_SA2.md` (semàfor, llum ambient, indicador de nivell).
+- **Simulació interactiva (Wokwi):** semàfor a `Simulacions/Wokwi/SA2_semafor/` (enllaç a `SA2_esquemes_connexions.md`).
+
+---
+
+## Pensament computacional d'aquesta SA
+
+Avui has treballat amb **PATRONS i ALGORISME** (la seqüència ordenada de fases del semàfor) i amb **ABSTRACCIÓ** (encapsular fases en funcions). On has vist un patró que es repeteix? ______________________
+
+## Diana d'autoavaluació
+
+Marca el teu nivell (NA/AS/AN/AE):
+
+| Criteri | NA | AS | AN | AE |
+|---|---|---|---|---|
+| Programo seqüències amb `for`/`if` i variables | ☐ | ☐ | ☐ | ☐ |
+| Regulo intensitat/color amb PWM (`analogWrite`, `map`) | ☐ | ☐ | ☐ | ☐ |
+| Munto el circuit amb resistència i polaritat correctes | ☐ | ☐ | ☐ | ☐ |
+
+## Coavaluació (2 estrelles i un desig)
+
+Intercanvieu el panell/semàfor amb una altra parella:
+- ⭐ Una cosa ben feta: ______________________
+- ⭐ Una altra cosa ben feta: ______________________
+- 💡 Una millora (desig): ______________________
+
+## Exit ticket (abans de marxar)
+
+1. Una cosa que he après avui: ______________________
+2. Una cosa que encara no tinc clara: ______________________
+3. On ho faria servir al món real: ______________________
+
+## Context real i ODS
+
+Els sistemes de senyalització ordenen ciutats i indústries. **ODS 11** (ciutats sostenibles) i **ODS 7** (energia: el LED consumeix molt menys que la bombeta). Com faria el teu panell un ús més eficient de l'energia? ______________________
+
+---
+
 ## Quadern tècnic (SA2)
 - **Concepte nou més important:** _______________________________________
 - **Error trobat i solució:** ___________________________________________

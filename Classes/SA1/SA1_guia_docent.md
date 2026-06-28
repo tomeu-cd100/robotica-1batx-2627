@@ -143,3 +143,36 @@ A la SA1 hem fet **parpellejar un LED** (una sortida digital senzilla). A la **S
 | **Sense maquinari per a tothom** | Tot és reproduïble a **Tinkercad**/**Wokwi**; es pot treballar amb el LED **intern** (pin 13) sense cablejar res. |
 
 > **Avaluació formativa:** comparteix les rúbriques **R4** i **R5** amb l'alumnat **abans** de començar el producte (vegeu `Programació didàctica/07_Rubriques.md`).
+
+---
+
+## Treball cooperatiu amb rols
+
+L'alumnat treballa en parella amb **rols rotatius** (un canvi per sessió) perquè tothom programi, munti i documenti:
+
+| Rol | Funció |
+|---|---|
+| Coordinador/a | Gestiona el temps, llegeix l'enunciat, vetlla perquè tothom participi. |
+| Programador/a | Escriu i edita el codi. |
+| Enginyer/a de maquinari | Munta el circuit, comprova connexions i seguretat. |
+| Provador/a–Documentador/a | Prova, aplica la rutina DEPURA i documenta al quadern. |
+
+> El quadre per rotar els rols és a la fitxa. Forma les parelles **heterogènies** segons la prova diagnòstica.
+
+## Pensament computacional i depuració
+
+- **Concepte de PC d'aquesta SA:** **descomposició** (partir un sistema en entrada → procés → sortida). Nomena-ho explícitament a l'Activitat 1.
+- **Depuració:** presenta la **rutina DEPURA** com a forma estàndard d'afrontar errors tot el curs (és a la fitxa); el docent té la taula d'**errors freqüents** de més amunt.
+
+> DEPURA: **D**escriu · **E**xamina · **P**rova una hipòtesi cada cop · **U**bica · **R**epara · **A**punta.
+
+## Avaluació formativa (instruments)
+
+- **Diana d'autoavaluació** (fitxa): posicionament en 3 criteris clau.
+- **Coavaluació** ("2 estrelles i un desig"): cada parella valora el pòster d'una altra.
+- **Exit ticket** (fitxa): 3 preguntes de tancament; recull-les per ajustar la sessió següent.
+
+## Context real i ODS
+
+- **Context:** robots quotidians i sistemes embeguts invisibles (electrodomèstics, transport, indústria).
+- **ODS 9** (indústria, innovació) i **ODS 12** (consum responsable): hi connecten el dilema ètic del pòster i la reflexió del quadern.
