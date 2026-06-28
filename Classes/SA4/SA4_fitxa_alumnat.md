@@ -55,6 +55,67 @@ Dissenya una barrera que s'obre quan arriba un vehicle i es tanca sola.
 
 ---
 
+## Treball en equip · rols de la parella
+
+Repartiu-vos els rols i **roteu-los** a cada sessió:
+
+| Rol | S1 | S2 | S3 | S4 |
+|---|---|---|---|---|
+| Coordinador/a (temps, enunciat) | | | | |
+| Programador/a (codi) | | | | |
+| Enginyer/a de maquinari (motor/servo, **massa comuna**, seguretat) | | | | |
+| Provador/a–Documentador/a (prova + quadern) | | | | |
+
+---
+
+## Si t'encalles
+
+1. **Pista 1:** comprova la **massa comuna** (GND de l'Arduino unit al GND de l'alimentació del motor).
+2. **Pista 2:** verifica que el motor **no** s'alimenta des del pin 5V de l'Arduino; revisa ENA/IN1/IN2.
+3. **Pista 3:** aplica la **rutina DEPURA** i demana ajuda **explicant què ja has provat**.
+
+> **DEPURA:** **D**escriu · **E**xamina · **P**rova una hipòtesi cada cop · **U**bica · **R**epara · **A**punta-ho.
+
+## Vols més?
+
+- **Reptes ⭐:** `Reptes/Reptes_SA4.md` (barrera, ventilador, braç dispensador).
+- **Simulació interactiva (Wokwi):** servo a `SA4_esquemes_connexions.md` (el motor/pont H va amb maquinari real).
+
+---
+
+## Pensament computacional d'aquesta SA
+
+Treballes la **DESCOMPOSICIÓ del moviment** (partir una tasca en passos: obrir → esperar → tancar) i l'**ABSTRACCIÓ** amb funcions (`endavant()`, `atura()`…). Quina tasca has dividit en passos? ______________________
+
+## Diana d'autoavaluació
+
+Marca el teu nivell (NA/AS/AN/AE):
+
+| Criteri | NA | AS | AN | AE |
+|---|---|---|---|---|
+| Controlo la posició d'un servo i la velocitat d'un motor | ☐ | ☐ | ☐ | ☐ |
+| Munto el circuit amb seguretat (massa comuna, alimentació externa) | ☐ | ☐ | ☐ | ☐ |
+| Faig que el moviment respongui a un sensor | ☐ | ☐ | ☐ | ☐ |
+
+## Coavaluació (2 estrelles i un desig)
+
+Intercanvieu la barrera amb una altra parella:
+- ⭐ Una cosa ben feta: ______________________
+- ⭐ Una altra cosa ben feta: ______________________
+- 💡 Una millora (desig): ______________________
+
+## Exit ticket (abans de marxar)
+
+1. Una cosa que he après avui: ______________________
+2. Una cosa que encara no tinc clara: ______________________
+3. On ho faria servir al món real: ______________________
+
+## Context real i ODS
+
+Els actuadors mouen el món físic: barreres, ascensors, pròtesis, braços robòtics. **ODS 9** (indústria i innovació) i **ODS 10** (reduir desigualtats: robòtica assistencial i accessibilitat). Quin sistema de moviment ajudaria una persona amb mobilitat reduïda? ______________________
+
+---
+
 ## Quadern tècnic (SA4)
 - **Per què cal un pont H / driver?** ____________________________________
 - **Què és la massa comuna i per què és important?** ____________________

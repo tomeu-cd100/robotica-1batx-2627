@@ -51,6 +51,67 @@ Dissenya un avís que depèn de la distància:
 
 ---
 
+## Treball en equip · rols de la parella
+
+Repartiu-vos els rols i **roteu-los** a cada sessió:
+
+| Rol | S1 | S2 | S3 | S4 |
+|---|---|---|---|---|
+| Coordinador/a (temps, enunciat) | | | | |
+| Programador/a (codi) | | | | |
+| Enginyer/a de maquinari (sensor, connexions, seguretat) | | | | |
+| Provador/a–Documentador/a (monitor sèrie + quadern) | | | | |
+
+---
+
+## Si t'encalles
+
+1. **Pista 1:** obre el **Monitor sèrie** i mira quins valors arriben de debò del sensor.
+2. **Pista 2:** revisa l'alimentació del sensor (VCC/GND) i el pin de senyal amb l'esquema.
+3. **Pista 3:** aplica la **rutina DEPURA** i demana ajuda **explicant què ja has provat**.
+
+> **DEPURA:** **D**escriu · **E**xamina (Monitor sèrie!) · **P**rova una hipòtesi cada cop · **U**bica · **R**epara · **A**punta-ho.
+
+## Vols més?
+
+- **Reptes ⭐:** `Reptes/Reptes_SA3.md` (llum nocturna, sensor d'aparcament, instrument).
+- **Simulació interactiva (Wokwi):** vegeu `SA3_esquemes_connexions.md`.
+
+---
+
+## Pensament computacional d'aquesta SA
+
+Treballes l'**ABSTRACCIÓ** (encapsular la lectura en una funció com `mesuraDistancia()`) i els **CONDICIONALS** (decidir segons un llindar). On has fet servir una funció per amagar detalls? ______________________
+
+## Diana d'autoavaluació
+
+Marca el teu nivell (NA/AS/AN/AE):
+
+| Criteri | NA | AS | AN | AE |
+|---|---|---|---|---|
+| Distingeixo i llegeixo entrades digitals i analògiques | ☐ | ☐ | ☐ | ☐ |
+| Faig servir el Monitor sèrie per calibrar | ☐ | ☐ | ☐ | ☐ |
+| Escric i faig servir funcions pròpies | ☐ | ☐ | ☐ | ☐ |
+
+## Coavaluació (2 estrelles i un desig)
+
+Intercanvieu l'alarma/aparcament amb una altra parella:
+- ⭐ Una cosa ben feta: ______________________
+- ⭐ Una altra cosa ben feta: ______________________
+- 💡 Una millora (desig): ______________________
+
+## Exit ticket (abans de marxar)
+
+1. Una cosa que he après avui: ______________________
+2. Una cosa que encara no tinc clara: ______________________
+3. On ho faria servir al món real: ______________________
+
+## Context real i ODS
+
+Els sensors permeten estalviar energia i recursos. **ODS 7** (energia) i **ODS 12** (consum responsable): com podria el teu sistema reduir el consum d'un edifici? ______________________
+
+---
+
 ## Quadern tècnic (SA3)
 - **Diferència entre entrada digital i analògica:** ______________________
 - **Per a què serveix una funció?** _____________________________________
