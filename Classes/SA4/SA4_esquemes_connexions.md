@@ -79,3 +79,12 @@ Servo:    senyal --> Pin 9     (V+ i GND segons alimentacio)
 HC-SR04:  TRIG --> Pin 12    ECHO --> Pin 11
 Pin 8 --[ 220R ]--|>|-- GND          (LED)
 ```
+
+---
+
+## Simulació interactiva (Wokwi)
+
+- ▶ **Simulació (Servo controlat amb potenciòmetre):** <https://wokwi.com/projects/468088128427008001>
+- **Projecte al repositori:** [`Simulacions/Wokwi/SA4_servo_potenciometre/`](../../Simulacions/Wokwi/SA4_servo_potenciometre/) (`diagram.json` + `sketch.ino` + `libraries.txt`).
+
+> Obre l'enllaç i prem **▶**. Gira el **potenciòmetre** per moure el servo de 0 a 180°. La llibreria **Servo** s'instal·la sola amb el botó *Install "Servo" library* que apareix en compilar (pont H i motors DC no es porten a Wokwi).

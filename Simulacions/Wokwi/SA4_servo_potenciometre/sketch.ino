@@ -1,7 +1,8 @@
 /*
   SA4 - Servo controlat amb potenciometre (per a Wokwi)
   La posicio del servo (pin 9) segueix el gir del potenciometre (A0).
-  Llibreria estandard Servo.h (ja inclosa a Wokwi).
+  Llibreria estandard Servo.h: a Wokwi cal instal-lar-la (vegeu libraries.txt;
+  el primer cop apareix el boto "Install Servo library" en compilar).
   A Wokwi: clica el potenciometre i gira'l per moure el servo de 0 a 180 graus.
 */
 

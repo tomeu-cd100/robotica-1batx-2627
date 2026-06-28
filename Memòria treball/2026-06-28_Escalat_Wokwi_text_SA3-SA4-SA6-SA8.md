@@ -38,15 +38,31 @@ Wokwi executi MicroPython del micro:bit) i s'hi ha afegit una taula de **cobertu
 - **SA3 / HC-SR04:** a Wokwi es prova clicant el sensor i ajustant el control de distància.
 - **Part type ESP32 usat:** `board-esp32-devkit-c-v4`; pin analògic `esp:34`, alimentació `esp:3V3`.
 
-## Estat
-- **Text fet i sincronitzable:** SA3, SA4, SA6, SA8.
-- **Pendent (navegador):** publicar els 4 a wokwi.com com a públics i enganxar els enllaços
-  al `README.md` i als `Classes/SAx/SAx_esquemes_connexions.md` corresponents (com es va fer
-  amb SA1/SA2). Cost estimat ~8-10 passos/pràctica.
-- **No aplicable:** SA5 i SA7 (no simulables a Wokwi).
+## Publicació a Wokwi (feta el mateix dia)
+Els 4 projectes s'han **simulat i desat com a públics**. Tots compilen i la simulació funciona:
 
-## Per reprendre (publicació)
-1. Obrir `https://wokwi.com/projects/new/arduino-uno` (o `.../esp32` per a SA8).
-2. Injectar `sketch.ino` i `diagram.json` via `monaco.editor.getModels().setValue(...)`.
-3. Simular, desar com a públic (setter natiu al modal SAVE), copiar la URL.
-4. Actualitzar enllaços al repo.
+| SA | Enllaç públic | Verificació |
+|---|---|---|
+| SA3 | https://wokwi.com/projects/468087916595757057 | LED + brunzidor actius, sèrie mostra ~19,9 cm |
+| SA4 | https://wokwi.com/projects/468088128427008001 | servo segueix el potenciòmetre (cal llibreria Servo) |
+| SA6 | https://wokwi.com/projects/468088291274023937 | sèrie mostra `actiu=0/1` segons el potenciòmetre |
+| SA8 | https://wokwi.com/projects/468088488537422849 | ESP32 compila i arrenca (WiFi `Wokwi-GUEST`) |
+
+Enllaços afegits a: `Simulacions/Wokwi/README.md`, `Classes/SA3/SA3_esquemes_connexions.md`,
+`Classes/SA4/SA4_esquemes_connexions.md`, `Classes/SA6/SA6_esquemes_connexions.md`,
+`Classes/SA8/SA8_connexions.md`.
+
+## Aprenentatge tècnic nou (publicació)
+- **La llibreria `Servo.h` NO ve inclosa a Wokwi**: en compilar surt un botó *Install "Servo"
+  library* que crea un `libraries.txt`. S'ha afegit `libraries.txt` al projecte SA4 del repo
+  i s'ha corregit el comentari del sketch (deia erròniament "ja inclosa a Wokwi").
+- **Model `vfs:diagram.json`**: no existeix fins que s'obre la pestanya *diagram.json* a l'editor;
+  cal clicar-la abans del `setValue`.
+- **Modal SAVE**: la pàgina té diversos `<input>`; cal triar el del modal per geometria
+  (`getBoundingClientRect`, top 250-340, width>200), no `querySelector('input')` (agafa el del
+  monitor sèrie). Després, setter natiu + event `input` i clic a SAVE.
+- **ESP32**: `type` de placa `board-esp32-devkit-c-v4`, pin analògic `esp:34`, alimentació
+  `esp:3V3`. La compilació triga força més (cua de build pública, ~25-40 s).
+
+## No aplicable
+SA5 i SA7 (no simulables a Wokwi).
