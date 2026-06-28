@@ -30,7 +30,7 @@ i, si cal, `libraries.txt`. Patró de nom: `SA<n>_<lletra>_<nom>_<versió>`.
 **Total: 27 projectes** (mínim + ampliat dels reptes simulables).
 
 ## Enllaços interactius (Wokwi públic)
-*(s'ompliran a mesura que es publiquin)*
+> Tots 27 simulats i desats com a públics el 2026-06-28.
 
 | Projecte | Enllaç |
 |---|---|
@@ -56,11 +56,11 @@ i, si cal, `libraries.txt`. Patró de nom: `SA<n>_<lletra>_<nom>_<versió>`.
 | SA4_A_barrera_ampliat | <https://wokwi.com/projects/468093216249486337> |
 | SA4_C_brac_minim | <https://wokwi.com/projects/468093343168096257> |
 | SA4_C_brac_ampliat | <https://wokwi.com/projects/468104666395047937> |
-| SA6_A_termostat_minim | *(pendent)* |
-| SA6_A_termostat_ampliat | *(pendent)* |
-| SA6_B_semafor_minim | *(pendent)* |
-| SA6_B_semafor_ampliat | *(pendent)* |
-| SA6_C_proporcional_minim | *(pendent)* |
+| SA6_A_termostat_minim | <https://wokwi.com/projects/468104777049185281> |
+| SA6_A_termostat_ampliat | <https://wokwi.com/projects/468104859147450369> |
+| SA6_B_semafor_minim | <https://wokwi.com/projects/468104931211891713> |
+| SA6_B_semafor_ampliat | <https://wokwi.com/projects/468105016729562113> |
+| SA6_C_proporcional_minim | <https://wokwi.com/projects/468105083457798145> |
 
 ## Com publicar
 1. Obre `https://wokwi.com/projects/new/arduino-uno`.
