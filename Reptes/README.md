@@ -51,7 +51,7 @@ Els reptes es resolen amb les **mateixes rutines** que les classes (pòster proj
 
 ## Simulacions interactives (Wokwi)
 
-Els reptes de **SA1–SA4 i SA6** tenen el circuit i el codi de solució de referència muntats a Wokwi (versions **mínim** i **ampliat**): vegeu `Simulacions/Wokwi/Reptes/README.md`. Permeten provar i comparar sense maquinari. *(SA5, SA7 i la part micro:bit de SA8 no són simulables a Wokwi.)*
+Els reptes de **SA1–SA4 i SA6** tenen el circuit i el codi de solució de referència muntats a Wokwi (versions **mínim** i **ampliat**): vegeu `Simulacions/Wokwi/Reptes/README.md`. Permeten provar i comparar sense maquinari. **Excepcions dins d'aquest rang:** el repte **SA4_B (ventilador)** i l'**ampliat de SA6_C (proporcional)** usen motor DC + pont H, que no és component estàndard de Wokwi, i no s'hi simulen. *(SA5, SA7 i la part micro:bit de SA8 tampoc no són simulables a Wokwi.)*
 
 ## Convertir un repte en un objecte (disseny de producte)
 

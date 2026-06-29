@@ -26,7 +26,9 @@ La matèria s'organitza en **9 situacions d'aprenentatge (SA1-SA9)** distribuïd
 | **`Normativa/`** | Síntesi del marc legal LOMLOE + PDFs oficials (RD 243/2022, Decret 171/2022, DOIGC…). |
 | **`Recursos/`** | Full de càlcul amb 54 recursos de professorat en obert (títol, explicació, enllaç, paraules clau). |
 | **`Programació didàctica/`** | Programació completa en documents separats: objectius, sabers, metodologia, atenció a la diversitat, avaluació, rúbriques, seqüenciació anual i les 9 SA. |
-| **`Classes/`** | Material d'aula per SA (guia docent, fitxa d'alumnat, esquemes de connexions i **codi** `.ino`/`.py`), amb `Solucionari/` dels reptes. |
+| **`Classes/`** | Material d'aula per SA (guia docent, fitxa d'alumnat, esquemes de connexions i **codi** `.ino`/`.py`), amb `Solucionari/` de les ampliacions («+ repte») de les pràctiques. |
+| **`Reptes/`** | Tres reptes triables (contextos diferents, mateixos continguts) per a cada SA1-SA8, amb el seu `Solucionari/` (versions mínim i ampliat). |
+| **`Simulacions/`** | Circuits i codi en format **Wokwi** (text reproduïble) de les pràctiques i dels reptes, amb enllaços públics interactius. |
 | **`Avaluació/`** | 3 proves pràctiques (una per trimestre), amb enunciat per nivells, graella de correcció i solució orientativa. |
 | **`Memòria treball/`** | Registre datat de l'evolució del projecte. |
 
