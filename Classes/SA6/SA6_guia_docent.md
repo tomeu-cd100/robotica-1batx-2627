@@ -23,7 +23,7 @@
 
 ## Mètode de projecte i continuïtat
 - **Cicle de treball** (com a tot el curs): *analitzar → dissenyar → prototipar → provar → millorar* (vegeu SA1). El **producte** n'és el recorregut complet i el **quadern tècnic** el documenta.
-- **Lectura de codi amb PRIMM:** a cada *modelatge* l'alumnat **prediu** què farà el sketch **abans** d'executar-lo, després l'**investiga**, el **modifica** i en **crea** un de nou.
+- **Lectura de codi amb PRIMM:** a cada *modelatge* l'alumnat **prediu** què farà el sketch **abans** d'executar-lo, després l'**investiga**, el **modifica** i en **crea** un de nou. **Operativa (val per a totes les sessions amb codi):** dedica els primers ~5' del Modelatge a projectar el codi nou **sense executar-lo** i recollir prediccions; només després, executa i investiga.
 - **Pont (d'on venim / on anem):** ve de la **SA5** (paradigmes de programació) → portem a la **SA7** (robòtica mòbil). El **llaç tancat** i les **màquines d'estats** d'aquí són la base dels **comportaments autònoms** del robot (evitar obstacles, seguir línia).
 
 ---
@@ -59,9 +59,14 @@
 
 **Punt clau:** una **màquina d'estats** organitza comportaments complexos en estats clars i transicions; evita el codi espagueti i no bloqueja (s'usa amb `millis()`).
 
+> 🧩 **Bastida `millis()` (recomanada abans d'aquesta sessió):** fins ara `millis()` només s'ha vist com a *concepte* (SA2 S2) o *ampliació* (SA1 `blink_millis.ino`), no s'ha practicat. Abans de la màquina d'estats, fes una **mini-pràctica guiada de ~10'** (p. ex. dos LED que parpellegen a ritmes diferents **sense** `delay()`), **o** dona l'esquelet de la màquina d'estats amb el patró `millis()` ja muntat com a bastida per a qui ho necessiti.
+
 ---
 
 ## SESSIÓ 4 (2 h) — Control proporcional
+
+> 📋 **Aquesta sessió allotja la prova pràctica trimestral T2** (vegeu `Avaluació/Prova_practica_T2.md` i `Programació didàctica/08_Sequenciacio_temporal_anual.md`): el repte de control d'aquesta sessió **fa de prova T2** i no afegeix hores extra.
+
 - **Activació (10'):** *"I si la resposta fos més suau, proporcional a com de lluny estem de l'objectiu?"*
 - **Modelatge (25'):** `04_control_proporcional.ino`. Concepte d'**error** i de **sortida proporcional** (P): com més gran l'error, més actuació. Introducció a l'estabilitat.
 - **Pràctica guiada (35'):** regulació proporcional (p. ex. velocitat del ventilador segons la temperatura).
@@ -93,6 +98,15 @@
 
 ---
 
+## Guió de modelatge (què verbalitzar)
+
+> Frases i preguntes clau per al **Modelatge** de cada sessió (què mirar, què preguntar abans d'executar, error a anticipar).
+
+- **S1 · `01_llac_obert_vs_tancat`:** dibuixa el **diagrama de blocs** (consigna → error → actuador → sensor/realimentació). Pregunta: *"què passa si trec el sensor?"* → llaç obert ("confia" que tot anirà bé). *Error a anticipar:* confondre realimentació amb la sortida.
+- **S2 · `02_termostat_histeresi`:** mostra l'**oscil·lació** amb un sol llindar i com **dos llindars** la maten. Demana predir el comportament a prop de la consigna. *Error a anticipar:* parpelleig per no posar histèresi.
+- **S3 · `03_maquina_estats` (`enum`/`switch`):** recorre cada **estat** (què fa) i les seves **transicions** (quan canvia). Recorda la **bastida `millis()`** (no bloquejar). *Error a anticipar:* un `case` sense transició → la màquina es "penja".
+- **S4 · `04_control_proporcional`:** al **Serial Plotter**, compara **tot/res vs proporcional**. Demana predir què passa si `Kp` és enorme. *Error a anticipar:* oscil·lació per `Kp` massa gran (limita amb `constrain`).
+
 ## Atenció a la diversitat (DUA)
 
 | Via | Mesura |
@@ -101,6 +115,8 @@
 | **+ Ampliació** (qui va sobrat) | Afegir estats, comparar tot/res vs P, ajustar `Kp`; reptes ⭐ de `Reptes/Reptes_SA6.md`. |
 | **Representació múltiple** | Diagrama de blocs i d'estats, **Serial Plotter** (resposta visual), simulació Wokwi. |
 | **Implicació** | Cada parella tria el procés a controlar i la finestra d'histèresi. |
+
+> ♿ **Accessibilitat (daltonisme):** si uses l'indicador **verd/vermell** d'estat, acompanya'l d'una **pista no cromàtica** (posició, etiqueta ON/OFF, o parpelleig) perquè l'estat no depengui només del color.
 
 ## Treball cooperatiu amb rols
 

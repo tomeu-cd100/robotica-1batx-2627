@@ -15,3 +15,7 @@
 - **Solució orientativa** per al docent (codi) — no es lliura a l'alumnat.
 
 > Durada: 2 h (una sessió). Es permet consultar esquemes i el quadern tècnic propi. Vegeu també `00_LLEGEIX-ME_Avaluacio.md` i les rúbriques a [`../Programació didàctica/07_Rubriques.md`](../Programació%20didàctica/07_Rubriques.md).
+
+## Qualificació per competències
+
+Per traduir criteris (CA), rúbriques (R) i ponderacions (45/25/20/10) en notes, usa el **[`Full_qualificacio_competencies.md`](Full_qualificacio_competencies.md)**: inclou l'escala NA/AS/AN/AE → nota, el mapa CA↔rúbrica↔SA i un full de seguiment per alumne/a i trimestre.

@@ -23,7 +23,7 @@
 
 ## Mètode de projecte i continuïtat
 - **Cicle de treball** (com a tot el curs): *analitzar → dissenyar → prototipar → provar → millorar* (vegeu SA1). El **producte** n'és el recorregut complet i el **quadern tècnic** el documenta.
-- **Lectura de codi amb PRIMM:** a cada *modelatge* l'alumnat **prediu** què farà el sketch **abans** d'executar-lo, després l'**investiga**, el **modifica** i en **crea** un de nou.
+- **Lectura de codi amb PRIMM:** a cada *modelatge* l'alumnat **prediu** què farà el sketch **abans** d'executar-lo, després l'**investiga**, el **modifica** i en **crea** un de nou. **Operativa (val per a totes les sessions amb codi):** dedica els primers ~5' del Modelatge a projectar el codi nou **sense executar-lo** i recollir prediccions; només després, executa i investiga.
 - **Pont (d'on venim / on anem):** ve de la **SA2** (sortides/actuadors) → portem a la **SA4** (moviment). Aquí el sistema aprèn a **percebre** (sensors); a la SA4 la percepció **mourà** servos i motors.
 
 ---
@@ -62,6 +62,9 @@
 ---
 
 ## SESSIÓ 4 (2 h) — Producte: alarma/aparcament
+
+> 📋 **Aquesta sessió allotja la prova pràctica trimestral T1** (vegeu `Avaluació/Prova_practica_T1.md` i `Programació didàctica/08_Sequenciacio_temporal_anual.md`): el producte/repte d'aquesta sessió **fa de prova T1** i no afegeix hores extra.
+
 - **Activació (10'):** presentació del repte.
 - **Pràctica (70'):** `04_alarma_aparcament.ino`. Integren ultrasons + LED/piezo amb **avís proporcional a la distància** (com més a prop, més ràpid el so). Cada parella personalitza llindars.
 - **Documentació + defensa (30'):** esquema, codi comentat, mini-defensa.
@@ -90,6 +93,15 @@
 | L'alarma/avís es dispara sol sense cap objecte | `pulseIn` retorna `0` quan no hi ha eco (objecte fora de rang) i `0` cm es llegeix com "molt a prop" | Posar *timeout* a `pulseIn(ECHO, HIGH, 30000)` i tractar el `0` com a "molt lluny" (p. ex. retornar 400). |
 
 ---
+
+## Guió de modelatge (què verbalitzar)
+
+> Frases i preguntes clau per al **Modelatge** de cada sessió (què mirar, què preguntar abans d'executar, error a anticipar).
+
+- **S1 · `01_polsador_debounce` (`INPUT_PULLUP`):** analogia — *el pin està "agafat" a HIGH i prémer l'estira a LOW* (lògica invertida). Pregunta: *"per què, sense antirebot, una sola premuda en compta diverses?"* *Error a anticipar:* sorpresa per la lògica invertida.
+- **S2 · `02_potenciometre_ldr` (`analogRead`, `map()`):** obre el **Monitor Sèrie** i mou el potenciòmetre **en directe** perquè vegin els 0–1023. Pregunta: *"com passo de 0–1023 a 0–255?"* → `map()`. *Error a anticipar:* divisor de tensió de la LDR mal connectat (lectures 0 o 1023).
+- **S3 · `03_ultrasons_funcio` (funcions):** modela **escriure una funció** `mesuraDistancia()` i com **retorna** un valor. Pregunta: *"quin avantatge té encapsular-ho en una funció?"* *Error a anticipar:* TRIG i ECHO intercanviats.
+- **S4 · `04_alarma_aparcament` (integració):** mostra'l com a integració sensor→actuador; pregunta com fer l'**avís proporcional** a la distància.
 
 ## Atenció a la diversitat (DUA)
 

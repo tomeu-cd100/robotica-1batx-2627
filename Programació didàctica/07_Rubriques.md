@@ -53,3 +53,5 @@ Rúbriques reutilitzables amb **quatre nivells d'assoliment**. Conversió orient
 ---
 
 > **Ús:** cada SA indica quines rúbriques s'apliquen al seu producte. Les rúbriques es comparteixen amb l'alumnat **abans** de començar la SA per orientar l'aprenentatge (avaluació formativa).
+>
+> **Nota sobre la R5 (actitud, cooperació i autoregulació):** com que els **rols cooperatius roten** (sovint cada alumne fa cada rol una sola vegada per SA), la R5 es valora **al llarg del trimestre** (acumulant l'observació de diverses sessions i SA), no sessió a sessió. Així la rotació de rols té sentit longitudinal i la valoració és més fiable.

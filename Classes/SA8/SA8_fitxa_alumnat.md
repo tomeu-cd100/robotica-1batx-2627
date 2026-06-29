@@ -30,16 +30,20 @@ Dissenya un sistema IoT del teu entorn (hort, aula, casa...):
 | Què mesura | |
 | Com transmet les dades | |
 | Qui les fa servir | |
+| **Recull alguna dada personal?** (identifica una persona?) | |
+| **Consentiment:** qui ho ha d'autoritzar? | |
 | Un risc de privacitat/seguretat | |
-| Una mesura per reduir-lo | |
+| Una mesura per reduir-lo (minimitzar, xifrar, no conservar…) | |
 
 ## Activitat 3 · Introducció a la IA (S3)
 1. Carrega `03_ia_gestos.py`. Quins gestos classifica? ____________________
 2. Quina diferència hi ha entre **regles fetes a mà** i **aprenentatge automàtic**? ____________
 3. **Repte:** afegeix una classe nova de gest. Quina? __________
-4. **Reflexió ètica:** un benefici i un risc de la IA:
+4. **Biaix:** el teu classificador s'ha provat només amb les **teves** dades. Amb qui podria fallar i per què? ______________________________________________
+5. **Reflexió ètica:** un benefici i un risc de la IA:
    - Benefici: ______________________________________________________
    - Risc: __________________________________________________________
+   - **Consentiment:** si el teu sistema mesurés una persona, com li demanaries permís? ______________________________________________
 
 **Autoavaluació** (marca el teu nivell — NA/AS/AN/AE):
 | Criteri | Nivell |

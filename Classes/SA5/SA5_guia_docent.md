@@ -23,13 +23,16 @@
 
 ## Mètode de projecte i continuïtat
 - **Cicle de treball** (com a tot el curs): *analitzar → dissenyar → prototipar → provar → millorar* (vegeu SA1). El **producte** n'és el recorregut complet i el **quadern tècnic** el documenta.
-- **Lectura de codi amb PRIMM:** també en Python. A cada *modelatge* l'alumnat **prediu** què farà el programa **abans** d'executar-lo (al simulador o a la placa), després l'**investiga**, el **modifica** i en **crea** un de nou.
+- **Lectura de codi amb PRIMM:** també en Python. A cada *modelatge* l'alumnat **prediu** què farà el programa **abans** d'executar-lo (al simulador o a la placa), després l'**investiga**, el **modifica** i en **crea** un de nou. **Operativa (val per a totes les sessions amb codi):** dedica els primers ~5' del Modelatge a projectar el codi nou **sense executar-lo** i recollir prediccions; només després, executa i investiga.
 - **Pont (d'on venim / on anem):** ve de la **SA4** (Arduino/C++) → portem a la **SA6** (control, torna a Arduino). Aquí s'obre el **fil dels dos llenguatges** (C/C++ ↔ Python, criteri **CA1.2**): els mateixos conceptes en dos paradigmes. Es reprendrà a la **SA8**.
 - **Bastida de transició:** **MakeCode** (blocs) com a pont abans del codi Python per a qui ho necessiti.
 
 ---
 
 ## SESSIÓ 1 (2 h) — Primers passos amb MicroPython
+
+> 🔗 **Bastida prèvia (SA0):** abans de començar, deriva l'alumnat que ho necessiti a `Classes/SA0/SA0_guia_programacio.md`, **Part B (MicroPython)** i **Part C (comparativa C++↔Python)**, per amortir el canvi de llenguatge.
+
 - **Activació (10'):** *"La mateixa idea, dos llenguatges: què canviarà respecte d'Arduino?"*
 - **Modelatge (25'):** editor Python de micro:bit. `from microbit import *`, `display.scroll()`, `display.show(Image...)`, botons. **Indentació** com a estructura (vs claus `{}` de C++).
 - **Pràctica guiada (35'):** `01_name_badge.py`; mostren el nom i reaccionen als botons A/B.
@@ -82,6 +85,14 @@
 *(CA1.2 = programar en MicroPython i comparar-ho amb C/C++; CA3.1 = implementar/explicar control bàsic. Vegeu `Programació didàctica/06_Avaluacio_criteris_qualificacio.md`. Comparteix R1 i R4 **abans** de començar.)*
 
 ---
+
+## Guió de modelatge (què verbalitzar)
+
+> Frases i preguntes clau per al **Modelatge** de cada sessió (què mirar, què preguntar abans d'executar, error a anticipar).
+
+- **S1 · `01_name_badge` (sintaxi Python):** èmfasi clau — *en Python la **indentació és sintaxi**, no estètica; no hi ha `;` ni `{}`*. Compara visualment amb un sketch d'Arduino. Usa el **simulador** per provar sense placa. *Error a anticipar:* `IndentationError` per barrejar tabs i espais.
+- **S2 · `02_passes` / `03_nightlight` (sensors integrats):** mostra `display.read_light_level()` i l'acceleròmetre; recalca que cal **filtrar/posar llindar** a les lectures, igual que a Arduino. *Error a anticipar:* el comptapassos compta de més sense antirebot.
+- **S3 · `04_radio_dau` (ràdio):** les dues plaques han de compartir el **mateix `group`**. Demana predir què passa si una placa té un `group` diferent. Tanca completant la **taula comparativa C++↔Python**. *Error a anticipar:* oblidar `radio.on()`.
 
 ## Atenció a la diversitat (DUA)
 

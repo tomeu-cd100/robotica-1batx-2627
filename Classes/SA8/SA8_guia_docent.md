@@ -24,7 +24,7 @@
 
 ## Mètode de projecte i continuïtat
 - **Cicle de treball** (com a tot el curs): *analitzar → dissenyar → prototipar → provar → millorar* (vegeu SA1). El disseny IoT (S2) treballa especialment la fase **analitzar** (requisits, riscos).
-- **Lectura de codi amb PRIMM:** també en Python. A cada *modelatge* l'alumnat **prediu** què farà el programa **abans** d'executar-lo, després l'**investiga**, el **modifica** i en **crea** un de nou.
+- **Lectura de codi amb PRIMM:** també en Python. A cada *modelatge* l'alumnat **prediu** què farà el programa **abans** d'executar-lo, després l'**investiga**, el **modifica** i en **crea** un de nou. **Operativa (val per a totes les sessions amb codi):** dedica els primers ~5' del Modelatge a projectar el codi nou **sense executar-lo** i recollir prediccions; només després, executa i investiga.
 - **Pont (d'on venim / on anem):** ve de la **SA7** (robot mòbil) → portem a la **SA9** (projecte final). Reprèn el **fil dels dos llenguatges** (Python/C++) obert a la **SA5**; les peces d'aquí (dades, connexió, decisió) es poden **integrar** al projecte final.
 
 ---
@@ -56,7 +56,7 @@
 - **Modelatge (30'):** `03_ia_gestos.py`. Recollir dades de l'acceleròmetre i **classificar** gestos (pla, dret, inclinat, sacseig) amb **regles** a partir dels valors. Explicar la diferència entre **regles fetes a mà** i **aprenentatge automàtic (ML)** real.
 - **Pràctica guiada (30'):** proven i ajusten el classificador de gestos.
 - **Repte (30'):** afegir una classe nova o millorar els llindars; **+ repte:** explorar **ML real** amb l'extensió de MakeCode "Code & AI" / ML (recollir mostres i entrenar).
-- **Reflexió ètica + tancament (20'):** biaixos, dades i usos responsables de la IA.
+- **Reflexió ètica + tancament (20'):** biaixos, dades i usos responsables de la IA. Usa el marc de la secció **"Ètica de dades i IA"** (RGPD, biaix, consentiment) i una de les seves preguntes de mini-debat.
 
 **Punt clau:** una "IA" pot ser tan simple com un conjunt de **regles** sobre dades; el **ML** aprèn les regles a partir d'exemples. Tots dos depenen de **bones dades**.
 
@@ -73,6 +73,22 @@
 
 *(CA3.1 = control/decisió; CA4.2 = integrar tecnologies emergents (IoT/telemetria/IA) en un sistema de control. Vegeu `Programació didàctica/06_Avaluacio_criteris_qualificacio.md`. Comparteix R1, R3 i R4 **abans** de començar.)*
 
+## Ètica de dades i IA (RGPD, biaix, consentiment)
+
+> Marc breu per a la **Sessió 2 (riscos)** i la **Sessió 3 (reflexió IA)**. Concreta la **CA5.3** (valorar l'impacte ètic/social). No cal teoria jurídica: es tracta que l'alumnat sàpiga **fer-se les preguntes correctes** sobre les dades que recull el seu sistema.
+
+**Tres idees clau (per verbalitzar):**
+1. **Privadesa i RGPD (idea, no llei):** una **dada personal** és tota informació que identifica una persona (ubicació, hàbits, salut…). Principis aplicables a un projecte: **minimització** (recull només el que necessites), **finalitat** (per a què serveix), **conservació** (no la guardis per sempre) i **seguretat** (xifratge, accés restringit). Pregunta de control: *"el meu sensor mesura alguna cosa que identifiqui una persona?"*
+2. **Biaix:** un sistema d'IA **aprèn de les dades** que li dones; si les dades són esbiaixades, les decisions ho seran. Exemple proper: un classificador de gestos entrenat només amb dades d'unes mans pot fallar amb altres. Mantra: *"garbage in, garbage out"* — **bones dades = bones decisions**.
+3. **Consentiment:** abans de mesurar o enregistrar algú, **cal que ho sàpiga i hi estigui d'acord**. Pregunta: *"qui ha dit que sí a ser mesurat pel meu sistema?"*
+
+**Mini-debat (tria'n una, 5–10'):**
+- Un timbre intel·ligent grava qui passa pel carrer. És acceptable? On és el límit?
+- Una app de salut ven les teves dades de passes a una asseguradora. Què hauria de canviar?
+- Un assistent de veu falla més amb certs accents. De qui és la responsabilitat i com es corregiria?
+
+> **Connexió ODS/ciutadania digital:** ODS 11 (ciutats intel·ligents **i** respectuoses amb la privadesa) i ODS 16 (institucions, drets). La reflexió escrita del producte (R4) ha d'incloure **un risc de dades concret** i **una mesura per reduir-lo**.
+
 ## Errors freqüents
 | Error | Causa | Solució |
 |---|---|---|
@@ -82,6 +98,14 @@
 | ESP32 no connecta al WiFi | Credencials/2,4 GHz | Revisar SSID/clau; xarxa de 2,4 GHz. |
 
 ---
+
+## Guió de modelatge (què verbalitzar)
+
+> Frases i preguntes clau per al **Modelatge** de cada sessió (què mirar, què preguntar abans d'executar, error a anticipar).
+
+- **S1 · `01/02_telemetria` (emissor/receptor):** mostra el parell `radio.send()` / `radio.receive()` i com **registrar pel port sèrie** (per fer-ne després un gràfic). Recalca el **mateix `group`** a les dues plaques. *Error a anticipar:* dades barrejades per no etiquetar-les (`"T:23"`).
+- **S2 · IoT (disseny, sense codi):** dibuixa l'arquitectura **dispositiu → xarxa → núvol → app**. Pregunta pels **riscos**: *"qui té aquestes dades? què passa si algú les intercepta?"*. *Error a anticipar:* veure l'IoT com a "màgia" sense riscos.
+- **S3 · `03_ia_gestos` (IA):** distingeix **regles fetes a mà** vs **aprenentatge automàtic (ML)**. Insisteix: cal **mesurar valors reals** abans de fixar llindars. Tanca amb **biaix i ètica** de les dades. *Error a anticipar:* fixar llindars "a ull" sense mesurar.
 
 ## Atenció a la diversitat (DUA)
 

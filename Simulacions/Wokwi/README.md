@@ -51,6 +51,18 @@ Pins habituals: LED `A` (ànode) / `C` (càtode) · resistència `1` / `2` · Ar
 
 > ⚠️ **Limitació de Wokwi descoberta (2026-06-28): no simula el BBC micro:bit amb MicroPython.** Les úniques plaques que executen MicroPython a Wokwi són Raspberry Pi Pico i ESP32. Per tant, les pràctiques de **SA5** i la **part de gestos de SA8** (micro:bit) **no es poden portar a Wokwi**; es queden amb els diagrames i el codi a `Classes/`. Per a SA8 sí que es porta la pràctica **IoT amb ESP32** (`04_esp32_telemetria`), adaptada a la xarxa simulada `Wokwi-GUEST`.
 
+## Pla B quan no hi ha Wokwi (ni maquinari)
+
+Per a les pràctiques que **no** es poden portar a Wokwi, alternatives de simulació o demostració perquè el pla B del curs sigui fiable:
+
+| SA / part | Alternativa |
+|---|---|
+| **SA5 micro:bit** | **Simulador oficial** a [python.microbit.org](https://python.microbit.org) — executa el codi al navegador i mostra la matriu LED, els botons i els sensors (sense placa). Alternativa: **Open Roberta Lab**. |
+| **SA8 part micro:bit (gestos)** | Mateix **simulador** python.microbit.org per provar `03_ia_gestos.py` (acceleròmetre/gestos simulables amb el ratolí). |
+| **SA7 Imagina 3dBot** | No simulable: **demo projectada** del robot real, **vídeo** de les iteracions, o traçar la lògica sobre el **diagrama de decisió**; el repte de pista es fa amb el robot físic en equips. |
+
+> ⚠️ **La ràdio (SA5/SA8) no es prova amb un sol simulador** (cal comunicació *entre* plaques): per a la part de ràdio calen **dues plaques reals** o una **demostració del docent**. El simulador serveix per a la lògica de cada placa per separat.
+
 ## Estat de l'escalat
 - **Fet i publicat (públic):** SA1, SA2, SA3, SA4, SA6, SA8 (ESP32). → 6 projectes amb enllaç interactiu.
-- **No aplicable:** SA5 i SA7 (no simulables a Wokwi).
+- **No aplicable a Wokwi (amb pla B a la taula de dalt):** SA5 i SA7 (i la part micro:bit de SA8).
