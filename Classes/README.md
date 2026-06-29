@@ -6,7 +6,8 @@ Material llest per a l'aula de cada situació d'aprenentatge (**SA1-SA9**), amb 
 
 Cada subcarpeta `SAx/` conté, segons la SA:
 - **`SAx_guia_docent.md`** — desenvolupament de la sessió per al professorat.
-- **`SAx_fitxa_alumnat.md`** — fitxa de treball de l'alumnat.
+- **`SAx_fitxa_alumnat.md`** — **fitxa base** (nucli d'una cara, per a tot l'alumnat).
+- **`SAx_fitxa_ampliada.md`** — **versió ampliada** (aprofundiment): rutines i ampliacions per a qui vulgui/pugui més.
 - **`SAx_esquemes_connexions.md`** / **`SAx_connexions.md`** — esquemes de muntatge.
 - **`codi/`** — programes `.ino` (Arduino) o `.py` (micro:bit/MicroPython).
 

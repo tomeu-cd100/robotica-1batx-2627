@@ -2,7 +2,8 @@
 
 Material llest per a l'aula, organitzat per situació d'aprenentatge (SA). Cada SA conté:
 - **Guia docent** (`SAx_guia_docent.md`): seqüència sessió a sessió, punts clau i errors freqüents.
-- **Fitxa d'alumnat** (`SAx_fitxa_alumnat.md`): activitats, reptes i quadern tècnic.
+- **Fitxa base** (`SAx_fitxa_alumnat.md`): el **nucli d'una cara** que fa tot l'alumnat — activitats nuclears, repte, producte, DEPURA, autoavaluació i quadern.
+- **Fitxa ampliada** (`SAx_fitxa_ampliada.md`): **versió d'aprofundiment** amb totes les rutines (rols, coavaluació, exit ticket, ODS, pensament computacional) i ampliacions.
 - **Esquemes** (`SAx_esquemes_connexions.md`): taules de connexió pin-a-pin (reproduïbles a Tinkercad/Wokwi). *(SA2 i SA3.)*
 - **Codi** (`codi/*.ino`): sketches comentats, oberts directament a l'Arduino IDE.
 

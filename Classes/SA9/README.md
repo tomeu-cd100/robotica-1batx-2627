@@ -7,7 +7,8 @@ Novena i última situació d'aprenentatge (**10 h · 5 sessions**, 3r trimestre)
 | Fitxer | Descripció |
 |---|---|
 | `SA9_guia_docent.md` | Guia del professorat: sentit, 5 sessions per fases, rols, mapa d'avaluació i gestió de projecte. |
-| `SA9_fitxa_alumnat.md` | Fitxa-quadern de l'equip (repte, rols, disseny, planificació, iteracions, defensa). |
+| `SA9_fitxa_alumnat.md` | **Fitxa base** de l'equip: repte, rols, disseny, planificació, iteracions, defensa, checklist. |
+| `SA9_fitxa_ampliada.md` | **Versió ampliada**: guió complet + rutines (coavaluació, exit ticket final, PC). |
 | `plantilles/` | Plantilles de treball (vegeu la taula següent). |
 
 ### Plantilles (`plantilles/`)

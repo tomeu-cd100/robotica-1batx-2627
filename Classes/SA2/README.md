@@ -7,7 +7,8 @@ Segona situació d'aprenentatge (**8 h · 4 sessions**, 1r trimestre). Es passa 
 | Fitxer | Descripció |
 |---|---|
 | `SA2_guia_docent.md` | Guia del professorat: objectius, 4 sessions, mètode de projecte, mapa d'avaluació i errors freqüents. |
-| `SA2_fitxa_alumnat.md` | Fitxa de treball de l'alumnat (Activitats 1-4 + quadern). |
+| `SA2_fitxa_alumnat.md` | **Fitxa base** (nucli d'una cara, per a tot l'alumnat): Activitats 1-4 + quadern. |
+| `SA2_fitxa_ampliada.md` | **Versió ampliada** (aprofundiment): totes les rutines (rols, coavaluació, exit ticket, ODS, PC) i ampliacions. |
 | `SA2_esquemes_connexions.md` | Esquemes i connexions de tots els circuits (LED, semàfor, fade, RGB, panell). |
 | `codi/` | Sketches d'Arduino (vegeu la taula següent). |
 
