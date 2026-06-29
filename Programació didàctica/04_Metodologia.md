@@ -14,11 +14,15 @@ La matèria adopta un **enfocament competencial** basat en **situacions d'aprene
 
 | Fase | Temps | Descripció |
 |---|---|---|
+| **0. Arrencada i preparació** | 5-10' | Repartiment i recompte de kits, encesa d'ordinadors, obrir l'IDE/simulador, seleccionar placa/port. **No es pot ometre:** és temps real d'aula. |
 | **Activació** | 10' | Repte o pregunta inicial; recuperació del que se sap. |
-| **Modelatge** | 20' | El docent mostra el concepte/codi clau (live coding). |
-| **Pràctica guiada** | 40' | L'alumnat replica i modifica en parelles. |
-| **Pràctica autònoma / repte** | 40' | Repte obert que aplica el concepte. |
+| **Modelatge (amb PRIMM)** | 20' | El docent mostra el concepte/codi clau (live coding). **Predir abans d'executar:** projecta el codi nou **sense executar-lo** i recull prediccions (~5') *abans* d'investigar-lo. |
+| **Pràctica guiada** | 30-40' | L'alumnat replica i modifica en parelles. |
+| **Pràctica autònoma / repte** | 30-40' | Repte obert que aplica el concepte. El **"+ repte"** fa de marge: s'escurça si la sessió va justa. |
 | **Tancament i registre** | 10' | Posada en comú, autoavaluació i **quadern tècnic** (*logbook*). |
+| **Recollida** | 5' | Desconnexió segura, recompte i ordre del material. |
+
+> ⏱️ **Temps realista (important per a la planificació):** la suma de les fases nuclears és de ~110-120', però **l'arrencada i la recollida (15-20') són temps real** que sovint no es pressuposta. El temps lectiu efectiu d'una sessió de 2 h és de ~95-105'. Per no quedar endarrerit: tracta el **registre del quadern com a distribuït** (2-3' després del modelatge i del repte, no tot al final) i considera el **"+ repte" com a marge**, no com a obligatori.
 
 ## 4.3. Agrupaments
 

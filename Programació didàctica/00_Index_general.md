@@ -21,6 +21,7 @@
 | 07 | `07_Rubriques.md` | Rúbriques d'avaluació reutilitzables. |
 | 08 | `08_Sequenciacio_temporal_anual.md` | Seqüenciació de les 9 situacions d'aprenentatge. |
 | 09 | `09_Materials_recursos_per_unitat.md` | Mapatge del maquinari disponible a cada unitat. |
+| 09b | `09b_Guia_compra_pressupost.md` | Llista de compra i pressupost orientatiu per engegar des de zero. |
 | 10-18 | `10_SA1...` → `18_SA9...` | Les 9 situacions d'aprenentatge (unitats) desenvolupades. |
 
 ---

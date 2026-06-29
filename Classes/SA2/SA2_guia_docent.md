@@ -24,7 +24,7 @@
 
 ## Mètode de projecte i continuïtat
 - **Cicle de treball** (com a tot el curs): *analitzar → dissenyar → prototipar → provar → millorar* (vegeu SA1). El **producte** de la SA n'és el recorregut complet i el **quadern tècnic** el documenta.
-- **Lectura de codi amb PRIMM:** a cada *modelatge* l'alumnat **prediu** què farà el sketch **abans** d'executar-lo, després l'**investiga**, el **modifica** i en **crea** un de nou. Predir abans de provar consolida la comprensió.
+- **Lectura de codi amb PRIMM:** a cada *modelatge* l'alumnat **prediu** què farà el sketch **abans** d'executar-lo, després l'**investiga**, el **modifica** i en **crea** un de nou. Predir abans de provar consolida la comprensió. **Operativa (val per a totes les sessions amb codi):** dedica els primers ~5' del Modelatge a projectar el codi nou **sense executar-lo** i recollir prediccions; només després, executa i investiga.
 - **Pont (d'on venim / on anem):** ve de la **SA1** (parpelleig d'un LED) → portem a la **SA3** (entrades i sensors). Aquí el sistema **actua** (sortides); a la SA3 aprendrà a **percebre** (entrades).
 
 ---
@@ -91,6 +91,15 @@
 
 ---
 
+## Guió de modelatge (què verbalitzar)
+
+> Frases i preguntes clau per al **Modelatge** de cada sessió (què mirar, què preguntar abans d'executar, error a anticipar).
+
+- **S1 · `01_led_basic` (constants):** mostra per què `const int LED = 8;` és millor que escriure `8` per tot arreu. Pregunta: *"si moc el LED al pin 7, quantes línies he de canviar?"* *Error a anticipar:* oblidar `pinMode(LED, OUTPUT)`.
+- **S2 · `02_semafor` (`for`/`if`):** recorre el `loop()` en veu alta com una **recepta seqüencial**. Demana **predir l'ordre** d'encesa abans d'executar. Verbalitza: *`delay()` bloqueja — mentre espera, no passa res més*. *Error a anticipar:* esperar que els LED canviïn alhora.
+- **S3 · `03_fade_pwm` / `04_rgb` (PWM, `map()`):** contrasta `digitalWrite` (0/1) amb `analogWrite` (**0–255**). Demana predir què fa el valor **128**. Mantra: *PWM només als pins `~`*. *Error a anticipar:* barrejar el rang 0–1023 (lectura) amb 0–255 (PWM).
+- **S4 · `05_panell` (integració):** no facis codi nou; mostra'l com a **integració** i pregunta com combinarien estat (RGB) + avís (piezo) + càrrega (relé).
+
 ## Atenció a la diversitat (DUA)
 
 | Via | Mesura |
@@ -99,6 +108,8 @@
 | **+ Ampliació** (qui va sobrat) | Fase nocturna, semàfor de vianants, arc de Sant Martí RGB; reptes ⭐ de `Reptes/Reptes_SA2.md`. |
 | **Representació múltiple** | Esquema de connexions, **simulació Wokwi** (semàfor), codi comentat. |
 | **Implicació** | Cada parella tria estats i colors del seu panell i quin repte amplia. |
+
+> ♿ **Accessibilitat (daltonisme):** el semàfor i el LED RGB es basen en el **color**. Afegeix una **pista no cromàtica**: posició fixa dels LED (a dalt/al mig/a baix), una etiqueta, o un **patró de parpelleig** diferent per estat. Així el sistema és llegible també per a l'alumnat amb daltonisme.
 
 ## Treball cooperatiu amb rols
 

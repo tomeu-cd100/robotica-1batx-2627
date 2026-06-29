@@ -7,6 +7,7 @@ Marc: **Decret 150/2017** (atenció educativa en un sistema inclusiu) i Decret 1
 - **Activitats multinivell:** cada pràctica té un **nucli obligatori** + **reptes d'ampliació** (marcats com a *"+ repte"*).
 - **Bastides (scaffolding):** codi base comentat, plantilles de circuit, fragments (*snippets*) i diagrames de flux.
 - **Doble via de representació:** explicació + esquema visual + simulació (Tinkercad/Wokwi) abans del muntatge físic.
+- **No confiïs només en el color:** quan un LED o indicador codifica informació (semàfor, verd/vermell, RGB), afegeix una **pista redundant** (posició fixa, etiqueta, nombre de parpellejos o símbol) perquè sigui accessible a l'alumnat amb **daltonisme** (~1 de cada 12 nois). És, a més, bona pràctica d'enginyeria (no fer dependre un senyal d'un sol canal).
 - **Parelles heterogènies** amb rols rotatius (*pair programming*).
 - **Exemples model** i rúbriques compartides des de l'inici (l'alumnat sap què s'espera).
 - **Avaluació contínua i formativa** amb retorn freqüent.

@@ -23,7 +23,7 @@
 
 ## Mètode de projecte i continuïtat
 - **Cicle de treball** (com a tot el curs): *analitzar → dissenyar → prototipar → provar → millorar* (vegeu SA1). El **producte** n'és el recorregut complet i el **quadern tècnic** el documenta.
-- **Lectura de codi amb PRIMM:** a cada *modelatge* l'alumnat **prediu** què farà el sketch **abans** d'executar-lo, després l'**investiga**, el **modifica** i en **crea** un de nou.
+- **Lectura de codi amb PRIMM:** a cada *modelatge* l'alumnat **prediu** què farà el sketch **abans** d'executar-lo, després l'**investiga**, el **modifica** i en **crea** un de nou. **Operativa (val per a totes les sessions amb codi):** dedica els primers ~5' del Modelatge a projectar el codi nou **sense executar-lo** i recollir prediccions; només després, executa i investiga.
 - **Pont (d'on venim / on anem):** ve de la **SA3** (sensors) → portem a la **SA5** (micro:bit + MicroPython, **canvi de plataforma i llenguatge**). El control sensor→moviment d'aquí és la llavor del **control** (SA6) i la **robòtica mòbil** (SA7).
 
 ---
@@ -90,6 +90,15 @@
 
 ---
 
+## Guió de modelatge (què verbalitzar)
+
+> Frases i preguntes clau per al **Modelatge** de cada sessió (què mirar, què preguntar abans d'executar, error a anticipar).
+
+- **S1 · `01_servo_potenciometre` (servo):** distingeix **servo** (controla *posició*/angle 0–180°) de **motor DC** (gir continu). Demana predir on anirà `write(90)`. Avís: *si mous diversos servos, alimentació externa*. *Error a anticipar:* el servo vibra per alimentació insuficient.
+- **S2 · `02_motor_pont_h` (pont H):** dibuixa la **taula IN1/IN2** per a cada sentit i assenyala **ENA = velocitat (PWM)**. Repeteix com un mantra: *MASSA COMUNA, mai el motor des del 5V*. *Error a anticipar:* l'Arduino es reinicia pel pic de corrent del motor.
+- **S3 · `03_sensor_velocitat` (percepció→acció):** mostra com `map()` converteix **distància → velocitat**. Pregunta: *"què ha de passar a la distància mínima de seguretat?"*
+- **S4 · `04_barrera_automatica` (integració):** mostra'l com a integració; pregunta com personalitzarien temps i angles.
+
 ## Atenció a la diversitat (DUA)
 
 | Via | Mesura |
@@ -111,6 +120,12 @@ Parelles amb **rols rotatius**: Coordinador/a · Programador/a · Enginyer/a de 
 ## Avaluació formativa (instruments)
 
 - **Diana d'autoavaluació** (fitxa) · **Coavaluació** "2 estrelles i un desig" · **Exit ticket** de tancament.
+
+## Referent (coeducació)
+
+> **Cynthia Breazeal** — enginyera del MIT, pionera de la **robòtica social** (robots que es mouen i interaccionen per comunicar-se, com Kismet i Jibo).
+>
+> *Connexió amb la SA:* el moviment controlat (servos, motors) no només **desplaça** —també **expressa i assisteix** (robòtica assistencial, ODS 10)—. Pregunta: *quins moviments fan que un robot sembli "viu" o proper?*
 
 ## Context real i ODS
 

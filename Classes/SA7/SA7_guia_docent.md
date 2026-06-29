@@ -27,7 +27,7 @@ La **Imagina 3dBot** és Arduino-compatible, però **els pins dels motors depene
 
 ## Mètode de projecte i continuïtat
 - **Cicle de treball** (com a tot el curs): *analitzar → dissenyar → prototipar → provar → millorar* (vegeu SA1). Aquí la fase **provar → millorar** és central: el repte de pista s'**itera** mesurant temps i errors.
-- **Lectura de codi amb PRIMM:** a cada *modelatge* l'alumnat **prediu** què farà el robot **abans** d'executar-lo, després l'**investiga**, el **modifica** i en **crea** un de nou.
+- **Lectura de codi amb PRIMM:** a cada *modelatge* l'alumnat **prediu** què farà el robot **abans** d'executar-lo, després l'**investiga**, el **modifica** i en **crea** un de nou. **Operativa (val per a totes les sessions amb codi):** dedica els primers ~5' del Modelatge a projectar/llegir el codi nou **sense executar-lo** i recollir prediccions del comportament del robot; només després, executa i investiga.
 - **Pont (d'on venim / on anem):** ve de la **SA6** (control: llaç tancat i màquines d'estats) → portem a la **SA8** (IoT i IA). L'evita-obstacles i el seguidor de línia són **control en llaç tancat** (SA6) aplicat al moviment.
 
 ---
@@ -95,6 +95,15 @@ La **Imagina 3dBot** és Arduino-compatible, però **els pins dels motors depene
 
 ---
 
+## Guió de modelatge (què verbalitzar)
+
+> Frases i preguntes clau per al **Modelatge** de cada sessió (què mirar, què preguntar abans d'executar, error a anticipar).
+
+- **S1 · `01_moviment_basic` (cinemàtica diferencial):** **AVÍS previ:** ajusta els **pins del model** abans de pujar res. Explica el gir amb les mans (dues rodes): *mateixa velocitat = recte; diferent = gir*. Demana predir què fa amb una roda més ràpida. *Error a anticipar:* no va recte per motors desiguals (cal calibrar).
+- **S2 · `02_trajectoria_quadrat`:** el gir **per temps** és imprecís (depèn de bateria i superfície). Demana **mesurar l'error** del gir de 90° i calibrar. *Error a anticipar:* esperar precisió del control per temps.
+- **S3 · `03_evita_obstacles`:** és **percepció → decisió → acció** (llaç tancat, SA6). Demana predir l'estratègia quan detecta un obstacle. *Error a anticipar:* estratègia massa simple → es queda encallat.
+- **S4 · `04_seguidor_linia`:** calibra el **llindar dels sensors IR** segons la pista. Demana **iterar mesurant el temps** de volta. *Error a anticipar:* no detecta la línia per alçada/llindar mal ajustats.
+
 ## Atenció a la diversitat (DUA)
 
 | Via | Mesura |
@@ -117,6 +126,12 @@ Equips amb **rols rotatius**: Coordinador/a (estratègia) · Programador/a · En
 
 - **Diana d'autoavaluació** (fitxa) · **Coavaluació** entre equips (demostració) · **Exit ticket** de tancament.
 - El **registre d'iteracions** (temps de volta per intent) és en si mateix avaluació formativa del cicle provar→millorar.
+
+## Referent (coeducació)
+
+> **Daniela Rus** — directora del CSAIL del MIT, referent mundial en **robòtica mòbil i autònoma** i sistemes distribuïts (eixams de robots, vehicles autònoms).
+>
+> *Connexió amb la SA:* és exactament el que feu aquí —fer que un robot es mogui i **decideixi sol**—, a escala de recerca. Pregunta: *quins reptes té un vehicle autònom que el vostre seguidor de línia ja insinua?*
 
 ## Context real i ODS
 

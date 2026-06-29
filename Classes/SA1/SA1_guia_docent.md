@@ -133,6 +133,14 @@ A la SA1 hem fet **parpellejar un LED** (una sortida digital senzilla). A la **S
 
 ---
 
+## Guió de modelatge (què verbalitzar)
+
+> Frases i preguntes clau per al **Modelatge** de cada sessió. Pensat perquè el docent **afegeixi valor encara que no improvisi codi**: el que cal mirar, què preguntar (predicció) i l'error que cal anticipar.
+
+- **S1 · Entrada–Procés–Sortida:** dibuixa 3 caixes (SENSOR → CERVELL → ACTUADOR). Per a cada exemple pregunta *"què percep? què decideix? què fa?"* — **no donis tu la resposta**, que la classe ompli les caixes. *Error a anticipar:* confondre entrada (sensor) amb sortida (actuador).
+- **S2 · La placa:** assenyala **físicament** cada part abans d'etiquetar-la. Mantra: *pins amb `~` = PWM; A0–A5 = entrades analògiques*. Pregunta: *"un LED, a quin tipus de pin el connectaries?"* *Error a anticipar:* confondre 5V amb GND.
+- **S3 · Blink (PRIMM):** projecta `blink.ino` **sense pujar-lo**. Pregunta: *"què farà? i si canvio el 1000 per 100?"*. Llegeix en veu alta `setup()` (s'executa **un cop**) vs `loop()` (**per sempre**); verbalitza que `delay` és en **mil·lisegons**. *Error a anticipar:* creure que `setup()` es repeteix.
+
 ## Atenció a la diversitat
 
 | Necessitat | Mesura |
@@ -171,6 +179,12 @@ L'alumnat treballa en parella amb **rols rotatius** (un canvi per sessió) perqu
 - **Diana d'autoavaluació** (fitxa): posicionament en 3 criteris clau.
 - **Coavaluació** ("2 estrelles i un desig"): cada parella valora el pòster d'una altra.
 - **Exit ticket** (fitxa): 3 preguntes de tancament; recull-les per ajustar la sessió següent.
+
+## Referent (coeducació)
+
+> **Carme Torras** (Barcelona, 1956) — investigadora en **robòtica assistencial** a l'Institut de Robòtica i Informàtica Industrial (IRI, CSIC-UPC) i pionera a connectar robòtica i **ètica**; també escriu ciència-ficció sobre l'impacte social de la tecnologia.
+>
+> *Connexió amb la SA:* uneix els dos fils d'aquesta unitat —què és un robot i quins **dilemes ètics** planteja—. Pregunta a la classe: *per què una experta en robots hi dedica temps a pensar-ne l'ètica?*
 
 ## Context real i ODS
 
