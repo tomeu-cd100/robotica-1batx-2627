@@ -1,18 +1,21 @@
 # SA8 · Guia docent — IoT i IA: el robot connectat i intel·ligent
 
 **Durada:** 6 h (3 sessions) · **Maquinari:** micro:bit (ràdio) + Micro:shield · **ESP32 (WiFi) opcional** · **Llenguatge:** MicroPython (Python) / C++ (ESP32)
-**Referència:** `Programació didàctica/17_SA8_IoT_IA.md` · **Connexions:** `SA8_connexions.md`
+**Referència:** `Programació didàctica/17_SA8_IoT_IA.md` · **Connexions:** `SA8_connexions.md` · **Marc d'IA del curs:** `../00_IA_a_la_materia.md`
+
+> 🤖 **Aquesta és la SA on culmina la IA.** Arriba aquí com a **pas natural** (el sistema ja percep i actua → ara **decideix amb dades**), després de les llavors sembrades a SA1/SA3/SA6/SA7. Repassa el marc de conjunt a **`../00_IA_a_la_materia.md`** (espiral, marc conceptual mínim i ús d'assistents d'IA amb integritat).
 
 ## Objectius de la SA
 1. Enviar i monitorar **dades de sensors** entre dispositius (telemetria).
 2. Comprendre el concepte d'**Internet de les coses** i les seves aplicacions/riscos.
-3. Introduir-se a la **IA**: classificar gestos/patrons amb dades de sensor.
-4. Valorar **privacitat, seguretat i ètica** de les dades (ODS).
+3. Introduir-se a la **IA**: distingir **regles fetes a mà** d'**aprenentatge automàtic (ML)** i **entrenar** un classificador amb exemples.
+4. Valorar **privacitat, seguretat, biaix i ètica** de les dades (ODS) i fer un **ús responsable** d'assistents d'IA.
 
 ## Material per parella/equip
 - 2 micro:bit (emissor i receptor) + cables USB.
 - (Opcional) ESP32 per a la demostració WiFi/MQTT.
 - Editor Python de micro:bit / Thonny.
+- **Sessió 3 (ML):** 1 ordinador/tauleta amb **navegador i càmera/micròfon** per parella (Teachable Machine). *Pla B: demostració projectada del docent.*
 
 ## Codi de suport (`codi/`)
 | Fitxer | Contingut |
@@ -51,14 +54,14 @@
 
 ---
 
-## SESSIÓ 3 (2 h) — Introducció a la IA
+## SESSIÓ 3 (2 h) — Introducció a la IA: de les regles a l'aprenentatge
 - **Activació (10'):** *"Com pot un sistema 'reconèixer' un gest o decidir per si sol?"*
-- **Modelatge (30'):** `03_ia_gestos.py`. Recollir dades de l'acceleròmetre i **classificar** gestos (pla, dret, inclinat, sacseig) amb **regles** a partir dels valors. Explicar la diferència entre **regles fetes a mà** i **aprenentatge automàtic (ML)** real.
-- **Pràctica guiada (30'):** proven i ajusten el classificador de gestos.
-- **Repte (30'):** afegir una classe nova o millorar els llindars; **+ repte:** explorar **ML real** amb l'extensió de MakeCode "Code & AI" / ML (recollir mostres i entrenar).
-- **Reflexió ètica + tancament (20'):** biaixos, dades i usos responsables de la IA. Usa el marc de la secció **"Ètica de dades i IA"** (RGPD, biaix, consentiment) i una de les seves preguntes de mini-debat.
+- **Modelatge (25'):** `03_ia_gestos.py`. Recollir dades de l'acceleròmetre i **classificar** gestos (pla, dret, inclinat, sacseig) amb **regles** a partir dels valors. Explicar la diferència entre **regles fetes a mà** i **aprenentatge automàtic (ML)** real (vegeu el marc de `../00_IA_a_la_materia.md` §4).
+- **Pràctica guiada (25'):** proven i ajusten el classificador per **regles**.
+- **De regles a ML real (35'):** fes el salt amb la **pràctica de Teachable Machine** (`SA8_practica_teachable_machine.md`): l'alumnat **recull exemples**, **entrena** un classificador (imatge/so/postura), el **prova** i el **trenca a propòsit** per veure'n els límits. *(Sense maquinari extra; Pla B amb demostració projectada — vegeu la pràctica.)* **Alternativa amb la placa:** extensió **ML/"AI" de MakeCode** per a micro:bit (recollir mostres de moviment i entrenar).
+- **Reflexió ètica + tancament (15'):** biaixos, dades i usos responsables de la IA. Usa el marc de la secció **"Ètica de dades i IA"** (RGPD, biaix, consentiment) i una de les seves preguntes de mini-debat.
 
-**Punt clau:** una "IA" pot ser tan simple com un conjunt de **regles** sobre dades; el **ML** aprèn les regles a partir d'exemples. Tots dos depenen de **bones dades**.
+**Punt clau:** una "IA" pot ser tan simple com un conjunt de **regles** sobre dades; el **ML** **aprèn** les regles a partir d'**exemples** (dades d'entrenament). Tots dos depenen de **bones dades**: *garbage in, garbage out*.
 
 **Producte:** sistema connectat que recull/transmet dades (telemetria) **o** classifica un gest/patró amb IA, + **reflexió escrita** sobre ètica i privacitat.
 **Avaluació:** rúbriques **R1** (codi), **R3** (sistema/decisió), **R4** (documentació/reflexió).
@@ -112,7 +115,7 @@
 | Via | Mesura |
 |---|---|
 | **Bastida** (qui s'encalla) | Donar emissor i receptor ja fets per modificar-los; **simulador** micro:bit i Wokwi (ESP32); equips heterogenis. |
-| **+ Ampliació** (qui va sobrat) | Dues magnituds etiquetades, alerta per llindar, classe nova de gest, ML real amb MakeCode; reptes ⭐ de `Reptes/Reptes_SA8.md`. |
+| **+ Ampliació** (qui va sobrat) | Dues magnituds etiquetades, alerta per llindar, classe nova de gest, **ML real** (Teachable Machine: exportar model; o MakeCode ML); reptes ⭐ de `Reptes/Reptes_SA8.md`. |
 | **Representació múltiple** | Dades en taula i gràfic, diagrama d'arquitectura IoT, simuladors. |
 | **Implicació** | Cada equip tria el sistema IoT del seu entorn (hort, aula, casa). |
 

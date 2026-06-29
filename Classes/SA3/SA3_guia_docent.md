@@ -125,6 +125,16 @@ Parelles amb **rols rotatius** (un canvi per sessió): Coordinador/a · Programa
 
 - **Diana d'autoavaluació** (fitxa) sobre 3 criteris clau · **Coavaluació** "2 estrelles i un desig" · **Exit ticket** de tancament.
 
+## Connexió amb la IA (llavor)
+
+> Llavor conceptual de **2–3'** (eix A del curs; vegeu `../00_IA_a_la_materia.md`). No consumeix sessió.
+
+Aquí l'alumnat escriu **regles fetes a mà** sobre dades de sensor: `if distancia < 20: alarma`. **Això és la base de la IA per classificació.** Pregunta per plantar la llavor:
+
+> *"I si en lloc d'escriure tu el llindar, el sistema l'aprengués sol mirant molts exemples? Això és l'**aprenentatge automàtic**, i ho veurem a la SA8."*
+
+**Idea clau:** un **llindar** és una **regla** que decideix una categoria a partir d'un valor → és el precursor d'un **classificador**. Connecta el `analogRead`/`if` d'avui amb el *"dades → decisió"* de la IA.
+
 ## Context real i ODS
 
 - **Context:** llum automàtica, sensors d'estalvi, aparcaments intel·ligents.
