@@ -7,7 +7,8 @@ Quarta situació d'aprenentatge (**8 h · 4 sessions**, 2n trimestre). El sistem
 | Fitxer | Descripció |
 |---|---|
 | `SA4_guia_docent.md` | Guia del professorat: objectius, 4 sessions, mètode de projecte, mapa d'avaluació i errors freqüents. |
-| `SA4_fitxa_alumnat.md` | Fitxa de treball de l'alumnat (Activitats 1-4 + quadern). |
+| `SA4_fitxa_alumnat.md` | **Fitxa base** (nucli d'una cara, per a tot l'alumnat): Activitats 1-4 + quadern. |
+| `SA4_fitxa_ampliada.md` | **Versió ampliada** (aprofundiment): totes les rutines (rols, coavaluació, exit ticket, ODS, PC) i ampliacions. |
 | `SA4_esquemes_connexions.md` | Esquemes i connexions (servo, L298N, massa comuna, alimentació externa). |
 | `codi/` | Sketches d'Arduino (vegeu la taula següent). |
 

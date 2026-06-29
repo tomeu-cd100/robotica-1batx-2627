@@ -9,7 +9,8 @@ Setena situació d'aprenentatge (**8 h · 4 sessions**, 3r trimestre). El robot 
 | Fitxer | Descripció |
 |---|---|
 | `SA7_guia_docent.md` | Guia del professorat: objectius, 4 sessions, mètode de projecte, mapa d'avaluació i errors freqüents. |
-| `SA7_fitxa_alumnat.md` | Fitxa de treball de l'alumnat (Activitats 1-4 + quadern). |
+| `SA7_fitxa_alumnat.md` | **Fitxa base** (nucli d'una cara, per a tot l'alumnat): Activitats 1-4 + quadern. |
+| `SA7_fitxa_ampliada.md` | **Versió ampliada** (aprofundiment): totes les rutines (rols, coavaluació, exit ticket, ODS, PC) i ampliacions. |
 | `SA7_esquemes_connexions.md` | Esquemes i connexions (motors, sensors de línia/distància). |
 | `codi/` | Sketches d'Arduino (vegeu la taula següent). |
 

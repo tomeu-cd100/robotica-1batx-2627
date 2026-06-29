@@ -7,7 +7,8 @@ Cinquena situació d'aprenentatge (**7 h · 3-4 sessions**, 2n trimestre). **Can
 | Fitxer | Descripció |
 |---|---|
 | `SA5_guia_docent.md` | Guia del professorat: objectius, sessions, mètode de projecte, mapa d'avaluació i errors freqüents. |
-| `SA5_fitxa_alumnat.md` | Fitxa de treball de l'alumnat (Activitats 1-4 + quadern). |
+| `SA5_fitxa_alumnat.md` | **Fitxa base** (nucli d'una cara, per a tot l'alumnat): Activitats 1-4 + quadern. |
+| `SA5_fitxa_ampliada.md` | **Versió ampliada** (aprofundiment): totes les rutines (rols, coavaluació, exit ticket, ODS, PC) i ampliacions. |
 | `SA5_connexions.md` | Connexions de la micro:bit i perifèrics via Micro:shield. |
 | `codi/` | Programes MicroPython (vegeu la taula següent). |
 

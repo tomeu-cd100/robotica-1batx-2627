@@ -7,8 +7,23 @@
 2. Pregunta clau (la de la guia): *"El vostre seguidor de línia segueix una **regla**. Això **aprèn** a veure la carretera. Què passa si apareix una situació que **no** era a les dades d'entrenament?"*
 3. Tanca amb la idea: **programat** (regles que escrivim) vs **après** (patrons que el model dedueix de dades) → s'aprofundeix a la SA8.
 
-## Què buscar (termes de cerca a YouTube/cercador)
-> ⚠️ Els enllaços canvien; **verifica el vídeo abans de classe** i comprova que és apte per a l'aula. Aquí tens **termes de cerca estables** i fonts fiables, no URLs fixes.
+## Enllaços recomanats (tria'n **1–2**; ⚠️ previsualitza'ls abans de classe)
+
+> Enllaços concrets a canals fiables, comprovats que **existien el juny de 2026**. Com que YouTube canvia, **mira'ls abans** i, si cal, descarrega'ls (vegeu Pla B). Prioritza els **visuals** (es veu la detecció) per narrar-los tu al nivell de l'aula.
+
+| Tema | Vídeo i canal | Enllaç | Idioma |
+|---|---|---|---|
+| **Percepció amb sensors** (es veuen les caixes de detecció) | *Waymo, Sensor Visualization — The Road Ahead* (canal oficial **Waymo**) | <https://www.youtube.com/watch?v=wKNvzLgTYhQ> | EN (visual: narra-ho tu) |
+| Com "veu" un cotxe autònom | *How Does a Self-Driving Car See? (Waymo's system explained)* | <https://www.youtube.com/watch?v=0nJMnw1Ldks> | EN |
+| **Reconeixement d'objectes en temps real** (regles vs après) | *Real-Time Object Detection using YOLOv8* | <https://www.youtube.com/watch?v=Sl12AP_Yy6o> | EN (visual) |
+| Divulgació — explicació de la IA | *¿Cómo funcionan los autos autónomos? · aprendeIA* | <https://www.youtube.com/watch?v=dTpOLCUPwy8> | ES (educatiu) |
+| **Divulgació en català** | *El vehicle autònom* — programa *No pot ser!* (**TV3 / 3Cat**) | <https://www.3cat.cat/3cat/el-vehicle-autonom-a-no-pot-ser/noticia/2911731/> | CA |
+| Notícia (context proper) | *Arriba a Espanya el primer cotxe sense mans · RTVE* | <https://www.youtube.com/watch?v=63Swevpag4Y> | ES |
+
+> **Combinació suggerida (3'):** 1 clip visual de percepció (Waymo o YOLO) + la pregunta clau de dalt. Si vols context proper, obre el de TV3 (català) o el d'aprendeIA (castellà).
+
+## Què buscar (termes de cerca alternatius, per si un enllaç cau)
+> ⚠️ Els enllaços canvien; **verifica el vídeo abans de classe** i comprova que és apte per a l'aula. Aquí tens **termes de cerca estables** i fonts fiables, per si necessites substituir-ne algun.
 
 | Tema | Termes de cerca | Font fiable habitual |
 |---|---|---|

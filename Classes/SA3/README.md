@@ -7,7 +7,8 @@ Tercera situació d'aprenentatge (**8 h · 4 sessions**, 1r trimestre). El siste
 | Fitxer | Descripció |
 |---|---|
 | `SA3_guia_docent.md` | Guia del professorat: objectius, 4 sessions, mètode de projecte, mapa d'avaluació i errors freqüents. |
-| `SA3_fitxa_alumnat.md` | Fitxa de treball de l'alumnat (Activitats 1-4 + quadern). |
+| `SA3_fitxa_alumnat.md` | **Fitxa base** (nucli d'una cara, per a tot l'alumnat): Activitats 1-4 + quadern. |
+| `SA3_fitxa_ampliada.md` | **Versió ampliada** (aprofundiment): totes les rutines (rols, coavaluació, exit ticket, ODS, PC) i ampliacions. |
 | `SA3_esquemes_connexions.md` | Esquemes i connexions (polsador, divisor de tensió, ultrasons…). |
 | `codi/` | Sketches d'Arduino (vegeu la taula següent). |
 
