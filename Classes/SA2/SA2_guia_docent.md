@@ -1,6 +1,6 @@
 # SA2 · Guia docent — Sortides digitals i PWM: dona vida als actuadors
 
-**Durada:** 7-8 h (4 sessions; la 4a amb ampliacions opcionals) · **Maquinari:** Arduino UNO + kit Keyestudio/BQ · **Llenguatge:** C/C++
+**Durada:** 8 h (4 sessions; la 4a amb ampliacions opcionals) · **Maquinari:** Arduino UNO + kit Keyestudio/BQ · **Llenguatge:** C/C++
 **Referència:** `Programació didàctica/11_SA2_Sortides_digitals_PWM.md` · **Esquemes:** `SA2_esquemes_connexions.md`
 
 ## Objectius de la SA

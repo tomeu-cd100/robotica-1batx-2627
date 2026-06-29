@@ -1,6 +1,6 @@
 # Classes — material d'aula
 
-Material llest per a l'aula de cada situació d'aprenentatge (**SA1-SA9**), amb el **codi** funcional i el solucionari dels reptes.
+Material llest per a l'aula de cada situació d'aprenentatge (**SA1-SA9**), amb el **codi** funcional i el solucionari de les ampliacions («+ repte») de les pràctiques. *(El solucionari dels reptes triables A/B/C és a `../Reptes/Solucionari/`.)*
 
 ## Organització
 
@@ -22,7 +22,7 @@ Cada subcarpeta `SAx/` conté, segons la SA:
 | `SA7/` | Robòtica mòbil | Imagina 3dBot |
 | `SA8/` | IoT i IA | micro:bit / ESP32 |
 | `SA9/` | Projecte final | (plantilles) |
-| `Solucionari/` | Solucions dels reptes "+ repte/ampliació" per trimestre | — |
+| `Solucionari/` | Solucions de les ampliacions «+ repte» de les pràctiques, per trimestre (≠ `../Reptes/Solucionari/`) | — |
 
 ## Convencions de codi
 - Comentaris en català **sense accents** (evita problemes de codificació a l'IDE).

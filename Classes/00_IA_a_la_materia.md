@@ -12,7 +12,7 @@ La IA **no és un afegitó de moda**: és contingut **prescriptiu** del currícu
 - **Criteri CA5.1:** *"Controlar i experimentar el funcionament de sistemes… aplicant les possibilitats de les **tecnologies emergents (IA**, telemetria, Internet de les coses, big data, etc.)."*
 - **Sabers bàsics:** *"**Intel·ligència artificial aplicada als sistemes de control.**"*
 
-> ⚖️ **Pes realista.** És una matèria **trimestral/optativa** (~70 h). La IA hi entra com a **tecnologia emergent dins del control**, no com a assignatura d'IA. L'objectiu **no** és que l'alumnat entreni xarxes neuronals, sinó que **entengui la idea** (dades → model → decisió), en vegi els **límits i riscos**, i la **connecti** amb el que ja sap (sensors, llindars, control). Dosi: petites llavors al llarg del curs + un nucli a la SA8.
+> ⚖️ **Pes realista.** És una matèria **optativa anual** (~70 h). La IA hi entra com a **tecnologia emergent dins del control**, no com a assignatura d'IA. L'objectiu **no** és que l'alumnat entreni xarxes neuronals, sinó que **entengui la idea** (dades → model → decisió), en vegi els **límits i riscos**, i la **connecti** amb el que ja sap (sensors, llindars, control). Dosi: petites llavors al llarg del curs + un nucli a la SA8.
 
 ---
 

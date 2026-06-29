@@ -1,6 +1,6 @@
 # SA4 · Guia docent — Moviment: servos, motors i ponts H
 
-**Durada:** 7-8 h (4 sessions; la 4a amb ampliacions opcionals) · **Maquinari:** Arduino UNO + servo SG90 + motor DC + driver/pont H (L298N) · **Llenguatge:** C/C++
+**Durada:** 8 h (4 sessions; la 4a amb ampliacions opcionals) · **Maquinari:** Arduino UNO + servo SG90 + motor DC + driver/pont H (L298N) · **Llenguatge:** C/C++
 **Referència:** `Programació didàctica/13_SA4_Moviment_servos_motors.md` · **Esquemes:** `SA4_esquemes_connexions.md`
 
 ## Objectius de la SA
