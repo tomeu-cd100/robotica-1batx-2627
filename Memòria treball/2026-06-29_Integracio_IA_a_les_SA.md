@@ -30,8 +30,13 @@ La IA ja era contingut prescriptiu (CE5 / CA5.1 / sabers: *"IA aplicada als sist
 - **Eina realista i gratuïta:** Teachable Machine (navegador, sense maquinari ni instal·lació) amb **Pla B** per a aules sense dispositius/internet.
 - **Privadesa primer:** no entrenar models amb cares d'alumnes ni enganxar dades personals a assistents d'IA.
 
-## Pendents / possibles continuacions
+## Pendents (FETS en segona tanda)
 
-- Afegir una **opció de repte amb IA** explícita al banc de reptes de SA9.
-- Vídeos curts descarregables (conducció autònoma) per a la llavor de SA7.
-- Versió imprimible (A4) del **semàfor d'usos d'IA** per penjar a l'aula.
+- ✅ **Repte amb IA a SA9:** ampliat el repte 12 del `Banc_de_reptes.md` amb dues vies (Teachable Machine / micro:bit), requisit mínim, ampliacions graduades i nota de privadesa.
+- ✅ **Vídeos per a la llavor de SA7:** nou `Classes/SA7/SA7_recursos_video_IA.md` (termes de cerca estables, fonts fiables, guia de descàrrega offline i Pla B); la caixa d'IA de SA7 hi apunta.
+- ✅ **Pòster A4 del semàfor d'usos d'IA:** nou `Classes/00_Poster_IA_us_assistents.md` (regla d'or, semàfor 🟢🟡🔴, "explica-ho", honestedat, avisos); enllaçat des del marc transversal i els índexs.
+
+## Possibles continuacions futures
+
+- Buscar i fixar **URLs concretes** de vídeos validats per al docent (ara hi ha termes de cerca, no enllaços fixos).
+- Versions PDF/DOCX imprimibles dels pòsters.

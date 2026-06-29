@@ -72,6 +72,8 @@ Abans de demanar res a una IA, l'alumnat aplica la rutina **DEPURA** (Descriu ·
 
 ### 5.2. Semàfor d'usos (penjar a l'aula)
 
+> 🖨️ **Versió imprimible A4/A3:** `00_Poster_IA_us_assistents.md` (regla d'or, semàfor, "explica-ho", honestedat i avisos) per penjar a l'aula.
+
 | 🟢 SÍ (ben fet) | 🟡 AMB CURA | 🔴 NO (deshonest) |
 |---|---|---|
 | Demanar que **expliqui** un missatge d'error. | Demanar que **suggereixi** com estructurar el codi (després el reescric jo). | Enganxar l'enunciat i lliurar la resposta **sense entendre-la**. |

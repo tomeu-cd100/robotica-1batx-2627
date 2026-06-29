@@ -18,7 +18,28 @@ Tria un repte segons l'ambició de l'equip. Tots integren electrònica + program
 9. **Robot de competició** (WRO / RoboCup Junior / FTC) segons reglament.
 10. **Robot amb control proporcional** (seguidor de línia suau / equilibri).
 11. **Sistema IoT complet:** sensors → ràdio/WiFi → registre i alertes.
-12. **IA aplicada:** classificació de gestos/objectes per controlar un sistema.
+12. **IA aplicada:** classificació de gestos/objectes per controlar un sistema (detall a sota).
+
+### Repte 12 en detall · Sistema controlat per IA
+
+**Context.** Un sistema que **decideix amb un model** (no només amb regles `if`): reconeix un gest, un objecte, un so o una postura i hi associa una **acció**. És el pas que tanca el fil del curs *percebre → decidir amb dades*.
+
+**Què treballa.** Cicle de **ML** (recollir dades → entrenar → provar → millorar), **biaix**, i integració del model en un sistema. Connecta amb la SA8 i el marc de `../../00_IA_a_la_materia.md`.
+
+**Dues vies (tria segons material):**
+- **Via A · Teachable Machine (recomanada, sense maquinari extra).** Entrena un classificador (imatge/so/postura) al navegador i fes que **dispari una acció** (vegeu `../SA8_practica_teachable_machine.md`). L'acció pot ser virtual (missatge a pantalla) o física si exportes el model i el connectes a un actuador.
+- **Via B · micro:bit (gestos).** Classifica gestos de l'acceleròmetre (regles o ML de MakeCode) i controla un altre dispositiu per ràdio (comandament gestual).
+
+**Requisit mínim.** Reconèixer **≥2 classes** de manera fiable i associar-hi una **acció clara**; **document** del procés (quines dades, com s'ha provat).
+
+**Ampliacions graduades.**
+1. *(bàsica)* Afegeix una **tercera classe** i millora-la amb més exemples.
+2. *(notable)* **Identifica i corregeix un biaix** (proves amb condicions/persones diferents) i documenta-ho.
+3. *(⭐⭐⭐)* **Integra el model** en un sistema físic (gest/objecte → moviment d'un robot o actuador).
+
+**Avaluació.** R3 (sistema funcional i iterat), R1 (codi/integració), R4 (**reflexió sobre dades, biaix i ètica** — obligatòria).
+
+> ⚠️ **Privadesa:** no entrenis models amb **cares d'alumnes** ni dades personals sense consentiment (vegeu l'ètica de dades de la SA8).
 
 ## Criteris per triar
 - Que sigui **realitzable** en 10 h amb el material disponible.

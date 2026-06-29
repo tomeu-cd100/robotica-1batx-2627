@@ -141,7 +141,7 @@ El vostre robot evita obstacles i segueix línia amb **regles programades** (`if
 
 > *"El vostre seguidor de línia segueix una regla. Un Tesla **aprèn** a veure la carretera. Quina diferència hi ha? Què passa si apareix una situació que **no** era a les dades d'entrenament?"*
 
-**Idea clau:** comportament **programat** (regles que escrivim) vs **après** (patrons que el model dedueix de dades). Bo per debatre límits i seguretat. *(Suport: vídeo curt descarregat de conducció autònoma — vegeu Pla B a `Simulacions/Wokwi/README.md`.)*
+**Idea clau:** comportament **programat** (regles que escrivim) vs **après** (patrons que el model dedueix de dades). Bo per debatre límits i seguretat. *(Suport: 1–2 vídeos curts + guia de descàrrega offline a `SA7_recursos_video_IA.md`.)*
 
 ## Context real i ODS
 

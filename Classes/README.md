@@ -30,5 +30,6 @@ Cada subcarpeta `SAx/` conté, segons la SA:
 ## Recursos transversals
 - **`00_IA_a_la_materia.md`** — guia d'integració de la **Intel·ligència Artificial** a tot el curs: espiral SA0→SA9, marc conceptual mínim, ètica de dades i **ús responsable d'assistents d'IA** (integritat acadèmica). Pràctica de ML a `SA8/SA8_practica_teachable_machine.md`.
 - **`00_Poster_aula_metode_DEPURA_rols.md`** — pòster d'aula (mètode, DEPURA, rols).
+- **`00_Poster_IA_us_assistents.md`** — pòster A4/A3: semàfor d'usos d'assistents d'IA + integritat acadèmica.
 
 > La planificació didàctica de cada SA és a [`../Programació didàctica/`](../Programació%20didàctica/). El `00_LLEGEIX-ME_Classes.md` amplia aquesta guia.
