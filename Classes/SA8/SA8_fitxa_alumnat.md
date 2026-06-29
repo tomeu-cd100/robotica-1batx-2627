@@ -38,9 +38,10 @@ Dissenya un sistema IoT del teu entorn (hort, aula, casa...):
 ## Activitat 3 · Introducció a la IA (S3)
 1. Carrega `03_ia_gestos.py`. Quins gestos classifica? ____________________
 2. Quina diferència hi ha entre **regles fetes a mà** i **aprenentatge automàtic**? ____________
-3. **Repte:** afegeix una classe nova de gest. Quina? __________
-4. **Biaix:** el teu classificador s'ha provat només amb les **teves** dades. Amb qui podria fallar i per què? ______________________________________________
-5. **Reflexió ètica:** un benefici i un risc de la IA:
+3. **De regles a ML real:** fes la pràctica `SA8_practica_teachable_machine.md` (entrena un classificador amb **exemples**). Quantes classes has fet servir i quants exemples per classe? __________
+4. **Repte:** afegeix una classe nova (de gest o al teu model de Teachable Machine). Quina? __________
+5. **Biaix:** el teu classificador s'ha provat només amb les **teves** dades. Amb qui podria fallar i per què? ______________________________________________
+6. **Reflexió ètica:** un benefici i un risc de la IA:
    - Benefici: ______________________________________________________
    - Risc: __________________________________________________________
    - **Consentiment:** si el teu sistema mesurés una persona, com li demanaries permís? ______________________________________________
@@ -119,3 +120,10 @@ L'IoT i la IA fan ciutats i entorns "intel·ligents", però plantegen reptes de 
 - **Què és la telemetria?** ____________________________________________
 - **Per què les "bones dades" són clau per a la IA?** ___________________
 - **Error trobat i solució:** ___________________________________________
+
+### Ús d'assistents d'IA (honestedat) — només si n'has fet servir
+> *La IA t'ha d'ajudar a APRENDRE, no a saltar-te l'aprenentatge. Declarar-ho no baixa nota; amagar-ho o no saber-ho explicar, sí. Abans de preguntar a la IA, aplica DEPURA.* (Vegeu `../00_IA_a_la_materia.md` §5.)
+- **Eina i per a què:** ________________________________________________
+- **Què li he demanat (literalment):** _________________________________
+- **Què m'ha donat:** _________________________________________________
+- **Què he canviat / entès jo** (sé explicar cada línia?): _____________

@@ -15,6 +15,7 @@ Registre **datat** de l'evolució del projecte. Cada avenç important genera un 
 | `2026-06-29_Informe_analisi_pedagogica_i_arrencada.md` | Diagnòstic global + guia d'arrencada per a docent novell + pla d'edicions. |
 | `2026-06-29_Valoracio_pedagogica_sessions.md` | Valoració pedagògica sessió a sessió de totes les SA. |
 | `2026-06-29_Analisi_pedagogica_i_millores.md` | Registre de les millores aplicades arran de l'anàlisi. |
+| `2026-06-29_Integracio_IA_a_les_SA.md` | Integració de la IA a tot el curs: espiral SA0→SA9, ML real (Teachable Machine) i ús d'assistents d'IA amb integritat. |
 
 ## Convenció
 Cada nou avenç → **document nou** anomenat amb la data (`AAAA-MM-DD_descripcio.md`). No se sobreescriuen els anteriors.

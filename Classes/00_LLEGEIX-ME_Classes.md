@@ -30,6 +30,7 @@ Material llest per a l'aula, organitzat per situació d'aprenentatge (SA). Cada 
 - **SA8**: codi micro:bit en `.py`; l'ESP32 és **opcional/avançat**.
 - **SA9**: el codi el crea l'alumnat; es proporcionen **plantilles** de treball.
 - **Recurs transversal d'aula:** `00_Poster_aula_metode_DEPURA_rols.md` (per projectar/imprimir): mètode de projecte, rutina de depuració **DEPURA**, **rols** d'equip i autoavaluació/coavaluació. Les rutines del pòster es concreten a cada fitxa i guia.
+- **Guia transversal d'IA:** `00_IA_a_la_materia.md` — com s'introdueix la **Intel·ligència Artificial** al llarg del curs (espiral SA0→SA9, marc conceptual mínim, **ètica de dades** i **ús d'assistents d'IA amb integritat acadèmica**). La pràctica de ML viu a `SA8/SA8_practica_teachable_machine.md`.
 - **Banc d'objectes per dissenyar:** `00_Banc_objectes_disseny.md` — per a cada SA, objectes reals que l'alumnat pot dissenyar i construir com a **producte** (funció, usuari, carcassa/maqueta), amb procés de disseny, pautes de fabricació i rúbrica de producte.
 - **Plantilla de disseny d'objecte:** `00_Plantilla_disseny_objecte.md` — full A4 imprimible perquè l'alumnat dissenyi el seu objecte (empatitzar → definir → idear/esbós → prototipar → provar → comunicar) amb autoavaluació i coavaluació.
 - **Mapa SA → objecte:** `00_Mapa_SA_objectes.md` — vista de conjunt per projectar: què s'aprèn a cada SA i quins objectes s'hi poden dissenyar (el fil encendre → … → integrar).

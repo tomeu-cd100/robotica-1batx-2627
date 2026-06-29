@@ -119,7 +119,15 @@
 | **IoT (Internet de les coses)** | Objectes connectats que envien i reben dades per la xarxa. | Una bàscula que envia el pes al mòbil. |
 | **Telemetria** | Enviar **mesures a distància** des d'un sensor. | L'estació meteorològica que reporta dades al núvol. |
 | **Emissor / Receptor** | Qui **envia** dades i qui les **rep**. | Qui parla i qui escolta per walkie-talkie. |
-| **Intel·ligència Artificial (IA)** | Sistemes que **aprenen** de dades per fer prediccions o classificacions. | Reconèixer un gest o una cara. |
+| **Intel·ligència Artificial (IA)** | Sistemes que prenen decisions o fan prediccions; o bé amb **regles** que escrivim, o bé **aprenent** de dades. | Reconèixer un gest o una cara. |
+| **Regles fetes a mà** | La persona escriu les condicions (`if valor > X`). | Una recepta amb passos fixos. |
+| **Aprenentatge automàtic (ML)** | En lloc d'escriure les regles, donem **exemples** i el sistema les **dedueix sol**. | Aprendre a distingir gossos i gats veient-ne molts. |
+| **Dades d'entrenament** | Els exemples amb què "ensenyem" el model. | Les fotos amb què estudies per a un examen visual. |
+| **Model** | El resultat d'entrenar: el que fa la predicció/classificació. | L'expert ja format. |
+| **Classificació** | Decidir a quina **categoria** pertany una cosa. | Dir si un correu és spam o no. |
+| **Biaix** | Error sistemàtic perquè les **dades** eren parcials. | Un jurat que només ha vist un tipus de cas. |
+| **IA generativa** | IA que **crea** text/imatges predient el següent tros (ChatGPT…). Pot **inventar** amb seguretat. | Un loro molt llegit que continua frases. |
+| **Assistent de codi** | IA que ajuda a programar/depurar (ChatGPT, Copilot…). Cal fer-ne un **ús honest**: t'ha d'ajudar a aprendre, no a copiar. Vegeu `00_IA_a_la_materia.md`. | Un company que et dona pistes, no la resposta. |
 | **ESP32** | Microcontrolador amb **WiFi/Bluetooth** integrat (opcional/avançat). | Un Arduino amb connexió a internet. |
 
 ---

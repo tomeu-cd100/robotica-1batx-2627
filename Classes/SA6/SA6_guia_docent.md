@@ -131,6 +131,16 @@ Parelles amb **rols rotatius**: Coordinador/a · Programador/a · Enginyer/a de 
 
 - **Diana d'autoavaluació** (fitxa) · **Coavaluació** "2 estrelles i un desig" · **Exit ticket** de tancament.
 
+## Connexió amb la IA (llavor)
+
+> Llavor conceptual de **2–3'** (eix A del curs; vegeu `../00_IA_a_la_materia.md`). **És el saber literal del currículum:** *"Intel·ligència artificial aplicada als sistemes de control."*
+
+Avui l'alumnat dissenya el control **a mà**: la histèresi, la màquina d'estats i la constant del proporcional les fixa **la persona**. Pregunta per plantar la llavor:
+
+> *"I si el sistema **aprengués sol** la millor resposta a partir d'exemples, en lloc que tu n'ajustis les constants? Això és la **IA aplicada al control**."*
+
+**Idea clau:** el control clàssic (tot/res, proporcional/PID) usa **regles i constants fixades per l'enginyer/a**; un controlador **basat en IA** **aprèn** la política de control de **dades**. Avantatge: serveix per a sistemes massa complexos per modelar a mà. Risc: depèn de les dades i és menys **explicable**. Ho aprofundirem a la SA8.
+
 ## Context real i ODS
 
 - **Context:** termòstats, climatització, control de processos industrials.

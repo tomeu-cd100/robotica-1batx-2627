@@ -133,6 +133,16 @@ Equips amb **rols rotatius**: Coordinador/a (estratègia) · Programador/a · En
 >
 > *Connexió amb la SA:* és exactament el que feu aquí —fer que un robot es mogui i **decideixi sol**—, a escala de recerca. Pregunta: *quins reptes té un vehicle autònom que el vostre seguidor de línia ja insinua?*
 
+## Connexió amb la IA (llavor)
+
+> Llavor conceptual de **2–3'** (eix A del curs; vegeu `../00_IA_a_la_materia.md`). Lliga directament amb el referent (Daniela Rus, vehicles autònoms).
+
+El vostre robot evita obstacles i segueix línia amb **regles programades** (`if` sobre sensors IR/ultrasons). Un cotxe autònom real fa el mateix tipus de decisions, però amb **IA**: **aprèn** a reconèixer vianants, senyals i carrils a partir de **milions d'exemples** (visió per computador).
+
+> *"El vostre seguidor de línia segueix una regla. Un Tesla **aprèn** a veure la carretera. Quina diferència hi ha? Què passa si apareix una situació que **no** era a les dades d'entrenament?"*
+
+**Idea clau:** comportament **programat** (regles que escrivim) vs **après** (patrons que el model dedueix de dades). Bo per debatre límits i seguretat. *(Suport: vídeo curt descarregat de conducció autònoma — vegeu Pla B a `Simulacions/Wokwi/README.md`.)*
+
 ## Context real i ODS
 
 - **Context:** vehicles autònoms, AGV de logística, robots de repartiment.
