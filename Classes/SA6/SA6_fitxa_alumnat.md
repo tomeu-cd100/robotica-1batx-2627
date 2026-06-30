@@ -2,7 +2,7 @@
 
 **Nom:** ______________________  **Parella:** ______________________  **Data:** __________
 
-> Faràs que el sistema **es reguli sol**. Treballaràs llaç obert/tancat, histèresi, màquines d'estats i control proporcional.
+> Faràs que el sistema **es reguli sol**. Nucli: llaç obert/tancat, histèresi i màquines d'estats. El control proporcional és **+ampliació** (opcional).
 
 ---
 
@@ -26,7 +26,10 @@
 2. Dibuixa el **diagrama d'estats** (estats i transicions).
 3. **Repte:** afegeix un estat nou o una transició condicional.
 
-### 4 · Control proporcional (S4)
+> 💡 Si t'encalles muntant el patró, parteix de l'esquelet `03_maquina_estats_BASTIDA` (el patró `enum`/`switch` + `millis()` ja hi és; tu omples els `// TODO`). El `millis()` no bloquejant ja el vas practicar a la SA4 (`05_dos_leds_millis`).
+
+### 4 · Control proporcional (S4) · **+Ampliació (opcional)**
+> Aquesta part és **per a qui vagi sobrat**: el nucli de la SA són la histèresi i la màquina d'estats.
 1. Carrega `04_control_proporcional.ino`. Què és l'**error**? ______________________
 2. Com afecta `Kp` a la resposta? ______________________
 3. **Repte:** compara tot/res vs proporcional al Serial Plotter. Quin és més estable? ____
