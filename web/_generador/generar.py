@@ -105,6 +105,29 @@ def sa_trimestre(n: int) -> int:
     return 1 if n <= 3 else 2 if n <= 6 else 3
 
 
+def is_activitat(src: Path) -> bool:
+    """Document que recull activitats que ha de fer l'alumnat (es genera en PDF)."""
+    name = src.name
+    parts = src.parts
+    if name.endswith(("_fitxa_alumnat.md", "_fitxa_ampliada.md")):
+        return True
+    if name in {"SA1_poster_robot_plantilla.md", "00_Plantilla_disseny_objecte.md",
+                "SA1_prova_diagnostica.md"}:
+        return True
+    if "SA9" in parts and "plantilles" in parts and name.endswith(".md"):
+        return True
+    if name.startswith("Prova_practica_T") and name.endswith(".md"):
+        return True
+    if name.startswith("Reptes_SA") and name.endswith(".md"):
+        return True
+    return False
+
+
+def pdf_out_for(out_rel: str) -> str:
+    """Ruta de sortida del PDF (relativa a web/) per a una pàgina HTML."""
+    return "pdf/" + out_rel[:-5] + ".pdf"  # treu .html
+
+
 # ---------------------------------------------------------------------------
 # Utilitats
 # ---------------------------------------------------------------------------
@@ -501,7 +524,7 @@ def breadcrumb_html(out_rel: str, section_key: str, title: str) -> str:
 
 
 def page_shell(*, out_rel, section_key, title, content_html, toc="",
-               tri=None, pages):
+               tri=None, pages, pdf_href=None):
     prefix = depth_prefix(out_rel)
     sec = SECTION_BY_KEY.get(section_key)
     accent_attr = f' data-section="{section_key}"'
@@ -509,6 +532,13 @@ def page_shell(*, out_rel, section_key, title, content_html, toc="",
     if tri:
         tri_badge = (f'<span class="badge-tri" data-tri="{tri}">'
                      f'{TRIMESTRES[tri]["label"]}</span>')
+    pdf_block = ""
+    print_cap = ""
+    if pdf_href:
+        pdf_block = (f'<div class="pagina-eines"><a class="baixa-pdf" href="{pdf_href}" '
+                     f'download>⬇ Baixa PDF</a></div>')
+        print_cap = (f'<div class="print-cap"><div class="pc-site">{html.escape(SITE_TITLE)}</div>'
+                     f'<div class="pc-tit">{html.escape(title)}</div></div>')
     sidebar = sidebar_html(section_key, out_rel, pages)
     has_sidebar = "amb-sidebar" if sidebar else "sense-sidebar"
     toc_block = toc or ""
@@ -544,7 +574,9 @@ def page_shell(*, out_rel, section_key, title, content_html, toc="",
 <div class="layout">
   <aside class="sidebar">{sidebar}</aside>
   <main id="contingut">
+    {print_cap}
     {breadcrumb_html(out_rel, section_key, title)}
+    {pdf_block}
     {tri_badge}
     <article class="prose">
 {content_html}
@@ -1004,10 +1036,11 @@ def main():
     pages, md_map, code_map, code_groups, sim_groups, sim_map = discover()
     copied_imgs: dict = {}
     search_index = []
+    pdf_manifest = []   # pàgines d'activitat que es generaran en PDF
 
-    # neteja de sortides HTML antigues (manté assets i _generador)
+    # neteja de sortides HTML antigues (manté assets, _generador i els PDF)
     for item in WEB.iterdir():
-        if item.name in {"assets", "_generador", ".git"}:
+        if item.name in {"assets", "_generador", ".git", "pdf"}:
             continue
         if item.is_dir():
             shutil.rmtree(item)
@@ -1038,9 +1071,14 @@ def main():
                 grp = page_group(p.section, p.out_rel)
                 extra = subindex_extra(p.section, grp, p.out_rel, pages)
         content = body + ("\n" + extra if extra else "")
+        pdf_href = None
+        if p.kind in ("doc", "special") and is_activitat(p.src):
+            pdf_out = pdf_out_for(p.out_rel)
+            pdf_href = rel_url(p.out_rel, pdf_out)
+            pdf_manifest.append({"html": p.out_rel, "pdf": pdf_out, "title": p.title})
         full = page_shell(out_rel=p.out_rel, section_key=p.section,
                           title=p.title, content_html=content, toc=toc,
-                          tri=p.trimester, pages=pages)
+                          tri=p.trimester, pages=pages, pdf_href=pdf_href)
         dest = WEB / p.out_rel
         dest.parent.mkdir(parents=True, exist_ok=True)
         dest.write_text(full, encoding="utf-8")
@@ -1081,11 +1119,16 @@ def main():
     # .nojekyll perquè GitHub Pages no processi amb Jekyll
     (WEB / ".nojekyll").write_text("", encoding="utf-8")
 
+    # Manifest d'activitats per a la generació de PDF (vegeu generar_pdf.py)
+    (SCRIPT_DIR / "_activitats.json").write_text(
+        json.dumps(pdf_manifest, ensure_ascii=False, indent=1), encoding="utf-8")
+
     print(f"  · {len([p for p in pages if p.kind not in ('code', 'sim')])} pàgines de document")
     print(f"  · {len(code_groups)} pàgines de codi")
     print(f"  · {len(sim_groups)} pàgines de simulació")
     print(f"  · {len(copied_imgs)} imatges copiades")
     print(f"  · {len(search_index)} entrades a l'índex de cerca")
+    print(f"  · {len(pdf_manifest)} pàgines d'activitat per a PDF (executa generar_pdf.py)")
     print("Fet. Obre web/index.html o publica la carpeta web/ a GitHub Pages.")
 
 

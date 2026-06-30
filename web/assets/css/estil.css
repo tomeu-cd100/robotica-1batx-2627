@@ -426,3 +426,36 @@ body.sense-toc .prose, body.sense-sidebar .prose { max-width: 78ch; }
   #cerca { width: 130px; }
   .brand-sub { display: none; }
 }
+
+/* ---------- Botó "Baixa PDF" ---------- */
+.pagina-eines { display: flex; justify-content: flex-end; margin: -.2rem 0 .8rem; }
+.baixa-pdf {
+  display: inline-flex; align-items: center; gap: .4rem;
+  border: 1px solid var(--border-fort); background: var(--surface); color: var(--text);
+  font-size: .85rem; font-weight: 650; padding: .4rem .9rem; border-radius: 999px;
+  transition: border-color .12s, color .12s;
+}
+.baixa-pdf:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
+.print-cap { display: none; }
+
+/* ---------- Impressió / PDF ---------- */
+@page { size: A4; margin: 15mm 14mm 16mm; }
+@media print {
+  .topbar, .sidebar, .toc, .peu, .breadcrumb, .skip,
+  .pagina-eines, .menu-btn, .badge-tri, .copia-btn { display: none !important; }
+  html, body { background: #fff !important; color: #000; font-size: 11pt; }
+  .layout, body.sense-toc .layout, body.sense-sidebar .layout {
+    display: block; max-width: 100%; padding: 0; margin: 0; gap: 0;
+  }
+  main#contingut { padding: 0; }
+  .prose { max-width: 100%; }
+  .print-cap {
+    display: block; border-bottom: 2px solid #000; margin: 0 0 1rem; padding: 0 0 .45rem;
+  }
+  .print-cap .pc-site { font-size: .72rem; color: #333; letter-spacing: .05em; text-transform: uppercase; }
+  .print-cap .pc-tit { font-size: 1.35rem; font-weight: 800; margin: .15rem 0 0; line-height: 1.2; }
+  a { color: #000; }
+  .codi-bloc, .card, .sa-card, .prose table, .prose blockquote { break-inside: avoid; }
+  .prose pre, .codi-cos pre { white-space: pre-wrap; word-wrap: break-word; }
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
