@@ -1,15 +1,15 @@
 # SA4 · Moviment: servos, motors i ponts H
 
-Quarta situació d'aprenentatge (**8 h · 4 sessions**, 2n trimestre). El sistema **es mou**: control de posició amb **servomotor**, control de velocitat i direcció d'un **motor DC** amb **driver/pont H** i alimentació externa, i integració sensor → moviment. Maquinari: Arduino UNO + servo SG90 + motor DC + L298N. Programació oficial: `Programació didàctica/13_SA4_Moviment_servos_motors.md`.
+Quarta situació d'aprenentatge (**8 h · 4 sessions**, 2n trimestre). El sistema **es mou**: control de posició amb **servomotor**, control de velocitat i direcció d'un **motor DC** amb **driver/pont H** i alimentació externa, i integració sensor → moviment. Maquinari: Arduino UNO + servo SG90 + motor DC + L298N. Programació oficial: [`Programació didàctica/13_SA4_Moviment_servos_motors.md`](../../Programació%20didàctica/13_SA4_Moviment_servos_motors.md).
 
 ## Contingut
 
 | Fitxer | Descripció |
 |---|---|
-| `SA4_guia_docent.md` | Guia del professorat: objectius, 4 sessions, mètode de projecte, mapa d'avaluació i errors freqüents. |
-| `SA4_fitxa_alumnat.md` | **Fitxa base** (nucli d'una cara, per a tot l'alumnat): Activitats 1-4 + quadern. |
-| `SA4_fitxa_ampliada.md` | **Versió ampliada** (aprofundiment): totes les rutines (rols, coavaluació, exit ticket, ODS, PC) i ampliacions. |
-| `SA4_esquemes_connexions.md` | Esquemes i connexions (servo, L298N, massa comuna, alimentació externa). |
+| [`SA4_guia_docent.md`](SA4_guia_docent.md) | Guia del professorat: objectius, 4 sessions, mètode de projecte, mapa d'avaluació i errors freqüents. |
+| [`SA4_fitxa_alumnat.md`](SA4_fitxa_alumnat.md) | **Fitxa base** (nucli d'una cara, per a tot l'alumnat): Activitats 1-4 + quadern. |
+| [`SA4_fitxa_ampliada.md`](SA4_fitxa_ampliada.md) | **Versió ampliada** (aprofundiment): totes les rutines (rols, coavaluació, exit ticket, ODS, PC) i ampliacions. |
+| [`SA4_esquemes_connexions.md`](SA4_esquemes_connexions.md) | Esquemes i connexions (servo, L298N, massa comuna, alimentació externa). |
 | `codi/` | Sketches d'Arduino (vegeu la taula següent). |
 
 ### Codi (`codi/`)

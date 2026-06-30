@@ -1,7 +1,7 @@
 # SA7 · Guia docent — Robòtica mòbil: cinemàtica i trajectòries
 
 **Durada:** 8 h (4 sessions) · **Maquinari:** Placa **Imagina 3dBot (Arduino)** + sensors de línia (IR) i de distància (ultrasons) · **Llenguatge:** C/C++
-**Referència:** `Programació didàctica/16_SA7_Robotica_mobil.md` · **Esquemes:** `SA7_esquemes_connexions.md`
+**Referència:** [`Programació didàctica/16_SA7_Robotica_mobil.md`](../../Programació%20didàctica/16_SA7_Robotica_mobil.md) · **Esquemes:** [`SA7_esquemes_connexions.md`](SA7_esquemes_connexions.md)
 
 ## Objectius de la SA
 1. Programar el moviment d'un robot mòbil (endavant, gir, aturada) amb **control diferencial**.
@@ -83,7 +83,7 @@ La **Imagina 3dBot** és Arduino-compatible, però **els pins dels motors depene
 | Quadern (proves i iteracions) | Calibratge, mesura d'errors i millores documentades | CA4.1 | R4 |
 | Observació del procés | Treball d'equip, ús segur del robot a la pista | CA4.1 | R4 |
 
-*(CA1.1 = programar en C/C++; CA3.1 = control (llaç tancat); CA4.1 = programar un robot mòbil amb trajectòries i comportaments autònoms. Vegeu `Programació didàctica/06_Avaluacio_criteris_qualificacio.md`. Comparteix R1, R3 i R4 **abans** de començar.)*
+*(CA1.1 = programar en C/C++; CA3.1 = control (llaç tancat); CA4.1 = programar un robot mòbil amb trajectòries i comportaments autònoms. Vegeu [`Programació didàctica/06_Avaluacio_criteris_qualificacio.md`](../../Programació%20didàctica/06_Avaluacio_criteris_qualificacio.md). Comparteix R1, R3 i R4 **abans** de començar.)*
 
 ## Errors freqüents
 | Error | Causa | Solució |
@@ -109,7 +109,7 @@ La **Imagina 3dBot** és Arduino-compatible, però **els pins dels motors depene
 | Via | Mesura |
 |---|---|
 | **Bastida** (qui s'encalla) | Provar **una funció de moviment cada cop** abans de la trajectòria; donar el bloc de pins ja ajustat; equips heterogenis amb rols clars. |
-| **+ Ampliació** (qui va sobrat) | Gir proporcional a la proximitat, correcció suau del seguidor, tornar al punt de sortida; reptes ⭐ de `Reptes/Reptes_SA7.md`. |
+| **+ Ampliació** (qui va sobrat) | Gir proporcional a la proximitat, correcció suau del seguidor, tornar al punt de sortida; reptes ⭐ de [`Reptes/Reptes_SA7.md`](../../Reptes/Reptes_SA7.md). |
 | **Representació múltiple** | Diagrama de decisió (percepció→acció), demostració física, vídeo de les iteracions. |
 | **Implicació** | Cada equip tria l'estratègia i el repte de pista; competició amistosa per temps. |
 
@@ -141,7 +141,7 @@ El vostre robot evita obstacles i segueix línia amb **regles programades** (`if
 
 > *"El vostre seguidor de línia segueix una regla. Un Tesla **aprèn** a veure la carretera. Quina diferència hi ha? Què passa si apareix una situació que **no** era a les dades d'entrenament?"*
 
-**Idea clau:** comportament **programat** (regles que escrivim) vs **après** (patrons que el model dedueix de dades). Bo per debatre límits i seguretat. *(Suport: 1–2 vídeos curts + guia de descàrrega offline a `SA7_recursos_video_IA.md`.)*
+**Idea clau:** comportament **programat** (regles que escrivim) vs **après** (patrons que el model dedueix de dades). Bo per debatre límits i seguretat. *(Suport: 1–2 vídeos curts + guia de descàrrega offline a [`SA7_recursos_video_IA.md`](SA7_recursos_video_IA.md).)*
 
 ## Context real i ODS
 

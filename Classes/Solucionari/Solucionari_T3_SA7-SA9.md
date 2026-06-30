@@ -140,4 +140,4 @@ while True:
 
 ## SA9
 
-El projecte final és **obert**: no té solucionari tancat. L'avaluació es fa amb les **rúbriques R1-R5** i el **dossier tècnic** (`SA9/plantilles/Dossier_tecnic_PLANTILLA.md`). Per a cada repte del banc, el professorat pot preparar una solució de referència pròpia segons el material triat.
+El projecte final és **obert**: no té solucionari tancat. L'avaluació es fa amb les **rúbriques R1-R5** i el **dossier tècnic** ([`SA9/plantilles/Dossier_tecnic_PLANTILLA.md`](../SA9/plantilles/Dossier_tecnic_PLANTILLA.md)). Per a cada repte del banc, el professorat pot preparar una solució de referència pròpia segons el material triat.

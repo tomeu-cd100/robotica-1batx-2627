@@ -1,6 +1,6 @@
 # Plantilla de disseny d'objecte
 
-> **Full de treball imprimible (A4).** Omple'l per dissenyar el teu objecte, des de la idea fins al producte. Es treballa amb el `00_Banc_objectes_disseny.md` al costat.
+> **Full de treball imprimible (A4).** Omple'l per dissenyar el teu objecte, des de la idea fins al producte. Es treballa amb el [`00_Banc_objectes_disseny.md`](00_Banc_objectes_disseny.md) al costat.
 
 **Nom/Equip:** ______________________  **SA:** ______  **Data:** __________
 

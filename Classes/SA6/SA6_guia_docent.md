@@ -1,7 +1,7 @@
 # SA6 · Guia docent — Sistemes de control: llaç obert/tancat i màquines d'estats
 
 **Durada:** 8 h (4 sessions; la 4a amb ampliacions opcionals) · **Maquinari:** Arduino UNO + NTC, LDR, LED/ventilador, polsador, (ultrasons) · **Llenguatge:** C/C++
-**Referència:** `Programació didàctica/15_SA6_Sistemes_control.md` · **Esquemes:** `SA6_esquemes_connexions.md`
+**Referència:** [`Programació didàctica/15_SA6_Sistemes_control.md`](../../Programació%20didàctica/15_SA6_Sistemes_control.md) · **Esquemes:** [`SA6_esquemes_connexions.md`](SA6_esquemes_connexions.md)
 
 ## Objectius de la SA
 1. Distingir i implementar **control en llaç obert i en llaç tancat**.
@@ -65,7 +65,7 @@
 
 ## SESSIÓ 4 (2 h) — Control proporcional
 
-> 📋 **Aquesta sessió allotja la prova pràctica trimestral T2** (vegeu `Avaluació/Prova_practica_T2.md` i `Programació didàctica/08_Sequenciacio_temporal_anual.md`): el repte de control d'aquesta sessió **fa de prova T2** i no afegeix hores extra.
+> 📋 **Aquesta sessió allotja la prova pràctica trimestral T2** (vegeu [`Avaluació/Prova_practica_T2.md`](../../Avaluació/Prova_practica_T2.md) i [`Programació didàctica/08_Sequenciacio_temporal_anual.md`](../../Programació%20didàctica/08_Sequenciacio_temporal_anual.md)): el repte de control d'aquesta sessió **fa de prova T2** i no afegeix hores extra.
 
 - **Activació (10'):** *"I si la resposta fos més suau, proporcional a com de lluny estem de l'objectiu?"*
 - **Modelatge (25'):** `04_control_proporcional.ino`. Concepte d'**error** i de **sortida proporcional** (P): com més gran l'error, més actuació. Introducció a l'estabilitat.
@@ -86,7 +86,7 @@
 | Quadern (diagrama de blocs + anàlisi) | Consigna, error, realimentació; anàlisi de la resposta | CA3.1 | R4 |
 | Observació + Serial Plotter | Histèresi, ajust de `Kp`, comparació tot/res vs proporcional | CA3.1 | R3 |
 
-*(CA1.1 = programar en C/C++; CA3.1 = implementar sistemes de control (llaç obert/tancat, màquines d'estats) i explicar-ne el funcionament. Vegeu `Programació didàctica/06_Avaluacio_criteris_qualificacio.md`. Comparteix R1, R3 i R4 **abans** de començar.)*
+*(CA1.1 = programar en C/C++; CA3.1 = implementar sistemes de control (llaç obert/tancat, màquines d'estats) i explicar-ne el funcionament. Vegeu [`Programació didàctica/06_Avaluacio_criteris_qualificacio.md`](../../Programació%20didàctica/06_Avaluacio_criteris_qualificacio.md). Comparteix R1, R3 i R4 **abans** de començar.)*
 
 ## Errors freqüents
 | Error | Causa | Solució |
@@ -112,7 +112,7 @@
 | Via | Mesura |
 |---|---|
 | **Bastida** (qui s'encalla) | Donar el **diagrama de blocs** parcialment fet; començar amb el termòstat tot/res abans del proporcional; parella heterogènia. |
-| **+ Ampliació** (qui va sobrat) | Afegir estats, comparar tot/res vs P, ajustar `Kp`; reptes ⭐ de `Reptes/Reptes_SA6.md`. |
+| **+ Ampliació** (qui va sobrat) | Afegir estats, comparar tot/res vs P, ajustar `Kp`; reptes ⭐ de [`Reptes/Reptes_SA6.md`](../../Reptes/Reptes_SA6.md). |
 | **Representació múltiple** | Diagrama de blocs i d'estats, **Serial Plotter** (resposta visual), simulació Wokwi. |
 | **Implicació** | Cada parella tria el procés a controlar i la finestra d'histèresi. |
 

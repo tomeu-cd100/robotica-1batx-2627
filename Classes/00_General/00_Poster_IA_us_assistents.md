@@ -1,6 +1,6 @@
 # Pòster d'aula — Fer servir la IA amb cap
 
-> Recurs **per projectar o imprimir** (A4/A3) i tenir visible. Concreta el protocol d'ús d'assistents d'IA de `00_IA_a_la_materia.md` (§5). Pensat per a qualsevol activitat amb codi.
+> Recurs **per projectar o imprimir** (A4/A3) i tenir visible. Concreta el protocol d'ús d'assistents d'IA de [`00_IA_a_la_materia.md`](00_IA_a_la_materia.md) (§5). Pensat per a qualsevol activitat amb codi.
 
 ---
 
@@ -76,4 +76,4 @@ Què he canviat / entès jo: ____________________
 
 ---
 
-> Connecta amb: rutina **DEPURA** (`00_Poster_aula_metode_DEPURA_rols.md`) · ètica de dades (`SA8/SA8_guia_docent.md`) · marc complet (`00_IA_a_la_materia.md`).
+> Connecta amb: rutina **DEPURA** ([`00_Poster_aula_metode_DEPURA_rols.md`](00_Poster_aula_metode_DEPURA_rols.md)) · ètica de dades ([`SA8/SA8_guia_docent.md`](../SA8/SA8_guia_docent.md)) · marc complet ([`00_IA_a_la_materia.md`](00_IA_a_la_materia.md)).

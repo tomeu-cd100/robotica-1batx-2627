@@ -9,7 +9,7 @@
 ## El que has de fer
 
 ### 1 · Telemetria (S1)
-0. **PREDIU:** amb `01_telemetria_emissor.py` i `02_telemetria_receptor.py`, què mostrarà la receptora? ______________________
+0. **PREDIU:** amb [`01_telemetria_emissor.py`](codi/01_telemetria_emissor.py) i [`02_telemetria_receptor.py`](codi/02_telemetria_receptor.py), què mostrarà la receptora? ______________________
 1. Carrega'ls en dues plaques (mateix `group`) i comprova.
 2. Quines magnituds envies? __________ Cada quant? __________
 3. **Repte:** envia dues magnituds etiquetades (`T:..`, `L:..`).
@@ -26,9 +26,9 @@ Dissenya un sistema IoT del teu entorn (mínim ètic obligatori):
 | Un risc de privacitat + una mesura per reduir-lo | |
 
 ### 3 · Introducció a la IA (S3)
-1. Carrega `03_ia_gestos.py`. Quins gestos classifica? __________
+1. Carrega [`03_ia_gestos.py`](codi/03_ia_gestos.py). Quins gestos classifica? __________
 2. Diferència entre **regles fetes a mà** i **aprenentatge automàtic**: ____
-3. **De regles a ML real:** fes `SA8_practica_teachable_machine.md` (entrena amb exemples). Classes i exemples per classe: __________
+3. **De regles a ML real:** fes [`SA8_practica_teachable_machine.md`](SA8_practica_teachable_machine.md) (entrena amb exemples). Classes i exemples per classe: __________
 4. **Biaix:** amb qui podria fallar el teu classificador i per què? ____
 
 **Producte:** sistema connectat o classificador + reflexió ètica. S'avalua amb **R1**, **R3** i **R4**.

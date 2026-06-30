@@ -6,10 +6,10 @@ Material **transversal de suport** (no és una SA amb sessions pròpies). Reunei
 
 | Fitxer | Públic | Descripció |
 |---|---|---|
-| `SA0_vocabulari_essencial.md` | Alumnat | Glossari **organitzat per SA** (SA1→SA9), amb definicions breus i analogies del dia a dia. "Diccionari de butxaca" del curs. |
-| `SA0_guia_programacio.md` | Alumnat | Guia de programació: **Part A** Arduino (C/C++), **Part B** MicroPython (micro:bit), **Part C** taula comparativa + errors freqüents + mètode PRIMM. |
-| `SA0_fitxa_alumnat.md` | Alumnat | Activitats d'**autoaprenentatge** (no qualifica): E-P-S, digital/analògic, emparellar termes, llegir i predir codi, detectar errors, traduir Arduino↔MicroPython. |
-| `SA0_guia_docent.md` | Docent | Referència densa: com integrar la SA0, mapa vocabulari↔SA↔programació didàctica, precisions tècniques i **solucionari** de la fitxa. |
+| [`SA0_vocabulari_essencial.md`](SA0_vocabulari_essencial.md) | Alumnat | Glossari **organitzat per SA** (SA1→SA9), amb definicions breus i analogies del dia a dia. "Diccionari de butxaca" del curs. |
+| [`SA0_guia_programacio.md`](SA0_guia_programacio.md) | Alumnat | Guia de programació: **Part A** Arduino (C/C++), **Part B** MicroPython (micro:bit), **Part C** taula comparativa + errors freqüents + mètode PRIMM. |
+| [`SA0_fitxa_alumnat.md`](SA0_fitxa_alumnat.md) | Alumnat | Activitats d'**autoaprenentatge** (no qualifica): E-P-S, digital/analògic, emparellar termes, llegir i predir codi, detectar errors, traduir Arduino↔MicroPython. |
+| [`SA0_guia_docent.md`](SA0_guia_docent.md) | Docent | Referència densa: com integrar la SA0, mapa vocabulari↔SA↔programació didàctica, precisions tècniques i **solucionari** de la fitxa. |
 
 ## Com usar-la
 

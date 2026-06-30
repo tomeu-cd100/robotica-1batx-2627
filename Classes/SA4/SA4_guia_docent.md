@@ -1,7 +1,7 @@
 # SA4 · Guia docent — Moviment: servos, motors i ponts H
 
 **Durada:** 8 h (4 sessions; la 4a amb ampliacions opcionals) · **Maquinari:** Arduino UNO + servo SG90 + motor DC + driver/pont H (L298N) · **Llenguatge:** C/C++
-**Referència:** `Programació didàctica/13_SA4_Moviment_servos_motors.md` · **Esquemes:** `SA4_esquemes_connexions.md`
+**Referència:** [`Programació didàctica/13_SA4_Moviment_servos_motors.md`](../../Programació%20didàctica/13_SA4_Moviment_servos_motors.md) · **Esquemes:** [`SA4_esquemes_connexions.md`](SA4_esquemes_connexions.md)
 
 ## Objectius de la SA
 1. Controlar la **posició** d'un servo i la **velocitat/direcció** d'un motor DC.
@@ -78,7 +78,7 @@
 | Quadern tècnic | Esquema del pont H, taula distància→velocitat, errors | CA1.1 | R1 |
 | Observació de muntatge segur | Massa comuna, alimentació externa, no alimentar motors des de l'Arduino | CA2.1 | R2 |
 
-*(CA1.1 = programar en C/C++; CA2.1 = dissenyar/muntar circuits amb seguretat; CA3.1 = implementar sistemes de control. Vegeu `Programació didàctica/06_Avaluacio_criteris_qualificacio.md`. Comparteix R1, R2 i R3 **abans** de començar.)*
+*(CA1.1 = programar en C/C++; CA2.1 = dissenyar/muntar circuits amb seguretat; CA3.1 = implementar sistemes de control. Vegeu [`Programació didàctica/06_Avaluacio_criteris_qualificacio.md`](../../Programació%20didàctica/06_Avaluacio_criteris_qualificacio.md). Comparteix R1, R2 i R3 **abans** de començar.)*
 
 ## Errors freqüents
 | Error | Causa | Solució |
@@ -104,7 +104,7 @@
 | Via | Mesura |
 |---|---|
 | **Bastida** (qui s'encalla) | Moure el servo a **angles fixos** abans del control amb potenciòmetre; donar la **taula de lògica del pont H** ja resolta; parella heterogènia. |
-| **+ Ampliació** (qui va sobrat) | Dos servos coordinats, rampa d'acceleració, invertir sentit per distància; reptes ⭐ de `Reptes/Reptes_SA4.md`. |
+| **+ Ampliació** (qui va sobrat) | Dos servos coordinats, rampa d'acceleració, invertir sentit per distància; reptes ⭐ de [`Reptes/Reptes_SA4.md`](../../Reptes/Reptes_SA4.md). |
 | **Representació múltiple** | Esquema del pont H, simulació Wokwi (servo), vídeo del moviment, codi comentat. |
 | **Implicació** | Cada parella tria angles, temps i el mecanisme (barrera, braç, ventilador). |
 

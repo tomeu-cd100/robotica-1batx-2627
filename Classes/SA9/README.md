@@ -1,14 +1,14 @@
 # SA9 · Repte final integrador (opció competició)
 
-Novena i última situació d'aprenentatge (**10 h · 5 sessions**, 3r trimestre). És el **projecte de síntesi** del curs: en equip, l'alumnat dissenya, construeix, programa, documenta i defensa un **sistema robòtic autònom** que resol un repte real, integrant **tot l'après (SA1-SA8)**. Opció de vincular-lo a una **competició** (WRO, RoboCup Junior, FTC) o al **Treball de Recerca**. Maquinari i llenguatge **lliures**. Programació oficial: `Programació didàctica/18_SA9_Projecte_final.md`.
+Novena i última situació d'aprenentatge (**10 h · 5 sessions**, 3r trimestre). És el **projecte de síntesi** del curs: en equip, l'alumnat dissenya, construeix, programa, documenta i defensa un **sistema robòtic autònom** que resol un repte real, integrant **tot l'après (SA1-SA8)**. Opció de vincular-lo a una **competició** (WRO, RoboCup Junior, FTC) o al **Treball de Recerca**. Maquinari i llenguatge **lliures**. Programació oficial: [`Programació didàctica/18_SA9_Projecte_final.md`](../../Programació%20didàctica/18_SA9_Projecte_final.md).
 
 ## Contingut
 
 | Fitxer | Descripció |
 |---|---|
-| `SA9_guia_docent.md` | Guia del professorat: sentit, 5 sessions per fases, rols, mapa d'avaluació i gestió de projecte. |
-| `SA9_fitxa_alumnat.md` | **Fitxa base** de l'equip: repte, rols, disseny, planificació, iteracions, defensa, checklist. |
-| `SA9_fitxa_ampliada.md` | **Versió ampliada**: guió complet + rutines (coavaluació, exit ticket final, PC). |
+| [`SA9_guia_docent.md`](SA9_guia_docent.md) | Guia del professorat: sentit, 5 sessions per fases, rols, mapa d'avaluació i gestió de projecte. |
+| [`SA9_fitxa_alumnat.md`](SA9_fitxa_alumnat.md) | **Fitxa base** de l'equip: repte, rols, disseny, planificació, iteracions, defensa, checklist. |
+| [`SA9_fitxa_ampliada.md`](SA9_fitxa_ampliada.md) | **Versió ampliada**: guió complet + rutines (coavaluació, exit ticket final, PC). |
 | `plantilles/` | Plantilles de treball (vegeu la taula següent). |
 
 ### Plantilles (`plantilles/`)

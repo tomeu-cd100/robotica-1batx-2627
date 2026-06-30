@@ -24,7 +24,7 @@ Analitza aquests tres sistemes i completa la taula. Pensa: què *percep* (entrad
 
 ## Activitat 2 · La placa Arduino UNO
 
-Etiqueta aquestes parts a l'**esquema mut** que et donarà el professorat (`SA1_esquemes_connexions.md`, apartat 1.2):
+Etiqueta aquestes parts a l'**esquema mut** que et donarà el professorat ([`SA1_esquemes_connexions.md`](SA1_esquemes_connexions.md), apartat 1.2):
 - [ ] Microcontrolador  - [ ] Pins digitals  - [ ] Pins analògics (A0-A5)
 - [ ] Pins d'alimentació (5V, GND)  - [ ] Connector USB  - [ ] Pins PWM (~)
 
@@ -38,7 +38,7 @@ ___________________________________________________________________
 
 ## Activitat 3 · Normes de seguretat
 
-Llegeix les normes (`SA1_normes_seguretat.md`) i **signa** el full. Escriu aquí les 2 normes que et semblen més importants:
+Llegeix les normes ([`SA1_normes_seguretat.md`](SA1_normes_seguretat.md)) i **signa** el full. Escriu aquí les 2 normes que et semblen més importants:
 
 1. ___________________________________________________________________
 2. ___________________________________________________________________
@@ -72,7 +72,7 @@ ___________________________________________________________________
 
 ## Producte de la SA · Fitxa-pòster
 
-Tria un **robot real** i analitza'l amb la plantilla `SA1_poster_robot_plantilla.md` (entrada-procés-sortida + dilema ètic). S'avalua amb la rúbrica **R4**.
+Tria un **robot real** i analitza'l amb la plantilla [`SA1_poster_robot_plantilla.md`](SA1_poster_robot_plantilla.md) (entrada-procés-sortida + dilema ètic). S'avalua amb la rúbrica **R4**.
 
 ---
 
@@ -99,7 +99,7 @@ Repartiu-vos els rols i **roteu-los** a cada sessió (marqueu qui fa què):
 
 ## Vols més?
 
-- **Reptes ⭐:** tria'n un a `Reptes/Reptes_SA1.md` i amplia el teu producte.
+- **Reptes ⭐:** tria'n un a [`Reptes/Reptes_SA1.md`](../../Reptes/Reptes_SA1.md) i amplia el teu producte.
 - **Simulació interactiva (Wokwi):** prova-ho sense maquinari (vegeu `Simulacions/Wokwi/`).
 
 ---

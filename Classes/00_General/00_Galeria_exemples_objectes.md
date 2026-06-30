@@ -1,6 +1,6 @@
 # Galeria d'exemples resolts — objectes de disseny
 
-> Dos objectes desenvolupats **de punta a punta** com a **model**: mostren com es veu la `00_Plantilla_disseny_objecte.md` ben omplerta. Útils per ensenyar el nivell esperat (no per copiar: l'alumnat dissenya el seu).
+> Dos objectes desenvolupats **de punta a punta** com a **model**: mostren com es veu la [`00_Plantilla_disseny_objecte.md`](00_Plantilla_disseny_objecte.md) ben omplerta. Útils per ensenyar el nivell esperat (no per copiar: l'alumnat dissenya el seu).
 
 ---
 
@@ -125,6 +125,6 @@
 ---
 
 ## Com fer servir aquesta galeria
-- **Projecta un exemple** abans que l'alumnat empleni la seva `00_Plantilla_disseny_objecte.md`: mostra el **nivell i el detall** esperats.
+- **Projecta un exemple** abans que l'alumnat empleni la seva [`00_Plantilla_disseny_objecte.md`](00_Plantilla_disseny_objecte.md): mostra el **nivell i el detall** esperats.
 - Fes notar que el valor és el **procés** (iteracions de la fase 5) i les **decisions justificades** (fase 6), no la perfecció de l'acabat.
-- Recursos: catàleg a `00_Banc_objectes_disseny.md` · full de treball a `00_Plantilla_disseny_objecte.md` · mapa a `00_Mapa_SA_objectes.md`.
+- Recursos: catàleg a [`00_Banc_objectes_disseny.md`](00_Banc_objectes_disseny.md) · full de treball a [`00_Plantilla_disseny_objecte.md`](00_Plantilla_disseny_objecte.md) · mapa a [`00_Mapa_SA_objectes.md`](00_Mapa_SA_objectes.md).

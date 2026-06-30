@@ -9,18 +9,18 @@
 ---
 
 ## Activitat 1 · Name badge (S1)
-0. **PREDIU** (abans d'executar): mirant `01_name_badge.py`, què creus que farà la matriu de LED i els botons? ____________________
-1. Carrega `01_name_badge.py` i **comprova** la predicció. Quina instrucció mostra text que es desplaça? `__________`
+0. **PREDIU** (abans d'executar): mirant [`01_name_badge.py`](codi/01_name_badge.py), què creus que farà la matriu de LED i els botons? ____________________
+1. Carrega [`01_name_badge.py`](codi/01_name_badge.py) i **comprova** la predicció. Quina instrucció mostra text que es desplaça? `__________`
 2. Diferència entre `display.show()` i `display.scroll()`: ________________
 3. **Repte:** badge d'emocions (A: contenta / B: trista). **+ Repte:** animació pròpia.
 
 ## Activitat 2 · Sensors integrats (S2)
-1. Comptapassos (`02_passes.py`): quin sensor s'usa? __________ Quin llindar has posat? ____
-2. Llum automàtic (`03_nightlight.py`): rang de `read_light_level()` = de ____ a ____
+1. Comptapassos ([`02_passes.py`](codi/02_passes.py)): quin sensor s'usa? __________ Quin llindar has posat? ____
+2. Llum automàtic ([`03_nightlight.py`](codi/03_nightlight.py)): rang de `read_light_level()` = de ____ a ____
 3. **Repte:** detector d'inclinació o termòmetre amb avís. **+ Repte:** guardar màx/mín.
 
 ## Activitat 3 · Ràdio (S3)
-1. Carrega `04_radio_dau.py` en **dues** plaques. Què han de compartir per comunicar-se? __________
+1. Carrega [`04_radio_dau.py`](codi/04_radio_dau.py) en **dues** plaques. Què han de compartir per comunicar-se? __________
 2. Quina instrucció envia? `__________` Quina rep? `__________`
 3. **Repte:** "pedra-paper-tisora" o comandament. **+ Repte:** xarxa de 3+ plaques.
 
@@ -68,7 +68,7 @@ Repartiu-vos els rols i **roteu-los** a cada sessió:
 
 ## Vols més?
 
-- **Reptes ⭐:** `Reptes/Reptes_SA5.md` (comptapassos, llum de nit, joc per ràdio).
+- **Reptes ⭐:** [`Reptes/Reptes_SA5.md`](../../Reptes/Reptes_SA5.md) (comptapassos, llum de nit, joc per ràdio).
 - **Simulador:** prova el codi a **python.microbit.org** (sense maquinari).
 
 ---

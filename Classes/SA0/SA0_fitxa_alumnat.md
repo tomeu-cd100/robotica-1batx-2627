@@ -2,7 +2,7 @@
 
 **Nom:** ______________________  **Parella:** ______________________  **Data:** __________
 
-> Aquesta fitxa és d'**autoaprenentatge**: pots fer-la sol/a o en parella, amb el `SA0_vocabulari_essencial.md` i el `SA0_guia_programacio.md` al costat. No es qualifica: serveix perquè arribis a la SA1 amb la base posada.
+> Aquesta fitxa és d'**autoaprenentatge**: pots fer-la sol/a o en parella, amb el [`SA0_vocabulari_essencial.md`](SA0_vocabulari_essencial.md) i el [`SA0_guia_programacio.md`](SA0_guia_programacio.md) al costat. No es qualifica: serveix perquè arribis a la SA1 amb la base posada.
 
 ---
 
@@ -154,4 +154,4 @@ Entendre els sistemes que ens envolten és **alfabetització tecnològica**. **O
 | Llegir un codi senzill i predir què farà | | | |
 | Saber on consultar un terme que no recordo | | | |
 
-> Si tens dos o més 🔴, repassa el `SA0_vocabulari_essencial.md` i el `SA0_guia_programacio.md` abans de la SA1. **No passa res**: per això existeix la SA0.
+> Si tens dos o més 🔴, repassa el [`SA0_vocabulari_essencial.md`](SA0_vocabulari_essencial.md) i el [`SA0_guia_programacio.md`](SA0_guia_programacio.md) abans de la SA1. **No passa res**: per això existeix la SA0.

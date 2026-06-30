@@ -1,7 +1,7 @@
 # SA8 · Guia docent — IoT i IA: el robot connectat i intel·ligent
 
 **Durada:** 6 h (3 sessions) · **Maquinari:** micro:bit (ràdio) + Micro:shield · **ESP32 (WiFi) opcional** · **Llenguatge:** MicroPython (Python) / C++ (ESP32)
-**Referència:** `Programació didàctica/17_SA8_IoT_IA.md` · **Connexions:** `SA8_connexions.md` · **Marc d'IA del curs:** `../00_IA_a_la_materia.md`
+**Referència:** [`Programació didàctica/17_SA8_IoT_IA.md`](../../Programació%20didàctica/17_SA8_IoT_IA.md) · **Connexions:** [`SA8_connexions.md`](SA8_connexions.md) · **Marc d'IA del curs:** `../00_IA_a_la_materia.md`
 
 > 🤖 **Aquesta és la SA on culmina la IA.** Arriba aquí com a **pas natural** (el sistema ja percep i actua → ara **decideix amb dades**), després de les llavors sembrades a SA1/SA3/SA6/SA7. Repassa el marc de conjunt a **`../00_IA_a_la_materia.md`** (espiral, marc conceptual mínim i ús d'assistents d'IA amb integritat).
 
@@ -20,9 +20,9 @@
 ## Codi de suport (`codi/`)
 | Fitxer | Contingut |
 |---|---|
-| `01_telemetria_emissor.py` | micro:bit que envia dades de sensors per ràdio. |
-| `02_telemetria_receptor.py` | micro:bit que rep, mostra i registra (sèrie). |
-| `03_ia_gestos.py` | Classificació de gestos amb l'acceleròmetre (IA basada en regles). |
+| [`01_telemetria_emissor.py`](codi/01_telemetria_emissor.py) | micro:bit que envia dades de sensors per ràdio. |
+| [`02_telemetria_receptor.py`](codi/02_telemetria_receptor.py) | micro:bit que rep, mostra i registra (sèrie). |
+| [`03_ia_gestos.py`](codi/03_ia_gestos.py) | Classificació de gestos amb l'acceleròmetre (IA basada en regles). |
 | `04_esp32_telemetria.ino` | *(Opcional)* ESP32 que publica dades per WiFi. |
 
 ## Mètode de projecte i continuïtat
@@ -34,7 +34,7 @@
 
 ## SESSIÓ 1 (2 h) — Telemetria: el robot que informa
 - **Activació (10'):** *"Com sap el teu mòbil la temperatura de casa quan ets fora?"* → telemetria/IoT.
-- **Modelatge (25'):** `01_telemetria_emissor.py` + `02_telemetria_receptor.py`. Enviar dades amb `radio.send()`; rebre-les i **registrar-les pel port sèrie** (per fer-ne després un gràfic/full de càlcul).
+- **Modelatge (25'):** [`01_telemetria_emissor.py`](codi/01_telemetria_emissor.py) + [`02_telemetria_receptor.py`](codi/02_telemetria_receptor.py). Enviar dades amb `radio.send()`; rebre-les i **registrar-les pel port sèrie** (per fer-ne després un gràfic/full de càlcul).
 - **Pràctica guiada (35'):** una placa mesura temperatura/llum i les envia; l'altra les mostra i registra.
 - **Repte (40'):** enviar dues magnituds amb etiqueta (p. ex. `"T:23"`, `"L:120"`); **+ repte:** alerta quan se supera un llindar.
 - **Tancament (10'):** quadern (mostra de dades registrades).
@@ -56,9 +56,9 @@
 
 ## SESSIÓ 3 (2 h) — Introducció a la IA: de les regles a l'aprenentatge
 - **Activació (10'):** *"Com pot un sistema 'reconèixer' un gest o decidir per si sol?"*
-- **Modelatge (25'):** `03_ia_gestos.py`. Recollir dades de l'acceleròmetre i **classificar** gestos (pla, dret, inclinat, sacseig) amb **regles** a partir dels valors. Explicar la diferència entre **regles fetes a mà** i **aprenentatge automàtic (ML)** real (vegeu el marc de `../00_IA_a_la_materia.md` §4).
+- **Modelatge (25'):** [`03_ia_gestos.py`](codi/03_ia_gestos.py). Recollir dades de l'acceleròmetre i **classificar** gestos (pla, dret, inclinat, sacseig) amb **regles** a partir dels valors. Explicar la diferència entre **regles fetes a mà** i **aprenentatge automàtic (ML)** real (vegeu el marc de `../00_IA_a_la_materia.md` §4).
 - **Pràctica guiada (25'):** proven i ajusten el classificador per **regles**.
-- **De regles a ML real (35'):** fes el salt amb la **pràctica de Teachable Machine** (`SA8_practica_teachable_machine.md`): l'alumnat **recull exemples**, **entrena** un classificador (imatge/so/postura), el **prova** i el **trenca a propòsit** per veure'n els límits. *(Sense maquinari extra; Pla B amb demostració projectada — vegeu la pràctica.)* **Alternativa amb la placa:** extensió **ML/"AI" de MakeCode** per a micro:bit (recollir mostres de moviment i entrenar).
+- **De regles a ML real (35'):** fes el salt amb la **pràctica de Teachable Machine** ([`SA8_practica_teachable_machine.md`](SA8_practica_teachable_machine.md)): l'alumnat **recull exemples**, **entrena** un classificador (imatge/so/postura), el **prova** i el **trenca a propòsit** per veure'n els límits. *(Sense maquinari extra; Pla B amb demostració projectada — vegeu la pràctica.)* **Alternativa amb la placa:** extensió **ML/"AI" de MakeCode** per a micro:bit (recollir mostres de moviment i entrenar).
 - **Reflexió ètica + tancament (15'):** biaixos, dades i usos responsables de la IA. Usa el marc de la secció **"Ètica de dades i IA"** (RGPD, biaix, consentiment) i una de les seves preguntes de mini-debat.
 
 **Punt clau:** una "IA" pot ser tan simple com un conjunt de **regles** sobre dades; el **ML** **aprèn** les regles a partir d'**exemples** (dades d'entrenament). Tots dos depenen de **bones dades**: *garbage in, garbage out*.
@@ -74,7 +74,7 @@
 | Quadern (dades + reflexió ètica) | Registre de dades i valoració ètica (ODS) | CA4.2 | R4 |
 | Coavaluació | Treball d'equip i decisions de disseny responsable | CA3.1 | R4 |
 
-*(CA3.1 = control/decisió; CA4.2 = integrar tecnologies emergents (IoT/telemetria/IA) en un sistema de control. Vegeu `Programació didàctica/06_Avaluacio_criteris_qualificacio.md`. Comparteix R1, R3 i R4 **abans** de començar.)*
+*(CA3.1 = control/decisió; CA4.2 = integrar tecnologies emergents (IoT/telemetria/IA) en un sistema de control. Vegeu [`Programació didàctica/06_Avaluacio_criteris_qualificacio.md`](../../Programació%20didàctica/06_Avaluacio_criteris_qualificacio.md). Comparteix R1, R3 i R4 **abans** de començar.)*
 
 ## Ètica de dades i IA (RGPD, biaix, consentiment)
 
@@ -115,7 +115,7 @@
 | Via | Mesura |
 |---|---|
 | **Bastida** (qui s'encalla) | Donar emissor i receptor ja fets per modificar-los; **simulador** micro:bit i Wokwi (ESP32); equips heterogenis. |
-| **+ Ampliació** (qui va sobrat) | Dues magnituds etiquetades, alerta per llindar, classe nova de gest, **ML real** (Teachable Machine: exportar model; o MakeCode ML); reptes ⭐ de `Reptes/Reptes_SA8.md`. |
+| **+ Ampliació** (qui va sobrat) | Dues magnituds etiquetades, alerta per llindar, classe nova de gest, **ML real** (Teachable Machine: exportar model; o MakeCode ML); reptes ⭐ de [`Reptes/Reptes_SA8.md`](../../Reptes/Reptes_SA8.md). |
 | **Representació múltiple** | Dades en taula i gràfic, diagrama d'arquitectura IoT, simuladors. |
 | **Implicació** | Cada equip tria el sistema IoT del seu entorn (hort, aula, casa). |
 

@@ -72,7 +72,7 @@ Repartiu-vos els rols i **roteu-los** a cada sessió:
 
 ## Vols més?
 
-- **Reptes ⭐:** `Reptes/Reptes_SA7.md` (repartidor, explorador, seguidor de línia).
+- **Reptes ⭐:** [`Reptes/Reptes_SA7.md`](../../Reptes/Reptes_SA7.md) (repartidor, explorador, seguidor de línia).
 - **Repte de pista cronometrat:** millora el temps de volta iterant (registra cada intent).
 
 ---

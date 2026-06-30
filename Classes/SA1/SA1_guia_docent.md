@@ -1,7 +1,7 @@
 # SA1 · Guia docent — Què és un robot? Sistemes embeguts i mètode de projecte
 
 **Durada:** 6 h (3 sessions de 2 h) · **Maquinari:** Arduino UNO (demostració) + Tinkercad · **Llenguatge:** lectura de C/C++
-**Referència:** `Programació didàctica/10_SA1_Introduccio_robotica.md`
+**Referència:** [`Programació didàctica/10_SA1_Introduccio_robotica.md`](../../Programació%20didàctica/10_SA1_Introduccio_robotica.md)
 
 ## Objectius de la SA
 1. Definir robot i sistema embegut; identificar entrada-procés-sortida.
@@ -18,11 +18,11 @@
 ## Documents de la SA (aquesta carpeta)
 | Document | Quan s'usa |
 |---|---|
-| `SA1_fitxa_alumnat.md` | Totes les sessions (Activitats 1-4 + quadern). |
-| `SA1_prova_diagnostica.md` | Sessió 1 (imprimible o Google Forms; **no qualifica**). |
-| `SA1_esquemes_connexions.md` | Sessió 2 (anatomia de la placa, Activitat 2) i 3 (circuit `Blink`). |
-| `SA1_normes_seguretat.md` | Sessió 2 (lectura i **signatura**). |
-| `SA1_poster_robot_plantilla.md` | Producte de la SA (es pot iniciar a la Sessió 3). |
+| [`SA1_fitxa_alumnat.md`](SA1_fitxa_alumnat.md) | Totes les sessions (Activitats 1-4 + quadern). |
+| [`SA1_prova_diagnostica.md`](SA1_prova_diagnostica.md) | Sessió 1 (imprimible o Google Forms; **no qualifica**). |
+| [`SA1_esquemes_connexions.md`](SA1_esquemes_connexions.md) | Sessió 2 (anatomia de la placa, Activitat 2) i 3 (circuit `Blink`). |
+| [`SA1_normes_seguretat.md`](SA1_normes_seguretat.md) | Sessió 2 (lectura i **signatura**). |
+| [`SA1_poster_robot_plantilla.md`](SA1_poster_robot_plantilla.md) | Producte de la SA (es pot iniciar a la Sessió 3). |
 | `codi/` | `blink`, `blink_repte` i ampliacions `blink_millis`, `sos_morse`. |
 
 ---
@@ -50,7 +50,7 @@ La SA1 no només respon *"què és un robot?"*: també presenta **com treballare
 | Activació | 15' | Llança la pregunta: *"Quins robots tens a casa sense saber-ho?"* | Pluja d'idees; llista a la pissarra. |
 | Explicació | 25' | Presenta el model **entrada → procés → sortida** i el concepte de sistema embegut. | Prenen notes; classifiquen exemples. |
 | Pràctica | 40' | Reparteix l'**anàlisi de 3 sistemes** (rentadora, dron, semàfor). | En parelles, omplen la taula E-P-S de la fitxa (Activitat 1). |
-| Diagnòstic | 30' | Passa la **prova diagnòstica** (`SA1_prova_diagnostica.md`; no qualifica). | Responen individualment. |
+| Diagnòstic | 30' | Passa la **prova diagnòstica** ([`SA1_prova_diagnostica.md`](SA1_prova_diagnostica.md); no qualifica). | Responen individualment. |
 | Tancament | 10' | Recull conclusions; presenta el **mètode de projecte** (pòster a l'aula) com a forma de treball del curs; obre el quadern tècnic. | Primera entrada al quadern. |
 
 **Punts clau:** tot sistema automàtic té sensors (entrada), un "cervell" (procés) i actuadors (sortida). El robot és un sistema embegut amb capacitat d'actuar sobre l'entorn. **Tot el curs** treballarem amb el cicle analitzar → dissenyar → prototipar → provar → millorar.
@@ -62,7 +62,7 @@ La SA1 no només respon *"què és un robot?"*: també presenta **com treballare
 | Dron | Giroscopi/acceleròmetre, GPS, comandament | Controlador de vol que estabilitza i navega | Motors de les hèlixs (ESC), LED, càmera |
 | Semàfor | Temporitzador, sensor de presència/espira | Lògica de seqüència de fases | LED vermell/groc/verd |
 
-**Prova diagnòstica:** vegeu `SA1_prova_diagnostica.md` (versió imprimible amb clau de correcció + versió Google Forms autocorregible). Serveix per formar **parelles heterogènies** (alumnat amb experiència + sense).
+**Prova diagnòstica:** vegeu [`SA1_prova_diagnostica.md`](SA1_prova_diagnostica.md) (versió imprimible amb clau de correcció + versió Google Forms autocorregible). Serveix per formar **parelles heterogènies** (alumnat amb experiència + sense).
 
 ---
 
@@ -71,8 +71,8 @@ La SA1 no només respon *"què és un robot?"*: també presenta **com treballare
 | Fase | Temps | Activitat docent | Activitat alumnat |
 |---|---|---|---|
 | Activació | 10' | Mostra una placa Arduino UNO real. | Identifiquen parts visibles. |
-| Explicació | 30' | Arquitectura: microcontrolador, pins digitals/analògics, alimentació, USB. **Analògic vs digital**. (Projecta la versió etiquetada de `SA1_esquemes_connexions.md`.) | Etiqueten l'**esquema mut de la placa** (Activitat 2; versió muda del mateix document). |
-| Seguretat | 20' | Presenta i comenta les **normes de seguretat** (`SA1_normes_seguretat.md`). | Llegeixen i **signen** el full. |
+| Explicació | 30' | Arquitectura: microcontrolador, pins digitals/analògics, alimentació, USB. **Analògic vs digital**. (Projecta la versió etiquetada de [`SA1_esquemes_connexions.md`](SA1_esquemes_connexions.md).) | Etiqueten l'**esquema mut de la placa** (Activitat 2; versió muda del mateix document). |
+| Seguretat | 20' | Presenta i comenta les **normes de seguretat** ([`SA1_normes_seguretat.md`](SA1_normes_seguretat.md)). | Llegeixen i **signen** el full. |
 | Pràctica | 50' | Tour guiat de l'**Arduino IDE** i de **Tinkercad** (crear compte de classe, primer circuit virtual). | Creen el seu primer circuit a Tinkercad (LED + placa). |
 | Tancament | 10' | Resol dubtes de l'entorn. | Entrada al quadern: captura del circuit. |
 
@@ -94,7 +94,7 @@ La SA1 no només respon *"què és un robot?"*: també presenta **com treballare
 | **Investigar** | 20' | Lectura guiada: `setup()`, `loop()`, `pinMode`, `digitalWrite`, `delay`. | Anoten què fa cada part i per què. |
 | **Modificar** | 25' | Demana canviar el temps i el patró de parpelleig. | Modifiquen `delay` i observen l'efecte. |
 | **Crear** | 30' | Proposa el **repte de parpelleig variable** (`blink_repte.ino`). Per a qui acaba aviat, **ampliacions** (`blink_millis.ino`, `sos_morse.ino`). | Resolen; comparen solucions. |
-| **Debat + tancament** | 20' | Mini-debat **ètica de l'automatització** (ODS); presenta la **fitxa-pòster** (`SA1_poster_robot_plantilla.md`). | Reflexió escrita al quadern; trien el robot del pòster. |
+| **Debat + tancament** | 20' | Mini-debat **ètica de l'automatització** (ODS); presenta la **fitxa-pòster** ([`SA1_poster_robot_plantilla.md`](SA1_poster_robot_plantilla.md)). | Reflexió escrita al quadern; trien el robot del pòster. |
 
 **Errors freqüents i solució:**
 | Error | Causa | Solució |
@@ -103,7 +103,7 @@ La SA1 no només respon *"què és un robot?"*: també presenta **com treballare
 | "Port not found" en pujar | Placa no seleccionada | Eines → Placa: Arduino UNO; Port correcte. |
 | Parpelleig massa ràpid/imperceptible | `delay` molt petit | Augmentar el valor (ms). |
 
-**Producte de la SA:** fitxa-pòster d'anàlisi d'un robot real (`SA1_poster_robot_plantilla.md`) + primeres entrades del quadern tècnic.
+**Producte de la SA:** fitxa-pòster d'anàlisi d'un robot real ([`SA1_poster_robot_plantilla.md`](SA1_poster_robot_plantilla.md)) + primeres entrades del quadern tècnic.
 
 ### Mapa d'avaluació (traçabilitat)
 
@@ -115,7 +115,7 @@ La SA1 no només respon *"què és un robot?"*: també presenta **com treballare
 | Quadern tècnic | Documentació i reflexió del procés | CA5.1 | **R4** | Sí |
 | Observació d'aula | Cooperació, autonomia, seguretat | CA5.3 | **R5** | Sí |
 
-*(CA5.1 = gestionar un projecte tecnològic; CA5.3 = valorar l'impacte ètic/social/ambiental i cooperar. Vegeu `Programació didàctica/06_Avaluacio_criteris_qualificacio.md`.)*
+*(CA5.1 = gestionar un projecte tecnològic; CA5.3 = valorar l'impacte ètic/social/ambiental i cooperar. Vegeu [`Programació didàctica/06_Avaluacio_criteris_qualificacio.md`](../../Programació%20didàctica/06_Avaluacio_criteris_qualificacio.md).)*
 
 ### Quadern tècnic — primera entrada (guia per a l'alumnat)
 
@@ -150,7 +150,7 @@ A la SA1 hem fet **parpellejar un LED** (una sortida digital senzilla). A la **S
 | **Diversitat lingüística/lectora** | Glossari mínim a la pissarra (sensor, actuador, procés, embegut); diagrames ASCII i imatges en lloc de text dens. |
 | **Sense maquinari per a tothom** | Tot és reproduïble a **Tinkercad**/**Wokwi**; es pot treballar amb el LED **intern** (pin 13) sense cablejar res. |
 
-> **Avaluació formativa:** comparteix les rúbriques **R4** i **R5** amb l'alumnat **abans** de començar el producte (vegeu `Programació didàctica/07_Rubriques.md`).
+> **Avaluació formativa:** comparteix les rúbriques **R4** i **R5** amb l'alumnat **abans** de començar el producte (vegeu [`Programació didàctica/07_Rubriques.md`](../../Programació%20didàctica/07_Rubriques.md)).
 
 ---
 

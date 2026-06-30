@@ -34,7 +34,7 @@
 - **Tipus de control:** llaç obert / llaç tancat / màquina d'estats (encercla)
 
 ## 4. Planificació
-Useu `plantilles/Planificacio_agile_PLANTILLA.md` (taulell To Do / Fent / Fet).
+Useu [`plantilles/Planificacio_agile_PLANTILLA.md`](plantilles/Planificacio_agile_PLANTILLA.md) (taulell To Do / Fent / Fet).
 - Fita sessió 2: ____________________________________________________
 - Fita sessió 3: ____________________________________________________
 - Fita sessió 4: ____________________________________________________
