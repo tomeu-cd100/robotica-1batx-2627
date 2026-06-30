@@ -1,0 +1,182 @@
+[
+ {
+  "html": "classes/00-general/00-plantilla-disseny-objecte.html",
+  "pdf": "pdf/classes/00-general/00-plantilla-disseny-objecte.pdf",
+  "title": "Plantilla de disseny d'objecte"
+ },
+ {
+  "html": "classes/sa0/sa0-fitxa-alumnat.html",
+  "pdf": "pdf/classes/sa0/sa0-fitxa-alumnat.pdf",
+  "title": "SA0 · Fitxa d'alumnat — Vocabulari i primeres passes amb el codi"
+ },
+ {
+  "html": "classes/sa1/sa1-fitxa-alumnat.html",
+  "pdf": "pdf/classes/sa1/sa1-fitxa-alumnat.pdf",
+  "title": "SA1 · Fitxa base — Què és un robot?"
+ },
+ {
+  "html": "classes/sa1/sa1-fitxa-ampliada.html",
+  "pdf": "pdf/classes/sa1/sa1-fitxa-ampliada.pdf",
+  "title": "SA1 · Fitxa ampliada (aprofundiment) — Què és un robot?"
+ },
+ {
+  "html": "classes/sa1/sa1-poster-robot-plantilla.html",
+  "pdf": "pdf/classes/sa1/sa1-poster-robot-plantilla.pdf",
+  "title": "SA1 · Fitxa-pòster: \"Analitzem un robot real\""
+ },
+ {
+  "html": "classes/sa1/sa1-prova-diagnostica.html",
+  "pdf": "pdf/classes/sa1/sa1-prova-diagnostica.pdf",
+  "title": "SA1 · Prova diagnòstica de coneixements previs"
+ },
+ {
+  "html": "classes/sa2/sa2-fitxa-alumnat.html",
+  "pdf": "pdf/classes/sa2/sa2-fitxa-alumnat.pdf",
+  "title": "SA2 · Fitxa base — Sortides digitals i PWM"
+ },
+ {
+  "html": "classes/sa2/sa2-fitxa-ampliada.html",
+  "pdf": "pdf/classes/sa2/sa2-fitxa-ampliada.pdf",
+  "title": "SA2 · Fitxa ampliada (aprofundiment) — Sortides digitals i PWM"
+ },
+ {
+  "html": "classes/sa3/sa3-fitxa-alumnat.html",
+  "pdf": "pdf/classes/sa3/sa3-fitxa-alumnat.pdf",
+  "title": "SA3 · Fitxa base — Entrades i sensors"
+ },
+ {
+  "html": "classes/sa3/sa3-fitxa-ampliada.html",
+  "pdf": "pdf/classes/sa3/sa3-fitxa-ampliada.pdf",
+  "title": "SA3 · Fitxa ampliada (aprofundiment) — Entrades i sensors"
+ },
+ {
+  "html": "classes/sa4/sa4-fitxa-alumnat.html",
+  "pdf": "pdf/classes/sa4/sa4-fitxa-alumnat.pdf",
+  "title": "SA4 · Fitxa base — Moviment: servos, motors i ponts H"
+ },
+ {
+  "html": "classes/sa4/sa4-fitxa-ampliada.html",
+  "pdf": "pdf/classes/sa4/sa4-fitxa-ampliada.pdf",
+  "title": "SA4 · Fitxa ampliada (aprofundiment) — Moviment: servos, motors i ponts H"
+ },
+ {
+  "html": "classes/sa5/sa5-fitxa-alumnat.html",
+  "pdf": "pdf/classes/sa5/sa5-fitxa-alumnat.pdf",
+  "title": "SA5 · Fitxa base — micro:bit i MicroPython"
+ },
+ {
+  "html": "classes/sa5/sa5-fitxa-ampliada.html",
+  "pdf": "pdf/classes/sa5/sa5-fitxa-ampliada.pdf",
+  "title": "SA5 · Fitxa ampliada (aprofundiment) — micro:bit i MicroPython"
+ },
+ {
+  "html": "classes/sa6/sa6-fitxa-alumnat.html",
+  "pdf": "pdf/classes/sa6/sa6-fitxa-alumnat.pdf",
+  "title": "SA6 · Fitxa base — Sistemes de control"
+ },
+ {
+  "html": "classes/sa6/sa6-fitxa-ampliada.html",
+  "pdf": "pdf/classes/sa6/sa6-fitxa-ampliada.pdf",
+  "title": "SA6 · Fitxa ampliada (aprofundiment) — Sistemes de control"
+ },
+ {
+  "html": "classes/sa7/sa7-fitxa-alumnat.html",
+  "pdf": "pdf/classes/sa7/sa7-fitxa-alumnat.pdf",
+  "title": "SA7 · Fitxa base — Robòtica mòbil"
+ },
+ {
+  "html": "classes/sa7/sa7-fitxa-ampliada.html",
+  "pdf": "pdf/classes/sa7/sa7-fitxa-ampliada.pdf",
+  "title": "SA7 · Fitxa ampliada (aprofundiment) — Robòtica mòbil"
+ },
+ {
+  "html": "classes/sa8/sa8-fitxa-alumnat.html",
+  "pdf": "pdf/classes/sa8/sa8-fitxa-alumnat.pdf",
+  "title": "SA8 · Fitxa base — IoT i IA"
+ },
+ {
+  "html": "classes/sa8/sa8-fitxa-ampliada.html",
+  "pdf": "pdf/classes/sa8/sa8-fitxa-ampliada.pdf",
+  "title": "SA8 · Fitxa ampliada (aprofundiment) — IoT i IA"
+ },
+ {
+  "html": "classes/sa9/plantilles/banc-de-reptes.html",
+  "pdf": "pdf/classes/sa9/plantilles/banc-de-reptes.pdf",
+  "title": "SA9 · Banc de reptes (per nivells)"
+ },
+ {
+  "html": "classes/sa9/plantilles/dossier-tecnic-plantilla.html",
+  "pdf": "pdf/classes/sa9/plantilles/dossier-tecnic-plantilla.pdf",
+  "title": "Dossier tècnic — [Títol del projecte]"
+ },
+ {
+  "html": "classes/sa9/plantilles/planificacio-agile-plantilla.html",
+  "pdf": "pdf/classes/sa9/plantilles/planificacio-agile-plantilla.pdf",
+  "title": "Planificació àgil — Equip: ______________________"
+ },
+ {
+  "html": "classes/sa9/sa9-fitxa-alumnat.html",
+  "pdf": "pdf/classes/sa9/sa9-fitxa-alumnat.pdf",
+  "title": "SA9 · Fitxa base — Repte final integrador"
+ },
+ {
+  "html": "classes/sa9/sa9-fitxa-ampliada.html",
+  "pdf": "pdf/classes/sa9/sa9-fitxa-ampliada.pdf",
+  "title": "SA9 · Fitxa ampliada (aprofundiment) — Repte final integrador"
+ },
+ {
+  "html": "reptes/reptes-sa1.html",
+  "pdf": "pdf/reptes/reptes-sa1.pdf",
+  "title": "Reptes SA1 · Introducció: primer programa amb un LED"
+ },
+ {
+  "html": "reptes/reptes-sa2.html",
+  "pdf": "pdf/reptes/reptes-sa2.pdf",
+  "title": "Reptes SA2 · Sortides digitals i PWM"
+ },
+ {
+  "html": "reptes/reptes-sa3.html",
+  "pdf": "pdf/reptes/reptes-sa3.pdf",
+  "title": "Reptes SA3 · Entrades i sensors"
+ },
+ {
+  "html": "reptes/reptes-sa4.html",
+  "pdf": "pdf/reptes/reptes-sa4.pdf",
+  "title": "Reptes SA4 · Moviment: servos, motors i ponts H"
+ },
+ {
+  "html": "reptes/reptes-sa5.html",
+  "pdf": "pdf/reptes/reptes-sa5.pdf",
+  "title": "Reptes SA5 · micro:bit i MicroPython"
+ },
+ {
+  "html": "reptes/reptes-sa6.html",
+  "pdf": "pdf/reptes/reptes-sa6.pdf",
+  "title": "Reptes SA6 · Sistemes de control"
+ },
+ {
+  "html": "reptes/reptes-sa7.html",
+  "pdf": "pdf/reptes/reptes-sa7.pdf",
+  "title": "Reptes SA7 · Robòtica mòbil (Imagina 3dBot)"
+ },
+ {
+  "html": "reptes/reptes-sa8.html",
+  "pdf": "pdf/reptes/reptes-sa8.pdf",
+  "title": "Reptes SA8 · IoT i Intel·ligència Artificial"
+ },
+ {
+  "html": "avaluacio/prova-practica-t1.html",
+  "pdf": "pdf/avaluacio/prova-practica-t1.pdf",
+  "title": "Prova pràctica — Trimestre 1 (SA1-SA3)"
+ },
+ {
+  "html": "avaluacio/prova-practica-t2.html",
+  "pdf": "pdf/avaluacio/prova-practica-t2.pdf",
+  "title": "Prova pràctica — Trimestre 2 (SA4-SA6)"
+ },
+ {
+  "html": "avaluacio/prova-practica-t3.html",
+  "pdf": "pdf/avaluacio/prova-practica-t3.pdf",
+  "title": "Prova pràctica — Trimestre 3 (SA7-SA9)"
+ }
+]
