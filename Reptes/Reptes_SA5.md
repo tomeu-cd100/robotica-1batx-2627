@@ -50,7 +50,7 @@
 
 **Context.** Un **dau electrònic**, un **pedra-paper-tisora**, o **enviar missatges** entre dos micro:bits per ràdio.
 
-> *Client: empresa de joguines / equip de robòtica · Lliurable: joc o comandament sense fil · Món real: comunicació sense fil i comandaments remots (base del comandament del braç de SA4).*
+> *Client: empresa de joguines / equip de robòtica · Lliurable: joc o comandament sense fil · Món real: comunicació sense fil i comandaments remots.* (La ràdio és la **base** d'un possible comandament del braç de SA4 — **via avançada i opcional**, requereix pont micro:bit↔Arduino; vegeu `Programació didàctica/08c_Projectes_vida_real.md`.)
 
 **Què treballa.** `random`, esdeveniments (sacsejada/botó), `display`, i/o comunicació `radio`.
 

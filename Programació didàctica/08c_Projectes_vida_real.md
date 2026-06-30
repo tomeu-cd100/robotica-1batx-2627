@@ -41,7 +41,13 @@ Productes sense moviment mecànic (es reserva per al 2n trimestre). **Fil:** *un
 | **SA5** | **Comandament micro:bit** (per gestos o ràdio) + producte propi micro:bit | Joc/ràdio · Comptapassos · Llum de nit | Wearables, controls sense fil, esport connectat |
 | **SA6** | **Control intel·ligent del moviment** (màquina d'estats + proporcional) | Regulador proporcional · Semàfor adaptatiu · Termòstat | Robòtica de precisió, climatització, automòbil |
 
-> **Integració del trimestre:** el **braç de SA4** es **teledirigeix amb el micro:bit de SA5** i es mou de forma **suau i precisa gràcies al control de SA6**. Equips que no vulguin braç poden fer una **barrera/climatitzador** amb la mateixa cadena tècnica.
+> **Integració del trimestre:** el **braç de SA4** es mou de forma **suau i precisa gràcies al control de SA6** i, opcionalment, es **teledirigeix amb el micro:bit de SA5**. Equips que no vulguin braç poden fer una **barrera/climatitzador** amb la mateixa cadena tècnica.
+
+> ⚙️ **Nota tècnica — comandament del braç (important).** El micro:bit **no pot moure directament un servo connectat a l'Arduino**: cal un **pont de comunicació**. Dues vies:
+> - **Via recomanada (100% Arduino):** el braç es controla amb un **potenciòmetre o joystick connectat al mateix Arduino** (SA3 + SA4). Senzill, sense pont, i suficient per a l'objectiu d'aprenentatge. El micro:bit (SA5) es treballa com a **producte propi independent** (comptapassos, joc/ràdio) sense haver-lo d'acoblar al braç.
+> - **Via avançada (micro:bit → Arduino):** un micro:bit **emissor** envia per **ràdio** a un segon micro:bit **receptor** connectat a l'Arduino per **sèrie/pins**; l'Arduino interpreta el missatge i mou el servo. És un repte d'ampliació d'equips ràpids; **requereix maquinari extra** (2n micro:bit + cablejat) **no previst al pressupost base**.
+>
+> Conclusió: la **continuïtat SA4↔SA5↔SA6 és pedagògica** (mateixa família de productes), no obliga a acoblar físicament les tres plataformes. L'acoblament real és **opcional i avançat**.
 
 ---
 
