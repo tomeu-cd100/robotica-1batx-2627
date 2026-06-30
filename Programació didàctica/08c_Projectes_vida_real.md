@@ -1,6 +1,6 @@
 # 08c · Projectes de la vida real (model mixt: producte per SA + gran integrador)
 
-**Proposta pedagògica.** Convertir cada SA en un **producte real autònom** que l'alumnat pugui reconèixer en el món que l'envolta (un braç robòtic, un cotxe teledirigit, una barrera de pàrquing…), mantenint la progressió tècnica actual i culminant amb **SA9 com a gran projecte integrador**.
+**Enfocament pedagògic (ja desplegat als reptes de SA1–SA8).** Cada SA es planteja com un **producte real autònom** que l'alumnat pot reconèixer en el món que l'envolta (un braç robòtic, un cotxe teledirigit, una barrera de pàrquing…), mantenint la progressió tècnica actual i culminant amb **SA9 com a gran projecte integrador**. Vegeu l'estat d'implementació al final del document.
 
 > **Model triat:** *mixt*. Cada SA acaba amb un **producte físic petit però complet** (no un exercici aïllat), i SA9 demana sintetitzar-ho tot. No s'imposa un únic artefacte de trimestre: cada SA és vàlida per si mateixa, però la seqüència està pensada perquè els subsistemes encaixin si un equip vol acumular-los cap al projecte final.
 
@@ -75,22 +75,25 @@ SA9 ja és un projecte obert; aquesta proposta només hi afegeix un **catàleg d
 
 ---
 
-## Impacte sobre el material actual
+## Estat d'implementació sobre el material actual
 
-| Element | Canvi necessari |
-|---------|-----------------|
-| Reptes (`Reptes/`) | **Reescriptura de marc**: afegir a cada repte un encapçalament "Producte real / Client / Lliurable". El codi i les ampliacions no canvien. |
-| Fitxes d'alumnat | Opcional: una línia de context "Aquest producte serveix per a…". Sense canvis tècnics. |
-| Guies docents | Afegir nota d'integració de trimestre (com encadenar productes). |
-| Seqüenciació (`08`) | Cap canvi d'hores ni de rúbriques. Aquest document n'és el complement. |
+Aquest marc **ja està aplicat** al material (no és una proposta pendent):
+
+| Element | Estat |
+|---------|-------|
+| Reptes (`Reptes/`) | ✅ **Fet a totes les SA1–SA8**: cada repte porta l'encapçalament "Producte real / Client / Lliurable / Món real". El codi i les ampliacions no s'han tocat. |
+| `Reptes/README.md` | ✅ Inclou el fil de productes per trimestre i remet a aquest document. |
+| Seqüenciació (`08`) | ✅ Sense canvis d'hores ni de rúbriques: aquest document n'és el complement (capa de sentit). |
+| Fitxes d'alumnat | ◻️ Opcional i no fet: es podria afegir una línia de context "Aquest producte serveix per a…". Sense canvis tècnics. |
+| Guies docents | ◻️ Opcional i no fet: es podria afegir una nota d'integració de trimestre (com encadenar productes). |
 | Material físic | Per al braç de SA4 cal preveure **2-3 servos i estructura** per equip (vegeu `09b_Guia_compra_pressupost.md`); per al cotxe, el robot Imagina 3dBot ja és previst a SA7. |
 
 ---
 
-## Decisions pendents abans d'implementar
+## Decisions que resten obertes
 
-1. **Abast de la reescriptura de reptes:** tots els reptes A/B/C, o només l'opció "estrella" de cada SA?
-2. **Material del braç (SA4):** quants servos per equip i si es comparteix una estructura impresa en 3D comuna.
-3. **Avaluació:** afegir o no un criteri de "producte funcional" a les rúbriques, o mantenir R1-R5 tal com estan.
+1. **Material del braç (SA4):** quants servos per equip i si es comparteix una estructura impresa en 3D comuna.
+2. **Avaluació:** afegir o no un criteri de "producte funcional" a les rúbriques, o mantenir R1-R5 tal com estan.
+3. **Fitxes i guies docents:** decidir si s'incorpora la línia de context i la nota d'integració de trimestre (millores opcionals, vegeu taula anterior).
 
-> **Següent pas suggerit:** validar aquest document i, si s'aprova, fer un **pilot reescrivint el repte del braç robòtic (SA4)** com a mostra del nou format "producte real".
+> **On som:** el reframing de productes està desplegat als reptes de totes les SA. El que queda és **decisió de centre** (material del braç) i **opcional** (context a fitxes/guies, criteri de rúbrica).
