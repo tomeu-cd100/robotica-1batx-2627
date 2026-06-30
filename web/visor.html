@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Visor de documents · Robòtica · 1r de Batxillerat</title>
+<link rel="stylesheet" href="assets/css/estil.css">
+<script>(function(){try{var t=localStorage.getItem('tema');if(t==='fosc'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.setAttribute('data-tema','fosc');}catch(e){}})();</script>
+</head>
+<body data-section="recursos" class="sense-sidebar sense-toc">
+<a class="skip" href="#contingut">Salta al contingut</a>
+<header class="topbar">
+  <a class="brand" href="index.html"><span class="brand-mark">◆</span> Robòtica <span class="brand-sub">1r Batx</span></a>
+  <nav class="topnav" aria-label="Seccions"><a href="index.html">Inici</a></nav>
+  <div class="topbar-eines">
+    <a class="btn btn-secundari" id="doc-gh" href="#" target="_blank" rel="noopener">Obre a GitHub ↗</a>
+    <button class="tema-btn" aria-label="Canvia el tema clar/fosc" title="Tema clar/fosc">◐</button>
+  </div>
+</header>
+<div class="layout">
+  <main id="contingut">
+    <nav class="breadcrumb" aria-label="Ubicació"><a href="index.html">Inici</a> <span class="sep">/</span> <span>Documents</span> <span class="sep">/</span> <span id="doc-titol" aria-current="page">Document</span></nav>
+    <h1 id="doc-h1" class="visor-h1">Document</h1>
+    <div id="visor-cont" class="visor-cont"><div class="visor-msg">Carregant…</div></div>
+  </main>
+</div>
+<footer class="peu">
+  <p>Robòtica · 1r de Batxillerat · visor de documents. Els fitxers es carreguen des del <a href="https://github.com/tomeu-cd100/robotica-1batx-2627" target="_blank" rel="noopener">repositori a GitHub</a>.</p>
+</footer>
+<script type="module">
+const p = new URLSearchParams(location.search);
+const u = p.get('u'); const t = p.get('t') || 'Document'; const x = (p.get('x') || '').toLowerCase();
+document.getElementById('doc-titol').textContent = t;
+document.getElementById('doc-h1').textContent = t;
+document.title = t + ' · Robòtica · 1r de Batxillerat';
+let gh = u || '#';
+if (u && u.indexOf('raw.githubusercontent.com') > -1) {
+  gh = u.replace('https://raw.githubusercontent.com/', 'https://github.com/').replace('/main/', '/blob/main/');
+}
+document.getElementById('doc-gh').href = gh;
+const cont = document.getElementById('visor-cont');
+const office = ['xlsx','xls','pptx','ppt','docx','doc','ods','odt','csv'];
+function msg(h){ cont.innerHTML = '<div class="visor-msg">' + h + '</div>'; }
+if (!u) {
+  msg('No s\'ha indicat cap document.');
+} else if (x === 'pdf') {
+  try {
+    const pdfjs = await import('https://cdn.jsdelivr.net/npm/pdfjs-dist@4.7.76/build/pdf.min.mjs');
+    pdfjs.GlobalWorkerOptions.workerSrc = 'https://cdn.jsdelivr.net/npm/pdfjs-dist@4.7.76/build/pdf.worker.min.mjs';
+    const pdf = await pdfjs.getDocument({ url: u }).promise;
+    cont.innerHTML = '';
+    for (let n = 1; n <= pdf.numPages; n++) {
+      const page = await pdf.getPage(n);
+      const vp = page.getViewport({ scale: 1.6 });
+      const c = document.createElement('canvas');
+      c.className = 'visor-pagina'; c.width = vp.width; c.height = vp.height;
+      cont.appendChild(c);
+      await page.render({ canvasContext: c.getContext('2d'), viewport: vp }).promise;
+    }
+  } catch (e) {
+    msg('No s\'ha pogut mostrar el PDF aquí (potser sense connexió). <a href="' + gh + '" target="_blank" rel="noopener">Obre\'l a GitHub ↗</a>');
+  }
+} else if (office.includes(x)) {
+  const src = 'https://view.officeapps.live.com/op/embed.aspx?src=' + encodeURIComponent(u);
+  cont.innerHTML = '<iframe class="visor-iframe" src="' + src + '" allowfullscreen></iframe>';
+} else {
+  msg('Aquest tipus de fitxer no es pot previsualitzar al web. <a href="' + gh + '" target="_blank" rel="noopener">Descarrega\'l des de GitHub ↗</a>');
+}
+</script>
+<script src="assets/js/lloc.js"></script>
+</body>
+</html>

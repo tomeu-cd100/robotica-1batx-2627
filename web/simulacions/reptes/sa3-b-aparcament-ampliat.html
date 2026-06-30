@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SA3 B aparcament ampliat · Robòtica · 1r de Batxillerat</title>
+<meta name="description" content="Material docent · LOMLOE Catalunya · curs 2026-2027">
+<link rel="stylesheet" href="../../assets/css/estil.css">
+<link rel="stylesheet" href="../../assets/css/pygments.css">
+<script>(function(){try{var t=localStorage.getItem('tema');if(t==='fosc'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.setAttribute('data-tema','fosc');}catch(e){}})();</script>
+</head>
+<body data-section="simulacions" class="amb-sidebar sense-toc">
+<a class="skip" href="#contingut">Salta al contingut</a>
+<header class="topbar">
+  <button class="menu-btn" aria-label="Obre el menú" aria-expanded="false">☰</button>
+  <a class="brand" href="../../index.html"><span class="brand-mark">◆</span> Robòtica <span class="brand-sub">1r Batx</span></a>
+  <nav class="topnav" aria-label="Seccions">
+    <a href="../../index.html">Inici</a>
+<a href="../../programacio/index.html" data-sec="programacio">Programació didàctica</a>
+<a href="../../classes/index.html" data-sec="classes">Classes</a>
+<a href="../../reptes/index.html" data-sec="reptes">Reptes</a>
+<a href="../../avaluacio/index.html" data-sec="avaluacio">Avaluació</a>
+<a href="../../normativa/index.html" data-sec="normativa">Normativa</a>
+<a href="../../simulacions/index.html" data-sec="simulacions" class="actiu">Simulacions</a>
+<a href="../../recursos/index.html" data-sec="recursos">Recursos</a>
+  </nav>
+  <div class="topbar-eines">
+    <div class="cercador">
+      <input type="search" id="cerca" placeholder="Cerca…" autocomplete="off" aria-label="Cerca al web">
+      <div id="cerca-resultats" class="cerca-resultats" hidden></div>
+    </div>
+    <button class="tema-btn" aria-label="Canvia el tema clar/fosc" title="Tema clar/fosc">◐</button>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar"><nav class="sidebar-nav" aria-label="Pàgines de la secció">
+<p class="sidebar-titol">Simulacions</p>
+<ul class="sb-top">
+<li><a href="../index.html">Presentació</a></li>
+</ul>
+<details class="sb-grup"><summary><span>Practiques</span></summary><ul><li><a href="../practiques/sa1-blink.html">SA1 blink</a></li><li><a href="../practiques/sa2-semafor.html">SA2 semafor</a></li><li><a href="../practiques/sa3-alarma-aparcament.html">SA3 alarma aparcament</a></li><li><a href="../practiques/sa4-servo-potenciometre.html">SA4 servo potenciometre</a></li><li><a href="../practiques/sa6-termostat-histeresi.html">SA6 termostat histeresi</a></li><li><a href="../practiques/sa8-telemetria-esp32.html">SA8 telemetria esp32</a></li></ul></details>
+<details class="sb-grup" open><summary><span>Reptes</span></summary><ul><li><a href="index.html">Presentació</a></li><li><a href="sa1-a-far-ampliat.html">SA1 A far ampliat</a></li><li><a href="sa1-a-far-minim.html">SA1 A far minim</a></li><li><a href="sa1-b-llum-ampliat.html">SA1 B llum ampliat</a></li><li><a href="sa1-b-llum-minim.html">SA1 B llum minim</a></li><li><a href="sa1-c-morse-ampliat.html">SA1 C morse ampliat</a></li><li><a href="sa1-c-morse-minim.html">SA1 C morse minim</a></li><li><a href="sa2-a-semafor-ampliat.html">SA2 A semafor ampliat</a></li><li><a href="sa2-a-semafor-minim.html">SA2 A semafor minim</a></li><li><a href="sa2-b-ambient-ampliat.html">SA2 B ambient ampliat</a></li><li><a href="sa2-b-ambient-minim.html">SA2 B ambient minim</a></li><li><a href="sa2-c-nivell-ampliat.html">SA2 C nivell ampliat</a></li><li><a href="sa2-c-nivell-minim.html">SA2 C nivell minim</a></li><li><a href="sa3-a-nocturna-ampliat.html">SA3 A nocturna ampliat</a></li><li><a href="sa3-a-nocturna-minim.html">SA3 A nocturna minim</a></li><li><a href="sa3-b-aparcament-ampliat.html" class="actiu">SA3 B aparcament ampliat</a></li><li><a href="sa3-b-aparcament-minim.html">SA3 B aparcament minim</a></li><li><a href="sa3-c-instrument-ampliat.html">SA3 C instrument ampliat</a></li><li><a href="sa3-c-instrument-minim.html">SA3 C instrument minim</a></li><li><a href="sa4-a-barrera-ampliat.html">SA4 A barrera ampliat</a></li><li><a href="sa4-a-barrera-minim.html">SA4 A barrera minim</a></li><li><a href="sa4-c-brac-ampliat.html">SA4 C brac ampliat</a></li><li><a href="sa4-c-brac-minim.html">SA4 C brac minim</a></li><li><a href="sa6-a-termostat-ampliat.html">SA6 A termostat ampliat</a></li><li><a href="sa6-a-termostat-minim.html">SA6 A termostat minim</a></li><li><a href="sa6-b-semafor-ampliat.html">SA6 B semafor ampliat</a></li><li><a href="sa6-b-semafor-minim.html">SA6 B semafor minim</a></li><li><a href="sa6-c-proporcional-minim.html">SA6 C proporcional minim</a></li></ul></details>
+</nav></aside>
+  <main id="contingut">
+    <nav class="breadcrumb" aria-label="Ubicació"><a href="../../index.html">Inici</a> <span class="sep">/</span> <a href="../../simulacions/index.html">Simulacions</a> <span class="sep">/</span> <span aria-current="page">SA3 B aparcament ampliat</span></nav>
+    <span class="badge-tri" data-tri="1">1r trimestre</span>
+    <article class="prose">
+<h1>SA3 B aparcament ampliat</h1>
+<p class="codi-intro">Simulació Wokwi (repte). Pots reproduir-la a <a href="https://wokwi.com/" target="_blank" rel="noopener">wokwi.com</a>: crea un projecte nou i enganxa-hi el contingut de <code>diagram.json</code> i del fitxer de codi. <a href="https://github.com/tomeu-cd100/robotica-1batx-2627/tree/main/Simulacions/Wokwi/Reptes/SA3_B_aparcament_ampliat" target="_blank" rel="noopener">Veure la carpeta a GitHub ↗</a></p>
+<section class="codi-bloc" id="diagram-json"><header class="codi-cap"><code class="codi-nom">diagram.json</code><button class="copia-btn" type="button">Copia</button></header><div class="codi-cos"><div class="highlight"><pre><span></span>{ &quot;version&quot;: 1, &quot;author&quot;: &quot;Robotica 1 Batx&quot;, &quot;editor&quot;: &quot;wokwi&quot;,
+  &quot;parts&quot;: [
+    { &quot;type&quot;: &quot;wokwi-arduino-uno&quot;, &quot;id&quot;: &quot;uno&quot;, &quot;top&quot;: 0, &quot;left&quot;: 0, &quot;attrs&quot;: {} },
+    { &quot;type&quot;: &quot;wokwi-hc-sr04&quot;, &quot;id&quot;: &quot;sonar&quot;, &quot;top&quot;: -160, &quot;left&quot;: 200, &quot;attrs&quot;: { &quot;distance&quot;: &quot;20&quot; } },
+    { &quot;type&quot;: &quot;wokwi-led&quot;, &quot;id&quot;: &quot;led&quot;, &quot;top&quot;: -110, &quot;left&quot;: 110, &quot;attrs&quot;: { &quot;color&quot;: &quot;red&quot; } },
+    { &quot;type&quot;: &quot;wokwi-resistor&quot;, &quot;id&quot;: &quot;r1&quot;, &quot;top&quot;: 20, &quot;left&quot;: 110, &quot;attrs&quot;: { &quot;value&quot;: &quot;220&quot; } },
+    { &quot;type&quot;: &quot;wokwi-buzzer&quot;, &quot;id&quot;: &quot;bz&quot;, &quot;top&quot;: 100, &quot;left&quot;: 180, &quot;attrs&quot;: { &quot;volume&quot;: &quot;0.1&quot; } }
+  ],
+  &quot;connections&quot;: [
+    [ &quot;sonar:VCC&quot;, &quot;uno:5V&quot;, &quot;red&quot;, [] ], [ &quot;sonar:GND&quot;, &quot;uno:GND.1&quot;, &quot;black&quot;, [] ],
+    [ &quot;sonar:TRIG&quot;, &quot;uno:12&quot;, &quot;blue&quot;, [] ], [ &quot;sonar:ECHO&quot;, &quot;uno:11&quot;, &quot;green&quot;, [] ],
+    [ &quot;uno:8&quot;, &quot;r1:1&quot;, &quot;orange&quot;, [] ], [ &quot;r1:2&quot;, &quot;led:A&quot;, &quot;orange&quot;, [] ], [ &quot;led:C&quot;, &quot;uno:GND.2&quot;, &quot;black&quot;, [] ],
+    [ &quot;uno:6&quot;, &quot;bz:1&quot;, &quot;purple&quot;, [] ], [ &quot;bz:2&quot;, &quot;uno:GND.3&quot;, &quot;black&quot;, [] ]
+  ] }
+</pre></div>
+</div></section>
+<section class="codi-bloc" id="sketch-ino"><header class="codi-cap"><code class="codi-nom">sketch.ino</code><button class="copia-btn" type="button">Copia</button></header><div class="codi-cos"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm">  Solucionari Repte SA3-B · Sensor d&#39;aparcament (AMPLIAT)</span>
+<span class="cm">  AMPLIACIO 1: la mesura ja esta encapsulada en la funcio mesuraDistancia().</span>
+<span class="cm">  AMPLIACIO 2: tres trams (lluny / mig / a prop) amb avisos diferents.</span>
+<span class="cm">  AMPLIACIO 3: avis proporcional: el ritme del bip augmenta com mes a prop.</span>
+<span class="cm">  Circuit: HC-SR04 TRIG=12, ECHO=11 ; LED=8 ; piezo=6.</span>
+<span class="cm">*/</span>
+
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">TRIG</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w"> </span><span class="n">ECHO</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w"> </span><span class="n">LED</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="n">PIEZO</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">6</span><span class="p">;</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">LLUNY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">30</span><span class="p">;</span><span class="w">   </span><span class="c1">// cm</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">PROP</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w">   </span><span class="c1">// cm</span>
+
+<span class="c1">// AMPLIACIO 1: funcio de mesura (amb timeout + filtre sense-eco)</span>
+<span class="kt">float</span><span class="w"> </span><span class="nf">mesuraDistancia</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">TRIG</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span><span class="w">  </span><span class="n">delayMicroseconds</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">TRIG</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH</span><span class="p">);</span><span class="w"> </span><span class="n">delayMicroseconds</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+<span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">TRIG</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span>
+<span class="w">  </span><span class="kt">long</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pulseIn</span><span class="p">(</span><span class="n">ECHO</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH</span><span class="p">,</span><span class="w"> </span><span class="mi">30000</span><span class="p">);</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">t</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mi">400</span><span class="p">;</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">0.034</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">2.0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">TRIG</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span><span class="w"> </span><span class="n">pinMode</span><span class="p">(</span><span class="n">ECHO</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT</span><span class="p">);</span>
+<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">LED</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span><span class="w"> </span><span class="n">pinMode</span><span class="p">(</span><span class="n">PIEZO</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span>
+<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mesuraDistancia</span><span class="p">();</span>
+<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">d</span><span class="p">);</span>
+
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">d</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">LLUNY</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// AMPLIACIO 2: tram lluny -&gt; tot tranquil</span>
+<span class="w">    </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">LED</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span>
+<span class="w">    </span><span class="n">noTone</span><span class="p">(</span><span class="n">PIEZO</span><span class="p">);</span>
+<span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="mi">60</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">d</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">PROP</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// AMPLIACIO 2 + 3: tram mig -&gt; bips amb ritme proporcional a la distancia</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">interval</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">map</span><span class="p">((</span><span class="kt">int</span><span class="p">)</span><span class="n">d</span><span class="p">,</span><span class="w"> </span><span class="n">PROP</span><span class="p">,</span><span class="w"> </span><span class="n">LLUNY</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">600</span><span class="p">);</span><span class="w">  </span><span class="c1">// mes a prop -&gt; mes rapid</span>
+<span class="w">    </span><span class="n">tone</span><span class="p">(</span><span class="n">PIEZO</span><span class="p">,</span><span class="w"> </span><span class="mi">1500</span><span class="p">,</span><span class="w"> </span><span class="mi">50</span><span class="p">);</span>
+<span class="w">    </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">LED</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH</span><span class="p">);</span><span class="w"> </span><span class="n">delay</span><span class="p">(</span><span class="n">interval</span><span class="p">);</span>
+<span class="w">    </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">LED</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span><span class="w">  </span><span class="n">delay</span><span class="p">(</span><span class="n">interval</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// tram a prop -&gt; avis continu</span>
+<span class="w">    </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">LED</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH</span><span class="p">);</span>
+<span class="w">    </span><span class="n">tone</span><span class="p">(</span><span class="n">PIEZO</span><span class="p">,</span><span class="w"> </span><span class="mi">2500</span><span class="p">);</span>
+<span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="mi">60</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div></section>
+    </article>
+  </main>
+  
+</div>
+<footer class="peu">
+  <p>Robòtica · 1r de Batxillerat · material sota llicència <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca" target="_blank" rel="noopener">CC BY-SA 4.0</a>.</p>
+  <p><a href="https://github.com/tomeu-cd100/robotica-1batx-2627" target="_blank" rel="noopener">Repositori a GitHub</a> · web generat el 2026-06-30.</p>
+</footer>
+<script src="../../assets/js/cerca-index.js"></script>
+<script src="../../assets/js/lloc.js"></script>
+</body>
+</html>

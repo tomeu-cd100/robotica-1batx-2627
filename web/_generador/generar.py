@@ -43,6 +43,14 @@ BUILD_DATE = date.today().isoformat()
 
 CODE_EXT = {".ino", ".py", ".cpp", ".c", ".h"}
 IMG_EXT = {".png", ".jpg", ".jpeg", ".svg", ".webp", ".gif"}
+DOC_EXT = {".pdf", ".xlsx", ".xls", ".pptx", ".ppt", ".docx", ".doc",
+           ".csv", ".odt", ".ods", ".zip"}
+
+# Bases de GitHub per enllaçar/visualitzar documents sense copiar-los al web
+REPO_SLUG = "tomeu-cd100/robotica-1batx-2627"
+RAW_BASE = f"https://raw.githubusercontent.com/{REPO_SLUG}/main/"
+TREE_BASE = f"https://github.com/{REPO_SLUG}/tree/main/"
+BLOB_BASE = f"https://github.com/{REPO_SLUG}/blob/main/"
 
 # ---------------------------------------------------------------------------
 # Definició de seccions (cada apartat un color)
@@ -58,6 +66,8 @@ SECTIONS = [
      "icon": "📝", "desc": "Proves pràctiques per trimestre i full de qualificació."},
     {"key": "normativa", "title": "Normativa", "src": "Normativa",
      "icon": "⚖️", "desc": "Marc legal LOMLOE i documents oficials."},
+    {"key": "simulacions", "title": "Simulacions", "src": "Simulacions/Wokwi",
+     "icon": "🔌", "desc": "Circuits Wokwi de pràctiques i reptes: codi i diagrama, reproduïbles."},
     {"key": "recursos", "title": "Recursos", "src": "Recursos",
      "icon": "📚", "desc": "Recursos de professorat en obert i materials de suport."},
 ]
@@ -235,14 +245,40 @@ def discover() -> tuple[list[Page], dict, dict, list[dict]]:
                            f"reptes/solucionari/sa{sa}/codi.html", "reptes",
                            sa_trimestre(sa))
 
-    return pages, md_map, code_map, code_groups
+    # Simulacions Wokwi: una pàgina per projecte (carpeta amb sketch + diagram)
+    sim_groups: list[dict] = []
+    sim_map: dict[str, str] = {}
+    sim_dir = ROOT / "Simulacions" / "Wokwi"
+    if sim_dir.exists():
+        for folder in sorted([p for p in sim_dir.rglob("*") if p.is_dir()]):
+            files = sorted([f for f in folder.iterdir() if f.is_file()
+                            and (f.suffix.lower() in CODE_EXT
+                                 or f.suffix.lower() in {".json", ".txt"})])
+            if not any(f.suffix.lower() in {".ino", ".py"} or f.name == "diagram.json"
+                       for f in files):
+                continue
+            rel = folder.relative_to(sim_dir)
+            is_repte = rel.parts[0].lower() == "reptes"
+            sub = "reptes" if is_repte else "practiques"
+            out_rel = f"simulacions/{sub}/{slugify(folder.name)}.html"
+            sa = detect_sa(folder.name)
+            tri = sa_trimestre(sa) if sa else None
+            title = folder.name.replace("_", " ")
+            sim_groups.append({"out_rel": out_rel, "folder": folder, "files": files,
+                               "title": title, "tri": tri, "is_repte": is_repte})
+            pages.append(Page(folder, "simulacions", out_rel, title, tri, "sim"))
+            sim_map[str(folder.resolve())] = out_rel
+            for f in files:
+                sim_map[str(f.resolve())] = out_rel
+
+    return pages, md_map, code_map, code_groups, sim_groups, sim_map
 
 
 # ---------------------------------------------------------------------------
 # Reescriptura d'enllaços dins l'HTML generat
 # ---------------------------------------------------------------------------
 def rewrite_links(html_body: str, src_file: Path, out_rel: str,
-                  md_map: dict, code_map: dict, copied_imgs: dict) -> str:
+                  md_map: dict, code_map: dict, sim_map: dict, copied_imgs: dict) -> str:
     prefix = depth_prefix(out_rel)
     src_dir = src_file.parent if src_file.is_file() else src_file
 
@@ -260,6 +296,8 @@ def rewrite_links(html_body: str, src_file: Path, out_rel: str,
         if key in code_map:
             page, anchor = code_map[key]
             return rel_url(out_rel, page) + "#" + anchor
+        if key in sim_map:
+            return rel_url(out_rel, sim_map[key]) + frag
         # Carpeta -> index.html d'aquesta carpeta?
         readme = target / "README.md"
         if str(readme.resolve()) in md_map:
@@ -268,6 +306,13 @@ def rewrite_links(html_body: str, src_file: Path, out_rel: str,
         if target.suffix.lower() in IMG_EXT and target.exists():
             name = copy_image(target, copied_imgs)
             return prefix + "assets/img/" + name + frag
+        # Document (pdf, full de càlcul…) -> enllaç a GitHub
+        if target.suffix.lower() in DOC_EXT and target.exists():
+            try:
+                relpath = target.relative_to(ROOT.resolve())
+                return BLOB_BASE + urllib.parse.quote(str(relpath).replace("\\", "/"))
+            except ValueError:
+                pass
         return None
 
     def repl_href(m):
@@ -276,6 +321,8 @@ def rewrite_links(html_body: str, src_file: Path, out_rel: str,
             extra = ' target="_blank" rel="noopener"' if href.startswith("http") else ""
             return f'{m.group(1)}="{href}"{extra}'
         new = resolve(href)
+        if new and new.startswith("http"):
+            return f'{m.group(1)}="{new}" target="_blank" rel="noopener"'
         return f'{m.group(1)}="{new if new else href}"'
 
     html_body = re.sub(r'(href)="([^"]+)"', repl_href, html_body)
@@ -539,9 +586,84 @@ def render_code_page(group: dict, pages: list[Page]) -> str:
                       tri=group["tri"], pages=pages)
 
 
+def render_sim_page(group: dict, pages: list[Page]) -> str:
+    formatter = HtmlFormatter(cssclass="highlight", nowrap=False)
+    folder = group["folder"]
+    relpath = str(folder.resolve().relative_to(ROOT.resolve())).replace("\\", "/")
+    tree = TREE_BASE + urllib.parse.quote(relpath)
+    mena = "Repte" if group["is_repte"] else "Pràctica"
+    parts = [f'<h1>{html.escape(group["title"])}</h1>',
+             f'<p class="codi-intro">Simulació Wokwi ({mena.lower()}). '
+             f'Pots reproduir-la a <a href="https://wokwi.com/" target="_blank" rel="noopener">wokwi.com</a>: '
+             f'crea un projecte nou i enganxa-hi el contingut de <code>diagram.json</code> i del '
+             f'fitxer de codi. <a href="{tree}" target="_blank" rel="noopener">Veure la carpeta a GitHub ↗</a></p>']
+    for f in group["files"]:
+        code = f.read_text(encoding="utf-8", errors="replace")
+        lang = "json" if f.suffix.lower() == "json" else None
+        try:
+            lexer = get_lexer_by_name(lang) if lang else lexer_for(f)
+        except Exception:
+            lexer = lexer_for(f)
+        highlighted = highlight(code, lexer, formatter)
+        anchor = slugify(f.name)
+        parts.append(
+            f'<section class="codi-bloc" id="{anchor}">'
+            f'<header class="codi-cap"><code class="codi-nom">{html.escape(f.name)}</code>'
+            f'<button class="copia-btn" type="button">Copia</button></header>'
+            f'<div class="codi-cos">{highlighted}</div></section>'
+        )
+    content = "\n".join(parts)
+    return page_shell(out_rel=group["out_rel"], section_key="simulacions",
+                      title=group["title"], content_html=content,
+                      tri=group["tri"], pages=pages)
+
+
 # ---------------------------------------------------------------------------
 # Pàgines índex de secció (targetes)
 # ---------------------------------------------------------------------------
+DOC_ICONS = {".pdf": "📕", ".xlsx": "📊", ".xls": "📊", ".csv": "📊", ".ods": "📊",
+             ".pptx": "📽️", ".ppt": "📽️", ".docx": "📄", ".doc": "📄", ".odt": "📄",
+             ".zip": "🗜️"}
+
+
+def section_documents(section_key: str, current_out: str) -> str:
+    """Llista de documents de la secció: visor in-situ per als de l'arrel,
+    enllaç a GitHub per als de subcarpetes (arxius voluminosos)."""
+    sec = SECTION_BY_KEY.get(section_key)
+    if not sec:
+        return ""
+    src_dir = ROOT / sec["src"]
+    if not src_dir.exists():
+        return ""
+    docs = sorted([p for p in src_dir.rglob("*") if p.suffix.lower() in DOC_EXT])
+    if not docs:
+        return ""
+    prefix = depth_prefix(current_out)
+    root_docs = [d for d in docs if d.parent == src_dir]
+    subfolders: dict[str, list] = {}
+    for d in docs:
+        if d.parent != src_dir:
+            subfolders.setdefault(d.relative_to(src_dir).parts[0], []).append(d)
+
+    cards = []
+    for d in root_docs:
+        relpath = str(d.relative_to(ROOT)).replace("\\", "/")
+        raw = RAW_BASE + urllib.parse.quote(relpath)
+        title = d.stem.replace("_", " ")
+        ext = d.suffix.lower().lstrip(".")
+        href = (prefix + "visor.html?u=" + urllib.parse.quote(raw, safe="")
+                + "&t=" + urllib.parse.quote(title, safe="") + "&x=" + ext)
+        ic = DOC_ICONS.get(d.suffix.lower(), "📄")
+        cards.append(f'<a class="card" href="{href}"><span class="card-ic">{ic}</span>'
+                     f'<span class="card-tit">{html.escape(title)} '
+                     f'<small class="doc-ext">{ext}</small></span></a>')
+    for folder, items in sorted(subfolders.items()):
+        tree = TREE_BASE + urllib.parse.quote(f"{sec['src']}/{folder}")
+        cards.append(f'<a class="card doc-folder" href="{tree}" target="_blank" rel="noopener">'
+                     f'<span class="card-ic">📁</span><span class="card-tit">{html.escape(folder)} '
+                     f'<small>({len(items)} fitxers · obre a GitHub ↗)</small></span></a>')
+    return ('<h2 class="seccio-sep">Documents</h2>'
+            '<div class="card-grid">' + "\n".join(cards) + "</div>")
 def section_gallery(section_key: str, current_out: str, copied_imgs: dict) -> str:
     """Galeria amb les imatges presents a la carpeta font de la secció."""
     sec = SECTION_BY_KEY.get(section_key)
@@ -775,11 +897,92 @@ def write_pygments_css():
 
 
 # ---------------------------------------------------------------------------
+# Visor de documents (PDF.js per a PDF, visor d'Office per a fulls/diapos)
+# ---------------------------------------------------------------------------
+def render_visor() -> str:
+    tpl = r"""<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Visor de documents · %%TITLE%%</title>
+<link rel="stylesheet" href="assets/css/estil.css">
+<script>(function(){try{var t=localStorage.getItem('tema');if(t==='fosc'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.setAttribute('data-tema','fosc');}catch(e){}})();</script>
+</head>
+<body data-section="recursos" class="sense-sidebar sense-toc">
+<a class="skip" href="#contingut">Salta al contingut</a>
+<header class="topbar">
+  <a class="brand" href="index.html"><span class="brand-mark">◆</span> Robòtica <span class="brand-sub">1r Batx</span></a>
+  <nav class="topnav" aria-label="Seccions"><a href="index.html">Inici</a></nav>
+  <div class="topbar-eines">
+    <a class="btn btn-secundari" id="doc-gh" href="#" target="_blank" rel="noopener">Obre a GitHub ↗</a>
+    <button class="tema-btn" aria-label="Canvia el tema clar/fosc" title="Tema clar/fosc">◐</button>
+  </div>
+</header>
+<div class="layout">
+  <main id="contingut">
+    <nav class="breadcrumb" aria-label="Ubicació"><a href="index.html">Inici</a> <span class="sep">/</span> <span>Documents</span> <span class="sep">/</span> <span id="doc-titol" aria-current="page">Document</span></nav>
+    <h1 id="doc-h1" class="visor-h1">Document</h1>
+    <div id="visor-cont" class="visor-cont"><div class="visor-msg">Carregant…</div></div>
+  </main>
+</div>
+<footer class="peu">
+  <p>%%TITLE%% · visor de documents. Els fitxers es carreguen des del <a href="%%REPO%%" target="_blank" rel="noopener">repositori a GitHub</a>.</p>
+</footer>
+<script type="module">
+const p = new URLSearchParams(location.search);
+const u = p.get('u'); const t = p.get('t') || 'Document'; const x = (p.get('x') || '').toLowerCase();
+document.getElementById('doc-titol').textContent = t;
+document.getElementById('doc-h1').textContent = t;
+document.title = t + ' · %%TITLE%%';
+let gh = u || '#';
+if (u && u.indexOf('raw.githubusercontent.com') > -1) {
+  gh = u.replace('https://raw.githubusercontent.com/', 'https://github.com/').replace('/main/', '/blob/main/');
+}
+document.getElementById('doc-gh').href = gh;
+const cont = document.getElementById('visor-cont');
+const office = ['xlsx','xls','pptx','ppt','docx','doc','ods','odt','csv'];
+function msg(h){ cont.innerHTML = '<div class="visor-msg">' + h + '</div>'; }
+if (!u) {
+  msg('No s\'ha indicat cap document.');
+} else if (x === 'pdf') {
+  try {
+    const pdfjs = await import('https://cdn.jsdelivr.net/npm/pdfjs-dist@4.7.76/build/pdf.min.mjs');
+    pdfjs.GlobalWorkerOptions.workerSrc = 'https://cdn.jsdelivr.net/npm/pdfjs-dist@4.7.76/build/pdf.worker.min.mjs';
+    const pdf = await pdfjs.getDocument({ url: u }).promise;
+    cont.innerHTML = '';
+    for (let n = 1; n <= pdf.numPages; n++) {
+      const page = await pdf.getPage(n);
+      const vp = page.getViewport({ scale: 1.6 });
+      const c = document.createElement('canvas');
+      c.className = 'visor-pagina'; c.width = vp.width; c.height = vp.height;
+      cont.appendChild(c);
+      await page.render({ canvasContext: c.getContext('2d'), viewport: vp }).promise;
+    }
+  } catch (e) {
+    msg('No s\'ha pogut mostrar el PDF aquí (potser sense connexió). <a href="' + gh + '" target="_blank" rel="noopener">Obre\'l a GitHub ↗</a>');
+  }
+} else if (office.includes(x)) {
+  const src = 'https://view.officeapps.live.com/op/embed.aspx?src=' + encodeURIComponent(u);
+  cont.innerHTML = '<iframe class="visor-iframe" src="' + src + '" allowfullscreen></iframe>';
+} else {
+  msg('Aquest tipus de fitxer no es pot previsualitzar al web. <a href="' + gh + '" target="_blank" rel="noopener">Descarrega\'l des de GitHub ↗</a>');
+}
+</script>
+<script src="assets/js/lloc.js"></script>
+</body>
+</html>
+"""
+    return (tpl.replace("%%TITLE%%", SITE_TITLE)
+            .replace("%%REPO%%", REPO_URL))
+
+
+# ---------------------------------------------------------------------------
 # Procés principal
 # ---------------------------------------------------------------------------
 def main():
     print("Generant el web de Robòtica…")
-    pages, md_map, code_map, code_groups = discover()
+    pages, md_map, code_map, code_groups, sim_groups, sim_map = discover()
     copied_imgs: dict = {}
     search_index = []
 
@@ -796,18 +999,19 @@ def main():
 
     # Pàgines de documents
     for p in pages:
-        if p.kind == "code":
+        if p.kind in ("code", "sim"):
             continue
         text = p.src.read_text(encoding="utf-8")
         md = make_md()
         body = md.convert(text)
-        body = rewrite_links(body, p.src, p.out_rel, md_map, code_map, copied_imgs)
+        body = rewrite_links(body, p.src, p.out_rel, md_map, code_map, sim_map, copied_imgs)
         toc = toc_html(md)
         extra = ""
         if p.kind == "index":
             if p.out_rel == f"{p.section}/index.html":
                 extra = section_index_extra(p.section, p.out_rel, pages)
                 extra += section_gallery(p.section, p.out_rel, copied_imgs)
+                extra += section_documents(p.section, p.out_rel)
             else:
                 grp = page_group(p.section, p.out_rel)
                 extra = subindex_extra(p.section, grp, p.out_rel, pages)
@@ -830,6 +1034,18 @@ def main():
         search_index.append({"t": g["label"], "s": SECTION_BY_KEY[g["section"]]["title"],
                              "u": g["out_rel"], "tri": g["tri"]})
 
+    # Pàgines de simulacions Wokwi
+    for g in sim_groups:
+        full = render_sim_page(g, pages)
+        dest = WEB / g["out_rel"]
+        dest.parent.mkdir(parents=True, exist_ok=True)
+        dest.write_text(full, encoding="utf-8")
+        search_index.append({"t": g["title"], "s": "Simulacions",
+                             "u": g["out_rel"], "tri": g["tri"]})
+
+    # Visor de documents (PDF.js + visor d'Office), sense copiar fitxers
+    (WEB / "visor.html").write_text(render_visor(), encoding="utf-8")
+
     # Home
     (WEB / "index.html").write_text(render_home(pages), encoding="utf-8")
     search_index.insert(0, {"t": "Inici", "s": "Inici", "u": "index.html", "tri": None})
@@ -843,8 +1059,9 @@ def main():
     # .nojekyll perquè GitHub Pages no processi amb Jekyll
     (WEB / ".nojekyll").write_text("", encoding="utf-8")
 
-    print(f"  · {len([p for p in pages if p.kind!='code'])} pàgines de document")
+    print(f"  · {len([p for p in pages if p.kind not in ('code', 'sim')])} pàgines de document")
     print(f"  · {len(code_groups)} pàgines de codi")
+    print(f"  · {len(sim_groups)} pàgines de simulació")
     print(f"  · {len(copied_imgs)} imatges copiades")
     print(f"  · {len(search_index)} entrades a l'índex de cerca")
     print("Fet. Obre web/index.html o publica la carpeta web/ a GitHub Pages.")

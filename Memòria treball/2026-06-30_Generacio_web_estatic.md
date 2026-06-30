@@ -33,6 +33,13 @@ L'apartat Classes (~80 pàgines) sortia en llista plana i cada índex de SA most
 - SA0 reconeguda com a preàmbul transversal (color neutre, sense trimestre).
 - La lògica és genèrica: també millora Programació (SA per trimestre) i Reptes.
 
+## Millora: Simulacions + visor de documents (mateix dia)
+Revisió d'enllaços a documents al web:
+- **Faltava l'apartat `Simulacions/` (Wokwi)** → afegit com a secció (color lima), 33 pàgines de simulació (sketch + diagram.json), agrupades Pràctiques/Reptes. Arregla 6 enllaços trencats des de Classes.
+- **Documents binaris (298 fitxers, 405 MB)**: no es copien al web (límits de Pages). Es crea `web/visor.html` que mostra els PDF amb **PDF.js** (carregats des de `raw.githubusercontent.com` per CORS; GitHub posa `X-Frame-Options: deny`, així que l'iframe directe no funciona, però el `fetch` de PDF.js sí) i els Office amb el **visor d'Office**.
+- A Normativa i Recursos s'afegeix la secció **Documents**: els de l'arrel obren al visor; les subcarpetes voluminoses (fitxes STEAM, llibres) s'enllacen a la carpeta de GitHub.
+- Generador: `discover()` retorna també `sim_groups`/`sim_map`; `rewrite_links` resol carpetes de simulació i documents; noves funcions `render_sim_page`, `section_documents`, `render_visor`.
+
 ## Pendents / passos següents
 - Activar GitHub Pages (Settings → Pages → Source: **GitHub Actions**) per publicar.
 - Fer *commit* dels fitxers nous (encara no s'ha fet).

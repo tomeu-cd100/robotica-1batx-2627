@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SA4 servo potenciometre · Robòtica · 1r de Batxillerat</title>
+<meta name="description" content="Material docent · LOMLOE Catalunya · curs 2026-2027">
+<link rel="stylesheet" href="../../assets/css/estil.css">
+<link rel="stylesheet" href="../../assets/css/pygments.css">
+<script>(function(){try{var t=localStorage.getItem('tema');if(t==='fosc'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.setAttribute('data-tema','fosc');}catch(e){}})();</script>
+</head>
+<body data-section="simulacions" class="amb-sidebar sense-toc">
+<a class="skip" href="#contingut">Salta al contingut</a>
+<header class="topbar">
+  <button class="menu-btn" aria-label="Obre el menú" aria-expanded="false">☰</button>
+  <a class="brand" href="../../index.html"><span class="brand-mark">◆</span> Robòtica <span class="brand-sub">1r Batx</span></a>
+  <nav class="topnav" aria-label="Seccions">
+    <a href="../../index.html">Inici</a>
+<a href="../../programacio/index.html" data-sec="programacio">Programació didàctica</a>
+<a href="../../classes/index.html" data-sec="classes">Classes</a>
+<a href="../../reptes/index.html" data-sec="reptes">Reptes</a>
+<a href="../../avaluacio/index.html" data-sec="avaluacio">Avaluació</a>
+<a href="../../normativa/index.html" data-sec="normativa">Normativa</a>
+<a href="../../simulacions/index.html" data-sec="simulacions" class="actiu">Simulacions</a>
+<a href="../../recursos/index.html" data-sec="recursos">Recursos</a>
+  </nav>
+  <div class="topbar-eines">
+    <div class="cercador">
+      <input type="search" id="cerca" placeholder="Cerca…" autocomplete="off" aria-label="Cerca al web">
+      <div id="cerca-resultats" class="cerca-resultats" hidden></div>
+    </div>
+    <button class="tema-btn" aria-label="Canvia el tema clar/fosc" title="Tema clar/fosc">◐</button>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar"><nav class="sidebar-nav" aria-label="Pàgines de la secció">
+<p class="sidebar-titol">Simulacions</p>
+<ul class="sb-top">
+<li><a href="../index.html">Presentació</a></li>
+</ul>
+<details class="sb-grup" open><summary><span>Practiques</span></summary><ul><li><a href="sa1-blink.html">SA1 blink</a></li><li><a href="sa2-semafor.html">SA2 semafor</a></li><li><a href="sa3-alarma-aparcament.html">SA3 alarma aparcament</a></li><li><a href="sa4-servo-potenciometre.html" class="actiu">SA4 servo potenciometre</a></li><li><a href="sa6-termostat-histeresi.html">SA6 termostat histeresi</a></li><li><a href="sa8-telemetria-esp32.html">SA8 telemetria esp32</a></li></ul></details>
+<details class="sb-grup"><summary><span>Reptes</span></summary><ul><li><a href="../reptes/index.html">Presentació</a></li><li><a href="../reptes/sa1-a-far-ampliat.html">SA1 A far ampliat</a></li><li><a href="../reptes/sa1-a-far-minim.html">SA1 A far minim</a></li><li><a href="../reptes/sa1-b-llum-ampliat.html">SA1 B llum ampliat</a></li><li><a href="../reptes/sa1-b-llum-minim.html">SA1 B llum minim</a></li><li><a href="../reptes/sa1-c-morse-ampliat.html">SA1 C morse ampliat</a></li><li><a href="../reptes/sa1-c-morse-minim.html">SA1 C morse minim</a></li><li><a href="../reptes/sa2-a-semafor-ampliat.html">SA2 A semafor ampliat</a></li><li><a href="../reptes/sa2-a-semafor-minim.html">SA2 A semafor minim</a></li><li><a href="../reptes/sa2-b-ambient-ampliat.html">SA2 B ambient ampliat</a></li><li><a href="../reptes/sa2-b-ambient-minim.html">SA2 B ambient minim</a></li><li><a href="../reptes/sa2-c-nivell-ampliat.html">SA2 C nivell ampliat</a></li><li><a href="../reptes/sa2-c-nivell-minim.html">SA2 C nivell minim</a></li><li><a href="../reptes/sa3-a-nocturna-ampliat.html">SA3 A nocturna ampliat</a></li><li><a href="../reptes/sa3-a-nocturna-minim.html">SA3 A nocturna minim</a></li><li><a href="../reptes/sa3-b-aparcament-ampliat.html">SA3 B aparcament ampliat</a></li><li><a href="../reptes/sa3-b-aparcament-minim.html">SA3 B aparcament minim</a></li><li><a href="../reptes/sa3-c-instrument-ampliat.html">SA3 C instrument ampliat</a></li><li><a href="../reptes/sa3-c-instrument-minim.html">SA3 C instrument minim</a></li><li><a href="../reptes/sa4-a-barrera-ampliat.html">SA4 A barrera ampliat</a></li><li><a href="../reptes/sa4-a-barrera-minim.html">SA4 A barrera minim</a></li><li><a href="../reptes/sa4-c-brac-ampliat.html">SA4 C brac ampliat</a></li><li><a href="../reptes/sa4-c-brac-minim.html">SA4 C brac minim</a></li><li><a href="../reptes/sa6-a-termostat-ampliat.html">SA6 A termostat ampliat</a></li><li><a href="../reptes/sa6-a-termostat-minim.html">SA6 A termostat minim</a></li><li><a href="../reptes/sa6-b-semafor-ampliat.html">SA6 B semafor ampliat</a></li><li><a href="../reptes/sa6-b-semafor-minim.html">SA6 B semafor minim</a></li><li><a href="../reptes/sa6-c-proporcional-minim.html">SA6 C proporcional minim</a></li></ul></details>
+</nav></aside>
+  <main id="contingut">
+    <nav class="breadcrumb" aria-label="Ubicació"><a href="../../index.html">Inici</a> <span class="sep">/</span> <a href="../../simulacions/index.html">Simulacions</a> <span class="sep">/</span> <span aria-current="page">SA4 servo potenciometre</span></nav>
+    <span class="badge-tri" data-tri="2">2n trimestre</span>
+    <article class="prose">
+<h1>SA4 servo potenciometre</h1>
+<p class="codi-intro">Simulació Wokwi (pràctica). Pots reproduir-la a <a href="https://wokwi.com/" target="_blank" rel="noopener">wokwi.com</a>: crea un projecte nou i enganxa-hi el contingut de <code>diagram.json</code> i del fitxer de codi. <a href="https://github.com/tomeu-cd100/robotica-1batx-2627/tree/main/Simulacions/Wokwi/SA4_servo_potenciometre" target="_blank" rel="noopener">Veure la carpeta a GitHub ↗</a></p>
+<section class="codi-bloc" id="diagram-json"><header class="codi-cap"><code class="codi-nom">diagram.json</code><button class="copia-btn" type="button">Copia</button></header><div class="codi-cos"><div class="highlight"><pre><span></span>{
+  &quot;version&quot;: 1,
+  &quot;author&quot;: &quot;Robotica 1 Batx&quot;,
+  &quot;editor&quot;: &quot;wokwi&quot;,
+  &quot;parts&quot;: [
+    { &quot;type&quot;: &quot;wokwi-arduino-uno&quot;, &quot;id&quot;: &quot;uno&quot;, &quot;top&quot;: 0, &quot;left&quot;: 0, &quot;attrs&quot;: {} },
+    { &quot;type&quot;: &quot;wokwi-servo&quot;, &quot;id&quot;: &quot;servo&quot;, &quot;top&quot;: -140, &quot;left&quot;: 200, &quot;attrs&quot;: {} },
+    { &quot;type&quot;: &quot;wokwi-potentiometer&quot;, &quot;id&quot;: &quot;pot&quot;, &quot;top&quot;: 100, &quot;left&quot;: 180, &quot;attrs&quot;: {} }
+  ],
+  &quot;connections&quot;: [
+    [ &quot;servo:PWM&quot;, &quot;uno:9&quot;, &quot;green&quot;, [] ],
+    [ &quot;servo:V+&quot;, &quot;uno:5V&quot;, &quot;red&quot;, [] ],
+    [ &quot;servo:GND&quot;, &quot;uno:GND.1&quot;, &quot;black&quot;, [] ],
+    [ &quot;pot:VCC&quot;, &quot;uno:5V&quot;, &quot;red&quot;, [] ],
+    [ &quot;pot:SIG&quot;, &quot;uno:A0&quot;, &quot;blue&quot;, [] ],
+    [ &quot;pot:GND&quot;, &quot;uno:GND.2&quot;, &quot;black&quot;, [] ]
+  ]
+}
+</pre></div>
+</div></section>
+<section class="codi-bloc" id="libraries-txt"><header class="codi-cap"><code class="codi-nom">libraries.txt</code><button class="copia-btn" type="button">Copia</button></header><div class="codi-cos"><div class="highlight"><pre><span></span># Llibreries del projecte Wokwi (una per linia).
+# A wokwi.com s&#39;instal-len soles amb el boto &quot;Install ... library&quot; en compilar.
+Servo
+</pre></div>
+</div></section>
+<section class="codi-bloc" id="sketch-ino"><header class="codi-cap"><code class="codi-nom">sketch.ino</code><button class="copia-btn" type="button">Copia</button></header><div class="codi-cos"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm">  SA4 - Servo controlat amb potenciometre (per a Wokwi)</span>
+<span class="cm">  La posicio del servo (pin 9) segueix el gir del potenciometre (A0).</span>
+<span class="cm">  Llibreria estandard Servo.h: a Wokwi cal instal-lar-la (vegeu libraries.txt;</span>
+<span class="cm">  el primer cop apareix el boto &quot;Install Servo library&quot; en compilar).</span>
+<span class="cm">  A Wokwi: clica el potenciometre i gira&#39;l per moure el servo de 0 a 180 graus.</span>
+<span class="cm">*/</span>
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;Servo.h&gt;</span>
+
+<span class="n">Servo</span><span class="w"> </span><span class="n">servo</span><span class="p">;</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">POT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">A0</span><span class="p">;</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">servo</span><span class="p">.</span><span class="n">attach</span><span class="p">(</span><span class="mi">9</span><span class="p">);</span><span class="w">     </span><span class="c1">// el servo esta connectat al pin 9</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">valor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">analogRead</span><span class="p">(</span><span class="n">POT</span><span class="p">);</span><span class="w">              </span><span class="c1">// 0..1023</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">angle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">map</span><span class="p">(</span><span class="n">valor</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1023</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">180</span><span class="p">);</span><span class="w">  </span><span class="c1">// 0..180 graus</span>
+<span class="w">  </span><span class="n">servo</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="n">angle</span><span class="p">);</span>
+<span class="w">  </span><span class="n">delay</span><span class="p">(</span><span class="mi">15</span><span class="p">);</span><span class="w">           </span><span class="c1">// petita pausa perque el servo arribi</span>
+<span class="p">}</span>
+</pre></div>
+</div></section>
+    </article>
+  </main>
+  
+</div>
+<footer class="peu">
+  <p>Robòtica · 1r de Batxillerat · material sota llicència <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca" target="_blank" rel="noopener">CC BY-SA 4.0</a>.</p>
+  <p><a href="https://github.com/tomeu-cd100/robotica-1batx-2627" target="_blank" rel="noopener">Repositori a GitHub</a> · web generat el 2026-06-30.</p>
+</footer>
+<script src="../../assets/js/cerca-index.js"></script>
+<script src="../../assets/js/lloc.js"></script>
+</body>
+</html>

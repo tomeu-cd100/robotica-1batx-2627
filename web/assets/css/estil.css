@@ -51,6 +51,7 @@ html[data-tema="fosc"] {
 [data-section="reptes"]     { --accent: #d97706; --accent-2: #f59e0b; --accent-soft: #fffbeb; }
 [data-section="avaluacio"]  { --accent: #e11d48; --accent-2: #f43f5e; --accent-soft: #fff1f2; }
 [data-section="normativa"]  { --accent: #475569; --accent-2: #64748b; --accent-soft: #f1f5f9; }
+[data-section="simulacions"]{ --accent: #65a30d; --accent-2: #84cc16; --accent-soft: #f7fee7; }
 [data-section="recursos"]   { --accent: #059669; --accent-2: #10b981; --accent-soft: #ecfdf5; }
 html[data-tema="fosc"] [data-section] { --accent-soft: rgba(255, 255, 255, .06); }
 
@@ -358,6 +359,22 @@ body.sense-toc .prose, body.sense-sidebar .prose { max-width: 78ch; }
 .galeria-item { margin: 0; border: 1px solid var(--border); border-radius: var(--radi); overflow: hidden; background: var(--surface); }
 .galeria-item img { width: 100%; height: 170px; object-fit: cover; display: block; border: 0; border-radius: 0; }
 .galeria-item figcaption { padding: .6rem .8rem; font-size: .85rem; color: var(--muted); text-transform: capitalize; }
+
+/* ---------- Documents i visor ---------- */
+.doc-ext {
+  display: inline-block; font-size: .68rem; font-weight: 700; text-transform: uppercase;
+  background: var(--accent-soft); color: var(--accent); padding: .05rem .4rem;
+  border-radius: 5px; margin-left: .35rem; vertical-align: middle; letter-spacing: .03em;
+}
+.card.doc-folder { background: var(--bg); border-style: dashed; }
+.card.doc-folder small { color: var(--muted); font-weight: 500; display: block; margin-top: .15rem; }
+
+.visor-h1 { font-size: 1.7rem; margin: .2rem 0 1rem; letter-spacing: -.02em; }
+.visor-cont { display: flex; flex-direction: column; align-items: center; gap: 1rem; min-height: 50vh; }
+.visor-pagina { max-width: 100%; height: auto; box-shadow: var(--ombra); border: 1px solid var(--border); border-radius: 6px; background: #fff; }
+.visor-iframe { width: 100%; height: 80vh; border: 1px solid var(--border); border-radius: var(--radi); background: var(--surface); }
+.visor-msg { color: var(--muted); padding: 3rem 1rem; text-align: center; }
+.visor-msg a { font-weight: 600; }
 
 /* ---------- Pàgines de codi ---------- */
 .codi-intro { color: var(--muted); }

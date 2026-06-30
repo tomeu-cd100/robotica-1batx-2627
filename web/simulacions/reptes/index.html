@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Simulacions Wokwi — Reptes · Robòtica · 1r de Batxillerat</title>
+<meta name="description" content="Material docent · LOMLOE Catalunya · curs 2026-2027">
+<link rel="stylesheet" href="../../assets/css/estil.css">
+<link rel="stylesheet" href="../../assets/css/pygments.css">
+<script>(function(){try{var t=localStorage.getItem('tema');if(t==='fosc'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.setAttribute('data-tema','fosc');}catch(e){}})();</script>
+</head>
+<body data-section="simulacions" class="amb-sidebar amb-toc">
+<a class="skip" href="#contingut">Salta al contingut</a>
+<header class="topbar">
+  <button class="menu-btn" aria-label="Obre el menú" aria-expanded="false">☰</button>
+  <a class="brand" href="../../index.html"><span class="brand-mark">◆</span> Robòtica <span class="brand-sub">1r Batx</span></a>
+  <nav class="topnav" aria-label="Seccions">
+    <a href="../../index.html">Inici</a>
+<a href="../../programacio/index.html" data-sec="programacio">Programació didàctica</a>
+<a href="../../classes/index.html" data-sec="classes">Classes</a>
+<a href="../../reptes/index.html" data-sec="reptes">Reptes</a>
+<a href="../../avaluacio/index.html" data-sec="avaluacio">Avaluació</a>
+<a href="../../normativa/index.html" data-sec="normativa">Normativa</a>
+<a href="../../simulacions/index.html" data-sec="simulacions" class="actiu">Simulacions</a>
+<a href="../../recursos/index.html" data-sec="recursos">Recursos</a>
+  </nav>
+  <div class="topbar-eines">
+    <div class="cercador">
+      <input type="search" id="cerca" placeholder="Cerca…" autocomplete="off" aria-label="Cerca al web">
+      <div id="cerca-resultats" class="cerca-resultats" hidden></div>
+    </div>
+    <button class="tema-btn" aria-label="Canvia el tema clar/fosc" title="Tema clar/fosc">◐</button>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar"><nav class="sidebar-nav" aria-label="Pàgines de la secció">
+<p class="sidebar-titol">Simulacions</p>
+<ul class="sb-top">
+<li><a href="../index.html">Presentació</a></li>
+</ul>
+<details class="sb-grup"><summary><span>Practiques</span></summary><ul><li><a href="../practiques/sa1-blink.html">SA1 blink</a></li><li><a href="../practiques/sa2-semafor.html">SA2 semafor</a></li><li><a href="../practiques/sa3-alarma-aparcament.html">SA3 alarma aparcament</a></li><li><a href="../practiques/sa4-servo-potenciometre.html">SA4 servo potenciometre</a></li><li><a href="../practiques/sa6-termostat-histeresi.html">SA6 termostat histeresi</a></li><li><a href="../practiques/sa8-telemetria-esp32.html">SA8 telemetria esp32</a></li></ul></details>
+<details class="sb-grup" open><summary><span>Reptes</span></summary><ul><li><a href="index.html" class="actiu">Presentació</a></li><li><a href="sa1-a-far-ampliat.html">SA1 A far ampliat</a></li><li><a href="sa1-a-far-minim.html">SA1 A far minim</a></li><li><a href="sa1-b-llum-ampliat.html">SA1 B llum ampliat</a></li><li><a href="sa1-b-llum-minim.html">SA1 B llum minim</a></li><li><a href="sa1-c-morse-ampliat.html">SA1 C morse ampliat</a></li><li><a href="sa1-c-morse-minim.html">SA1 C morse minim</a></li><li><a href="sa2-a-semafor-ampliat.html">SA2 A semafor ampliat</a></li><li><a href="sa2-a-semafor-minim.html">SA2 A semafor minim</a></li><li><a href="sa2-b-ambient-ampliat.html">SA2 B ambient ampliat</a></li><li><a href="sa2-b-ambient-minim.html">SA2 B ambient minim</a></li><li><a href="sa2-c-nivell-ampliat.html">SA2 C nivell ampliat</a></li><li><a href="sa2-c-nivell-minim.html">SA2 C nivell minim</a></li><li><a href="sa3-a-nocturna-ampliat.html">SA3 A nocturna ampliat</a></li><li><a href="sa3-a-nocturna-minim.html">SA3 A nocturna minim</a></li><li><a href="sa3-b-aparcament-ampliat.html">SA3 B aparcament ampliat</a></li><li><a href="sa3-b-aparcament-minim.html">SA3 B aparcament minim</a></li><li><a href="sa3-c-instrument-ampliat.html">SA3 C instrument ampliat</a></li><li><a href="sa3-c-instrument-minim.html">SA3 C instrument minim</a></li><li><a href="sa4-a-barrera-ampliat.html">SA4 A barrera ampliat</a></li><li><a href="sa4-a-barrera-minim.html">SA4 A barrera minim</a></li><li><a href="sa4-c-brac-ampliat.html">SA4 C brac ampliat</a></li><li><a href="sa4-c-brac-minim.html">SA4 C brac minim</a></li><li><a href="sa6-a-termostat-ampliat.html">SA6 A termostat ampliat</a></li><li><a href="sa6-a-termostat-minim.html">SA6 A termostat minim</a></li><li><a href="sa6-b-semafor-ampliat.html">SA6 B semafor ampliat</a></li><li><a href="sa6-b-semafor-minim.html">SA6 B semafor minim</a></li><li><a href="sa6-c-proporcional-minim.html">SA6 C proporcional minim</a></li></ul></details>
+</nav></aside>
+  <main id="contingut">
+    <nav class="breadcrumb" aria-label="Ubicació"><a href="../../index.html">Inici</a> <span class="sep">/</span> <a href="../../simulacions/index.html">Simulacions</a> <span class="sep">/</span> <span aria-current="page">Simulacions Wokwi — Reptes</span></nav>
+    
+    <article class="prose">
+<h1 id="simulacions-wokwi-reptes"><a class="toclink" href="#simulacions-wokwi-reptes">Simulacions Wokwi — Reptes</a></h1>
+<p>Projectes Wokwi (text reproduïble) del <strong>solucionari dels reptes</strong> (<code>Reptes/Solucionari/</code>).
+Cada carpeta té <code>diagram.json</code> (circuit) + <code>sketch.ino</code> (codi, còpia fidel del solucionari)
+i, si cal, <code>libraries.txt</code>. Patró de nom: <code>SA&lt;n&gt;_&lt;lletra&gt;_&lt;nom&gt;_&lt;versió&gt;</code>.</p>
+<blockquote>
+<p>Es generen les versions <strong>mínim</strong> i <strong>ampliat</strong> de cada repte simulable a Wokwi.</p>
+</blockquote>
+<h2 id="cobertura"><a class="toclink" href="#cobertura">Cobertura</a></h2>
+<table>
+<thead>
+<tr>
+<th>SA</th>
+<th>Repte</th>
+<th>mínim</th>
+<th>ampliat</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SA1</td>
+<td>A far costaner</td>
+<td>✅</td>
+<td>✅</td>
+<td>LED intern (pin 13); ampliat afegeix 2n far al pin 12</td>
+</tr>
+<tr>
+<td>SA1</td>
+<td>B llum bici</td>
+<td>✅</td>
+<td>✅</td>
+<td>LED intern (pin 13)</td>
+</tr>
+<tr>
+<td>SA1</td>
+<td>C morse</td>
+<td>✅</td>
+<td>✅</td>
+<td>LED intern (pin 13)</td>
+</tr>
+<tr>
+<td>SA2</td>
+<td>A semàfor</td>
+<td>✅</td>
+<td>✅</td>
+<td>3 LED / 5 LED (cotxes + vianants)</td>
+</tr>
+<tr>
+<td>SA2</td>
+<td>B llum ambient</td>
+<td>✅</td>
+<td>✅</td>
+<td>LED PWM / LED RGB</td>
+</tr>
+<tr>
+<td>SA2</td>
+<td>C indicador nivell</td>
+<td>✅</td>
+<td>✅</td>
+<td>4 LED / 4 LED + RGB</td>
+</tr>
+<tr>
+<td>SA3</td>
+<td>A llum nocturna</td>
+<td>✅</td>
+<td>✅</td>
+<td>LDR (mòdul) + LED</td>
+</tr>
+<tr>
+<td>SA3</td>
+<td>B sensor aparcament</td>
+<td>✅</td>
+<td>✅</td>
+<td>HC-SR04 + LED (+ brunzidor a l'ampliat)</td>
+</tr>
+<tr>
+<td>SA3</td>
+<td>C instrument</td>
+<td>✅</td>
+<td>✅</td>
+<td>potenciòmetre + LED (+ polsador a l'ampliat)</td>
+</tr>
+<tr>
+<td>SA4</td>
+<td>A barrera</td>
+<td>✅</td>
+<td>✅</td>
+<td>servo + polsador / + HC-SR04 + 2 LED</td>
+</tr>
+<tr>
+<td>SA4</td>
+<td>B ventilador</td>
+<td>❌</td>
+<td>❌</td>
+<td><strong>motor DC + pont H: no és component estàndard de Wokwi</strong></td>
+</tr>
+<tr>
+<td>SA4</td>
+<td>C braç dispensador</td>
+<td>✅</td>
+<td>✅</td>
+<td>1 servo / 2 servos + potenciòmetre</td>
+</tr>
+<tr>
+<td>SA6</td>
+<td>A termòstat</td>
+<td>✅</td>
+<td>✅</td>
+<td>pot (temperatura) + LED (+ 2n pot + polsador)</td>
+</tr>
+<tr>
+<td>SA6</td>
+<td>B semàfor adaptatiu</td>
+<td>✅</td>
+<td>✅</td>
+<td>3 LED / 6 LED + 2 polsadors</td>
+</tr>
+<tr>
+<td>SA6</td>
+<td>C proporcional</td>
+<td>✅</td>
+<td>❌</td>
+<td>mínim: LDR + LED. <strong>Ampliat usa motor → exclòs</strong></td>
+</tr>
+<tr>
+<td>SA5, SA8</td>
+<td>(micro:bit)</td>
+<td>❌</td>
+<td>❌</td>
+<td>Wokwi no executa MicroPython al micro:bit</td>
+</tr>
+<tr>
+<td>SA7</td>
+<td>(robot 3dBot)</td>
+<td>❌</td>
+<td>❌</td>
+<td>placa propietària, no simulable</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Total: 27 projectes</strong> (mínim + ampliat dels reptes simulables).</p>
+<h2 id="enllacos-interactius-wokwi-public"><a class="toclink" href="#enllacos-interactius-wokwi-public">Enllaços interactius (Wokwi públic)</a></h2>
+<blockquote>
+<p>Tots 27 simulats i desats com a públics el 2026-06-28.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Projecte</th>
+<th>Enllaç</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SA1_A_far_minim</td>
+<td><a href="https://wokwi.com/projects/468091585479800833" target="_blank" rel="noopener">https://wokwi.com/projects/468091585479800833</a></td>
+</tr>
+<tr>
+<td>SA1_A_far_ampliat</td>
+<td><a href="https://wokwi.com/projects/468091919929463809" target="_blank" rel="noopener">https://wokwi.com/projects/468091919929463809</a></td>
+</tr>
+<tr>
+<td>SA1_B_llum_minim</td>
+<td><a href="https://wokwi.com/projects/468091669683614721" target="_blank" rel="noopener">https://wokwi.com/projects/468091669683614721</a></td>
+</tr>
+<tr>
+<td>SA1_B_llum_ampliat</td>
+<td><a href="https://wokwi.com/projects/468091733644667905" target="_blank" rel="noopener">https://wokwi.com/projects/468091733644667905</a></td>
+</tr>
+<tr>
+<td>SA1_C_morse_minim</td>
+<td><a href="https://wokwi.com/projects/468091789071354881" target="_blank" rel="noopener">https://wokwi.com/projects/468091789071354881</a></td>
+</tr>
+<tr>
+<td>SA1_C_morse_ampliat</td>
+<td><a href="https://wokwi.com/projects/468091843657078785" target="_blank" rel="noopener">https://wokwi.com/projects/468091843657078785</a></td>
+</tr>
+<tr>
+<td>SA2_A_semafor_minim</td>
+<td><a href="https://wokwi.com/projects/468092029251908609" target="_blank" rel="noopener">https://wokwi.com/projects/468092029251908609</a></td>
+</tr>
+<tr>
+<td>SA2_A_semafor_ampliat</td>
+<td><a href="https://wokwi.com/projects/468092101123410945" target="_blank" rel="noopener">https://wokwi.com/projects/468092101123410945</a></td>
+</tr>
+<tr>
+<td>SA2_B_ambient_minim</td>
+<td><a href="https://wokwi.com/projects/468092162483986433" target="_blank" rel="noopener">https://wokwi.com/projects/468092162483986433</a></td>
+</tr>
+<tr>
+<td>SA2_B_ambient_ampliat</td>
+<td><a href="https://wokwi.com/projects/468092248193553409" target="_blank" rel="noopener">https://wokwi.com/projects/468092248193553409</a></td>
+</tr>
+<tr>
+<td>SA2_C_nivell_minim</td>
+<td><a href="https://wokwi.com/projects/468092318032915457" target="_blank" rel="noopener">https://wokwi.com/projects/468092318032915457</a></td>
+</tr>
+<tr>
+<td>SA2_C_nivell_ampliat</td>
+<td><a href="https://wokwi.com/projects/468092391546487809" target="_blank" rel="noopener">https://wokwi.com/projects/468092391546487809</a></td>
+</tr>
+<tr>
+<td>SA3_A_nocturna_minim</td>
+<td><a href="https://wokwi.com/projects/468092512398022657" target="_blank" rel="noopener">https://wokwi.com/projects/468092512398022657</a></td>
+</tr>
+<tr>
+<td>SA3_A_nocturna_ampliat</td>
+<td><a href="https://wokwi.com/projects/468092581729875969" target="_blank" rel="noopener">https://wokwi.com/projects/468092581729875969</a></td>
+</tr>
+<tr>
+<td>SA3_B_aparcament_minim</td>
+<td><a href="https://wokwi.com/projects/468092650802729985" target="_blank" rel="noopener">https://wokwi.com/projects/468092650802729985</a></td>
+</tr>
+<tr>
+<td>SA3_B_aparcament_ampliat</td>
+<td><a href="https://wokwi.com/projects/468092730863606785" target="_blank" rel="noopener">https://wokwi.com/projects/468092730863606785</a></td>
+</tr>
+<tr>
+<td>SA3_C_instrument_minim</td>
+<td><a href="https://wokwi.com/projects/468092793918686209" target="_blank" rel="noopener">https://wokwi.com/projects/468092793918686209</a></td>
+</tr>
+<tr>
+<td>SA3_C_instrument_ampliat</td>
+<td><a href="https://wokwi.com/projects/468092893797661697" target="_blank" rel="noopener">https://wokwi.com/projects/468092893797661697</a></td>
+</tr>
+<tr>
+<td>SA4_A_barrera_minim</td>
+<td><a href="https://wokwi.com/projects/468093084646898689" target="_blank" rel="noopener">https://wokwi.com/projects/468093084646898689</a></td>
+</tr>
+<tr>
+<td>SA4_A_barrera_ampliat</td>
+<td><a href="https://wokwi.com/projects/468093216249486337" target="_blank" rel="noopener">https://wokwi.com/projects/468093216249486337</a></td>
+</tr>
+<tr>
+<td>SA4_C_brac_minim</td>
+<td><a href="https://wokwi.com/projects/468093343168096257" target="_blank" rel="noopener">https://wokwi.com/projects/468093343168096257</a></td>
+</tr>
+<tr>
+<td>SA4_C_brac_ampliat</td>
+<td><a href="https://wokwi.com/projects/468104666395047937" target="_blank" rel="noopener">https://wokwi.com/projects/468104666395047937</a></td>
+</tr>
+<tr>
+<td>SA6_A_termostat_minim</td>
+<td><a href="https://wokwi.com/projects/468104777049185281" target="_blank" rel="noopener">https://wokwi.com/projects/468104777049185281</a></td>
+</tr>
+<tr>
+<td>SA6_A_termostat_ampliat</td>
+<td><a href="https://wokwi.com/projects/468104859147450369" target="_blank" rel="noopener">https://wokwi.com/projects/468104859147450369</a></td>
+</tr>
+<tr>
+<td>SA6_B_semafor_minim</td>
+<td><a href="https://wokwi.com/projects/468104931211891713" target="_blank" rel="noopener">https://wokwi.com/projects/468104931211891713</a></td>
+</tr>
+<tr>
+<td>SA6_B_semafor_ampliat</td>
+<td><a href="https://wokwi.com/projects/468105016729562113" target="_blank" rel="noopener">https://wokwi.com/projects/468105016729562113</a></td>
+</tr>
+<tr>
+<td>SA6_C_proporcional_minim</td>
+<td><a href="https://wokwi.com/projects/468105083457798145" target="_blank" rel="noopener">https://wokwi.com/projects/468105083457798145</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="com-publicar"><a class="toclink" href="#com-publicar">Com publicar</a></h2>
+<ol>
+<li>Obre <code>https://wokwi.com/projects/new/arduino-uno</code>.</li>
+<li>Enganxa <code>sketch.ino</code> i <code>diagram.json</code> (pestanya corresponent).</li>
+<li>Si demana llibreries (SA4: Servo), prem <em>Install library</em>.</li>
+<li>Simula (▶), desa com a <strong>públic</strong> i copia la URL.</li>
+</ol>
+<h2 class="seccio-sep">Materials d'aquesta SA</h2><div class="card-grid"><a class="card" href="sa1-a-far-ampliat.html"><span class="card-ic">📄</span><span class="card-tit">SA1 A far ampliat</span></a><a class="card" href="sa1-a-far-minim.html"><span class="card-ic">📄</span><span class="card-tit">SA1 A far minim</span></a><a class="card" href="sa1-b-llum-ampliat.html"><span class="card-ic">📄</span><span class="card-tit">SA1 B llum ampliat</span></a><a class="card" href="sa1-b-llum-minim.html"><span class="card-ic">📄</span><span class="card-tit">SA1 B llum minim</span></a><a class="card" href="sa1-c-morse-ampliat.html"><span class="card-ic">📄</span><span class="card-tit">SA1 C morse ampliat</span></a><a class="card" href="sa1-c-morse-minim.html"><span class="card-ic">📄</span><span class="card-tit">SA1 C morse minim</span></a><a class="card" href="sa2-a-semafor-ampliat.html"><span class="card-ic">📄</span><span class="card-tit">SA2 A semafor ampliat</span></a><a class="card" href="sa2-a-semafor-minim.html"><span class="card-ic">📄</span><span class="card-tit">SA2 A semafor minim</span></a><a class="card" href="sa2-b-ambient-ampliat.html"><span class="card-ic">📄</span><span class="card-tit">SA2 B ambient ampliat</span></a><a class="card" href="sa2-b-ambient-minim.html"><span class="card-ic">📄</span><span class="card-tit">SA2 B ambient minim</span></a><a class="card" href="sa2-c-nivell-ampliat.html"><span class="card-ic">📄</span><span class="card-tit">SA2 C nivell ampliat</span></a><a class="card" href="sa2-c-nivell-minim.html"><span class="card-ic">📄</span><span class="card-tit">SA2 C nivell minim</span></a><a class="card" href="sa3-a-nocturna-ampliat.html"><span class="card-ic">📄</span><span class="card-tit">SA3 A nocturna ampliat</span></a><a class="card" href="sa3-a-nocturna-minim.html"><span class="card-ic">📄</span><span class="card-tit">SA3 A nocturna minim</span></a><a class="card" href="sa3-b-aparcament-ampliat.html"><span class="card-ic">📄</span><span class="card-tit">SA3 B aparcament ampliat</span></a><a class="card" href="sa3-b-aparcament-minim.html"><span class="card-ic">📄</span><span class="card-tit">SA3 B aparcament minim</span></a><a class="card" href="sa3-c-instrument-ampliat.html"><span class="card-ic">📄</span><span class="card-tit">SA3 C instrument ampliat</span></a><a class="card" href="sa3-c-instrument-minim.html"><span class="card-ic">📄</span><span class="card-tit">SA3 C instrument minim</span></a><a class="card" href="sa4-a-barrera-ampliat.html"><span class="card-ic">📄</span><span class="card-tit">SA4 A barrera ampliat</span></a><a class="card" href="sa4-a-barrera-minim.html"><span class="card-ic">📄</span><span class="card-tit">SA4 A barrera minim</span></a><a class="card" href="sa4-c-brac-ampliat.html"><span class="card-ic">📄</span><span class="card-tit">SA4 C brac ampliat</span></a><a class="card" href="sa4-c-brac-minim.html"><span class="card-ic">📄</span><span class="card-tit">SA4 C brac minim</span></a><a class="card" href="sa6-a-termostat-ampliat.html"><span class="card-ic">📄</span><span class="card-tit">SA6 A termostat ampliat</span></a><a class="card" href="sa6-a-termostat-minim.html"><span class="card-ic">📄</span><span class="card-tit">SA6 A termostat minim</span></a><a class="card" href="sa6-b-semafor-ampliat.html"><span class="card-ic">📄</span><span class="card-tit">SA6 B semafor ampliat</span></a><a class="card" href="sa6-b-semafor-minim.html"><span class="card-ic">📄</span><span class="card-tit">SA6 B semafor minim</span></a><a class="card" href="sa6-c-proporcional-minim.html"><span class="card-ic">📄</span><span class="card-tit">SA6 C proporcional minim</span></a></div>
+    </article>
+  </main>
+  <nav class="toc" aria-label="En aquesta pàgina"><p class="toc-titol">En aquesta pàgina</p><ul>
+<li class="toc-l1"><a href="#simulacions-wokwi-reptes">Simulacions Wokwi — Reptes</a></li>
+<li class="toc-l2"><a href="#cobertura">Cobertura</a></li>
+<li class="toc-l2"><a href="#enllacos-interactius-wokwi-public">Enllaços interactius (Wokwi públic)</a></li>
+<li class="toc-l2"><a href="#com-publicar">Com publicar</a></li>
+</ul></nav>
+</div>
+<footer class="peu">
+  <p>Robòtica · 1r de Batxillerat · material sota llicència <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca" target="_blank" rel="noopener">CC BY-SA 4.0</a>.</p>
+  <p><a href="https://github.com/tomeu-cd100/robotica-1batx-2627" target="_blank" rel="noopener">Repositori a GitHub</a> · web generat el 2026-06-30.</p>
+</footer>
+<script src="../../assets/js/cerca-index.js"></script>
+<script src="../../assets/js/lloc.js"></script>
+</body>
+</html>
