@@ -3,6 +3,18 @@
 Rúbriques reutilitzables amb **quatre nivells d'assoliment**. Conversió orientativa a nota: **NA = 0-4 · AS = 5-6 · AN = 7-8 · AE = 9-10**.
 (NA: no assolit · AS: assoliment satisfactori · AN: assoliment notable · AE: assoliment excel·lent.)
 
+> ⚠️ **No confonguis les rúbriques `R1–R5` amb les competències específiques `CE-R1–CE-R5`** (doc `02`). Són **dos sistemes diferents** que comparteixen numeració: les **rúbriques** avaluen *com de bé* es fa una feina concreta (codi, circuit…); les **competències** descriuen *què* s'ha d'assolir al curs. Només coincideixen en l'1 i el 2:
+>
+> | Núm. | **Rúbrica** (R) — instrument d'avaluació | **Competència** (CE-R) — fita del curs |
+> |---|---|---|
+> | 1 | Programació (codi) | Programar sistemes |
+> | 2 | Circuit i electrònica | Construir i experimentar circuits |
+> | 3 | **Projecte i robot** | **Automatitzar i controlar** |
+> | 4 | **Documentació i comunicació** | **Dissenyar robots i trajectòries** |
+> | 5 | **Actitud i cooperació** | **Projectar i comunicar** |
+>
+> Quan un repte diu "s'avalua amb R1, R3, R4" es refereix a les **rúbriques** d'aquest document.
+
 ---
 
 ## R1 · Rúbrica de programació (codi)

@@ -29,7 +29,7 @@
 2. *(notable)* Dispensa **una dosi** per activació (un sol cicle, evita repeticions amb *debounce*).
 3. *(⭐⭐⭐)* Coordina **dos servos** (p. ex. base + pinça) per a una tasca completa de "agafa i deixa".
 
-> **Cap a SA5/SA6:** el moviment manual amb potenciòmetre s'actualitzarà a **comandament micro:bit per gestos** (SA5) i a **moviment suau amb control proporcional / màquina d'estats** (SA6).
+> **Cap a SA5/SA6:** el moviment manual amb potenciòmetre evolucionarà cap a **moviment suau amb control proporcional / màquina d'estats** (SA6). El **comandament per micro:bit** (SA5) és una **via avançada i opcional**: cal un pont de comunicació (vegeu la nota tècnica a `Programació didàctica/08c_Projectes_vida_real.md`). La via recomanada manté el control al mateix Arduino (potenciòmetre/joystick).
 
 ---
 
