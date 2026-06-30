@@ -1,6 +1,6 @@
 # Mapa del curs · de cada SA a un objecte real
 
-> Vista de conjunt **per projectar**: què aprens a cada SA i quins objectes pots dissenyar-hi. Detall i briefing a `00_Banc_objectes_disseny.md`.
+> Vista de conjunt **per projectar**: què aprens a cada SA i quins objectes pots dissenyar-hi. Detall i briefing a [`00_Banc_objectes_disseny.md`](00_Banc_objectes_disseny.md).
 
 ```
         EL SISTEMA...        APRENS A...                  OBJECTES QUE POTS DISSENYAR
@@ -43,4 +43,4 @@ SA9│  🎓 ho integra tot │ projecte complet (en autonomia) │ ✨ objecte 
 
 > De fer **parpellejar un LED** a dissenyar un **objecte connectat i intel·ligent** amb la seva carcassa. Cada pas afegeix una capacitat nova al sistema… i una idea nova d'objecte per crear.
 
-*Recursos: briefing i materials a `00_Banc_objectes_disseny.md` · full de disseny a `00_Plantilla_disseny_objecte.md` · rutines a `00_Poster_aula_metode_DEPURA_rols.md`.*
+*Recursos: briefing i materials a [`00_Banc_objectes_disseny.md`](00_Banc_objectes_disseny.md) · full de disseny a [`00_Plantilla_disseny_objecte.md`](00_Plantilla_disseny_objecte.md) · rutines a [`00_Poster_aula_metode_DEPURA_rols.md`](00_Poster_aula_metode_DEPURA_rols.md).*

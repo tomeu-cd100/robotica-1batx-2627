@@ -11,9 +11,9 @@ La SA0 reuneix en un sol lloc el **vocabulari** i els **conceptes de programaci�
 
 | Document | Públic | Quan/Com usar-lo |
 |---|---|---|
-| `SA0_vocabulari_essencial.md` | Alumnat | Consulta contínua. Glossari **per SA**. Projectable; també imprimible com a "diccionari de butxaca". |
-| `SA0_guia_programacio.md` | Alumnat | Lectura/consulta. Conceptes Arduino (A) + MicroPython (B) + comparativa (C). Referència en resoldre reptes. |
-| `SA0_fitxa_alumnat.md` | Alumnat | Autoaprenentatge (no qualifica). Diagnòstic informal abans de SA1; deures de repàs per a qui ho necessiti. |
+| [`SA0_vocabulari_essencial.md`](SA0_vocabulari_essencial.md) | Alumnat | Consulta contínua. Glossari **per SA**. Projectable; també imprimible com a "diccionari de butxaca". |
+| [`SA0_guia_programacio.md`](SA0_guia_programacio.md) | Alumnat | Lectura/consulta. Conceptes Arduino (A) + MicroPython (B) + comparativa (C). Referència en resoldre reptes. |
+| [`SA0_fitxa_alumnat.md`](SA0_fitxa_alumnat.md) | Alumnat | Autoaprenentatge (no qualifica). Diagnòstic informal abans de SA1; deures de repàs per a qui ho necessiti. |
 | `SA0_guia_docent.md` | Docent | Aquest document: integració, mapa i solucionari. |
 
 ## Com integrar-la (3 escenaris)
@@ -45,7 +45,7 @@ La SA0 reuneix en un sol lloc el **vocabulari** i els **conceptes de programaci�
 - **MicroPython ≠ Python complet:** algunes funcions de Python estàndard no hi són. Editors: python.microbit.org (en línia) i Thonny (escriptori).
 - **Codi als `.md` vs sketches reals:** aquí només hi ha **fragments il·lustratius**; els sketches complets i carregables viuen a `Classes/SAx/codi/`.
 
-## Solucionari de la fitxa (`SA0_fitxa_alumnat.md`)
+## Solucionari de la fitxa ([`SA0_fitxa_alumnat.md`](SA0_fitxa_alumnat.md))
 
 **Act. 1 (orientatiu):**
 | Sistema | Entrada | Procés | Sortida |

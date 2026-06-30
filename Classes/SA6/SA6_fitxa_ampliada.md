@@ -78,8 +78,8 @@ Repartiu-vos els rols i **roteu-los** a cada sessió:
 
 ## Vols més?
 
-- **Reptes ⭐:** `Reptes/Reptes_SA6.md` (termòstat, semàfor adaptatiu, proporcional).
-- **Simulació interactiva (Wokwi):** termòstat a `SA6_esquemes_connexions.md`.
+- **Reptes ⭐:** [`Reptes/Reptes_SA6.md`](../../Reptes/Reptes_SA6.md) (termòstat, semàfor adaptatiu, proporcional).
+- **Simulació interactiva (Wokwi):** termòstat a [`SA6_esquemes_connexions.md`](SA6_esquemes_connexions.md).
 
 ---
 

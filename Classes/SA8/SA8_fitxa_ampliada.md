@@ -9,8 +9,8 @@
 ---
 
 ## Activitat 1 · Telemetria (S1)
-0. **PREDIU** (abans d'executar): mirant `01_telemetria_emissor.py` i `02_telemetria_receptor.py`, què creus que mostrarà la placa receptora? ____________________
-1. Carrega `01_telemetria_emissor.py` i `02_telemetria_receptor.py` en dues plaques (mateix `group`) i **comprova** la predicció.
+0. **PREDIU** (abans d'executar): mirant [`01_telemetria_emissor.py`](codi/01_telemetria_emissor.py) i [`02_telemetria_receptor.py`](codi/02_telemetria_receptor.py), què creus que mostrarà la placa receptora? ____________________
+1. Carrega [`01_telemetria_emissor.py`](codi/01_telemetria_emissor.py) i [`02_telemetria_receptor.py`](codi/02_telemetria_receptor.py) en dues plaques (mateix `group`) i **comprova** la predicció.
 2. Quines magnituds envies? __________________ Cada quant? __________
 3. Registra 5 lectures rebudes:
 
@@ -38,9 +38,9 @@ Dissenya un sistema IoT del teu entorn (hort, aula, casa...):
 | Una mesura per reduir-lo (minimitzar, xifrar, no conservar…) | |
 
 ## Activitat 3 · Introducció a la IA (S3)
-1. Carrega `03_ia_gestos.py`. Quins gestos classifica? ____________________
+1. Carrega [`03_ia_gestos.py`](codi/03_ia_gestos.py). Quins gestos classifica? ____________________
 2. Quina diferència hi ha entre **regles fetes a mà** i **aprenentatge automàtic**? ____________
-3. **De regles a ML real:** fes la pràctica `SA8_practica_teachable_machine.md` (entrena un classificador amb **exemples**). Quantes classes has fet servir i quants exemples per classe? __________
+3. **De regles a ML real:** fes la pràctica [`SA8_practica_teachable_machine.md`](SA8_practica_teachable_machine.md) (entrena un classificador amb **exemples**). Quantes classes has fet servir i quants exemples per classe? __________
 4. **Repte:** afegeix una classe nova (de gest o al teu model de Teachable Machine). Quina? __________
 5. **Biaix:** el teu classificador s'ha provat només amb les **teves** dades. Amb qui podria fallar i per què? ______________________________________________
 6. **Reflexió ètica:** un benefici i un risc de la IA:
@@ -80,7 +80,7 @@ Repartiu-vos els rols i **roteu-los** a cada sessió:
 
 ## Vols més?
 
-- **Reptes ⭐:** `Reptes/Reptes_SA8.md` (estació meteo, alerta, gestos).
+- **Reptes ⭐:** [`Reptes/Reptes_SA8.md`](../../Reptes/Reptes_SA8.md) (estació meteo, alerta, gestos).
 - **Simuladors:** micro:bit a **python.microbit.org**; telemetria ESP32 a `Simulacions/Wokwi/SA8_telemetria_esp32/`.
 
 ---

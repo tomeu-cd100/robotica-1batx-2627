@@ -83,6 +83,10 @@ TRIMESTRES = {
     2: {"label": "2n trimestre", "sas": [4, 5, 6]},
     3: {"label": "3r trimestre", "sas": [7, 8, 9]},
 }
+# Etiquetes especials per a subcarpetes que no són SA (clau = slug de la carpeta)
+GROUP_LABELS = {
+    "00-general": "Material transversal del curs",
+}
 SA_TITLES = {
     0: "Vocabulari essencial i bases de programació",
     1: "Introducció a la robòtica",
@@ -383,6 +387,8 @@ def page_group(section_key: str, out_rel: str) -> str:
 
 
 def group_sort_key(gk: str):
+    if gk in GROUP_LABELS:          # material transversal: sempre primer
+        return (0, 0, gk)
     sa = detect_sa(gk)
     if sa is not None:
         return (1, sa, gk)
@@ -392,6 +398,8 @@ def group_sort_key(gk: str):
 
 
 def group_label(gk: str) -> str:
+    if gk in GROUP_LABELS:
+        return GROUP_LABELS[gk]
     sa = detect_sa(gk)
     if sa is not None:
         return f"SA{sa} · {SA_TITLES.get(sa, '')}".strip(" ·")
@@ -740,6 +748,7 @@ def section_index_extra(section_key: str, current_out: str, pages: list[Page]) -
     tri_entries: list[tuple] = []        # (tri, ordre, card)
     generals: list[Page] = []
     other_blocks: list[str] = []
+    transversal_blocks: list[str] = []   # material transversal (no SA): va primer
     preamble_cards: list[str] = []
     has_hubs = False
 
@@ -774,9 +783,9 @@ def section_index_extra(section_key: str, current_out: str, pages: list[Page]) -
             for p in sorted(gps, key=lambda p: (p.kind != "index", p.out_rel)):
                 title = "Presentació" if p.kind == "index" else p.title
                 cards.append(doc_card(rel_url(current_out, p.out_rel), title, p.kind))
-            other_blocks.append(
-                f'<h2 class="seccio-sep">{html.escape(group_label(gk) or gk)}</h2>'
-                f'<div class="card-grid">{"".join(cards)}</div>')
+            block = (f'<h2 class="seccio-sep">{html.escape(group_label(gk) or gk)}</h2>'
+                     f'<div class="card-grid">{"".join(cards)}</div>')
+            (transversal_blocks if gk in GROUP_LABELS else other_blocks).append(block)
 
     generals_html = ""
     if generals:
@@ -791,11 +800,12 @@ def section_index_extra(section_key: str, current_out: str, pages: list[Page]) -
         preamble_html = ('<h2 class="seccio-sep">Preàmbul</h2>'
                          '<div class="sa-grid">' + "".join(preamble_cards) + "</div>")
 
-    # Ordre: si hi ha SA amb pàgina pròpia (Classes), SA primer; si no, documents primer
+    # Ordre: material transversal primer; després, si hi ha SA amb pàgina pròpia
+    # (Classes), les SA; si no, els documents primer.
     if has_hubs:
-        ordered = [preamble_html, sa_html, generals_html] + other_blocks
+        ordered = transversal_blocks + [preamble_html, sa_html, generals_html] + other_blocks
     else:
-        ordered = [generals_html, preamble_html, sa_html] + other_blocks
+        ordered = transversal_blocks + [generals_html, preamble_html, sa_html] + other_blocks
     return "\n".join([b for b in ordered if b])
 
 
@@ -823,7 +833,9 @@ def subindex_extra(section_key: str, group_key: str, current_out: str,
     for p in sorted(gps, key=ordre):
         title = "Codi de les pràctiques" if p.kind == "code" else p.title
         cards.append(doc_card(rel_url(current_out, p.out_rel), title, p.kind))
-    return ('<h2 class="seccio-sep">Materials d\'aquesta SA</h2>'
+    titol = ("Materials d'aquesta SA" if detect_sa(group_key) is not None
+             else "Materials d'aquest apartat")
+    return (f'<h2 class="seccio-sep">{titol}</h2>'
             '<div class="card-grid">' + "".join(cards) + "</div>")
 
 

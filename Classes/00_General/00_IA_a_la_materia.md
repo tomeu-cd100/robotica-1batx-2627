@@ -33,12 +33,12 @@ Cada llavor és **curta i conceptual** (no consumeix una sessió sencera, tret d
 
 | SA | Llavor d'IA | Com introduir-la (cost baix) | On |
 |----|-------------|------------------------------|----|
-| **SA0** | Vocabulari: *IA, model, dades d'entrenament, classificació, biaix, IA generativa, assistent de codi*. | Consulta puntual quan surti el terme. | `SA0_vocabulari_essencial.md` (bloc SA8 ampliat). |
+| **SA0** | Vocabulari: *IA, model, dades d'entrenament, classificació, biaix, IA generativa, assistent de codi*. | Consulta puntual quan surti el terme. | [`SA0_vocabulari_essencial.md`](../SA0/SA0_vocabulari_essencial.md) (bloc SA8 ampliat). |
 | **SA1** | *Què és i què NO és IA.* Un robot que segueix regles fixes **no** és IA; ho és quan "aprèn" o decideix amb dades. | Pregunta d'activació de 5'. | Connexió conceptual. |
-| **SA3** | **Dades → decisió.** Un **llindar** (`if dist < 20`) és la **regla** precursora d'un classificador. | Caixa "Connexió amb la IA". | `SA3_guia_docent.md`. |
-| **SA6** | **IA aplicada al control** (la frase literal del saber). Compara una **regla/PID** feta a mà amb un controlador que **aprendria** la resposta. | Caixa "Connexió amb la IA". | `SA6_guia_docent.md`. |
-| **SA7** | Comportament **programat** vs **après**. Els cotxes autònoms i el seguiment visual usen IA; el nostre seguidor de línia, regles. | Caixa "Connexió amb la IA" + demo/vídeo. | `SA7_guia_docent.md`. |
-| **SA8** | **NUCLI.** De *regles fetes a mà* → **aprenentatge automàtic (ML) real**: dades d'entrenament, model, prova, **biaix**, sobreajust; ètica i privadesa de dades. | Sessió 3 ampliada + **pràctica Teachable Machine**. | `SA8_guia_docent.md`, `SA8_practica_teachable_machine.md`. |
+| **SA3** | **Dades → decisió.** Un **llindar** (`if dist < 20`) és la **regla** precursora d'un classificador. | Caixa "Connexió amb la IA". | [`SA3_guia_docent.md`](../SA3/SA3_guia_docent.md). |
+| **SA6** | **IA aplicada al control** (la frase literal del saber). Compara una **regla/PID** feta a mà amb un controlador que **aprendria** la resposta. | Caixa "Connexió amb la IA". | [`SA6_guia_docent.md`](../SA6/SA6_guia_docent.md). |
+| **SA7** | Comportament **programat** vs **après**. Els cotxes autònoms i el seguiment visual usen IA; el nostre seguidor de línia, regles. | Caixa "Connexió amb la IA" + demo/vídeo. | [`SA7_guia_docent.md`](../SA7/SA7_guia_docent.md). |
+| **SA8** | **NUCLI.** De *regles fetes a mà* → **aprenentatge automàtic (ML) real**: dades d'entrenament, model, prova, **biaix**, sobreajust; ètica i privadesa de dades. | Sessió 3 ampliada + **pràctica Teachable Machine**. | [`SA8_guia_docent.md`](../SA8/SA8_guia_docent.md), [`SA8_practica_teachable_machine.md`](../SA8/SA8_practica_teachable_machine.md). |
 | **SA9** | **Opció** de repte final amb component d'IA (classificador de gestos/imatge/so integrat al projecte). | Banc de reptes. | `SA9` plantilles / `Reptes/`. |
 
 > 🧵 **Fil narratiu únic:** *encendre (SA1) → percebre (SA3) → moure's (SA4) → regular-se (SA6) → desplaçar-se sol (SA7) → **connectar-se i decidir amb dades (SA8)***. La IA és el pas natural quan el sistema ja percep i actua: ara **aprèn a decidir**.
@@ -54,7 +54,7 @@ Quatre idees. Si l'alumnat se'n va amb aquestes quatre, n'hi ha prou.
    - *Aprenentatge automàtic (ML):* en lloc d'escriure les regles, **donem exemples** (dades etiquetades) i el **model les dedueix sol**. Útil quan les regles serien massa complexes (reconèixer una cara, una veu, un gest variable).
 2. **Dades → model → decisió.** Un model d'IA és el resultat d'**entrenar** amb dades. La qualitat de la decisió **depèn de les dades**: *garbage in, garbage out*.
 3. **Biaix i límits.** Si les dades d'entrenament són parcials, les decisions ho seran (un classificador entrenat només amb unes mans falla amb altres). La IA **no "entén"**: troba **patrons estadístics**, i pot equivocar-se amb seguretat.
-4. **Ètica de dades.** Recollir dades implica **privadesa, consentiment i finalitat** (vegeu el bloc *"Ètica de dades i IA"* de `SA8_guia_docent.md`: RGPD, biaix, consentiment).
+4. **Ètica de dades.** Recollir dades implica **privadesa, consentiment i finalitat** (vegeu el bloc *"Ètica de dades i IA"* de [`SA8_guia_docent.md`](../SA8/SA8_guia_docent.md): RGPD, biaix, consentiment).
 
 > Vocabulari "IA generativa" (ChatGPT i companyia): són models entrenats amb **enormes quantitats de text** que **prediuen la paraula següent**. Per això **sonen segurs encara que s'equivoquin** (al·lucinacions). Aquesta idea és la frontissa cap a l'**eix B**.
 
@@ -72,7 +72,7 @@ Abans de demanar res a una IA, l'alumnat aplica la rutina **DEPURA** (Descriu ·
 
 ### 5.2. Semàfor d'usos (penjar a l'aula)
 
-> 🖨️ **Versió imprimible A4/A3:** `00_Poster_IA_us_assistents.md` (regla d'or, semàfor, "explica-ho", honestedat i avisos) per penjar a l'aula.
+> 🖨️ **Versió imprimible A4/A3:** [`00_Poster_IA_us_assistents.md`](00_Poster_IA_us_assistents.md) (regla d'or, semàfor, "explica-ho", honestedat i avisos) per penjar a l'aula.
 
 | 🟢 SÍ (ben fet) | 🟡 AMB CURA | 🔴 NO (deshonest) |
 |---|---|---|
@@ -114,7 +114,7 @@ Declarar l'ús **no baixa nota**; amagar-lo o no saber explicar-lo, **sí**.
 
 Per passar de *regles* a **ML real** **sense maquinari extra** (només navegador), la SA8 incorpora una pràctica amb **Google Teachable Machine**: l'alumnat **recull exemples**, **entrena** un classificador (imatge, so o postura), el **prova en directe** i **observa el biaix**.
 
-→ Material complet: **`Classes/SA8/SA8_practica_teachable_machine.md`**. És integrable com a **ampliació de la SA8 · Sessió 3** o com a **opció de repte a la SA9**. Té **Pla B** sense internet.
+→ Material complet: **[`Classes/SA8/SA8_practica_teachable_machine.md`](../SA8/SA8_practica_teachable_machine.md)**. És integrable com a **ampliació de la SA8 · Sessió 3** o com a **opció de repte a la SA9**. Té **Pla B** sense internet.
 
 ---
 
@@ -133,6 +133,6 @@ Per passar de *regles* a **ML real** **sense maquinari extra** (només navegador
 - Marc de **competència digital** i IA del Departament d'Educació (consulta XTEC: ús de la IA a l'aula).
 - *Teachable Machine* (Google) — `teachablemachine.withgoogle.com`.
 - Extensió **ML / "AI"** de MakeCode per a micro:bit (recollir mostres i entrenar al navegador).
-- Bloc **"Ètica de dades i IA"** a `Classes/SA8/SA8_guia_docent.md` (RGPD, biaix, consentiment, mini-debats).
+- Bloc **"Ètica de dades i IA"** a [`Classes/SA8/SA8_guia_docent.md`](../SA8/SA8_guia_docent.md) (RGPD, biaix, consentiment, mini-debats).
 
 > **Resum en una frase:** la IA entra **a poc a poc com a contingut** (sensors→dades→decisió→ML, culminant a la SA8) i **transversalment com a eina** (assistents amb DEPURA-primer, semàfor d'usos i "explica-ho"), sempre lligada a l'**ètica de les dades**.

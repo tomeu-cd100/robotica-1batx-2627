@@ -156,4 +156,4 @@ A **totes** les SA treballem amb el mateix cicle d'enginyeria. Tingue'l sempre p
 | **4. Provar** | Funciona? On falla? |
 | **5. Millorar** | Com ho faig millor? |
 
-> Aquest és també l'esquema del teu **quadern tècnic**. → Per aprendre a programar la placa, ves a **`SA0_guia_programacio.md`**.
+> Aquest és també l'esquema del teu **quadern tècnic**. → Per aprendre a programar la placa, ves a **[`SA0_guia_programacio.md`](SA0_guia_programacio.md)**.

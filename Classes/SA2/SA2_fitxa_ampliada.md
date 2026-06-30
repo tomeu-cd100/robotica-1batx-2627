@@ -75,8 +75,8 @@ Repartiu-vos els rols i **roteu-los** a cada sessió:
 
 ## Vols més?
 
-- **Reptes ⭐:** `Reptes/Reptes_SA2.md` (semàfor, llum ambient, indicador de nivell).
-- **Simulació interactiva (Wokwi):** semàfor a `Simulacions/Wokwi/SA2_semafor/` (enllaç a `SA2_esquemes_connexions.md`).
+- **Reptes ⭐:** [`Reptes/Reptes_SA2.md`](../../Reptes/Reptes_SA2.md) (semàfor, llum ambient, indicador de nivell).
+- **Simulació interactiva (Wokwi):** semàfor a `Simulacions/Wokwi/SA2_semafor/` (enllaç a [`SA2_esquemes_connexions.md`](SA2_esquemes_connexions.md)).
 
 ---
 

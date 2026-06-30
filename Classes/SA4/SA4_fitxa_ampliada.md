@@ -80,8 +80,8 @@ Repartiu-vos els rols i **roteu-los** a cada sessió:
 
 ## Vols més?
 
-- **Reptes ⭐:** `Reptes/Reptes_SA4.md` (barrera, ventilador, braç dispensador).
-- **Simulació interactiva (Wokwi):** servo a `SA4_esquemes_connexions.md` (el motor/pont H va amb maquinari real).
+- **Reptes ⭐:** [`Reptes/Reptes_SA4.md`](../../Reptes/Reptes_SA4.md) (barrera, ventilador, braç dispensador).
+- **Simulació interactiva (Wokwi):** servo a [`SA4_esquemes_connexions.md`](SA4_esquemes_connexions.md) (el motor/pont H va amb maquinari real).
 
 ---
 

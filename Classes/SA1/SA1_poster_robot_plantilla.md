@@ -66,7 +66,7 @@ Tot robot té avantatges i riscos. Identifica'n **un de cada** i relaciona'l amb
 | **Reflexió** (dilema ètic ben argumentat) | ☐ | ☐ | ☐ | ☐ |
 | **Presentació** (ordre, imatge, comunicació visual) | ☐ | ☐ | ☐ | ☐ |
 
-*(NA: no assolit · AS: satisfactori · AN: notable · AE: excel·lent — vegeu `Programació didàctica/07_Rubriques.md`.)*
+*(NA: no assolit · AS: satisfactori · AN: notable · AE: excel·lent — vegeu [`Programació didàctica/07_Rubriques.md`](../../Programació%20didàctica/07_Rubriques.md).)*
 
 ---
 

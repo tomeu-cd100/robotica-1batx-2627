@@ -76,8 +76,8 @@ Repartiu-vos els rols i **roteu-los** a cada sessió:
 
 ## Vols més?
 
-- **Reptes ⭐:** `Reptes/Reptes_SA3.md` (llum nocturna, sensor d'aparcament, instrument).
-- **Simulació interactiva (Wokwi):** vegeu `SA3_esquemes_connexions.md`.
+- **Reptes ⭐:** [`Reptes/Reptes_SA3.md`](../../Reptes/Reptes_SA3.md) (llum nocturna, sensor d'aparcament, instrument).
+- **Simulació interactiva (Wokwi):** vegeu [`SA3_esquemes_connexions.md`](SA3_esquemes_connexions.md).
 
 ---
 

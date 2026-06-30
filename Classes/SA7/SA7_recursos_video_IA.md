@@ -1,6 +1,6 @@
 # SA7 · Recursos de vídeo — comportament programat vs après (IA)
 
-> Suport per a la caixa **"Connexió amb la IA"** de `SA7_guia_docent.md`. Objectiu: amb **1–2 vídeos curts** (2–4'), fer veure la diferència entre el vostre robot (regles programades) i un vehicle/robot que **aprèn** a percebre el món amb IA. **No cal projectar gaire estona**: és una llavor de 3', no una sessió.
+> Suport per a la caixa **"Connexió amb la IA"** de [`SA7_guia_docent.md`](SA7_guia_docent.md). Objectiu: amb **1–2 vídeos curts** (2–4'), fer veure la diferència entre el vostre robot (regles programades) i un vehicle/robot que **aprèn** a percebre el món amb IA. **No cal projectar gaire estona**: és una llavor de 3', no una sessió.
 
 ## Com fer-ho servir (3')
 1. Projecta **un** clip curt de conducció/percepció autònoma.
@@ -39,7 +39,7 @@
 2. Desa'l en local i projecta'l sense connexió.
 3. Alternativa sense vídeo: **descriu** l'escena i passa directament a la pregunta i el debat (la llavor funciona igual de paraula).
 
-> Vegeu també el **Pla B general** de simuladors/recursos a `Simulacions/Wokwi/README.md`.
+> Vegeu també el **Pla B general** de simuladors/recursos a [`Simulacions/Wokwi/README.md`](../../Simulacions/Wokwi/README.md).
 
 ## Connexió curricular
 - Reforça **CA5.1** (tecnologies emergents: IA) i lliga amb el **referent** de la SA7 (Daniela Rus, robòtica autònoma).

@@ -1,7 +1,7 @@
 # SA5 · Guia docent — micro:bit i MicroPython: un altre paradigma
 
 **Durada:** 7 h (3-4 sessions) · **Maquinari:** micro:bit + Micro:shield · **Llenguatge:** MicroPython
-**Referència:** `Programació didàctica/14_SA5_microbit_micropython.md` · **Connexions:** `SA5_connexions.md`
+**Referència:** [`Programació didàctica/14_SA5_microbit_micropython.md`](../../Programació%20didàctica/14_SA5_microbit_micropython.md) · **Connexions:** [`SA5_connexions.md`](SA5_connexions.md)
 
 ## Objectius de la SA
 1. Escriure programes en **MicroPython** amb la sintaxi correcta (**indentació!**).
@@ -16,10 +16,10 @@
 ## Codi de suport (`codi/`)
 | Fitxer | Contingut |
 |---|---|
-| `01_name_badge.py` | Matriu LED, botons, imatges. |
-| `02_passes.py` | Comptapassos amb l'acceleròmetre. |
-| `03_nightlight.py` | Llum automàtic amb el sensor de llum. |
-| `04_radio_dau.py` | Dau digital + comunicació per ràdio. |
+| [`01_name_badge.py`](codi/01_name_badge.py) | Matriu LED, botons, imatges. |
+| [`02_passes.py`](codi/02_passes.py) | Comptapassos amb l'acceleròmetre. |
+| [`03_nightlight.py`](codi/03_nightlight.py) | Llum automàtic amb el sensor de llum. |
+| [`04_radio_dau.py`](codi/04_radio_dau.py) | Dau digital + comunicació per ràdio. |
 
 ## Mètode de projecte i continuïtat
 - **Cicle de treball** (com a tot el curs): *analitzar → dissenyar → prototipar → provar → millorar* (vegeu SA1). El **producte** n'és el recorregut complet i el **quadern tècnic** el documenta.
@@ -31,11 +31,11 @@
 
 ## SESSIÓ 1 (2 h) — Primers passos amb MicroPython
 
-> 🔗 **Bastida prèvia (SA0):** abans de començar, deriva l'alumnat que ho necessiti a `Classes/SA0/SA0_guia_programacio.md`, **Part B (MicroPython)** i **Part C (comparativa C++↔Python)**, per amortir el canvi de llenguatge.
+> 🔗 **Bastida prèvia (SA0):** abans de començar, deriva l'alumnat que ho necessiti a [`Classes/SA0/SA0_guia_programacio.md`](../SA0/SA0_guia_programacio.md), **Part B (MicroPython)** i **Part C (comparativa C++↔Python)**, per amortir el canvi de llenguatge.
 
 - **Activació (10'):** *"La mateixa idea, dos llenguatges: què canviarà respecte d'Arduino?"*
 - **Modelatge (25'):** editor Python de micro:bit. `from microbit import *`, `display.scroll()`, `display.show(Image...)`, botons. **Indentació** com a estructura (vs claus `{}` de C++).
-- **Pràctica guiada (35'):** `01_name_badge.py`; mostren el nom i reaccionen als botons A/B.
+- **Pràctica guiada (35'):** [`01_name_badge.py`](codi/01_name_badge.py); mostren el nom i reaccionen als botons A/B.
 - **Repte (40'):** badge d'emocions (botó A: contenta, botó B: trista); **+ repte:** animació pròpia amb diverses imatges.
 - **Tancament (10'):** quadern; primera fila de la **taula comparativa** C++/Python.
 
@@ -45,7 +45,7 @@
 
 ## SESSIÓ 2 (2 h) — Sensors integrats
 - **Activació (10'):** *"Quins sensors porta de sèrie la micro:bit?"* (acceleròmetre, brúixola, temperatura, llum).
-- **Modelatge (25'):** `02_passes.py` (acceleròmetre, `get_strength`, llindar i antirebot) i `03_nightlight.py` (`display.read_light_level()`).
+- **Modelatge (25'):** [`02_passes.py`](codi/02_passes.py) (acceleròmetre, `get_strength`, llindar i antirebot) i [`03_nightlight.py`](codi/03_nightlight.py) (`display.read_light_level()`).
 - **Pràctica guiada (35'):** comptapassos i llum automàtic.
 - **Repte (40'):** detector d'inclinació (nivell) o termòmetre amb avís; **+ repte:** registrar dades i mostrar màxim/mínim.
 - **Tancament (10'):** quadern.
@@ -56,7 +56,7 @@
 
 ## SESSIÓ 3 (2 h) — Ràdio i comparació de paradigmes
 - **Activació (10'):** *"Com es comuniquen dues plaques sense cables?"* → ràdio.
-- **Modelatge (25'):** `04_radio_dau.py`. Mòdul `radio`: `radio.on()`, `radio.config(group=...)`, `send()`, `receive()`. Gestos (`was_gesture("shake")`) i `random`.
+- **Modelatge (25'):** [`04_radio_dau.py`](codi/04_radio_dau.py). Mòdul `radio`: `radio.on()`, `radio.config(group=...)`, `send()`, `receive()`. Gestos (`was_gesture("shake")`) i `random`.
 - **Pràctica guiada (35'):** dau digital que es comparteix per ràdio entre dues plaques.
 - **Repte (40'):** "pedra-paper-tisora" per ràdio o comandament a distància; **+ repte:** xarxa de 3+ plaques.
 - **Comparació + tancament (15'):** completar la **taula comparativa C++ ↔ Python** d'un mateix programa (p. ex. comptador) i reflexionar sobre els dos paradigmes.
@@ -82,7 +82,7 @@
 | Repte de codi Python | Sintaxi (indentació), funcions, lectura de sensor | CA1.2 | R1 |
 | Quadern tècnic | Comparativa, errors i millores; decisió de disseny | CA1.2, CA3.1 | R4 |
 
-*(CA1.2 = programar en MicroPython i comparar-ho amb C/C++; CA3.1 = implementar/explicar control bàsic. Vegeu `Programació didàctica/06_Avaluacio_criteris_qualificacio.md`. Comparteix R1 i R4 **abans** de començar.)*
+*(CA1.2 = programar en MicroPython i comparar-ho amb C/C++; CA3.1 = implementar/explicar control bàsic. Vegeu [`Programació didàctica/06_Avaluacio_criteris_qualificacio.md`](../../Programació%20didàctica/06_Avaluacio_criteris_qualificacio.md). Comparteix R1 i R4 **abans** de començar.)*
 
 ---
 
@@ -99,7 +99,7 @@
 | Via | Mesura |
 |---|---|
 | **Bastida** (qui s'encalla) | **MakeCode (blocs)** com a pont abans del Python; **simulador** (python.microbit.org) per provar sense placa; donar l'esquelet `while True:` indentat. |
-| **+ Ampliació** (qui va sobrat) | Xarxa de 3+ plaques per ràdio, registre de màx/mín, animacions pròpies; reptes ⭐ de `Reptes/Reptes_SA5.md`. |
+| **+ Ampliació** (qui va sobrat) | Xarxa de 3+ plaques per ràdio, registre de màx/mín, animacions pròpies; reptes ⭐ de [`Reptes/Reptes_SA5.md`](../../Reptes/Reptes_SA5.md). |
 | **Representació múltiple** | Blocs ↔ codi, simulador visual, taula comparativa C++/Python. |
 | **Implicació** | Cada parella tria el projecte (badge, comptapassos, nightlight o joc per ràdio). |
 

@@ -1,7 +1,7 @@
 # SA9 · Guia docent — Repte final integrador (opció competició)
 
 **Durada:** 10 h (5 sessions) · **Maquinari:** lliure (Arduino / micro:bit / Imagina 3dBot) · **Llenguatge:** lliure (C/C++ i/o Python)
-**Referència:** `Programació didàctica/18_SA9_Projecte_final.md`
+**Referència:** [`Programació didàctica/18_SA9_Projecte_final.md`](../../Programació%20didàctica/18_SA9_Projecte_final.md)
 
 ## Sentit de la SA
 Projecte de **síntesi** del curs: en equip, l'alumnat dissenya, construeix, programa, documenta i defensa un **sistema robòtic autònom** que resol un repte real. Integra tot l'après (SA1-SA8). Opció de vincular-lo a una **competició** (WRO, RoboCup Junior, FTC) o al futur **Treball de Recerca**.
@@ -66,7 +66,7 @@ Aquesta SA **tanca el mètode de projecte** introduït a la **SA1** i practicat 
 | Procés (taulell, iteracions) | Gestió del projecte (anàlisi → prototip → millora) | CA5.1 | R5 |
 | Coavaluació + reflexió ètica | Cooperació i impacte ètic/sostenibilitat (ODS) | CA5.3 | R5 |
 
-*(CA5.1 = gestionar un projecte complet; CA5.2 = documentar i defensar; CA5.3 = valorar impacte ètic i cooperar. Vegeu `Programació didàctica/06_Avaluacio_criteris_qualificacio.md`. Comparteix **totes** les rúbriques **abans** de començar.)*
+*(CA5.1 = gestionar un projecte complet; CA5.2 = documentar i defensar; CA5.3 = valorar impacte ètic i cooperar. Vegeu [`Programació didàctica/06_Avaluacio_criteris_qualificacio.md`](../../Programació%20didàctica/06_Avaluacio_criteris_qualificacio.md). Comparteix **totes** les rúbriques **abans** de començar.)*
 
 ## Orientacions per al docent
 - Tenir el **banc de reptes amb nivells** perquè cada equip triï segons ambició (atenció a la diversitat).

@@ -313,4 +313,4 @@ No copiïs codi sense entendre'l. Segueix aquests passos:
 4. **M**odificar — canvia coses i observa l'efecte.
 5. **C**rear — escriu el teu propi a partir del que has après.
 
-> Predir **abans** de provar és el pas que més t'ajuda a aprendre de veritat. → Practica-ho a **`SA0_fitxa_alumnat.md`**.
+> Predir **abans** de provar és el pas que més t'ajuda a aprendre de veritat. → Practica-ho a **[`SA0_fitxa_alumnat.md`](SA0_fitxa_alumnat.md)**.

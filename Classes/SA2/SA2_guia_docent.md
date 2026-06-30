@@ -1,7 +1,7 @@
 # SA2 · Guia docent — Sortides digitals i PWM: dona vida als actuadors
 
 **Durada:** 8 h (4 sessions; la 4a amb ampliacions opcionals) · **Maquinari:** Arduino UNO + kit Keyestudio/BQ · **Llenguatge:** C/C++
-**Referència:** `Programació didàctica/11_SA2_Sortides_digitals_PWM.md` · **Esquemes:** `SA2_esquemes_connexions.md`
+**Referència:** [`Programació didàctica/11_SA2_Sortides_digitals_PWM.md`](../../Programació%20didàctica/11_SA2_Sortides_digitals_PWM.md) · **Esquemes:** [`SA2_esquemes_connexions.md`](SA2_esquemes_connexions.md)
 
 ## Objectius de la SA
 1. Escriure programes amb variables, constants i estructures de control (`for`, `if`).
@@ -79,7 +79,7 @@
 | Quadern tècnic | Esquema, codi comentat, errors i millores | CA1.1, CA2.2 | R1 |
 | Observació de muntatge | Resistència limitadora, polaritat, seguretat | CA2.1 | R2 |
 
-*(CA1.1 = programar en C/C++; CA2.1 = dissenyar/muntar circuits amb seguretat; CA2.2 = mesurar/interpretar senyals. Vegeu `Programació didàctica/06_Avaluacio_criteris_qualificacio.md`. Comparteix R1 i R2 amb l'alumnat **abans** de començar.)*
+*(CA1.1 = programar en C/C++; CA2.1 = dissenyar/muntar circuits amb seguretat; CA2.2 = mesurar/interpretar senyals. Vegeu [`Programació didàctica/06_Avaluacio_criteris_qualificacio.md`](../../Programació%20didàctica/06_Avaluacio_criteris_qualificacio.md). Comparteix R1 i R2 amb l'alumnat **abans** de començar.)*
 
 ## Errors freqüents
 | Error | Causa | Solució |
@@ -105,7 +105,7 @@
 | Via | Mesura |
 |---|---|
 | **Bastida** (qui s'encalla) | Començar amb **1 LED** abans del semàfor de 3; donar la seqüència de fases en comentaris per completar; parella heterogènia. |
-| **+ Ampliació** (qui va sobrat) | Fase nocturna, semàfor de vianants, arc de Sant Martí RGB; reptes ⭐ de `Reptes/Reptes_SA2.md`. |
+| **+ Ampliació** (qui va sobrat) | Fase nocturna, semàfor de vianants, arc de Sant Martí RGB; reptes ⭐ de [`Reptes/Reptes_SA2.md`](../../Reptes/Reptes_SA2.md). |
 | **Representació múltiple** | Esquema de connexions, **simulació Wokwi** (semàfor), codi comentat. |
 | **Implicació** | Cada parella tria estats i colors del seu panell i quin repte amplia. |
 

@@ -1,7 +1,7 @@
 # SA3 · Guia docent — Entrades i sensors: el robot percep
 
 **Durada:** 8 h (4 sessions) · **Maquinari:** Arduino UNO + Keyestudio (polsador, potenciòmetre, LDR, NTC, ultrasons HC-SR04) · **Llenguatge:** C/C++
-**Referència:** `Programació didàctica/12_SA3_Entrades_sensors.md` · **Esquemes:** `SA3_esquemes_connexions.md`
+**Referència:** [`Programació didàctica/12_SA3_Entrades_sensors.md`](../../Programació%20didàctica/12_SA3_Entrades_sensors.md) · **Esquemes:** [`SA3_esquemes_connexions.md`](SA3_esquemes_connexions.md)
 
 ## Objectius de la SA
 1. Llegir entrades digitals (`digitalRead`) i analògiques (`analogRead`) i interpretar-ne els valors.
@@ -63,7 +63,7 @@
 
 ## SESSIÓ 4 (2 h) — Producte: alarma/aparcament
 
-> 📋 **Aquesta sessió allotja la prova pràctica trimestral T1** (vegeu `Avaluació/Prova_practica_T1.md` i `Programació didàctica/08_Sequenciacio_temporal_anual.md`): el producte/repte d'aquesta sessió **fa de prova T1** i no afegeix hores extra.
+> 📋 **Aquesta sessió allotja la prova pràctica trimestral T1** (vegeu [`Avaluació/Prova_practica_T1.md`](../../Avaluació/Prova_practica_T1.md) i [`Programació didàctica/08_Sequenciacio_temporal_anual.md`](../../Programació%20didàctica/08_Sequenciacio_temporal_anual.md)): el producte/repte d'aquesta sessió **fa de prova T1** i no afegeix hores extra.
 
 - **Activació (10'):** presentació del repte.
 - **Pràctica (70'):** `04_alarma_aparcament.ino`. Integren ultrasons + LED/piezo amb **avís proporcional a la distància** (com més a prop, més ràpid el so). Cada parella personalitza llindars.
@@ -81,7 +81,7 @@
 | Quadern tècnic | Taula de lectures, codi de la funció, errors | CA1.1, CA2.2 | R1 |
 | Observació + depuració sèrie | Ús del monitor/traçador, divisor de tensió | CA2.2 | R2 |
 
-*(CA1.1 = programar en C/C++; CA2.1 = dissenyar/muntar circuits amb seguretat; CA2.2 = mesurar/interpretar senyals. Vegeu `Programació didàctica/06_Avaluacio_criteris_qualificacio.md`. Comparteix R1 i R2 **abans** de començar.)*
+*(CA1.1 = programar en C/C++; CA2.1 = dissenyar/muntar circuits amb seguretat; CA2.2 = mesurar/interpretar senyals. Vegeu [`Programació didàctica/06_Avaluacio_criteris_qualificacio.md`](../../Programació%20didàctica/06_Avaluacio_criteris_qualificacio.md). Comparteix R1 i R2 **abans** de començar.)*
 
 ## Errors freqüents
 | Error | Causa | Solució |
@@ -108,7 +108,7 @@
 | Via | Mesura |
 |---|---|
 | **Bastida** (qui s'encalla) | Començar amb el **polsador** (digital) abans de l'analògic; donar la funció `mesuraDistancia()` ja escrita per llegir-la i usar-la; parella heterogènia. |
-| **+ Ampliació** (qui va sobrat) | Mitjana de 3 mesures, detectar acostament/allunyament; reptes ⭐ de `Reptes/Reptes_SA3.md`. |
+| **+ Ampliació** (qui va sobrat) | Mitjana de 3 mesures, detectar acostament/allunyament; reptes ⭐ de [`Reptes/Reptes_SA3.md`](../../Reptes/Reptes_SA3.md). |
 | **Representació múltiple** | Esquema, **Serial Plotter** (dada visual), simulació Wokwi, codi comentat. |
 | **Implicació** | Cada parella tria llindars i el tipus d'avís del seu producte. |
 
