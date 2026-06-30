@@ -306,6 +306,13 @@ def rewrite_links(html_body: str, src_file: Path, out_rel: str,
         if target.suffix.lower() in IMG_EXT and target.exists():
             name = copy_image(target, copied_imgs)
             return prefix + "assets/img/" + name + frag
+        # .md NO convertit a pàgina -> enllaç al fitxer original a GitHub
+        if target.suffix.lower() == ".md" and target.exists():
+            try:
+                relpath = target.relative_to(ROOT.resolve())
+                return BLOB_BASE + urllib.parse.quote(str(relpath).replace("\\", "/")) + frag
+            except ValueError:
+                pass
         # Document (pdf, full de càlcul…) -> enllaç a GitHub
         if target.suffix.lower() in DOC_EXT and target.exists():
             try:
@@ -994,6 +1001,9 @@ def main():
             shutil.rmtree(item)
         elif item.suffix == ".html" or item.name == ".nojekyll":
             item.unlink()
+    # imatges: es regeneren netes (evita duplicats acumulats entre tirades)
+    if IMG_OUT.exists():
+        shutil.rmtree(IMG_OUT)
 
     write_pygments_css()
 
