@@ -92,8 +92,12 @@
 <td>Màquina d'estats amb <code>enum</code>/<code>switch</code>.</td>
 </tr>
 <tr>
+<td><a href="codi.html#codi-03-maquina-estats-bastida-03-maquina-estats-bastida"><code>03_maquina_estats_BASTIDA/03_maquina_estats_BASTIDA.ino</code></a></td>
+<td><strong>Bastida</strong>: el patró (<code>enum</code>/<code>switch</code> + <code>millis()</code>) ja muntat; l'alumnat només omple els <code>// TODO</code>.</td>
+</tr>
+<tr>
 <td><code>04_control_proporcional.ino</code></td>
-<td>Regulació proporcional bàsica.</td>
+<td>Regulació proporcional bàsica <strong>(+ampliació, no nucli)</strong>.</td>
 </tr>
 </tbody>
 </table>
@@ -134,12 +138,13 @@
 </ul>
 <p><strong>Punt clau:</strong> una <strong>màquina d'estats</strong> organitza comportaments complexos en estats clars i transicions; evita el codi espagueti i no bloqueja (s'usa amb <code>millis()</code>).</p>
 <blockquote>
-<p>🧩 <strong>Bastida <code>millis()</code> (recomanada abans d'aquesta sessió):</strong> fins ara <code>millis()</code> només s'ha vist com a <em>concepte</em> (SA2 S2) o <em>ampliació</em> (SA1 <code>blink_millis.ino</code>), no s'ha practicat. Abans de la màquina d'estats, fes una <strong>mini-pràctica guiada de ~10'</strong> (p. ex. dos LED que parpellegen a ritmes diferents <strong>sense</strong> <code>delay()</code>), <strong>o</strong> dona l'esquelet de la màquina d'estats amb el patró <code>millis()</code> ja muntat com a bastida per a qui ho necessiti.</p>
+<p>🧩 <strong>Bastida <code>millis()</code> (clau per a aquesta sessió):</strong> el patró no bloquejant amb <code>millis()</code> es <strong>practica a la SA4</strong> amb <a href="../sa4/codi.html#codi-05-dos-leds-millis-05-dos-leds-millis"><code>05_dos_leds_millis</code></a> (dos LED a ritmes diferents sense <code>delay()</code>). Si no s'ha fet, dedica-hi <strong>~10'</strong> ara com a escalfament. Per a qui s'encalli, reparteix l'esquelet <a href="codi.html#codi-03-maquina-estats-bastida-03-maquina-estats-bastida"><code>03_maquina_estats_BASTIDA</code></a>: té el patró (<code>enum</code>/<code>switch</code> + <code>millis()</code>) ja muntat i només cal omplir els <code>// TODO</code> (comportament i transicions de cada estat).</p>
 </blockquote>
 <hr />
 <h2 id="sessio-4-2-h-control-proporcional"><a class="toclink" href="#sessio-4-2-h-control-proporcional">SESSIÓ 4 (2 h) — Control proporcional</a></h2>
 <blockquote>
 <p>📋 <strong>Aquesta sessió allotja la prova pràctica trimestral T2</strong> (vegeu <a href="../../avaluacio/prova-practica-t2.html"><code>Avaluació/Prova_practica_T2.md</code></a> i <a href="../../programacio/08-sequenciacio-temporal-anual.html"><code>Programació didàctica/08_Sequenciacio_temporal_anual.md</code></a>): el repte de control d'aquesta sessió <strong>fa de prova T2</strong> i no afegeix hores extra.</p>
+<p>⚖️ <strong>Nivell exigible:</strong> el <strong>nucli</strong> d'aquesta SA és <strong>llaç obert/tancat + histèresi + màquina d'estats</strong>. El <strong>control proporcional és +ampliació</strong> (notable/excel·lent), coherent amb la graella de la prova T2 (el nucli avaluable és el control tot/res amb histèresi). Amb poc temps, prioritza consolidar la màquina d'estats; ofereix el proporcional a qui vagi sobrat.</p>
 </blockquote>
 <ul>
 <li><strong>Activació (10'):</strong> <em>"I si la resposta fos més suau, proporcional a com de lluny estem de l'objectiu?"</em></li>

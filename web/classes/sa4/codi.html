@@ -62,6 +62,7 @@
 <li><a href="#codi-02-motor-pont-h-02-motor-pont-h"><code>codi/02_motor_pont_h/02_motor_pont_h.ino</code></a></li>
 <li><a href="#codi-03-sensor-velocitat-03-sensor-velocitat"><code>codi/03_sensor_velocitat/03_sensor_velocitat.ino</code></a></li>
 <li><a href="#codi-04-barrera-automatica-04-barrera-automatica"><code>codi/04_barrera_automatica/04_barrera_automatica.ino</code></a></li>
+<li><a href="#codi-05-dos-leds-millis-05-dos-leds-millis"><code>codi/05_dos_leds_millis/05_dos_leds_millis.ino</code></a></li>
 </ul>
 <section class="codi-bloc" id="codi-01-servo-potenciometre-01-servo-potenciometre"><header class="codi-cap"><code class="codi-nom">codi/01_servo_potenciometre/01_servo_potenciometre.ino</code><button class="copia-btn" type="button">Copia</button></header><div class="codi-cos"><div class="highlight"><pre><span></span><span class="cm">/*</span>
 <span class="cm">  SA4 - 01_servo_potenciometre.ino</span>
@@ -227,6 +228,53 @@
 <span class="w">    </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">LED</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="w">  </span><span class="n">delay</span><span class="p">(</span><span class="mi">60</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div></section>
+<section class="codi-bloc" id="codi-05-dos-leds-millis-05-dos-leds-millis"><header class="codi-cap"><code class="codi-nom">codi/05_dos_leds_millis/05_dos_leds_millis.ino</code><button class="copia-btn" type="button">Copia</button></header><div class="codi-cos"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm">  SA4 - 05_dos_leds_millis.ino  (mini-practica de temporitzacio NO bloquejant)</span>
+
+<span class="cm">  Objectiu: fer dues coses &quot;alhora&quot; sense delay(). Dos LEDs parpellegen a</span>
+<span class="cm">  ritmes diferents. Amb delay() no es podria, perque delay() ATURA tot.</span>
+<span class="cm">  Aquest patro amb millis() es la base de la maquina d&#39;estats de la SA6.</span>
+
+<span class="cm">  Munta: LED al pin 7 i LED al pin 8 (amb la seva resistencia).</span>
+<span class="cm">*/</span>
+
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">LED_A</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">7</span><span class="p">;</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">LED_B</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="p">;</span>
+
+<span class="k">const</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">PERIODE_A</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">250</span><span class="p">;</span><span class="w">   </span><span class="c1">// LED A: canvia cada 250 ms</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">PERIODE_B</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1000</span><span class="p">;</span><span class="w">  </span><span class="c1">// LED B: canvia cada 1000 ms</span>
+
+<span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">tA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">   </span><span class="c1">// ultim canvi del LED A</span>
+<span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">tB</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">   </span><span class="c1">// ultim canvi del LED B</span>
+<span class="kt">bool</span><span class="w"> </span><span class="n">encesA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+<span class="kt">bool</span><span class="w"> </span><span class="n">encesB</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">LED_A</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span>
+<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">LED_B</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">ara</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">millis</span><span class="p">();</span><span class="w">   </span><span class="c1">// &quot;cronometre&quot; intern, no atura res</span>
+
+<span class="w">  </span><span class="c1">// LED A: ha passat el seu periode?</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ara</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">tA</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">PERIODE_A</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">tA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ara</span><span class="p">;</span>
+<span class="w">    </span><span class="n">encesA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">!</span><span class="n">encesA</span><span class="p">;</span><span class="w">             </span><span class="c1">// inverteix l&#39;estat</span>
+<span class="w">    </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">LED_A</span><span class="p">,</span><span class="w"> </span><span class="n">encesA</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="c1">// LED B: ha passat el SEU periode (diferent)?</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ara</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">tB</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">PERIODE_B</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">tB</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ara</span><span class="p">;</span>
+<span class="w">    </span><span class="n">encesB</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">!</span><span class="n">encesB</span><span class="p">;</span>
+<span class="w">    </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">LED_B</span><span class="p">,</span><span class="w"> </span><span class="n">encesB</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="c1">// El loop no s&#39;atura mai: per aixo els dos LEDs poden anar a ritmes diferents.</span>
 <span class="p">}</span>
 </pre></div>
 </div></section>

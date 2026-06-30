@@ -58,7 +58,7 @@
 <h1 id="sa6-fitxa-base-sistemes-de-control"><a class="toclink" href="#sa6-fitxa-base-sistemes-de-control">SA6 · Fitxa base — Sistemes de control</a></h1>
 <p><strong>Nom:</strong> <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><em>  <strong>Parella:</strong> <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong></em>  <strong>Data:</strong> <strong><em>_</em></strong>___</p>
 <blockquote>
-<p>Faràs que el sistema <strong>es reguli sol</strong>. Treballaràs llaç obert/tancat, histèresi, màquines d'estats i control proporcional.</p>
+<p>Faràs que el sistema <strong>es reguli sol</strong>. Nucli: llaç obert/tancat, histèresi i màquines d'estats. El control proporcional és <strong>+ampliació</strong> (opcional).</p>
 </blockquote>
 <hr />
 <h2 id="el-que-has-de-fer"><a class="toclink" href="#el-que-has-de-fer">El que has de fer</a></h2>
@@ -85,12 +85,16 @@
 <li>Dibuixa el <strong>diagrama d'estats</strong> (estats i transicions).</li>
 <li><strong>Repte:</strong> afegeix un estat nou o una transició condicional.</li>
 </ol>
-<h3 id="4-control-proporcional-s4"><a class="toclink" href="#4-control-proporcional-s4">4 · Control proporcional (S4)</a></h3>
-<ol>
-<li>Carrega <code>04_control_proporcional.ino</code>. Què és l'<strong>error</strong>? <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>_</li>
-<li>Com afecta <code>Kp</code> a la resposta? <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>_</li>
-<li><strong>Repte:</strong> compara tot/res vs proporcional al Serial Plotter. Quin és més estable? ____</li>
-</ol>
+<blockquote>
+<p>💡 Si t'encalles muntant el patró, parteix de l'esquelet <code>03_maquina_estats_BASTIDA</code> (el patró <code>enum</code>/<code>switch</code> + <code>millis()</code> ja hi és; tu omples els <code>// TODO</code>). El <code>millis()</code> no bloquejant ja el vas practicar a la SA4 (<code>05_dos_leds_millis</code>).</p>
+</blockquote>
+<h3 id="4-control-proporcional-s4-ampliacio-opcional"><a class="toclink" href="#4-control-proporcional-s4-ampliacio-opcional">4 · Control proporcional (S4) · <strong>+Ampliació (opcional)</strong></a></h3>
+<blockquote>
+<p>Aquesta part és <strong>per a qui vagi sobrat</strong>: el nucli de la SA són la histèresi i la màquina d'estats.
+1. Carrega <code>04_control_proporcional.ino</code>. Què és l'<strong>error</strong>? <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><em>
+2. Com afecta <code>Kp</code> a la resposta? <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong></em>
+3. <strong>Repte:</strong> compara tot/res vs proporcional al Serial Plotter. Quin és més estable? ____</p>
+</blockquote>
 <p><strong>Producte:</strong> un sistema de control documentat. S'avalua amb <strong>R1</strong>, <strong>R3</strong> i <strong>R4</strong>.</p>
 <h2 id="si-tencalles-depura"><a class="toclink" href="#si-tencalles-depura">Si t'encalles (DEPURA)</a></h2>
 <blockquote>

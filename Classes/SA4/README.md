@@ -20,6 +20,7 @@ Quarta situació d'aprenentatge (**8 h · 4 sessions**, 2n trimestre). El sistem
 | `02_motor_pont_h.ino` | Motor DC: direcció (`IN1`/`IN2`) i velocitat (PWM a `ENA`). |
 | `03_sensor_velocitat.ino` | Ultrasons regula la velocitat del motor (percepció → moviment). |
 | `04_barrera_automatica.ino` | Producte: barrera amb servo activada per sensor. |
+| [`05_dos_leds_millis/05_dos_leds_millis.ino`](codi/05_dos_leds_millis/05_dos_leds_millis.ino) | **Bastida (opcional, 10')**: dos LEDs a ritmes diferents **sense `delay()`** (patró `millis()`). Prepara la **màquina d'estats de la SA6**. |
 
 ## Producte i avaluació
 
@@ -29,3 +30,5 @@ Quarta situació d'aprenentatge (**8 h · 4 sessions**, 2n trimestre). El sistem
 ## Continuïtat
 
 Ve de la **SA3** (sensors) i porta a la **SA5** (micro:bit i MicroPython, **canvi de plataforma i llenguatge**). El control sensor → moviment d'aquí és la llavor del **control** (SA6) i de la **robòtica mòbil** (SA7).
+
+> 🧩 **Pont cap a SA6 (recomanat):** si queda marge, fes la mini-pràctica [`05_dos_leds_millis`](codi/05_dos_leds_millis/05_dos_leds_millis.ino) (10') perquè l'alumnat **practiqui `millis()` no bloquejant abans** de la màquina d'estats de la SA6.

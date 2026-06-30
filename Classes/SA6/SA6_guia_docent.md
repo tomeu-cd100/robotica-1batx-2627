@@ -19,7 +19,8 @@
 | `01_llac_obert_vs_tancat.ino` | Comparació dels dos tipus de control. |
 | `02_termostat_histeresi.ino` | Control tot/res amb histèresi. |
 | `03_maquina_estats.ino` | Màquina d'estats amb `enum`/`switch`. |
-| `04_control_proporcional.ino` | Regulació proporcional bàsica. |
+| [`03_maquina_estats_BASTIDA/03_maquina_estats_BASTIDA.ino`](codi/03_maquina_estats_BASTIDA/03_maquina_estats_BASTIDA.ino) | **Bastida**: el patró (`enum`/`switch` + `millis()`) ja muntat; l'alumnat només omple els `// TODO`. |
+| `04_control_proporcional.ino` | Regulació proporcional bàsica **(+ampliació, no nucli)**. |
 
 ## Mètode de projecte i continuïtat
 - **Cicle de treball** (com a tot el curs): *analitzar → dissenyar → prototipar → provar → millorar* (vegeu SA1). El **producte** n'és el recorregut complet i el **quadern tècnic** el documenta.
@@ -59,13 +60,15 @@
 
 **Punt clau:** una **màquina d'estats** organitza comportaments complexos en estats clars i transicions; evita el codi espagueti i no bloqueja (s'usa amb `millis()`).
 
-> 🧩 **Bastida `millis()` (recomanada abans d'aquesta sessió):** fins ara `millis()` només s'ha vist com a *concepte* (SA2 S2) o *ampliació* (SA1 `blink_millis.ino`), no s'ha practicat. Abans de la màquina d'estats, fes una **mini-pràctica guiada de ~10'** (p. ex. dos LED que parpellegen a ritmes diferents **sense** `delay()`), **o** dona l'esquelet de la màquina d'estats amb el patró `millis()` ja muntat com a bastida per a qui ho necessiti.
+> 🧩 **Bastida `millis()` (clau per a aquesta sessió):** el patró no bloquejant amb `millis()` es **practica a la SA4** amb [`05_dos_leds_millis`](../SA4/codi/05_dos_leds_millis/05_dos_leds_millis.ino) (dos LED a ritmes diferents sense `delay()`). Si no s'ha fet, dedica-hi **~10'** ara com a escalfament. Per a qui s'encalli, reparteix l'esquelet [`03_maquina_estats_BASTIDA`](codi/03_maquina_estats_BASTIDA/03_maquina_estats_BASTIDA.ino): té el patró (`enum`/`switch` + `millis()`) ja muntat i només cal omplir els `// TODO` (comportament i transicions de cada estat).
 
 ---
 
 ## SESSIÓ 4 (2 h) — Control proporcional
 
 > 📋 **Aquesta sessió allotja la prova pràctica trimestral T2** (vegeu [`Avaluació/Prova_practica_T2.md`](../../Avaluació/Prova_practica_T2.md) i [`Programació didàctica/08_Sequenciacio_temporal_anual.md`](../../Programació%20didàctica/08_Sequenciacio_temporal_anual.md)): el repte de control d'aquesta sessió **fa de prova T2** i no afegeix hores extra.
+
+> ⚖️ **Nivell exigible:** el **nucli** d'aquesta SA és **llaç obert/tancat + histèresi + màquina d'estats**. El **control proporcional és +ampliació** (notable/excel·lent), coherent amb la graella de la prova T2 (el nucli avaluable és el control tot/res amb histèresi). Amb poc temps, prioritza consolidar la màquina d'estats; ofereix el proporcional a qui vagi sobrat.
 
 - **Activació (10'):** *"I si la resposta fos més suau, proporcional a com de lluny estem de l'objectiu?"*
 - **Modelatge (25'):** `04_control_proporcional.ino`. Concepte d'**error** i de **sortida proporcional** (P): com més gran l'error, més actuació. Introducció a l'estabilitat.

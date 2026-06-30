@@ -61,6 +61,7 @@
 <li><a href="#codi-01-llac-obert-vs-tancat-01-llac-obert-vs-tancat"><code>codi/01_llac_obert_vs_tancat/01_llac_obert_vs_tancat.ino</code></a></li>
 <li><a href="#codi-02-termostat-histeresi-02-termostat-histeresi"><code>codi/02_termostat_histeresi/02_termostat_histeresi.ino</code></a></li>
 <li><a href="#codi-03-maquina-estats-03-maquina-estats"><code>codi/03_maquina_estats/03_maquina_estats.ino</code></a></li>
+<li><a href="#codi-03-maquina-estats-bastida-03-maquina-estats-bastida"><code>codi/03_maquina_estats_BASTIDA/03_maquina_estats_BASTIDA.ino</code></a></li>
 <li><a href="#codi-04-control-proporcional-04-control-proporcional"><code>codi/04_control_proporcional/04_control_proporcional.ino</code></a></li>
 </ul>
 <section class="codi-bloc" id="codi-01-llac-obert-vs-tancat-01-llac-obert-vs-tancat"><header class="codi-cap"><code class="codi-nom">codi/01_llac_obert_vs_tancat/01_llac_obert_vs_tancat.ino</code><button class="copia-btn" type="button">Copia</button></header><div class="codi-cos"><div class="highlight"><pre><span></span><span class="cm">/*</span>
@@ -206,6 +207,73 @@
 <span class="w">      </span><span class="c1">// parpelleig del verd per indicar final</span>
 <span class="w">      </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">LED_VERD</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">millis</span><span class="p">()</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">300</span><span class="p">)</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span>
 <span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">polsat</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">canviaEstat</span><span class="p">(</span><span class="n">ESPERA</span><span class="p">);</span><span class="w"> </span><span class="n">delay</span><span class="p">(</span><span class="mi">250</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
+<span class="w">      </span><span class="k">break</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div></section>
+<section class="codi-bloc" id="codi-03-maquina-estats-bastida-03-maquina-estats-bastida"><header class="codi-cap"><code class="codi-nom">codi/03_maquina_estats_BASTIDA/03_maquina_estats_BASTIDA.ino</code><button class="copia-btn" type="button">Copia</button></header><div class="codi-cos"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm">  SA6 - 03_maquina_estats_BASTIDA.ino  (BASTIDA / esquelet per a l&#39;alumnat)</span>
+
+<span class="cm">  El patro dificil ja esta muntat: enum d&#39;estats, switch, i temporitzacio</span>
+<span class="cm">  NO bloquejant amb millis() (com a 05_dos_leds_millis.ino de la SA4).</span>
+<span class="cm">  Tu nomes has d&#39;OMPLIR els // TODO: que fa cada estat i quan canvia.</span>
+
+<span class="cm">  Munta: polsador al pin 2 (INPUT_PULLUP), LEDs als pins 7 i 8, sortida al 9.</span>
+<span class="cm">*/</span>
+
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">POLSADOR</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">LED_VERD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">7</span><span class="p">;</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">LED_VERMELL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="p">;</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">SORTIDA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">9</span><span class="p">;</span>
+
+<span class="c1">// Pots afegir o treure estats segons el teu proces.</span>
+<span class="k">enum</span><span class="w"> </span><span class="nc">Estat</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">ESPERA</span><span class="p">,</span><span class="w"> </span><span class="n">FASE1</span><span class="p">,</span><span class="w"> </span><span class="n">FASE2</span><span class="p">,</span><span class="w"> </span><span class="n">FET</span><span class="w"> </span><span class="p">};</span>
+<span class="n">Estat</span><span class="w"> </span><span class="n">estat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESPERA</span><span class="p">;</span>
+
+<span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">tEstat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">   </span><span class="c1">// moment d&#39;entrada a l&#39;estat actual</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">canviaEstat</span><span class="p">(</span><span class="n">Estat</span><span class="w"> </span><span class="n">nou</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">estat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nou</span><span class="p">;</span>
+<span class="w">  </span><span class="n">tEstat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">millis</span><span class="p">();</span><span class="w">        </span><span class="c1">// reinicia el &quot;cronometre&quot; de l&#39;estat</span>
+<span class="p">}</span>
+
+<span class="kt">bool</span><span class="w"> </span><span class="nf">polsat</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">digitalRead</span><span class="p">(</span><span class="n">POLSADOR</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">LOW</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// Quants ms portem dins de l&#39;estat actual (patro no bloquejant).</span>
+<span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="nf">tempsEnEstat</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">millis</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">tEstat</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">POLSADOR</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT_PULLUP</span><span class="p">);</span>
+<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">LED_VERD</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span>
+<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">LED_VERMELL</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span>
+<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">SORTIDA</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span>
+<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">estat</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="no">ESPERA</span><span class="p">:</span>
+<span class="w">      </span><span class="c1">// TODO: que ha de fer el sistema mentre espera? (LEDs, sortida)</span>
+<span class="w">      </span><span class="c1">// TODO: quan ha de passar a FASE1? (p. ex. if (polsat()) canviaEstat(FASE1);)</span>
+<span class="w">      </span><span class="k">break</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="no">FASE1</span><span class="p">:</span>
+<span class="w">      </span><span class="c1">// TODO: comportament de FASE1</span>
+<span class="w">      </span><span class="c1">// TODO: transicio per TEMPS -&gt; if (tempsEnEstat() &gt; 3000) canviaEstat(FASE2);</span>
+<span class="w">      </span><span class="k">break</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="no">FASE2</span><span class="p">:</span>
+<span class="w">      </span><span class="c1">// TODO: comportament de FASE2 i transicio cap a FET</span>
+<span class="w">      </span><span class="k">break</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="no">FET</span><span class="p">:</span>
+<span class="w">      </span><span class="c1">// TODO: indica que ha acabat; torna a ESPERA si es torna a polsar</span>
 <span class="w">      </span><span class="k">break</span><span class="p">;</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
