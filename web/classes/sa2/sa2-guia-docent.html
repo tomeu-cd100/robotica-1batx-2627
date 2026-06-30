@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SA2 · Guia docent — Sortides digitals i PWM: dona vida als actuadors · Robòtica · 1r de Batxillerat</title>
+<meta name="description" content="Material docent · LOMLOE Catalunya · curs 2026-2027">
+<link rel="stylesheet" href="../../assets/css/estil.css">
+<link rel="stylesheet" href="../../assets/css/pygments.css">
+<script>(function(){try{var t=localStorage.getItem('tema');if(t==='fosc'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.setAttribute('data-tema','fosc');}catch(e){}})();</script>
+</head>
+<body data-section="classes" class="amb-sidebar amb-toc">
+<a class="skip" href="#contingut">Salta al contingut</a>
+<header class="topbar">
+  <button class="menu-btn" aria-label="Obre el menú" aria-expanded="false">☰</button>
+  <a class="brand" href="../../index.html"><span class="brand-mark">◆</span> Robòtica <span class="brand-sub">1r Batx</span></a>
+  <nav class="topnav" aria-label="Seccions">
+    <a href="../../index.html">Inici</a>
+<a href="../../programacio/index.html" data-sec="programacio">Programació didàctica</a>
+<a href="../../classes/index.html" data-sec="classes" class="actiu">Classes</a>
+<a href="../../reptes/index.html" data-sec="reptes">Reptes</a>
+<a href="../../avaluacio/index.html" data-sec="avaluacio">Avaluació</a>
+<a href="../../normativa/index.html" data-sec="normativa">Normativa</a>
+<a href="../../recursos/index.html" data-sec="recursos">Recursos</a>
+  </nav>
+  <div class="topbar-eines">
+    <div class="cercador">
+      <input type="search" id="cerca" placeholder="Cerca…" autocomplete="off" aria-label="Cerca al web">
+      <div id="cerca-resultats" class="cerca-resultats" hidden></div>
+    </div>
+    <button class="tema-btn" aria-label="Canvia el tema clar/fosc" title="Tema clar/fosc">◐</button>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar"><nav class="sidebar-nav" aria-label="Pàgines de la secció">
+<p class="sidebar-titol">Classes</p>
+<ul class="sb-top">
+<li><a href="../index.html">Presentació</a></li>
+<li><a href="../00-banc-objectes-disseny.html">Banc d&#x27;objectes per dissenyar — de l&#x27;electrònica al producte</a></li>
+<li><a href="../00-galeria-exemples-objectes.html">Galeria d&#x27;exemples resolts — objectes de disseny</a></li>
+<li><a href="../00-ia-a-la-materia.html">00 · La Intel·ligència Artificial a la matèria (guia transversal)</a></li>
+<li><a href="../00-llegeix-me-classes.html">Classes — Material d&#x27;aula</a></li>
+<li><a href="../00-mapa-sa-objectes.html">Mapa del curs · de cada SA a un objecte real</a></li>
+<li><a href="../00-plantilla-disseny-objecte.html">Plantilla de disseny d&#x27;objecte</a></li>
+<li><a href="../00-poster-aula-metode-depura-rols.html">Pòster d&#x27;aula — Com treballem a Robòtica</a></li>
+<li><a href="../00-poster-ia-us-assistents.html">Pòster d&#x27;aula — Fer servir la IA amb cap</a></li>
+</ul>
+<details class="sb-grup"><summary><span>SA0 · Vocabulari essencial i bases de programació</span></summary><ul><li><a href="../sa0/index.html">Presentació</a></li><li><a href="../sa0/sa0-fitxa-alumnat.html">SA0 · Fitxa d&#x27;alumnat — Vocabulari i primeres passes amb el codi</a></li><li><a href="../sa0/sa0-guia-docent.html">SA0 · Guia docent — Vocabulari essencial i bases de programació</a></li><li><a href="../sa0/sa0-guia-programacio.html">SA0 · Guia per aprendre a programar la placa</a></li><li><a href="../sa0/sa0-vocabulari-essencial.html">SA0 · Vocabulari essencial de la robòtica</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA1 · Introducció a la robòtica</span><span class="tri-dot" data-tri="1"></span></summary><ul><li><a href="../sa1/index.html">Presentació</a></li><li><a href="../sa1/sa1-esquemes-connexions.html">SA1 · Esquemes i connexions</a></li><li><a href="../sa1/sa1-fitxa-alumnat.html">SA1 · Fitxa base — Què és un robot?</a></li><li><a href="../sa1/sa1-fitxa-ampliada.html">SA1 · Fitxa ampliada (aprofundiment) — Què és un robot?</a></li><li><a href="../sa1/sa1-guia-docent.html">SA1 · Guia docent — Què és un robot? Sistemes embeguts i mètode de projecte</a></li><li><a href="../sa1/sa1-normes-seguretat.html">SA1 · Normes de seguretat del laboratori de robòtica</a></li><li><a href="../sa1/sa1-poster-robot-plantilla.html">SA1 · Fitxa-pòster: &quot;Analitzem un robot real&quot;</a></li><li><a href="../sa1/sa1-prova-diagnostica.html">SA1 · Prova diagnòstica de coneixements previs</a></li><li><a href="../sa1/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup" open><summary><span>SA2 · Sortides digitals i PWM</span><span class="tri-dot" data-tri="1"></span></summary><ul><li><a href="index.html">Presentació</a></li><li><a href="sa2-esquemes-connexions.html">SA2 · Esquemes i connexions</a></li><li><a href="sa2-fitxa-alumnat.html">SA2 · Fitxa base — Sortides digitals i PWM</a></li><li><a href="sa2-fitxa-ampliada.html">SA2 · Fitxa ampliada (aprofundiment) — Sortides digitals i PWM</a></li><li><a href="sa2-guia-docent.html" class="actiu">SA2 · Guia docent — Sortides digitals i PWM: dona vida als actuadors</a></li><li><a href="codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA3 · Entrades i sensors</span><span class="tri-dot" data-tri="1"></span></summary><ul><li><a href="../sa3/index.html">Presentació</a></li><li><a href="../sa3/sa3-esquemes-connexions.html">SA3 · Esquemes i connexions</a></li><li><a href="../sa3/sa3-fitxa-alumnat.html">SA3 · Fitxa base — Entrades i sensors</a></li><li><a href="../sa3/sa3-fitxa-ampliada.html">SA3 · Fitxa ampliada (aprofundiment) — Entrades i sensors</a></li><li><a href="../sa3/sa3-guia-docent.html">SA3 · Guia docent — Entrades i sensors: el robot percep</a></li><li><a href="../sa3/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA4 · Moviment: servos i motors</span><span class="tri-dot" data-tri="2"></span></summary><ul><li><a href="../sa4/index.html">Presentació</a></li><li><a href="../sa4/sa4-esquemes-connexions.html">SA4 · Esquemes i connexions</a></li><li><a href="../sa4/sa4-fitxa-alumnat.html">SA4 · Fitxa base — Moviment: servos, motors i ponts H</a></li><li><a href="../sa4/sa4-fitxa-ampliada.html">SA4 · Fitxa ampliada (aprofundiment) — Moviment: servos, motors i ponts H</a></li><li><a href="../sa4/sa4-guia-docent.html">SA4 · Guia docent — Moviment: servos, motors i ponts H</a></li><li><a href="../sa4/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA5 · micro:bit i MicroPython</span><span class="tri-dot" data-tri="2"></span></summary><ul><li><a href="../sa5/index.html">Presentació</a></li><li><a href="../sa5/sa5-connexions.html">SA5 · Connexions i entorn</a></li><li><a href="../sa5/sa5-fitxa-alumnat.html">SA5 · Fitxa base — micro:bit i MicroPython</a></li><li><a href="../sa5/sa5-fitxa-ampliada.html">SA5 · Fitxa ampliada (aprofundiment) — micro:bit i MicroPython</a></li><li><a href="../sa5/sa5-guia-docent.html">SA5 · Guia docent — micro:bit i MicroPython: un altre paradigma</a></li><li><a href="../sa5/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA6 · Sistemes de control</span><span class="tri-dot" data-tri="2"></span></summary><ul><li><a href="../sa6/index.html">Presentació</a></li><li><a href="../sa6/sa6-esquemes-connexions.html">SA6 · Esquemes i connexions</a></li><li><a href="../sa6/sa6-fitxa-alumnat.html">SA6 · Fitxa base — Sistemes de control</a></li><li><a href="../sa6/sa6-fitxa-ampliada.html">SA6 · Fitxa ampliada (aprofundiment) — Sistemes de control</a></li><li><a href="../sa6/sa6-guia-docent.html">SA6 · Guia docent — Sistemes de control: llaç obert/tancat i màquines d&#x27;estats</a></li><li><a href="../sa6/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA7 · Robòtica mòbil</span><span class="tri-dot" data-tri="3"></span></summary><ul><li><a href="../sa7/index.html">Presentació</a></li><li><a href="../sa7/sa7-esquemes-connexions.html">SA7 · Esquemes i connexions</a></li><li><a href="../sa7/sa7-fitxa-alumnat.html">SA7 · Fitxa base — Robòtica mòbil</a></li><li><a href="../sa7/sa7-fitxa-ampliada.html">SA7 · Fitxa ampliada (aprofundiment) — Robòtica mòbil</a></li><li><a href="../sa7/sa7-guia-docent.html">SA7 · Guia docent — Robòtica mòbil: cinemàtica i trajectòries</a></li><li><a href="../sa7/sa7-recursos-video-ia.html">SA7 · Recursos de vídeo — comportament programat vs après (IA)</a></li><li><a href="../sa7/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA8 · IoT i IA</span><span class="tri-dot" data-tri="3"></span></summary><ul><li><a href="../sa8/index.html">Presentació</a></li><li><a href="../sa8/sa8-connexions.html">SA8 · Connexions i entorn</a></li><li><a href="../sa8/sa8-fitxa-alumnat.html">SA8 · Fitxa base — IoT i IA</a></li><li><a href="../sa8/sa8-fitxa-ampliada.html">SA8 · Fitxa ampliada (aprofundiment) — IoT i IA</a></li><li><a href="../sa8/sa8-guia-docent.html">SA8 · Guia docent — IoT i IA: el robot connectat i intel·ligent</a></li><li><a href="../sa8/sa8-practica-teachable-machine.html">SA8 · Pràctica d&#x27;IA — Entrenar un classificador amb Teachable Machine</a></li><li><a href="../sa8/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA9 · Projecte final</span><span class="tri-dot" data-tri="3"></span></summary><ul><li><a href="../sa9/index.html">Presentació</a></li><li><a href="../sa9/plantilles/banc-de-reptes.html">SA9 · Banc de reptes (per nivells)</a></li><li><a href="../sa9/plantilles/dossier-tecnic-plantilla.html">Dossier tècnic — [Títol del projecte]</a></li><li><a href="../sa9/plantilles/planificacio-agile-plantilla.html">Planificació àgil — Equip: ______________________</a></li><li><a href="../sa9/sa9-fitxa-alumnat.html">SA9 · Fitxa base — Repte final integrador</a></li><li><a href="../sa9/sa9-fitxa-ampliada.html">SA9 · Fitxa ampliada (aprofundiment) — Repte final integrador</a></li><li><a href="../sa9/sa9-guia-docent.html">SA9 · Guia docent — Repte final integrador (opció competició)</a></li><li><a href="../sa9/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>Solucionari</span></summary><ul><li><a href="../solucionari/solucionari-t1-sa1-sa3.html">Solucionari de reptes — Trimestre 1 (SA1-SA3)</a></li><li><a href="../solucionari/solucionari-t2-sa4-sa6.html">Solucionari de reptes — Trimestre 2 (SA4-SA6)</a></li><li><a href="../solucionari/solucionari-t3-sa7-sa9.html">Solucionari de reptes — Trimestre 3 (SA7-SA9)</a></li></ul></details>
+</nav></aside>
+  <main id="contingut">
+    <nav class="breadcrumb" aria-label="Ubicació"><a href="../../index.html">Inici</a> <span class="sep">/</span> <a href="../../classes/index.html">Classes</a> <span class="sep">/</span> <span aria-current="page">SA2 · Guia docent — Sortides digitals i PWM: dona vida als actuadors</span></nav>
+    <span class="badge-tri" data-tri="1">1r trimestre</span>
+    <article class="prose">
+<h1 id="sa2-guia-docent-sortides-digitals-i-pwm-dona-vida-als-actuadors"><a class="toclink" href="#sa2-guia-docent-sortides-digitals-i-pwm-dona-vida-als-actuadors">SA2 · Guia docent — Sortides digitals i PWM: dona vida als actuadors</a></h1>
+<p><strong>Durada:</strong> 8 h (4 sessions; la 4a amb ampliacions opcionals) · <strong>Maquinari:</strong> Arduino UNO + kit Keyestudio/BQ · <strong>Llenguatge:</strong> C/C++
+<strong>Referència:</strong> <code>Programació didàctica/11_SA2_Sortides_digitals_PWM.md</code> · <strong>Esquemes:</strong> <code>SA2_esquemes_connexions.md</code></p>
+<h2 id="objectius-de-la-sa"><a class="toclink" href="#objectius-de-la-sa">Objectius de la SA</a></h2>
+<ol>
+<li>Escriure programes amb variables, constants i estructures de control (<code>for</code>, <code>if</code>).</li>
+<li>Controlar sortides digitals i regular intensitat/to amb <strong>PWM</strong> (<code>analogWrite</code>).</li>
+<li>Muntar circuits de sortida segurs (resistència limitadora, polaritat).</li>
+<li>Documentar codi i esquema al quadern tècnic.</li>
+</ol>
+<h2 id="material-per-parella"><a class="toclink" href="#material-per-parella">Material per parella</a></h2>
+<ul>
+<li>Arduino UNO + USB, protoboard, cables dupont.</li>
+<li>LED (vermell, groc, verd), 1 LED RGB (càtode comú), resistències 220 Ω, brunzidor piezo, mòdul relé.</li>
+</ul>
+<h2 id="codi-de-suport-carpeta-codi"><a class="toclink" href="#codi-de-suport-carpeta-codi">Codi de suport (carpeta <code>codi/</code>)</a></h2>
+<table>
+<thead>
+<tr>
+<th>Fitxer</th>
+<th>Contingut</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>01_led_basic.ino</code></td>
+<td>Encendre/apagar un LED al pin 8.</td>
+</tr>
+<tr>
+<td><code>02_semafor.ino</code></td>
+<td>Semàfor de 3 LED amb temporització.</td>
+</tr>
+<tr>
+<td><code>03_fade_pwm.ino</code></td>
+<td>Efecte <em>fade</em> amb PWM.</td>
+</tr>
+<tr>
+<td><code>04_rgb.ino</code></td>
+<td>Barreja de colors amb LED RGB.</td>
+</tr>
+<tr>
+<td><code>05_panell_senyalitzacio.ino</code></td>
+<td>Producte integrador (RGB + piezo + relé).</td>
+</tr>
+</tbody>
+</table>
+<h2 id="metode-de-projecte-i-continuitat"><a class="toclink" href="#metode-de-projecte-i-continuitat">Mètode de projecte i continuïtat</a></h2>
+<ul>
+<li><strong>Cicle de treball</strong> (com a tot el curs): <em>analitzar → dissenyar → prototipar → provar → millorar</em> (vegeu SA1). El <strong>producte</strong> de la SA n'és el recorregut complet i el <strong>quadern tècnic</strong> el documenta.</li>
+<li><strong>Lectura de codi amb PRIMM:</strong> a cada <em>modelatge</em> l'alumnat <strong>prediu</strong> què farà el sketch <strong>abans</strong> d'executar-lo, després l'<strong>investiga</strong>, el <strong>modifica</strong> i en <strong>crea</strong> un de nou. Predir abans de provar consolida la comprensió. <strong>Operativa (val per a totes les sessions amb codi):</strong> dedica els primers ~5' del Modelatge a projectar el codi nou <strong>sense executar-lo</strong> i recollir prediccions; només després, executa i investiga.</li>
+<li><strong>Pont (d'on venim / on anem):</strong> ve de la <strong>SA1</strong> (parpelleig d'un LED) → portem a la <strong>SA3</strong> (entrades i sensors). Aquí el sistema <strong>actua</strong> (sortides); a la SA3 aprendrà a <strong>percebre</strong> (entrades).</li>
+</ul>
+<hr />
+<h2 id="sessio-1-2-h-variables-i-la-primera-sortida"><a class="toclink" href="#sessio-1-2-h-variables-i-la-primera-sortida">SESSIÓ 1 (2 h) — Variables i la primera sortida</a></h2>
+<ul>
+<li><strong>Activació (10'):</strong> repàs de <code>Blink</code>. Pregunta: <em>"I si vull canviar el pin sense buscar-lo per tot el codi?"</em> → <strong>constants</strong>.</li>
+<li><strong>Modelatge (20'):</strong> <code>01_led_basic.ino</code>. Concepte de <strong>constant</strong> (<code>const int</code>) i <strong>variable</strong>. Esquema bàsic LED + 220 Ω.</li>
+<li><strong>Pràctica guiada (40'):</strong> munten el LED al pin 8 i el fan parpellejar; canvien temps amb una variable.</li>
+<li><strong>Repte (40'):</strong> parpelleig amb temps definits per variables; <strong>+ repte:</strong> patró Morse d'una lletra.</li>
+<li><strong>Tancament (10'):</strong> esquema i codi al quadern.</li>
+</ul>
+<p><strong>Punt clau:</strong> sempre <strong>resistència limitadora</strong> (220 Ω) en sèrie amb el LED; pota llarga = ànode (+).</p>
+<hr />
+<h2 id="sessio-2-2-h-estructures-de-control-el-semafor"><a class="toclink" href="#sessio-2-2-h-estructures-de-control-el-semafor">SESSIÓ 2 (2 h) — Estructures de control: el semàfor</a></h2>
+<ul>
+<li><strong>Activació (10'):</strong> com es repeteix una seqüència? → bucles.</li>
+<li><strong>Modelatge (25'):</strong> <code>02_semafor.ino</code>. <code>for</code>, <code>if</code>, ordre de les fases. Introducció a <code>millis()</code> vs <code>delay()</code> (concepte, sense aprofundir).</li>
+<li><strong>Pràctica guiada (35'):</strong> munten 3 LED (pins 8-9-10) i programen el cicle.</li>
+<li><strong>Repte (40'):</strong> afegir <strong>fase nocturna</strong> (groc intermitent) activable; <strong>+ repte:</strong> semàfor de vianants amb segon grup de LED.</li>
+<li><strong>Tancament (10'):</strong> quadern.</li>
+</ul>
+<p><strong>Punt clau:</strong> <code>delay()</code> bloqueja el programa; per a sistemes que han de fer diverses coses alhora s'usa <code>millis()</code> (es treballarà més endavant).</p>
+<hr />
+<h2 id="sessio-3-2-h-pwm-intensitat-i-color"><a class="toclink" href="#sessio-3-2-h-pwm-intensitat-i-color">SESSIÓ 3 (2 h) — PWM: intensitat i color</a></h2>
+<ul>
+<li><strong>Activació (10'):</strong> <em>"Com es regula la intensitat d'un LED si només hi ha HIGH/LOW?"</em> → <strong>PWM</strong>.</li>
+<li><strong>Modelatge (25'):</strong> <code>03_fade_pwm.ino</code> (<code>analogWrite</code> 0-255) i funció <code>map()</code>. Després <code>04_rgb.ino</code> (barreja RGB).</li>
+<li><strong>Pràctica guiada (35'):</strong> efecte <em>fade</em> al pin 9; després colors amb el LED RGB (pins 9-10-11).</li>
+<li><strong>Repte (40'):</strong> crear 5 colors propis i una transició suau entre dos colors; <strong>+ repte:</strong> arc de Sant Martí cíclic.</li>
+<li><strong>Tancament (10'):</strong> quadern (taula de colors RGB provats).</li>
+</ul>
+<p><strong>Punt clau:</strong> PWM només als pins amb <code>~</code> (3, 5, 6, 9, 10, 11). Valors 0-255.</p>
+<hr />
+<h2 id="sessio-4-2-h-producte-panell-de-senyalitzacio"><a class="toclink" href="#sessio-4-2-h-producte-panell-de-senyalitzacio">SESSIÓ 4 (2 h) — Producte: panell de senyalització</a></h2>
+<ul>
+<li><strong>Activació (10'):</strong> presentació del repte integrador.</li>
+<li><strong>Pràctica (70'):</strong> <code>05_panell_senyalitzacio.ino</code> com a base. Integren <strong>LED RGB (estat) + piezo (avís) + relé (càrrega)</strong>. Cada parella personalitza estats i seqüència.</li>
+<li><strong>Documentació + defensa (30'):</strong> completen esquema i codi comentat; mini-defensa (1') del seu panell.</li>
+<li><strong>Tancament (10'):</strong> autoavaluació amb rúbriques.</li>
+</ul>
+<p><strong>Producte:</strong> dispositiu de senyalització programable (semàfor amb fase nocturna o panell d'estat RGB + so + càrrega).
+<strong>Avaluació:</strong> rúbriques <strong>R1</strong> (codi) i <strong>R2</strong> (circuit).</p>
+<h3 id="mapa-davaluacio-tracabilitat"><a class="toclink" href="#mapa-davaluacio-tracabilitat">Mapa d'avaluació (traçabilitat)</a></h3>
+<table>
+<thead>
+<tr>
+<th>Instrument</th>
+<th>Què evidencia</th>
+<th>Criteri</th>
+<th>Rúbrica</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Producte (panell/semàfor)</td>
+<td>Sortides digitals + PWM en un sistema integrat</td>
+<td>CA2.1, CA2.2</td>
+<td>R1, R2</td>
+</tr>
+<tr>
+<td>Repte curt de codi</td>
+<td>Variables, <code>for</code>/<code>if</code>, <code>analogWrite</code>, <code>map()</code></td>
+<td>CA1.1</td>
+<td>R1</td>
+</tr>
+<tr>
+<td>Quadern tècnic</td>
+<td>Esquema, codi comentat, errors i millores</td>
+<td>CA1.1, CA2.2</td>
+<td>R1</td>
+</tr>
+<tr>
+<td>Observació de muntatge</td>
+<td>Resistència limitadora, polaritat, seguretat</td>
+<td>CA2.1</td>
+<td>R2</td>
+</tr>
+</tbody>
+</table>
+<p><em>(CA1.1 = programar en C/C++; CA2.1 = dissenyar/muntar circuits amb seguretat; CA2.2 = mesurar/interpretar senyals. Vegeu <code>Programació didàctica/06_Avaluacio_criteris_qualificacio.md</code>. Comparteix R1 i R2 amb l'alumnat </em><em>abans</em><em> de començar.)</em></p>
+<h2 id="errors-frequents"><a class="toclink" href="#errors-frequents">Errors freqüents</a></h2>
+<table>
+<thead>
+<tr>
+<th>Error</th>
+<th>Causa</th>
+<th>Solució</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LED sempre encès o apagat</td>
+<td>Pin equivocat o sense <code>pinMode OUTPUT</code></td>
+<td>Revisar número de pin i <code>setup()</code>.</td>
+</tr>
+<tr>
+<td><code>analogWrite</code> no regula</td>
+<td>Pin sense PWM</td>
+<td>Usar pin amb <code>~</code> (3,5,6,9,10,11).</td>
+</tr>
+<tr>
+<td>RGB mostra colors estranys</td>
+<td>Càtode/ànode comú confós</td>
+<td>Verificar tipus de LED i pin comú a GND (càtode comú).</td>
+</tr>
+<tr>
+<td>El relé no commuta</td>
+<td>Alimentació insuficient</td>
+<td>Alimentar el mòdul correctament; revisar pin de senyal.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="guio-de-modelatge-que-verbalitzar"><a class="toclink" href="#guio-de-modelatge-que-verbalitzar">Guió de modelatge (què verbalitzar)</a></h2>
+<blockquote>
+<p>Frases i preguntes clau per al <strong>Modelatge</strong> de cada sessió (què mirar, què preguntar abans d'executar, error a anticipar).</p>
+</blockquote>
+<ul>
+<li><strong>S1 · <code>01_led_basic</code> (constants):</strong> mostra per què <code>const int LED = 8;</code> és millor que escriure <code>8</code> per tot arreu. Pregunta: <em>"si moc el LED al pin 7, quantes línies he de canviar?"</em> <em>Error a anticipar:</em> oblidar <code>pinMode(LED, OUTPUT)</code>.</li>
+<li><strong>S2 · <code>02_semafor</code> (<code>for</code>/<code>if</code>):</strong> recorre el <code>loop()</code> en veu alta com una <strong>recepta seqüencial</strong>. Demana <strong>predir l'ordre</strong> d'encesa abans d'executar. Verbalitza: <em><code>delay()</code> bloqueja — mentre espera, no passa res més</em>. <em>Error a anticipar:</em> esperar que els LED canviïn alhora.</li>
+<li><strong>S3 · <code>03_fade_pwm</code> / <code>04_rgb</code> (PWM, <code>map()</code>):</strong> contrasta <code>digitalWrite</code> (0/1) amb <code>analogWrite</code> (<strong>0–255</strong>). Demana predir què fa el valor <strong>128</strong>. Mantra: <em>PWM només als pins <code>~</code></em>. <em>Error a anticipar:</em> barrejar el rang 0–1023 (lectura) amb 0–255 (PWM).</li>
+<li><strong>S4 · <code>05_panell</code> (integració):</strong> no facis codi nou; mostra'l com a <strong>integració</strong> i pregunta com combinarien estat (RGB) + avís (piezo) + càrrega (relé).</li>
+</ul>
+<h2 id="atencio-a-la-diversitat-dua"><a class="toclink" href="#atencio-a-la-diversitat-dua">Atenció a la diversitat (DUA)</a></h2>
+<table>
+<thead>
+<tr>
+<th>Via</th>
+<th>Mesura</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Bastida</strong> (qui s'encalla)</td>
+<td>Començar amb <strong>1 LED</strong> abans del semàfor de 3; donar la seqüència de fases en comentaris per completar; parella heterogènia.</td>
+</tr>
+<tr>
+<td><strong>+ Ampliació</strong> (qui va sobrat)</td>
+<td>Fase nocturna, semàfor de vianants, arc de Sant Martí RGB; reptes ⭐ de <code>Reptes/Reptes_SA2.md</code>.</td>
+</tr>
+<tr>
+<td><strong>Representació múltiple</strong></td>
+<td>Esquema de connexions, <strong>simulació Wokwi</strong> (semàfor), codi comentat.</td>
+</tr>
+<tr>
+<td><strong>Implicació</strong></td>
+<td>Cada parella tria estats i colors del seu panell i quin repte amplia.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>♿ <strong>Accessibilitat (daltonisme):</strong> el semàfor i el LED RGB es basen en el <strong>color</strong>. Afegeix una <strong>pista no cromàtica</strong>: posició fixa dels LED (a dalt/al mig/a baix), una etiqueta, o un <strong>patró de parpelleig</strong> diferent per estat. Així el sistema és llegible també per a l'alumnat amb daltonisme.</p>
+</blockquote>
+<h2 id="treball-cooperatiu-amb-rols"><a class="toclink" href="#treball-cooperatiu-amb-rols">Treball cooperatiu amb rols</a></h2>
+<p>Parelles amb <strong>rols rotatius</strong> (un canvi per sessió):</p>
+<table>
+<thead>
+<tr>
+<th>Rol</th>
+<th>Funció</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Coordinador/a</td>
+<td>Temps, enunciat, participació de tothom.</td>
+</tr>
+<tr>
+<td>Programador/a</td>
+<td>Escriu i edita el codi.</td>
+</tr>
+<tr>
+<td>Enginyer/a de maquinari</td>
+<td>Munta el circuit, comprova resistència/polaritat i seguretat.</td>
+</tr>
+<tr>
+<td>Provador/a–Documentador/a</td>
+<td>Prova, aplica DEPURA, documenta al quadern.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="pensament-computacional-i-depuracio"><a class="toclink" href="#pensament-computacional-i-depuracio">Pensament computacional i depuració</a></h2>
+<ul>
+<li><strong>PC d'aquesta SA:</strong> <strong>patrons i algorisme</strong> (la seqüència de fases) i <strong>abstracció</strong> (encapsular fases en funcions).</li>
+<li><strong>Depuració:</strong> rutina <strong>DEPURA</strong> (a la fitxa) + taula d'errors freqüents de més amunt.</li>
+</ul>
+<h2 id="avaluacio-formativa-instruments"><a class="toclink" href="#avaluacio-formativa-instruments">Avaluació formativa (instruments)</a></h2>
+<ul>
+<li><strong>Diana d'autoavaluació</strong> (fitxa) sobre 3 criteris clau.</li>
+<li><strong>Coavaluació</strong> "2 estrelles i un desig" entre parelles.</li>
+<li><strong>Exit ticket</strong> de tancament; recull-lo per ajustar la sessió següent.</li>
+</ul>
+<h2 id="context-real-i-ods"><a class="toclink" href="#context-real-i-ods">Context real i ODS</a></h2>
+<ul>
+<li><strong>Context:</strong> senyalització urbana i industrial; eficiència lumínica.</li>
+<li><strong>ODS 11</strong> (ciutats sostenibles) i <strong>ODS 7</strong> (energia neta: LED vs bombeta).</li>
+</ul>
+    </article>
+  </main>
+  <nav class="toc" aria-label="En aquesta pàgina"><p class="toc-titol">En aquesta pàgina</p><ul>
+<li class="toc-l1"><a href="#sa2-guia-docent-sortides-digitals-i-pwm-dona-vida-als-actuadors">SA2 · Guia docent — Sortides digitals i PWM: dona vida als actuadors</a></li>
+<li class="toc-l2"><a href="#objectius-de-la-sa">Objectius de la SA</a></li>
+<li class="toc-l2"><a href="#material-per-parella">Material per parella</a></li>
+<li class="toc-l2"><a href="#codi-de-suport-carpeta-codi">Codi de suport (carpeta codi/)</a></li>
+<li class="toc-l2"><a href="#metode-de-projecte-i-continuitat">Mètode de projecte i continuïtat</a></li>
+<li class="toc-l2"><a href="#sessio-1-2-h-variables-i-la-primera-sortida">SESSIÓ 1 (2 h) — Variables i la primera sortida</a></li>
+<li class="toc-l2"><a href="#sessio-2-2-h-estructures-de-control-el-semafor">SESSIÓ 2 (2 h) — Estructures de control: el semàfor</a></li>
+<li class="toc-l2"><a href="#sessio-3-2-h-pwm-intensitat-i-color">SESSIÓ 3 (2 h) — PWM: intensitat i color</a></li>
+<li class="toc-l2"><a href="#sessio-4-2-h-producte-panell-de-senyalitzacio">SESSIÓ 4 (2 h) — Producte: panell de senyalització</a></li>
+<li class="toc-l2"><a href="#errors-frequents">Errors freqüents</a></li>
+<li class="toc-l2"><a href="#guio-de-modelatge-que-verbalitzar">Guió de modelatge (què verbalitzar)</a></li>
+<li class="toc-l2"><a href="#atencio-a-la-diversitat-dua">Atenció a la diversitat (DUA)</a></li>
+<li class="toc-l2"><a href="#treball-cooperatiu-amb-rols">Treball cooperatiu amb rols</a></li>
+<li class="toc-l2"><a href="#pensament-computacional-i-depuracio">Pensament computacional i depuració</a></li>
+<li class="toc-l2"><a href="#avaluacio-formativa-instruments">Avaluació formativa (instruments)</a></li>
+<li class="toc-l2"><a href="#context-real-i-ods">Context real i ODS</a></li>
+</ul></nav>
+</div>
+<footer class="peu">
+  <p>Robòtica · 1r de Batxillerat · material sota llicència <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca" target="_blank" rel="noopener">CC BY-SA 4.0</a>.</p>
+  <p><a href="https://github.com/tomeu-cd100/robotica-1batx-2627" target="_blank" rel="noopener">Repositori a GitHub</a> · web generat el 2026-06-30.</p>
+</footer>
+<script src="../../assets/js/cerca-index.js"></script>
+<script src="../../assets/js/lloc.js"></script>
+</body>
+</html>

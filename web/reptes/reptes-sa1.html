@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reptes SA1 · Introducció: primer programa amb un LED · Robòtica · 1r de Batxillerat</title>
+<meta name="description" content="Material docent · LOMLOE Catalunya · curs 2026-2027">
+<link rel="stylesheet" href="../assets/css/estil.css">
+<link rel="stylesheet" href="../assets/css/pygments.css">
+<script>(function(){try{var t=localStorage.getItem('tema');if(t==='fosc'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.setAttribute('data-tema','fosc');}catch(e){}})();</script>
+</head>
+<body data-section="reptes" class="amb-sidebar amb-toc">
+<a class="skip" href="#contingut">Salta al contingut</a>
+<header class="topbar">
+  <button class="menu-btn" aria-label="Obre el menú" aria-expanded="false">☰</button>
+  <a class="brand" href="../index.html"><span class="brand-mark">◆</span> Robòtica <span class="brand-sub">1r Batx</span></a>
+  <nav class="topnav" aria-label="Seccions">
+    <a href="../index.html">Inici</a>
+<a href="../programacio/index.html" data-sec="programacio">Programació didàctica</a>
+<a href="../classes/index.html" data-sec="classes">Classes</a>
+<a href="../reptes/index.html" data-sec="reptes" class="actiu">Reptes</a>
+<a href="../avaluacio/index.html" data-sec="avaluacio">Avaluació</a>
+<a href="../normativa/index.html" data-sec="normativa">Normativa</a>
+<a href="../recursos/index.html" data-sec="recursos">Recursos</a>
+  </nav>
+  <div class="topbar-eines">
+    <div class="cercador">
+      <input type="search" id="cerca" placeholder="Cerca…" autocomplete="off" aria-label="Cerca al web">
+      <div id="cerca-resultats" class="cerca-resultats" hidden></div>
+    </div>
+    <button class="tema-btn" aria-label="Canvia el tema clar/fosc" title="Tema clar/fosc">◐</button>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar"><nav class="sidebar-nav" aria-label="Pàgines de la secció">
+<p class="sidebar-titol">Reptes</p>
+<ul class="sb-top">
+<li><a href="index.html">Presentació</a></li>
+<li><a href="reptes-sa1.html" class="actiu">Reptes SA1 · Introducció: primer programa amb un LED <span class="tri-dot" data-tri="1"></span></a></li>
+<li><a href="reptes-sa2.html">Reptes SA2 · Sortides digitals i PWM <span class="tri-dot" data-tri="1"></span></a></li>
+<li><a href="reptes-sa3.html">Reptes SA3 · Entrades i sensors <span class="tri-dot" data-tri="1"></span></a></li>
+<li><a href="reptes-sa4.html">Reptes SA4 · Moviment: servos, motors i ponts H <span class="tri-dot" data-tri="2"></span></a></li>
+<li><a href="reptes-sa5.html">Reptes SA5 · micro:bit i MicroPython <span class="tri-dot" data-tri="2"></span></a></li>
+<li><a href="reptes-sa6.html">Reptes SA6 · Sistemes de control <span class="tri-dot" data-tri="2"></span></a></li>
+<li><a href="reptes-sa7.html">Reptes SA7 · Robòtica mòbil (Imagina 3dBot) <span class="tri-dot" data-tri="3"></span></a></li>
+<li><a href="reptes-sa8.html">Reptes SA8 · IoT i Intel·ligència Artificial <span class="tri-dot" data-tri="3"></span></a></li>
+</ul>
+<details class="sb-grup"><summary><span>Solucionari</span></summary><ul><li><a href="solucionari/index.html">Presentació</a></li><li><a href="solucionari/sa1/codi.html">Codi</a></li><li><a href="solucionari/sa2/codi.html">Codi</a></li><li><a href="solucionari/sa3/codi.html">Codi</a></li><li><a href="solucionari/sa4/codi.html">Codi</a></li><li><a href="solucionari/sa5/codi.html">Codi</a></li><li><a href="solucionari/sa6/codi.html">Codi</a></li><li><a href="solucionari/sa7/codi.html">Codi</a></li><li><a href="solucionari/sa8/codi.html">Codi</a></li></ul></details>
+</nav></aside>
+  <main id="contingut">
+    <nav class="breadcrumb" aria-label="Ubicació"><a href="../index.html">Inici</a> <span class="sep">/</span> <a href="../reptes/index.html">Reptes</a> <span class="sep">/</span> <span aria-current="page">Reptes SA1 · Introducció: primer programa amb un LED</span></nav>
+    <span class="badge-tri" data-tri="1">1r trimestre</span>
+    <article class="prose">
+<h1 id="reptes-sa1-introduccio-primer-programa-amb-un-led"><a class="toclink" href="#reptes-sa1-introduccio-primer-programa-amb-un-led">Reptes SA1 · Introducció: primer programa amb un LED</a></h1>
+<p><strong>Tria UN dels tres reptes.</strong> Tots controlen un <strong>LED</strong> amb sortides digitals (<code>pinMode</code>, <code>digitalWrite</code>, <code>delay</code>) i el model <strong>entrada→procés→sortida</strong>. Parteixen del mateix <strong>requisit mínim</strong> i creixen amb <strong>ampliacions</strong>. Es poden muntar a Tinkercad o amb el LED intern (pin 13).</p>
+<blockquote>
+<p><strong>Continguts SA1:</strong> robot i sistema embegut, digital vs analògic, esquelet <code>setup()</code>/<code>loop()</code>, primer codi (<code>Blink</code>). · <strong>Vocabulari/bases:</strong> <code>Classes/SA0/</code>.</p>
+<p><strong>Format "producte real":</strong> cada repte simula un <strong>encàrrec</strong> amb <strong>client</strong>, <strong>lliurable</strong> i <strong>ús al món real</strong>. El requisit tècnic no canvia; el marc ajuda a donar sentit al producte. <em>(1r trimestre — dispositius que informen i perceben. Vegeu <code>Programació didàctica/08c_Projectes_vida_real.md</code>.)</em></p>
+</blockquote>
+<hr />
+<h2 id="repte-a-far-costaner"><a class="toclink" href="#repte-a-far-costaner">🌊 Repte A · Far costaner</a></h2>
+<p><strong>Context.</strong> Un far identifica cada port amb un <strong>patró de llum</strong> propi (tants segons encès, tants apagat). Programa un far amb el seu codi lluminós únic.</p>
+<blockquote>
+<p><em>Client: autoritat portuària · Lliurable: balisa amb patró identificatiu · Món real: senyalització marítima i navegació.</em></p>
+</blockquote>
+<p><strong>Què treballa.</strong> Sortida digital, temporització amb <code>delay()</code>, seqüència repetitiva al <code>loop()</code>.</p>
+<p><strong>Requisit mínim.</strong>
+- Un LED que repeteix <strong>un patró identificatiu propi</strong> (mínim 2 temps diferents, p. ex. 2 s encès / 1 s apagat).
+- Codi comentat amb <code>setup()</code> i <code>loop()</code>.</p>
+<p><strong>Ampliacions graduades.</strong>
+1. <em>(bàsica)</em> Usa <strong>variables</strong> per als temps i canvia el patró fàcilment.
+2. <em>(notable)</em> Combina <strong>dos patrons</strong> alternats (flaix curt + llum llarga) amb un bucle <code>for</code>.
+3. <em>(⭐⭐⭐)</em> Afegeix un <strong>segon LED</strong> (far secundari) amb un ritme diferent i sincronitzat.</p>
+<hr />
+<h2 id="repte-b-llum-de-bicicleta-intelligent"><a class="toclink" href="#repte-b-llum-de-bicicleta-intelligent">🚲 Repte B · Llum de bicicleta intel·ligent</a></h2>
+<p><strong>Context.</strong> Les llums de bici tenen diversos <strong>modes</strong> (fix, intermitent ràpid, intermitent lent). Programa el comportament lluminós d'una llum del darrere.</p>
+<blockquote>
+<p><em>Client: marca de mobilitat urbana · Lliurable: llum de seguretat multimode · Món real: seguretat viària i visibilitat ciclista.</em></p>
+</blockquote>
+<p><strong>Què treballa.</strong> Sortida digital, patrons de parpelleig, organització del <code>loop()</code>.</p>
+<p><strong>Requisit mínim.</strong>
+- Un LED que fa un <strong>mode intermitent clar i regular</strong> (p. ex. 200 ms encès / 200 ms apagat).
+- Codi comentat.</p>
+<p><strong>Ampliacions graduades.</strong>
+1. <em>(bàsica)</em> Afegeix un <strong>segon mode</strong> (parpelleig més lent) que s'executi després del primer.
+2. <em>(notable)</em> Programa una <strong>seqüència d'emergència</strong> (3 flaixos ràpids + pausa) amb bucle <code>for</code>.
+3. <em>(⭐⭐⭐)</em> Encapsula cada mode en una <strong>funció pròpia</strong> (<code>mode_emergencia()</code>...).</p>
+<hr />
+<h2 id="repte-c-missatge-en-morse"><a class="toclink" href="#repte-c-missatge-en-morse">📡 Repte C · Missatge en Morse</a></h2>
+<p><strong>Context.</strong> Abans dels mòbils, els missatges viatjaven en <strong>codi Morse</strong> (punts i ratlles). Fes que el LED enviï una paraula curta.</p>
+<blockquote>
+<p><em>Client: equip de rescat · Lliurable: emissor lluminós de senyals d'auxili · Món real: comunicació d'emergència sense ràdio.</em></p>
+</blockquote>
+<p><strong>Què treballa.</strong> Sortida digital, temps curts/llargs, idea de codificar informació amb llum.</p>
+<p><strong>Requisit mínim.</strong>
+- El LED emet <strong>les lletres S O S</strong> (· · · — — — · · ·) amb temps de punt i ratlla diferenciats.
+- Codi comentat.</p>
+<p><strong>Ampliacions graduades.</strong>
+1. <em>(bàsica)</em> Usa <strong>variables</strong> per al temps del punt i deriva'n la ratlla (×3).
+2. <em>(notable)</em> Crea les <strong>funcions</strong> <code>punt()</code> i <code>ratlla()</code> i compon el missatge cridant-les.
+3. <em>(⭐⭐⭐)</em> Envia <strong>les teves inicials</strong> respectant les pauses entre lletres i paraules.</p>
+<hr />
+<h2 id="material-necessari-qualsevol-dels-tres"><a class="toclink" href="#material-necessari-qualsevol-dels-tres">Material necessari (qualsevol dels tres)</a></h2>
+<ul>
+<li>Arduino UNO + cable USB (o LED intern del pin 13) · 1 LED + resistència 220 Ω + cables (si és muntatge real) · o <strong>Tinkercad/Wokwi</strong>.</li>
+</ul>
+<h2 id="per-on-comencar-metode-de-projecte-primm"><a class="toclink" href="#per-on-comencar-metode-de-projecte-primm">Per on començar (mètode de projecte + PRIMM)</a></h2>
+<ol>
+<li><strong>Analitzar:</strong> quin patró/missatge vull? Dibuixa'l en una línia de temps.</li>
+<li><strong>Dissenyar (Predir):</strong> escriu <em>abans</em> quines línies de codi necessitaràs.</li>
+<li><strong>Prototipar:</strong> parteix de <code>Classes/SA1/codi/blink.ino</code> i modifica'l.</li>
+<li><strong>Provar:</strong> carrega'l, observa, compara amb la teva predicció.</li>
+<li><strong>Millorar:</strong> introdueix variables/funcions i una ampliació.</li>
+</ol>
+<h2 id="com-savalua"><a class="toclink" href="#com-savalua">Com s'avalua</a></h2>
+<table>
+<thead>
+<tr>
+<th>Rúbrica</th>
+<th>Per què</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>R1</strong> (codi)</td>
+<td>Funcionament, estructura, llegibilitat, depuració.</td>
+</tr>
+<tr>
+<td><strong>R4</strong> (documentació)</td>
+<td>Quadern tècnic: predicció, solució i millora.</td>
+</tr>
+<tr>
+<td><strong>R5</strong> (actitud)</td>
+<td>Autonomia, gestió de l'error, cooperació.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="producte-entrega"><a class="toclink" href="#producte-entrega">Producte / entrega</a></h2>
+<ul>
+<li>Codi <code>.ino</code> comentat + entrada al <strong>quadern tècnic</strong> (predicció, què he fet, error trobat i millora).</li>
+</ul>
+<hr />
+<h2 id="orientacio-docent"><a class="toclink" href="#orientacio-docent">Orientació docent</a></h2>
+<ul>
+<li><strong>Errors freqüents:</strong> LED sense resistència o amb polaritat invertida; <code>delay()</code> massa petit (parpelleig imperceptible); oblidar <code>pinMode(..., OUTPUT)</code>.</li>
+<li><strong>Diferenciació:</strong> el mínim és idèntic als tres → tothom assoleix la base; les ampliacions 2–3 introdueixen <code>for</code> i funcions per a qui va sobrat.</li>
+<li><strong>Gestió d'aula:</strong> tots són simulables a Tinkercad si no hi ha prou plaques; el repte C connecta amb l'ampliació <code>sos_morse.ino</code> de la SA1.</li>
+<li><strong>Vincle avaluació:</strong> producte coherent amb el de la SA1 (quadern tècnic, R4/R5) i amb la rúbrica R1 de codi.</li>
+</ul>
+    </article>
+  </main>
+  <nav class="toc" aria-label="En aquesta pàgina"><p class="toc-titol">En aquesta pàgina</p><ul>
+<li class="toc-l1"><a href="#reptes-sa1-introduccio-primer-programa-amb-un-led">Reptes SA1 · Introducció: primer programa amb un LED</a></li>
+<li class="toc-l2"><a href="#repte-a-far-costaner">🌊 Repte A · Far costaner</a></li>
+<li class="toc-l2"><a href="#repte-b-llum-de-bicicleta-intelligent">🚲 Repte B · Llum de bicicleta intel·ligent</a></li>
+<li class="toc-l2"><a href="#repte-c-missatge-en-morse">📡 Repte C · Missatge en Morse</a></li>
+<li class="toc-l2"><a href="#material-necessari-qualsevol-dels-tres">Material necessari (qualsevol dels tres)</a></li>
+<li class="toc-l2"><a href="#per-on-comencar-metode-de-projecte-primm">Per on començar (mètode de projecte + PRIMM)</a></li>
+<li class="toc-l2"><a href="#com-savalua">Com s&#x27;avalua</a></li>
+<li class="toc-l2"><a href="#producte-entrega">Producte / entrega</a></li>
+<li class="toc-l2"><a href="#orientacio-docent">Orientació docent</a></li>
+</ul></nav>
+</div>
+<footer class="peu">
+  <p>Robòtica · 1r de Batxillerat · material sota llicència <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca" target="_blank" rel="noopener">CC BY-SA 4.0</a>.</p>
+  <p><a href="https://github.com/tomeu-cd100/robotica-1batx-2627" target="_blank" rel="noopener">Repositori a GitHub</a> · web generat el 2026-06-30.</p>
+</footer>
+<script src="../assets/js/cerca-index.js"></script>
+<script src="../assets/js/lloc.js"></script>
+</body>
+</html>

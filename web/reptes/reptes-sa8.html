@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reptes SA8 · IoT i Intel·ligència Artificial · Robòtica · 1r de Batxillerat</title>
+<meta name="description" content="Material docent · LOMLOE Catalunya · curs 2026-2027">
+<link rel="stylesheet" href="../assets/css/estil.css">
+<link rel="stylesheet" href="../assets/css/pygments.css">
+<script>(function(){try{var t=localStorage.getItem('tema');if(t==='fosc'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.setAttribute('data-tema','fosc');}catch(e){}})();</script>
+</head>
+<body data-section="reptes" class="amb-sidebar amb-toc">
+<a class="skip" href="#contingut">Salta al contingut</a>
+<header class="topbar">
+  <button class="menu-btn" aria-label="Obre el menú" aria-expanded="false">☰</button>
+  <a class="brand" href="../index.html"><span class="brand-mark">◆</span> Robòtica <span class="brand-sub">1r Batx</span></a>
+  <nav class="topnav" aria-label="Seccions">
+    <a href="../index.html">Inici</a>
+<a href="../programacio/index.html" data-sec="programacio">Programació didàctica</a>
+<a href="../classes/index.html" data-sec="classes">Classes</a>
+<a href="../reptes/index.html" data-sec="reptes" class="actiu">Reptes</a>
+<a href="../avaluacio/index.html" data-sec="avaluacio">Avaluació</a>
+<a href="../normativa/index.html" data-sec="normativa">Normativa</a>
+<a href="../recursos/index.html" data-sec="recursos">Recursos</a>
+  </nav>
+  <div class="topbar-eines">
+    <div class="cercador">
+      <input type="search" id="cerca" placeholder="Cerca…" autocomplete="off" aria-label="Cerca al web">
+      <div id="cerca-resultats" class="cerca-resultats" hidden></div>
+    </div>
+    <button class="tema-btn" aria-label="Canvia el tema clar/fosc" title="Tema clar/fosc">◐</button>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar"><nav class="sidebar-nav" aria-label="Pàgines de la secció">
+<p class="sidebar-titol">Reptes</p>
+<ul class="sb-top">
+<li><a href="index.html">Presentació</a></li>
+<li><a href="reptes-sa1.html">Reptes SA1 · Introducció: primer programa amb un LED <span class="tri-dot" data-tri="1"></span></a></li>
+<li><a href="reptes-sa2.html">Reptes SA2 · Sortides digitals i PWM <span class="tri-dot" data-tri="1"></span></a></li>
+<li><a href="reptes-sa3.html">Reptes SA3 · Entrades i sensors <span class="tri-dot" data-tri="1"></span></a></li>
+<li><a href="reptes-sa4.html">Reptes SA4 · Moviment: servos, motors i ponts H <span class="tri-dot" data-tri="2"></span></a></li>
+<li><a href="reptes-sa5.html">Reptes SA5 · micro:bit i MicroPython <span class="tri-dot" data-tri="2"></span></a></li>
+<li><a href="reptes-sa6.html">Reptes SA6 · Sistemes de control <span class="tri-dot" data-tri="2"></span></a></li>
+<li><a href="reptes-sa7.html">Reptes SA7 · Robòtica mòbil (Imagina 3dBot) <span class="tri-dot" data-tri="3"></span></a></li>
+<li><a href="reptes-sa8.html" class="actiu">Reptes SA8 · IoT i Intel·ligència Artificial <span class="tri-dot" data-tri="3"></span></a></li>
+</ul>
+<details class="sb-grup"><summary><span>Solucionari</span></summary><ul><li><a href="solucionari/index.html">Presentació</a></li><li><a href="solucionari/sa1/codi.html">Codi</a></li><li><a href="solucionari/sa2/codi.html">Codi</a></li><li><a href="solucionari/sa3/codi.html">Codi</a></li><li><a href="solucionari/sa4/codi.html">Codi</a></li><li><a href="solucionari/sa5/codi.html">Codi</a></li><li><a href="solucionari/sa6/codi.html">Codi</a></li><li><a href="solucionari/sa7/codi.html">Codi</a></li><li><a href="solucionari/sa8/codi.html">Codi</a></li></ul></details>
+</nav></aside>
+  <main id="contingut">
+    <nav class="breadcrumb" aria-label="Ubicació"><a href="../index.html">Inici</a> <span class="sep">/</span> <a href="../reptes/index.html">Reptes</a> <span class="sep">/</span> <span aria-current="page">Reptes SA8 · IoT i Intel·ligència Artificial</span></nav>
+    <span class="badge-tri" data-tri="3">3r trimestre</span>
+    <article class="prose">
+<h1 id="reptes-sa8-iot-i-intelligencia-artificial"><a class="toclink" href="#reptes-sa8-iot-i-intelligencia-artificial">Reptes SA8 · IoT i Intel·ligència Artificial</a></h1>
+<p><strong>Tria UN dels tres reptes.</strong> Tots <strong>connecten o fan intel·ligent</strong> un sistema: envien/reben dades o usen un model per decidir. Mateix requisit mínim, ampliacions graduades. Base en <strong>micro:bit/MicroPython</strong> (l'ESP32 és opcional/avançat).</p>
+<blockquote>
+<p><strong>Continguts SA8:</strong> IoT, telemetria (emissor/receptor), ràdio, IA (gestos), ESP32 (opcional). · <strong>Codi base:</strong> <code>Classes/SA8/codi/</code> (<code>.py</code> + <code>esp32_telemetria.ino</code>).</p>
+<p><strong>Format "producte real":</strong> cada repte simula un <strong>encàrrec</strong> amb <strong>client</strong>, <strong>lliurable</strong> i <strong>ús al món real</strong>. El requisit tècnic no canvia. <em>(3r trimestre — aquests sistemes </em><em>connecten i fan intel·ligent el cotxe autònom</em><em> de SA7 i alimenten el projecte final de SA9. Vegeu <code>Programació didàctica/08c_Projectes_vida_real.md</code>.)</em></p>
+</blockquote>
+<hr />
+<h2 id="repte-a-estacio-meteorologica-connectada"><a class="toclink" href="#repte-a-estacio-meteorologica-connectada">🌍 Repte A · Estació meteorològica connectada</a></h2>
+<p><strong>Context.</strong> Una estació que <strong>mesura</strong> l'entorn (temperatura, llum) i <strong>envia</strong> les dades a un altre dispositiu que les mostra/registra.</p>
+<blockquote>
+<p><em>Client: servei meteorològic / smart city · Lliurable: estació meteorològica connectada · Món real: Internet de les Coses i monitoratge ambiental.</em></p>
+</blockquote>
+<p><strong>Què treballa.</strong> Telemetria: emissor que llegeix sensors i <strong>envia per ràdio</strong>; receptor que <strong>rep i mostra</strong>.</p>
+<p><strong>Requisit mínim.</strong>
+- Un micro:bit <strong>emissor</strong> llegeix un sensor (temperatura/llum) i <strong>envia</strong> el valor; un <strong>receptor</strong> el <strong>mostra</strong>.
+- Codi comentat (emissor i receptor).</p>
+<p><strong>Ampliacions graduades.</strong>
+1. <em>(bàsica)</em> Envia <strong>diverses magnituds</strong> identificades (etiqueta + valor).
+2. <em>(notable)</em> El receptor <strong>registra</strong> o calcula màxim/mínim/mitjana.
+3. <em>(⭐⭐⭐)</em> Porta la telemetria a un <strong>ESP32 amb WiFi</strong> (avançat) o a un full de càlcul.</p>
+<hr />
+<h2 id="repte-b-sistema-dalerta-a-distancia"><a class="toclink" href="#repte-b-sistema-dalerta-a-distancia">🚨 Repte B · Sistema d'alerta a distància</a></h2>
+<p><strong>Context.</strong> Un sensor que <strong>avisa a distància</strong> quan passa alguna cosa (porta oberta, planta seca, temperatura alta) enviant una alerta a un receptor.</p>
+<blockquote>
+<p><em>Client: empresa de seguretat / agricultura · Lliurable: sistema d'alerta remota · Món real: alarmes connectades i monitoratge de cultius.</em></p>
+</blockquote>
+<p><strong>Què treballa.</strong> Detecció amb llindar + comunicació per ràdio (esdeveniment → missatge).</p>
+<p><strong>Requisit mínim.</strong>
+- Un emissor que, <strong>quan se supera un llindar</strong>, <strong>envia una alerta</strong>; un receptor que la <strong>mostra</strong> (icona/text + so).
+- Codi comentat.</p>
+<p><strong>Ampliacions graduades.</strong>
+1. <em>(bàsica)</em> Diferencia <strong>estat normal vs alerta</strong> amb icones clares.
+2. <em>(notable)</em> Afegeix <strong>confirmació (ACK)</strong> del receptor o diversos nivells d'alerta.
+3. <em>(⭐⭐⭐)</em> Xarxa de <strong>diversos emissors</strong> identificats que reporten a un sol receptor.</p>
+<hr />
+<h2 id="repte-c-control-per-gestos-ia"><a class="toclink" href="#repte-c-control-per-gestos-ia">✋ Repte C · Control per gestos (IA)</a></h2>
+<p><strong>Context.</strong> Controlar un sistema <strong>amb gestos</strong> (moviments de la mà amb el micro:bit) reconeguts per un model, com fan els wearables.</p>
+<blockquote>
+<p><em>Client: empresa de tecnologia accessible · Lliurable: comandament per gestos amb IA · Món real: interfícies gestuals, accessibilitat i wearables intel·ligents.</em></p>
+</blockquote>
+<p><strong>Què treballa.</strong> Captura de dades de l'acceleròmetre, <strong>classificació</strong> de gestos, acció associada.</p>
+<p><strong>Requisit mínim.</strong>
+- Reconèixer <strong>almenys dos gestos</strong> diferents (p. ex. inclinar/sacsejar) i associar-hi una <strong>acció</strong> (mostrar icona, enviar missatge).
+- Codi comentat.</p>
+<p><strong>Ampliacions graduades.</strong>
+1. <em>(bàsica)</em> Afegeix un <strong>tercer gest</strong> i la seva acció.
+2. <em>(notable)</em> Usa els gestos per <strong>controlar un altre dispositiu</strong> per ràdio (comandament gestual).
+3. <em>(⭐⭐⭐)</em> Entrena/ajusta un <strong>model senzill</strong> de classificació amb dades pròpies (ML educatiu).</p>
+<hr />
+<h2 id="material-necessari-segons-repte"><a class="toclink" href="#material-necessari-segons-repte">Material necessari (segons repte)</a></h2>
+<ul>
+<li><strong>Dos</strong> micro:bits (emissor/receptor) + piles · sensors integrats (temperatura, llum, acceleròmetre) · <em>(opcional)</em> ESP32 + WiFi per al repte A avançat · python.microbit.org / <strong>Thonny</strong>.</li>
+</ul>
+<h2 id="per-on-comencar-metode-de-projecte-primm"><a class="toclink" href="#per-on-comencar-metode-de-projecte-primm">Per on començar (mètode de projecte + PRIMM)</a></h2>
+<ol>
+<li><strong>Analitzar:</strong> quina dada/acció viatja, de qui a qui?</li>
+<li><strong>Dissenyar (Predir):</strong> defineix el <strong>protocol</strong> (què s'envia i com s'interpreta).</li>
+<li><strong>Prototipar:</strong> parteix de <code>Classes/SA8/codi/</code> (<code>01_telemetria_emissor.py</code>, <code>02_telemetria_receptor.py</code>, <code>03_ia_gestos.py</code>; ESP32: <code>04_esp32_telemetria.ino</code>).</li>
+<li><strong>Provar:</strong> comprova la comunicació amb missatges senzills abans d'afegir sensors.</li>
+<li><strong>Millorar:</strong> afegeix magnituds, ACK, nivells o gestos.</li>
+</ol>
+<h2 id="com-savalua"><a class="toclink" href="#com-savalua">Com s'avalua</a></h2>
+<table>
+<thead>
+<tr>
+<th>Rúbrica</th>
+<th>Per què</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>R1</strong> (codi)</td>
+<td>Estructura emissor/receptor, lògica de classificació.</td>
+</tr>
+<tr>
+<td><strong>R3</strong> (projecte)</td>
+<td>Sistema connectat funcional i fiable.</td>
+</tr>
+<tr>
+<td><strong>R4</strong> (documentació)</td>
+<td>Quadern tècnic: protocol de comunicació i proves.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="producte-entrega"><a class="toclink" href="#producte-entrega">Producte / entrega</a></h2>
+<ul>
+<li>Codi <code>.py</code> (emissor i receptor) comentat + quadern tècnic amb el protocol i un registre de proves.</li>
+</ul>
+<hr />
+<h2 id="orientacio-docent"><a class="toclink" href="#orientacio-docent">Orientació docent</a></h2>
+<ul>
+<li><strong>Errors freqüents:</strong> <strong>grups de ràdio</strong> diferents entre dispositius; <code>radio.receive()</code> retorna <code>None</code> (no gestionar-ho); barrejar tipus (enviar números com a text); a l'ESP32, credencials/WiFi (deixar-ho com a ampliació).</li>
+<li><strong>Diferenciació:</strong> el mínim és enviar-rebre una dada o reconèixer dos gestos; xarxes, ACK i ML escalen.</li>
+<li><strong>Gestió d'aula:</strong> aparellar dispositius per <strong>grups de ràdio</strong> únics per equip per evitar interferències; l'ESP32 és <strong>opcional/avançat</strong>. Reforça les diferències de llenguatge amb <code>Classes/SA0/</code> (Part B).</li>
+<li><strong>Vincle avaluació:</strong> R1 + R3 + R4; tanca el curs amb visió de sistemes connectats i ètica de les dades (pont amb SA9).</li>
+</ul>
+    </article>
+  </main>
+  <nav class="toc" aria-label="En aquesta pàgina"><p class="toc-titol">En aquesta pàgina</p><ul>
+<li class="toc-l1"><a href="#reptes-sa8-iot-i-intelligencia-artificial">Reptes SA8 · IoT i Intel·ligència Artificial</a></li>
+<li class="toc-l2"><a href="#repte-a-estacio-meteorologica-connectada">🌍 Repte A · Estació meteorològica connectada</a></li>
+<li class="toc-l2"><a href="#repte-b-sistema-dalerta-a-distancia">🚨 Repte B · Sistema d&#x27;alerta a distància</a></li>
+<li class="toc-l2"><a href="#repte-c-control-per-gestos-ia">✋ Repte C · Control per gestos (IA)</a></li>
+<li class="toc-l2"><a href="#material-necessari-segons-repte">Material necessari (segons repte)</a></li>
+<li class="toc-l2"><a href="#per-on-comencar-metode-de-projecte-primm">Per on començar (mètode de projecte + PRIMM)</a></li>
+<li class="toc-l2"><a href="#com-savalua">Com s&#x27;avalua</a></li>
+<li class="toc-l2"><a href="#producte-entrega">Producte / entrega</a></li>
+<li class="toc-l2"><a href="#orientacio-docent">Orientació docent</a></li>
+</ul></nav>
+</div>
+<footer class="peu">
+  <p>Robòtica · 1r de Batxillerat · material sota llicència <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca" target="_blank" rel="noopener">CC BY-SA 4.0</a>.</p>
+  <p><a href="https://github.com/tomeu-cd100/robotica-1batx-2627" target="_blank" rel="noopener">Repositori a GitHub</a> · web generat el 2026-06-30.</p>
+</footer>
+<script src="../assets/js/cerca-index.js"></script>
+<script src="../assets/js/lloc.js"></script>
+</body>
+</html>

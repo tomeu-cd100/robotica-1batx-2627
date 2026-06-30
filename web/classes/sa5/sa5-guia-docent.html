@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SA5 · Guia docent — micro:bit i MicroPython: un altre paradigma · Robòtica · 1r de Batxillerat</title>
+<meta name="description" content="Material docent · LOMLOE Catalunya · curs 2026-2027">
+<link rel="stylesheet" href="../../assets/css/estil.css">
+<link rel="stylesheet" href="../../assets/css/pygments.css">
+<script>(function(){try{var t=localStorage.getItem('tema');if(t==='fosc'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.setAttribute('data-tema','fosc');}catch(e){}})();</script>
+</head>
+<body data-section="classes" class="amb-sidebar amb-toc">
+<a class="skip" href="#contingut">Salta al contingut</a>
+<header class="topbar">
+  <button class="menu-btn" aria-label="Obre el menú" aria-expanded="false">☰</button>
+  <a class="brand" href="../../index.html"><span class="brand-mark">◆</span> Robòtica <span class="brand-sub">1r Batx</span></a>
+  <nav class="topnav" aria-label="Seccions">
+    <a href="../../index.html">Inici</a>
+<a href="../../programacio/index.html" data-sec="programacio">Programació didàctica</a>
+<a href="../../classes/index.html" data-sec="classes" class="actiu">Classes</a>
+<a href="../../reptes/index.html" data-sec="reptes">Reptes</a>
+<a href="../../avaluacio/index.html" data-sec="avaluacio">Avaluació</a>
+<a href="../../normativa/index.html" data-sec="normativa">Normativa</a>
+<a href="../../recursos/index.html" data-sec="recursos">Recursos</a>
+  </nav>
+  <div class="topbar-eines">
+    <div class="cercador">
+      <input type="search" id="cerca" placeholder="Cerca…" autocomplete="off" aria-label="Cerca al web">
+      <div id="cerca-resultats" class="cerca-resultats" hidden></div>
+    </div>
+    <button class="tema-btn" aria-label="Canvia el tema clar/fosc" title="Tema clar/fosc">◐</button>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar"><nav class="sidebar-nav" aria-label="Pàgines de la secció">
+<p class="sidebar-titol">Classes</p>
+<ul class="sb-top">
+<li><a href="../index.html">Presentació</a></li>
+<li><a href="../00-banc-objectes-disseny.html">Banc d&#x27;objectes per dissenyar — de l&#x27;electrònica al producte</a></li>
+<li><a href="../00-galeria-exemples-objectes.html">Galeria d&#x27;exemples resolts — objectes de disseny</a></li>
+<li><a href="../00-ia-a-la-materia.html">00 · La Intel·ligència Artificial a la matèria (guia transversal)</a></li>
+<li><a href="../00-llegeix-me-classes.html">Classes — Material d&#x27;aula</a></li>
+<li><a href="../00-mapa-sa-objectes.html">Mapa del curs · de cada SA a un objecte real</a></li>
+<li><a href="../00-plantilla-disseny-objecte.html">Plantilla de disseny d&#x27;objecte</a></li>
+<li><a href="../00-poster-aula-metode-depura-rols.html">Pòster d&#x27;aula — Com treballem a Robòtica</a></li>
+<li><a href="../00-poster-ia-us-assistents.html">Pòster d&#x27;aula — Fer servir la IA amb cap</a></li>
+</ul>
+<details class="sb-grup"><summary><span>SA0 · Vocabulari essencial i bases de programació</span></summary><ul><li><a href="../sa0/index.html">Presentació</a></li><li><a href="../sa0/sa0-fitxa-alumnat.html">SA0 · Fitxa d&#x27;alumnat — Vocabulari i primeres passes amb el codi</a></li><li><a href="../sa0/sa0-guia-docent.html">SA0 · Guia docent — Vocabulari essencial i bases de programació</a></li><li><a href="../sa0/sa0-guia-programacio.html">SA0 · Guia per aprendre a programar la placa</a></li><li><a href="../sa0/sa0-vocabulari-essencial.html">SA0 · Vocabulari essencial de la robòtica</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA1 · Introducció a la robòtica</span><span class="tri-dot" data-tri="1"></span></summary><ul><li><a href="../sa1/index.html">Presentació</a></li><li><a href="../sa1/sa1-esquemes-connexions.html">SA1 · Esquemes i connexions</a></li><li><a href="../sa1/sa1-fitxa-alumnat.html">SA1 · Fitxa base — Què és un robot?</a></li><li><a href="../sa1/sa1-fitxa-ampliada.html">SA1 · Fitxa ampliada (aprofundiment) — Què és un robot?</a></li><li><a href="../sa1/sa1-guia-docent.html">SA1 · Guia docent — Què és un robot? Sistemes embeguts i mètode de projecte</a></li><li><a href="../sa1/sa1-normes-seguretat.html">SA1 · Normes de seguretat del laboratori de robòtica</a></li><li><a href="../sa1/sa1-poster-robot-plantilla.html">SA1 · Fitxa-pòster: &quot;Analitzem un robot real&quot;</a></li><li><a href="../sa1/sa1-prova-diagnostica.html">SA1 · Prova diagnòstica de coneixements previs</a></li><li><a href="../sa1/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA2 · Sortides digitals i PWM</span><span class="tri-dot" data-tri="1"></span></summary><ul><li><a href="../sa2/index.html">Presentació</a></li><li><a href="../sa2/sa2-esquemes-connexions.html">SA2 · Esquemes i connexions</a></li><li><a href="../sa2/sa2-fitxa-alumnat.html">SA2 · Fitxa base — Sortides digitals i PWM</a></li><li><a href="../sa2/sa2-fitxa-ampliada.html">SA2 · Fitxa ampliada (aprofundiment) — Sortides digitals i PWM</a></li><li><a href="../sa2/sa2-guia-docent.html">SA2 · Guia docent — Sortides digitals i PWM: dona vida als actuadors</a></li><li><a href="../sa2/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA3 · Entrades i sensors</span><span class="tri-dot" data-tri="1"></span></summary><ul><li><a href="../sa3/index.html">Presentació</a></li><li><a href="../sa3/sa3-esquemes-connexions.html">SA3 · Esquemes i connexions</a></li><li><a href="../sa3/sa3-fitxa-alumnat.html">SA3 · Fitxa base — Entrades i sensors</a></li><li><a href="../sa3/sa3-fitxa-ampliada.html">SA3 · Fitxa ampliada (aprofundiment) — Entrades i sensors</a></li><li><a href="../sa3/sa3-guia-docent.html">SA3 · Guia docent — Entrades i sensors: el robot percep</a></li><li><a href="../sa3/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA4 · Moviment: servos i motors</span><span class="tri-dot" data-tri="2"></span></summary><ul><li><a href="../sa4/index.html">Presentació</a></li><li><a href="../sa4/sa4-esquemes-connexions.html">SA4 · Esquemes i connexions</a></li><li><a href="../sa4/sa4-fitxa-alumnat.html">SA4 · Fitxa base — Moviment: servos, motors i ponts H</a></li><li><a href="../sa4/sa4-fitxa-ampliada.html">SA4 · Fitxa ampliada (aprofundiment) — Moviment: servos, motors i ponts H</a></li><li><a href="../sa4/sa4-guia-docent.html">SA4 · Guia docent — Moviment: servos, motors i ponts H</a></li><li><a href="../sa4/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup" open><summary><span>SA5 · micro:bit i MicroPython</span><span class="tri-dot" data-tri="2"></span></summary><ul><li><a href="index.html">Presentació</a></li><li><a href="sa5-connexions.html">SA5 · Connexions i entorn</a></li><li><a href="sa5-fitxa-alumnat.html">SA5 · Fitxa base — micro:bit i MicroPython</a></li><li><a href="sa5-fitxa-ampliada.html">SA5 · Fitxa ampliada (aprofundiment) — micro:bit i MicroPython</a></li><li><a href="sa5-guia-docent.html" class="actiu">SA5 · Guia docent — micro:bit i MicroPython: un altre paradigma</a></li><li><a href="codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA6 · Sistemes de control</span><span class="tri-dot" data-tri="2"></span></summary><ul><li><a href="../sa6/index.html">Presentació</a></li><li><a href="../sa6/sa6-esquemes-connexions.html">SA6 · Esquemes i connexions</a></li><li><a href="../sa6/sa6-fitxa-alumnat.html">SA6 · Fitxa base — Sistemes de control</a></li><li><a href="../sa6/sa6-fitxa-ampliada.html">SA6 · Fitxa ampliada (aprofundiment) — Sistemes de control</a></li><li><a href="../sa6/sa6-guia-docent.html">SA6 · Guia docent — Sistemes de control: llaç obert/tancat i màquines d&#x27;estats</a></li><li><a href="../sa6/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA7 · Robòtica mòbil</span><span class="tri-dot" data-tri="3"></span></summary><ul><li><a href="../sa7/index.html">Presentació</a></li><li><a href="../sa7/sa7-esquemes-connexions.html">SA7 · Esquemes i connexions</a></li><li><a href="../sa7/sa7-fitxa-alumnat.html">SA7 · Fitxa base — Robòtica mòbil</a></li><li><a href="../sa7/sa7-fitxa-ampliada.html">SA7 · Fitxa ampliada (aprofundiment) — Robòtica mòbil</a></li><li><a href="../sa7/sa7-guia-docent.html">SA7 · Guia docent — Robòtica mòbil: cinemàtica i trajectòries</a></li><li><a href="../sa7/sa7-recursos-video-ia.html">SA7 · Recursos de vídeo — comportament programat vs après (IA)</a></li><li><a href="../sa7/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA8 · IoT i IA</span><span class="tri-dot" data-tri="3"></span></summary><ul><li><a href="../sa8/index.html">Presentació</a></li><li><a href="../sa8/sa8-connexions.html">SA8 · Connexions i entorn</a></li><li><a href="../sa8/sa8-fitxa-alumnat.html">SA8 · Fitxa base — IoT i IA</a></li><li><a href="../sa8/sa8-fitxa-ampliada.html">SA8 · Fitxa ampliada (aprofundiment) — IoT i IA</a></li><li><a href="../sa8/sa8-guia-docent.html">SA8 · Guia docent — IoT i IA: el robot connectat i intel·ligent</a></li><li><a href="../sa8/sa8-practica-teachable-machine.html">SA8 · Pràctica d&#x27;IA — Entrenar un classificador amb Teachable Machine</a></li><li><a href="../sa8/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA9 · Projecte final</span><span class="tri-dot" data-tri="3"></span></summary><ul><li><a href="../sa9/index.html">Presentació</a></li><li><a href="../sa9/plantilles/banc-de-reptes.html">SA9 · Banc de reptes (per nivells)</a></li><li><a href="../sa9/plantilles/dossier-tecnic-plantilla.html">Dossier tècnic — [Títol del projecte]</a></li><li><a href="../sa9/plantilles/planificacio-agile-plantilla.html">Planificació àgil — Equip: ______________________</a></li><li><a href="../sa9/sa9-fitxa-alumnat.html">SA9 · Fitxa base — Repte final integrador</a></li><li><a href="../sa9/sa9-fitxa-ampliada.html">SA9 · Fitxa ampliada (aprofundiment) — Repte final integrador</a></li><li><a href="../sa9/sa9-guia-docent.html">SA9 · Guia docent — Repte final integrador (opció competició)</a></li><li><a href="../sa9/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>Solucionari</span></summary><ul><li><a href="../solucionari/solucionari-t1-sa1-sa3.html">Solucionari de reptes — Trimestre 1 (SA1-SA3)</a></li><li><a href="../solucionari/solucionari-t2-sa4-sa6.html">Solucionari de reptes — Trimestre 2 (SA4-SA6)</a></li><li><a href="../solucionari/solucionari-t3-sa7-sa9.html">Solucionari de reptes — Trimestre 3 (SA7-SA9)</a></li></ul></details>
+</nav></aside>
+  <main id="contingut">
+    <nav class="breadcrumb" aria-label="Ubicació"><a href="../../index.html">Inici</a> <span class="sep">/</span> <a href="../../classes/index.html">Classes</a> <span class="sep">/</span> <span aria-current="page">SA5 · Guia docent — micro:bit i MicroPython: un altre paradigma</span></nav>
+    <span class="badge-tri" data-tri="2">2n trimestre</span>
+    <article class="prose">
+<h1 id="sa5-guia-docent-microbit-i-micropython-un-altre-paradigma"><a class="toclink" href="#sa5-guia-docent-microbit-i-micropython-un-altre-paradigma">SA5 · Guia docent — micro:bit i MicroPython: un altre paradigma</a></h1>
+<p><strong>Durada:</strong> 7 h (3-4 sessions) · <strong>Maquinari:</strong> micro:bit + Micro:shield · <strong>Llenguatge:</strong> MicroPython
+<strong>Referència:</strong> <code>Programació didàctica/14_SA5_microbit_micropython.md</code> · <strong>Connexions:</strong> <code>SA5_connexions.md</code></p>
+<h2 id="objectius-de-la-sa"><a class="toclink" href="#objectius-de-la-sa">Objectius de la SA</a></h2>
+<ol>
+<li>Escriure programes en <strong>MicroPython</strong> amb la sintaxi correcta (<strong>indentació!</strong>).</li>
+<li>Usar els <strong>sensors integrats</strong> de la micro:bit i la comunicació per <strong>ràdio</strong>.</li>
+<li><strong>Comparar</strong> la mateixa solució en C/C++ (Arduino) i Python (micro:bit).</li>
+</ol>
+<h2 id="material-per-parella"><a class="toclink" href="#material-per-parella">Material per parella</a></h2>
+<ul>
+<li>2 plaques <strong>micro:bit</strong> (per practicar la ràdio) + cables USB.</li>
+<li>Micro:shield (per a perifèrics externs, opcional).</li>
+<li>Entorn: <strong>editor Python de micro:bit</strong> (python.microbit.org) o <strong>Thonny</strong>. MakeCode com a pont.</li>
+</ul>
+<h2 id="codi-de-suport-codi"><a class="toclink" href="#codi-de-suport-codi">Codi de suport (<code>codi/</code>)</a></h2>
+<table>
+<thead>
+<tr>
+<th>Fitxer</th>
+<th>Contingut</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>01_name_badge.py</code></td>
+<td>Matriu LED, botons, imatges.</td>
+</tr>
+<tr>
+<td><code>02_passes.py</code></td>
+<td>Comptapassos amb l'acceleròmetre.</td>
+</tr>
+<tr>
+<td><code>03_nightlight.py</code></td>
+<td>Llum automàtic amb el sensor de llum.</td>
+</tr>
+<tr>
+<td><code>04_radio_dau.py</code></td>
+<td>Dau digital + comunicació per ràdio.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="metode-de-projecte-i-continuitat"><a class="toclink" href="#metode-de-projecte-i-continuitat">Mètode de projecte i continuïtat</a></h2>
+<ul>
+<li><strong>Cicle de treball</strong> (com a tot el curs): <em>analitzar → dissenyar → prototipar → provar → millorar</em> (vegeu SA1). El <strong>producte</strong> n'és el recorregut complet i el <strong>quadern tècnic</strong> el documenta.</li>
+<li><strong>Lectura de codi amb PRIMM:</strong> també en Python. A cada <em>modelatge</em> l'alumnat <strong>prediu</strong> què farà el programa <strong>abans</strong> d'executar-lo (al simulador o a la placa), després l'<strong>investiga</strong>, el <strong>modifica</strong> i en <strong>crea</strong> un de nou. <strong>Operativa (val per a totes les sessions amb codi):</strong> dedica els primers ~5' del Modelatge a projectar el codi nou <strong>sense executar-lo</strong> i recollir prediccions; només després, executa i investiga.</li>
+<li><strong>Pont (d'on venim / on anem):</strong> ve de la <strong>SA4</strong> (Arduino/C++) → portem a la <strong>SA6</strong> (control, torna a Arduino). Aquí s'obre el <strong>fil dels dos llenguatges</strong> (C/C++ ↔ Python, criteri <strong>CA1.2</strong>): els mateixos conceptes en dos paradigmes. Es reprendrà a la <strong>SA8</strong>.</li>
+<li><strong>Bastida de transició:</strong> <strong>MakeCode</strong> (blocs) com a pont abans del codi Python per a qui ho necessiti.</li>
+</ul>
+<hr />
+<h2 id="sessio-1-2-h-primers-passos-amb-micropython"><a class="toclink" href="#sessio-1-2-h-primers-passos-amb-micropython">SESSIÓ 1 (2 h) — Primers passos amb MicroPython</a></h2>
+<blockquote>
+<p>🔗 <strong>Bastida prèvia (SA0):</strong> abans de començar, deriva l'alumnat que ho necessiti a <code>Classes/SA0/SA0_guia_programacio.md</code>, <strong>Part B (MicroPython)</strong> i <strong>Part C (comparativa C++↔Python)</strong>, per amortir el canvi de llenguatge.</p>
+</blockquote>
+<ul>
+<li><strong>Activació (10'):</strong> <em>"La mateixa idea, dos llenguatges: què canviarà respecte d'Arduino?"</em></li>
+<li><strong>Modelatge (25'):</strong> editor Python de micro:bit. <code>from microbit import *</code>, <code>display.scroll()</code>, <code>display.show(Image...)</code>, botons. <strong>Indentació</strong> com a estructura (vs claus <code>{}</code> de C++).</li>
+<li><strong>Pràctica guiada (35'):</strong> <code>01_name_badge.py</code>; mostren el nom i reaccionen als botons A/B.</li>
+<li><strong>Repte (40'):</strong> badge d'emocions (botó A: contenta, botó B: trista); <strong>+ repte:</strong> animació pròpia amb diverses imatges.</li>
+<li><strong>Tancament (10'):</strong> quadern; primera fila de la <strong>taula comparativa</strong> C++/Python.</li>
+</ul>
+<p><strong>Punt clau:</strong> en Python la <strong>indentació no és estètica, és sintaxi</strong>. No hi ha <code>;</code> ni <code>{}</code>. El simulador integrat permet provar sense placa.</p>
+<hr />
+<h2 id="sessio-2-2-h-sensors-integrats"><a class="toclink" href="#sessio-2-2-h-sensors-integrats">SESSIÓ 2 (2 h) — Sensors integrats</a></h2>
+<ul>
+<li><strong>Activació (10'):</strong> <em>"Quins sensors porta de sèrie la micro:bit?"</em> (acceleròmetre, brúixola, temperatura, llum).</li>
+<li><strong>Modelatge (25'):</strong> <code>02_passes.py</code> (acceleròmetre, <code>get_strength</code>, llindar i antirebot) i <code>03_nightlight.py</code> (<code>display.read_light_level()</code>).</li>
+<li><strong>Pràctica guiada (35'):</strong> comptapassos i llum automàtic.</li>
+<li><strong>Repte (40'):</strong> detector d'inclinació (nivell) o termòmetre amb avís; <strong>+ repte:</strong> registrar dades i mostrar màxim/mínim.</li>
+<li><strong>Tancament (10'):</strong> quadern.</li>
+</ul>
+<p><strong>Punt clau:</strong> els sensors integrats permeten projectes sense electrònica externa → ràpid prototipatge. Cal <strong>filtrar/llindar</strong> les lectures (com a Arduino).</p>
+<hr />
+<h2 id="sessio-3-2-h-radio-i-comparacio-de-paradigmes"><a class="toclink" href="#sessio-3-2-h-radio-i-comparacio-de-paradigmes">SESSIÓ 3 (2 h) — Ràdio i comparació de paradigmes</a></h2>
+<ul>
+<li><strong>Activació (10'):</strong> <em>"Com es comuniquen dues plaques sense cables?"</em> → ràdio.</li>
+<li><strong>Modelatge (25'):</strong> <code>04_radio_dau.py</code>. Mòdul <code>radio</code>: <code>radio.on()</code>, <code>radio.config(group=...)</code>, <code>send()</code>, <code>receive()</code>. Gestos (<code>was_gesture("shake")</code>) i <code>random</code>.</li>
+<li><strong>Pràctica guiada (35'):</strong> dau digital que es comparteix per ràdio entre dues plaques.</li>
+<li><strong>Repte (40'):</strong> "pedra-paper-tisora" per ràdio o comandament a distància; <strong>+ repte:</strong> xarxa de 3+ plaques.</li>
+<li><strong>Comparació + tancament (15'):</strong> completar la <strong>taula comparativa C++ ↔ Python</strong> d'un mateix programa (p. ex. comptador) i reflexionar sobre els dos paradigmes.</li>
+</ul>
+<p><strong>Punt clau:</strong> dues plaques han de compartir el <strong>mateix <code>group</code></strong> per comunicar-se. Comparació: Python (sintaxi neta, sense tipus explícits, ràpid de prototipar) vs C/C++ (més control del maquinari, tipat, eficiència).</p>
+<h2 id="errors-frequents"><a class="toclink" href="#errors-frequents">Errors freqüents</a></h2>
+<table>
+<thead>
+<tr>
+<th>Error</th>
+<th>Causa</th>
+<th>Solució</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>IndentationError</code></td>
+<td>Indentació incorrecta</td>
+<td>Usar 4 espais coherents; no barrejar tabs/espais.</td>
+</tr>
+<tr>
+<td>El programa no reacciona als botons</td>
+<td>Lògica fora del <code>while True</code></td>
+<td>Posar la lectura dins del bucle.</td>
+</tr>
+<tr>
+<td>La ràdio no rep res</td>
+<td><code>group</code> diferent o <code>radio.off()</code></td>
+<td>Mateix <code>group</code>; <code>radio.on()</code> a l'inici.</td>
+</tr>
+<tr>
+<td>Comptapassos compta de més</td>
+<td>Sense antirebot</td>
+<td>Afegir <code>sleep()</code> després de detectar.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Producte:</strong> aplicació amb micro:bit (comptapassos, nightlight o joc per ràdio) + <strong>taula comparativa</strong> C++/Python.
+<strong>Avaluació:</strong> rúbriques <strong>R1</strong> (codi) i <strong>R4</strong> (documentació/comparativa).</p>
+<h3 id="mapa-davaluacio-tracabilitat"><a class="toclink" href="#mapa-davaluacio-tracabilitat">Mapa d'avaluació (traçabilitat)</a></h3>
+<table>
+<thead>
+<tr>
+<th>Instrument</th>
+<th>Què evidencia</th>
+<th>Criteri</th>
+<th>Rúbrica</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Producte (app micro:bit)</td>
+<td>Programa en MicroPython amb sensors i/o ràdio</td>
+<td>CA1.2</td>
+<td>R1</td>
+</tr>
+<tr>
+<td>Taula comparativa C++ ↔ Python</td>
+<td>Comparar la mateixa solució en dos llenguatges</td>
+<td>CA1.2</td>
+<td>R4</td>
+</tr>
+<tr>
+<td>Repte de codi Python</td>
+<td>Sintaxi (indentació), funcions, lectura de sensor</td>
+<td>CA1.2</td>
+<td>R1</td>
+</tr>
+<tr>
+<td>Quadern tècnic</td>
+<td>Comparativa, errors i millores; decisió de disseny</td>
+<td>CA1.2, CA3.1</td>
+<td>R4</td>
+</tr>
+</tbody>
+</table>
+<p><em>(CA1.2 = programar en MicroPython i comparar-ho amb C/C++; CA3.1 = implementar/explicar control bàsic. Vegeu <code>Programació didàctica/06_Avaluacio_criteris_qualificacio.md</code>. Comparteix R1 i R4 </em><em>abans</em><em> de començar.)</em></p>
+<hr />
+<h2 id="guio-de-modelatge-que-verbalitzar"><a class="toclink" href="#guio-de-modelatge-que-verbalitzar">Guió de modelatge (què verbalitzar)</a></h2>
+<blockquote>
+<p>Frases i preguntes clau per al <strong>Modelatge</strong> de cada sessió (què mirar, què preguntar abans d'executar, error a anticipar).</p>
+</blockquote>
+<ul>
+<li><strong>S1 · <code>01_name_badge</code> (sintaxi Python):</strong> èmfasi clau — <em>en Python la </em><em>indentació és sintaxi</em><em>, no estètica; no hi ha <code>;</code> ni <code>{}</code></em>. Compara visualment amb un sketch d'Arduino. Usa el <strong>simulador</strong> per provar sense placa. <em>Error a anticipar:</em> <code>IndentationError</code> per barrejar tabs i espais.</li>
+<li><strong>S2 · <code>02_passes</code> / <code>03_nightlight</code> (sensors integrats):</strong> mostra <code>display.read_light_level()</code> i l'acceleròmetre; recalca que cal <strong>filtrar/posar llindar</strong> a les lectures, igual que a Arduino. <em>Error a anticipar:</em> el comptapassos compta de més sense antirebot.</li>
+<li><strong>S3 · <code>04_radio_dau</code> (ràdio):</strong> les dues plaques han de compartir el <strong>mateix <code>group</code></strong>. Demana predir què passa si una placa té un <code>group</code> diferent. Tanca completant la <strong>taula comparativa C++↔Python</strong>. <em>Error a anticipar:</em> oblidar <code>radio.on()</code>.</li>
+</ul>
+<h2 id="atencio-a-la-diversitat-dua"><a class="toclink" href="#atencio-a-la-diversitat-dua">Atenció a la diversitat (DUA)</a></h2>
+<table>
+<thead>
+<tr>
+<th>Via</th>
+<th>Mesura</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Bastida</strong> (qui s'encalla)</td>
+<td><strong>MakeCode (blocs)</strong> com a pont abans del Python; <strong>simulador</strong> (python.microbit.org) per provar sense placa; donar l'esquelet <code>while True:</code> indentat.</td>
+</tr>
+<tr>
+<td><strong>+ Ampliació</strong> (qui va sobrat)</td>
+<td>Xarxa de 3+ plaques per ràdio, registre de màx/mín, animacions pròpies; reptes ⭐ de <code>Reptes/Reptes_SA5.md</code>.</td>
+</tr>
+<tr>
+<td><strong>Representació múltiple</strong></td>
+<td>Blocs ↔ codi, simulador visual, taula comparativa C++/Python.</td>
+</tr>
+<tr>
+<td><strong>Implicació</strong></td>
+<td>Cada parella tria el projecte (badge, comptapassos, nightlight o joc per ràdio).</td>
+</tr>
+</tbody>
+</table>
+<h2 id="treball-cooperatiu-amb-rols"><a class="toclink" href="#treball-cooperatiu-amb-rols">Treball cooperatiu amb rols</a></h2>
+<p>Parelles amb <strong>rols rotatius</strong>: Coordinador/a · Programador/a (Python) · Enginyer/a de maquinari (prepara la micro:bit i prova els sensors/ràdio) · Provador/a–Documentador/a. Quadre per rotar a la fitxa.</p>
+<h2 id="pensament-computacional-i-depuracio"><a class="toclink" href="#pensament-computacional-i-depuracio">Pensament computacional i depuració</a></h2>
+<ul>
+<li><strong>PC d'aquesta SA:</strong> programació <strong>per esdeveniments</strong> (botons, gestos, ràdio) i <strong>abstracció</strong> (sensors integrats).</li>
+<li><strong>Depuració:</strong> rutina <strong>DEPURA</strong>; l'error més típic és l'<strong>indentació</strong> (<code>IndentationError</code>) → la U d'<em>Ubica</em> sovint és una línia mal sagnada.</li>
+</ul>
+<h2 id="avaluacio-formativa-instruments"><a class="toclink" href="#avaluacio-formativa-instruments">Avaluació formativa (instruments)</a></h2>
+<ul>
+<li><strong>Diana d'autoavaluació</strong> (fitxa) · <strong>Coavaluació</strong> "2 estrelles i un desig" · <strong>Exit ticket</strong> de tancament.</li>
+</ul>
+<h2 id="context-real-i-ods"><a class="toclink" href="#context-real-i-ods">Context real i ODS</a></h2>
+<ul>
+<li><strong>Context:</strong> <em>wearables</em>, dispositius de salut, joguines i material educatiu programable.</li>
+<li><strong>ODS 3</strong> (salut i benestar: comptapassos, alertes) i <strong>ODS 4</strong> (educació de qualitat: la micro:bit democratitza la programació).</li>
+</ul>
+    </article>
+  </main>
+  <nav class="toc" aria-label="En aquesta pàgina"><p class="toc-titol">En aquesta pàgina</p><ul>
+<li class="toc-l1"><a href="#sa5-guia-docent-microbit-i-micropython-un-altre-paradigma">SA5 · Guia docent — micro:bit i MicroPython: un altre paradigma</a></li>
+<li class="toc-l2"><a href="#objectius-de-la-sa">Objectius de la SA</a></li>
+<li class="toc-l2"><a href="#material-per-parella">Material per parella</a></li>
+<li class="toc-l2"><a href="#codi-de-suport-codi">Codi de suport (codi/)</a></li>
+<li class="toc-l2"><a href="#metode-de-projecte-i-continuitat">Mètode de projecte i continuïtat</a></li>
+<li class="toc-l2"><a href="#sessio-1-2-h-primers-passos-amb-micropython">SESSIÓ 1 (2 h) — Primers passos amb MicroPython</a></li>
+<li class="toc-l2"><a href="#sessio-2-2-h-sensors-integrats">SESSIÓ 2 (2 h) — Sensors integrats</a></li>
+<li class="toc-l2"><a href="#sessio-3-2-h-radio-i-comparacio-de-paradigmes">SESSIÓ 3 (2 h) — Ràdio i comparació de paradigmes</a></li>
+<li class="toc-l2"><a href="#errors-frequents">Errors freqüents</a></li>
+<li class="toc-l2"><a href="#guio-de-modelatge-que-verbalitzar">Guió de modelatge (què verbalitzar)</a></li>
+<li class="toc-l2"><a href="#atencio-a-la-diversitat-dua">Atenció a la diversitat (DUA)</a></li>
+<li class="toc-l2"><a href="#treball-cooperatiu-amb-rols">Treball cooperatiu amb rols</a></li>
+<li class="toc-l2"><a href="#pensament-computacional-i-depuracio">Pensament computacional i depuració</a></li>
+<li class="toc-l2"><a href="#avaluacio-formativa-instruments">Avaluació formativa (instruments)</a></li>
+<li class="toc-l2"><a href="#context-real-i-ods">Context real i ODS</a></li>
+</ul></nav>
+</div>
+<footer class="peu">
+  <p>Robòtica · 1r de Batxillerat · material sota llicència <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca" target="_blank" rel="noopener">CC BY-SA 4.0</a>.</p>
+  <p><a href="https://github.com/tomeu-cd100/robotica-1batx-2627" target="_blank" rel="noopener">Repositori a GitHub</a> · web generat el 2026-06-30.</p>
+</footer>
+<script src="../../assets/js/cerca-index.js"></script>
+<script src="../../assets/js/lloc.js"></script>
+</body>
+</html>

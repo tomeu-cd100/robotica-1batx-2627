@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Codi · SA3 · Robòtica · 1r de Batxillerat</title>
+<meta name="description" content="Material docent · LOMLOE Catalunya · curs 2026-2027">
+<link rel="stylesheet" href="../../assets/css/estil.css">
+<link rel="stylesheet" href="../../assets/css/pygments.css">
+<script>(function(){try{var t=localStorage.getItem('tema');if(t==='fosc'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.setAttribute('data-tema','fosc');}catch(e){}})();</script>
+</head>
+<body data-section="classes" class="amb-sidebar sense-toc">
+<a class="skip" href="#contingut">Salta al contingut</a>
+<header class="topbar">
+  <button class="menu-btn" aria-label="Obre el menú" aria-expanded="false">☰</button>
+  <a class="brand" href="../../index.html"><span class="brand-mark">◆</span> Robòtica <span class="brand-sub">1r Batx</span></a>
+  <nav class="topnav" aria-label="Seccions">
+    <a href="../../index.html">Inici</a>
+<a href="../../programacio/index.html" data-sec="programacio">Programació didàctica</a>
+<a href="../../classes/index.html" data-sec="classes" class="actiu">Classes</a>
+<a href="../../reptes/index.html" data-sec="reptes">Reptes</a>
+<a href="../../avaluacio/index.html" data-sec="avaluacio">Avaluació</a>
+<a href="../../normativa/index.html" data-sec="normativa">Normativa</a>
+<a href="../../recursos/index.html" data-sec="recursos">Recursos</a>
+  </nav>
+  <div class="topbar-eines">
+    <div class="cercador">
+      <input type="search" id="cerca" placeholder="Cerca…" autocomplete="off" aria-label="Cerca al web">
+      <div id="cerca-resultats" class="cerca-resultats" hidden></div>
+    </div>
+    <button class="tema-btn" aria-label="Canvia el tema clar/fosc" title="Tema clar/fosc">◐</button>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar"><nav class="sidebar-nav" aria-label="Pàgines de la secció">
+<p class="sidebar-titol">Classes</p>
+<ul class="sb-top">
+<li><a href="../index.html">Presentació</a></li>
+<li><a href="../00-banc-objectes-disseny.html">Banc d&#x27;objectes per dissenyar — de l&#x27;electrònica al producte</a></li>
+<li><a href="../00-galeria-exemples-objectes.html">Galeria d&#x27;exemples resolts — objectes de disseny</a></li>
+<li><a href="../00-ia-a-la-materia.html">00 · La Intel·ligència Artificial a la matèria (guia transversal)</a></li>
+<li><a href="../00-llegeix-me-classes.html">Classes — Material d&#x27;aula</a></li>
+<li><a href="../00-mapa-sa-objectes.html">Mapa del curs · de cada SA a un objecte real</a></li>
+<li><a href="../00-plantilla-disseny-objecte.html">Plantilla de disseny d&#x27;objecte</a></li>
+<li><a href="../00-poster-aula-metode-depura-rols.html">Pòster d&#x27;aula — Com treballem a Robòtica</a></li>
+<li><a href="../00-poster-ia-us-assistents.html">Pòster d&#x27;aula — Fer servir la IA amb cap</a></li>
+</ul>
+<details class="sb-grup"><summary><span>SA0 · Vocabulari essencial i bases de programació</span></summary><ul><li><a href="../sa0/index.html">Presentació</a></li><li><a href="../sa0/sa0-fitxa-alumnat.html">SA0 · Fitxa d&#x27;alumnat — Vocabulari i primeres passes amb el codi</a></li><li><a href="../sa0/sa0-guia-docent.html">SA0 · Guia docent — Vocabulari essencial i bases de programació</a></li><li><a href="../sa0/sa0-guia-programacio.html">SA0 · Guia per aprendre a programar la placa</a></li><li><a href="../sa0/sa0-vocabulari-essencial.html">SA0 · Vocabulari essencial de la robòtica</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA1 · Introducció a la robòtica</span><span class="tri-dot" data-tri="1"></span></summary><ul><li><a href="../sa1/index.html">Presentació</a></li><li><a href="../sa1/sa1-esquemes-connexions.html">SA1 · Esquemes i connexions</a></li><li><a href="../sa1/sa1-fitxa-alumnat.html">SA1 · Fitxa base — Què és un robot?</a></li><li><a href="../sa1/sa1-fitxa-ampliada.html">SA1 · Fitxa ampliada (aprofundiment) — Què és un robot?</a></li><li><a href="../sa1/sa1-guia-docent.html">SA1 · Guia docent — Què és un robot? Sistemes embeguts i mètode de projecte</a></li><li><a href="../sa1/sa1-normes-seguretat.html">SA1 · Normes de seguretat del laboratori de robòtica</a></li><li><a href="../sa1/sa1-poster-robot-plantilla.html">SA1 · Fitxa-pòster: &quot;Analitzem un robot real&quot;</a></li><li><a href="../sa1/sa1-prova-diagnostica.html">SA1 · Prova diagnòstica de coneixements previs</a></li><li><a href="../sa1/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA2 · Sortides digitals i PWM</span><span class="tri-dot" data-tri="1"></span></summary><ul><li><a href="../sa2/index.html">Presentació</a></li><li><a href="../sa2/sa2-esquemes-connexions.html">SA2 · Esquemes i connexions</a></li><li><a href="../sa2/sa2-fitxa-alumnat.html">SA2 · Fitxa base — Sortides digitals i PWM</a></li><li><a href="../sa2/sa2-fitxa-ampliada.html">SA2 · Fitxa ampliada (aprofundiment) — Sortides digitals i PWM</a></li><li><a href="../sa2/sa2-guia-docent.html">SA2 · Guia docent — Sortides digitals i PWM: dona vida als actuadors</a></li><li><a href="../sa2/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup" open><summary><span>SA3 · Entrades i sensors</span><span class="tri-dot" data-tri="1"></span></summary><ul><li><a href="index.html">Presentació</a></li><li><a href="sa3-esquemes-connexions.html">SA3 · Esquemes i connexions</a></li><li><a href="sa3-fitxa-alumnat.html">SA3 · Fitxa base — Entrades i sensors</a></li><li><a href="sa3-fitxa-ampliada.html">SA3 · Fitxa ampliada (aprofundiment) — Entrades i sensors</a></li><li><a href="sa3-guia-docent.html">SA3 · Guia docent — Entrades i sensors: el robot percep</a></li><li><a href="codi.html" class="actiu">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA4 · Moviment: servos i motors</span><span class="tri-dot" data-tri="2"></span></summary><ul><li><a href="../sa4/index.html">Presentació</a></li><li><a href="../sa4/sa4-esquemes-connexions.html">SA4 · Esquemes i connexions</a></li><li><a href="../sa4/sa4-fitxa-alumnat.html">SA4 · Fitxa base — Moviment: servos, motors i ponts H</a></li><li><a href="../sa4/sa4-fitxa-ampliada.html">SA4 · Fitxa ampliada (aprofundiment) — Moviment: servos, motors i ponts H</a></li><li><a href="../sa4/sa4-guia-docent.html">SA4 · Guia docent — Moviment: servos, motors i ponts H</a></li><li><a href="../sa4/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA5 · micro:bit i MicroPython</span><span class="tri-dot" data-tri="2"></span></summary><ul><li><a href="../sa5/index.html">Presentació</a></li><li><a href="../sa5/sa5-connexions.html">SA5 · Connexions i entorn</a></li><li><a href="../sa5/sa5-fitxa-alumnat.html">SA5 · Fitxa base — micro:bit i MicroPython</a></li><li><a href="../sa5/sa5-fitxa-ampliada.html">SA5 · Fitxa ampliada (aprofundiment) — micro:bit i MicroPython</a></li><li><a href="../sa5/sa5-guia-docent.html">SA5 · Guia docent — micro:bit i MicroPython: un altre paradigma</a></li><li><a href="../sa5/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA6 · Sistemes de control</span><span class="tri-dot" data-tri="2"></span></summary><ul><li><a href="../sa6/index.html">Presentació</a></li><li><a href="../sa6/sa6-esquemes-connexions.html">SA6 · Esquemes i connexions</a></li><li><a href="../sa6/sa6-fitxa-alumnat.html">SA6 · Fitxa base — Sistemes de control</a></li><li><a href="../sa6/sa6-fitxa-ampliada.html">SA6 · Fitxa ampliada (aprofundiment) — Sistemes de control</a></li><li><a href="../sa6/sa6-guia-docent.html">SA6 · Guia docent — Sistemes de control: llaç obert/tancat i màquines d&#x27;estats</a></li><li><a href="../sa6/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA7 · Robòtica mòbil</span><span class="tri-dot" data-tri="3"></span></summary><ul><li><a href="../sa7/index.html">Presentació</a></li><li><a href="../sa7/sa7-esquemes-connexions.html">SA7 · Esquemes i connexions</a></li><li><a href="../sa7/sa7-fitxa-alumnat.html">SA7 · Fitxa base — Robòtica mòbil</a></li><li><a href="../sa7/sa7-fitxa-ampliada.html">SA7 · Fitxa ampliada (aprofundiment) — Robòtica mòbil</a></li><li><a href="../sa7/sa7-guia-docent.html">SA7 · Guia docent — Robòtica mòbil: cinemàtica i trajectòries</a></li><li><a href="../sa7/sa7-recursos-video-ia.html">SA7 · Recursos de vídeo — comportament programat vs après (IA)</a></li><li><a href="../sa7/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA8 · IoT i IA</span><span class="tri-dot" data-tri="3"></span></summary><ul><li><a href="../sa8/index.html">Presentació</a></li><li><a href="../sa8/sa8-connexions.html">SA8 · Connexions i entorn</a></li><li><a href="../sa8/sa8-fitxa-alumnat.html">SA8 · Fitxa base — IoT i IA</a></li><li><a href="../sa8/sa8-fitxa-ampliada.html">SA8 · Fitxa ampliada (aprofundiment) — IoT i IA</a></li><li><a href="../sa8/sa8-guia-docent.html">SA8 · Guia docent — IoT i IA: el robot connectat i intel·ligent</a></li><li><a href="../sa8/sa8-practica-teachable-machine.html">SA8 · Pràctica d&#x27;IA — Entrenar un classificador amb Teachable Machine</a></li><li><a href="../sa8/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA9 · Projecte final</span><span class="tri-dot" data-tri="3"></span></summary><ul><li><a href="../sa9/index.html">Presentació</a></li><li><a href="../sa9/plantilles/banc-de-reptes.html">SA9 · Banc de reptes (per nivells)</a></li><li><a href="../sa9/plantilles/dossier-tecnic-plantilla.html">Dossier tècnic — [Títol del projecte]</a></li><li><a href="../sa9/plantilles/planificacio-agile-plantilla.html">Planificació àgil — Equip: ______________________</a></li><li><a href="../sa9/sa9-fitxa-alumnat.html">SA9 · Fitxa base — Repte final integrador</a></li><li><a href="../sa9/sa9-fitxa-ampliada.html">SA9 · Fitxa ampliada (aprofundiment) — Repte final integrador</a></li><li><a href="../sa9/sa9-guia-docent.html">SA9 · Guia docent — Repte final integrador (opció competició)</a></li><li><a href="../sa9/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>Solucionari</span></summary><ul><li><a href="../solucionari/solucionari-t1-sa1-sa3.html">Solucionari de reptes — Trimestre 1 (SA1-SA3)</a></li><li><a href="../solucionari/solucionari-t2-sa4-sa6.html">Solucionari de reptes — Trimestre 2 (SA4-SA6)</a></li><li><a href="../solucionari/solucionari-t3-sa7-sa9.html">Solucionari de reptes — Trimestre 3 (SA7-SA9)</a></li></ul></details>
+</nav></aside>
+  <main id="contingut">
+    <nav class="breadcrumb" aria-label="Ubicació"><a href="../../index.html">Inici</a> <span class="sep">/</span> <a href="../../classes/index.html">Classes</a> <span class="sep">/</span> <span aria-current="page">Codi · SA3</span></nav>
+    <span class="badge-tri" data-tri="1">1r trimestre</span>
+    <article class="prose">
+<h1>Codi · SA3</h1>
+<p class="codi-intro">Fitxers de codi font. Fes servir el botó <strong>Copia</strong> per dur-los a l'IDE d'Arduino o a l'editor de micro:bit.</p>
+<ul class="codi-llista">
+<li><a href="#codi-01-polsador-debounce-01-polsador-debounce"><code>codi/01_polsador_debounce/01_polsador_debounce.ino</code></a></li>
+<li><a href="#codi-02-potenciometre-ldr-02-potenciometre-ldr"><code>codi/02_potenciometre_ldr/02_potenciometre_ldr.ino</code></a></li>
+<li><a href="#codi-03-ultrasons-funcio-03-ultrasons-funcio"><code>codi/03_ultrasons_funcio/03_ultrasons_funcio.ino</code></a></li>
+<li><a href="#codi-04-alarma-aparcament-04-alarma-aparcament"><code>codi/04_alarma_aparcament/04_alarma_aparcament.ino</code></a></li>
+</ul>
+<section class="codi-bloc" id="codi-01-polsador-debounce-01-polsador-debounce"><header class="codi-cap"><code class="codi-nom">codi/01_polsador_debounce/01_polsador_debounce.ino</code><button class="copia-btn" type="button">Copia</button></header><div class="codi-cos"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm">  SA3 - 01_polsador_debounce.ino</span>
+<span class="cm">  Entrada digital amb pull-up intern + antirebot (debounce). Compta premudes.</span>
+<span class="cm">  Circuit: polsador entre pin 2 i GND. (Opcional) LED al pin 8.</span>
+<span class="cm">  Amb INPUT_PULLUP: en repos = HIGH, en premer = LOW.</span>
+<span class="cm">*/</span>
+
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">POLSADOR</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">LED</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="p">;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="n">comptador</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">estatAnterior</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">HIGH</span><span class="p">;</span><span class="w">          </span><span class="c1">// en repos esta a HIGH</span>
+<span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">ultimCanvi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">ANTIREBOT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">40</span><span class="p">;</span><span class="w">  </span><span class="c1">// ms</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">POLSADOR</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT_PULLUP</span><span class="p">);</span>
+<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">LED</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span>
+<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">estat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">digitalRead</span><span class="p">(</span><span class="n">POLSADOR</span><span class="p">);</span>
+
+<span class="w">  </span><span class="c1">// Detecta el canvi HIGH -&gt; LOW (premuda) amb antirebot</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">estat</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">estatAnterior</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">(</span><span class="n">millis</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">ultimCanvi</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">ANTIREBOT</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">ultimCanvi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">millis</span><span class="p">();</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">estat</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">LOW</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">            </span><span class="c1">// s&#39;acaba de premer</span>
+<span class="w">      </span><span class="n">comptador</span><span class="o">++</span><span class="p">;</span>
+<span class="w">      </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Premudes: &quot;</span><span class="p">);</span>
+<span class="w">      </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">comptador</span><span class="p">);</span>
+<span class="w">      </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">LED</span><span class="p">,</span><span class="w"> </span><span class="o">!</span><span class="n">digitalRead</span><span class="p">(</span><span class="n">LED</span><span class="p">));</span><span class="w">  </span><span class="c1">// mode toggle del LED</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">estatAnterior</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">estat</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div></section>
+<section class="codi-bloc" id="codi-02-potenciometre-ldr-02-potenciometre-ldr"><header class="codi-cap"><code class="codi-nom">codi/02_potenciometre_ldr/02_potenciometre_ldr.ino</code><button class="copia-btn" type="button">Copia</button></header><div class="codi-cos"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm">  SA3 - 02_potenciometre_ldr.ino</span>
+<span class="cm">  Entrades analogiques: potenciometre (A0) i LDR (A1).</span>
+<span class="cm">  - El potenciometre regula la intensitat d&#39;un LED (PWM, pin 9).</span>
+<span class="cm">  - La LDR encen el LED si fa fosc (llum automatic) - repte resolt amb llindar.</span>
+<span class="cm">  Circuit: pot. cursor -&gt; A0 ; LDR en divisor amb 10k -&gt; A1 ; LED pin 9 (~).</span>
+<span class="cm">*/</span>
+
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">POT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">A0</span><span class="p">;</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">LDR</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">A1</span><span class="p">;</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">LED</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">9</span><span class="p">;</span><span class="w">        </span><span class="c1">// pin PWM</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="n">llindar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">400</span><span class="p">;</span><span class="w">        </span><span class="c1">// per sota d&#39;aquest valor de LDR, considerem &quot;fosc&quot;</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">LED</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span>
+<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">valorPot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">analogRead</span><span class="p">(</span><span class="n">POT</span><span class="p">);</span><span class="w">   </span><span class="c1">// 0..1023</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">valorLdr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">analogRead</span><span class="p">(</span><span class="n">LDR</span><span class="p">);</span><span class="w">   </span><span class="c1">// 0..1023</span>
+
+<span class="w">  </span><span class="c1">// Opcio A: regular intensitat amb el potenciometre</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">brillantor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">map</span><span class="p">(</span><span class="n">valorPot</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1023</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">255</span><span class="p">);</span>
+<span class="w">  </span><span class="n">analogWrite</span><span class="p">(</span><span class="n">LED</span><span class="p">,</span><span class="w"> </span><span class="n">brillantor</span><span class="p">);</span>
+
+<span class="w">  </span><span class="c1">// Mostra les lectures al monitor serie (Eines &gt; Serial Monitor)</span>
+<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;POT: &quot;</span><span class="p">);</span><span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">valorPot</span><span class="p">);</span>
+<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;  LDR: &quot;</span><span class="p">);</span><span class="w"> </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">valorLdr</span><span class="p">);</span>
+
+<span class="w">  </span><span class="n">delay</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="cm">/*</span>
+<span class="cm">  REPTE (llum automatic): substitueix el contingut de loop() per aixo</span>
+<span class="cm">  per encendre el LED al maxim quan fa fosc:</span>
+
+<span class="cm">  int valorLdr = analogRead(LDR);</span>
+<span class="cm">  if (valorLdr &lt; llindar) {</span>
+<span class="cm">    analogWrite(LED, 255);   // fa fosc -&gt; llum encesa</span>
+<span class="cm">  } else {</span>
+<span class="cm">    analogWrite(LED, 0);     // hi ha llum -&gt; apagada</span>
+<span class="cm">  }</span>
+<span class="cm">*/</span>
+</pre></div>
+</div></section>
+<section class="codi-bloc" id="codi-03-ultrasons-funcio-03-ultrasons-funcio"><header class="codi-cap"><code class="codi-nom">codi/03_ultrasons_funcio/03_ultrasons_funcio.ino</code><button class="copia-btn" type="button">Copia</button></header><div class="codi-cos"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm">  SA3 - 03_ultrasons_funcio.ino</span>
+<span class="cm">  Sensor d&#39;ultrasons HC-SR04. Aprenem a escriure una FUNCIO que retorna un valor.</span>
+<span class="cm">  Circuit: TRIG=12, ECHO=11, VCC=5V, GND=GND.</span>
+<span class="cm">  Visualitza la distancia amb el Serial Plotter (Eines &gt; Serial Plotter).</span>
+<span class="cm">*/</span>
+
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">TRIG</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">12</span><span class="p">;</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">ECHO</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">11</span><span class="p">;</span>
+
+<span class="c1">// Funcio propia: mesura i RETORNA la distancia en cm</span>
+<span class="kt">float</span><span class="w"> </span><span class="nf">mesuraDistancia</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">TRIG</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span>
+<span class="w">  </span><span class="n">delayMicroseconds</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">TRIG</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH</span><span class="p">);</span><span class="w">     </span><span class="c1">// pols de 10 us</span>
+<span class="w">  </span><span class="n">delayMicroseconds</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+<span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">TRIG</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span>
+
+<span class="w">  </span><span class="kt">long</span><span class="w"> </span><span class="n">temps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pulseIn</span><span class="p">(</span><span class="n">ECHO</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH</span><span class="p">,</span><span class="w"> </span><span class="mi">30000</span><span class="p">);</span><span class="w">  </span><span class="c1">// temps de l&#39;eco en us (timeout 30 ms)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">temps</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mi">400</span><span class="p">;</span><span class="w">               </span><span class="c1">// sense eco: objecte fora de rang (molt lluny)</span>
+<span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">dist</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temps</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">0.034</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">2.0</span><span class="p">;</span><span class="w">   </span><span class="c1">// cm (velocitat del so ~0.034 cm/us)</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">dist</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// REPTE resolt: mitjana de 3 mesures (filtre simple)</span>
+<span class="kt">float</span><span class="w"> </span><span class="nf">distanciaMitjana</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">suma</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">suma</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">mesuraDistancia</span><span class="p">();</span>
+<span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="mi">20</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">suma</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">3.0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">TRIG</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span>
+<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">ECHO</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT</span><span class="p">);</span>
+<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">distanciaMitjana</span><span class="p">();</span>
+<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">d</span><span class="p">);</span><span class="w">     </span><span class="c1">// una sola dada per linia: ideal per al Serial Plotter</span>
+<span class="w">  </span><span class="n">delay</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div></section>
+<section class="codi-bloc" id="codi-04-alarma-aparcament-04-alarma-aparcament"><header class="codi-cap"><code class="codi-nom">codi/04_alarma_aparcament/04_alarma_aparcament.ino</code><button class="copia-btn" type="button">Copia</button></header><div class="codi-cos"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm">  SA3 - 04_alarma_aparcament.ino  (PRODUCTE integrador)</span>
+<span class="cm">  Alarma de proximitat tipus sensor d&#39;aparcament.</span>
+<span class="cm">  Com mes a prop esta l&#39;objecte, mes rapid sona el piezo i mes &quot;alerta&quot; el LED.</span>
+<span class="cm">  Circuit: HC-SR04 TRIG=12 ECHO=11 ; LED=8 ; piezo=6.</span>
+<span class="cm">*/</span>
+
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">TRIG</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">12</span><span class="p">;</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">ECHO</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">11</span><span class="p">;</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">LED</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="p">;</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">PIEZO</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">6</span><span class="p">;</span>
+
+<span class="c1">// Llindars de distancia (cm) - personalitzables</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">LLUNY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">30</span><span class="p">;</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">PROP</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+
+<span class="kt">float</span><span class="w"> </span><span class="nf">mesuraDistancia</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">TRIG</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span>
+<span class="w">  </span><span class="n">delayMicroseconds</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">TRIG</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH</span><span class="p">);</span>
+<span class="w">  </span><span class="n">delayMicroseconds</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+<span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">TRIG</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span>
+<span class="w">  </span><span class="kt">long</span><span class="w"> </span><span class="n">temps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pulseIn</span><span class="p">(</span><span class="n">ECHO</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH</span><span class="p">,</span><span class="w"> </span><span class="mi">30000</span><span class="p">);</span><span class="w">  </span><span class="c1">// timeout 30 ms</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">temps</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mi">400</span><span class="p">;</span><span class="w">               </span><span class="c1">// sense eco: fora de rang (evita falsa alarma)</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">temps</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">0.034</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">2.0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">TRIG</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span>
+<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">ECHO</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT</span><span class="p">);</span>
+<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">LED</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span>
+<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">PIEZO</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span>
+<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mesuraDistancia</span><span class="p">();</span>
+<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">d</span><span class="p">);</span>
+
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">d</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">LLUNY</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Lluny: tot tranquil</span>
+<span class="w">    </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">LED</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span>
+<span class="w">    </span><span class="n">noTone</span><span class="p">(</span><span class="n">PIEZO</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">d</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">PROP</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Zona intermedia: bips espaiats (interval proporcional a la distancia)</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">interval</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">map</span><span class="p">((</span><span class="kt">int</span><span class="p">)</span><span class="n">d</span><span class="p">,</span><span class="w"> </span><span class="n">PROP</span><span class="p">,</span><span class="w"> </span><span class="n">LLUNY</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">600</span><span class="p">);</span><span class="w">  </span><span class="c1">// mes a prop -&gt; mes rapid</span>
+<span class="w">    </span><span class="n">tone</span><span class="p">(</span><span class="n">PIEZO</span><span class="p">,</span><span class="w"> </span><span class="mi">1500</span><span class="p">,</span><span class="w"> </span><span class="mi">60</span><span class="p">);</span>
+<span class="w">    </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">LED</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH</span><span class="p">);</span>
+<span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="n">interval</span><span class="p">);</span>
+<span class="w">    </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">LED</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span>
+<span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="n">interval</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Molt a prop: avis continu</span>
+<span class="w">    </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">LED</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH</span><span class="p">);</span>
+<span class="w">    </span><span class="n">tone</span><span class="p">(</span><span class="n">PIEZO</span><span class="p">,</span><span class="w"> </span><span class="mi">2500</span><span class="p">);</span><span class="w">   </span><span class="c1">// so continu</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="n">delay</span><span class="p">(</span><span class="mi">20</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div></section>
+    </article>
+  </main>
+  
+</div>
+<footer class="peu">
+  <p>Robòtica · 1r de Batxillerat · material sota llicència <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca" target="_blank" rel="noopener">CC BY-SA 4.0</a>.</p>
+  <p><a href="https://github.com/tomeu-cd100/robotica-1batx-2627" target="_blank" rel="noopener">Repositori a GitHub</a> · web generat el 2026-06-30.</p>
+</footer>
+<script src="../../assets/js/cerca-index.js"></script>
+<script src="../../assets/js/lloc.js"></script>
+</body>
+</html>

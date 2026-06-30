@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>04 · Metodologia · Robòtica · 1r de Batxillerat</title>
+<meta name="description" content="Material docent · LOMLOE Catalunya · curs 2026-2027">
+<link rel="stylesheet" href="../assets/css/estil.css">
+<link rel="stylesheet" href="../assets/css/pygments.css">
+<script>(function(){try{var t=localStorage.getItem('tema');if(t==='fosc'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.setAttribute('data-tema','fosc');}catch(e){}})();</script>
+</head>
+<body data-section="programacio" class="amb-sidebar amb-toc">
+<a class="skip" href="#contingut">Salta al contingut</a>
+<header class="topbar">
+  <button class="menu-btn" aria-label="Obre el menú" aria-expanded="false">☰</button>
+  <a class="brand" href="../index.html"><span class="brand-mark">◆</span> Robòtica <span class="brand-sub">1r Batx</span></a>
+  <nav class="topnav" aria-label="Seccions">
+    <a href="../index.html">Inici</a>
+<a href="../programacio/index.html" data-sec="programacio" class="actiu">Programació didàctica</a>
+<a href="../classes/index.html" data-sec="classes">Classes</a>
+<a href="../reptes/index.html" data-sec="reptes">Reptes</a>
+<a href="../avaluacio/index.html" data-sec="avaluacio">Avaluació</a>
+<a href="../normativa/index.html" data-sec="normativa">Normativa</a>
+<a href="../recursos/index.html" data-sec="recursos">Recursos</a>
+  </nav>
+  <div class="topbar-eines">
+    <div class="cercador">
+      <input type="search" id="cerca" placeholder="Cerca…" autocomplete="off" aria-label="Cerca al web">
+      <div id="cerca-resultats" class="cerca-resultats" hidden></div>
+    </div>
+    <button class="tema-btn" aria-label="Canvia el tema clar/fosc" title="Tema clar/fosc">◐</button>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar"><nav class="sidebar-nav" aria-label="Pàgines de la secció">
+<p class="sidebar-titol">Programació didàctica</p>
+<ul class="sb-top">
+<li><a href="index.html">Presentació</a></li>
+<li><a href="00-index-general.html">Programació didàctica — Robòtica · 1r de Batxillerat (científic i tecnològic)</a></li>
+<li><a href="01-introduccio-context-justificacio.html">01 · Introducció, context i justificació</a></li>
+<li><a href="02-objectius-competencies.html">02 · Objectius i competències</a></li>
+<li><a href="03-sabers-i-continguts.html">03 · Sabers i continguts</a></li>
+<li><a href="04-metodologia.html" class="actiu">04 · Metodologia</a></li>
+<li><a href="05-atencio-a-la-diversitat.html">05 · Atenció a la diversitat</a></li>
+<li><a href="06-avaluacio-criteris-qualificacio.html">06 · Avaluació: criteris, instruments i qualificació</a></li>
+<li><a href="07-rubriques.html">07 · Rúbriques d&#x27;avaluació</a></li>
+<li><a href="08-sequenciacio-temporal-anual.html">08 · Seqüenciació temporal anual</a></li>
+<li><a href="08c-projectes-vida-real.html">08c · Projectes de la vida real (model mixt: producte per SA + gran integrador)</a></li>
+<li><a href="09-materials-recursos-per-unitat.html">09 · Materials i recursos per unitat</a></li>
+<li><a href="09b-guia-compra-pressupost.html">09b · Guia de compra i pressupost del maquinari</a></li>
+<li><a href="09c-inventari-kits-disponibles.html">09c · Inventari del maquinari disponible (dotació real del centre)</a></li>
+<li><a href="10-sa1-introduccio-robotica.html">SA1 · Què és un robot? Sistemes embeguts i mètode de projecte <span class="tri-dot" data-tri="1"></span></a></li>
+<li><a href="11-sa2-sortides-digitals-pwm.html">SA2 · Sortides digitals i PWM: dona vida als actuadors <span class="tri-dot" data-tri="1"></span></a></li>
+<li><a href="12-sa3-entrades-sensors.html">SA3 · Entrades i sensors: el robot percep <span class="tri-dot" data-tri="1"></span></a></li>
+<li><a href="13-sa4-moviment-servos-motors.html">SA4 · Moviment: servos, motors i ponts H <span class="tri-dot" data-tri="2"></span></a></li>
+<li><a href="14-sa5-microbit-micropython.html">SA5 · micro:bit i MicroPython: un altre paradigma <span class="tri-dot" data-tri="2"></span></a></li>
+<li><a href="15-sa6-sistemes-control.html">SA6 · Sistemes de control: llaç obert/tancat i màquines d&#x27;estats <span class="tri-dot" data-tri="2"></span></a></li>
+<li><a href="16-sa7-robotica-mobil.html">SA7 · Robòtica mòbil: cinemàtica i trajectòries <span class="tri-dot" data-tri="3"></span></a></li>
+<li><a href="17-sa8-iot-ia.html">SA8 · IoT i IA: el robot connectat i intel·ligent <span class="tri-dot" data-tri="3"></span></a></li>
+<li><a href="18-sa9-projecte-final.html">SA9 · Repte final integrador (opció competició) <span class="tri-dot" data-tri="3"></span></a></li>
+</ul>
+</nav></aside>
+  <main id="contingut">
+    <nav class="breadcrumb" aria-label="Ubicació"><a href="../index.html">Inici</a> <span class="sep">/</span> <a href="../programacio/index.html">Programació didàctica</a> <span class="sep">/</span> <span aria-current="page">04 · Metodologia</span></nav>
+    
+    <article class="prose">
+<h1 id="04-metodologia"><a class="toclink" href="#04-metodologia">04 · Metodologia</a></h1>
+<h2 id="41-principis-metodologics"><a class="toclink" href="#41-principis-metodologics">4.1. Principis metodològics</a></h2>
+<p>La matèria adopta un <strong>enfocament competencial</strong> basat en <strong>situacions d'aprenentatge</strong> contextualitzades, coherent amb el Decret 171/2022. Principis:</p>
+<ul>
+<li><strong>Aprendre fent</strong> (<em>learning by doing</em>) i <strong>fes-ho tu mateix</strong> (<em>DIY</em>): cada concepte es consolida amb una pràctica real.</li>
+<li><strong>Aprenentatge basat en projectes (ABP)</strong> i en <strong>reptes</strong>: les unitats culminen en un producte/repte.</li>
+<li><strong>Design thinking i metodologies àgils</strong>: iteració, prototip mínim viable, millora contínua.</li>
+<li><strong>L'error com a part de l'aprenentatge</strong>: la depuració (<em>debugging</em>) és contingut, no fracàs.</li>
+<li><strong>Progressió del concret a l'abstracte</strong>: del component físic al sistema autònom; del codi guiat al codi autònom.</li>
+</ul>
+<h2 id="42-estructura-tipus-duna-sessio-2-h"><a class="toclink" href="#42-estructura-tipus-duna-sessio-2-h">4.2. Estructura tipus d'una sessió (2 h)</a></h2>
+<table>
+<thead>
+<tr>
+<th>Fase</th>
+<th>Temps</th>
+<th>Descripció</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>0. Arrencada i preparació</strong></td>
+<td>5-10'</td>
+<td>Repartiment i recompte de kits, encesa d'ordinadors, obrir l'IDE/simulador, seleccionar placa/port. <strong>No es pot ometre:</strong> és temps real d'aula.</td>
+</tr>
+<tr>
+<td><strong>Activació</strong></td>
+<td>10'</td>
+<td>Repte o pregunta inicial; recuperació del que se sap.</td>
+</tr>
+<tr>
+<td><strong>Modelatge (amb PRIMM)</strong></td>
+<td>20'</td>
+<td>El docent mostra el concepte/codi clau (live coding). <strong>Predir abans d'executar:</strong> projecta el codi nou <strong>sense executar-lo</strong> i recull prediccions (~5') <em>abans</em> d'investigar-lo.</td>
+</tr>
+<tr>
+<td><strong>Pràctica guiada</strong></td>
+<td>30-40'</td>
+<td>L'alumnat replica i modifica en parelles.</td>
+</tr>
+<tr>
+<td><strong>Pràctica autònoma / repte</strong></td>
+<td>30-40'</td>
+<td>Repte obert que aplica el concepte. El <strong>"+ repte"</strong> fa de marge: s'escurça si la sessió va justa.</td>
+</tr>
+<tr>
+<td><strong>Tancament i registre</strong></td>
+<td>10'</td>
+<td>Posada en comú, autoavaluació i <strong>quadern tècnic</strong> (<em>logbook</em>).</td>
+</tr>
+<tr>
+<td><strong>Recollida</strong></td>
+<td>5'</td>
+<td>Desconnexió segura, recompte i ordre del material.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>⏱️ <strong>Temps realista (important per a la planificació):</strong> la suma de les fases nuclears és de ~110-120', però <strong>l'arrencada i la recollida (15-20') són temps real</strong> que sovint no es pressuposta. El temps lectiu efectiu d'una sessió de 2 h és de ~95-105'. Per no quedar endarrerit: tracta el <strong>registre del quadern com a distribuït</strong> (2-3' després del modelatge i del repte, no tot al final) i considera el <strong>"+ repte" com a marge</strong>, no com a obligatori.</p>
+</blockquote>
+<h2 id="43-agrupaments"><a class="toclink" href="#43-agrupaments">4.3. Agrupaments</a></h2>
+<ul>
+<li><strong>Parelles de programació</strong> (<em>pair programming</em>) heterogènies, amb rols rotatius (<em>driver</em> / <em>navigator</em>).</li>
+<li><strong>Equips de projecte</strong> de 2-3 per a SA7-SA9.</li>
+<li>Moments d'<strong>individualització</strong> per a proves i quadern tècnic personal.</li>
+</ul>
+<h2 id="44-eines-i-entorns"><a class="toclink" href="#44-eines-i-entorns">4.4. Eines i entorns</a></h2>
+<ul>
+<li><strong>Programació:</strong> Arduino IDE (C/C++), editor Python de micro:bit / Thonny, MakeCode (transició).</li>
+<li><strong>Simulació:</strong> <strong>Tinkercad Circuits</strong> i <strong>Wokwi</strong> (C++ i MicroPython) per a treball previ, aules nombroses o alumnat sense placa en un moment donat.</li>
+<li><strong>Documentació:</strong> quadern tècnic digital (Markdown / document compartit), repositori d'evidències.</li>
+<li><strong>Gestió d'aula:</strong> rúbriques compartides, llistes de verificació, exemples model.</li>
+</ul>
+<blockquote>
+<p>Els recursos concrets (lliçons, bancs de pràctiques, tutorials) són a <code>Recursos/Recursos_Professorat_Robotica_1Batx.xlsx</code>.</p>
+</blockquote>
+<h2 id="45-el-quadern-tecnic-logbook"><a class="toclink" href="#45-el-quadern-tecnic-logbook">4.5. El quadern tècnic (<em>logbook</em>)</a></h2>
+<p>Element vertebrador de l'avaluació contínua. Per a cada pràctica/projecte, l'alumnat hi recull:
+- Objectiu i esquema del circuit.
+- Codi comentat i decisions de disseny.
+- Proves realitzades, errors trobats i com s'han resolt.
+- Conclusions i possibles millores.</p>
+<h2 id="46-perspectiva-de-genere-i-coeducacio"><a class="toclink" href="#46-perspectiva-de-genere-i-coeducacio">4.6. Perspectiva de gènere i coeducació</a></h2>
+<ul>
+<li>Rotació de rols per evitar que els rols tècnics recaiguin sempre en els mateixos perfils.</li>
+<li>Referents femenins en enginyeria i tecnologia.</li>
+<li>Reptes contextualitzats en àmbits diversos (salut, sostenibilitat, accessibilitat) per ampliar l'interès.</li>
+</ul>
+<h2 id="47-sostenibilitat-i-etica-ods"><a class="toclink" href="#47-sostenibilitat-i-etica-ods">4.7. Sostenibilitat i ètica (ODS)</a></h2>
+<ul>
+<li>Reutilització de components, gestió de residus electrònics, consum energètic dels sistemes.</li>
+<li>Reflexió sobre l'impacte social de l'automatització i la IA.</li>
+</ul>
+<h2 id="48-espais"><a class="toclink" href="#48-espais">4.8. Espais</a></h2>
+<ul>
+<li><strong>Aula taller / laboratori</strong> amb llocs de treball, alimentació i emmagatzematge de kits.</li>
+<li>Aula amb dispositius per a programació i simulació.</li>
+<li>Espai obert per a proves de robòtica mòbil (circuits de terra per a SA7 i SA9).</li>
+</ul>
+<h2 id="49-atencio-a-la-diversitat-resum"><a class="toclink" href="#49-atencio-a-la-diversitat-resum">4.9. Atenció a la diversitat (resum)</a></h2>
+<p>Es despleguen mesures universals, addicionals i intensives detallades a <code>05_Atencio_a_la_diversitat.md</code>: activitats multinivell, reptes d'ampliació, bastides (codi base, plantilles) i parelles heterogènies.</p>
+    </article>
+  </main>
+  <nav class="toc" aria-label="En aquesta pàgina"><p class="toc-titol">En aquesta pàgina</p><ul>
+<li class="toc-l1"><a href="#04-metodologia">04 · Metodologia</a></li>
+<li class="toc-l2"><a href="#41-principis-metodologics">4.1. Principis metodològics</a></li>
+<li class="toc-l2"><a href="#42-estructura-tipus-duna-sessio-2-h">4.2. Estructura tipus d&#x27;una sessió (2 h)</a></li>
+<li class="toc-l2"><a href="#43-agrupaments">4.3. Agrupaments</a></li>
+<li class="toc-l2"><a href="#44-eines-i-entorns">4.4. Eines i entorns</a></li>
+<li class="toc-l2"><a href="#45-el-quadern-tecnic-logbook">4.5. El quadern tècnic (logbook)</a></li>
+<li class="toc-l2"><a href="#46-perspectiva-de-genere-i-coeducacio">4.6. Perspectiva de gènere i coeducació</a></li>
+<li class="toc-l2"><a href="#47-sostenibilitat-i-etica-ods">4.7. Sostenibilitat i ètica (ODS)</a></li>
+<li class="toc-l2"><a href="#48-espais">4.8. Espais</a></li>
+<li class="toc-l2"><a href="#49-atencio-a-la-diversitat-resum">4.9. Atenció a la diversitat (resum)</a></li>
+</ul></nav>
+</div>
+<footer class="peu">
+  <p>Robòtica · 1r de Batxillerat · material sota llicència <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca" target="_blank" rel="noopener">CC BY-SA 4.0</a>.</p>
+  <p><a href="https://github.com/tomeu-cd100/robotica-1batx-2627" target="_blank" rel="noopener">Repositori a GitHub</a> · web generat el 2026-06-30.</p>
+</footer>
+<script src="../assets/js/cerca-index.js"></script>
+<script src="../assets/js/lloc.js"></script>
+</body>
+</html>

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Banc d&#x27;objectes per dissenyar — de l&#x27;electrònica al producte · Robòtica · 1r de Batxillerat</title>
+<meta name="description" content="Material docent · LOMLOE Catalunya · curs 2026-2027">
+<link rel="stylesheet" href="../assets/css/estil.css">
+<link rel="stylesheet" href="../assets/css/pygments.css">
+<script>(function(){try{var t=localStorage.getItem('tema');if(t==='fosc'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.setAttribute('data-tema','fosc');}catch(e){}})();</script>
+</head>
+<body data-section="classes" class="amb-sidebar amb-toc">
+<a class="skip" href="#contingut">Salta al contingut</a>
+<header class="topbar">
+  <button class="menu-btn" aria-label="Obre el menú" aria-expanded="false">☰</button>
+  <a class="brand" href="../index.html"><span class="brand-mark">◆</span> Robòtica <span class="brand-sub">1r Batx</span></a>
+  <nav class="topnav" aria-label="Seccions">
+    <a href="../index.html">Inici</a>
+<a href="../programacio/index.html" data-sec="programacio">Programació didàctica</a>
+<a href="../classes/index.html" data-sec="classes" class="actiu">Classes</a>
+<a href="../reptes/index.html" data-sec="reptes">Reptes</a>
+<a href="../avaluacio/index.html" data-sec="avaluacio">Avaluació</a>
+<a href="../normativa/index.html" data-sec="normativa">Normativa</a>
+<a href="../recursos/index.html" data-sec="recursos">Recursos</a>
+  </nav>
+  <div class="topbar-eines">
+    <div class="cercador">
+      <input type="search" id="cerca" placeholder="Cerca…" autocomplete="off" aria-label="Cerca al web">
+      <div id="cerca-resultats" class="cerca-resultats" hidden></div>
+    </div>
+    <button class="tema-btn" aria-label="Canvia el tema clar/fosc" title="Tema clar/fosc">◐</button>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar"><nav class="sidebar-nav" aria-label="Pàgines de la secció">
+<p class="sidebar-titol">Classes</p>
+<ul class="sb-top">
+<li><a href="index.html">Presentació</a></li>
+<li><a href="00-banc-objectes-disseny.html" class="actiu">Banc d&#x27;objectes per dissenyar — de l&#x27;electrònica al producte</a></li>
+<li><a href="00-galeria-exemples-objectes.html">Galeria d&#x27;exemples resolts — objectes de disseny</a></li>
+<li><a href="00-ia-a-la-materia.html">00 · La Intel·ligència Artificial a la matèria (guia transversal)</a></li>
+<li><a href="00-llegeix-me-classes.html">Classes — Material d&#x27;aula</a></li>
+<li><a href="00-mapa-sa-objectes.html">Mapa del curs · de cada SA a un objecte real</a></li>
+<li><a href="00-plantilla-disseny-objecte.html">Plantilla de disseny d&#x27;objecte</a></li>
+<li><a href="00-poster-aula-metode-depura-rols.html">Pòster d&#x27;aula — Com treballem a Robòtica</a></li>
+<li><a href="00-poster-ia-us-assistents.html">Pòster d&#x27;aula — Fer servir la IA amb cap</a></li>
+</ul>
+<details class="sb-grup"><summary><span>SA0 · Vocabulari essencial i bases de programació</span></summary><ul><li><a href="sa0/index.html">Presentació</a></li><li><a href="sa0/sa0-fitxa-alumnat.html">SA0 · Fitxa d&#x27;alumnat — Vocabulari i primeres passes amb el codi</a></li><li><a href="sa0/sa0-guia-docent.html">SA0 · Guia docent — Vocabulari essencial i bases de programació</a></li><li><a href="sa0/sa0-guia-programacio.html">SA0 · Guia per aprendre a programar la placa</a></li><li><a href="sa0/sa0-vocabulari-essencial.html">SA0 · Vocabulari essencial de la robòtica</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA1 · Introducció a la robòtica</span><span class="tri-dot" data-tri="1"></span></summary><ul><li><a href="sa1/index.html">Presentació</a></li><li><a href="sa1/sa1-esquemes-connexions.html">SA1 · Esquemes i connexions</a></li><li><a href="sa1/sa1-fitxa-alumnat.html">SA1 · Fitxa base — Què és un robot?</a></li><li><a href="sa1/sa1-fitxa-ampliada.html">SA1 · Fitxa ampliada (aprofundiment) — Què és un robot?</a></li><li><a href="sa1/sa1-guia-docent.html">SA1 · Guia docent — Què és un robot? Sistemes embeguts i mètode de projecte</a></li><li><a href="sa1/sa1-normes-seguretat.html">SA1 · Normes de seguretat del laboratori de robòtica</a></li><li><a href="sa1/sa1-poster-robot-plantilla.html">SA1 · Fitxa-pòster: &quot;Analitzem un robot real&quot;</a></li><li><a href="sa1/sa1-prova-diagnostica.html">SA1 · Prova diagnòstica de coneixements previs</a></li><li><a href="sa1/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA2 · Sortides digitals i PWM</span><span class="tri-dot" data-tri="1"></span></summary><ul><li><a href="sa2/index.html">Presentació</a></li><li><a href="sa2/sa2-esquemes-connexions.html">SA2 · Esquemes i connexions</a></li><li><a href="sa2/sa2-fitxa-alumnat.html">SA2 · Fitxa base — Sortides digitals i PWM</a></li><li><a href="sa2/sa2-fitxa-ampliada.html">SA2 · Fitxa ampliada (aprofundiment) — Sortides digitals i PWM</a></li><li><a href="sa2/sa2-guia-docent.html">SA2 · Guia docent — Sortides digitals i PWM: dona vida als actuadors</a></li><li><a href="sa2/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA3 · Entrades i sensors</span><span class="tri-dot" data-tri="1"></span></summary><ul><li><a href="sa3/index.html">Presentació</a></li><li><a href="sa3/sa3-esquemes-connexions.html">SA3 · Esquemes i connexions</a></li><li><a href="sa3/sa3-fitxa-alumnat.html">SA3 · Fitxa base — Entrades i sensors</a></li><li><a href="sa3/sa3-fitxa-ampliada.html">SA3 · Fitxa ampliada (aprofundiment) — Entrades i sensors</a></li><li><a href="sa3/sa3-guia-docent.html">SA3 · Guia docent — Entrades i sensors: el robot percep</a></li><li><a href="sa3/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA4 · Moviment: servos i motors</span><span class="tri-dot" data-tri="2"></span></summary><ul><li><a href="sa4/index.html">Presentació</a></li><li><a href="sa4/sa4-esquemes-connexions.html">SA4 · Esquemes i connexions</a></li><li><a href="sa4/sa4-fitxa-alumnat.html">SA4 · Fitxa base — Moviment: servos, motors i ponts H</a></li><li><a href="sa4/sa4-fitxa-ampliada.html">SA4 · Fitxa ampliada (aprofundiment) — Moviment: servos, motors i ponts H</a></li><li><a href="sa4/sa4-guia-docent.html">SA4 · Guia docent — Moviment: servos, motors i ponts H</a></li><li><a href="sa4/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA5 · micro:bit i MicroPython</span><span class="tri-dot" data-tri="2"></span></summary><ul><li><a href="sa5/index.html">Presentació</a></li><li><a href="sa5/sa5-connexions.html">SA5 · Connexions i entorn</a></li><li><a href="sa5/sa5-fitxa-alumnat.html">SA5 · Fitxa base — micro:bit i MicroPython</a></li><li><a href="sa5/sa5-fitxa-ampliada.html">SA5 · Fitxa ampliada (aprofundiment) — micro:bit i MicroPython</a></li><li><a href="sa5/sa5-guia-docent.html">SA5 · Guia docent — micro:bit i MicroPython: un altre paradigma</a></li><li><a href="sa5/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA6 · Sistemes de control</span><span class="tri-dot" data-tri="2"></span></summary><ul><li><a href="sa6/index.html">Presentació</a></li><li><a href="sa6/sa6-esquemes-connexions.html">SA6 · Esquemes i connexions</a></li><li><a href="sa6/sa6-fitxa-alumnat.html">SA6 · Fitxa base — Sistemes de control</a></li><li><a href="sa6/sa6-fitxa-ampliada.html">SA6 · Fitxa ampliada (aprofundiment) — Sistemes de control</a></li><li><a href="sa6/sa6-guia-docent.html">SA6 · Guia docent — Sistemes de control: llaç obert/tancat i màquines d&#x27;estats</a></li><li><a href="sa6/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA7 · Robòtica mòbil</span><span class="tri-dot" data-tri="3"></span></summary><ul><li><a href="sa7/index.html">Presentació</a></li><li><a href="sa7/sa7-esquemes-connexions.html">SA7 · Esquemes i connexions</a></li><li><a href="sa7/sa7-fitxa-alumnat.html">SA7 · Fitxa base — Robòtica mòbil</a></li><li><a href="sa7/sa7-fitxa-ampliada.html">SA7 · Fitxa ampliada (aprofundiment) — Robòtica mòbil</a></li><li><a href="sa7/sa7-guia-docent.html">SA7 · Guia docent — Robòtica mòbil: cinemàtica i trajectòries</a></li><li><a href="sa7/sa7-recursos-video-ia.html">SA7 · Recursos de vídeo — comportament programat vs après (IA)</a></li><li><a href="sa7/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA8 · IoT i IA</span><span class="tri-dot" data-tri="3"></span></summary><ul><li><a href="sa8/index.html">Presentació</a></li><li><a href="sa8/sa8-connexions.html">SA8 · Connexions i entorn</a></li><li><a href="sa8/sa8-fitxa-alumnat.html">SA8 · Fitxa base — IoT i IA</a></li><li><a href="sa8/sa8-fitxa-ampliada.html">SA8 · Fitxa ampliada (aprofundiment) — IoT i IA</a></li><li><a href="sa8/sa8-guia-docent.html">SA8 · Guia docent — IoT i IA: el robot connectat i intel·ligent</a></li><li><a href="sa8/sa8-practica-teachable-machine.html">SA8 · Pràctica d&#x27;IA — Entrenar un classificador amb Teachable Machine</a></li><li><a href="sa8/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA9 · Projecte final</span><span class="tri-dot" data-tri="3"></span></summary><ul><li><a href="sa9/index.html">Presentació</a></li><li><a href="sa9/plantilles/banc-de-reptes.html">SA9 · Banc de reptes (per nivells)</a></li><li><a href="sa9/plantilles/dossier-tecnic-plantilla.html">Dossier tècnic — [Títol del projecte]</a></li><li><a href="sa9/plantilles/planificacio-agile-plantilla.html">Planificació àgil — Equip: ______________________</a></li><li><a href="sa9/sa9-fitxa-alumnat.html">SA9 · Fitxa base — Repte final integrador</a></li><li><a href="sa9/sa9-fitxa-ampliada.html">SA9 · Fitxa ampliada (aprofundiment) — Repte final integrador</a></li><li><a href="sa9/sa9-guia-docent.html">SA9 · Guia docent — Repte final integrador (opció competició)</a></li><li><a href="sa9/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>Solucionari</span></summary><ul><li><a href="solucionari/solucionari-t1-sa1-sa3.html">Solucionari de reptes — Trimestre 1 (SA1-SA3)</a></li><li><a href="solucionari/solucionari-t2-sa4-sa6.html">Solucionari de reptes — Trimestre 2 (SA4-SA6)</a></li><li><a href="solucionari/solucionari-t3-sa7-sa9.html">Solucionari de reptes — Trimestre 3 (SA7-SA9)</a></li></ul></details>
+</nav></aside>
+  <main id="contingut">
+    <nav class="breadcrumb" aria-label="Ubicació"><a href="../index.html">Inici</a> <span class="sep">/</span> <a href="../classes/index.html">Classes</a> <span class="sep">/</span> <span aria-current="page">Banc d&#x27;objectes per dissenyar — de l&#x27;electrònica al producte</span></nav>
+    
+    <article class="prose">
+<h1 id="banc-dobjectes-per-dissenyar-de-lelectronica-al-producte"><a class="toclink" href="#banc-dobjectes-per-dissenyar-de-lelectronica-al-producte">Banc d'objectes per dissenyar — de l'electrònica al producte</a></h1>
+<blockquote>
+<p>Catàleg <strong>transversal</strong>: per a cada SA, <strong>objectes reals</strong> que l'alumnat pot <strong>dissenyar i construir</strong> com a producte amb identitat pròpia (no només el muntatge tècnic). Cada objecte parteix dels continguts de la SA i hi afegeix la dimensió de <strong>disseny de producte</strong>: funció, usuari, carcassa/maqueta i estètica.</p>
+</blockquote>
+<p>Es pot fer servir com a <strong>alternativa al producte de la SA</strong>, com a <strong>repte obert</strong>, o com a <strong>llavor del projecte de SA9</strong>.</p>
+<hr />
+<h2 id="el-proces-de-disseny-dun-objecte-integrat-amb-el-metode-de-projecte"><a class="toclink" href="#el-proces-de-disseny-dun-objecte-integrat-amb-el-metode-de-projecte">El procés de disseny d'un objecte (integrat amb el mètode de projecte)</a></h2>
+<table>
+<thead>
+<tr>
+<th>Pas</th>
+<th>Pregunta de disseny</th>
+<th>Es correspon amb…</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. <strong>Empatitzar</strong></td>
+<td>Qui ho farà servir? Quin problema o desig té?</td>
+<td>Analitzar</td>
+</tr>
+<tr>
+<td>2. <strong>Definir</strong></td>
+<td>Què ha de fer l'objecte (funció) i quins requisits té?</td>
+<td>Analitzar</td>
+</tr>
+<tr>
+<td>3. <strong>Idear i dissenyar</strong></td>
+<td>Quina forma, mida i materials? On va l'electrònica?</td>
+<td>Dissenyar</td>
+</tr>
+<tr>
+<td>4. <strong>Prototipar</strong></td>
+<td>Munto el circuit, programo i construeixo la carcassa/maqueta.</td>
+<td>Prototipar</td>
+</tr>
+<tr>
+<td>5. <strong>Provar i millorar</strong></td>
+<td>Funciona? És còmode, segur i atractiu? Itero.</td>
+<td>Provar → Millorar</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>És el mateix cicle del curs, amb la mirada de <strong>producte</strong>: un objecte que algú voldria usar, no només un circuit damunt la taula.</p>
+</blockquote>
+<hr />
+<h2 id="pautes-de-carcassa-maqueta-i-fabricacio"><a class="toclink" href="#pautes-de-carcassa-maqueta-i-fabricacio">Pautes de carcassa, maqueta i fabricació</a></h2>
+<ul>
+<li><strong>Materials de baix cost:</strong> cartró ploma, cartró reciclat, fusta de balsa, envasos reutilitzats (ampolles, capses), brides, velcro, cola tèrmica.</li>
+<li><strong>Impressió 3D</strong> (aprofitant que el curs ja la usa amb la Imagina 3dBot): suports de sensor, carcasses, engranatges, peces a mida. Eines: Tinkercad 3D / FreeCAD → STL.</li>
+<li><strong>Subjecció de l'electrònica:</strong> deixar accés al <strong>USB</strong> i al <strong>portapiles</strong>; forats per a sensors (LDR, ultrasons) i per a la <strong>ventilació</strong> si hi ha motors.</li>
+<li><strong>Seguretat:</strong> cap cable pelat accessible; bateries fixades; vores sense tall; motors amb protecció de dits.</li>
+<li><strong>Ecodisseny (ODS 12):</strong> prioritzar material reciclat/reutilitzat, unions desmuntables (per reparar i reciclar) i mida mínima necessària.</li>
+</ul>
+<hr />
+<h2 id="rubrica-de-disseny-de-producte-complementa-r2r3r4"><a class="toclink" href="#rubrica-de-disseny-de-producte-complementa-r2r3r4">Rúbrica de disseny de producte (complementa R2/R3/R4)</a></h2>
+<table>
+<thead>
+<tr>
+<th>Aspecte</th>
+<th>NA</th>
+<th>AS</th>
+<th>AN</th>
+<th>AE</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Funció</strong>: l'objecte fa el que diu i respon a una necessitat real</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Usabilitat</strong>: còmode i clar per a l'usuari previst</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Construcció</strong>: carcassa/maqueta sòlida, neta i segura</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Ecodisseny</strong>: materials i unions responsables (ODS 12)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Comunicació</strong>: explica decisions de disseny (per què així)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="banc-dobjectes-per-sa"><a class="toclink" href="#banc-dobjectes-per-sa">Banc d'objectes per SA</a></h2>
+<blockquote>
+<p>Format de cada objecte: <strong>Funció · Usuari/context · Base tècnica (SA) · Carcassa/maqueta · Repte de disseny extra.</strong></p>
+</blockquote>
+<h3 id="sa1-led-sortida-digital-entrada-proces-sortida"><a class="toclink" href="#sa1-led-sortida-digital-entrada-proces-sortida">SA1 · LED, sortida digital, entrada-procés-sortida</a></h3>
+<ul>
+<li><strong>Llum de nit infantil.</strong> Funció: llum suau amb un patró tranquil·litzador. · Usuari: infants. · Base: LED (intern o extern) amb patró de <code>delay()</code>. · Carcassa: figura translúcida de cartró/paper vegetal o impresa en filament translúcid. · Repte: forma personalitzada que difongui bé la llum.</li>
+<li><strong>Xapa/insígnia lluminosa.</strong> Funció: identificar un grup o esdeveniment amb llum. · Usuari: assistents a una fira/jornada. · Base: LED amb parpelleig. · Carcassa: suport amb agulla/clip imprès; logotip retallat. · Repte: silueta del logotip que deixi passar la llum.</li>
+<li><strong>Far de maqueta.</strong> Funció: senyal lluminosa identificativa. · Usuari: maqueta de port/diorama. · Base: LED amb patró propi. · Carcassa: torre de cartró + lent de difusió. · Repte: dos temps clarament distingibles a distància.</li>
+</ul>
+<h3 id="sa2-sortides-multiples-pwm-rgb"><a class="toclink" href="#sa2-sortides-multiples-pwm-rgb">SA2 · Sortides múltiples, PWM, RGB</a></h3>
+<ul>
+<li><strong>Làmpada d'ambient RGB.</strong> Funció: il·luminació decorativa amb colors i <em>fade</em>. · Usuari: habitació/escriptori. · Base: LED RGB + PWM. · Carcassa: difusor (ampolla reciclada, paper vegetal o pantalla impresa). · Repte: diversos "modes" d'ambient.</li>
+<li><strong>Llum d'estat (ocupat/lliure).</strong> Funció: comunicar disponibilitat sense paraules. · Usuari: teletreball, aula, lavabo. · Base: RGB o 3 LED. · Carcassa: peça de taula o de porta impresa, amb peana. · Repte: canvi d'estat amb un botó i color clar a distància.</li>
+<li><strong>Semàfor educatiu de maqueta.</strong> Funció: ensenyar el trànsit. · Usuari: educació infantil. · Base: 3 LED + seqüència. · Carcassa: pal + caixa de cartró a escala. · Repte: afegir fase de vianants.</li>
+</ul>
+<h3 id="sa3-sensors-i-entrades"><a class="toclink" href="#sa3-sensors-i-entrades">SA3 · Sensors i entrades</a></h3>
+<ul>
+<li><strong>Llum automàtica d'armari/passadís.</strong> Funció: encén sol quan fa fosc. · Usuari: casa. · Base: LDR + LED. · Carcassa: caixa amb finestreta per a la LDR. · Repte: histèresi perquè no parpellegi al capvespre.</li>
+<li><strong>Sensor d'aparcament de garatge.</strong> Funció: avisa quan el cotxe és a la distància justa. · Usuari: conductor al garatge. · Base: HC-SR04 + LED/brunzidor. · Carcassa: caixa amb suport de paret i sensor orientable. · Repte: tres trams (lluny/mig/a prop).</li>
+<li><strong>Alarma de calaix/motxilla.</strong> Funció: avisa si algú l'obre. · Usuari: estudiant. · Base: LDR (entra llum) o polsador. · Carcassa: mòdul petit amovible. · Repte: desactivació amb una seqüència.</li>
+</ul>
+<h3 id="sa4-servos-motors-i-moviment"><a class="toclink" href="#sa4-servos-motors-i-moviment">SA4 · Servos, motors i moviment</a></h3>
+<ul>
+<li><strong>Barrera de pàrquing.</strong> Funció: obrir/tancar el pas. · Usuari: maqueta urbana. · Base: servo (+ ultrasons). · Carcassa: estructura amb braç articulat (cartró/3D). · Repte: obertura automàtica per detecció.</li>
+<li><strong>Dispensador (caramels / pinso de mascota).</strong> Funció: servir una dosi. · Usuari: casa, mascotes. · Base: servo com a comporta. · Carcassa: tremuja (ampolla/cartró) + comporta giratòria. · Repte: una sola dosi per activació.</li>
+<li><strong>Braç robòtic de cartró (tipus MeArm).</strong> Funció: agafar i moure objectes lleugers. · Usuari: taller/demostració. · Base: 2 servos coordinats. · Carcassa: peces de cartró o impreses. · Repte: afegir una pinça.</li>
+</ul>
+<h3 id="sa5-microbit-i-micropython"><a class="toclink" href="#sa5-microbit-i-micropython">SA5 · micro:bit i MicroPython</a></h3>
+<ul>
+<li><strong>Podòmetre <em>wearable</em>.</strong> Funció: comptar passes i animar a moure's. · Usuari: esportista. · Base: acceleròmetre. · Carcassa: braçalet/clip (tela o imprès) amb accés al USB. · Repte: objectiu diari i felicitació en assolir-lo.</li>
+<li><strong>Insígnia interactiva.</strong> Funció: mostrar nom/emoció. · Usuari: jornada o classe. · Base: matriu LED + botons. · Carcassa: penjoll amb cordó. · Repte: animació pròpia.</li>
+<li><strong>Joc de butxaca (dau/pedra-paper-tisora).</strong> Funció: jugar a qualsevol lloc. · Usuari: tothom. · Base: acceleròmetre + ràdio. · Carcassa: carcassa de butxaca robusta. · Repte: partida entre dues plaques per ràdio.</li>
+</ul>
+<h3 id="sa6-sistemes-de-control"><a class="toclink" href="#sa6-sistemes-de-control">SA6 · Sistemes de control</a></h3>
+<ul>
+<li><strong>Mini-hivernacle automàtic.</strong> Funció: mantenir condicions per a una planta. · Usuari: balcó/aula. · Base: sensor + ventilador/llum amb histèresi. · Carcassa: estructura transparent (ampolla, metacrilat o marc imprès). · Repte: regular dues variables.</li>
+<li><strong>Termòstat de maqueta.</strong> Funció: mantenir una consigna. · Usuari: casa. · Base: sensor + actuador (LED/ventilador) tot/res amb histèresi. · Carcassa: caixa amb indicador d'estat. · Repte: consigna ajustable amb potenciòmetre.</li>
+<li><strong>Incubadora didàctica.</strong> Funció: temperatura estable. · Usuari: granja escola. · Base: control en llaç tancat. · Carcassa: caixa aïllada amb finestreta. · Repte: alarma si surt de rang.</li>
+</ul>
+<h3 id="sa7-robotica-mobil-imagina-3dbot"><a class="toclink" href="#sa7-robotica-mobil-imagina-3dbot">SA7 · Robòtica mòbil (Imagina 3dBot)</a></h3>
+<ul>
+<li><strong>Robot repartidor.</strong> Funció: portar un objecte d'un punt a un altre. · Usuari: magatzem/casa de maqueta. · Base: 3dBot + trajectòria/seguidor. · Carcassa: safata o compartiment (cartró/3D). · Repte: completar una ruta amb càrrega.</li>
+<li><strong>Robot netejador (tipus Roomba).</strong> Funció: recórrer una superfície. · Usuari: casa. · Base: 3dBot + evita-obstacles. · Carcassa: faldó/raspall frontal. · Repte: no caure d'una taula (sensor de vora).</li>
+<li><strong>Vehicle de competició (seguidor de línia).</strong> Funció: completar un circuit ràpid. · Usuari: cursa d'aula. · Base: 3dBot + sensors IR. · Carcassa: carrosseria lleugera i aerodinàmica (cartró/3D). · Repte: millorar el temps de volta iterant.</li>
+</ul>
+<h3 id="sa8-iot-i-ia"><a class="toclink" href="#sa8-iot-i-ia">SA8 · IoT i IA</a></h3>
+<ul>
+<li><strong>Estació meteo connectada.</strong> Funció: mesurar i transmetre dades ambientals. · Usuari: hort/aula. · Base: micro:bit/ESP32 + sensors (telemetria). · Carcassa: abric tipus <em>Stevenson</em> (ventilat, protegit de la pluja) de cartró/3D. · Repte: registre i alerta per llindar.</li>
+<li><strong>Comptador d'aforament.</strong> Funció: comptar persones que entren/surten. · Usuari: botiga/aula. · Base: sensor + ràdio. · Carcassa: mòdul discret a la porta. · Repte: avís en superar l'aforament.</li>
+<li><strong>Control domòtic per gestos.</strong> Funció: encendre/controlar amb moviments. · Usuari: accessibilitat a la llar. · Base: micro:bit (acceleròmetre, IA per regles) + ràdio. · Carcassa: comandament de mà o guant. · Repte: afegir una nova classe de gest.</li>
+</ul>
+<h3 id="sa9-projecte-final-objecte-lliure-integrador"><a class="toclink" href="#sa9-projecte-final-objecte-lliure-integrador">SA9 · Projecte final — objecte lliure integrador</a></h3>
+<ul>
+<li>L'equip <strong>tria o inventa</strong> un objecte que combini sensors + actuadors + control (i, si vol, IoT/IA), amb una <strong>carcassa/maqueta acabada</strong>.</li>
+<li>Guia de tria: <em>quin problema real resol? qui l'usarà? quins continguts de SA1–SA8 integra? com serà físicament?</em></li>
+<li>Useu el <code>plantilles/Banc_de_reptes.md</code> i el <code>Dossier_tecnic_PLANTILLA.md</code>; documenteu també les <strong>decisions de disseny de producte</strong> (per què aquesta forma, materials i mida).</li>
+</ul>
+<hr />
+<h2 id="connexio-amb-el-curs"><a class="toclink" href="#connexio-amb-el-curs">Connexió amb el curs</a></h2>
+<ul>
+<li>Cada objecte reforça el <strong>context real i ODS</strong> de la seva SA (vegeu cada <code>SAx_guia_docent.md</code>).</li>
+<li>L'enfocament d'<strong>ecodisseny</strong> (materials reutilitzats, desmuntables) treballa l'<strong>ODS 12</strong>.</li>
+<li>Aquest banc complementa els <strong>reptes</strong> (<code>Reptes/</code>) i el <strong>projecte final</strong> (<code>Classes/SA9/</code>): el repte aporta el context tècnic; aquest banc, la mirada de <strong>producte</strong>.</li>
+</ul>
+    </article>
+  </main>
+  <nav class="toc" aria-label="En aquesta pàgina"><p class="toc-titol">En aquesta pàgina</p><ul>
+<li class="toc-l1"><a href="#banc-dobjectes-per-dissenyar-de-lelectronica-al-producte">Banc d&#x27;objectes per dissenyar — de l&#x27;electrònica al producte</a></li>
+<li class="toc-l2"><a href="#el-proces-de-disseny-dun-objecte-integrat-amb-el-metode-de-projecte">El procés de disseny d&#x27;un objecte (integrat amb el mètode de projecte)</a></li>
+<li class="toc-l2"><a href="#pautes-de-carcassa-maqueta-i-fabricacio">Pautes de carcassa, maqueta i fabricació</a></li>
+<li class="toc-l2"><a href="#rubrica-de-disseny-de-producte-complementa-r2r3r4">Rúbrica de disseny de producte (complementa R2/R3/R4)</a></li>
+<li class="toc-l2"><a href="#banc-dobjectes-per-sa">Banc d&#x27;objectes per SA</a></li>
+<li class="toc-l2"><a href="#connexio-amb-el-curs">Connexió amb el curs</a></li>
+</ul></nav>
+</div>
+<footer class="peu">
+  <p>Robòtica · 1r de Batxillerat · material sota llicència <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca" target="_blank" rel="noopener">CC BY-SA 4.0</a>.</p>
+  <p><a href="https://github.com/tomeu-cd100/robotica-1batx-2627" target="_blank" rel="noopener">Repositori a GitHub</a> · web generat el 2026-06-30.</p>
+</footer>
+<script src="../assets/js/cerca-index.js"></script>
+<script src="../assets/js/lloc.js"></script>
+</body>
+</html>

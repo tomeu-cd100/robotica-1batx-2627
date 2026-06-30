@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prova pràctica — Trimestre 3 (SA7-SA9) · Robòtica · 1r de Batxillerat</title>
+<meta name="description" content="Material docent · LOMLOE Catalunya · curs 2026-2027">
+<link rel="stylesheet" href="../assets/css/estil.css">
+<link rel="stylesheet" href="../assets/css/pygments.css">
+<script>(function(){try{var t=localStorage.getItem('tema');if(t==='fosc'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.setAttribute('data-tema','fosc');}catch(e){}})();</script>
+</head>
+<body data-section="avaluacio" class="amb-sidebar amb-toc">
+<a class="skip" href="#contingut">Salta al contingut</a>
+<header class="topbar">
+  <button class="menu-btn" aria-label="Obre el menú" aria-expanded="false">☰</button>
+  <a class="brand" href="../index.html"><span class="brand-mark">◆</span> Robòtica <span class="brand-sub">1r Batx</span></a>
+  <nav class="topnav" aria-label="Seccions">
+    <a href="../index.html">Inici</a>
+<a href="../programacio/index.html" data-sec="programacio">Programació didàctica</a>
+<a href="../classes/index.html" data-sec="classes">Classes</a>
+<a href="../reptes/index.html" data-sec="reptes">Reptes</a>
+<a href="../avaluacio/index.html" data-sec="avaluacio" class="actiu">Avaluació</a>
+<a href="../normativa/index.html" data-sec="normativa">Normativa</a>
+<a href="../recursos/index.html" data-sec="recursos">Recursos</a>
+  </nav>
+  <div class="topbar-eines">
+    <div class="cercador">
+      <input type="search" id="cerca" placeholder="Cerca…" autocomplete="off" aria-label="Cerca al web">
+      <div id="cerca-resultats" class="cerca-resultats" hidden></div>
+    </div>
+    <button class="tema-btn" aria-label="Canvia el tema clar/fosc" title="Tema clar/fosc">◐</button>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar"><nav class="sidebar-nav" aria-label="Pàgines de la secció">
+<p class="sidebar-titol">Avaluació</p>
+<ul class="sb-top">
+<li><a href="index.html">Presentació</a></li>
+<li><a href="00-llegeix-me-avaluacio.html">Avaluació — Proves pràctiques per trimestre</a></li>
+<li><a href="full-qualificacio-competencies.html">Full de qualificació per competències</a></li>
+<li><a href="prova-practica-t1.html">Prova pràctica — Trimestre 1 (SA1-SA3)</a></li>
+<li><a href="prova-practica-t2.html">Prova pràctica — Trimestre 2 (SA4-SA6)</a></li>
+<li><a href="prova-practica-t3.html" class="actiu">Prova pràctica — Trimestre 3 (SA7-SA9)</a></li>
+</ul>
+</nav></aside>
+  <main id="contingut">
+    <nav class="breadcrumb" aria-label="Ubicació"><a href="../index.html">Inici</a> <span class="sep">/</span> <a href="../avaluacio/index.html">Avaluació</a> <span class="sep">/</span> <span aria-current="page">Prova pràctica — Trimestre 3 (SA7-SA9)</span></nav>
+    
+    <article class="prose">
+<h1 id="prova-practica-trimestre-3-sa7-sa9"><a class="toclink" href="#prova-practica-trimestre-3-sa7-sa9">Prova pràctica — Trimestre 3 (SA7-SA9)</a></h1>
+<h2 id="robot-autonom-sistema-connectat"><a class="toclink" href="#robot-autonom-sistema-connectat">"Robot autònom + sistema connectat"</a></h2>
+<p><strong>Durada:</strong> 2 h · <strong>Material:</strong> robot mòbil (Imagina 3dBot) + pista de proves; micro:bit. Es permet consultar esquemes i quadern.</p>
+<blockquote>
+<p>ℹ️ Al 3r trimestre <strong>el pes principal de l'avaluació és el projecte final (SA9)</strong> amb les rúbriques R1-R5 i el dossier tècnic. Aquesta prova pràctica <strong>complementa</strong> el projecte i comprova destreses de robòtica i integració.</p>
+</blockquote>
+<h3 id="competencies-i-criteris-avaluats"><a class="toclink" href="#competencies-i-criteris-avaluats">Competències i criteris avaluats</a></h3>
+<ul>
+<li><strong>CE-R4</strong> (robots) → CA4.1, CA4.2 · <strong>CE-R3</strong> (control) → CA3.1</li>
+<li>Rúbriques: <strong>R1</strong> (codi), <strong>R3</strong> (robot/control), <strong>R4</strong> (documentació).</li>
+</ul>
+<hr />
+<h2 id="enunciat-per-nivells"><a class="toclink" href="#enunciat-per-nivells">Enunciat (per nivells)</a></h2>
+<h3 id="part-a-robotica-mobil-6-punts"><a class="toclink" href="#part-a-robotica-mobil-6-punts">PART A — Robòtica mòbil (6 punts)</a></h3>
+<p>Programa el robot perquè, en una <strong>pista marcada</strong>:
+1. <strong>Nivell satisfactori:</strong> faci un <strong>recorregut definit</strong> (p. ex. recte + gir de 90° + recte) de manera fiable.
+2. <strong>Ampliació (notable):</strong> <strong>reaccioni a un obstacle</strong> (s'atura o l'esquiva amb l'ultrasons).
+3. <strong>Ampliació (excel·lent):</strong> <strong>segueixi una línia</strong> o faci una correcció <strong>proporcional</strong> del rumb.</p>
+<h3 id="part-b-integracio-iotia-4-punts"><a class="toclink" href="#part-b-integracio-iotia-4-punts">PART B — Integració IoT/IA (4 punts)</a></h3>
+<ol start="4">
+<li><strong>Nivell satisfactori:</strong> amb micro:bit, <strong>mesura i transmet</strong> una dada (telemetria per ràdio) o <strong>classifica un gest</strong>.</li>
+<li><strong>Ampliació:</strong> integra la dada/decisió en el comportament (p. ex. una ordre per ràdio atura el robot, o un gest dispara una acció).</li>
+</ol>
+<h3 id="lliurament"><a class="toclink" href="#lliurament">Lliurament</a></h3>
+<p>Demostració a la pista + <strong>explicació al quadern</strong>: estratègia del robot (diagrama de la decisió) i descripció del sistema connectat.</p>
+<hr />
+<h2 id="graella-de-correccio-10-punts"><a class="toclink" href="#graella-de-correccio-10-punts">Graella de correcció (10 punts)</a></h2>
+<table>
+<thead>
+<tr>
+<th>Criteri</th>
+<th>Punts</th>
+<th>Rúbrica</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Recorregut definit fiable (nucli)</td>
+<td>3</td>
+<td>R1, R3</td>
+</tr>
+<tr>
+<td>Reacció a obstacle (ampliació)</td>
+<td>1,5</td>
+<td>R3</td>
+</tr>
+<tr>
+<td>Seguidor de línia / correcció proporcional (ampliació)</td>
+<td>1,5</td>
+<td>R3</td>
+</tr>
+<tr>
+<td>Telemetria o classificació de gest (nucli Part B)</td>
+<td>2</td>
+<td>R1</td>
+</tr>
+<tr>
+<td>Integració dada/decisió en l'acció (ampliació)</td>
+<td>1</td>
+<td>R3</td>
+</tr>
+<tr>
+<td>Documentació (estratègia + sistema)</td>
+<td>1</td>
+<td>R4</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="solucio-orientativa-docent"><a class="toclink" href="#solucio-orientativa-docent">Solució orientativa (docent)</a></h2>
+<h3 id="part-a-recorregut-reaccio-a-obstacle-combinat"><a class="toclink" href="#part-a-recorregut-reaccio-a-obstacle-combinat">Part A — recorregut + reacció a obstacle (combinat)</a></h3>
+<blockquote>
+<p>Ajustar pins i temps de gir segons la placa.</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">ESQ_DIR</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="n">ESQ_VEL</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="n">DRET_DIR</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="n">DRET_VEL</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="n">TRIG</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span><span class="w"> </span><span class="n">ECHO</span><span class="o">=</span><span class="mi">11</span><span class="p">;</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">VEL</span><span class="o">=</span><span class="mi">170</span><span class="p">;</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">T_GIR_90</span><span class="o">=</span><span class="mi">600</span><span class="p">;</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">motors</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">dE</span><span class="p">,</span><span class="kt">int</span><span class="w"> </span><span class="n">vE</span><span class="p">,</span><span class="kt">int</span><span class="w"> </span><span class="n">dD</span><span class="p">,</span><span class="kt">int</span><span class="w"> </span><span class="n">vD</span><span class="p">){</span><span class="w"> </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">ESQ_DIR</span><span class="p">,</span><span class="n">dE</span><span class="p">);</span><span class="n">analogWrite</span><span class="p">(</span><span class="n">ESQ_VEL</span><span class="p">,</span><span class="n">vE</span><span class="p">);</span>
+<span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">DRET_DIR</span><span class="p">,</span><span class="n">dD</span><span class="p">);</span><span class="n">analogWrite</span><span class="p">(</span><span class="n">DRET_VEL</span><span class="p">,</span><span class="n">vD</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">endavant</span><span class="p">(){</span><span class="w"> </span><span class="n">motors</span><span class="p">(</span><span class="n">HIGH</span><span class="p">,</span><span class="n">VEL</span><span class="p">,</span><span class="n">HIGH</span><span class="p">,</span><span class="n">VEL</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">gira</span><span class="p">(){</span><span class="w"> </span><span class="n">motors</span><span class="p">(</span><span class="n">HIGH</span><span class="p">,</span><span class="n">VEL</span><span class="p">,</span><span class="n">LOW</span><span class="p">,</span><span class="n">VEL</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">atura</span><span class="p">(){</span><span class="w"> </span><span class="n">analogWrite</span><span class="p">(</span><span class="n">ESQ_VEL</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span><span class="w"> </span><span class="n">analogWrite</span><span class="p">(</span><span class="n">DRET_VEL</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
+<span class="kt">float</span><span class="w"> </span><span class="nf">dist</span><span class="p">(){</span><span class="w"> </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">TRIG</span><span class="p">,</span><span class="n">LOW</span><span class="p">);</span><span class="n">delayMicroseconds</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">TRIG</span><span class="p">,</span><span class="n">HIGH</span><span class="p">);</span>
+<span class="w">  </span><span class="n">delayMicroseconds</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">TRIG</span><span class="p">,</span><span class="n">LOW</span><span class="p">);</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">t</span><span class="o">=</span><span class="n">pulseIn</span><span class="p">(</span><span class="n">ECHO</span><span class="p">,</span><span class="n">HIGH</span><span class="p">,</span><span class="mi">30000</span><span class="p">);</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">t</span><span class="o">==</span><span class="mi">0</span><span class="o">?</span><span class="mi">400</span><span class="o">:</span><span class="n">t</span><span class="o">*</span><span class="mf">0.034</span><span class="o">/</span><span class="mf">2.0</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">(){</span><span class="w"> </span><span class="n">pinMode</span><span class="p">(</span><span class="n">ESQ_DIR</span><span class="p">,</span><span class="n">OUTPUT</span><span class="p">);</span><span class="n">pinMode</span><span class="p">(</span><span class="n">ESQ_VEL</span><span class="p">,</span><span class="n">OUTPUT</span><span class="p">);</span><span class="n">pinMode</span><span class="p">(</span><span class="n">DRET_DIR</span><span class="p">,</span><span class="n">OUTPUT</span><span class="p">);</span>
+<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">DRET_VEL</span><span class="p">,</span><span class="n">OUTPUT</span><span class="p">);</span><span class="n">pinMode</span><span class="p">(</span><span class="n">TRIG</span><span class="p">,</span><span class="n">OUTPUT</span><span class="p">);</span><span class="n">pinMode</span><span class="p">(</span><span class="n">ECHO</span><span class="p">,</span><span class="n">INPUT</span><span class="p">);</span><span class="w"> </span><span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">(){</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">dist</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">15</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">atura</span><span class="p">();</span><span class="w"> </span><span class="n">delay</span><span class="p">(</span><span class="mi">200</span><span class="p">);</span><span class="w"> </span><span class="n">gira</span><span class="p">();</span><span class="w"> </span><span class="n">delay</span><span class="p">(</span><span class="n">T_GIR_90</span><span class="p">);</span><span class="w"> </span><span class="p">}</span><span class="w">  </span><span class="c1">// esquiva</span>
+<span class="w">  </span><span class="k">else</span><span class="w"> </span><span class="n">endavant</span><span class="p">();</span>
+<span class="w">  </span><span class="n">delay</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h3 id="part-b-microbit-ordre-per-radio-que-atura-el-robot"><a class="toclink" href="#part-b-microbit-ordre-per-radio-que-atura-el-robot">Part B — micro:bit: ordre per ràdio que atura el robot</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">microbit</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">radio</span>
+<span class="n">radio</span><span class="o">.</span><span class="n">on</span><span class="p">();</span> <span class="n">radio</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">group</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">button_a</span><span class="o">.</span><span class="n">is_pressed</span><span class="p">():</span>
+        <span class="n">radio</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="s2">&quot;STOP&quot;</span><span class="p">)</span>      <span class="c1"># envia ordre</span>
+        <span class="n">display</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">Image</span><span class="o">.</span><span class="n">NO</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">display</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+</code></pre></div>
+
+<blockquote>
+<p>(El robot, amb un receptor de ràdio, atura motors en rebre "STOP" — integració acció↔comunicació.)</p>
+<p>Avaluació global del trimestre: combinar el resultat d'aquesta prova amb la rúbrica del <strong>projecte final (SA9)</strong>.</p>
+</blockquote>
+    </article>
+  </main>
+  <nav class="toc" aria-label="En aquesta pàgina"><p class="toc-titol">En aquesta pàgina</p><ul>
+<li class="toc-l1"><a href="#prova-practica-trimestre-3-sa7-sa9">Prova pràctica — Trimestre 3 (SA7-SA9)</a></li>
+<li class="toc-l2"><a href="#robot-autonom-sistema-connectat">&quot;Robot autònom + sistema connectat&quot;</a></li>
+<li class="toc-l2"><a href="#enunciat-per-nivells">Enunciat (per nivells)</a></li>
+<li class="toc-l2"><a href="#graella-de-correccio-10-punts">Graella de correcció (10 punts)</a></li>
+<li class="toc-l2"><a href="#solucio-orientativa-docent">Solució orientativa (docent)</a></li>
+</ul></nav>
+</div>
+<footer class="peu">
+  <p>Robòtica · 1r de Batxillerat · material sota llicència <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca" target="_blank" rel="noopener">CC BY-SA 4.0</a>.</p>
+  <p><a href="https://github.com/tomeu-cd100/robotica-1batx-2627" target="_blank" rel="noopener">Repositori a GitHub</a> · web generat el 2026-06-30.</p>
+</footer>
+<script src="../assets/js/cerca-index.js"></script>
+<script src="../assets/js/lloc.js"></script>
+</body>
+</html>

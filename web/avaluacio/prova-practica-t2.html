@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prova pràctica — Trimestre 2 (SA4-SA6) · Robòtica · 1r de Batxillerat</title>
+<meta name="description" content="Material docent · LOMLOE Catalunya · curs 2026-2027">
+<link rel="stylesheet" href="../assets/css/estil.css">
+<link rel="stylesheet" href="../assets/css/pygments.css">
+<script>(function(){try{var t=localStorage.getItem('tema');if(t==='fosc'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.setAttribute('data-tema','fosc');}catch(e){}})();</script>
+</head>
+<body data-section="avaluacio" class="amb-sidebar amb-toc">
+<a class="skip" href="#contingut">Salta al contingut</a>
+<header class="topbar">
+  <button class="menu-btn" aria-label="Obre el menú" aria-expanded="false">☰</button>
+  <a class="brand" href="../index.html"><span class="brand-mark">◆</span> Robòtica <span class="brand-sub">1r Batx</span></a>
+  <nav class="topnav" aria-label="Seccions">
+    <a href="../index.html">Inici</a>
+<a href="../programacio/index.html" data-sec="programacio">Programació didàctica</a>
+<a href="../classes/index.html" data-sec="classes">Classes</a>
+<a href="../reptes/index.html" data-sec="reptes">Reptes</a>
+<a href="../avaluacio/index.html" data-sec="avaluacio" class="actiu">Avaluació</a>
+<a href="../normativa/index.html" data-sec="normativa">Normativa</a>
+<a href="../recursos/index.html" data-sec="recursos">Recursos</a>
+  </nav>
+  <div class="topbar-eines">
+    <div class="cercador">
+      <input type="search" id="cerca" placeholder="Cerca…" autocomplete="off" aria-label="Cerca al web">
+      <div id="cerca-resultats" class="cerca-resultats" hidden></div>
+    </div>
+    <button class="tema-btn" aria-label="Canvia el tema clar/fosc" title="Tema clar/fosc">◐</button>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar"><nav class="sidebar-nav" aria-label="Pàgines de la secció">
+<p class="sidebar-titol">Avaluació</p>
+<ul class="sb-top">
+<li><a href="index.html">Presentació</a></li>
+<li><a href="00-llegeix-me-avaluacio.html">Avaluació — Proves pràctiques per trimestre</a></li>
+<li><a href="full-qualificacio-competencies.html">Full de qualificació per competències</a></li>
+<li><a href="prova-practica-t1.html">Prova pràctica — Trimestre 1 (SA1-SA3)</a></li>
+<li><a href="prova-practica-t2.html" class="actiu">Prova pràctica — Trimestre 2 (SA4-SA6)</a></li>
+<li><a href="prova-practica-t3.html">Prova pràctica — Trimestre 3 (SA7-SA9)</a></li>
+</ul>
+</nav></aside>
+  <main id="contingut">
+    <nav class="breadcrumb" aria-label="Ubicació"><a href="../index.html">Inici</a> <span class="sep">/</span> <a href="../avaluacio/index.html">Avaluació</a> <span class="sep">/</span> <span aria-current="page">Prova pràctica — Trimestre 2 (SA4-SA6)</span></nav>
+    
+    <article class="prose">
+<h1 id="prova-practica-trimestre-2-sa4-sa6"><a class="toclink" href="#prova-practica-trimestre-2-sa4-sa6">Prova pràctica — Trimestre 2 (SA4-SA6)</a></h1>
+<h2 id="control-climatic-estacio-remota"><a class="toclink" href="#control-climatic-estacio-remota">"Control climàtic + estació remota"</a></h2>
+<p><strong>Durada:</strong> 2 h · <strong>Material:</strong> Arduino UNO + motor/ventilador amb pont H (o LED PWM com a substitut) + NTC/potenciòmetre; 2 micro:bit. Es permet consultar esquemes i quadern.</p>
+<h3 id="competencies-i-criteris-avaluats"><a class="toclink" href="#competencies-i-criteris-avaluats">Competències i criteris avaluats</a></h3>
+<ul>
+<li><strong>CE-R3</strong> (control) → CA3.1 · <strong>CE-R1</strong> (programar) → CA1.1, CA1.2</li>
+<li>Rúbriques: <strong>R1</strong> (codi), <strong>R3</strong> (control), <strong>R4</strong> (documentació).</li>
+</ul>
+<hr />
+<h2 id="enunciat-dues-parts"><a class="toclink" href="#enunciat-dues-parts">Enunciat (dues parts)</a></h2>
+<h3 id="part-a-control-amb-arduino-nucli-6-punts"><a class="toclink" href="#part-a-control-amb-arduino-nucli-6-punts">PART A — Control amb Arduino (nucli, 6 punts)</a></h3>
+<p>Construeix un <strong>control de temperatura</strong> que reguli un ventilador (o LED PWM):
+1. Llegeix un sensor (NTC o potenciòmetre com a simulació de temperatura).
+2. <strong>Nivell satisfactori:</strong> control <strong>tot/res amb histèresi</strong> (engega per sobre d'un llindar, atura per sota d'un altre).
+3. <strong>Ampliació (notable):</strong> afegeix <strong>indicador</strong> d'estat (LED verd/vermell).
+4. <strong>Ampliació (excel·lent):</strong> implementa <strong>control proporcional</strong> (la velocitat depèn de l'error) i visualitza-ho al <strong>Serial Plotter</strong>.</p>
+<h3 id="part-b-microbit-4-punts"><a class="toclink" href="#part-b-microbit-4-punts">PART B — micro:bit (4 punts)</a></h3>
+<p>Programa una <strong>estació remota</strong> en MicroPython:
+1. <strong>Nivell satisfactori:</strong> mostra la temperatura/llum i, si supera un llindar, mostra una alerta (Image.NO).
+2. <strong>Ampliació:</strong> <strong>envia la lectura per ràdio</strong> a una segona placa que la rep i la mostra.</p>
+<h3 id="lliurament"><a class="toclink" href="#lliurament">Lliurament</a></h3>
+<p>Tots dos programes funcionant + <strong>quadern</strong>: diagrama de blocs del control (Part A) i taula d'una lectura enviada/rebuda (Part B).</p>
+<hr />
+<h2 id="graella-de-correccio-10-punts"><a class="toclink" href="#graella-de-correccio-10-punts">Graella de correcció (10 punts)</a></h2>
+<table>
+<thead>
+<tr>
+<th>Criteri</th>
+<th>Punts</th>
+<th>Rúbrica</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Part A: control tot/res amb histèresi funcional</td>
+<td>3</td>
+<td>R1, R3</td>
+</tr>
+<tr>
+<td>Part A: indicador d'estat (ampliació)</td>
+<td>1</td>
+<td>R3</td>
+</tr>
+<tr>
+<td>Part A: control proporcional + Serial Plotter (ampliació)</td>
+<td>2</td>
+<td>R1, R3</td>
+</tr>
+<tr>
+<td>Part B: lectura i alerta a micro:bit</td>
+<td>2</td>
+<td>R1</td>
+</tr>
+<tr>
+<td>Part B: enviament/recepció per ràdio (ampliació)</td>
+<td>1</td>
+<td>R1</td>
+</tr>
+<tr>
+<td>Documentació (diagrama de blocs + dades)</td>
+<td>1</td>
+<td>R4</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="solucio-orientativa-docent"><a class="toclink" href="#solucio-orientativa-docent">Solució orientativa (docent)</a></h2>
+<h3 id="part-a-control-proporcional-inclou-la-base-de-histeresi-com-a-alternativa"><a class="toclink" href="#part-a-control-proporcional-inclou-la-base-de-histeresi-com-a-alternativa">Part A — control proporcional (inclou la base de histèresi com a alternativa)</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">SENSOR</span><span class="o">=</span><span class="n">A0</span><span class="p">,</span><span class="w"> </span><span class="n">VENTILADOR</span><span class="o">=</span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="n">LED_V</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="n">LED_R</span><span class="o">=</span><span class="mi">8</span><span class="p">;</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">CONSIGNA</span><span class="o">=</span><span class="mi">500</span><span class="p">;</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">Kp</span><span class="o">=</span><span class="mf">0.8</span><span class="p">;</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">(){</span><span class="w"> </span><span class="n">pinMode</span><span class="p">(</span><span class="n">VENTILADOR</span><span class="p">,</span><span class="n">OUTPUT</span><span class="p">);</span><span class="w"> </span><span class="n">pinMode</span><span class="p">(</span><span class="n">LED_V</span><span class="p">,</span><span class="n">OUTPUT</span><span class="p">);</span><span class="w"> </span><span class="n">pinMode</span><span class="p">(</span><span class="n">LED_R</span><span class="p">,</span><span class="n">OUTPUT</span><span class="p">);</span><span class="w"> </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">(){</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">analogRead</span><span class="p">(</span><span class="n">SENSOR</span><span class="p">);</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">error</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">CONSIGNA</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">sortida</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">constrain</span><span class="p">((</span><span class="kt">int</span><span class="p">)(</span><span class="n">Kp</span><span class="o">*</span><span class="n">error</span><span class="p">),</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">255</span><span class="p">);</span>
+<span class="w">  </span><span class="n">analogWrite</span><span class="p">(</span><span class="n">VENTILADOR</span><span class="p">,</span><span class="w"> </span><span class="n">sortida</span><span class="p">);</span>
+<span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">LED_R</span><span class="p">,</span><span class="w"> </span><span class="n">sortida</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">HIGH</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span><span class="w">   </span><span class="c1">// refrigerant</span>
+<span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">LED_V</span><span class="p">,</span><span class="w"> </span><span class="n">sortida</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">HIGH</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span><span class="w">  </span><span class="c1">// en repos</span>
+<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">CONSIGNA</span><span class="p">);</span><span class="w"> </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot; &quot;</span><span class="p">);</span><span class="w"> </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">t</span><span class="p">);</span><span class="w"> </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot; &quot;</span><span class="p">);</span><span class="w"> </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">sortida</span><span class="p">);</span>
+<span class="w">  </span><span class="n">delay</span><span class="p">(</span><span class="mi">50</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h3 id="part-b-microbit-emissor-amb-alerta"><a class="toclink" href="#part-b-microbit-emissor-amb-alerta">Part B — micro:bit emissor (amb alerta)</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">microbit</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">radio</span>
+<span class="n">radio</span><span class="o">.</span><span class="n">on</span><span class="p">();</span> <span class="n">radio</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">group</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">LLINDAR</span> <span class="o">=</span> <span class="mi">28</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">temperature</span><span class="p">()</span>
+    <span class="n">display</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">Image</span><span class="o">.</span><span class="n">NO</span> <span class="k">if</span> <span class="n">t</span> <span class="o">&gt;</span> <span class="n">LLINDAR</span> <span class="k">else</span> <span class="n">Image</span><span class="o">.</span><span class="n">YES</span><span class="p">)</span>
+    <span class="n">radio</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="mi">2000</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Receptor:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">microbit</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">radio</span>
+<span class="n">radio</span><span class="o">.</span><span class="n">on</span><span class="p">();</span> <span class="n">radio</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">group</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="n">radio</span><span class="o">.</span><span class="n">receive</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">m</span><span class="p">:</span>
+        <span class="n">display</span><span class="o">.</span><span class="n">scroll</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+</code></pre></div>
+    </article>
+  </main>
+  <nav class="toc" aria-label="En aquesta pàgina"><p class="toc-titol">En aquesta pàgina</p><ul>
+<li class="toc-l1"><a href="#prova-practica-trimestre-2-sa4-sa6">Prova pràctica — Trimestre 2 (SA4-SA6)</a></li>
+<li class="toc-l2"><a href="#control-climatic-estacio-remota">&quot;Control climàtic + estació remota&quot;</a></li>
+<li class="toc-l2"><a href="#enunciat-dues-parts">Enunciat (dues parts)</a></li>
+<li class="toc-l2"><a href="#graella-de-correccio-10-punts">Graella de correcció (10 punts)</a></li>
+<li class="toc-l2"><a href="#solucio-orientativa-docent">Solució orientativa (docent)</a></li>
+</ul></nav>
+</div>
+<footer class="peu">
+  <p>Robòtica · 1r de Batxillerat · material sota llicència <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca" target="_blank" rel="noopener">CC BY-SA 4.0</a>.</p>
+  <p><a href="https://github.com/tomeu-cd100/robotica-1batx-2627" target="_blank" rel="noopener">Repositori a GitHub</a> · web generat el 2026-06-30.</p>
+</footer>
+<script src="../assets/js/cerca-index.js"></script>
+<script src="../assets/js/lloc.js"></script>
+</body>
+</html>

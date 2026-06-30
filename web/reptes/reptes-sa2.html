@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reptes SA2 · Sortides digitals i PWM · Robòtica · 1r de Batxillerat</title>
+<meta name="description" content="Material docent · LOMLOE Catalunya · curs 2026-2027">
+<link rel="stylesheet" href="../assets/css/estil.css">
+<link rel="stylesheet" href="../assets/css/pygments.css">
+<script>(function(){try{var t=localStorage.getItem('tema');if(t==='fosc'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.setAttribute('data-tema','fosc');}catch(e){}})();</script>
+</head>
+<body data-section="reptes" class="amb-sidebar amb-toc">
+<a class="skip" href="#contingut">Salta al contingut</a>
+<header class="topbar">
+  <button class="menu-btn" aria-label="Obre el menú" aria-expanded="false">☰</button>
+  <a class="brand" href="../index.html"><span class="brand-mark">◆</span> Robòtica <span class="brand-sub">1r Batx</span></a>
+  <nav class="topnav" aria-label="Seccions">
+    <a href="../index.html">Inici</a>
+<a href="../programacio/index.html" data-sec="programacio">Programació didàctica</a>
+<a href="../classes/index.html" data-sec="classes">Classes</a>
+<a href="../reptes/index.html" data-sec="reptes" class="actiu">Reptes</a>
+<a href="../avaluacio/index.html" data-sec="avaluacio">Avaluació</a>
+<a href="../normativa/index.html" data-sec="normativa">Normativa</a>
+<a href="../recursos/index.html" data-sec="recursos">Recursos</a>
+  </nav>
+  <div class="topbar-eines">
+    <div class="cercador">
+      <input type="search" id="cerca" placeholder="Cerca…" autocomplete="off" aria-label="Cerca al web">
+      <div id="cerca-resultats" class="cerca-resultats" hidden></div>
+    </div>
+    <button class="tema-btn" aria-label="Canvia el tema clar/fosc" title="Tema clar/fosc">◐</button>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar"><nav class="sidebar-nav" aria-label="Pàgines de la secció">
+<p class="sidebar-titol">Reptes</p>
+<ul class="sb-top">
+<li><a href="index.html">Presentació</a></li>
+<li><a href="reptes-sa1.html">Reptes SA1 · Introducció: primer programa amb un LED <span class="tri-dot" data-tri="1"></span></a></li>
+<li><a href="reptes-sa2.html" class="actiu">Reptes SA2 · Sortides digitals i PWM <span class="tri-dot" data-tri="1"></span></a></li>
+<li><a href="reptes-sa3.html">Reptes SA3 · Entrades i sensors <span class="tri-dot" data-tri="1"></span></a></li>
+<li><a href="reptes-sa4.html">Reptes SA4 · Moviment: servos, motors i ponts H <span class="tri-dot" data-tri="2"></span></a></li>
+<li><a href="reptes-sa5.html">Reptes SA5 · micro:bit i MicroPython <span class="tri-dot" data-tri="2"></span></a></li>
+<li><a href="reptes-sa6.html">Reptes SA6 · Sistemes de control <span class="tri-dot" data-tri="2"></span></a></li>
+<li><a href="reptes-sa7.html">Reptes SA7 · Robòtica mòbil (Imagina 3dBot) <span class="tri-dot" data-tri="3"></span></a></li>
+<li><a href="reptes-sa8.html">Reptes SA8 · IoT i Intel·ligència Artificial <span class="tri-dot" data-tri="3"></span></a></li>
+</ul>
+<details class="sb-grup"><summary><span>Solucionari</span></summary><ul><li><a href="solucionari/index.html">Presentació</a></li><li><a href="solucionari/sa1/codi.html">Codi</a></li><li><a href="solucionari/sa2/codi.html">Codi</a></li><li><a href="solucionari/sa3/codi.html">Codi</a></li><li><a href="solucionari/sa4/codi.html">Codi</a></li><li><a href="solucionari/sa5/codi.html">Codi</a></li><li><a href="solucionari/sa6/codi.html">Codi</a></li><li><a href="solucionari/sa7/codi.html">Codi</a></li><li><a href="solucionari/sa8/codi.html">Codi</a></li></ul></details>
+</nav></aside>
+  <main id="contingut">
+    <nav class="breadcrumb" aria-label="Ubicació"><a href="../index.html">Inici</a> <span class="sep">/</span> <a href="../reptes/index.html">Reptes</a> <span class="sep">/</span> <span aria-current="page">Reptes SA2 · Sortides digitals i PWM</span></nav>
+    <span class="badge-tri" data-tri="1">1r trimestre</span>
+    <article class="prose">
+<h1 id="reptes-sa2-sortides-digitals-i-pwm"><a class="toclink" href="#reptes-sa2-sortides-digitals-i-pwm">Reptes SA2 · Sortides digitals i PWM</a></h1>
+<p><strong>Tria UN dels tres reptes.</strong> Tots coordinen <strong>diverses sortides</strong> i/o fan servir <strong>PWM</strong> (<code>analogWrite</code>, 0–255, pins <code>~</code>). Mateix requisit mínim, ampliacions graduades. Simulables a Tinkercad/Wokwi.</p>
+<blockquote>
+<p><strong>Continguts SA2:</strong> múltiples sortides digitals, PWM i brillantor, LED RGB, seqüències. · <strong>Codi base:</strong> <code>Classes/SA2/codi/</code>.</p>
+<p><strong>Format "producte real":</strong> cada repte simula un <strong>encàrrec</strong> amb <strong>client</strong>, <strong>lliurable</strong> i <strong>ús al món real</strong>. El requisit tècnic no canvia. <em>(1r trimestre — dispositius que informen i perceben. Vegeu <code>Programació didàctica/08c_Projectes_vida_real.md</code>.)</em></p>
+</blockquote>
+<hr />
+<h2 id="repte-a-semafor-dun-encreuament"><a class="toclink" href="#repte-a-semafor-dun-encreuament">🚦 Repte A · Semàfor d'un encreuament</a></h2>
+<p><strong>Context.</strong> Programa el cicle d'un semàfor de cotxes amb els temps realistes de cada fase.</p>
+<blockquote>
+<p><em>Client: ajuntament (mobilitat) · Lliurable: regulador de semàfor d'una cruïlla · Món real: regulació de trànsit urbà.</em></p>
+</blockquote>
+<p><strong>Què treballa.</strong> Coordinar 3 sortides digitals amb una seqüència temporitzada.</p>
+<p><strong>Requisit mínim.</strong>
+- 3 LED (vermell, groc, verd) amb la <strong>seqüència correcta</strong> i temps diferents per fase.
+- Codi comentat amb els pins ben identificats.</p>
+<p><strong>Ampliacions graduades.</strong>
+1. <em>(bàsica)</em> Usa <strong>constants</strong> per als pins i <strong>variables</strong> per als temps.
+2. <em>(notable)</em> Afegeix un <strong>semàfor de vianants</strong> coordinat (verd vianants quan vermell cotxes).
+3. <em>(⭐⭐⭐)</em> Encapsula cada fase en una <strong>funció</strong> i fes el cicle net al <code>loop()</code>.</p>
+<hr />
+<h2 id="repte-b-llum-dambient-regulable"><a class="toclink" href="#repte-b-llum-dambient-regulable">💡 Repte B · Llum d'ambient regulable</a></h2>
+<p><strong>Context.</strong> Una llum d'ambient que <strong>puja i baixa d'intensitat</strong> suaument (efecte "respiració") o canvia de color.</p>
+<blockquote>
+<p><em>Client: estudi de disseny d'interiors · Lliurable: làmpada d'ambient regulable · Món real: il·luminació decorativa i domòtica.</em></p>
+</blockquote>
+<p><strong>Què treballa.</strong> PWM amb <code>analogWrite</code> (0–255), bucles per fer transicions suaus.</p>
+<p><strong>Requisit mínim.</strong>
+- Un LED en un pin <code>~</code> que fa un <strong>efecte fade</strong> (puja i baixa d'intensitat) amb un bucle <code>for</code>.
+- Codi comentat.</p>
+<p><strong>Ampliacions graduades.</strong>
+1. <em>(bàsica)</em> Ajusta la <strong>velocitat</strong> del fade amb una variable.
+2. <em>(notable)</em> Passa a un <strong>LED RGB</strong> i fes una transició entre <strong>dos colors</strong>.
+3. <em>(⭐⭐⭐)</em> Programa un <strong>cicle de colors</strong> (arc de Sant Martí) barrejant els tres canals.</p>
+<hr />
+<h2 id="repte-c-indicador-de-nivell-barra-de-led"><a class="toclink" href="#repte-c-indicador-de-nivell-barra-de-led">📊 Repte C · Indicador de nivell (barra de LED)</a></h2>
+<p><strong>Context.</strong> Un indicador visual de nivell (bateria, dipòsit, volum) amb una <strong>barra de LEDs</strong> que s'omple per trams.</p>
+<blockquote>
+<p><em>Client: fabricant d'equips industrials · Lliurable: indicador de nivell de barra · Món real: panells de control de bateria, dipòsit o volum.</em></p>
+</blockquote>
+<p><strong>Què treballa.</strong> Control de múltiples sortides segons un valor, organització amb bucles.</p>
+<p><strong>Requisit mínim.</strong>
+- 4–5 LED que s'encenen <strong>progressivament</strong> segons un nivell (de moment fixat al codi o amb un comptador).
+- Codi comentat.</p>
+<p><strong>Ampliacions graduades.</strong>
+1. <em>(bàsica)</em> Recorre els LED amb un <strong>bucle <code>for</code></strong> i un array de pins.
+2. <em>(notable)</em> Fes que el nivell <strong>pugi i baixi</strong> en bucle (efecte VU-mètre).
+3. <em>(⭐⭐⭐)</em> Substitueix l'últim LED per un <strong>RGB</strong> que passi de verd a vermell segons el nivell.</p>
+<hr />
+<h2 id="material-necessari-segons-repte"><a class="toclink" href="#material-necessari-segons-repte">Material necessari (segons repte)</a></h2>
+<ul>
+<li>Arduino UNO + cable USB · LEDs (3–5) + resistències 220 Ω (o LED RGB) · cables / placa de proves · o <strong>Tinkercad/Wokwi</strong>.</li>
+</ul>
+<h2 id="per-on-comencar-metode-de-projecte-primm"><a class="toclink" href="#per-on-comencar-metode-de-projecte-primm">Per on començar (mètode de projecte + PRIMM)</a></h2>
+<ol>
+<li><strong>Analitzar:</strong> quantes sortides necessito i com es coordinen en el temps?</li>
+<li><strong>Dissenyar (Predir):</strong> fes un esquema de pins i una línia de temps de les fases.</li>
+<li><strong>Prototipar:</strong> parteix dels sketches de <code>Classes/SA2/codi/</code> (<code>02_semafor</code>, <code>03_fade_pwm</code>, <code>04_rgb</code>, <code>05_panell_senyalitzacio</code>).</li>
+<li><strong>Provar:</strong> comprova temps i colors; depura amb el Monitor Sèrie si cal.</li>
+<li><strong>Millorar:</strong> introdueix constants, funcions i una ampliació.</li>
+</ol>
+<h2 id="com-savalua"><a class="toclink" href="#com-savalua">Com s'avalua</a></h2>
+<table>
+<thead>
+<tr>
+<th>Rúbrica</th>
+<th>Per què</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>R1</strong> (codi)</td>
+<td>Estructura i modularitat (funcions per fase).</td>
+</tr>
+<tr>
+<td><strong>R2</strong> (circuit)</td>
+<td>Muntatge correcte de múltiples sortides i resistències.</td>
+</tr>
+<tr>
+<td><strong>R4</strong> (documentació)</td>
+<td>Esquema de connexions i quadern tècnic.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="producte-entrega"><a class="toclink" href="#producte-entrega">Producte / entrega</a></h2>
+<ul>
+<li>Codi <code>.ino</code> comentat + <strong>esquema de connexions</strong> + entrada al quadern tècnic.</li>
+</ul>
+<hr />
+<h2 id="orientacio-docent"><a class="toclink" href="#orientacio-docent">Orientació docent</a></h2>
+<ul>
+<li><strong>Errors freqüents:</strong> confondre <code>analogWrite</code> (0–255) amb nivells digitals; usar PWM en un pin <strong>sense</strong> <code>~</code>; oblidar resistències; ordre de fases del semàfor incorrecte.</li>
+<li><strong>Diferenciació:</strong> el mínim assegura la base (seqüència/fade/barra); les ampliacions porten a arrays, RGB i funcions.</li>
+<li><strong>Gestió d'aula:</strong> el repte A enllaça amb <code>02_semafor</code>; el B amb <code>03_fade_pwm</code>/<code>04_rgb</code>; el C amb <code>05_panell_senyalitzacio</code>. Tot simulable.</li>
+<li><strong>Vincle avaluació:</strong> producte amb esquema (R2/R4) coherent amb el material de la SA2.</li>
+</ul>
+    </article>
+  </main>
+  <nav class="toc" aria-label="En aquesta pàgina"><p class="toc-titol">En aquesta pàgina</p><ul>
+<li class="toc-l1"><a href="#reptes-sa2-sortides-digitals-i-pwm">Reptes SA2 · Sortides digitals i PWM</a></li>
+<li class="toc-l2"><a href="#repte-a-semafor-dun-encreuament">🚦 Repte A · Semàfor d&#x27;un encreuament</a></li>
+<li class="toc-l2"><a href="#repte-b-llum-dambient-regulable">💡 Repte B · Llum d&#x27;ambient regulable</a></li>
+<li class="toc-l2"><a href="#repte-c-indicador-de-nivell-barra-de-led">📊 Repte C · Indicador de nivell (barra de LED)</a></li>
+<li class="toc-l2"><a href="#material-necessari-segons-repte">Material necessari (segons repte)</a></li>
+<li class="toc-l2"><a href="#per-on-comencar-metode-de-projecte-primm">Per on començar (mètode de projecte + PRIMM)</a></li>
+<li class="toc-l2"><a href="#com-savalua">Com s&#x27;avalua</a></li>
+<li class="toc-l2"><a href="#producte-entrega">Producte / entrega</a></li>
+<li class="toc-l2"><a href="#orientacio-docent">Orientació docent</a></li>
+</ul></nav>
+</div>
+<footer class="peu">
+  <p>Robòtica · 1r de Batxillerat · material sota llicència <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca" target="_blank" rel="noopener">CC BY-SA 4.0</a>.</p>
+  <p><a href="https://github.com/tomeu-cd100/robotica-1batx-2627" target="_blank" rel="noopener">Repositori a GitHub</a> · web generat el 2026-06-30.</p>
+</footer>
+<script src="../assets/js/cerca-index.js"></script>
+<script src="../assets/js/lloc.js"></script>
+</body>
+</html>

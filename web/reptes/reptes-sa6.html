@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reptes SA6 · Sistemes de control · Robòtica · 1r de Batxillerat</title>
+<meta name="description" content="Material docent · LOMLOE Catalunya · curs 2026-2027">
+<link rel="stylesheet" href="../assets/css/estil.css">
+<link rel="stylesheet" href="../assets/css/pygments.css">
+<script>(function(){try{var t=localStorage.getItem('tema');if(t==='fosc'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.setAttribute('data-tema','fosc');}catch(e){}})();</script>
+</head>
+<body data-section="reptes" class="amb-sidebar amb-toc">
+<a class="skip" href="#contingut">Salta al contingut</a>
+<header class="topbar">
+  <button class="menu-btn" aria-label="Obre el menú" aria-expanded="false">☰</button>
+  <a class="brand" href="../index.html"><span class="brand-mark">◆</span> Robòtica <span class="brand-sub">1r Batx</span></a>
+  <nav class="topnav" aria-label="Seccions">
+    <a href="../index.html">Inici</a>
+<a href="../programacio/index.html" data-sec="programacio">Programació didàctica</a>
+<a href="../classes/index.html" data-sec="classes">Classes</a>
+<a href="../reptes/index.html" data-sec="reptes" class="actiu">Reptes</a>
+<a href="../avaluacio/index.html" data-sec="avaluacio">Avaluació</a>
+<a href="../normativa/index.html" data-sec="normativa">Normativa</a>
+<a href="../recursos/index.html" data-sec="recursos">Recursos</a>
+  </nav>
+  <div class="topbar-eines">
+    <div class="cercador">
+      <input type="search" id="cerca" placeholder="Cerca…" autocomplete="off" aria-label="Cerca al web">
+      <div id="cerca-resultats" class="cerca-resultats" hidden></div>
+    </div>
+    <button class="tema-btn" aria-label="Canvia el tema clar/fosc" title="Tema clar/fosc">◐</button>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar"><nav class="sidebar-nav" aria-label="Pàgines de la secció">
+<p class="sidebar-titol">Reptes</p>
+<ul class="sb-top">
+<li><a href="index.html">Presentació</a></li>
+<li><a href="reptes-sa1.html">Reptes SA1 · Introducció: primer programa amb un LED <span class="tri-dot" data-tri="1"></span></a></li>
+<li><a href="reptes-sa2.html">Reptes SA2 · Sortides digitals i PWM <span class="tri-dot" data-tri="1"></span></a></li>
+<li><a href="reptes-sa3.html">Reptes SA3 · Entrades i sensors <span class="tri-dot" data-tri="1"></span></a></li>
+<li><a href="reptes-sa4.html">Reptes SA4 · Moviment: servos, motors i ponts H <span class="tri-dot" data-tri="2"></span></a></li>
+<li><a href="reptes-sa5.html">Reptes SA5 · micro:bit i MicroPython <span class="tri-dot" data-tri="2"></span></a></li>
+<li><a href="reptes-sa6.html" class="actiu">Reptes SA6 · Sistemes de control <span class="tri-dot" data-tri="2"></span></a></li>
+<li><a href="reptes-sa7.html">Reptes SA7 · Robòtica mòbil (Imagina 3dBot) <span class="tri-dot" data-tri="3"></span></a></li>
+<li><a href="reptes-sa8.html">Reptes SA8 · IoT i Intel·ligència Artificial <span class="tri-dot" data-tri="3"></span></a></li>
+</ul>
+<details class="sb-grup"><summary><span>Solucionari</span></summary><ul><li><a href="solucionari/index.html">Presentació</a></li><li><a href="solucionari/sa1/codi.html">Codi</a></li><li><a href="solucionari/sa2/codi.html">Codi</a></li><li><a href="solucionari/sa3/codi.html">Codi</a></li><li><a href="solucionari/sa4/codi.html">Codi</a></li><li><a href="solucionari/sa5/codi.html">Codi</a></li><li><a href="solucionari/sa6/codi.html">Codi</a></li><li><a href="solucionari/sa7/codi.html">Codi</a></li><li><a href="solucionari/sa8/codi.html">Codi</a></li></ul></details>
+</nav></aside>
+  <main id="contingut">
+    <nav class="breadcrumb" aria-label="Ubicació"><a href="../index.html">Inici</a> <span class="sep">/</span> <a href="../reptes/index.html">Reptes</a> <span class="sep">/</span> <span aria-current="page">Reptes SA6 · Sistemes de control</span></nav>
+    <span class="badge-tri" data-tri="2">2n trimestre</span>
+    <article class="prose">
+<h1 id="reptes-sa6-sistemes-de-control"><a class="toclink" href="#reptes-sa6-sistemes-de-control">Reptes SA6 · Sistemes de control</a></h1>
+<p><strong>Tria UN dels tres reptes.</strong> Tots implementen un <strong>llaç de control</strong> (mesurar → comparar amb una consigna → actuar). Mateix requisit mínim, ampliacions graduades. Integren sensors (SA3) i actuadors (SA2/SA4). Simulables a Tinkercad/Wokwi.</p>
+<blockquote>
+<p><strong>Continguts SA6:</strong> llaç obert vs tancat, realimentació, consigna, histèresi, màquina d'estats, control proporcional. · <strong>Codi base:</strong> <code>Classes/SA6/codi/</code>.</p>
+<p><strong>Format "producte real":</strong> cada repte simula un <strong>encàrrec</strong> amb <strong>client</strong>, <strong>lliurable</strong> i <strong>ús al món real</strong>. El requisit tècnic no canvia. <em>(2n trimestre — el control proporcional dóna </em><em>moviment intel·ligent i precís</em><em> al braç robòtic de SA4. Vegeu <code>Programació didàctica/08c_Projectes_vida_real.md</code>.)</em></p>
+</blockquote>
+<hr />
+<h2 id="repte-a-termostat-amb-histeresi"><a class="toclink" href="#repte-a-termostat-amb-histeresi">🌡️ Repte A · Termòstat amb histèresi</a></h2>
+<p><strong>Context.</strong> Un termòstat que <strong>manté la temperatura</strong> engegant i parant la calefacció/ventilació, sense oscil·lar contínuament.</p>
+<blockquote>
+<p><em>Client: empresa de climatització · Lliurable: termòstat amb histèresi · Món real: calefacció i aire condicionat eficients.</em></p>
+</blockquote>
+<p><strong>Què treballa.</strong> Llaç tancat, consigna, <strong>histèresi</strong> (dos llindars).</p>
+<p><strong>Requisit mínim.</strong>
+- Llegir la <strong>temperatura</strong> (o un potenciòmetre que la simuli) i activar una sortida (LED/ventilador) segons una <strong>consigna</strong>.
+- Codi comentat; valors al Monitor Sèrie.</p>
+<p><strong>Ampliacions graduades.</strong>
+1. <em>(bàsica)</em> Afegeix <strong>histèresi</strong> (arrenca a X, atura a X−2) per evitar parpelleigs.
+2. <em>(notable)</em> Permet <strong>ajustar la consigna</strong> amb un potenciòmetre.
+3. <em>(⭐⭐⭐)</em> Afegeix <strong>dos modes</strong> (fred/calor) amb una màquina d'estats.</p>
+<hr />
+<h2 id="repte-b-semafor-adaptatiu-maquina-destats"><a class="toclink" href="#repte-b-semafor-adaptatiu-maquina-destats">🚦 Repte B · Semàfor adaptatiu (màquina d'estats)</a></h2>
+<p><strong>Context.</strong> Un semàfor que <strong>canvia d'estat</strong> segons condicions (botó de vianants, sensor de presència), no només per temps.</p>
+<blockquote>
+<p><em>Client: ajuntament (mobilitat) · Lliurable: semàfor adaptatiu amb màquina d'estats · Món real: trànsit intel·ligent que reacciona a la demanda.</em></p>
+</blockquote>
+<p><strong>Què treballa.</strong> <strong>Màquina d'estats</strong> (estats + transicions), entrades que disparen canvis.</p>
+<p><strong>Requisit mínim.</strong>
+- Implementar un semàfor amb <strong>estats ben definits</strong> (verd/groc/vermell) i transicions controlades per una <strong>variable d'estat</strong> (no encadenant <code>delay()</code>).
+- Codi comentat.</p>
+<p><strong>Ampliacions graduades.</strong>
+1. <em>(bàsica)</em> Afegeix un <strong>polsador de vianants</strong> que avança a vermell de forma segura.
+2. <em>(notable)</em> Afegeix un estat de <strong>parpelleig groc</strong> (mode nocturn).
+3. <em>(⭐⭐⭐)</em> Coordina <strong>dos semàfors</strong> d'un encreuament amb estats complementaris.</p>
+<hr />
+<h2 id="repte-c-regulador-proporcional"><a class="toclink" href="#repte-c-regulador-proporcional">⚙️ Repte C · Regulador proporcional</a></h2>
+<p><strong>Context.</strong> Un sistema que <strong>corregeix de manera proporcional</strong> a l'error: com més lluny de l'objectiu, més forta la correcció (llum, velocitat o posició).</p>
+<blockquote>
+<p><em>Client: empresa de robòtica de precisió · Lliurable: regulador proporcional (base del PID) · Món real: control de motors, drons i braços robòtics (com el de SA4).</em></p>
+</blockquote>
+<p><strong>Què treballa.</strong> <strong>Control proporcional</strong> (sortida ∝ error), <code>map()</code>/càlcul, PWM.</p>
+<p><strong>Requisit mínim.</strong>
+- Mantenir una magnitud (p. ex. <strong>nivell de llum</strong> d'una LDR) a prop d'una <strong>consigna</strong> ajustant un LED per <strong>PWM proporcional a l'error</strong>.
+- Codi comentat; error i sortida al Monitor Sèrie.</p>
+<p><strong>Ampliacions graduades.</strong>
+1. <em>(bàsica)</em> Ajusta la <strong>constant proporcional (Kp)</strong> i observa l'efecte.
+2. <em>(notable)</em> Compara amb un <strong>control tot-o-res</strong> i documenta la diferència.
+3. <em>(⭐⭐⭐)</em> Aplica-ho a un <strong>motor</strong> (velocitat proporcional a la distància d'un ultrasons).</p>
+<hr />
+<h2 id="material-necessari-segons-repte"><a class="toclink" href="#material-necessari-segons-repte">Material necessari (segons repte)</a></h2>
+<ul>
+<li>Arduino UNO + USB · sensor (temperatura/LDR/ultrasons) o potenciòmetre simulador · LED/ventilador/motor segons repte · o <strong>Tinkercad/Wokwi</strong>.</li>
+</ul>
+<h2 id="per-on-comencar-metode-de-projecte-primm"><a class="toclink" href="#per-on-comencar-metode-de-projecte-primm">Per on començar (mètode de projecte + PRIMM)</a></h2>
+<ol>
+<li><strong>Analitzar:</strong> quina és la <strong>variable a controlar</strong> i quina la <strong>consigna</strong>?</li>
+<li><strong>Dissenyar (Predir):</strong> dibuixa el llaç (mesura → comparació → actuació) abans de codificar.</li>
+<li><strong>Prototipar:</strong> parteix de <code>Classes/SA6/codi/</code> (<code>02_termostat_histeresi</code>, <code>03_maquina_estats</code>, <code>04_control_proporcional</code>).</li>
+<li><strong>Provar:</strong> observa el comportament al Monitor Sèrie; ajusta llindars/Kp.</li>
+<li><strong>Millorar:</strong> afegeix histèresi, estats o proporcionalitat.</li>
+</ol>
+<h2 id="com-savalua"><a class="toclink" href="#com-savalua">Com s'avalua</a></h2>
+<table>
+<thead>
+<tr>
+<th>Rúbrica</th>
+<th>Per què</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>R1</strong> (codi)</td>
+<td>Estructura del llaç, màquina d'estats sense <code>delay</code> bloquejant.</td>
+</tr>
+<tr>
+<td><strong>R3</strong> (projecte)</td>
+<td>Control fiable amb realimentació (autonomia/control).</td>
+</tr>
+<tr>
+<td><strong>R4</strong> (documentació)</td>
+<td>Quadern tècnic: comparació de comportaments i ajust de paràmetres.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="producte-entrega"><a class="toclink" href="#producte-entrega">Producte / entrega</a></h2>
+<ul>
+<li>Codi <code>.ino</code> comentat + quadern tècnic amb gràfic/registre del comportament i justificació dels paràmetres.</li>
+</ul>
+<hr />
+<h2 id="orientacio-docent"><a class="toclink" href="#orientacio-docent">Orientació docent</a></h2>
+<ul>
+<li><strong>Errors freqüents:</strong> confondre llaç obert i tancat; oscil·lacions per manca d'histèresi; màquines d'estats fetes amb <code>delay()</code> encadenats (millor variables d'estat + <code>millis()</code>); Kp massa alt (inestabilitat).</li>
+<li><strong>Diferenciació:</strong> el mínim és un llaç tancat bàsic; histèresi, estats i proporcionalitat escalen la dificultat.</li>
+<li><strong>Gestió d'aula:</strong> un <strong>potenciòmetre</strong> pot simular qualsevol sensor per centrar-se en el control. Connecta amb la SA3 (sensors) i la SA4 (actuadors).</li>
+<li><strong>Vincle avaluació:</strong> R1 + R3 + R4; conceptes clau de cara al projecte final (SA9).</li>
+</ul>
+    </article>
+  </main>
+  <nav class="toc" aria-label="En aquesta pàgina"><p class="toc-titol">En aquesta pàgina</p><ul>
+<li class="toc-l1"><a href="#reptes-sa6-sistemes-de-control">Reptes SA6 · Sistemes de control</a></li>
+<li class="toc-l2"><a href="#repte-a-termostat-amb-histeresi">🌡️ Repte A · Termòstat amb histèresi</a></li>
+<li class="toc-l2"><a href="#repte-b-semafor-adaptatiu-maquina-destats">🚦 Repte B · Semàfor adaptatiu (màquina d&#x27;estats)</a></li>
+<li class="toc-l2"><a href="#repte-c-regulador-proporcional">⚙️ Repte C · Regulador proporcional</a></li>
+<li class="toc-l2"><a href="#material-necessari-segons-repte">Material necessari (segons repte)</a></li>
+<li class="toc-l2"><a href="#per-on-comencar-metode-de-projecte-primm">Per on començar (mètode de projecte + PRIMM)</a></li>
+<li class="toc-l2"><a href="#com-savalua">Com s&#x27;avalua</a></li>
+<li class="toc-l2"><a href="#producte-entrega">Producte / entrega</a></li>
+<li class="toc-l2"><a href="#orientacio-docent">Orientació docent</a></li>
+</ul></nav>
+</div>
+<footer class="peu">
+  <p>Robòtica · 1r de Batxillerat · material sota llicència <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca" target="_blank" rel="noopener">CC BY-SA 4.0</a>.</p>
+  <p><a href="https://github.com/tomeu-cd100/robotica-1batx-2627" target="_blank" rel="noopener">Repositori a GitHub</a> · web generat el 2026-06-30.</p>
+</footer>
+<script src="../assets/js/cerca-index.js"></script>
+<script src="../assets/js/lloc.js"></script>
+</body>
+</html>

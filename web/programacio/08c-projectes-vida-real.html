@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>08c · Projectes de la vida real (model mixt: producte per SA + gran integrador) · Robòtica · 1r de Batxillerat</title>
+<meta name="description" content="Material docent · LOMLOE Catalunya · curs 2026-2027">
+<link rel="stylesheet" href="../assets/css/estil.css">
+<link rel="stylesheet" href="../assets/css/pygments.css">
+<script>(function(){try{var t=localStorage.getItem('tema');if(t==='fosc'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.setAttribute('data-tema','fosc');}catch(e){}})();</script>
+</head>
+<body data-section="programacio" class="amb-sidebar amb-toc">
+<a class="skip" href="#contingut">Salta al contingut</a>
+<header class="topbar">
+  <button class="menu-btn" aria-label="Obre el menú" aria-expanded="false">☰</button>
+  <a class="brand" href="../index.html"><span class="brand-mark">◆</span> Robòtica <span class="brand-sub">1r Batx</span></a>
+  <nav class="topnav" aria-label="Seccions">
+    <a href="../index.html">Inici</a>
+<a href="../programacio/index.html" data-sec="programacio" class="actiu">Programació didàctica</a>
+<a href="../classes/index.html" data-sec="classes">Classes</a>
+<a href="../reptes/index.html" data-sec="reptes">Reptes</a>
+<a href="../avaluacio/index.html" data-sec="avaluacio">Avaluació</a>
+<a href="../normativa/index.html" data-sec="normativa">Normativa</a>
+<a href="../recursos/index.html" data-sec="recursos">Recursos</a>
+  </nav>
+  <div class="topbar-eines">
+    <div class="cercador">
+      <input type="search" id="cerca" placeholder="Cerca…" autocomplete="off" aria-label="Cerca al web">
+      <div id="cerca-resultats" class="cerca-resultats" hidden></div>
+    </div>
+    <button class="tema-btn" aria-label="Canvia el tema clar/fosc" title="Tema clar/fosc">◐</button>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar"><nav class="sidebar-nav" aria-label="Pàgines de la secció">
+<p class="sidebar-titol">Programació didàctica</p>
+<ul class="sb-top">
+<li><a href="index.html">Presentació</a></li>
+<li><a href="00-index-general.html">Programació didàctica — Robòtica · 1r de Batxillerat (científic i tecnològic)</a></li>
+<li><a href="01-introduccio-context-justificacio.html">01 · Introducció, context i justificació</a></li>
+<li><a href="02-objectius-competencies.html">02 · Objectius i competències</a></li>
+<li><a href="03-sabers-i-continguts.html">03 · Sabers i continguts</a></li>
+<li><a href="04-metodologia.html">04 · Metodologia</a></li>
+<li><a href="05-atencio-a-la-diversitat.html">05 · Atenció a la diversitat</a></li>
+<li><a href="06-avaluacio-criteris-qualificacio.html">06 · Avaluació: criteris, instruments i qualificació</a></li>
+<li><a href="07-rubriques.html">07 · Rúbriques d&#x27;avaluació</a></li>
+<li><a href="08-sequenciacio-temporal-anual.html">08 · Seqüenciació temporal anual</a></li>
+<li><a href="08c-projectes-vida-real.html" class="actiu">08c · Projectes de la vida real (model mixt: producte per SA + gran integrador)</a></li>
+<li><a href="09-materials-recursos-per-unitat.html">09 · Materials i recursos per unitat</a></li>
+<li><a href="09b-guia-compra-pressupost.html">09b · Guia de compra i pressupost del maquinari</a></li>
+<li><a href="09c-inventari-kits-disponibles.html">09c · Inventari del maquinari disponible (dotació real del centre)</a></li>
+<li><a href="10-sa1-introduccio-robotica.html">SA1 · Què és un robot? Sistemes embeguts i mètode de projecte <span class="tri-dot" data-tri="1"></span></a></li>
+<li><a href="11-sa2-sortides-digitals-pwm.html">SA2 · Sortides digitals i PWM: dona vida als actuadors <span class="tri-dot" data-tri="1"></span></a></li>
+<li><a href="12-sa3-entrades-sensors.html">SA3 · Entrades i sensors: el robot percep <span class="tri-dot" data-tri="1"></span></a></li>
+<li><a href="13-sa4-moviment-servos-motors.html">SA4 · Moviment: servos, motors i ponts H <span class="tri-dot" data-tri="2"></span></a></li>
+<li><a href="14-sa5-microbit-micropython.html">SA5 · micro:bit i MicroPython: un altre paradigma <span class="tri-dot" data-tri="2"></span></a></li>
+<li><a href="15-sa6-sistemes-control.html">SA6 · Sistemes de control: llaç obert/tancat i màquines d&#x27;estats <span class="tri-dot" data-tri="2"></span></a></li>
+<li><a href="16-sa7-robotica-mobil.html">SA7 · Robòtica mòbil: cinemàtica i trajectòries <span class="tri-dot" data-tri="3"></span></a></li>
+<li><a href="17-sa8-iot-ia.html">SA8 · IoT i IA: el robot connectat i intel·ligent <span class="tri-dot" data-tri="3"></span></a></li>
+<li><a href="18-sa9-projecte-final.html">SA9 · Repte final integrador (opció competició) <span class="tri-dot" data-tri="3"></span></a></li>
+</ul>
+</nav></aside>
+  <main id="contingut">
+    <nav class="breadcrumb" aria-label="Ubicació"><a href="../index.html">Inici</a> <span class="sep">/</span> <a href="../programacio/index.html">Programació didàctica</a> <span class="sep">/</span> <span aria-current="page">08c · Projectes de la vida real (model mixt: producte per SA + gran integrador)</span></nav>
+    
+    <article class="prose">
+<h1 id="08c-projectes-de-la-vida-real-model-mixt-producte-per-sa-gran-integrador"><a class="toclink" href="#08c-projectes-de-la-vida-real-model-mixt-producte-per-sa-gran-integrador">08c · Projectes de la vida real (model mixt: producte per SA + gran integrador)</a></h1>
+<p><strong>Enfocament pedagògic (ja desplegat als reptes de SA1–SA8).</strong> Cada SA es planteja com un <strong>producte real autònom</strong> que l'alumnat pot reconèixer en el món que l'envolta (un braç robòtic, un cotxe teledirigit, una barrera de pàrquing…), mantenint la progressió tècnica actual i culminant amb <strong>SA9 com a gran projecte integrador</strong>. Vegeu l'estat d'implementació al final del document.</p>
+<blockquote>
+<p><strong>Model triat:</strong> <em>mixt</em>. Cada SA acaba amb un <strong>producte físic petit però complet</strong> (no un exercici aïllat), i SA9 demana sintetitzar-ho tot. No s'imposa un únic artefacte de trimestre: cada SA és vàlida per si mateixa, però la seqüència està pensada perquè els subsistemes encaixin si un equip vol acumular-los cap al projecte final.</p>
+</blockquote>
+<hr />
+<h2 id="per-que-aquest-canvi"><a class="toclink" href="#per-que-aquest-canvi">Per què aquest canvi</a></h2>
+<p>Els reptes actuals (<code>Reptes/</code>) <strong>ja tenen context realista</strong> (far costaner, semàfor, sensor d'aparcament, braç dispensador, robot repartidor…), però es viuen com a <strong>exercicis tancats</strong>. Aquesta proposta:</p>
+<ul>
+<li>Dona a cada SA un <strong>marc de producte</strong> (qui l'usaria, quin problema resol, quin és el lliurable funcional).</li>
+<li><strong>Reaprofita</strong> els reptes A/B/C existents com a variants del mateix producte.</li>
+<li>Fa <strong>explícita la connexió</strong> entre el producte de cada SA i el projecte final de SA9.</li>
+<li><strong>No altera</strong> hores, rúbriques ni seqüència tècnica: és una capa de sentit, no una reestructuració.</li>
+</ul>
+<hr />
+<h2 id="mapa-de-productes-per-trimestre"><a class="toclink" href="#mapa-de-productes-per-trimestre">Mapa de productes per trimestre</a></h2>
+<h3 id="1r-trimestre-arduino-del-senyal-a-la-percepcio"><a class="toclink" href="#1r-trimestre-arduino-del-senyal-a-la-percepcio">1r TRIMESTRE — Arduino: del senyal a la percepció</a></h3>
+<p>Productes sense moviment mecànic (es reserva per al 2n trimestre). <strong>Fil:</strong> <em>un dispositiu que informa i percep.</em></p>
+<table>
+<thead>
+<tr>
+<th>SA</th>
+<th>Producte real de la SA</th>
+<th>Reptes que s'hi reaprofiten</th>
+<th>Qui ho usa / problema real</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>SA1</strong></td>
+<td><strong>Balisa de senyalització</strong> (far, llum de bici o emissor Morse)</td>
+<td>Far costaner · Llum de bici · Morse</td>
+<td>Senyalització marítima, seguretat viària, comunicació d'emergència</td>
+</tr>
+<tr>
+<td><strong>SA2</strong></td>
+<td><strong>Panell de senyalització programable</strong> (semàfor + indicador)</td>
+<td>Semàfor · Llum d'ambient · Indicador de nivell</td>
+<td>Regulació de trànsit, indicadors industrials de nivell</td>
+</tr>
+<tr>
+<td><strong>SA3</strong></td>
+<td><strong>Estació sensora intel·ligent</strong> (alarma de proximitat o llum automàtica)</td>
+<td>Llum nocturna · Sensor d'aparcament · Instrument interactiu</td>
+<td>Estalvi energètic, ajuda a l'aparcament, domòtica</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Producte estrella opcional del trimestre:</strong> <em>peatge/barrera intel·ligent (sense moviment)</em> — el panell de SA2 mostra l'estat i el sensor de SA3 detecta el vehicle. El motor que obre la barrera arriba a SA4.</p>
+</blockquote>
+<hr />
+<h3 id="2n-trimestre-moviment-i-control-el-brac-robotic"><a class="toclink" href="#2n-trimestre-moviment-i-control-el-brac-robotic">2n TRIMESTRE — Moviment i control: el <strong>braç robòtic</strong></a></h3>
+<p><strong>Fil:</strong> <em>una màquina que es mou amb precisió i decideix sola.</em> Producte estrella del trimestre: un <strong>braç robòtic</strong> controlable i intel·ligent.</p>
+<table>
+<thead>
+<tr>
+<th>SA</th>
+<th>Producte real de la SA</th>
+<th>Reptes que s'hi reaprofiten</th>
+<th>Qui ho usa / problema real</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>SA4</strong></td>
+<td><strong>Mecanisme motoritzat</strong> (braç dispensador, barrera o vehicle amb motor)</td>
+<td>Braç dispensador · Barrera automàtica · Ventilador/vehicle</td>
+<td>Robòtica industrial, automatització, accessibilitat</td>
+</tr>
+<tr>
+<td><strong>SA5</strong></td>
+<td><strong>Comandament micro:bit</strong> (per gestos o ràdio) + producte propi micro:bit</td>
+<td>Joc/ràdio · Comptapassos · Llum de nit</td>
+<td>Wearables, controls sense fil, esport connectat</td>
+</tr>
+<tr>
+<td><strong>SA6</strong></td>
+<td><strong>Control intel·ligent del moviment</strong> (màquina d'estats + proporcional)</td>
+<td>Regulador proporcional · Semàfor adaptatiu · Termòstat</td>
+<td>Robòtica de precisió, climatització, automòbil</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Integració del trimestre:</strong> el <strong>braç de SA4</strong> es mou de forma <strong>suau i precisa gràcies al control de SA6</strong> i, opcionalment, es <strong>teledirigeix amb el micro:bit de SA5</strong>. Equips que no vulguin braç poden fer una <strong>barrera/climatitzador</strong> amb la mateixa cadena tècnica.</p>
+<p>⚙️ <strong>Nota tècnica — comandament del braç (important).</strong> El micro:bit <strong>no pot moure directament un servo connectat a l'Arduino</strong>: cal un <strong>pont de comunicació</strong>. Dues vies:
+- <strong>Via recomanada (100% Arduino):</strong> el braç es controla amb un <strong>potenciòmetre o joystick connectat al mateix Arduino</strong> (SA3 + SA4). Senzill, sense pont, i suficient per a l'objectiu d'aprenentatge. El micro:bit (SA5) es treballa com a <strong>producte propi independent</strong> (comptapassos, joc/ràdio) sense haver-lo d'acoblar al braç.
+- <strong>Via avançada (micro:bit → Arduino):</strong> un micro:bit <strong>emissor</strong> envia per <strong>ràdio</strong> a un segon micro:bit <strong>receptor</strong> connectat a l'Arduino per <strong>sèrie/pins</strong>; l'Arduino interpreta el missatge i mou el servo. És un repte d'ampliació d'equips ràpids; <strong>requereix maquinari extra</strong> (2n micro:bit + cablejat) <strong>no previst al pressupost base</strong>.</p>
+<p>Conclusió: la <strong>continuïtat SA4↔SA5↔SA6 és pedagògica</strong> (mateixa família de productes), no obliga a acoblar físicament les tres plataformes. L'acoblament real és <strong>opcional i avançat</strong>.</p>
+</blockquote>
+<hr />
+<h3 id="3r-trimestre-robot-autonom-i-connectat-el-cotxe-que-es-torna-intelligent"><a class="toclink" href="#3r-trimestre-robot-autonom-i-connectat-el-cotxe-que-es-torna-intelligent">3r TRIMESTRE — Robot autònom i connectat: el <strong>cotxe que es torna intel·ligent</strong></a></h3>
+<p><strong>Fil:</strong> <em>un vehicle que es condueix sol i es connecta.</em> Producte estrella: un <strong>cotxe/robot mòbil</strong> que evoluciona de teledirigit a autònom, i SA9 com a síntesi lliure.</p>
+<table>
+<thead>
+<tr>
+<th>SA</th>
+<th>Producte real de la SA</th>
+<th>Reptes que s'hi reaprofiten</th>
+<th>Qui ho usa / problema real</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>SA7</strong></td>
+<td><strong>Robot mòbil autònom</strong> (evita obstacles o segueix línia)</td>
+<td>Explorador · Seguidor de línia · Repartidor</td>
+<td>Vehicle autònom, logística, AGV de magatzem</td>
+</tr>
+<tr>
+<td><strong>SA8</strong></td>
+<td><strong>Robot connectat (IoT) i amb IA</strong> (telemetria + gestos)</td>
+<td>Estació meteo · Sistema d'alerta · Control per gestos</td>
+<td>Cotxe connectat, ciutat intel·ligent, assistència</td>
+</tr>
+<tr>
+<td><strong>SA9</strong></td>
+<td><strong>Projecte final lliure</strong> (cada equip proposa el seu robot)</td>
+<td>— (lliure, ja existeix)</td>
+<td>El que l'equip vulgui resoldre</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Integració del trimestre:</strong> el <strong>cotxe de SA7</strong> rep <strong>telecomandament i telemetria de SA8</strong> (ràdio/WiFi) i pot <strong>reaccionar a gestos</strong>. SA9 permet combinar-ho tot o triar un repte propi (opció competició WRO/RoboCup/FTC o Treball de Recerca).</p>
+</blockquote>
+<hr />
+<h2 id="sa9-com-a-gran-integrador"><a class="toclink" href="#sa9-com-a-gran-integrador">SA9 com a gran integrador</a></h2>
+<p>SA9 ja és un projecte obert; aquesta proposta només hi afegeix un <strong>catàleg de productes de referència</strong> perquè els equips sàpiguen què poden reaprofitar:</p>
+<ul>
+<li><strong>Braç robòtic classificador</strong> (SA4 + SA6 + visió/sensor de SA3 + IA de gestos de SA8).</li>
+<li><strong>Cotxe autònom de repartiment</strong> (SA7 + SA8 + senyalització de SA2).</li>
+<li><strong>Estació domòtica completa</strong> (SA3 sensors + SA6 control + SA8 IoT).</li>
+<li><strong>Proposta lliure</strong> de l'equip (manté l'esperit obert actual).</li>
+</ul>
+<hr />
+<h2 id="estat-dimplementacio-sobre-el-material-actual"><a class="toclink" href="#estat-dimplementacio-sobre-el-material-actual">Estat d'implementació sobre el material actual</a></h2>
+<p>Aquest marc <strong>ja està aplicat</strong> al material (no és una proposta pendent):</p>
+<table>
+<thead>
+<tr>
+<th>Element</th>
+<th>Estat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Reptes (<code>Reptes/</code>)</td>
+<td>✅ <strong>Fet a totes les SA1–SA8</strong>: cada repte porta l'encapçalament "Producte real / Client / Lliurable / Món real". El codi i les ampliacions no s'han tocat.</td>
+</tr>
+<tr>
+<td><code>Reptes/README.md</code></td>
+<td>✅ Inclou el fil de productes per trimestre i remet a aquest document.</td>
+</tr>
+<tr>
+<td>Seqüenciació (<code>08</code>)</td>
+<td>✅ Sense canvis d'hores ni de rúbriques: aquest document n'és el complement (capa de sentit).</td>
+</tr>
+<tr>
+<td>Fitxes d'alumnat</td>
+<td>◻️ Opcional i no fet: es podria afegir una línia de context "Aquest producte serveix per a…". Sense canvis tècnics.</td>
+</tr>
+<tr>
+<td>Guies docents</td>
+<td>◻️ Opcional i no fet: es podria afegir una nota d'integració de trimestre (com encadenar productes).</td>
+</tr>
+<tr>
+<td>Material físic</td>
+<td>Per al braç de SA4 cal preveure <strong>2-3 servos i estructura</strong> per equip (vegeu <code>09b_Guia_compra_pressupost.md</code>); per al cotxe, el robot Imagina 3dBot ja és previst a SA7.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="decisions-que-resten-obertes"><a class="toclink" href="#decisions-que-resten-obertes">Decisions que resten obertes</a></h2>
+<ol>
+<li><strong>Material del braç (SA4):</strong> quants servos per equip i si es comparteix una estructura impresa en 3D comuna.</li>
+<li><strong>Avaluació:</strong> afegir o no un criteri de "producte funcional" a les rúbriques, o mantenir R1-R5 tal com estan.</li>
+<li><strong>Fitxes i guies docents:</strong> decidir si s'incorpora la línia de context i la nota d'integració de trimestre (millores opcionals, vegeu taula anterior).</li>
+</ol>
+<blockquote>
+<p><strong>On som:</strong> el reframing de productes està desplegat als reptes de totes les SA. El que queda és <strong>decisió de centre</strong> (material del braç) i <strong>opcional</strong> (context a fitxes/guies, criteri de rúbrica).</p>
+</blockquote>
+    </article>
+  </main>
+  <nav class="toc" aria-label="En aquesta pàgina"><p class="toc-titol">En aquesta pàgina</p><ul>
+<li class="toc-l1"><a href="#08c-projectes-de-la-vida-real-model-mixt-producte-per-sa-gran-integrador">08c · Projectes de la vida real (model mixt: producte per SA + gran integrador)</a></li>
+<li class="toc-l2"><a href="#per-que-aquest-canvi">Per què aquest canvi</a></li>
+<li class="toc-l2"><a href="#mapa-de-productes-per-trimestre">Mapa de productes per trimestre</a></li>
+<li class="toc-l2"><a href="#sa9-com-a-gran-integrador">SA9 com a gran integrador</a></li>
+<li class="toc-l2"><a href="#estat-dimplementacio-sobre-el-material-actual">Estat d&#x27;implementació sobre el material actual</a></li>
+<li class="toc-l2"><a href="#decisions-que-resten-obertes">Decisions que resten obertes</a></li>
+</ul></nav>
+</div>
+<footer class="peu">
+  <p>Robòtica · 1r de Batxillerat · material sota llicència <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca" target="_blank" rel="noopener">CC BY-SA 4.0</a>.</p>
+  <p><a href="https://github.com/tomeu-cd100/robotica-1batx-2627" target="_blank" rel="noopener">Repositori a GitHub</a> · web generat el 2026-06-30.</p>
+</footer>
+<script src="../assets/js/cerca-index.js"></script>
+<script src="../assets/js/lloc.js"></script>
+</body>
+</html>

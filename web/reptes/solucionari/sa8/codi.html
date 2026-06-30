@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Codi solucionari reptes · SA8 · Robòtica · 1r de Batxillerat</title>
+<meta name="description" content="Material docent · LOMLOE Catalunya · curs 2026-2027">
+<link rel="stylesheet" href="../../../assets/css/estil.css">
+<link rel="stylesheet" href="../../../assets/css/pygments.css">
+<script>(function(){try{var t=localStorage.getItem('tema');if(t==='fosc'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.setAttribute('data-tema','fosc');}catch(e){}})();</script>
+</head>
+<body data-section="reptes" class="amb-sidebar sense-toc">
+<a class="skip" href="#contingut">Salta al contingut</a>
+<header class="topbar">
+  <button class="menu-btn" aria-label="Obre el menú" aria-expanded="false">☰</button>
+  <a class="brand" href="../../../index.html"><span class="brand-mark">◆</span> Robòtica <span class="brand-sub">1r Batx</span></a>
+  <nav class="topnav" aria-label="Seccions">
+    <a href="../../../index.html">Inici</a>
+<a href="../../../programacio/index.html" data-sec="programacio">Programació didàctica</a>
+<a href="../../../classes/index.html" data-sec="classes">Classes</a>
+<a href="../../../reptes/index.html" data-sec="reptes" class="actiu">Reptes</a>
+<a href="../../../avaluacio/index.html" data-sec="avaluacio">Avaluació</a>
+<a href="../../../normativa/index.html" data-sec="normativa">Normativa</a>
+<a href="../../../recursos/index.html" data-sec="recursos">Recursos</a>
+  </nav>
+  <div class="topbar-eines">
+    <div class="cercador">
+      <input type="search" id="cerca" placeholder="Cerca…" autocomplete="off" aria-label="Cerca al web">
+      <div id="cerca-resultats" class="cerca-resultats" hidden></div>
+    </div>
+    <button class="tema-btn" aria-label="Canvia el tema clar/fosc" title="Tema clar/fosc">◐</button>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar"><nav class="sidebar-nav" aria-label="Pàgines de la secció">
+<p class="sidebar-titol">Reptes</p>
+<ul class="sb-top">
+<li><a href="../../index.html">Presentació</a></li>
+<li><a href="../../reptes-sa1.html">Reptes SA1 · Introducció: primer programa amb un LED <span class="tri-dot" data-tri="1"></span></a></li>
+<li><a href="../../reptes-sa2.html">Reptes SA2 · Sortides digitals i PWM <span class="tri-dot" data-tri="1"></span></a></li>
+<li><a href="../../reptes-sa3.html">Reptes SA3 · Entrades i sensors <span class="tri-dot" data-tri="1"></span></a></li>
+<li><a href="../../reptes-sa4.html">Reptes SA4 · Moviment: servos, motors i ponts H <span class="tri-dot" data-tri="2"></span></a></li>
+<li><a href="../../reptes-sa5.html">Reptes SA5 · micro:bit i MicroPython <span class="tri-dot" data-tri="2"></span></a></li>
+<li><a href="../../reptes-sa6.html">Reptes SA6 · Sistemes de control <span class="tri-dot" data-tri="2"></span></a></li>
+<li><a href="../../reptes-sa7.html">Reptes SA7 · Robòtica mòbil (Imagina 3dBot) <span class="tri-dot" data-tri="3"></span></a></li>
+<li><a href="../../reptes-sa8.html">Reptes SA8 · IoT i Intel·ligència Artificial <span class="tri-dot" data-tri="3"></span></a></li>
+</ul>
+<details class="sb-grup" open><summary><span>Solucionari</span></summary><ul><li><a href="../index.html">Presentació</a></li><li><a href="../sa1/codi.html">Codi</a></li><li><a href="../sa2/codi.html">Codi</a></li><li><a href="../sa3/codi.html">Codi</a></li><li><a href="../sa4/codi.html">Codi</a></li><li><a href="../sa5/codi.html">Codi</a></li><li><a href="../sa6/codi.html">Codi</a></li><li><a href="../sa7/codi.html">Codi</a></li><li><a href="codi.html" class="actiu">Codi</a></li></ul></details>
+</nav></aside>
+  <main id="contingut">
+    <nav class="breadcrumb" aria-label="Ubicació"><a href="../../../index.html">Inici</a> <span class="sep">/</span> <a href="../../../reptes/index.html">Reptes</a> <span class="sep">/</span> <span aria-current="page">Codi solucionari reptes · SA8</span></nav>
+    <span class="badge-tri" data-tri="3">3r trimestre</span>
+    <article class="prose">
+<h1>Codi solucionari reptes · SA8</h1>
+<p class="codi-intro">Fitxers de codi font. Fes servir el botó <strong>Copia</strong> per dur-los a l'IDE d'Arduino o a l'editor de micro:bit.</p>
+<ul class="codi-llista">
+<li><a href="#a-estacio-meteo-emissor-ampliat"><code>A_estacio_meteo_emissor_ampliat.py</code></a></li>
+<li><a href="#a-estacio-meteo-emissor-minim"><code>A_estacio_meteo_emissor_minim.py</code></a></li>
+<li><a href="#a-estacio-meteo-receptor-ampliat"><code>A_estacio_meteo_receptor_ampliat.py</code></a></li>
+<li><a href="#a-estacio-meteo-receptor-minim"><code>A_estacio_meteo_receptor_minim.py</code></a></li>
+<li><a href="#b-alerta-emissor-ampliat"><code>B_alerta_emissor_ampliat.py</code></a></li>
+<li><a href="#b-alerta-emissor-minim"><code>B_alerta_emissor_minim.py</code></a></li>
+<li><a href="#b-alerta-receptor-ampliat"><code>B_alerta_receptor_ampliat.py</code></a></li>
+<li><a href="#b-alerta-receptor-minim"><code>B_alerta_receptor_minim.py</code></a></li>
+<li><a href="#c-gestos-ampliat"><code>C_gestos_ampliat.py</code></a></li>
+<li><a href="#c-gestos-minim"><code>C_gestos_minim.py</code></a></li>
+</ul>
+<section class="codi-bloc" id="a-estacio-meteo-emissor-ampliat"><header class="codi-cap"><code class="codi-nom">A_estacio_meteo_emissor_ampliat.py</code><button class="copia-btn" type="button">Copia</button></header><div class="codi-cos"><div class="highlight"><pre><span></span><span class="c1"># Solucionari Repte SA8-A · Estacio meteo - EMISSOR (AMPLIAT)</span>
+<span class="c1"># AMPLIACIO 1: envia diverses magnituds etiquetades (temperatura i llum).</span>
+<span class="c1"># AMPLIACIO 3: alternativa avancada -&gt; portar la telemetria a un ESP32 amb WiFi</span>
+<span class="c1">#   (vegeu Classes/SA8/codi/04_esp32_telemetria.ino). Aqui ho deixem per radio.</span>
+<span class="c1"># NOTA: cada equip, un group propi (evita interferencies).</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">microbit</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">radio</span>
+
+<span class="n">radio</span><span class="o">.</span><span class="n">on</span><span class="p">()</span>
+<span class="n">radio</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">group</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">temperature</span><span class="p">()</span>
+    <span class="n">llum</span> <span class="o">=</span> <span class="n">display</span><span class="o">.</span><span class="n">read_light_level</span><span class="p">()</span>
+    <span class="c1"># AMPLIACIO 1: dues magnituds etiquetades, separades per ;</span>
+    <span class="n">radio</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="s2">&quot;T:&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;;L:&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">llum</span><span class="p">))</span>
+    <span class="n">display</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">Image</span><span class="o">.</span><span class="n">ARROW_N</span><span class="p">)</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="mi">2000</span><span class="p">)</span>
+</pre></div>
+</div></section>
+<section class="codi-bloc" id="a-estacio-meteo-emissor-minim"><header class="codi-cap"><code class="codi-nom">A_estacio_meteo_emissor_minim.py</code><button class="copia-btn" type="button">Copia</button></header><div class="codi-cos"><div class="highlight"><pre><span></span><span class="c1"># Solucionari Repte SA8-A · Estacio meteo - EMISSOR (REQUISIT MINIM)</span>
+<span class="c1"># Llegeix un sensor (temperatura) i l&#39;envia per radio.</span>
+<span class="c1"># NOTA: emissor i receptor han de compartir group. Si hi ha mes d&#39;un equip a</span>
+<span class="c1"># l&#39;aula, cada equip ha de triar un group DIFERENT per evitar interferencies.</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">microbit</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">radio</span>
+
+<span class="n">radio</span><span class="o">.</span><span class="n">on</span><span class="p">()</span>
+<span class="n">radio</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">group</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">temperature</span><span class="p">()</span>        <span class="c1"># graus C aprox.</span>
+    <span class="n">radio</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>       <span class="c1"># envia el valor</span>
+    <span class="n">display</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">Image</span><span class="o">.</span><span class="n">ARROW_N</span><span class="p">)</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="mi">2000</span><span class="p">)</span>
+</pre></div>
+</div></section>
+<section class="codi-bloc" id="a-estacio-meteo-receptor-ampliat"><header class="codi-cap"><code class="codi-nom">A_estacio_meteo_receptor_ampliat.py</code><button class="copia-btn" type="button">Copia</button></header><div class="codi-cos"><div class="highlight"><pre><span></span><span class="c1"># Solucionari Repte SA8-A · Estacio meteo - RECEPTOR (AMPLIAT)</span>
+<span class="c1"># AMPLIACIO 2: registra i calcula maxim, minim i mitjana de la temperatura.</span>
+<span class="c1"># Separa el missatge &quot;T:23;L:120&quot; en parts i en treu la temperatura.</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">microbit</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">radio</span>
+
+<span class="n">radio</span><span class="o">.</span><span class="n">on</span><span class="p">()</span>
+<span class="n">radio</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">group</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">suma</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">maxim</span> <span class="o">=</span> <span class="o">-</span><span class="mi">999</span>
+<span class="n">minim</span> <span class="o">=</span> <span class="mi">999</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">missatge</span> <span class="o">=</span> <span class="n">radio</span><span class="o">.</span><span class="n">receive</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">missatge</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">missatge</span><span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">parts</span> <span class="o">=</span> <span class="n">missatge</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;;&quot;</span><span class="p">)</span>
+            <span class="n">t</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">parts</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;:&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">])</span>   <span class="c1"># agafa el valor despres de &quot;T:&quot;</span>
+
+            <span class="c1"># AMPLIACIO 2: estadistiques</span>
+            <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span>
+            <span class="n">suma</span> <span class="o">=</span> <span class="n">suma</span> <span class="o">+</span> <span class="n">t</span>
+            <span class="k">if</span> <span class="n">t</span> <span class="o">&gt;</span> <span class="n">maxim</span><span class="p">:</span>
+                <span class="n">maxim</span> <span class="o">=</span> <span class="n">t</span>
+            <span class="k">if</span> <span class="n">t</span> <span class="o">&lt;</span> <span class="n">minim</span><span class="p">:</span>
+                <span class="n">minim</span> <span class="o">=</span> <span class="n">t</span>
+            <span class="n">mitjana</span> <span class="o">=</span> <span class="n">suma</span> <span class="o">//</span> <span class="n">n</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;max=&quot;</span><span class="p">,</span> <span class="n">maxim</span><span class="p">,</span> <span class="s2">&quot;min=&quot;</span><span class="p">,</span> <span class="n">minim</span><span class="p">,</span> <span class="s2">&quot;mitjana=&quot;</span><span class="p">,</span> <span class="n">mitjana</span><span class="p">)</span>
+            <span class="n">display</span><span class="o">.</span><span class="n">scroll</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="n">display</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">Image</span><span class="o">.</span><span class="n">CONFUSED</span><span class="p">)</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+</pre></div>
+</div></section>
+<section class="codi-bloc" id="a-estacio-meteo-receptor-minim"><header class="codi-cap"><code class="codi-nom">A_estacio_meteo_receptor_minim.py</code><button class="copia-btn" type="button">Copia</button></header><div class="codi-cos"><div class="highlight"><pre><span></span><span class="c1"># Solucionari Repte SA8-A · Estacio meteo - RECEPTOR (REQUISIT MINIM)</span>
+<span class="c1"># Rep el valor per radio i el mostra (i l&#39;imprimeix pel port serie).</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">microbit</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">radio</span>
+
+<span class="n">radio</span><span class="o">.</span><span class="n">on</span><span class="p">()</span>
+<span class="n">radio</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">group</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">missatge</span> <span class="o">=</span> <span class="n">radio</span><span class="o">.</span><span class="n">receive</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">missatge</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">missatge</span><span class="p">)</span>           <span class="c1"># apareix al REPL/monitor serie</span>
+        <span class="n">display</span><span class="o">.</span><span class="n">scroll</span><span class="p">(</span><span class="n">missatge</span><span class="p">)</span>  <span class="c1"># mostra el valor rebut</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+</pre></div>
+</div></section>
+<section class="codi-bloc" id="b-alerta-emissor-ampliat"><header class="codi-cap"><code class="codi-nom">B_alerta_emissor_ampliat.py</code><button class="copia-btn" type="button">Copia</button></header><div class="codi-cos"><div class="highlight"><pre><span></span><span class="c1"># Solucionari Repte SA8-B · Sistema d&#39;alerta - EMISSOR (AMPLIAT)</span>
+<span class="c1"># AMPLIACIO 1: diferencia estat normal vs alerta amb icones clares.</span>
+<span class="c1"># AMPLIACIO 2: diversos NIVELLS d&#39;alerta (avis / greu).</span>
+<span class="c1"># AMPLIACIO 3: emissor IDENTIFICAT (per a una xarxa de diversos emissors).</span>
+<span class="c1"># NOTA: cada equip, un group propi.</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">microbit</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">radio</span>
+
+<span class="n">radio</span><span class="o">.</span><span class="n">on</span><span class="p">()</span>
+<span class="n">radio</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">group</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="n">ID</span> <span class="o">=</span> <span class="s2">&quot;S1&quot;</span>          <span class="c1"># AMPLIACIO 3: identificador d&#39;aquest emissor</span>
+<span class="n">AVIS</span> <span class="o">=</span> <span class="mi">26</span>          <span class="c1"># AMPLIACIO 2: nivells</span>
+<span class="n">GREU</span> <span class="o">=</span> <span class="mi">30</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">temperature</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">t</span> <span class="o">&gt;</span> <span class="n">GREU</span><span class="p">:</span>
+        <span class="n">radio</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">ID</span> <span class="o">+</span> <span class="s2">&quot;:GREU:&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+        <span class="n">display</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">Image</span><span class="o">.</span><span class="n">SKULL</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">t</span> <span class="o">&gt;</span> <span class="n">AVIS</span><span class="p">:</span>
+        <span class="n">radio</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">ID</span> <span class="o">+</span> <span class="s2">&quot;:AVIS:&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+        <span class="n">display</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">Image</span><span class="o">.</span><span class="n">NO</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">display</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">Image</span><span class="o">.</span><span class="n">YES</span><span class="p">)</span>   <span class="c1"># AMPLIACIO 1: estat normal</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+</pre></div>
+</div></section>
+<section class="codi-bloc" id="b-alerta-emissor-minim"><header class="codi-cap"><code class="codi-nom">B_alerta_emissor_minim.py</code><button class="copia-btn" type="button">Copia</button></header><div class="codi-cos"><div class="highlight"><pre><span></span><span class="c1"># Solucionari Repte SA8-B · Sistema d&#39;alerta - EMISSOR (REQUISIT MINIM)</span>
+<span class="c1"># Quan se supera un llindar (temperatura), envia una alerta per radio.</span>
+<span class="c1"># NOTA: cada equip, un group propi.</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">microbit</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">radio</span>
+
+<span class="n">radio</span><span class="o">.</span><span class="n">on</span><span class="p">()</span>
+<span class="n">radio</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">group</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="n">LLINDAR</span> <span class="o">=</span> <span class="mi">28</span>   <span class="c1"># graus C</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">temperature</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">t</span> <span class="o">&gt;</span> <span class="n">LLINDAR</span><span class="p">:</span>
+        <span class="n">radio</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="s2">&quot;ALERTA&quot;</span><span class="p">)</span>
+        <span class="n">display</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">Image</span><span class="o">.</span><span class="n">NO</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">display</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">Image</span><span class="o">.</span><span class="n">YES</span><span class="p">)</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+</pre></div>
+</div></section>
+<section class="codi-bloc" id="b-alerta-receptor-ampliat"><header class="codi-cap"><code class="codi-nom">B_alerta_receptor_ampliat.py</code><button class="copia-btn" type="button">Copia</button></header><div class="codi-cos"><div class="highlight"><pre><span></span><span class="c1"># Solucionari Repte SA8-B · Sistema d&#39;alerta - RECEPTOR (AMPLIAT)</span>
+<span class="c1"># AMPLIACIO 1: icones segons el nivell.</span>
+<span class="c1"># AMPLIACIO 2: confirmacio (ACK) cap a l&#39;emissor.</span>
+<span class="c1"># AMPLIACIO 3: xarxa -&gt; identifica quin emissor ha enviat l&#39;alerta.</span>
+<span class="c1"># Format del missatge: &quot;S1:GREU:31&quot;</span>
+<span class="c1"># NOTA: cada equip, un group propi.</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">microbit</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">radio</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">music</span>
+
+<span class="n">radio</span><span class="o">.</span><span class="n">on</span><span class="p">()</span>
+<span class="n">radio</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">group</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">missatge</span> <span class="o">=</span> <span class="n">radio</span><span class="o">.</span><span class="n">receive</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">missatge</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">missatge</span><span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">id_emissor</span><span class="p">,</span> <span class="n">nivell</span><span class="p">,</span> <span class="n">valor</span> <span class="o">=</span> <span class="n">missatge</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;:&quot;</span><span class="p">)</span>
+            <span class="c1"># AMPLIACIO 3: mostra qui avisa</span>
+            <span class="n">display</span><span class="o">.</span><span class="n">scroll</span><span class="p">(</span><span class="n">id_emissor</span><span class="p">)</span>
+            <span class="c1"># AMPLIACIO 1: icona segons nivell</span>
+            <span class="k">if</span> <span class="n">nivell</span> <span class="o">==</span> <span class="s2">&quot;GREU&quot;</span><span class="p">:</span>
+                <span class="n">display</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">Image</span><span class="o">.</span><span class="n">SKULL</span><span class="p">)</span>
+                <span class="n">music</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">music</span><span class="o">.</span><span class="n">BA_DING</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">nivell</span> <span class="o">==</span> <span class="s2">&quot;AVIS&quot;</span><span class="p">:</span>
+                <span class="n">display</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">Image</span><span class="o">.</span><span class="n">NO</span><span class="p">)</span>
+            <span class="c1"># AMPLIACIO 2: confirma la recepcio</span>
+            <span class="n">radio</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="s2">&quot;ACK:&quot;</span> <span class="o">+</span> <span class="n">id_emissor</span><span class="p">)</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="n">display</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">Image</span><span class="o">.</span><span class="n">CONFUSED</span><span class="p">)</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+</pre></div>
+</div></section>
+<section class="codi-bloc" id="b-alerta-receptor-minim"><header class="codi-cap"><code class="codi-nom">B_alerta_receptor_minim.py</code><button class="copia-btn" type="button">Copia</button></header><div class="codi-cos"><div class="highlight"><pre><span></span><span class="c1"># Solucionari Repte SA8-B · Sistema d&#39;alerta - RECEPTOR (REQUISIT MINIM)</span>
+<span class="c1"># Rep l&#39;alerta i la mostra (icona + so).</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">microbit</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">radio</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">music</span>
+
+<span class="n">radio</span><span class="o">.</span><span class="n">on</span><span class="p">()</span>
+<span class="n">radio</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">group</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">missatge</span> <span class="o">=</span> <span class="n">radio</span><span class="o">.</span><span class="n">receive</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">missatge</span> <span class="o">==</span> <span class="s2">&quot;ALERTA&quot;</span><span class="p">:</span>
+        <span class="n">display</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">Image</span><span class="o">.</span><span class="n">SKULL</span><span class="p">)</span>
+        <span class="n">music</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">music</span><span class="o">.</span><span class="n">BA_DING</span><span class="p">)</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+</pre></div>
+</div></section>
+<section class="codi-bloc" id="c-gestos-ampliat"><header class="codi-cap"><code class="codi-nom">C_gestos_ampliat.py</code><button class="copia-btn" type="button">Copia</button></header><div class="codi-cos"><div class="highlight"><pre><span></span><span class="c1"># Solucionari Repte SA8-C · Control per gestos (AMPLIAT)</span>
+<span class="c1"># AMPLIACIO 1: afegeix un tercer gest amb la seva accio.</span>
+<span class="c1"># AMPLIACIO 2: usa els gestos per controlar un altre dispositiu per radio (comandament gestual).</span>
+<span class="c1"># AMPLIACIO 3 (nota): per a un model de ML &quot;de veritat&quot; que APREN de dades, es pot</span>
+<span class="c1">#   explorar l&#39;extensio &quot;Code &amp; AI&quot; de MakeCode i entrenar amb exemples propis.</span>
+<span class="c1">#   Aqui mantenim el classificador per REGLES (transparent i explicable).</span>
+<span class="c1"># NOTA: cada equip, un group propi.</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">microbit</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">radio</span>
+
+<span class="n">radio</span><span class="o">.</span><span class="n">on</span><span class="p">()</span>
+<span class="n">radio</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">group</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">classifica</span><span class="p">():</span>
+    <span class="c1"># Classificador per regles amb tres gestos</span>
+    <span class="k">if</span> <span class="n">accelerometer</span><span class="o">.</span><span class="n">was_gesture</span><span class="p">(</span><span class="s2">&quot;shake&quot;</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;A&quot;</span>     <span class="c1"># gest 1</span>
+    <span class="k">if</span> <span class="n">accelerometer</span><span class="o">.</span><span class="n">was_gesture</span><span class="p">(</span><span class="s2">&quot;face up&quot;</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;B&quot;</span>     <span class="c1"># gest 2</span>
+    <span class="k">if</span> <span class="n">accelerometer</span><span class="o">.</span><span class="n">was_gesture</span><span class="p">(</span><span class="s2">&quot;face down&quot;</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;C&quot;</span>     <span class="c1"># AMPLIACIO 1: gest 3</span>
+    <span class="k">return</span> <span class="kc">None</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">gest</span> <span class="o">=</span> <span class="n">classifica</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">gest</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="c1"># AMPLIACIO 2: envia l&#39;ordre a l&#39;altre dispositiu</span>
+        <span class="n">radio</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">gest</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">gest</span> <span class="o">==</span> <span class="s2">&quot;A&quot;</span><span class="p">:</span>
+            <span class="n">display</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">Image</span><span class="o">.</span><span class="n">SQUARE</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">gest</span> <span class="o">==</span> <span class="s2">&quot;B&quot;</span><span class="p">:</span>
+            <span class="n">display</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">Image</span><span class="o">.</span><span class="n">YES</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">gest</span> <span class="o">==</span> <span class="s2">&quot;C&quot;</span><span class="p">:</span>
+            <span class="n">display</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">Image</span><span class="o">.</span><span class="n">NO</span><span class="p">)</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div></section>
+<section class="codi-bloc" id="c-gestos-minim"><header class="codi-cap"><code class="codi-nom">C_gestos_minim.py</code><button class="copia-btn" type="button">Copia</button></header><div class="codi-cos"><div class="highlight"><pre><span></span><span class="c1"># Solucionari Repte SA8-C · Control per gestos (REQUISIT MINIM)</span>
+<span class="c1"># Reconeix almenys DOS gestos i hi associa una accio (mostrar una icona).</span>
+<span class="c1"># Es una &quot;IA&quot; basada en regles (classificador senzill fet a ma).</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">microbit</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">accelerometer</span><span class="o">.</span><span class="n">was_gesture</span><span class="p">(</span><span class="s2">&quot;shake&quot;</span><span class="p">):</span>
+        <span class="n">display</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">Image</span><span class="o">.</span><span class="n">SQUARE</span><span class="p">)</span>        <span class="c1"># gest 1: sacseig</span>
+    <span class="k">elif</span> <span class="n">accelerometer</span><span class="o">.</span><span class="n">was_gesture</span><span class="p">(</span><span class="s2">&quot;face up&quot;</span><span class="p">):</span>
+        <span class="n">display</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">Image</span><span class="o">.</span><span class="n">YES</span><span class="p">)</span>           <span class="c1"># gest 2: pla cara amunt</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div></section>
+    </article>
+  </main>
+  
+</div>
+<footer class="peu">
+  <p>Robòtica · 1r de Batxillerat · material sota llicència <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca" target="_blank" rel="noopener">CC BY-SA 4.0</a>.</p>
+  <p><a href="https://github.com/tomeu-cd100/robotica-1batx-2627" target="_blank" rel="noopener">Repositori a GitHub</a> · web generat el 2026-06-30.</p>
+</footer>
+<script src="../../../assets/js/cerca-index.js"></script>
+<script src="../../../assets/js/lloc.js"></script>
+</body>
+</html>

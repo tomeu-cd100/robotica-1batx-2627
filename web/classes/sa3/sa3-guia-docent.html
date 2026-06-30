@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SA3 · Guia docent — Entrades i sensors: el robot percep · Robòtica · 1r de Batxillerat</title>
+<meta name="description" content="Material docent · LOMLOE Catalunya · curs 2026-2027">
+<link rel="stylesheet" href="../../assets/css/estil.css">
+<link rel="stylesheet" href="../../assets/css/pygments.css">
+<script>(function(){try{var t=localStorage.getItem('tema');if(t==='fosc'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.setAttribute('data-tema','fosc');}catch(e){}})();</script>
+</head>
+<body data-section="classes" class="amb-sidebar amb-toc">
+<a class="skip" href="#contingut">Salta al contingut</a>
+<header class="topbar">
+  <button class="menu-btn" aria-label="Obre el menú" aria-expanded="false">☰</button>
+  <a class="brand" href="../../index.html"><span class="brand-mark">◆</span> Robòtica <span class="brand-sub">1r Batx</span></a>
+  <nav class="topnav" aria-label="Seccions">
+    <a href="../../index.html">Inici</a>
+<a href="../../programacio/index.html" data-sec="programacio">Programació didàctica</a>
+<a href="../../classes/index.html" data-sec="classes" class="actiu">Classes</a>
+<a href="../../reptes/index.html" data-sec="reptes">Reptes</a>
+<a href="../../avaluacio/index.html" data-sec="avaluacio">Avaluació</a>
+<a href="../../normativa/index.html" data-sec="normativa">Normativa</a>
+<a href="../../recursos/index.html" data-sec="recursos">Recursos</a>
+  </nav>
+  <div class="topbar-eines">
+    <div class="cercador">
+      <input type="search" id="cerca" placeholder="Cerca…" autocomplete="off" aria-label="Cerca al web">
+      <div id="cerca-resultats" class="cerca-resultats" hidden></div>
+    </div>
+    <button class="tema-btn" aria-label="Canvia el tema clar/fosc" title="Tema clar/fosc">◐</button>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar"><nav class="sidebar-nav" aria-label="Pàgines de la secció">
+<p class="sidebar-titol">Classes</p>
+<ul class="sb-top">
+<li><a href="../index.html">Presentació</a></li>
+<li><a href="../00-banc-objectes-disseny.html">Banc d&#x27;objectes per dissenyar — de l&#x27;electrònica al producte</a></li>
+<li><a href="../00-galeria-exemples-objectes.html">Galeria d&#x27;exemples resolts — objectes de disseny</a></li>
+<li><a href="../00-ia-a-la-materia.html">00 · La Intel·ligència Artificial a la matèria (guia transversal)</a></li>
+<li><a href="../00-llegeix-me-classes.html">Classes — Material d&#x27;aula</a></li>
+<li><a href="../00-mapa-sa-objectes.html">Mapa del curs · de cada SA a un objecte real</a></li>
+<li><a href="../00-plantilla-disseny-objecte.html">Plantilla de disseny d&#x27;objecte</a></li>
+<li><a href="../00-poster-aula-metode-depura-rols.html">Pòster d&#x27;aula — Com treballem a Robòtica</a></li>
+<li><a href="../00-poster-ia-us-assistents.html">Pòster d&#x27;aula — Fer servir la IA amb cap</a></li>
+</ul>
+<details class="sb-grup"><summary><span>SA0 · Vocabulari essencial i bases de programació</span></summary><ul><li><a href="../sa0/index.html">Presentació</a></li><li><a href="../sa0/sa0-fitxa-alumnat.html">SA0 · Fitxa d&#x27;alumnat — Vocabulari i primeres passes amb el codi</a></li><li><a href="../sa0/sa0-guia-docent.html">SA0 · Guia docent — Vocabulari essencial i bases de programació</a></li><li><a href="../sa0/sa0-guia-programacio.html">SA0 · Guia per aprendre a programar la placa</a></li><li><a href="../sa0/sa0-vocabulari-essencial.html">SA0 · Vocabulari essencial de la robòtica</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA1 · Introducció a la robòtica</span><span class="tri-dot" data-tri="1"></span></summary><ul><li><a href="../sa1/index.html">Presentació</a></li><li><a href="../sa1/sa1-esquemes-connexions.html">SA1 · Esquemes i connexions</a></li><li><a href="../sa1/sa1-fitxa-alumnat.html">SA1 · Fitxa base — Què és un robot?</a></li><li><a href="../sa1/sa1-fitxa-ampliada.html">SA1 · Fitxa ampliada (aprofundiment) — Què és un robot?</a></li><li><a href="../sa1/sa1-guia-docent.html">SA1 · Guia docent — Què és un robot? Sistemes embeguts i mètode de projecte</a></li><li><a href="../sa1/sa1-normes-seguretat.html">SA1 · Normes de seguretat del laboratori de robòtica</a></li><li><a href="../sa1/sa1-poster-robot-plantilla.html">SA1 · Fitxa-pòster: &quot;Analitzem un robot real&quot;</a></li><li><a href="../sa1/sa1-prova-diagnostica.html">SA1 · Prova diagnòstica de coneixements previs</a></li><li><a href="../sa1/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA2 · Sortides digitals i PWM</span><span class="tri-dot" data-tri="1"></span></summary><ul><li><a href="../sa2/index.html">Presentació</a></li><li><a href="../sa2/sa2-esquemes-connexions.html">SA2 · Esquemes i connexions</a></li><li><a href="../sa2/sa2-fitxa-alumnat.html">SA2 · Fitxa base — Sortides digitals i PWM</a></li><li><a href="../sa2/sa2-fitxa-ampliada.html">SA2 · Fitxa ampliada (aprofundiment) — Sortides digitals i PWM</a></li><li><a href="../sa2/sa2-guia-docent.html">SA2 · Guia docent — Sortides digitals i PWM: dona vida als actuadors</a></li><li><a href="../sa2/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup" open><summary><span>SA3 · Entrades i sensors</span><span class="tri-dot" data-tri="1"></span></summary><ul><li><a href="index.html">Presentació</a></li><li><a href="sa3-esquemes-connexions.html">SA3 · Esquemes i connexions</a></li><li><a href="sa3-fitxa-alumnat.html">SA3 · Fitxa base — Entrades i sensors</a></li><li><a href="sa3-fitxa-ampliada.html">SA3 · Fitxa ampliada (aprofundiment) — Entrades i sensors</a></li><li><a href="sa3-guia-docent.html" class="actiu">SA3 · Guia docent — Entrades i sensors: el robot percep</a></li><li><a href="codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA4 · Moviment: servos i motors</span><span class="tri-dot" data-tri="2"></span></summary><ul><li><a href="../sa4/index.html">Presentació</a></li><li><a href="../sa4/sa4-esquemes-connexions.html">SA4 · Esquemes i connexions</a></li><li><a href="../sa4/sa4-fitxa-alumnat.html">SA4 · Fitxa base — Moviment: servos, motors i ponts H</a></li><li><a href="../sa4/sa4-fitxa-ampliada.html">SA4 · Fitxa ampliada (aprofundiment) — Moviment: servos, motors i ponts H</a></li><li><a href="../sa4/sa4-guia-docent.html">SA4 · Guia docent — Moviment: servos, motors i ponts H</a></li><li><a href="../sa4/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA5 · micro:bit i MicroPython</span><span class="tri-dot" data-tri="2"></span></summary><ul><li><a href="../sa5/index.html">Presentació</a></li><li><a href="../sa5/sa5-connexions.html">SA5 · Connexions i entorn</a></li><li><a href="../sa5/sa5-fitxa-alumnat.html">SA5 · Fitxa base — micro:bit i MicroPython</a></li><li><a href="../sa5/sa5-fitxa-ampliada.html">SA5 · Fitxa ampliada (aprofundiment) — micro:bit i MicroPython</a></li><li><a href="../sa5/sa5-guia-docent.html">SA5 · Guia docent — micro:bit i MicroPython: un altre paradigma</a></li><li><a href="../sa5/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA6 · Sistemes de control</span><span class="tri-dot" data-tri="2"></span></summary><ul><li><a href="../sa6/index.html">Presentació</a></li><li><a href="../sa6/sa6-esquemes-connexions.html">SA6 · Esquemes i connexions</a></li><li><a href="../sa6/sa6-fitxa-alumnat.html">SA6 · Fitxa base — Sistemes de control</a></li><li><a href="../sa6/sa6-fitxa-ampliada.html">SA6 · Fitxa ampliada (aprofundiment) — Sistemes de control</a></li><li><a href="../sa6/sa6-guia-docent.html">SA6 · Guia docent — Sistemes de control: llaç obert/tancat i màquines d&#x27;estats</a></li><li><a href="../sa6/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA7 · Robòtica mòbil</span><span class="tri-dot" data-tri="3"></span></summary><ul><li><a href="../sa7/index.html">Presentació</a></li><li><a href="../sa7/sa7-esquemes-connexions.html">SA7 · Esquemes i connexions</a></li><li><a href="../sa7/sa7-fitxa-alumnat.html">SA7 · Fitxa base — Robòtica mòbil</a></li><li><a href="../sa7/sa7-fitxa-ampliada.html">SA7 · Fitxa ampliada (aprofundiment) — Robòtica mòbil</a></li><li><a href="../sa7/sa7-guia-docent.html">SA7 · Guia docent — Robòtica mòbil: cinemàtica i trajectòries</a></li><li><a href="../sa7/sa7-recursos-video-ia.html">SA7 · Recursos de vídeo — comportament programat vs après (IA)</a></li><li><a href="../sa7/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA8 · IoT i IA</span><span class="tri-dot" data-tri="3"></span></summary><ul><li><a href="../sa8/index.html">Presentació</a></li><li><a href="../sa8/sa8-connexions.html">SA8 · Connexions i entorn</a></li><li><a href="../sa8/sa8-fitxa-alumnat.html">SA8 · Fitxa base — IoT i IA</a></li><li><a href="../sa8/sa8-fitxa-ampliada.html">SA8 · Fitxa ampliada (aprofundiment) — IoT i IA</a></li><li><a href="../sa8/sa8-guia-docent.html">SA8 · Guia docent — IoT i IA: el robot connectat i intel·ligent</a></li><li><a href="../sa8/sa8-practica-teachable-machine.html">SA8 · Pràctica d&#x27;IA — Entrenar un classificador amb Teachable Machine</a></li><li><a href="../sa8/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA9 · Projecte final</span><span class="tri-dot" data-tri="3"></span></summary><ul><li><a href="../sa9/index.html">Presentació</a></li><li><a href="../sa9/plantilles/banc-de-reptes.html">SA9 · Banc de reptes (per nivells)</a></li><li><a href="../sa9/plantilles/dossier-tecnic-plantilla.html">Dossier tècnic — [Títol del projecte]</a></li><li><a href="../sa9/plantilles/planificacio-agile-plantilla.html">Planificació àgil — Equip: ______________________</a></li><li><a href="../sa9/sa9-fitxa-alumnat.html">SA9 · Fitxa base — Repte final integrador</a></li><li><a href="../sa9/sa9-fitxa-ampliada.html">SA9 · Fitxa ampliada (aprofundiment) — Repte final integrador</a></li><li><a href="../sa9/sa9-guia-docent.html">SA9 · Guia docent — Repte final integrador (opció competició)</a></li><li><a href="../sa9/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>Solucionari</span></summary><ul><li><a href="../solucionari/solucionari-t1-sa1-sa3.html">Solucionari de reptes — Trimestre 1 (SA1-SA3)</a></li><li><a href="../solucionari/solucionari-t2-sa4-sa6.html">Solucionari de reptes — Trimestre 2 (SA4-SA6)</a></li><li><a href="../solucionari/solucionari-t3-sa7-sa9.html">Solucionari de reptes — Trimestre 3 (SA7-SA9)</a></li></ul></details>
+</nav></aside>
+  <main id="contingut">
+    <nav class="breadcrumb" aria-label="Ubicació"><a href="../../index.html">Inici</a> <span class="sep">/</span> <a href="../../classes/index.html">Classes</a> <span class="sep">/</span> <span aria-current="page">SA3 · Guia docent — Entrades i sensors: el robot percep</span></nav>
+    <span class="badge-tri" data-tri="1">1r trimestre</span>
+    <article class="prose">
+<h1 id="sa3-guia-docent-entrades-i-sensors-el-robot-percep"><a class="toclink" href="#sa3-guia-docent-entrades-i-sensors-el-robot-percep">SA3 · Guia docent — Entrades i sensors: el robot percep</a></h1>
+<p><strong>Durada:</strong> 8 h (4 sessions) · <strong>Maquinari:</strong> Arduino UNO + Keyestudio (polsador, potenciòmetre, LDR, NTC, ultrasons HC-SR04) · <strong>Llenguatge:</strong> C/C++
+<strong>Referència:</strong> <code>Programació didàctica/12_SA3_Entrades_sensors.md</code> · <strong>Esquemes:</strong> <code>SA3_esquemes_connexions.md</code></p>
+<h2 id="objectius-de-la-sa"><a class="toclink" href="#objectius-de-la-sa">Objectius de la SA</a></h2>
+<ol>
+<li>Llegir entrades digitals (<code>digitalRead</code>) i analògiques (<code>analogRead</code>) i interpretar-ne els valors.</li>
+<li>Aplicar <strong>funcions</strong> definides per l'usuari per modularitzar.</li>
+<li>Usar el <strong>monitor/traçador sèrie</strong> per depurar i visualitzar dades.</li>
+<li>Connectar percepció (sensor) amb acció (actuador).</li>
+</ol>
+<h2 id="material-per-parella"><a class="toclink" href="#material-per-parella">Material per parella</a></h2>
+<ul>
+<li>Arduino UNO + USB, protoboard, cables.</li>
+<li>Polsador, potenciòmetre, LDR + resistència 10 kΩ, NTC + 10 kΩ, sensor d'ultrasons HC-SR04, LED, brunzidor piezo.</li>
+</ul>
+<h2 id="codi-de-suport-carpeta-codi"><a class="toclink" href="#codi-de-suport-carpeta-codi">Codi de suport (carpeta <code>codi/</code>)</a></h2>
+<table>
+<thead>
+<tr>
+<th>Fitxer</th>
+<th>Contingut</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>01_polsador_debounce.ino</code></td>
+<td>Entrada digital amb <em>pull-up</em> i antirebot; comptador.</td>
+</tr>
+<tr>
+<td><code>02_potenciometre_ldr.ino</code></td>
+<td>Entrades analògiques; <code>map()</code>; llum automàtic.</td>
+</tr>
+<tr>
+<td><code>03_ultrasons_funcio.ino</code></td>
+<td>Funció <code>mesuraDistancia()</code>; Serial Plotter.</td>
+</tr>
+<tr>
+<td><code>04_alarma_aparcament.ino</code></td>
+<td>Producte: sensor→actuador segons distància.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="metode-de-projecte-i-continuitat"><a class="toclink" href="#metode-de-projecte-i-continuitat">Mètode de projecte i continuïtat</a></h2>
+<ul>
+<li><strong>Cicle de treball</strong> (com a tot el curs): <em>analitzar → dissenyar → prototipar → provar → millorar</em> (vegeu SA1). El <strong>producte</strong> n'és el recorregut complet i el <strong>quadern tècnic</strong> el documenta.</li>
+<li><strong>Lectura de codi amb PRIMM:</strong> a cada <em>modelatge</em> l'alumnat <strong>prediu</strong> què farà el sketch <strong>abans</strong> d'executar-lo, després l'<strong>investiga</strong>, el <strong>modifica</strong> i en <strong>crea</strong> un de nou. <strong>Operativa (val per a totes les sessions amb codi):</strong> dedica els primers ~5' del Modelatge a projectar el codi nou <strong>sense executar-lo</strong> i recollir prediccions; només després, executa i investiga.</li>
+<li><strong>Pont (d'on venim / on anem):</strong> ve de la <strong>SA2</strong> (sortides/actuadors) → portem a la <strong>SA4</strong> (moviment). Aquí el sistema aprèn a <strong>percebre</strong> (sensors); a la SA4 la percepció <strong>mourà</strong> servos i motors.</li>
+</ul>
+<hr />
+<h2 id="sessio-1-2-h-entrades-digitals-i-monitor-serie"><a class="toclink" href="#sessio-1-2-h-entrades-digitals-i-monitor-serie">SESSIÓ 1 (2 h) — Entrades digitals i monitor sèrie</a></h2>
+<ul>
+<li><strong>Activació (10'):</strong> <em>"Com sap la placa que has premut un botó?"</em></li>
+<li><strong>Modelatge (25'):</strong> <code>01_polsador_debounce.ino</code>. <code>INPUT_PULLUP</code> (per què evita el cable extra), <code>digitalRead</code>, <strong>antirebot</strong> (<em>debounce</em>) i <strong>Serial Monitor</strong>.</li>
+<li><strong>Pràctica guiada (35'):</strong> munten el polsador al pin 2; obren el monitor sèrie i compten premudes.</li>
+<li><strong>Repte (40'):</strong> el polsador encén/apaga un LED a cada premuda (mode <em>toggle</em>); <strong>+ repte:</strong> comptar fins a 5 i reiniciar.</li>
+<li><strong>Tancament (10'):</strong> quadern.</li>
+</ul>
+<p><strong>Punt clau:</strong> amb <code>INPUT_PULLUP</code> el pin llegeix <strong>HIGH en repòs</strong> i <strong>LOW en prémer</strong> (lògica invertida). El <em>debounce</em> evita lectures múltiples per un sol clic.</p>
+<hr />
+<h2 id="sessio-2-2-h-entrades-analogiques"><a class="toclink" href="#sessio-2-2-h-entrades-analogiques">SESSIÓ 2 (2 h) — Entrades analògiques</a></h2>
+<ul>
+<li><strong>Activació (10'):</strong> <em>"Quants valors pot tenir una entrada analògica?"</em> → 0-1023.</li>
+<li><strong>Modelatge (25'):</strong> <code>02_potenciometre_ldr.ino</code>. <code>analogRead</code> (conversió A/D 10 bits), <strong><code>map()</code></strong> per reescalar, divisor de tensió per a la LDR.</li>
+<li><strong>Pràctica guiada (35'):</strong> llegeixen potenciòmetre (A0) i LDR (A1) al monitor; regulen la intensitat d'un LED amb el potenciòmetre (PWM).</li>
+<li><strong>Repte (40'):</strong> <strong>llum automàtic</strong> (LDR → LED s'encén si fa fosc) amb llindar; <strong>+ repte:</strong> llindar ajustable amb el potenciòmetre.</li>
+<li><strong>Tancament (10'):</strong> quadern (taula de lectures).</li>
+</ul>
+<p><strong>Punt clau:</strong> <code>analogRead</code> retorna 0-1023; <code>analogWrite</code> necessita 0-255 → cal <strong><code>map()</code></strong>. El divisor de tensió converteix la resistència variable (LDR/NTC) en tensió mesurable.</p>
+<hr />
+<h2 id="sessio-3-2-h-sensor-de-distancia-i-funcions"><a class="toclink" href="#sessio-3-2-h-sensor-de-distancia-i-funcions">SESSIÓ 3 (2 h) — Sensor de distància i funcions</a></h2>
+<ul>
+<li><strong>Activació (10'):</strong> <em>"Com mesura distàncies un cotxe en aparcar?"</em> → ultrasons.</li>
+<li><strong>Modelatge (30'):</strong> <code>03_ultrasons_funcio.ino</code>. Principi de l'eco (<code>pulseIn</code>), càlcul de distància, i sobretot <strong>escriure una funció</strong> <code>mesuraDistancia()</code> que retorna un valor.</li>
+<li><strong>Pràctica guiada (30'):</strong> munten l'HC-SR04; visualitzen la distància amb <strong>Serial Plotter</strong>.</li>
+<li><strong>Repte (40'):</strong> funció que retorna la distància mitjana de 3 mesures (filtre); <strong>+ repte:</strong> detectar si un objecte s'acosta o s'allunya.</li>
+<li><strong>Tancament (10'):</strong> quadern (codi de la funció).</li>
+</ul>
+<p><strong>Punt clau:</strong> una <strong>funció</strong> encapsula una tasca i en retorna un resultat → codi més net i reutilitzable. <code>pulseIn</code> mesura el temps de l'eco; distància (cm) = temps · 0,034 / 2.</p>
+<hr />
+<h2 id="sessio-4-2-h-producte-alarmaaparcament"><a class="toclink" href="#sessio-4-2-h-producte-alarmaaparcament">SESSIÓ 4 (2 h) — Producte: alarma/aparcament</a></h2>
+<blockquote>
+<p>📋 <strong>Aquesta sessió allotja la prova pràctica trimestral T1</strong> (vegeu <code>Avaluació/Prova_practica_T1.md</code> i <code>Programació didàctica/08_Sequenciacio_temporal_anual.md</code>): el producte/repte d'aquesta sessió <strong>fa de prova T1</strong> i no afegeix hores extra.</p>
+</blockquote>
+<ul>
+<li><strong>Activació (10'):</strong> presentació del repte.</li>
+<li><strong>Pràctica (70'):</strong> <code>04_alarma_aparcament.ino</code>. Integren ultrasons + LED/piezo amb <strong>avís proporcional a la distància</strong> (com més a prop, més ràpid el so). Cada parella personalitza llindars.</li>
+<li><strong>Documentació + defensa (30'):</strong> esquema, codi comentat, mini-defensa.</li>
+<li><strong>Tancament (10'):</strong> autoavaluació.</li>
+</ul>
+<p><strong>Producte:</strong> sistema sensor→actuador (alarma de proximitat o llum automàtic) amb codi modular (funcions).
+<strong>Avaluació:</strong> rúbriques <strong>R1</strong> (codi) i <strong>R2</strong> (circuit). Repte individual: escriure una funció de lectura.</p>
+<h3 id="mapa-davaluacio-tracabilitat"><a class="toclink" href="#mapa-davaluacio-tracabilitat">Mapa d'avaluació (traçabilitat)</a></h3>
+<table>
+<thead>
+<tr>
+<th>Instrument</th>
+<th>Què evidencia</th>
+<th>Criteri</th>
+<th>Rúbrica</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Producte (alarma/llum automàtic)</td>
+<td>Percepció → acció amb codi modular</td>
+<td>CA2.1, CA2.2</td>
+<td>R1, R2</td>
+</tr>
+<tr>
+<td>Repte de codi (funció de lectura)</td>
+<td>Funcions, <code>digitalRead</code>/<code>analogRead</code>, <code>map()</code></td>
+<td>CA1.1</td>
+<td>R1</td>
+</tr>
+<tr>
+<td>Quadern tècnic</td>
+<td>Taula de lectures, codi de la funció, errors</td>
+<td>CA1.1, CA2.2</td>
+<td>R1</td>
+</tr>
+<tr>
+<td>Observació + depuració sèrie</td>
+<td>Ús del monitor/traçador, divisor de tensió</td>
+<td>CA2.2</td>
+<td>R2</td>
+</tr>
+</tbody>
+</table>
+<p><em>(CA1.1 = programar en C/C++; CA2.1 = dissenyar/muntar circuits amb seguretat; CA2.2 = mesurar/interpretar senyals. Vegeu <code>Programació didàctica/06_Avaluacio_criteris_qualificacio.md</code>. Comparteix R1 i R2 </em><em>abans</em><em> de començar.)</em></p>
+<h2 id="errors-frequents"><a class="toclink" href="#errors-frequents">Errors freqüents</a></h2>
+<table>
+<thead>
+<tr>
+<th>Error</th>
+<th>Causa</th>
+<th>Solució</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>El polsador "salta" sol</td>
+<td>Sense <em>debounce</em> o sense <em>pull-up</em></td>
+<td>Usar <code>INPUT_PULLUP</code> i antirebot.</td>
+</tr>
+<tr>
+<td>Lectura analògica sempre 0 o 1023</td>
+<td>Divisor mal connectat</td>
+<td>Revisar la resistència de 10 kΩ i el punt mig al pin analògic.</td>
+</tr>
+<tr>
+<td>Distància sempre 0 o molt gran</td>
+<td>TRIG/ECHO intercanviats</td>
+<td>Verificar TRIG (sortida) i ECHO (entrada).</td>
+</tr>
+<tr>
+<td>El LED no regula amb el potenciòmetre</td>
+<td>Pin de sortida sense PWM</td>
+<td>LED en pin <code>~</code> i usar <code>map()</code> a 0-255.</td>
+</tr>
+<tr>
+<td>L'alarma/avís es dispara sol sense cap objecte</td>
+<td><code>pulseIn</code> retorna <code>0</code> quan no hi ha eco (objecte fora de rang) i <code>0</code> cm es llegeix com "molt a prop"</td>
+<td>Posar <em>timeout</em> a <code>pulseIn(ECHO, HIGH, 30000)</code> i tractar el <code>0</code> com a "molt lluny" (p. ex. retornar 400).</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="guio-de-modelatge-que-verbalitzar"><a class="toclink" href="#guio-de-modelatge-que-verbalitzar">Guió de modelatge (què verbalitzar)</a></h2>
+<blockquote>
+<p>Frases i preguntes clau per al <strong>Modelatge</strong> de cada sessió (què mirar, què preguntar abans d'executar, error a anticipar).</p>
+</blockquote>
+<ul>
+<li><strong>S1 · <code>01_polsador_debounce</code> (<code>INPUT_PULLUP</code>):</strong> analogia — <em>el pin està "agafat" a HIGH i prémer l'estira a LOW</em> (lògica invertida). Pregunta: <em>"per què, sense antirebot, una sola premuda en compta diverses?"</em> <em>Error a anticipar:</em> sorpresa per la lògica invertida.</li>
+<li><strong>S2 · <code>02_potenciometre_ldr</code> (<code>analogRead</code>, <code>map()</code>):</strong> obre el <strong>Monitor Sèrie</strong> i mou el potenciòmetre <strong>en directe</strong> perquè vegin els 0–1023. Pregunta: <em>"com passo de 0–1023 a 0–255?"</em> → <code>map()</code>. <em>Error a anticipar:</em> divisor de tensió de la LDR mal connectat (lectures 0 o 1023).</li>
+<li><strong>S3 · <code>03_ultrasons_funcio</code> (funcions):</strong> modela <strong>escriure una funció</strong> <code>mesuraDistancia()</code> i com <strong>retorna</strong> un valor. Pregunta: <em>"quin avantatge té encapsular-ho en una funció?"</em> <em>Error a anticipar:</em> TRIG i ECHO intercanviats.</li>
+<li><strong>S4 · <code>04_alarma_aparcament</code> (integració):</strong> mostra'l com a integració sensor→actuador; pregunta com fer l'<strong>avís proporcional</strong> a la distància.</li>
+</ul>
+<h2 id="atencio-a-la-diversitat-dua"><a class="toclink" href="#atencio-a-la-diversitat-dua">Atenció a la diversitat (DUA)</a></h2>
+<table>
+<thead>
+<tr>
+<th>Via</th>
+<th>Mesura</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Bastida</strong> (qui s'encalla)</td>
+<td>Començar amb el <strong>polsador</strong> (digital) abans de l'analògic; donar la funció <code>mesuraDistancia()</code> ja escrita per llegir-la i usar-la; parella heterogènia.</td>
+</tr>
+<tr>
+<td><strong>+ Ampliació</strong> (qui va sobrat)</td>
+<td>Mitjana de 3 mesures, detectar acostament/allunyament; reptes ⭐ de <code>Reptes/Reptes_SA3.md</code>.</td>
+</tr>
+<tr>
+<td><strong>Representació múltiple</strong></td>
+<td>Esquema, <strong>Serial Plotter</strong> (dada visual), simulació Wokwi, codi comentat.</td>
+</tr>
+<tr>
+<td><strong>Implicació</strong></td>
+<td>Cada parella tria llindars i el tipus d'avís del seu producte.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="treball-cooperatiu-amb-rols"><a class="toclink" href="#treball-cooperatiu-amb-rols">Treball cooperatiu amb rols</a></h2>
+<p>Parelles amb <strong>rols rotatius</strong> (un canvi per sessió): Coordinador/a · Programador/a · Enginyer/a de maquinari (sensor, connexions, seguretat) · Provador/a–Documentador/a (monitor sèrie + quadern). Quadre per rotar a la fitxa.</p>
+<h2 id="pensament-computacional-i-depuracio"><a class="toclink" href="#pensament-computacional-i-depuracio">Pensament computacional i depuració</a></h2>
+<ul>
+<li><strong>PC d'aquesta SA:</strong> <strong>abstracció</strong> (encapsular la lectura en una funció) i <strong>condicionals</strong> (decidir per llindar).</li>
+<li><strong>Depuració:</strong> la <strong>rutina DEPURA</strong> amb el <strong>Monitor sèrie</strong> com a eina central (la E d'<em>Examina</em>).</li>
+</ul>
+<h2 id="avaluacio-formativa-instruments"><a class="toclink" href="#avaluacio-formativa-instruments">Avaluació formativa (instruments)</a></h2>
+<ul>
+<li><strong>Diana d'autoavaluació</strong> (fitxa) sobre 3 criteris clau · <strong>Coavaluació</strong> "2 estrelles i un desig" · <strong>Exit ticket</strong> de tancament.</li>
+</ul>
+<h2 id="connexio-amb-la-ia-llavor"><a class="toclink" href="#connexio-amb-la-ia-llavor">Connexió amb la IA (llavor)</a></h2>
+<blockquote>
+<p>Llavor conceptual de <strong>2–3'</strong> (eix A del curs; vegeu <code>../00_IA_a_la_materia.md</code>). No consumeix sessió.</p>
+</blockquote>
+<p>Aquí l'alumnat escriu <strong>regles fetes a mà</strong> sobre dades de sensor: <code>if distancia &lt; 20: alarma</code>. <strong>Això és la base de la IA per classificació.</strong> Pregunta per plantar la llavor:</p>
+<blockquote>
+<p><em>"I si en lloc d'escriure tu el llindar, el sistema l'aprengués sol mirant molts exemples? Això és l'</em><em>aprenentatge automàtic</em><em>, i ho veurem a la SA8."</em></p>
+</blockquote>
+<p><strong>Idea clau:</strong> un <strong>llindar</strong> és una <strong>regla</strong> que decideix una categoria a partir d'un valor → és el precursor d'un <strong>classificador</strong>. Connecta el <code>analogRead</code>/<code>if</code> d'avui amb el <em>"dades → decisió"</em> de la IA.</p>
+<h2 id="context-real-i-ods"><a class="toclink" href="#context-real-i-ods">Context real i ODS</a></h2>
+<ul>
+<li><strong>Context:</strong> llum automàtica, sensors d'estalvi, aparcaments intel·ligents.</li>
+<li><strong>ODS 7</strong> (energia) i <strong>ODS 12</strong> (consum responsable): els sensors redueixen el malbaratament.</li>
+</ul>
+    </article>
+  </main>
+  <nav class="toc" aria-label="En aquesta pàgina"><p class="toc-titol">En aquesta pàgina</p><ul>
+<li class="toc-l1"><a href="#sa3-guia-docent-entrades-i-sensors-el-robot-percep">SA3 · Guia docent — Entrades i sensors: el robot percep</a></li>
+<li class="toc-l2"><a href="#objectius-de-la-sa">Objectius de la SA</a></li>
+<li class="toc-l2"><a href="#material-per-parella">Material per parella</a></li>
+<li class="toc-l2"><a href="#codi-de-suport-carpeta-codi">Codi de suport (carpeta codi/)</a></li>
+<li class="toc-l2"><a href="#metode-de-projecte-i-continuitat">Mètode de projecte i continuïtat</a></li>
+<li class="toc-l2"><a href="#sessio-1-2-h-entrades-digitals-i-monitor-serie">SESSIÓ 1 (2 h) — Entrades digitals i monitor sèrie</a></li>
+<li class="toc-l2"><a href="#sessio-2-2-h-entrades-analogiques">SESSIÓ 2 (2 h) — Entrades analògiques</a></li>
+<li class="toc-l2"><a href="#sessio-3-2-h-sensor-de-distancia-i-funcions">SESSIÓ 3 (2 h) — Sensor de distància i funcions</a></li>
+<li class="toc-l2"><a href="#sessio-4-2-h-producte-alarmaaparcament">SESSIÓ 4 (2 h) — Producte: alarma/aparcament</a></li>
+<li class="toc-l2"><a href="#errors-frequents">Errors freqüents</a></li>
+<li class="toc-l2"><a href="#guio-de-modelatge-que-verbalitzar">Guió de modelatge (què verbalitzar)</a></li>
+<li class="toc-l2"><a href="#atencio-a-la-diversitat-dua">Atenció a la diversitat (DUA)</a></li>
+<li class="toc-l2"><a href="#treball-cooperatiu-amb-rols">Treball cooperatiu amb rols</a></li>
+<li class="toc-l2"><a href="#pensament-computacional-i-depuracio">Pensament computacional i depuració</a></li>
+<li class="toc-l2"><a href="#avaluacio-formativa-instruments">Avaluació formativa (instruments)</a></li>
+<li class="toc-l2"><a href="#connexio-amb-la-ia-llavor">Connexió amb la IA (llavor)</a></li>
+<li class="toc-l2"><a href="#context-real-i-ods">Context real i ODS</a></li>
+</ul></nav>
+</div>
+<footer class="peu">
+  <p>Robòtica · 1r de Batxillerat · material sota llicència <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca" target="_blank" rel="noopener">CC BY-SA 4.0</a>.</p>
+  <p><a href="https://github.com/tomeu-cd100/robotica-1batx-2627" target="_blank" rel="noopener">Repositori a GitHub</a> · web generat el 2026-06-30.</p>
+</footer>
+<script src="../../assets/js/cerca-index.js"></script>
+<script src="../../assets/js/lloc.js"></script>
+</body>
+</html>

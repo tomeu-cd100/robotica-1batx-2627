@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SA5 · micro:bit i MicroPython: un altre paradigma · Robòtica · 1r de Batxillerat</title>
+<meta name="description" content="Material docent · LOMLOE Catalunya · curs 2026-2027">
+<link rel="stylesheet" href="../assets/css/estil.css">
+<link rel="stylesheet" href="../assets/css/pygments.css">
+<script>(function(){try{var t=localStorage.getItem('tema');if(t==='fosc'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.setAttribute('data-tema','fosc');}catch(e){}})();</script>
+</head>
+<body data-section="programacio" class="amb-sidebar amb-toc">
+<a class="skip" href="#contingut">Salta al contingut</a>
+<header class="topbar">
+  <button class="menu-btn" aria-label="Obre el menú" aria-expanded="false">☰</button>
+  <a class="brand" href="../index.html"><span class="brand-mark">◆</span> Robòtica <span class="brand-sub">1r Batx</span></a>
+  <nav class="topnav" aria-label="Seccions">
+    <a href="../index.html">Inici</a>
+<a href="../programacio/index.html" data-sec="programacio" class="actiu">Programació didàctica</a>
+<a href="../classes/index.html" data-sec="classes">Classes</a>
+<a href="../reptes/index.html" data-sec="reptes">Reptes</a>
+<a href="../avaluacio/index.html" data-sec="avaluacio">Avaluació</a>
+<a href="../normativa/index.html" data-sec="normativa">Normativa</a>
+<a href="../recursos/index.html" data-sec="recursos">Recursos</a>
+  </nav>
+  <div class="topbar-eines">
+    <div class="cercador">
+      <input type="search" id="cerca" placeholder="Cerca…" autocomplete="off" aria-label="Cerca al web">
+      <div id="cerca-resultats" class="cerca-resultats" hidden></div>
+    </div>
+    <button class="tema-btn" aria-label="Canvia el tema clar/fosc" title="Tema clar/fosc">◐</button>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar"><nav class="sidebar-nav" aria-label="Pàgines de la secció">
+<p class="sidebar-titol">Programació didàctica</p>
+<ul class="sb-top">
+<li><a href="index.html">Presentació</a></li>
+<li><a href="00-index-general.html">Programació didàctica — Robòtica · 1r de Batxillerat (científic i tecnològic)</a></li>
+<li><a href="01-introduccio-context-justificacio.html">01 · Introducció, context i justificació</a></li>
+<li><a href="02-objectius-competencies.html">02 · Objectius i competències</a></li>
+<li><a href="03-sabers-i-continguts.html">03 · Sabers i continguts</a></li>
+<li><a href="04-metodologia.html">04 · Metodologia</a></li>
+<li><a href="05-atencio-a-la-diversitat.html">05 · Atenció a la diversitat</a></li>
+<li><a href="06-avaluacio-criteris-qualificacio.html">06 · Avaluació: criteris, instruments i qualificació</a></li>
+<li><a href="07-rubriques.html">07 · Rúbriques d&#x27;avaluació</a></li>
+<li><a href="08-sequenciacio-temporal-anual.html">08 · Seqüenciació temporal anual</a></li>
+<li><a href="08c-projectes-vida-real.html">08c · Projectes de la vida real (model mixt: producte per SA + gran integrador)</a></li>
+<li><a href="09-materials-recursos-per-unitat.html">09 · Materials i recursos per unitat</a></li>
+<li><a href="09b-guia-compra-pressupost.html">09b · Guia de compra i pressupost del maquinari</a></li>
+<li><a href="09c-inventari-kits-disponibles.html">09c · Inventari del maquinari disponible (dotació real del centre)</a></li>
+<li><a href="10-sa1-introduccio-robotica.html">SA1 · Què és un robot? Sistemes embeguts i mètode de projecte <span class="tri-dot" data-tri="1"></span></a></li>
+<li><a href="11-sa2-sortides-digitals-pwm.html">SA2 · Sortides digitals i PWM: dona vida als actuadors <span class="tri-dot" data-tri="1"></span></a></li>
+<li><a href="12-sa3-entrades-sensors.html">SA3 · Entrades i sensors: el robot percep <span class="tri-dot" data-tri="1"></span></a></li>
+<li><a href="13-sa4-moviment-servos-motors.html">SA4 · Moviment: servos, motors i ponts H <span class="tri-dot" data-tri="2"></span></a></li>
+<li><a href="14-sa5-microbit-micropython.html" class="actiu">SA5 · micro:bit i MicroPython: un altre paradigma <span class="tri-dot" data-tri="2"></span></a></li>
+<li><a href="15-sa6-sistemes-control.html">SA6 · Sistemes de control: llaç obert/tancat i màquines d&#x27;estats <span class="tri-dot" data-tri="2"></span></a></li>
+<li><a href="16-sa7-robotica-mobil.html">SA7 · Robòtica mòbil: cinemàtica i trajectòries <span class="tri-dot" data-tri="3"></span></a></li>
+<li><a href="17-sa8-iot-ia.html">SA8 · IoT i IA: el robot connectat i intel·ligent <span class="tri-dot" data-tri="3"></span></a></li>
+<li><a href="18-sa9-projecte-final.html">SA9 · Repte final integrador (opció competició) <span class="tri-dot" data-tri="3"></span></a></li>
+</ul>
+</nav></aside>
+  <main id="contingut">
+    <nav class="breadcrumb" aria-label="Ubicació"><a href="../index.html">Inici</a> <span class="sep">/</span> <a href="../programacio/index.html">Programació didàctica</a> <span class="sep">/</span> <span aria-current="page">SA5 · micro:bit i MicroPython: un altre paradigma</span></nav>
+    <span class="badge-tri" data-tri="2">2n trimestre</span>
+    <article class="prose">
+<h1 id="sa5-microbit-i-micropython-un-altre-paradigma"><a class="toclink" href="#sa5-microbit-i-micropython-un-altre-paradigma">SA5 · micro:bit i MicroPython: un altre paradigma</a></h1>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Trimestre</strong></td>
+<td>2n</td>
+</tr>
+<tr>
+<td><strong>Durada</strong></td>
+<td>7 h (3-4 sessions)</td>
+</tr>
+<tr>
+<td><strong>Maquinari</strong></td>
+<td>micro:bit + Micro:shield (sensors externs)</td>
+</tr>
+<tr>
+<td><strong>Llenguatge</strong></td>
+<td>MicroPython (amb MakeCode com a pont)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="vincle-competencial"><a class="toclink" href="#vincle-competencial">Vincle competencial</a></h2>
+<ul>
+<li><strong>Competències específiques:</strong> CE-R1 (principal); CE-R3 (secundària).</li>
+<li><strong>Criteris d'avaluació:</strong> CA1.2, CA3.1.</li>
+<li><strong>Competències clau:</strong> STEM, CD, CPSAA.</li>
+</ul>
+<h2 id="sabers-bloc-d"><a class="toclink" href="#sabers-bloc-d">Sabers (Bloc D)</a></h2>
+<p>Sintaxi de Python (indentació, variables, funcions); E/S de micro:bit (matriu LED, botons, acceleròmetre, brúixola, temperatura, llum); pins externs amb Micro:shield; <strong>comunicació per ràdio</strong>; comparació C/C++ ↔ Python.</p>
+<h2 id="objectius-daprenentatge"><a class="toclink" href="#objectius-daprenentatge">Objectius d'aprenentatge</a></h2>
+<ol>
+<li>Escriure programes en <strong>MicroPython</strong> amb la sintaxi correcta (indentació!).</li>
+<li>Usar els sensors integrats de la micro:bit i perifèrics via Micro:shield.</li>
+<li>Implementar <strong>comunicació per ràdio</strong> entre dues plaques.</li>
+<li><strong>Comparar</strong> la mateixa solució en C/C++ (Arduino) i Python (micro:bit).</li>
+</ol>
+<h2 id="reptepregunta-inicial"><a class="toclink" href="#reptepregunta-inicial">Repte/pregunta inicial</a></h2>
+<blockquote>
+<p><em>"La mateixa idea, dos llenguatges: què canvia entre programar en C++ i en Python?"</em></p>
+</blockquote>
+<h2 id="sequencia-de-sessions"><a class="toclink" href="#sequencia-de-sessions">Seqüència de sessions</a></h2>
+<table>
+<thead>
+<tr>
+<th>Sessió</th>
+<th>Activitats</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1</strong></td>
+<td>Editor Python micro:bit. Matriu LED, botons. "Name badge" i animacions. Indentació i variables.</td>
+</tr>
+<tr>
+<td><strong>2</strong></td>
+<td>Sensors integrats: acceleròmetre (detector de moviment/passes), temperatura, llum (nightlight). Funcions en Python.</td>
+</tr>
+<tr>
+<td><strong>3</strong></td>
+<td><strong>Ràdio</strong>: missatgeria/comandament entre dues micro:bit. Mini-projecte: "dau digital" o "pedra-paper-tisora" per ràdio.</td>
+</tr>
+<tr>
+<td><strong>4 (opc./+ampliació)</strong></td>
+<td><strong>Taula comparativa C++ ↔ Python</strong> d'un mateix programa (p. ex. comptador). Reflexió sobre paradigmes.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="producte"><a class="toclink" href="#producte">Producte</a></h2>
+<p>Aplicació amb micro:bit que usa sensors i/o ràdio (comptapassos, nightlight, joc per ràdio) + taula comparativa C++/Python al quadern.</p>
+<h2 id="avaluacio"><a class="toclink" href="#avaluacio">Avaluació</a></h2>
+<ul>
+<li>Instruments: producte + quadern (inclou comparativa) + repte de codi Python.</li>
+<li>Rúbriques: <strong>R1</strong>, <strong>R4</strong> (comparativa/documentació).</li>
+</ul>
+<h2 id="atencio-a-la-diversitat"><a class="toclink" href="#atencio-a-la-diversitat">Atenció a la diversitat</a></h2>
+<ul>
+<li><strong>Bastida:</strong> <strong>MakeCode</strong> (blocs) com a pont abans del codi Python; simulador integrat.</li>
+<li><strong>+ Ampliació:</strong> xarxa de 3+ plaques; ús de dades de sensor per a decisions; mini-IA (vegeu SA8).</li>
+</ul>
+<h2 id="recursos"><a class="toclink" href="#recursos">Recursos</a></h2>
+<p>micro:bit First lessons with Python; Python Editor; MakeCode; INTEF Aula en Abierto micro:bit; Open Roberta.</p>
+    </article>
+  </main>
+  <nav class="toc" aria-label="En aquesta pàgina"><p class="toc-titol">En aquesta pàgina</p><ul>
+<li class="toc-l1"><a href="#sa5-microbit-i-micropython-un-altre-paradigma">SA5 · micro:bit i MicroPython: un altre paradigma</a></li>
+<li class="toc-l2"><a href="#vincle-competencial">Vincle competencial</a></li>
+<li class="toc-l2"><a href="#sabers-bloc-d">Sabers (Bloc D)</a></li>
+<li class="toc-l2"><a href="#objectius-daprenentatge">Objectius d&#x27;aprenentatge</a></li>
+<li class="toc-l2"><a href="#reptepregunta-inicial">Repte/pregunta inicial</a></li>
+<li class="toc-l2"><a href="#sequencia-de-sessions">Seqüència de sessions</a></li>
+<li class="toc-l2"><a href="#producte">Producte</a></li>
+<li class="toc-l2"><a href="#avaluacio">Avaluació</a></li>
+<li class="toc-l2"><a href="#atencio-a-la-diversitat">Atenció a la diversitat</a></li>
+<li class="toc-l2"><a href="#recursos">Recursos</a></li>
+</ul></nav>
+</div>
+<footer class="peu">
+  <p>Robòtica · 1r de Batxillerat · material sota llicència <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca" target="_blank" rel="noopener">CC BY-SA 4.0</a>.</p>
+  <p><a href="https://github.com/tomeu-cd100/robotica-1batx-2627" target="_blank" rel="noopener">Repositori a GitHub</a> · web generat el 2026-06-30.</p>
+</footer>
+<script src="../assets/js/cerca-index.js"></script>
+<script src="../assets/js/lloc.js"></script>
+</body>
+</html>

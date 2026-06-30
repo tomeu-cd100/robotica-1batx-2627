@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Solucionari dels Reptes (codi de referència) · Robòtica · 1r de Batxillerat</title>
+<meta name="description" content="Material docent · LOMLOE Catalunya · curs 2026-2027">
+<link rel="stylesheet" href="../../assets/css/estil.css">
+<link rel="stylesheet" href="../../assets/css/pygments.css">
+<script>(function(){try{var t=localStorage.getItem('tema');if(t==='fosc'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.setAttribute('data-tema','fosc');}catch(e){}})();</script>
+</head>
+<body data-section="reptes" class="amb-sidebar amb-toc">
+<a class="skip" href="#contingut">Salta al contingut</a>
+<header class="topbar">
+  <button class="menu-btn" aria-label="Obre el menú" aria-expanded="false">☰</button>
+  <a class="brand" href="../../index.html"><span class="brand-mark">◆</span> Robòtica <span class="brand-sub">1r Batx</span></a>
+  <nav class="topnav" aria-label="Seccions">
+    <a href="../../index.html">Inici</a>
+<a href="../../programacio/index.html" data-sec="programacio">Programació didàctica</a>
+<a href="../../classes/index.html" data-sec="classes">Classes</a>
+<a href="../../reptes/index.html" data-sec="reptes" class="actiu">Reptes</a>
+<a href="../../avaluacio/index.html" data-sec="avaluacio">Avaluació</a>
+<a href="../../normativa/index.html" data-sec="normativa">Normativa</a>
+<a href="../../recursos/index.html" data-sec="recursos">Recursos</a>
+  </nav>
+  <div class="topbar-eines">
+    <div class="cercador">
+      <input type="search" id="cerca" placeholder="Cerca…" autocomplete="off" aria-label="Cerca al web">
+      <div id="cerca-resultats" class="cerca-resultats" hidden></div>
+    </div>
+    <button class="tema-btn" aria-label="Canvia el tema clar/fosc" title="Tema clar/fosc">◐</button>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar"><nav class="sidebar-nav" aria-label="Pàgines de la secció">
+<p class="sidebar-titol">Reptes</p>
+<ul class="sb-top">
+<li><a href="../index.html">Presentació</a></li>
+<li><a href="../reptes-sa1.html">Reptes SA1 · Introducció: primer programa amb un LED <span class="tri-dot" data-tri="1"></span></a></li>
+<li><a href="../reptes-sa2.html">Reptes SA2 · Sortides digitals i PWM <span class="tri-dot" data-tri="1"></span></a></li>
+<li><a href="../reptes-sa3.html">Reptes SA3 · Entrades i sensors <span class="tri-dot" data-tri="1"></span></a></li>
+<li><a href="../reptes-sa4.html">Reptes SA4 · Moviment: servos, motors i ponts H <span class="tri-dot" data-tri="2"></span></a></li>
+<li><a href="../reptes-sa5.html">Reptes SA5 · micro:bit i MicroPython <span class="tri-dot" data-tri="2"></span></a></li>
+<li><a href="../reptes-sa6.html">Reptes SA6 · Sistemes de control <span class="tri-dot" data-tri="2"></span></a></li>
+<li><a href="../reptes-sa7.html">Reptes SA7 · Robòtica mòbil (Imagina 3dBot) <span class="tri-dot" data-tri="3"></span></a></li>
+<li><a href="../reptes-sa8.html">Reptes SA8 · IoT i Intel·ligència Artificial <span class="tri-dot" data-tri="3"></span></a></li>
+</ul>
+<details class="sb-grup" open><summary><span>Solucionari</span></summary><ul><li><a href="index.html" class="actiu">Presentació</a></li><li><a href="sa1/codi.html">Codi</a></li><li><a href="sa2/codi.html">Codi</a></li><li><a href="sa3/codi.html">Codi</a></li><li><a href="sa4/codi.html">Codi</a></li><li><a href="sa5/codi.html">Codi</a></li><li><a href="sa6/codi.html">Codi</a></li><li><a href="sa7/codi.html">Codi</a></li><li><a href="sa8/codi.html">Codi</a></li></ul></details>
+</nav></aside>
+  <main id="contingut">
+    <nav class="breadcrumb" aria-label="Ubicació"><a href="../../index.html">Inici</a> <span class="sep">/</span> <a href="../../reptes/index.html">Reptes</a> <span class="sep">/</span> <span aria-current="page">Solucionari dels Reptes (codi de referència)</span></nav>
+    
+    <article class="prose">
+<h1 id="solucionari-dels-reptes-codi-de-referencia"><a class="toclink" href="#solucionari-dels-reptes-codi-de-referencia">Solucionari dels Reptes (codi de referència)</a></h1>
+<p>Codi de <strong>solució de referència</strong> per als 3 reptes de cada SA (SA1–SA8) de la carpeta <code>Reptes/</code>. <strong>Material per al docent.</strong></p>
+<blockquote>
+<p>⚠️ <strong>Avís de verificació.</strong> Aquestes solucions s'han escrit amb cura però <strong>no s'han provat al maquinari real</strong>. Abans d'usar-les, verifica-les a <strong>Tinkercad/Wokwi</strong> o a la placa. A la <strong>SA7</strong> (Imagina 3dBot) cal <strong>ajustar els pins</strong> dels motors segons el manual. Hi pot haver més d'una solució vàlida.</p>
+</blockquote>
+<h2 id="estructura"><a class="toclink" href="#estructura">Estructura</a></h2>
+<p>Per a cada repte hi ha <strong>dos sketches carregables</strong>:
+- <strong><code>minim</code></strong> — resol el <strong>requisit mínim</strong> del repte (net i comentat).
+- <strong><code>ampliat</code></strong> — incorpora les <strong>ampliacions graduades</strong> (marcades amb <code>// AMPLIACIO 1/2/3</code>).</p>
+<p>Els sketches d'<strong>Arduino</strong> (<code>.ino</code>) viuen cada un en una carpeta pròpia (ho exigeix l'IDE). Els de <strong>micro:bit</strong> (<code>.py</code>, SA5 i SA8) són fitxers directes.</p>
+<div class="highlight"><pre><span></span><code>Solucionari/
+├── SA1/  A_far_costaner/ · B_llum_bici/ · C_morse/        (.ino)
+├── SA2/  A_semafor/ · B_llum_ambient/ · C_indicador_nivell/ (.ino)
+├── SA3/  A_llum_nocturna/ · B_sensor_aparcament/ · C_instrument/ (.ino)
+├── SA4/  A_barrera/ · B_ventilador/ · C_brac_dispensador/  (.ino)
+├── SA5/  A_comptapassos*.py · B_llum_nit*.py · C_joc_radio*.py
+├── SA6/  A_termostat/ · B_semafor_adaptatiu/ · C_proporcional/ (.ino)
+├── SA7/  A_repartidor/ · B_explorador/ · C_seguidor_linia/ (.ino)
+└── SA8/  A_estacio_meteo*.py · B_alerta*.py · C_gestos*.py
+</code></pre></div>
+
+<h2 id="notes"><a class="toclink" href="#notes">Notes</a></h2>
+<ul>
+<li>Comentaris en català <strong>sense accents</strong> als fitxers de codi (convenció del curs, evita problemes de codificació).</li>
+<li>Pins coherents amb el material de <code>Classes/SAx/codi/</code>.</li>
+<li>Enunciats dels reptes: <code>Reptes/Reptes_SAx.md</code>. Vocabulari i bases: <code>Classes/SA0/</code>.</li>
+</ul>
+<h2 class="seccio-sep">Materials d'aquesta SA</h2><div class="card-grid"><a class="card" href="sa1/codi.html"><span class="card-ic">💻</span><span class="card-tit">Codi de les pràctiques</span></a><a class="card" href="sa2/codi.html"><span class="card-ic">💻</span><span class="card-tit">Codi de les pràctiques</span></a><a class="card" href="sa3/codi.html"><span class="card-ic">💻</span><span class="card-tit">Codi de les pràctiques</span></a><a class="card" href="sa4/codi.html"><span class="card-ic">💻</span><span class="card-tit">Codi de les pràctiques</span></a><a class="card" href="sa5/codi.html"><span class="card-ic">💻</span><span class="card-tit">Codi de les pràctiques</span></a><a class="card" href="sa6/codi.html"><span class="card-ic">💻</span><span class="card-tit">Codi de les pràctiques</span></a><a class="card" href="sa7/codi.html"><span class="card-ic">💻</span><span class="card-tit">Codi de les pràctiques</span></a><a class="card" href="sa8/codi.html"><span class="card-ic">💻</span><span class="card-tit">Codi de les pràctiques</span></a></div>
+    </article>
+  </main>
+  <nav class="toc" aria-label="En aquesta pàgina"><p class="toc-titol">En aquesta pàgina</p><ul>
+<li class="toc-l1"><a href="#solucionari-dels-reptes-codi-de-referencia">Solucionari dels Reptes (codi de referència)</a></li>
+<li class="toc-l2"><a href="#estructura">Estructura</a></li>
+<li class="toc-l2"><a href="#notes">Notes</a></li>
+</ul></nav>
+</div>
+<footer class="peu">
+  <p>Robòtica · 1r de Batxillerat · material sota llicència <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca" target="_blank" rel="noopener">CC BY-SA 4.0</a>.</p>
+  <p><a href="https://github.com/tomeu-cd100/robotica-1batx-2627" target="_blank" rel="noopener">Repositori a GitHub</a> · web generat el 2026-06-30.</p>
+</footer>
+<script src="../../assets/js/cerca-index.js"></script>
+<script src="../../assets/js/lloc.js"></script>
+</body>
+</html>

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Codi solucionari reptes · SA1 · Robòtica · 1r de Batxillerat</title>
+<meta name="description" content="Material docent · LOMLOE Catalunya · curs 2026-2027">
+<link rel="stylesheet" href="../../../assets/css/estil.css">
+<link rel="stylesheet" href="../../../assets/css/pygments.css">
+<script>(function(){try{var t=localStorage.getItem('tema');if(t==='fosc'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.setAttribute('data-tema','fosc');}catch(e){}})();</script>
+</head>
+<body data-section="reptes" class="amb-sidebar sense-toc">
+<a class="skip" href="#contingut">Salta al contingut</a>
+<header class="topbar">
+  <button class="menu-btn" aria-label="Obre el menú" aria-expanded="false">☰</button>
+  <a class="brand" href="../../../index.html"><span class="brand-mark">◆</span> Robòtica <span class="brand-sub">1r Batx</span></a>
+  <nav class="topnav" aria-label="Seccions">
+    <a href="../../../index.html">Inici</a>
+<a href="../../../programacio/index.html" data-sec="programacio">Programació didàctica</a>
+<a href="../../../classes/index.html" data-sec="classes">Classes</a>
+<a href="../../../reptes/index.html" data-sec="reptes" class="actiu">Reptes</a>
+<a href="../../../avaluacio/index.html" data-sec="avaluacio">Avaluació</a>
+<a href="../../../normativa/index.html" data-sec="normativa">Normativa</a>
+<a href="../../../recursos/index.html" data-sec="recursos">Recursos</a>
+  </nav>
+  <div class="topbar-eines">
+    <div class="cercador">
+      <input type="search" id="cerca" placeholder="Cerca…" autocomplete="off" aria-label="Cerca al web">
+      <div id="cerca-resultats" class="cerca-resultats" hidden></div>
+    </div>
+    <button class="tema-btn" aria-label="Canvia el tema clar/fosc" title="Tema clar/fosc">◐</button>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar"><nav class="sidebar-nav" aria-label="Pàgines de la secció">
+<p class="sidebar-titol">Reptes</p>
+<ul class="sb-top">
+<li><a href="../../index.html">Presentació</a></li>
+<li><a href="../../reptes-sa1.html">Reptes SA1 · Introducció: primer programa amb un LED <span class="tri-dot" data-tri="1"></span></a></li>
+<li><a href="../../reptes-sa2.html">Reptes SA2 · Sortides digitals i PWM <span class="tri-dot" data-tri="1"></span></a></li>
+<li><a href="../../reptes-sa3.html">Reptes SA3 · Entrades i sensors <span class="tri-dot" data-tri="1"></span></a></li>
+<li><a href="../../reptes-sa4.html">Reptes SA4 · Moviment: servos, motors i ponts H <span class="tri-dot" data-tri="2"></span></a></li>
+<li><a href="../../reptes-sa5.html">Reptes SA5 · micro:bit i MicroPython <span class="tri-dot" data-tri="2"></span></a></li>
+<li><a href="../../reptes-sa6.html">Reptes SA6 · Sistemes de control <span class="tri-dot" data-tri="2"></span></a></li>
+<li><a href="../../reptes-sa7.html">Reptes SA7 · Robòtica mòbil (Imagina 3dBot) <span class="tri-dot" data-tri="3"></span></a></li>
+<li><a href="../../reptes-sa8.html">Reptes SA8 · IoT i Intel·ligència Artificial <span class="tri-dot" data-tri="3"></span></a></li>
+</ul>
+<details class="sb-grup" open><summary><span>Solucionari</span></summary><ul><li><a href="../index.html">Presentació</a></li><li><a href="codi.html" class="actiu">Codi</a></li><li><a href="../sa2/codi.html">Codi</a></li><li><a href="../sa3/codi.html">Codi</a></li><li><a href="../sa4/codi.html">Codi</a></li><li><a href="../sa5/codi.html">Codi</a></li><li><a href="../sa6/codi.html">Codi</a></li><li><a href="../sa7/codi.html">Codi</a></li><li><a href="../sa8/codi.html">Codi</a></li></ul></details>
+</nav></aside>
+  <main id="contingut">
+    <nav class="breadcrumb" aria-label="Ubicació"><a href="../../../index.html">Inici</a> <span class="sep">/</span> <a href="../../../reptes/index.html">Reptes</a> <span class="sep">/</span> <span aria-current="page">Codi solucionari reptes · SA1</span></nav>
+    <span class="badge-tri" data-tri="1">1r trimestre</span>
+    <article class="prose">
+<h1>Codi solucionari reptes · SA1</h1>
+<p class="codi-intro">Fitxers de codi font. Fes servir el botó <strong>Copia</strong> per dur-los a l'IDE d'Arduino o a l'editor de micro:bit.</p>
+<ul class="codi-llista">
+<li><a href="#a-far-costaner-ampliat-ampliat"><code>A_far_costaner/ampliat/ampliat.ino</code></a></li>
+<li><a href="#a-far-costaner-minim-minim"><code>A_far_costaner/minim/minim.ino</code></a></li>
+<li><a href="#b-llum-bici-ampliat-ampliat"><code>B_llum_bici/ampliat/ampliat.ino</code></a></li>
+<li><a href="#b-llum-bici-minim-minim"><code>B_llum_bici/minim/minim.ino</code></a></li>
+<li><a href="#c-morse-ampliat-ampliat"><code>C_morse/ampliat/ampliat.ino</code></a></li>
+<li><a href="#c-morse-minim-minim"><code>C_morse/minim/minim.ino</code></a></li>
+</ul>
+<section class="codi-bloc" id="a-far-costaner-ampliat-ampliat"><header class="codi-cap"><code class="codi-nom">A_far_costaner/ampliat/ampliat.ino</code><button class="copia-btn" type="button">Copia</button></header><div class="codi-cos"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm">  Solucionari Repte SA1-A · Far costaner (AMPLIAT)</span>
+<span class="cm">  AMPLIACIO 1: temps en variables (patro facil de canviar).</span>
+<span class="cm">  AMPLIACIO 2: dos patrons combinats (una llum llarga + 3 flaixos curts) amb un for.</span>
+<span class="cm">  AMPLIACIO 3: segon far amb ritme propi i SIMULTANI (amb millis(), sense delay).</span>
+<span class="cm">  Circuit: FAR principal pin 13 ; FAR secundari pin 12 (+220 ohm a GND).</span>
+<span class="cm">*/</span>
+
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">FAR</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="mi">13</span><span class="p">;</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">FAR2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">12</span><span class="p">;</span>
+
+<span class="c1">// AMPLIACIO 1: temps parametritzats</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">T_LLARG</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2000</span><span class="p">;</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">T_CURT</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="mi">200</span><span class="p">;</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">T_PAUSA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">400</span><span class="p">;</span>
+
+<span class="c1">// AMPLIACIO 3: control no bloquejant del segon far</span>
+<span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">tFar2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">INTERVAL_FAR2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">250</span><span class="p">;</span><span class="w">  </span><span class="c1">// ritme propi del far secundari</span>
+<span class="kt">bool</span><span class="w"> </span><span class="n">estatFar2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">actualitzaFar2</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// Parpelleja el FAR2 amb el seu ritme sense aturar el programa</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">millis</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">tFar2</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">INTERVAL_FAR2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">tFar2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">millis</span><span class="p">();</span>
+<span class="w">    </span><span class="n">estatFar2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">!</span><span class="n">estatFar2</span><span class="p">;</span>
+<span class="w">    </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">FAR2</span><span class="p">,</span><span class="w"> </span><span class="n">estatFar2</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// Encen el far principal un temps mantenint viu el far secundari</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">encenFar</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">durada</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">inici</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">millis</span><span class="p">();</span>
+<span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">FAR</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH</span><span class="p">);</span>
+<span class="w">  </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">millis</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">inici</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="p">)</span><span class="n">durada</span><span class="p">)</span><span class="w"> </span><span class="n">actualitzaFar2</span><span class="p">();</span>
+<span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">FAR</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">pausaFar</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">durada</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">inici</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">millis</span><span class="p">();</span>
+<span class="w">  </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">millis</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">inici</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="p">)</span><span class="n">durada</span><span class="p">)</span><span class="w"> </span><span class="n">actualitzaFar2</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">FAR</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span>
+<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">FAR2</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// AMPLIACIO 2: una llum llarga + 3 flaixos curts</span>
+<span class="w">  </span><span class="n">encenFar</span><span class="p">(</span><span class="n">T_LLARG</span><span class="p">);</span><span class="w"> </span><span class="n">pausaFar</span><span class="p">(</span><span class="n">T_PAUSA</span><span class="p">);</span>
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">encenFar</span><span class="p">(</span><span class="n">T_CURT</span><span class="p">);</span><span class="w"> </span><span class="n">pausaFar</span><span class="p">(</span><span class="n">T_PAUSA</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div></section>
+<section class="codi-bloc" id="a-far-costaner-minim-minim"><header class="codi-cap"><code class="codi-nom">A_far_costaner/minim/minim.ino</code><button class="copia-btn" type="button">Copia</button></header><div class="codi-cos"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm">  Solucionari Repte SA1-A · Far costaner (REQUISIT MINIM)</span>
+<span class="cm">  Un LED repeteix un patro lluminos identificatiu propi (minim 2 temps diferents).</span>
+<span class="cm">  Patro d&#39;exemple: 2 s ences / 1 s apagat.</span>
+<span class="cm">  Circuit: LED intern del pin 13 (o LED + 220 ohm a GND).</span>
+<span class="cm">*/</span>
+
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">FAR</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">13</span><span class="p">;</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">FAR</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">FAR</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH</span><span class="p">);</span>
+<span class="w">  </span><span class="n">delay</span><span class="p">(</span><span class="mi">2000</span><span class="p">);</span><span class="w">             </span><span class="c1">// 2 s ences</span>
+<span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">FAR</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span>
+<span class="w">  </span><span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span><span class="w">             </span><span class="c1">// 1 s apagat</span>
+<span class="p">}</span>
+</pre></div>
+</div></section>
+<section class="codi-bloc" id="b-llum-bici-ampliat-ampliat"><header class="codi-cap"><code class="codi-nom">B_llum_bici/ampliat/ampliat.ino</code><button class="copia-btn" type="button">Copia</button></header><div class="codi-cos"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm">  Solucionari Repte SA1-B · Llum de bicicleta (AMPLIAT)</span>
+<span class="cm">  AMPLIACIO 1: un segon mode (parpelleig lent) despres del primer.</span>
+<span class="cm">  AMPLIACIO 2: seqüencia d&#39;emergencia (3 flaixos rapids + pausa) amb for.</span>
+<span class="cm">  AMPLIACIO 3: cada mode encapsulat en una FUNCIO propia.</span>
+<span class="cm">  Circuit: LED al pin 13 (o LED + 220 ohm a GND).</span>
+<span class="cm">*/</span>
+
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">LLUM</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">13</span><span class="p">;</span>
+
+<span class="c1">// AMPLIACIO 3: cada mode es una funcio</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">modeRapid</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">repeticions</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">repeticions</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">LLUM</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH</span><span class="p">);</span><span class="w"> </span><span class="n">delay</span><span class="p">(</span><span class="mi">200</span><span class="p">);</span>
+<span class="w">    </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">LLUM</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span><span class="w">  </span><span class="n">delay</span><span class="p">(</span><span class="mi">200</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">modeLent</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">repeticions</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">repeticions</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">LLUM</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH</span><span class="p">);</span><span class="w"> </span><span class="n">delay</span><span class="p">(</span><span class="mi">700</span><span class="p">);</span>
+<span class="w">    </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">LLUM</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span><span class="w">  </span><span class="n">delay</span><span class="p">(</span><span class="mi">700</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">modeEmergencia</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// AMPLIACIO 2: 3 flaixos rapids + pausa llarga</span>
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">LLUM</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH</span><span class="p">);</span><span class="w"> </span><span class="n">delay</span><span class="p">(</span><span class="mi">80</span><span class="p">);</span>
+<span class="w">    </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">LLUM</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span><span class="w">  </span><span class="n">delay</span><span class="p">(</span><span class="mi">80</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="n">delay</span><span class="p">(</span><span class="mi">600</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">LLUM</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">modeRapid</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span><span class="w">        </span><span class="c1">// mode 1</span>
+<span class="w">  </span><span class="n">modeLent</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span><span class="w">         </span><span class="c1">// AMPLIACIO 1: mode 2</span>
+<span class="w">  </span><span class="n">modeEmergencia</span><span class="p">();</span><span class="w">    </span><span class="c1">// AMPLIACIO 2</span>
+<span class="p">}</span>
+</pre></div>
+</div></section>
+<section class="codi-bloc" id="b-llum-bici-minim-minim"><header class="codi-cap"><code class="codi-nom">B_llum_bici/minim/minim.ino</code><button class="copia-btn" type="button">Copia</button></header><div class="codi-cos"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm">  Solucionari Repte SA1-B · Llum de bicicleta (REQUISIT MINIM)</span>
+<span class="cm">  Un LED fa un mode intermitent clar i regular (200 ms ences / 200 ms apagat).</span>
+<span class="cm">  Circuit: LED al pin 13 (o LED + 220 ohm a GND).</span>
+<span class="cm">*/</span>
+
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">LLUM</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">13</span><span class="p">;</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">LLUM</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">LLUM</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH</span><span class="p">);</span>
+<span class="w">  </span><span class="n">delay</span><span class="p">(</span><span class="mi">200</span><span class="p">);</span>
+<span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">LLUM</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span>
+<span class="w">  </span><span class="n">delay</span><span class="p">(</span><span class="mi">200</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div></section>
+<section class="codi-bloc" id="c-morse-ampliat-ampliat"><header class="codi-cap"><code class="codi-nom">C_morse/ampliat/ampliat.ino</code><button class="copia-btn" type="button">Copia</button></header><div class="codi-cos"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm">  Solucionari Repte SA1-C · Missatge en Morse (AMPLIAT)</span>
+<span class="cm">  AMPLIACIO 1: el temps del punt es una variable i la ratlla se&#39;n deriva (x3).</span>
+<span class="cm">  AMPLIACIO 2: funcions punt() i ratlla() per compondre el missatge.</span>
+<span class="cm">  AMPLIACIO 3: enviar unes inicials respectant les pauses entre lletres i paraules.</span>
+<span class="cm">  Exemple: inicials &quot;TC&quot; (T = - ; C = -.-.). Canvia-les per les teves.</span>
+<span class="cm">  Circuit: LED al pin 13 (o LED + 220 ohm a GND).</span>
+<span class="cm">*/</span>
+
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">LED</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">13</span><span class="p">;</span>
+
+<span class="c1">// AMPLIACIO 1: tot deriva del temps del punt</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">PUNT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">250</span><span class="p">;</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">RATLLA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PUNT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">PAUSA_SENYAL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PUNT</span><span class="p">;</span><span class="w">       </span><span class="c1">// entre punts/ratlles d&#39;una lletra</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">PAUSA_LLETRA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PUNT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w">   </span><span class="c1">// entre lletres</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">PAUSA_PARAULA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PUNT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">7</span><span class="p">;</span><span class="w">  </span><span class="c1">// entre paraules</span>
+
+<span class="c1">// AMPLIACIO 2: funcions basiques</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">punt</span><span class="p">()</span><span class="w">   </span><span class="p">{</span><span class="w"> </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">LED</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH</span><span class="p">);</span><span class="w"> </span><span class="n">delay</span><span class="p">(</span><span class="n">PUNT</span><span class="p">);</span><span class="w">   </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">LED</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span><span class="w"> </span><span class="n">delay</span><span class="p">(</span><span class="n">PAUSA_SENYAL</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">ratlla</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">LED</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH</span><span class="p">);</span><span class="w"> </span><span class="n">delay</span><span class="p">(</span><span class="n">RATLLA</span><span class="p">);</span><span class="w"> </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">LED</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span><span class="w"> </span><span class="n">delay</span><span class="p">(</span><span class="n">PAUSA_SENYAL</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">LED</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// AMPLIACIO 3: inicials &quot;TC&quot;</span>
+<span class="w">  </span><span class="c1">// T = -</span>
+<span class="w">  </span><span class="n">ratlla</span><span class="p">();</span>
+<span class="w">  </span><span class="n">delay</span><span class="p">(</span><span class="n">PAUSA_LLETRA</span><span class="p">);</span>
+<span class="w">  </span><span class="c1">// C = -.-.</span>
+<span class="w">  </span><span class="n">ratlla</span><span class="p">();</span><span class="w"> </span><span class="n">punt</span><span class="p">();</span><span class="w"> </span><span class="n">ratlla</span><span class="p">();</span><span class="w"> </span><span class="n">punt</span><span class="p">();</span>
+<span class="w">  </span><span class="n">delay</span><span class="p">(</span><span class="n">PAUSA_PARAULA</span><span class="p">);</span><span class="w">   </span><span class="c1">// fi del missatge, pausa de paraula abans de repetir</span>
+<span class="p">}</span>
+</pre></div>
+</div></section>
+<section class="codi-bloc" id="c-morse-minim-minim"><header class="codi-cap"><code class="codi-nom">C_morse/minim/minim.ino</code><button class="copia-btn" type="button">Copia</button></header><div class="codi-cos"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm">  Solucionari Repte SA1-C · Missatge en Morse (REQUISIT MINIM)</span>
+<span class="cm">  El LED emet &quot;S O S&quot; amb temps de punt i ratlla diferenciats.</span>
+<span class="cm">  Morse: punt = . (curt) ; ratlla = - (3 punts).</span>
+<span class="cm">  Circuit: LED al pin 13 (o LED + 220 ohm a GND).</span>
+<span class="cm">*/</span>
+
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">LED</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">13</span><span class="p">;</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">PUNT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">250</span><span class="p">;</span><span class="w">          </span><span class="c1">// durada d&#39;un punt (ms)</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">RATLLA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PUNT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w">   </span><span class="c1">// una ratlla son 3 punts</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">PAUSA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PUNT</span><span class="p">;</span><span class="w">        </span><span class="c1">// pausa entre senyals d&#39;una mateixa lletra</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">LED</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// S = . . .</span>
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">LED</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH</span><span class="p">);</span><span class="w"> </span><span class="n">delay</span><span class="p">(</span><span class="n">PUNT</span><span class="p">);</span><span class="w">   </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">LED</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span><span class="w"> </span><span class="n">delay</span><span class="p">(</span><span class="n">PAUSA</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
+<span class="w">  </span><span class="n">delay</span><span class="p">(</span><span class="n">RATLLA</span><span class="p">);</span><span class="w">   </span><span class="c1">// pausa entre lletres</span>
+<span class="w">  </span><span class="c1">// O = - - -</span>
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">LED</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH</span><span class="p">);</span><span class="w"> </span><span class="n">delay</span><span class="p">(</span><span class="n">RATLLA</span><span class="p">);</span><span class="w"> </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">LED</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span><span class="w"> </span><span class="n">delay</span><span class="p">(</span><span class="n">PAUSA</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
+<span class="w">  </span><span class="n">delay</span><span class="p">(</span><span class="n">RATLLA</span><span class="p">);</span>
+<span class="w">  </span><span class="c1">// S = . . .</span>
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">LED</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH</span><span class="p">);</span><span class="w"> </span><span class="n">delay</span><span class="p">(</span><span class="n">PUNT</span><span class="p">);</span><span class="w">   </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">LED</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span><span class="w"> </span><span class="n">delay</span><span class="p">(</span><span class="n">PAUSA</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
+<span class="w">  </span><span class="n">delay</span><span class="p">(</span><span class="n">RATLLA</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span><span class="w">  </span><span class="c1">// pausa llarga abans de repetir</span>
+<span class="p">}</span>
+</pre></div>
+</div></section>
+    </article>
+  </main>
+  
+</div>
+<footer class="peu">
+  <p>Robòtica · 1r de Batxillerat · material sota llicència <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca" target="_blank" rel="noopener">CC BY-SA 4.0</a>.</p>
+  <p><a href="https://github.com/tomeu-cd100/robotica-1batx-2627" target="_blank" rel="noopener">Repositori a GitHub</a> · web generat el 2026-06-30.</p>
+</footer>
+<script src="../../../assets/js/cerca-index.js"></script>
+<script src="../../../assets/js/lloc.js"></script>
+</body>
+</html>

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SA0 · Guia docent — Vocabulari essencial i bases de programació · Robòtica · 1r de Batxillerat</title>
+<meta name="description" content="Material docent · LOMLOE Catalunya · curs 2026-2027">
+<link rel="stylesheet" href="../../assets/css/estil.css">
+<link rel="stylesheet" href="../../assets/css/pygments.css">
+<script>(function(){try{var t=localStorage.getItem('tema');if(t==='fosc'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.setAttribute('data-tema','fosc');}catch(e){}})();</script>
+</head>
+<body data-section="classes" class="amb-sidebar amb-toc">
+<a class="skip" href="#contingut">Salta al contingut</a>
+<header class="topbar">
+  <button class="menu-btn" aria-label="Obre el menú" aria-expanded="false">☰</button>
+  <a class="brand" href="../../index.html"><span class="brand-mark">◆</span> Robòtica <span class="brand-sub">1r Batx</span></a>
+  <nav class="topnav" aria-label="Seccions">
+    <a href="../../index.html">Inici</a>
+<a href="../../programacio/index.html" data-sec="programacio">Programació didàctica</a>
+<a href="../../classes/index.html" data-sec="classes" class="actiu">Classes</a>
+<a href="../../reptes/index.html" data-sec="reptes">Reptes</a>
+<a href="../../avaluacio/index.html" data-sec="avaluacio">Avaluació</a>
+<a href="../../normativa/index.html" data-sec="normativa">Normativa</a>
+<a href="../../recursos/index.html" data-sec="recursos">Recursos</a>
+  </nav>
+  <div class="topbar-eines">
+    <div class="cercador">
+      <input type="search" id="cerca" placeholder="Cerca…" autocomplete="off" aria-label="Cerca al web">
+      <div id="cerca-resultats" class="cerca-resultats" hidden></div>
+    </div>
+    <button class="tema-btn" aria-label="Canvia el tema clar/fosc" title="Tema clar/fosc">◐</button>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar"><nav class="sidebar-nav" aria-label="Pàgines de la secció">
+<p class="sidebar-titol">Classes</p>
+<ul class="sb-top">
+<li><a href="../index.html">Presentació</a></li>
+<li><a href="../00-banc-objectes-disseny.html">Banc d&#x27;objectes per dissenyar — de l&#x27;electrònica al producte</a></li>
+<li><a href="../00-galeria-exemples-objectes.html">Galeria d&#x27;exemples resolts — objectes de disseny</a></li>
+<li><a href="../00-ia-a-la-materia.html">00 · La Intel·ligència Artificial a la matèria (guia transversal)</a></li>
+<li><a href="../00-llegeix-me-classes.html">Classes — Material d&#x27;aula</a></li>
+<li><a href="../00-mapa-sa-objectes.html">Mapa del curs · de cada SA a un objecte real</a></li>
+<li><a href="../00-plantilla-disseny-objecte.html">Plantilla de disseny d&#x27;objecte</a></li>
+<li><a href="../00-poster-aula-metode-depura-rols.html">Pòster d&#x27;aula — Com treballem a Robòtica</a></li>
+<li><a href="../00-poster-ia-us-assistents.html">Pòster d&#x27;aula — Fer servir la IA amb cap</a></li>
+</ul>
+<details class="sb-grup" open><summary><span>SA0 · Vocabulari essencial i bases de programació</span></summary><ul><li><a href="index.html">Presentació</a></li><li><a href="sa0-fitxa-alumnat.html">SA0 · Fitxa d&#x27;alumnat — Vocabulari i primeres passes amb el codi</a></li><li><a href="sa0-guia-docent.html" class="actiu">SA0 · Guia docent — Vocabulari essencial i bases de programació</a></li><li><a href="sa0-guia-programacio.html">SA0 · Guia per aprendre a programar la placa</a></li><li><a href="sa0-vocabulari-essencial.html">SA0 · Vocabulari essencial de la robòtica</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA1 · Introducció a la robòtica</span><span class="tri-dot" data-tri="1"></span></summary><ul><li><a href="../sa1/index.html">Presentació</a></li><li><a href="../sa1/sa1-esquemes-connexions.html">SA1 · Esquemes i connexions</a></li><li><a href="../sa1/sa1-fitxa-alumnat.html">SA1 · Fitxa base — Què és un robot?</a></li><li><a href="../sa1/sa1-fitxa-ampliada.html">SA1 · Fitxa ampliada (aprofundiment) — Què és un robot?</a></li><li><a href="../sa1/sa1-guia-docent.html">SA1 · Guia docent — Què és un robot? Sistemes embeguts i mètode de projecte</a></li><li><a href="../sa1/sa1-normes-seguretat.html">SA1 · Normes de seguretat del laboratori de robòtica</a></li><li><a href="../sa1/sa1-poster-robot-plantilla.html">SA1 · Fitxa-pòster: &quot;Analitzem un robot real&quot;</a></li><li><a href="../sa1/sa1-prova-diagnostica.html">SA1 · Prova diagnòstica de coneixements previs</a></li><li><a href="../sa1/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA2 · Sortides digitals i PWM</span><span class="tri-dot" data-tri="1"></span></summary><ul><li><a href="../sa2/index.html">Presentació</a></li><li><a href="../sa2/sa2-esquemes-connexions.html">SA2 · Esquemes i connexions</a></li><li><a href="../sa2/sa2-fitxa-alumnat.html">SA2 · Fitxa base — Sortides digitals i PWM</a></li><li><a href="../sa2/sa2-fitxa-ampliada.html">SA2 · Fitxa ampliada (aprofundiment) — Sortides digitals i PWM</a></li><li><a href="../sa2/sa2-guia-docent.html">SA2 · Guia docent — Sortides digitals i PWM: dona vida als actuadors</a></li><li><a href="../sa2/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA3 · Entrades i sensors</span><span class="tri-dot" data-tri="1"></span></summary><ul><li><a href="../sa3/index.html">Presentació</a></li><li><a href="../sa3/sa3-esquemes-connexions.html">SA3 · Esquemes i connexions</a></li><li><a href="../sa3/sa3-fitxa-alumnat.html">SA3 · Fitxa base — Entrades i sensors</a></li><li><a href="../sa3/sa3-fitxa-ampliada.html">SA3 · Fitxa ampliada (aprofundiment) — Entrades i sensors</a></li><li><a href="../sa3/sa3-guia-docent.html">SA3 · Guia docent — Entrades i sensors: el robot percep</a></li><li><a href="../sa3/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA4 · Moviment: servos i motors</span><span class="tri-dot" data-tri="2"></span></summary><ul><li><a href="../sa4/index.html">Presentació</a></li><li><a href="../sa4/sa4-esquemes-connexions.html">SA4 · Esquemes i connexions</a></li><li><a href="../sa4/sa4-fitxa-alumnat.html">SA4 · Fitxa base — Moviment: servos, motors i ponts H</a></li><li><a href="../sa4/sa4-fitxa-ampliada.html">SA4 · Fitxa ampliada (aprofundiment) — Moviment: servos, motors i ponts H</a></li><li><a href="../sa4/sa4-guia-docent.html">SA4 · Guia docent — Moviment: servos, motors i ponts H</a></li><li><a href="../sa4/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA5 · micro:bit i MicroPython</span><span class="tri-dot" data-tri="2"></span></summary><ul><li><a href="../sa5/index.html">Presentació</a></li><li><a href="../sa5/sa5-connexions.html">SA5 · Connexions i entorn</a></li><li><a href="../sa5/sa5-fitxa-alumnat.html">SA5 · Fitxa base — micro:bit i MicroPython</a></li><li><a href="../sa5/sa5-fitxa-ampliada.html">SA5 · Fitxa ampliada (aprofundiment) — micro:bit i MicroPython</a></li><li><a href="../sa5/sa5-guia-docent.html">SA5 · Guia docent — micro:bit i MicroPython: un altre paradigma</a></li><li><a href="../sa5/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA6 · Sistemes de control</span><span class="tri-dot" data-tri="2"></span></summary><ul><li><a href="../sa6/index.html">Presentació</a></li><li><a href="../sa6/sa6-esquemes-connexions.html">SA6 · Esquemes i connexions</a></li><li><a href="../sa6/sa6-fitxa-alumnat.html">SA6 · Fitxa base — Sistemes de control</a></li><li><a href="../sa6/sa6-fitxa-ampliada.html">SA6 · Fitxa ampliada (aprofundiment) — Sistemes de control</a></li><li><a href="../sa6/sa6-guia-docent.html">SA6 · Guia docent — Sistemes de control: llaç obert/tancat i màquines d&#x27;estats</a></li><li><a href="../sa6/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA7 · Robòtica mòbil</span><span class="tri-dot" data-tri="3"></span></summary><ul><li><a href="../sa7/index.html">Presentació</a></li><li><a href="../sa7/sa7-esquemes-connexions.html">SA7 · Esquemes i connexions</a></li><li><a href="../sa7/sa7-fitxa-alumnat.html">SA7 · Fitxa base — Robòtica mòbil</a></li><li><a href="../sa7/sa7-fitxa-ampliada.html">SA7 · Fitxa ampliada (aprofundiment) — Robòtica mòbil</a></li><li><a href="../sa7/sa7-guia-docent.html">SA7 · Guia docent — Robòtica mòbil: cinemàtica i trajectòries</a></li><li><a href="../sa7/sa7-recursos-video-ia.html">SA7 · Recursos de vídeo — comportament programat vs après (IA)</a></li><li><a href="../sa7/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA8 · IoT i IA</span><span class="tri-dot" data-tri="3"></span></summary><ul><li><a href="../sa8/index.html">Presentació</a></li><li><a href="../sa8/sa8-connexions.html">SA8 · Connexions i entorn</a></li><li><a href="../sa8/sa8-fitxa-alumnat.html">SA8 · Fitxa base — IoT i IA</a></li><li><a href="../sa8/sa8-fitxa-ampliada.html">SA8 · Fitxa ampliada (aprofundiment) — IoT i IA</a></li><li><a href="../sa8/sa8-guia-docent.html">SA8 · Guia docent — IoT i IA: el robot connectat i intel·ligent</a></li><li><a href="../sa8/sa8-practica-teachable-machine.html">SA8 · Pràctica d&#x27;IA — Entrenar un classificador amb Teachable Machine</a></li><li><a href="../sa8/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA9 · Projecte final</span><span class="tri-dot" data-tri="3"></span></summary><ul><li><a href="../sa9/index.html">Presentació</a></li><li><a href="../sa9/plantilles/banc-de-reptes.html">SA9 · Banc de reptes (per nivells)</a></li><li><a href="../sa9/plantilles/dossier-tecnic-plantilla.html">Dossier tècnic — [Títol del projecte]</a></li><li><a href="../sa9/plantilles/planificacio-agile-plantilla.html">Planificació àgil — Equip: ______________________</a></li><li><a href="../sa9/sa9-fitxa-alumnat.html">SA9 · Fitxa base — Repte final integrador</a></li><li><a href="../sa9/sa9-fitxa-ampliada.html">SA9 · Fitxa ampliada (aprofundiment) — Repte final integrador</a></li><li><a href="../sa9/sa9-guia-docent.html">SA9 · Guia docent — Repte final integrador (opció competició)</a></li><li><a href="../sa9/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>Solucionari</span></summary><ul><li><a href="../solucionari/solucionari-t1-sa1-sa3.html">Solucionari de reptes — Trimestre 1 (SA1-SA3)</a></li><li><a href="../solucionari/solucionari-t2-sa4-sa6.html">Solucionari de reptes — Trimestre 2 (SA4-SA6)</a></li><li><a href="../solucionari/solucionari-t3-sa7-sa9.html">Solucionari de reptes — Trimestre 3 (SA7-SA9)</a></li></ul></details>
+</nav></aside>
+  <main id="contingut">
+    <nav class="breadcrumb" aria-label="Ubicació"><a href="../../index.html">Inici</a> <span class="sep">/</span> <a href="../../classes/index.html">Classes</a> <span class="sep">/</span> <span aria-current="page">SA0 · Guia docent — Vocabulari essencial i bases de programació</span></nav>
+    
+    <article class="prose">
+<h1 id="sa0-guia-docent-vocabulari-essencial-i-bases-de-programacio"><a class="toclink" href="#sa0-guia-docent-vocabulari-essencial-i-bases-de-programacio">SA0 · Guia docent — Vocabulari essencial i bases de programació</a></h1>
+<p><strong>Naturalesa:</strong> material <strong>transversal de suport</strong>, no una SA amb sessions pròpies. <strong>Públic:</strong> referència per al docent.
+<strong>Llenguatges:</strong> Arduino C/C++ i MicroPython (micro:bit). <strong>Vincle:</strong> base prèvia a <code>Programació didàctica/10_SA1...</code> i transversal a SA1–SA9.</p>
+<h2 id="que-es-la-sa0-i-per-que"><a class="toclink" href="#que-es-la-sa0-i-per-que">Què és la SA0 i per què</a></h2>
+<p>La SA0 reuneix en un sol lloc el <strong>vocabulari</strong> i els <strong>conceptes de programació</strong> que les SA1–SA9 donen per coneguts. Evita repetir definicions a cada unitat i ofereix a l'alumnat un únic punt de consulta. No consumeix sessions del calendari (la matèria té 2 h setmanals): s'usa com a <strong>material de referència</strong> i <strong>bastida</strong> segons necessitat.</p>
+<h2 id="documents-de-la-carpeta"><a class="toclink" href="#documents-de-la-carpeta">Documents de la carpeta</a></h2>
+<table>
+<thead>
+<tr>
+<th>Document</th>
+<th>Públic</th>
+<th>Quan/Com usar-lo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SA0_vocabulari_essencial.md</code></td>
+<td>Alumnat</td>
+<td>Consulta contínua. Glossari <strong>per SA</strong>. Projectable; també imprimible com a "diccionari de butxaca".</td>
+</tr>
+<tr>
+<td><code>SA0_guia_programacio.md</code></td>
+<td>Alumnat</td>
+<td>Lectura/consulta. Conceptes Arduino (A) + MicroPython (B) + comparativa (C). Referència en resoldre reptes.</td>
+</tr>
+<tr>
+<td><code>SA0_fitxa_alumnat.md</code></td>
+<td>Alumnat</td>
+<td>Autoaprenentatge (no qualifica). Diagnòstic informal abans de SA1; deures de repàs per a qui ho necessiti.</td>
+</tr>
+<tr>
+<td><code>SA0_guia_docent.md</code></td>
+<td>Docent</td>
+<td>Aquest document: integració, mapa i solucionari.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="com-integrar-la-3-escenaris"><a class="toclink" href="#com-integrar-la-3-escenaris">Com integrar-la (3 escenaris)</a></h2>
+<ol>
+<li><strong>Inici de curs (recomanat):</strong> repartir el vocabulari i la guia com a material de referència; proposar la fitxa com a <strong>autodiagnòstic</strong> voluntari la primera setmana. No ocupa sessió sencera; 15–20 min de presentació dins la SA1.</li>
+<li><strong>Bastida puntual (atenció a la diversitat):</strong> derivar a seccions concretes l'alumnat que necessiti reforç (p. ex., "repassa A6. <code>if/else</code>" abans de la SA3).</li>
+<li><strong>Pont a MicroPython:</strong> abans de la SA5, fer llegir la Part B i la taula comparativa (Part C) per amortir el canvi de llenguatge.</li>
+</ol>
+<h2 id="mapa-vocabulari-sa-programacio-didactica"><a class="toclink" href="#mapa-vocabulari-sa-programacio-didactica">Mapa vocabulari ↔ SA ↔ programació didàctica</a></h2>
+<table>
+<thead>
+<tr>
+<th>SA</th>
+<th>Termes nucli</th>
+<th>Concepte de programació associat</th>
+<th>Doc. prog. didàctica</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SA1</td>
+<td>robot, sistema embegut, E-P-S, digital/analògic</td>
+<td>esquelet <code>setup()</code>/<code>loop()</code>, <code>digitalWrite</code>, <code>delay</code></td>
+<td><code>10_SA1...</code></td>
+</tr>
+<tr>
+<td>SA2</td>
+<td>sortida digital, PWM, LED, resistència, RGB</td>
+<td><code>analogWrite</code> (0–255), pins <code>~</code></td>
+<td><code>11_SA2...</code></td>
+</tr>
+<tr>
+<td>SA3</td>
+<td>sensor, actuador, debounce, LDR, ultrasons</td>
+<td><code>analogRead</code> (0–1023), <code>if/else</code>, funcions</td>
+<td><code>12_SA3...</code></td>
+</tr>
+<tr>
+<td>SA4</td>
+<td>servo, motor DC, pont H, llibreria</td>
+<td><code>#include</code>, llibreria <code>Servo.h</code></td>
+<td><code>13_SA4...</code></td>
+</tr>
+<tr>
+<td>SA5</td>
+<td>micro:bit, MicroPython, indentació, ràdio</td>
+<td>sintaxi Python, <code>while True</code>, <code>radio</code></td>
+<td><code>14_SA5...</code></td>
+</tr>
+<tr>
+<td>SA6</td>
+<td>llaç obert/tancat, histèresi, màquina d'estats, P</td>
+<td>condicionals encadenats, estats, variables d'estat</td>
+<td><code>15_SA6...</code></td>
+</tr>
+<tr>
+<td>SA7</td>
+<td>robot mòbil, trajectòria, seguidor de línia, IR</td>
+<td>funcions de moviment, lectura de sensors IR</td>
+<td><code>16_SA7...</code></td>
+</tr>
+<tr>
+<td>SA8</td>
+<td>IoT, telemetria, IA, ESP32</td>
+<td><code>radio</code>/sèrie, estructures de dades</td>
+<td><code>17_SA8...</code></td>
+</tr>
+<tr>
+<td>SA9</td>
+<td>projecte, àgil, prototip, iteració, dossier</td>
+<td>integració de tot l'anterior</td>
+<td><code>18_SA9...</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="precisions-tecniques-per-evitar-imprecisions-a-laula"><a class="toclink" href="#precisions-tecniques-per-evitar-imprecisions-a-laula">Precisions tècniques (per evitar imprecisions a l'aula)</a></h2>
+<ul>
+<li><strong><code>analogRead</code> retorna 0–1023</strong> (ADC de 10 bits); <strong><code>analogWrite</code>/PWM accepta 0–255</strong> (8 bits). Confondre els dos rangs és l'error conceptual més comú.</li>
+<li><strong>PWM no és senyal analògic real:</strong> és commutació ràpida (cicle de treball). Per a l'alumnat n'hi ha prou amb l'analogia, però convé no afirmar que "el pin treu 2,5 V".</li>
+<li><strong><code>delay()</code> bloqueja</strong>; introduir <code>millis()</code> només com a ampliació (ja present a SA1 <code>blink_millis.ino</code>).</li>
+<li><strong><code>INPUT_PULLUP</code>:</strong> a SA3 (polsadors) sovint cal la resistència de <em>pull-up</em> interna; aquí s'ha simplificat a <code>INPUT</code> per no avançar matèria. Comentar-ho en arribar al <em>debounce</em>.</li>
+<li><strong>MicroPython ≠ Python complet:</strong> algunes funcions de Python estàndard no hi són. Editors: python.microbit.org (en línia) i Thonny (escriptori).</li>
+<li><strong>Codi als <code>.md</code> vs sketches reals:</strong> aquí només hi ha <strong>fragments il·lustratius</strong>; els sketches complets i carregables viuen a <code>Classes/SAx/codi/</code>.</li>
+</ul>
+<h2 id="solucionari-de-la-fitxa-sa0_fitxa_alumnatmd"><a class="toclink" href="#solucionari-de-la-fitxa-sa0_fitxa_alumnatmd">Solucionari de la fitxa (<code>SA0_fitxa_alumnat.md</code>)</a></h2>
+<p><strong>Act. 1 (orientatiu):</strong>
+| Sistema | Entrada | Procés | Sortida |
+|---|---|---|---|
+| Llum del passadís | sensor de presència/llum | decideix si hi ha algú i si és fosc | bombeta/LED |
+| Termòstat | sensor de temperatura + consigna | compara amb la consigna | caldera/relé |
+| Porta automàtica | sensor de moviment | detecta aproximació | motor de la porta |</p>
+<p><strong>Act. 2:</strong> interruptor = <strong>D</strong> · volum = <strong>A</strong> · timbre = <strong>D</strong> · termòmetre = <strong>A</strong> · LDR = <strong>A</strong>.</p>
+<p><strong>Act. 3:</strong> 1→sensor (mesura) · 2→actuador (acció física) · 3→microcontrolador (cervell) · 4→sketch (programa) · 5→bug (error). Ordre de les definicions: actuador(2), microcontrolador(3), sensor(1), bug(5), sketch(4).</p>
+<p><strong>Act. 4:</strong> Predicció esperada: el LED del pin 13 parpelleja encès 1 s / apagat 1 s, indefinidament. <code>setup()</code> configura el pin 13 com a sortida; s'executa <strong>una sola vegada</strong>. Amb <code>delay(100)</code> parpellejaria molt més ràpid (5 cops/s).</p>
+<p><strong>Act. 5:</strong> falta el <strong>punt i coma</strong> després de <code>pinMode(13, OUTPUT)</code>. Correcte: <code>pinMode(13, OUTPUT);</code>.</p>
+<p><strong>Act. 6:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">microbit</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">display</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">)</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
+</code></pre></div>
+
+<h2 id="atencio-a-la-diversitat"><a class="toclink" href="#atencio-a-la-diversitat">Atenció a la diversitat</a></h2>
+<table>
+<thead>
+<tr>
+<th>Necessitat</th>
+<th>Mesura amb la SA0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Bastida</strong></td>
+<td>Derivar a seccions concretes del vocabulari/guia; "diccionari de butxaca" imprès a mà.</td>
+</tr>
+<tr>
+<td><strong>+ Ampliació</strong></td>
+<td>Proposar <code>millis()</code> (A5), funcions amb paràmetres (A8) i traduir més exemples Arduino↔MicroPython (Part C).</td>
+</tr>
+<tr>
+<td><strong>Diversitat lectora/lingüística</strong></td>
+<td>Glossari amb analogies del dia a dia; taules curtes en lloc de text dens.</td>
+</tr>
+<tr>
+<td><strong>Sense maquinari</strong></td>
+<td>Tots els exemples es proven a Tinkercad/Wokwi; micro:bit té simulador a python.microbit.org.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>La SA0 <strong>no qualifica</strong>. La seva funció és anivellar i donar autonomia de consulta. Referencia-la explícitament cada cop que un terme o concepte reaparegui a una SA.</p>
+</blockquote>
+<h2 id="pensament-computacional-i-depuracio"><a class="toclink" href="#pensament-computacional-i-depuracio">Pensament computacional i depuració</a></h2>
+<ul>
+<li><strong>PC de la SA0:</strong> <strong>abstracció</strong> (donar nom als conceptes) i <strong>lectura d'algorismes</strong> (predir el resultat d'un codi, Act. 4 i 6).</li>
+<li><strong>Depuració:</strong> la SA0 introdueix la <strong>rutina DEPURA</strong>, que s'usa a totes les SA. L'Act. 5 (detecta l'error) n'és la primera pràctica.</li>
+</ul>
+<blockquote>
+<p>DEPURA: <strong>D</strong>escriu · <strong>E</strong>xamina · <strong>P</strong>rova una hipòtesi cada cop · <strong>U</strong>bica · <strong>R</strong>epara · <strong>A</strong>punta.</p>
+</blockquote>
+<h2 id="context-real-i-ods"><a class="toclink" href="#context-real-i-ods">Context real i ODS</a></h2>
+<ul>
+<li><strong>Context:</strong> alfabetització tecnològica — entendre els sistemes que ens envolten.</li>
+<li><strong>ODS 4</strong> (educació de qualitat): la SA0 garanteix que tothom arrenca amb la mateixa base, atenent la diversitat de punts de partida.</li>
+</ul>
+<blockquote>
+<p>Els <strong>rols cooperatius</strong> i la <strong>coavaluació</strong> s'introdueixen a partir de la SA1 (la SA0 és material de consulta individual o en parella, sense producte avaluable).</p>
+</blockquote>
+    </article>
+  </main>
+  <nav class="toc" aria-label="En aquesta pàgina"><p class="toc-titol">En aquesta pàgina</p><ul>
+<li class="toc-l1"><a href="#sa0-guia-docent-vocabulari-essencial-i-bases-de-programacio">SA0 · Guia docent — Vocabulari essencial i bases de programació</a></li>
+<li class="toc-l2"><a href="#que-es-la-sa0-i-per-que">Què és la SA0 i per què</a></li>
+<li class="toc-l2"><a href="#documents-de-la-carpeta">Documents de la carpeta</a></li>
+<li class="toc-l2"><a href="#com-integrar-la-3-escenaris">Com integrar-la (3 escenaris)</a></li>
+<li class="toc-l2"><a href="#mapa-vocabulari-sa-programacio-didactica">Mapa vocabulari ↔ SA ↔ programació didàctica</a></li>
+<li class="toc-l2"><a href="#precisions-tecniques-per-evitar-imprecisions-a-laula">Precisions tècniques (per evitar imprecisions a l&#x27;aula)</a></li>
+<li class="toc-l2"><a href="#solucionari-de-la-fitxa-sa0_fitxa_alumnatmd">Solucionari de la fitxa (SA0_fitxa_alumnat.md)</a></li>
+<li class="toc-l2"><a href="#atencio-a-la-diversitat">Atenció a la diversitat</a></li>
+<li class="toc-l2"><a href="#pensament-computacional-i-depuracio">Pensament computacional i depuració</a></li>
+<li class="toc-l2"><a href="#context-real-i-ods">Context real i ODS</a></li>
+</ul></nav>
+</div>
+<footer class="peu">
+  <p>Robòtica · 1r de Batxillerat · material sota llicència <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca" target="_blank" rel="noopener">CC BY-SA 4.0</a>.</p>
+  <p><a href="https://github.com/tomeu-cd100/robotica-1batx-2627" target="_blank" rel="noopener">Repositori a GitHub</a> · web generat el 2026-06-30.</p>
+</footer>
+<script src="../../assets/js/cerca-index.js"></script>
+<script src="../../assets/js/lloc.js"></script>
+</body>
+</html>

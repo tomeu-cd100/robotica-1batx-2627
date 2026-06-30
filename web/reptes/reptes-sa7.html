@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reptes SA7 · Robòtica mòbil (Imagina 3dBot) · Robòtica · 1r de Batxillerat</title>
+<meta name="description" content="Material docent · LOMLOE Catalunya · curs 2026-2027">
+<link rel="stylesheet" href="../assets/css/estil.css">
+<link rel="stylesheet" href="../assets/css/pygments.css">
+<script>(function(){try{var t=localStorage.getItem('tema');if(t==='fosc'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.setAttribute('data-tema','fosc');}catch(e){}})();</script>
+</head>
+<body data-section="reptes" class="amb-sidebar amb-toc">
+<a class="skip" href="#contingut">Salta al contingut</a>
+<header class="topbar">
+  <button class="menu-btn" aria-label="Obre el menú" aria-expanded="false">☰</button>
+  <a class="brand" href="../index.html"><span class="brand-mark">◆</span> Robòtica <span class="brand-sub">1r Batx</span></a>
+  <nav class="topnav" aria-label="Seccions">
+    <a href="../index.html">Inici</a>
+<a href="../programacio/index.html" data-sec="programacio">Programació didàctica</a>
+<a href="../classes/index.html" data-sec="classes">Classes</a>
+<a href="../reptes/index.html" data-sec="reptes" class="actiu">Reptes</a>
+<a href="../avaluacio/index.html" data-sec="avaluacio">Avaluació</a>
+<a href="../normativa/index.html" data-sec="normativa">Normativa</a>
+<a href="../recursos/index.html" data-sec="recursos">Recursos</a>
+  </nav>
+  <div class="topbar-eines">
+    <div class="cercador">
+      <input type="search" id="cerca" placeholder="Cerca…" autocomplete="off" aria-label="Cerca al web">
+      <div id="cerca-resultats" class="cerca-resultats" hidden></div>
+    </div>
+    <button class="tema-btn" aria-label="Canvia el tema clar/fosc" title="Tema clar/fosc">◐</button>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar"><nav class="sidebar-nav" aria-label="Pàgines de la secció">
+<p class="sidebar-titol">Reptes</p>
+<ul class="sb-top">
+<li><a href="index.html">Presentació</a></li>
+<li><a href="reptes-sa1.html">Reptes SA1 · Introducció: primer programa amb un LED <span class="tri-dot" data-tri="1"></span></a></li>
+<li><a href="reptes-sa2.html">Reptes SA2 · Sortides digitals i PWM <span class="tri-dot" data-tri="1"></span></a></li>
+<li><a href="reptes-sa3.html">Reptes SA3 · Entrades i sensors <span class="tri-dot" data-tri="1"></span></a></li>
+<li><a href="reptes-sa4.html">Reptes SA4 · Moviment: servos, motors i ponts H <span class="tri-dot" data-tri="2"></span></a></li>
+<li><a href="reptes-sa5.html">Reptes SA5 · micro:bit i MicroPython <span class="tri-dot" data-tri="2"></span></a></li>
+<li><a href="reptes-sa6.html">Reptes SA6 · Sistemes de control <span class="tri-dot" data-tri="2"></span></a></li>
+<li><a href="reptes-sa7.html" class="actiu">Reptes SA7 · Robòtica mòbil (Imagina 3dBot) <span class="tri-dot" data-tri="3"></span></a></li>
+<li><a href="reptes-sa8.html">Reptes SA8 · IoT i Intel·ligència Artificial <span class="tri-dot" data-tri="3"></span></a></li>
+</ul>
+<details class="sb-grup"><summary><span>Solucionari</span></summary><ul><li><a href="solucionari/index.html">Presentació</a></li><li><a href="solucionari/sa1/codi.html">Codi</a></li><li><a href="solucionari/sa2/codi.html">Codi</a></li><li><a href="solucionari/sa3/codi.html">Codi</a></li><li><a href="solucionari/sa4/codi.html">Codi</a></li><li><a href="solucionari/sa5/codi.html">Codi</a></li><li><a href="solucionari/sa6/codi.html">Codi</a></li><li><a href="solucionari/sa7/codi.html">Codi</a></li><li><a href="solucionari/sa8/codi.html">Codi</a></li></ul></details>
+</nav></aside>
+  <main id="contingut">
+    <nav class="breadcrumb" aria-label="Ubicació"><a href="../index.html">Inici</a> <span class="sep">/</span> <a href="../reptes/index.html">Reptes</a> <span class="sep">/</span> <span aria-current="page">Reptes SA7 · Robòtica mòbil (Imagina 3dBot)</span></nav>
+    <span class="badge-tri" data-tri="3">3r trimestre</span>
+    <article class="prose">
+<h1 id="reptes-sa7-robotica-mobil-imagina-3dbot"><a class="toclink" href="#reptes-sa7-robotica-mobil-imagina-3dbot">Reptes SA7 · Robòtica mòbil (Imagina 3dBot)</a></h1>
+<p><strong>Tria UN dels tres reptes.</strong> Tots fan que un <strong>robot mòbil es desplaci de forma autònoma</strong> amb una lògica pròpia. Mateix requisit mínim, ampliacions graduades.</p>
+<blockquote>
+<p>⚠️ <strong>Important:</strong> cal <strong>ajustar els pins</strong> dels motors al codi segons el manual de la placa (bloc marcat als <code>.ino</code>).
+<strong>Continguts SA7:</strong> moviment bàsic, trajectòries, evitar obstacles (ultrasons), seguidor de línia (IR). · <strong>Codi base:</strong> <code>Classes/SA7/codi/</code>.</p>
+<p>🌟 <strong>Format "producte real" — producte estrella del 3r trimestre:</strong> construïu un <strong>cotxe/robot autònom</strong>. Cada repte n'és una capacitat (ruta, exploració, seguiment). A SA8 hi afegireu <strong>telecomandament i telemetria (IoT/IA)</strong>. <em>(Vegeu <code>Programació didàctica/08c_Projectes_vida_real.md</code>.)</em></p>
+</blockquote>
+<hr />
+<h2 id="repte-a-robot-repartidor-trajectoria-programada"><a class="toclink" href="#repte-a-robot-repartidor-trajectoria-programada">📦 Repte A · Robot repartidor (trajectòria programada)</a></h2>
+<p><strong>Context.</strong> Un robot de magatzem que ha de seguir un <strong>recorregut conegut</strong> (anar, girar, tornar) per portar una càrrega d'un punt a un altre.</p>
+<blockquote>
+<p><em>Client: operador logístic · Lliurable: robot repartidor de ruta programada · Món real: AGV de magatzem i logística automatitzada.</em></p>
+</blockquote>
+<p><strong>Què treballa.</strong> Moviment bàsic (endavant, gir, parar), seqüència de trajectòria, funcions de moviment.</p>
+<p><strong>Requisit mínim.</strong>
+- El robot fa una <strong>trajectòria definida</strong> (mínim: anar recte, girar i parar) amb <strong>funcions</strong> de moviment (<code>endavant()</code>, <code>gira()</code>...).
+- Codi comentat amb els pins dels motors ajustats.</p>
+<p><strong>Ampliacions graduades.</strong>
+1. <em>(bàsica)</em> Completa un <strong>quadrat</strong> (o circuit tancat) tornant al punt inicial.
+2. <em>(notable)</em> <strong>Calibra</strong> els temps de gir perquè els angles siguin precisos.
+3. <em>(⭐⭐⭐)</em> Encadena una <strong>ruta amb diverses parades</strong> i senyalitza-les amb un LED/so.</p>
+<hr />
+<h2 id="repte-b-robot-explorador-evita-obstacles"><a class="toclink" href="#repte-b-robot-explorador-evita-obstacles">🧭 Repte B · Robot explorador (evita obstacles)</a></h2>
+<p><strong>Context.</strong> Un robot que <strong>explora</strong> un espai sense xocar, canviant de rumb quan detecta un obstacle.</p>
+<blockquote>
+<p><em>Client: agència d'exploració · Lliurable: robot explorador evita-obstacles · Món real: rovers, robots d'inspecció i neteja autònoma.</em></p>
+</blockquote>
+<p><strong>Què treballa.</strong> Ultrasons + lògica de navegació (decisió segons distància).</p>
+<p><strong>Requisit mínim.</strong>
+- El robot avança i, en <strong>detectar un obstacle</strong> a prop, <strong>s'atura i canvia de direcció</strong> per continuar.
+- Codi comentat.</p>
+<p><strong>Ampliacions graduades.</strong>
+1. <em>(bàsica)</em> Encapsula la mesura i la maniobra en <strong>funcions</strong>.
+2. <em>(notable)</em> <strong>Estratègia</strong> de navegació: mira a banda i banda i tria el costat més lliure.
+3. <em>(⭐⭐⭐)</em> Combina amb un <strong>mode de cerca</strong> (explora fins a trobar pas) sense quedar encallat.</p>
+<hr />
+<h2 id="repte-c-seguidor-de-linia"><a class="toclink" href="#repte-c-seguidor-de-linia">🏁 Repte C · Seguidor de línia</a></h2>
+<p><strong>Context.</strong> Un robot de competició que <strong>segueix una línia</strong> pintada al terra el més de pressa i estable possible.</p>
+<blockquote>
+<p><em>Client: equip de competició de robòtica · Lliurable: robot seguidor de línia · Món real: competicions (WRO/RoboCup) i guiatge industrial per línia.</em></p>
+</blockquote>
+<p><strong>Què treballa.</strong> Sensors infrarojos (IR), lògica de seguiment, ajust de velocitat.</p>
+<p><strong>Requisit mínim.</strong>
+- El robot <strong>segueix una línia</strong> amb els sensors IR (corregeix quan se'n surt).
+- Codi comentat.</p>
+<p><strong>Ampliacions graduades.</strong>
+1. <em>(bàsica)</em> Afegeix un <strong>cronòmetre</strong> del recorregut (Monitor Sèrie).
+2. <em>(notable)</em> Suavitza les correccions per anar <strong>més ràpid sense sortir-se</strong>.
+3. <em>(⭐⭐⭐)</em> Implementa un <strong>control proporcional</strong> (gir ∝ desviació) — pont amb la SA6.</p>
+<hr />
+<h2 id="material-necessari"><a class="toclink" href="#material-necessari">Material necessari</a></h2>
+<ul>
+<li>Robot <strong>Imagina 3dBot</strong> (xassís + motors + pont H integrat) · sensor d'ultrasons (repte B) · mòdul de sensors IR (repte C) · piles/bateria · cinta/circuit de línia (repte C) · manual de la placa per als <strong>pins</strong>.</li>
+</ul>
+<h2 id="per-on-comencar-metode-de-projecte-primm"><a class="toclink" href="#per-on-comencar-metode-de-projecte-primm">Per on començar (mètode de projecte + PRIMM)</a></h2>
+<ol>
+<li><strong>Analitzar:</strong> quin comportament vull i quins sensors el guien?</li>
+<li><strong>Dissenyar (Predir):</strong> descompon el moviment en funcions; predigues els temps de gir.</li>
+<li><strong>Prototipar:</strong> parteix de <code>Classes/SA7/codi/</code> (<code>01_moviment_basic</code>, <code>02_trajectoria_quadrat</code>, <code>03_evita_obstacles</code>, <code>04_seguidor_linia</code>) i <strong>ajusta els pins</strong>.</li>
+<li><strong>Provar:</strong> prova en un espai segur i ampli; calibra temps/llindars.</li>
+<li><strong>Millorar:</strong> afegeix estratègia, cronòmetre o control proporcional.</li>
+</ol>
+<h2 id="com-savalua"><a class="toclink" href="#com-savalua">Com s'avalua</a></h2>
+<table>
+<thead>
+<tr>
+<th>Rúbrica</th>
+<th>Per què</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>R1</strong> (codi)</td>
+<td>Funcions de moviment, lògica de navegació/seguiment.</td>
+</tr>
+<tr>
+<td><strong>R3</strong> (projecte)</td>
+<td>Robot autònom, integració sensors+motors, fiabilitat.</td>
+</tr>
+<tr>
+<td><strong>R5</strong> (actitud)</td>
+<td>Iteració, gestió de l'error, cooperació en proves.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="producte-entrega"><a class="toclink" href="#producte-entrega">Producte / entrega</a></h2>
+<ul>
+<li>Codi <code>.ino</code> comentat (amb pins ajustats) + quadern tècnic amb el procés de calibratge i un vídeo/registre de la prova.</li>
+</ul>
+<hr />
+<h2 id="orientacio-docent"><a class="toclink" href="#orientacio-docent">Orientació docent</a></h2>
+<ul>
+<li><strong>Errors freqüents:</strong> <strong>pins dels motors</strong> no ajustats al manual; sentit de gir invertit; temps de gir sense calibrar; sensors IR sense ajustar al contrast del terra; bateria baixa (comportament erràtic).</li>
+<li><strong>Diferenciació:</strong> el mínim és moviment autònom amb funcions; trajectòries precises, estratègies i control proporcional escalen.</li>
+<li><strong>Gestió d'aula:</strong> reservar <strong>espai de proves</strong>; treballar per torns si hi ha pocs robots; el repte C necessita un circuit de línia preparat. Seguretat: robots a terra, no a la taula.</li>
+<li><strong>Vincle avaluació:</strong> R1 + R3 + R5; el repte C connecta amb el control proporcional (SA6) i prepara el projecte (SA9).</li>
+</ul>
+    </article>
+  </main>
+  <nav class="toc" aria-label="En aquesta pàgina"><p class="toc-titol">En aquesta pàgina</p><ul>
+<li class="toc-l1"><a href="#reptes-sa7-robotica-mobil-imagina-3dbot">Reptes SA7 · Robòtica mòbil (Imagina 3dBot)</a></li>
+<li class="toc-l2"><a href="#repte-a-robot-repartidor-trajectoria-programada">📦 Repte A · Robot repartidor (trajectòria programada)</a></li>
+<li class="toc-l2"><a href="#repte-b-robot-explorador-evita-obstacles">🧭 Repte B · Robot explorador (evita obstacles)</a></li>
+<li class="toc-l2"><a href="#repte-c-seguidor-de-linia">🏁 Repte C · Seguidor de línia</a></li>
+<li class="toc-l2"><a href="#material-necessari">Material necessari</a></li>
+<li class="toc-l2"><a href="#per-on-comencar-metode-de-projecte-primm">Per on començar (mètode de projecte + PRIMM)</a></li>
+<li class="toc-l2"><a href="#com-savalua">Com s&#x27;avalua</a></li>
+<li class="toc-l2"><a href="#producte-entrega">Producte / entrega</a></li>
+<li class="toc-l2"><a href="#orientacio-docent">Orientació docent</a></li>
+</ul></nav>
+</div>
+<footer class="peu">
+  <p>Robòtica · 1r de Batxillerat · material sota llicència <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca" target="_blank" rel="noopener">CC BY-SA 4.0</a>.</p>
+  <p><a href="https://github.com/tomeu-cd100/robotica-1batx-2627" target="_blank" rel="noopener">Repositori a GitHub</a> · web generat el 2026-06-30.</p>
+</footer>
+<script src="../assets/js/cerca-index.js"></script>
+<script src="../assets/js/lloc.js"></script>
+</body>
+</html>

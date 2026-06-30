@@ -1,0 +1,40 @@
+name: Publicar web a GitHub Pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "web/**"
+      - ".github/workflows/pages.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  desplega:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.desplegament.outputs.page_url }}
+    steps:
+      - name: Clona el repositori
+        uses: actions/checkout@v4
+
+      - name: Configura Pages
+        uses: actions/configure-pages@v5
+
+      - name: Puja la carpeta web/ com a artefacte
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: web
+
+      - name: Desplega a Pages
+        id: desplegament
+        uses: actions/deploy-pages@v4

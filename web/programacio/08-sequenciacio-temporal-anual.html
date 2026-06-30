@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>08 · Seqüenciació temporal anual · Robòtica · 1r de Batxillerat</title>
+<meta name="description" content="Material docent · LOMLOE Catalunya · curs 2026-2027">
+<link rel="stylesheet" href="../assets/css/estil.css">
+<link rel="stylesheet" href="../assets/css/pygments.css">
+<script>(function(){try{var t=localStorage.getItem('tema');if(t==='fosc'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.setAttribute('data-tema','fosc');}catch(e){}})();</script>
+</head>
+<body data-section="programacio" class="amb-sidebar amb-toc">
+<a class="skip" href="#contingut">Salta al contingut</a>
+<header class="topbar">
+  <button class="menu-btn" aria-label="Obre el menú" aria-expanded="false">☰</button>
+  <a class="brand" href="../index.html"><span class="brand-mark">◆</span> Robòtica <span class="brand-sub">1r Batx</span></a>
+  <nav class="topnav" aria-label="Seccions">
+    <a href="../index.html">Inici</a>
+<a href="../programacio/index.html" data-sec="programacio" class="actiu">Programació didàctica</a>
+<a href="../classes/index.html" data-sec="classes">Classes</a>
+<a href="../reptes/index.html" data-sec="reptes">Reptes</a>
+<a href="../avaluacio/index.html" data-sec="avaluacio">Avaluació</a>
+<a href="../normativa/index.html" data-sec="normativa">Normativa</a>
+<a href="../recursos/index.html" data-sec="recursos">Recursos</a>
+  </nav>
+  <div class="topbar-eines">
+    <div class="cercador">
+      <input type="search" id="cerca" placeholder="Cerca…" autocomplete="off" aria-label="Cerca al web">
+      <div id="cerca-resultats" class="cerca-resultats" hidden></div>
+    </div>
+    <button class="tema-btn" aria-label="Canvia el tema clar/fosc" title="Tema clar/fosc">◐</button>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar"><nav class="sidebar-nav" aria-label="Pàgines de la secció">
+<p class="sidebar-titol">Programació didàctica</p>
+<ul class="sb-top">
+<li><a href="index.html">Presentació</a></li>
+<li><a href="00-index-general.html">Programació didàctica — Robòtica · 1r de Batxillerat (científic i tecnològic)</a></li>
+<li><a href="01-introduccio-context-justificacio.html">01 · Introducció, context i justificació</a></li>
+<li><a href="02-objectius-competencies.html">02 · Objectius i competències</a></li>
+<li><a href="03-sabers-i-continguts.html">03 · Sabers i continguts</a></li>
+<li><a href="04-metodologia.html">04 · Metodologia</a></li>
+<li><a href="05-atencio-a-la-diversitat.html">05 · Atenció a la diversitat</a></li>
+<li><a href="06-avaluacio-criteris-qualificacio.html">06 · Avaluació: criteris, instruments i qualificació</a></li>
+<li><a href="07-rubriques.html">07 · Rúbriques d&#x27;avaluació</a></li>
+<li><a href="08-sequenciacio-temporal-anual.html" class="actiu">08 · Seqüenciació temporal anual</a></li>
+<li><a href="08c-projectes-vida-real.html">08c · Projectes de la vida real (model mixt: producte per SA + gran integrador)</a></li>
+<li><a href="09-materials-recursos-per-unitat.html">09 · Materials i recursos per unitat</a></li>
+<li><a href="09b-guia-compra-pressupost.html">09b · Guia de compra i pressupost del maquinari</a></li>
+<li><a href="09c-inventari-kits-disponibles.html">09c · Inventari del maquinari disponible (dotació real del centre)</a></li>
+<li><a href="10-sa1-introduccio-robotica.html">SA1 · Què és un robot? Sistemes embeguts i mètode de projecte <span class="tri-dot" data-tri="1"></span></a></li>
+<li><a href="11-sa2-sortides-digitals-pwm.html">SA2 · Sortides digitals i PWM: dona vida als actuadors <span class="tri-dot" data-tri="1"></span></a></li>
+<li><a href="12-sa3-entrades-sensors.html">SA3 · Entrades i sensors: el robot percep <span class="tri-dot" data-tri="1"></span></a></li>
+<li><a href="13-sa4-moviment-servos-motors.html">SA4 · Moviment: servos, motors i ponts H <span class="tri-dot" data-tri="2"></span></a></li>
+<li><a href="14-sa5-microbit-micropython.html">SA5 · micro:bit i MicroPython: un altre paradigma <span class="tri-dot" data-tri="2"></span></a></li>
+<li><a href="15-sa6-sistemes-control.html">SA6 · Sistemes de control: llaç obert/tancat i màquines d&#x27;estats <span class="tri-dot" data-tri="2"></span></a></li>
+<li><a href="16-sa7-robotica-mobil.html">SA7 · Robòtica mòbil: cinemàtica i trajectòries <span class="tri-dot" data-tri="3"></span></a></li>
+<li><a href="17-sa8-iot-ia.html">SA8 · IoT i IA: el robot connectat i intel·ligent <span class="tri-dot" data-tri="3"></span></a></li>
+<li><a href="18-sa9-projecte-final.html">SA9 · Repte final integrador (opció competició) <span class="tri-dot" data-tri="3"></span></a></li>
+</ul>
+</nav></aside>
+  <main id="contingut">
+    <nav class="breadcrumb" aria-label="Ubicació"><a href="../index.html">Inici</a> <span class="sep">/</span> <a href="../programacio/index.html">Programació didàctica</a> <span class="sep">/</span> <span aria-current="page">08 · Seqüenciació temporal anual</span></nav>
+    
+    <article class="prose">
+<h1 id="08-sequenciacio-temporal-anual"><a class="toclink" href="#08-sequenciacio-temporal-anual">08 · Seqüenciació temporal anual</a></h1>
+<p><strong>Base de càlcul:</strong> 2 h/setmana · ≈ 35 setmanes lectives · ≈ <strong>70 h</strong>.
+Distribució en <strong>3 trimestres</strong> i <strong>9 situacions d'aprenentatge (SA)</strong>.</p>
+<h2 id="visio-general"><a class="toclink" href="#visio-general">Visió general</a></h2>
+<table>
+<thead>
+<tr>
+<th>Trim.</th>
+<th>Setmanes aprox.</th>
+<th>SA</th>
+<th>Títol</th>
+<th>Hores</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1r</strong></td>
+<td>s1-s12</td>
+<td>SA1</td>
+<td>Què és un robot? Sistemes embeguts i mètode de projecte</td>
+<td>6</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>SA2 *</td>
+<td>Sortides digitals i PWM: dona vida als actuadors</td>
+<td>8</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>SA3</td>
+<td>Entrades i sensors: el robot percep</td>
+<td>8</td>
+</tr>
+<tr>
+<td><strong>2n</strong></td>
+<td>s13-s24</td>
+<td>SA4 *</td>
+<td>Moviment: servos, motors i ponts H</td>
+<td>8</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>SA5</td>
+<td>micro:bit i MicroPython: un altre paradigma</td>
+<td>7</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>SA6 *</td>
+<td>Sistemes de control: llaç obert/tancat i màquines d'estats</td>
+<td>8</td>
+</tr>
+<tr>
+<td><strong>3r</strong></td>
+<td>s25-s35</td>
+<td>SA7</td>
+<td>Robòtica mòbil: cinemàtica i trajectòries</td>
+<td>8</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>SA8</td>
+<td>IoT i IA: el robot connectat i intel·ligent</td>
+<td>6</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>SA9</td>
+<td>Repte final integrador (opció competició)</td>
+<td>10</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td><strong>Subtotal SA</strong></td>
+<td><strong>69 h</strong></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td><strong>Marge (diagnòstic, avaluació, imprevistos)</strong></td>
+<td><strong>~1 h</strong></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td><strong>Total</strong></td>
+<td><strong>70 h</strong></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>*</strong> SA amb <strong>4a sessió d'ampliacions opcionals</strong>: les <strong>8 h (4 sessions)</strong> són el còmput de referència. Si el calendari real ho exigeix, la 4a sessió es pot escurçar perquè conté ampliacions opcionals (les guies docents en detallen les 4 sessions). Aquesta n'és la <strong>flexibilitat de ritme</strong>, juntament amb la integració de les proves (vegeu més avall).</p>
+</blockquote>
+<h2 id="marge-i-integracio-de-lavaluacio"><a class="toclink" href="#marge-i-integracio-de-lavaluacio">Marge i integració de l'avaluació</a></h2>
+<p>Per garantir la <strong>viabilitat real</strong> del curs (2 h/setmana ≈ 70 h), s'apliquen dos criteris:</p>
+<ol>
+<li><strong>Flexibilitat de ritme (marge ~1 h):</strong> les SA marcades amb <strong>*</strong> (SA2, SA4, SA6) compten <strong>8 h (4 sessions)</strong>, però la 4a sessió conté activitats d'<strong>ampliació opcionals</strong> que es poden escurçar segons el calendari real. Així s'allibera marge per al <strong>diagnòstic inicial</strong> (SA1), festius i imprevistos sense alterar el còmput de referència.</li>
+<li><strong>Proves pràctiques integrades (sense hores extra):</strong> les <strong>proves pràctiques trimestrals</strong> (<code>Avaluació/Prova_practica_T1/T2/T3</code>) <strong>no afegeixen sessions</strong>: s'incorporen com a <strong>repte avaluable</strong> dins l'última sessió de la SA de tancament de cada trimestre:
+   - <strong>T1</strong> → dins la SA3 (sessió 4, producte/repte).
+   - <strong>T2</strong> → dins la SA6 (sessió 4, repte de control).
+   - <strong>T3</strong> → dins la SA9 (demostració + defensa, ja prevista).</li>
+</ol>
+<blockquote>
+<p>Vegeu la ponderació a <code>06_Avaluacio_criteris_qualificacio.md</code> (dimensió "Proves pràctiques", 20 %). Aquesta integració manté el pes avaluatiu sense comprometre les hores lectives.</p>
+</blockquote>
+<h2 id="fil-conductor-i-progressio"><a class="toclink" href="#fil-conductor-i-progressio">Fil conductor i progressió</a></h2>
+<div class="highlight"><pre><span></span><code>Trimestre 1 — FONAMENTS
+  SA1 ─ Context, mètode, entorns, seguretat, diagnòstic inicial
+  SA2 ─ Programació C/C++ + sortides (LED, PWM, so, relé)
+  SA3 ─ Programació C/C++ + entrades (polsadors, sensors analògics)
+        ▼ (l&#39;alumnat ja controla E/S amb Arduino)
+Trimestre 2 — CONTROL I SENSORS
+  SA4 ─ Actuadors de moviment (servos, motors DC, pont H)
+  SA5 ─ micro:bit + MicroPython (nou paradigma, ràdio, sensors)
+  SA6 ─ Sistemes de control (llaç obert/tancat, màquines d&#39;estats)
+        ▼ (l&#39;alumnat controla moviment i realimentació)
+Trimestre 3 — ROBÒTICA I INTEGRACIÓ
+  SA7 ─ Robòtica mòbil (Imagina 3dBot): seguir línia / evitar obstacles
+  SA8 ─ IoT/IA: telemetria, dades, introducció a la IA
+  SA9 ─ Repte final: projecte autònom + documentació + defensa
+</code></pre></div>
+
+<h2 id="criteris-de-sequenciacio"><a class="toclink" href="#criteris-de-sequenciacio">Criteris de seqüenciació</a></h2>
+<ol>
+<li><strong>Maquinari concret → abstracció:</strong> del component (SA2) al sistema autònom (SA9).</li>
+<li><strong>Un llenguatge consolidat abans del segon:</strong> C/C++ (SA2-SA4) abans de Python (SA5), i transferència posterior.</li>
+<li><strong>Cada SA reutilitza i amplia l'anterior</strong> (avaluació contínua i espiral).</li>
+<li><strong>El projecte final (SA9) integra</strong> electrònica + programació + control + robòtica + documentació.</li>
+</ol>
+<h2 id="connexions-interdisciplinaries"><a class="toclink" href="#connexions-interdisciplinaries">Connexions interdisciplinàries</a></h2>
+<ul>
+<li><strong>Matemàtiques I:</strong> funcions, proporcionalitat (mapatge de senyals), geometria (trajectòries), lògica.</li>
+<li><strong>Física:</strong> electricitat, mecànica del moviment, sensors.</li>
+<li><strong>Tecnologia i Enginyeria I:</strong> comparteix sabers; possibilitat de coordinació de projectes.</li>
+<li><strong>Treball de Recerca:</strong> la SA9 pot llavorar un futur TR.</li>
+</ul>
+<h2 id="flexibilitat"><a class="toclink" href="#flexibilitat">Flexibilitat</a></h2>
+<ul>
+<li>Si la matèria acaba sent de <strong>3 h/setmana</strong>, cada SA incorpora les activitats <em>"+ ampliació"</em>.</li>
+<li>Si es prioritza <strong>Python-primer</strong>, s'intercanvien SA5↔SA2/SA3 (cal adaptar el maquinari de les primeres setmanes a micro:bit).</li>
+</ul>
+    </article>
+  </main>
+  <nav class="toc" aria-label="En aquesta pàgina"><p class="toc-titol">En aquesta pàgina</p><ul>
+<li class="toc-l1"><a href="#08-sequenciacio-temporal-anual">08 · Seqüenciació temporal anual</a></li>
+<li class="toc-l2"><a href="#visio-general">Visió general</a></li>
+<li class="toc-l2"><a href="#marge-i-integracio-de-lavaluacio">Marge i integració de l&#x27;avaluació</a></li>
+<li class="toc-l2"><a href="#fil-conductor-i-progressio">Fil conductor i progressió</a></li>
+<li class="toc-l2"><a href="#criteris-de-sequenciacio">Criteris de seqüenciació</a></li>
+<li class="toc-l2"><a href="#connexions-interdisciplinaries">Connexions interdisciplinàries</a></li>
+<li class="toc-l2"><a href="#flexibilitat">Flexibilitat</a></li>
+</ul></nav>
+</div>
+<footer class="peu">
+  <p>Robòtica · 1r de Batxillerat · material sota llicència <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca" target="_blank" rel="noopener">CC BY-SA 4.0</a>.</p>
+  <p><a href="https://github.com/tomeu-cd100/robotica-1batx-2627" target="_blank" rel="noopener">Repositori a GitHub</a> · web generat el 2026-06-30.</p>
+</footer>
+<script src="../assets/js/cerca-index.js"></script>
+<script src="../assets/js/lloc.js"></script>
+</body>
+</html>

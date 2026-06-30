@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reptes SA5 · micro:bit i MicroPython · Robòtica · 1r de Batxillerat</title>
+<meta name="description" content="Material docent · LOMLOE Catalunya · curs 2026-2027">
+<link rel="stylesheet" href="../assets/css/estil.css">
+<link rel="stylesheet" href="../assets/css/pygments.css">
+<script>(function(){try{var t=localStorage.getItem('tema');if(t==='fosc'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.setAttribute('data-tema','fosc');}catch(e){}})();</script>
+</head>
+<body data-section="reptes" class="amb-sidebar amb-toc">
+<a class="skip" href="#contingut">Salta al contingut</a>
+<header class="topbar">
+  <button class="menu-btn" aria-label="Obre el menú" aria-expanded="false">☰</button>
+  <a class="brand" href="../index.html"><span class="brand-mark">◆</span> Robòtica <span class="brand-sub">1r Batx</span></a>
+  <nav class="topnav" aria-label="Seccions">
+    <a href="../index.html">Inici</a>
+<a href="../programacio/index.html" data-sec="programacio">Programació didàctica</a>
+<a href="../classes/index.html" data-sec="classes">Classes</a>
+<a href="../reptes/index.html" data-sec="reptes" class="actiu">Reptes</a>
+<a href="../avaluacio/index.html" data-sec="avaluacio">Avaluació</a>
+<a href="../normativa/index.html" data-sec="normativa">Normativa</a>
+<a href="../recursos/index.html" data-sec="recursos">Recursos</a>
+  </nav>
+  <div class="topbar-eines">
+    <div class="cercador">
+      <input type="search" id="cerca" placeholder="Cerca…" autocomplete="off" aria-label="Cerca al web">
+      <div id="cerca-resultats" class="cerca-resultats" hidden></div>
+    </div>
+    <button class="tema-btn" aria-label="Canvia el tema clar/fosc" title="Tema clar/fosc">◐</button>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar"><nav class="sidebar-nav" aria-label="Pàgines de la secció">
+<p class="sidebar-titol">Reptes</p>
+<ul class="sb-top">
+<li><a href="index.html">Presentació</a></li>
+<li><a href="reptes-sa1.html">Reptes SA1 · Introducció: primer programa amb un LED <span class="tri-dot" data-tri="1"></span></a></li>
+<li><a href="reptes-sa2.html">Reptes SA2 · Sortides digitals i PWM <span class="tri-dot" data-tri="1"></span></a></li>
+<li><a href="reptes-sa3.html">Reptes SA3 · Entrades i sensors <span class="tri-dot" data-tri="1"></span></a></li>
+<li><a href="reptes-sa4.html">Reptes SA4 · Moviment: servos, motors i ponts H <span class="tri-dot" data-tri="2"></span></a></li>
+<li><a href="reptes-sa5.html" class="actiu">Reptes SA5 · micro:bit i MicroPython <span class="tri-dot" data-tri="2"></span></a></li>
+<li><a href="reptes-sa6.html">Reptes SA6 · Sistemes de control <span class="tri-dot" data-tri="2"></span></a></li>
+<li><a href="reptes-sa7.html">Reptes SA7 · Robòtica mòbil (Imagina 3dBot) <span class="tri-dot" data-tri="3"></span></a></li>
+<li><a href="reptes-sa8.html">Reptes SA8 · IoT i Intel·ligència Artificial <span class="tri-dot" data-tri="3"></span></a></li>
+</ul>
+<details class="sb-grup"><summary><span>Solucionari</span></summary><ul><li><a href="solucionari/index.html">Presentació</a></li><li><a href="solucionari/sa1/codi.html">Codi</a></li><li><a href="solucionari/sa2/codi.html">Codi</a></li><li><a href="solucionari/sa3/codi.html">Codi</a></li><li><a href="solucionari/sa4/codi.html">Codi</a></li><li><a href="solucionari/sa5/codi.html">Codi</a></li><li><a href="solucionari/sa6/codi.html">Codi</a></li><li><a href="solucionari/sa7/codi.html">Codi</a></li><li><a href="solucionari/sa8/codi.html">Codi</a></li></ul></details>
+</nav></aside>
+  <main id="contingut">
+    <nav class="breadcrumb" aria-label="Ubicació"><a href="../index.html">Inici</a> <span class="sep">/</span> <a href="../reptes/index.html">Reptes</a> <span class="sep">/</span> <span aria-current="page">Reptes SA5 · micro:bit i MicroPython</span></nav>
+    <span class="badge-tri" data-tri="2">2n trimestre</span>
+    <article class="prose">
+<h1 id="reptes-sa5-microbit-i-micropython"><a class="toclink" href="#reptes-sa5-microbit-i-micropython">Reptes SA5 · micro:bit i MicroPython</a></h1>
+<p><strong>Tria UN dels tres reptes.</strong> Tots es programen en <strong>MicroPython</strong> per a <strong>micro:bit</strong>, fent servir les entrades i sensors <strong>integrats</strong> i la pantalla de LEDs. Mateix requisit mínim, ampliacions graduades. Editor: python.microbit.org (té simulador) o Thonny.</p>
+<blockquote>
+<p><strong>Continguts SA5:</strong> MicroPython (indentació, <code>while True</code>), <code>display</code>, botons, acceleròmetre, sensor de llum, ràdio. · <strong>Codi base:</strong> <code>Classes/SA5/codi/</code> (<code>.py</code>).</p>
+<p><strong>Format "producte real":</strong> cada repte simula un <strong>encàrrec</strong> amb <strong>client</strong>, <strong>lliurable</strong> i <strong>ús al món real</strong>. El requisit tècnic no canvia. <em>(2n trimestre — el repte C de ràdio pot esdevenir el </em><em>comandament del braç robòtic</em><em> de SA4. Vegeu <code>Programació didàctica/08c_Projectes_vida_real.md</code>.)</em></p>
+</blockquote>
+<hr />
+<h2 id="repte-a-comptapassos-personal"><a class="toclink" href="#repte-a-comptapassos-personal">🏃 Repte A · Comptapassos personal</a></h2>
+<p><strong>Context.</strong> Una polsera d'activitat que <strong>compta passos</strong> detectant el moviment, com un podòmetre.</p>
+<blockquote>
+<p><em>Client: marca d'esport i salut · Lliurable: comptapassos vestible · Món real: wearables i monitoratge d'activitat física.</em></p>
+</blockquote>
+<p><strong>Què treballa.</strong> Acceleròmetre, variables, condicionals, <code>display</code>.</p>
+<p><strong>Requisit mínim.</strong>
+- Detectar <strong>sacsejades/passos</strong> amb l'acceleròmetre i <strong>comptar-los</strong>, mostrant el total a la pantalla (en prémer un botó).
+- Codi comentat amb indentació correcta.</p>
+<p><strong>Ampliacions graduades.</strong>
+1. <em>(bàsica)</em> Reinicia el comptador amb el <strong>botó B</strong>.
+2. <em>(notable)</em> Fixa un <strong>objectiu</strong> (p. ex. 20 passos) i mostra una <strong>icona</strong> en assolir-lo.
+3. <em>(⭐⭐⭐)</em> Mostra una <strong>barra de progrés</strong> amb els LEDs cap a l'objectiu.</p>
+<hr />
+<h2 id="repte-b-llum-de-nit-intelligent"><a class="toclink" href="#repte-b-llum-de-nit-intelligent">🌃 Repte B · Llum de nit intel·ligent</a></h2>
+<p><strong>Context.</strong> Una llum que <strong>s'encén quan fa fosc</strong> fent servir el sensor de llum del propi micro:bit.</p>
+<blockquote>
+<p><em>Client: empresa de domòtica · Lliurable: llum de nit autònoma · Món real: il·luminació adaptativa de la llar.</em></p>
+</blockquote>
+<p><strong>Què treballa.</strong> <code>display.read_light_level()</code>, llindar amb <code>if</code>, sortida a la pantalla.</p>
+<p><strong>Requisit mínim.</strong>
+- Llegir el <strong>nivell de llum</strong> i <strong>encendre la pantalla</strong> (imatge) quan baixa d'un llindar; apagar-la quan hi ha llum.
+- Codi comentat.</p>
+<p><strong>Ampliacions graduades.</strong>
+1. <em>(bàsica)</em> Mostra el <strong>nivell de llum</strong> numèric en prémer un botó (per calibrar).
+2. <em>(notable)</em> Afegeix <strong>histèresi</strong> (dos llindars) per evitar parpelleigs.
+3. <em>(⭐⭐⭐)</em> Ajusta la <strong>brillantor</strong> de la imatge segons la foscor.</p>
+<hr />
+<h2 id="repte-c-joc-o-missatges-per-radio"><a class="toclink" href="#repte-c-joc-o-missatges-per-radio">🎲 Repte C · Joc o missatges per ràdio</a></h2>
+<p><strong>Context.</strong> Un <strong>dau electrònic</strong>, un <strong>pedra-paper-tisora</strong>, o <strong>enviar missatges</strong> entre dos micro:bits per ràdio.</p>
+<blockquote>
+<p><em>Client: empresa de joguines / equip de robòtica · Lliurable: joc o comandament sense fil · Món real: comunicació sense fil i comandaments remots.</em> (La ràdio és la <strong>base</strong> d'un possible comandament del braç de SA4 — <strong>via avançada i opcional</strong>, requereix pont micro:bit↔Arduino; vegeu <code>Programació didàctica/08c_Projectes_vida_real.md</code>.)</p>
+</blockquote>
+<p><strong>Què treballa.</strong> <code>random</code>, esdeveniments (sacsejada/botó), <code>display</code>, i/o comunicació <code>radio</code>.</p>
+<p><strong>Requisit mínim.</strong>
+- <em>Opció joc:</em> en <strong>sacsejar</strong> o prémer, mostra un <strong>resultat aleatori</strong> (dau 1–6 o gest).
+- <em>Opció ràdio:</em> en prémer un botó, <strong>envia</strong> un missatge/icona que un altre micro:bit <strong>rep i mostra</strong>.</p>
+<p><strong>Ampliacions graduades.</strong>
+1. <em>(bàsica)</em> Afegeix una <strong>animació</strong> abans de mostrar el resultat.
+2. <em>(notable)</em> <em>(joc)</em> porta el <strong>recompte</strong> de tirades; <em>(ràdio)</em> respon amb un <strong>ACK</strong> (confirmació).
+3. <em>(⭐⭐⭐)</em> Combina-ho: un <strong>joc multijugador per ràdio</strong> entre dos micro:bits.</p>
+<hr />
+<h2 id="material-necessari-segons-repte"><a class="toclink" href="#material-necessari-segons-repte">Material necessari (segons repte)</a></h2>
+<ul>
+<li>micro:bit (+ piles) · per al repte C (ràdio): <strong>dos</strong> micro:bits · ordinador amb python.microbit.org o <strong>Thonny</strong> · <em>(no cal cablejar: tot és integrat)</em>.</li>
+</ul>
+<h2 id="per-on-comencar-metode-de-projecte-primm"><a class="toclink" href="#per-on-comencar-metode-de-projecte-primm">Per on començar (mètode de projecte + PRIMM)</a></h2>
+<ol>
+<li><strong>Analitzar:</strong> quina entrada integrada faig servir (moviment / llum / botó) i què mostro?</li>
+<li><strong>Dissenyar (Predir):</strong> escriu l'estructura <code>while True:</code> i el que anirà sagnat dins.</li>
+<li><strong>Prototipar:</strong> parteix de <code>Classes/SA5/codi/</code> (<code>02_passes.py</code>, <code>03_nightlight.py</code>, <code>04_radio_dau.py</code>).</li>
+<li><strong>Provar:</strong> usa el <strong>simulador</strong> abans de carregar al dispositiu.</li>
+<li><strong>Millorar:</strong> afegeix histèresi, icones, recompte o ràdio.</li>
+</ol>
+<h2 id="com-savalua"><a class="toclink" href="#com-savalua">Com s'avalua</a></h2>
+<table>
+<thead>
+<tr>
+<th>Rúbrica</th>
+<th>Per què</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>R1</strong> (codi)</td>
+<td>Indentació correcta, lògica, llegibilitat en Python.</td>
+</tr>
+<tr>
+<td><strong>R3</strong> (projecte)</td>
+<td>Integració sensor + pantalla (+ ràdio) funcional.</td>
+</tr>
+<tr>
+<td><strong>R4</strong> (documentació)</td>
+<td>Quadern tècnic: diferències Arduino↔MicroPython.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="producte-entrega"><a class="toclink" href="#producte-entrega">Producte / entrega</a></h2>
+<ul>
+<li>Codi <code>.py</code> comentat + entrada al quadern tècnic (què canvia respecte d'Arduino).</li>
+</ul>
+<hr />
+<h2 id="orientacio-docent"><a class="toclink" href="#orientacio-docent">Orientació docent</a></h2>
+<ul>
+<li><strong>Errors freqüents:</strong> <code>IndentationError</code> (sagnat); oblidar <code>from microbit import *</code>; al repte de ràdio, grups diferents entre emissors; confondre <code>is_pressed()</code> amb <code>was_pressed()</code>.</li>
+<li><strong>Diferenciació:</strong> el mínim usa una entrada integrada; les ampliacions porten a histèresi, <code>random</code>, recompte i ràdio.</li>
+<li><strong>Gestió d'aula:</strong> el <strong>simulador</strong> permet treballar sense maquinari; per al repte C cal aparellar grups de 2 micro:bits. Recomanar repassar <code>Classes/SA0/SA0_guia_programacio.md</code> (Part B i taula comparativa).</li>
+<li><strong>Vincle avaluació:</strong> R1 (codi Python) + R3 + R4; punt fort per consolidar el <strong>transfer</strong> de conceptes entre llenguatges.</li>
+</ul>
+    </article>
+  </main>
+  <nav class="toc" aria-label="En aquesta pàgina"><p class="toc-titol">En aquesta pàgina</p><ul>
+<li class="toc-l1"><a href="#reptes-sa5-microbit-i-micropython">Reptes SA5 · micro:bit i MicroPython</a></li>
+<li class="toc-l2"><a href="#repte-a-comptapassos-personal">🏃 Repte A · Comptapassos personal</a></li>
+<li class="toc-l2"><a href="#repte-b-llum-de-nit-intelligent">🌃 Repte B · Llum de nit intel·ligent</a></li>
+<li class="toc-l2"><a href="#repte-c-joc-o-missatges-per-radio">🎲 Repte C · Joc o missatges per ràdio</a></li>
+<li class="toc-l2"><a href="#material-necessari-segons-repte">Material necessari (segons repte)</a></li>
+<li class="toc-l2"><a href="#per-on-comencar-metode-de-projecte-primm">Per on començar (mètode de projecte + PRIMM)</a></li>
+<li class="toc-l2"><a href="#com-savalua">Com s&#x27;avalua</a></li>
+<li class="toc-l2"><a href="#producte-entrega">Producte / entrega</a></li>
+<li class="toc-l2"><a href="#orientacio-docent">Orientació docent</a></li>
+</ul></nav>
+</div>
+<footer class="peu">
+  <p>Robòtica · 1r de Batxillerat · material sota llicència <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca" target="_blank" rel="noopener">CC BY-SA 4.0</a>.</p>
+  <p><a href="https://github.com/tomeu-cd100/robotica-1batx-2627" target="_blank" rel="noopener">Repositori a GitHub</a> · web generat el 2026-06-30.</p>
+</footer>
+<script src="../assets/js/cerca-index.js"></script>
+<script src="../assets/js/lloc.js"></script>
+</body>
+</html>

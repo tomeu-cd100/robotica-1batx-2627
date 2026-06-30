@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Codi solucionari reptes · SA6 · Robòtica · 1r de Batxillerat</title>
+<meta name="description" content="Material docent · LOMLOE Catalunya · curs 2026-2027">
+<link rel="stylesheet" href="../../../assets/css/estil.css">
+<link rel="stylesheet" href="../../../assets/css/pygments.css">
+<script>(function(){try{var t=localStorage.getItem('tema');if(t==='fosc'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.setAttribute('data-tema','fosc');}catch(e){}})();</script>
+</head>
+<body data-section="reptes" class="amb-sidebar sense-toc">
+<a class="skip" href="#contingut">Salta al contingut</a>
+<header class="topbar">
+  <button class="menu-btn" aria-label="Obre el menú" aria-expanded="false">☰</button>
+  <a class="brand" href="../../../index.html"><span class="brand-mark">◆</span> Robòtica <span class="brand-sub">1r Batx</span></a>
+  <nav class="topnav" aria-label="Seccions">
+    <a href="../../../index.html">Inici</a>
+<a href="../../../programacio/index.html" data-sec="programacio">Programació didàctica</a>
+<a href="../../../classes/index.html" data-sec="classes">Classes</a>
+<a href="../../../reptes/index.html" data-sec="reptes" class="actiu">Reptes</a>
+<a href="../../../avaluacio/index.html" data-sec="avaluacio">Avaluació</a>
+<a href="../../../normativa/index.html" data-sec="normativa">Normativa</a>
+<a href="../../../recursos/index.html" data-sec="recursos">Recursos</a>
+  </nav>
+  <div class="topbar-eines">
+    <div class="cercador">
+      <input type="search" id="cerca" placeholder="Cerca…" autocomplete="off" aria-label="Cerca al web">
+      <div id="cerca-resultats" class="cerca-resultats" hidden></div>
+    </div>
+    <button class="tema-btn" aria-label="Canvia el tema clar/fosc" title="Tema clar/fosc">◐</button>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar"><nav class="sidebar-nav" aria-label="Pàgines de la secció">
+<p class="sidebar-titol">Reptes</p>
+<ul class="sb-top">
+<li><a href="../../index.html">Presentació</a></li>
+<li><a href="../../reptes-sa1.html">Reptes SA1 · Introducció: primer programa amb un LED <span class="tri-dot" data-tri="1"></span></a></li>
+<li><a href="../../reptes-sa2.html">Reptes SA2 · Sortides digitals i PWM <span class="tri-dot" data-tri="1"></span></a></li>
+<li><a href="../../reptes-sa3.html">Reptes SA3 · Entrades i sensors <span class="tri-dot" data-tri="1"></span></a></li>
+<li><a href="../../reptes-sa4.html">Reptes SA4 · Moviment: servos, motors i ponts H <span class="tri-dot" data-tri="2"></span></a></li>
+<li><a href="../../reptes-sa5.html">Reptes SA5 · micro:bit i MicroPython <span class="tri-dot" data-tri="2"></span></a></li>
+<li><a href="../../reptes-sa6.html">Reptes SA6 · Sistemes de control <span class="tri-dot" data-tri="2"></span></a></li>
+<li><a href="../../reptes-sa7.html">Reptes SA7 · Robòtica mòbil (Imagina 3dBot) <span class="tri-dot" data-tri="3"></span></a></li>
+<li><a href="../../reptes-sa8.html">Reptes SA8 · IoT i Intel·ligència Artificial <span class="tri-dot" data-tri="3"></span></a></li>
+</ul>
+<details class="sb-grup" open><summary><span>Solucionari</span></summary><ul><li><a href="../index.html">Presentació</a></li><li><a href="../sa1/codi.html">Codi</a></li><li><a href="../sa2/codi.html">Codi</a></li><li><a href="../sa3/codi.html">Codi</a></li><li><a href="../sa4/codi.html">Codi</a></li><li><a href="../sa5/codi.html">Codi</a></li><li><a href="codi.html" class="actiu">Codi</a></li><li><a href="../sa7/codi.html">Codi</a></li><li><a href="../sa8/codi.html">Codi</a></li></ul></details>
+</nav></aside>
+  <main id="contingut">
+    <nav class="breadcrumb" aria-label="Ubicació"><a href="../../../index.html">Inici</a> <span class="sep">/</span> <a href="../../../reptes/index.html">Reptes</a> <span class="sep">/</span> <span aria-current="page">Codi solucionari reptes · SA6</span></nav>
+    <span class="badge-tri" data-tri="2">2n trimestre</span>
+    <article class="prose">
+<h1>Codi solucionari reptes · SA6</h1>
+<p class="codi-intro">Fitxers de codi font. Fes servir el botó <strong>Copia</strong> per dur-los a l'IDE d'Arduino o a l'editor de micro:bit.</p>
+<ul class="codi-llista">
+<li><a href="#a-termostat-ampliat-ampliat"><code>A_termostat/ampliat/ampliat.ino</code></a></li>
+<li><a href="#a-termostat-minim-minim"><code>A_termostat/minim/minim.ino</code></a></li>
+<li><a href="#b-semafor-adaptatiu-ampliat-ampliat"><code>B_semafor_adaptatiu/ampliat/ampliat.ino</code></a></li>
+<li><a href="#b-semafor-adaptatiu-minim-minim"><code>B_semafor_adaptatiu/minim/minim.ino</code></a></li>
+<li><a href="#c-proporcional-ampliat-ampliat"><code>C_proporcional/ampliat/ampliat.ino</code></a></li>
+<li><a href="#c-proporcional-minim-minim"><code>C_proporcional/minim/minim.ino</code></a></li>
+</ul>
+<section class="codi-bloc" id="a-termostat-ampliat-ampliat"><header class="codi-cap"><code class="codi-nom">A_termostat/ampliat/ampliat.ino</code><button class="copia-btn" type="button">Copia</button></header><div class="codi-cos"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm">  Solucionari Repte SA6-A · Termostat (AMPLIAT)</span>
+<span class="cm">  AMPLIACIO 1: histeresi (arrenca a X, atura a X-marge) per evitar oscil-lacions.</span>
+<span class="cm">  AMPLIACIO 2: consigna ajustable amb un potenciometre.</span>
+<span class="cm">  AMPLIACIO 3: dos modes (fred/calor) amb una maquina d&#39;estats senzilla.</span>
+<span class="cm">  Circuit: sensor -&gt; A0 ; potenciometre consigna -&gt; A1 ; sortida -&gt; pin 9 ;</span>
+<span class="cm">           selector de mode: polsador entre pin 2 i GND.</span>
+<span class="cm">*/</span>
+
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">SENSOR</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">A0</span><span class="p">,</span><span class="w"> </span><span class="n">POT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">A1</span><span class="p">,</span><span class="w"> </span><span class="n">SORTIDA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="n">POLSADOR</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">MARGE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">40</span><span class="p">;</span><span class="w">        </span><span class="c1">// amplada de la histeresi</span>
+<span class="kt">bool</span><span class="w"> </span><span class="n">actiu</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+
+<span class="k">enum</span><span class="w"> </span><span class="nc">Mode</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">CALOR</span><span class="p">,</span><span class="w"> </span><span class="n">FRED</span><span class="w"> </span><span class="p">};</span><span class="w">   </span><span class="c1">// AMPLIACIO 3</span>
+<span class="n">Mode</span><span class="w"> </span><span class="n">mode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CALOR</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">estatAnterior</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">HIGH</span><span class="p">;</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">SORTIDA</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span>
+<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">POLSADOR</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT_PULLUP</span><span class="p">);</span>
+<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">analogRead</span><span class="p">(</span><span class="n">SENSOR</span><span class="p">);</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">consigna</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">analogRead</span><span class="p">(</span><span class="n">POT</span><span class="p">);</span><span class="w">   </span><span class="c1">// AMPLIACIO 2: consigna variable</span>
+
+<span class="w">  </span><span class="c1">// AMPLIACIO 3: el polsador canvia de mode</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">estat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">digitalRead</span><span class="p">(</span><span class="n">POLSADOR</span><span class="p">);</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">estat</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">LOW</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">estatAnterior</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">HIGH</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">mode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">mode</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">CALOR</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">FRED</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">CALOR</span><span class="p">;</span><span class="w"> </span><span class="n">delay</span><span class="p">(</span><span class="mi">40</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
+<span class="w">  </span><span class="n">estatAnterior</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">estat</span><span class="p">;</span>
+
+<span class="w">  </span><span class="c1">// AMPLIACIO 1: histeresi (la direccio depen del mode)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">mode</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">CALOR</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">                 </span><span class="c1">// refrigeracio: activa si fa massa calor</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">actiu</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">consigna</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">MARGE</span><span class="p">)</span><span class="w"> </span><span class="n">actiu</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
+<span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">actiu</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">consigna</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">MARGE</span><span class="p">)</span><span class="w"> </span><span class="n">actiu</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w">                             </span><span class="c1">// calefaccio: activa si fa massa fred</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">actiu</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">consigna</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">MARGE</span><span class="p">)</span><span class="w"> </span><span class="n">actiu</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
+<span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">actiu</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">consigna</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">MARGE</span><span class="p">)</span><span class="w"> </span><span class="n">actiu</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">SORTIDA</span><span class="p">,</span><span class="w"> </span><span class="n">actiu</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">HIGH</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span>
+
+<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;mode=&quot;</span><span class="p">);</span><span class="w"> </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">mode</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">CALOR</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s">&quot;CALOR&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s">&quot;FRED&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot; t=&quot;</span><span class="p">);</span><span class="w"> </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">t</span><span class="p">);</span>
+<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot; consigna=&quot;</span><span class="p">);</span><span class="w"> </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">consigna</span><span class="p">);</span>
+<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot; actiu=&quot;</span><span class="p">);</span><span class="w"> </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">actiu</span><span class="p">);</span>
+<span class="w">  </span><span class="n">delay</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div></section>
+<section class="codi-bloc" id="a-termostat-minim-minim"><header class="codi-cap"><code class="codi-nom">A_termostat/minim/minim.ino</code><button class="copia-btn" type="button">Copia</button></header><div class="codi-cos"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm">  Solucionari Repte SA6-A · Termostat (REQUISIT MINIM)</span>
+<span class="cm">  Llac tancat: llegeix la &quot;temperatura&quot; (NTC o potenciometre a A0) i activa una</span>
+<span class="cm">  sortida (LED/ventilador a pin 9) segons una consigna.</span>
+<span class="cm">  Circuit: sensor/pot -&gt; A0 ; sortida -&gt; pin 9. Valors al Monitor Serie.</span>
+<span class="cm">*/</span>
+
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">SENSOR</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">A0</span><span class="p">;</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">SORTIDA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">9</span><span class="p">;</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">CONSIGNA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">500</span><span class="p">;</span><span class="w">   </span><span class="c1">// valor objectiu (lectura 0..1023)</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">SORTIDA</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span>
+<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">analogRead</span><span class="p">(</span><span class="n">SENSOR</span><span class="p">);</span>
+<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">t</span><span class="p">);</span>
+
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">t</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">CONSIGNA</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">SORTIDA</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH</span><span class="p">);</span><span class="w">   </span><span class="c1">// massa &quot;calor&quot; -&gt; activa</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">SORTIDA</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="n">delay</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div></section>
+<section class="codi-bloc" id="b-semafor-adaptatiu-ampliat-ampliat"><header class="codi-cap"><code class="codi-nom">B_semafor_adaptatiu/ampliat/ampliat.ino</code><button class="copia-btn" type="button">Copia</button></header><div class="codi-cos"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm">  Solucionari Repte SA6-B · Semafor adaptatiu (AMPLIAT)</span>
+<span class="cm">  AMPLIACIO 1: polsador de vianants que avanca a vermell de forma segura.</span>
+<span class="cm">  AMPLIACIO 2: estat de parpelleig groc (mode nocturn) amb el boto B.</span>
+<span class="cm">  AMPLIACIO 3: coordina un segon semafor amb estats complementaris.</span>
+<span class="cm">  Circuit: S1 VERD=10,GROC=9,VERMELL=8 ; S2 VERD=A1,GROC=A2,VERMELL=A3 (pins digitals) ;</span>
+<span class="cm">           polsador vianants entre pin 2 i GND ; polsador mode nocturn entre pin 3 i GND.</span>
+<span class="cm">*/</span>
+
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">VERD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="n">GROC</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="n">VERMELL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="p">;</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">S2_VERD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">A1</span><span class="p">,</span><span class="w"> </span><span class="n">S2_GROC</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">A2</span><span class="p">,</span><span class="w"> </span><span class="n">S2_VERMELL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">A3</span><span class="p">;</span><span class="w">   </span><span class="c1">// segon semafor</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">P_VIANANTS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">P_NOCTURN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
+
+<span class="k">enum</span><span class="w"> </span><span class="nc">Estat</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">E_VERD</span><span class="p">,</span><span class="w"> </span><span class="n">E_GROC</span><span class="p">,</span><span class="w"> </span><span class="n">E_VERMELL</span><span class="p">,</span><span class="w"> </span><span class="n">E_NOCTURN</span><span class="w"> </span><span class="p">};</span>
+<span class="n">Estat</span><span class="w"> </span><span class="n">estat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">E_VERD</span><span class="p">;</span>
+<span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">tEstat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">T_VERD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4000</span><span class="p">,</span><span class="w"> </span><span class="n">T_GROC</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1500</span><span class="p">,</span><span class="w"> </span><span class="n">T_VERMELL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4000</span><span class="p">;</span>
+<span class="kt">bool</span><span class="w"> </span><span class="n">peticioVianants</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">aplica</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kt">bool</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">estat</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">E_VERD</span><span class="p">),</span><span class="w"> </span><span class="n">g</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">estat</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">E_GROC</span><span class="p">),</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">estat</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">E_VERMELL</span><span class="p">);</span>
+<span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">VERD</span><span class="p">,</span><span class="w"> </span><span class="n">v</span><span class="p">);</span><span class="w"> </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">GROC</span><span class="p">,</span><span class="w"> </span><span class="n">g</span><span class="p">);</span><span class="w"> </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">VERMELL</span><span class="p">,</span><span class="w"> </span><span class="n">r</span><span class="p">);</span>
+<span class="w">  </span><span class="c1">// AMPLIACIO 3: segon semafor complementari (vermell quan el primer no ho es)</span>
+<span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">S2_VERMELL</span><span class="p">,</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">LOW</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">HIGH</span><span class="p">);</span>
+<span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">S2_VERD</span><span class="p">,</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">HIGH</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span>
+<span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">S2_GROC</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">canvia</span><span class="p">(</span><span class="n">Estat</span><span class="w"> </span><span class="n">nou</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">estat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nou</span><span class="p">;</span><span class="w"> </span><span class="n">tEstat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">millis</span><span class="p">();</span><span class="w"> </span><span class="n">aplica</span><span class="p">();</span><span class="w"> </span><span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">VERD</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span><span class="w"> </span><span class="n">pinMode</span><span class="p">(</span><span class="n">GROC</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span><span class="w"> </span><span class="n">pinMode</span><span class="p">(</span><span class="n">VERMELL</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span>
+<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">S2_VERD</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span><span class="w"> </span><span class="n">pinMode</span><span class="p">(</span><span class="n">S2_GROC</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span><span class="w"> </span><span class="n">pinMode</span><span class="p">(</span><span class="n">S2_VERMELL</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span>
+<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">P_VIANANTS</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT_PULLUP</span><span class="p">);</span><span class="w"> </span><span class="n">pinMode</span><span class="p">(</span><span class="n">P_NOCTURN</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT_PULLUP</span><span class="p">);</span>
+<span class="w">  </span><span class="n">canvia</span><span class="p">(</span><span class="n">E_VERD</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// AMPLIACIO 1: peticio de vianants</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">digitalRead</span><span class="p">(</span><span class="n">P_VIANANTS</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">LOW</span><span class="p">)</span><span class="w"> </span><span class="n">peticioVianants</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
+<span class="w">  </span><span class="c1">// AMPLIACIO 2: mode nocturn</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">digitalRead</span><span class="p">(</span><span class="n">P_NOCTURN</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">LOW</span><span class="p">)</span><span class="w"> </span><span class="n">canvia</span><span class="p">(</span><span class="n">E_NOCTURN</span><span class="p">);</span>
+
+<span class="w">  </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">ara</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">millis</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">tEstat</span><span class="p">;</span>
+<span class="w">  </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">estat</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="no">E_VERD</span><span class="p">:</span>
+<span class="w">      </span><span class="c1">// si hi ha vianants esperant, escurca el verd</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ara</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="p">(</span><span class="n">peticioVianants</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mi">1000UL</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">T_VERD</span><span class="p">))</span><span class="w"> </span><span class="n">canvia</span><span class="p">(</span><span class="n">E_GROC</span><span class="p">);</span>
+<span class="w">      </span><span class="k">break</span><span class="p">;</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="no">E_GROC</span><span class="p">:</span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ara</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">T_GROC</span><span class="p">)</span><span class="w"> </span><span class="n">canvia</span><span class="p">(</span><span class="n">E_VERMELL</span><span class="p">);</span><span class="w"> </span><span class="k">break</span><span class="p">;</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="no">E_VERMELL</span><span class="p">:</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ara</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">T_VERMELL</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">peticioVianants</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span><span class="w"> </span><span class="n">canvia</span><span class="p">(</span><span class="n">E_VERD</span><span class="p">);</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="k">break</span><span class="p">;</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="no">E_NOCTURN</span><span class="p">:</span>
+<span class="w">      </span><span class="c1">// AMPLIACIO 2: groc intermitent; surt amb el boto de vianants</span>
+<span class="w">      </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">VERD</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span><span class="w"> </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">VERMELL</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span>
+<span class="w">      </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">GROC</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">millis</span><span class="p">()</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">500</span><span class="p">)</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span>
+<span class="w">      </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">S2_GROC</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">millis</span><span class="p">()</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">500</span><span class="p">)</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span>
+<span class="w">      </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">S2_VERD</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span><span class="w"> </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">S2_VERMELL</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">digitalRead</span><span class="p">(</span><span class="n">P_VIANANTS</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">LOW</span><span class="p">)</span><span class="w"> </span><span class="n">canvia</span><span class="p">(</span><span class="n">E_VERD</span><span class="p">);</span>
+<span class="w">      </span><span class="k">break</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div></section>
+<section class="codi-bloc" id="b-semafor-adaptatiu-minim-minim"><header class="codi-cap"><code class="codi-nom">B_semafor_adaptatiu/minim/minim.ino</code><button class="copia-btn" type="button">Copia</button></header><div class="codi-cos"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm">  Solucionari Repte SA6-B · Semafor adaptatiu (REQUISIT MINIM)</span>
+<span class="cm">  Maquina d&#39;estats amb una variable d&#39;estat i millis() (sense delay encadenats).</span>
+<span class="cm">  Estats: VERD -&gt; GROC -&gt; VERMELL -&gt; VERD...</span>
+<span class="cm">  Circuit: VERD=10, GROC=9, VERMELL=8 (cada un amb 220 ohm a GND).</span>
+<span class="cm">*/</span>
+
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">VERD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="n">GROC</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="n">VERMELL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="p">;</span>
+
+<span class="k">enum</span><span class="w"> </span><span class="nc">Estat</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">E_VERD</span><span class="p">,</span><span class="w"> </span><span class="n">E_GROC</span><span class="p">,</span><span class="w"> </span><span class="n">E_VERMELL</span><span class="w"> </span><span class="p">};</span>
+<span class="n">Estat</span><span class="w"> </span><span class="n">estat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">E_VERD</span><span class="p">;</span>
+<span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">tEstat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+
+<span class="k">const</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">T_VERD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4000</span><span class="p">,</span><span class="w"> </span><span class="n">T_GROC</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1500</span><span class="p">,</span><span class="w"> </span><span class="n">T_VERMELL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4000</span><span class="p">;</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">aplica</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">VERD</span><span class="p">,</span><span class="w"> </span><span class="n">estat</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">E_VERD</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">HIGH</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span>
+<span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">GROC</span><span class="p">,</span><span class="w"> </span><span class="n">estat</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">E_GROC</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">HIGH</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span>
+<span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">VERMELL</span><span class="p">,</span><span class="w"> </span><span class="n">estat</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">E_VERMELL</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">HIGH</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">canvia</span><span class="p">(</span><span class="n">Estat</span><span class="w"> </span><span class="n">nou</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">estat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nou</span><span class="p">;</span><span class="w"> </span><span class="n">tEstat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">millis</span><span class="p">();</span><span class="w"> </span><span class="n">aplica</span><span class="p">();</span><span class="w"> </span><span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">VERD</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span><span class="w"> </span><span class="n">pinMode</span><span class="p">(</span><span class="n">GROC</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span><span class="w"> </span><span class="n">pinMode</span><span class="p">(</span><span class="n">VERMELL</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span>
+<span class="w">  </span><span class="n">canvia</span><span class="p">(</span><span class="n">E_VERD</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">ara</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">millis</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">tEstat</span><span class="p">;</span>
+<span class="w">  </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">estat</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="no">E_VERD</span><span class="p">:</span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ara</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">T_VERD</span><span class="p">)</span><span class="w">    </span><span class="n">canvia</span><span class="p">(</span><span class="n">E_GROC</span><span class="p">);</span><span class="w">    </span><span class="k">break</span><span class="p">;</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="no">E_GROC</span><span class="p">:</span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ara</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">T_GROC</span><span class="p">)</span><span class="w">    </span><span class="n">canvia</span><span class="p">(</span><span class="n">E_VERMELL</span><span class="p">);</span><span class="w"> </span><span class="k">break</span><span class="p">;</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="no">E_VERMELL</span><span class="p">:</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ara</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">T_VERMELL</span><span class="p">)</span><span class="w"> </span><span class="n">canvia</span><span class="p">(</span><span class="n">E_VERD</span><span class="p">);</span><span class="w">    </span><span class="k">break</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div></section>
+<section class="codi-bloc" id="c-proporcional-ampliat-ampliat"><header class="codi-cap"><code class="codi-nom">C_proporcional/ampliat/ampliat.ino</code><button class="copia-btn" type="button">Copia</button></header><div class="codi-cos"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm">  Solucionari Repte SA6-C · Regulador proporcional (AMPLIAT)</span>
+<span class="cm">  AMPLIACIO 1: ajusta la constant proporcional (Kp) amb un potenciometre i observa l&#39;efecte.</span>
+<span class="cm">  AMPLIACIO 2: compara amb un control tot-o-res (alterna amb el boto).</span>
+<span class="cm">  AMPLIACIO 3: aplica-ho a un motor (velocitat proporcional a la distancia d&#39;un ultrasons).</span>
+<span class="cm">  Circuit: HC-SR04 TRIG=12 ECHO=11 ; motor pont H ENA=5 IN1=7 IN2=8 ;</span>
+<span class="cm">           potenciometre Kp -&gt; A0 ; polsador mode entre pin 2 i GND.</span>
+<span class="cm">*/</span>
+
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">TRIG</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w"> </span><span class="n">ECHO</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">11</span><span class="p">;</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">ENA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="n">IN1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="n">IN2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="p">;</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">POT_KP</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">A0</span><span class="p">,</span><span class="w"> </span><span class="n">POLSADOR</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">CONSIGNA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">25</span><span class="p">;</span><span class="w">     </span><span class="c1">// distancia objectiu (cm)</span>
+<span class="kt">bool</span><span class="w"> </span><span class="n">modeProporcional</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">estatAnterior</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">HIGH</span><span class="p">;</span>
+
+<span class="kt">float</span><span class="w"> </span><span class="nf">mesuraDistancia</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">TRIG</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span><span class="w">  </span><span class="n">delayMicroseconds</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">TRIG</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH</span><span class="p">);</span><span class="w"> </span><span class="n">delayMicroseconds</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+<span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">TRIG</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span>
+<span class="w">  </span><span class="kt">long</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pulseIn</span><span class="p">(</span><span class="n">ECHO</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH</span><span class="p">,</span><span class="w"> </span><span class="mi">30000</span><span class="p">);</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">t</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mi">400</span><span class="p">;</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">0.034</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">2.0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">motor</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">velocitat</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">IN1</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH</span><span class="p">);</span><span class="w"> </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">IN2</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span>
+<span class="w">  </span><span class="n">analogWrite</span><span class="p">(</span><span class="n">ENA</span><span class="p">,</span><span class="w"> </span><span class="n">constrain</span><span class="p">(</span><span class="n">velocitat</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">255</span><span class="p">));</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">TRIG</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span><span class="w"> </span><span class="n">pinMode</span><span class="p">(</span><span class="n">ECHO</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT</span><span class="p">);</span>
+<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">ENA</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span><span class="w"> </span><span class="n">pinMode</span><span class="p">(</span><span class="n">IN1</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span><span class="w"> </span><span class="n">pinMode</span><span class="p">(</span><span class="n">IN2</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span>
+<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">POLSADOR</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT_PULLUP</span><span class="p">);</span>
+<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// AMPLIACIO 2: el polsador alterna proporcional / tot-o-res</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">estat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">digitalRead</span><span class="p">(</span><span class="n">POLSADOR</span><span class="p">);</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">estat</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">LOW</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">estatAnterior</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">HIGH</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">modeProporcional</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">!</span><span class="n">modeProporcional</span><span class="p">;</span><span class="w"> </span><span class="n">delay</span><span class="p">(</span><span class="mi">40</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
+<span class="w">  </span><span class="n">estatAnterior</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">estat</span><span class="p">;</span>
+
+<span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mesuraDistancia</span><span class="p">();</span>
+<span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">error</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">CONSIGNA</span><span class="p">;</span><span class="w">          </span><span class="c1">// AMPLIACIO 3: error de distancia</span>
+
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">velocitat</span><span class="p">;</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">modeProporcional</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// AMPLIACIO 1: Kp ajustable amb el potenciometre (0..2)</span>
+<span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">Kp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">analogRead</span><span class="p">(</span><span class="n">POT_KP</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">512.0</span><span class="p">;</span>
+<span class="w">    </span><span class="n">velocitat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)(</span><span class="n">Kp</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">error</span><span class="p">);</span><span class="w">     </span><span class="c1">// mes lluny -&gt; mes rapid</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">velocitat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">error</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="c1">// tot-o-res</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="n">motor</span><span class="p">(</span><span class="n">velocitat</span><span class="p">);</span>
+
+<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">modeProporcional</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s">&quot;P &quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s">&quot;ONOFF &quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">d</span><span class="p">);</span><span class="w"> </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot; &quot;</span><span class="p">);</span><span class="w"> </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">velocitat</span><span class="p">);</span>
+<span class="w">  </span><span class="n">delay</span><span class="p">(</span><span class="mi">50</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div></section>
+<section class="codi-bloc" id="c-proporcional-minim-minim"><header class="codi-cap"><code class="codi-nom">C_proporcional/minim/minim.ino</code><button class="copia-btn" type="button">Copia</button></header><div class="codi-cos"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm">  Solucionari Repte SA6-C · Regulador proporcional (REQUISIT MINIM)</span>
+<span class="cm">  La sortida (PWM) es proporcional a l&#39;error respecte d&#39;una consigna.</span>
+<span class="cm">  Exemple: mantenir el nivell de llum (LDR a A0) a prop d&#39;una consigna ajustant un LED.</span>
+<span class="cm">  Circuit: LDR en divisor amb 10k -&gt; A0 ; LED al pin 9 (~PWM) + 220 ohm.</span>
+<span class="cm">*/</span>
+
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">SENSOR</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">A0</span><span class="p">;</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">SORTIDA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">9</span><span class="p">;</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">CONSIGNA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">500</span><span class="p">;</span><span class="w">     </span><span class="c1">// valor objectiu (0..1023)</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">Kp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.8</span><span class="p">;</span><span class="w">         </span><span class="c1">// constant proporcional</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">SORTIDA</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span>
+<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">analogRead</span><span class="p">(</span><span class="n">SENSOR</span><span class="p">);</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">error</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CONSIGNA</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">v</span><span class="p">;</span><span class="w">             </span><span class="c1">// com de lluny estem de l&#39;objectiu</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">sortida</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)(</span><span class="n">Kp</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">error</span><span class="p">);</span>
+<span class="w">  </span><span class="n">sortida</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">constrain</span><span class="p">(</span><span class="n">sortida</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">255</span><span class="p">);</span><span class="w"> </span><span class="c1">// rang valid de PWM</span>
+<span class="w">  </span><span class="n">analogWrite</span><span class="p">(</span><span class="n">SORTIDA</span><span class="p">,</span><span class="w"> </span><span class="n">sortida</span><span class="p">);</span>
+
+<span class="w">  </span><span class="c1">// Per al Serial Plotter: consigna, lectura i sortida</span>
+<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">CONSIGNA</span><span class="p">);</span><span class="w"> </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot; &quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">v</span><span class="p">);</span><span class="w">        </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot; &quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">sortida</span><span class="p">);</span>
+<span class="w">  </span><span class="n">delay</span><span class="p">(</span><span class="mi">50</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div></section>
+    </article>
+  </main>
+  
+</div>
+<footer class="peu">
+  <p>Robòtica · 1r de Batxillerat · material sota llicència <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca" target="_blank" rel="noopener">CC BY-SA 4.0</a>.</p>
+  <p><a href="https://github.com/tomeu-cd100/robotica-1batx-2627" target="_blank" rel="noopener">Repositori a GitHub</a> · web generat el 2026-06-30.</p>
+</footer>
+<script src="../../../assets/js/cerca-index.js"></script>
+<script src="../../../assets/js/lloc.js"></script>
+</body>
+</html>

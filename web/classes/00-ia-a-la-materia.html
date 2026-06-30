@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>00 · La Intel·ligència Artificial a la matèria (guia transversal) · Robòtica · 1r de Batxillerat</title>
+<meta name="description" content="Material docent · LOMLOE Catalunya · curs 2026-2027">
+<link rel="stylesheet" href="../assets/css/estil.css">
+<link rel="stylesheet" href="../assets/css/pygments.css">
+<script>(function(){try{var t=localStorage.getItem('tema');if(t==='fosc'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.setAttribute('data-tema','fosc');}catch(e){}})();</script>
+</head>
+<body data-section="classes" class="amb-sidebar amb-toc">
+<a class="skip" href="#contingut">Salta al contingut</a>
+<header class="topbar">
+  <button class="menu-btn" aria-label="Obre el menú" aria-expanded="false">☰</button>
+  <a class="brand" href="../index.html"><span class="brand-mark">◆</span> Robòtica <span class="brand-sub">1r Batx</span></a>
+  <nav class="topnav" aria-label="Seccions">
+    <a href="../index.html">Inici</a>
+<a href="../programacio/index.html" data-sec="programacio">Programació didàctica</a>
+<a href="../classes/index.html" data-sec="classes" class="actiu">Classes</a>
+<a href="../reptes/index.html" data-sec="reptes">Reptes</a>
+<a href="../avaluacio/index.html" data-sec="avaluacio">Avaluació</a>
+<a href="../normativa/index.html" data-sec="normativa">Normativa</a>
+<a href="../recursos/index.html" data-sec="recursos">Recursos</a>
+  </nav>
+  <div class="topbar-eines">
+    <div class="cercador">
+      <input type="search" id="cerca" placeholder="Cerca…" autocomplete="off" aria-label="Cerca al web">
+      <div id="cerca-resultats" class="cerca-resultats" hidden></div>
+    </div>
+    <button class="tema-btn" aria-label="Canvia el tema clar/fosc" title="Tema clar/fosc">◐</button>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar"><nav class="sidebar-nav" aria-label="Pàgines de la secció">
+<p class="sidebar-titol">Classes</p>
+<ul class="sb-top">
+<li><a href="index.html">Presentació</a></li>
+<li><a href="00-banc-objectes-disseny.html">Banc d&#x27;objectes per dissenyar — de l&#x27;electrònica al producte</a></li>
+<li><a href="00-galeria-exemples-objectes.html">Galeria d&#x27;exemples resolts — objectes de disseny</a></li>
+<li><a href="00-ia-a-la-materia.html" class="actiu">00 · La Intel·ligència Artificial a la matèria (guia transversal)</a></li>
+<li><a href="00-llegeix-me-classes.html">Classes — Material d&#x27;aula</a></li>
+<li><a href="00-mapa-sa-objectes.html">Mapa del curs · de cada SA a un objecte real</a></li>
+<li><a href="00-plantilla-disseny-objecte.html">Plantilla de disseny d&#x27;objecte</a></li>
+<li><a href="00-poster-aula-metode-depura-rols.html">Pòster d&#x27;aula — Com treballem a Robòtica</a></li>
+<li><a href="00-poster-ia-us-assistents.html">Pòster d&#x27;aula — Fer servir la IA amb cap</a></li>
+</ul>
+<details class="sb-grup"><summary><span>SA0 · Vocabulari essencial i bases de programació</span></summary><ul><li><a href="sa0/index.html">Presentació</a></li><li><a href="sa0/sa0-fitxa-alumnat.html">SA0 · Fitxa d&#x27;alumnat — Vocabulari i primeres passes amb el codi</a></li><li><a href="sa0/sa0-guia-docent.html">SA0 · Guia docent — Vocabulari essencial i bases de programació</a></li><li><a href="sa0/sa0-guia-programacio.html">SA0 · Guia per aprendre a programar la placa</a></li><li><a href="sa0/sa0-vocabulari-essencial.html">SA0 · Vocabulari essencial de la robòtica</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA1 · Introducció a la robòtica</span><span class="tri-dot" data-tri="1"></span></summary><ul><li><a href="sa1/index.html">Presentació</a></li><li><a href="sa1/sa1-esquemes-connexions.html">SA1 · Esquemes i connexions</a></li><li><a href="sa1/sa1-fitxa-alumnat.html">SA1 · Fitxa base — Què és un robot?</a></li><li><a href="sa1/sa1-fitxa-ampliada.html">SA1 · Fitxa ampliada (aprofundiment) — Què és un robot?</a></li><li><a href="sa1/sa1-guia-docent.html">SA1 · Guia docent — Què és un robot? Sistemes embeguts i mètode de projecte</a></li><li><a href="sa1/sa1-normes-seguretat.html">SA1 · Normes de seguretat del laboratori de robòtica</a></li><li><a href="sa1/sa1-poster-robot-plantilla.html">SA1 · Fitxa-pòster: &quot;Analitzem un robot real&quot;</a></li><li><a href="sa1/sa1-prova-diagnostica.html">SA1 · Prova diagnòstica de coneixements previs</a></li><li><a href="sa1/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA2 · Sortides digitals i PWM</span><span class="tri-dot" data-tri="1"></span></summary><ul><li><a href="sa2/index.html">Presentació</a></li><li><a href="sa2/sa2-esquemes-connexions.html">SA2 · Esquemes i connexions</a></li><li><a href="sa2/sa2-fitxa-alumnat.html">SA2 · Fitxa base — Sortides digitals i PWM</a></li><li><a href="sa2/sa2-fitxa-ampliada.html">SA2 · Fitxa ampliada (aprofundiment) — Sortides digitals i PWM</a></li><li><a href="sa2/sa2-guia-docent.html">SA2 · Guia docent — Sortides digitals i PWM: dona vida als actuadors</a></li><li><a href="sa2/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA3 · Entrades i sensors</span><span class="tri-dot" data-tri="1"></span></summary><ul><li><a href="sa3/index.html">Presentació</a></li><li><a href="sa3/sa3-esquemes-connexions.html">SA3 · Esquemes i connexions</a></li><li><a href="sa3/sa3-fitxa-alumnat.html">SA3 · Fitxa base — Entrades i sensors</a></li><li><a href="sa3/sa3-fitxa-ampliada.html">SA3 · Fitxa ampliada (aprofundiment) — Entrades i sensors</a></li><li><a href="sa3/sa3-guia-docent.html">SA3 · Guia docent — Entrades i sensors: el robot percep</a></li><li><a href="sa3/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA4 · Moviment: servos i motors</span><span class="tri-dot" data-tri="2"></span></summary><ul><li><a href="sa4/index.html">Presentació</a></li><li><a href="sa4/sa4-esquemes-connexions.html">SA4 · Esquemes i connexions</a></li><li><a href="sa4/sa4-fitxa-alumnat.html">SA4 · Fitxa base — Moviment: servos, motors i ponts H</a></li><li><a href="sa4/sa4-fitxa-ampliada.html">SA4 · Fitxa ampliada (aprofundiment) — Moviment: servos, motors i ponts H</a></li><li><a href="sa4/sa4-guia-docent.html">SA4 · Guia docent — Moviment: servos, motors i ponts H</a></li><li><a href="sa4/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA5 · micro:bit i MicroPython</span><span class="tri-dot" data-tri="2"></span></summary><ul><li><a href="sa5/index.html">Presentació</a></li><li><a href="sa5/sa5-connexions.html">SA5 · Connexions i entorn</a></li><li><a href="sa5/sa5-fitxa-alumnat.html">SA5 · Fitxa base — micro:bit i MicroPython</a></li><li><a href="sa5/sa5-fitxa-ampliada.html">SA5 · Fitxa ampliada (aprofundiment) — micro:bit i MicroPython</a></li><li><a href="sa5/sa5-guia-docent.html">SA5 · Guia docent — micro:bit i MicroPython: un altre paradigma</a></li><li><a href="sa5/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA6 · Sistemes de control</span><span class="tri-dot" data-tri="2"></span></summary><ul><li><a href="sa6/index.html">Presentació</a></li><li><a href="sa6/sa6-esquemes-connexions.html">SA6 · Esquemes i connexions</a></li><li><a href="sa6/sa6-fitxa-alumnat.html">SA6 · Fitxa base — Sistemes de control</a></li><li><a href="sa6/sa6-fitxa-ampliada.html">SA6 · Fitxa ampliada (aprofundiment) — Sistemes de control</a></li><li><a href="sa6/sa6-guia-docent.html">SA6 · Guia docent — Sistemes de control: llaç obert/tancat i màquines d&#x27;estats</a></li><li><a href="sa6/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA7 · Robòtica mòbil</span><span class="tri-dot" data-tri="3"></span></summary><ul><li><a href="sa7/index.html">Presentació</a></li><li><a href="sa7/sa7-esquemes-connexions.html">SA7 · Esquemes i connexions</a></li><li><a href="sa7/sa7-fitxa-alumnat.html">SA7 · Fitxa base — Robòtica mòbil</a></li><li><a href="sa7/sa7-fitxa-ampliada.html">SA7 · Fitxa ampliada (aprofundiment) — Robòtica mòbil</a></li><li><a href="sa7/sa7-guia-docent.html">SA7 · Guia docent — Robòtica mòbil: cinemàtica i trajectòries</a></li><li><a href="sa7/sa7-recursos-video-ia.html">SA7 · Recursos de vídeo — comportament programat vs après (IA)</a></li><li><a href="sa7/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA8 · IoT i IA</span><span class="tri-dot" data-tri="3"></span></summary><ul><li><a href="sa8/index.html">Presentació</a></li><li><a href="sa8/sa8-connexions.html">SA8 · Connexions i entorn</a></li><li><a href="sa8/sa8-fitxa-alumnat.html">SA8 · Fitxa base — IoT i IA</a></li><li><a href="sa8/sa8-fitxa-ampliada.html">SA8 · Fitxa ampliada (aprofundiment) — IoT i IA</a></li><li><a href="sa8/sa8-guia-docent.html">SA8 · Guia docent — IoT i IA: el robot connectat i intel·ligent</a></li><li><a href="sa8/sa8-practica-teachable-machine.html">SA8 · Pràctica d&#x27;IA — Entrenar un classificador amb Teachable Machine</a></li><li><a href="sa8/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA9 · Projecte final</span><span class="tri-dot" data-tri="3"></span></summary><ul><li><a href="sa9/index.html">Presentació</a></li><li><a href="sa9/plantilles/banc-de-reptes.html">SA9 · Banc de reptes (per nivells)</a></li><li><a href="sa9/plantilles/dossier-tecnic-plantilla.html">Dossier tècnic — [Títol del projecte]</a></li><li><a href="sa9/plantilles/planificacio-agile-plantilla.html">Planificació àgil — Equip: ______________________</a></li><li><a href="sa9/sa9-fitxa-alumnat.html">SA9 · Fitxa base — Repte final integrador</a></li><li><a href="sa9/sa9-fitxa-ampliada.html">SA9 · Fitxa ampliada (aprofundiment) — Repte final integrador</a></li><li><a href="sa9/sa9-guia-docent.html">SA9 · Guia docent — Repte final integrador (opció competició)</a></li><li><a href="sa9/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>Solucionari</span></summary><ul><li><a href="solucionari/solucionari-t1-sa1-sa3.html">Solucionari de reptes — Trimestre 1 (SA1-SA3)</a></li><li><a href="solucionari/solucionari-t2-sa4-sa6.html">Solucionari de reptes — Trimestre 2 (SA4-SA6)</a></li><li><a href="solucionari/solucionari-t3-sa7-sa9.html">Solucionari de reptes — Trimestre 3 (SA7-SA9)</a></li></ul></details>
+</nav></aside>
+  <main id="contingut">
+    <nav class="breadcrumb" aria-label="Ubicació"><a href="../index.html">Inici</a> <span class="sep">/</span> <a href="../classes/index.html">Classes</a> <span class="sep">/</span> <span aria-current="page">00 · La Intel·ligència Artificial a la matèria (guia transversal)</span></nav>
+    
+    <article class="prose">
+<h1 id="00-la-intelligencia-artificial-a-la-materia-guia-transversal"><a class="toclink" href="#00-la-intelligencia-artificial-a-la-materia-guia-transversal">00 · La Intel·ligència Artificial a la matèria (guia transversal)</a></h1>
+<blockquote>
+<p><strong>Per a qui és aquest document?</strong> Per al <strong>professorat</strong>. Explica <strong>com s'introdueix la IA al llarg de tot el curs</strong> (no només a la SA8), amb quin marc conceptual mínim, com tractar-la <strong>èticament</strong> i com gestionar l'<strong>ús d'assistents d'IA</strong> (tipus ChatGPT/Copilot) a l'aula amb <strong>integritat acadèmica</strong>. És un mapa de conjunt: el desplegament concret viu a cada SA.</p>
+</blockquote>
+<hr />
+<h2 id="1-per-que-la-ia-i-amb-quin-pes"><a class="toclink" href="#1-per-que-la-ia-i-amb-quin-pes">1. Per què la IA, i amb quin pes</a></h2>
+<p>La IA <strong>no és un afegitó de moda</strong>: és contingut <strong>prescriptiu</strong> del currículum.</p>
+<ul>
+<li><strong>Competència específica 5 (CE5)</strong> de <em>Tecnologia i Enginyeria I</em> (Decret 171/2022): <em>"…aplicant coneixements de la regulació automàtica, del control programat i de les </em><em>tecnologies emergents</em><em>…"</em>.</li>
+<li><strong>Criteri CA5.1:</strong> <em>"Controlar i experimentar el funcionament de sistemes… aplicant les possibilitats de les </em><em>tecnologies emergents (IA</em><em>, telemetria, Internet de les coses, big data, etc.)."</em></li>
+<li><strong>Sabers bàsics:</strong> <em>"</em><em>Intel·ligència artificial aplicada als sistemes de control.</em><em>"</em></li>
+</ul>
+<blockquote>
+<p>⚖️ <strong>Pes realista.</strong> És una matèria <strong>optativa anual</strong> (~70 h). La IA hi entra com a <strong>tecnologia emergent dins del control</strong>, no com a assignatura d'IA. L'objectiu <strong>no</strong> és que l'alumnat entreni xarxes neuronals, sinó que <strong>entengui la idea</strong> (dades → model → decisió), en vegi els <strong>límits i riscos</strong>, i la <strong>connecti</strong> amb el que ja sap (sensors, llindars, control). Dosi: petites llavors al llarg del curs + un nucli a la SA8.</p>
+</blockquote>
+<hr />
+<h2 id="2-dos-eixos-no-els-confonguis"><a class="toclink" href="#2-dos-eixos-no-els-confonguis">2. Dos eixos (no els confonguis)</a></h2>
+<table>
+<thead>
+<tr>
+<th>Eix</th>
+<th>Què és</th>
+<th>On viu</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>A · IA com a OBJECTE d'estudi</strong></td>
+<td>Què és la IA, com funciona (regles vs aprenentatge), dades/model/biaix, ètica, IA aplicada al control.</td>
+<td>Espiral SA0→SA9, <strong>nucli a SA8</strong> + pràctica Teachable Machine.</td>
+</tr>
+<tr>
+<td><strong>B · IA com a EINA de treball</strong></td>
+<td>Ús responsable d'<strong>assistents d'IA</strong> (ChatGPT, Copilot, Gemini…) per programar, depurar i documentar, amb <strong>integritat acadèmica</strong>.</td>
+<td><strong>Transversal</strong> (§5 d'aquest document) — qualsevol SA amb codi.</td>
+</tr>
+</tbody>
+</table>
+<p>Tots dos s'avaluen amb les rúbriques existents (no en calen de noves): l'<strong>eix A</strong> via <strong>R1/R3/R4</strong> a la SA8; l'<strong>eix B</strong> s'integra a <strong>R1 (depuració)</strong>, <strong>R4 (documentació honesta)</strong> i <strong>R5 (autoregulació/responsabilitat)</strong>.</p>
+<hr />
+<h2 id="3-eix-a-la-ia-en-espiral-sa0-sa9"><a class="toclink" href="#3-eix-a-la-ia-en-espiral-sa0-sa9">3. Eix A — La IA en espiral (SA0 → SA9)</a></h2>
+<p>Cada llavor és <strong>curta i conceptual</strong> (no consumeix una sessió sencera, tret de la SA8). La idea és que, quan s'arribi a la SA8, la IA <strong>no soni nova</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>SA</th>
+<th>Llavor d'IA</th>
+<th>Com introduir-la (cost baix)</th>
+<th>On</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>SA0</strong></td>
+<td>Vocabulari: <em>IA, model, dades d'entrenament, classificació, biaix, IA generativa, assistent de codi</em>.</td>
+<td>Consulta puntual quan surti el terme.</td>
+<td><code>SA0_vocabulari_essencial.md</code> (bloc SA8 ampliat).</td>
+</tr>
+<tr>
+<td><strong>SA1</strong></td>
+<td><em>Què és i què NO és IA.</em> Un robot que segueix regles fixes <strong>no</strong> és IA; ho és quan "aprèn" o decideix amb dades.</td>
+<td>Pregunta d'activació de 5'.</td>
+<td>Connexió conceptual.</td>
+</tr>
+<tr>
+<td><strong>SA3</strong></td>
+<td><strong>Dades → decisió.</strong> Un <strong>llindar</strong> (<code>if dist &lt; 20</code>) és la <strong>regla</strong> precursora d'un classificador.</td>
+<td>Caixa "Connexió amb la IA".</td>
+<td><code>SA3_guia_docent.md</code>.</td>
+</tr>
+<tr>
+<td><strong>SA6</strong></td>
+<td><strong>IA aplicada al control</strong> (la frase literal del saber). Compara una <strong>regla/PID</strong> feta a mà amb un controlador que <strong>aprendria</strong> la resposta.</td>
+<td>Caixa "Connexió amb la IA".</td>
+<td><code>SA6_guia_docent.md</code>.</td>
+</tr>
+<tr>
+<td><strong>SA7</strong></td>
+<td>Comportament <strong>programat</strong> vs <strong>après</strong>. Els cotxes autònoms i el seguiment visual usen IA; el nostre seguidor de línia, regles.</td>
+<td>Caixa "Connexió amb la IA" + demo/vídeo.</td>
+<td><code>SA7_guia_docent.md</code>.</td>
+</tr>
+<tr>
+<td><strong>SA8</strong></td>
+<td><strong>NUCLI.</strong> De <em>regles fetes a mà</em> → <strong>aprenentatge automàtic (ML) real</strong>: dades d'entrenament, model, prova, <strong>biaix</strong>, sobreajust; ètica i privadesa de dades.</td>
+<td>Sessió 3 ampliada + <strong>pràctica Teachable Machine</strong>.</td>
+<td><code>SA8_guia_docent.md</code>, <code>SA8_practica_teachable_machine.md</code>.</td>
+</tr>
+<tr>
+<td><strong>SA9</strong></td>
+<td><strong>Opció</strong> de repte final amb component d'IA (classificador de gestos/imatge/so integrat al projecte).</td>
+<td>Banc de reptes.</td>
+<td><code>SA9</code> plantilles / <code>Reptes/</code>.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>🧵 <strong>Fil narratiu únic:</strong> <em>encendre (SA1) → percebre (SA3) → moure's (SA4) → regular-se (SA6) → desplaçar-se sol (SA7) → </em><em>connectar-se i decidir amb dades (SA8)</em><strong>. La IA és el pas natural quan el sistema ja percep i actua: ara </strong>aprèn a decidir**.</p>
+</blockquote>
+<hr />
+<h2 id="4-marc-conceptual-minim-el-que-no-pot-faltar"><a class="toclink" href="#4-marc-conceptual-minim-el-que-no-pot-faltar">4. Marc conceptual mínim (el que NO pot faltar)</a></h2>
+<p>Quatre idees. Si l'alumnat se'n va amb aquestes quatre, n'hi ha prou.</p>
+<ol>
+<li><strong>Regles vs aprenentatge.</strong>
+   - <em>Regles fetes a mà:</em> la persona escriu les condicions (<code>if acceleració &gt; X: "sacseig"</code>). Funciona si el problema és senzill i el coneixem bé.
+   - <em>Aprenentatge automàtic (ML):</em> en lloc d'escriure les regles, <strong>donem exemples</strong> (dades etiquetades) i el <strong>model les dedueix sol</strong>. Útil quan les regles serien massa complexes (reconèixer una cara, una veu, un gest variable).</li>
+<li><strong>Dades → model → decisió.</strong> Un model d'IA és el resultat d'<strong>entrenar</strong> amb dades. La qualitat de la decisió <strong>depèn de les dades</strong>: <em>garbage in, garbage out</em>.</li>
+<li><strong>Biaix i límits.</strong> Si les dades d'entrenament són parcials, les decisions ho seran (un classificador entrenat només amb unes mans falla amb altres). La IA <strong>no "entén"</strong>: troba <strong>patrons estadístics</strong>, i pot equivocar-se amb seguretat.</li>
+<li><strong>Ètica de dades.</strong> Recollir dades implica <strong>privadesa, consentiment i finalitat</strong> (vegeu el bloc <em>"Ètica de dades i IA"</em> de <code>SA8_guia_docent.md</code>: RGPD, biaix, consentiment).</li>
+</ol>
+<blockquote>
+<p>Vocabulari "IA generativa" (ChatGPT i companyia): són models entrenats amb <strong>enormes quantitats de text</strong> que <strong>prediuen la paraula següent</strong>. Per això <strong>sonen segurs encara que s'equivoquin</strong> (al·lucinacions). Aquesta idea és la frontissa cap a l'<strong>eix B</strong>.</p>
+</blockquote>
+<hr />
+<h2 id="5-eix-b-us-dassistents-dia-amb-integritat-academica"><a class="toclink" href="#5-eix-b-us-dassistents-dia-amb-integritat-academica">5. Eix B — Ús d'assistents d'IA amb integritat acadèmica</a></h2>
+<p>L'alumnat <strong>ja</strong> fa servir ChatGPT i companyia. Prohibir-ho és irreal i contraeducatiu; el que cal és <strong>ensenyar a usar-los bé</strong>. Principi rector:</p>
+<blockquote>
+<p>🧭 <strong>"La IA t'ha d'ajudar a APRENDRE, no a SALTAR-TE l'aprenentatge."</strong></p>
+</blockquote>
+<h3 id="51-regla-dor-depura-primer-ia-despres"><a class="toclink" href="#51-regla-dor-depura-primer-ia-despres">5.1. Regla d'or: <strong>DEPURA primer, IA després</strong></a></h3>
+<p>Abans de demanar res a una IA, l'alumnat aplica la rutina <strong>DEPURA</strong> (Descriu · Examina · Prova una hipòtesi · Ubica · Repara · Apunta). La IA és l'<strong>últim recurs</strong>, no el primer reflex. Així es protegeix el múscul de la resolució de problemes.</p>
+<h3 id="52-semafor-dusos-penjar-a-laula"><a class="toclink" href="#52-semafor-dusos-penjar-a-laula">5.2. Semàfor d'usos (penjar a l'aula)</a></h3>
+<blockquote>
+<p>🖨️ <strong>Versió imprimible A4/A3:</strong> <code>00_Poster_IA_us_assistents.md</code> (regla d'or, semàfor, "explica-ho", honestedat i avisos) per penjar a l'aula.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>🟢 SÍ (ben fet)</th>
+<th>🟡 AMB CURA</th>
+<th>🔴 NO (deshonest)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Demanar que <strong>expliqui</strong> un missatge d'error.</td>
+<td>Demanar que <strong>suggereixi</strong> com estructurar el codi (després el reescric jo).</td>
+<td>Enganxar l'enunciat i lliurar la resposta <strong>sense entendre-la</strong>.</td>
+</tr>
+<tr>
+<td>Demanar <strong>exemples</strong> d'una funció (<code>map()</code>, <code>radio.send()</code>).</td>
+<td>Generar un <strong>esborrany</strong> que jo <strong>reviso, provo i modifico</strong>.</td>
+<td>Fer-li <strong>tota la pràctica/quadern</strong> i copiar-ho.</td>
+</tr>
+<tr>
+<td>Demanar que em <strong>faci preguntes</strong> per repassar.</td>
+<td>Traduir/millorar la <strong>redacció</strong> d'una reflexió meva.</td>
+<td>Presentar com a <strong>propi</strong> un text/codi que no puc explicar.</td>
+</tr>
+<tr>
+<td>Demanar <strong>idees</strong> per a un repte i triar-ne jo.</td>
+<td></td>
+<td>Usar-la en una <strong>prova/examen</strong> on no està permès.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="53-verificacio-explica-ho"><a class="toclink" href="#53-verificacio-explica-ho">5.3. Verificació "<strong>Explica-ho</strong>"</a></h3>
+<p>Norma simple i potent: <strong>si fas servir codi o text d'una IA, has de poder explicar cada línia.</strong> El docent pot assenyalar qualsevol línia i demanar <em>"què fa això i per què?"</em>. Si no se sap explicar → no compta com a aprenentatge (i pot baixar nota a R1/R4).</p>
+<h3 id="54-citar-lus-transparencia-no-castig"><a class="toclink" href="#54-citar-lus-transparencia-no-castig">5.4. Citar l'ús (transparència, no càstig)</a></h3>
+<p>Usar la IA <strong>declarant-ho</strong> és honest; amagar-ho és el problema. Al <strong>quadern tècnic</strong>, una línia breu:</p>
+<blockquote>
+<p><em>"He fet servir [eina] per: <strong><em>_</em>_. Li he demanat: '</strong><strong><em>_'. M'ha donat: </em></strong><strong><em>. Què he canviat/entès: </em></strong>___."</em></p>
+</blockquote>
+<p>Declarar l'ús <strong>no baixa nota</strong>; amagar-lo o no saber explicar-lo, <strong>sí</strong>.</p>
+<h3 id="55-encaix-amb-les-rubriques-sense-crear-ne-de-noves"><a class="toclink" href="#55-encaix-amb-les-rubriques-sense-crear-ne-de-noves">5.5. Encaix amb les rúbriques (sense crear-ne de noves)</a></h3>
+<table>
+<thead>
+<tr>
+<th>Rúbrica</th>
+<th>Com hi entra l'ús d'IA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>R1 · Depuració</strong></td>
+<td>"Depura i <strong>explica la causa</strong>" → si la IA va donar la solució, l'alumne <strong>l'ha d'entendre i explicar</strong>.</td>
+</tr>
+<tr>
+<td><strong>R4 · Documentació</strong></td>
+<td>Quadern <strong>honest</strong>: l'ús d'IA citat i la reflexió <strong>pròpia</strong>.</td>
+</tr>
+<tr>
+<td><strong>R5 · Autoregulació/Responsabilitat</strong></td>
+<td>Aplicar <strong>DEPURA abans</strong> d'externalitzar; ús responsable i declarat.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="56-avisos-practics"><a class="toclink" href="#56-avisos-practics">5.6. Avisos pràctics</a></h3>
+<ul>
+<li><strong>Privadesa:</strong> no enganxar a la IA <strong>dades personals</strong> (noms, fotos d'alumnes, etc.). Connecta amb l'ètica de dades de la SA8.</li>
+<li><strong>Al·lucinacions:</strong> la IA <strong>inventa amb seguretat</strong>; sempre <strong>provar el codi</strong> i contrastar.</li>
+<li><strong>Edat i comptes:</strong> moltes eines requereixen +13/+14 anys i compte. Prioritza eines del centre o sense registre; <strong>consulta la teva direcció/coordinació digital</strong> abans d'exigir comptes personals.</li>
+<li><strong>Equitat:</strong> no tothom té el mateix accés a IA de pagament; <strong>no n'avaluïs mai el resultat</strong>, sinó el <strong>procés i la comprensió</strong>.</li>
+</ul>
+<hr />
+<h2 id="6-practica-estrella-dia-eix-a-nucli-teachable-machine"><a class="toclink" href="#6-practica-estrella-dia-eix-a-nucli-teachable-machine">6. Pràctica estrella d'IA (eix A, nucli) — Teachable Machine</a></h2>
+<p>Per passar de <em>regles</em> a <strong>ML real</strong> <strong>sense maquinari extra</strong> (només navegador), la SA8 incorpora una pràctica amb <strong>Google Teachable Machine</strong>: l'alumnat <strong>recull exemples</strong>, <strong>entrena</strong> un classificador (imatge, so o postura), el <strong>prova en directe</strong> i <strong>observa el biaix</strong>.</p>
+<p>→ Material complet: <strong><code>Classes/SA8/SA8_practica_teachable_machine.md</code></strong>. És integrable com a <strong>ampliació de la SA8 · Sessió 3</strong> o com a <strong>opció de repte a la SA9</strong>. Té <strong>Pla B</strong> sense internet.</p>
+<hr />
+<h2 id="7-pla-b-i-requisits"><a class="toclink" href="#7-pla-b-i-requisits">7. Pla B i requisits</a></h2>
+<table>
+<thead>
+<tr>
+<th>Situació</th>
+<th>Solució</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sense internet a l'aula</td>
+<td>IA com a <strong>objecte d'estudi</strong> es pot fer <strong>sense connexió</strong> (regles a la micro:bit, debat ètic, vídeos descarregats). Teachable Machine necessita navegador → fer-ho a casa/aula d'informàtica o amb una <strong>demostració del docent</strong>.</td>
+</tr>
+<tr>
+<td>Sense comptes d'IA per a l'alumnat</td>
+<td>Eix B treballat amb <strong>demostració projectada</strong> del docent + debat; o eines del centre.</td>
+</tr>
+<tr>
+<td>Poc temps</td>
+<td>Mínim irrenunciable: <strong>§4 (4 idees)</strong> + <strong>§5.1–5.3 (regla d'or, semàfor, "explica-ho")</strong> + Sessió 3 de SA8.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="8-per-a-saber-ne-mes-docent"><a class="toclink" href="#8-per-a-saber-ne-mes-docent">8. Per a saber-ne més (docent)</a></h2>
+<ul>
+<li>Marc de <strong>competència digital</strong> i IA del Departament d'Educació (consulta XTEC: ús de la IA a l'aula).</li>
+<li><em>Teachable Machine</em> (Google) — <code>teachablemachine.withgoogle.com</code>.</li>
+<li>Extensió <strong>ML / "AI"</strong> de MakeCode per a micro:bit (recollir mostres i entrenar al navegador).</li>
+<li>Bloc <strong>"Ètica de dades i IA"</strong> a <code>Classes/SA8/SA8_guia_docent.md</code> (RGPD, biaix, consentiment, mini-debats).</li>
+</ul>
+<blockquote>
+<p><strong>Resum en una frase:</strong> la IA entra <strong>a poc a poc com a contingut</strong> (sensors→dades→decisió→ML, culminant a la SA8) i <strong>transversalment com a eina</strong> (assistents amb DEPURA-primer, semàfor d'usos i "explica-ho"), sempre lligada a l'<strong>ètica de les dades</strong>.</p>
+</blockquote>
+    </article>
+  </main>
+  <nav class="toc" aria-label="En aquesta pàgina"><p class="toc-titol">En aquesta pàgina</p><ul>
+<li class="toc-l1"><a href="#00-la-intelligencia-artificial-a-la-materia-guia-transversal">00 · La Intel·ligència Artificial a la matèria (guia transversal)</a></li>
+<li class="toc-l2"><a href="#1-per-que-la-ia-i-amb-quin-pes">1. Per què la IA, i amb quin pes</a></li>
+<li class="toc-l2"><a href="#2-dos-eixos-no-els-confonguis">2. Dos eixos (no els confonguis)</a></li>
+<li class="toc-l2"><a href="#3-eix-a-la-ia-en-espiral-sa0-sa9">3. Eix A — La IA en espiral (SA0 → SA9)</a></li>
+<li class="toc-l2"><a href="#4-marc-conceptual-minim-el-que-no-pot-faltar">4. Marc conceptual mínim (el que NO pot faltar)</a></li>
+<li class="toc-l2"><a href="#5-eix-b-us-dassistents-dia-amb-integritat-academica">5. Eix B — Ús d&#x27;assistents d&#x27;IA amb integritat acadèmica</a></li>
+<li class="toc-l2"><a href="#6-practica-estrella-dia-eix-a-nucli-teachable-machine">6. Pràctica estrella d&#x27;IA (eix A, nucli) — Teachable Machine</a></li>
+<li class="toc-l2"><a href="#7-pla-b-i-requisits">7. Pla B i requisits</a></li>
+<li class="toc-l2"><a href="#8-per-a-saber-ne-mes-docent">8. Per a saber-ne més (docent)</a></li>
+</ul></nav>
+</div>
+<footer class="peu">
+  <p>Robòtica · 1r de Batxillerat · material sota llicència <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca" target="_blank" rel="noopener">CC BY-SA 4.0</a>.</p>
+  <p><a href="https://github.com/tomeu-cd100/robotica-1batx-2627" target="_blank" rel="noopener">Repositori a GitHub</a> · web generat el 2026-06-30.</p>
+</footer>
+<script src="../assets/js/cerca-index.js"></script>
+<script src="../assets/js/lloc.js"></script>
+</body>
+</html>

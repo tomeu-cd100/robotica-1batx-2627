@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Solucionari de reptes — Trimestre 3 (SA7-SA9) · Robòtica · 1r de Batxillerat</title>
+<meta name="description" content="Material docent · LOMLOE Catalunya · curs 2026-2027">
+<link rel="stylesheet" href="../../assets/css/estil.css">
+<link rel="stylesheet" href="../../assets/css/pygments.css">
+<script>(function(){try{var t=localStorage.getItem('tema');if(t==='fosc'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.setAttribute('data-tema','fosc');}catch(e){}})();</script>
+</head>
+<body data-section="classes" class="amb-sidebar amb-toc">
+<a class="skip" href="#contingut">Salta al contingut</a>
+<header class="topbar">
+  <button class="menu-btn" aria-label="Obre el menú" aria-expanded="false">☰</button>
+  <a class="brand" href="../../index.html"><span class="brand-mark">◆</span> Robòtica <span class="brand-sub">1r Batx</span></a>
+  <nav class="topnav" aria-label="Seccions">
+    <a href="../../index.html">Inici</a>
+<a href="../../programacio/index.html" data-sec="programacio">Programació didàctica</a>
+<a href="../../classes/index.html" data-sec="classes" class="actiu">Classes</a>
+<a href="../../reptes/index.html" data-sec="reptes">Reptes</a>
+<a href="../../avaluacio/index.html" data-sec="avaluacio">Avaluació</a>
+<a href="../../normativa/index.html" data-sec="normativa">Normativa</a>
+<a href="../../recursos/index.html" data-sec="recursos">Recursos</a>
+  </nav>
+  <div class="topbar-eines">
+    <div class="cercador">
+      <input type="search" id="cerca" placeholder="Cerca…" autocomplete="off" aria-label="Cerca al web">
+      <div id="cerca-resultats" class="cerca-resultats" hidden></div>
+    </div>
+    <button class="tema-btn" aria-label="Canvia el tema clar/fosc" title="Tema clar/fosc">◐</button>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar"><nav class="sidebar-nav" aria-label="Pàgines de la secció">
+<p class="sidebar-titol">Classes</p>
+<ul class="sb-top">
+<li><a href="../index.html">Presentació</a></li>
+<li><a href="../00-banc-objectes-disseny.html">Banc d&#x27;objectes per dissenyar — de l&#x27;electrònica al producte</a></li>
+<li><a href="../00-galeria-exemples-objectes.html">Galeria d&#x27;exemples resolts — objectes de disseny</a></li>
+<li><a href="../00-ia-a-la-materia.html">00 · La Intel·ligència Artificial a la matèria (guia transversal)</a></li>
+<li><a href="../00-llegeix-me-classes.html">Classes — Material d&#x27;aula</a></li>
+<li><a href="../00-mapa-sa-objectes.html">Mapa del curs · de cada SA a un objecte real</a></li>
+<li><a href="../00-plantilla-disseny-objecte.html">Plantilla de disseny d&#x27;objecte</a></li>
+<li><a href="../00-poster-aula-metode-depura-rols.html">Pòster d&#x27;aula — Com treballem a Robòtica</a></li>
+<li><a href="../00-poster-ia-us-assistents.html">Pòster d&#x27;aula — Fer servir la IA amb cap</a></li>
+</ul>
+<details class="sb-grup"><summary><span>SA0 · Vocabulari essencial i bases de programació</span></summary><ul><li><a href="../sa0/index.html">Presentació</a></li><li><a href="../sa0/sa0-fitxa-alumnat.html">SA0 · Fitxa d&#x27;alumnat — Vocabulari i primeres passes amb el codi</a></li><li><a href="../sa0/sa0-guia-docent.html">SA0 · Guia docent — Vocabulari essencial i bases de programació</a></li><li><a href="../sa0/sa0-guia-programacio.html">SA0 · Guia per aprendre a programar la placa</a></li><li><a href="../sa0/sa0-vocabulari-essencial.html">SA0 · Vocabulari essencial de la robòtica</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA1 · Introducció a la robòtica</span><span class="tri-dot" data-tri="1"></span></summary><ul><li><a href="../sa1/index.html">Presentació</a></li><li><a href="../sa1/sa1-esquemes-connexions.html">SA1 · Esquemes i connexions</a></li><li><a href="../sa1/sa1-fitxa-alumnat.html">SA1 · Fitxa base — Què és un robot?</a></li><li><a href="../sa1/sa1-fitxa-ampliada.html">SA1 · Fitxa ampliada (aprofundiment) — Què és un robot?</a></li><li><a href="../sa1/sa1-guia-docent.html">SA1 · Guia docent — Què és un robot? Sistemes embeguts i mètode de projecte</a></li><li><a href="../sa1/sa1-normes-seguretat.html">SA1 · Normes de seguretat del laboratori de robòtica</a></li><li><a href="../sa1/sa1-poster-robot-plantilla.html">SA1 · Fitxa-pòster: &quot;Analitzem un robot real&quot;</a></li><li><a href="../sa1/sa1-prova-diagnostica.html">SA1 · Prova diagnòstica de coneixements previs</a></li><li><a href="../sa1/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA2 · Sortides digitals i PWM</span><span class="tri-dot" data-tri="1"></span></summary><ul><li><a href="../sa2/index.html">Presentació</a></li><li><a href="../sa2/sa2-esquemes-connexions.html">SA2 · Esquemes i connexions</a></li><li><a href="../sa2/sa2-fitxa-alumnat.html">SA2 · Fitxa base — Sortides digitals i PWM</a></li><li><a href="../sa2/sa2-fitxa-ampliada.html">SA2 · Fitxa ampliada (aprofundiment) — Sortides digitals i PWM</a></li><li><a href="../sa2/sa2-guia-docent.html">SA2 · Guia docent — Sortides digitals i PWM: dona vida als actuadors</a></li><li><a href="../sa2/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA3 · Entrades i sensors</span><span class="tri-dot" data-tri="1"></span></summary><ul><li><a href="../sa3/index.html">Presentació</a></li><li><a href="../sa3/sa3-esquemes-connexions.html">SA3 · Esquemes i connexions</a></li><li><a href="../sa3/sa3-fitxa-alumnat.html">SA3 · Fitxa base — Entrades i sensors</a></li><li><a href="../sa3/sa3-fitxa-ampliada.html">SA3 · Fitxa ampliada (aprofundiment) — Entrades i sensors</a></li><li><a href="../sa3/sa3-guia-docent.html">SA3 · Guia docent — Entrades i sensors: el robot percep</a></li><li><a href="../sa3/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA4 · Moviment: servos i motors</span><span class="tri-dot" data-tri="2"></span></summary><ul><li><a href="../sa4/index.html">Presentació</a></li><li><a href="../sa4/sa4-esquemes-connexions.html">SA4 · Esquemes i connexions</a></li><li><a href="../sa4/sa4-fitxa-alumnat.html">SA4 · Fitxa base — Moviment: servos, motors i ponts H</a></li><li><a href="../sa4/sa4-fitxa-ampliada.html">SA4 · Fitxa ampliada (aprofundiment) — Moviment: servos, motors i ponts H</a></li><li><a href="../sa4/sa4-guia-docent.html">SA4 · Guia docent — Moviment: servos, motors i ponts H</a></li><li><a href="../sa4/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA5 · micro:bit i MicroPython</span><span class="tri-dot" data-tri="2"></span></summary><ul><li><a href="../sa5/index.html">Presentació</a></li><li><a href="../sa5/sa5-connexions.html">SA5 · Connexions i entorn</a></li><li><a href="../sa5/sa5-fitxa-alumnat.html">SA5 · Fitxa base — micro:bit i MicroPython</a></li><li><a href="../sa5/sa5-fitxa-ampliada.html">SA5 · Fitxa ampliada (aprofundiment) — micro:bit i MicroPython</a></li><li><a href="../sa5/sa5-guia-docent.html">SA5 · Guia docent — micro:bit i MicroPython: un altre paradigma</a></li><li><a href="../sa5/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA6 · Sistemes de control</span><span class="tri-dot" data-tri="2"></span></summary><ul><li><a href="../sa6/index.html">Presentació</a></li><li><a href="../sa6/sa6-esquemes-connexions.html">SA6 · Esquemes i connexions</a></li><li><a href="../sa6/sa6-fitxa-alumnat.html">SA6 · Fitxa base — Sistemes de control</a></li><li><a href="../sa6/sa6-fitxa-ampliada.html">SA6 · Fitxa ampliada (aprofundiment) — Sistemes de control</a></li><li><a href="../sa6/sa6-guia-docent.html">SA6 · Guia docent — Sistemes de control: llaç obert/tancat i màquines d&#x27;estats</a></li><li><a href="../sa6/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA7 · Robòtica mòbil</span><span class="tri-dot" data-tri="3"></span></summary><ul><li><a href="../sa7/index.html">Presentació</a></li><li><a href="../sa7/sa7-esquemes-connexions.html">SA7 · Esquemes i connexions</a></li><li><a href="../sa7/sa7-fitxa-alumnat.html">SA7 · Fitxa base — Robòtica mòbil</a></li><li><a href="../sa7/sa7-fitxa-ampliada.html">SA7 · Fitxa ampliada (aprofundiment) — Robòtica mòbil</a></li><li><a href="../sa7/sa7-guia-docent.html">SA7 · Guia docent — Robòtica mòbil: cinemàtica i trajectòries</a></li><li><a href="../sa7/sa7-recursos-video-ia.html">SA7 · Recursos de vídeo — comportament programat vs après (IA)</a></li><li><a href="../sa7/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA8 · IoT i IA</span><span class="tri-dot" data-tri="3"></span></summary><ul><li><a href="../sa8/index.html">Presentació</a></li><li><a href="../sa8/sa8-connexions.html">SA8 · Connexions i entorn</a></li><li><a href="../sa8/sa8-fitxa-alumnat.html">SA8 · Fitxa base — IoT i IA</a></li><li><a href="../sa8/sa8-fitxa-ampliada.html">SA8 · Fitxa ampliada (aprofundiment) — IoT i IA</a></li><li><a href="../sa8/sa8-guia-docent.html">SA8 · Guia docent — IoT i IA: el robot connectat i intel·ligent</a></li><li><a href="../sa8/sa8-practica-teachable-machine.html">SA8 · Pràctica d&#x27;IA — Entrenar un classificador amb Teachable Machine</a></li><li><a href="../sa8/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA9 · Projecte final</span><span class="tri-dot" data-tri="3"></span></summary><ul><li><a href="../sa9/index.html">Presentació</a></li><li><a href="../sa9/plantilles/banc-de-reptes.html">SA9 · Banc de reptes (per nivells)</a></li><li><a href="../sa9/plantilles/dossier-tecnic-plantilla.html">Dossier tècnic — [Títol del projecte]</a></li><li><a href="../sa9/plantilles/planificacio-agile-plantilla.html">Planificació àgil — Equip: ______________________</a></li><li><a href="../sa9/sa9-fitxa-alumnat.html">SA9 · Fitxa base — Repte final integrador</a></li><li><a href="../sa9/sa9-fitxa-ampliada.html">SA9 · Fitxa ampliada (aprofundiment) — Repte final integrador</a></li><li><a href="../sa9/sa9-guia-docent.html">SA9 · Guia docent — Repte final integrador (opció competició)</a></li><li><a href="../sa9/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup" open><summary><span>Solucionari</span></summary><ul><li><a href="solucionari-t1-sa1-sa3.html">Solucionari de reptes — Trimestre 1 (SA1-SA3)</a></li><li><a href="solucionari-t2-sa4-sa6.html">Solucionari de reptes — Trimestre 2 (SA4-SA6)</a></li><li><a href="solucionari-t3-sa7-sa9.html" class="actiu">Solucionari de reptes — Trimestre 3 (SA7-SA9)</a></li></ul></details>
+</nav></aside>
+  <main id="contingut">
+    <nav class="breadcrumb" aria-label="Ubicació"><a href="../../index.html">Inici</a> <span class="sep">/</span> <a href="../../classes/index.html">Classes</a> <span class="sep">/</span> <span aria-current="page">Solucionari de reptes — Trimestre 3 (SA7-SA9)</span></nav>
+    <span class="badge-tri" data-tri="3">3r trimestre</span>
+    <article class="prose">
+<h1 id="solucionari-de-reptes-trimestre-3-sa7-sa9"><a class="toclink" href="#solucionari-de-reptes-trimestre-3-sa7-sa9">Solucionari de reptes — Trimestre 3 (SA7-SA9)</a></h1>
+<blockquote>
+<p>Solucions orientatives. A SA7 recorda <strong>ajustar els pins</strong> dels motors segons la placa.</p>
+</blockquote>
+<hr />
+<h2 id="sa7-imagina-3dbot"><a class="toclink" href="#sa7-imagina-3dbot">SA7 (Imagina 3dBot)</a></h2>
+<h3 id="repte-compensar-per-anar-recte-offset-de-velocitats"><a class="toclink" href="#repte-compensar-per-anar-recte-offset-de-velocitats">+ Repte: compensar per anar recte (offset de velocitats)</a></h3>
+<p>Si el robot tira cap a un costat, aplica un petit offset a una roda:</p>
+<div class="highlight"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">VEL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">180</span><span class="p">;</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">OFFSET</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">15</span><span class="p">;</span><span class="w">   </span><span class="c1">// ajusta&#39;l fins que vagi recte (pot ser negatiu)</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">endavant</span><span class="p">(){</span>
+<span class="w">  </span><span class="n">motors</span><span class="p">(</span><span class="n">HIGH</span><span class="p">,</span><span class="w"> </span><span class="n">VEL</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH</span><span class="p">,</span><span class="w"> </span><span class="n">VEL</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">OFFSET</span><span class="p">);</span><span class="w">  </span><span class="c1">// frena lleugerament una roda</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h3 id="repte-trajectoria-en-triangle"><a class="toclink" href="#repte-trajectoria-en-triangle">Repte: trajectòria en triangle</a></h3>
+<p>Un triangle equilàter requereix girs de <strong>120°</strong> (angle exterior):</p>
+<div class="highlight"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">T_RECTE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1200</span><span class="p">,</span><span class="w"> </span><span class="n">T_GIR_120</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">800</span><span class="p">;</span><span class="w">  </span><span class="c1">// CALIBRAR T_GIR_120</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">(){</span>
+<span class="w">  </span><span class="c1">// ... pinMode dels motors ...</span>
+<span class="w">  </span><span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">&lt;</span><span class="mi">3</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+<span class="w">    </span><span class="n">endavant</span><span class="p">();</span><span class="w"> </span><span class="n">delay</span><span class="p">(</span><span class="n">T_RECTE</span><span class="p">);</span><span class="w"> </span><span class="n">atura</span><span class="p">();</span><span class="w"> </span><span class="n">delay</span><span class="p">(</span><span class="mi">300</span><span class="p">);</span>
+<span class="w">    </span><span class="n">gira_dreta</span><span class="p">();</span><span class="w"> </span><span class="n">delay</span><span class="p">(</span><span class="n">T_GIR_120</span><span class="p">);</span><span class="w"> </span><span class="n">atura</span><span class="p">();</span><span class="w"> </span><span class="n">delay</span><span class="p">(</span><span class="mi">300</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="n">atura</span><span class="p">();</span>
+<span class="p">}</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">(){}</span>
+</code></pre></div>
+
+<h3 id="repte-seguidor-de-linia-proporcional-sensors-analogics"><a class="toclink" href="#repte-seguidor-de-linia-proporcional-sensors-analogics">+ Repte: seguidor de línia PROPORCIONAL (sensors analògics)</a></h3>
+<p>Si els sensors donen lectura analògica, la correcció és proporcional a l'error:</p>
+<div class="highlight"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">ESQ_VEL</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="n">DRET_VEL</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="n">ESQ_DIR</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="n">DRET_DIR</span><span class="o">=</span><span class="mi">7</span><span class="p">;</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">S_ESQ</span><span class="o">=</span><span class="n">A0</span><span class="p">,</span><span class="w"> </span><span class="n">S_DRET</span><span class="o">=</span><span class="n">A1</span><span class="p">;</span><span class="w">   </span><span class="c1">// sensors analogics</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">BASE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">150</span><span class="p">;</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">Kp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.2</span><span class="p">;</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">(){</span>
+<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">ESQ_VEL</span><span class="p">,</span><span class="n">OUTPUT</span><span class="p">);</span><span class="n">pinMode</span><span class="p">(</span><span class="n">DRET_VEL</span><span class="p">,</span><span class="n">OUTPUT</span><span class="p">);</span>
+<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">ESQ_DIR</span><span class="p">,</span><span class="n">OUTPUT</span><span class="p">);</span><span class="n">pinMode</span><span class="p">(</span><span class="n">DRET_DIR</span><span class="p">,</span><span class="n">OUTPUT</span><span class="p">);</span>
+<span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">ESQ_DIR</span><span class="p">,</span><span class="n">HIGH</span><span class="p">);</span><span class="w"> </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">DRET_DIR</span><span class="p">,</span><span class="n">HIGH</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">(){</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">error</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">analogRead</span><span class="p">(</span><span class="n">S_ESQ</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">analogRead</span><span class="p">(</span><span class="n">S_DRET</span><span class="p">);</span><span class="w">  </span><span class="c1">// desviacio</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">corr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)(</span><span class="n">Kp</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">error</span><span class="p">);</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">vEsq</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">constrain</span><span class="p">(</span><span class="n">BASE</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">corr</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">255</span><span class="p">);</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">vDret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">constrain</span><span class="p">(</span><span class="n">BASE</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">corr</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">255</span><span class="p">);</span>
+<span class="w">  </span><span class="n">analogWrite</span><span class="p">(</span><span class="n">ESQ_VEL</span><span class="p">,</span><span class="w"> </span><span class="n">vEsq</span><span class="p">);</span>
+<span class="w">  </span><span class="n">analogWrite</span><span class="p">(</span><span class="n">DRET_VEL</span><span class="p">,</span><span class="w"> </span><span class="n">vDret</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<blockquote>
+<p>Aquesta correcció <strong>proporcional</strong> dona un seguiment molt més suau que el tot/res (connecta amb SA6).</p>
+</blockquote>
+<h3 id="repte-gir-proporcional-a-la-proximitat-evita-obstacles"><a class="toclink" href="#repte-gir-proporcional-a-la-proximitat-evita-obstacles">+ Repte: gir proporcional a la proximitat (evita-obstacles)</a></h3>
+<p>Com més a prop l'obstacle, gir més tancat (gira més estona):</p>
+<div class="highlight"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">DIST_MIN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">25</span><span class="p">;</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">(){</span>
+<span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">distancia</span><span class="p">();</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">d</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">DIST_MIN</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">gir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">map</span><span class="p">((</span><span class="kt">int</span><span class="p">)</span><span class="n">d</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="n">DIST_MIN</span><span class="p">,</span><span class="w"> </span><span class="mi">600</span><span class="p">,</span><span class="w"> </span><span class="mi">150</span><span class="p">);</span><span class="w">  </span><span class="c1">// mes a prop -&gt; gir mes llarg</span>
+<span class="w">    </span><span class="n">gir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">constrain</span><span class="p">(</span><span class="n">gir</span><span class="p">,</span><span class="w"> </span><span class="mi">150</span><span class="p">,</span><span class="w"> </span><span class="mi">600</span><span class="p">);</span>
+<span class="w">    </span><span class="n">atura</span><span class="p">();</span><span class="w">      </span><span class="n">delay</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+<span class="w">    </span><span class="n">gira_dreta</span><span class="p">();</span><span class="w"> </span><span class="n">delay</span><span class="p">(</span><span class="n">gir</span><span class="p">);</span>
+<span class="w">    </span><span class="n">atura</span><span class="p">();</span><span class="w">      </span><span class="n">delay</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">endavant</span><span class="p">();</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="n">delay</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h3 id="repte-tornar-al-punt-de-sortida"><a class="toclink" href="#repte-tornar-al-punt-de-sortida">+ Repte: tornar al punt de sortida</a></h3>
+<p>Per a un recorregut en "L", fes el camí d'anada, fes mitja volta i refes-lo:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">anada</span><span class="p">(){</span><span class="w"> </span><span class="n">endavant</span><span class="p">();</span><span class="w"> </span><span class="n">delay</span><span class="p">(</span><span class="mi">1200</span><span class="p">);</span><span class="w"> </span><span class="n">gira_dreta</span><span class="p">();</span><span class="w"> </span><span class="n">delay</span><span class="p">(</span><span class="mi">600</span><span class="p">);</span><span class="w"> </span><span class="n">endavant</span><span class="p">();</span><span class="w"> </span><span class="n">delay</span><span class="p">(</span><span class="mi">1200</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">mitja_volta</span><span class="p">(){</span><span class="w"> </span><span class="n">gira_dreta</span><span class="p">();</span><span class="w"> </span><span class="n">delay</span><span class="p">(</span><span class="mi">1200</span><span class="p">);</span><span class="w"> </span><span class="p">}</span><span class="w">   </span><span class="c1">// ~180 graus (CALIBRAR)</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">(){</span>
+<span class="w">  </span><span class="c1">// ... pinMode dels motors ...</span>
+<span class="w">  </span><span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+<span class="w">  </span><span class="n">anada</span><span class="p">();</span>
+<span class="w">  </span><span class="n">mitja_volta</span><span class="p">();</span>
+<span class="w">  </span><span class="n">anada</span><span class="p">();</span><span class="w">          </span><span class="c1">// refa el cami per tornar a prop de l&#39;origen</span>
+<span class="w">  </span><span class="n">atura</span><span class="p">();</span>
+<span class="p">}</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">(){}</span>
+</code></pre></div>
+
+<hr />
+<h2 id="sa8"><a class="toclink" href="#sa8">SA8</a></h2>
+<h3 id="repte-afegir-una-classe-de-gest-nova-al-classificador"><a class="toclink" href="#repte-afegir-una-classe-de-gest-nova-al-classificador">+ Repte: afegir una classe de gest nova al classificador</a></h3>
+<p>Afegeix una regla nova a <code>classifica()</code> (p. ex. detectar "GIR" amb la brúixola o un llindar combinat):</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">classifica</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">accelerometer</span><span class="o">.</span><span class="n">was_gesture</span><span class="p">(</span><span class="s2">&quot;shake&quot;</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;SACSEIG&quot;</span>
+    <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">200</span> <span class="ow">and</span> <span class="nb">abs</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">200</span> <span class="ow">and</span> <span class="n">z</span> <span class="o">&lt;</span> <span class="o">-</span><span class="mi">700</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;PLA&quot;</span>
+    <span class="k">if</span> <span class="n">y</span> <span class="o">&gt;</span> <span class="mi">600</span> <span class="ow">and</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">600</span><span class="p">:</span>          <span class="c1"># NOVA classe combinada</span>
+        <span class="k">return</span> <span class="s2">&quot;CANTONADA&quot;</span>
+    <span class="c1"># ... la resta de regles ...</span>
+    <span class="k">return</span> <span class="s2">&quot;DRET&quot;</span>
+</code></pre></div>
+
+<h3 id="repte-ml-real-nota"><a class="toclink" href="#repte-ml-real-nota">+ Repte (ML real): nota</a></h3>
+<p>Per a <strong>aprenentatge automàtic</strong> real (no regles), usar l'entorn <strong>MakeCode "Code &amp; AI"</strong> (https://microbit.org/code-ai/): recollir mostres de cada gest, <strong>entrenar</strong> el model i exportar-lo. És una bona pràctica per discutir dades d'entrenament i biaixos.</p>
+<h3 id="repte-alerta-per-llindar-telemetria"><a class="toclink" href="#repte-alerta-per-llindar-telemetria">+ Repte: alerta per llindar (telemetria)</a></h3>
+<p>L'emissor envia una alerta quan supera un llindar; el receptor la mostra:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># EMISSOR</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">microbit</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">radio</span>
+<span class="n">radio</span><span class="o">.</span><span class="n">on</span><span class="p">();</span> <span class="n">radio</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">group</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">LLINDAR</span> <span class="o">=</span> <span class="mi">28</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">temperature</span><span class="p">()</span> <span class="o">&gt;</span> <span class="n">LLINDAR</span><span class="p">:</span>
+        <span class="n">radio</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="s2">&quot;ALERTA&quot;</span><span class="p">)</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1"># RECEPTOR</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">microbit</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">radio</span><span class="o">,</span><span class="w"> </span><span class="nn">music</span>
+<span class="n">radio</span><span class="o">.</span><span class="n">on</span><span class="p">();</span> <span class="n">radio</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">group</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">radio</span><span class="o">.</span><span class="n">receive</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;ALERTA&quot;</span><span class="p">:</span>
+        <span class="n">display</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">Image</span><span class="o">.</span><span class="n">SKULL</span><span class="p">)</span>
+        <span class="n">music</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">music</span><span class="o">.</span><span class="n">BA_DING</span><span class="p">)</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+</code></pre></div>
+
+<hr />
+<h2 id="sa9"><a class="toclink" href="#sa9">SA9</a></h2>
+<p>El projecte final és <strong>obert</strong>: no té solucionari tancat. L'avaluació es fa amb les <strong>rúbriques R1-R5</strong> i el <strong>dossier tècnic</strong> (<code>SA9/plantilles/Dossier_tecnic_PLANTILLA.md</code>). Per a cada repte del banc, el professorat pot preparar una solució de referència pròpia segons el material triat.</p>
+    </article>
+  </main>
+  <nav class="toc" aria-label="En aquesta pàgina"><p class="toc-titol">En aquesta pàgina</p><ul>
+<li class="toc-l1"><a href="#solucionari-de-reptes-trimestre-3-sa7-sa9">Solucionari de reptes — Trimestre 3 (SA7-SA9)</a></li>
+<li class="toc-l2"><a href="#sa7-imagina-3dbot">SA7 (Imagina 3dBot)</a></li>
+<li class="toc-l2"><a href="#sa8">SA8</a></li>
+<li class="toc-l2"><a href="#sa9">SA9</a></li>
+</ul></nav>
+</div>
+<footer class="peu">
+  <p>Robòtica · 1r de Batxillerat · material sota llicència <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca" target="_blank" rel="noopener">CC BY-SA 4.0</a>.</p>
+  <p><a href="https://github.com/tomeu-cd100/robotica-1batx-2627" target="_blank" rel="noopener">Repositori a GitHub</a> · web generat el 2026-06-30.</p>
+</footer>
+<script src="../../assets/js/cerca-index.js"></script>
+<script src="../../assets/js/lloc.js"></script>
+</body>
+</html>

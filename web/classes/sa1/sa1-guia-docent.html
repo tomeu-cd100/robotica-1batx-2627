@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SA1 · Guia docent — Què és un robot? Sistemes embeguts i mètode de projecte · Robòtica · 1r de Batxillerat</title>
+<meta name="description" content="Material docent · LOMLOE Catalunya · curs 2026-2027">
+<link rel="stylesheet" href="../../assets/css/estil.css">
+<link rel="stylesheet" href="../../assets/css/pygments.css">
+<script>(function(){try{var t=localStorage.getItem('tema');if(t==='fosc'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.setAttribute('data-tema','fosc');}catch(e){}})();</script>
+</head>
+<body data-section="classes" class="amb-sidebar amb-toc">
+<a class="skip" href="#contingut">Salta al contingut</a>
+<header class="topbar">
+  <button class="menu-btn" aria-label="Obre el menú" aria-expanded="false">☰</button>
+  <a class="brand" href="../../index.html"><span class="brand-mark">◆</span> Robòtica <span class="brand-sub">1r Batx</span></a>
+  <nav class="topnav" aria-label="Seccions">
+    <a href="../../index.html">Inici</a>
+<a href="../../programacio/index.html" data-sec="programacio">Programació didàctica</a>
+<a href="../../classes/index.html" data-sec="classes" class="actiu">Classes</a>
+<a href="../../reptes/index.html" data-sec="reptes">Reptes</a>
+<a href="../../avaluacio/index.html" data-sec="avaluacio">Avaluació</a>
+<a href="../../normativa/index.html" data-sec="normativa">Normativa</a>
+<a href="../../recursos/index.html" data-sec="recursos">Recursos</a>
+  </nav>
+  <div class="topbar-eines">
+    <div class="cercador">
+      <input type="search" id="cerca" placeholder="Cerca…" autocomplete="off" aria-label="Cerca al web">
+      <div id="cerca-resultats" class="cerca-resultats" hidden></div>
+    </div>
+    <button class="tema-btn" aria-label="Canvia el tema clar/fosc" title="Tema clar/fosc">◐</button>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar"><nav class="sidebar-nav" aria-label="Pàgines de la secció">
+<p class="sidebar-titol">Classes</p>
+<ul class="sb-top">
+<li><a href="../index.html">Presentació</a></li>
+<li><a href="../00-banc-objectes-disseny.html">Banc d&#x27;objectes per dissenyar — de l&#x27;electrònica al producte</a></li>
+<li><a href="../00-galeria-exemples-objectes.html">Galeria d&#x27;exemples resolts — objectes de disseny</a></li>
+<li><a href="../00-ia-a-la-materia.html">00 · La Intel·ligència Artificial a la matèria (guia transversal)</a></li>
+<li><a href="../00-llegeix-me-classes.html">Classes — Material d&#x27;aula</a></li>
+<li><a href="../00-mapa-sa-objectes.html">Mapa del curs · de cada SA a un objecte real</a></li>
+<li><a href="../00-plantilla-disseny-objecte.html">Plantilla de disseny d&#x27;objecte</a></li>
+<li><a href="../00-poster-aula-metode-depura-rols.html">Pòster d&#x27;aula — Com treballem a Robòtica</a></li>
+<li><a href="../00-poster-ia-us-assistents.html">Pòster d&#x27;aula — Fer servir la IA amb cap</a></li>
+</ul>
+<details class="sb-grup"><summary><span>SA0 · Vocabulari essencial i bases de programació</span></summary><ul><li><a href="../sa0/index.html">Presentació</a></li><li><a href="../sa0/sa0-fitxa-alumnat.html">SA0 · Fitxa d&#x27;alumnat — Vocabulari i primeres passes amb el codi</a></li><li><a href="../sa0/sa0-guia-docent.html">SA0 · Guia docent — Vocabulari essencial i bases de programació</a></li><li><a href="../sa0/sa0-guia-programacio.html">SA0 · Guia per aprendre a programar la placa</a></li><li><a href="../sa0/sa0-vocabulari-essencial.html">SA0 · Vocabulari essencial de la robòtica</a></li></ul></details>
+<details class="sb-grup" open><summary><span>SA1 · Introducció a la robòtica</span><span class="tri-dot" data-tri="1"></span></summary><ul><li><a href="index.html">Presentació</a></li><li><a href="sa1-esquemes-connexions.html">SA1 · Esquemes i connexions</a></li><li><a href="sa1-fitxa-alumnat.html">SA1 · Fitxa base — Què és un robot?</a></li><li><a href="sa1-fitxa-ampliada.html">SA1 · Fitxa ampliada (aprofundiment) — Què és un robot?</a></li><li><a href="sa1-guia-docent.html" class="actiu">SA1 · Guia docent — Què és un robot? Sistemes embeguts i mètode de projecte</a></li><li><a href="sa1-normes-seguretat.html">SA1 · Normes de seguretat del laboratori de robòtica</a></li><li><a href="sa1-poster-robot-plantilla.html">SA1 · Fitxa-pòster: &quot;Analitzem un robot real&quot;</a></li><li><a href="sa1-prova-diagnostica.html">SA1 · Prova diagnòstica de coneixements previs</a></li><li><a href="codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA2 · Sortides digitals i PWM</span><span class="tri-dot" data-tri="1"></span></summary><ul><li><a href="../sa2/index.html">Presentació</a></li><li><a href="../sa2/sa2-esquemes-connexions.html">SA2 · Esquemes i connexions</a></li><li><a href="../sa2/sa2-fitxa-alumnat.html">SA2 · Fitxa base — Sortides digitals i PWM</a></li><li><a href="../sa2/sa2-fitxa-ampliada.html">SA2 · Fitxa ampliada (aprofundiment) — Sortides digitals i PWM</a></li><li><a href="../sa2/sa2-guia-docent.html">SA2 · Guia docent — Sortides digitals i PWM: dona vida als actuadors</a></li><li><a href="../sa2/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA3 · Entrades i sensors</span><span class="tri-dot" data-tri="1"></span></summary><ul><li><a href="../sa3/index.html">Presentació</a></li><li><a href="../sa3/sa3-esquemes-connexions.html">SA3 · Esquemes i connexions</a></li><li><a href="../sa3/sa3-fitxa-alumnat.html">SA3 · Fitxa base — Entrades i sensors</a></li><li><a href="../sa3/sa3-fitxa-ampliada.html">SA3 · Fitxa ampliada (aprofundiment) — Entrades i sensors</a></li><li><a href="../sa3/sa3-guia-docent.html">SA3 · Guia docent — Entrades i sensors: el robot percep</a></li><li><a href="../sa3/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA4 · Moviment: servos i motors</span><span class="tri-dot" data-tri="2"></span></summary><ul><li><a href="../sa4/index.html">Presentació</a></li><li><a href="../sa4/sa4-esquemes-connexions.html">SA4 · Esquemes i connexions</a></li><li><a href="../sa4/sa4-fitxa-alumnat.html">SA4 · Fitxa base — Moviment: servos, motors i ponts H</a></li><li><a href="../sa4/sa4-fitxa-ampliada.html">SA4 · Fitxa ampliada (aprofundiment) — Moviment: servos, motors i ponts H</a></li><li><a href="../sa4/sa4-guia-docent.html">SA4 · Guia docent — Moviment: servos, motors i ponts H</a></li><li><a href="../sa4/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA5 · micro:bit i MicroPython</span><span class="tri-dot" data-tri="2"></span></summary><ul><li><a href="../sa5/index.html">Presentació</a></li><li><a href="../sa5/sa5-connexions.html">SA5 · Connexions i entorn</a></li><li><a href="../sa5/sa5-fitxa-alumnat.html">SA5 · Fitxa base — micro:bit i MicroPython</a></li><li><a href="../sa5/sa5-fitxa-ampliada.html">SA5 · Fitxa ampliada (aprofundiment) — micro:bit i MicroPython</a></li><li><a href="../sa5/sa5-guia-docent.html">SA5 · Guia docent — micro:bit i MicroPython: un altre paradigma</a></li><li><a href="../sa5/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA6 · Sistemes de control</span><span class="tri-dot" data-tri="2"></span></summary><ul><li><a href="../sa6/index.html">Presentació</a></li><li><a href="../sa6/sa6-esquemes-connexions.html">SA6 · Esquemes i connexions</a></li><li><a href="../sa6/sa6-fitxa-alumnat.html">SA6 · Fitxa base — Sistemes de control</a></li><li><a href="../sa6/sa6-fitxa-ampliada.html">SA6 · Fitxa ampliada (aprofundiment) — Sistemes de control</a></li><li><a href="../sa6/sa6-guia-docent.html">SA6 · Guia docent — Sistemes de control: llaç obert/tancat i màquines d&#x27;estats</a></li><li><a href="../sa6/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA7 · Robòtica mòbil</span><span class="tri-dot" data-tri="3"></span></summary><ul><li><a href="../sa7/index.html">Presentació</a></li><li><a href="../sa7/sa7-esquemes-connexions.html">SA7 · Esquemes i connexions</a></li><li><a href="../sa7/sa7-fitxa-alumnat.html">SA7 · Fitxa base — Robòtica mòbil</a></li><li><a href="../sa7/sa7-fitxa-ampliada.html">SA7 · Fitxa ampliada (aprofundiment) — Robòtica mòbil</a></li><li><a href="../sa7/sa7-guia-docent.html">SA7 · Guia docent — Robòtica mòbil: cinemàtica i trajectòries</a></li><li><a href="../sa7/sa7-recursos-video-ia.html">SA7 · Recursos de vídeo — comportament programat vs après (IA)</a></li><li><a href="../sa7/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA8 · IoT i IA</span><span class="tri-dot" data-tri="3"></span></summary><ul><li><a href="../sa8/index.html">Presentació</a></li><li><a href="../sa8/sa8-connexions.html">SA8 · Connexions i entorn</a></li><li><a href="../sa8/sa8-fitxa-alumnat.html">SA8 · Fitxa base — IoT i IA</a></li><li><a href="../sa8/sa8-fitxa-ampliada.html">SA8 · Fitxa ampliada (aprofundiment) — IoT i IA</a></li><li><a href="../sa8/sa8-guia-docent.html">SA8 · Guia docent — IoT i IA: el robot connectat i intel·ligent</a></li><li><a href="../sa8/sa8-practica-teachable-machine.html">SA8 · Pràctica d&#x27;IA — Entrenar un classificador amb Teachable Machine</a></li><li><a href="../sa8/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA9 · Projecte final</span><span class="tri-dot" data-tri="3"></span></summary><ul><li><a href="../sa9/index.html">Presentació</a></li><li><a href="../sa9/plantilles/banc-de-reptes.html">SA9 · Banc de reptes (per nivells)</a></li><li><a href="../sa9/plantilles/dossier-tecnic-plantilla.html">Dossier tècnic — [Títol del projecte]</a></li><li><a href="../sa9/plantilles/planificacio-agile-plantilla.html">Planificació àgil — Equip: ______________________</a></li><li><a href="../sa9/sa9-fitxa-alumnat.html">SA9 · Fitxa base — Repte final integrador</a></li><li><a href="../sa9/sa9-fitxa-ampliada.html">SA9 · Fitxa ampliada (aprofundiment) — Repte final integrador</a></li><li><a href="../sa9/sa9-guia-docent.html">SA9 · Guia docent — Repte final integrador (opció competició)</a></li><li><a href="../sa9/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>Solucionari</span></summary><ul><li><a href="../solucionari/solucionari-t1-sa1-sa3.html">Solucionari de reptes — Trimestre 1 (SA1-SA3)</a></li><li><a href="../solucionari/solucionari-t2-sa4-sa6.html">Solucionari de reptes — Trimestre 2 (SA4-SA6)</a></li><li><a href="../solucionari/solucionari-t3-sa7-sa9.html">Solucionari de reptes — Trimestre 3 (SA7-SA9)</a></li></ul></details>
+</nav></aside>
+  <main id="contingut">
+    <nav class="breadcrumb" aria-label="Ubicació"><a href="../../index.html">Inici</a> <span class="sep">/</span> <a href="../../classes/index.html">Classes</a> <span class="sep">/</span> <span aria-current="page">SA1 · Guia docent — Què és un robot? Sistemes embeguts i mètode de projecte</span></nav>
+    <span class="badge-tri" data-tri="1">1r trimestre</span>
+    <article class="prose">
+<h1 id="sa1-guia-docent-que-es-un-robot-sistemes-embeguts-i-metode-de-projecte"><a class="toclink" href="#sa1-guia-docent-que-es-un-robot-sistemes-embeguts-i-metode-de-projecte">SA1 · Guia docent — Què és un robot? Sistemes embeguts i mètode de projecte</a></h1>
+<p><strong>Durada:</strong> 6 h (3 sessions de 2 h) · <strong>Maquinari:</strong> Arduino UNO (demostració) + Tinkercad · <strong>Llenguatge:</strong> lectura de C/C++
+<strong>Referència:</strong> <code>Programació didàctica/10_SA1_Introduccio_robotica.md</code></p>
+<h2 id="objectius-de-la-sa"><a class="toclink" href="#objectius-de-la-sa">Objectius de la SA</a></h2>
+<ol>
+<li>Definir robot i sistema embegut; identificar entrada-procés-sortida.</li>
+<li>Reconèixer l'arquitectura d'Arduino i la diferència analògic/digital.</li>
+<li>Aplicar normes de seguretat i conèixer l'entorn (IDE + simulador).</li>
+<li>Llegir i modificar el primer programa (<code>Blink</code>).</li>
+<li>Conèixer i començar a aplicar el <strong>mètode de projecte</strong> (anàlisi → disseny → prototip → prova → millora) com a forma de treball de tot el curs.</li>
+</ol>
+<h2 id="materials-per-a-la-sessio"><a class="toclink" href="#materials-per-a-la-sessio">Materials per a la sessió</a></h2>
+<ul>
+<li>1 Arduino UNO + cable USB (per a demostració i, si n'hi ha, per parelles).</li>
+<li>Ordinadors amb <strong>Arduino IDE</strong> instal·lat i accés a <strong>Tinkercad</strong> (tinkercad.com).</li>
+<li>Projector. Quadern tècnic (digital o paper) per a cada alumne/a.</li>
+</ul>
+<h2 id="documents-de-la-sa-aquesta-carpeta"><a class="toclink" href="#documents-de-la-sa-aquesta-carpeta">Documents de la SA (aquesta carpeta)</a></h2>
+<table>
+<thead>
+<tr>
+<th>Document</th>
+<th>Quan s'usa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SA1_fitxa_alumnat.md</code></td>
+<td>Totes les sessions (Activitats 1-4 + quadern).</td>
+</tr>
+<tr>
+<td><code>SA1_prova_diagnostica.md</code></td>
+<td>Sessió 1 (imprimible o Google Forms; <strong>no qualifica</strong>).</td>
+</tr>
+<tr>
+<td><code>SA1_esquemes_connexions.md</code></td>
+<td>Sessió 2 (anatomia de la placa, Activitat 2) i 3 (circuit <code>Blink</code>).</td>
+</tr>
+<tr>
+<td><code>SA1_normes_seguretat.md</code></td>
+<td>Sessió 2 (lectura i <strong>signatura</strong>).</td>
+</tr>
+<tr>
+<td><code>SA1_poster_robot_plantilla.md</code></td>
+<td>Producte de la SA (es pot iniciar a la Sessió 3).</td>
+</tr>
+<tr>
+<td><code>codi/</code></td>
+<td><code>blink</code>, <code>blink_repte</code> i ampliacions <code>blink_millis</code>, <code>sos_morse</code>.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="el-metode-de-projecte-fil-conductor-del-curs"><a class="toclink" href="#el-metode-de-projecte-fil-conductor-del-curs">El mètode de projecte (fil conductor del curs)</a></h2>
+<p>La SA1 no només respon <em>"què és un robot?"</em>: també presenta <strong>com treballarem</strong> a totes les SA. És el cicle d'enginyeria que es repetirà fins al projecte final (SA9) i que avalua la <strong>CA5.1</strong> (<em>gestionar un projecte tecnològic complet: anàlisi → prototip → millora</em>).</p>
+<table>
+<thead>
+<tr>
+<th>Fase</th>
+<th>Pregunta clau</th>
+<th>A la SA1 es viu així…</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1. Analitzar</strong></td>
+<td>Quin problema/repte tinc? Què necessito?</td>
+<td>Entendre el repte del <code>Blink</code> i descompondre'l (entrada-procés-sortida).</td>
+</tr>
+<tr>
+<td><strong>2. Dissenyar</strong></td>
+<td>Com ho penso resoldre abans de fer-ho?</td>
+<td>Predir/planificar la solució del repte (PRIMM, Sessió 3) abans d'escriure codi.</td>
+</tr>
+<tr>
+<td><strong>3. Prototipar</strong></td>
+<td>Construeixo una primera versió.</td>
+<td>Escriure/muntar el codi (real o a Tinkercad).</td>
+</tr>
+<tr>
+<td><strong>4. Provar</strong></td>
+<td>Funciona? On falla?</td>
+<td>Pujar, observar, identificar errors (taula d'errors freqüents).</td>
+</tr>
+<tr>
+<td><strong>5. Millorar</strong></td>
+<td>Com ho faig millor?</td>
+<td>Ajustar temps, refactoritzar amb variables/funcions, ampliacions.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Es presenta de forma <strong>breu i visual</strong> (un pòster a l'aula) i es <strong>referencia explícitament</strong> cada cop que l'alumnat resol un repte. No es memoritza: s'aplica. És també l'estructura del <strong>quadern tècnic</strong>.</p>
+</blockquote>
+<hr />
+<h2 id="sessio-1-2-h-que-es-un-robot"><a class="toclink" href="#sessio-1-2-h-que-es-un-robot">SESSIÓ 1 (2 h) — Què és un robot?</a></h2>
+<table>
+<thead>
+<tr>
+<th>Fase</th>
+<th>Temps</th>
+<th>Activitat docent</th>
+<th>Activitat alumnat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Activació</td>
+<td>15'</td>
+<td>Llança la pregunta: <em>"Quins robots tens a casa sense saber-ho?"</em></td>
+<td>Pluja d'idees; llista a la pissarra.</td>
+</tr>
+<tr>
+<td>Explicació</td>
+<td>25'</td>
+<td>Presenta el model <strong>entrada → procés → sortida</strong> i el concepte de sistema embegut.</td>
+<td>Prenen notes; classifiquen exemples.</td>
+</tr>
+<tr>
+<td>Pràctica</td>
+<td>40'</td>
+<td>Reparteix l'<strong>anàlisi de 3 sistemes</strong> (rentadora, dron, semàfor).</td>
+<td>En parelles, omplen la taula E-P-S de la fitxa (Activitat 1).</td>
+</tr>
+<tr>
+<td>Diagnòstic</td>
+<td>30'</td>
+<td>Passa la <strong>prova diagnòstica</strong> (<code>SA1_prova_diagnostica.md</code>; no qualifica).</td>
+<td>Responen individualment.</td>
+</tr>
+<tr>
+<td>Tancament</td>
+<td>10'</td>
+<td>Recull conclusions; presenta el <strong>mètode de projecte</strong> (pòster a l'aula) com a forma de treball del curs; obre el quadern tècnic.</td>
+<td>Primera entrada al quadern.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Punts clau:</strong> tot sistema automàtic té sensors (entrada), un "cervell" (procés) i actuadors (sortida). El robot és un sistema embegut amb capacitat d'actuar sobre l'entorn. <strong>Tot el curs</strong> treballarem amb el cicle analitzar → dissenyar → prototipar → provar → millorar.</p>
+<p><strong>Solucions Activitat 1 (orientatives):</strong>
+| Sistema | Entrada | Procés | Sortida |
+|---|---|---|---|
+| Rentadora | Selector de programa, sensor de nivell d'aigua i de temperatura | Microcontrolador que segueix el cicle (omplir, rentar, centrifugar) | Motor del tambor, electrovàlvula, resistència, bomba de buidatge |
+| Dron | Giroscopi/acceleròmetre, GPS, comandament | Controlador de vol que estabilitza i navega | Motors de les hèlixs (ESC), LED, càmera |
+| Semàfor | Temporitzador, sensor de presència/espira | Lògica de seqüència de fases | LED vermell/groc/verd |</p>
+<p><strong>Prova diagnòstica:</strong> vegeu <code>SA1_prova_diagnostica.md</code> (versió imprimible amb clau de correcció + versió Google Forms autocorregible). Serveix per formar <strong>parelles heterogènies</strong> (alumnat amb experiència + sense).</p>
+<hr />
+<h2 id="sessio-2-2-h-arquitectura-i-seguretat"><a class="toclink" href="#sessio-2-2-h-arquitectura-i-seguretat">SESSIÓ 2 (2 h) — Arquitectura i seguretat</a></h2>
+<table>
+<thead>
+<tr>
+<th>Fase</th>
+<th>Temps</th>
+<th>Activitat docent</th>
+<th>Activitat alumnat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Activació</td>
+<td>10'</td>
+<td>Mostra una placa Arduino UNO real.</td>
+<td>Identifiquen parts visibles.</td>
+</tr>
+<tr>
+<td>Explicació</td>
+<td>30'</td>
+<td>Arquitectura: microcontrolador, pins digitals/analògics, alimentació, USB. <strong>Analògic vs digital</strong>. (Projecta la versió etiquetada de <code>SA1_esquemes_connexions.md</code>.)</td>
+<td>Etiqueten l'<strong>esquema mut de la placa</strong> (Activitat 2; versió muda del mateix document).</td>
+</tr>
+<tr>
+<td>Seguretat</td>
+<td>20'</td>
+<td>Presenta i comenta les <strong>normes de seguretat</strong> (<code>SA1_normes_seguretat.md</code>).</td>
+<td>Llegeixen i <strong>signen</strong> el full.</td>
+</tr>
+<tr>
+<td>Pràctica</td>
+<td>50'</td>
+<td>Tour guiat de l'<strong>Arduino IDE</strong> i de <strong>Tinkercad</strong> (crear compte de classe, primer circuit virtual).</td>
+<td>Creen el seu primer circuit a Tinkercad (LED + placa).</td>
+</tr>
+<tr>
+<td>Tancament</td>
+<td>10'</td>
+<td>Resol dubtes de l'entorn.</td>
+<td>Entrada al quadern: captura del circuit.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Punts clau:</strong>
+- <strong>Digital</strong> = dos estats (0/5 V, LOW/HIGH). <strong>Analògic</strong> = valors continus (0–5 V → 0–1023).
+- Pins <code>~</code> = PWM. Pins <code>A0-A5</code> = entrades analògiques.
+- <strong>Seguretat:</strong> treballar amb la placa desconnectada en muntar; no curtcircuitar 5 V–GND; respectar polaritats.</p>
+<hr />
+<h2 id="sessio-3-2-h-el-primer-programa"><a class="toclink" href="#sessio-3-2-h-el-primer-programa">SESSIÓ 3 (2 h) — El primer programa</a></h2>
+<blockquote>
+<p><strong>Mètode de lectura de codi: PRIMM.</strong> En lloc de copiar codi, l'alumnat el <strong>Prediu</strong>, l'<strong>Executa</strong>, l'<strong>Investiga</strong>, el <strong>Modifica</strong> i en <strong>Crea</strong> un de nou. Predir <em>abans</em> d'executar és el pas que més consolida la comprensió. Encaixa amb el mètode de projecte (predir = dissenyar; executar/investigar = provar; modificar/crear = millorar).</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Fase (PRIMM)</th>
+<th>Temps</th>
+<th>Activitat docent</th>
+<th>Activitat alumnat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Predir</strong></td>
+<td>15'</td>
+<td>Projecta <code>blink.ino</code> <strong>sense executar-lo</strong>: <em>"Què creieu que farà? Què fa cada línia?"</em></td>
+<td>Escriuen la seva <strong>predicció</strong> a la fitxa (Activitat 4).</td>
+</tr>
+<tr>
+<td><strong>Executar</strong></td>
+<td>10'</td>
+<td>Carrega <code>Blink</code> (real o Tinkercad).</td>
+<td>Comproven la predicció; comenten diferències.</td>
+</tr>
+<tr>
+<td><strong>Investigar</strong></td>
+<td>20'</td>
+<td>Lectura guiada: <code>setup()</code>, <code>loop()</code>, <code>pinMode</code>, <code>digitalWrite</code>, <code>delay</code>.</td>
+<td>Anoten què fa cada part i per què.</td>
+</tr>
+<tr>
+<td><strong>Modificar</strong></td>
+<td>25'</td>
+<td>Demana canviar el temps i el patró de parpelleig.</td>
+<td>Modifiquen <code>delay</code> i observen l'efecte.</td>
+</tr>
+<tr>
+<td><strong>Crear</strong></td>
+<td>30'</td>
+<td>Proposa el <strong>repte de parpelleig variable</strong> (<code>blink_repte.ino</code>). Per a qui acaba aviat, <strong>ampliacions</strong> (<code>blink_millis.ino</code>, <code>sos_morse.ino</code>).</td>
+<td>Resolen; comparen solucions.</td>
+</tr>
+<tr>
+<td><strong>Debat + tancament</strong></td>
+<td>20'</td>
+<td>Mini-debat <strong>ètica de l'automatització</strong> (ODS); presenta la <strong>fitxa-pòster</strong> (<code>SA1_poster_robot_plantilla.md</code>).</td>
+<td>Reflexió escrita al quadern; trien el robot del pòster.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Errors freqüents i solució:</strong>
+| Error | Causa | Solució |
+|---|---|---|
+| El LED no s'encén | Polaritat/posició invertida o sense resistència | Revisar pota llarga (+) a la sortida; resistència 220 Ω. |
+| "Port not found" en pujar | Placa no seleccionada | Eines → Placa: Arduino UNO; Port correcte. |
+| Parpelleig massa ràpid/imperceptible | <code>delay</code> molt petit | Augmentar el valor (ms). |</p>
+<p><strong>Producte de la SA:</strong> fitxa-pòster d'anàlisi d'un robot real (<code>SA1_poster_robot_plantilla.md</code>) + primeres entrades del quadern tècnic.</p>
+<h3 id="mapa-davaluacio-tracabilitat"><a class="toclink" href="#mapa-davaluacio-tracabilitat">Mapa d'avaluació (traçabilitat)</a></h3>
+<table>
+<thead>
+<tr>
+<th>Instrument</th>
+<th>Què evidencia</th>
+<th>Criteri</th>
+<th>Rúbrica</th>
+<th>Qualifica?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Prova diagnòstica</td>
+<td>Coneixements previs (per agrupar)</td>
+<td>—</td>
+<td>—</td>
+<td><strong>No</strong> (diagnòstica)</td>
+</tr>
+<tr>
+<td>Fitxa d'alumnat (Act. 1-4)</td>
+<td>Comprensió E-P-S, placa, codi</td>
+<td>CA5.1</td>
+<td>R4</td>
+<td>Formativa</td>
+</tr>
+<tr>
+<td>Fitxa-pòster</td>
+<td>Anàlisi d'un sistema + dilema ètic (ODS)</td>
+<td>CA5.3</td>
+<td><strong>R4</strong></td>
+<td>Sí</td>
+</tr>
+<tr>
+<td>Quadern tècnic</td>
+<td>Documentació i reflexió del procés</td>
+<td>CA5.1</td>
+<td><strong>R4</strong></td>
+<td>Sí</td>
+</tr>
+<tr>
+<td>Observació d'aula</td>
+<td>Cooperació, autonomia, seguretat</td>
+<td>CA5.3</td>
+<td><strong>R5</strong></td>
+<td>Sí</td>
+</tr>
+</tbody>
+</table>
+<p><em>(CA5.1 = gestionar un projecte tecnològic; CA5.3 = valorar l'impacte ètic/social/ambiental i cooperar. Vegeu <code>Programació didàctica/06_Avaluacio_criteris_qualificacio.md</code>.)</em></p>
+<h3 id="quadern-tecnic-primera-entrada-guia-per-a-lalumnat"><a class="toclink" href="#quadern-tecnic-primera-entrada-guia-per-a-lalumnat">Quadern tècnic — primera entrada (guia per a l'alumnat)</a></h3>
+<p>El quadern tècnic és el <strong>diari de bord</strong> que es farà servir tota la matèria. La 1a entrada (SA1) inclou, seguint el mètode de projecte:
+- <strong>Què he après</strong> (conceptes clau: robot, sistema embegut, E-P-S, digital/analògic).
+- <strong>Repte i com l'he resolt</strong> (predicció → solució → millores del <code>Blink</code>).
+- <strong>Un error que he tingut i com l'he resolt.</strong>
+- <strong>Reflexió ètica</strong> (un avantatge i un risc de l'automatització + ODS).</p>
+<blockquote>
+<p>Comparteix les rúbriques <strong>R4</strong> i <strong>R5</strong> amb l'alumnat <strong>abans</strong> de començar (avaluació formativa).</p>
+</blockquote>
+<h3 id="pont-cap-a-la-sa2"><a class="toclink" href="#pont-cap-a-la-sa2">Pont cap a la SA2</a></h3>
+<p>A la SA1 hem fet <strong>parpellejar un LED</strong> (una sortida digital senzilla). A la <strong>SA2</strong> controlarem <strong>múltiples sortides digitals i PWM</strong> (semàfors, intensitat, RGB): passem de "encendre/apagar" a "graduar i coordinar" sortides.</p>
+<hr />
+<h2 id="guio-de-modelatge-que-verbalitzar"><a class="toclink" href="#guio-de-modelatge-que-verbalitzar">Guió de modelatge (què verbalitzar)</a></h2>
+<blockquote>
+<p>Frases i preguntes clau per al <strong>Modelatge</strong> de cada sessió. Pensat perquè el docent <strong>afegeixi valor encara que no improvisi codi</strong>: el que cal mirar, què preguntar (predicció) i l'error que cal anticipar.</p>
+</blockquote>
+<ul>
+<li><strong>S1 · Entrada–Procés–Sortida:</strong> dibuixa 3 caixes (SENSOR → CERVELL → ACTUADOR). Per a cada exemple pregunta <em>"què percep? què decideix? què fa?"</em> — <strong>no donis tu la resposta</strong>, que la classe ompli les caixes. <em>Error a anticipar:</em> confondre entrada (sensor) amb sortida (actuador).</li>
+<li><strong>S2 · La placa:</strong> assenyala <strong>físicament</strong> cada part abans d'etiquetar-la. Mantra: <em>pins amb <code>~</code> = PWM; A0–A5 = entrades analògiques</em>. Pregunta: <em>"un LED, a quin tipus de pin el connectaries?"</em> <em>Error a anticipar:</em> confondre 5V amb GND.</li>
+<li><strong>S3 · Blink (PRIMM):</strong> projecta <code>blink.ino</code> <strong>sense pujar-lo</strong>. Pregunta: <em>"què farà? i si canvio el 1000 per 100?"</em>. Llegeix en veu alta <code>setup()</code> (s'executa <strong>un cop</strong>) vs <code>loop()</code> (<strong>per sempre</strong>); verbalitza que <code>delay</code> és en <strong>mil·lisegons</strong>. <em>Error a anticipar:</em> creure que <code>setup()</code> es repeteix.</li>
+</ul>
+<h2 id="atencio-a-la-diversitat"><a class="toclink" href="#atencio-a-la-diversitat">Atenció a la diversitat</a></h2>
+<table>
+<thead>
+<tr>
+<th>Necessitat</th>
+<th>Mesura</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Bastida (qui ho necessita)</strong></td>
+<td>Apartats guiats de la fitxa i del pòster; la versió <strong>etiquetada</strong> de la placa com a referència; treball en <strong>parella heterogènia</strong> segons la diagnòstica.</td>
+</tr>
+<tr>
+<td><strong>+ Ampliació (qui va sobrat)</strong></td>
+<td>Sketches <code>blink_millis.ino</code> (sense <code>delay()</code>) i <code>sos_morse.ino</code> (funcions); investigar un robot industrial/IA i preparar defensa oral d'1 min.</td>
+</tr>
+<tr>
+<td><strong>Diversitat lingüística/lectora</strong></td>
+<td>Glossari mínim a la pissarra (sensor, actuador, procés, embegut); diagrames ASCII i imatges en lloc de text dens.</td>
+</tr>
+<tr>
+<td><strong>Sense maquinari per a tothom</strong></td>
+<td>Tot és reproduïble a <strong>Tinkercad</strong>/<strong>Wokwi</strong>; es pot treballar amb el LED <strong>intern</strong> (pin 13) sense cablejar res.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Avaluació formativa:</strong> comparteix les rúbriques <strong>R4</strong> i <strong>R5</strong> amb l'alumnat <strong>abans</strong> de començar el producte (vegeu <code>Programació didàctica/07_Rubriques.md</code>).</p>
+</blockquote>
+<hr />
+<h2 id="treball-cooperatiu-amb-rols"><a class="toclink" href="#treball-cooperatiu-amb-rols">Treball cooperatiu amb rols</a></h2>
+<p>L'alumnat treballa en parella amb <strong>rols rotatius</strong> (un canvi per sessió) perquè tothom programi, munti i documenti:</p>
+<table>
+<thead>
+<tr>
+<th>Rol</th>
+<th>Funció</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Coordinador/a</td>
+<td>Gestiona el temps, llegeix l'enunciat, vetlla perquè tothom participi.</td>
+</tr>
+<tr>
+<td>Programador/a</td>
+<td>Escriu i edita el codi.</td>
+</tr>
+<tr>
+<td>Enginyer/a de maquinari</td>
+<td>Munta el circuit, comprova connexions i seguretat.</td>
+</tr>
+<tr>
+<td>Provador/a–Documentador/a</td>
+<td>Prova, aplica la rutina DEPURA i documenta al quadern.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>El quadre per rotar els rols és a la fitxa. Forma les parelles <strong>heterogènies</strong> segons la prova diagnòstica.</p>
+</blockquote>
+<h2 id="pensament-computacional-i-depuracio"><a class="toclink" href="#pensament-computacional-i-depuracio">Pensament computacional i depuració</a></h2>
+<ul>
+<li><strong>Concepte de PC d'aquesta SA:</strong> <strong>descomposició</strong> (partir un sistema en entrada → procés → sortida). Nomena-ho explícitament a l'Activitat 1.</li>
+<li><strong>Depuració:</strong> presenta la <strong>rutina DEPURA</strong> com a forma estàndard d'afrontar errors tot el curs (és a la fitxa); el docent té la taula d'<strong>errors freqüents</strong> de més amunt.</li>
+</ul>
+<blockquote>
+<p>DEPURA: <strong>D</strong>escriu · <strong>E</strong>xamina · <strong>P</strong>rova una hipòtesi cada cop · <strong>U</strong>bica · <strong>R</strong>epara · <strong>A</strong>punta.</p>
+</blockquote>
+<h2 id="avaluacio-formativa-instruments"><a class="toclink" href="#avaluacio-formativa-instruments">Avaluació formativa (instruments)</a></h2>
+<ul>
+<li><strong>Diana d'autoavaluació</strong> (fitxa): posicionament en 3 criteris clau.</li>
+<li><strong>Coavaluació</strong> ("2 estrelles i un desig"): cada parella valora el pòster d'una altra.</li>
+<li><strong>Exit ticket</strong> (fitxa): 3 preguntes de tancament; recull-les per ajustar la sessió següent.</li>
+</ul>
+<h2 id="referent-coeducacio"><a class="toclink" href="#referent-coeducacio">Referent (coeducació)</a></h2>
+<blockquote>
+<p><strong>Carme Torras</strong> (Barcelona, 1956) — investigadora en <strong>robòtica assistencial</strong> a l'Institut de Robòtica i Informàtica Industrial (IRI, CSIC-UPC) i pionera a connectar robòtica i <strong>ètica</strong>; també escriu ciència-ficció sobre l'impacte social de la tecnologia.</p>
+<p><em>Connexió amb la SA:</em> uneix els dos fils d'aquesta unitat —què és un robot i quins <strong>dilemes ètics</strong> planteja—. Pregunta a la classe: <em>per què una experta en robots hi dedica temps a pensar-ne l'ètica?</em></p>
+</blockquote>
+<h2 id="context-real-i-ods"><a class="toclink" href="#context-real-i-ods">Context real i ODS</a></h2>
+<ul>
+<li><strong>Context:</strong> robots quotidians i sistemes embeguts invisibles (electrodomèstics, transport, indústria).</li>
+<li><strong>ODS 9</strong> (indústria, innovació) i <strong>ODS 12</strong> (consum responsable): hi connecten el dilema ètic del pòster i la reflexió del quadern.</li>
+</ul>
+    </article>
+  </main>
+  <nav class="toc" aria-label="En aquesta pàgina"><p class="toc-titol">En aquesta pàgina</p><ul>
+<li class="toc-l1"><a href="#sa1-guia-docent-que-es-un-robot-sistemes-embeguts-i-metode-de-projecte">SA1 · Guia docent — Què és un robot? Sistemes embeguts i mètode de projecte</a></li>
+<li class="toc-l2"><a href="#objectius-de-la-sa">Objectius de la SA</a></li>
+<li class="toc-l2"><a href="#materials-per-a-la-sessio">Materials per a la sessió</a></li>
+<li class="toc-l2"><a href="#documents-de-la-sa-aquesta-carpeta">Documents de la SA (aquesta carpeta)</a></li>
+<li class="toc-l2"><a href="#el-metode-de-projecte-fil-conductor-del-curs">El mètode de projecte (fil conductor del curs)</a></li>
+<li class="toc-l2"><a href="#sessio-1-2-h-que-es-un-robot">SESSIÓ 1 (2 h) — Què és un robot?</a></li>
+<li class="toc-l2"><a href="#sessio-2-2-h-arquitectura-i-seguretat">SESSIÓ 2 (2 h) — Arquitectura i seguretat</a></li>
+<li class="toc-l2"><a href="#sessio-3-2-h-el-primer-programa">SESSIÓ 3 (2 h) — El primer programa</a></li>
+<li class="toc-l2"><a href="#guio-de-modelatge-que-verbalitzar">Guió de modelatge (què verbalitzar)</a></li>
+<li class="toc-l2"><a href="#atencio-a-la-diversitat">Atenció a la diversitat</a></li>
+<li class="toc-l2"><a href="#treball-cooperatiu-amb-rols">Treball cooperatiu amb rols</a></li>
+<li class="toc-l2"><a href="#pensament-computacional-i-depuracio">Pensament computacional i depuració</a></li>
+<li class="toc-l2"><a href="#avaluacio-formativa-instruments">Avaluació formativa (instruments)</a></li>
+<li class="toc-l2"><a href="#referent-coeducacio">Referent (coeducació)</a></li>
+<li class="toc-l2"><a href="#context-real-i-ods">Context real i ODS</a></li>
+</ul></nav>
+</div>
+<footer class="peu">
+  <p>Robòtica · 1r de Batxillerat · material sota llicència <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca" target="_blank" rel="noopener">CC BY-SA 4.0</a>.</p>
+  <p><a href="https://github.com/tomeu-cd100/robotica-1batx-2627" target="_blank" rel="noopener">Repositori a GitHub</a> · web generat el 2026-06-30.</p>
+</footer>
+<script src="../../assets/js/cerca-index.js"></script>
+<script src="../../assets/js/lloc.js"></script>
+</body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prova pràctica — Trimestre 1 (SA1-SA3) · Robòtica · 1r de Batxillerat</title>
+<meta name="description" content="Material docent · LOMLOE Catalunya · curs 2026-2027">
+<link rel="stylesheet" href="../assets/css/estil.css">
+<link rel="stylesheet" href="../assets/css/pygments.css">
+<script>(function(){try{var t=localStorage.getItem('tema');if(t==='fosc'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.setAttribute('data-tema','fosc');}catch(e){}})();</script>
+</head>
+<body data-section="avaluacio" class="amb-sidebar amb-toc">
+<a class="skip" href="#contingut">Salta al contingut</a>
+<header class="topbar">
+  <button class="menu-btn" aria-label="Obre el menú" aria-expanded="false">☰</button>
+  <a class="brand" href="../index.html"><span class="brand-mark">◆</span> Robòtica <span class="brand-sub">1r Batx</span></a>
+  <nav class="topnav" aria-label="Seccions">
+    <a href="../index.html">Inici</a>
+<a href="../programacio/index.html" data-sec="programacio">Programació didàctica</a>
+<a href="../classes/index.html" data-sec="classes">Classes</a>
+<a href="../reptes/index.html" data-sec="reptes">Reptes</a>
+<a href="../avaluacio/index.html" data-sec="avaluacio" class="actiu">Avaluació</a>
+<a href="../normativa/index.html" data-sec="normativa">Normativa</a>
+<a href="../recursos/index.html" data-sec="recursos">Recursos</a>
+  </nav>
+  <div class="topbar-eines">
+    <div class="cercador">
+      <input type="search" id="cerca" placeholder="Cerca…" autocomplete="off" aria-label="Cerca al web">
+      <div id="cerca-resultats" class="cerca-resultats" hidden></div>
+    </div>
+    <button class="tema-btn" aria-label="Canvia el tema clar/fosc" title="Tema clar/fosc">◐</button>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar"><nav class="sidebar-nav" aria-label="Pàgines de la secció">
+<p class="sidebar-titol">Avaluació</p>
+<ul class="sb-top">
+<li><a href="index.html">Presentació</a></li>
+<li><a href="00-llegeix-me-avaluacio.html">Avaluació — Proves pràctiques per trimestre</a></li>
+<li><a href="full-qualificacio-competencies.html">Full de qualificació per competències</a></li>
+<li><a href="prova-practica-t1.html" class="actiu">Prova pràctica — Trimestre 1 (SA1-SA3)</a></li>
+<li><a href="prova-practica-t2.html">Prova pràctica — Trimestre 2 (SA4-SA6)</a></li>
+<li><a href="prova-practica-t3.html">Prova pràctica — Trimestre 3 (SA7-SA9)</a></li>
+</ul>
+</nav></aside>
+  <main id="contingut">
+    <nav class="breadcrumb" aria-label="Ubicació"><a href="../index.html">Inici</a> <span class="sep">/</span> <a href="../avaluacio/index.html">Avaluació</a> <span class="sep">/</span> <span aria-current="page">Prova pràctica — Trimestre 1 (SA1-SA3)</span></nav>
+    
+    <article class="prose">
+<h1 id="prova-practica-trimestre-1-sa1-sa3"><a class="toclink" href="#prova-practica-trimestre-1-sa1-sa3">Prova pràctica — Trimestre 1 (SA1-SA3)</a></h1>
+<h2 id="llum-de-seguretat-intelligent"><a class="toclink" href="#llum-de-seguretat-intelligent">"Llum de seguretat intel·ligent"</a></h2>
+<p><strong>Durada:</strong> 2 h · <strong>Material:</strong> Arduino UNO, protoboard, LDR + 10 kΩ, LED + 220 Ω, polsador, brunzidor piezo, cables. Es permet consultar esquemes i quadern tècnic.</p>
+<h3 id="competencies-i-criteris-avaluats"><a class="toclink" href="#competencies-i-criteris-avaluats">Competències i criteris avaluats</a></h3>
+<ul>
+<li><strong>CE-R1</strong> (programar) → CA1.1 · <strong>CE-R2</strong> (circuits) → CA2.1, CA2.2</li>
+<li>Rúbriques: <strong>R1</strong> (codi), <strong>R2</strong> (circuit), <strong>R4</strong> (documentació).</li>
+</ul>
+<hr />
+<h2 id="enunciat-per-nivells"><a class="toclink" href="#enunciat-per-nivells">Enunciat (per nivells)</a></h2>
+<p>Has de construir i programar un sistema d'il·luminació de seguretat.</p>
+<h3 id="nivell-1-nucli-obligatori-assoliment-satisfactori"><a class="toclink" href="#nivell-1-nucli-obligatori-assoliment-satisfactori">Nivell 1 — Nucli obligatori (assoliment satisfactori)</a></h3>
+<ol>
+<li>Munta una <strong>LDR</strong> (entrada analògica) i un <strong>LED</strong> (sortida).</li>
+<li>Programa el sistema perquè <strong>el LED s'encengui quan fa fosc</strong> (lectura de la LDR per sota d'un llindar).</li>
+<li>Mostra la <strong>lectura de la LDR pel Serial Monitor</strong>.</li>
+</ol>
+<h3 id="nivell-2-ampliacio-notable"><a class="toclink" href="#nivell-2-ampliacio-notable">Nivell 2 — Ampliació (notable)</a></h3>
+<ol start="4">
+<li>Afegeix un <strong>polsador</strong> que activi/desactivi el sistema (mode ON/OFF) amb <strong>antirebot</strong>.</li>
+</ol>
+<h3 id="nivell-3-ampliacio-excellent"><a class="toclink" href="#nivell-3-ampliacio-excellent">Nivell 3 — Ampliació (excel·lent)</a></h3>
+<ol start="5">
+<li>Afegeix un <strong>brunzidor</strong> que faci un avís quan la foscor és extrema (segon llindar), i estructura el codi amb <strong>funcions</strong>.</li>
+</ol>
+<h3 id="lliurament"><a class="toclink" href="#lliurament">Lliurament</a></h3>
+<ul>
+<li>Sistema funcionant + <strong>explicació breu al quadern</strong> (esquema + què fa cada part + un error que has resolt).</li>
+</ul>
+<hr />
+<h2 id="graella-de-correccio-10-punts"><a class="toclink" href="#graella-de-correccio-10-punts">Graella de correcció (10 punts)</a></h2>
+<table>
+<thead>
+<tr>
+<th>Criteri</th>
+<th>Punts</th>
+<th>Rúbrica</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>El circuit funciona i està ben muntat (segur)</td>
+<td>3</td>
+<td>R2</td>
+</tr>
+<tr>
+<td>El LED respon correctament a la llum (nucli)</td>
+<td>2</td>
+<td>R1</td>
+</tr>
+<tr>
+<td>Lectura pel Serial correcta</td>
+<td>1</td>
+<td>R1</td>
+</tr>
+<tr>
+<td>Polsador ON/OFF amb antirebot (ampliació)</td>
+<td>1,5</td>
+<td>R1</td>
+</tr>
+<tr>
+<td>Brunzidor + codi amb funcions (ampliació)</td>
+<td>1,5</td>
+<td>R1</td>
+</tr>
+<tr>
+<td>Documentació al quadern (esquema + error)</td>
+<td>1</td>
+<td>R4</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Orientació: nucli ben fet ≈ 5-6; amb una ampliació ≈ 7-8; amb les dues i bona documentació ≈ 9-10.</p>
+</blockquote>
+<hr />
+<h2 id="solucio-orientativa-docent"><a class="toclink" href="#solucio-orientativa-docent">Solució orientativa (docent)</a></h2>
+<p><strong>Connexions:</strong> LDR en divisor amb 10 kΩ → A1 · LED → pin 9 (220 Ω) · polsador → pin 2 (<code>INPUT_PULLUP</code>) · piezo → pin 6.</p>
+<div class="highlight"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">LDR</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">A1</span><span class="p">,</span><span class="w"> </span><span class="n">LED</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="n">BOTO</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">PIEZO</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">6</span><span class="p">;</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">LLINDAR</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">400</span><span class="p">;</span><span class="w">        </span><span class="c1">// fosc</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">LLINDAR_EXTREM</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">150</span><span class="p">;</span><span class="w"> </span><span class="c1">// molt fosc</span>
+<span class="kt">bool</span><span class="w"> </span><span class="n">actiu</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">anterior</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">HIGH</span><span class="p">;</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">avis</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">tone</span><span class="p">(</span><span class="n">PIEZO</span><span class="p">,</span><span class="w"> </span><span class="mi">1500</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">LED</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span>
+<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">BOTO</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT_PULLUP</span><span class="p">);</span>
+<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">PIEZO</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span>
+<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// Polsador ON/OFF amb antirebot</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">estat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">digitalRead</span><span class="p">(</span><span class="n">BOTO</span><span class="p">);</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">estat</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">LOW</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">anterior</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">HIGH</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">actiu</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">!</span><span class="n">actiu</span><span class="p">;</span><span class="w"> </span><span class="n">delay</span><span class="p">(</span><span class="mi">40</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
+<span class="w">  </span><span class="n">anterior</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">estat</span><span class="p">;</span>
+
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">llum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">analogRead</span><span class="p">(</span><span class="n">LDR</span><span class="p">);</span>
+<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">llum</span><span class="p">);</span>
+
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">actiu</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">llum</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">LLINDAR</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">LED</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">llum</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">LLINDAR_EXTREM</span><span class="p">)</span><span class="w"> </span><span class="n">avis</span><span class="p">();</span><span class="w">   </span><span class="c1">// avis si foscor extrema</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">LED</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="n">delay</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+    </article>
+  </main>
+  <nav class="toc" aria-label="En aquesta pàgina"><p class="toc-titol">En aquesta pàgina</p><ul>
+<li class="toc-l1"><a href="#prova-practica-trimestre-1-sa1-sa3">Prova pràctica — Trimestre 1 (SA1-SA3)</a></li>
+<li class="toc-l2"><a href="#llum-de-seguretat-intelligent">&quot;Llum de seguretat intel·ligent&quot;</a></li>
+<li class="toc-l2"><a href="#enunciat-per-nivells">Enunciat (per nivells)</a></li>
+<li class="toc-l2"><a href="#graella-de-correccio-10-punts">Graella de correcció (10 punts)</a></li>
+<li class="toc-l2"><a href="#solucio-orientativa-docent">Solució orientativa (docent)</a></li>
+</ul></nav>
+</div>
+<footer class="peu">
+  <p>Robòtica · 1r de Batxillerat · material sota llicència <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca" target="_blank" rel="noopener">CC BY-SA 4.0</a>.</p>
+  <p><a href="https://github.com/tomeu-cd100/robotica-1batx-2627" target="_blank" rel="noopener">Repositori a GitHub</a> · web generat el 2026-06-30.</p>
+</footer>
+<script src="../assets/js/cerca-index.js"></script>
+<script src="../assets/js/lloc.js"></script>
+</body>
+</html>

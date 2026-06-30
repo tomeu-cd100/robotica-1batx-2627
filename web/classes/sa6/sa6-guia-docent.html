@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SA6 · Guia docent — Sistemes de control: llaç obert/tancat i màquines d&#x27;estats · Robòtica · 1r de Batxillerat</title>
+<meta name="description" content="Material docent · LOMLOE Catalunya · curs 2026-2027">
+<link rel="stylesheet" href="../../assets/css/estil.css">
+<link rel="stylesheet" href="../../assets/css/pygments.css">
+<script>(function(){try{var t=localStorage.getItem('tema');if(t==='fosc'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.setAttribute('data-tema','fosc');}catch(e){}})();</script>
+</head>
+<body data-section="classes" class="amb-sidebar amb-toc">
+<a class="skip" href="#contingut">Salta al contingut</a>
+<header class="topbar">
+  <button class="menu-btn" aria-label="Obre el menú" aria-expanded="false">☰</button>
+  <a class="brand" href="../../index.html"><span class="brand-mark">◆</span> Robòtica <span class="brand-sub">1r Batx</span></a>
+  <nav class="topnav" aria-label="Seccions">
+    <a href="../../index.html">Inici</a>
+<a href="../../programacio/index.html" data-sec="programacio">Programació didàctica</a>
+<a href="../../classes/index.html" data-sec="classes" class="actiu">Classes</a>
+<a href="../../reptes/index.html" data-sec="reptes">Reptes</a>
+<a href="../../avaluacio/index.html" data-sec="avaluacio">Avaluació</a>
+<a href="../../normativa/index.html" data-sec="normativa">Normativa</a>
+<a href="../../recursos/index.html" data-sec="recursos">Recursos</a>
+  </nav>
+  <div class="topbar-eines">
+    <div class="cercador">
+      <input type="search" id="cerca" placeholder="Cerca…" autocomplete="off" aria-label="Cerca al web">
+      <div id="cerca-resultats" class="cerca-resultats" hidden></div>
+    </div>
+    <button class="tema-btn" aria-label="Canvia el tema clar/fosc" title="Tema clar/fosc">◐</button>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar"><nav class="sidebar-nav" aria-label="Pàgines de la secció">
+<p class="sidebar-titol">Classes</p>
+<ul class="sb-top">
+<li><a href="../index.html">Presentació</a></li>
+<li><a href="../00-banc-objectes-disseny.html">Banc d&#x27;objectes per dissenyar — de l&#x27;electrònica al producte</a></li>
+<li><a href="../00-galeria-exemples-objectes.html">Galeria d&#x27;exemples resolts — objectes de disseny</a></li>
+<li><a href="../00-ia-a-la-materia.html">00 · La Intel·ligència Artificial a la matèria (guia transversal)</a></li>
+<li><a href="../00-llegeix-me-classes.html">Classes — Material d&#x27;aula</a></li>
+<li><a href="../00-mapa-sa-objectes.html">Mapa del curs · de cada SA a un objecte real</a></li>
+<li><a href="../00-plantilla-disseny-objecte.html">Plantilla de disseny d&#x27;objecte</a></li>
+<li><a href="../00-poster-aula-metode-depura-rols.html">Pòster d&#x27;aula — Com treballem a Robòtica</a></li>
+<li><a href="../00-poster-ia-us-assistents.html">Pòster d&#x27;aula — Fer servir la IA amb cap</a></li>
+</ul>
+<details class="sb-grup"><summary><span>SA0 · Vocabulari essencial i bases de programació</span></summary><ul><li><a href="../sa0/index.html">Presentació</a></li><li><a href="../sa0/sa0-fitxa-alumnat.html">SA0 · Fitxa d&#x27;alumnat — Vocabulari i primeres passes amb el codi</a></li><li><a href="../sa0/sa0-guia-docent.html">SA0 · Guia docent — Vocabulari essencial i bases de programació</a></li><li><a href="../sa0/sa0-guia-programacio.html">SA0 · Guia per aprendre a programar la placa</a></li><li><a href="../sa0/sa0-vocabulari-essencial.html">SA0 · Vocabulari essencial de la robòtica</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA1 · Introducció a la robòtica</span><span class="tri-dot" data-tri="1"></span></summary><ul><li><a href="../sa1/index.html">Presentació</a></li><li><a href="../sa1/sa1-esquemes-connexions.html">SA1 · Esquemes i connexions</a></li><li><a href="../sa1/sa1-fitxa-alumnat.html">SA1 · Fitxa base — Què és un robot?</a></li><li><a href="../sa1/sa1-fitxa-ampliada.html">SA1 · Fitxa ampliada (aprofundiment) — Què és un robot?</a></li><li><a href="../sa1/sa1-guia-docent.html">SA1 · Guia docent — Què és un robot? Sistemes embeguts i mètode de projecte</a></li><li><a href="../sa1/sa1-normes-seguretat.html">SA1 · Normes de seguretat del laboratori de robòtica</a></li><li><a href="../sa1/sa1-poster-robot-plantilla.html">SA1 · Fitxa-pòster: &quot;Analitzem un robot real&quot;</a></li><li><a href="../sa1/sa1-prova-diagnostica.html">SA1 · Prova diagnòstica de coneixements previs</a></li><li><a href="../sa1/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA2 · Sortides digitals i PWM</span><span class="tri-dot" data-tri="1"></span></summary><ul><li><a href="../sa2/index.html">Presentació</a></li><li><a href="../sa2/sa2-esquemes-connexions.html">SA2 · Esquemes i connexions</a></li><li><a href="../sa2/sa2-fitxa-alumnat.html">SA2 · Fitxa base — Sortides digitals i PWM</a></li><li><a href="../sa2/sa2-fitxa-ampliada.html">SA2 · Fitxa ampliada (aprofundiment) — Sortides digitals i PWM</a></li><li><a href="../sa2/sa2-guia-docent.html">SA2 · Guia docent — Sortides digitals i PWM: dona vida als actuadors</a></li><li><a href="../sa2/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA3 · Entrades i sensors</span><span class="tri-dot" data-tri="1"></span></summary><ul><li><a href="../sa3/index.html">Presentació</a></li><li><a href="../sa3/sa3-esquemes-connexions.html">SA3 · Esquemes i connexions</a></li><li><a href="../sa3/sa3-fitxa-alumnat.html">SA3 · Fitxa base — Entrades i sensors</a></li><li><a href="../sa3/sa3-fitxa-ampliada.html">SA3 · Fitxa ampliada (aprofundiment) — Entrades i sensors</a></li><li><a href="../sa3/sa3-guia-docent.html">SA3 · Guia docent — Entrades i sensors: el robot percep</a></li><li><a href="../sa3/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA4 · Moviment: servos i motors</span><span class="tri-dot" data-tri="2"></span></summary><ul><li><a href="../sa4/index.html">Presentació</a></li><li><a href="../sa4/sa4-esquemes-connexions.html">SA4 · Esquemes i connexions</a></li><li><a href="../sa4/sa4-fitxa-alumnat.html">SA4 · Fitxa base — Moviment: servos, motors i ponts H</a></li><li><a href="../sa4/sa4-fitxa-ampliada.html">SA4 · Fitxa ampliada (aprofundiment) — Moviment: servos, motors i ponts H</a></li><li><a href="../sa4/sa4-guia-docent.html">SA4 · Guia docent — Moviment: servos, motors i ponts H</a></li><li><a href="../sa4/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA5 · micro:bit i MicroPython</span><span class="tri-dot" data-tri="2"></span></summary><ul><li><a href="../sa5/index.html">Presentació</a></li><li><a href="../sa5/sa5-connexions.html">SA5 · Connexions i entorn</a></li><li><a href="../sa5/sa5-fitxa-alumnat.html">SA5 · Fitxa base — micro:bit i MicroPython</a></li><li><a href="../sa5/sa5-fitxa-ampliada.html">SA5 · Fitxa ampliada (aprofundiment) — micro:bit i MicroPython</a></li><li><a href="../sa5/sa5-guia-docent.html">SA5 · Guia docent — micro:bit i MicroPython: un altre paradigma</a></li><li><a href="../sa5/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup" open><summary><span>SA6 · Sistemes de control</span><span class="tri-dot" data-tri="2"></span></summary><ul><li><a href="index.html">Presentació</a></li><li><a href="sa6-esquemes-connexions.html">SA6 · Esquemes i connexions</a></li><li><a href="sa6-fitxa-alumnat.html">SA6 · Fitxa base — Sistemes de control</a></li><li><a href="sa6-fitxa-ampliada.html">SA6 · Fitxa ampliada (aprofundiment) — Sistemes de control</a></li><li><a href="sa6-guia-docent.html" class="actiu">SA6 · Guia docent — Sistemes de control: llaç obert/tancat i màquines d&#x27;estats</a></li><li><a href="codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA7 · Robòtica mòbil</span><span class="tri-dot" data-tri="3"></span></summary><ul><li><a href="../sa7/index.html">Presentació</a></li><li><a href="../sa7/sa7-esquemes-connexions.html">SA7 · Esquemes i connexions</a></li><li><a href="../sa7/sa7-fitxa-alumnat.html">SA7 · Fitxa base — Robòtica mòbil</a></li><li><a href="../sa7/sa7-fitxa-ampliada.html">SA7 · Fitxa ampliada (aprofundiment) — Robòtica mòbil</a></li><li><a href="../sa7/sa7-guia-docent.html">SA7 · Guia docent — Robòtica mòbil: cinemàtica i trajectòries</a></li><li><a href="../sa7/sa7-recursos-video-ia.html">SA7 · Recursos de vídeo — comportament programat vs après (IA)</a></li><li><a href="../sa7/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA8 · IoT i IA</span><span class="tri-dot" data-tri="3"></span></summary><ul><li><a href="../sa8/index.html">Presentació</a></li><li><a href="../sa8/sa8-connexions.html">SA8 · Connexions i entorn</a></li><li><a href="../sa8/sa8-fitxa-alumnat.html">SA8 · Fitxa base — IoT i IA</a></li><li><a href="../sa8/sa8-fitxa-ampliada.html">SA8 · Fitxa ampliada (aprofundiment) — IoT i IA</a></li><li><a href="../sa8/sa8-guia-docent.html">SA8 · Guia docent — IoT i IA: el robot connectat i intel·ligent</a></li><li><a href="../sa8/sa8-practica-teachable-machine.html">SA8 · Pràctica d&#x27;IA — Entrenar un classificador amb Teachable Machine</a></li><li><a href="../sa8/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA9 · Projecte final</span><span class="tri-dot" data-tri="3"></span></summary><ul><li><a href="../sa9/index.html">Presentació</a></li><li><a href="../sa9/plantilles/banc-de-reptes.html">SA9 · Banc de reptes (per nivells)</a></li><li><a href="../sa9/plantilles/dossier-tecnic-plantilla.html">Dossier tècnic — [Títol del projecte]</a></li><li><a href="../sa9/plantilles/planificacio-agile-plantilla.html">Planificació àgil — Equip: ______________________</a></li><li><a href="../sa9/sa9-fitxa-alumnat.html">SA9 · Fitxa base — Repte final integrador</a></li><li><a href="../sa9/sa9-fitxa-ampliada.html">SA9 · Fitxa ampliada (aprofundiment) — Repte final integrador</a></li><li><a href="../sa9/sa9-guia-docent.html">SA9 · Guia docent — Repte final integrador (opció competició)</a></li><li><a href="../sa9/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>Solucionari</span></summary><ul><li><a href="../solucionari/solucionari-t1-sa1-sa3.html">Solucionari de reptes — Trimestre 1 (SA1-SA3)</a></li><li><a href="../solucionari/solucionari-t2-sa4-sa6.html">Solucionari de reptes — Trimestre 2 (SA4-SA6)</a></li><li><a href="../solucionari/solucionari-t3-sa7-sa9.html">Solucionari de reptes — Trimestre 3 (SA7-SA9)</a></li></ul></details>
+</nav></aside>
+  <main id="contingut">
+    <nav class="breadcrumb" aria-label="Ubicació"><a href="../../index.html">Inici</a> <span class="sep">/</span> <a href="../../classes/index.html">Classes</a> <span class="sep">/</span> <span aria-current="page">SA6 · Guia docent — Sistemes de control: llaç obert/tancat i màquines d&#x27;estats</span></nav>
+    <span class="badge-tri" data-tri="2">2n trimestre</span>
+    <article class="prose">
+<h1 id="sa6-guia-docent-sistemes-de-control-llac-oberttancat-i-maquines-destats"><a class="toclink" href="#sa6-guia-docent-sistemes-de-control-llac-oberttancat-i-maquines-destats">SA6 · Guia docent — Sistemes de control: llaç obert/tancat i màquines d'estats</a></h1>
+<p><strong>Durada:</strong> 8 h (4 sessions; la 4a amb ampliacions opcionals) · <strong>Maquinari:</strong> Arduino UNO + NTC, LDR, LED/ventilador, polsador, (ultrasons) · <strong>Llenguatge:</strong> C/C++
+<strong>Referència:</strong> <code>Programació didàctica/15_SA6_Sistemes_control.md</code> · <strong>Esquemes:</strong> <code>SA6_esquemes_connexions.md</code></p>
+<h2 id="objectius-de-la-sa"><a class="toclink" href="#objectius-de-la-sa">Objectius de la SA</a></h2>
+<ol>
+<li>Distingir i implementar <strong>control en llaç obert i en llaç tancat</strong>.</li>
+<li>Dissenyar una <strong>màquina d'estats</strong> per a un comportament seqüencial.</li>
+<li>Implementar una regulació <strong>tot/res (histèresi)</strong> i una <strong>proporcional</strong> bàsica.</li>
+<li>Representar el sistema amb un <strong>diagrama de blocs</strong>.</li>
+</ol>
+<h2 id="material-per-parella"><a class="toclink" href="#material-per-parella">Material per parella</a></h2>
+<ul>
+<li>Arduino UNO + USB, protoboard, cables.</li>
+<li>NTC + resistència 10 kΩ, LDR + 10 kΩ, LED (o petit ventilador via transistor/relé), polsador.</li>
+</ul>
+<h2 id="codi-de-suport-codi"><a class="toclink" href="#codi-de-suport-codi">Codi de suport (<code>codi/</code>)</a></h2>
+<table>
+<thead>
+<tr>
+<th>Fitxer</th>
+<th>Contingut</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>01_llac_obert_vs_tancat.ino</code></td>
+<td>Comparació dels dos tipus de control.</td>
+</tr>
+<tr>
+<td><code>02_termostat_histeresi.ino</code></td>
+<td>Control tot/res amb histèresi.</td>
+</tr>
+<tr>
+<td><code>03_maquina_estats.ino</code></td>
+<td>Màquina d'estats amb <code>enum</code>/<code>switch</code>.</td>
+</tr>
+<tr>
+<td><code>04_control_proporcional.ino</code></td>
+<td>Regulació proporcional bàsica.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="metode-de-projecte-i-continuitat"><a class="toclink" href="#metode-de-projecte-i-continuitat">Mètode de projecte i continuïtat</a></h2>
+<ul>
+<li><strong>Cicle de treball</strong> (com a tot el curs): <em>analitzar → dissenyar → prototipar → provar → millorar</em> (vegeu SA1). El <strong>producte</strong> n'és el recorregut complet i el <strong>quadern tècnic</strong> el documenta.</li>
+<li><strong>Lectura de codi amb PRIMM:</strong> a cada <em>modelatge</em> l'alumnat <strong>prediu</strong> què farà el sketch <strong>abans</strong> d'executar-lo, després l'<strong>investiga</strong>, el <strong>modifica</strong> i en <strong>crea</strong> un de nou. <strong>Operativa (val per a totes les sessions amb codi):</strong> dedica els primers ~5' del Modelatge a projectar el codi nou <strong>sense executar-lo</strong> i recollir prediccions; només després, executa i investiga.</li>
+<li><strong>Pont (d'on venim / on anem):</strong> ve de la <strong>SA5</strong> (paradigmes de programació) → portem a la <strong>SA7</strong> (robòtica mòbil). El <strong>llaç tancat</strong> i les <strong>màquines d'estats</strong> d'aquí són la base dels <strong>comportaments autònoms</strong> del robot (evitar obstacles, seguir línia).</li>
+</ul>
+<hr />
+<h2 id="sessio-1-2-h-que-es-un-sistema-de-control"><a class="toclink" href="#sessio-1-2-h-que-es-un-sistema-de-control">SESSIÓ 1 (2 h) — Què és un sistema de control?</a></h2>
+<ul>
+<li><strong>Activació (10'):</strong> <em>"Per què un aire condicionat no encén i apaga sense parar?"</em></li>
+<li><strong>Modelatge (25'):</strong> conceptes: <strong>consigna, sensor (realimentació), error, actuador</strong>. <strong>Llaç obert</strong> (sense sensor, temporitzat) vs <strong>llaç tancat</strong> (amb sensor). <strong>Diagrama de blocs</strong>.</li>
+<li><strong>Pràctica guiada (35'):</strong> <code>01_llac_obert_vs_tancat.ino</code>; comparen el comportament dels dos modes amb el mateix muntatge.</li>
+<li><strong>Repte (40'):</strong> dibuixar el diagrama de blocs del seu sistema; identificar entrada/sortida/realimentació; <strong>+ repte:</strong> pensar 3 exemples reals de cada tipus.</li>
+<li><strong>Tancament (10'):</strong> quadern (diagrama).</li>
+</ul>
+<p><strong>Punt clau:</strong> el <strong>llaç tancat</strong> corregeix segons el que mesura (realimentació); el <strong>llaç obert</strong> "confia" que tot anirà bé.</p>
+<hr />
+<h2 id="sessio-2-2-h-control-totres-i-histeresi"><a class="toclink" href="#sessio-2-2-h-control-totres-i-histeresi">SESSIÓ 2 (2 h) — Control tot/res i histèresi</a></h2>
+<ul>
+<li><strong>Activació (10'):</strong> <em>"Si encenc el ventilador a 25°C i l'apago a 25°C, què passa al voltant de 25°?"</em> → oscil·lació.</li>
+<li><strong>Modelatge (25'):</strong> <code>02_termostat_histeresi.ino</code>. Control <strong>tot/res</strong> amb dos llindars (<strong>histèresi</strong>) per evitar el parpelleig.</li>
+<li><strong>Pràctica guiada (35'):</strong> termòstat amb NTC + LED/ventilador i histèresi.</li>
+<li><strong>Repte (40'):</strong> ajustar la finestra d'histèresi i observar l'efecte; <strong>+ repte:</strong> afegir indicador d'estat (verd/vermell).</li>
+<li><strong>Tancament (10'):</strong> quadern (gràfic del comportament).</li>
+</ul>
+<p><strong>Punt clau:</strong> la <strong>histèresi</strong> (encendre a un llindar i apagar a un altre) evita commutacions ràpides al voltant de la consigna.</p>
+<hr />
+<h2 id="sessio-3-2-h-maquines-destats"><a class="toclink" href="#sessio-3-2-h-maquines-destats">SESSIÓ 3 (2 h) — Màquines d'estats</a></h2>
+<ul>
+<li><strong>Activació (10'):</strong> <em>"Com es programa una seqüència amb diversos passos i condicions?"</em></li>
+<li><strong>Modelatge (30'):</strong> <code>03_maquina_estats.ino</code>. <code>enum</code> d'estats + <code>switch</code>; transicions per <strong>temps</strong> o per <strong>esdeveniment</strong> (polsador). Exemple: procés (espera → fase 1 → fase 2 → fet).</li>
+<li><strong>Pràctica guiada (30'):</strong> implementen la màquina d'estats i la proven.</li>
+<li><strong>Repte (40'):</strong> afegir un estat nou o una transició condicional; <strong>+ repte:</strong> semàfor adaptatiu (canvia segons polsador de vianant).</li>
+<li><strong>Tancament (10'):</strong> quadern (diagrama d'estats).</li>
+</ul>
+<p><strong>Punt clau:</strong> una <strong>màquina d'estats</strong> organitza comportaments complexos en estats clars i transicions; evita el codi espagueti i no bloqueja (s'usa amb <code>millis()</code>).</p>
+<blockquote>
+<p>🧩 <strong>Bastida <code>millis()</code> (recomanada abans d'aquesta sessió):</strong> fins ara <code>millis()</code> només s'ha vist com a <em>concepte</em> (SA2 S2) o <em>ampliació</em> (SA1 <code>blink_millis.ino</code>), no s'ha practicat. Abans de la màquina d'estats, fes una <strong>mini-pràctica guiada de ~10'</strong> (p. ex. dos LED que parpellegen a ritmes diferents <strong>sense</strong> <code>delay()</code>), <strong>o</strong> dona l'esquelet de la màquina d'estats amb el patró <code>millis()</code> ja muntat com a bastida per a qui ho necessiti.</p>
+</blockquote>
+<hr />
+<h2 id="sessio-4-2-h-control-proporcional"><a class="toclink" href="#sessio-4-2-h-control-proporcional">SESSIÓ 4 (2 h) — Control proporcional</a></h2>
+<blockquote>
+<p>📋 <strong>Aquesta sessió allotja la prova pràctica trimestral T2</strong> (vegeu <code>Avaluació/Prova_practica_T2.md</code> i <code>Programació didàctica/08_Sequenciacio_temporal_anual.md</code>): el repte de control d'aquesta sessió <strong>fa de prova T2</strong> i no afegeix hores extra.</p>
+</blockquote>
+<ul>
+<li><strong>Activació (10'):</strong> <em>"I si la resposta fos més suau, proporcional a com de lluny estem de l'objectiu?"</em></li>
+<li><strong>Modelatge (25'):</strong> <code>04_control_proporcional.ino</code>. Concepte d'<strong>error</strong> i de <strong>sortida proporcional</strong> (P): com més gran l'error, més actuació. Introducció a l'estabilitat.</li>
+<li><strong>Pràctica guiada (35'):</strong> regulació proporcional (p. ex. velocitat del ventilador segons la temperatura).</li>
+<li><strong>Repte (40'):</strong> comparar <strong>tot/res vs proporcional</strong> amb el Serial Plotter; ajustar la constant <code>Kp</code>; <strong>+ repte:</strong> discutir què passa si <code>Kp</code> és massa gran.</li>
+<li><strong>Tancament (15'):</strong> quadern + autoavaluació.</li>
+</ul>
+<p><strong>Punt clau:</strong> el control <strong>proporcional</strong> dosifica l'actuació segons l'error → resposta més suau i estable que el tot/res. (És la base del control <strong>PID</strong>, que es veurà en cursos superiors.)</p>
+<p><strong>Producte:</strong> sistema de control documentat (termòstat amb histèresi o procés amb màquina d'estats) amb <strong>diagrama de blocs</strong> i anàlisi de la resposta.
+<strong>Avaluació:</strong> rúbriques <strong>R1</strong> (codi), <strong>R3</strong> (control), <strong>R4</strong> (documentació).</p>
+<h3 id="mapa-davaluacio-tracabilitat"><a class="toclink" href="#mapa-davaluacio-tracabilitat">Mapa d'avaluació (traçabilitat)</a></h3>
+<table>
+<thead>
+<tr>
+<th>Instrument</th>
+<th>Què evidencia</th>
+<th>Criteri</th>
+<th>Rúbrica</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Producte (termòstat / màquina d'estats)</td>
+<td>Implementar un sistema de control i explicar-lo</td>
+<td>CA3.1</td>
+<td>R3</td>
+</tr>
+<tr>
+<td>Repte (dissenyar una màquina d'estats)</td>
+<td><code>enum</code>/<code>switch</code>, transicions, no bloqueig (<code>millis()</code>)</td>
+<td>CA1.1, CA3.1</td>
+<td>R1, R3</td>
+</tr>
+<tr>
+<td>Quadern (diagrama de blocs + anàlisi)</td>
+<td>Consigna, error, realimentació; anàlisi de la resposta</td>
+<td>CA3.1</td>
+<td>R4</td>
+</tr>
+<tr>
+<td>Observació + Serial Plotter</td>
+<td>Histèresi, ajust de <code>Kp</code>, comparació tot/res vs proporcional</td>
+<td>CA3.1</td>
+<td>R3</td>
+</tr>
+</tbody>
+</table>
+<p><em>(CA1.1 = programar en C/C++; CA3.1 = implementar sistemes de control (llaç obert/tancat, màquines d'estats) i explicar-ne el funcionament. Vegeu <code>Programació didàctica/06_Avaluacio_criteris_qualificacio.md</code>. Comparteix R1, R3 i R4 </em><em>abans</em><em> de començar.)</em></p>
+<h2 id="errors-frequents"><a class="toclink" href="#errors-frequents">Errors freqüents</a></h2>
+<table>
+<thead>
+<tr>
+<th>Error</th>
+<th>Causa</th>
+<th>Solució</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>El ventilador parpelleja sense parar</td>
+<td>Sense histèresi</td>
+<td>Usar dos llindars (encendre/apagar).</td>
+</tr>
+<tr>
+<td>La màquina d'estats es "queda penjada"</td>
+<td>Transició mal definida</td>
+<td>Revisar condicions de cada <code>case</code>.</td>
+</tr>
+<tr>
+<td>Lectura de temperatura inestable</td>
+<td>Soroll del sensor</td>
+<td>Mitjana de diverses lectures.</td>
+</tr>
+<tr>
+<td>El control P oscil·la molt</td>
+<td><code>Kp</code> massa gran</td>
+<td>Reduir <code>Kp</code>; limitar la sortida amb <code>constrain</code>.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="guio-de-modelatge-que-verbalitzar"><a class="toclink" href="#guio-de-modelatge-que-verbalitzar">Guió de modelatge (què verbalitzar)</a></h2>
+<blockquote>
+<p>Frases i preguntes clau per al <strong>Modelatge</strong> de cada sessió (què mirar, què preguntar abans d'executar, error a anticipar).</p>
+</blockquote>
+<ul>
+<li><strong>S1 · <code>01_llac_obert_vs_tancat</code>:</strong> dibuixa el <strong>diagrama de blocs</strong> (consigna → error → actuador → sensor/realimentació). Pregunta: <em>"què passa si trec el sensor?"</em> → llaç obert ("confia" que tot anirà bé). <em>Error a anticipar:</em> confondre realimentació amb la sortida.</li>
+<li><strong>S2 · <code>02_termostat_histeresi</code>:</strong> mostra l'<strong>oscil·lació</strong> amb un sol llindar i com <strong>dos llindars</strong> la maten. Demana predir el comportament a prop de la consigna. <em>Error a anticipar:</em> parpelleig per no posar histèresi.</li>
+<li><strong>S3 · <code>03_maquina_estats</code> (<code>enum</code>/<code>switch</code>):</strong> recorre cada <strong>estat</strong> (què fa) i les seves <strong>transicions</strong> (quan canvia). Recorda la <strong>bastida <code>millis()</code></strong> (no bloquejar). <em>Error a anticipar:</em> un <code>case</code> sense transició → la màquina es "penja".</li>
+<li><strong>S4 · <code>04_control_proporcional</code>:</strong> al <strong>Serial Plotter</strong>, compara <strong>tot/res vs proporcional</strong>. Demana predir què passa si <code>Kp</code> és enorme. <em>Error a anticipar:</em> oscil·lació per <code>Kp</code> massa gran (limita amb <code>constrain</code>).</li>
+</ul>
+<h2 id="atencio-a-la-diversitat-dua"><a class="toclink" href="#atencio-a-la-diversitat-dua">Atenció a la diversitat (DUA)</a></h2>
+<table>
+<thead>
+<tr>
+<th>Via</th>
+<th>Mesura</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Bastida</strong> (qui s'encalla)</td>
+<td>Donar el <strong>diagrama de blocs</strong> parcialment fet; començar amb el termòstat tot/res abans del proporcional; parella heterogènia.</td>
+</tr>
+<tr>
+<td><strong>+ Ampliació</strong> (qui va sobrat)</td>
+<td>Afegir estats, comparar tot/res vs P, ajustar <code>Kp</code>; reptes ⭐ de <code>Reptes/Reptes_SA6.md</code>.</td>
+</tr>
+<tr>
+<td><strong>Representació múltiple</strong></td>
+<td>Diagrama de blocs i d'estats, <strong>Serial Plotter</strong> (resposta visual), simulació Wokwi.</td>
+</tr>
+<tr>
+<td><strong>Implicació</strong></td>
+<td>Cada parella tria el procés a controlar i la finestra d'histèresi.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>♿ <strong>Accessibilitat (daltonisme):</strong> si uses l'indicador <strong>verd/vermell</strong> d'estat, acompanya'l d'una <strong>pista no cromàtica</strong> (posició, etiqueta ON/OFF, o parpelleig) perquè l'estat no depengui només del color.</p>
+</blockquote>
+<h2 id="treball-cooperatiu-amb-rols"><a class="toclink" href="#treball-cooperatiu-amb-rols">Treball cooperatiu amb rols</a></h2>
+<p>Parelles amb <strong>rols rotatius</strong>: Coordinador/a · Programador/a · Enginyer/a de maquinari (sensor/actuador, seguretat) · Provador/a–Documentador/a (Serial Plotter + quadern). Quadre per rotar a la fitxa.</p>
+<h2 id="pensament-computacional-i-depuracio"><a class="toclink" href="#pensament-computacional-i-depuracio">Pensament computacional i depuració</a></h2>
+<ul>
+<li><strong>PC d'aquesta SA:</strong> <strong>màquina d'estats</strong> (estats + transicions) i <strong>bucle de control</strong> (mesurar → comparar → corregir).</li>
+<li><strong>Depuració:</strong> rutina <strong>DEPURA</strong> amb el <strong>Serial Plotter</strong> per visualitzar si el sistema oscil·la o s'estabilitza.</li>
+</ul>
+<h2 id="avaluacio-formativa-instruments"><a class="toclink" href="#avaluacio-formativa-instruments">Avaluació formativa (instruments)</a></h2>
+<ul>
+<li><strong>Diana d'autoavaluació</strong> (fitxa) · <strong>Coavaluació</strong> "2 estrelles i un desig" · <strong>Exit ticket</strong> de tancament.</li>
+</ul>
+<h2 id="connexio-amb-la-ia-llavor"><a class="toclink" href="#connexio-amb-la-ia-llavor">Connexió amb la IA (llavor)</a></h2>
+<blockquote>
+<p>Llavor conceptual de <strong>2–3'</strong> (eix A del curs; vegeu <code>../00_IA_a_la_materia.md</code>). <strong>És el saber literal del currículum:</strong> <em>"Intel·ligència artificial aplicada als sistemes de control."</em></p>
+</blockquote>
+<p>Avui l'alumnat dissenya el control <strong>a mà</strong>: la histèresi, la màquina d'estats i la constant del proporcional les fixa <strong>la persona</strong>. Pregunta per plantar la llavor:</p>
+<blockquote>
+<p><em>"I si el sistema </em><em>aprengués sol</em><em> la millor resposta a partir d'exemples, en lloc que tu n'ajustis les constants? Això és la </em><em>IA aplicada al control</em><em>."</em></p>
+</blockquote>
+<p><strong>Idea clau:</strong> el control clàssic (tot/res, proporcional/PID) usa <strong>regles i constants fixades per l'enginyer/a</strong>; un controlador <strong>basat en IA</strong> <strong>aprèn</strong> la política de control de <strong>dades</strong>. Avantatge: serveix per a sistemes massa complexos per modelar a mà. Risc: depèn de les dades i és menys <strong>explicable</strong>. Ho aprofundirem a la SA8.</p>
+<h2 id="context-real-i-ods"><a class="toclink" href="#context-real-i-ods">Context real i ODS</a></h2>
+<ul>
+<li><strong>Context:</strong> termòstats, climatització, control de processos industrials.</li>
+<li><strong>ODS 7</strong> (energia: el bon control estalvia) i <strong>ODS 11</strong> (edificis i ciutats sostenibles).</li>
+</ul>
+    </article>
+  </main>
+  <nav class="toc" aria-label="En aquesta pàgina"><p class="toc-titol">En aquesta pàgina</p><ul>
+<li class="toc-l1"><a href="#sa6-guia-docent-sistemes-de-control-llac-oberttancat-i-maquines-destats">SA6 · Guia docent — Sistemes de control: llaç obert/tancat i màquines d&#x27;estats</a></li>
+<li class="toc-l2"><a href="#objectius-de-la-sa">Objectius de la SA</a></li>
+<li class="toc-l2"><a href="#material-per-parella">Material per parella</a></li>
+<li class="toc-l2"><a href="#codi-de-suport-codi">Codi de suport (codi/)</a></li>
+<li class="toc-l2"><a href="#metode-de-projecte-i-continuitat">Mètode de projecte i continuïtat</a></li>
+<li class="toc-l2"><a href="#sessio-1-2-h-que-es-un-sistema-de-control">SESSIÓ 1 (2 h) — Què és un sistema de control?</a></li>
+<li class="toc-l2"><a href="#sessio-2-2-h-control-totres-i-histeresi">SESSIÓ 2 (2 h) — Control tot/res i histèresi</a></li>
+<li class="toc-l2"><a href="#sessio-3-2-h-maquines-destats">SESSIÓ 3 (2 h) — Màquines d&#x27;estats</a></li>
+<li class="toc-l2"><a href="#sessio-4-2-h-control-proporcional">SESSIÓ 4 (2 h) — Control proporcional</a></li>
+<li class="toc-l2"><a href="#errors-frequents">Errors freqüents</a></li>
+<li class="toc-l2"><a href="#guio-de-modelatge-que-verbalitzar">Guió de modelatge (què verbalitzar)</a></li>
+<li class="toc-l2"><a href="#atencio-a-la-diversitat-dua">Atenció a la diversitat (DUA)</a></li>
+<li class="toc-l2"><a href="#treball-cooperatiu-amb-rols">Treball cooperatiu amb rols</a></li>
+<li class="toc-l2"><a href="#pensament-computacional-i-depuracio">Pensament computacional i depuració</a></li>
+<li class="toc-l2"><a href="#avaluacio-formativa-instruments">Avaluació formativa (instruments)</a></li>
+<li class="toc-l2"><a href="#connexio-amb-la-ia-llavor">Connexió amb la IA (llavor)</a></li>
+<li class="toc-l2"><a href="#context-real-i-ods">Context real i ODS</a></li>
+</ul></nav>
+</div>
+<footer class="peu">
+  <p>Robòtica · 1r de Batxillerat · material sota llicència <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca" target="_blank" rel="noopener">CC BY-SA 4.0</a>.</p>
+  <p><a href="https://github.com/tomeu-cd100/robotica-1batx-2627" target="_blank" rel="noopener">Repositori a GitHub</a> · web generat el 2026-06-30.</p>
+</footer>
+<script src="../../assets/js/cerca-index.js"></script>
+<script src="../../assets/js/lloc.js"></script>
+</body>
+</html>

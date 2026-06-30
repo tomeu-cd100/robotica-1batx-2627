@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SA4 · Esquemes i connexions · Robòtica · 1r de Batxillerat</title>
+<meta name="description" content="Material docent · LOMLOE Catalunya · curs 2026-2027">
+<link rel="stylesheet" href="../../assets/css/estil.css">
+<link rel="stylesheet" href="../../assets/css/pygments.css">
+<script>(function(){try{var t=localStorage.getItem('tema');if(t==='fosc'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.setAttribute('data-tema','fosc');}catch(e){}})();</script>
+</head>
+<body data-section="classes" class="amb-sidebar amb-toc">
+<a class="skip" href="#contingut">Salta al contingut</a>
+<header class="topbar">
+  <button class="menu-btn" aria-label="Obre el menú" aria-expanded="false">☰</button>
+  <a class="brand" href="../../index.html"><span class="brand-mark">◆</span> Robòtica <span class="brand-sub">1r Batx</span></a>
+  <nav class="topnav" aria-label="Seccions">
+    <a href="../../index.html">Inici</a>
+<a href="../../programacio/index.html" data-sec="programacio">Programació didàctica</a>
+<a href="../../classes/index.html" data-sec="classes" class="actiu">Classes</a>
+<a href="../../reptes/index.html" data-sec="reptes">Reptes</a>
+<a href="../../avaluacio/index.html" data-sec="avaluacio">Avaluació</a>
+<a href="../../normativa/index.html" data-sec="normativa">Normativa</a>
+<a href="../../recursos/index.html" data-sec="recursos">Recursos</a>
+  </nav>
+  <div class="topbar-eines">
+    <div class="cercador">
+      <input type="search" id="cerca" placeholder="Cerca…" autocomplete="off" aria-label="Cerca al web">
+      <div id="cerca-resultats" class="cerca-resultats" hidden></div>
+    </div>
+    <button class="tema-btn" aria-label="Canvia el tema clar/fosc" title="Tema clar/fosc">◐</button>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar"><nav class="sidebar-nav" aria-label="Pàgines de la secció">
+<p class="sidebar-titol">Classes</p>
+<ul class="sb-top">
+<li><a href="../index.html">Presentació</a></li>
+<li><a href="../00-banc-objectes-disseny.html">Banc d&#x27;objectes per dissenyar — de l&#x27;electrònica al producte</a></li>
+<li><a href="../00-galeria-exemples-objectes.html">Galeria d&#x27;exemples resolts — objectes de disseny</a></li>
+<li><a href="../00-ia-a-la-materia.html">00 · La Intel·ligència Artificial a la matèria (guia transversal)</a></li>
+<li><a href="../00-llegeix-me-classes.html">Classes — Material d&#x27;aula</a></li>
+<li><a href="../00-mapa-sa-objectes.html">Mapa del curs · de cada SA a un objecte real</a></li>
+<li><a href="../00-plantilla-disseny-objecte.html">Plantilla de disseny d&#x27;objecte</a></li>
+<li><a href="../00-poster-aula-metode-depura-rols.html">Pòster d&#x27;aula — Com treballem a Robòtica</a></li>
+<li><a href="../00-poster-ia-us-assistents.html">Pòster d&#x27;aula — Fer servir la IA amb cap</a></li>
+</ul>
+<details class="sb-grup"><summary><span>SA0 · Vocabulari essencial i bases de programació</span></summary><ul><li><a href="../sa0/index.html">Presentació</a></li><li><a href="../sa0/sa0-fitxa-alumnat.html">SA0 · Fitxa d&#x27;alumnat — Vocabulari i primeres passes amb el codi</a></li><li><a href="../sa0/sa0-guia-docent.html">SA0 · Guia docent — Vocabulari essencial i bases de programació</a></li><li><a href="../sa0/sa0-guia-programacio.html">SA0 · Guia per aprendre a programar la placa</a></li><li><a href="../sa0/sa0-vocabulari-essencial.html">SA0 · Vocabulari essencial de la robòtica</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA1 · Introducció a la robòtica</span><span class="tri-dot" data-tri="1"></span></summary><ul><li><a href="../sa1/index.html">Presentació</a></li><li><a href="../sa1/sa1-esquemes-connexions.html">SA1 · Esquemes i connexions</a></li><li><a href="../sa1/sa1-fitxa-alumnat.html">SA1 · Fitxa base — Què és un robot?</a></li><li><a href="../sa1/sa1-fitxa-ampliada.html">SA1 · Fitxa ampliada (aprofundiment) — Què és un robot?</a></li><li><a href="../sa1/sa1-guia-docent.html">SA1 · Guia docent — Què és un robot? Sistemes embeguts i mètode de projecte</a></li><li><a href="../sa1/sa1-normes-seguretat.html">SA1 · Normes de seguretat del laboratori de robòtica</a></li><li><a href="../sa1/sa1-poster-robot-plantilla.html">SA1 · Fitxa-pòster: &quot;Analitzem un robot real&quot;</a></li><li><a href="../sa1/sa1-prova-diagnostica.html">SA1 · Prova diagnòstica de coneixements previs</a></li><li><a href="../sa1/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA2 · Sortides digitals i PWM</span><span class="tri-dot" data-tri="1"></span></summary><ul><li><a href="../sa2/index.html">Presentació</a></li><li><a href="../sa2/sa2-esquemes-connexions.html">SA2 · Esquemes i connexions</a></li><li><a href="../sa2/sa2-fitxa-alumnat.html">SA2 · Fitxa base — Sortides digitals i PWM</a></li><li><a href="../sa2/sa2-fitxa-ampliada.html">SA2 · Fitxa ampliada (aprofundiment) — Sortides digitals i PWM</a></li><li><a href="../sa2/sa2-guia-docent.html">SA2 · Guia docent — Sortides digitals i PWM: dona vida als actuadors</a></li><li><a href="../sa2/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA3 · Entrades i sensors</span><span class="tri-dot" data-tri="1"></span></summary><ul><li><a href="../sa3/index.html">Presentació</a></li><li><a href="../sa3/sa3-esquemes-connexions.html">SA3 · Esquemes i connexions</a></li><li><a href="../sa3/sa3-fitxa-alumnat.html">SA3 · Fitxa base — Entrades i sensors</a></li><li><a href="../sa3/sa3-fitxa-ampliada.html">SA3 · Fitxa ampliada (aprofundiment) — Entrades i sensors</a></li><li><a href="../sa3/sa3-guia-docent.html">SA3 · Guia docent — Entrades i sensors: el robot percep</a></li><li><a href="../sa3/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup" open><summary><span>SA4 · Moviment: servos i motors</span><span class="tri-dot" data-tri="2"></span></summary><ul><li><a href="index.html">Presentació</a></li><li><a href="sa4-esquemes-connexions.html" class="actiu">SA4 · Esquemes i connexions</a></li><li><a href="sa4-fitxa-alumnat.html">SA4 · Fitxa base — Moviment: servos, motors i ponts H</a></li><li><a href="sa4-fitxa-ampliada.html">SA4 · Fitxa ampliada (aprofundiment) — Moviment: servos, motors i ponts H</a></li><li><a href="sa4-guia-docent.html">SA4 · Guia docent — Moviment: servos, motors i ponts H</a></li><li><a href="codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA5 · micro:bit i MicroPython</span><span class="tri-dot" data-tri="2"></span></summary><ul><li><a href="../sa5/index.html">Presentació</a></li><li><a href="../sa5/sa5-connexions.html">SA5 · Connexions i entorn</a></li><li><a href="../sa5/sa5-fitxa-alumnat.html">SA5 · Fitxa base — micro:bit i MicroPython</a></li><li><a href="../sa5/sa5-fitxa-ampliada.html">SA5 · Fitxa ampliada (aprofundiment) — micro:bit i MicroPython</a></li><li><a href="../sa5/sa5-guia-docent.html">SA5 · Guia docent — micro:bit i MicroPython: un altre paradigma</a></li><li><a href="../sa5/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA6 · Sistemes de control</span><span class="tri-dot" data-tri="2"></span></summary><ul><li><a href="../sa6/index.html">Presentació</a></li><li><a href="../sa6/sa6-esquemes-connexions.html">SA6 · Esquemes i connexions</a></li><li><a href="../sa6/sa6-fitxa-alumnat.html">SA6 · Fitxa base — Sistemes de control</a></li><li><a href="../sa6/sa6-fitxa-ampliada.html">SA6 · Fitxa ampliada (aprofundiment) — Sistemes de control</a></li><li><a href="../sa6/sa6-guia-docent.html">SA6 · Guia docent — Sistemes de control: llaç obert/tancat i màquines d&#x27;estats</a></li><li><a href="../sa6/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA7 · Robòtica mòbil</span><span class="tri-dot" data-tri="3"></span></summary><ul><li><a href="../sa7/index.html">Presentació</a></li><li><a href="../sa7/sa7-esquemes-connexions.html">SA7 · Esquemes i connexions</a></li><li><a href="../sa7/sa7-fitxa-alumnat.html">SA7 · Fitxa base — Robòtica mòbil</a></li><li><a href="../sa7/sa7-fitxa-ampliada.html">SA7 · Fitxa ampliada (aprofundiment) — Robòtica mòbil</a></li><li><a href="../sa7/sa7-guia-docent.html">SA7 · Guia docent — Robòtica mòbil: cinemàtica i trajectòries</a></li><li><a href="../sa7/sa7-recursos-video-ia.html">SA7 · Recursos de vídeo — comportament programat vs après (IA)</a></li><li><a href="../sa7/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA8 · IoT i IA</span><span class="tri-dot" data-tri="3"></span></summary><ul><li><a href="../sa8/index.html">Presentació</a></li><li><a href="../sa8/sa8-connexions.html">SA8 · Connexions i entorn</a></li><li><a href="../sa8/sa8-fitxa-alumnat.html">SA8 · Fitxa base — IoT i IA</a></li><li><a href="../sa8/sa8-fitxa-ampliada.html">SA8 · Fitxa ampliada (aprofundiment) — IoT i IA</a></li><li><a href="../sa8/sa8-guia-docent.html">SA8 · Guia docent — IoT i IA: el robot connectat i intel·ligent</a></li><li><a href="../sa8/sa8-practica-teachable-machine.html">SA8 · Pràctica d&#x27;IA — Entrenar un classificador amb Teachable Machine</a></li><li><a href="../sa8/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA9 · Projecte final</span><span class="tri-dot" data-tri="3"></span></summary><ul><li><a href="../sa9/index.html">Presentació</a></li><li><a href="../sa9/plantilles/banc-de-reptes.html">SA9 · Banc de reptes (per nivells)</a></li><li><a href="../sa9/plantilles/dossier-tecnic-plantilla.html">Dossier tècnic — [Títol del projecte]</a></li><li><a href="../sa9/plantilles/planificacio-agile-plantilla.html">Planificació àgil — Equip: ______________________</a></li><li><a href="../sa9/sa9-fitxa-alumnat.html">SA9 · Fitxa base — Repte final integrador</a></li><li><a href="../sa9/sa9-fitxa-ampliada.html">SA9 · Fitxa ampliada (aprofundiment) — Repte final integrador</a></li><li><a href="../sa9/sa9-guia-docent.html">SA9 · Guia docent — Repte final integrador (opció competició)</a></li><li><a href="../sa9/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>Solucionari</span></summary><ul><li><a href="../solucionari/solucionari-t1-sa1-sa3.html">Solucionari de reptes — Trimestre 1 (SA1-SA3)</a></li><li><a href="../solucionari/solucionari-t2-sa4-sa6.html">Solucionari de reptes — Trimestre 2 (SA4-SA6)</a></li><li><a href="../solucionari/solucionari-t3-sa7-sa9.html">Solucionari de reptes — Trimestre 3 (SA7-SA9)</a></li></ul></details>
+</nav></aside>
+  <main id="contingut">
+    <nav class="breadcrumb" aria-label="Ubicació"><a href="../../index.html">Inici</a> <span class="sep">/</span> <a href="../../classes/index.html">Classes</a> <span class="sep">/</span> <span aria-current="page">SA4 · Esquemes i connexions</span></nav>
+    <span class="badge-tri" data-tri="2">2n trimestre</span>
+    <article class="prose">
+<h1 id="sa4-esquemes-i-connexions"><a class="toclink" href="#sa4-esquemes-i-connexions">SA4 · Esquemes i connexions</a></h1>
+<blockquote>
+<p>⚠️ <strong>Regla d'or:</strong> <strong>massa comuna</strong> (uneix el GND de l'Arduino amb el GND de l'alimentació del motor) i <strong>mai</strong> alimentis motors/servos des del pin 5V de l'Arduino si en mous més d'un.</p>
+</blockquote>
+<h2 id="llegenda-dels-diagrames"><a class="toclink" href="#llegenda-dels-diagrames">Llegenda dels diagrames</a></h2>
+<div class="highlight"><pre><span></span><code>--[ 220R ]--   resistencia
+|&gt;|            LED ( |&gt; = anode , | = catode )
+--&gt;            senyal / cap a
++              nus de connexio comu (massa comuna GND)
+~              pin amb PWM
+</code></pre></div>
+
+<hr />
+<h2 id="1-servo-controlat-per-potenciometre-01_servo_potenciometreino"><a class="toclink" href="#1-servo-controlat-per-potenciometre-01_servo_potenciometreino">1. Servo controlat per potenciòmetre (<code>01_servo_potenciometre.ino</code>)</a></h2>
+<p><strong>Servo SG90:</strong>
+| Cable servo | Cap a |
+|---|---|
+| Marró/negre (GND) | GND |
+| Vermell (V+) | 5 V (o alimentació externa) |
+| Taronja/groc (senyal) | Pin 9 |</p>
+<p><strong>Potenciòmetre:</strong> extrems a 5 V i GND; cursor a <strong>A0</strong>.</p>
+<div class="highlight"><pre><span></span><code>Servo:  senyal --&gt; Pin 9     V+ --&gt; 5V     GND --&gt; GND
+Pot:    5V -- [ pot ] -- GND     cursor --&gt; [A0]
+</code></pre></div>
+
+<hr />
+<h2 id="2-motor-dc-amb-pont-h-l298n-02_motor_pont_hino"><a class="toclink" href="#2-motor-dc-amb-pont-h-l298n-02_motor_pont_hino">2. Motor DC amb pont H L298N (<code>02_motor_pont_h.ino</code>)</a></h2>
+<table>
+<thead>
+<tr>
+<th>L298N</th>
+<th>Cap a</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ENA</td>
+<td>Pin 5 ~ (PWM, velocitat)</td>
+</tr>
+<tr>
+<td>IN1</td>
+<td>Pin 7 (direcció)</td>
+</tr>
+<tr>
+<td>IN2</td>
+<td>Pin 8 (direcció)</td>
+</tr>
+<tr>
+<td>OUT1 / OUT2</td>
+<td>Bornes del motor DC</td>
+</tr>
+<tr>
+<td>+12V (VS)</td>
+<td>+ alimentació externa (piles)</td>
+</tr>
+<tr>
+<td>GND</td>
+<td>GND piles <strong>i</strong> GND Arduino (massa comuna)</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>Arduino:  Pin 5~ --&gt; ENA    Pin 7 --&gt; IN1    Pin 8 --&gt; IN2    GND --+
+Piles:    (+) --&gt; VS(+12V)        (-) --&gt; GND -------------------+--(massa comuna)
+Motor:    OUT1 -- motor -- OUT2
+</code></pre></div>
+
+<hr />
+<h2 id="3-sensor-regula-velocitat-03_sensor_velocitatino"><a class="toclink" href="#3-sensor-regula-velocitat-03_sensor_velocitatino">3. Sensor regula velocitat (<code>03_sensor_velocitat.ino</code>)</a></h2>
+<p>Igual que el muntatge 2 <strong>+</strong> sensor d'ultrasons:</p>
+<table>
+<thead>
+<tr>
+<th>HC-SR04</th>
+<th>Cap a</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TRIG / ECHO</td>
+<td>Pin 12 / Pin 11</td>
+</tr>
+<tr>
+<td>VCC / GND</td>
+<td>5V / GND</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>HC-SR04:  TRIG --&gt; Pin 12    ECHO --&gt; Pin 11    VCC=5V  GND=GND
+(la resta, com el muntatge 2: pont H + motor + massa comuna)
+</code></pre></div>
+
+<hr />
+<h2 id="4-barrera-automatica-04_barrera_automaticaino"><a class="toclink" href="#4-barrera-automatica-04_barrera_automaticaino">4. Barrera automàtica (<code>04_barrera_automatica.ino</code>)</a></h2>
+<table>
+<thead>
+<tr>
+<th>Pin</th>
+<th>Component</th>
+<th>Via</th>
+<th>Cap a</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>9</td>
+<td>Servo (senyal)</td>
+<td>—</td>
+<td>(V+ i GND amb alimentació adequada)</td>
+</tr>
+<tr>
+<td>12 / 11</td>
+<td>HC-SR04 TRIG / ECHO</td>
+<td>—</td>
+<td>VCC=5V, GND=GND</td>
+</tr>
+<tr>
+<td>8</td>
+<td>LED indicador</td>
+<td>220 Ω</td>
+<td>GND</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>Servo:    senyal --&gt; Pin 9     (V+ i GND segons alimentacio)
+HC-SR04:  TRIG --&gt; Pin 12    ECHO --&gt; Pin 11
+Pin 8 --[ 220R ]--|&gt;|-- GND          (LED)
+</code></pre></div>
+
+<hr />
+<h2 id="simulacio-interactiva-wokwi"><a class="toclink" href="#simulacio-interactiva-wokwi">Simulació interactiva (Wokwi)</a></h2>
+<ul>
+<li>▶ <strong>Simulació (Servo controlat amb potenciòmetre):</strong> <a href="https://wokwi.com/projects/468088128427008001" target="_blank" rel="noopener">https://wokwi.com/projects/468088128427008001</a></li>
+<li><strong>Projecte al repositori:</strong> <a href="../../Simulacions/Wokwi/SA4_servo_potenciometre/"><code>Simulacions/Wokwi/SA4_servo_potenciometre/</code></a> (<code>diagram.json</code> + <code>sketch.ino</code> + <code>libraries.txt</code>).</li>
+</ul>
+<blockquote>
+<p>Obre l'enllaç i prem <strong>▶</strong>. Gira el <strong>potenciòmetre</strong> per moure el servo de 0 a 180°. La llibreria <strong>Servo</strong> s'instal·la sola amb el botó <em>Install "Servo" library</em> que apareix en compilar (pont H i motors DC no es porten a Wokwi).</p>
+</blockquote>
+    </article>
+  </main>
+  <nav class="toc" aria-label="En aquesta pàgina"><p class="toc-titol">En aquesta pàgina</p><ul>
+<li class="toc-l1"><a href="#sa4-esquemes-i-connexions">SA4 · Esquemes i connexions</a></li>
+<li class="toc-l2"><a href="#llegenda-dels-diagrames">Llegenda dels diagrames</a></li>
+<li class="toc-l2"><a href="#1-servo-controlat-per-potenciometre-01_servo_potenciometreino">1. Servo controlat per potenciòmetre (01_servo_potenciometre.ino)</a></li>
+<li class="toc-l2"><a href="#2-motor-dc-amb-pont-h-l298n-02_motor_pont_hino">2. Motor DC amb pont H L298N (02_motor_pont_h.ino)</a></li>
+<li class="toc-l2"><a href="#3-sensor-regula-velocitat-03_sensor_velocitatino">3. Sensor regula velocitat (03_sensor_velocitat.ino)</a></li>
+<li class="toc-l2"><a href="#4-barrera-automatica-04_barrera_automaticaino">4. Barrera automàtica (04_barrera_automatica.ino)</a></li>
+<li class="toc-l2"><a href="#simulacio-interactiva-wokwi">Simulació interactiva (Wokwi)</a></li>
+</ul></nav>
+</div>
+<footer class="peu">
+  <p>Robòtica · 1r de Batxillerat · material sota llicència <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca" target="_blank" rel="noopener">CC BY-SA 4.0</a>.</p>
+  <p><a href="https://github.com/tomeu-cd100/robotica-1batx-2627" target="_blank" rel="noopener">Repositori a GitHub</a> · web generat el 2026-06-30.</p>
+</footer>
+<script src="../../assets/js/cerca-index.js"></script>
+<script src="../../assets/js/lloc.js"></script>
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reptes SA3 · Entrades i sensors · Robòtica · 1r de Batxillerat</title>
+<meta name="description" content="Material docent · LOMLOE Catalunya · curs 2026-2027">
+<link rel="stylesheet" href="../assets/css/estil.css">
+<link rel="stylesheet" href="../assets/css/pygments.css">
+<script>(function(){try{var t=localStorage.getItem('tema');if(t==='fosc'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.setAttribute('data-tema','fosc');}catch(e){}})();</script>
+</head>
+<body data-section="reptes" class="amb-sidebar amb-toc">
+<a class="skip" href="#contingut">Salta al contingut</a>
+<header class="topbar">
+  <button class="menu-btn" aria-label="Obre el menú" aria-expanded="false">☰</button>
+  <a class="brand" href="../index.html"><span class="brand-mark">◆</span> Robòtica <span class="brand-sub">1r Batx</span></a>
+  <nav class="topnav" aria-label="Seccions">
+    <a href="../index.html">Inici</a>
+<a href="../programacio/index.html" data-sec="programacio">Programació didàctica</a>
+<a href="../classes/index.html" data-sec="classes">Classes</a>
+<a href="../reptes/index.html" data-sec="reptes" class="actiu">Reptes</a>
+<a href="../avaluacio/index.html" data-sec="avaluacio">Avaluació</a>
+<a href="../normativa/index.html" data-sec="normativa">Normativa</a>
+<a href="../recursos/index.html" data-sec="recursos">Recursos</a>
+  </nav>
+  <div class="topbar-eines">
+    <div class="cercador">
+      <input type="search" id="cerca" placeholder="Cerca…" autocomplete="off" aria-label="Cerca al web">
+      <div id="cerca-resultats" class="cerca-resultats" hidden></div>
+    </div>
+    <button class="tema-btn" aria-label="Canvia el tema clar/fosc" title="Tema clar/fosc">◐</button>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar"><nav class="sidebar-nav" aria-label="Pàgines de la secció">
+<p class="sidebar-titol">Reptes</p>
+<ul class="sb-top">
+<li><a href="index.html">Presentació</a></li>
+<li><a href="reptes-sa1.html">Reptes SA1 · Introducció: primer programa amb un LED <span class="tri-dot" data-tri="1"></span></a></li>
+<li><a href="reptes-sa2.html">Reptes SA2 · Sortides digitals i PWM <span class="tri-dot" data-tri="1"></span></a></li>
+<li><a href="reptes-sa3.html" class="actiu">Reptes SA3 · Entrades i sensors <span class="tri-dot" data-tri="1"></span></a></li>
+<li><a href="reptes-sa4.html">Reptes SA4 · Moviment: servos, motors i ponts H <span class="tri-dot" data-tri="2"></span></a></li>
+<li><a href="reptes-sa5.html">Reptes SA5 · micro:bit i MicroPython <span class="tri-dot" data-tri="2"></span></a></li>
+<li><a href="reptes-sa6.html">Reptes SA6 · Sistemes de control <span class="tri-dot" data-tri="2"></span></a></li>
+<li><a href="reptes-sa7.html">Reptes SA7 · Robòtica mòbil (Imagina 3dBot) <span class="tri-dot" data-tri="3"></span></a></li>
+<li><a href="reptes-sa8.html">Reptes SA8 · IoT i Intel·ligència Artificial <span class="tri-dot" data-tri="3"></span></a></li>
+</ul>
+<details class="sb-grup"><summary><span>Solucionari</span></summary><ul><li><a href="solucionari/index.html">Presentació</a></li><li><a href="solucionari/sa1/codi.html">Codi</a></li><li><a href="solucionari/sa2/codi.html">Codi</a></li><li><a href="solucionari/sa3/codi.html">Codi</a></li><li><a href="solucionari/sa4/codi.html">Codi</a></li><li><a href="solucionari/sa5/codi.html">Codi</a></li><li><a href="solucionari/sa6/codi.html">Codi</a></li><li><a href="solucionari/sa7/codi.html">Codi</a></li><li><a href="solucionari/sa8/codi.html">Codi</a></li></ul></details>
+</nav></aside>
+  <main id="contingut">
+    <nav class="breadcrumb" aria-label="Ubicació"><a href="../index.html">Inici</a> <span class="sep">/</span> <a href="../reptes/index.html">Reptes</a> <span class="sep">/</span> <span aria-current="page">Reptes SA3 · Entrades i sensors</span></nav>
+    <span class="badge-tri" data-tri="1">1r trimestre</span>
+    <article class="prose">
+<h1 id="reptes-sa3-entrades-i-sensors"><a class="toclink" href="#reptes-sa3-entrades-i-sensors">Reptes SA3 · Entrades i sensors</a></h1>
+<p><strong>Tria UN dels tres reptes.</strong> Tots <strong>llegeixen un sensor</strong> i <strong>decideixen una acció</strong> amb <code>if/else</code> (model entrada→procés→sortida complet). Mateix requisit mínim, ampliacions graduades. Simulables a Tinkercad/Wokwi.</p>
+<blockquote>
+<p><strong>Continguts SA3:</strong> polsador i <em>debounce</em>, potenciòmetre, LDR, ultrasons, <code>analogRead</code> (0–1023), condicionals. · <strong>Codi base:</strong> <code>Classes/SA3/codi/</code>.</p>
+<p><strong>Format "producte real":</strong> cada repte simula un <strong>encàrrec</strong> amb <strong>client</strong>, <strong>lliurable</strong> i <strong>ús al món real</strong>. El requisit tècnic no canvia. <em>(1r trimestre — dispositius que informen i perceben. Vegeu <code>Programació didàctica/08c_Projectes_vida_real.md</code>.)</em></p>
+</blockquote>
+<hr />
+<h2 id="repte-a-llum-automatica-nocturna"><a class="toclink" href="#repte-a-llum-automatica-nocturna">🌙 Repte A · Llum automàtica nocturna</a></h2>
+<p><strong>Context.</strong> Un llum que <strong>s'encén sol quan es fa fosc</strong> i s'apaga amb la llum del dia (estalvi energètic).</p>
+<blockquote>
+<p><em>Client: servei d'enllumenat públic · Lliurable: fanal automàtic amb sensor de llum · Món real: estalvi energètic i enllumenat intel·ligent.</em></p>
+</blockquote>
+<p><strong>Què treballa.</strong> Lectura analògica d'una LDR, llindar de decisió amb <code>if</code>.</p>
+<p><strong>Requisit mínim.</strong>
+- Llegir una <strong>LDR</strong> i encendre un LED quan la llum baixa d'un <strong>llindar</strong>.
+- Codi comentat; valor de la LDR visible al <strong>Monitor Sèrie</strong>.</p>
+<p><strong>Ampliacions graduades.</strong>
+1. <em>(bàsica)</em> Calibra el <strong>llindar</strong> observant valors reals al Monitor Sèrie.
+2. <em>(notable)</em> Afegeix <strong>histèresi</strong> (dos llindars) perquè no parpellegi al capvespre.
+3. <em>(⭐⭐⭐)</em> Regula la <strong>brillantor</strong> del LED amb PWM segons la foscor (com més fosc, més llum).</p>
+<hr />
+<h2 id="repte-b-sensor-daparcament-antixoc"><a class="toclink" href="#repte-b-sensor-daparcament-antixoc">🅿️ Repte B · Sensor d'aparcament (antixoc)</a></h2>
+<p><strong>Context.</strong> El sensor que avisa quan t'acostes massa en aparcar: més a prop, més ràpid pita/parpelleja.</p>
+<blockquote>
+<p><em>Client: taller d'automoció · Lliurable: sensor d'aparcament antixoc · Món real: ajuda a la conducció i seguretat.</em></p>
+</blockquote>
+<p><strong>Què treballa.</strong> Sensor d'ultrasons, mesura de distància, decisions per trams.</p>
+<p><strong>Requisit mínim.</strong>
+- Mesurar la <strong>distància</strong> amb ultrasons i encendre un LED (o brunzidor) quan estàs <strong>per sota d'una distància</strong>.
+- Codi comentat; distància visible al Monitor Sèrie.</p>
+<p><strong>Ampliacions graduades.</strong>
+1. <em>(bàsica)</em> Encapsula la mesura en una <strong>funció</strong> <code>mesura_distancia()</code>.
+2. <em>(notable)</em> Fes <strong>tres trams</strong> (lluny/mig/a prop) amb avisos diferents.
+3. <em>(⭐⭐⭐)</em> Avís <strong>proporcional</strong>: el ritme del parpelleig/so augmenta com més a prop.</p>
+<hr />
+<h2 id="repte-c-instrument-o-comptador-interactiu"><a class="toclink" href="#repte-c-instrument-o-comptador-interactiu">🎛️ Repte C · Instrument o comptador interactiu</a></h2>
+<p><strong>Context.</strong> Un control de joc o un instrument: un <strong>potenciòmetre</strong> que regula alguna cosa, o un <strong>polsador</strong> que compta sense rebots.</p>
+<blockquote>
+<p><em>Client: estudi de videojocs / fabricant de comandaments · Lliurable: comandament o comptador interactiu · Món real: interfícies d'usuari i instrumentació.</em></p>
+</blockquote>
+<p><strong>Què treballa.</strong> Entrada analògica (potenciòmetre) o digital amb <em>debounce</em>; relació entrada→sortida.</p>
+<p><strong>Requisit mínim.</strong>
+- <em>Opció 1:</em> un <strong>potenciòmetre</strong> que controla la brillantor d'un LED (o el ritme d'un parpelleig).
+- <em>Opció 2:</em> un <strong>polsador amb debounce</strong> que <strong>compta</strong> premudes i les mostra (Monitor Sèrie / LEDs).</p>
+<p><strong>Ampliacions graduades.</strong>
+1. <em>(bàsica)</em> Mostra el valor/recompte de forma clara al Monitor Sèrie.
+2. <em>(notable)</em> Mapeja l'entrada (<code>map()</code>) a un rang útil (p. ex. 0–255 de PWM).
+3. <em>(⭐⭐⭐)</em> Combina <strong>dues entrades</strong> (potenciòmetre + polsador) per a un mini-instrument.</p>
+<hr />
+<h2 id="material-necessari-segons-repte"><a class="toclink" href="#material-necessari-segons-repte">Material necessari (segons repte)</a></h2>
+<ul>
+<li>Arduino UNO + USB · LDR / sensor d'ultrasons HC-SR04 / potenciòmetre / polsador · LED + resistència (o brunzidor) · resistència de 10 kΩ per a divisor/pull-up · o <strong>Tinkercad/Wokwi</strong>.</li>
+</ul>
+<h2 id="per-on-comencar-metode-de-projecte-primm"><a class="toclink" href="#per-on-comencar-metode-de-projecte-primm">Per on començar (mètode de projecte + PRIMM)</a></h2>
+<ol>
+<li><strong>Analitzar:</strong> quina magnitud mesuro i quina decisió en depèn?</li>
+<li><strong>Dissenyar (Predir):</strong> quin llindar/lògica? Predigues els valors que donarà el sensor.</li>
+<li><strong>Prototipar:</strong> parteix de <code>Classes/SA3/codi/</code> (<code>01_polsador_debounce</code>, <code>02_potenciometre_ldr</code>, <code>03_ultrasons_funcio</code>, <code>04_alarma_aparcament</code>).</li>
+<li><strong>Provar:</strong> llegeix valors reals al Monitor Sèrie i ajusta el llindar.</li>
+<li><strong>Millorar:</strong> afegeix histèresi, funcions o <code>map()</code>.</li>
+</ol>
+<h2 id="com-savalua"><a class="toclink" href="#com-savalua">Com s'avalua</a></h2>
+<table>
+<thead>
+<tr>
+<th>Rúbrica</th>
+<th>Per què</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>R1</strong> (codi)</td>
+<td>Lògica de decisió, funcions, depuració amb Serial.</td>
+</tr>
+<tr>
+<td><strong>R2</strong> (circuit)</td>
+<td>Connexió correcta de sensors (divisor/pull-up).</td>
+</tr>
+<tr>
+<td><strong>R4</strong> (documentació)</td>
+<td>Quadern tècnic: calibratge del llindar i proves.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="producte-entrega"><a class="toclink" href="#producte-entrega">Producte / entrega</a></h2>
+<ul>
+<li>Codi <code>.ino</code> comentat + esquema + quadern tècnic (com he calibrat el llindar i quins valors he mesurat).</li>
+</ul>
+<hr />
+<h2 id="orientacio-docent"><a class="toclink" href="#orientacio-docent">Orientació docent</a></h2>
+<ul>
+<li><strong>Errors freqüents:</strong> llegir un sensor analògic amb <code>digitalRead</code>; oblidar la resistència de <em>pull-up</em>/divisor; no filtrar el <strong>rebot</strong> del polsador; llindar fix sense calibrar.</li>
+<li><strong>Diferenciació:</strong> el mínim (llegir + decidir) és comú; la histèresi i la resposta proporcional connecten amb la SA6.</li>
+<li><strong>Gestió d'aula:</strong> insistir en l'ús del <strong>Monitor Sèrie</strong> com a eina de depuració. Tot simulable a Tinkercad (ultrasons i LDR inclosos).</li>
+<li><strong>Vincle avaluació:</strong> R1 + R2 + R4; pont natural cap a control (SA6).</li>
+</ul>
+    </article>
+  </main>
+  <nav class="toc" aria-label="En aquesta pàgina"><p class="toc-titol">En aquesta pàgina</p><ul>
+<li class="toc-l1"><a href="#reptes-sa3-entrades-i-sensors">Reptes SA3 · Entrades i sensors</a></li>
+<li class="toc-l2"><a href="#repte-a-llum-automatica-nocturna">🌙 Repte A · Llum automàtica nocturna</a></li>
+<li class="toc-l2"><a href="#repte-b-sensor-daparcament-antixoc">🅿️ Repte B · Sensor d&#x27;aparcament (antixoc)</a></li>
+<li class="toc-l2"><a href="#repte-c-instrument-o-comptador-interactiu">🎛️ Repte C · Instrument o comptador interactiu</a></li>
+<li class="toc-l2"><a href="#material-necessari-segons-repte">Material necessari (segons repte)</a></li>
+<li class="toc-l2"><a href="#per-on-comencar-metode-de-projecte-primm">Per on començar (mètode de projecte + PRIMM)</a></li>
+<li class="toc-l2"><a href="#com-savalua">Com s&#x27;avalua</a></li>
+<li class="toc-l2"><a href="#producte-entrega">Producte / entrega</a></li>
+<li class="toc-l2"><a href="#orientacio-docent">Orientació docent</a></li>
+</ul></nav>
+</div>
+<footer class="peu">
+  <p>Robòtica · 1r de Batxillerat · material sota llicència <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca" target="_blank" rel="noopener">CC BY-SA 4.0</a>.</p>
+  <p><a href="https://github.com/tomeu-cd100/robotica-1batx-2627" target="_blank" rel="noopener">Repositori a GitHub</a> · web generat el 2026-06-30.</p>
+</footer>
+<script src="../assets/js/cerca-index.js"></script>
+<script src="../assets/js/lloc.js"></script>
+</body>
+</html>

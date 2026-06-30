@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SA4 · Guia docent — Moviment: servos, motors i ponts H · Robòtica · 1r de Batxillerat</title>
+<meta name="description" content="Material docent · LOMLOE Catalunya · curs 2026-2027">
+<link rel="stylesheet" href="../../assets/css/estil.css">
+<link rel="stylesheet" href="../../assets/css/pygments.css">
+<script>(function(){try{var t=localStorage.getItem('tema');if(t==='fosc'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.setAttribute('data-tema','fosc');}catch(e){}})();</script>
+</head>
+<body data-section="classes" class="amb-sidebar amb-toc">
+<a class="skip" href="#contingut">Salta al contingut</a>
+<header class="topbar">
+  <button class="menu-btn" aria-label="Obre el menú" aria-expanded="false">☰</button>
+  <a class="brand" href="../../index.html"><span class="brand-mark">◆</span> Robòtica <span class="brand-sub">1r Batx</span></a>
+  <nav class="topnav" aria-label="Seccions">
+    <a href="../../index.html">Inici</a>
+<a href="../../programacio/index.html" data-sec="programacio">Programació didàctica</a>
+<a href="../../classes/index.html" data-sec="classes" class="actiu">Classes</a>
+<a href="../../reptes/index.html" data-sec="reptes">Reptes</a>
+<a href="../../avaluacio/index.html" data-sec="avaluacio">Avaluació</a>
+<a href="../../normativa/index.html" data-sec="normativa">Normativa</a>
+<a href="../../recursos/index.html" data-sec="recursos">Recursos</a>
+  </nav>
+  <div class="topbar-eines">
+    <div class="cercador">
+      <input type="search" id="cerca" placeholder="Cerca…" autocomplete="off" aria-label="Cerca al web">
+      <div id="cerca-resultats" class="cerca-resultats" hidden></div>
+    </div>
+    <button class="tema-btn" aria-label="Canvia el tema clar/fosc" title="Tema clar/fosc">◐</button>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar"><nav class="sidebar-nav" aria-label="Pàgines de la secció">
+<p class="sidebar-titol">Classes</p>
+<ul class="sb-top">
+<li><a href="../index.html">Presentació</a></li>
+<li><a href="../00-banc-objectes-disseny.html">Banc d&#x27;objectes per dissenyar — de l&#x27;electrònica al producte</a></li>
+<li><a href="../00-galeria-exemples-objectes.html">Galeria d&#x27;exemples resolts — objectes de disseny</a></li>
+<li><a href="../00-ia-a-la-materia.html">00 · La Intel·ligència Artificial a la matèria (guia transversal)</a></li>
+<li><a href="../00-llegeix-me-classes.html">Classes — Material d&#x27;aula</a></li>
+<li><a href="../00-mapa-sa-objectes.html">Mapa del curs · de cada SA a un objecte real</a></li>
+<li><a href="../00-plantilla-disseny-objecte.html">Plantilla de disseny d&#x27;objecte</a></li>
+<li><a href="../00-poster-aula-metode-depura-rols.html">Pòster d&#x27;aula — Com treballem a Robòtica</a></li>
+<li><a href="../00-poster-ia-us-assistents.html">Pòster d&#x27;aula — Fer servir la IA amb cap</a></li>
+</ul>
+<details class="sb-grup"><summary><span>SA0 · Vocabulari essencial i bases de programació</span></summary><ul><li><a href="../sa0/index.html">Presentació</a></li><li><a href="../sa0/sa0-fitxa-alumnat.html">SA0 · Fitxa d&#x27;alumnat — Vocabulari i primeres passes amb el codi</a></li><li><a href="../sa0/sa0-guia-docent.html">SA0 · Guia docent — Vocabulari essencial i bases de programació</a></li><li><a href="../sa0/sa0-guia-programacio.html">SA0 · Guia per aprendre a programar la placa</a></li><li><a href="../sa0/sa0-vocabulari-essencial.html">SA0 · Vocabulari essencial de la robòtica</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA1 · Introducció a la robòtica</span><span class="tri-dot" data-tri="1"></span></summary><ul><li><a href="../sa1/index.html">Presentació</a></li><li><a href="../sa1/sa1-esquemes-connexions.html">SA1 · Esquemes i connexions</a></li><li><a href="../sa1/sa1-fitxa-alumnat.html">SA1 · Fitxa base — Què és un robot?</a></li><li><a href="../sa1/sa1-fitxa-ampliada.html">SA1 · Fitxa ampliada (aprofundiment) — Què és un robot?</a></li><li><a href="../sa1/sa1-guia-docent.html">SA1 · Guia docent — Què és un robot? Sistemes embeguts i mètode de projecte</a></li><li><a href="../sa1/sa1-normes-seguretat.html">SA1 · Normes de seguretat del laboratori de robòtica</a></li><li><a href="../sa1/sa1-poster-robot-plantilla.html">SA1 · Fitxa-pòster: &quot;Analitzem un robot real&quot;</a></li><li><a href="../sa1/sa1-prova-diagnostica.html">SA1 · Prova diagnòstica de coneixements previs</a></li><li><a href="../sa1/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA2 · Sortides digitals i PWM</span><span class="tri-dot" data-tri="1"></span></summary><ul><li><a href="../sa2/index.html">Presentació</a></li><li><a href="../sa2/sa2-esquemes-connexions.html">SA2 · Esquemes i connexions</a></li><li><a href="../sa2/sa2-fitxa-alumnat.html">SA2 · Fitxa base — Sortides digitals i PWM</a></li><li><a href="../sa2/sa2-fitxa-ampliada.html">SA2 · Fitxa ampliada (aprofundiment) — Sortides digitals i PWM</a></li><li><a href="../sa2/sa2-guia-docent.html">SA2 · Guia docent — Sortides digitals i PWM: dona vida als actuadors</a></li><li><a href="../sa2/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA3 · Entrades i sensors</span><span class="tri-dot" data-tri="1"></span></summary><ul><li><a href="../sa3/index.html">Presentació</a></li><li><a href="../sa3/sa3-esquemes-connexions.html">SA3 · Esquemes i connexions</a></li><li><a href="../sa3/sa3-fitxa-alumnat.html">SA3 · Fitxa base — Entrades i sensors</a></li><li><a href="../sa3/sa3-fitxa-ampliada.html">SA3 · Fitxa ampliada (aprofundiment) — Entrades i sensors</a></li><li><a href="../sa3/sa3-guia-docent.html">SA3 · Guia docent — Entrades i sensors: el robot percep</a></li><li><a href="../sa3/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup" open><summary><span>SA4 · Moviment: servos i motors</span><span class="tri-dot" data-tri="2"></span></summary><ul><li><a href="index.html">Presentació</a></li><li><a href="sa4-esquemes-connexions.html">SA4 · Esquemes i connexions</a></li><li><a href="sa4-fitxa-alumnat.html">SA4 · Fitxa base — Moviment: servos, motors i ponts H</a></li><li><a href="sa4-fitxa-ampliada.html">SA4 · Fitxa ampliada (aprofundiment) — Moviment: servos, motors i ponts H</a></li><li><a href="sa4-guia-docent.html" class="actiu">SA4 · Guia docent — Moviment: servos, motors i ponts H</a></li><li><a href="codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA5 · micro:bit i MicroPython</span><span class="tri-dot" data-tri="2"></span></summary><ul><li><a href="../sa5/index.html">Presentació</a></li><li><a href="../sa5/sa5-connexions.html">SA5 · Connexions i entorn</a></li><li><a href="../sa5/sa5-fitxa-alumnat.html">SA5 · Fitxa base — micro:bit i MicroPython</a></li><li><a href="../sa5/sa5-fitxa-ampliada.html">SA5 · Fitxa ampliada (aprofundiment) — micro:bit i MicroPython</a></li><li><a href="../sa5/sa5-guia-docent.html">SA5 · Guia docent — micro:bit i MicroPython: un altre paradigma</a></li><li><a href="../sa5/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA6 · Sistemes de control</span><span class="tri-dot" data-tri="2"></span></summary><ul><li><a href="../sa6/index.html">Presentació</a></li><li><a href="../sa6/sa6-esquemes-connexions.html">SA6 · Esquemes i connexions</a></li><li><a href="../sa6/sa6-fitxa-alumnat.html">SA6 · Fitxa base — Sistemes de control</a></li><li><a href="../sa6/sa6-fitxa-ampliada.html">SA6 · Fitxa ampliada (aprofundiment) — Sistemes de control</a></li><li><a href="../sa6/sa6-guia-docent.html">SA6 · Guia docent — Sistemes de control: llaç obert/tancat i màquines d&#x27;estats</a></li><li><a href="../sa6/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA7 · Robòtica mòbil</span><span class="tri-dot" data-tri="3"></span></summary><ul><li><a href="../sa7/index.html">Presentació</a></li><li><a href="../sa7/sa7-esquemes-connexions.html">SA7 · Esquemes i connexions</a></li><li><a href="../sa7/sa7-fitxa-alumnat.html">SA7 · Fitxa base — Robòtica mòbil</a></li><li><a href="../sa7/sa7-fitxa-ampliada.html">SA7 · Fitxa ampliada (aprofundiment) — Robòtica mòbil</a></li><li><a href="../sa7/sa7-guia-docent.html">SA7 · Guia docent — Robòtica mòbil: cinemàtica i trajectòries</a></li><li><a href="../sa7/sa7-recursos-video-ia.html">SA7 · Recursos de vídeo — comportament programat vs après (IA)</a></li><li><a href="../sa7/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA8 · IoT i IA</span><span class="tri-dot" data-tri="3"></span></summary><ul><li><a href="../sa8/index.html">Presentació</a></li><li><a href="../sa8/sa8-connexions.html">SA8 · Connexions i entorn</a></li><li><a href="../sa8/sa8-fitxa-alumnat.html">SA8 · Fitxa base — IoT i IA</a></li><li><a href="../sa8/sa8-fitxa-ampliada.html">SA8 · Fitxa ampliada (aprofundiment) — IoT i IA</a></li><li><a href="../sa8/sa8-guia-docent.html">SA8 · Guia docent — IoT i IA: el robot connectat i intel·ligent</a></li><li><a href="../sa8/sa8-practica-teachable-machine.html">SA8 · Pràctica d&#x27;IA — Entrenar un classificador amb Teachable Machine</a></li><li><a href="../sa8/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA9 · Projecte final</span><span class="tri-dot" data-tri="3"></span></summary><ul><li><a href="../sa9/index.html">Presentació</a></li><li><a href="../sa9/plantilles/banc-de-reptes.html">SA9 · Banc de reptes (per nivells)</a></li><li><a href="../sa9/plantilles/dossier-tecnic-plantilla.html">Dossier tècnic — [Títol del projecte]</a></li><li><a href="../sa9/plantilles/planificacio-agile-plantilla.html">Planificació àgil — Equip: ______________________</a></li><li><a href="../sa9/sa9-fitxa-alumnat.html">SA9 · Fitxa base — Repte final integrador</a></li><li><a href="../sa9/sa9-fitxa-ampliada.html">SA9 · Fitxa ampliada (aprofundiment) — Repte final integrador</a></li><li><a href="../sa9/sa9-guia-docent.html">SA9 · Guia docent — Repte final integrador (opció competició)</a></li><li><a href="../sa9/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>Solucionari</span></summary><ul><li><a href="../solucionari/solucionari-t1-sa1-sa3.html">Solucionari de reptes — Trimestre 1 (SA1-SA3)</a></li><li><a href="../solucionari/solucionari-t2-sa4-sa6.html">Solucionari de reptes — Trimestre 2 (SA4-SA6)</a></li><li><a href="../solucionari/solucionari-t3-sa7-sa9.html">Solucionari de reptes — Trimestre 3 (SA7-SA9)</a></li></ul></details>
+</nav></aside>
+  <main id="contingut">
+    <nav class="breadcrumb" aria-label="Ubicació"><a href="../../index.html">Inici</a> <span class="sep">/</span> <a href="../../classes/index.html">Classes</a> <span class="sep">/</span> <span aria-current="page">SA4 · Guia docent — Moviment: servos, motors i ponts H</span></nav>
+    <span class="badge-tri" data-tri="2">2n trimestre</span>
+    <article class="prose">
+<h1 id="sa4-guia-docent-moviment-servos-motors-i-ponts-h"><a class="toclink" href="#sa4-guia-docent-moviment-servos-motors-i-ponts-h">SA4 · Guia docent — Moviment: servos, motors i ponts H</a></h1>
+<p><strong>Durada:</strong> 8 h (4 sessions; la 4a amb ampliacions opcionals) · <strong>Maquinari:</strong> Arduino UNO + servo SG90 + motor DC + driver/pont H (L298N) · <strong>Llenguatge:</strong> C/C++
+<strong>Referència:</strong> <code>Programació didàctica/13_SA4_Moviment_servos_motors.md</code> · <strong>Esquemes:</strong> <code>SA4_esquemes_connexions.md</code></p>
+<h2 id="objectius-de-la-sa"><a class="toclink" href="#objectius-de-la-sa">Objectius de la SA</a></h2>
+<ol>
+<li>Controlar la <strong>posició</strong> d'un servo i la <strong>velocitat/direcció</strong> d'un motor DC.</li>
+<li>Comprendre per què cal un <strong>driver (pont H)</strong> i una <strong>alimentació externa</strong>.</li>
+<li>Usar llibreries (<code>Servo.h</code>) i estructurar el control en <strong>funcions</strong>.</li>
+<li>Relacionar entrada (sensor/potenciòmetre) amb moviment (control).</li>
+</ol>
+<h2 id="material-per-parella"><a class="toclink" href="#material-per-parella">Material per parella</a></h2>
+<ul>
+<li>Arduino UNO + USB, protoboard, cables.</li>
+<li>Servo SG90, motor DC, mòdul driver <strong>L298N</strong> (o pont H del kit), portapiles/alimentació externa (4×AA o font), potenciòmetre, sensor d'ultrasons.</li>
+</ul>
+<h2 id="codi-de-suport-codi"><a class="toclink" href="#codi-de-suport-codi">Codi de suport (<code>codi/</code>)</a></h2>
+<table>
+<thead>
+<tr>
+<th>Fitxer</th>
+<th>Contingut</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>01_servo_potenciometre.ino</code></td>
+<td>Servo controlat per potenciòmetre.</td>
+</tr>
+<tr>
+<td><code>02_motor_pont_h.ino</code></td>
+<td>Motor DC: direcció + velocitat (PWM) amb L298N.</td>
+</tr>
+<tr>
+<td><code>03_sensor_velocitat.ino</code></td>
+<td>Ultrasons regula la velocitat del motor.</td>
+</tr>
+<tr>
+<td><code>04_barrera_automatica.ino</code></td>
+<td>Producte: barrera amb servo activada per sensor.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="metode-de-projecte-i-continuitat"><a class="toclink" href="#metode-de-projecte-i-continuitat">Mètode de projecte i continuïtat</a></h2>
+<ul>
+<li><strong>Cicle de treball</strong> (com a tot el curs): <em>analitzar → dissenyar → prototipar → provar → millorar</em> (vegeu SA1). El <strong>producte</strong> n'és el recorregut complet i el <strong>quadern tècnic</strong> el documenta.</li>
+<li><strong>Lectura de codi amb PRIMM:</strong> a cada <em>modelatge</em> l'alumnat <strong>prediu</strong> què farà el sketch <strong>abans</strong> d'executar-lo, després l'<strong>investiga</strong>, el <strong>modifica</strong> i en <strong>crea</strong> un de nou. <strong>Operativa (val per a totes les sessions amb codi):</strong> dedica els primers ~5' del Modelatge a projectar el codi nou <strong>sense executar-lo</strong> i recollir prediccions; només després, executa i investiga.</li>
+<li><strong>Pont (d'on venim / on anem):</strong> ve de la <strong>SA3</strong> (sensors) → portem a la <strong>SA5</strong> (micro:bit + MicroPython, <strong>canvi de plataforma i llenguatge</strong>). El control sensor→moviment d'aquí és la llavor del <strong>control</strong> (SA6) i la <strong>robòtica mòbil</strong> (SA7).</li>
+</ul>
+<hr />
+<h2 id="sessio-1-2-h-el-servomotor"><a class="toclink" href="#sessio-1-2-h-el-servomotor">SESSIÓ 1 (2 h) — El servomotor</a></h2>
+<ul>
+<li><strong>Activació (10'):</strong> <em>"Com es controla l'angle exacte d'un braç robòtic?"</em></li>
+<li><strong>Modelatge (25'):</strong> <code>01_servo_potenciometre.ino</code>. Llibreria <code>Servo.h</code>, <code>attach()</code>, <code>write(angle)</code> (0-180°). Diferència servo ↔ motor DC.</li>
+<li><strong>Pràctica guiada (35'):</strong> munten el servo; el mouen a angles fixos; després el controlen amb el potenciòmetre (<code>map(0-1023 → 0-180)</code>).</li>
+<li><strong>Repte (40'):</strong> "escombrada" automàtica (vaivé 0↔180) suau; <strong>+ repte:</strong> dos servos coordinats.</li>
+<li><strong>Tancament (10'):</strong> quadern (esquema + codi).</li>
+</ul>
+<p><strong>Punt clau:</strong> el servo es controla per posició (angle); s'alimenta a 5 V però si en mous diversos cal <strong>alimentació externa</strong> (no des del pin 5V de l'Arduino).</p>
+<hr />
+<h2 id="sessio-2-2-h-motor-dc-i-pont-h"><a class="toclink" href="#sessio-2-2-h-motor-dc-i-pont-h">SESSIÓ 2 (2 h) — Motor DC i pont H</a></h2>
+<ul>
+<li><strong>Activació (10'):</strong> <em>"Per què no puc connectar un motor directament a un pin?"</em> → corrent i protecció.</li>
+<li><strong>Modelatge (30'):</strong> <code>02_motor_pont_h.ino</code>. Funcionament del <strong>pont H</strong> (L298N): <code>IN1</code>/<code>IN2</code> (direcció), <code>ENA</code> (velocitat per PWM). <strong>Massa comuna</strong> entre Arduino i alimentació del motor.</li>
+<li><strong>Pràctica guiada (30'):</strong> munten el motor amb L298N i alimentació externa; gir endavant/enrere; control de velocitat.</li>
+<li><strong>Repte (40'):</strong> funcions <code>endavant(vel)</code>, <code>enrere(vel)</code>, <code>atura()</code>; seqüència de moviments; <strong>+ repte:</strong> rampa d'acceleració.</li>
+<li><strong>Tancament (10'):</strong> quadern.</li>
+</ul>
+<p><strong>Punt clau:</strong> un pin d'Arduino dona poc corrent → el <strong>driver</strong> amplifica. <strong>Sempre</strong> unir el GND de l'Arduino amb el GND de l'alimentació del motor (massa comuna). Mai alimentar el motor des del pin 5V.</p>
+<hr />
+<h2 id="sessio-3-2-h-del-sensor-al-moviment"><a class="toclink" href="#sessio-3-2-h-del-sensor-al-moviment">SESSIÓ 3 (2 h) — Del sensor al moviment</a></h2>
+<ul>
+<li><strong>Activació (10'):</strong> <em>"Com fa un robot per frenar quan s'acosta a una paret?"</em></li>
+<li><strong>Modelatge (25'):</strong> <code>03_sensor_velocitat.ino</code>. Integració: l'ultrasons mesura distància → <code>map()</code> → velocitat del motor (percepció→acció).</li>
+<li><strong>Pràctica guiada (35'):</strong> connecten ultrasons + motor; com més a prop, més lent.</li>
+<li><strong>Repte (40'):</strong> aturar el motor per sota d'un llindar de seguretat; <strong>+ repte:</strong> invertir el sentit segons distància.</li>
+<li><strong>Tancament (10'):</strong> quadern (taula distància→velocitat).</li>
+</ul>
+<p><strong>Punt clau:</strong> la sortida (moviment) depèn de l'entrada (sensor) → primer pas cap al <strong>control</strong> (SA6) i la robòtica mòbil (SA7).</p>
+<hr />
+<h2 id="sessio-4-2-h-producte-barrera-automatica"><a class="toclink" href="#sessio-4-2-h-producte-barrera-automatica">SESSIÓ 4 (2 h) — Producte: barrera automàtica</a></h2>
+<ul>
+<li><strong>Activació (10'):</strong> presentació del repte.</li>
+<li><strong>Pràctica (70'):</strong> <code>04_barrera_automatica.ino</code>. Barrera amb <strong>servo</strong> que s'obre quan l'ultrasons detecta un vehicle a prop i es tanca passat un temps, amb LED indicador. Cada parella personalitza temps i angles.</li>
+<li><strong>Documentació + defensa (30'):</strong> esquema, codi comentat, mini-defensa.</li>
+<li><strong>Tancament (10'):</strong> autoavaluació.</li>
+</ul>
+<p><strong>Producte:</strong> mecanisme motoritzat controlat per sensor (barrera, braç o ventilador regulable).
+<strong>Avaluació:</strong> rúbriques <strong>R1</strong> (codi), <strong>R2</strong> (circuit), <strong>R3</strong> parcial (control).</p>
+<h3 id="mapa-davaluacio-tracabilitat"><a class="toclink" href="#mapa-davaluacio-tracabilitat">Mapa d'avaluació (traçabilitat)</a></h3>
+<table>
+<thead>
+<tr>
+<th>Instrument</th>
+<th>Què evidencia</th>
+<th>Criteri</th>
+<th>Rúbrica</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Producte (barrera/braç/ventilador)</td>
+<td>Control de posició i velocitat sensor→actuador</td>
+<td>CA3.1</td>
+<td>R3 (parcial), R1</td>
+</tr>
+<tr>
+<td>Repte de codi (funcions de moviment)</td>
+<td><code>Servo.h</code>, lògica del pont H, <code>map()</code>, funcions</td>
+<td>CA1.1</td>
+<td>R1</td>
+</tr>
+<tr>
+<td>Quadern tècnic</td>
+<td>Esquema del pont H, taula distància→velocitat, errors</td>
+<td>CA1.1</td>
+<td>R1</td>
+</tr>
+<tr>
+<td>Observació de muntatge segur</td>
+<td>Massa comuna, alimentació externa, no alimentar motors des de l'Arduino</td>
+<td>CA2.1</td>
+<td>R2</td>
+</tr>
+</tbody>
+</table>
+<p><em>(CA1.1 = programar en C/C++; CA2.1 = dissenyar/muntar circuits amb seguretat; CA3.1 = implementar sistemes de control. Vegeu <code>Programació didàctica/06_Avaluacio_criteris_qualificacio.md</code>. Comparteix R1, R2 i R3 </em><em>abans</em><em> de començar.)</em></p>
+<h2 id="errors-frequents"><a class="toclink" href="#errors-frequents">Errors freqüents</a></h2>
+<table>
+<thead>
+<tr>
+<th>Error</th>
+<th>Causa</th>
+<th>Solució</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>El servo vibra/no arriba a l'angle</td>
+<td>Alimentació insuficient</td>
+<td>Alimentació externa de 5 V; massa comuna.</td>
+</tr>
+<tr>
+<td>El motor no gira</td>
+<td>Falta <code>ENA</code> en HIGH/PWM o massa no comuna</td>
+<td>Activar <code>ENA</code>; unir GND Arduino–driver–piles.</td>
+</tr>
+<tr>
+<td>L'Arduino es reinicia en moure el motor</td>
+<td>Pic de corrent des del 5V</td>
+<td>Mai alimentar el motor des de l'Arduino.</td>
+</tr>
+<tr>
+<td>Gira sempre en el mateix sentit</td>
+<td><code>IN1</code>/<code>IN2</code> mal posats</td>
+<td>Revisar la lògica IN1≠IN2 per a cada sentit.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="guio-de-modelatge-que-verbalitzar"><a class="toclink" href="#guio-de-modelatge-que-verbalitzar">Guió de modelatge (què verbalitzar)</a></h2>
+<blockquote>
+<p>Frases i preguntes clau per al <strong>Modelatge</strong> de cada sessió (què mirar, què preguntar abans d'executar, error a anticipar).</p>
+</blockquote>
+<ul>
+<li><strong>S1 · <code>01_servo_potenciometre</code> (servo):</strong> distingeix <strong>servo</strong> (controla <em>posició</em>/angle 0–180°) de <strong>motor DC</strong> (gir continu). Demana predir on anirà <code>write(90)</code>. Avís: <em>si mous diversos servos, alimentació externa</em>. <em>Error a anticipar:</em> el servo vibra per alimentació insuficient.</li>
+<li><strong>S2 · <code>02_motor_pont_h</code> (pont H):</strong> dibuixa la <strong>taula IN1/IN2</strong> per a cada sentit i assenyala <strong>ENA = velocitat (PWM)</strong>. Repeteix com un mantra: <em>MASSA COMUNA, mai el motor des del 5V</em>. <em>Error a anticipar:</em> l'Arduino es reinicia pel pic de corrent del motor.</li>
+<li><strong>S3 · <code>03_sensor_velocitat</code> (percepció→acció):</strong> mostra com <code>map()</code> converteix <strong>distància → velocitat</strong>. Pregunta: <em>"què ha de passar a la distància mínima de seguretat?"</em></li>
+<li><strong>S4 · <code>04_barrera_automatica</code> (integració):</strong> mostra'l com a integració; pregunta com personalitzarien temps i angles.</li>
+</ul>
+<h2 id="atencio-a-la-diversitat-dua"><a class="toclink" href="#atencio-a-la-diversitat-dua">Atenció a la diversitat (DUA)</a></h2>
+<table>
+<thead>
+<tr>
+<th>Via</th>
+<th>Mesura</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Bastida</strong> (qui s'encalla)</td>
+<td>Moure el servo a <strong>angles fixos</strong> abans del control amb potenciòmetre; donar la <strong>taula de lògica del pont H</strong> ja resolta; parella heterogènia.</td>
+</tr>
+<tr>
+<td><strong>+ Ampliació</strong> (qui va sobrat)</td>
+<td>Dos servos coordinats, rampa d'acceleració, invertir sentit per distància; reptes ⭐ de <code>Reptes/Reptes_SA4.md</code>.</td>
+</tr>
+<tr>
+<td><strong>Representació múltiple</strong></td>
+<td>Esquema del pont H, simulació Wokwi (servo), vídeo del moviment, codi comentat.</td>
+</tr>
+<tr>
+<td><strong>Implicació</strong></td>
+<td>Cada parella tria angles, temps i el mecanisme (barrera, braç, ventilador).</td>
+</tr>
+</tbody>
+</table>
+<h2 id="treball-cooperatiu-amb-rols"><a class="toclink" href="#treball-cooperatiu-amb-rols">Treball cooperatiu amb rols</a></h2>
+<p>Parelles amb <strong>rols rotatius</strong>: Coordinador/a · Programador/a · Enginyer/a de maquinari (motor/servo, <strong>massa comuna</strong>, seguretat) · Provador/a–Documentador/a. Quadre per rotar a la fitxa.</p>
+<h2 id="pensament-computacional-i-depuracio"><a class="toclink" href="#pensament-computacional-i-depuracio">Pensament computacional i depuració</a></h2>
+<ul>
+<li><strong>PC d'aquesta SA:</strong> <strong>descomposició del moviment</strong> (partir una tasca en passos) i <strong>abstracció</strong> amb funcions (<code>endavant()</code>, <code>atura()</code>…).</li>
+<li><strong>Depuració:</strong> rutina <strong>DEPURA</strong>; atenció especial a la <strong>seguretat elèctrica</strong> en aïllar el problema (alimentació, massa comuna).</li>
+</ul>
+<h2 id="avaluacio-formativa-instruments"><a class="toclink" href="#avaluacio-formativa-instruments">Avaluació formativa (instruments)</a></h2>
+<ul>
+<li><strong>Diana d'autoavaluació</strong> (fitxa) · <strong>Coavaluació</strong> "2 estrelles i un desig" · <strong>Exit ticket</strong> de tancament.</li>
+</ul>
+<h2 id="referent-coeducacio"><a class="toclink" href="#referent-coeducacio">Referent (coeducació)</a></h2>
+<blockquote>
+<p><strong>Cynthia Breazeal</strong> — enginyera del MIT, pionera de la <strong>robòtica social</strong> (robots que es mouen i interaccionen per comunicar-se, com Kismet i Jibo).</p>
+<p><em>Connexió amb la SA:</em> el moviment controlat (servos, motors) no només <strong>desplaça</strong> —també <strong>expressa i assisteix</strong> (robòtica assistencial, ODS 10)—. Pregunta: <em>quins moviments fan que un robot sembli "viu" o proper?</em></p>
+</blockquote>
+<h2 id="context-real-i-ods"><a class="toclink" href="#context-real-i-ods">Context real i ODS</a></h2>
+<ul>
+<li><strong>Context:</strong> barreres, ascensors, braços robòtics, pròtesis, robòtica assistencial.</li>
+<li><strong>ODS 9</strong> (indústria i innovació) i <strong>ODS 10</strong> (reduir desigualtats: accessibilitat i tecnologia assistencial).</li>
+</ul>
+    </article>
+  </main>
+  <nav class="toc" aria-label="En aquesta pàgina"><p class="toc-titol">En aquesta pàgina</p><ul>
+<li class="toc-l1"><a href="#sa4-guia-docent-moviment-servos-motors-i-ponts-h">SA4 · Guia docent — Moviment: servos, motors i ponts H</a></li>
+<li class="toc-l2"><a href="#objectius-de-la-sa">Objectius de la SA</a></li>
+<li class="toc-l2"><a href="#material-per-parella">Material per parella</a></li>
+<li class="toc-l2"><a href="#codi-de-suport-codi">Codi de suport (codi/)</a></li>
+<li class="toc-l2"><a href="#metode-de-projecte-i-continuitat">Mètode de projecte i continuïtat</a></li>
+<li class="toc-l2"><a href="#sessio-1-2-h-el-servomotor">SESSIÓ 1 (2 h) — El servomotor</a></li>
+<li class="toc-l2"><a href="#sessio-2-2-h-motor-dc-i-pont-h">SESSIÓ 2 (2 h) — Motor DC i pont H</a></li>
+<li class="toc-l2"><a href="#sessio-3-2-h-del-sensor-al-moviment">SESSIÓ 3 (2 h) — Del sensor al moviment</a></li>
+<li class="toc-l2"><a href="#sessio-4-2-h-producte-barrera-automatica">SESSIÓ 4 (2 h) — Producte: barrera automàtica</a></li>
+<li class="toc-l2"><a href="#errors-frequents">Errors freqüents</a></li>
+<li class="toc-l2"><a href="#guio-de-modelatge-que-verbalitzar">Guió de modelatge (què verbalitzar)</a></li>
+<li class="toc-l2"><a href="#atencio-a-la-diversitat-dua">Atenció a la diversitat (DUA)</a></li>
+<li class="toc-l2"><a href="#treball-cooperatiu-amb-rols">Treball cooperatiu amb rols</a></li>
+<li class="toc-l2"><a href="#pensament-computacional-i-depuracio">Pensament computacional i depuració</a></li>
+<li class="toc-l2"><a href="#avaluacio-formativa-instruments">Avaluació formativa (instruments)</a></li>
+<li class="toc-l2"><a href="#referent-coeducacio">Referent (coeducació)</a></li>
+<li class="toc-l2"><a href="#context-real-i-ods">Context real i ODS</a></li>
+</ul></nav>
+</div>
+<footer class="peu">
+  <p>Robòtica · 1r de Batxillerat · material sota llicència <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca" target="_blank" rel="noopener">CC BY-SA 4.0</a>.</p>
+  <p><a href="https://github.com/tomeu-cd100/robotica-1batx-2627" target="_blank" rel="noopener">Repositori a GitHub</a> · web generat el 2026-06-30.</p>
+</footer>
+<script src="../../assets/js/cerca-index.js"></script>
+<script src="../../assets/js/lloc.js"></script>
+</body>
+</html>

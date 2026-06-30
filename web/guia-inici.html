@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guia d&#x27;inici docent · Robòtica · 1r de Batxillerat</title>
+<meta name="description" content="Material docent · LOMLOE Catalunya · curs 2026-2027">
+<link rel="stylesheet" href="assets/css/estil.css">
+<link rel="stylesheet" href="assets/css/pygments.css">
+<script>(function(){try{var t=localStorage.getItem('tema');if(t==='fosc'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.setAttribute('data-tema','fosc');}catch(e){}})();</script>
+</head>
+<body data-section="inici" class="sense-sidebar amb-toc">
+<a class="skip" href="#contingut">Salta al contingut</a>
+<header class="topbar">
+  <button class="menu-btn" aria-label="Obre el menú" aria-expanded="false">☰</button>
+  <a class="brand" href="index.html"><span class="brand-mark">◆</span> Robòtica <span class="brand-sub">1r Batx</span></a>
+  <nav class="topnav" aria-label="Seccions">
+    <a href="index.html" class="actiu">Inici</a>
+<a href="programacio/index.html" data-sec="programacio">Programació didàctica</a>
+<a href="classes/index.html" data-sec="classes">Classes</a>
+<a href="reptes/index.html" data-sec="reptes">Reptes</a>
+<a href="avaluacio/index.html" data-sec="avaluacio">Avaluació</a>
+<a href="normativa/index.html" data-sec="normativa">Normativa</a>
+<a href="recursos/index.html" data-sec="recursos">Recursos</a>
+  </nav>
+  <div class="topbar-eines">
+    <div class="cercador">
+      <input type="search" id="cerca" placeholder="Cerca…" autocomplete="off" aria-label="Cerca al web">
+      <div id="cerca-resultats" class="cerca-resultats" hidden></div>
+    </div>
+    <button class="tema-btn" aria-label="Canvia el tema clar/fosc" title="Tema clar/fosc">◐</button>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar"></aside>
+  <main id="contingut">
+    <nav class="breadcrumb" aria-label="Ubicació"><a href="index.html">Inici</a> <span class="sep">/</span> <span aria-current="page">Guia d&#x27;inici docent</span></nav>
+    
+    <article class="prose">
+<h1 id="guia-dinici-per-al-docent-comenca-des-del-primer-dia"><a class="toclink" href="#guia-dinici-per-al-docent-comenca-des-del-primer-dia">Guia d'inici per al docent — comença des del primer dia</a></h1>
+<blockquote>
+<p>Per a un professor/a que <strong>agafa aquest material per primera vegada</strong>. Cobreix el que la programació didàctica i les guies de SA <strong>no</strong> expliquen: com <strong>engegar l'entorn</strong>, quin <strong>nivell mínim</strong> necessites i què fer <strong>quan alguna cosa falla a l'aula</strong>.</p>
+<p>El "com fer cada classe" minut a minut ja és a <code>Classes/SAx/SAx_guia_docent.md</code>. Aquesta guia és el pas <strong>abans</strong> d'obrir aquelles.</p>
+</blockquote>
+<hr />
+<h2 id="0-mapa-rapid-on-es-cada-cosa"><a class="toclink" href="#0-mapa-rapid-on-es-cada-cosa">0 · Mapa ràpid: on és cada cosa</a></h2>
+<table>
+<thead>
+<tr>
+<th>Necessites…</th>
+<th>Vés a…</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Visió de conjunt i decisions del curs</td>
+<td><code>Programació didàctica/00_Index_general.md</code></td>
+</tr>
+<tr>
+<td>Com donar <strong>una sessió concreta</strong></td>
+<td><code>Classes/SAx/SAx_guia_docent.md</code> (fases, temps, errors freqüents)</td>
+</tr>
+<tr>
+<td>El que reparteixes a l'alumnat</td>
+<td><code>Classes/SAx/SAx_fitxa_alumnat.md</code></td>
+</tr>
+<tr>
+<td>El <strong>codi</strong> carregable</td>
+<td><code>Classes/SAx/codi/</code></td>
+</tr>
+<tr>
+<td>Connexions del circuit</td>
+<td><code>Classes/SAx/SAx_esquemes_connexions.md</code></td>
+</tr>
+<tr>
+<td>Provar <strong>sense maquinari</strong></td>
+<td><code>Simulacions/Wokwi/</code> (enllaços públics)</td>
+</tr>
+<tr>
+<td>Reptes per triar</td>
+<td><code>Reptes/</code> (+ <code>Reptes/Solucionari/</code>)</td>
+</tr>
+<tr>
+<td>Avaluar</td>
+<td><code>Avaluació/</code> (proves per trimestre) + <code>Programació didàctica/07_Rubriques.md</code></td>
+</tr>
+<tr>
+<td>Vocabulari i bases de programació</td>
+<td><code>Classes/SA0/</code></td>
+</tr>
+<tr>
+<td>Disseny d'objectes (producte)</td>
+<td><code>Classes/00_Banc_objectes_disseny.md</code>, <code>00_Plantilla_disseny_objecte.md</code>, <code>00_Mapa_SA_objectes.md</code>, <code>00_Galeria_exemples_objectes.md</code></td>
+</tr>
+<tr>
+<td>Rutines d'aula (projectar)</td>
+<td><code>Classes/00_Poster_aula_metode_DEPURA_rols.md</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="1-abans-de-la-primera-classe-engegada-tecnica"><a class="toclink" href="#1-abans-de-la-primera-classe-engegada-tecnica">1 · Abans de la primera classe — engegada tècnica</a></h2>
+<h3 id="11-installa-i-prova-larduino-ide-30-min"><a class="toclink" href="#11-installa-i-prova-larduino-ide-30-min">1.1. Instal·la i prova l'Arduino IDE (≈ 30 min)</a></h3>
+<ol>
+<li>Descarrega l'<strong>Arduino IDE</strong> de <a href="https://www.arduino.cc/en/software" target="_blank" rel="noopener">arduino.cc/en/software</a> i instal·la'l.</li>
+<li><strong>Driver CH340 (important amb plaques clòniques/econòmiques):</strong> molts UNO no oficials porten el xip <strong>CH340</strong>; a Windows sovint cal instal·lar-ne el driver perquè aparegui el port. Cerca "driver CH340" del fabricant del teu kit. (Les plaques oficials no ho necessiten.)</li>
+<li>Connecta una placa amb un <strong>cable USB de dades</strong> (no de només càrrega) i selecciona <strong>Eines → Placa → Arduino UNO</strong> i <strong>Eines → Port → (el que aparegui)</strong>.</li>
+<li><strong>Càrrega de prova:</strong> <code>Fitxer → Exemples → 01.Basics → Blink</code> i prem <strong>Puja (→)</strong>. Si el LED "L" parpelleja, l'entorn funciona.</li>
+</ol>
+<h3 id="12-comptes-i-editors-en-linia-20-min"><a class="toclink" href="#12-comptes-i-editors-en-linia-20-min">1.2. Comptes i editors en línia (≈ 20 min)</a></h3>
+<table>
+<thead>
+<tr>
+<th>Eina</th>
+<th>Per a què</th>
+<th>Compte?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Tinkercad Circuits</strong> (tinkercad.com)</td>
+<td>Simular Arduino/circuits; <strong>Classes</strong> per a l'alumnat</td>
+<td>Sí (docent); l'alumnat pot entrar amb codi de classe sense correu</td>
+</tr>
+<tr>
+<td><strong>Wokwi</strong> (wokwi.com)</td>
+<td>Simular Arduino/ESP32; tens els projectes del curs ja fets</td>
+<td>Recomanat (Google/GitHub)</td>
+</tr>
+<tr>
+<td><strong>Editor Python micro:bit</strong> (python.microbit.org)</td>
+<td>MicroPython; flasheig per WebUSB</td>
+<td>No cal</td>
+</tr>
+<tr>
+<td><strong>Thonny</strong> (thonny.org)</td>
+<td>MicroPython d'escriptori (alternativa)</td>
+<td>No</td>
+</tr>
+<tr>
+<td><strong>MakeCode</strong> (makecode.microbit.org)</td>
+<td>Blocs → Python (bastida SA5)</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Els circuits del curs ja estan muntats a Wokwi: vegeu <code>Simulacions/Wokwi/README.md</code> i <code>Simulacions/Wokwi/Reptes/README.md</code>. Pots projectar-los directament.</p>
+</blockquote>
+<h3 id="13-prepara-el-material-fisic"><a class="toclink" href="#13-prepara-el-material-fisic">1.3. Prepara el material físic</a></h3>
+<ul>
+<li>Revisa l'inventari de <code>Programació didàctica/09_Materials_recursos_per_unitat.md</code>.</li>
+<li><strong>Etiqueta una caixa per grup</strong> amb un checklist de contingut (LED, resistències, cables, placa, USB…).</li>
+<li>Prepara un <strong>kit de reserva</strong> per a avaries.</li>
+<li>Comprova que tens <strong>prou cables USB de dades</strong> i preses de corrent als llocs de treball.</li>
+</ul>
+<h3 id="14-checklist-de-la-primera-setmana"><a class="toclink" href="#14-checklist-de-la-primera-setmana">1.4. Checklist de la primera setmana</a></h3>
+<ul>
+<li>[ ] Arduino IDE instal·lat i <strong>Blink</strong> carregat en una placa de prova.</li>
+<li>[ ] Driver CH340 instal·lat si cal (el port apareix).</li>
+<li>[ ] Compte de Tinkercad (i classe creada) + accés a Wokwi.</li>
+<li>[ ] Editor Python de micro:bit provat (flasheig d'un <code>display.scroll("Hola")</code>).</li>
+<li>[ ] Kits comptats, etiquetats i amb kit de reserva.</li>
+<li>[ ] Llegida la <strong>guia docent de SA1</strong> i preparada la <strong>prova diagnòstica</strong> (<code>Classes/SA1/SA1_prova_diagnostica.md</code>).</li>
+<li>[ ] Rúbriques <strong>R4/R5</strong> a punt per compartir amb l'alumnat (es comparteixen <em>abans</em> de començar).</li>
+<li>[ ] Projectat el <strong>pòster d'aula</strong> (<code>Classes/00_Poster_aula_metode_DEPURA_rols.md</code>).</li>
+</ul>
+<hr />
+<h2 id="2-quin-nivell-necessites-tu-i-autoformacio-expres"><a class="toclink" href="#2-quin-nivell-necessites-tu-i-autoformacio-expres">2 · Quin nivell necessites tu (i autoformació exprés)</a></h2>
+<p>No cal ser enginyer/a, però sí tenir aquesta base. Si algun punt et balla, dedica-hi un parell d'hores <strong>abans</strong> d'arribar-hi a classe.</p>
+<h3 id="21-nivell-minim-del-docent-hauria-de-poder"><a class="toclink" href="#21-nivell-minim-del-docent-hauria-de-poder">2.1. Nivell mínim del docent ("hauria de poder…")</a></h3>
+<ul>
+<li><strong>Arduino/C++:</strong> entendre <code>setup()</code>/<code>loop()</code>, <code>pinMode</code>, <code>digitalWrite</code>/<code>digitalRead</code>, <code>analogRead</code> (0–1023) i <code>analogWrite</code>/PWM (0–255), <code>if</code>/<code>for</code>, variables i <strong>funcions</strong>.</li>
+<li><strong>Electrònica:</strong> muntar un LED amb resistència (polaritat), un divisor de tensió (LDR/NTC), i les regles de seguretat (massa comuna, no alimentar motors des del 5V).</li>
+<li><strong>MicroPython (micro:bit):</strong> sintaxi bàsica, <strong>indentació</strong>, <code>while True</code>, sensors integrats i <code>radio</code>.</li>
+<li><strong>Robòtica mòbil:</strong> idea de <strong>cinemàtica diferencial</strong> (girar = rodes a velocitats diferents).</li>
+</ul>
+<h3 id="22-ruta-expres-dautoformacio-un-cap-de-setmana"><a class="toclink" href="#22-ruta-expres-dautoformacio-un-cap-de-setmana">2.2. Ruta exprés d'autoformació (un cap de setmana)</a></h3>
+<table>
+<thead>
+<tr>
+<th>Pas</th>
+<th>Què fer</th>
+<th>On</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Llegeix la guia de programació de base</td>
+<td><code>Classes/SA0/SA0_guia_programacio.md</code></td>
+</tr>
+<tr>
+<td>2</td>
+<td>Fes tu mateix/a <strong>Blink</strong> i el semàfor (SA1–SA2)</td>
+<td>Placa real o <code>Simulacions/Wokwi/</code></td>
+</tr>
+<tr>
+<td>3</td>
+<td>Munta i prova un sensor (LDR i ultrasons, SA3)</td>
+<td><code>Classes/SA3/codi/</code> o Wokwi</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Prova un programa de micro:bit</td>
+<td>python.microbit.org (<code>Classes/SA5/codi/</code>)</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Repassa criteris i rúbriques</td>
+<td><code>Programació didàctica/06</code>, <code>07</code></td>
+</tr>
+<tr>
+<td>6</td>
+<td>Amplia amb 1–2 recursos</td>
+<td><code>Recursos/Recursos_Professorat_Robotica_1Batx.xlsx</code></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Fer <strong>tu</strong> les pràctiques de SA1–SA3 abans de començar és la millor preparació: són la base de tota la resta.</p>
+</blockquote>
+<h3 id="23-autodiagnostic-docent-marca-el-que-ja-domines"><a class="toclink" href="#23-autodiagnostic-docent-marca-el-que-ja-domines">2.3. Autodiagnòstic docent (marca el que ja domines)</a></h3>
+<ul>
+<li>[ ] Sé carregar un sketch a l'Arduino i seleccionar placa/port.</li>
+<li>[ ] Sé què fa cada línia del <code>Blink</code> i del semàfor.</li>
+<li>[ ] Sé llegir un sensor analògic i usar <code>map()</code>.</li>
+<li>[ ] Sé flashejar un programa a la micro:bit.</li>
+<li>[ ] Sé explicar la diferència digital/analògic i PWM.</li>
+</ul>
+<blockquote>
+<p>Si en marques 4/5, pots començar. La resta s'aprèn fent, <strong>amb</strong> l'alumnat (l'error és contingut, no fracàs).</p>
+</blockquote>
+<hr />
+<h2 id="3-quan-alguna-cosa-falla-a-laula-pla-b-i-faq"><a class="toclink" href="#3-quan-alguna-cosa-falla-a-laula-pla-b-i-faq">3 · Quan alguna cosa falla a l'aula (pla B i FAQ)</a></h2>
+<h3 id="31-estrategia-general-de-pla-b"><a class="toclink" href="#31-estrategia-general-de-pla-b">3.1. Estratègia general de pla B</a></h3>
+<ul>
+<li><strong>Falten plaques o no funcionen:</strong> treballa amb els <strong>simuladors</strong> (Wokwi/Tinkercad) i en <strong>parelles</strong>; projecta la simulació i fes-la en directe.</li>
+<li><strong>Una part de la classe s'encalla:</strong> atura i fes una <strong>mini-demo projectada</strong> del pas conflictiu.</li>
+<li><strong>Ritmes diferents:</strong> qui acaba, passa a les <strong>ampliacions</strong> (reptes ⭐); qui va just, fa el <strong>mínim</strong> amb la bastida (vegeu cada guia docent, secció "Atenció a la diversitat").</li>
+</ul>
+<h3 id="32-faq-dincidencies-tecniques"><a class="toclink" href="#32-faq-dincidencies-tecniques">3.2. FAQ d'incidències tècniques</a></h3>
+<table>
+<thead>
+<tr>
+<th>Símptoma</th>
+<th>Causa probable</th>
+<th>Acció ràpida</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>No apareix el <strong>port</strong></td>
+<td>Falta driver CH340 / cable de només càrrega</td>
+<td>Instal·lar CH340; provar un cable de <strong>dades</strong> i un altre USB</td>
+</tr>
+<tr>
+<td>"avrdude: ...access denied / port busy" en pujar</td>
+<td>Monitor sèrie obert o port equivocat</td>
+<td>Tancar el Monitor; revisar Eines → Port/Placa</td>
+</tr>
+<tr>
+<td>El <strong>LED intern</strong> no parpelleja</td>
+<td>Placa/port mal seleccionats</td>
+<td><code>Exemples → Blink</code>; revisar Eines → Placa: UNO</td>
+</tr>
+<tr>
+<td>El <strong>LED extern</strong> no s'encén</td>
+<td>Polaritat, sense resistència o sense <code>pinMode OUTPUT</code></td>
+<td>Pota llarga (+) cap a la sortida; 220 Ω; revisar <code>setup()</code></td>
+</tr>
+<tr>
+<td><code>analogWrite</code> no regula</td>
+<td>Pin sense PWM</td>
+<td>Usar pin amb <code>~</code> (3,5,6,9,10,11)</td>
+</tr>
+<tr>
+<td>La <strong>micro:bit</strong> no apareix com a disc</td>
+<td>Cable de només càrrega / firmware</td>
+<td>Cable de <strong>dades</strong>; provar WebUSB o arrossegar el <code>.hex</code></td>
+</tr>
+<tr>
+<td><code>IndentationError</code> (micro:bit)</td>
+<td>Indentació incorrecta</td>
+<td>4 espais coherents; no barrejar tabs i espais</td>
+</tr>
+<tr>
+<td>El <strong>servo</strong> vibra / no arriba</td>
+<td>Alimentació insuficient</td>
+<td>Alimentació externa de 5 V + <strong>massa comuna</strong></td>
+</tr>
+<tr>
+<td>El <strong>motor</strong> no gira</td>
+<td><code>ENA</code> sense PWM o massa no comuna</td>
+<td>Activar <code>ENA</code>; unir GND Arduino–driver–piles</td>
+</tr>
+<tr>
+<td>La <strong>ràdio</strong> micro:bit no rep</td>
+<td><code>group</code> diferent</td>
+<td>Mateix <code>radio.config(group=...)</code> i <code>radio.on()</code> a les dues plaques</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Cada SA té, a més, la seva pròpia taula d'<strong>errors freqüents</strong> al final de la guia docent.</p>
+</blockquote>
+<hr />
+<h2 id="4-la-primera-sessio-resum-ultra-rapid"><a class="toclink" href="#4-la-primera-sessio-resum-ultra-rapid">4 · La primera sessió (resum ultra-ràpid)</a></h2>
+<ol>
+<li>Obre <code>Classes/SA1/SA1_guia_docent.md</code> (Sessió 1) i <code>SA1_fitxa_alumnat.md</code>.</li>
+<li>Pregunta d'activació: <em>"Quins robots tens a casa sense saber-ho?"</em></li>
+<li>Presenta <strong>entrada → procés → sortida</strong> i el <strong>mètode de projecte</strong> (projecta el pòster).</li>
+<li>Passa la <strong>prova diagnòstica</strong> (no qualifica; serveix per fer parelles heterogènies).</li>
+<li>Comparteix les <strong>rúbriques</strong> i obre el <strong>quadern tècnic</strong>.</li>
+</ol>
+<blockquote>
+<p>A partir d'aquí, segueix la guia docent de cada SA: està pensada perquè la puguis seguir sessió a sessió.</p>
+</blockquote>
+<hr />
+<p><em>Aquesta guia complementa el <code>README.md</code> (visió i estructura) i la <code>Programació didàctica/</code> (el perquè didàctic). Material sota llicència CC BY-SA 4.0.</em></p>
+    </article>
+  </main>
+  <nav class="toc" aria-label="En aquesta pàgina"><p class="toc-titol">En aquesta pàgina</p><ul>
+<li class="toc-l1"><a href="#guia-dinici-per-al-docent-comenca-des-del-primer-dia">Guia d&#x27;inici per al docent — comença des del primer dia</a></li>
+<li class="toc-l2"><a href="#0-mapa-rapid-on-es-cada-cosa">0 · Mapa ràpid: on és cada cosa</a></li>
+<li class="toc-l2"><a href="#1-abans-de-la-primera-classe-engegada-tecnica">1 · Abans de la primera classe — engegada tècnica</a></li>
+<li class="toc-l2"><a href="#2-quin-nivell-necessites-tu-i-autoformacio-expres">2 · Quin nivell necessites tu (i autoformació exprés)</a></li>
+<li class="toc-l2"><a href="#3-quan-alguna-cosa-falla-a-laula-pla-b-i-faq">3 · Quan alguna cosa falla a l&#x27;aula (pla B i FAQ)</a></li>
+<li class="toc-l2"><a href="#4-la-primera-sessio-resum-ultra-rapid">4 · La primera sessió (resum ultra-ràpid)</a></li>
+</ul></nav>
+</div>
+<footer class="peu">
+  <p>Robòtica · 1r de Batxillerat · material sota llicència <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca" target="_blank" rel="noopener">CC BY-SA 4.0</a>.</p>
+  <p><a href="https://github.com/tomeu-cd100/robotica-1batx-2627" target="_blank" rel="noopener">Repositori a GitHub</a> · web generat el 2026-06-30.</p>
+</footer>
+<script src="assets/js/cerca-index.js"></script>
+<script src="assets/js/lloc.js"></script>
+</body>
+</html>

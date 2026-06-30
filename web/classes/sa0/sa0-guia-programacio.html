@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SA0 · Guia per aprendre a programar la placa · Robòtica · 1r de Batxillerat</title>
+<meta name="description" content="Material docent · LOMLOE Catalunya · curs 2026-2027">
+<link rel="stylesheet" href="../../assets/css/estil.css">
+<link rel="stylesheet" href="../../assets/css/pygments.css">
+<script>(function(){try{var t=localStorage.getItem('tema');if(t==='fosc'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.setAttribute('data-tema','fosc');}catch(e){}})();</script>
+</head>
+<body data-section="classes" class="amb-sidebar amb-toc">
+<a class="skip" href="#contingut">Salta al contingut</a>
+<header class="topbar">
+  <button class="menu-btn" aria-label="Obre el menú" aria-expanded="false">☰</button>
+  <a class="brand" href="../../index.html"><span class="brand-mark">◆</span> Robòtica <span class="brand-sub">1r Batx</span></a>
+  <nav class="topnav" aria-label="Seccions">
+    <a href="../../index.html">Inici</a>
+<a href="../../programacio/index.html" data-sec="programacio">Programació didàctica</a>
+<a href="../../classes/index.html" data-sec="classes" class="actiu">Classes</a>
+<a href="../../reptes/index.html" data-sec="reptes">Reptes</a>
+<a href="../../avaluacio/index.html" data-sec="avaluacio">Avaluació</a>
+<a href="../../normativa/index.html" data-sec="normativa">Normativa</a>
+<a href="../../recursos/index.html" data-sec="recursos">Recursos</a>
+  </nav>
+  <div class="topbar-eines">
+    <div class="cercador">
+      <input type="search" id="cerca" placeholder="Cerca…" autocomplete="off" aria-label="Cerca al web">
+      <div id="cerca-resultats" class="cerca-resultats" hidden></div>
+    </div>
+    <button class="tema-btn" aria-label="Canvia el tema clar/fosc" title="Tema clar/fosc">◐</button>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar"><nav class="sidebar-nav" aria-label="Pàgines de la secció">
+<p class="sidebar-titol">Classes</p>
+<ul class="sb-top">
+<li><a href="../index.html">Presentació</a></li>
+<li><a href="../00-banc-objectes-disseny.html">Banc d&#x27;objectes per dissenyar — de l&#x27;electrònica al producte</a></li>
+<li><a href="../00-galeria-exemples-objectes.html">Galeria d&#x27;exemples resolts — objectes de disseny</a></li>
+<li><a href="../00-ia-a-la-materia.html">00 · La Intel·ligència Artificial a la matèria (guia transversal)</a></li>
+<li><a href="../00-llegeix-me-classes.html">Classes — Material d&#x27;aula</a></li>
+<li><a href="../00-mapa-sa-objectes.html">Mapa del curs · de cada SA a un objecte real</a></li>
+<li><a href="../00-plantilla-disseny-objecte.html">Plantilla de disseny d&#x27;objecte</a></li>
+<li><a href="../00-poster-aula-metode-depura-rols.html">Pòster d&#x27;aula — Com treballem a Robòtica</a></li>
+<li><a href="../00-poster-ia-us-assistents.html">Pòster d&#x27;aula — Fer servir la IA amb cap</a></li>
+</ul>
+<details class="sb-grup" open><summary><span>SA0 · Vocabulari essencial i bases de programació</span></summary><ul><li><a href="index.html">Presentació</a></li><li><a href="sa0-fitxa-alumnat.html">SA0 · Fitxa d&#x27;alumnat — Vocabulari i primeres passes amb el codi</a></li><li><a href="sa0-guia-docent.html">SA0 · Guia docent — Vocabulari essencial i bases de programació</a></li><li><a href="sa0-guia-programacio.html" class="actiu">SA0 · Guia per aprendre a programar la placa</a></li><li><a href="sa0-vocabulari-essencial.html">SA0 · Vocabulari essencial de la robòtica</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA1 · Introducció a la robòtica</span><span class="tri-dot" data-tri="1"></span></summary><ul><li><a href="../sa1/index.html">Presentació</a></li><li><a href="../sa1/sa1-esquemes-connexions.html">SA1 · Esquemes i connexions</a></li><li><a href="../sa1/sa1-fitxa-alumnat.html">SA1 · Fitxa base — Què és un robot?</a></li><li><a href="../sa1/sa1-fitxa-ampliada.html">SA1 · Fitxa ampliada (aprofundiment) — Què és un robot?</a></li><li><a href="../sa1/sa1-guia-docent.html">SA1 · Guia docent — Què és un robot? Sistemes embeguts i mètode de projecte</a></li><li><a href="../sa1/sa1-normes-seguretat.html">SA1 · Normes de seguretat del laboratori de robòtica</a></li><li><a href="../sa1/sa1-poster-robot-plantilla.html">SA1 · Fitxa-pòster: &quot;Analitzem un robot real&quot;</a></li><li><a href="../sa1/sa1-prova-diagnostica.html">SA1 · Prova diagnòstica de coneixements previs</a></li><li><a href="../sa1/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA2 · Sortides digitals i PWM</span><span class="tri-dot" data-tri="1"></span></summary><ul><li><a href="../sa2/index.html">Presentació</a></li><li><a href="../sa2/sa2-esquemes-connexions.html">SA2 · Esquemes i connexions</a></li><li><a href="../sa2/sa2-fitxa-alumnat.html">SA2 · Fitxa base — Sortides digitals i PWM</a></li><li><a href="../sa2/sa2-fitxa-ampliada.html">SA2 · Fitxa ampliada (aprofundiment) — Sortides digitals i PWM</a></li><li><a href="../sa2/sa2-guia-docent.html">SA2 · Guia docent — Sortides digitals i PWM: dona vida als actuadors</a></li><li><a href="../sa2/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA3 · Entrades i sensors</span><span class="tri-dot" data-tri="1"></span></summary><ul><li><a href="../sa3/index.html">Presentació</a></li><li><a href="../sa3/sa3-esquemes-connexions.html">SA3 · Esquemes i connexions</a></li><li><a href="../sa3/sa3-fitxa-alumnat.html">SA3 · Fitxa base — Entrades i sensors</a></li><li><a href="../sa3/sa3-fitxa-ampliada.html">SA3 · Fitxa ampliada (aprofundiment) — Entrades i sensors</a></li><li><a href="../sa3/sa3-guia-docent.html">SA3 · Guia docent — Entrades i sensors: el robot percep</a></li><li><a href="../sa3/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA4 · Moviment: servos i motors</span><span class="tri-dot" data-tri="2"></span></summary><ul><li><a href="../sa4/index.html">Presentació</a></li><li><a href="../sa4/sa4-esquemes-connexions.html">SA4 · Esquemes i connexions</a></li><li><a href="../sa4/sa4-fitxa-alumnat.html">SA4 · Fitxa base — Moviment: servos, motors i ponts H</a></li><li><a href="../sa4/sa4-fitxa-ampliada.html">SA4 · Fitxa ampliada (aprofundiment) — Moviment: servos, motors i ponts H</a></li><li><a href="../sa4/sa4-guia-docent.html">SA4 · Guia docent — Moviment: servos, motors i ponts H</a></li><li><a href="../sa4/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA5 · micro:bit i MicroPython</span><span class="tri-dot" data-tri="2"></span></summary><ul><li><a href="../sa5/index.html">Presentació</a></li><li><a href="../sa5/sa5-connexions.html">SA5 · Connexions i entorn</a></li><li><a href="../sa5/sa5-fitxa-alumnat.html">SA5 · Fitxa base — micro:bit i MicroPython</a></li><li><a href="../sa5/sa5-fitxa-ampliada.html">SA5 · Fitxa ampliada (aprofundiment) — micro:bit i MicroPython</a></li><li><a href="../sa5/sa5-guia-docent.html">SA5 · Guia docent — micro:bit i MicroPython: un altre paradigma</a></li><li><a href="../sa5/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA6 · Sistemes de control</span><span class="tri-dot" data-tri="2"></span></summary><ul><li><a href="../sa6/index.html">Presentació</a></li><li><a href="../sa6/sa6-esquemes-connexions.html">SA6 · Esquemes i connexions</a></li><li><a href="../sa6/sa6-fitxa-alumnat.html">SA6 · Fitxa base — Sistemes de control</a></li><li><a href="../sa6/sa6-fitxa-ampliada.html">SA6 · Fitxa ampliada (aprofundiment) — Sistemes de control</a></li><li><a href="../sa6/sa6-guia-docent.html">SA6 · Guia docent — Sistemes de control: llaç obert/tancat i màquines d&#x27;estats</a></li><li><a href="../sa6/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA7 · Robòtica mòbil</span><span class="tri-dot" data-tri="3"></span></summary><ul><li><a href="../sa7/index.html">Presentació</a></li><li><a href="../sa7/sa7-esquemes-connexions.html">SA7 · Esquemes i connexions</a></li><li><a href="../sa7/sa7-fitxa-alumnat.html">SA7 · Fitxa base — Robòtica mòbil</a></li><li><a href="../sa7/sa7-fitxa-ampliada.html">SA7 · Fitxa ampliada (aprofundiment) — Robòtica mòbil</a></li><li><a href="../sa7/sa7-guia-docent.html">SA7 · Guia docent — Robòtica mòbil: cinemàtica i trajectòries</a></li><li><a href="../sa7/sa7-recursos-video-ia.html">SA7 · Recursos de vídeo — comportament programat vs après (IA)</a></li><li><a href="../sa7/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA8 · IoT i IA</span><span class="tri-dot" data-tri="3"></span></summary><ul><li><a href="../sa8/index.html">Presentació</a></li><li><a href="../sa8/sa8-connexions.html">SA8 · Connexions i entorn</a></li><li><a href="../sa8/sa8-fitxa-alumnat.html">SA8 · Fitxa base — IoT i IA</a></li><li><a href="../sa8/sa8-fitxa-ampliada.html">SA8 · Fitxa ampliada (aprofundiment) — IoT i IA</a></li><li><a href="../sa8/sa8-guia-docent.html">SA8 · Guia docent — IoT i IA: el robot connectat i intel·ligent</a></li><li><a href="../sa8/sa8-practica-teachable-machine.html">SA8 · Pràctica d&#x27;IA — Entrenar un classificador amb Teachable Machine</a></li><li><a href="../sa8/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>SA9 · Projecte final</span><span class="tri-dot" data-tri="3"></span></summary><ul><li><a href="../sa9/index.html">Presentació</a></li><li><a href="../sa9/plantilles/banc-de-reptes.html">SA9 · Banc de reptes (per nivells)</a></li><li><a href="../sa9/plantilles/dossier-tecnic-plantilla.html">Dossier tècnic — [Títol del projecte]</a></li><li><a href="../sa9/plantilles/planificacio-agile-plantilla.html">Planificació àgil — Equip: ______________________</a></li><li><a href="../sa9/sa9-fitxa-alumnat.html">SA9 · Fitxa base — Repte final integrador</a></li><li><a href="../sa9/sa9-fitxa-ampliada.html">SA9 · Fitxa ampliada (aprofundiment) — Repte final integrador</a></li><li><a href="../sa9/sa9-guia-docent.html">SA9 · Guia docent — Repte final integrador (opció competició)</a></li><li><a href="../sa9/codi.html">Codi</a></li></ul></details>
+<details class="sb-grup"><summary><span>Solucionari</span></summary><ul><li><a href="../solucionari/solucionari-t1-sa1-sa3.html">Solucionari de reptes — Trimestre 1 (SA1-SA3)</a></li><li><a href="../solucionari/solucionari-t2-sa4-sa6.html">Solucionari de reptes — Trimestre 2 (SA4-SA6)</a></li><li><a href="../solucionari/solucionari-t3-sa7-sa9.html">Solucionari de reptes — Trimestre 3 (SA7-SA9)</a></li></ul></details>
+</nav></aside>
+  <main id="contingut">
+    <nav class="breadcrumb" aria-label="Ubicació"><a href="../../index.html">Inici</a> <span class="sep">/</span> <a href="../../classes/index.html">Classes</a> <span class="sep">/</span> <span aria-current="page">SA0 · Guia per aprendre a programar la placa</span></nav>
+    
+    <article class="prose">
+<h1 id="sa0-guia-per-aprendre-a-programar-la-placa"><a class="toclink" href="#sa0-guia-per-aprendre-a-programar-la-placa">SA0 · Guia per aprendre a programar la placa</a></h1>
+<blockquote>
+<p><strong>Objectiu:</strong> que entenguis <strong>com es programa</strong> abans d'entrar a les unitats. Aquí tens els conceptes bàsics ben explicats, amb exemples curts. La part <strong>A</strong> és per a <strong>Arduino (C/C++)</strong>, que faràs servir a la majoria de SA; la part <strong>B</strong> és per a <strong>MicroPython (micro:bit)</strong>; la part <strong>C</strong> compara els dos.</p>
+<p><strong>Idea clau:</strong> programar és <strong>donar ordres molt precises</strong> a una màquina que fa <em>exactament</em> el que dius (ni més, ni menys). Si una cosa no funciona, gairebé sempre és perquè l'ordre no era la que pensaves.</p>
+</blockquote>
+<hr />
+<h1 id="part-a-arduino-llenguatge-cc"><a class="toclink" href="#part-a-arduino-llenguatge-cc">PART A · Arduino (llenguatge C/C++)</a></h1>
+<h2 id="a0-el-flux-de-treball"><a class="toclink" href="#a0-el-flux-de-treball">A0. El flux de treball</a></h2>
+<ol>
+<li><strong>Escrius</strong> el programa (<em>sketch</em>) a l'<strong>Arduino IDE</strong>.</li>
+<li>El <strong>Verifiques</strong> (botó ✔): l'ordinador comprova que no hi hagi errors d'escriptura (<em>compilar</em>).</li>
+<li>El <strong>Carregues</strong> (botó →): el programa passa de l'ordinador a la placa per l'USB.</li>
+<li>La placa <strong>executa</strong> el programa, encara que la desconnectis de l'ordinador (queda gravat).</li>
+</ol>
+<blockquote>
+<p>Pots fer tot això sense placa física a <strong>Tinkercad Circuits</strong> o <strong>Wokwi</strong>.</p>
+</blockquote>
+<hr />
+<h2 id="a1-lesquelet-de-tot-programa-arduino"><a class="toclink" href="#a1-lesquelet-de-tot-programa-arduino">A1. L'esquelet de tot programa Arduino</a></h2>
+<p>Tot <em>sketch</em> té sempre <strong>dues parts obligatòries</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// Es fa UNA sola vegada, en engegar la placa.</span>
+<span class="w">  </span><span class="c1">// Aquí es PREPARA tot (configurar pins, iniciar comunicació...).</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// Es repeteix INFINITAMENT, una vegada i una altra.</span>
+<span class="w">  </span><span class="c1">// Aquí va el comportament del robot.</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<blockquote>
+<p><strong>Analogia:</strong> <code>setup()</code> és <strong>preparar-se abans de sortir de casa</strong> (ho fas un cop). <code>loop()</code> és <strong>el que fas durant tot el dia, en bucle</strong>.</p>
+</blockquote>
+<hr />
+<h2 id="a2-comentaris-notes-per-a-humans"><a class="toclink" href="#a2-comentaris-notes-per-a-humans">A2. Comentaris (notes per a humans)</a></h2>
+<p>L'ordinador els <strong>ignora</strong>; serveixen perquè tu (i els altres) entengueu el codi.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Això és un comentari d&#39;una línia</span>
+
+<span class="cm">/* Això és un comentari</span>
+<span class="cm">   de diverses línies */</span>
+</code></pre></div>
+
+<blockquote>
+<p><strong>Bona pràctica:</strong> comenta <em>per què</em> fas una cosa, no <em>què</em> fa una línia òbvia.</p>
+</blockquote>
+<hr />
+<h2 id="a3-variables-i-tipus-de-dades"><a class="toclink" href="#a3-variables-i-tipus-de-dades">A3. Variables i tipus de dades</a></h2>
+<p>Una <strong>variable</strong> és una <strong>caixa amb nom</strong> on guardes un valor. Has de dir de <strong>quin tipus</strong> és:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">comptador</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">        </span><span class="c1">// nombre enter: ...-2, -1, 0, 1, 2...</span>
+<span class="kt">float</span><span class="w"> </span><span class="n">temperatura</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">21.5</span><span class="p">;</span><span class="w"> </span><span class="c1">// nombre amb decimals</span>
+<span class="kt">bool</span><span class="w"> </span><span class="n">ences</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span><span class="w">        </span><span class="c1">// cert/fals (true / false)</span>
+<span class="kt">char</span><span class="w"> </span><span class="n">lletra</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">&#39;A&#39;</span><span class="p">;</span><span class="w">        </span><span class="c1">// un sol caràcter</span>
+</code></pre></div>
+
+<p>Una <strong>constant</strong> és una caixa que <strong>no canviarà mai</strong>; s'escriu amb <code>const</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">PIN_LED</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">13</span><span class="p">;</span><span class="w">   </span><span class="c1">// el LED sempre serà al pin 13</span>
+</code></pre></div>
+
+<blockquote>
+<p><strong>Per què tipus?</strong> Perquè la placa té poca memòria i necessita saber quant espai reservar. Triar bé el tipus evita errors. <strong>Convenció:</strong> les constants en MAJÚSCULES.</p>
+</blockquote>
+<hr />
+<h2 id="a4-configurar-i-usar-els-pins"><a class="toclink" href="#a4-configurar-i-usar-els-pins">A4. Configurar i usar els pins</a></h2>
+<h3 id="configurar-dins-setup"><a class="toclink" href="#configurar-dins-setup">Configurar (dins <code>setup()</code>)</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">pinMode</span><span class="p">(</span><span class="n">PIN_LED</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span><span class="w">   </span><span class="c1">// aquest pin serà una SORTIDA (LED, motor...)</span>
+<span class="n">pinMode</span><span class="p">(</span><span class="n">PIN_BOTO</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT</span><span class="p">);</span><span class="w">   </span><span class="c1">// aquest pin serà una ENTRADA (botó, sensor...)</span>
+</code></pre></div>
+
+<h3 id="sortida-i-entrada-digital-nomes-2-estats"><a class="toclink" href="#sortida-i-entrada-digital-nomes-2-estats">Sortida i entrada DIGITAL (només 2 estats)</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">digitalWrite</span><span class="p">(</span><span class="n">PIN_LED</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH</span><span class="p">);</span><span class="w">   </span><span class="c1">// encén (posa 5 V)</span>
+<span class="n">digitalWrite</span><span class="p">(</span><span class="n">PIN_LED</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span><span class="w">    </span><span class="c1">// apaga (posa 0 V)</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="n">estat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">digitalRead</span><span class="p">(</span><span class="n">PIN_BOTO</span><span class="p">);</span><span class="w">  </span><span class="c1">// llegeix: HIGH o LOW</span>
+</code></pre></div>
+
+<h3 id="entrada-i-sortida-analogica-molts-valors"><a class="toclink" href="#entrada-i-sortida-analogica-molts-valors">Entrada i sortida ANALÒGICA (molts valors)</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">valor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">analogRead</span><span class="p">(</span><span class="n">A0</span><span class="p">);</span><span class="w">     </span><span class="c1">// llegeix 0..1023 (sensor, potenciòmetre)</span>
+<span class="n">analogWrite</span><span class="p">(</span><span class="n">PIN_LED</span><span class="p">,</span><span class="w"> </span><span class="mi">128</span><span class="p">);</span><span class="w">      </span><span class="c1">// PWM 0..255 (mitja brillantor). Pins amb ~</span>
+</code></pre></div>
+
+<blockquote>
+<p><strong>Recorda:</strong> <code>analogRead</code> → <strong>0–1023</strong> (entrada). <code>analogWrite</code>/PWM → <strong>0–255</strong> (sortida, només pins <code>~</code>).</p>
+</blockquote>
+<hr />
+<h2 id="a5-esperes-delay"><a class="toclink" href="#a5-esperes-delay">A5. Esperes: <code>delay()</code></a></h2>
+<div class="highlight"><pre><span></span><code><span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span><span class="w">   </span><span class="c1">// atura tot durant 1000 mil·lisegons = 1 segon</span>
+</code></pre></div>
+
+<blockquote>
+<p>⚠️ <code>delay()</code> <strong>bloqueja</strong>: mentre espera, la placa no pot fer res més. Quan necessitis fer diverses coses alhora, s'usa <code>millis()</code> (un "cronòmetre" que no atura el programa). Ho veuràs com a ampliació.</p>
+</blockquote>
+<p><strong>Exemple complet — fer parpellejar un LED (<code>Blink</code>):</strong></p>
+<div class="highlight"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">PIN_LED</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">13</span><span class="p">;</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">PIN_LED</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span><span class="w">   </span><span class="c1">// el pin del LED és sortida</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">PIN_LED</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH</span><span class="p">);</span><span class="w"> </span><span class="c1">// encén</span>
+<span class="w">  </span><span class="n">delay</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span><span class="w">                  </span><span class="c1">// espera mig segon</span>
+<span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">PIN_LED</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span><span class="w">  </span><span class="c1">// apaga</span>
+<span class="w">  </span><span class="n">delay</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span><span class="w">                  </span><span class="c1">// espera mig segon</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<hr />
+<h2 id="a6-prendre-decisions-if-else"><a class="toclink" href="#a6-prendre-decisions-if-else">A6. Prendre decisions: <code>if / else</code></a></h2>
+<p>El programa fa una cosa <strong>o una altra</strong> segons una condició:</p>
+<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">temperatura</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">25</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">VENTILADOR</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH</span><span class="p">);</span><span class="w">   </span><span class="c1">// si fa calor, engega</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">VENTILADOR</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span><span class="w">    </span><span class="c1">// si no, apaga</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><strong>Operadors de comparació:</strong> <code>==</code> (igual), <code>!=</code> (diferent), <code>&gt;</code>, <code>&lt;</code>, <code>&gt;=</code>, <code>&lt;=</code>.
+<strong>Operadors lògics:</strong> <code>&amp;&amp;</code> (i), <code>||</code> (o), <code>!</code> (no).</p>
+<blockquote>
+<p>⚠️ Error clàssic: <code>=</code> <strong>assigna</strong> un valor; <code>==</code> <strong>compara</strong>. No són el mateix!</p>
+</blockquote>
+<hr />
+<h2 id="a7-repetir-bucles-for-i-while"><a class="toclink" href="#a7-repetir-bucles-for-i-while">A7. Repetir: bucles <code>for</code> i <code>while</code></a></h2>
+<div class="highlight"><pre><span></span><code><span class="c1">// Repetir un nombre conegut de vegades:</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">PIN_LED</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH</span><span class="p">);</span>
+<span class="w">  </span><span class="n">delay</span><span class="p">(</span><span class="mi">200</span><span class="p">);</span>
+<span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">PIN_LED</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span>
+<span class="w">  </span><span class="n">delay</span><span class="p">(</span><span class="mi">200</span><span class="p">);</span>
+<span class="p">}</span><span class="w">   </span><span class="c1">// parpelleja 3 cops</span>
+
+<span class="c1">// Repetir MENTRE es compleixi una condició:</span>
+<span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">digitalRead</span><span class="p">(</span><span class="n">PIN_BOTO</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">LOW</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// espera fins que premin el botó</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<hr />
+<h2 id="a8-funcions-propies-donar-nom-a-una-tasca"><a class="toclink" href="#a8-funcions-propies-donar-nom-a-una-tasca">A8. Funcions pròpies (donar nom a una tasca)</a></h2>
+<p>Si repeteixes un bloc de codi, posa-li nom i crida'l. El codi queda més net i clar:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">parpelleja</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">temps</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">     </span><span class="c1">// defineixes la funció</span>
+<span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">PIN_LED</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH</span><span class="p">);</span>
+<span class="w">  </span><span class="n">delay</span><span class="p">(</span><span class="n">temps</span><span class="p">);</span>
+<span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">PIN_LED</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span>
+<span class="w">  </span><span class="n">delay</span><span class="p">(</span><span class="n">temps</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">parpelleja</span><span class="p">(</span><span class="mi">200</span><span class="p">);</span><span class="w">   </span><span class="c1">// la crides quan vulguis</span>
+<span class="w">  </span><span class="n">parpelleja</span><span class="p">(</span><span class="mi">800</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<blockquote>
+<p><strong>Analogia:</strong> una funció és una <strong>recepta</strong> que escrius un cop i pots fer servir tantes vegades com vulguis.</p>
+</blockquote>
+<hr />
+<h2 id="a9-depurar-amb-el-monitor-serie"><a class="toclink" href="#a9-depurar-amb-el-monitor-serie">A9. Depurar amb el Monitor Sèrie</a></h2>
+<p>El <strong>Serial</strong> envia missatges de la placa a l'ordinador: és la teva eina per <strong>veure què passa per dins</strong>.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span><span class="w">          </span><span class="c1">// inicia la comunicació</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">analogRead</span><span class="p">(</span><span class="n">A0</span><span class="p">);</span>
+<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">v</span><span class="p">);</span><span class="w">           </span><span class="c1">// mostra el valor a la pantalla</span>
+<span class="w">  </span><span class="n">delay</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<blockquote>
+<p>Obre <strong>Eines → Monitor sèrie</strong> (a 9600 bauds). És com posar <code>print()</code> per espiar les variables.</p>
+</blockquote>
+<hr />
+<h1 id="part-b-micropython-microbit"><a class="toclink" href="#part-b-micropython-microbit">PART B · MicroPython (micro:bit)</a></h1>
+<p>A la <strong>SA5</strong> (i part de la SA8) no fas servir Arduino sinó el <strong>micro:bit</strong> amb <strong>MicroPython</strong>. Editors: <strong>python.microbit.org</strong> o <strong>Thonny</strong>.</p>
+<h2 id="b1-lesquelet-dun-programa-microbit"><a class="toclink" href="#b1-lesquelet-dun-programa-microbit">B1. L'esquelet d'un programa micro:bit</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">microbit</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>   <span class="c1"># porta totes les eines del micro:bit</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>              <span class="c1"># bucle infinit (com el loop() d&#39;Arduino)</span>
+    <span class="n">display</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">)</span>    <span class="c1"># mostra la lletra A a la pantalla de LEDs</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>           <span class="c1"># espera 500 ms</span>
+</code></pre></div>
+
+<blockquote>
+<p><strong>No hi ha <code>setup()</code>/<code>loop()</code>.</strong> El que va abans del <code>while True:</code> es fa un cop (preparació); el que va dins es repeteix.</p>
+</blockquote>
+<h2 id="b2-la-gran-diferencia-la-indentacio"><a class="toclink" href="#b2-la-gran-diferencia-la-indentacio">B2. La gran diferència: la INDENTACIÓ</a></h2>
+<p>En Python <strong>no hi ha claus <code>{}</code></strong>. El que mana és l'<strong>espai a l'esquerra</strong> (sagnat). Les línies amb el mateix sagnat formen un bloc:</p>
+<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="n">temperature</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">25</span><span class="p">:</span>
+    <span class="n">display</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="s2">&quot;!&quot;</span><span class="p">)</span>    <span class="c1"># AIXÒ va dins de l&#39;if (està sagnat)</span>
+<span class="n">display</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>          <span class="c1"># AIXÒ ja és fora de l&#39;if (sense sagnat)</span>
+</code></pre></div>
+
+<blockquote>
+<p>⚠️ Si barreges espais i no sagnes bé, el programa fallarà. <strong>La indentació és obligatòria</strong>, no decorativa.</p>
+</blockquote>
+<h2 id="b3-variables-sense-declarar-tipus"><a class="toclink" href="#b3-variables-sense-declarar-tipus">B3. Variables (sense declarar tipus)</a></h2>
+<p>A diferència d'Arduino, <strong>no escrius el tipus</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="n">comptador</span> <span class="o">=</span> <span class="mi">0</span>          <span class="c1"># Python ja sap que és un enter</span>
+<span class="n">temperatura</span> <span class="o">=</span> <span class="mf">21.5</span>     <span class="c1"># decimal</span>
+<span class="n">nom</span> <span class="o">=</span> <span class="s2">&quot;robot&quot;</span>          <span class="c1"># text</span>
+</code></pre></div>
+
+<h2 id="b4-entrades-i-sortides-integrades"><a class="toclink" href="#b4-entrades-i-sortides-integrades">B4. Entrades i sortides integrades</a></h2>
+<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="n">button_a</span><span class="o">.</span><span class="n">is_pressed</span><span class="p">():</span>     <span class="c1"># botó A premut?</span>
+    <span class="n">display</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">Image</span><span class="o">.</span><span class="n">HAPPY</span><span class="p">)</span>  <span class="c1"># mostra una cara contenta</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">accelerometer</span><span class="o">.</span><span class="n">get_x</span><span class="p">()</span>     <span class="c1"># llegeix la inclinació</span>
+<span class="n">nivell</span> <span class="o">=</span> <span class="n">display</span><span class="o">.</span><span class="n">read_light_level</span><span class="p">()</span>  <span class="c1"># sensor de llum integrat</span>
+</code></pre></div>
+
+<h2 id="b5-comunicacio-per-radio-entre-microbits"><a class="toclink" href="#b5-comunicacio-per-radio-entre-microbits">B5. Comunicació per ràdio (entre micro:bits)</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">radio</span>
+<span class="n">radio</span><span class="o">.</span><span class="n">on</span><span class="p">()</span>
+<span class="n">radio</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">group</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>     <span class="c1"># mateix grup per parlar entre ells</span>
+
+<span class="n">radio</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="s2">&quot;hola&quot;</span><span class="p">)</span>        <span class="c1"># l&#39;emissor envia</span>
+<span class="n">missatge</span> <span class="o">=</span> <span class="n">radio</span><span class="o">.</span><span class="n">receive</span><span class="p">()</span> <span class="c1"># el receptor rep (o None si no hi ha res)</span>
+</code></pre></div>
+
+<hr />
+<h1 id="part-c-arduino-vs-micropython-taula-comparativa"><a class="toclink" href="#part-c-arduino-vs-micropython-taula-comparativa">PART C · Arduino vs MicroPython (taula comparativa)</a></h1>
+<table>
+<thead>
+<tr>
+<th>Concepte</th>
+<th>Arduino (C/C++)</th>
+<th>MicroPython (micro:bit)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Preparació (un cop)</strong></td>
+<td><code>void setup() { }</code></td>
+<td>línies abans del <code>while True:</code></td>
+</tr>
+<tr>
+<td><strong>Bucle infinit</strong></td>
+<td><code>void loop() { }</code></td>
+<td><code>while True:</code></td>
+</tr>
+<tr>
+<td><strong>Blocs de codi</strong></td>
+<td>claus <code>{ }</code></td>
+<td><strong>indentació</strong> (espais)</td>
+</tr>
+<tr>
+<td><strong>Final de línia</strong></td>
+<td>punt i coma <code>;</code></td>
+<td>salt de línia (res)</td>
+</tr>
+<tr>
+<td><strong>Declarar variable</strong></td>
+<td>amb tipus: <code>int x = 0;</code></td>
+<td>sense tipus: <code>x = 0</code></td>
+</tr>
+<tr>
+<td><strong>Comentari</strong></td>
+<td><code>// ...</code> o <code>/* ... */</code></td>
+<td><code># ...</code></td>
+</tr>
+<tr>
+<td><strong>Esperar</strong></td>
+<td><code>delay(500);</code></td>
+<td><code>sleep(500)</code></td>
+</tr>
+<tr>
+<td><strong>Mostrar per depurar</strong></td>
+<td><code>Serial.println(x);</code></td>
+<td><code>print(x)</code></td>
+</tr>
+<tr>
+<td><strong>Condició</strong></td>
+<td><code>if (x &gt; 5) { }</code></td>
+<td><code>if x &gt; 5:</code></td>
+</tr>
+<tr>
+<td><strong>Bucle comptat</strong></td>
+<td><code>for (int i=0; i&lt;3; i++){}</code></td>
+<td><code>for i in range(3):</code></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Conclusió:</strong> els <strong>conceptes són els mateixos</strong> (variables, condicions, bucles, entrades/sortides). Només canvia la <strong>manera d'escriure'ls</strong> (la <em>sintaxi</em>). Si entens la lògica, canviar de llenguatge és qüestió de practicar la forma.</p>
+</blockquote>
+<hr />
+<h2 id="errors-frequents-i-com-resoldrels"><a class="toclink" href="#errors-frequents-i-com-resoldrels">Errors freqüents (i com resoldre'ls)</a></h2>
+<table>
+<thead>
+<tr>
+<th>Símptoma</th>
+<th>Causa probable</th>
+<th>Solució</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>No compila / "expected ;"</td>
+<td>Falta un <code>;</code> (Arduino)</td>
+<td>Revisa el final de cada línia.</td>
+</tr>
+<tr>
+<td>"Port not found" en carregar</td>
+<td>Placa o port mal seleccionats</td>
+<td>Eines → Placa i Port correctes.</td>
+</tr>
+<tr>
+<td>El LED no s'encén</td>
+<td>Polaritat, sense resistència, pin equivocat</td>
+<td>Revisa muntatge i el número de pin del codi.</td>
+</tr>
+<tr>
+<td><code>IndentationError</code> (Python)</td>
+<td>Sagnat incorrecte</td>
+<td>Alinea bé els espais del bloc.</td>
+</tr>
+<tr>
+<td>Fa coses estranyes però compila</td>
+<td>Error de <strong>lògica</strong> (no de sintaxi)</td>
+<td>Posa <code>Serial.println</code>/<code>print</code> per veure els valors.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="metode-per-llegir-codi-primm"><a class="toclink" href="#metode-per-llegir-codi-primm">Mètode per llegir codi: PRIMM</a></h2>
+<p>No copiïs codi sense entendre'l. Segueix aquests passos:</p>
+<ol>
+<li><strong>P</strong>redir — abans d'executar, escriu què creus que farà.</li>
+<li><strong>E</strong>xecutar — carrega'l i comprova si encertaves.</li>
+<li><strong>I</strong>nvestigar — entén què fa cada línia.</li>
+<li><strong>M</strong>odificar — canvia coses i observa l'efecte.</li>
+<li><strong>C</strong>rear — escriu el teu propi a partir del que has après.</li>
+</ol>
+<blockquote>
+<p>Predir <strong>abans</strong> de provar és el pas que més t'ajuda a aprendre de veritat. → Practica-ho a <strong><code>SA0_fitxa_alumnat.md</code></strong>.</p>
+</blockquote>
+    </article>
+  </main>
+  <nav class="toc" aria-label="En aquesta pàgina"><p class="toc-titol">En aquesta pàgina</p><ul>
+<li class="toc-l1"><a href="#sa0-guia-per-aprendre-a-programar-la-placa">SA0 · Guia per aprendre a programar la placa</a></li>
+<li class="toc-l1"><a href="#part-a-arduino-llenguatge-cc">PART A · Arduino (llenguatge C/C++)</a></li>
+<li class="toc-l2"><a href="#a0-el-flux-de-treball">A0. El flux de treball</a></li>
+<li class="toc-l2"><a href="#a1-lesquelet-de-tot-programa-arduino">A1. L&#x27;esquelet de tot programa Arduino</a></li>
+<li class="toc-l2"><a href="#a2-comentaris-notes-per-a-humans">A2. Comentaris (notes per a humans)</a></li>
+<li class="toc-l2"><a href="#a3-variables-i-tipus-de-dades">A3. Variables i tipus de dades</a></li>
+<li class="toc-l2"><a href="#a4-configurar-i-usar-els-pins">A4. Configurar i usar els pins</a></li>
+<li class="toc-l2"><a href="#a5-esperes-delay">A5. Esperes: delay()</a></li>
+<li class="toc-l2"><a href="#a6-prendre-decisions-if-else">A6. Prendre decisions: if / else</a></li>
+<li class="toc-l2"><a href="#a7-repetir-bucles-for-i-while">A7. Repetir: bucles for i while</a></li>
+<li class="toc-l2"><a href="#a8-funcions-propies-donar-nom-a-una-tasca">A8. Funcions pròpies (donar nom a una tasca)</a></li>
+<li class="toc-l2"><a href="#a9-depurar-amb-el-monitor-serie">A9. Depurar amb el Monitor Sèrie</a></li>
+<li class="toc-l1"><a href="#part-b-micropython-microbit">PART B · MicroPython (micro:bit)</a></li>
+<li class="toc-l2"><a href="#b1-lesquelet-dun-programa-microbit">B1. L&#x27;esquelet d&#x27;un programa micro:bit</a></li>
+<li class="toc-l2"><a href="#b2-la-gran-diferencia-la-indentacio">B2. La gran diferència: la INDENTACIÓ</a></li>
+<li class="toc-l2"><a href="#b3-variables-sense-declarar-tipus">B3. Variables (sense declarar tipus)</a></li>
+<li class="toc-l2"><a href="#b4-entrades-i-sortides-integrades">B4. Entrades i sortides integrades</a></li>
+<li class="toc-l2"><a href="#b5-comunicacio-per-radio-entre-microbits">B5. Comunicació per ràdio (entre micro:bits)</a></li>
+<li class="toc-l1"><a href="#part-c-arduino-vs-micropython-taula-comparativa">PART C · Arduino vs MicroPython (taula comparativa)</a></li>
+<li class="toc-l2"><a href="#errors-frequents-i-com-resoldrels">Errors freqüents (i com resoldre&#x27;ls)</a></li>
+<li class="toc-l2"><a href="#metode-per-llegir-codi-primm">Mètode per llegir codi: PRIMM</a></li>
+</ul></nav>
+</div>
+<footer class="peu">
+  <p>Robòtica · 1r de Batxillerat · material sota llicència <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca" target="_blank" rel="noopener">CC BY-SA 4.0</a>.</p>
+  <p><a href="https://github.com/tomeu-cd100/robotica-1batx-2627" target="_blank" rel="noopener">Repositori a GitHub</a> · web generat el 2026-06-30.</p>
+</footer>
+<script src="../../assets/js/cerca-index.js"></script>
+<script src="../../assets/js/lloc.js"></script>
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reptes SA4 · Moviment: servos, motors i ponts H · Robòtica · 1r de Batxillerat</title>
+<meta name="description" content="Material docent · LOMLOE Catalunya · curs 2026-2027">
+<link rel="stylesheet" href="../assets/css/estil.css">
+<link rel="stylesheet" href="../assets/css/pygments.css">
+<script>(function(){try{var t=localStorage.getItem('tema');if(t==='fosc'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.setAttribute('data-tema','fosc');}catch(e){}})();</script>
+</head>
+<body data-section="reptes" class="amb-sidebar amb-toc">
+<a class="skip" href="#contingut">Salta al contingut</a>
+<header class="topbar">
+  <button class="menu-btn" aria-label="Obre el menú" aria-expanded="false">☰</button>
+  <a class="brand" href="../index.html"><span class="brand-mark">◆</span> Robòtica <span class="brand-sub">1r Batx</span></a>
+  <nav class="topnav" aria-label="Seccions">
+    <a href="../index.html">Inici</a>
+<a href="../programacio/index.html" data-sec="programacio">Programació didàctica</a>
+<a href="../classes/index.html" data-sec="classes">Classes</a>
+<a href="../reptes/index.html" data-sec="reptes" class="actiu">Reptes</a>
+<a href="../avaluacio/index.html" data-sec="avaluacio">Avaluació</a>
+<a href="../normativa/index.html" data-sec="normativa">Normativa</a>
+<a href="../recursos/index.html" data-sec="recursos">Recursos</a>
+  </nav>
+  <div class="topbar-eines">
+    <div class="cercador">
+      <input type="search" id="cerca" placeholder="Cerca…" autocomplete="off" aria-label="Cerca al web">
+      <div id="cerca-resultats" class="cerca-resultats" hidden></div>
+    </div>
+    <button class="tema-btn" aria-label="Canvia el tema clar/fosc" title="Tema clar/fosc">◐</button>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar"><nav class="sidebar-nav" aria-label="Pàgines de la secció">
+<p class="sidebar-titol">Reptes</p>
+<ul class="sb-top">
+<li><a href="index.html">Presentació</a></li>
+<li><a href="reptes-sa1.html">Reptes SA1 · Introducció: primer programa amb un LED <span class="tri-dot" data-tri="1"></span></a></li>
+<li><a href="reptes-sa2.html">Reptes SA2 · Sortides digitals i PWM <span class="tri-dot" data-tri="1"></span></a></li>
+<li><a href="reptes-sa3.html">Reptes SA3 · Entrades i sensors <span class="tri-dot" data-tri="1"></span></a></li>
+<li><a href="reptes-sa4.html" class="actiu">Reptes SA4 · Moviment: servos, motors i ponts H <span class="tri-dot" data-tri="2"></span></a></li>
+<li><a href="reptes-sa5.html">Reptes SA5 · micro:bit i MicroPython <span class="tri-dot" data-tri="2"></span></a></li>
+<li><a href="reptes-sa6.html">Reptes SA6 · Sistemes de control <span class="tri-dot" data-tri="2"></span></a></li>
+<li><a href="reptes-sa7.html">Reptes SA7 · Robòtica mòbil (Imagina 3dBot) <span class="tri-dot" data-tri="3"></span></a></li>
+<li><a href="reptes-sa8.html">Reptes SA8 · IoT i Intel·ligència Artificial <span class="tri-dot" data-tri="3"></span></a></li>
+</ul>
+<details class="sb-grup"><summary><span>Solucionari</span></summary><ul><li><a href="solucionari/index.html">Presentació</a></li><li><a href="solucionari/sa1/codi.html">Codi</a></li><li><a href="solucionari/sa2/codi.html">Codi</a></li><li><a href="solucionari/sa3/codi.html">Codi</a></li><li><a href="solucionari/sa4/codi.html">Codi</a></li><li><a href="solucionari/sa5/codi.html">Codi</a></li><li><a href="solucionari/sa6/codi.html">Codi</a></li><li><a href="solucionari/sa7/codi.html">Codi</a></li><li><a href="solucionari/sa8/codi.html">Codi</a></li></ul></details>
+</nav></aside>
+  <main id="contingut">
+    <nav class="breadcrumb" aria-label="Ubicació"><a href="../index.html">Inici</a> <span class="sep">/</span> <a href="../reptes/index.html">Reptes</a> <span class="sep">/</span> <span aria-current="page">Reptes SA4 · Moviment: servos, motors i ponts H</span></nav>
+    <span class="badge-tri" data-tri="2">2n trimestre</span>
+    <article class="prose">
+<h1 id="reptes-sa4-moviment-servos-motors-i-ponts-h"><a class="toclink" href="#reptes-sa4-moviment-servos-motors-i-ponts-h">Reptes SA4 · Moviment: servos, motors i ponts H</a></h1>
+<p><strong>Tria UN dels tres reptes.</strong> Tots <strong>controlen un actuador de moviment</strong> (servo o motor DC) <strong>segons una entrada</strong>. Mateix requisit mínim, ampliacions graduades. Atenció: els motors necessiten <strong>alimentació externa</strong> i seguretat.</p>
+<blockquote>
+<p><strong>Format "producte real":</strong> cada repte simula un <strong>encàrrec professional</strong>. Hi trobaràs <strong>qui</strong> us el demana (client), <strong>quin producte</strong> heu de lliurar i <strong>per a què</strong> serveix al món real. El requisit tècnic és el mateix d'abans; el marc us ajuda a decidir disseny i prioritats com ho faria un equip d'enginyeria.</p>
+<p><strong>Continguts SA4:</strong> servomotor (llibreria <code>Servo.h</code>), motor DC, pont H (sentit i velocitat), <code>analogWrite</code>. · <strong>Codi base:</strong> <code>Classes/SA4/codi/</code>.</p>
+<p>🌟 <strong>Producte estrella del trimestre:</strong> el <strong>Repte C (braç robòtic)</strong> és la peça central del 2n trimestre. A SA5 hi afegireu un <strong>comandament micro:bit</strong> i a SA6 el dotareu de <strong>moviment intel·ligent i precís</strong>. Si el vostre equip vol acumular cap al projecte final (SA9), comenceu per aquí. Vegeu <code>Programació didàctica/08c_Projectes_vida_real.md</code>.</p>
+</blockquote>
+<hr />
+<h2 id="repte-c-brac-robotic-producte-estrella"><a class="toclink" href="#repte-c-brac-robotic-producte-estrella">🤖 Repte C · Braç robòtic ⭐ <em>(producte estrella)</em></a></h2>
+<p><strong>Client.</strong> Un <strong>petit taller d'automatització</strong> vol un <strong>braç robòtic econòmic</strong> per a tasques repetitives: dispensar una dosi, classificar peces per mida/color o desplaçar objectes lleugers d'un punt a un altre.</p>
+<p><strong>Producte a lliurar.</strong> Un <strong>braç robòtic d'un o més servos</strong> que executa una <strong>tasca útil</strong> quan rep una ordre (sensor, polsador o, més endavant, comandament).</p>
+<p><strong>Per a què serveix al món real.</strong> Robòtica industrial col·laborativa, automatització de laboratori, accessibilitat (braços assistencials), línies de muntatge.</p>
+<p><strong>Què treballa.</strong> Control precís d'un <strong>servo</strong> (<code>Servo.h</code>) per a una acció útil, activat per una entrada.</p>
+<p><strong>Requisit mínim.</strong>
+- Un <strong>servo</strong> que executa un <strong>moviment de tasca</strong> (p. ex. 0°→120°→0°) quan es detecta una entrada.
+- Codi comentat.</p>
+<p><strong>Ampliacions graduades.</strong>
+1. <em>(bàsica)</em> Controla l'angle directament amb un <strong>potenciòmetre</strong> (mode manual).
+2. <em>(notable)</em> Dispensa <strong>una dosi</strong> per activació (un sol cicle, evita repeticions amb <em>debounce</em>).
+3. <em>(⭐⭐⭐)</em> Coordina <strong>dos servos</strong> (p. ex. base + pinça) per a una tasca completa de "agafa i deixa".</p>
+<blockquote>
+<p><strong>Cap a SA5/SA6:</strong> el moviment manual amb potenciòmetre evolucionarà cap a <strong>moviment suau amb control proporcional / màquina d'estats</strong> (SA6). El <strong>comandament per micro:bit</strong> (SA5) és una <strong>via avançada i opcional</strong>: cal un pont de comunicació (vegeu la nota tècnica a <code>Programació didàctica/08c_Projectes_vida_real.md</code>). La via recomanada manté el control al mateix Arduino (potenciòmetre/joystick).</p>
+</blockquote>
+<hr />
+<h2 id="repte-a-barrera-automatica"><a class="toclink" href="#repte-a-barrera-automatica">🚧 Repte A · Barrera automàtica</a></h2>
+<p><strong>Client.</strong> La gestió d'un <strong>pàrquing o pas a nivell</strong> necessita una <strong>barrera automàtica</strong> que s'obri només quan arriba un vehicle autoritzat i es tanqui sola.</p>
+<p><strong>Producte a lliurar.</strong> Una <strong>barrera motoritzada</strong> que s'obre i es tanca segons una entrada (sensor o polsador), amb senyalització d'estat.</p>
+<p><strong>Per a què serveix al món real.</strong> Control d'accessos, seguretat viària, regulació d'aparcaments.</p>
+<p><strong>Què treballa.</strong> Control d'un <strong>servo</strong> (angles 0°–180°) amb la llibreria <code>Servo.h</code>, activat per una entrada.</p>
+<p><strong>Requisit mínim.</strong>
+- Un <strong>servo</strong> que passa de <strong>tancat (0°)</strong> a <strong>obert (90°/180°)</strong> quan s'activa un <strong>polsador</strong> (o sensor), i torna.
+- Codi comentat amb la llibreria inclosa.</p>
+<p><strong>Ampliacions graduades.</strong>
+1. <em>(bàsica)</em> Fes el moviment <strong>suau</strong> (graus de mica en mica amb un <code>for</code>).
+2. <em>(notable)</em> Obre amb <strong>ultrasons</strong> (detecta el cotxe) i tanca sol passat un temps.
+3. <em>(⭐⭐⭐)</em> Afegeix un <strong>LED/semàfor</strong> coordinat (vermell tancada, verd oberta).</p>
+<blockquote>
+<p><strong>Continuïtat de trimestre:</strong> aquesta barrera reaprofita la senyalització de SA2 i la detecció de SA3; és la versió "amb moviment" del peatge intel·ligent del 1r trimestre.</p>
+</blockquote>
+<hr />
+<h2 id="repte-b-ventilador-o-vehicle-amb-motor"><a class="toclink" href="#repte-b-ventilador-o-vehicle-amb-motor">🌬️ Repte B · Ventilador o vehicle amb motor</a></h2>
+<p><strong>Client.</strong> Un fabricant de <strong>petits electrodomèstics o vehicles</strong> vol un prototip que controli un <strong>motor DC</strong>: engegar, parar, regular velocitat i invertir el sentit.</p>
+<p><strong>Producte a lliurar.</strong> Un <strong>dispositiu motoritzat</strong> (ventilador regulable o vehicle) governat per una entrada, amb alimentació segura.</p>
+<p><strong>Per a què serveix al món real.</strong> Climatització, mobilitat elèctrica, automoció, electrodomèstics.</p>
+<p><strong>Què treballa.</strong> Motor DC amb <strong>pont H</strong>: control de sentit i de velocitat (PWM).</p>
+<p><strong>Requisit mínim.</strong>
+- Engegar i parar un <strong>motor DC</strong> mitjançant un <strong>pont H</strong>, controlat per una entrada (polsador/potenciòmetre).
+- Codi comentat; alimentació externa connectada amb seguretat.</p>
+<p><strong>Ampliacions graduades.</strong>
+1. <em>(bàsica)</em> Regula la <strong>velocitat</strong> amb PWM des d'un potenciòmetre.
+2. <em>(notable)</em> Afegeix <strong>canvi de sentit</strong> (endavant/enrere) amb el pont H.
+3. <em>(⭐⭐⭐)</em> Programa una <strong>seqüència</strong> (accelera, manté, frena) amb funcions.</p>
+<blockquote>
+<p><strong>Cap a SA7:</strong> el control de motor DC amb pont H és la base de la <strong>locomoció del robot mòbil</strong> del 3r trimestre.</p>
+</blockquote>
+<hr />
+<h2 id="material-necessari-segons-repte"><a class="toclink" href="#material-necessari-segons-repte">Material necessari (segons repte)</a></h2>
+<ul>
+<li>Arduino UNO + USB · servo SG90 / motor DC + <strong>pont H</strong> (L298N o similar) · <strong>font d'alimentació externa</strong> per als motors · polsador/potenciòmetre/ultrasons segons repte · o <strong>Tinkercad/Wokwi</strong>.</li>
+<li><strong>Repte C (braç):</strong> preveure <strong>2 servos</strong> i una <strong>estructura</strong> (cartró, fusta o impressió 3D) per equip.</li>
+</ul>
+<h2 id="per-on-comencar-metode-de-projecte-primm"><a class="toclink" href="#per-on-comencar-metode-de-projecte-primm">Per on començar (mètode de projecte + PRIMM)</a></h2>
+<ol>
+<li><strong>Analitzar:</strong> quin moviment necessito i què el dispara? Qui és el client i què valora?</li>
+<li><strong>Dissenyar (Predir):</strong> angles/velocitats i diagrama de connexió (compte amb l'alimentació).</li>
+<li><strong>Prototipar:</strong> parteix de <code>Classes/SA4/codi/</code> (<code>01_servo_potenciometre</code>, <code>02_motor_pont_h</code>, <code>04_barrera_automatica</code>).</li>
+<li><strong>Provar:</strong> prova <strong>sense càrrega</strong> primer; comprova sentits i angles.</li>
+<li><strong>Millorar:</strong> suavitza moviments, afegeix sensor o segon actuador.</li>
+</ol>
+<h2 id="com-savalua"><a class="toclink" href="#com-savalua">Com s'avalua</a></h2>
+<table>
+<thead>
+<tr>
+<th>Rúbrica</th>
+<th>Per què</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>R1</strong> (codi)</td>
+<td>Ús de llibreries i funcions, lògica de control.</td>
+</tr>
+<tr>
+<td><strong>R2</strong> (circuit)</td>
+<td>Connexió i <strong>seguretat</strong> amb motors i alimentació externa.</td>
+</tr>
+<tr>
+<td><strong>R3</strong> (projecte)</td>
+<td>Integració actuador + entrada, control fiable, <strong>adequació al producte demanat</strong>.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="producte-entrega"><a class="toclink" href="#producte-entrega">Producte / entrega</a></h2>
+<ul>
+<li>Codi <code>.ino</code> comentat + esquema (amb alimentació) + quadern tècnic.</li>
+<li><strong>Full de producte</strong> (1 cara): qui és el client, què fa el producte i una millora futura.</li>
+</ul>
+<hr />
+<h2 id="orientacio-docent"><a class="toclink" href="#orientacio-docent">Orientació docent</a></h2>
+<ul>
+<li><strong>Marc "producte real":</strong> el client i el lliurable són una <strong>capa de sentit</strong>, no afegeixen requisit tècnic. Ajuden a prioritzar disseny i a connectar amb SA5/SA6 i el projecte final. El <strong>Repte C</strong> és el recomanat si l'equip vol construir cap a SA9.</li>
+<li><strong>Seguretat (clau):</strong> alimentar motors amb <strong>font externa</strong>, mai des del pin de 5 V; <strong>GND comú</strong>; muntar amb la placa desconnectada. Insistir en R2 (seguretat).</li>
+<li><strong>Errors freqüents:</strong> oblidar <code>#include &lt;Servo.h&gt;</code> i <code>attach()</code>; motor que no gira per manca de pont H/alimentació; sentit invertit (intercanviar sortides del pont H).</li>
+<li><strong>Diferenciació:</strong> el mínim és mou-un-actuador-amb-una-entrada; les ampliacions porten a PWM, sentit, <em>debounce</em> i coordinació de dos actuadors.</li>
+<li><strong>Gestió d'aula:</strong> si no hi ha ponts H per a tothom, simular a Tinkercad o compartir per torns; el repte A enllaça amb <code>04_barrera_automatica</code>. Per al braç (C), una estructura comuna impresa en 3D estalvia temps de muntatge.</li>
+</ul>
+    </article>
+  </main>
+  <nav class="toc" aria-label="En aquesta pàgina"><p class="toc-titol">En aquesta pàgina</p><ul>
+<li class="toc-l1"><a href="#reptes-sa4-moviment-servos-motors-i-ponts-h">Reptes SA4 · Moviment: servos, motors i ponts H</a></li>
+<li class="toc-l2"><a href="#repte-c-brac-robotic-producte-estrella">🤖 Repte C · Braç robòtic ⭐ (producte estrella)</a></li>
+<li class="toc-l2"><a href="#repte-a-barrera-automatica">🚧 Repte A · Barrera automàtica</a></li>
+<li class="toc-l2"><a href="#repte-b-ventilador-o-vehicle-amb-motor">🌬️ Repte B · Ventilador o vehicle amb motor</a></li>
+<li class="toc-l2"><a href="#material-necessari-segons-repte">Material necessari (segons repte)</a></li>
+<li class="toc-l2"><a href="#per-on-comencar-metode-de-projecte-primm">Per on començar (mètode de projecte + PRIMM)</a></li>
+<li class="toc-l2"><a href="#com-savalua">Com s&#x27;avalua</a></li>
+<li class="toc-l2"><a href="#producte-entrega">Producte / entrega</a></li>
+<li class="toc-l2"><a href="#orientacio-docent">Orientació docent</a></li>
+</ul></nav>
+</div>
+<footer class="peu">
+  <p>Robòtica · 1r de Batxillerat · material sota llicència <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca" target="_blank" rel="noopener">CC BY-SA 4.0</a>.</p>
+  <p><a href="https://github.com/tomeu-cd100/robotica-1batx-2627" target="_blank" rel="noopener">Repositori a GitHub</a> · web generat el 2026-06-30.</p>
+</footer>
+<script src="../assets/js/cerca-index.js"></script>
+<script src="../assets/js/lloc.js"></script>
+</body>
+</html>

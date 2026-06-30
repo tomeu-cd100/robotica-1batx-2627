@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Codi solucionari reptes · SA5 · Robòtica · 1r de Batxillerat</title>
+<meta name="description" content="Material docent · LOMLOE Catalunya · curs 2026-2027">
+<link rel="stylesheet" href="../../../assets/css/estil.css">
+<link rel="stylesheet" href="../../../assets/css/pygments.css">
+<script>(function(){try{var t=localStorage.getItem('tema');if(t==='fosc'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.setAttribute('data-tema','fosc');}catch(e){}})();</script>
+</head>
+<body data-section="reptes" class="amb-sidebar sense-toc">
+<a class="skip" href="#contingut">Salta al contingut</a>
+<header class="topbar">
+  <button class="menu-btn" aria-label="Obre el menú" aria-expanded="false">☰</button>
+  <a class="brand" href="../../../index.html"><span class="brand-mark">◆</span> Robòtica <span class="brand-sub">1r Batx</span></a>
+  <nav class="topnav" aria-label="Seccions">
+    <a href="../../../index.html">Inici</a>
+<a href="../../../programacio/index.html" data-sec="programacio">Programació didàctica</a>
+<a href="../../../classes/index.html" data-sec="classes">Classes</a>
+<a href="../../../reptes/index.html" data-sec="reptes" class="actiu">Reptes</a>
+<a href="../../../avaluacio/index.html" data-sec="avaluacio">Avaluació</a>
+<a href="../../../normativa/index.html" data-sec="normativa">Normativa</a>
+<a href="../../../recursos/index.html" data-sec="recursos">Recursos</a>
+  </nav>
+  <div class="topbar-eines">
+    <div class="cercador">
+      <input type="search" id="cerca" placeholder="Cerca…" autocomplete="off" aria-label="Cerca al web">
+      <div id="cerca-resultats" class="cerca-resultats" hidden></div>
+    </div>
+    <button class="tema-btn" aria-label="Canvia el tema clar/fosc" title="Tema clar/fosc">◐</button>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar"><nav class="sidebar-nav" aria-label="Pàgines de la secció">
+<p class="sidebar-titol">Reptes</p>
+<ul class="sb-top">
+<li><a href="../../index.html">Presentació</a></li>
+<li><a href="../../reptes-sa1.html">Reptes SA1 · Introducció: primer programa amb un LED <span class="tri-dot" data-tri="1"></span></a></li>
+<li><a href="../../reptes-sa2.html">Reptes SA2 · Sortides digitals i PWM <span class="tri-dot" data-tri="1"></span></a></li>
+<li><a href="../../reptes-sa3.html">Reptes SA3 · Entrades i sensors <span class="tri-dot" data-tri="1"></span></a></li>
+<li><a href="../../reptes-sa4.html">Reptes SA4 · Moviment: servos, motors i ponts H <span class="tri-dot" data-tri="2"></span></a></li>
+<li><a href="../../reptes-sa5.html">Reptes SA5 · micro:bit i MicroPython <span class="tri-dot" data-tri="2"></span></a></li>
+<li><a href="../../reptes-sa6.html">Reptes SA6 · Sistemes de control <span class="tri-dot" data-tri="2"></span></a></li>
+<li><a href="../../reptes-sa7.html">Reptes SA7 · Robòtica mòbil (Imagina 3dBot) <span class="tri-dot" data-tri="3"></span></a></li>
+<li><a href="../../reptes-sa8.html">Reptes SA8 · IoT i Intel·ligència Artificial <span class="tri-dot" data-tri="3"></span></a></li>
+</ul>
+<details class="sb-grup" open><summary><span>Solucionari</span></summary><ul><li><a href="../index.html">Presentació</a></li><li><a href="../sa1/codi.html">Codi</a></li><li><a href="../sa2/codi.html">Codi</a></li><li><a href="../sa3/codi.html">Codi</a></li><li><a href="../sa4/codi.html">Codi</a></li><li><a href="codi.html" class="actiu">Codi</a></li><li><a href="../sa6/codi.html">Codi</a></li><li><a href="../sa7/codi.html">Codi</a></li><li><a href="../sa8/codi.html">Codi</a></li></ul></details>
+</nav></aside>
+  <main id="contingut">
+    <nav class="breadcrumb" aria-label="Ubicació"><a href="../../../index.html">Inici</a> <span class="sep">/</span> <a href="../../../reptes/index.html">Reptes</a> <span class="sep">/</span> <span aria-current="page">Codi solucionari reptes · SA5</span></nav>
+    <span class="badge-tri" data-tri="2">2n trimestre</span>
+    <article class="prose">
+<h1>Codi solucionari reptes · SA5</h1>
+<p class="codi-intro">Fitxers de codi font. Fes servir el botó <strong>Copia</strong> per dur-los a l'IDE d'Arduino o a l'editor de micro:bit.</p>
+<ul class="codi-llista">
+<li><a href="#a-comptapassos-ampliat"><code>A_comptapassos_ampliat.py</code></a></li>
+<li><a href="#a-comptapassos-minim"><code>A_comptapassos_minim.py</code></a></li>
+<li><a href="#b-llum-nit-ampliat"><code>B_llum_nit_ampliat.py</code></a></li>
+<li><a href="#b-llum-nit-minim"><code>B_llum_nit_minim.py</code></a></li>
+<li><a href="#c-joc-radio-ampliat"><code>C_joc_radio_ampliat.py</code></a></li>
+<li><a href="#c-joc-radio-minim"><code>C_joc_radio_minim.py</code></a></li>
+</ul>
+<section class="codi-bloc" id="a-comptapassos-ampliat"><header class="codi-cap"><code class="codi-nom">A_comptapassos_ampliat.py</code><button class="copia-btn" type="button">Copia</button></header><div class="codi-cos"><div class="highlight"><pre><span></span><span class="c1"># Solucionari Repte SA5-A · Comptapassos personal (AMPLIAT)</span>
+<span class="c1"># AMPLIACIO 1: reinicia el comptador amb el boto B.</span>
+<span class="c1"># AMPLIACIO 2: objectiu de passes; mostra una icona en assolir-lo.</span>
+<span class="c1"># AMPLIACIO 3: barra de progres amb els LEDs cap a l&#39;objectiu.</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">microbit</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+
+<span class="n">passes</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">LLINDAR</span> <span class="o">=</span> <span class="mi">1500</span>
+<span class="n">OBJECTIU</span> <span class="o">=</span> <span class="mi">20</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">mostra_progres</span><span class="p">(</span><span class="n">actual</span><span class="p">,</span> <span class="n">total</span><span class="p">):</span>
+    <span class="c1"># AMPLIACIO 3: dibuixa una barra (0..total -&gt; 0..25 LEDs encesos)</span>
+    <span class="n">encesos</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="mi">25</span><span class="p">,</span> <span class="p">(</span><span class="n">actual</span> <span class="o">*</span> <span class="mi">25</span><span class="p">)</span> <span class="o">//</span> <span class="n">total</span><span class="p">)</span>
+    <span class="n">img</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">fila</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+            <span class="n">n</span> <span class="o">=</span> <span class="n">fila</span> <span class="o">*</span> <span class="mi">5</span> <span class="o">+</span> <span class="n">col</span>
+            <span class="n">img</span> <span class="o">+=</span> <span class="s2">&quot;9&quot;</span> <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="n">encesos</span> <span class="k">else</span> <span class="s2">&quot;0&quot;</span>
+        <span class="k">if</span> <span class="n">fila</span> <span class="o">&lt;</span> <span class="mi">4</span><span class="p">:</span>
+            <span class="n">img</span> <span class="o">+=</span> <span class="s2">&quot;:&quot;</span>
+    <span class="n">display</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">Image</span><span class="p">(</span><span class="n">img</span><span class="p">))</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">forca</span> <span class="o">=</span> <span class="n">accelerometer</span><span class="o">.</span><span class="n">get_strength</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">forca</span> <span class="o">&gt;</span> <span class="n">LLINDAR</span><span class="p">:</span>
+        <span class="n">passes</span> <span class="o">=</span> <span class="n">passes</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="n">sleep</span><span class="p">(</span><span class="mi">300</span><span class="p">)</span>
+
+    <span class="c1"># AMPLIACIO 1: reset amb boto B</span>
+    <span class="k">if</span> <span class="n">button_b</span><span class="o">.</span><span class="n">is_pressed</span><span class="p">():</span>
+        <span class="n">passes</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">display</span><span class="o">.</span><span class="n">scroll</span><span class="p">(</span><span class="s2">&quot;0&quot;</span><span class="p">)</span>
+
+    <span class="c1"># AMPLIACIO 2: objectiu assolit</span>
+    <span class="k">if</span> <span class="n">passes</span> <span class="o">&gt;=</span> <span class="n">OBJECTIU</span><span class="p">:</span>
+        <span class="n">display</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">Image</span><span class="o">.</span><span class="n">HAPPY</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># AMPLIACIO 3: barra de progres mentre no s&#39;assoleix</span>
+        <span class="n">mostra_progres</span><span class="p">(</span><span class="n">passes</span><span class="p">,</span> <span class="n">OBJECTIU</span><span class="p">)</span>
+
+    <span class="n">sleep</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+</pre></div>
+</div></section>
+<section class="codi-bloc" id="a-comptapassos-minim"><header class="codi-cap"><code class="codi-nom">A_comptapassos_minim.py</code><button class="copia-btn" type="button">Copia</button></header><div class="codi-cos"><div class="highlight"><pre><span></span><span class="c1"># Solucionari Repte SA5-A · Comptapassos personal (REQUISIT MINIM)</span>
+<span class="c1"># Detecta passes/sacsejades amb l&#39;acceleròmetre i les compta.</span>
+<span class="c1"># En prémer el boto A, mostra el total a la pantalla.</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">microbit</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+
+<span class="n">passes</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">LLINDAR</span> <span class="o">=</span> <span class="mi">1500</span>   <span class="c1"># forca (mil-li-g) per damunt de la qual comptem un pas</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">forca</span> <span class="o">=</span> <span class="n">accelerometer</span><span class="o">.</span><span class="n">get_strength</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">forca</span> <span class="o">&gt;</span> <span class="n">LLINDAR</span><span class="p">:</span>
+        <span class="n">passes</span> <span class="o">=</span> <span class="n">passes</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="n">sleep</span><span class="p">(</span><span class="mi">300</span><span class="p">)</span>            <span class="c1"># antirebot: evita comptar el mateix pas dos cops</span>
+
+    <span class="k">if</span> <span class="n">button_a</span><span class="o">.</span><span class="n">is_pressed</span><span class="p">():</span>
+        <span class="n">display</span><span class="o">.</span><span class="n">scroll</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">passes</span><span class="p">))</span>   <span class="c1"># mostra el total</span>
+
+    <span class="n">sleep</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+</pre></div>
+</div></section>
+<section class="codi-bloc" id="b-llum-nit-ampliat"><header class="codi-cap"><code class="codi-nom">B_llum_nit_ampliat.py</code><button class="copia-btn" type="button">Copia</button></header><div class="codi-cos"><div class="highlight"><pre><span></span><span class="c1"># Solucionari Repte SA5-B · Llum de nit intel-ligent (AMPLIAT)</span>
+<span class="c1"># AMPLIACIO 1: mostra el nivell de llum numeric en premer un boto (per calibrar).</span>
+<span class="c1"># AMPLIACIO 2: histeresi (dos llindars) per evitar parpellejos.</span>
+<span class="c1"># AMPLIACIO 3: ajusta la brillantor de la imatge segons la foscor.</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">microbit</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+
+<span class="n">LLINDAR_FOSC</span> <span class="o">=</span> <span class="mi">40</span>   <span class="c1"># per sota: encen</span>
+<span class="n">LLINDAR_CLAR</span> <span class="o">=</span> <span class="mi">80</span>   <span class="c1"># per sobre: apaga</span>
+<span class="n">ences</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">llum</span> <span class="o">=</span> <span class="n">display</span><span class="o">.</span><span class="n">read_light_level</span><span class="p">()</span>
+
+    <span class="c1"># AMPLIACIO 1: calibratge -&gt; mostra el valor amb el boto A</span>
+    <span class="k">if</span> <span class="n">button_a</span><span class="o">.</span><span class="n">is_pressed</span><span class="p">():</span>
+        <span class="n">display</span><span class="o">.</span><span class="n">scroll</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">llum</span><span class="p">))</span>
+
+    <span class="c1"># AMPLIACIO 2: decisio amb histeresi</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">ences</span> <span class="ow">and</span> <span class="n">llum</span> <span class="o">&lt;</span> <span class="n">LLINDAR_FOSC</span><span class="p">:</span>
+        <span class="n">ences</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="k">elif</span> <span class="n">ences</span> <span class="ow">and</span> <span class="n">llum</span> <span class="o">&gt;</span> <span class="n">LLINDAR_CLAR</span><span class="p">:</span>
+        <span class="n">ences</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="k">if</span> <span class="n">ences</span><span class="p">:</span>
+        <span class="c1"># AMPLIACIO 3: com mes fosc, mes brillant tota la pantalla (1..9)</span>
+        <span class="n">brillantor</span> <span class="o">=</span> <span class="mi">9</span> <span class="o">-</span> <span class="p">(</span><span class="n">llum</span> <span class="o">*</span> <span class="mi">9</span><span class="p">)</span> <span class="o">//</span> <span class="n">LLINDAR_FOSC</span>
+        <span class="k">if</span> <span class="n">brillantor</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">brillantor</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="n">fila</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">brillantor</span><span class="p">)</span> <span class="o">*</span> <span class="mi">5</span>
+        <span class="n">display</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">Image</span><span class="p">(</span><span class="n">fila</span> <span class="o">+</span> <span class="s2">&quot;:&quot;</span> <span class="o">+</span> <span class="n">fila</span> <span class="o">+</span> <span class="s2">&quot;:&quot;</span> <span class="o">+</span> <span class="n">fila</span> <span class="o">+</span> <span class="s2">&quot;:&quot;</span> <span class="o">+</span> <span class="n">fila</span> <span class="o">+</span> <span class="s2">&quot;:&quot;</span> <span class="o">+</span> <span class="n">fila</span><span class="p">))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">display</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="mi">150</span><span class="p">)</span>
+</pre></div>
+</div></section>
+<section class="codi-bloc" id="b-llum-nit-minim"><header class="codi-cap"><code class="codi-nom">B_llum_nit_minim.py</code><button class="copia-btn" type="button">Copia</button></header><div class="codi-cos"><div class="highlight"><pre><span></span><span class="c1"># Solucionari Repte SA5-B · Llum de nit intel-ligent (REQUISIT MINIM)</span>
+<span class="c1"># Llegeix el nivell de llum del micro:bit i encen la pantalla quan fa fosc.</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">microbit</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+
+<span class="n">LLINDAR</span> <span class="o">=</span> <span class="mi">50</span>   <span class="c1"># per sota d&#39;aquest nivell (0..255), considerem &quot;fosc&quot;</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">llum</span> <span class="o">=</span> <span class="n">display</span><span class="o">.</span><span class="n">read_light_level</span><span class="p">()</span>   <span class="c1"># 0..255</span>
+    <span class="c1"># IMPORTANT: read_light_level fa servir la matriu de LEDs; per llegir cal</span>
+    <span class="c1"># apagar-la un instant. Aqui ho fem mostrant la imatge despres de llegir.</span>
+    <span class="k">if</span> <span class="n">llum</span> <span class="o">&lt;</span> <span class="n">LLINDAR</span><span class="p">:</span>
+        <span class="n">display</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">Image</span><span class="o">.</span><span class="n">SQUARE</span><span class="p">)</span>      <span class="c1"># fa fosc -&gt; llum encesa</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">display</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>                 <span class="c1"># hi ha llum -&gt; apagada</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
+</pre></div>
+</div></section>
+<section class="codi-bloc" id="c-joc-radio-ampliat"><header class="codi-cap"><code class="codi-nom">C_joc_radio_ampliat.py</code><button class="copia-btn" type="button">Copia</button></header><div class="codi-cos"><div class="highlight"><pre><span></span><span class="c1"># Solucionari Repte SA5-C · Joc per radio (AMPLIAT)</span>
+<span class="c1"># AMPLIACIO 1: animacio abans de mostrar el resultat.</span>
+<span class="c1"># AMPLIACIO 2: porta el recompte de tirades.</span>
+<span class="c1"># AMPLIACIO 3: joc multijugador per radio (dau compartit entre dues plaques).</span>
+<span class="c1"># IMPORTANT: les dues plaques han de tenir el MATEIX group.</span>
+<span class="c1"># NOTA: si hi ha mes d&#39;un equip a l&#39;aula, cada equip ha de triar un group DIFERENT.</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">microbit</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">radio</span>
+
+<span class="n">radio</span><span class="o">.</span><span class="n">on</span><span class="p">()</span>
+<span class="n">radio</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">group</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="n">tirades</span> <span class="o">=</span> <span class="mi">0</span>   <span class="c1"># AMPLIACIO 2</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">anima</span><span class="p">():</span>
+    <span class="c1"># AMPLIACIO 1: petita animacio de &quot;remenar&quot; el dau</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">):</span>
+        <span class="n">display</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)))</span>
+        <span class="n">sleep</span><span class="p">(</span><span class="mi">80</span><span class="p">)</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">accelerometer</span><span class="o">.</span><span class="n">was_gesture</span><span class="p">(</span><span class="s2">&quot;shake&quot;</span><span class="p">):</span>
+        <span class="n">anima</span><span class="p">()</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+        <span class="n">display</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+        <span class="n">tirades</span> <span class="o">=</span> <span class="n">tirades</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="n">radio</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>            <span class="c1"># AMPLIACIO 3: comparteix el resultat</span>
+
+    <span class="c1"># AMPLIACIO 3: rep el dau de l&#39;altra placa</span>
+    <span class="n">missatge</span> <span class="o">=</span> <span class="n">radio</span><span class="o">.</span><span class="n">receive</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">missatge</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">display</span><span class="o">.</span><span class="n">scroll</span><span class="p">(</span><span class="s2">&quot;R&quot;</span> <span class="o">+</span> <span class="n">missatge</span><span class="p">)</span>
+
+    <span class="c1"># AMPLIACIO 2: mostra el recompte amb el boto A</span>
+    <span class="k">if</span> <span class="n">button_a</span><span class="o">.</span><span class="n">is_pressed</span><span class="p">():</span>
+        <span class="n">display</span><span class="o">.</span><span class="n">scroll</span><span class="p">(</span><span class="s2">&quot;T&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">tirades</span><span class="p">))</span>
+
+    <span class="n">sleep</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+</pre></div>
+</div></section>
+<section class="codi-bloc" id="c-joc-radio-minim"><header class="codi-cap"><code class="codi-nom">C_joc_radio_minim.py</code><button class="copia-btn" type="button">Copia</button></header><div class="codi-cos"><div class="highlight"><pre><span></span><span class="c1"># Solucionari Repte SA5-C · Joc o missatges per radio (REQUISIT MINIM)</span>
+<span class="c1"># Opcio joc: en sacsejar, mostra un resultat aleatori (dau 1..6).</span>
+<span class="c1"># (L&#39;opcio radio entre dues plaques esta a la versio ampliada.)</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">microbit</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">accelerometer</span><span class="o">.</span><span class="n">was_gesture</span><span class="p">(</span><span class="s2">&quot;shake&quot;</span><span class="p">):</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+        <span class="n">display</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+</pre></div>
+</div></section>
+    </article>
+  </main>
+  
+</div>
+<footer class="peu">
+  <p>Robòtica · 1r de Batxillerat · material sota llicència <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca" target="_blank" rel="noopener">CC BY-SA 4.0</a>.</p>
+  <p><a href="https://github.com/tomeu-cd100/robotica-1batx-2627" target="_blank" rel="noopener">Repositori a GitHub</a> · web generat el 2026-06-30.</p>
+</footer>
+<script src="../../../assets/js/cerca-index.js"></script>
+<script src="../../../assets/js/lloc.js"></script>
+</body>
+</html>

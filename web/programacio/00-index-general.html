@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Programació didàctica — Robòtica · 1r de Batxillerat (científic i tecnològic) · Robòtica · 1r de Batxillerat</title>
+<meta name="description" content="Material docent · LOMLOE Catalunya · curs 2026-2027">
+<link rel="stylesheet" href="../assets/css/estil.css">
+<link rel="stylesheet" href="../assets/css/pygments.css">
+<script>(function(){try{var t=localStorage.getItem('tema');if(t==='fosc'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.setAttribute('data-tema','fosc');}catch(e){}})();</script>
+</head>
+<body data-section="programacio" class="amb-sidebar amb-toc">
+<a class="skip" href="#contingut">Salta al contingut</a>
+<header class="topbar">
+  <button class="menu-btn" aria-label="Obre el menú" aria-expanded="false">☰</button>
+  <a class="brand" href="../index.html"><span class="brand-mark">◆</span> Robòtica <span class="brand-sub">1r Batx</span></a>
+  <nav class="topnav" aria-label="Seccions">
+    <a href="../index.html">Inici</a>
+<a href="../programacio/index.html" data-sec="programacio" class="actiu">Programació didàctica</a>
+<a href="../classes/index.html" data-sec="classes">Classes</a>
+<a href="../reptes/index.html" data-sec="reptes">Reptes</a>
+<a href="../avaluacio/index.html" data-sec="avaluacio">Avaluació</a>
+<a href="../normativa/index.html" data-sec="normativa">Normativa</a>
+<a href="../recursos/index.html" data-sec="recursos">Recursos</a>
+  </nav>
+  <div class="topbar-eines">
+    <div class="cercador">
+      <input type="search" id="cerca" placeholder="Cerca…" autocomplete="off" aria-label="Cerca al web">
+      <div id="cerca-resultats" class="cerca-resultats" hidden></div>
+    </div>
+    <button class="tema-btn" aria-label="Canvia el tema clar/fosc" title="Tema clar/fosc">◐</button>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar"><nav class="sidebar-nav" aria-label="Pàgines de la secció">
+<p class="sidebar-titol">Programació didàctica</p>
+<ul class="sb-top">
+<li><a href="index.html">Presentació</a></li>
+<li><a href="00-index-general.html" class="actiu">Programació didàctica — Robòtica · 1r de Batxillerat (científic i tecnològic)</a></li>
+<li><a href="01-introduccio-context-justificacio.html">01 · Introducció, context i justificació</a></li>
+<li><a href="02-objectius-competencies.html">02 · Objectius i competències</a></li>
+<li><a href="03-sabers-i-continguts.html">03 · Sabers i continguts</a></li>
+<li><a href="04-metodologia.html">04 · Metodologia</a></li>
+<li><a href="05-atencio-a-la-diversitat.html">05 · Atenció a la diversitat</a></li>
+<li><a href="06-avaluacio-criteris-qualificacio.html">06 · Avaluació: criteris, instruments i qualificació</a></li>
+<li><a href="07-rubriques.html">07 · Rúbriques d&#x27;avaluació</a></li>
+<li><a href="08-sequenciacio-temporal-anual.html">08 · Seqüenciació temporal anual</a></li>
+<li><a href="08c-projectes-vida-real.html">08c · Projectes de la vida real (model mixt: producte per SA + gran integrador)</a></li>
+<li><a href="09-materials-recursos-per-unitat.html">09 · Materials i recursos per unitat</a></li>
+<li><a href="09b-guia-compra-pressupost.html">09b · Guia de compra i pressupost del maquinari</a></li>
+<li><a href="09c-inventari-kits-disponibles.html">09c · Inventari del maquinari disponible (dotació real del centre)</a></li>
+<li><a href="10-sa1-introduccio-robotica.html">SA1 · Què és un robot? Sistemes embeguts i mètode de projecte <span class="tri-dot" data-tri="1"></span></a></li>
+<li><a href="11-sa2-sortides-digitals-pwm.html">SA2 · Sortides digitals i PWM: dona vida als actuadors <span class="tri-dot" data-tri="1"></span></a></li>
+<li><a href="12-sa3-entrades-sensors.html">SA3 · Entrades i sensors: el robot percep <span class="tri-dot" data-tri="1"></span></a></li>
+<li><a href="13-sa4-moviment-servos-motors.html">SA4 · Moviment: servos, motors i ponts H <span class="tri-dot" data-tri="2"></span></a></li>
+<li><a href="14-sa5-microbit-micropython.html">SA5 · micro:bit i MicroPython: un altre paradigma <span class="tri-dot" data-tri="2"></span></a></li>
+<li><a href="15-sa6-sistemes-control.html">SA6 · Sistemes de control: llaç obert/tancat i màquines d&#x27;estats <span class="tri-dot" data-tri="2"></span></a></li>
+<li><a href="16-sa7-robotica-mobil.html">SA7 · Robòtica mòbil: cinemàtica i trajectòries <span class="tri-dot" data-tri="3"></span></a></li>
+<li><a href="17-sa8-iot-ia.html">SA8 · IoT i IA: el robot connectat i intel·ligent <span class="tri-dot" data-tri="3"></span></a></li>
+<li><a href="18-sa9-projecte-final.html">SA9 · Repte final integrador (opció competició) <span class="tri-dot" data-tri="3"></span></a></li>
+</ul>
+</nav></aside>
+  <main id="contingut">
+    <nav class="breadcrumb" aria-label="Ubicació"><a href="../index.html">Inici</a> <span class="sep">/</span> <a href="../programacio/index.html">Programació didàctica</a> <span class="sep">/</span> <span aria-current="page">Programació didàctica — Robòtica · 1r de Batxillerat (científic i tecnològic)</span></nav>
+    
+    <article class="prose">
+<h1 id="programacio-didactica-robotica-1r-de-batxillerat-cientific-i-tecnologic"><a class="toclink" href="#programacio-didactica-robotica-1r-de-batxillerat-cientific-i-tecnologic">Programació didàctica — Robòtica · 1r de Batxillerat (científic i tecnològic)</a></h1>
+<h3 id="curs-2026-2027-lomloe-catalunya-decret-1712022"><a class="toclink" href="#curs-2026-2027-lomloe-catalunya-decret-1712022">Curs 2026-2027 · LOMLOE · Catalunya (Decret 171/2022)</a></h3>
+<blockquote>
+<p>Conjunt de documents Markdown que conformen la programació didàctica completa de la matèria.
+<strong>Hores:</strong> 2 h setmanals · <strong>Modalitat:</strong> anual (≈ 70 h) · <strong>Llengua:</strong> català.
+<strong>Referent curricular:</strong> <em>Tecnologia i Enginyeria I</em> (Ciències i Tecnologia), especialment la <strong>Competència específica 5</strong> (control programat i robòtica) i el bloc de sabers <strong>Automatització</strong>. Vegeu la carpeta <code>Normativa</code>.</p>
+</blockquote>
+<hr />
+<h2 id="index-de-documents"><a class="toclink" href="#index-de-documents">📑 Índex de documents</a></h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Document</th>
+<th>Contingut</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>00</td>
+<td><code>00_Index_general.md</code></td>
+<td>Aquest índex, decisions clau i com navegar.</td>
+</tr>
+<tr>
+<td>01</td>
+<td><code>01_Introduccio_context_justificacio.md</code></td>
+<td>Context, justificació, alumnat, marc normatiu.</td>
+</tr>
+<tr>
+<td>02</td>
+<td><code>02_Objectius_competencies.md</code></td>
+<td>Competències clau, competències específiques de la matèria i objectius.</td>
+</tr>
+<tr>
+<td>03</td>
+<td><code>03_Sabers_i_continguts.md</code></td>
+<td>Sabers organitzats en blocs i la seva distribució.</td>
+</tr>
+<tr>
+<td>04</td>
+<td><code>04_Metodologia.md</code></td>
+<td>Enfocament competencial, ABP, eines, espais.</td>
+</tr>
+<tr>
+<td>05</td>
+<td><code>05_Atencio_a_la_diversitat.md</code></td>
+<td>Mesures universals, addicionals i intensives.</td>
+</tr>
+<tr>
+<td>06</td>
+<td><code>06_Avaluacio_criteris_qualificacio.md</code></td>
+<td>Criteris d'avaluació, instruments i ponderació.</td>
+</tr>
+<tr>
+<td>07</td>
+<td><code>07_Rubriques.md</code></td>
+<td>Rúbriques d'avaluació reutilitzables.</td>
+</tr>
+<tr>
+<td>08</td>
+<td><code>08_Sequenciacio_temporal_anual.md</code></td>
+<td>Seqüenciació de les 9 situacions d'aprenentatge.</td>
+</tr>
+<tr>
+<td>08c</td>
+<td><code>08c_Projectes_vida_real.md</code></td>
+<td>Capa de sentit "producte de la vida real": fil de productes per trimestre cap al projecte integrador de SA9 (no altera hores ni rúbriques).</td>
+</tr>
+<tr>
+<td>09</td>
+<td><code>09_Materials_recursos_per_unitat.md</code></td>
+<td>Mapatge del maquinari disponible a cada unitat.</td>
+</tr>
+<tr>
+<td>09b</td>
+<td><code>09b_Guia_compra_pressupost.md</code></td>
+<td>Llista de compra i pressupost orientatiu per engegar des de zero.</td>
+</tr>
+<tr>
+<td>09c</td>
+<td><code>09c_Inventari_kits_disponibles.md</code></td>
+<td>Inventari del maquinari real del centre (3 kits/alumne + micro:bit + Imagina 3dBot) i on s'usa cada element.</td>
+</tr>
+<tr>
+<td>10-18</td>
+<td><code>10_SA1...</code> → <code>18_SA9...</code></td>
+<td>Les 9 situacions d'aprenentatge (unitats) desenvolupades.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="fil-conductor-de-la-materia"><a class="toclink" href="#fil-conductor-de-la-materia">🧭 Fil conductor de la matèria</a></h2>
+<blockquote>
+<p><strong>"Del component al sistema autònom"</strong>: l'alumnat avança del control d'un component electrònic fins al disseny, la programació i la documentació d'un sistema robòtic autònom que resol un repte real.</p>
+</blockquote>
+<p><strong>Tres etapes (una per trimestre):</strong></p>
+<ol>
+<li><strong>Fonaments</strong> — Electrònica + programació estructurada amb <strong>Arduino (C/C++)</strong>.</li>
+<li><strong>Control i sensors</strong> — <strong>micro:bit + MicroPython</strong>, actuadors i sistemes de control.</li>
+<li><strong>Robòtica i integració</strong> — Robòtica mòbil, IoT/IA i <strong>projecte/repte final</strong>.</li>
+</ol>
+<hr />
+<h2 id="decisions-de-disseny-preses-ajustables"><a class="toclink" href="#decisions-de-disseny-preses-ajustables">⚙️ Decisions de disseny preses (ajustables)</a></h2>
+<ol>
+<li><strong>Seqüència de llenguatges: Arduino C/C++ primer, Python (micro:bit) després.</strong>
+   <em>Justificació:</em> es comença pel maquinari concret i la programació estructurada de baix nivell (sabers d'electrònica i automatització), i s'introdueix Python quan ja hi ha base, per fer transferència i comparació de paradigmes. <em>(Si prefereixes Python-primer, es reordenen SA2-SA5.)</em></li>
+<li><strong>2 h setmanals anuals (≈ 70 h).</strong> Si finalment són 3 h, cada SA s'amplia amb les activitats marcades com a <em>"+ ampliació"</em>.</li>
+<li><strong>Avaluació per projectes/situacions d'aprenentatge</strong> amb quadern tècnic (<em>logbook</em>) i defenses orals.</li>
+<li><strong>Maquinari prioritari:</strong> Arduino UNO + kit Keyestudio KS0011/bàsic; micro:bit + Micro:shield; placa <strong>Imagina 3dBot (Arduino)</strong> per a robòtica mòbil. <em>(LEGO/mBot descartats per nivell.)</em></li>
+<li><strong>Simuladors</strong> (Tinkercad Circuits, Wokwi) com a suport per a aules nombroses o treball previ.</li>
+</ol>
+<blockquote>
+<p>⚠️ <strong>A confirmar amb el centre</strong> (heretat de la fase de normativa): optativa oficial vs pròpia, hores exactes (2/3 h) i continuïtat a 2n. Vegeu <code>Normativa/01_Normativa_LOMLOE_Robotica_1Batx_Catalunya.md</code>.</p>
+</blockquote>
+<hr />
+<h2 id="mapa-de-sequenciacio-resum"><a class="toclink" href="#mapa-de-sequenciacio-resum">🗺️ Mapa de seqüenciació (resum)</a></h2>
+<table>
+<thead>
+<tr>
+<th>Trim.</th>
+<th>SA</th>
+<th>Títol</th>
+<th>Hores</th>
+<th>Maquinari</th>
+<th>Llenguatge</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1r</td>
+<td>SA1</td>
+<td>Què és un robot? Sistemes embeguts i mètode de projecte</td>
+<td>6</td>
+<td>Arduino / simulador</td>
+<td>— / C++</td>
+</tr>
+<tr>
+<td>1r</td>
+<td>SA2</td>
+<td>Sortides digitals i PWM: dona vida als actuadors</td>
+<td>8</td>
+<td>Arduino + KS0011</td>
+<td>C/C++</td>
+</tr>
+<tr>
+<td>1r</td>
+<td>SA3</td>
+<td>Entrades i sensors: el robot percep</td>
+<td>8</td>
+<td>Arduino + KS0011</td>
+<td>C/C++</td>
+</tr>
+<tr>
+<td>2n</td>
+<td>SA4</td>
+<td>Moviment: servos, motors i ponts H</td>
+<td>8</td>
+<td>Arduino + KS0011</td>
+<td>C/C++</td>
+</tr>
+<tr>
+<td>2n</td>
+<td>SA5</td>
+<td>micro:bit i MicroPython: un altre paradigma</td>
+<td>7</td>
+<td>micro:bit + Micro:shield</td>
+<td>Python</td>
+</tr>
+<tr>
+<td>2n</td>
+<td>SA6</td>
+<td>Sistemes de control: llaç obert/tancat i màquines d'estats</td>
+<td>8</td>
+<td>Arduino / micro:bit</td>
+<td>C++ / Python</td>
+</tr>
+<tr>
+<td>3r</td>
+<td>SA7</td>
+<td>Robòtica mòbil: cinemàtica i trajectòries</td>
+<td>8</td>
+<td>Imagina 3dBot</td>
+<td>C/C++</td>
+</tr>
+<tr>
+<td>3r</td>
+<td>SA8</td>
+<td>IoT i IA: el robot connectat i intel·ligent</td>
+<td>6</td>
+<td>micro:bit ràdio / ESP32*</td>
+<td>Python / C++</td>
+</tr>
+<tr>
+<td>3r</td>
+<td>SA9</td>
+<td>Repte final integrador (opció competició)</td>
+<td>10</td>
+<td>Lliure</td>
+<td>Lliure</td>
+</tr>
+</tbody>
+</table>
+<p><em>ESP32 opcional segons disponibilitat.</em></p>
+<p><strong>Total: ≈ 69 h</strong> (+ marge per a avaluacions i imprevistos fins a ~70 h).</p>
+    </article>
+  </main>
+  <nav class="toc" aria-label="En aquesta pàgina"><p class="toc-titol">En aquesta pàgina</p><ul>
+<li class="toc-l1"><a href="#programacio-didactica-robotica-1r-de-batxillerat-cientific-i-tecnologic">Programació didàctica — Robòtica · 1r de Batxillerat (científic i tecnològic)</a></li>
+<li class="toc-l2"><a href="#curs-2026-2027-lomloe-catalunya-decret-1712022">Curs 2026-2027 · LOMLOE · Catalunya (Decret 171/2022)</a></li>
+<li class="toc-l2"><a href="#index-de-documents">📑 Índex de documents</a></li>
+<li class="toc-l2"><a href="#fil-conductor-de-la-materia">🧭 Fil conductor de la matèria</a></li>
+<li class="toc-l2"><a href="#decisions-de-disseny-preses-ajustables">⚙️ Decisions de disseny preses (ajustables)</a></li>
+<li class="toc-l2"><a href="#mapa-de-sequenciacio-resum">🗺️ Mapa de seqüenciació (resum)</a></li>
+</ul></nav>
+</div>
+<footer class="peu">
+  <p>Robòtica · 1r de Batxillerat · material sota llicència <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca" target="_blank" rel="noopener">CC BY-SA 4.0</a>.</p>
+  <p><a href="https://github.com/tomeu-cd100/robotica-1batx-2627" target="_blank" rel="noopener">Repositori a GitHub</a> · web generat el 2026-06-30.</p>
+</footer>
+<script src="../assets/js/cerca-index.js"></script>
+<script src="../assets/js/lloc.js"></script>
+</body>
+</html>
