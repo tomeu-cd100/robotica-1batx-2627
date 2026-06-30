@@ -4,6 +4,8 @@ Llista de compra orientativa per **engegar la matèria des de zero**, derivada d
 
 > ⚠️ **Els preus són orientatius (mercat 2026, IVA inclòs) i varien molt** segons proveïdor, marca i si la placa és **oficial** o **compatible (clon)**. Demana sempre pressupost a diversos proveïdors educatius. Tot el curs es pot fer **sense maquinari** amb simuladors (Tinkercad/Wokwi) si el pressupost és nul.
 
+> 📦 **Ja tens material?** Aquesta guia és per **comprar des de zero**. La **dotació real del centre** (3 kits/alumne + micro:bit + Imagina 3dBot) està inventariada a **`09c_Inventari_kits_disponibles.md`**; segons aquell inventari, **l'única compra pendent és el pont H L298N (SA4)**.
+
 ---
 
 ## 1. Estratègia de compra (llegeix-ho abans)
