@@ -4,11 +4,15 @@
 
 > **Continguts SA6:** llaç obert vs tancat, realimentació, consigna, histèresi, màquina d'estats, control proporcional. · **Codi base:** `Classes/SA6/codi/`.
 
+> **Format "producte real":** cada repte simula un **encàrrec** amb **client**, **lliurable** i **ús al món real**. El requisit tècnic no canvia. *(2n trimestre — el control proporcional dóna **moviment intel·ligent i precís** al braç robòtic de SA4. Vegeu `Programació didàctica/08c_Projectes_vida_real.md`.)*
+
 ---
 
 ## 🌡️ Repte A · Termòstat amb histèresi
 
 **Context.** Un termòstat que **manté la temperatura** engegant i parant la calefacció/ventilació, sense oscil·lar contínuament.
+
+> *Client: empresa de climatització · Lliurable: termòstat amb histèresi · Món real: calefacció i aire condicionat eficients.*
 
 **Què treballa.** Llaç tancat, consigna, **histèresi** (dos llindars).
 
@@ -27,6 +31,8 @@
 
 **Context.** Un semàfor que **canvia d'estat** segons condicions (botó de vianants, sensor de presència), no només per temps.
 
+> *Client: ajuntament (mobilitat) · Lliurable: semàfor adaptatiu amb màquina d'estats · Món real: trànsit intel·ligent que reacciona a la demanda.*
+
 **Què treballa.** **Màquina d'estats** (estats + transicions), entrades que disparen canvis.
 
 **Requisit mínim.**
@@ -43,6 +49,8 @@
 ## ⚙️ Repte C · Regulador proporcional
 
 **Context.** Un sistema que **corregeix de manera proporcional** a l'error: com més lluny de l'objectiu, més forta la correcció (llum, velocitat o posició).
+
+> *Client: empresa de robòtica de precisió · Lliurable: regulador proporcional (base del PID) · Món real: control de motors, drons i braços robòtics (com el de SA4).*
 
 **Què treballa.** **Control proporcional** (sortida ∝ error), `map()`/càlcul, PWM.
 

@@ -4,11 +4,15 @@
 
 > **Continguts SA2:** múltiples sortides digitals, PWM i brillantor, LED RGB, seqüències. · **Codi base:** `Classes/SA2/codi/`.
 
+> **Format "producte real":** cada repte simula un **encàrrec** amb **client**, **lliurable** i **ús al món real**. El requisit tècnic no canvia. *(1r trimestre — dispositius que informen i perceben. Vegeu `Programació didàctica/08c_Projectes_vida_real.md`.)*
+
 ---
 
 ## 🚦 Repte A · Semàfor d'un encreuament
 
 **Context.** Programa el cicle d'un semàfor de cotxes amb els temps realistes de cada fase.
+
+> *Client: ajuntament (mobilitat) · Lliurable: regulador de semàfor d'una cruïlla · Món real: regulació de trànsit urbà.*
 
 **Què treballa.** Coordinar 3 sortides digitals amb una seqüència temporitzada.
 
@@ -27,6 +31,8 @@
 
 **Context.** Una llum d'ambient que **puja i baixa d'intensitat** suaument (efecte "respiració") o canvia de color.
 
+> *Client: estudi de disseny d'interiors · Lliurable: làmpada d'ambient regulable · Món real: il·luminació decorativa i domòtica.*
+
 **Què treballa.** PWM amb `analogWrite` (0–255), bucles per fer transicions suaus.
 
 **Requisit mínim.**
@@ -43,6 +49,8 @@
 ## 📊 Repte C · Indicador de nivell (barra de LED)
 
 **Context.** Un indicador visual de nivell (bateria, dipòsit, volum) amb una **barra de LEDs** que s'omple per trams.
+
+> *Client: fabricant d'equips industrials · Lliurable: indicador de nivell de barra · Món real: panells de control de bateria, dipòsit o volum.*
 
 **Què treballa.** Control de múltiples sortides segons un valor, organització amb bucles.
 

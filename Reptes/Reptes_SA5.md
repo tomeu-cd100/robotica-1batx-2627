@@ -4,11 +4,15 @@
 
 > **Continguts SA5:** MicroPython (indentació, `while True`), `display`, botons, acceleròmetre, sensor de llum, ràdio. · **Codi base:** `Classes/SA5/codi/` (`.py`).
 
+> **Format "producte real":** cada repte simula un **encàrrec** amb **client**, **lliurable** i **ús al món real**. El requisit tècnic no canvia. *(2n trimestre — el repte C de ràdio pot esdevenir el **comandament del braç robòtic** de SA4. Vegeu `Programació didàctica/08c_Projectes_vida_real.md`.)*
+
 ---
 
 ## 🏃 Repte A · Comptapassos personal
 
 **Context.** Una polsera d'activitat que **compta passos** detectant el moviment, com un podòmetre.
+
+> *Client: marca d'esport i salut · Lliurable: comptapassos vestible · Món real: wearables i monitoratge d'activitat física.*
 
 **Què treballa.** Acceleròmetre, variables, condicionals, `display`.
 
@@ -27,6 +31,8 @@
 
 **Context.** Una llum que **s'encén quan fa fosc** fent servir el sensor de llum del propi micro:bit.
 
+> *Client: empresa de domòtica · Lliurable: llum de nit autònoma · Món real: il·luminació adaptativa de la llar.*
+
 **Què treballa.** `display.read_light_level()`, llindar amb `if`, sortida a la pantalla.
 
 **Requisit mínim.**
@@ -43,6 +49,8 @@
 ## 🎲 Repte C · Joc o missatges per ràdio
 
 **Context.** Un **dau electrònic**, un **pedra-paper-tisora**, o **enviar missatges** entre dos micro:bits per ràdio.
+
+> *Client: empresa de joguines / equip de robòtica · Lliurable: joc o comandament sense fil · Món real: comunicació sense fil i comandaments remots (base del comandament del braç de SA4).*
 
 **Què treballa.** `random`, esdeveniments (sacsejada/botó), `display`, i/o comunicació `radio`.
 

@@ -4,11 +4,15 @@
 
 > **Continguts SA8:** IoT, telemetria (emissor/receptor), ràdio, IA (gestos), ESP32 (opcional). · **Codi base:** `Classes/SA8/codi/` (`.py` + `esp32_telemetria.ino`).
 
+> **Format "producte real":** cada repte simula un **encàrrec** amb **client**, **lliurable** i **ús al món real**. El requisit tècnic no canvia. *(3r trimestre — aquests sistemes **connecten i fan intel·ligent el cotxe autònom** de SA7 i alimenten el projecte final de SA9. Vegeu `Programació didàctica/08c_Projectes_vida_real.md`.)*
+
 ---
 
 ## 🌍 Repte A · Estació meteorològica connectada
 
 **Context.** Una estació que **mesura** l'entorn (temperatura, llum) i **envia** les dades a un altre dispositiu que les mostra/registra.
+
+> *Client: servei meteorològic / smart city · Lliurable: estació meteorològica connectada · Món real: Internet de les Coses i monitoratge ambiental.*
 
 **Què treballa.** Telemetria: emissor que llegeix sensors i **envia per ràdio**; receptor que **rep i mostra**.
 
@@ -27,6 +31,8 @@
 
 **Context.** Un sensor que **avisa a distància** quan passa alguna cosa (porta oberta, planta seca, temperatura alta) enviant una alerta a un receptor.
 
+> *Client: empresa de seguretat / agricultura · Lliurable: sistema d'alerta remota · Món real: alarmes connectades i monitoratge de cultius.*
+
 **Què treballa.** Detecció amb llindar + comunicació per ràdio (esdeveniment → missatge).
 
 **Requisit mínim.**
@@ -43,6 +49,8 @@
 ## ✋ Repte C · Control per gestos (IA)
 
 **Context.** Controlar un sistema **amb gestos** (moviments de la mà amb el micro:bit) reconeguts per un model, com fan els wearables.
+
+> *Client: empresa de tecnologia accessible · Lliurable: comandament per gestos amb IA · Món real: interfícies gestuals, accessibilitat i wearables intel·ligents.*
 
 **Què treballa.** Captura de dades de l'acceleròmetre, **classificació** de gestos, acció associada.
 

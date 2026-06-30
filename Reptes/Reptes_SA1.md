@@ -4,11 +4,15 @@
 
 > **Continguts SA1:** robot i sistema embegut, digital vs analògic, esquelet `setup()`/`loop()`, primer codi (`Blink`). · **Vocabulari/bases:** `Classes/SA0/`.
 
+> **Format "producte real":** cada repte simula un **encàrrec** amb **client**, **lliurable** i **ús al món real**. El requisit tècnic no canvia; el marc ajuda a donar sentit al producte. *(1r trimestre — dispositius que informen i perceben. Vegeu `Programació didàctica/08c_Projectes_vida_real.md`.)*
+
 ---
 
 ## 🌊 Repte A · Far costaner
 
 **Context.** Un far identifica cada port amb un **patró de llum** propi (tants segons encès, tants apagat). Programa un far amb el seu codi lluminós únic.
+
+> *Client: autoritat portuària · Lliurable: balisa amb patró identificatiu · Món real: senyalització marítima i navegació.*
 
 **Què treballa.** Sortida digital, temporització amb `delay()`, seqüència repetitiva al `loop()`.
 
@@ -27,6 +31,8 @@
 
 **Context.** Les llums de bici tenen diversos **modes** (fix, intermitent ràpid, intermitent lent). Programa el comportament lluminós d'una llum del darrere.
 
+> *Client: marca de mobilitat urbana · Lliurable: llum de seguretat multimode · Món real: seguretat viària i visibilitat ciclista.*
+
 **Què treballa.** Sortida digital, patrons de parpelleig, organització del `loop()`.
 
 **Requisit mínim.**
@@ -43,6 +49,8 @@
 ## 📡 Repte C · Missatge en Morse
 
 **Context.** Abans dels mòbils, els missatges viatjaven en **codi Morse** (punts i ratlles). Fes que el LED enviï una paraula curta.
+
+> *Client: equip de rescat · Lliurable: emissor lluminós de senyals d'auxili · Món real: comunicació d'emergència sense ràdio.*
 
 **Què treballa.** Sortida digital, temps curts/llargs, idea de codificar informació amb llum.
 

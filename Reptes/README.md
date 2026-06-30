@@ -26,7 +26,17 @@ Aquesta carpeta conté, **per a cada situació d'aprenentatge (SA1–SA8)**, **t
 
 ## Estructura de cada repte
 
-Context/problema · Què treballa · **Requisit mínim** · **Ampliacions graduades** · Material · Per on començar (mètode de projecte + PRIMM) · Com s'avalua (rúbriques) · Producte · Orientació docent.
+Context/problema · **Client · Lliurable · Món real** · Què treballa · **Requisit mínim** · **Ampliacions graduades** · Material · Per on començar (mètode de projecte + PRIMM) · Com s'avalua (rúbriques) · Producte · Orientació docent.
+
+## Format "producte de la vida real" i fil per trimestres
+
+Cada repte es planteja com un **encàrrec professional** (qui el demana, quin **producte** s'ha de lliurar i quin **ús real** té), sense canviar el contingut tècnic. A més, els productes s'encadenen al llarg del curs cap a un **gran projecte integrador** (SA9):
+
+- **1r trimestre (SA1–SA3):** dispositius que **informen i perceben** (balises, panells de senyalització, estacions sensores).
+- **2n trimestre (SA4–SA6):** producte estrella el **braç robòtic** — moviment (SA4) + comandament micro:bit (SA5) + control intel·ligent (SA6).
+- **3r trimestre (SA7–SA9):** producte estrella el **cotxe/robot autònom** — navegació (SA7) + IoT/IA (SA8) + síntesi lliure (SA9).
+
+Detall complet a **`Programació didàctica/08c_Projectes_vida_real.md`**.
 
 ## Com s'avalua (rúbriques del curs)
 
