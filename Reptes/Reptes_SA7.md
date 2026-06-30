@@ -5,11 +5,15 @@
 > ⚠️ **Important:** cal **ajustar els pins** dels motors al codi segons el manual de la placa (bloc marcat als `.ino`).
 > **Continguts SA7:** moviment bàsic, trajectòries, evitar obstacles (ultrasons), seguidor de línia (IR). · **Codi base:** `Classes/SA7/codi/`.
 
+> 🌟 **Format "producte real" — producte estrella del 3r trimestre:** construïu un **cotxe/robot autònom**. Cada repte n'és una capacitat (ruta, exploració, seguiment). A SA8 hi afegireu **telecomandament i telemetria (IoT/IA)**. *(Vegeu `Programació didàctica/08c_Projectes_vida_real.md`.)*
+
 ---
 
 ## 📦 Repte A · Robot repartidor (trajectòria programada)
 
 **Context.** Un robot de magatzem que ha de seguir un **recorregut conegut** (anar, girar, tornar) per portar una càrrega d'un punt a un altre.
+
+> *Client: operador logístic · Lliurable: robot repartidor de ruta programada · Món real: AGV de magatzem i logística automatitzada.*
 
 **Què treballa.** Moviment bàsic (endavant, gir, parar), seqüència de trajectòria, funcions de moviment.
 
@@ -28,6 +32,8 @@
 
 **Context.** Un robot que **explora** un espai sense xocar, canviant de rumb quan detecta un obstacle.
 
+> *Client: agència d'exploració · Lliurable: robot explorador evita-obstacles · Món real: rovers, robots d'inspecció i neteja autònoma.*
+
 **Què treballa.** Ultrasons + lògica de navegació (decisió segons distància).
 
 **Requisit mínim.**
@@ -44,6 +50,8 @@
 ## 🏁 Repte C · Seguidor de línia
 
 **Context.** Un robot de competició que **segueix una línia** pintada al terra el més de pressa i estable possible.
+
+> *Client: equip de competició de robòtica · Lliurable: robot seguidor de línia · Món real: competicions (WRO/RoboCup) i guiatge industrial per línia.*
 
 **Què treballa.** Sensors infrarojos (IR), lògica de seguiment, ajust de velocitat.
 

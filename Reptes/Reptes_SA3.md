@@ -4,11 +4,15 @@
 
 > **Continguts SA3:** polsador i *debounce*, potenciòmetre, LDR, ultrasons, `analogRead` (0–1023), condicionals. · **Codi base:** `Classes/SA3/codi/`.
 
+> **Format "producte real":** cada repte simula un **encàrrec** amb **client**, **lliurable** i **ús al món real**. El requisit tècnic no canvia. *(1r trimestre — dispositius que informen i perceben. Vegeu `Programació didàctica/08c_Projectes_vida_real.md`.)*
+
 ---
 
 ## 🌙 Repte A · Llum automàtica nocturna
 
 **Context.** Un llum que **s'encén sol quan es fa fosc** i s'apaga amb la llum del dia (estalvi energètic).
+
+> *Client: servei d'enllumenat públic · Lliurable: fanal automàtic amb sensor de llum · Món real: estalvi energètic i enllumenat intel·ligent.*
 
 **Què treballa.** Lectura analògica d'una LDR, llindar de decisió amb `if`.
 
@@ -27,6 +31,8 @@
 
 **Context.** El sensor que avisa quan t'acostes massa en aparcar: més a prop, més ràpid pita/parpelleja.
 
+> *Client: taller d'automoció · Lliurable: sensor d'aparcament antixoc · Món real: ajuda a la conducció i seguretat.*
+
 **Què treballa.** Sensor d'ultrasons, mesura de distància, decisions per trams.
 
 **Requisit mínim.**
@@ -43,6 +49,8 @@
 ## 🎛️ Repte C · Instrument o comptador interactiu
 
 **Context.** Un control de joc o un instrument: un **potenciòmetre** que regula alguna cosa, o un **polsador** que compta sense rebots.
+
+> *Client: estudi de videojocs / fabricant de comandaments · Lliurable: comandament o comptador interactiu · Món real: interfícies d'usuari i instrumentació.*
 
 **Què treballa.** Entrada analògica (potenciòmetre) o digital amb *debounce*; relació entrada→sortida.
 
