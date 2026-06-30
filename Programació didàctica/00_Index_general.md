@@ -20,8 +20,10 @@
 | 06 | `06_Avaluacio_criteris_qualificacio.md` | Criteris d'avaluació, instruments i ponderació. |
 | 07 | `07_Rubriques.md` | Rúbriques d'avaluació reutilitzables. |
 | 08 | `08_Sequenciacio_temporal_anual.md` | Seqüenciació de les 9 situacions d'aprenentatge. |
+| 08c | `08c_Projectes_vida_real.md` | Capa de sentit "producte de la vida real": fil de productes per trimestre cap al projecte integrador de SA9 (no altera hores ni rúbriques). |
 | 09 | `09_Materials_recursos_per_unitat.md` | Mapatge del maquinari disponible a cada unitat. |
 | 09b | `09b_Guia_compra_pressupost.md` | Llista de compra i pressupost orientatiu per engegar des de zero. |
+| 09c | `09c_Inventari_kits_disponibles.md` | Inventari del maquinari real del centre (3 kits/alumne + micro:bit + Imagina 3dBot) i on s'usa cada element. |
 | 10-18 | `10_SA1...` → `18_SA9...` | Les 9 situacions d'aprenentatge (unitats) desenvolupades. |
 
 ---

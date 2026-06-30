@@ -15,7 +15,10 @@ Programació didàctica **completa** de la matèria, amb cada apartat important 
 | `06_Avaluacio_criteris_qualificacio.md` | Criteris d'avaluació i qualificació. |
 | `07_Rubriques.md` | Rúbriques R1-R5. |
 | `08_Sequenciacio_temporal_anual.md` | Seqüenciació temporal al llarg del curs. |
+| `08c_Projectes_vida_real.md` | Capa "producte de la vida real": fil de productes per trimestre cap al projecte integrador (SA9). |
 | `09_Materials_recursos_per_unitat.md` | Materials i recursos per unitat. |
+| `09b_Guia_compra_pressupost.md` | Llista de compra i pressupost orientatiu per engegar des de zero. |
+| `09c_Inventari_kits_disponibles.md` | Inventari del maquinari real disponible al centre i on s'utilitza cada element. |
 
 ## Situacions d'aprenentatge (SA1-SA9)
 
