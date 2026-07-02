@@ -57,19 +57,39 @@ BLOB_BASE = f"https://github.com/{REPO_SLUG}/blob/main/"
 # ---------------------------------------------------------------------------
 SECTIONS = [
     {"key": "programacio", "title": "Programació didàctica", "src": "Programació didàctica",
-     "icon": "📘", "desc": "Objectius, sabers, metodologia, avaluació, rúbriques i les 9 SA."},
+     "icon": "📘", "desc": "Objectius, sabers, metodologia, avaluació, rúbriques i les 9 SA.",
+     "pauta": ["Comença per l'<strong>Índex general (00)</strong>: és el mapa de tots els documents.",
+               "Per al dia a dia en tens prou amb tres: <strong>04 Metodologia</strong> (com es treballa), <strong>06-07 Avaluació i rúbriques</strong> (com es qualifica) i <strong>08 Seqüenciació</strong> (el calendari).",
+               "Cada SA té el seu document (<strong>10 a 18</strong>) amb objectius, sessions i mapa d'avaluació."]},
     {"key": "classes", "title": "Classes", "src": "Classes",
-     "icon": "🧑‍🏫", "desc": "Material d'aula per SA: guies, fitxes, esquemes i codi."},
+     "icon": "🧑‍🏫", "desc": "Material d'aula per SA: guies, fitxes, esquemes i codi.",
+     "pauta": ["Tria la <strong>SA de la setmana</strong> a les targetes de sota (cada trimestre té el seu color).",
+               "Dins de cada SA, l'ordre de treball és sempre el mateix: <strong>1) guia docent → 2) fitxa base → 3) esquemes i codi → 4) fitxa ampliada i reptes</strong>.",
+               "Les rutines comunes (graella d'activació, mini-checks, pòsters, defensa oral, IA) són al <strong>Material transversal del curs</strong>."]},
     {"key": "reptes", "title": "Reptes", "src": "Reptes",
-     "icon": "🎯", "desc": "Reptes triables per SA amb el seu solucionari."},
+     "icon": "🎯", "desc": "Reptes triables per SA amb el seu solucionari.",
+     "pauta": ["Cada SA té <strong>3 reptes per triar</strong>: mateixos continguts i mínim comú, contextos diferents.",
+               "L'alumnat tria <strong>pel context</strong> (no per dificultat) i decideix fins on arriba amb les ampliacions.",
+               "El <strong>solucionari</strong> (codi resolt) és material del docent: no es lliura a l'alumnat."]},
     {"key": "avaluacio", "title": "Avaluació", "src": "Avaluació",
-     "icon": "📝", "desc": "Proves pràctiques per trimestre i full de qualificació."},
+     "icon": "📝", "desc": "Proves pràctiques per trimestre i full de qualificació.",
+     "pauta": ["Una <strong>prova pràctica per trimestre</strong>, integrada a l'última sessió de SA3, SA6 i SA9 (no costa hores extra).",
+               "<strong>T1 i T2 són individuals</strong> per defecte; el radar previ són els mini-checks de cada SA (a Classes → Material transversal).",
+               "Després de cada prova, l'alumnat escriu el <strong>pla de millora personal</strong> (3 línies) al quadern; el <strong>full de qualificació</strong> creua criteris CA ↔ rúbriques.",
+               "Per a l'alumnat: la guia <a href=\"../classes/00-general/00-avaluacio-per-alumnat.html\"><strong>«Com s'avalua aquesta matèria»</strong></a> (reparteix-la la primera setmana) i la caixa <strong>«🎯 Objectius i avaluació»</strong> de cada fitxa."]},
     {"key": "normativa", "title": "Normativa", "src": "Normativa",
-     "icon": "⚖️", "desc": "Marc legal LOMLOE i documents oficials."},
+     "icon": "⚖️", "desc": "Marc legal LOMLOE i documents oficials.",
+     "pauta": ["Per al dia a dia, la <strong>síntesi (01)</strong> és suficient.",
+               "Els <strong>PDF oficials</strong> (Decret 171/2022, RD 243/2022) són per justificar decisions davant d'inspecció o famílies."]},
     {"key": "simulacions", "title": "Simulacions", "src": "Simulacions/Wokwi",
-     "icon": "🔌", "desc": "Circuits Wokwi de pràctiques i reptes: codi i diagrama, reproduïbles."},
+     "icon": "🔌", "desc": "Circuits Wokwi de pràctiques i reptes: codi i diagrama, reproduïbles.",
+     "pauta": ["Cada pràctica i repte simulable té el seu <strong>circuit Wokwi</strong>: serveix per treballar sense maquinari o abans de muntar.",
+               "Per reproduir-la: projecte nou a <strong>wokwi.com</strong> → enganxa-hi el <code>diagram.json</code> i el codi.",
+               "El que no és simulable (micro:bit, robot 3dBot) té el <strong>pla B</strong> indicat a la presentació."]},
     {"key": "recursos", "title": "Recursos", "src": "Recursos",
-     "icon": "📚", "desc": "Recursos de professorat en obert i materials de suport."},
+     "icon": "📚", "desc": "Recursos de professorat en obert i materials de suport.",
+     "pauta": ["Material de <strong>consulta i suport</strong>: no forma part de la seqüència del curs.",
+               "Comença pel <strong>LLEGEIX-ME</strong> per saber què hi ha i per a què serveix cada cosa."]},
 ]
 SECTION_BY_KEY = {s["key"]: s for s in SECTIONS}
 
@@ -112,7 +132,7 @@ def is_activitat(src: Path) -> bool:
     if name.endswith(("_fitxa_alumnat.md", "_fitxa_ampliada.md")):
         return True
     if name in {"SA1_poster_robot_plantilla.md", "00_Plantilla_disseny_objecte.md",
-                "SA1_prova_diagnostica.md"}:
+                "SA1_prova_diagnostica.md", "00_Avaluacio_per_alumnat.md"}:
         return True
     if "SA9" in parts and "plantilles" in parts and name.endswith(".md"):
         return True
@@ -511,16 +531,161 @@ def toc_html(md: markdown.Markdown) -> str:
     return "\n".join(out)
 
 
-def breadcrumb_html(out_rel: str, section_key: str, title: str) -> str:
+def breadcrumb_html(out_rel: str, section_key: str, title: str,
+                    all_outs: set | None = None) -> str:
     prefix = depth_prefix(out_rel)
     crumbs = [f'<a href="{prefix}index.html">Inici</a>']
     if section_key != "inici":
         sec = SECTION_BY_KEY.get(section_key)
         if sec:
             crumbs.append(f'<a href="{prefix}{section_key}/index.html">{sec["title"]}</a>')
+        # nivell intermedi: subcarpeta (SA o apartat) amb pàgina índex pròpia
+        gk = page_group(section_key, out_rel)
+        if gk and all_outs:
+            gk_index = f"{section_key}/{gk}/index.html"
+            if gk_index != out_rel and gk_index in all_outs:
+                crumbs.append(f'<a href="{rel_url(out_rel, gk_index)}">'
+                              f'{html.escape(group_label(gk))}</a>')
     crumbs.append(f'<span aria-current="page">{html.escape(title)}</span>')
     return '<nav class="breadcrumb" aria-label="Ubicació">' + \
         ' <span class="sep">/</span> '.join(crumbs) + "</nav>"
+
+
+def pauta_html(section_key: str) -> str:
+    """Caixa «Com s'usa aquesta secció» de l'índex de cada secció."""
+    sec = SECTION_BY_KEY.get(section_key)
+    steps = sec.get("pauta") if sec else None
+    if not steps:
+        return ""
+    items = "".join(f"<li>{s}</li>" for s in steps)
+    return ('<div class="pauta-box"><p class="pauta-tit">📋 Com s\'usa aquesta secció</p>'
+            f'<ol>{items}</ol></div>')
+
+
+# --- Fil transversal de cada SA (Programació ↔ Classes ↔ Codi ↔ Reptes ↔ …) ---
+SA_PROVA = {3: ("Prova T1", "avaluacio/prova-practica-t1.html"),
+            6: ("Prova T2", "avaluacio/prova-practica-t2.html"),
+            9: ("Prova T3", "avaluacio/prova-practica-t3.html")}
+
+
+def build_sa_fil(pages: list[Page]) -> dict[int, list[tuple[str, str]]]:
+    """Per a cada SA (1-9), la llista ordenada de (etiqueta, out_rel) del seu fil."""
+    outs = {p.out_rel for p in pages}
+    prog: dict[int, str] = {}
+    reptes: dict[int, str] = {}
+    for p in pages:
+        if p.section == "programacio" and p.kind == "doc":
+            sa = detect_sa(p.src.name)
+            if sa and sa not in prog:
+                prog[sa] = p.out_rel
+        if p.section == "reptes" and p.kind == "doc" and p.src.name.startswith("Reptes_SA"):
+            sa = detect_sa(p.src.name)
+            if sa and sa not in reptes:
+                reptes[sa] = p.out_rel
+    fil: dict[int, list[tuple[str, str]]] = {}
+    for sa in range(1, 10):
+        items: list[tuple[str, str]] = []
+        if sa in prog:
+            items.append(("📘 Programació", prog[sa]))
+        if f"classes/sa{sa}/index.html" in outs:
+            items.append(("🧑‍🏫 Guia i fitxes", f"classes/sa{sa}/index.html"))
+        if f"classes/sa{sa}/codi.html" in outs:
+            items.append(("💻 Codi", f"classes/sa{sa}/codi.html"))
+        if sa in reptes:
+            items.append(("🎯 Reptes", reptes[sa]))
+        if f"reptes/solucionari/sa{sa}/codi.html" in outs:
+            items.append(("🔑 Solucionari", f"reptes/solucionari/sa{sa}/codi.html"))
+        if sa in SA_PROVA and SA_PROVA[sa][1] in outs:
+            items.append((f"📝 {SA_PROVA[sa][0]}", SA_PROVA[sa][1]))
+        if items:
+            fil[sa] = items
+    return fil
+
+
+def sa_fil_html(sa: int, current_out: str, fil: dict) -> str:
+    """Barra «Tot sobre la SAx» amb enllaços creuats entre seccions."""
+    items = fil.get(sa)
+    if not items or len(items) < 2:
+        return ""
+    tri = sa_trimestre(sa)
+    pills = []
+    for label, out in items:
+        if out == current_out:
+            pills.append(f'<span class="sa-fil-pill actiu">{label}</span>')
+        else:
+            pills.append(f'<a class="sa-fil-pill" href="{rel_url(current_out, out)}">{label}</a>')
+    return (f'<nav class="sa-fil" aria-label="Tot sobre la SA{sa}">'
+            f'<span class="sa-fil-tit"><span class="tri-dot" data-tri="{tri}"></span>'
+            f'Tot sobre la <strong>SA{sa}</strong>:</span>' + "".join(pills) + "</nav>")
+
+
+# --- Seqüències «anterior / següent» (itinerari pautat dins de cada bloc) ---
+def doc_ordre(p: Page):
+    """Ordre pedagògic dels materials d'una SA (guia → fitxa → esquemes → codi)."""
+    n = p.out_rel.lower()
+    rang = 9
+    for i, clau in enumerate(["guia", "fitxa-alumnat", "fitxa", "vocabulari",
+                               "prova", "normes", "esquemes", "connexions",
+                               "poster", "recursos", "practica"]):
+        if clau in n:
+            rang = i
+            break
+    return (p.kind == "code", rang, p.out_rel)
+
+
+def build_sequences(pages: list[Page]) -> dict[str, str]:
+    """Mapa out_rel -> HTML del paginador (‹ anterior · següent ›)."""
+    seqs: list[tuple[str, list[Page]]] = []
+
+    def add_seq(label: str, items: list[Page]):
+        if len(items) >= 2:
+            seqs.append((label, items))
+
+    # Programació didàctica: 00 → 18 (l'ordre alfabètic ja és el pedagògic)
+    prog = sorted([p for p in pages if p.section == "programacio" and p.kind == "doc"
+                   and page_group("programacio", p.out_rel) == ""],
+                  key=lambda p: p.out_rel)
+    add_seq("Programació didàctica", prog)
+
+    # Classes: dins de cada SA, presentació → guia → fitxes → esquemes → codi
+    for sa in range(0, 10):
+        grp = [p for p in pages if p.section == "classes"
+               and page_group("classes", p.out_rel) == f"sa{sa}"]
+        if not grp:
+            continue
+        idx = [p for p in grp if p.kind == "index"]
+        rest = sorted([p for p in grp if p.kind != "index"], key=doc_ordre)
+        add_seq(f"SA{sa}", idx + rest)
+
+    # Reptes: SA1 → SA8
+    rep = sorted([p for p in pages if p.section == "reptes" and p.kind == "doc"
+                  and p.src.name.startswith("Reptes_SA")], key=lambda p: p.out_rel)
+    add_seq("Reptes per SA", rep)
+
+    pager: dict[str, str] = {}
+    for label, items in seqs:
+        for i, p in enumerate(items):
+            prev_p = items[i - 1] if i > 0 else None
+            next_p = items[i + 1] if i < len(items) - 1 else None
+            parts = ['<nav class="pager" aria-label="Itinerari">']
+            if prev_p:
+                t = "Presentació" if prev_p.kind == "index" else ("Codi" if prev_p.kind == "code" else prev_p.title)
+                parts.append(f'<a class="pager-a prev" href="{rel_url(p.out_rel, prev_p.out_rel)}">'
+                             f'<span class="pager-dir">← Anterior</span>'
+                             f'<span class="pager-tit">{html.escape(t)}</span></a>')
+            else:
+                parts.append('<span class="pager-a buit"></span>')
+            parts.append(f'<span class="pager-seq">{html.escape(label)} · {i + 1}/{len(items)}</span>')
+            if next_p:
+                t = "Presentació" if next_p.kind == "index" else ("Codi" if next_p.kind == "code" else next_p.title)
+                parts.append(f'<a class="pager-a next" href="{rel_url(p.out_rel, next_p.out_rel)}">'
+                             f'<span class="pager-dir">Següent →</span>'
+                             f'<span class="pager-tit">{html.escape(t)}</span></a>')
+            else:
+                parts.append('<span class="pager-a buit"></span>')
+            parts.append("</nav>")
+            pager[p.out_rel] = "".join(parts)
+    return pager
 
 
 def page_shell(*, out_rel, section_key, title, content_html, toc="",
@@ -575,7 +740,7 @@ def page_shell(*, out_rel, section_key, title, content_html, toc="",
   <aside class="sidebar">{sidebar}</aside>
   <main id="contingut">
     {print_cap}
-    {breadcrumb_html(out_rel, section_key, title)}
+    {breadcrumb_html(out_rel, section_key, title, {p.out_rel for p in pages})}
     {pdf_block}
     {tri_badge}
     <article class="prose">
@@ -608,7 +773,7 @@ def lexer_for(path: Path):
         return get_lexer_by_name("text")
 
 
-def render_code_page(group: dict, pages: list[Page]) -> str:
+def render_code_page(group: dict, pages: list[Page], extra_nav: str = "") -> str:
     formatter = HtmlFormatter(cssclass="highlight", nowrap=False)
     parts = [f'<h1>{html.escape(group["label"])}</h1>',
              '<p class="codi-intro">Fitxers de codi font. Fes servir el botó '
@@ -627,6 +792,8 @@ def render_code_page(group: dict, pages: list[Page]) -> str:
             f'<button class="copia-btn" type="button">Copia</button></header>'
             f'<div class="codi-cos">{highlighted}</div></section>'
         )
+    if extra_nav:
+        parts.append(extra_nav)
     content = "\n".join(parts)
     return page_shell(out_rel=group["out_rel"], section_key=group["section"],
                       title=group["label"], content_html=content,
@@ -874,6 +1041,17 @@ def subindex_extra(section_key: str, group_key: str, current_out: str,
 # ---------------------------------------------------------------------------
 # Home
 # ---------------------------------------------------------------------------
+def find_out(pages: list[Page], src_name: str, fallback: str) -> str:
+    """Sortida (out_rel) de la pàgina generada des del fitxer font `src_name`."""
+    for p in pages:
+        try:
+            if p.src.name == src_name:
+                return p.out_rel
+        except Exception:
+            pass
+    return fallback
+
+
 def render_home(pages: list[Page]) -> str:
     # targetes de seccions
     sec_cards = []
@@ -884,13 +1062,66 @@ def render_home(pages: list[Page]) -> str:
             f'<span class="sec-tit">{s["title"]}</span>'
             f'<span class="sec-desc">{html.escape(s["desc"])}</span></a>'
         )
-    # mapa de SA -> pàgina de programació
+
+    # rutes guiades «Per on començo?» (URL resoltes dinàmicament)
+    outs = {p.out_rel for p in pages}
+    u_met = find_out(pages, "04_Metodologia.md", "programacio/index.html")
+    u_seq = find_out(pages, "08_Sequenciacio_temporal_anual.md", "programacio/index.html")
+    u_rub = find_out(pages, "07_Rubriques.md", "programacio/index.html")
+    u_full = find_out(pages, "Full_qualificacio_competencies.md", "avaluacio/index.html")
+    u_trans = ("classes/00-general/index.html"
+               if "classes/00-general/index.html" in outs else "classes/index.html")
+    u_alum = find_out(pages, "00_Avaluacio_per_alumnat.md", "avaluacio/index.html")
+    rutes = f"""
+<h2 class="seccio-sep">Per on començo?</h2>
+<p class="seccio-intro">Tria la teva situació: cada ruta et porta, pas a pas, al que necessites.</p>
+<div class="ruta-grid">
+  <div class="ruta-card">
+    <p class="ruta-tit">🧭 Agafo la matèria per primer cop</p>
+    <ol>
+      <li><a href="guia-inici.html">Guia d'inici docent</a> — instal·lació, comptes, checklist i pla B.</li>
+      <li><a href="{u_met}">Metodologia</a> — com és una sessió tipus i com es treballa.</li>
+      <li><a href="{u_seq}">Calendari del curs</a> — seqüència de SA i pla de contingència.</li>
+    </ol>
+  </div>
+  <div class="ruta-card">
+    <p class="ruta-tit">📅 Preparo la classe de la setmana</p>
+    <ol>
+      <li>Obre la <a href="classes/index.html">SA que toca</a> i llegeix la <strong>guia docent</strong> de la sessió.</li>
+      <li>Té a punt la <strong>fitxa base</strong> (o el PDF) i el <strong>codi</strong> de la SA.</li>
+      <li>Graella d'activació, mini-checks i pòsters: <a href="{u_trans}">material transversal</a>.</li>
+    </ol>
+  </div>
+  <div class="ruta-card">
+    <p class="ruta-tit">📝 He d'avaluar</p>
+    <ol>
+      <li><a href="{u_rub}">Rúbriques R1-R5</a> — comparteix-les <strong>abans</strong> de començar.</li>
+      <li><a href="avaluacio/index.html">Proves per trimestre</a> — T1 i T2, individuals.</li>
+      <li><a href="{u_full}">Full de qualificació</a> — creua criteris i rúbriques.</li>
+    </ol>
+  </div>
+  <div class="ruta-card">
+    <p class="ruta-tit">🎓 Soc alumne/a: com se m'avaluarà?</p>
+    <ol>
+      <li><a href="{u_alum}">Com s'avalua aquesta matèria</a> — d'on surt la nota, què compta i què no.</li>
+      <li>A la <strong>fitxa de cada SA</strong>: la caixa «🎯 Objectius i avaluació» (què sabré fer i què lliuro).</li>
+      <li><a href="{u_rub}">Rúbriques completes</a> — tens dret a veure-les abans de començar.</li>
+    </ol>
+  </div>
+</div>
+"""
+
+    # mapa de SA -> material d'aula (Classes); si no n'hi ha, programació
     sa_to_out = {}
     for p in pages:
         if p.section == "programacio":
             sa = detect_sa(p.src.name)
             if sa and sa not in sa_to_out:
                 sa_to_out[sa] = p.out_rel
+    for sa in range(1, 10):
+        hub = f"classes/sa{sa}/index.html"
+        if hub in outs:
+            sa_to_out[sa] = hub
     tri_blocks = []
     for t, info in TRIMESTRES.items():
         cards = []
@@ -915,18 +1146,19 @@ def render_home(pages: list[Page]) -> str:
   <div class="hero-cta">
     <a class="btn btn-primari" href="guia-inici.html">Comença per la guia d'inici</a>
     <a class="btn btn-secundari" href="programacio/index.html">Programació didàctica</a>
+    <a class="btn btn-secundari" href="{u_alum}">🎓 Com s'avalua</a>
   </div>
 </section>
+{rutes}
+<h2 class="seccio-sep">Les 9 situacions d'aprenentatge</h2>
+<p class="seccio-intro">Cada trimestre té el seu color. Clica una SA per anar al seu <strong>material d'aula</strong>; un cop dins, el <strong>fil de la SA</strong> t'enllaça la programació, el codi, els reptes, el solucionari i la prova.</p>
+<div class="tri-wrap">
+{"".join(tri_blocks)}
+</div>
 
 <h2 class="seccio-sep">Apartats</h2>
 <div class="sec-grid">
 {"".join(sec_cards)}
-</div>
-
-<h2 class="seccio-sep">Les 9 situacions d'aprenentatge</h2>
-<p class="seccio-intro">Cada trimestre té el seu color. Clica una SA per veure'n la programació didàctica.</p>
-<div class="tri-wrap">
-{"".join(tri_blocks)}
 </div>
 """
     return page_shell(out_rel="index.html", section_key="inici",
@@ -1037,6 +1269,8 @@ def main():
     copied_imgs: dict = {}
     search_index = []
     pdf_manifest = []   # pàgines d'activitat que es generaran en PDF
+    sa_fil = build_sa_fil(pages)       # fil transversal de cada SA
+    pager_map = build_sequences(pages)  # paginador ‹ anterior · següent ›
 
     # neteja de sortides HTML antigues (manté assets, _generador i els PDF)
     for item in WEB.iterdir():
@@ -1062,15 +1296,23 @@ def main():
         body = rewrite_links(body, p.src, p.out_rel, md_map, code_map, sim_map, copied_imgs)
         toc = toc_html(md)
         extra = ""
+        pre = ""
         if p.kind == "index":
             if p.out_rel == f"{p.section}/index.html":
+                pre = pauta_html(p.section)   # «Com s'usa aquesta secció»
                 extra = section_index_extra(p.section, p.out_rel, pages)
                 extra += section_gallery(p.section, p.out_rel, copied_imgs)
                 extra += section_documents(p.section, p.out_rel)
             else:
                 grp = page_group(p.section, p.out_rel)
                 extra = subindex_extra(p.section, grp, p.out_rel, pages)
-        content = body + ("\n" + extra if extra else "")
+        content = (pre + "\n" if pre else "") + body + ("\n" + extra if extra else "")
+        # Fil transversal de la SA + paginador d'itinerari (navegació pautada)
+        sa = detect_sa(p.out_rel)
+        if sa and 1 <= sa <= 9:
+            content += "\n" + sa_fil_html(sa, p.out_rel, sa_fil)
+        if p.out_rel in pager_map:
+            content += "\n" + pager_map[p.out_rel]
         pdf_href = None
         if p.kind in ("doc", "special") and is_activitat(p.src):
             pdf_out = pdf_out_for(p.out_rel)
@@ -1087,7 +1329,12 @@ def main():
 
     # Pàgines de codi
     for g in code_groups:
-        full = render_code_page(g, pages)
+        extra_nav = ""
+        sa = detect_sa(g["out_rel"])
+        if sa and 1 <= sa <= 9:
+            extra_nav += sa_fil_html(sa, g["out_rel"], sa_fil)
+        extra_nav += pager_map.get(g["out_rel"], "")
+        full = render_code_page(g, pages, extra_nav)
         dest = WEB / g["out_rel"]
         dest.parent.mkdir(parents=True, exist_ok=True)
         dest.write_text(full, encoding="utf-8")

@@ -1,5 +1,10 @@
 [
  {
+  "html": "classes/00-general/00-avaluacio-per-alumnat.html",
+  "pdf": "pdf/classes/00-general/00-avaluacio-per-alumnat.pdf",
+  "title": "Com s'avalua aquesta matèria — guia per a l'alumnat"
+ },
+ {
   "html": "classes/00-general/00-plantilla-disseny-objecte.html",
   "pdf": "pdf/classes/00-general/00-plantilla-disseny-objecte.pdf",
   "title": "Plantilla de disseny d'objecte"
@@ -32,7 +37,7 @@
  {
   "html": "classes/sa2/sa2-fitxa-alumnat.html",
   "pdf": "pdf/classes/sa2/sa2-fitxa-alumnat.pdf",
-  "title": "SA2 · Fitxa base — Sortides digitals i PWM"
+  "title": "SA2 · Fitxa base — Sortides digitals i PWM · *encén, gradua i coordina llums i so*"
  },
  {
   "html": "classes/sa2/sa2-fitxa-ampliada.html",
@@ -42,7 +47,7 @@
  {
   "html": "classes/sa3/sa3-fitxa-alumnat.html",
   "pdf": "pdf/classes/sa3/sa3-fitxa-alumnat.pdf",
-  "title": "SA3 · Fitxa base — Entrades i sensors"
+  "title": "SA3 · Fitxa base — Entrades i sensors · *fes que el sistema percebi el món*"
  },
  {
   "html": "classes/sa3/sa3-fitxa-ampliada.html",
@@ -52,7 +57,7 @@
  {
   "html": "classes/sa4/sa4-fitxa-alumnat.html",
   "pdf": "pdf/classes/sa4/sa4-fitxa-alumnat.pdf",
-  "title": "SA4 · Fitxa base — Moviment: servos, motors i ponts H"
+  "title": "SA4 · Fitxa base — Moviment: servos, motors i ponts H · *fes que les coses es moguin*"
  },
  {
   "html": "classes/sa4/sa4-fitxa-ampliada.html",
@@ -62,7 +67,7 @@
  {
   "html": "classes/sa5/sa5-fitxa-alumnat.html",
   "pdf": "pdf/classes/sa5/sa5-fitxa-alumnat.pdf",
-  "title": "SA5 · Fitxa base — micro:bit i MicroPython"
+  "title": "SA5 · Fitxa base — micro:bit i MicroPython · *els mateixos conceptes, un altre llenguatge*"
  },
  {
   "html": "classes/sa5/sa5-fitxa-ampliada.html",
@@ -72,7 +77,7 @@
  {
   "html": "classes/sa6/sa6-fitxa-alumnat.html",
   "pdf": "pdf/classes/sa6/sa6-fitxa-alumnat.pdf",
-  "title": "SA6 · Fitxa base — Sistemes de control"
+  "title": "SA6 · Fitxa base — Sistemes de control · *que el sistema es reguli sol*"
  },
  {
   "html": "classes/sa6/sa6-fitxa-ampliada.html",
@@ -82,7 +87,7 @@
  {
   "html": "classes/sa7/sa7-fitxa-alumnat.html",
   "pdf": "pdf/classes/sa7/sa7-fitxa-alumnat.pdf",
-  "title": "SA7 · Fitxa base — Robòtica mòbil"
+  "title": "SA7 · Fitxa base — Robòtica mòbil · *com es mou i gira un robot*"
  },
  {
   "html": "classes/sa7/sa7-fitxa-ampliada.html",
@@ -92,7 +97,7 @@
  {
   "html": "classes/sa8/sa8-fitxa-alumnat.html",
   "pdf": "pdf/classes/sa8/sa8-fitxa-alumnat.pdf",
-  "title": "SA8 · Fitxa base — IoT i IA"
+  "title": "SA8 · Fitxa base — IoT i IA · *connecta el sistema i decideix amb dades*"
  },
  {
   "html": "classes/sa8/sa8-fitxa-ampliada.html",
@@ -117,7 +122,7 @@
  {
   "html": "classes/sa9/sa9-fitxa-alumnat.html",
   "pdf": "pdf/classes/sa9/sa9-fitxa-alumnat.pdf",
-  "title": "SA9 · Fitxa base — Repte final integrador"
+  "title": "SA9 · Fitxa base — Repte final integrador · *el teu sistema: de la idea a la demo*"
  },
  {
   "html": "classes/sa9/sa9-fitxa-ampliada.html",

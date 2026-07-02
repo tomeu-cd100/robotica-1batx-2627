@@ -438,11 +438,81 @@ body.sense-toc .prose, body.sense-sidebar .prose { max-width: 78ch; }
 .baixa-pdf:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
 .print-cap { display: none; }
 
+/* ---------- Navegació pautada ---------- */
+/* Caixa «Com s'usa aquesta secció» (índex de secció) */
+.pauta-box {
+  background: var(--accent-soft); border: 1px solid var(--border);
+  border-left: 4px solid var(--accent); border-radius: var(--radi-s);
+  padding: .9rem 1.2rem; margin: 0 0 1.4rem;
+}
+.pauta-box .pauta-tit {
+  margin: 0 0 .35rem; font-weight: 700; font-size: .95rem;
+  letter-spacing: .02em; color: var(--accent);
+}
+.pauta-box ol { margin: 0; padding-left: 1.25rem; }
+.pauta-box li { margin: .25rem 0; }
+
+/* Rutes guiades de la portada («Per on començo?») */
+.ruta-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem; margin: 0 0 1.6rem;
+}
+.ruta-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radi); padding: 1rem 1.2rem; box-shadow: var(--ombra);
+}
+.ruta-card .ruta-tit { margin: 0 0 .5rem; font-weight: 700; }
+.ruta-card ol { margin: 0; padding-left: 1.25rem; }
+.ruta-card li { margin: .3rem 0; }
+
+/* Fil transversal d'una SA (pastilles d'enllaç creuat entre seccions) */
+.sa-fil {
+  display: flex; flex-wrap: wrap; align-items: center; gap: .45rem;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radi-s); padding: .6rem .9rem; margin: 1.8rem 0 0;
+}
+.sa-fil-tit { color: var(--muted); font-size: .88rem; margin-right: .25rem;
+  display: inline-flex; align-items: center; gap: .4rem; }
+.sa-fil-pill {
+  display: inline-block; padding: .22rem .7rem; border-radius: 999px;
+  border: 1px solid var(--border-fort); font-size: .85rem;
+  background: var(--bg); color: var(--text); white-space: nowrap;
+}
+a.sa-fil-pill:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
+.sa-fil-pill.actiu { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+/* Paginador d'itinerari (‹ anterior · següent ›) */
+.pager {
+  display: grid; grid-template-columns: 1fr auto 1fr; align-items: stretch;
+  gap: .8rem; margin: 1.2rem 0 0; padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+.pager-a {
+  display: flex; flex-direction: column; gap: .1rem; padding: .55rem .8rem;
+  border: 1px solid var(--border); border-radius: var(--radi-s);
+  background: var(--surface); min-width: 0;
+}
+.pager-a.buit { visibility: hidden; }
+.pager-a:hover { border-color: var(--accent); text-decoration: none; }
+.pager-a.next { text-align: right; }
+.pager-dir { font-size: .75rem; color: var(--muted); letter-spacing: .03em; }
+.pager-tit { font-weight: 600; font-size: .92rem; color: var(--text);
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.pager-a:hover .pager-tit { color: var(--accent); }
+.pager-seq { align-self: center; color: var(--muted); font-size: .8rem; white-space: nowrap; }
+@media (max-width: 640px) {
+  .pager { grid-template-columns: 1fr; }
+  .pager-seq { order: -1; justify-self: center; }
+  .pager-a.next { text-align: left; }
+  .pager-a.buit { display: none; }
+}
+
 /* ---------- Impressió / PDF ---------- */
 @page { size: A4; margin: 15mm 14mm 16mm; }
 @media print {
   .topbar, .sidebar, .toc, .peu, .breadcrumb, .skip,
-  .pagina-eines, .menu-btn, .badge-tri, .copia-btn { display: none !important; }
+  .pagina-eines, .menu-btn, .badge-tri, .copia-btn,
+  .sa-fil, .pager, .pauta-box { display: none !important; }
   html, body { background: #fff !important; color: #000; font-size: 11pt; }
   .layout, body.sense-toc .layout, body.sense-sidebar .layout {
     display: block; max-width: 100%; padding: 0; margin: 0; gap: 0;
