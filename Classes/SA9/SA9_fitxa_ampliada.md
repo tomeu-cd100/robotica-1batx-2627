@@ -72,9 +72,17 @@ Marca el nivell (NA/AS/AN/AE):
 | Hem treballat amb rols i planificació àgil | ☐ | ☐ | ☐ | ☐ |
 | Hem iterat (provar → millorar) i ho hem documentat | ☐ | ☐ | ☐ | ☐ |
 
-## Coavaluació (2 estrelles i un desig)
+## Coavaluació (2 estrelles i un desig — amb criteris)
 
-En veure la defensa d'un altre equip, anoteu:
+En veure la defensa d'un altre equip, **primer valoreu-la amb criteris de la rúbrica R4** (marqueu ✓ o ✗):
+
+| Criteri | ✓/✗ |
+|---|---|
+| La defensa segueix **problema → solució → decisió tècnica → demo** — R4 | |
+| La demostració ensenya el **requisit principal funcionant** (o expliquen la depuració en directe amb criteri) — R4 | |
+| **Responen preguntes** sense llegir el dossier — R4 | |
+
+Ara escriviu el retorn — **les estrelles i el desig han de sortir de la taula**:
 - ⭐ Una cosa ben feta: ______________________
 - ⭐ Una altra cosa ben feta: ______________________
 - 💡 Una millora (desig): ______________________

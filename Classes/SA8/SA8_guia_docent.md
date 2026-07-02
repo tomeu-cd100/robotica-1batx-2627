@@ -29,6 +29,7 @@
 - **Cicle de treball** (com a tot el curs): *analitzar → dissenyar → prototipar → provar → millorar* (vegeu SA1). El disseny IoT (S2) treballa especialment la fase **analitzar** (requisits, riscos).
 - **Lectura de codi amb PRIMM:** també en Python. A cada *modelatge* l'alumnat **prediu** què farà el programa **abans** d'executar-lo, després l'**investiga**, el **modifica** i en **crea** un de nou. **Operativa (val per a totes les sessions amb codi):** dedica els primers ~5' del Modelatge a projectar el codi nou **sense executar-lo** i recollir prediccions; només després, executa i investiga.
 - **Pont (d'on venim / on anem):** ve de la **SA7** (robot mòbil) → portem a la **SA9** (projecte final). Reprèn el **fil dels dos llenguatges** (Python/C++) obert a la **SA5**; les peces d'aquí (dades, connexió, decisió) es poden **integrar** al projecte final.
+- **Retirada de bastida — repte "a full en blanc" (últim graó abans de la SA9):** de la parella emissor/receptor de telemetria, **una de les dues meitats** s'escriu amb l'editor buit (pseudocodi propi + xuleta de `radio`); l'altra pot partir del codi donat. Vegeu `Programació didàctica/04_Metodologia.md` §4.2 bis.
 
 ---
 
@@ -131,6 +132,7 @@ Equips amb **rols rotatius**: Coordinador/a · Programador/a · Enginyer/a de ma
 ## Avaluació formativa (instruments)
 
 - **Diana d'autoavaluació** (fitxa) · **Coavaluació** entre equips (ja al mapa d'avaluació) · **Exit ticket** de tancament.
+- **Mini-check individual** (10', **inici de la S3**, no qualifica): llegir i explicar línia a línia un emissor de telemetria (`group`, `send`). Vegeu [`../00_General/00_Mini_checks_individuals.md`](../00_General/00_Mini_checks_individuals.md).
 
 ## Context real i ODS
 

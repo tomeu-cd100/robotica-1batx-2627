@@ -1,8 +1,24 @@
-# SA5 · Fitxa base — micro:bit i MicroPython
+# SA5 · Fitxa base — micro:bit i MicroPython · *els mateixos conceptes, un altre llenguatge*
 
 **Nom:** ______________________  **Parella:** ______________________  **Data:** __________
 
 > Canvies de llenguatge: ara **Python** sobre micro:bit. Atenció a la **indentació** (en Python és obligatòria!).
+
+## 🎯 Objectius i avaluació
+
+**En acabar aquesta SA podré:**
+1. Escriure programes **MicroPython** ben indentats que funcionen.
+2. Fer servir els **sensors integrats** (acceleròmetre, llum) i la **ràdio** de la micro:bit.
+3. **Comparar** la mateixa solució en C++ (Arduino) i en Python (micro:bit).
+
+| Què lliuro | Rúbrica | On compta |
+|---|---|---|
+| **App micro:bit** (comptapassos, llum de nit o joc per ràdio) | **R1** | Projectes (45 %) |
+| **Taula comparativa C++ ↔ Python** completa | **R4** | Projectes (45 %) |
+| **Quadern tècnic** (pseudocodi, errors d'indentació resolts) | **R4** | Quadern i pràctiques (25 %) |
+| Mini-check individual (inici S3) | semàfor | **No qualifica** (em situa) |
+
+> Escala NA·AS·AN·AE, rúbriques i tot el sistema: **[Com s'avalua la matèria](../00_General/00_Avaluacio_per_alumnat.md)**.
 
 ---
 
@@ -25,6 +41,9 @@
 3. **Repte:** "pedra-paper-tisora" o comandament per ràdio.
 
 ### 4 · Producte + comparació C++ ↔ Python
+
+> ✏️ **Dissenya abans de codificar:** pseudocodi del producte al quadern (3–5 línies). Fixa't que el pseudocodi és **el mateix** en C++ i en Python: el que canvia és la sintaxi — aquesta és la gràcia de la comparació.
+
 Tria un dels reptes com a producte i completa la comparació amb un programa senzill:
 
 | Aspecte | Arduino (C/C++) | micro:bit (Python) |

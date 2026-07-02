@@ -99,9 +99,17 @@ Marca el teu nivell (NA/AS/AN/AE):
 | Munto el circuit amb seguretat (massa comuna, alimentació externa) | ☐ | ☐ | ☐ | ☐ |
 | Faig que el moviment respongui a un sensor | ☐ | ☐ | ☐ | ☐ |
 
-## Coavaluació (2 estrelles i un desig)
+## Coavaluació (2 estrelles i un desig — amb criteris)
 
-Intercanvieu la barrera amb una altra parella:
+Intercanvieu la barrera amb una altra parella. **Primer mireu-la amb criteris de les rúbriques R1, R2 i R3** (marqueu ✓ o ✗):
+
+| Criteri | ✓/✗ |
+|---|---|
+| La barrera **obre i tanca sola** amb els temps que han definit — R3 | |
+| El motor/servo va amb **alimentació correcta** i **massa comuna** — R2 | |
+| Obrir i tancar estan **encapsulats en funcions** amb nom clar — R1 | |
+
+Ara escriviu el retorn — **les estrelles i el desig han de sortir de la taula**:
 - ⭐ Una cosa ben feta: ______________________
 - ⭐ Una altra cosa ben feta: ______________________
 - 💡 Una millora (desig): ______________________

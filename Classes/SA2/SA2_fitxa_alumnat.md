@@ -1,8 +1,23 @@
-# SA2 · Fitxa base — Sortides digitals i PWM
+# SA2 · Fitxa base — Sortides digitals i PWM · *encén, gradua i coordina llums i so*
 
 **Nom:** ______________________  **Parella:** ______________________  **Data:** __________
 
 > Controlaràs LED, color i so, i regularàs la intensitat amb PWM. Recorda: **cada LED amb resistència de 220 Ω** i polaritat correcta.
+
+## 🎯 Objectius i avaluació
+
+**En acabar aquesta SA podré:**
+1. Escriure programes amb **variables, `if` i `for`** que controlin llums i so.
+2. **Graduar** intensitat i color amb PWM (`analogWrite`, 0–255, pins `~`).
+3. Muntar circuits correctes (resistència, polaritat) i **mesurar-hi tensions** amb el multímetre.
+
+| Què lliuro | Rúbrica | On compta |
+|---|---|---|
+| **Panell de senyalització** (producte, S4) + defensa d'1' | **R1** (codi) i **R2** (circuit) | Projectes (45 %) |
+| **Quadern tècnic** (esquemes, mesures, errors) | **R4** | Quadern i pràctiques (25 %) |
+| Mini-check individual (inici S4) | semàfor | **No qualifica** (em situa) |
+
+> Escala NA·AS·AN·AE, rúbriques i tot el sistema: **[Com s'avalua la matèria](../00_General/00_Avaluacio_per_alumnat.md)**.
 
 ---
 
@@ -12,7 +27,8 @@
 0. **PREDIU:** mirant `01_led_basic.ino`, què farà el LED? ______________________
 1. Munta un LED al pin 8. Carrega `01_led_basic.ino` i comprova la predicció.
 2. Canvia el temps d'encès/apagat amb una **variable** `temps`. Valor provat: ______
-3. **Repte:** escriu el codi Morse d'una lletra (· curt / − llarg). Lletra: ____
+3. **Racó de mesura (multímetre):** amb el LED encès, tensió al LED = ______ V · a la resistència = ______ V · suma ≈ ______ V. Què hi observes? ______________________
+4. **Repte:** escriu el codi Morse d'una lletra (· curt / − llarg). Lletra: ____
 
 ### 2 · Semàfor (S2)
 1. Munta 3 LED (vermell-8, groc-9, verd-10). Carrega `02_semafor.ino`.

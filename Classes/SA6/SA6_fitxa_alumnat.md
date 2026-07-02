@@ -1,8 +1,25 @@
-# SA6 · Fitxa base — Sistemes de control
+# SA6 · Fitxa base — Sistemes de control · *que el sistema es reguli sol*
 
 **Nom:** ______________________  **Parella:** ______________________  **Data:** __________
 
 > Faràs que el sistema **es reguli sol**. Nucli: llaç obert/tancat, histèresi i màquines d'estats. El control proporcional és **+ampliació** (opcional).
+
+## 🎯 Objectius i avaluació
+
+**En acabar aquesta SA podré:**
+1. Distingir **llaç obert** i **llaç tancat** i explicar el meu sistema amb un **diagrama de blocs**.
+2. Fer un **termòstat amb histèresi** (dos llindars, sense "clic-clic").
+3. Construir una **màquina d'estats** que no es bloqueja (`millis()`).
+4. *(+Ampliació opcional)* Provar el **control proporcional**.
+
+| Què lliuro | Rúbrica | On compta |
+|---|---|---|
+| **Sistema de control documentat** (producte) + defensa de 2-3' | **R1**, **R3** i **R4** | Projectes (45 %) |
+| **Prova T2** (individual, dins la S4; el nucli és la histèresi) | **R1, R3, R4** | Proves (20 %) |
+| **Quadern tècnic** (diagrama d'estats, diagrama de blocs, errors) | **R4** | Quadern i pràctiques (25 %) |
+| Mini-check individual (inici S3) | semàfor | **No qualifica** (m'avisa abans de la prova) |
+
+> Escala NA·AS·AN·AE, rúbriques i tot el sistema: **[Com s'avalua la matèria](../00_General/00_Avaluacio_per_alumnat.md)**.
 
 ---
 
@@ -34,7 +51,10 @@
 2. Com afecta `Kp` a la resposta? ______________________
 3. **Repte:** compara tot/res vs proporcional al Serial Plotter. Quin és més estable? ____
 
+> ✏️ **Dissenya abans de codificar:** aquí el pseudocodi és el **diagrama d'estats** que has dibuixat (activitat 3.2): cada estat i cada fletxa han d'existir abans que el `switch`. No escriguis cap `case` que no sigui al dibuix.
+
 **Producte:** un sistema de control documentat. S'avalua amb **R1**, **R3** i **R4**.
+**Defensa (2-3', nivell T2):** problema → solució → **una decisió tècnica justificada** (per què aquests llindars? per què aquests estats?) + 2 preguntes. Ja no n'hi ha prou amb el minut de T1: vegeu l'escala a [`../00_General/00_Guia_defensa_oral.md`](../00_General/00_Guia_defensa_oral.md).
 
 ## Si t'encalles (DEPURA)
 > **D**escriu · **E**xamina (**Serial Plotter**: la sortida segueix la consigna o oscil·la?) · **P**rova una hipòtesi cada cop · **U**bica · **R**epara · **A**punta-ho.

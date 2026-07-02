@@ -27,6 +27,10 @@ Has de construir i programar un sistema d'il·luminació de seguretat.
 ### Lliurament
 - Sistema funcionant + **explicació breu al quadern** (esquema + què fa cada part + un error que has resolt).
 
+### Pla de millora personal (després de la prova — 3 línies, no puntua)
+> Quan rebis el retorn, escriu al quadern: **(1)** què m'ha fallat o m'ha costat més · **(2)** què practicaré concretament (quina secció de `SA0`, quin sketch refaré) · **(3)** com comprovaré que ja ho tinc.
+> El docent **recupera aquestes 3 línies a l'inici de la SA4**: la primera graella d'activació del trimestre es dedica a comprovar el punt (3) de cadascú. El retorn només serveix si algú hi torna.
+
 ---
 
 ## Graella de correcció (10 punts)

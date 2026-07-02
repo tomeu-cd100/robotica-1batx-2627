@@ -87,9 +87,17 @@ Marca el teu nivell (NA/AS/AN/AE):
 | Faig servir sensors integrats (acceleròmetre, llum…) | ☐ | ☐ | ☐ | ☐ |
 | Comunico dues plaques per ràdio | ☐ | ☐ | ☐ | ☐ |
 
-## Coavaluació (2 estrelles i un desig)
+## Coavaluació (2 estrelles i un desig — amb criteris)
 
-Intercanvieu el projecte micro:bit amb una altra parella:
+Intercanvieu el projecte micro:bit amb una altra parella. **Primer mireu-lo amb criteris de les rúbriques R1 i R4** (marqueu ✓ o ✗):
+
+| Criteri | ✓/✗ |
+|---|---|
+| El programa funciona i està **ben indentat** (Python llegible) — R1 | |
+| La **taula comparativa C++↔Python** és completa i correcta — R4 | |
+| El **sensor o la ràdio** hi aporten funció real (no decoració) — R1 | |
+
+Ara escriviu el retorn — **les estrelles i el desig han de sortir de la taula**:
 - ⭐ Una cosa ben feta: ______________________
 - ⭐ Una altra cosa ben feta: ______________________
 - 💡 Una millora (desig): ______________________

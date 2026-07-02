@@ -72,6 +72,7 @@ Aquesta SA **tanca el mètode de projecte** introduït a la **SA1** i practicat 
 - Tenir el **banc de reptes amb nivells** perquè cada equip triï segons ambició (atenció a la diversitat).
 - Oferir el **`Classes/00_Banc_objectes_disseny.md`** com a font d'idees: el projecte final pot ser un **objecte real amb carcassa/maqueta** (disseny de producte), no només un muntatge. Inclou rúbrica de producte i pautes de fabricació (cartró/impressió 3D, ecodisseny ODS 12).
 - Fixar **fites parcials** (checklist) a cada sessió per evitar deixar-ho tot per al final.
+- **Defenses esglaonades si hi ha més de 6 equips:** 5' + preguntes + canvi de muntatge ≈ 12-15' per equip; una sola S5 no dona. Programa 2-3 defenses al final de S3 i S4 (equips amb prototip llest) i la resta a la S5. Escala, guió i errors típics de la defensa: [`../00_General/00_Guia_defensa_oral.md`](../00_General/00_Guia_defensa_oral.md).
 - Recordar criteris d'**ètica i sostenibilitat** (reutilització de components, impacte).
 - Si s'opta per **competició**, alinear el repte amb el reglament corresponent.
 

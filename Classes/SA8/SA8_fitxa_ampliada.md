@@ -99,9 +99,17 @@ Marca el teu nivell (NA/AS/AN/AE):
 | Explico l'arquitectura IoT i els seus riscos | ☐ | ☐ | ☐ | ☐ |
 | Distingeixo regles fetes a mà i aprenentatge automàtic | ☐ | ☐ | ☐ | ☐ |
 
-## Coavaluació (2 estrelles i un desig)
+## Coavaluació (2 estrelles i un desig — amb criteris)
 
-Intercanvieu el sistema IoT/IA amb un altre equip:
+Intercanvieu el sistema IoT/IA amb un altre equip. **Primer mireu-lo amb criteris de les rúbriques R3 i R4** (marqueu ✓ o ✗):
+
+| Criteri | ✓/✗ |
+|---|---|
+| Les **dades arriben i es veuen** (pantalla o port sèrie) — R3 | |
+| Identifiquen un **risc de privacitat** amb una mesura concreta — R4 | |
+| Saben dir **amb qui podria fallar** el seu classificador i per què (biaix) — R4 | |
+
+Ara escriviu el retorn — **les estrelles i el desig han de sortir de la taula**:
 - ⭐ Una cosa ben feta: ______________________
 - ⭐ Una altra cosa ben feta: ______________________
 - 💡 Una millora (desig): ______________________

@@ -1,10 +1,27 @@
-# SA9 · Fitxa base — Repte final integrador
+# SA9 · Fitxa base — Repte final integrador · *el teu sistema: de la idea a la demo*
 
 **Equip:** ______________________  **Membres:** ______________________  **Data:** __________
 
 > El projecte final: dissenyareu, construireu, programareu i defensareu un sistema robòtic autònom. Useu les **plantilles** de `plantilles/`.
 
 > 🔄 **Mètode de projecte** (el mateix de tot el curs): *analitzar (§1) → dissenyar (§2-3) → prototipar → provar/millorar (§5) → comunicar (§6)*. Aquest cop, **sencer i en autonomia**.
+
+## 🎯 Objectius i avaluació
+
+**En acabar aquesta SA podré:**
+1. **Gestionar un projecte sencer**: analitzar → dissenyar → prototipar → provar → millorar.
+2. **Integrar** electrònica, programació i control en un sistema propi que funciona.
+3. **Documentar-lo** en un dossier tècnic i **defensar-lo** oralment (5' + preguntes).
+
+| Què lliurem | Rúbrica | On compta |
+|---|---|---|
+| **Sistema funcional** (compleix els requisits mínims) | **R1**, **R2**, **R3** | Projectes (45 %) — pes principal del trimestre |
+| **Dossier tècnic** complet | **R4** | Projectes (45 %) |
+| **Defensa oral + demostració** (amb preguntes individuals) | **R4** | Projectes (45 %) |
+| **Prova T3** (robot + sistema connectat) | **R1, R3, R4** | Proves (20 %) |
+| **Procés d'equip** (taulell àgil, rols, iteracions) | **R5** | Actitud (10 %) |
+
+> Escala NA·AS·AN·AE, rúbriques i tot el sistema: **[Com s'avalua la matèria](../00_General/00_Avaluacio_per_alumnat.md)**.
 
 ---
 

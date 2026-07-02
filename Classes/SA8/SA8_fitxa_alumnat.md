@@ -1,8 +1,24 @@
-# SA8 · Fitxa base — IoT i IA
+# SA8 · Fitxa base — IoT i IA · *connecta el sistema i decideix amb dades*
 
 **Nom:** ______________________  **Equip:** ______________________  **Data:** __________
 
 > Connectaràs dispositius (telemetria/IoT) i faràs que el sistema "reconegui" patrons (IA). Pensa també en l'**ètica de les dades**.
+
+## 🎯 Objectius i avaluació
+
+**En acabar aquesta SA podré:**
+1. Enviar i rebre **dades a distància** (telemetria per ràdio).
+2. Explicar què és l'**IoT** i valorar-ne els **riscos de privacitat** (dades personals, consentiment).
+3. Distingir **regles fetes a mà** i **aprenentatge automàtic**, entrenar un classificador i detectar-ne el **biaix**.
+
+| Què lliuro | Rúbrica | On compta |
+|---|---|---|
+| **Sistema connectat o classificador** (producte) | **R1** i **R3** | Projectes (45 %) |
+| **Reflexió ètica** (privacitat, biaix, consentiment) | **R4** | Projectes (45 %) |
+| **Quadern tècnic** (dades enviades, disseny IoT, errors) | **R4** | Quadern i pràctiques (25 %) |
+| Mini-check individual (inici S3) | semàfor | **No qualifica** (em situa) |
+
+> Escala NA·AS·AN·AE, rúbriques i tot el sistema: **[Com s'avalua la matèria](../00_General/00_Avaluacio_per_alumnat.md)**.
 
 ---
 
@@ -30,6 +46,8 @@ Dissenya un sistema IoT del teu entorn (mínim ètic obligatori):
 2. Diferència entre **regles fetes a mà** i **aprenentatge automàtic**: ____
 3. **De regles a ML real:** fes [`SA8_practica_teachable_machine.md`](SA8_practica_teachable_machine.md) (entrena amb exemples). Classes i exemples per classe: __________
 4. **Biaix:** amb qui podria fallar el teu classificador i per què? ____
+
+> ✏️ **Un repte a full en blanc:** l'emissor **o** el receptor de telemetria del teu producte, escrit des de l'editor buit (pseudocodi propi + xuleta de `radio`). L'altra meitat pot partir del codi donat.
 
 **Producte:** sistema connectat o classificador + reflexió ètica. S'avalua amb **R1**, **R3** i **R4**.
 

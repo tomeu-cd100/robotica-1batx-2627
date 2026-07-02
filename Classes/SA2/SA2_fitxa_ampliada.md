@@ -94,9 +94,17 @@ Marca el teu nivell (NA/AS/AN/AE):
 | Regulo intensitat/color amb PWM (`analogWrite`, `map`) | ☐ | ☐ | ☐ | ☐ |
 | Munto el circuit amb resistència i polaritat correctes | ☐ | ☐ | ☐ | ☐ |
 
-## Coavaluació (2 estrelles i un desig)
+## Coavaluació (2 estrelles i un desig — amb criteris)
 
-Intercanvieu el panell/semàfor amb una altra parella:
+Intercanvieu el panell/semàfor amb una altra parella. **Primer mireu-lo amb criteris de les rúbriques R1 i R2** (marqueu ✓ o ✗):
+
+| Criteri | ✓/✗ |
+|---|---|
+| El codi usa **constants/variables amb noms clars** (no números "màgics" pertot) — R1 | |
+| Cada LED té **resistència** i la **polaritat** correcta — R2 | |
+| Els **estats** del panell es distingeixen sense que us els expliquin (color + so) — R1 | |
+
+Ara escriviu el retorn — **les estrelles i el desig han de sortir de la taula**:
 - ⭐ Una cosa ben feta: ______________________
 - ⭐ Una altra cosa ben feta: ______________________
 - 💡 Una millora (desig): ______________________

@@ -133,6 +133,7 @@ Parelles amb **rols rotatius**: Coordinador/a · Programador/a · Enginyer/a de 
 ## Avaluació formativa (instruments)
 
 - **Diana d'autoavaluació** (fitxa) · **Coavaluació** "2 estrelles i un desig" · **Exit ticket** de tancament.
+- **Mini-check individual** (10', **inici de la S3** — la S4 acull la prova T2 —, no qualifica): diagnosticar el "clic-clic" del termòstat i escriure els dos llindars (histèresi). Vegeu [`../00_General/00_Mini_checks_individuals.md`](../00_General/00_Mini_checks_individuals.md).
 
 ## Connexió amb la IA (llavor)
 

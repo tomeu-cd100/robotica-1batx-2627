@@ -29,6 +29,7 @@ La **Imagina 3dBot** és Arduino-compatible, però **els pins dels motors depene
 - **Cicle de treball** (com a tot el curs): *analitzar → dissenyar → prototipar → provar → millorar* (vegeu SA1). Aquí la fase **provar → millorar** és central: el repte de pista s'**itera** mesurant temps i errors.
 - **Lectura de codi amb PRIMM:** a cada *modelatge* l'alumnat **prediu** què farà el robot **abans** d'executar-lo, després l'**investiga**, el **modifica** i en **crea** un de nou. **Operativa (val per a totes les sessions amb codi):** dedica els primers ~5' del Modelatge a projectar/llegir el codi nou **sense executar-lo** i recollir prediccions del comportament del robot; només després, executa i investiga.
 - **Pont (d'on venim / on anem):** ve de la **SA6** (control: llaç tancat i màquines d'estats) → portem a la **SA8** (IoT i IA). L'evita-obstacles i el seguidor de línia són **control en llaç tancat** (SA6) aplicat al moviment.
+- **Retirada de bastida — repte "a full en blanc" (nou en aquesta SA):** cada parella escriu **un** dels reptes amb l'**editor buit** — només el seu pseudocodi i el full-xuleta de crides (`motors()`, `dist()`…), sense obrir cap sketch fet. És el penúltim graó abans de la SA9 (vegeu `Programació didàctica/04_Metodologia.md` §4.2 bis). El paper del docent: **no deixar obrir el sketch de referència fins que el pseudocodi estigui ensenyat**; si s'encallen, la pista és el pseudocodi, no el codi fet.
 
 ---
 
@@ -126,6 +127,7 @@ Equips amb **rols rotatius**: Coordinador/a (estratègia) · Programador/a · En
 
 - **Diana d'autoavaluació** (fitxa) · **Coavaluació** entre equips (demostració) · **Exit ticket** de tancament.
 - El **registre d'iteracions** (temps de volta per intent) és en si mateix avaluació formativa del cicle provar→millorar.
+- **Mini-check individual** (10', **inici de la S4**, no qualifica): escriure el `loop()` reactiu de l'evita-obstacles amb les funcions donades. Vegeu [`../00_General/00_Mini_checks_individuals.md`](../00_General/00_Mini_checks_individuals.md).
 
 ## Referent (coeducació)
 

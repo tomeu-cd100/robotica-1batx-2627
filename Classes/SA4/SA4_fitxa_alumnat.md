@@ -1,8 +1,23 @@
-# SA4 · Fitxa base — Moviment: servos, motors i ponts H
+# SA4 · Fitxa base — Moviment: servos, motors i ponts H · *fes que les coses es moguin*
 
 **Nom:** ______________________  **Parella:** ______________________  **Data:** __________
 
 > Faràs moure el sistema: posició amb servo i velocitat/direcció amb motor DC. Recorda la **massa comuna** i **no alimentar motors des de l'Arduino**.
+
+## 🎯 Objectius i avaluació
+
+**En acabar aquesta SA podré:**
+1. Controlar la **posició d'un servo** (0–180°) fent servir una **llibreria** (`Servo.h`).
+2. Moure un **motor DC** en els dos sentits amb **pont H** i alimentació segura (font externa + massa comuna).
+3. Fer que el **moviment respongui a un sensor**.
+
+| Què lliuro | Rúbrica | On compta |
+|---|---|---|
+| **Barrera automàtica** (producte, S4) + defensa d'1' | **R1**, **R2** i **R3** | Projectes (45 %) |
+| **Quadern tècnic** (pseudocodi, lògica del pont H, errors) | **R4** | Quadern i pràctiques (25 %) |
+| Mini-check individual (inici S4) | semàfor | **No qualifica** (em situa) |
+
+> Escala NA·AS·AN·AE, rúbriques i tot el sistema: **[Com s'avalua la matèria](../00_General/00_Avaluacio_per_alumnat.md)**.
 
 ---
 
@@ -40,6 +55,9 @@
 2. **Repte:** atura el motor sota un llindar de seguretat: ____ cm.
 
 ### 4 · Producte: barrera automàtica (S4)
+
+> ✏️ **Dissenya abans de codificar:** pseudocodi de la barrera al quadern (3–5 línies) **abans** d'obrir l'editor. El codi de les sessions és **referència de consulta**, no plantilla per retocar: escriu el teu a partir del pseudocodi.
+
 Barrera que s'obre quan arriba un vehicle i es tanca sola.
 - Angle tancat: ____° · obert: ____° · temps obert: ____ s · detecció: ____ cm
 - **Defensa (1'):** funcionament + una aplicació real. S'avalua amb **R1**, **R2** i **R3**.

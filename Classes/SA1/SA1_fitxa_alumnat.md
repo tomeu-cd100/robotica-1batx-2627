@@ -4,6 +4,23 @@
 
 > Descobriràs què és un robot i un sistema embegut, coneixeràs la placa Arduino i faràs el teu primer programa.
 
+## 🎯 Objectius i avaluació
+
+**En acabar aquesta SA podré:**
+1. Analitzar qualsevol sistema automàtic amb el model **entrada → procés → sortida**.
+2. Reconèixer les parts de la placa Arduino i distingir **digital** d'**analògic**.
+3. **Predir, llegir i modificar** un programa senzill (`Blink`).
+4. Treballar amb **seguretat** i portar el **quadern tècnic** al dia.
+
+| Què lliuro | Rúbrica | On compta |
+|---|---|---|
+| **Fitxa-pòster** d'un robot real (amb dilema ètic) | **R4** | Projectes (45 %) |
+| **Quadern tècnic** (primera entrada) | **R4** | Quadern i pràctiques (25 %) |
+| Treball a l'aula (seguretat, cooperació) | **R5** | Actitud (10 %) |
+| Prova diagnòstica | — | **No qualifica** (serveix per fer parelles) |
+
+> Escala NA·AS·AN·AE, rúbriques i tot el sistema: **[Com s'avalua la matèria](../00_General/00_Avaluacio_per_alumnat.md)**.
+
 ---
 
 ## El que has de fer

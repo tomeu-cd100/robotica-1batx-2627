@@ -1,8 +1,24 @@
-# SA7 · Fitxa base — Robòtica mòbil
+# SA7 · Fitxa base — Robòtica mòbil · *com es mou i gira un robot*
 
 **Nom:** ______________________  **Equip:** ______________________  **Data:** __________
 
 > Ara el robot es mou sol! Programaràs moviment, trajectòries i comportaments autònoms. Recorda **ajustar els pins** segons la teva placa.
+
+## 🎯 Objectius i avaluació
+
+**En acabar aquesta SA podré:**
+1. Programar **moviments i trajectòries** d'un robot (girar = rodes a velocitats diferents).
+2. Aconseguir un **comportament autònom**: evitar obstacles o seguir una línia.
+3. **Calibrar i millorar iterant**, registrant cada intent (temps, canvis, resultat).
+
+| Què lliuro | Rúbrica | On compta |
+|---|---|---|
+| **Comportament autònom** demostrat a la pista | **R1** i **R3** | Projectes (45 %) |
+| **Registre d'iteracions** (intents, millores) | **R3** i **R4** | Projectes (45 %) |
+| **Quadern tècnic** (calibratges, decisions, errors) | **R4** | Quadern i pràctiques (25 %) |
+| Mini-check individual (inici S4) | semàfor | **No qualifica** (em situa) |
+
+> Escala NA·AS·AN·AE, rúbriques i tot el sistema: **[Com s'avalua la matèria](../00_General/00_Avaluacio_per_alumnat.md)**.
 
 ---
 
@@ -33,6 +49,8 @@
 1. Calibra els sensors: valor "línia" = ______ / "fons" = ______
 2. Temps de volta — intent 1: ____ s · 2: ____ s · 3: ____ s
 3. Quines **millores** has fet entre intents? ______________________
+
+> ✏️ **Un repte a full en blanc:** tria **un** dels reptes d'aquesta SA i escriu-lo amb l'**editor buit**: només el teu pseudocodi i el full-xuleta de crides (`motors()`, `dist()`…). Sense obrir cap sketch fet. És l'entrenament directe per a la SA9.
 
 **Producte:** comportament autònom + registre d'iteracions. S'avalua amb **R1**, **R3** i **R4**.
 

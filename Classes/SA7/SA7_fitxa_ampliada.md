@@ -91,9 +91,17 @@ Marca el teu nivell (NA/AS/AN/AE):
 | El robot completa un comportament autònom | ☐ | ☐ | ☐ | ☐ |
 | Registro proves i itero per millorar | ☐ | ☐ | ☐ | ☐ |
 
-## Coavaluació (2 estrelles i un desig)
+## Coavaluació (2 estrelles i un desig — amb criteris)
 
-Mireu la demostració d'un altre equip i anoteu:
+Mireu la demostració d'un altre equip. **Primer valoreu-la amb criteris de la rúbrica R3** (marqueu ✓ o ✗):
+
+| Criteri | ✓/✗ |
+|---|---|
+| El robot completa el comportament **sense ajuda de les mans** — R3 | |
+| Tenen el **registre d'iteracions** (temps i millores anotades) — R3 | |
+| Saben explicar **què canviarien al calibratge** (temps de gir, llindar) — R3 | |
+
+Ara escriviu el retorn — **les estrelles i el desig han de sortir de la taula**:
 - ⭐ Una cosa ben feta: ______________________
 - ⭐ Una altra cosa ben feta: ______________________
 - 💡 Una millora (desig): ______________________

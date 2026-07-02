@@ -120,6 +120,7 @@ Parelles amb **rols rotatius**: Coordinador/a · Programador/a · Enginyer/a de 
 ## Avaluació formativa (instruments)
 
 - **Diana d'autoavaluació** (fitxa) · **Coavaluació** "2 estrelles i un desig" · **Exit ticket** de tancament.
+- **Mini-check individual** (10', **inici de la S4**, no qualifica): les 3 línies del servo a 90° + per què el motor DC va amb alimentació externa. Vegeu [`../00_General/00_Mini_checks_individuals.md`](../00_General/00_Mini_checks_individuals.md).
 
 ## Referent (coeducació)
 

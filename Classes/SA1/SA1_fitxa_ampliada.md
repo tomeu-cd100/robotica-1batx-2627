@@ -118,9 +118,17 @@ Marca el teu nivell (NA = no assolit · AS = suficient · AN = notable · AE = e
 | Reconec les parts de la placa i distingeixo digital/analògic | ☐ | ☐ | ☐ | ☐ |
 | Llegeixo i modifico el codi `Blink` | ☐ | ☐ | ☐ | ☐ |
 
-## Coavaluació (2 estrelles i un desig)
+## Coavaluació (2 estrelles i un desig — amb criteris)
 
-Intercanvieu el pòster amb una altra parella i anoteu:
+Intercanvieu el pòster amb una altra parella. **Primer mireu-lo amb criteris de la rúbrica R4** (marqueu ✓ o ✗):
+
+| Criteri | ✓/✗ |
+|---|---|
+| S'hi identifica clarament **entrada → procés → sortida** del robot | |
+| El **dilema ètic** té una opinió argumentada (no només "és bo/dolent") | |
+| **S'entén sense que ells l'expliquin** (títols, esquema, llegenda) | |
+
+Ara escriviu el retorn — **les estrelles i el desig han de sortir de la taula** (no val "m'agrada el color"):
 - ⭐ Una cosa ben feta: ______________________
 - ⭐ Una altra cosa ben feta: ______________________
 - 💡 Una millora (desig): ______________________

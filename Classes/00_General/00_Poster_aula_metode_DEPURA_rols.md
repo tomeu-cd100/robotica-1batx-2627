@@ -47,6 +47,8 @@ I llegim/escrivim codi amb **PRIMM**: **P**redir · **E**xecutar · **I**nvestig
 └─────────────────────────┴─────────────────────────────────────────┘
 ```
 > A micro:bit (SA5/SA8) l'enginyer/a prepara la placa i els sensors/ràdio. Al robot (SA7) hi ha un/a **pilot/a** que prova a la pista.
+>
+> **En parella (2 persones, 4 rols):** cadascú en porta **dos** — **A:** 🧭 Coordinador/a + ⌨️ Programador/a · **B:** 🔌 Enginyer/a + 🔎 Provador/a-Documentador/a. Així qui escriu el codi **no** és qui el valida (control creuat). A cada sessió, s'intercanvien A i B.
 
 ---
 

@@ -115,6 +115,7 @@ Parelles amb **rols rotatius**: Coordinador/a · Programador/a (Python) · Engin
 ## Avaluació formativa (instruments)
 
 - **Diana d'autoavaluació** (fitxa) · **Coavaluació** "2 estrelles i un desig" · **Exit ticket** de tancament.
+- **Mini-check individual** (10', **inici de la S3**, no qualifica): programa MicroPython de memòria (cor intermitent) — comprova sobretot la **indentació**. Vegeu [`../00_General/00_Mini_checks_individuals.md`](../00_General/00_Mini_checks_individuals.md).
 
 ## Context real i ODS
 

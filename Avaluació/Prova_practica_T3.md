@@ -26,6 +26,9 @@ Programa el robot perquè, en una **pista marcada**:
 ### Lliurament
 Demostració a la pista + **explicació al quadern**: estratègia del robot (diagrama de la decisió) i descripció del sistema connectat.
 
+### Reflexió final de curs (3 línies, no puntua)
+> Última entrada del quadern: **(1)** la competència de què estic més orgullós/osa aquest curs · **(2)** el que encara em costa · **(3)** on ho continuaré (batxillerat tecnològic, Treball de Recerca, projecte propi, competició…). Tanca el quadern com el vas obrir: mirant el procés, no només la nota.
+
 ---
 
 ## Graella de correcció (10 punts)

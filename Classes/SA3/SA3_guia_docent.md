@@ -48,6 +48,8 @@
 
 **Punt clau:** `analogRead` retorna 0-1023; `analogWrite` necessita 0-255 → cal **`map()`**. El divisor de tensió converteix la resistència variable (LDR/NTC) en tensió mesurable.
 
+> 🔌 **Racó de mesura (dins la pràctica guiada, ~5' per parella):** amb el **multímetre** al punt mig del divisor LDR–10 kΩ, comparar la **tensió real** amb la lectura del programa: `lectura/1023 · 5 V ≈ V mesurada` (p. ex. 512 → ~2,5 V). Tapar la LDR i veure com **totes dues** baixen alhora. Fa tangible què fa l'ADC (converteix tensió en nombre) i tanca el cicle de la **CA2.2**: mesurar amb instrument + interpretar amb software. El multímetre passa a ser eina oficial de la fase *Examina* de DEPURA per al maquinari.
+
 ---
 
 ## SESSIÓ 3 (2 h) — Sensor de distància i funcions
@@ -124,6 +126,7 @@ Parelles amb **rols rotatius** (un canvi per sessió): Coordinador/a · Programa
 ## Avaluació formativa (instruments)
 
 - **Diana d'autoavaluació** (fitxa) sobre 3 criteris clau · **Coavaluació** "2 estrelles i un desig" · **Exit ticket** de tancament.
+- **Mini-check individual** (10', **inici de la S3** — la S4 acull la prova T1 —, no qualifica): `if/else` sobre una lectura analògica. Detecta qui encara no programa sol abans de la prova. Vegeu [`../00_General/00_Mini_checks_individuals.md`](../00_General/00_Mini_checks_individuals.md).
 
 ## Connexió amb la IA (llavor)
 

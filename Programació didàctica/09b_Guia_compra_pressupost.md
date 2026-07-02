@@ -70,7 +70,7 @@ Llista de compra orientativa per **engegar la matèria des de zero**, derivada d
 | Component | Quant. | Cost orientatiu | Ús |
 |---|---|---|---|
 | **ESP32** (demo WiFi/IoT) | 1–2 | 5–10 €/u | SA8 (demostració) |
-| **Multímetre** (per al docent) | 1–2 | 10–20 €/u | diagnòstic d'avaries |
+| **Multímetre** (racó de mesura + docent) | 2–3 | 10–20 €/u | racó de mesura SA2-SA3 (CA2.2) + diagnòstic d'avaries |
 | **Caixes d'emmagatzematge** etiquetades | 15 + reserva | 2–5 €/u | logística (1 per parella) |
 | **Kit de reserva** complet | 1 | (= 1 kit parella) | avaries |
 | Consumibles de reposició (cables, LED, resistències) | — | 20–40 €/any | manteniment |

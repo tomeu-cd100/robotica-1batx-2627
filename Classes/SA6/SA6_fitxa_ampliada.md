@@ -97,9 +97,17 @@ Marca el teu nivell (NA/AS/AN/AE):
 | Implemento histèresi i una màquina d'estats | ☐ | ☐ | ☐ | ☐ |
 | Explico el diagrama de blocs del meu control | ☐ | ☐ | ☐ | ☐ |
 
-## Coavaluació (2 estrelles i un desig)
+## Coavaluació (2 estrelles i un desig — amb criteris)
 
-Intercanvieu el sistema de control amb una altra parella:
+Intercanvieu el sistema de control amb una altra parella. **Primer mireu-lo amb criteris de les rúbriques R1 i R3** (marqueu ✓ o ✗):
+
+| Criteri | ✓/✗ |
+|---|---|
+| Saben dir quina és la **consigna** i on es llegeix el **sensor** (llaç tancat) — R3 | |
+| La **histèresi** evita el "clic-clic" (els dos llindars es veuen al codi) — R1 | |
+| El **diagrama d'estats** coincideix amb el que fa el sistema de debò — R3 | |
+
+Ara escriviu el retorn — **les estrelles i el desig han de sortir de la taula**:
 - ⭐ Una cosa ben feta: ______________________
 - ⭐ Una altra cosa ben feta: ______________________
 - 💡 Una millora (desig): ______________________

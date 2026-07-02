@@ -50,7 +50,12 @@ L'avaluació és **competencial, contínua, formativa i global**, d'acord amb el
 - **Retorn freqüent** sobre el codi i el circuit (durant la pràctica autònoma).
 - **Rúbriques compartides** des de l'inici de cada SA.
 - **Sessions de revisió de codi** entre iguals (*code review*) per consolidar bones pràctiques.
+- **Mini-check individual per SA** (10', no qualifica): micro-repte de codi **en solitari i sense apunts** que detecta l'*efecte passatger* del treball en parella abans que el penalitzi la prova trimestral. Banc complet: `../Classes/00_General/00_Mini_checks_individuals.md`.
+- **Graella d'activació amb repàs espaiat** a cada sessió (no qualifica): les errades massives hi fan de termòmetre del grup. Banc: `../Classes/00_General/00_Banc_activacio_repas.md`.
 
 ## 6.6. Transparència
 
-Els criteris d'avaluació i les rúbriques es fan **públics a l'inici del curs i de cada SA**, segons exigeix la normativa.
+Els criteris d'avaluació i les rúbriques es fan **públics a l'inici del curs i de cada SA**, segons exigeix la normativa. Aquesta transparència està **materialitzada en dos instruments per a l'alumnat**:
+
+- **`Classes/00_General/00_Avaluacio_per_alumnat.md`** — guia del sistema d'avaluació en llenguatge d'alumne (ponderació, escala NA·AS·AN·AE, rúbriques resumides, què no qualifica, proves, recuperació, ús d'IA). Es reparteix la **primera setmana**.
+- **Caixa «🎯 Objectius i avaluació» a cada fitxa base** — objectius d'aprenentatge de la SA en primera persona ("en acabar podré…") + taula *què lliuro → rúbrica → on compta*. Es llegeix **a l'inici de cada SA** (2 minuts): l'alumnat comença sabent què ha d'assolir i com se'l valorarà.

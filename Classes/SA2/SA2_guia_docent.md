@@ -38,6 +38,8 @@
 
 **Punt clau:** sempre **resistència limitadora** (220 Ω) en sèrie amb el LED; pota llarga = ànode (+).
 
+> 🔌 **Racó de mesura (dins la pràctica guiada, ~5' per parella):** munta un punt amb **multímetre** i fes-hi passar les parelles rotativament amb el seu circuit encès: mesurar la **tensió entre les potes del LED** (~2 V) i **a la resistència** (~3 V), i comprovar que sumen ~5 V. És la primera vegada que *veuen* la llei de la malla en un circuit seu (connexió amb Física) i l'única evidència de **mesura física real** de la CA2.2/R2 fins ara. Amb 2-3 multímetres n'hi ha prou (el taller de tecnologia acostuma a tenir-ne); si no n'hi ha cap, fes-ho com a demo projectada amb el teu.
+
 ---
 
 ## SESSIÓ 2 (2 h) — Estructures de control: el semàfor
@@ -132,6 +134,7 @@ Parelles amb **rols rotatius** (un canvi per sessió):
 - **Diana d'autoavaluació** (fitxa) sobre 3 criteris clau.
 - **Coavaluació** "2 estrelles i un desig" entre parelles.
 - **Exit ticket** de tancament; recull-lo per ajustar la sessió següent.
+- **Mini-check individual** (10', **inici de la S4**, no qualifica): escriure de memòria un Blink complet al pin 8. Detecta qui encara no programa sol (*efecte passatger*). Enunciat, semàfor de correcció i accions: [`../00_General/00_Mini_checks_individuals.md`](../00_General/00_Mini_checks_individuals.md).
 
 ## Context real i ODS
 

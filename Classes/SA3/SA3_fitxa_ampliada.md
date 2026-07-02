@@ -95,9 +95,17 @@ Marca el teu nivell (NA/AS/AN/AE):
 | Faig servir el Monitor sèrie per calibrar | ☐ | ☐ | ☐ | ☐ |
 | Escric i faig servir funcions pròpies | ☐ | ☐ | ☐ | ☐ |
 
-## Coavaluació (2 estrelles i un desig)
+## Coavaluació (2 estrelles i un desig — amb criteris)
 
-Intercanvieu l'alarma/aparcament amb una altra parella:
+Intercanvieu l'alarma/aparcament amb una altra parella. **Primer mireu-la amb criteris de les rúbriques R1 i R2** (marqueu ✓ o ✗):
+
+| Criteri | ✓/✗ |
+|---|---|
+| El codi té una **funció pròpia** (p. ex. `mesuraDistancia()`) — R1 | |
+| Els **llindars de distància** fan el que diu la seva taula (provat!) — R1 | |
+| El **sensor està ben alimentat i estable** (VCC/GND, cables ferms) — R2 | |
+
+Ara escriviu el retorn — **les estrelles i el desig han de sortir de la taula**:
 - ⭐ Una cosa ben feta: ______________________
 - ⭐ Una altra cosa ben feta: ______________________
 - 💡 Una millora (desig): ______________________

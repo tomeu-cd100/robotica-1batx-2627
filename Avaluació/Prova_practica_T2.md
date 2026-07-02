@@ -26,6 +26,10 @@ Programa una **estació remota** en MicroPython:
 ### Lliurament
 Tots dos programes funcionant + **quadern**: diagrama de blocs del control (Part A) i taula d'una lectura enviada/rebuda (Part B).
 
+### Pla de millora personal (després de la prova — 3 línies, no puntua)
+> Quan rebis el retorn, escriu al quadern: **(1)** què m'ha fallat o m'ha costat més · **(2)** què practicaré concretament · **(3)** com comprovaré que ja ho tinc.
+> El docent **recupera aquestes 3 línies a l'inici de la SA7**. Al 3r trimestre tot conflueix al projecte: el que quedi coix aquí, allà es notarà — millor tapar-ho ara.
+
 ---
 
 ## Graella de correcció (10 punts)

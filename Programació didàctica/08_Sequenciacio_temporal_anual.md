@@ -34,6 +34,18 @@ Per garantir la **viabilitat real** del curs (2 h/setmana ≈ 70 h), s'apliquen 
 
 > Vegeu la ponderació a `06_Avaluacio_criteris_qualificacio.md` (dimensió "Proves pràctiques", 20 %). Aquesta integració manté el pes avaluatiu sense comprometre les hores lectives.
 
+## Pla de contingència temporal («curs mínim viable»)
+
+El marge real (~1 h) és **molt més petit que les pèrdues habituals** d'un curs (festius que cauen en dia de classe, sortides, vagues, avaries): cal preveure **on es retalla** abans que passi, no improvisar-ho al març. Ordre oficial de retallada, **sense trencar la progressió**:
+
+1. **No es retallen mai** SA1–SA3 (fonaments d'E/S: tot el curs s'hi recolza) ni SA9 (síntesi i pes avaluatiu del 3r trimestre).
+2. **Primera retallada:** les **4es sessions d'ampliació** de SA2, SA4 i SA6 (ja són opcionals per disseny — fins a 3 sessions recuperades). *Atenció:* si es retalla la S4 de SA3 o SA6, la **prova trimestral** que allotgen es trasllada a la darrera sessió efectiva de la SA.
+3. **Segona retallada:** **SA8 comprimible de 6 h a 4 h** (fusionar S1+S2: telemetria + disseny IoT en una sessió; la S3 d'IA es manté — és el nucli del saber "IA aplicada al control").
+4. **Tercera retallada (últim recurs):** SA7 de 8 h a 6 h (sacrificar la S4 de seguidor de línia i quedar-se amb l'evita-obstacles com a comportament autònom).
+5. **Es mantenen sempre:** una **prova pràctica per trimestre** (van integrades: no costen hores) i els **mini-checks individuals** (10', són el radar de l'avaluació).
+
+**Senyal d'alerta per decidir a temps:** si en acabar el **1r trimestre no s'ha tancat la SA3**, activa la retallada 2 ja al gener (no esperis al maig); si a **Setmana Santa no s'ha tancat la SA6**, activa també la 3.
+
 ## Fil conductor i progressió
 
 ```
