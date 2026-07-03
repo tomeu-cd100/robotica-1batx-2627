@@ -132,7 +132,8 @@ def is_activitat(src: Path) -> bool:
     if name.endswith(("_fitxa_alumnat.md", "_fitxa_ampliada.md")):
         return True
     if name in {"SA1_poster_robot_plantilla.md", "00_Plantilla_disseny_objecte.md",
-                "SA1_prova_diagnostica.md", "00_Avaluacio_per_alumnat.md"}:
+                "SA1_prova_diagnostica.md", "00_Avaluacio_per_alumnat.md",
+                "00_Glossari_tecnic.md", "00_Targetes_rescat.md"}:
         return True
     if "SA9" in parts and "plantilles" in parts and name.endswith(".md"):
         return True

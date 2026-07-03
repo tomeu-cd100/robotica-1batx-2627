@@ -5,9 +5,19 @@
   "title": "Com s'avalua aquesta matèria — guia per a l'alumnat"
  },
  {
+  "html": "classes/00-general/00-glossari-tecnic.html",
+  "pdf": "pdf/classes/00-general/00-glossari-tecnic.pdf",
+  "title": "📖 Glossari tècnic català ↔ anglès"
+ },
+ {
   "html": "classes/00-general/00-plantilla-disseny-objecte.html",
   "pdf": "pdf/classes/00-general/00-plantilla-disseny-objecte.pdf",
   "title": "Plantilla de disseny d'objecte"
+ },
+ {
+  "html": "classes/00-general/00-targetes-rescat.html",
+  "pdf": "pdf/classes/00-general/00-targetes-rescat.pdf",
+  "title": "🃏 Targetes de rescat — pistes escalonades per desencallar-te"
  },
  {
   "html": "classes/sa0/sa0-fitxa-alumnat.html",
