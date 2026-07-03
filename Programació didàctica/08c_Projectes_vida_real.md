@@ -75,6 +75,27 @@ SA9 ja és un projecte obert; aquesta proposta només hi afegeix un **catàleg d
 
 ---
 
+## Llavors de Treball de Recerca (per presentar al T2)
+
+L'alumnat de 1r de Batxillerat **tria el TR durant aquest curs**: la matèria és una pedrera natural de temes experimentals i mesurables. Cada SA deixa 1-2 **preguntes investigables** obertes; el docent les presenta breument **al segon trimestre** (quan comença la tria) i les té a mà quan un alumne/a busca tema.
+
+**Format mínim d'un TR experimental:** pregunta concreta → hipòtesi → experiment amb variables controlades i **mesures repetides** → anàlisi → conclusions. Tot el que hi ha sota compleix aquest format amb material del centre.
+
+| SA d'origen | Pregunta investigable (exemples) |
+|---|---|
+| SA2 | Eficiència lumínica: quina relació real hi ha entre el *duty cycle* del PWM i la lluminositat percebuda/mesurada d'un LED? (mesura amb LDR calibrada) |
+| SA3 | Quin sensor de distància és més fiable (ultrasons vs IR) segons material, angle i llum ambient? Estudi comparatiu amb estadística bàsica |
+| SA4 | Corba real d'un servo econòmic: velocitat i precisió d'angle sota càrregues diferents |
+| SA5 | Comparativa de consum energètic del mateix programa en C++ (Arduino) i MicroPython (micro:bit): quant «costa» la comoditat d'un llenguatge interpretat? |
+| SA6 | Histèresi òptima d'un termòstat domèstic: quin parell de llindars minimitza commutacions sense sacrificar confort? (simulació + prototip) |
+| SA7 | Efecte de la superfície i del nivell de bateria en la precisió d'odometria per temps d'un robot diferencial |
+| SA8 | Biaix d'un classificador entrenat amb Teachable Machine: com canvia l'encert segons qui (o què) apareix als exemples d'entrenament? |
+| SA9 | Estudi d'usabilitat del propi producte final amb usuaris reals (metodologia d'observació + iteració documentada) |
+
+> Connexió amb `05_Atencio_a_la_diversitat.md` §5.4 (via d'aprofundiment per a alumnat d'altes capacitats o molt motivat) i amb les competicions (WRO, RoboCup Junior) com a marc alternatiu de TR.
+
+---
+
 ## Estat d'implementació sobre el material actual
 
 Aquest marc **ja està aplicat** al material (no és una proposta pendent):

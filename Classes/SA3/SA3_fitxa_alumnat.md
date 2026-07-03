@@ -18,6 +18,8 @@
 | **Quadern tècnic** (pseudocodi, calibratges, errors) | **R4** | Quadern i pràctiques (25 %) |
 | Mini-check individual (inici S3) | semàfor | **No qualifica** (m'avisa abans de la prova) |
 
+> 🪜 **Versió nucli (ja és assoliment satisfactori):** avís de **2 nivells** segons la distància (LED + so) que funciona de manera fiable. **Versió completa:** els 3 trams calibrats, tractament del «0 = sense eco» i codi amb funcions pròpies.
+
 > Escala NA·AS·AN·AE, rúbriques i tot el sistema: **[Com s'avalua la matèria](../00_General/00_Avaluacio_per_alumnat.md)**.
 
 ---
@@ -58,7 +60,7 @@ Dissenya un avís que depèn de la distància:
 **Defensa (1'):** explica el teu sistema i una aplicació real. S'avalua amb **R1** i **R2**.
 
 ## Si t'encalles (DEPURA)
-> **D**escriu · **E**xamina (**Monitor sèrie!**) · **P**rova una hipòtesi cada cop · **U**bica · **R**epara · **A**punta-ho. Revisa l'alimentació del sensor (VCC/GND).
+> **D**escriu · **E**xamina (**Monitor sèrie!**) · **P**rova una hipòtesi cada cop · **U**bica · **R**epara · **A**punta-ho. Revisa l'alimentació del sensor (VCC/GND). Encara encallat? **[Targeta de rescat](../00_General/00_Targetes_rescat.md)** (comença per la 🟢).
 
 ## M'autoavaluo (NA/AS/AN/AE)
 | Criteri | NA | AS | AN | AE |

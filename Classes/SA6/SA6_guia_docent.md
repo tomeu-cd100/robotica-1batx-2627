@@ -31,6 +31,7 @@
 
 ## SESSIÓ 1 (2 h) — Què és un sistema de control?
 - **Activació (10'):** *"Per què un aire condicionat no encén i apaga sense parar?"*
+- 🔭 **Referent (1', dins l'activació):** **Irmgard Flügge-Lotz**, teòrica del control discontinu (tot/res) — exactament la histèresi d'aquesta SA ([guió](../00_General/00_Referents_tecnologia.md)).
 - **Modelatge (25'):** conceptes: **consigna, sensor (realimentació), error, actuador**. **Llaç obert** (sense sensor, temporitzat) vs **llaç tancat** (amb sensor). **Diagrama de blocs**.
 - **Pràctica guiada (35'):** `01_llac_obert_vs_tancat.ino`; comparen el comportament dels dos modes amb el mateix muntatge.
 - **Repte (40'):** dibuixar el diagrama de blocs del seu sistema; identificar entrada/sortida/realimentació; **+ repte:** pensar 3 exemples reals de cada tipus.

@@ -18,6 +18,8 @@
 | **Quadern tècnic** (calibratges, decisions, errors) | **R4** | Quadern i pràctiques (25 %) |
 | Mini-check individual (inici S4) | semàfor | **No qualifica** (em situa) |
 
+> 🪜 **Versió nucli (ja és assoliment satisfactori):** el robot completa **un** comportament autònom (evitar obstacles **o** seguir la línia), encara que lent, amb el registre d'almenys 2 iteracions. **Versió completa:** comportament robust i calibrat, amb 3+ iteracions documentades i millores mesurades.
+
 > Escala NA·AS·AN·AE, rúbriques i tot el sistema: **[Com s'avalua la matèria](../00_General/00_Avaluacio_per_alumnat.md)**.
 
 ---
@@ -55,7 +57,7 @@
 **Producte:** comportament autònom + registre d'iteracions. S'avalua amb **R1**, **R3** i **R4**.
 
 ## Si t'encalles (DEPURA)
-> **D**escriu · **E**xamina (què fa el robot de debò) · **P**rova una hipòtesi cada cop · **U**bica · **R**epara · **A**punta-ho. Comprova el bloc `// === PINS (AJUSTAR) ===` i prova **una funció de moviment cada cop**.
+> **D**escriu · **E**xamina (què fa el robot de debò) · **P**rova una hipòtesi cada cop · **U**bica · **R**epara · **A**punta-ho. Comprova el bloc `// === PINS (AJUSTAR) ===` i prova **una funció de moviment cada cop**. Encara encallat? **[Targeta de rescat](../00_General/00_Targetes_rescat.md)** (comença per la 🟢).
 
 ## M'autoavaluo (NA/AS/AN/AE)
 | Criteri | NA | AS | AN | AE |

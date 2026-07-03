@@ -19,6 +19,8 @@
 | **Quadern tècnic** (diagrama d'estats, diagrama de blocs, errors) | **R4** | Quadern i pràctiques (25 %) |
 | Mini-check individual (inici S3) | semàfor | **No qualifica** (m'avisa abans de la prova) |
 
+> 🪜 **Versió nucli (ja és assoliment satisfactori):** termòstat amb **histèresi** que funciona, documentat amb el diagrama de blocs. **Versió completa:** hi afegeix la màquina d'estats no bloquejant (`millis()`) amb llindars justificats — i, si vols, el control P comparat.
+
 > Escala NA·AS·AN·AE, rúbriques i tot el sistema: **[Com s'avalua la matèria](../00_General/00_Avaluacio_per_alumnat.md)**.
 
 ---
@@ -57,7 +59,7 @@
 **Defensa (2-3', nivell T2):** problema → solució → **una decisió tècnica justificada** (per què aquests llindars? per què aquests estats?) + 2 preguntes. Ja no n'hi ha prou amb el minut de T1: vegeu l'escala a [`../00_General/00_Guia_defensa_oral.md`](../00_General/00_Guia_defensa_oral.md).
 
 ## Si t'encalles (DEPURA)
-> **D**escriu · **E**xamina (**Serial Plotter**: la sortida segueix la consigna o oscil·la?) · **P**rova una hipòtesi cada cop · **U**bica · **R**epara · **A**punta-ho.
+> **D**escriu · **E**xamina (**Serial Plotter**: la sortida segueix la consigna o oscil·la?) · **P**rova una hipòtesi cada cop · **U**bica · **R**epara · **A**punta-ho. Encara encallat? **[Targeta de rescat](../00_General/00_Targetes_rescat.md)** (comença per la 🟢).
 
 ## M'autoavaluo (NA/AS/AN/AE)
 | Criteri | NA | AS | AN | AE |

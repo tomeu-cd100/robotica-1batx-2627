@@ -46,6 +46,8 @@ Aquesta SA **tanca el mètode de projecte** introduït a la **SA1** i practicat 
 | **4** | **Millorar i documentar** | Revisa codi (code review); guia la documentació. | **Segona iteració**; redacten el dossier tècnic. |
 | **5** | **Comunicar** | Organitza les defenses; modera. | **Defensa oral** + demostració; coavaluació; reflexió final. |
 
+> 🔭 **Referent (1', a l'inici de la S1):** **Cynthia Breazeal**, fundadora de la robòtica social — el destinatari del vostre sistema és sempre una persona. Tanca la galeria del curs; si voleu, afegiu-hi el referent de proximitat (**Núria Salán**, UPC). Guió: [`../00_General/00_Referents_tecnologia.md`](../00_General/00_Referents_tecnologia.md).
+
 ## Rols de l'equip (rotatius/repartits)
 - **Coordinació/planificació** (manté el taulell i els terminis).
 - **Maquinari/electrònica** (muntatge, esquemes).

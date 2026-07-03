@@ -70,6 +70,7 @@ Element vertebrador de l'avaluació contínua. Per a cada pràctica/projecte, l'
 - Codi comentat i decisions de disseny.
 - Proves realitzades, errors trobats i com s'han resolt.
 - Conclusions i possibles millores.
+- **Glossari personal:** 3 termes nous per SA, amb l'equivalent en **anglès** i una definició pròpia (a partir de `Classes/00_General/00_Glossari_tecnic.md`): la documentació real de la professió és en anglès, i el pont s'ha de construir des del primer dia.
 
 **Dues entrades que tanquen el bucle metacognitiu** (el registre només ensenya si algú hi torna):
 - **«Els meus 3 errors del trimestre»** (tancament de cada trimestre): rellegir els apunts DEPURA propis i triar els 3 errors més instructius — què va passar, com es va trobar, què faig diferent ara. És **repàs actiu** del propi material.
@@ -77,9 +78,18 @@ Element vertebrador de l'avaluació contínua. Per a cada pràctica/projecte, l'
 
 ## 4.6. Perspectiva de gènere i coeducació
 
-- Rotació de rols per evitar que els rols tècnics recaiguin sempre en els mateixos perfils.
-- Referents femenins en enginyeria i tecnologia.
-- Reptes contextualitzats en àmbits diversos (salut, sostenibilitat, accessibilitat) per ampliar l'interès.
+Principis (amb l'instrument que els fa operatius entre parèntesis):
+
+- **Rotació de rols** per evitar que els rols tècnics recaiguin sempre en els mateixos perfils (parelles A/B de §4.3: tothom passa per Programador i per Provador **cada setmana**, no "quan toqui").
+- **Referents en enginyeria i tecnologia** lligats al contingut: un per SA, 1 minut dins l'activació de la S1 (`Classes/00_General/00_Referents_tecnologia.md`).
+- **Reptes contextualitzats en àmbits diversos** (salut, sostenibilitat, accessibilitat) per ampliar l'interès.
+
+Pautes de gestió d'aula:
+
+1. **Formació de parelles:** al T1 i T2 les fa el docent (heterogènies en experiència prèvia), vigilant que cap perfil quedi sistemàticament de «secretari/ària» del company. L'experiència prèvia amb Arduino/programació **no** es distribueix per gènere de manera neutra: si es deixen les parelles a lliure elecció, el biaix d'entrada es consolida.
+2. **A les defenses orals:** qui **no** ha programat la part explicada, la defensa (evita l'especialització «un fa, l'altre presenta»); torn de preguntes moderat pel docent donant la primera paraula de manera repartida al llarg del trimestre.
+3. **Observació:** el desequilibri de participació és un **indicador trimestral** del sistema (vegeu `06b_Avaluacio_programacio_i_practica_docent.md` §1) — es mesura, no s'intueix.
+4. **Llenguatge i exemples:** enunciats i contextos sense marca de gènere implícita (el «vosaltres» genèric, exemples d'usuaris diversos als productes).
 
 ## 4.7. Sostenibilitat i ètica (ODS)
 

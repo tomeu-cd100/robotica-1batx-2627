@@ -21,6 +21,8 @@
 | **Prova T3** (robot + sistema connectat) | **R1, R3, R4** | Proves (20 %) |
 | **Procés d'equip** (taulell àgil, rols, iteracions) | **R5** | Actitud (10 %) |
 
+> 🪜 **Versió nucli (ja és assoliment satisfactori):** els **requisits mínims del §1** complerts i demostrables en directe, amb el dossier a les seccions essencials. **Versió completa:** iteracions documentades amb millores, sistema robust i defensa amb decisions tècniques justificades. *Si aneu malament de temps: targeta T9.2.*
+
 > Escala NA·AS·AN·AE, rúbriques i tot el sistema: **[Com s'avalua la matèria](../00_General/00_Avaluacio_per_alumnat.md)**.
 
 ---
@@ -58,7 +60,7 @@ Useu [`plantilles/Planificacio_agile_PLANTILLA.md`](plantilles/Planificacio_agil
 - **Reflexió ètica/sostenibilitat:** impacte del sistema: ______________________
 
 ## Si t'encalles (DEPURA)
-> Prova **per parts** (cada mòdul per separat). **D**escriu · **E**xamina · **P**rova una hipòtesi cada cop · **U**bica (aïlla el mòdul) · **R**epara · **A**punta-ho al dossier.
+> Prova **per parts** (cada mòdul per separat). **D**escriu · **E**xamina · **P**rova una hipòtesi cada cop · **U**bica (aïlla el mòdul) · **R**epara · **A**punta-ho al dossier. Encara encallats? **[Targetes de rescat](../00_General/00_Targetes_rescat.md)** — la T9.1 és exactament per a això.
 
 ## M'autoavaluo (equip · NA/AS/AN/AE)
 | Criteri | NA | AS | AN | AE |

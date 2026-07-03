@@ -18,6 +18,7 @@
 | 04 | `04_Metodologia.md` | Enfocament competencial, ABP, eines, espais. |
 | 05 | `05_Atencio_a_la_diversitat.md` | Mesures universals, addicionals i intensives. |
 | 06 | `06_Avaluacio_criteris_qualificacio.md` | Criteris d'avaluació, instruments i ponderació. |
+| 06b | `06b_Avaluacio_programacio_i_practica_docent.md` | Avaluació de la programació mateixa i de la pràctica docent: indicadors trimestrals, qüestionari a l'alumnat i full de decisions. |
 | 07 | `07_Rubriques.md` | Rúbriques d'avaluació reutilitzables. |
 | 08 | `08_Sequenciacio_temporal_anual.md` | Seqüenciació de les 9 situacions d'aprenentatge. |
 | 08c | `08c_Projectes_vida_real.md` | Capa de sentit "producte de la vida real": fil de productes per trimestre cap al projecte integrador de SA9 (no altera hores ni rúbriques). |

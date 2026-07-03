@@ -53,6 +53,8 @@ La SA1 no només respon *"què és un robot?"*: també presenta **com treballare
 | Diagnòstic | 30' | Passa la **prova diagnòstica** ([`SA1_prova_diagnostica.md`](SA1_prova_diagnostica.md); no qualifica). | Responen individualment. |
 | Tancament | 10' | Recull conclusions; presenta el **mètode de projecte** (pòster a l'aula) com a forma de treball del curs; obre el quadern tècnic. | Primera entrada al quadern. |
 
+> 🔭 **Referent (1', dins l'Activació):** **Margaret Hamilton** — el programari de vol de l'Apollo i el naixement de l'«enginyeria del programari». Ganxo i guió: [`../00_General/00_Referents_tecnologia.md`](../00_General/00_Referents_tecnologia.md).
+
 **Punts clau:** tot sistema automàtic té sensors (entrada), un "cervell" (procés) i actuadors (sortida). El robot és un sistema embegut amb capacitat d'actuar sobre l'entorn. **Tot el curs** treballarem amb el cicle analitzar → dissenyar → prototipar → provar → millorar.
 
 **Solucions Activitat 1 (orientatives):**

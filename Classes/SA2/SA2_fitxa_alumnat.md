@@ -17,6 +17,8 @@
 | **Quadern tècnic** (esquemes, mesures, errors) | **R4** | Quadern i pràctiques (25 %) |
 | Mini-check individual (inici S4) | semàfor | **No qualifica** (em situa) |
 
+> 🪜 **Versió nucli (ja és assoliment satisfactori):** panell amb **2 estats** clarament distingibles amb color i so. **Versió completa:** els 3 estats + relé, i codi ordenat amb una funció per estat.
+
 > Escala NA·AS·AN·AE, rúbriques i tot el sistema: **[Com s'avalua la matèria](../00_General/00_Avaluacio_per_alumnat.md)**.
 
 ---
@@ -52,7 +54,7 @@ Dissenya un panell que indiqui **estats** amb color + so + una càrrega (relé):
 **Defensa (1'):** explica què fa el teu panell i una millora possible. S'avalua amb **R1** (codi) i **R2** (circuit).
 
 ## Si t'encalles (DEPURA)
-> **D**escriu · **E**xamina (LED, error, Monitor Sèrie) · **P**rova una hipòtesi cada cop · **U**bica · **R**epara · **A**punta-ho. Revisa la **resistència** i la **polaritat** de cada LED.
+> **D**escriu · **E**xamina (LED, error, Monitor Sèrie) · **P**rova una hipòtesi cada cop · **U**bica · **R**epara · **A**punta-ho. Revisa la **resistència** i la **polaritat** de cada LED. Encara encallat? **[Targeta de rescat](../00_General/00_Targetes_rescat.md)** (comença per la 🟢).
 
 ## M'autoavaluo (NA/AS/AN/AE)
 | Criteri | NA | AS | AN | AE |

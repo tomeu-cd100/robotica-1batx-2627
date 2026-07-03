@@ -19,6 +19,8 @@
 | Treball a l'aula (seguretat, cooperació) | **R5** | Actitud (10 %) |
 | Prova diagnòstica | — | **No qualifica** (serveix per fer parelles) |
 
+> 🪜 **Versió nucli (ja és assoliment satisfactori):** pòster amb entrada → procés → sortida ben identificades i el dilema ètic plantejat. **Versió completa:** sensors i actuadors concrets, alternatives de disseny i dilema argumentat amb pros i contres.
+
 > Escala NA·AS·AN·AE, rúbriques i tot el sistema: **[Com s'avalua la matèria](../00_General/00_Avaluacio_per_alumnat.md)**.
 
 ---
@@ -54,7 +56,7 @@ Llegeix [`SA1_normes_seguretat.md`](SA1_normes_seguretat.md) i **signa** el full
 Tria un **robot real** i analitza'l amb [`SA1_poster_robot_plantilla.md`](SA1_poster_robot_plantilla.md) (entrada-procés-sortida + dilema ètic). S'avalua amb la rúbrica **R4**.
 
 ## Si t'encalles (DEPURA)
-> **D**escriu (què esperaves vs què passa) · **E**xamina (LED, error, Monitor Sèrie) · **P**rova una hipòtesi cada cop · **U**bica el problema · **R**epara i torna a provar · **A**punta-ho al quadern. Si demanes ajuda, explica **què ja has provat**.
+> **D**escriu (què esperaves vs què passa) · **E**xamina (LED, error, Monitor Sèrie) · **P**rova una hipòtesi cada cop · **U**bica el problema · **R**epara i torna a provar · **A**punta-ho al quadern. Si demanes ajuda, explica **què ja has provat**. Encara encallat? Agafa una **[targeta de rescat](../00_General/00_Targetes_rescat.md)** — comença per la pista 🟢.
 
 ## M'autoavaluo (NA = no assolit · AS = suficient · AN = notable · AE = excel·lent)
 | Criteri | NA | AS | AN | AE |

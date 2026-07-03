@@ -30,6 +30,7 @@
 
 ## SESSIÓ 1 (2 h) — Entrades digitals i monitor sèrie
 - **Activació (10'):** *"Com sap la placa que has premut un botó?"*
+- 🔭 **Referent (1', dins l'activació):** **Marie Van Brittan Brown**, inventora del primer sistema de videovigilància domèstica (1966) — l'avantpassat de l'alarma d'aquesta SA ([guió](../00_General/00_Referents_tecnologia.md)).
 - **Modelatge (25'):** `01_polsador_debounce.ino`. `INPUT_PULLUP` (per què evita el cable extra), `digitalRead`, **antirebot** (*debounce*) i **Serial Monitor**.
 - **Pràctica guiada (35'):** munten el polsador al pin 2; obren el monitor sèrie i compten premudes.
 - **Repte (40'):** el polsador encén/apaga un LED a cada premuda (mode *toggle*); **+ repte:** comptar fins a 5 i reiniciar.

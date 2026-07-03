@@ -59,3 +59,7 @@ Els criteris d'avaluació i les rúbriques es fan **públics a l'inici del curs 
 
 - **`Classes/00_General/00_Avaluacio_per_alumnat.md`** — guia del sistema d'avaluació en llenguatge d'alumne (ponderació, escala NA·AS·AN·AE, rúbriques resumides, què no qualifica, proves, recuperació, ús d'IA). Es reparteix la **primera setmana**.
 - **Caixa «🎯 Objectius i avaluació» a cada fitxa base** — objectius d'aprenentatge de la SA en primera persona ("en acabar podré…") + taula *què lliuro → rúbrica → on compta*. Es llegeix **a l'inici de cada SA** (2 minuts): l'alumnat comença sabent què ha d'assolir i com se'l valorarà.
+
+## 6.7. Avaluació de la programació i de la pràctica docent
+
+L'avaluació també s'aplica **a la programació mateixa i a qui la imparteix**: indicadors trimestrals (assoliment per CA, desviació temporal, senyals formatius), qüestionari breu a l'alumnat i full de decisions documentat. Vegeu **`06b_Avaluacio_programacio_i_practica_docent.md`**.

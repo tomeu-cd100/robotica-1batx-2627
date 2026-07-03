@@ -31,6 +31,7 @@
 
 ## SESSIÓ 1 (2 h) — Variables i la primera sortida
 - **Activació (10'):** repàs de `Blink`. Pregunta: *"I si vull canviar el pin sense buscar-lo per tot el codi?"* → **constants**.
+- 🔭 **Referent (1', dins l'activació):** **Limor Fried** («Ladyada»), Adafruit i el maquinari lliure ([guió](../00_General/00_Referents_tecnologia.md)).
 - **Modelatge (20'):** `01_led_basic.ino`. Concepte de **constant** (`const int`) i **variable**. Esquema bàsic LED + 220 Ω.
 - **Pràctica guiada (40'):** munten el LED al pin 8 i el fan parpellejar; canvien temps amb una variable.
 - **Repte (40'):** parpelleig amb temps definits per variables; **+ repte:** patró Morse d'una lletra.

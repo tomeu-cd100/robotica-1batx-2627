@@ -30,6 +30,7 @@
 
 ## SESSIÓ 1 (2 h) — El servomotor
 - **Activació (10'):** *"Com es controla l'angle exacte d'un braç robòtic?"*
+- 🔭 **Referent (1', dins l'activació):** **Edith Clarke**, primera enginyera elèctrica professional — potència i transmissió, el perquè de l'alimentació externa ([guió](../00_General/00_Referents_tecnologia.md)).
 - **Modelatge (25'):** `01_servo_potenciometre.ino`. Llibreria `Servo.h`, `attach()`, `write(angle)` (0-180°). Diferència servo ↔ motor DC.
 - **Pràctica guiada (35'):** munten el servo; el mouen a angles fixos; després el controlen amb el potenciòmetre (`map(0-1023 → 0-180)`).
 - **Repte (40'):** "escombrada" automàtica (vaivé 0↔180) suau; **+ repte:** dos servos coordinats.

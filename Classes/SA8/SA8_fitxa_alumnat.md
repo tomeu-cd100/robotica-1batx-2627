@@ -18,6 +18,8 @@
 | **Quadern tècnic** (dades enviades, disseny IoT, errors) | **R4** | Quadern i pràctiques (25 %) |
 | Mini-check individual (inici S3) | semàfor | **No qualifica** (em situa) |
 
+> 🪜 **Versió nucli (ja és assoliment satisfactori):** telemetria d'**una** magnitud etiquetada que es rep i es mostra + reflexió ètica amb un risc i una mesura. **Versió completa:** dues magnituds o alerta per llindar (o classificador entrenat i provat), amb el biaix analitzat.
+
 > Escala NA·AS·AN·AE, rúbriques i tot el sistema: **[Com s'avalua la matèria](../00_General/00_Avaluacio_per_alumnat.md)**.
 
 ---
@@ -52,7 +54,7 @@ Dissenya un sistema IoT del teu entorn (mínim ètic obligatori):
 **Producte:** sistema connectat o classificador + reflexió ètica. S'avalua amb **R1**, **R3** i **R4**.
 
 ## Si t'encalles (DEPURA)
-> **D**escriu · **E**xamina (dades al sèrie: arriben? ben etiquetades?) · **P**rova una hipòtesi cada cop · **U**bica · **R**epara · **A**punta-ho. Comprova el mateix `group` de ràdio a les dues plaques.
+> **D**escriu · **E**xamina (dades al sèrie: arriben? ben etiquetades?) · **P**rova una hipòtesi cada cop · **U**bica · **R**epara · **A**punta-ho. Comprova el mateix `group` de ràdio a les dues plaques. Encara encallat? **[Targeta de rescat](../00_General/00_Targetes_rescat.md)** (comença per la 🟢).
 
 ## M'autoavaluo (NA/AS/AN/AE)
 | Criteri | NA | AS | AN | AE |

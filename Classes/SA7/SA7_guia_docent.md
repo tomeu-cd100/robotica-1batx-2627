@@ -35,6 +35,7 @@ La **Imagina 3dBot** és Arduino-compatible, però **els pins dels motors depene
 
 ## SESSIÓ 1 (2 h) — Moviment i cinemàtica diferencial
 - **Activació (10'):** *"Com gira un robot que no té volant?"* → **cinemàtica diferencial** (velocitat de cada roda).
+- 🔭 **Referent (1', dins l'activació):** **Ayanna Howard**, navegació autònoma per a rovers de Mart (NASA JPL) ([guió](../00_General/00_Referents_tecnologia.md)).
 - **Modelatge (25'):** `01_moviment_basic.ino`. Ajust dels pins; funcions de moviment; per què girar = rodes a velocitats/sentits diferents.
 - **Pràctica guiada (35'):** ajusten els pins, proven endavant/enrere/girs.
 - **Repte (40'):** seqüència de moviments (p. ex. "balla"); **+ repte:** ajustar velocitats per anar recte (compensar desviació).

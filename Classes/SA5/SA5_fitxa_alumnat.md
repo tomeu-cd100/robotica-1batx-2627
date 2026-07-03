@@ -18,6 +18,8 @@
 | **Quadern tècnic** (pseudocodi, errors d'indentació resolts) | **R4** | Quadern i pràctiques (25 %) |
 | Mini-check individual (inici S3) | semàfor | **No qualifica** (em situa) |
 
+> 🪜 **Versió nucli (ja és assoliment satisfactori):** app que fa servir **un** sensor integrat o la ràdio i funciona + taula comparativa completa. **Versió completa:** app amb dues funcions o més (sensor + ràdio, registre de màxims…) i comparació comentada amb frases pròpies.
+
 > Escala NA·AS·AN·AE, rúbriques i tot el sistema: **[Com s'avalua la matèria](../00_General/00_Avaluacio_per_alumnat.md)**.
 
 ---
@@ -56,7 +58,7 @@ Tria un dels reptes com a producte i completa la comparació amb un programa sen
 S'avalua amb **R1** (codi) i **R4** (comparació).
 
 ## Si t'encalles (DEPURA)
-> **D**escriu · **E**xamina (errors de Python, **indentació**) · **P**rova una hipòtesi cada cop · **U**bica · **R**epara · **A**punta-ho. Comprova que el codi és a `main.py`.
+> **D**escriu · **E**xamina (errors de Python, **indentació**) · **P**rova una hipòtesi cada cop · **U**bica · **R**epara · **A**punta-ho. Comprova que el codi és a `main.py`. Encara encallat? **[Targeta de rescat](../00_General/00_Targetes_rescat.md)** (comença per la 🟢).
 
 ## M'autoavaluo (NA/AS/AN/AE)
 | Criteri | NA | AS | AN | AE |

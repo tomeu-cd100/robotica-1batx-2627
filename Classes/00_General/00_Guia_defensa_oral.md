@@ -34,6 +34,10 @@
 
 Qui escolta omple la **coavaluació amb criteris** de la fitxa ampliada (2 estrelles i un desig ancorats a la R4). Escoltar per avaluar és la meitat de l'aprenentatge de comunicar.
 
+## Qui defensa què (regla coeducativa)
+
+En parelles i equips, **qui no ha programat la part explicada, la defensa**: obliga tothom a entendre tot el sistema i desmunta l'especialització «un fa, l'altre presenta» (que gairebé mai es reparteix a l'atzar). El docent modera el torn de preguntes repartint la primera paraula al llarg del trimestre. Pautes completes: `Programació didàctica/04_Metodologia.md` §4.6.
+
 ## Logística de la SA9 (nota per al docent)
 
 Amb més de **6 equips**, una sola sessió de defenses (S5) no dona: 5' + preguntes + canvi de muntatge ≈ 12-15' per equip. **Esglaona-les:** 2-3 defenses al final de les sessions S3 i S4 (equips que ja tenen el prototip llest) i la resta a la S5. Avantatge afegit: els primers equips reben preguntes que els altres encara poden aprofitar per millorar.

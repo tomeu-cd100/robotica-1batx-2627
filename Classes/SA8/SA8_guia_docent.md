@@ -35,6 +35,7 @@
 
 ## SESSIÓ 1 (2 h) — Telemetria: el robot que informa
 - **Activació (10'):** *"Com sap el teu mòbil la temperatura de casa quan ets fora?"* → telemetria/IoT.
+- 🔭 **Referent (1', dins l'activació):** **Fei-Fei Li** (ImageNet: sense bones dades no hi ha bona IA) i menció d'**Hedy Lamarr** (salt de freqüència, 1942) ([guió](../00_General/00_Referents_tecnologia.md)).
 - **Modelatge (25'):** [`01_telemetria_emissor.py`](codi/01_telemetria_emissor.py) + [`02_telemetria_receptor.py`](codi/02_telemetria_receptor.py). Enviar dades amb `radio.send()`; rebre-les i **registrar-les pel port sèrie** (per fer-ne després un gràfic/full de càlcul).
 - **Pràctica guiada (35'):** una placa mesura temperatura/llum i les envia; l'altra les mostra i registra.
 - **Repte (40'):** enviar dues magnituds amb etiqueta (p. ex. `"T:23"`, `"L:120"`); **+ repte:** alerta quan se supera un llindar.

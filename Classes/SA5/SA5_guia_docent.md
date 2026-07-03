@@ -34,6 +34,7 @@
 > 🔗 **Bastida prèvia (SA0):** abans de començar, deriva l'alumnat que ho necessiti a [`Classes/SA0/SA0_guia_programacio.md`](../SA0/SA0_guia_programacio.md), **Part B (MicroPython)** i **Part C (comparativa C++↔Python)**, per amortir el canvi de llenguatge.
 
 - **Activació (10'):** *"La mateixa idea, dos llenguatges: què canviarà respecte d'Arduino?"*
+- 🔭 **Referent (1', dins l'activació):** **Sophie Wilson**, dissenyadora del conjunt d'instruccions ARM — el processador de la micro:bit i del mòbil ([guió](../00_General/00_Referents_tecnologia.md)).
 - **Modelatge (25'):** editor Python de micro:bit. `from microbit import *`, `display.scroll()`, `display.show(Image...)`, botons. **Indentació** com a estructura (vs claus `{}` de C++).
 - **Pràctica guiada (35'):** [`01_name_badge.py`](codi/01_name_badge.py); mostren el nom i reaccionen als botons A/B.
 - **Repte (40'):** badge d'emocions (botó A: contenta, botó B: trista); **+ repte:** animació pròpia amb diverses imatges.

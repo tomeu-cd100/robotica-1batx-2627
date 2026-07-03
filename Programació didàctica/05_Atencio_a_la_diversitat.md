@@ -15,6 +15,8 @@ Marc: **Decret 150/2017** (atenció educativa en un sistema inclusiu) i Decret 1
 ## 5.2. Mesures i suports addicionals
 
 Per a alumnat amb dificultats específiques o ritmes diferents:
+- **Targetes de rescat** amb pistes escalonades (pregunta conceptual → pas concret → fragment amb forat) per als encallaments previsibles de cada pràctica: [`Classes/00_General/00_Targetes_rescat.md`](../Classes/00_General/00_Targetes_rescat.md). L'alumne es desencalla sense esperar el docent i registra al quadern el nivell de pista usat (no penalitza).
+- **Versió nucli** explícita del producte de cada SA (a la caixa «Objectius i avaluació» de la fitxa): la versió mínima que ja és un assoliment satisfactori, perquè qui va just sàpiga on apuntar.
 - **Guions pas a pas** i fites parcials amb checklist.
 - **Reducció de la càrrega de codi** (es proporciona part del codi i l'alumnat completa parts clau).
 - Ús prioritari de **simulador** per reduir la complexitat del maquinari quan calgui.
