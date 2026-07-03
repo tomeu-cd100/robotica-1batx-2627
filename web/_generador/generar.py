@@ -1073,6 +1073,8 @@ def render_home(pages: list[Page]) -> str:
     u_trans = ("classes/00-general/index.html"
                if "classes/00-general/index.html" in outs else "classes/index.html")
     u_alum = find_out(pages, "00_Avaluacio_per_alumnat.md", "avaluacio/index.html")
+    u_targ = find_out(pages, "00_Targetes_rescat.md", "classes/index.html")
+    u_glos = find_out(pages, "00_Glossari_tecnic.md", "classes/index.html")
     rutes = f"""
 <h2 class="seccio-sep">Per on començo?</h2>
 <p class="seccio-intro">Tria la teva situació: cada ruta et porta, pas a pas, al que necessites.</p>
@@ -1102,10 +1104,12 @@ def render_home(pages: list[Page]) -> str:
     </ol>
   </div>
   <div class="ruta-card">
-    <p class="ruta-tit">🎓 Soc alumne/a: com se m'avaluarà?</p>
+    <p class="ruta-tit">🎓 Soc alumne/a</p>
     <ol>
       <li><a href="{u_alum}">Com s'avalua aquesta matèria</a> — d'on surt la nota, què compta i què no.</li>
       <li>A la <strong>fitxa de cada SA</strong>: la caixa «🎯 Objectius i avaluació» (què sabré fer i què lliuro).</li>
+      <li><a href="{u_targ}">Targetes de rescat</a> — si t'encalles: pistes en 3 nivells, sense que ningú et faci la feina.</li>
+      <li><a href="{u_glos}">Glossari català ↔ anglès</a> — els termes tècnics tal com els trobaràs quan busquis.</li>
       <li><a href="{u_rub}">Rúbriques completes</a> — tens dret a veure-les abans de començar.</li>
     </ol>
   </div>
