@@ -203,6 +203,13 @@ def make_md() -> markdown.Markdown:
     })
 
 
+def wrap_tables(body: str) -> str:
+    """Embolcalla cada <table> amb un contenidor de scroll horitzontal
+    perquè les taules amples (rúbriques) no desbordin en mòbil."""
+    body = re.sub(r"<table(\s[^>]*)?>", r'<div class="taula-scroll"><table\1>', body)
+    return body.replace("</table>", "</table></div>")
+
+
 # ---------------------------------------------------------------------------
 # Descobriment de pàgines
 # ---------------------------------------------------------------------------
@@ -1298,6 +1305,7 @@ def main():
         text = p.src.read_text(encoding="utf-8")
         md = make_md()
         body = md.convert(text)
+        body = wrap_tables(body)
         body = rewrite_links(body, p.src, p.out_rel, md_map, code_map, sim_map, copied_imgs)
         toc = toc_html(md)
         extra = ""

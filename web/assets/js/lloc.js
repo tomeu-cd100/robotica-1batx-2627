@@ -23,6 +23,19 @@
     });
   }
 
+  /* ---------- Regió aria-live per als lectors de pantalla ----------
+     Es crea en carregar (no sota demanda): els lectors només anuncien
+     de forma fiable les regions que ja existien al DOM abans del canvi. */
+  var avisA11y = document.createElement("div");
+  avisA11y.id = "a11y-avis";
+  avisA11y.className = "vo";
+  avisA11y.setAttribute("aria-live", "polite");
+  document.body.appendChild(avisA11y);
+  function anuncia(msg) {
+    avisA11y.textContent = "";
+    setTimeout(function () { avisA11y.textContent = msg; }, 30);
+  }
+
   /* ---------- Botons de copiar codi ---------- */
   document.querySelectorAll(".copia-btn").forEach(function (btn) {
     btn.addEventListener("click", function () {
@@ -34,6 +47,7 @@
         var orig = btn.textContent;
         btn.textContent = "Copiat ✓";
         btn.classList.add("fet");
+        anuncia("Codi copiat al porta-retalls.");
         setTimeout(function () { btn.textContent = orig; btn.classList.remove("fet"); }, 1600);
       };
       if (navigator.clipboard && navigator.clipboard.writeText) {
