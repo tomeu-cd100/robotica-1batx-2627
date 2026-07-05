@@ -7,8 +7,9 @@
 
 /* ---------- Tokens ---------- */
 :root {
-  --fs-base: 17px;
+  --fs-base: 1.0625rem;   /* 17px a mida 100%; escala amb la mida de l'arrel */
   --ff-text: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --ff-llegible: Verdana, "Trebuchet MS", "Segoe UI", system-ui, sans-serif;
   --ff-mono: "Cascadia Code", "JetBrains Mono", "Fira Code", Consolas, "SF Mono", monospace;
 
   --bg: #ffffff;
@@ -48,6 +49,8 @@ html[data-tema="fosc"] {
 
 /* ---------- Accents per apartat ---------- */
 [data-section="inici"]      { --accent: #6366f1; --accent-2: #8b5cf6; --accent-soft: #eef2ff; }
+[data-section="docent"]     { --accent: #4f46e5; --accent-2: #6366f1; --accent-soft: #eef2ff; }
+[data-section="alumnat"]    { --accent: #0891b2; --accent-2: #06b6d4; --accent-soft: #ecfeff; }
 [data-section="programacio"]{ --accent: #4f46e5; --accent-2: #6366f1; --accent-soft: #eef2ff; }
 [data-section="classes"]    { --accent: #0891b2; --accent-2: #06b6d4; --accent-soft: #ecfeff; }
 [data-section="reptes"]     { --accent: #d97706; --accent-2: #f59e0b; --accent-soft: #fffbeb; }
@@ -60,6 +63,8 @@ html[data-tema="fosc"] [data-section] { --accent-soft: rgba(255, 255, 255, .06);
 /* Accents en mode fosc: variants clares (sèrie 400) per garantir
    contrast AA (≥ 4.5:1) del text d'accent sobre --bg/--surface */
 html[data-tema="fosc"] [data-section="inici"]       { --accent: #818cf8; --accent-2: #a78bfa; }
+html[data-tema="fosc"] [data-section="docent"]      { --accent: #818cf8; --accent-2: #a78bfa; }
+html[data-tema="fosc"] [data-section="alumnat"]     { --accent: #38bdf8; --accent-2: #67e8f9; }
 html[data-tema="fosc"] [data-section="programacio"] { --accent: #818cf8; --accent-2: #a78bfa; }
 html[data-tema="fosc"] [data-section="classes"]     { --accent: #38bdf8; --accent-2: #67e8f9; }
 html[data-tema="fosc"] [data-section="reptes"]      { --accent: #fbbf24; --accent-2: #fcd34d; }
@@ -84,6 +89,19 @@ html[data-tema="fosc"] [data-tri="0"] { --tri: #94a3b8; }
 html[data-tema="fosc"] [data-tri="1"] { --tri: #60a5fa; }
 html[data-tema="fosc"] [data-tri="2"] { --tri: #a78bfa; }
 html[data-tema="fosc"] [data-tri="3"] { --tri: #f472b6; }
+
+/* ---------- Ajustos de lectura (mida de text i tipografia) ----------
+   La mida escala la font de l'arrel: tot el que va en rem (cos i títols)
+   creix o minva de manera proporcional. Es persisteix a localStorage. */
+html[data-mida="90"]  { font-size: 90%; }
+html[data-mida="110"] { font-size: 110%; }
+html[data-mida="120"] { font-size: 120%; }
+html[data-mida="130"] { font-size: 130%; }
+html[data-font="llegible"] body {
+  --ff-text: var(--ff-llegible);
+  letter-spacing: .01em;
+  line-height: 1.8;
+}
 
 /* ---------- Base ---------- */
 * { box-sizing: border-box; }
@@ -182,6 +200,24 @@ a:hover { text-decoration: underline; }
 }
 .tema-btn:hover, .menu-btn:hover { border-color: var(--accent); color: var(--accent); }
 .menu-btn { display: none; }
+
+/* ---------- Barra d'ajustos de lectura ---------- */
+.a11y-grup {
+  display: inline-flex; align-items: center; gap: .2rem;
+  border: 1px solid var(--border-fort); border-radius: 10px;
+  background: var(--surface); padding: 2px;
+}
+.a11y-btn {
+  border: 0; background: transparent; color: var(--text); cursor: pointer;
+  min-width: 34px; height: 32px; border-radius: 8px; padding: 0 .45rem;
+  font-size: .9rem; font-weight: 700; line-height: 1;
+  display: inline-flex; align-items: center; justify-content: center;
+}
+.a11y-btn:hover { background: var(--surface-2); color: var(--accent); }
+.a11y-btn.font-toggle { font-weight: 800; letter-spacing: -.02em; }
+.a11y-btn.font-toggle[aria-pressed="true"] {
+  background: var(--accent-soft); color: var(--accent);
+}
 
 /* ---------- Layout ---------- */
 .layout {
@@ -476,9 +512,16 @@ body.sense-toc .prose, body.sense-sidebar .prose { max-width: 78ch; }
   /* mínim 16px a l'input: evita el zoom automàtic de Safari iOS (WCAG 1.4.4) */
   #cerca { font-size: 16px; }
 }
+@media (max-width: 560px) {
+  .topbar { gap: .6rem; padding: 0 .8rem; }
+  .a11y-btn { min-width: 30px; padding: 0 .3rem; }
+}
 @media (max-width: 480px) {
-  #cerca { width: 130px; }
+  #cerca { width: 118px; }
   .brand-sub { display: none; }
+}
+@media (max-width: 430px) {
+  .a11y-grup .font-toggle { display: none; }  /* prioritza mida de text i tema */
 }
 
 /* ---------- Botó "Baixa PDF" ---------- */
@@ -518,6 +561,27 @@ body.sense-toc .prose, body.sense-sidebar .prose { max-width: 78ch; }
 .ruta-card .ruta-tit { margin: 0 0 .5rem; font-weight: 700; }
 .ruta-card ol { margin: 0; padding-left: 1.25rem; }
 .ruta-card li { margin: .3rem 0; }
+.ruta-card .ruta-mes { margin: .7rem 0 0; }
+.ruta-card .ruta-mes a { font-weight: 700; color: var(--accent); }
+
+/* Hubs per audiència (Docent / Alumnat): passos numerats amb accent */
+.hub-hero { padding: 1.4rem 0 .4rem; }
+.hub-passos {
+  list-style: none; counter-reset: pas; margin: 0 0 1.4rem; padding: 0;
+}
+.hub-passos > li {
+  position: relative; padding: .55rem 0 .55rem 2.6rem;
+  border-bottom: 1px solid var(--border); counter-increment: pas;
+}
+.hub-passos > li:last-child { border-bottom: 0; }
+.hub-passos > li::before {
+  content: counter(pas); position: absolute; left: 0; top: .5rem;
+  width: 1.8rem; height: 1.8rem; border-radius: 999px;
+  background: var(--accent-soft); color: var(--accent);
+  font-weight: 800; font-size: .9rem;
+  display: inline-flex; align-items: center; justify-content: center;
+}
+.hub-passos a { font-weight: 650; }
 
 /* Fil transversal d'una SA (pastilles d'enllaç creuat entre seccions) */
 .sa-fil {

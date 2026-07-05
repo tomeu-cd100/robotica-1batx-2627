@@ -36,6 +36,42 @@
     setTimeout(function () { avisA11y.textContent = msg; }, 30);
   }
 
+  /* ---------- Ajustos de lectura: mida de text i tipografia ---------- */
+  var MIDES = [90, 100, 110, 120, 130];
+  function midaActual() {
+    var m = parseInt(localStorage.getItem("mida"), 10);
+    return MIDES.indexOf(m) !== -1 ? m : 100;
+  }
+  function aplicaMida(m) {
+    if (m === 100) { doc.removeAttribute("data-mida"); }
+    else { doc.setAttribute("data-mida", String(m)); }
+    try { localStorage.setItem("mida", String(m)); } catch (e) {}
+    anuncia("Mida del text: " + m + " per cent.");
+  }
+  function canviaMida(pas) {
+    var i = MIDES.indexOf(midaActual());
+    var nou = MIDES[Math.min(MIDES.length - 1, Math.max(0, i + pas))];
+    if (nou !== midaActual()) aplicaMida(nou);
+  }
+  var btnMenys = document.querySelector(".mida-menys");
+  var btnMes = document.querySelector(".mida-mes");
+  if (btnMenys) btnMenys.addEventListener("click", function () { canviaMida(-1); });
+  if (btnMes) btnMes.addEventListener("click", function () { canviaMida(1); });
+
+  var btnFont = document.querySelector(".font-toggle");
+  if (btnFont) {
+    var fontOn = doc.getAttribute("data-font") === "llegible";
+    btnFont.setAttribute("aria-pressed", fontOn ? "true" : "false");
+    btnFont.addEventListener("click", function () {
+      fontOn = doc.getAttribute("data-font") === "llegible";
+      if (fontOn) { doc.removeAttribute("data-font"); }
+      else { doc.setAttribute("data-font", "llegible"); }
+      try { localStorage.setItem("font", fontOn ? "estandard" : "llegible"); } catch (e) {}
+      btnFont.setAttribute("aria-pressed", fontOn ? "false" : "true");
+      anuncia(fontOn ? "Tipografia estàndard." : "Tipografia de lectura fàcil activada.");
+    });
+  }
+
   /* ---------- Botons de copiar codi ---------- */
   document.querySelectorAll(".copia-btn").forEach(function (btn) {
     btn.addEventListener("click", function () {

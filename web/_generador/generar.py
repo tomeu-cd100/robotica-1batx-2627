@@ -98,6 +98,17 @@ ROOT_PAGES = [
     {"src": "GUIA_INICI_DOCENT.md", "out": "guia-inici.html", "title": "Guia d'inici docent"},
 ]
 
+# Menú superior per audiència: (href des de l'arrel, etiqueta, clau activa).
+# Les claus «docent» i «alumnat» són hubs d'orientació, no seccions amb carpeta.
+TOPNAV_ITEMS = [
+    ("index.html", "Inici", "inici"),
+    ("classes/index.html", "Les 9 SA", "classes"),
+    ("docent.html", "Docent", "docent"),
+    ("alumnat.html", "Alumnat", "alumnat"),
+    ("recursos/index.html", "Recursos", "recursos"),
+]
+HUB_KEYS = {"docent", "alumnat"}
+
 TRIMESTRES = {
     1: {"label": "1r trimestre", "sas": [1, 2, 3]},
     2: {"label": "2n trimestre", "sas": [4, 5, 6]},
@@ -422,12 +433,15 @@ def copy_image(src: Path, copied: dict) -> str:
 # Plantilla HTML
 # ---------------------------------------------------------------------------
 def topnav_html(out_rel: str, active: str) -> str:
+    """Menú per audiència (estil «Aula Maker»): curt i estable a totes les
+    pàgines. La resta de seccions s'hi arriba pels hubs, la portada i el
+    cercador; cap URL de secció no canvia."""
     prefix = depth_prefix(out_rel)
-    cls0 = ' class="actiu"' if active == "inici" else ""
-    items = [f'<a href="{prefix}index.html"{cls0}>Inici</a>']
-    for s in SECTIONS:
-        cls = ' class="actiu"' if active == s["key"] else ""
-        items.append(f'<a href="{prefix}{s["key"]}/index.html" data-sec="{s["key"]}"{cls}>{s["title"]}</a>')
+    items = []
+    for href, label, key in TOPNAV_ITEMS:
+        cls = ' class="actiu"' if active == key else ""
+        sec = f' data-sec="{key}"' if key in SECTION_BY_KEY else ""
+        items.append(f'<a href="{prefix}{href}"{sec}{cls}>{label}</a>')
     return "\n".join(items)
 
 
@@ -469,7 +483,7 @@ def _link(href, label, actiu, tri=None):
 
 
 def sidebar_html(section_key: str, current_out: str, pages: list[Page]) -> str:
-    if section_key == "inici":
+    if section_key == "inici" or section_key in HUB_KEYS:
         return ""
     root_index = f"{section_key}/index.html"
     sec_pages = [p for p in pages if p.section == section_key and p.out_rel != root_index]
@@ -726,7 +740,7 @@ def page_shell(*, out_rel, section_key, title, content_html, toc="",
 <meta name="description" content="{html.escape(SITE_TAGLINE)}">
 <link rel="stylesheet" href="{prefix}assets/css/estil.css">
 <link rel="stylesheet" href="{prefix}assets/css/pygments.css">
-<script>(function(){{try{{var t=localStorage.getItem('tema');if(t==='fosc'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.setAttribute('data-tema','fosc');}}catch(e){{}}}})();</script>
+<script>(function(){{try{{var d=document.documentElement,t=localStorage.getItem('tema');if(t==='fosc'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches))d.setAttribute('data-tema','fosc');var m=localStorage.getItem('mida');if(m&&m!=='100')d.setAttribute('data-mida',m);if(localStorage.getItem('font')==='llegible')d.setAttribute('data-font','llegible');}}catch(e){{}}}})();</script>
 </head>
 <body{accent_attr} class="{has_sidebar} {layout_class}">
 <a class="skip" href="#contingut">Salta al contingut</a>
@@ -740,6 +754,11 @@ def page_shell(*, out_rel, section_key, title, content_html, toc="",
     <div class="cercador">
       <input type="search" id="cerca" placeholder="Cerca…" autocomplete="off" aria-label="Cerca al web">
       <div id="cerca-resultats" class="cerca-resultats" hidden></div>
+    </div>
+    <div class="a11y-grup" role="group" aria-label="Ajustos de lectura">
+      <button class="a11y-btn mida-menys" aria-label="Redueix la mida del text" title="Text més petit">A−</button>
+      <button class="a11y-btn mida-mes" aria-label="Augmenta la mida del text" title="Text més gran">A+</button>
+      <button class="a11y-btn font-toggle" aria-pressed="false" aria-label="Tipografia de lectura fàcil" title="Tipografia de lectura fàcil">Aa</button>
     </div>
     <button class="tema-btn" aria-label="Canvia el tema clar/fosc" title="Tema clar/fosc">◐</button>
   </div>
@@ -1060,28 +1079,71 @@ def find_out(pages: list[Page], src_name: str, fallback: str) -> str:
     return fallback
 
 
-def render_home(pages: list[Page]) -> str:
-    # targetes de seccions
-    sec_cards = []
+def hub_urls(pages: list[Page]) -> dict[str, str]:
+    """URL (des de l'arrel) dels documents que enllacen la portada i els hubs."""
+    outs = {p.out_rel for p in pages}
+    return {
+        "met": find_out(pages, "04_Metodologia.md", "programacio/index.html"),
+        "seq": find_out(pages, "08_Sequenciacio_temporal_anual.md", "programacio/index.html"),
+        "rub": find_out(pages, "07_Rubriques.md", "programacio/index.html"),
+        "full": find_out(pages, "Full_qualificacio_competencies.md", "avaluacio/index.html"),
+        "trans": ("classes/00-general/index.html"
+                  if "classes/00-general/index.html" in outs else "classes/index.html"),
+        "alum": find_out(pages, "00_Avaluacio_per_alumnat.md", "avaluacio/index.html"),
+        "targ": find_out(pages, "00_Targetes_rescat.md", "classes/index.html"),
+        "glos": find_out(pages, "00_Glossari_tecnic.md", "classes/index.html"),
+    }
+
+
+def sec_cards_html() -> str:
+    """Targetes de totes les seccions (mapa complet, per a la portada i els hubs)."""
+    cards = []
     for s in SECTIONS:
-        sec_cards.append(
+        cards.append(
             f'<a class="sec-card" href="{s["key"]}/index.html" data-section="{s["key"]}">'
             f'<span class="sec-ic">{s["icon"]}</span>'
             f'<span class="sec-tit">{s["title"]}</span>'
             f'<span class="sec-desc">{html.escape(s["desc"])}</span></a>'
         )
+    return "".join(cards)
 
-    # rutes guiades «Per on començo?» (URL resoltes dinàmicament)
+
+def sa_grid_html(pages: list[Page]) -> str:
+    """Graella de les 9 SA per trimestre (portada i hub d'alumnat)."""
     outs = {p.out_rel for p in pages}
-    u_met = find_out(pages, "04_Metodologia.md", "programacio/index.html")
-    u_seq = find_out(pages, "08_Sequenciacio_temporal_anual.md", "programacio/index.html")
-    u_rub = find_out(pages, "07_Rubriques.md", "programacio/index.html")
-    u_full = find_out(pages, "Full_qualificacio_competencies.md", "avaluacio/index.html")
-    u_trans = ("classes/00-general/index.html"
-               if "classes/00-general/index.html" in outs else "classes/index.html")
-    u_alum = find_out(pages, "00_Avaluacio_per_alumnat.md", "avaluacio/index.html")
-    u_targ = find_out(pages, "00_Targetes_rescat.md", "classes/index.html")
-    u_glos = find_out(pages, "00_Glossari_tecnic.md", "classes/index.html")
+    sa_to_out = {}
+    for p in pages:
+        if p.section == "programacio":
+            sa = detect_sa(p.src.name)
+            if sa and sa not in sa_to_out:
+                sa_to_out[sa] = p.out_rel
+    for sa in range(1, 10):
+        hub = f"classes/sa{sa}/index.html"
+        if hub in outs:
+            sa_to_out[sa] = hub
+    tri_blocks = []
+    for t, info in TRIMESTRES.items():
+        cards = []
+        for sa in info["sas"]:
+            href = sa_to_out.get(sa, "programacio/index.html")
+            cards.append(
+                f'<a class="sa-card" href="{href}" data-tri="{t}">'
+                f'<span class="sa-num">SA{sa}</span>'
+                f'<span class="sa-nom">{html.escape(SA_TITLES[sa])}</span></a>'
+            )
+        tri_blocks.append(
+            f'<div class="tri-block" data-tri="{t}">'
+            f'<h3 class="tri-tit"><span class="tri-pastilla" data-tri="{t}"></span>{info["label"]}</h3>'
+            f'<div class="sa-grid">{"".join(cards)}</div></div>'
+        )
+    return '<div class="tri-wrap">\n' + "".join(tri_blocks) + "\n</div>"
+
+
+def render_home(pages: list[Page]) -> str:
+    u = hub_urls(pages)
+    u_met, u_seq, u_rub = u["met"], u["seq"], u["rub"]
+    u_full, u_trans, u_alum = u["full"], u["trans"], u["alum"]
+    u_targ, u_glos = u["targ"], u["glos"]
     rutes = f"""
 <h2 class="seccio-sep">Per on començo?</h2>
 <p class="seccio-intro">Tria la teva situació: cada ruta et porta, pas a pas, al que necessites.</p>
@@ -1117,38 +1179,11 @@ def render_home(pages: list[Page]) -> str:
       <li>A la <strong>fitxa de cada SA</strong>: la caixa «🎯 Objectius i avaluació» (què sabré fer i què lliuro).</li>
       <li><a href="{u_targ}">Targetes de rescat</a> — si t'encalles: pistes en 3 nivells, sense que ningú et faci la feina.</li>
       <li><a href="{u_glos}">Glossari català ↔ anglès</a> — els termes tècnics tal com els trobaràs quan busquis.</li>
-      <li><a href="{u_rub}">Rúbriques completes</a> — tens dret a veure-les abans de començar.</li>
     </ol>
+    <p class="ruta-mes"><a href="alumnat.html">Entra al teu espai →</a></p>
   </div>
 </div>
 """
-
-    # mapa de SA -> material d'aula (Classes); si no n'hi ha, programació
-    sa_to_out = {}
-    for p in pages:
-        if p.section == "programacio":
-            sa = detect_sa(p.src.name)
-            if sa and sa not in sa_to_out:
-                sa_to_out[sa] = p.out_rel
-    for sa in range(1, 10):
-        hub = f"classes/sa{sa}/index.html"
-        if hub in outs:
-            sa_to_out[sa] = hub
-    tri_blocks = []
-    for t, info in TRIMESTRES.items():
-        cards = []
-        for sa in info["sas"]:
-            href = sa_to_out.get(sa, f"programacio/index.html")
-            cards.append(
-                f'<a class="sa-card" href="{href}" data-tri="{t}">'
-                f'<span class="sa-num">SA{sa}</span>'
-                f'<span class="sa-nom">{html.escape(SA_TITLES[sa])}</span></a>'
-            )
-        tri_blocks.append(
-            f'<div class="tri-block" data-tri="{t}">'
-            f'<h3 class="tri-tit"><span class="tri-pastilla" data-tri="{t}"></span>{info["label"]}</h3>'
-            f'<div class="sa-grid">{"".join(cards)}</div></div>'
-        )
 
     content = f"""
 <section class="hero">
@@ -1157,24 +1192,107 @@ def render_home(pages: list[Page]) -> str:
   <p class="hero-lead">9 situacions d'aprenentatge amb Arduino, micro:bit i robòtica mòbil, en tres trimestres. Tot el material d'aula, la programació didàctica, els reptes i l'avaluació, en un sol lloc.</p>
   <div class="hero-cta">
     <a class="btn btn-primari" href="guia-inici.html">Comença per la guia d'inici</a>
-    <a class="btn btn-secundari" href="programacio/index.html">Programació didàctica</a>
-    <a class="btn btn-secundari" href="{u_alum}">🎓 Com s'avalua</a>
+    <a class="btn btn-secundari" href="docent.html">Espai docent</a>
+    <a class="btn btn-secundari" href="alumnat.html">🎓 Espai alumnat</a>
   </div>
 </section>
 {rutes}
 <h2 class="seccio-sep">Les 9 situacions d'aprenentatge</h2>
 <p class="seccio-intro">Cada trimestre té el seu color. Clica una SA per anar al seu <strong>material d'aula</strong>; un cop dins, el <strong>fil de la SA</strong> t'enllaça la programació, el codi, els reptes, el solucionari i la prova.</p>
-<div class="tri-wrap">
-{"".join(tri_blocks)}
-</div>
+{sa_grid_html(pages)}
 
 <h2 class="seccio-sep">Apartats</h2>
 <div class="sec-grid">
-{"".join(sec_cards)}
+{sec_cards_html()}
 </div>
 """
     return page_shell(out_rel="index.html", section_key="inici",
                       title="Inici", content_html=content, pages=pages)
+
+
+# ---------------------------------------------------------------------------
+# Hubs per audiència (docent i alumnat): pàgines d'orientació, no de contingut.
+# Tot el que enllacen ja existeix i s'indexa; el hub és una porta d'entrada.
+# ---------------------------------------------------------------------------
+def render_hub_docent(pages: list[Page]) -> str:
+    u = hub_urls(pages)
+    content = f"""
+<section class="hero hub-hero">
+  <p class="hero-kicker">Espai docent</p>
+  <h1 class="hero-titol">Tot el que necessites per fer la classe</h1>
+  <p class="hero-lead">Aquesta pàgina no és una secció nova: és una porta d'entrada organitzada pel que fas de veritat. Comença per dalt si agafes la matèria per primer cop; salta a «Setmana a setmana» si ja hi estàs.</p>
+</section>
+
+<h2 class="seccio-sep">1 · Començo de nou</h2>
+<p class="seccio-intro">La primera vegada, en aquest ordre.</p>
+<ol class="hub-passos">
+  <li><a href="guia-inici.html">Guia d'inici docent</a> — instal·lació, comptes, checklist de material i pla B.</li>
+  <li><a href="{u["met"]}">Metodologia</a> — com és una sessió tipus i com es treballa a l'aula.</li>
+  <li><a href="{u["seq"]}">Seqüenciació anual</a> — el calendari de les 9 SA i el pla de contingència.</li>
+</ol>
+
+<h2 class="seccio-sep">2 · Setmana a setmana</h2>
+<p class="seccio-intro">La rutina de preparar i fer la classe.</p>
+<ol class="hub-passos">
+  <li>Obre la <a href="classes/index.html">SA que toca</a> i llegeix la <strong>guia docent</strong> de la sessió.</li>
+  <li>Té a punt la <strong>fitxa base</strong> (o el seu PDF) i el <strong>codi</strong> de la SA.</li>
+  <li>Rutines comunes (graella d'activació, mini-checks, pòsters, defensa oral, IA): <a href="{u["trans"]}">material transversal del curs</a>.</li>
+  <li>Per treballar sense maquinari o abans de muntar: <a href="simulacions/index.html">simulacions Wokwi</a>.</li>
+</ol>
+
+<h2 class="seccio-sep">3 · Avaluar</h2>
+<p class="seccio-intro">Comparteix els criteris <strong>abans</strong> de començar cada SA.</p>
+<ol class="hub-passos">
+  <li><a href="{u["rub"]}">Rúbriques R1-R5</a> — les mateixes tot el curs; reparteix-les la primera setmana.</li>
+  <li><a href="avaluacio/index.html">Proves pràctiques per trimestre</a> — T1, T2 i T3, integrades a l'última sessió de SA3, SA6 i SA9.</li>
+  <li><a href="{u["full"]}">Full de qualificació</a> — creua els criteris d'avaluació amb les rúbriques.</li>
+</ol>
+
+<h2 class="seccio-sep">Referència completa</h2>
+<p class="seccio-intro">Quan necessitis el detall, cada apartat sencer.</p>
+<div class="sec-grid">
+{sec_cards_html()}
+</div>
+"""
+    return page_shell(out_rel="docent.html", section_key="docent",
+                      title="Docent", content_html=content, pages=pages)
+
+
+def render_hub_alumnat(pages: list[Page]) -> str:
+    u = hub_urls(pages)
+    content = f"""
+<section class="hero hub-hero">
+  <p class="hero-kicker">Espai alumnat</p>
+  <h1 class="hero-titol">El teu espai a Robòtica</h1>
+  <p class="hero-lead">Aquí tens el que necessites per orientar-te: com s'avalua (sense sorpreses), on trobar ajuda quan t'encalles i com practicar a casa. Res del que hi ha aquí et penalitza per mirar-ho: els criteris són teus des del primer dia.</p>
+</section>
+
+<h2 class="seccio-sep">Com s'avalua (sense sorpreses)</h2>
+<ol class="hub-passos">
+  <li><a href="{u["alum"]}">Com s'avalua aquesta matèria</a> — d'on surt la nota, què compta i què no.</li>
+  <li><a href="{u["rub"]}">Rúbriques completes</a> — tens dret a veure-les <strong>abans</strong> de començar. Mira-les i sabràs què es valora.</li>
+  <li>A la fitxa de cada SA, la caixa <strong>«🎯 Objectius i avaluació»</strong> et diu què sabràs fer i què has de lliurar.</li>
+</ol>
+
+<h2 class="seccio-sep">M'he encallat</h2>
+<p class="seccio-intro">Encallar-se forma part d'aprendre. Aquí tens ajuda que no et fa la feina.</p>
+<ol class="hub-passos">
+  <li><a href="{u["targ"]}">Targetes de rescat</a> — pistes en 3 nivells: primer un cop de mà petit, i només si cal, més. Ningú no et dóna la solució feta.</li>
+  <li><a href="{u["glos"]}">Glossari català ↔ anglès</a> — els termes tècnics tal com els trobaràs quan busquis per Internet.</li>
+</ol>
+
+<h2 class="seccio-sep">Practicar a casa</h2>
+<ol class="hub-passos">
+  <li><a href="simulacions/index.html">Simulacions Wokwi</a> — munta i prova els circuits sense cap placa, des del navegador.</li>
+  <li><a href="reptes/index.html">Reptes</a> — cada SA en té per triar: agafa el context que t'enganxi més.</li>
+</ol>
+
+<h2 class="seccio-sep">Les 9 situacions d'aprenentatge</h2>
+<p class="seccio-intro">Clica una SA per anar al seu material d'aula.</p>
+{sa_grid_html(pages)}
+"""
+    return page_shell(out_rel="alumnat.html", section_key="alumnat",
+                      title="Alumnat", content_html=content, pages=pages)
 
 
 # ---------------------------------------------------------------------------
@@ -1202,7 +1320,7 @@ def render_visor() -> str:
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Visor de documents · %%TITLE%%</title>
 <link rel="stylesheet" href="assets/css/estil.css">
-<script>(function(){try{var t=localStorage.getItem('tema');if(t==='fosc'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.setAttribute('data-tema','fosc');}catch(e){}})();</script>
+<script>(function(){try{var d=document.documentElement,t=localStorage.getItem('tema');if(t==='fosc'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches))d.setAttribute('data-tema','fosc');var m=localStorage.getItem('mida');if(m&&m!=='100')d.setAttribute('data-mida',m);if(localStorage.getItem('font')==='llegible')d.setAttribute('data-font','llegible');}catch(e){}})();</script>
 </head>
 <body data-section="recursos" class="sense-sidebar sense-toc">
 <a class="skip" href="#contingut">Salta al contingut</a>
@@ -1211,6 +1329,11 @@ def render_visor() -> str:
   <nav class="topnav" aria-label="Seccions"><a href="index.html">Inici</a></nav>
   <div class="topbar-eines">
     <a class="btn btn-secundari" id="doc-gh" href="#" target="_blank" rel="noopener">Obre a GitHub ↗</a>
+    <div class="a11y-grup" role="group" aria-label="Ajustos de lectura">
+      <button class="a11y-btn mida-menys" aria-label="Redueix la mida del text" title="Text més petit">A−</button>
+      <button class="a11y-btn mida-mes" aria-label="Augmenta la mida del text" title="Text més gran">A+</button>
+      <button class="a11y-btn font-toggle" aria-pressed="false" aria-label="Tipografia de lectura fàcil" title="Tipografia de lectura fàcil">Aa</button>
+    </div>
     <button class="tema-btn" aria-label="Canvia el tema clar/fosc" title="Tema clar/fosc">◐</button>
   </div>
 </header>
@@ -1366,9 +1489,15 @@ def main():
     # Visor de documents (PDF.js + visor d'Office), sense copiar fitxers
     (WEB / "visor.html").write_text(render_visor(), encoding="utf-8")
 
-    # Home
+    # Home i hubs per audiència (docent i alumnat)
     (WEB / "index.html").write_text(render_home(pages), encoding="utf-8")
+    (WEB / "docent.html").write_text(render_hub_docent(pages), encoding="utf-8")
+    (WEB / "alumnat.html").write_text(render_hub_alumnat(pages), encoding="utf-8")
     search_index.insert(0, {"t": "Inici", "s": "Inici", "u": "index.html", "tri": None})
+    search_index.insert(1, {"t": "Docent — espai del professorat", "s": "Docent",
+                            "u": "docent.html", "tri": None})
+    search_index.insert(2, {"t": "Alumnat — el teu espai", "s": "Alumnat",
+                            "u": "alumnat.html", "tri": None})
 
     # Índex de cerca (com a JS per funcionar també en local file://)
     ASSETS.joinpath("js").mkdir(parents=True, exist_ok=True)
