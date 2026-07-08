@@ -57,7 +57,7 @@ Els reptes es resolen amb les **mateixes rutines** que les classes (pòster proj
 - **Rols rotatius:** Coordinador/a · Programador/a · Enginyer/a de maquinari · Provador/a–Documentador/a (roteu-los a cada sessió).
 - **Quan no funcioni → rutina DEPURA:** **D**escriu · **E**xamina · **P**rova una hipòtesi cada cop · **U**bica · **R**epara · **A**punta-ho.
 - **Coavaluació "2 estrelles i un desig":** en acabar, intercanvieu el producte amb un altre equip i anoteu 2 coses ben fetes + 1 millora.
-- **Diana d'autoavaluació:** situeu-vos (NA/AS/AN/AE) en el codi, el circuit i la documentació abans de l'entrega.
+- **Diana d'autoavaluació:** situeu-vos (0-10) en el codi, el circuit i la documentació abans de l'entrega.
 
 ## Simulacions interactives (Wokwi)
 

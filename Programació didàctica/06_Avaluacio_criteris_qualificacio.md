@@ -37,7 +37,7 @@ L'avaluació és **competencial, contínua, formativa i global**, d'acord amb el
 | **Proves pràctiques** (programació/electrònica) | **20 %** | Reptes individuals curts. |
 | **Actitud, cooperació i autoregulació** | **10 %** | Observació, coavaluació, autoavaluació. |
 
-> Recomanació: ponderació **per competències** dins de cada dimensió. La qualificació trimestral i final s'expressa amb un enter **de l'1 al 10 (sense decimals)**, com estableix el Decret 171/2022.
+> Recomanació: ponderació **per competències** dins de cada dimensió. La qualificació trimestral i final s'expressa amb un enter **del 0 al 10 (sense decimals)**, com estableix el Decret 171/2022.
 
 ## 6.4. Caràcter continu i recuperació
 
@@ -57,7 +57,7 @@ L'avaluació és **competencial, contínua, formativa i global**, d'acord amb el
 
 Els criteris d'avaluació i les rúbriques es fan **públics a l'inici del curs i de cada SA**, segons exigeix la normativa. Aquesta transparència està **materialitzada en dos instruments per a l'alumnat**:
 
-- **`Classes/00_General/00_Avaluacio_per_alumnat.md`** — guia del sistema d'avaluació en llenguatge d'alumne (ponderació, escala NA·AS·AN·AE, rúbriques resumides, què no qualifica, proves, recuperació, ús d'IA). Es reparteix la **primera setmana**.
+- **`Classes/00_General/00_Avaluacio_per_alumnat.md`** — guia del sistema d'avaluació en llenguatge d'alumne (ponderació, escala de nota 0-10, rúbriques resumides, què no qualifica, proves, recuperació, ús d'IA). Es reparteix la **primera setmana**.
 - **Caixa «🎯 Objectius i avaluació» a cada fitxa base** — objectius d'aprenentatge de la SA en primera persona ("en acabar podré…") + taula *què lliuro → rúbrica → on compta*. Es llegeix **a l'inici de cada SA** (2 minuts): l'alumnat comença sabent què ha d'assolir i com se'l valorarà.
 
 ## 6.7. Avaluació de la programació i de la pràctica docent

@@ -79,7 +79,7 @@ Avui **no programaràs les regles**: ensenyaràs una IA **amb exemples** i desco
 
 ---
 
-## Autoavaluació (NA/AS/AN/AE)
+## Autoavaluació (Insuficient · Suficient/Bé · Notable · Excel·lent — 0-10)
 | Criteri | Nivell |
 |---|---|
 | He entrenat un classificador que funciona raonablement (R3) | ☐ NA ☐ AS ☐ AN ☐ AE |

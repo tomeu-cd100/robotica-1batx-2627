@@ -44,7 +44,7 @@ Dissenya un panell que indiqui **estats** amb color + so + una càrrega (relé).
 - **Esquema** (dibuixa o enganxa): ______________________
 - **Defensa (1'):** explica què fa el teu panell i una millora possible.
 
-**Autoavaluació** (marca el teu nivell — NA/AS/AN/AE):
+**Autoavaluació** (situa't; la nota és 0-10):
 | Criteri | Nivell |
 |---|---|
 | El codi funciona i està comentat (R1) | ☐ NA ☐ AS ☐ AN ☐ AE |
@@ -86,9 +86,9 @@ Avui has treballat amb **PATRONS i ALGORISME** (la seqüència ordenada de fases
 
 ## Diana d'autoavaluació
 
-Marca el teu nivell (NA/AS/AN/AE):
+Situa't (0-10):
 
-| Criteri | NA | AS | AN | AE |
+| Criteri | Insuficient | Suficient/Bé | Notable | Excel·lent |
 |---|---|---|---|---|
 | Programo seqüències amb `for`/`if` i variables | ☐ | ☐ | ☐ | ☐ |
 | Regulo intensitat/color amb PWM (`analogWrite`, `map`) | ☐ | ☐ | ☐ | ☐ |

@@ -48,7 +48,7 @@ Dissenya un sistema IoT del teu entorn (hort, aula, casa...):
    - Risc: __________________________________________________________
    - **Consentiment:** si el teu sistema mesurés una persona, com li demanaries permís? ______________________________________________
 
-**Autoavaluació** (marca el teu nivell — NA/AS/AN/AE):
+**Autoavaluació** (situa't; la nota és 0-10):
 | Criteri | Nivell |
 |---|---|
 | El sistema connectat / classificador funciona (R1, R3) | ☐ NA ☐ AS ☐ AN ☐ AE |
@@ -91,9 +91,9 @@ Treballes amb **DADES** (recollir, etiquetar, transmetre) i amb **CLASSIFICACIÓ
 
 ## Diana d'autoavaluació
 
-Marca el teu nivell (NA/AS/AN/AE):
+Situa't (0-10):
 
-| Criteri | NA | AS | AN | AE |
+| Criteri | Insuficient | Suficient/Bé | Notable | Excel·lent |
 |---|---|---|---|---|
 | Envio i registro dades entre dispositius (telemetria) | ☐ | ☐ | ☐ | ☐ |
 | Explico l'arquitectura IoT i els seus riscos | ☐ | ☐ | ☐ | ☐ |

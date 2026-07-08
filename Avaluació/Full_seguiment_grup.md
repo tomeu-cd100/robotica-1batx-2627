@@ -6,7 +6,7 @@
 
 ## 1. Graella (files = alumnat · columnes = senyals)
 
-Codis: mini-checks 🟢🟡🔴 · diana d'autoavaluació (nivell que s'ha posat l'alumne: NA/AS/AN/AE) · rescat = nivell més alt de targeta usat a la SA (🟢/🟡/🔴 o — si cap) · R5 = incidències o fortaleses d'actitud/cooperació (breu).
+Codis: mini-checks 🟢🟡🔴 · diana d'autoavaluació (nivell que s'ha posat l'alumne: Insuficient/Suficient-Bé/Notable/Excel·lent (0-10)) · rescat = nivell més alt de targeta usat a la SA (🟢/🟡/🔴 o — si cap) · R5 = incidències o fortaleses d'actitud/cooperació (breu).
 
 | Alumne/a | Mini-check SA__ | Rescat SA__ | Diana SA__ | Mini-check SA__ | Rescat SA__ | Diana SA__ | R5 (observacions) |
 |---|---|---|---|---|---|---|---|

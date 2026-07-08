@@ -10,14 +10,14 @@ Plantilla operativa per **qualificar per competències** d'acord amb `Programaci
 
 Conversió única per a totes les rúbriques (vegeu `Programació didàctica/07_Rubriques.md`):
 
-| Nivell | Sigla | Nota orientativa |
-|---|---|---|
-| No assolit | **NA** | 0–4 |
-| Assoliment satisfactori | **AS** | 5–6 |
-| Assoliment notable | **AN** | 7–8 |
-| Assoliment excel·lent | **AE** | 9–10 |
+| Nivell (nom de la banda) | Nota (0-10) |
+|---|---|
+| Insuficient | 0–4 |
+| Suficient / Bé | 5–6 |
+| Notable | 7–8 |
+| Excel·lent | 9–10 |
 
-> La qualificació trimestral i final s'expressa amb un **enter de l'1 al 10 (sense decimals)**, com estableix el Decret 171/2022. Els decimals s'usen només en el càlcul intern; s'arrodoneix al final.
+> La qualificació trimestral i final s'expressa amb un **enter del 0 al 10 (sense decimals)**, com estableix el Decret 171/2022. Els decimals s'usen només en el càlcul intern; s'arrodoneix al final.
 
 ---
 
@@ -55,16 +55,16 @@ Conversió única per a totes les rúbriques (vegeu `Programació didàctica/07_
 
 **Alumne/a:** ____________________  **Trimestre:** ____  **Grup:** ______
 
-### 4.1. Evidències i nivell assolit
+### 4.1. Evidències i nota
 
-Anota el nivell (NA/AS/AN/AE) i la nota numèrica de cada evidència. Les files canvien segons el trimestre (vegeu §5).
+Anota la **nota (0-10)** de cada evidència. Les files canvien segons el trimestre (vegeu §5).
 
-| SA / Instrument | CA | Rúbrica | Nivell | Nota (0–10) |
-|---|---|---|---|---|
-| | | | | |
-| | | | | |
-| | | | | |
-| | | | | |
+| SA / Instrument | CA | Rúbrica | Nota (0–10) |
+|---|---|---|---|
+| | | | |
+| | | | |
+| | | | |
+| | | | |
 
 ### 4.2. Càlcul per dimensió
 
@@ -95,7 +95,7 @@ Anota el nivell (NA/AS/AN/AE) i la nota numèrica de cada evidència. Les files 
 ## 6. Notes d'ús
 
 - **Avaluació contínua:** un CA treballat en diverses SA es pot **reavaluar**; preval l'evidència més recent i consolidada (la millora compta).
-- **Recuperació:** quan un CA queda en NA, l'activitat de recuperació és **millorar el producte/codi** (no un examen memorístic). Actualitza el nivell del CA, no afegeixis una nota a part.
+- **Recuperació:** quan un CA queda **suspès (per sota de 5)**, l'activitat de recuperació és **millorar el producte/codi** (no un examen memorístic). Actualitza el nivell del CA, no afegeixis una nota a part.
 - **R5 (actitud/cooperació):** es valora **al llarg del trimestre** (acumulant observació de diverses sessions), no sessió a sessió — coherent amb la rotació de rols (vegeu nota a `07_Rubriques.md`).
 - **Transparència:** comparteix aquest full i les rúbriques amb l'alumnat **a l'inici** del curs i de cada SA.
 

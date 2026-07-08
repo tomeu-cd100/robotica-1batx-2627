@@ -12,7 +12,7 @@ Es revisen **la setmana següent a l'avaluació** de cada trimestre. Cada indica
 
 | Indicador | Font (ja existent) | Llindar d'alerta | Acció si es dispara |
 |---|---|---|---|
-| **% d'alumnat amb algun CA en NA** per dimensió | `Avaluació/Full_qualificacio_competencies.md` §4 | > 25 % | Revisar la bastida de la SA implicada (no només recuperar l'alumne): més racó de mesura, més modelatge, mini-check avançat |
+| **% d'alumnat amb algun CA suspès (< 5)** per dimensió | `Avaluació/Full_qualificacio_competencies.md` §4 | > 25 % | Revisar la bastida de la SA implicada (no només recuperar l'alumne): més racó de mesura, més modelatge, mini-check avançat |
 | **Desviació temporal** (sessions reals vs previstes per SA) | Calendari vs `08_Sequenciacio_temporal_anual.md` | > 1 sessió acumulada | Activar el **pla de contingència** del doc 08 (curs mínim viable), no comprimir la SA següent sobre la marxa |
 | **Distribució de semàfors dels mini-checks** | `Avaluació/Full_seguiment_grup.md` | ≥ ⅓ de 🟡/🔴 en un check | Repesca col·lectiva de 10′ (ja prevista a `00_Mini_checks_individuals.md`) **i** anotar la pràctica com a candidata a revisió |
 | **Ús de targetes de rescat** (quantes i de quin nivell) | Quaderns + graella de grup | Moltes 🔴 al mateix punt | El problema no és de l'alumnat: revisar la pràctica o el modelatge d'aquell pas |

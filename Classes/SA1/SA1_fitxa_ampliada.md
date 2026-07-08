@@ -110,9 +110,9 @@ Avui has practicat la **DESCOMPOSICIÓ**: partir un sistema complex en parts sen
 
 ## Diana d'autoavaluació
 
-Marca el teu nivell (NA = no assolit · AS = suficient · AN = notable · AE = excel·lent):
+Situa't (0-10):
 
-| Criteri | NA | AS | AN | AE |
+| Criteri | Insuficient | Suficient/Bé | Notable | Excel·lent |
 |---|---|---|---|---|
 | Identifico entrada-procés-sortida d'un sistema | ☐ | ☐ | ☐ | ☐ |
 | Reconec les parts de la placa i distingeixo digital/analògic | ☐ | ☐ | ☐ | ☐ |

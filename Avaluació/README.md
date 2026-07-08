@@ -18,4 +18,4 @@
 
 ## Qualificació per competències
 
-Per traduir criteris (CA), rúbriques (R) i ponderacions (45/25/20/10) en notes, usa el **[`Full_qualificacio_competencies.md`](Full_qualificacio_competencies.md)**: inclou l'escala NA/AS/AN/AE → nota, el mapa CA↔rúbrica↔SA i un full de seguiment per alumne/a i trimestre.
+Per traduir criteris (CA), rúbriques (R) i ponderacions (45/25/20/10) en notes, usa el **[`Full_qualificacio_competencies.md`](Full_qualificacio_competencies.md)**: inclou la conversió del nivell de rúbrica a nota (0-10), el mapa CA↔rúbrica↔SA i un full de seguiment per alumne/a i trimestre.

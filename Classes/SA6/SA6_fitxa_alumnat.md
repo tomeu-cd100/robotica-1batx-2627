@@ -21,7 +21,7 @@
 
 > 🪜 **Versió nucli (ja és assoliment satisfactori):** termòstat amb **histèresi** que funciona, documentat amb el diagrama de blocs. **Versió completa:** hi afegeix la màquina d'estats no bloquejant (`millis()`) amb llindars justificats — i, si vols, el control P comparat.
 
-> Escala NA·AS·AN·AE, rúbriques i tot el sistema: **[Com s'avalua la matèria](../00_General/00_Avaluacio_per_alumnat.md)**.
+> Escala de nota 0-10, rúbriques i tot el sistema: **[Com s'avalua la matèria](../00_General/00_Avaluacio_per_alumnat.md)**.
 
 ---
 
@@ -61,8 +61,8 @@
 ## Si t'encalles (DEPURA)
 > **D**escriu · **E**xamina (**Serial Plotter**: la sortida segueix la consigna o oscil·la?) · **P**rova una hipòtesi cada cop · **U**bica · **R**epara · **A**punta-ho. Encara encallat? **[Targeta de rescat](../00_General/00_Targetes_rescat.md)** (comença per la 🟢).
 
-## M'autoavaluo (NA/AS/AN/AE)
-| Criteri | NA | AS | AN | AE |
+## M'autoavaluo (Insuficient · Suficient/Bé · Notable · Excel·lent — la nota és 0-10)
+| Criteri | Insuficient | Suficient/Bé | Notable | Excel·lent |
 |---|---|---|---|---|
 | Distingeixo llaç obert i llaç tancat | ☐ | ☐ | ☐ | ☐ |
 | Implemento histèresi i una màquina d'estats | ☐ | ☐ | ☐ | ☐ |

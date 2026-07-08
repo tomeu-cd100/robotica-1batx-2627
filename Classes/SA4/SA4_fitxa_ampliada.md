@@ -48,7 +48,7 @@ Dissenya una barrera que s'obre quan arriba un vehicle i es tanca sola.
 - **Esquema** (dibuixa o enganxa): ______________________
 - **Defensa (1'):** explica el funcionament i una aplicació real.
 
-**Autoavaluació** (marca el teu nivell — NA/AS/AN/AE):
+**Autoavaluació** (situa't; la nota és 0-10):
 | Criteri | Nivell |
 |---|---|
 | El codi de control és modular i comentat (R1) | ☐ NA ☐ AS ☐ AN ☐ AE |
@@ -91,9 +91,9 @@ Treballes la **DESCOMPOSICIÓ del moviment** (partir una tasca en passos: obrir 
 
 ## Diana d'autoavaluació
 
-Marca el teu nivell (NA/AS/AN/AE):
+Situa't (0-10):
 
-| Criteri | NA | AS | AN | AE |
+| Criteri | Insuficient | Suficient/Bé | Notable | Excel·lent |
 |---|---|---|---|---|
 | Controlo la posició d'un servo i la velocitat d'un motor | ☐ | ☐ | ☐ | ☐ |
 | Munto el circuit amb seguretat (massa comuna, alimentació externa) | ☐ | ☐ | ☐ | ☐ |

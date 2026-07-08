@@ -20,7 +20,7 @@
 
 > 🪜 **Versió nucli (ja és assoliment satisfactori):** el robot completa **un** comportament autònom (evitar obstacles **o** seguir la línia), encara que lent, amb el registre d'almenys 2 iteracions. **Versió completa:** comportament robust i calibrat, amb 3+ iteracions documentades i millores mesurades.
 
-> Escala NA·AS·AN·AE, rúbriques i tot el sistema: **[Com s'avalua la matèria](../00_General/00_Avaluacio_per_alumnat.md)**.
+> Escala de nota 0-10, rúbriques i tot el sistema: **[Com s'avalua la matèria](../00_General/00_Avaluacio_per_alumnat.md)**.
 
 ---
 
@@ -59,8 +59,8 @@
 ## Si t'encalles (DEPURA)
 > **D**escriu · **E**xamina (què fa el robot de debò) · **P**rova una hipòtesi cada cop · **U**bica · **R**epara · **A**punta-ho. Comprova el bloc `// === PINS (AJUSTAR) ===` i prova **una funció de moviment cada cop**. Encara encallat? **[Targeta de rescat](../00_General/00_Targetes_rescat.md)** (comença per la 🟢).
 
-## M'autoavaluo (NA/AS/AN/AE)
-| Criteri | NA | AS | AN | AE |
+## M'autoavaluo (Insuficient · Suficient/Bé · Notable · Excel·lent — la nota és 0-10)
+| Criteri | Insuficient | Suficient/Bé | Notable | Excel·lent |
 |---|---|---|---|---|
 | Programo moviment amb funcions (control diferencial) | ☐ | ☐ | ☐ | ☐ |
 | El robot completa un comportament autònom | ☐ | ☐ | ☐ | ☐ |

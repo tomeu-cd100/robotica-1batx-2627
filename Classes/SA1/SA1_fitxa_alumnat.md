@@ -21,7 +21,7 @@
 
 > 🪜 **Versió nucli (ja és assoliment satisfactori):** pòster amb entrada → procés → sortida ben identificades i el dilema ètic plantejat. **Versió completa:** sensors i actuadors concrets, alternatives de disseny i dilema argumentat amb pros i contres.
 
-> Escala NA·AS·AN·AE, rúbriques i tot el sistema: **[Com s'avalua la matèria](../00_General/00_Avaluacio_per_alumnat.md)**.
+> Escala de nota 0-10, rúbriques i tot el sistema: **[Com s'avalua la matèria](../00_General/00_Avaluacio_per_alumnat.md)**.
 
 ---
 
@@ -58,8 +58,8 @@ Tria un **robot real** i analitza'l amb [`SA1_poster_robot_plantilla.md`](SA1_po
 ## Si t'encalles (DEPURA)
 > **D**escriu (què esperaves vs què passa) · **E**xamina (LED, error, Monitor Sèrie) · **P**rova una hipòtesi cada cop · **U**bica el problema · **R**epara i torna a provar · **A**punta-ho al quadern. Si demanes ajuda, explica **què ja has provat**. Encara encallat? Agafa una **[targeta de rescat](../00_General/00_Targetes_rescat.md)** — comença per la pista 🟢.
 
-## M'autoavaluo (NA = no assolit · AS = suficient · AN = notable · AE = excel·lent)
-| Criteri | NA | AS | AN | AE |
+## M'autoavaluo (Insuficient · Suficient/Bé · Notable · Excel·lent — la nota és 0-10)
+| Criteri | Insuficient | Suficient/Bé | Notable | Excel·lent |
 |---|---|---|---|---|
 | Identifico entrada-procés-sortida d'un sistema | ☐ | ☐ | ☐ | ☐ |
 | Reconec les parts de la placa i distingeixo digital/analògic | ☐ | ☐ | ☐ | ☐ |

@@ -61,8 +61,8 @@ Explica **3 decisions de disseny** (per què aquesta forma, material, mida o col
 
 ---
 
-## Autoavaluació del producte (NA / AS / AN / AE)
-| Aspecte | NA | AS | AN | AE |
+## Autoavaluació del producte (Insuficient · Suficient/Bé · Notable · Excel·lent — 0-10)
+| Aspecte | Insuficient | Suficient/Bé | Notable | Excel·lent |
 |---|---|---|---|---|
 | **Funció**: fa el que ha de fer i és útil | ☐ | ☐ | ☐ | ☐ |
 | **Usabilitat**: còmode i clar per a l'usuari | ☐ | ☐ | ☐ | ☐ |

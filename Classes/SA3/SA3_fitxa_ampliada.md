@@ -45,7 +45,7 @@ Dissenya un avís que depèn de la distància:
 - **Esquema** (dibuixa o enganxa): ______________________
 - **Defensa (1'):** explica el teu sistema i una aplicació real.
 
-**Autoavaluació** (marca el teu nivell — NA/AS/AN/AE):
+**Autoavaluació** (situa't; la nota és 0-10):
 | Criteri | Nivell |
 |---|---|
 | El codi és modular (funcions) i comentat (R1) | ☐ NA ☐ AS ☐ AN ☐ AE |
@@ -87,9 +87,9 @@ Treballes l'**ABSTRACCIÓ** (encapsular la lectura en una funció com `mesuraDis
 
 ## Diana d'autoavaluació
 
-Marca el teu nivell (NA/AS/AN/AE):
+Situa't (0-10):
 
-| Criteri | NA | AS | AN | AE |
+| Criteri | Insuficient | Suficient/Bé | Notable | Excel·lent |
 |---|---|---|---|---|
 | Distingeixo i llegeixo entrades digitals i analògiques | ☐ | ☐ | ☐ | ☐ |
 | Faig servir el Monitor sèrie per calibrar | ☐ | ☐ | ☐ | ☐ |

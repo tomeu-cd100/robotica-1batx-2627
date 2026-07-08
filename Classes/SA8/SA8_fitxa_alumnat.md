@@ -20,7 +20,7 @@
 
 > 🪜 **Versió nucli (ja és assoliment satisfactori):** telemetria d'**una** magnitud etiquetada que es rep i es mostra + reflexió ètica amb un risc i una mesura. **Versió completa:** dues magnituds o alerta per llindar (o classificador entrenat i provat), amb el biaix analitzat.
 
-> Escala NA·AS·AN·AE, rúbriques i tot el sistema: **[Com s'avalua la matèria](../00_General/00_Avaluacio_per_alumnat.md)**.
+> Escala de nota 0-10, rúbriques i tot el sistema: **[Com s'avalua la matèria](../00_General/00_Avaluacio_per_alumnat.md)**.
 
 ---
 
@@ -56,8 +56,8 @@ Dissenya un sistema IoT del teu entorn (mínim ètic obligatori):
 ## Si t'encalles (DEPURA)
 > **D**escriu · **E**xamina (dades al sèrie: arriben? ben etiquetades?) · **P**rova una hipòtesi cada cop · **U**bica · **R**epara · **A**punta-ho. Comprova el mateix `group` de ràdio a les dues plaques. Encara encallat? **[Targeta de rescat](../00_General/00_Targetes_rescat.md)** (comença per la 🟢).
 
-## M'autoavaluo (NA/AS/AN/AE)
-| Criteri | NA | AS | AN | AE |
+## M'autoavaluo (Insuficient · Suficient/Bé · Notable · Excel·lent — la nota és 0-10)
+| Criteri | Insuficient | Suficient/Bé | Notable | Excel·lent |
 |---|---|---|---|---|
 | Envio i registro dades entre dispositius (telemetria) | ☐ | ☐ | ☐ | ☐ |
 | Explico l'arquitectura IoT i els seus riscos | ☐ | ☐ | ☐ | ☐ |

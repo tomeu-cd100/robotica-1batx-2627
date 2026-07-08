@@ -19,6 +19,7 @@ Registre **datat** de l'evolució del projecte. Cada avenç important genera un 
 | `2026-06-30_Revisio_coherencia_i_index_08c.md` | Sincronització des d'un altre ordinador + revisió de coherència: `08c` afegit a l'índex i al README, `09b` al README, i `08c` reescrit a estat "aplicat". |
 | `2026-06-30_Analisi_material_i_kits.md` | Anàlisi de les 3 fotos de kits ↔ SA: dotació completa (3 kits/alumne + micro:bit + Imagina 3dBot); única compra pendent L298N (SA4). Nou doc `09c`. |
 | `2026-07-08_Auditoria_multinivell_i_propostes_tecniques.md` | Auditoria tècnica a tots els nivells (infra, build, frontend, codi, QA, CI/CD) amb 11 propostes prioritzades i full de ruta en 6 fases, pensades per a implementació per un programador sènior. |
+| `2026-07-08_Conversio_qualificacio_0-10_Batxillerat.md` | Conversió de l'escala qualitativa NA/AS/AN/AE (ESO) a nota numèrica 0-10 amb descriptors oficials de Batxillerat (Insuficient/Suficient-Bé/Notable/Excel·lent), a 24 fitxers de material. |
 
 ## Convenció
 Cada nou avenç → **document nou** anomenat amb la data (`AAAA-MM-DD_descripcio.md`). No se sobreescriuen els anteriors.

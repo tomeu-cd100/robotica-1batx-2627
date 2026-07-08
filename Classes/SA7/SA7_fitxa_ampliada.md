@@ -40,7 +40,7 @@
 3. Quines **millores** has fet entre intents? ___________________________
 4. **+ Repte:** correcció proporcional (moviment més suau).
 
-**Autoavaluació** (marca el teu nivell — NA/AS/AN/AE):
+**Autoavaluació** (situa't; la nota és 0-10):
 | Criteri | Nivell |
 |---|---|
 | El codi del robot és modular i comentat (R1) | ☐ NA ☐ AS ☐ AN ☐ AE |
@@ -83,9 +83,9 @@ Treballes **ALGORISMES** (seqüència de decisions del seguidor/evita-obstacles)
 
 ## Diana d'autoavaluació
 
-Marca el teu nivell (NA/AS/AN/AE):
+Situa't (0-10):
 
-| Criteri | NA | AS | AN | AE |
+| Criteri | Insuficient | Suficient/Bé | Notable | Excel·lent |
 |---|---|---|---|---|
 | Programo moviment amb funcions (control diferencial) | ☐ | ☐ | ☐ | ☐ |
 | El robot completa un comportament autònom | ☐ | ☐ | ☐ | ☐ |

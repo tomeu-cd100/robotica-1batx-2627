@@ -59,7 +59,7 @@ Tot robot té avantatges i riscos. Identifica'n **un de cada** i relaciona'l amb
 
 ## Autoavaluació amb la rúbrica R4 (marca el teu nivell)
 
-| Criteri | NA | AS | AN | AE |
+| Criteri | Insuficient | Suficient/Bé | Notable | Excel·lent |
 |---|---|---|---|---|
 | **Claredat tècnica** (s'entén el sistema E-P-S) | ☐ | ☐ | ☐ | ☐ |
 | **Terminologia** (sensor, actuador, procés, embegut…) | ☐ | ☐ | ☐ | ☐ |

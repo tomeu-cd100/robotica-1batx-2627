@@ -46,7 +46,7 @@
 3. **Repte:** compara tot/res vs proporcional al Serial Plotter. Quin és més estable? ______
 4. **+ Repte:** què passa si `Kp` és massa gran? _________________________
 
-**Autoavaluació** (marca el teu nivell — NA/AS/AN/AE):
+**Autoavaluació** (situa't; la nota és 0-10):
 | Criteri | Nivell |
 |---|---|
 | El codi de control funciona i està comentat (R1) | ☐ NA ☐ AS ☐ AN ☐ AE |
@@ -89,9 +89,9 @@ Treballes la **MÀQUINA D'ESTATS** (organitzar comportaments en estats i transic
 
 ## Diana d'autoavaluació
 
-Marca el teu nivell (NA/AS/AN/AE):
+Situa't (0-10):
 
-| Criteri | NA | AS | AN | AE |
+| Criteri | Insuficient | Suficient/Bé | Notable | Excel·lent |
 |---|---|---|---|---|
 | Distingeixo llaç obert i llaç tancat | ☐ | ☐ | ☐ | ☐ |
 | Implemento histèresi i una màquina d'estats | ☐ | ☐ | ☐ | ☐ |

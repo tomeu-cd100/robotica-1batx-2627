@@ -1,7 +1,6 @@
 # 07 · Rúbriques d'avaluació
 
-Rúbriques reutilitzables amb **quatre nivells d'assoliment**. Conversió orientativa a nota: **NA = 0-4 · AS = 5-6 · AN = 7-8 · AE = 9-10**.
-(NA: no assolit · AS: assoliment satisfactori · AN: assoliment notable · AE: assoliment excel·lent.)
+Rúbriques reutilitzables amb **quatre nivells**, cadascun lligat a una **banda de nota (0-10)**. A Batxillerat la qualificació és numèrica; els noms només indiquen la banda: **Insuficient = 0-4 · Suficient/Bé = 5-6 · Notable = 7-8 · Excel·lent = 9-10**.
 
 > ⚠️ **No confonguis les rúbriques `R1–R5` amb les competències específiques `CE-R1–CE-R5`** (doc `02`). Són **dos sistemes diferents** que comparteixen numeració: les **rúbriques** avaluen *com de bé* es fa una feina concreta (codi, circuit…); les **competències** descriuen *què* s'ha d'assolir al curs. Només coincideixen en l'1 i el 2:
 >
@@ -19,7 +18,7 @@ Rúbriques reutilitzables amb **quatre nivells d'assoliment**. Conversió orient
 
 ## R1 · Rúbrica de programació (codi)
 
-| Criteri | NA (0-4) | AS (5-6) | AN (7-8) | AE (9-10) |
+| Criteri | Insuficient (0–4) | Suficient/Bé (5–6) | Notable (7–8) | Excel·lent (9–10) |
 |---|---|---|---|---|
 | **Funcionament** | El programa no compila o no fa la tasca. | Fa la tasca bàsica amb errors menors. | Fa la tasca completa de manera fiable. | Funciona i gestiona casos límit/errors. |
 | **Estructura** | Codi desordenat, tot a `loop`. | Alguna funció, poca modularitat. | Ben modularitzat amb funcions. | Modular, reutilitzable i eficient. |
@@ -28,7 +27,7 @@ Rúbriques reutilitzables amb **quatre nivells d'assoliment**. Conversió orient
 
 ## R2 · Rúbrica de circuit i electrònica
 
-| Criteri | NA | AS | AN | AE |
+| Criteri | Insuficient | Suficient/Bé | Notable | Excel·lent |
 |---|---|---|---|---|
 | **Muntatge** | Connexions incorrectes/insegures. | Funciona amb ajuda. | Muntatge correcte i ordenat. | Òptim, net i ben etiquetat. |
 | **Esquema** | Inexistent o erroni. | Esquema bàsic. | Esquema correcte amb simbologia. | Esquema professional i documentat. |
@@ -37,7 +36,7 @@ Rúbriques reutilitzables amb **quatre nivells d'assoliment**. Conversió orient
 
 ## R3 · Rúbrica de projecte i robot
 
-| Criteri | NA | AS | AN | AE |
+| Criteri | Insuficient | Suficient/Bé | Notable | Excel·lent |
 |---|---|---|---|---|
 | **Compliment del repte** | No assoleix els objectius. | Assoleix els mínims. | Assoleix tots els objectius. | Supera els objectius amb millores. |
 | **Disseny i iteració** | Sense procés de disseny. | Una sola versió. | Itera amb proves. | Iteració documentada i justificada. |
@@ -46,7 +45,7 @@ Rúbriques reutilitzables amb **quatre nivells d'assoliment**. Conversió orient
 
 ## R4 · Rúbrica de documentació tècnica i comunicació
 
-| Criteri | NA | AS | AN | AE |
+| Criteri | Insuficient | Suficient/Bé | Notable | Excel·lent |
 |---|---|---|---|---|
 | **Quadern tècnic** | Incomplet. | Bàsic. | Complet i ordenat. | Exhaustiu i reflexiu. |
 | **Claredat tècnica** | Confús. | Comprensible amb llacunes. | Clar i rigorós. | Rigorós, precís i ben argumentat. |
@@ -55,7 +54,7 @@ Rúbriques reutilitzables amb **quatre nivells d'assoliment**. Conversió orient
 
 ## R5 · Rúbrica d'actitud, cooperació i autoregulació
 
-| Criteri | NA | AS | AN | AE |
+| Criteri | Insuficient | Suficient/Bé | Notable | Excel·lent |
 |---|---|---|---|---|
 | **Cooperació** | No col·labora. | Col·labora puntualment. | Col·labora activament. | Lidera i facilita l'equip. |
 | **Gestió de l'error** | Es bloqueja/abandona. | Persisteix amb ajuda. | Persisteix i prova alternatives. | Converteix l'error en aprenentatge. |

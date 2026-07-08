@@ -37,7 +37,7 @@ Completa amb un mateix programa senzill (p. ex. un comptador):
 
 **Reflexió:** quin t'ha semblat més fàcil de llegir i per què? ________________
 
-**Autoavaluació** (marca el teu nivell — NA/AS/AN/AE):
+**Autoavaluació** (situa't; la nota és 0-10):
 | Criteri | Nivell |
 |---|---|
 | El programa Python funciona i està ben indentat (R1) | ☐ NA ☐ AS ☐ AN ☐ AE |
@@ -79,9 +79,9 @@ Treballes la programació **per esdeveniments** (reaccionar a botons, sacsejades
 
 ## Diana d'autoavaluació
 
-Marca el teu nivell (NA/AS/AN/AE):
+Situa't (0-10):
 
-| Criteri | NA | AS | AN | AE |
+| Criteri | Insuficient | Suficient/Bé | Notable | Excel·lent |
 |---|---|---|---|---|
 | Escric Python ben indentat que funciona | ☐ | ☐ | ☐ | ☐ |
 | Faig servir sensors integrats (acceleròmetre, llum…) | ☐ | ☐ | ☐ | ☐ |

@@ -19,7 +19,7 @@
 
 > 🪜 **Versió nucli (ja és assoliment satisfactori):** la barrera s'obre en detectar el vehicle i es tanca sola (angle i temps fixos). **Versió completa:** llindars calibrats, temps configurable i gestió del cas «vehicle aturat sota la barrera».
 
-> Escala NA·AS·AN·AE, rúbriques i tot el sistema: **[Com s'avalua la matèria](../00_General/00_Avaluacio_per_alumnat.md)**.
+> Escala de nota 0-10, rúbriques i tot el sistema: **[Com s'avalua la matèria](../00_General/00_Avaluacio_per_alumnat.md)**.
 
 ---
 
@@ -67,8 +67,8 @@ Barrera que s'obre quan arriba un vehicle i es tanca sola.
 ## Si t'encalles (DEPURA)
 > **D**escriu · **E**xamina · **P**rova una hipòtesi cada cop · **U**bica · **R**epara · **A**punta-ho. Comprova la **massa comuna** i que el motor **no** s'alimenta del 5V de l'Arduino. Encara encallat? **[Targeta de rescat](../00_General/00_Targetes_rescat.md)** (comença per la 🟢).
 
-## M'autoavaluo (NA/AS/AN/AE)
-| Criteri | NA | AS | AN | AE |
+## M'autoavaluo (Insuficient · Suficient/Bé · Notable · Excel·lent — la nota és 0-10)
+| Criteri | Insuficient | Suficient/Bé | Notable | Excel·lent |
 |---|---|---|---|---|
 | Controlo la posició d'un servo i la velocitat d'un motor | ☐ | ☐ | ☐ | ☐ |
 | Munto el circuit amb seguretat (massa comuna, alimentació externa) | ☐ | ☐ | ☐ | ☐ |

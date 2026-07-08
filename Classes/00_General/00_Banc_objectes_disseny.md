@@ -32,7 +32,7 @@ Es pot fer servir com a **alternativa al producte de la SA**, com a **repte ober
 
 ## Rúbrica de disseny de producte (complementa R2/R3/R4)
 
-| Aspecte | NA | AS | AN | AE |
+| Aspecte | Insuficient | Suficient/Bé | Notable | Excel·lent |
 |---|---|---|---|---|
 | **Funció**: l'objecte fa el que diu i respon a una necessitat real | | | | |
 | **Usabilitat**: còmode i clar per a l'usuari previst | | | | |

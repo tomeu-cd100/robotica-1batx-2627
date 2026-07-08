@@ -15,7 +15,7 @@
 
 Tot es valora amb **rúbriques de 4 nivells** que veuràs **abans** de començar cada producte:
 
-**NA** (no assolit, 0-4) · **AS** (satisfactori, 5-6) · **AN** (notable, 7-8) · **AE** (excel·lent, 9-10)
+**Insuficient** (0-4) · **Suficient/Bé** (5-6) · **Notable** (7-8) · **Excel·lent** (9-10). La teva **nota és el número** (0-10); els noms només indiquen la banda.
 
 Les 5 rúbriques del curs, en una línia cadascuna:
 

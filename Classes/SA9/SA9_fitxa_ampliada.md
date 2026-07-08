@@ -64,9 +64,9 @@ El projecte final **integra** tot el pensament computacional del curs: **descomp
 
 ## Diana d'autoavaluació (equip)
 
-Marca el nivell (NA/AS/AN/AE):
+Situa't (0-10):
 
-| Criteri | NA | AS | AN | AE |
+| Criteri | Insuficient | Suficient/Bé | Notable | Excel·lent |
 |---|---|---|---|---|
 | El sistema compleix els requisits mínims | ☐ | ☐ | ☐ | ☐ |
 | Hem treballat amb rols i planificació àgil | ☐ | ☐ | ☐ | ☐ |
