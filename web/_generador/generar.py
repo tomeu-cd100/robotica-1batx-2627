@@ -157,6 +157,22 @@ SA_TITLES = {
     8: "IoT i IA",
     9: "Projecte final",
 }
+# Emoji identificatiu de cada SA (ancorat al món de la robòtica)
+SA_ICONES = {0: "🧩", 1: "🤖", 2: "💡", 3: "📡", 4: "⚙️",
+             5: "🐍", 6: "🎛️", 7: "🚗", 8: "🌐", 9: "🏆"}
+# Frase del producte de cada SA (síntesi del «Producte» de la programació didàctica)
+SA_PRODUCTES = {
+    0: "Vocabulari i bases de programació",
+    1: "Fitxa-pòster d'un robot real",
+    2: "Dispositiu de senyalització (semàfor o RGB)",
+    3: "Alarma o llum automàtic (sensor→actuador)",
+    4: "Mecanisme motoritzat controlat per sensor",
+    5: "App micro:bit amb sensors o ràdio",
+    6: "Sistema de control (termòstat o màquina d'estats)",
+    7: "Robot mòbil autònom (línia o obstacles)",
+    8: "Sistema IoT o classificador amb IA",
+    9: "Robot autònom + dossier + defensa",
+}
 
 
 def sa_trimestre(n: int) -> int:
@@ -971,10 +987,16 @@ def doc_card(href, title, kind="doc", tri=None):
 
 
 def sa_hub_card(href, sa, name, meta, tri):
+    ic = SA_ICONES.get(sa, "📄") if isinstance(sa, int) else "📄"
+    prod = SA_PRODUCTES.get(sa) if isinstance(sa, int) else None
+    prod_html = f'<span class="sa-prod">{html.escape(prod)}</span>' if prod else ""
     meta_html = f'<span class="sa-meta">{html.escape(meta)}</span>' if meta else ""
+    num_html = f'<span class="sa-num">SA{sa}</span>' if sa != "" else ""
     return (f'<a class="sa-card" href="{href}" data-tri="{tri}">'
-            f'<span class="sa-num">SA{sa}</span>'
-            f'<span class="sa-nom">{html.escape(name)}</span>{meta_html}</a>')
+            f'<span class="sa-ic" aria-hidden="true">{ic}</span>'
+            f'<span class="sa-body">{num_html}'
+            f'<span class="sa-nom">{html.escape(name)}</span>'
+            f'{prod_html}{meta_html}</span></a>')
 
 
 def tri_blocks_html(entries: list[tuple]) -> str:
@@ -1161,8 +1183,12 @@ def sa_grid_html(pages: list[Page]) -> str:
             href = sa_to_out.get(sa, "programacio/index.html")
             cards.append(
                 f'<a class="sa-card" href="{href}" data-tri="{t}">'
+                f'<span class="sa-ic" aria-hidden="true">{SA_ICONES[sa]}</span>'
+                f'<span class="sa-body">'
                 f'<span class="sa-num">SA{sa}</span>'
-                f'<span class="sa-nom">{html.escape(SA_TITLES[sa])}</span></a>'
+                f'<span class="sa-nom">{html.escape(SA_TITLES[sa])}</span>'
+                f'<span class="sa-prod">{html.escape(SA_PRODUCTES[sa])}</span>'
+                f'</span></a>'
             )
         tri_blocks.append(
             f'<div class="tri-block" data-tri="{t}">'
@@ -1220,7 +1246,7 @@ def render_home(pages: list[Page]) -> str:
 
     content = f"""
 <section class="hero">
-  <p class="hero-kicker">{html.escape(SITE_TAGLINE)}</p>
+  <p class="hero-kicker">// {html.escape(SITE_TAGLINE)}</p>
   <h1 class="hero-titol">Robòtica a 1r de Batxillerat</h1>
   <p class="hero-lead">9 situacions d'aprenentatge amb Arduino, micro:bit i robòtica mòbil, en tres trimestres. Tot el material d'aula, la programació didàctica, els reptes i l'avaluació, en un sol lloc.</p>
   <div class="hero-cta">
