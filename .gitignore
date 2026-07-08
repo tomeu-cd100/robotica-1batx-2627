@@ -8,6 +8,23 @@ __pycache__/
 # Entorn virtual de Python
 .venv/
 
+# Web GENERAT: es reconstrueix a CI (web/_generador/generar.py) a cada push.
+# Es versionen només els FONTS: estil.css, lloc.js, el generador i web/README.md.
+/web/*.html
+/web/.nojekyll
+/web/classes/
+/web/programacio/
+/web/avaluacio/
+/web/normativa/
+/web/reptes/
+/web/recursos/
+/web/simulacions/
+/web/pdf/
+/web/assets/img/
+/web/assets/css/pygments.css
+/web/assets/js/cerca-index.js
+/web/_generador/_activitats.json
+
 # Fitxers temporals del sistema
 Thumbs.db
 desktop.ini
