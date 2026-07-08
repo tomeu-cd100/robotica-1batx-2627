@@ -41,6 +41,20 @@ Tria un repte segons l'ambició de l'equip. Tots integren electrònica + program
 
 > ⚠️ **Privadesa:** no entrenis models amb **cares d'alumnes** ni dades personals sense consentiment (vegeu l'ètica de dades de la SA8).
 
+## Propostes addicionals (rescatades de l'aula)
+
+Idees provades a l'aula, encaixables sobretot a **SA6 (control)** i **SA9 (projecte)**.
+Totes són de nivell **⭐** i tenen un requisit mínim clar + ampliacions.
+
+| Proposta | Què treballa | Material orientatiu | Ampliació |
+|---|---|---|---|
+| **Mesurador de nivell d'aigua** | Lectura de sensor + llindars + avís | Sensor de nivell/humitat + LED/brunzidor (+ OLED per mostrar) | Registrar mesures; bomba d'aigua (relé) per reomplir automàticament |
+| **Encesa/apagada automàtica de llums d'escala** | Detecció de presència + temporització (`millis()`) | PIR + LED/relé | Ajustar el temporitzador; afegir sensor de llum (només de nit) |
+| **Obertura automàtica de portes** | Detecció + moviment controlat | Ultrasons o PIR + servo | Tancament temporitzat; llum/brunzidor d'avís mentre s'obre |
+
+> 💡 La proposta de **domòtica** (llum + clima + alarma monitorats) ja hi és com a
+> repte **⭐⭐ núm. 7 (Sistema domòtic)**.
+
 ## Criteris per triar
 - Que sigui **realitzable** en 10 h amb el material disponible.
 - Que tingui un **requisit mínim clar** + millores opcionals.
