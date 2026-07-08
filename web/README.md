@@ -27,11 +27,20 @@ Després de canviar qualsevol material `.md`, executa des de l'arrel del reposit
 py web/_generador/generar.py
 ```
 
-Requereix Python amb dues llibreries (pures, només per generar):
+Requereix Python amb dues llibreries (pures, només per generar). Les versions
+estan **fixades** a `web/_generador/requirements.txt` perquè el build sigui
+reproduïble; instal·la-les preferiblement dins d'un entorn virtual:
 
 ```bash
-py -m pip install markdown pygments
+python -m venv .venv
+.venv\Scripts\activate                        # Windows
+# source .venv/bin/activate                   # Linux/macOS
+pip install -r web/_generador/requirements.txt
 ```
+
+> El peu de cada pàgina («web generat el …») pren la data de **l'últim commit**
+> (no la del rellotge), de manera que regenerar el mateix material no provoca
+> canvis. En CI es pot fixar amb la variable d'entorn `SOURCE_DATE_EPOCH`.
 
 ## Publicar a GitHub Pages
 

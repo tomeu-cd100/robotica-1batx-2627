@@ -1,6 +1,13 @@
 # Configuracio local de Claude Code (permisos, ajustos de maquina)
 .claude/
 
+# Cache de Python (generador del web)
+__pycache__/
+*.pyc
+
+# Entorn virtual de Python
+.venv/
+
 # Fitxers temporals del sistema
 Thumbs.db
 desktop.ini

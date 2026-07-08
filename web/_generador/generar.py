@@ -15,11 +15,13 @@ from __future__ import annotations
 
 import html
 import json
+import os
 import re
 import shutil
+import subprocess
 import unicodedata
 import urllib.parse
-from datetime import date
+from datetime import date, datetime, timezone
 from pathlib import Path
 
 import markdown
@@ -39,7 +41,32 @@ IMG_OUT = ASSETS / "img"
 SITE_TITLE = "Robòtica · 1r de Batxillerat"
 SITE_TAGLINE = "Material docent · LOMLOE Catalunya · curs 2026-2027"
 REPO_URL = "https://github.com/tomeu-cd100/robotica-1batx-2627"
-BUILD_DATE = date.today().isoformat()
+
+
+def build_date() -> str:
+    """Data del web derivada del contingut, no del rellotge, perquè dos builds
+    del mateix material produeixin una sortida idèntica (build reproduïble).
+    Ordre de preferència: data de l'últim commit de git → SOURCE_DATE_EPOCH
+    (útil en CI) → data d'avui (últim recurs)."""
+    try:
+        out = subprocess.run(
+            ["git", "-C", str(ROOT), "log", "-1", "--format=%cs"],
+            capture_output=True, text=True, check=True,
+        ).stdout.strip()
+        if out:
+            return out
+    except (OSError, subprocess.SubprocessError):
+        pass
+    epoch = os.environ.get("SOURCE_DATE_EPOCH")
+    if epoch:
+        try:
+            return datetime.fromtimestamp(int(epoch), tz=timezone.utc).date().isoformat()
+        except (ValueError, OverflowError, OSError):
+            pass
+    return date.today().isoformat()
+
+
+BUILD_DATE = build_date()
 
 CODE_EXT = {".ino", ".py", ".cpp", ".c", ".h"}
 IMG_EXT = {".png", ".jpg", ".jpeg", ".svg", ".webp", ".gif"}
@@ -251,8 +278,14 @@ def out_for_md(section_key: str, src: Path, src_dir: Path) -> str:
     return path
 
 
-def discover() -> tuple[list[Page], dict, dict, list[dict]]:
-    """Retorna (pàgines, mapa_md_src->out, mapa_codi_src->(out,anchor), grups_codi)."""
+def discover() -> tuple[list[Page], dict, dict, list[dict], list[dict], dict]:
+    """Retorna (pàgines, md_map, code_map, code_groups, sim_groups, sim_map):
+    - pàgines: llista de Page descobertes.
+    - md_map: ruta absoluta d'un .md font -> out_rel de la seva pàgina.
+    - code_map: ruta absoluta d'un fitxer de codi -> (out_rel, àncora).
+    - code_groups: grups de codi per SA (Classes i Solucionari).
+    - sim_groups: grups de simulacions Wokwi (una pàgina per projecte).
+    - sim_map: ruta absoluta d'una carpeta/fitxer de simulació -> out_rel."""
     pages: list[Page] = []
     md_map: dict[str, str] = {}
     code_map: dict[str, tuple[str, str]] = {}
