@@ -134,8 +134,10 @@
     function cerca(q) {
       q = normalitza(q.trim());
       if (!q) { tanca(); return; }
+      var vista = doc.getAttribute("data-vista") || "alumnat";
       var termes = q.split(/\s+/);
       resultats = index.filter(function (it) {
+        if (vista === "alumnat" && it.p === "docent") return false;
         var heu = normalitza(it.t + " " + it.s);
         return termes.every(function (t) { return heu.indexOf(t) !== -1; });
       }).slice(0, 12);

@@ -1594,7 +1594,7 @@ def main():
         dest.parent.mkdir(parents=True, exist_ok=True)
         dest.write_text(full, encoding="utf-8")
         search_index.append({"t": p.title, "s": SECTION_BY_KEY.get(p.section, {}).get("title", "Inici"),
-                             "u": p.out_rel, "tri": p.trimester})
+                             "u": p.out_rel, "tri": p.trimester, "p": p.public})
 
     # Pàgines de codi
     for g in code_groups:
@@ -1608,7 +1608,7 @@ def main():
         dest.parent.mkdir(parents=True, exist_ok=True)
         dest.write_text(full, encoding="utf-8")
         search_index.append({"t": g["label"], "s": SECTION_BY_KEY[g["section"]]["title"],
-                             "u": g["out_rel"], "tri": g["tri"]})
+                             "u": g["out_rel"], "tri": g["tri"], "p": g.get("public", "alumnat")})
 
     # Pàgines de simulacions Wokwi
     for g in sim_groups:
@@ -1617,7 +1617,7 @@ def main():
         dest.parent.mkdir(parents=True, exist_ok=True)
         dest.write_text(full, encoding="utf-8")
         search_index.append({"t": g["title"], "s": "Simulacions",
-                             "u": g["out_rel"], "tri": g["tri"]})
+                             "u": g["out_rel"], "tri": g["tri"], "p": "alumnat"})
 
     # Visor de documents (PDF.js + visor d'Office), sense copiar fitxers
     (WEB / "visor.html").write_text(render_visor(), encoding="utf-8")
@@ -1626,11 +1626,12 @@ def main():
     (WEB / "index.html").write_text(render_home(pages), encoding="utf-8")
     (WEB / "docent.html").write_text(render_hub_docent(pages), encoding="utf-8")
     (WEB / "alumnat.html").write_text(render_hub_alumnat(pages), encoding="utf-8")
-    search_index.insert(0, {"t": "Inici", "s": "Inici", "u": "index.html", "tri": None})
+    search_index.insert(0, {"t": "Inici", "s": "Inici", "u": "index.html",
+                            "tri": None, "p": "alumnat"})
     search_index.insert(1, {"t": "Docent — espai del professorat", "s": "Docent",
-                            "u": "docent.html", "tri": None})
+                            "u": "docent.html", "tri": None, "p": "docent"})
     search_index.insert(2, {"t": "Alumnat — el teu espai", "s": "Alumnat",
-                            "u": "alumnat.html", "tri": None})
+                            "u": "alumnat.html", "tri": None, "p": "alumnat"})
 
     # Índex de cerca (com a JS per funcionar també en local file://)
     ASSETS.joinpath("js").mkdir(parents=True, exist_ok=True)
