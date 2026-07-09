@@ -128,11 +128,13 @@ ROOT_PAGES = [
 # Menú superior per audiència: (href des de l'arrel, etiqueta, clau activa).
 # Les claus «docent» i «alumnat» són hubs d'orientació, no seccions amb carpeta.
 TOPNAV_ITEMS = [
-    ("index.html", "Inici", "inici"),
-    ("classes/index.html", "Les 9 SA", "classes"),
-    ("docent.html", "Docent", "docent"),
-    ("alumnat.html", "Alumnat", "alumnat"),
-    ("recursos/index.html", "Recursos", "recursos"),
+    ("index.html", "Inici", "inici", False),
+    ("classes/index.html", "Les 9 SA", "classes", False),
+    ("reptes/index.html", "Reptes", "reptes", False),
+    ("simulacions/index.html", "Simulacions", "simulacions", False),
+    ("programacio/index.html", "Programació", "programacio", True),
+    ("avaluacio/index.html", "Avaluació", "avaluacio", True),
+    ("recursos/index.html", "Recursos", "recursos", True),
 ]
 HUB_KEYS = {"docent", "alumnat"}
 
@@ -526,8 +528,13 @@ def topnav_html(out_rel: str, active: str) -> str:
     cercador; cap URL de secció no canvia."""
     prefix = depth_prefix(out_rel)
     items = []
-    for href, label, key in TOPNAV_ITEMS:
-        cls = ' class="actiu"' if active == key else ""
+    for href, label, key, docent in TOPNAV_ITEMS:
+        classes = []
+        if active == key:
+            classes.append("actiu")
+        if docent:
+            classes.append("nomes-docent")
+        cls = f' class="{" ".join(classes)}"' if classes else ""
         sec = f' data-sec="{key}"' if key in SECTION_BY_KEY else ""
         items.append(f'<a href="{prefix}{href}"{sec}{cls}>{label}</a>')
     return "\n".join(items)
@@ -564,10 +571,11 @@ def group_tri(gk: str):
     return sa_trimestre(sa) if sa else None
 
 
-def _link(href, label, actiu, tri=None):
+def _link(href, label, actiu, tri=None, docent=False):
     cls = ' class="actiu"' if actiu else ""
+    li_cls = ' class="nomes-docent"' if docent else ""
     dot = f' <span class="tri-dot" data-tri="{tri}"></span>' if tri else ""
-    return f'<li><a href="{href}"{cls}>{label}{dot}</a></li>'
+    return f'<li{li_cls}><a href="{href}"{cls}>{label}{dot}</a></li>'
 
 
 def sidebar_html(section_key: str, current_out: str, pages: list[Page]) -> str:
@@ -590,7 +598,8 @@ def sidebar_html(section_key: str, current_out: str, pages: list[Page]) -> str:
     # pàgines soltes a l'arrel de la secció
     for p in sorted(groups.pop("", []), key=lambda p: p.out_rel):
         out.append(_link(rel_url(current_out, p.out_rel), html.escape(p.title),
-                         p.out_rel == current_out, p.trimester))
+                         p.out_rel == current_out, p.trimester,
+                         docent=(p.public == "docent")))
     out.append("</ul>")
 
     # grups (subcarpetes) plegables
@@ -612,8 +621,11 @@ def sidebar_html(section_key: str, current_out: str, pages: list[Page]) -> str:
             else:
                 label = html.escape(p.title)
             items.append(_link(rel_url(current_out, p.out_rel), label,
-                               p.out_rel == current_out))
-        out.append(f'<details class="sb-grup"{open_attr}>{summary}<ul>'
+                               p.out_rel == current_out,
+                               docent=(p.public == "docent")))
+        grp_docent = bool(gps) and all(p.public == "docent" for p in gps)
+        grp_cls = "sb-grup nomes-docent" if grp_docent else "sb-grup"
+        out.append(f'<details class="{grp_cls}"{open_attr}>{summary}<ul>'
                    + "".join(items) + "</ul></details>")
 
     out.append("</nav>")
@@ -720,10 +732,11 @@ def sa_fil_html(sa: int, current_out: str, fil: dict) -> str:
     tri = sa_trimestre(sa)
     pills = []
     for label, out in items:
+        dc = " nomes-docent" if label[:1] in "📘🔑📝" else ""
         if out == current_out:
-            pills.append(f'<span class="sa-fil-pill actiu">{label}</span>')
+            pills.append(f'<span class="sa-fil-pill actiu{dc}">{label}</span>')
         else:
-            pills.append(f'<a class="sa-fil-pill" href="{rel_url(current_out, out)}">{label}</a>')
+            pills.append(f'<a class="sa-fil-pill{dc}" href="{rel_url(current_out, out)}">{label}</a>')
     return (f'<nav class="sa-fil" aria-label="Tot sobre la SA{sa}">'
             f'<span class="sa-fil-tit"><span class="tri-dot" data-tri="{tri}"></span>'
             f'Tot sobre la <strong>SA{sa}</strong>:</span>' + "".join(pills) + "</nav>")
