@@ -1048,11 +1048,12 @@ def page_sa(p: Page):
     return detect_sa(p.src.name) or detect_sa(p.out_rel)
 
 
-def doc_card(href, title, kind="doc", tri=None):
+def doc_card(href, title, kind="doc", tri=None, docent=False):
     icona = "💻" if kind == "code" else "📄"
     badge = (f'<span class="badge-tri mini" data-tri="{tri}">{TRIMESTRES[tri]["label"]}</span>'
              if tri else "")
-    return (f'<a class="card" href="{href}"><span class="card-ic">{icona}</span>'
+    cls = "card nomes-docent" if docent else "card"
+    return (f'<a class="{cls}" href="{href}"><span class="card-ic">{icona}</span>'
             f'<span class="card-tit">{html.escape(title)}</span>{badge}</a>')
 
 
@@ -1180,14 +1181,36 @@ def subindex_extra(section_key: str, group_key: str, current_out: str,
                 break
         return (p.kind == "code", rang, p.out_rel)
 
+    # Bloc «Comença aquí» destacat, per vista
+    def _find(*subs):
+        return next((p for p in gps if any(s in p.out_rel.lower() for s in subs)), None)
+    fitxa = _find("fitxa-alumnat")
+    guia = _find("guia-docent", "guia-programacio")
+    codi = next((p for p in gps if p.kind == "code"), None)
+    start = []
+    al = [(p, t) for p, t in [(fitxa, "Fitxa base"), (codi, "Codi")] if p]
+    if al:
+        cards_al = "".join(doc_card(rel_url(current_out, p.out_rel), t, p.kind) for p, t in al)
+        start.append('<div class="comenca-aqui portada-alumnat">'
+                     '<p class="ca-tit">▶ Comença aquí</p>'
+                     f'<div class="card-grid">{cards_al}</div></div>')
+    do = [(p, t) for p, t in [(guia, "Guia docent"), (fitxa, "Fitxa base")] if p]
+    if do:
+        cards_do = "".join(doc_card(rel_url(current_out, p.out_rel), t, p.kind) for p, t in do)
+        start.append('<div class="comenca-aqui nomes-docent">'
+                     '<p class="ca-tit">▶ Comença aquí</p>'
+                     f'<div class="card-grid">{cards_do}</div></div>')
+
     cards = []
     for p in sorted(gps, key=ordre):
         title = "Codi de les pràctiques" if p.kind == "code" else p.title
-        cards.append(doc_card(rel_url(current_out, p.out_rel), title, p.kind))
-    titol = ("Materials d'aquesta SA" if detect_sa(group_key) is not None
+        cards.append(doc_card(rel_url(current_out, p.out_rel), title, p.kind,
+                              docent=(p.public == "docent")))
+    titol = ("Tot el material de la SA" if detect_sa(group_key) is not None
              else "Materials d'aquest apartat")
-    return (f'<h2 class="seccio-sep">{titol}</h2>'
-            '<div class="card-grid">' + "".join(cards) + "</div>")
+    return ("".join(start)
+            + f'<h2 class="seccio-sep">{titol}</h2>'
+            + '<div class="card-grid">' + "".join(cards) + "</div>")
 
 
 # ---------------------------------------------------------------------------

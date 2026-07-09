@@ -681,6 +681,16 @@ html[data-vista="docent"] .portada-alumnat { display: none; }
 html[data-vista="docent"] .vista-btn .vista-ic-alumnat { display: none; }
 html[data-vista="docent"] .vista-btn .vista-ic-docent { display: inline; }
 
+/* Bloc «Comença aquí» per SA */
+.comenca-aqui {
+  background: var(--accent-soft);
+  border: 1px solid var(--border-fort);
+  border-radius: var(--radi);
+  padding: .8rem 1rem;
+  margin: 1rem 0 1.5rem;
+}
+.comenca-aqui .ca-tit { font-weight: 700; margin: 0 0 .6rem; }
+
 /* Paginador d'itinerari filtrat per vista */
 .pager[data-pager-vista="alumnat"] { display: none; }
 html[data-vista="alumnat"] .pager[data-pager-vista="docent"] { display: none; }
