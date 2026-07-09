@@ -434,7 +434,8 @@ def discover() -> tuple[list[Page], dict, dict, list[dict], list[dict], dict]:
 # Reescriptura d'enllaços dins l'HTML generat
 # ---------------------------------------------------------------------------
 def rewrite_links(html_body: str, src_file: Path, out_rel: str,
-                  md_map: dict, code_map: dict, sim_map: dict, copied_imgs: dict) -> str:
+                  md_map: dict, code_map: dict, sim_map: dict, copied_imgs: dict,
+                  md_title_map: dict | None = None) -> str:
     prefix = depth_prefix(out_rel)
     src_dir = src_file.parent if src_file.is_file() else src_file
 
@@ -498,6 +499,13 @@ def rewrite_links(html_body: str, src_file: Path, out_rel: str,
         return f'src="{new if new else src}"' if new else m.group(0)
 
     html_body = re.sub(r'src="([^"]+)"', repl_src, html_body)
+
+    # Text visible d'un enllaç que és un nom de fitxer .md -> títol humà
+    if md_title_map:
+        def repl_mdtext(m):
+            titol = md_title_map.get(m.group(1))
+            return ">" + html.escape(titol) + "</a>" if titol else m.group(0)
+        html_body = re.sub(r'>([^<>]+\.md)</a>', repl_mdtext, html_body)
     return html_body
 
 
@@ -571,6 +579,14 @@ def group_tri(gk: str):
     return sa_trimestre(sa) if sa else None
 
 
+def short_label(title: str) -> str:
+    """Etiqueta curta per al sidebar: talla el títol al primer subtítol."""
+    for sep in (" — ", " · *", "  ·  "):
+        if sep in title:
+            return title.split(sep)[0].strip()
+    return title
+
+
 def _link(href, label, actiu, tri=None, docent=False):
     cls = ' class="actiu"' if actiu else ""
     li_cls = ' class="nomes-docent"' if docent else ""
@@ -597,7 +613,7 @@ def sidebar_html(section_key: str, current_out: str, pages: list[Page]) -> str:
                      current_out == root_index))
     # pàgines soltes a l'arrel de la secció
     for p in sorted(groups.pop("", []), key=lambda p: p.out_rel):
-        out.append(_link(rel_url(current_out, p.out_rel), html.escape(p.title),
+        out.append(_link(rel_url(current_out, p.out_rel), html.escape(short_label(p.title)),
                          p.out_rel == current_out, p.trimester,
                          docent=(p.public == "docent")))
     out.append("</ul>")
@@ -605,7 +621,7 @@ def sidebar_html(section_key: str, current_out: str, pages: list[Page]) -> str:
     # grups (subcarpetes) plegables
     for gk in sorted(groups, key=group_sort_key):
         gps = groups[gk]
-        gps.sort(key=lambda p: (p.kind != "index", p.kind == "code", p.out_rel))
+        gps.sort(key=lambda p: (0 if p.kind == "index" else 1, doc_ordre(p)))
         in_group = any(p.out_rel == current_out for p in gps)
         idx = next((p for p in gps if p.kind == "index"), None)
         tri = group_tri(gk)
@@ -619,7 +635,7 @@ def sidebar_html(section_key: str, current_out: str, pages: list[Page]) -> str:
             elif p.kind == "code":
                 label = "Codi"
             else:
-                label = html.escape(p.title)
+                label = html.escape(short_label(p.title))
             items.append(_link(rel_url(current_out, p.out_rel), label,
                                p.out_rel == current_out,
                                docent=(p.public == "docent")))
@@ -1586,6 +1602,9 @@ def main():
     pdf_manifest = []   # pàgines d'activitat que es generaran en PDF
     sa_fil = build_sa_fil(pages)       # fil transversal de cada SA
     pager_map = build_sequences(pages)  # paginador ‹ anterior · següent ›
+    # nom de fitxer .md -> títol humà (per treure la jerga .md dels enllaços)
+    md_title_map = {p.src.name: p.title for p in pages
+                    if p.kind in ("doc", "index", "special")}
 
     # neteja de sortides HTML antigues (manté assets, _generador i els PDF)
     for item in WEB.iterdir():
@@ -1609,7 +1628,8 @@ def main():
         md = make_md()
         body = md.convert(text)
         body = wrap_tables(body)
-        body = rewrite_links(body, p.src, p.out_rel, md_map, code_map, sim_map, copied_imgs)
+        body = rewrite_links(body, p.src, p.out_rel, md_map, code_map, sim_map,
+                             copied_imgs, md_title_map)
         toc = toc_html(md)
         extra = ""
         pre = ""
