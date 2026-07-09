@@ -72,6 +72,20 @@
     });
   }
 
+  /* ---------- Vista docent / alumnat ---------- */
+  var vistaBtn = document.querySelector(".vista-btn");
+  if (vistaBtn) {
+    var vAra = doc.getAttribute("data-vista") || "alumnat";
+    vistaBtn.setAttribute("aria-pressed", vAra === "docent" ? "true" : "false");
+    vistaBtn.addEventListener("click", function () {
+      var nova = doc.getAttribute("data-vista") === "docent" ? "alumnat" : "docent";
+      doc.setAttribute("data-vista", nova);
+      try { localStorage.setItem("vista", nova); } catch (e) {}
+      vistaBtn.setAttribute("aria-pressed", nova === "docent" ? "true" : "false");
+      anuncia(nova === "docent" ? "Vista docent activada." : "Vista alumnat activada.");
+    });
+  }
+
   /* ---------- Botons de copiar codi ---------- */
   document.querySelectorAll(".copia-btn").forEach(function (btn) {
     btn.addEventListener("click", function () {

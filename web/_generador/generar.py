@@ -799,7 +799,7 @@ def build_sequences(pages: list[Page]) -> dict[str, str]:
 
 
 def page_shell(*, out_rel, section_key, title, content_html, toc="",
-               tri=None, pages, pdf_href=None):
+               tri=None, pages, pdf_href=None, public="alumnat"):
     prefix = depth_prefix(out_rel)
     sec = SECTION_BY_KEY.get(section_key)
     accent_attr = f' data-section="{section_key}"'
@@ -828,9 +828,9 @@ def page_shell(*, out_rel, section_key, title, content_html, toc="",
 <meta name="description" content="{html.escape(SITE_TAGLINE)}">
 <link rel="stylesheet" href="{prefix}assets/css/estil.css">
 <link rel="stylesheet" href="{prefix}assets/css/pygments.css">
-<script>(function(){{try{{var d=document.documentElement,t=localStorage.getItem('tema');if(t==='fosc'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches))d.setAttribute('data-tema','fosc');var m=localStorage.getItem('mida');if(m&&m!=='100')d.setAttribute('data-mida',m);if(localStorage.getItem('font')==='llegible')d.setAttribute('data-font','llegible');}}catch(e){{}}}})();</script>
+<script>(function(){{try{{var d=document.documentElement,t=localStorage.getItem('tema');if(t==='fosc'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches))d.setAttribute('data-tema','fosc');var m=localStorage.getItem('mida');if(m&&m!=='100')d.setAttribute('data-mida',m);if(localStorage.getItem('font')==='llegible')d.setAttribute('data-font','llegible');var v=localStorage.getItem('vista')||'alumnat';d.setAttribute('data-vista',v);}}catch(e){{}}}})();</script>
 </head>
-<body{accent_attr} class="{has_sidebar} {layout_class}">
+<body{accent_attr} data-public="{public}" class="{has_sidebar} {layout_class}">
 <a class="skip" href="#contingut">Salta al contingut</a>
 <header class="topbar">
   <button class="menu-btn" aria-label="Obre el menú" aria-expanded="false">☰</button>
@@ -848,12 +848,17 @@ def page_shell(*, out_rel, section_key, title, content_html, toc="",
       <button class="a11y-btn mida-mes" aria-label="Augmenta la mida del text" title="Text més gran">A+</button>
       <button class="a11y-btn font-toggle" aria-pressed="false" aria-label="Tipografia de lectura fàcil" title="Tipografia de lectura fàcil">Aa</button>
     </div>
+    <button class="vista-btn" aria-label="Canvia entre vista d'alumnat i de docent" aria-pressed="false" title="Vista alumnat / docent">
+      <span class="vista-ic-alumnat">🎓 Alumnat</span>
+      <span class="vista-ic-docent">👩‍🏫 Docent</span>
+    </button>
     <button class="tema-btn" aria-label="Canvia el tema clar/fosc" title="Tema clar/fosc">◐</button>
   </div>
 </header>
 <div class="layout">
   <aside class="sidebar">{sidebar}</aside>
   <main id="contingut">
+    <div class="avis-docent">📎 Aquesta pàgina és <strong>material per al docent</strong>. Actives la vista docent al botó de dalt.</div>
     {print_cap}
     {breadcrumb_html(out_rel, section_key, title, {p.out_rel for p in pages})}
     {pdf_block}
@@ -912,7 +917,7 @@ def render_code_page(group: dict, pages: list[Page], extra_nav: str = "") -> str
     content = "\n".join(parts)
     return page_shell(out_rel=group["out_rel"], section_key=group["section"],
                       title=group["label"], content_html=content,
-                      tri=group["tri"], pages=pages)
+                      tri=group["tri"], pages=pages, public=group.get("public", "alumnat"))
 
 
 def render_sim_page(group: dict, pages: list[Page]) -> str:
@@ -944,7 +949,7 @@ def render_sim_page(group: dict, pages: list[Page]) -> str:
     content = "\n".join(parts)
     return page_shell(out_rel=group["out_rel"], section_key="simulacions",
                       title=group["title"], content_html=content,
-                      tri=group["tri"], pages=pages)
+                      tri=group["tri"], pages=pages, public="alumnat")
 
 
 # ---------------------------------------------------------------------------
@@ -1305,7 +1310,8 @@ def render_home(pages: list[Page]) -> str:
 </div>
 """
     return page_shell(out_rel="index.html", section_key="inici",
-                      title="Inici", content_html=content, pages=pages)
+                      title="Inici", content_html=content, pages=pages,
+                      public="alumnat")
 
 
 # ---------------------------------------------------------------------------
@@ -1353,7 +1359,8 @@ def render_hub_docent(pages: list[Page]) -> str:
 </div>
 """
     return page_shell(out_rel="docent.html", section_key="docent",
-                      title="Docent", content_html=content, pages=pages)
+                      title="Docent", content_html=content, pages=pages,
+                      public="docent")
 
 
 def render_hub_alumnat(pages: list[Page]) -> str:
@@ -1390,7 +1397,8 @@ def render_hub_alumnat(pages: list[Page]) -> str:
 {sa_grid_html(pages)}
 """
     return page_shell(out_rel="alumnat.html", section_key="alumnat",
-                      title="Alumnat", content_html=content, pages=pages)
+                      title="Alumnat", content_html=content, pages=pages,
+                      public="alumnat")
 
 
 # ---------------------------------------------------------------------------
@@ -1554,7 +1562,8 @@ def main():
             pdf_manifest.append({"html": p.out_rel, "pdf": pdf_out, "title": p.title})
         full = page_shell(out_rel=p.out_rel, section_key=p.section,
                           title=p.title, content_html=content, toc=toc,
-                          tri=p.trimester, pages=pages, pdf_href=pdf_href)
+                          tri=p.trimester, pages=pages, pdf_href=pdf_href,
+                          public=p.public)
         dest = WEB / p.out_rel
         dest.parent.mkdir(parents=True, exist_ok=True)
         dest.write_text(full, encoding="utf-8")

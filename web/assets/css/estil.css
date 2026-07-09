@@ -654,3 +654,38 @@ a.sa-fil-pill:hover { border-color: var(--accent); color: var(--accent); text-de
   .prose pre, .codi-cos pre { white-space: pre-wrap; word-wrap: break-word; }
   * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 }
+
+/* ============================================================
+   Vistes docent / alumnat (commutador data-vista)
+   ============================================================ */
+/* Per defecte (vista docent) es veu tot; la vista alumnat amaga .nomes-docent */
+html[data-vista="alumnat"] .nomes-docent { display: none !important; }
+
+/* Botó del commutador al capçal */
+.vista-btn {
+  cursor: pointer;
+  border: 1px solid var(--border-fort);
+  background: var(--surface);
+  color: var(--text);
+  border-radius: var(--radi-s);
+  padding: .3rem .6rem;
+  font: inherit;
+  font-size: .9rem;
+  white-space: nowrap;
+}
+.vista-btn:hover { background: var(--surface-2); }
+.vista-btn .vista-ic-docent { display: none; }
+html[data-vista="docent"] .vista-btn .vista-ic-alumnat { display: none; }
+html[data-vista="docent"] .vista-btn .vista-ic-docent { display: inline; }
+
+/* Avís quan s'obre una pàgina docent en vista alumnat */
+.avis-docent { display: none; }
+html[data-vista="alumnat"] body[data-public="docent"] .avis-docent {
+  display: block;
+  background: var(--accent-soft);
+  border: 1px solid var(--border-fort);
+  border-radius: var(--radi-s);
+  padding: .5rem .8rem;
+  margin-bottom: 1rem;
+  font-size: .95em;
+}
