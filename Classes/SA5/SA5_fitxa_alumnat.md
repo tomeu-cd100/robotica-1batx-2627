@@ -15,7 +15,7 @@
 |---|---|---|
 | **App micro:bit** (comptapassos, llum de nit o joc per ràdio) | **R1** | Projectes (45 %) |
 | **Taula comparativa C++ ↔ Python** completa | **R4** | Projectes (45 %) |
-| **Quadern tècnic** (pseudocodi, errors d'indentació resolts) | **R4** | Quadern i pràctiques (25 %) |
+| **Quadern tècnic** (pseudocodi, errors d'indentació resolts) | **R4** | Quadern tècnic i pràctiques (25 %) |
 | Mini-check individual (inici S3) | semàfor | **No qualifica** (em situa) |
 
 > 🪜 **Versió nucli (ja és assoliment satisfactori):** app que fa servir **un** sensor integrat o la ràdio i funciona + taula comparativa completa. **Versió completa:** app amb dues funcions o més (sensor + ràdio, registre de màxims…) i comparació comentada amb frases pròpies.

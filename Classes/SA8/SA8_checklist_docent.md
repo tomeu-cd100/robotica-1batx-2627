@@ -33,7 +33,7 @@
 ## 📊 3. Avaluació i evidències (a recollir)
 - [ ] **Producte** (telemetria o classificador IA) → **R1, R3**, Projectes 45 %
 - [ ] **Reflexió ètica** (un risc de dades concret + una mesura per reduir-lo) → **R4**
-- [ ] **Fitxa de disseny IoT** + **quadern tècnic** (dades, errors) → **R4**, Quadern 25 %
+- [ ] **Fitxa de disseny IoT** + **quadern tècnic** (dades, errors) → **R4**, Quadern tècnic i pràctiques 25 %
 - [ ] **Coavaluació** (treball d'equip, disseny responsable) + **exit tickets** + registre **0–10**
 
 ## 🪜 4. Atenció a la diversitat (previst per aquesta SA)

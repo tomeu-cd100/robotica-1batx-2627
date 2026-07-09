@@ -36,7 +36,7 @@
 
 ## 📊 3. Avaluació i evidències (a recollir)
 - [ ] **Producte** (barrera/braç/ventilador) + defensa → **R3** (parcial) i **R1**, Projectes 45 %
-- [ ] **Quadern tècnic** (esquema pont H, taula distància→velocitat) → **R4**, Quadern 25 %
+- [ ] **Quadern tècnic** (esquema pont H, taula distància→velocitat) → **R4**, Quadern tècnic i pràctiques 25 %
 - [ ] **Observació de muntatge segur** (massa comuna, alimentació externa, no motors des de l'Arduino) → R2
 - [ ] Coavaluació + **exit tickets** + registre **0–10**
 

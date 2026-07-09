@@ -44,5 +44,12 @@ El contingut de cada SA es llista a **5 llocs**: taula del README de SA · llist
 4. **Unificar el nom** de la dimensió del 25 %.
 5. *(Opcional)* Nota de rol a la capçalera de cada porta d'entrada docent.
 
+## Correccions aplicades (mateix dia)
+- **A · GUIA_INICI_DOCENT**: rutes corregides a `00_General/`; avís del **web amb vistes docent/alumnat** al capdamunt del mapa; files noves (checklists per SA, quadern tècnic + tasca Classroom); checklist de la 1a setmana ampliada (guia «Com s'avalua», tasca del quadern a Classroom, enllaçar el web al Classroom); enllaç del quadern a «La primera sessió».
+- **B · 00_LLEGEIX-ME_Classes**: llista «Cada SA conté» amb **checklists** i esquemes corregits *(SA1–SA8)*; remissió al quadern tècnic; codi SA1 complet (4 sketches); «Possibles ampliacions futures» substituït per **«Estat i formats»** (web+PDF, proves T1-T3, solucionaris — tot ja existent).
+- **C · 8 mencions amb ruta vella** corregides a `SA9_guia_docent`, `07_Rubriques` (×2), `Reptes/README` (×2) i `GUIA_INICI` (×3).
+- **E · Nom del 25 % unificat** a **«Quadern tècnic i pràctiques»** a 24 fitxers (doc 06, full de qualificació, 9 fitxes, 8 checklists docent, tasca Classroom, guies del quadern).
+- **Verificat**: 0 rutes velles · 0 variants del nom antic · 0 enllaços `.md` trencats a tot el repo · build del web net.
+
 ## Conclusió
 El material **és clar en el nivell que més importa** (documents d'aula: fitxes, guies, reptes, checklists) i les dades són coherents entre capes. El problema d'usabilitat real és **de manteniment de la capa d'orientació**: els documents que diuen «on és cada cosa» (guia d'inici, LLEGEIX-ME) han quedat enrere respecte de l'evolució del material (reestructuració 00_General, web amb vistes, checklists, quadern). És exactament el tipus de document que més llegeix qui arriba de nou — i per això és la prioritat.

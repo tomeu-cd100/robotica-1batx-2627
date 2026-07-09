@@ -37,7 +37,7 @@
 ## 📊 3. Avaluació i evidències (a recollir)
 - [ ] **Producte** (termòstat/màquina d'estats) + defensa 2–3' → **R1, R3, R4**, Projectes 45 %
 - [ ] **Prova T2** (dins S4) → R1, R3, R4, Proves 20 %
-- [ ] **Quadern tècnic** (diagrama de blocs + diagrama d'estats + anàlisi de la resposta) → **R4**, Quadern 25 %
+- [ ] **Quadern tècnic** (diagrama de blocs + diagrama d'estats + anàlisi de la resposta) → **R4**, Quadern tècnic i pràctiques 25 %
 - [ ] **Observació + Serial Plotter** (histèresi, ajust de `Kp`) → R3
 - [ ] Coavaluació + **exit tickets** + registre **0–10**
 

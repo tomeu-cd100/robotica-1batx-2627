@@ -16,7 +16,7 @@
 |---|---|---|
 | **Sistema de control documentat** (producte) + defensa de 2-3' | **R1**, **R3** i **R4** | Projectes (45 %) |
 | **Prova T2** (individual, dins la S4; el nucli és la histèresi) | **R1, R3, R4** | Proves (20 %) |
-| **Quadern tècnic** (diagrama d'estats, diagrama de blocs, errors) | **R4** | Quadern i pràctiques (25 %) |
+| **Quadern tècnic** (diagrama d'estats, diagrama de blocs, errors) | **R4** | Quadern tècnic i pràctiques (25 %) |
 | Mini-check individual (inici S3) | semàfor | **No qualifica** (m'avisa abans de la prova) |
 
 > 🪜 **Versió nucli (ja és assoliment satisfactori):** termòstat amb **histèresi** que funciona, documentat amb el diagrama de blocs. **Versió completa:** hi afegeix la màquina d'estats no bloquejant (`millis()`) amb llindars justificats — i, si vols, el control P comparat.

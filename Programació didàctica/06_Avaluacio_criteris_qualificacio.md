@@ -33,7 +33,7 @@ L'avaluació és **competencial, contínua, formativa i global**, d'acord amb el
 | Dimensió | Pes | Instruments |
 |---|---|---|
 | **Projectes i productes** | **45 %** | Productes de les SA + defenses (rúbriques). |
-| **Pràctiques i quadern tècnic** | **25 %** | *Logbook*, pràctiques guiades i reptes. |
+| **Quadern tècnic i pràctiques** | **25 %** | *Logbook*, pràctiques guiades i reptes. |
 | **Proves pràctiques** (programació/electrònica) | **20 %** | Reptes individuals curts. |
 | **Actitud, cooperació i autoregulació** | **10 %** | Observació, coavaluació, autoavaluació. |
 

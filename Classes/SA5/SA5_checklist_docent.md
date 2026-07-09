@@ -33,7 +33,7 @@
 ## 📊 3. Avaluació i evidències (a recollir)
 - [ ] **App micro:bit** (comptapassos, nightlight o joc per ràdio) → **R1**, Projectes 45 %
 - [ ] **Taula comparativa C++ ↔ Python** completa → **R4**, Projectes 45 %
-- [ ] **Quadern tècnic** (comparativa, errors d'indentació, decisió de disseny) → **R4**, Quadern 25 %
+- [ ] **Quadern tècnic** (comparativa, errors d'indentació, decisió de disseny) → **R4**, Quadern tècnic i pràctiques 25 %
 - [ ] Coavaluació + **exit tickets** + registre **0–10**
 
 ## 🪜 4. Atenció a la diversitat (previst per aquesta SA)

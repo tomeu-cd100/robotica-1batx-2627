@@ -71,5 +71,5 @@ Tres criteris de la **R4** (la «Defensa oral» s'avalua al producte, no aquí).
 
 - **Mostreig, no lectura íntegra**: mira l'entrada de la SA i 1-2 punts a fons (p. ex. l'error documentat); comenta-hi directament al Doc.
 - **Historial de revisions** (Fitxer → Historial de versions): és la teva evidència d'**autoria i treball continuat**, i el detector natural del «tot escrit la nit abans» — coherent amb la política d'IA del curs.
-- La nota de registre pot ser **acumulada per trimestre** (mitjana de les SA del trimestre) dins la dimensió «Quadern i pràctiques» (25 %).
+- La nota de registre pot ser **acumulada per trimestre** (mitjana de les SA del trimestre) dins la dimensió «Quadern tècnic i pràctiques» (25 %).
 - Recorda que l'alumnat **pot consultar el quadern a les proves**: anuncia-ho — és el millor incentiu perquè el portin al dia.

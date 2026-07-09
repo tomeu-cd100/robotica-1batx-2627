@@ -15,7 +15,7 @@
 |---|---|---|
 | **Comportament autònom** demostrat a la pista | **R1** i **R3** | Projectes (45 %) |
 | **Registre d'iteracions** (intents, millores) | **R3** i **R4** | Projectes (45 %) |
-| **Quadern tècnic** (calibratges, decisions, errors) | **R4** | Quadern i pràctiques (25 %) |
+| **Quadern tècnic** (calibratges, decisions, errors) | **R4** | Quadern tècnic i pràctiques (25 %) |
 | Mini-check individual (inici S4) | semàfor | **No qualifica** (em situa) |
 
 > 🪜 **Versió nucli (ja és assoliment satisfactori):** el robot completa **un** comportament autònom (evitar obstacles **o** seguir la línia), encara que lent, amb el registre d'almenys 2 iteracions. **Versió completa:** comportament robust i calibrat, amb 3+ iteracions documentades i millores mesurades.

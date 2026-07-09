@@ -14,7 +14,7 @@
 | Què lliuro | Rúbrica | On compta |
 |---|---|---|
 | **Barrera automàtica** (producte, S4) + defensa d'1' | **R1**, **R2** i **R3** | Projectes (45 %) |
-| **Quadern tècnic** (pseudocodi, lògica del pont H, errors) | **R4** | Quadern i pràctiques (25 %) |
+| **Quadern tècnic** (pseudocodi, lògica del pont H, errors) | **R4** | Quadern tècnic i pràctiques (25 %) |
 | Mini-check individual (inici S4) | semàfor | **No qualifica** (em situa) |
 
 > 🪜 **Versió nucli (ja és assoliment satisfactori):** la barrera s'obre en detectar el vehicle i es tanca sola (angle i temps fixos). **Versió completa:** llindars calibrats, temps configurable i gestió del cas «vehicle aturat sota la barrera».

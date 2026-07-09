@@ -36,7 +36,7 @@
 
 ## 📊 3. Avaluació i evidències (a recollir)
 - [ ] **Producte** (panell/semàfor) + defensa → **R1** (codi) i **R2** (circuit), Projectes 45 %
-- [ ] **Quadern tècnic** (esquema, codi comentat, mesures) → **R4**, Quadern 25 %
+- [ ] **Quadern tècnic** (esquema, codi comentat, mesures) → **R4**, Quadern tècnic i pràctiques 25 %
 - [ ] **Observació de muntatge** (resistència limitadora, polaritat, seguretat) → R2
 - [ ] Coavaluació "2 estrelles i un desig" + **exit tickets** + registre **0–10**
 

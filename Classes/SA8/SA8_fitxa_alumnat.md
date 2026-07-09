@@ -15,7 +15,7 @@
 |---|---|---|
 | **Sistema connectat o classificador** (producte) | **R1** i **R3** | Projectes (45 %) |
 | **Reflexió ètica** (privacitat, biaix, consentiment) | **R4** | Projectes (45 %) |
-| **Quadern tècnic** (dades enviades, disseny IoT, errors) | **R4** | Quadern i pràctiques (25 %) |
+| **Quadern tècnic** (dades enviades, disseny IoT, errors) | **R4** | Quadern tècnic i pràctiques (25 %) |
 | Mini-check individual (inici S3) | semàfor | **No qualifica** (em situa) |
 
 > 🪜 **Versió nucli (ja és assoliment satisfactori):** telemetria d'**una** magnitud etiquetada que es rep i es mostra + reflexió ètica amb un risc i una mesura. **Versió completa:** dues magnituds o alerta per llindar (o classificador entrenat i provat), amb el biaix analitzat.

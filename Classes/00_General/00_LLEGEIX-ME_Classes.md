@@ -2,17 +2,20 @@
 
 Material llest per a l'aula, organitzat per situació d'aprenentatge (SA). Cada SA conté:
 - **Guia docent** (`SAx_guia_docent.md`): seqüència sessió a sessió, punts clau i errors freqüents.
-- **Fitxa base** (`SAx_fitxa_alumnat.md`): el **nucli d'una cara** que fa tot l'alumnat — activitats nuclears, repte, producte, DEPURA, autoavaluació i quadern.
+- **Checklists** (`SAx_checklist_docent.md` i `SAx_checklist_alumnat.md`): recordatori **d'una cara** per a cada públic — logística/moments/avaluació per al docent; què fer/lliurar + semàfor per a l'alumnat.
+- **Fitxa base** (`SAx_fitxa_alumnat.md`): el **nucli** que fa tot l'alumnat — activitats nuclears, repte, producte, DEPURA, autoavaluació i quadern.
 - **Fitxa ampliada** (`SAx_fitxa_ampliada.md`): **versió d'aprofundiment** amb totes les rutines (rols, coavaluació, exit ticket, ODS, pensament computacional) i ampliacions.
-- **Esquemes** (`SAx_esquemes_connexions.md`): taules de connexió pin-a-pin (reproduïbles a Tinkercad/Wokwi). *(SA2 i SA3.)*
-- **Codi** (`codi/*.ino`): sketches comentats, oberts directament a l'Arduino IDE.
+- **Esquemes** (`SAx_esquemes_connexions.md`; a SA5 i SA8, `SAx_connexions.md`): taules de connexió pin-a-pin (reproduïbles a Tinkercad/Wokwi). *(SA1–SA8.)*
+- **Codi** (`codi/*.ino` o `*.py`): sketches comentats, oberts directament a l'IDE o l'editor de micro:bit.
+
+> El registre de l'alumnat viu al seu **quadern tècnic**: guia, regles i plantilla d'entrada a [`00_Quadern_tecnic.md`](00_Quadern_tecnic.md) (per al docent, tasca de Classroom a punt a [`00_Quadern_tecnic_tasca_classroom.md`](00_Quadern_tecnic_tasca_classroom.md)).
 
 ## Contingut actual
 
 | SA | Tema | Sessions | Codi |
 |---|---|---|---|
 | **SA0** | Vocabulari essencial i bases de programació (material transversal de suport) | — | Fragments dins els `.md` |
-| **SA1** | Introducció a la robòtica i sistemes embeguts | 3 | `blink.ino`, `blink_repte.ino` |
+| **SA1** | Introducció a la robòtica i sistemes embeguts | 3 | `blink` · `blink_repte` · `blink_millis` · `sos_morse` |
 | **SA2** | Sortides digitals i PWM | 4 | `01_led_basic` · `02_semafor` · `03_fade_pwm` · `04_rgb` · `05_panell_senyalitzacio` |
 | **SA3** | Entrades i sensors | 4 | `01_polsador_debounce` · `02_potenciometre_ldr` · `03_ultrasons_funcio` · `04_alarma_aparcament` |
 | **SA4** | Moviment: servos, motors i ponts H | 4 | `01_servo_potenciometre` · `02_motor_pont_h` · `03_sensor_velocitat` · `04_barrera_automatica` |
@@ -44,10 +47,9 @@ Material llest per a l'aula, organitzat per situació d'aprenentatge (SA). Cada 
 - **Mapa SA → objecte:** [`00_Mapa_SA_objectes.md`](00_Mapa_SA_objectes.md) — vista de conjunt per projectar: què s'aprèn a cada SA i quins objectes s'hi poden dissenyar (el fil encendre → … → integrar).
 - **Galeria d'exemples resolts:** [`00_Galeria_exemples_objectes.md`](00_Galeria_exemples_objectes.md) — dos objectes desenvolupats de punta a punta (llum d'estat d'escriptori, SA2; mini-hivernacle automàtic, SA6) com a model del nivell esperat.
 
-## Estat
+## Estat i formats
 ✅ **Curs complet:** material d'aula de les 9 situacions d'aprenentatge (SA1-SA9), trimestres 1, 2 i 3.
 
-## Possibles ampliacions futures
-- Versions **DOCX/PDF** del material per imprimir/compartir.
-- Solucionari ampliat dels reptes "+ ampliació".
-- Bateria de proves pràctiques d'avaluació per trimestre.
+- 🌐 **Web navegable** (amb vista docent/alumnat): <https://tomeu-cd100.github.io/robotica-1batx-2627/> — les fitxes i activitats tenen **PDF imprimible** (botó «Baixa PDF»).
+- 📝 **Proves pràctiques per trimestre** (T1, T2, T3): a `Avaluació/`.
+- 🔑 **Solucionaris**: pràctiques «+ repte» a `Classes/Solucionari/`; reptes (mínim i ampliat) a `Reptes/Solucionari/`.

@@ -37,7 +37,7 @@
 ## 📊 3. Avaluació i evidències (a recollir)
 - [ ] **Demostració a la pista** (comportament autònom) → **R3**, Projectes 45 %
 - [ ] **Registre d'iteracions** (temps de volta per intent, millores) → **R3, R4**
-- [ ] **Quadern tècnic** (calibratges, decisions, errors) → **R4**, Quadern 25 %
+- [ ] **Quadern tècnic** (calibratges, decisions, errors) → **R4**, Quadern tècnic i pràctiques 25 %
 - [ ] **Observació del procés** (treball d'equip, ús segur del robot) → R4
 - [ ] Coavaluació entre equips + **exit tickets** + registre **0–10**
 

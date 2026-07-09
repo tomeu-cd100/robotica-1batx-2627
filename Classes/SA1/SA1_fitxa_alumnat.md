@@ -15,7 +15,7 @@
 | Què lliuro | Rúbrica | On compta |
 |---|---|---|
 | **Fitxa-pòster** d'un robot real (amb dilema ètic) | **R4** | Projectes (45 %) |
-| **Quadern tècnic** (primera entrada) | **R4** | Quadern i pràctiques (25 %) |
+| **Quadern tècnic** (primera entrada) | **R4** | Quadern tècnic i pràctiques (25 %) |
 | Treball a l'aula (seguretat, cooperació) | **R5** | Actitud (10 %) |
 | Prova diagnòstica | — | **No qualifica** (serveix per fer parelles) |
 

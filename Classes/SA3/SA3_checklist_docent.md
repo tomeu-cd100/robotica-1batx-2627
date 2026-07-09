@@ -37,7 +37,7 @@
 ## 📊 3. Avaluació i evidències (a recollir)
 - [ ] **Producte** (alarma/llum automàtic) + defensa → **R1** i **R2**, Projectes 45 %
 - [ ] **Prova T1** (dins S4) → R1, R2, R4, Proves 20 %
-- [ ] **Quadern tècnic** (pseudocodi, taula de lectures, codi de la funció) → **R4**, Quadern 25 %
+- [ ] **Quadern tècnic** (pseudocodi, taula de lectures, codi de la funció) → **R4**, Quadern tècnic i pràctiques 25 %
 - [ ] **Observació + depuració sèrie** (monitor, divisor de tensió) → R2
 - [ ] Coavaluació + **exit tickets** + registre **0–10**
 

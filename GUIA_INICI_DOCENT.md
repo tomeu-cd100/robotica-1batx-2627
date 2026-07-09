@@ -8,19 +8,23 @@
 
 ## 0 · Mapa ràpid: on és cada cosa
 
+> 🌐 **Tot aquest material també és un web navegable:** <https://tomeu-cd100.github.io/robotica-1batx-2627/>. Té **dues vistes**: per defecte s'obre la **vista Alumnat** (sense material docent); activa la **vista Docent** amb el botó de dalt a la dreta (es recorda). És la manera més còmoda de consultar-ho a classe i el que enllaçaràs al Classroom.
+
 | Necessites… | Vés a… |
 |---|---|
 | Visió de conjunt i decisions del curs | `Programació didàctica/00_Index_general.md` |
 | Com donar **una sessió concreta** | `Classes/SAx/SAx_guia_docent.md` (fases, temps, errors freqüents) |
+| Recordatori d'una cara per SA (docent i alumnat) | `Classes/SAx/SAx_checklist_docent.md` · `SAx_checklist_alumnat.md` |
 | El que reparteixes a l'alumnat | `Classes/SAx/SAx_fitxa_alumnat.md` |
+| El **quadern tècnic** de l'alumnat (guia + plantilla) | `Classes/00_General/00_Quadern_tecnic.md` (+ tasca de Classroom a punt: `00_Quadern_tecnic_tasca_classroom.md`) |
 | El **codi** carregable | `Classes/SAx/codi/` |
 | Connexions del circuit | `Classes/SAx/SAx_esquemes_connexions.md` |
 | Provar **sense maquinari** | `Simulacions/Wokwi/` (enllaços públics) |
 | Reptes per triar | `Reptes/` (+ `Reptes/Solucionari/`) |
 | Avaluar | `Avaluació/` (proves per trimestre) + `Programació didàctica/07_Rubriques.md` |
 | Vocabulari i bases de programació | `Classes/SA0/` |
-| Disseny d'objectes (producte) | `Classes/00_Banc_objectes_disseny.md`, `00_Plantilla_disseny_objecte.md`, `00_Mapa_SA_objectes.md`, `00_Galeria_exemples_objectes.md` |
-| Rutines d'aula (projectar) | `Classes/00_Poster_aula_metode_DEPURA_rols.md` |
+| Disseny d'objectes (producte) | `Classes/00_General/00_Banc_objectes_disseny.md`, `00_Plantilla_disseny_objecte.md`, `00_Mapa_SA_objectes.md`, `00_Galeria_exemples_objectes.md` |
+| Rutines d'aula (projectar) | `Classes/00_General/00_Poster_aula_metode_DEPURA_rols.md` |
 
 ---
 
@@ -57,7 +61,10 @@
 - [ ] Kits comptats, etiquetats i amb kit de reserva.
 - [ ] Llegida la **guia docent de SA1** i preparada la **prova diagnòstica** (`Classes/SA1/SA1_prova_diagnostica.md`).
 - [ ] Rúbriques **R4/R5** a punt per compartir amb l'alumnat (es comparteixen *abans* de començar).
-- [ ] Projectat el **pòster d'aula** (`Classes/00_Poster_aula_metode_DEPURA_rols.md`).
+- [ ] Projectat el **pòster d'aula** (`Classes/00_General/00_Poster_aula_metode_DEPURA_rols.md`).
+- [ ] Repartida/enllaçada la guia **«Com s'avalua la matèria»** (`Classes/00_General/00_Avaluacio_per_alumnat.md`).
+- [ ] Creada la **tasca del quadern tècnic** a Classroom (text i rúbrica a punt d'enganxar: `Classes/00_General/00_Quadern_tecnic_tasca_classroom.md`).
+- [ ] Enllaçat el **web del material** al Classroom (l'alumnat hi veu la seva vista per defecte).
 
 ---
 
@@ -124,7 +131,7 @@ No cal ser enginyer/a, però sí tenir aquesta base. Si algun punt et balla, ded
 2. Pregunta d'activació: *"Quins robots tens a casa sense saber-ho?"*
 3. Presenta **entrada → procés → sortida** i el **mètode de projecte** (projecta el pòster).
 4. Passa la **prova diagnòstica** (no qualifica; serveix per fer parelles heterogènies).
-5. Comparteix les **rúbriques** i obre el **quadern tècnic**.
+5. Comparteix les **rúbriques** i obre el **quadern tècnic** (guia i plantilla: `Classes/00_General/00_Quadern_tecnic.md`; tasca de Classroom a punt a `00_Quadern_tecnic_tasca_classroom.md`).
 
 > A partir d'aquí, segueix la guia docent de cada SA: està pensada perquè la puguis seguir sessió a sessió.
 

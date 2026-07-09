@@ -52,7 +52,7 @@ Cada repte indica les rúbriques aplicables. Es comparteixen amb l'alumnat **aba
 
 ## Com treballar els reptes (rols, depuració i coavaluació)
 
-Els reptes es resolen amb les **mateixes rutines** que les classes (pòster projectable: `Classes/00_Poster_aula_metode_DEPURA_rols.md`):
+Els reptes es resolen amb les **mateixes rutines** que les classes (pòster projectable: `Classes/00_General/00_Poster_aula_metode_DEPURA_rols.md`):
 
 - **Rols rotatius:** Coordinador/a · Programador/a · Enginyer/a de maquinari · Provador/a–Documentador/a (roteu-los a cada sessió).
 - **Quan no funcioni → rutina DEPURA:** **D**escriu · **E**xamina · **P**rova una hipòtesi cada cop · **U**bica · **R**epara · **A**punta-ho.
@@ -65,7 +65,7 @@ Els reptes de **SA1–SA4 i SA6** tenen el circuit i el codi de solució de refe
 
 ## Convertir un repte en un objecte (disseny de producte)
 
-Qualsevol repte es pot portar més enllà del muntatge i convertir-lo en un **objecte real amb carcassa/maqueta**. Vegeu el **`Classes/00_Banc_objectes_disseny.md`**: per a cada SA hi ha objectes dissenyables (funció, usuari, materials) amb procés de disseny i rúbrica de producte.
+Qualsevol repte es pot portar més enllà del muntatge i convertir-lo en un **objecte real amb carcassa/maqueta**. Vegeu el **`Classes/00_General/00_Banc_objectes_disseny.md`**: per a cada SA hi ha objectes dissenyables (funció, usuari, materials) amb procés de disseny i rúbrica de producte.
 
 ## Fil comú del curs
 

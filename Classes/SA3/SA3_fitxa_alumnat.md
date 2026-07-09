@@ -15,7 +15,7 @@
 |---|---|---|
 | **Alarma / sensor d'aparcament** (producte, S4) + defensa d'1' | **R1** i **R2** | Projectes (45 %) |
 | **Prova T1** (individual, dins la S4) | **R1, R2, R4** | Proves (20 %) |
-| **Quadern tècnic** (pseudocodi, calibratges, errors) | **R4** | Quadern i pràctiques (25 %) |
+| **Quadern tècnic** (pseudocodi, calibratges, errors) | **R4** | Quadern tècnic i pràctiques (25 %) |
 | Mini-check individual (inici S3) | semàfor | **No qualifica** (m'avisa abans de la prova) |
 
 > 🪜 **Versió nucli (ja és assoliment satisfactori):** avís de **2 nivells** segons la distància (LED + so) que funciona de manera fiable. **Versió completa:** els 3 trams calibrats, tractament del «0 = sense eco» i codi amb funcions pròpies.

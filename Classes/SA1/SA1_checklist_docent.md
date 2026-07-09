@@ -36,7 +36,7 @@
 
 ## 📊 3. Avaluació i evidències (a recollir)
 - [ ] **Fitxa-pòster** d'un robot real → **R4** (compta, Projectes 45 %)
-- [ ] **Quadern tècnic** 1a entrada → **R4** (Quadern i pràctiques 25 %)
+- [ ] **Quadern tècnic** 1a entrada → **R4** (Quadern tècnic i pràctiques 25 %)
 - [ ] **Observació d'aula** (cooperació, seguretat, autonomia) → **R5** (Actitud 10 %)
 - [ ] Coavaluació del pòster ("2 estrelles i un desig") + recollir **exit tickets**
 - [ ] Traspassar valoracions al registre (nota **0–10**)

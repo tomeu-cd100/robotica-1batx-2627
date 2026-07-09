@@ -43,7 +43,7 @@ Conversió única per a totes les rúbriques (vegeu `Programació didàctica/07_
 | Dimensió | Pes | Instruments | Rúbriques |
 |---|---|---|---|
 | **Projectes i productes** | **45 %** | Productes de cada SA + defenses orals | R1, R2, R3 |
-| **Pràctiques i quadern tècnic** | **25 %** | *Logbook*, pràctiques guiades i reptes | R4 (quadern), R1 |
+| **Quadern tècnic i pràctiques** | **25 %** | *Logbook*, pràctiques guiades i reptes | R4 (quadern), R1 |
 | **Proves pràctiques** | **20 %** | Reptes individuals curts (proves T1/T2/T3) | R1, R3 |
 | **Actitud, cooperació i autoregulació** | **10 %** | Observació, coavaluació, autoavaluació | R5 |
 
@@ -71,7 +71,7 @@ Anota la **nota (0-10)** de cada evidència. Les files canvien segons el trimest
 | Dimensió | Pes | Nota dimensió (mitjana de les evidències) | Aportació (nota × pes) |
 |---|---|---|---|
 | Projectes i productes | 0,45 | | |
-| Pràctiques i quadern tècnic | 0,25 | | |
+| Quadern tècnic i pràctiques | 0,25 | | |
 | Proves pràctiques | 0,20 | | |
 | Actitud, cooperació i autoregulació | 0,10 | | |
 | **TOTAL** | **1,00** | — | **= nota trimestral (arrodonir a enter)** |

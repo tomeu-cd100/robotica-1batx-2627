@@ -14,7 +14,7 @@
 | Què lliuro | Rúbrica | On compta |
 |---|---|---|
 | **Panell de senyalització** (producte, S4) + defensa d'1' | **R1** (codi) i **R2** (circuit) | Projectes (45 %) |
-| **Quadern tècnic** (esquemes, mesures, errors) | **R4** | Quadern i pràctiques (25 %) |
+| **Quadern tècnic** (esquemes, mesures, errors) | **R4** | Quadern tècnic i pràctiques (25 %) |
 | Mini-check individual (inici S4) | semàfor | **No qualifica** (em situa) |
 
 > 🪜 **Versió nucli (ja és assoliment satisfactori):** panell amb **2 estats** clarament distingibles amb color i so. **Versió completa:** els 3 estats + relé, i codi ordenat amb una funció per estat.
