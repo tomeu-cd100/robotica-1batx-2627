@@ -785,12 +785,12 @@ def build_sequences(pages: list[Page]) -> dict[str, str]:
                   and p.src.name.startswith("Reptes_SA")], key=lambda p: p.out_rel)
     add_seq("Reptes per SA", rep)
 
-    pager: dict[str, str] = {}
-    for label, items in seqs:
+    def render_pager(label: str, items: list[Page], vista: str) -> dict[str, str]:
+        out: dict[str, str] = {}
         for i, p in enumerate(items):
             prev_p = items[i - 1] if i > 0 else None
             next_p = items[i + 1] if i < len(items) - 1 else None
-            parts = ['<nav class="pager" aria-label="Itinerari">']
+            parts = [f'<nav class="pager" data-pager-vista="{vista}" aria-label="Itinerari">']
             if prev_p:
                 t = "Presentació" if prev_p.kind == "index" else ("Codi" if prev_p.kind == "code" else prev_p.title)
                 parts.append(f'<a class="pager-a prev" href="{rel_url(p.out_rel, prev_p.out_rel)}">'
@@ -807,7 +807,20 @@ def build_sequences(pages: list[Page]) -> dict[str, str]:
             else:
                 parts.append('<span class="pager-a buit"></span>')
             parts.append("</nav>")
-            pager[p.out_rel] = "".join(parts)
+            out[p.out_rel] = "".join(parts)
+        return out
+
+    # Dues variants per seqüència: completa (vista docent) i només-alumnat.
+    pager: dict[str, str] = {}
+    for label, items in seqs:
+        full = render_pager(label, items, "docent")
+        for out_rel, htmlp in full.items():
+            pager[out_rel] = htmlp
+        alum_items = [p for p in items if p.public == "alumnat"]
+        if len(alum_items) >= 2:
+            alum = render_pager(label, alum_items, "alumnat")
+            for out_rel, htmlp in alum.items():
+                pager[out_rel] = pager.get(out_rel, "") + htmlp
     return pager
 
 

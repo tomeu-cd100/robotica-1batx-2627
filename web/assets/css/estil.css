@@ -678,6 +678,11 @@ html[data-vista="alumnat"] .nomes-docent { display: none !important; }
 html[data-vista="docent"] .vista-btn .vista-ic-alumnat { display: none; }
 html[data-vista="docent"] .vista-btn .vista-ic-docent { display: inline; }
 
+/* Paginador d'itinerari filtrat per vista */
+.pager[data-pager-vista="alumnat"] { display: none; }
+html[data-vista="alumnat"] .pager[data-pager-vista="docent"] { display: none; }
+html[data-vista="alumnat"] .pager[data-pager-vista="alumnat"] { display: grid; }
+
 /* Avís quan s'obre una pàgina docent en vista alumnat */
 .avis-docent { display: none; }
 html[data-vista="alumnat"] body[data-public="docent"] .avis-docent {
