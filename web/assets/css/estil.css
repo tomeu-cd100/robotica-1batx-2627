@@ -661,6 +661,9 @@ a.sa-fil-pill:hover { border-color: var(--accent); color: var(--accent); text-de
 /* Per defecte (vista docent) es veu tot; la vista alumnat amaga .nomes-docent */
 html[data-vista="alumnat"] .nomes-docent { display: none !important; }
 
+/* Portada: bloc alumnat visible per defecte, ocult en vista docent */
+html[data-vista="docent"] .portada-alumnat { display: none; }
+
 /* Botó del commutador al capçal */
 .vista-btn {
   cursor: pointer;

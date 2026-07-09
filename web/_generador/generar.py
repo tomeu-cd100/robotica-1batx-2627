@@ -1314,15 +1314,38 @@ def render_home(pages: list[Page]) -> str:
 </div>
 """
 
-    content = f"""
+    alumnat_block = f"""
+<div class="portada-alumnat">
+<section class="hero">
+  <p class="hero-kicker">// {html.escape(SITE_TAGLINE)}</p>
+  <h1 class="hero-titol">La teva Robòtica</h1>
+  <p class="hero-lead">Tot el material per treballar les 9 situacions d'aprenentatge, en un sol lloc. Ets docent? Activa la <strong>vista docent</strong> amb el botó de dalt a la dreta.</p>
+</section>
+<h2 class="seccio-sep">Què vols fer?</h2>
+<div class="ruta-grid">
+  <div class="ruta-card"><p class="ruta-tit">📅 Treballar la SA de la setmana</p>
+    <p>Obre la teva situació d'aprenentatge i comença per la fitxa.</p>
+    <p class="ruta-mes"><a href="classes/index.html">Entra a les 9 SA →</a></p></div>
+  <div class="ruta-card"><p class="ruta-tit">🔌 Practicar a casa</p>
+    <p>Munta i prova els circuits sense cap placa, o tria un repte.</p>
+    <p class="ruta-mes"><a href="simulacions/index.html">Simulacions</a> · <a href="reptes/index.html">Reptes</a></p></div>
+  <div class="ruta-card"><p class="ruta-tit">🆘 M'he encallat</p>
+    <p>Pistes que no et fan la feina, i els termes tècnics explicats.</p>
+    <p class="ruta-mes"><a href="{u_targ}">Targetes de rescat</a> · <a href="{u_glos}">Glossari</a></p></div>
+</div>
+<h2 class="seccio-sep">Les 9 situacions d'aprenentatge</h2>
+{sa_grid_html(pages)}
+</div>
+"""
+
+    docent_block = f"""
+<div class="portada-docent nomes-docent">
 <section class="hero">
   <p class="hero-kicker">// {html.escape(SITE_TAGLINE)}</p>
   <h1 class="hero-titol">Robòtica a 1r de Batxillerat</h1>
   <p class="hero-lead">9 situacions d'aprenentatge amb Arduino, micro:bit i robòtica mòbil, en tres trimestres. Tot el material d'aula, la programació didàctica, els reptes i l'avaluació, en un sol lloc.</p>
   <div class="hero-cta">
     <a class="btn btn-primari" href="guia-inici.html">Comença per la guia d'inici</a>
-    <a class="btn btn-secundari" href="docent.html">Espai docent</a>
-    <a class="btn btn-secundari" href="alumnat.html">🎓 Espai alumnat</a>
   </div>
 </section>
 {rutes}
@@ -1334,7 +1357,9 @@ def render_home(pages: list[Page]) -> str:
 <div class="sec-grid">
 {sec_cards_html()}
 </div>
+</div>
 """
+    content = alumnat_block + docent_block
     return page_shell(out_rel="index.html", section_key="inici",
                       title="Inici", content_html=content, pages=pages,
                       public="alumnat")
