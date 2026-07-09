@@ -67,6 +67,8 @@
 | Registro proves i itero per millorar | ☐ | ☐ | ☐ | ☐ |
 
 ## Quadern tècnic
+
+> 📓 Escriu-ho a la teva entrada del **[quadern tècnic](../00_General/00_Quadern_tecnic.md)** (guia + plantilla; compta el 25 %).
 - **Què és la cinemàtica diferencial?** _______________________________
 - **Per què el control per temps no és precís?** ______________________
 - **Una millora que ha funcionat:** ___________________________________

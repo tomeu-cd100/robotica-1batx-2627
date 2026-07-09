@@ -68,6 +68,8 @@ S'avalua amb **R1** (codi) i **R4** (comparació).
 | Comunico dues plaques per ràdio | ☐ | ☐ | ☐ | ☐ |
 
 ## Quadern tècnic
+
+> 📓 Escriu-ho a la teva entrada del **[quadern tècnic](../00_General/00_Quadern_tecnic.md)** (guia + plantilla; compta el 25 %).
 - **Per què la indentació és important en Python?** ____________________
 - **Avantatge d'usar sensors integrats:** _____________________________
 - **Un error i com l'he resolt:** _____________________________________

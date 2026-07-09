@@ -66,6 +66,8 @@ Tria un **robot real** i analitza'l amb [`SA1_poster_robot_plantilla.md`](SA1_po
 | Llegeixo i modifico el codi `Blink` | ☐ | ☐ | ☐ | ☐ |
 
 ## Quadern tècnic
+
+> 📓 Escriu-ho a la teva entrada del **[quadern tècnic](../00_General/00_Quadern_tecnic.md)** (guia + plantilla; compta el 25 %).
 - **Què he après:** ___________________________________________________
 - **El repte i com l'he resolt** (què havia de fer, què vaig predir, com): ___________________________________________________
 - **Un error i com l'he resolt:** _____________________________________

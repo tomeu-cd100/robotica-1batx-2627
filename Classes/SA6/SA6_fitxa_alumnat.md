@@ -69,6 +69,8 @@
 | Explico el diagrama de blocs del meu control | ☐ | ☐ | ☐ | ☐ |
 
 ## Quadern tècnic
+
+> 📓 Escriu-ho a la teva entrada del **[quadern tècnic](../00_General/00_Quadern_tecnic.md)** (guia + plantilla; compta el 25 %).
 - **Què és la realimentació en un sistema de control?** _________________
 - **Per què serveix la histèresi?** ___________________________________
 - **Un error i com l'he resolt:** _____________________________________

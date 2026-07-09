@@ -70,6 +70,8 @@ Dissenya un avís que depèn de la distància:
 | Escric i faig servir funcions pròpies | ☐ | ☐ | ☐ | ☐ |
 
 ## Quadern tècnic
+
+> 📓 Escriu-ho a la teva entrada del **[quadern tècnic](../00_General/00_Quadern_tecnic.md)** (guia + plantilla; compta el 25 %).
 - **Diferència entre entrada digital i analògica:** ______________________
 - **Per a què serveix una funció?** ___________________________________
 - **Un error i com l'he resolt:** _____________________________________

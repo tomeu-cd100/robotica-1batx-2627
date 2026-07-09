@@ -194,7 +194,7 @@ GENERAL_ALUMNAT = {
     "00_Targetes_rescat.md", "00_Glossari_tecnic.md",
     "00_Avaluacio_per_alumnat.md", "00_Fitxes_referencia_tecnica.md",
     "00_Plantilla_disseny_objecte.md", "00_Galeria_exemples_objectes.md",
-    "00_Poster_IA_us_assistents.md",
+    "00_Poster_IA_us_assistents.md", "00_Quadern_tecnic.md",
 }
 
 
@@ -224,7 +224,8 @@ def is_activitat(src: Path) -> bool:
         return True
     if name in {"SA1_poster_robot_plantilla.md", "00_Plantilla_disseny_objecte.md",
                 "SA1_prova_diagnostica.md", "00_Avaluacio_per_alumnat.md",
-                "00_Glossari_tecnic.md", "00_Targetes_rescat.md"}:
+                "00_Glossari_tecnic.md", "00_Targetes_rescat.md",
+                "00_Quadern_tecnic.md"}:
         return True
     if "SA9" in parts and "plantilles" in parts and name.endswith(".md"):
         return True
@@ -1258,6 +1259,7 @@ def hub_urls(pages: list[Page]) -> dict[str, str]:
         "alum": find_out(pages, "00_Avaluacio_per_alumnat.md", "avaluacio/index.html"),
         "targ": find_out(pages, "00_Targetes_rescat.md", "classes/index.html"),
         "glos": find_out(pages, "00_Glossari_tecnic.md", "classes/index.html"),
+        "quad": find_out(pages, "00_Quadern_tecnic.md", "classes/index.html"),
     }
 
 
@@ -1373,6 +1375,9 @@ def render_home(pages: list[Page]) -> str:
   <div class="ruta-card"><p class="ruta-tit">🆘 M'he encallat</p>
     <p>Pistes que no et fan la feina, i els termes tècnics explicats.</p>
     <p class="ruta-mes"><a href="{u_targ}">Targetes de rescat</a> · <a href="{u_glos}">Glossari</a></p></div>
+  <div class="ruta-card"><p class="ruta-tit">📓 El meu quadern tècnic</p>
+    <p>El teu diari de treball: compta el 25 % i el pots consultar a les proves.</p>
+    <p class="ruta-mes"><a href="{u["quad"]}">Com portar-lo + plantilla →</a></p></div>
 </div>
 <h2 class="seccio-sep">Les 9 situacions d'aprenentatge</h2>
 {sa_grid_html(pages)}
@@ -1469,6 +1474,13 @@ def render_hub_alumnat(pages: list[Page]) -> str:
   <li><a href="{u["alum"]}">Com s'avalua aquesta matèria</a> — d'on surt la nota, què compta i què no.</li>
   <li><a href="{u["rub"]}">Rúbriques completes</a> — tens dret a veure-les <strong>abans</strong> de començar. Mira-les i sabràs què es valora.</li>
   <li>A la fitxa de cada SA, la caixa <strong>«🎯 Objectius i avaluació»</strong> et diu què sabràs fer i què has de lliurar.</li>
+</ol>
+
+<h2 class="seccio-sep">El meu quadern tècnic</h2>
+<p class="seccio-intro">El teu diari de treball: hi documentes el procés, compta el <strong>25 %</strong> de la nota i <strong>el pots consultar a les proves</strong>.</p>
+<ol class="hub-passos">
+  <li><a href="{u["quad"]}">Com portar el quadern + plantilla d'entrada</a> — les 5 regles i el bloc per copiar a cada SA.</li>
+  <li>Recorda: <strong>escriu-hi cada sessió</strong> (no tot al final) i documenta els errors — <strong>sumen</strong>.</li>
 </ol>
 
 <h2 class="seccio-sep">M'he encallat</h2>

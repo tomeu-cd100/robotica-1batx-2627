@@ -64,6 +64,8 @@ Dissenya un panell que indiqui **estats** amb color + so + una càrrega (relé):
 | Munto el circuit amb resistència i polaritat correctes | ☐ | ☐ | ☐ | ☐ |
 
 ## Quadern tècnic
+
+> 📓 Escriu-ho a la teva entrada del **[quadern tècnic](../00_General/00_Quadern_tecnic.md)** (guia + plantilla; compta el 25 %).
 - **Concepte nou més important:** ______________________________________
 - **Diferència entre `digitalWrite` i `analogWrite`:** ___________________
 - **Un error i com l'he resolt:** _____________________________________

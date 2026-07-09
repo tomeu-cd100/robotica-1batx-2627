@@ -75,6 +75,8 @@ Barrera que s'obre quan arriba un vehicle i es tanca sola.
 | Faig que el moviment respongui a un sensor | ☐ | ☐ | ☐ | ☐ |
 
 ## Quadern tècnic
+
+> 📓 Escriu-ho a la teva entrada del **[quadern tècnic](../00_General/00_Quadern_tecnic.md)** (guia + plantilla; compta el 25 %).
 - **Per què cal un pont H / driver?** _________________________________
 - **Què és la massa comuna i per què és important?** ___________________
 - **Un error i com l'he resolt:** _____________________________________
