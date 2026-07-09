@@ -179,6 +179,40 @@ def sa_trimestre(n: int) -> int:
     return 1 if n <= 3 else 2 if n <= 6 else 3
 
 
+# ---------------------------------------------------------------------------
+# Classificació per públic (docent / alumnat) — vegeu el commutador de vista
+# ---------------------------------------------------------------------------
+# Seccions senceres que són material del docent
+DOCENT_SECTIONS = {"programacio", "normativa", "avaluacio", "recursos"}
+# Fitxers de Classes que són del docent (per patró de nom)
+DOCENT_NAME_HINTS = ("_guia_docent", "_checklist_docent")
+# 00-general: material transversal visible a l'alumnat (la resta, docent)
+GENERAL_ALUMNAT = {
+    "00_Targetes_rescat.md", "00_Glossari_tecnic.md",
+    "00_Avaluacio_per_alumnat.md", "00_Fitxes_referencia_tecnica.md",
+    "00_Plantilla_disseny_objecte.md", "00_Galeria_exemples_objectes.md",
+    "00_Poster_IA_us_assistents.md",
+}
+
+
+def classify_public(section_key: str, src: Path) -> str:
+    """Retorna 'docent' o 'alumnat' per a una pàgina font."""
+    if section_key in DOCENT_SECTIONS:
+        return "docent"
+    name = src.name
+    parts = src.parts
+    # Solucionari de reptes -> docent
+    if section_key == "reptes" and "Solucionari" in parts:
+        return "docent"
+    # Material transversal 00-general
+    if "00_General" in parts:
+        return "alumnat" if name in GENERAL_ALUMNAT else "docent"
+    # Classes per patró de nom
+    if any(h in name.lower() for h in DOCENT_NAME_HINTS):
+        return "docent"
+    return "alumnat"
+
+
 def is_activitat(src: Path) -> bool:
     """Document que recull activitats que ha de fer l'alumnat (es genera en PDF)."""
     name = src.name
@@ -269,13 +303,15 @@ def wrap_tables(body: str) -> str:
 # ---------------------------------------------------------------------------
 class Page:
     def __init__(self, src: Path, section: str, out_rel: str, title: str,
-                 trimester: int | None = None, kind: str = "doc"):
+                 trimester: int | None = None, kind: str = "doc",
+                 public: str = "alumnat"):
         self.src = src
         self.section = section
         self.out_rel = out_rel
         self.title = title
         self.trimester = trimester
         self.kind = kind  # doc | index | code | special
+        self.public = public  # docent | alumnat
 
 
 def out_for_md(section_key: str, src: Path, src_dir: Path) -> str:
@@ -319,7 +355,8 @@ def discover() -> tuple[list[Page], dict, dict, list[dict], list[dict], dict]:
             sa = detect_sa(md_path.name) or detect_sa(str(md_path.relative_to(src_dir)))
             tri = sa_trimestre(sa) if sa else None
             kind = "index" if md_path.name.lower() == "readme.md" else "doc"
-            pages.append(Page(md_path, sec["key"], out_rel, title, tri, kind))
+            public = classify_public(sec["key"], md_path)
+            pages.append(Page(md_path, sec["key"], out_rel, title, tri, kind, public))
             md_map[str(md_path.resolve())] = out_rel
 
     # Pàgines especials de l'arrel
@@ -342,9 +379,11 @@ def discover() -> tuple[list[Page], dict, dict, list[dict], list[dict], dict]:
             anchor = slugify(str(rel.with_suffix("")))
             items.append({"path": f, "rel": str(rel).replace("\\", "/"), "anchor": anchor})
             code_map[str(f.resolve())] = (out_rel, anchor)
+        pub = "docent" if "Solucionari" in base.parts else "alumnat"
         code_groups.append({"label": label, "out_rel": out_rel,
-                            "section": section_key, "tri": tri, "items": items})
-        pages.append(Page(base, section_key, out_rel, label, tri, "code"))
+                            "section": section_key, "tri": tri, "items": items,
+                            "public": pub})
+        pages.append(Page(base, section_key, out_rel, label, tri, "code", pub))
 
     classes_dir = ROOT / "Classes"
     for sa in range(1, 10):
@@ -381,7 +420,7 @@ def discover() -> tuple[list[Page], dict, dict, list[dict], list[dict], dict]:
             title = folder.name.replace("_", " ")
             sim_groups.append({"out_rel": out_rel, "folder": folder, "files": files,
                                "title": title, "tri": tri, "is_repte": is_repte})
-            pages.append(Page(folder, "simulacions", out_rel, title, tri, "sim"))
+            pages.append(Page(folder, "simulacions", out_rel, title, tri, "sim", "alumnat"))
             sim_map[str(folder.resolve())] = out_rel
             for f in files:
                 sim_map[str(f.resolve())] = out_rel
