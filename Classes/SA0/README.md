@@ -10,6 +10,8 @@ Material **transversal de suport** (no és una SA amb sessions pròpies). Reunei
 | [`SA0_guia_programacio.md`](SA0_guia_programacio.md) | Alumnat | Guia de programació: **Part A** Arduino (C/C++), **Part B** MicroPython (micro:bit), **Part C** taula comparativa + errors freqüents + mètode PRIMM. |
 | [`SA0_fitxa_alumnat.md`](SA0_fitxa_alumnat.md) | Alumnat | Activitats d'**autoaprenentatge** (no qualifica): E-P-S, digital/analògic, emparellar termes, llegir i predir codi, detectar errors, traduir Arduino↔MicroPython. |
 | [`SA0_guia_docent.md`](SA0_guia_docent.md) | Docent | Referència densa: com integrar la SA0, mapa vocabulari↔SA↔programació didàctica, precisions tècniques i **solucionari** de la fitxa. |
+| [`SA0_checklist_docent.md`](SA0_checklist_docent.md) | Docent | **Checklist** (una cara) de desplegament: integració en 3 escenaris, precisions tècniques i diversitat. |
+| [`SA0_checklist_alumnat.md`](SA0_checklist_alumnat.md) | Alumnat | **Checklist** (una cara) d'autodiagnòstic (no qualifica): què necessito + autoavaluació amb semàfor. |
 
 ## Com usar-la
 

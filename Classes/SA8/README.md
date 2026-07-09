@@ -9,6 +9,8 @@ Vuitena situació d'aprenentatge (**6 h · 3 sessions**, 3r trimestre). El siste
 | [`SA8_guia_docent.md`](SA8_guia_docent.md) | Guia del professorat: objectius, 3 sessions, mètode de projecte, mapa d'avaluació i errors freqüents. |
 | [`SA8_fitxa_alumnat.md`](SA8_fitxa_alumnat.md) | **Fitxa base** (nucli d'una cara, per a tot l'alumnat): Activitats 1-3 + quadern. |
 | [`SA8_fitxa_ampliada.md`](SA8_fitxa_ampliada.md) | **Versió ampliada** (aprofundiment): totes les rutines (rols, coavaluació, exit ticket, ODS, PC) i ampliacions. |
+| [`SA8_checklist_docent.md`](SA8_checklist_docent.md) | **Checklist docent** (una cara): logística prèvia, punts de control per sessió, avaluació i diversitat. |
+| [`SA8_checklist_alumnat.md`](SA8_checklist_alumnat.md) | **Checklist alumnat** (una cara): què he de fer/lliurar + autoavaluació amb semàfor. |
 | [`SA8_connexions.md`](SA8_connexions.md) | Connexions (micro:bit emissor/receptor, Micro:shield, ESP32 opcional). |
 | `codi/` | Programes MicroPython + un sketch ESP32 (vegeu la taula següent). |
 

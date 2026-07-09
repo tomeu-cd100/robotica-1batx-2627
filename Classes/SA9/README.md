@@ -9,6 +9,8 @@ Novena i última situació d'aprenentatge (**10 h · 5 sessions**, 3r trimestre)
 | [`SA9_guia_docent.md`](SA9_guia_docent.md) | Guia del professorat: sentit, 5 sessions per fases, rols, mapa d'avaluació i gestió de projecte. |
 | [`SA9_fitxa_alumnat.md`](SA9_fitxa_alumnat.md) | **Fitxa base** de l'equip: repte, rols, disseny, planificació, iteracions, defensa, checklist. |
 | [`SA9_fitxa_ampliada.md`](SA9_fitxa_ampliada.md) | **Versió ampliada**: guió complet + rutines (coavaluació, exit ticket final, PC). |
+| [`SA9_checklist_docent.md`](SA9_checklist_docent.md) | **Checklist docent** (una cara): plantilles a punt, fites parcials per sessió, avaluació (R1–R5) i diversitat. |
+| [`SA9_checklist_alumnat.md`](SA9_checklist_alumnat.md) | **Checklist d'equip** (una cara): fites per sessió, entrega final i autoavaluació amb semàfor. |
 | `plantilles/` | Plantilles de treball (vegeu la taula següent). |
 
 ### Plantilles (`plantilles/`)
