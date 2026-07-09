@@ -163,7 +163,7 @@ a:hover { text-decoration: underline; }
 .brand:hover { text-decoration: none; }
 .brand-mark { color: var(--accent); }
 .brand-sub { color: var(--muted); font-weight: 600; font-size: .82rem; }
-.topnav { display: flex; gap: .25rem; margin-right: auto; flex-wrap: wrap; }
+.topnav { display: flex; gap: .25rem; margin-left: auto; flex-wrap: wrap; }
 .topnav a {
   color: var(--muted); font-weight: 600; font-size: .92rem;
   padding: .4rem .7rem; border-radius: var(--radi-s); white-space: nowrap;
