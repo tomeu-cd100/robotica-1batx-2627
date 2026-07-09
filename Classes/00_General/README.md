@@ -6,6 +6,7 @@ Recursos que **no pertanyen a una sola SA** sinó a tot el curs: guia general de
 
 - [**Classes — guia general d'aula**](00_LLEGEIX-ME_Classes.md): com s'organitza el material de cada SA (guia docent, fitxa base, fitxa ampliada, esquemes i codi) i taula de contingut del curs.
 - [**Quadern tècnic — el diari de treball de l'alumnat**](00_Quadern_tecnic.md): què és, les 5 regles per portar-lo (Google Doc + esquemes a mà) i la **plantilla d'entrada** per a cada SA. Compta el 25 % (R4) i es pot consultar a les proves.
+- [**Quadern tècnic — tasca de Classroom**](00_Quadern_tecnic_tasca_classroom.md) *(docent)*: text i configuració a punt d'enganxar (tasca inicial + tasca per SA) amb la **rúbrica R4** preparada per a Classroom.
 - [**La Intel·ligència Artificial a la matèria**](00_IA_a_la_materia.md): com s'introdueix la IA en espiral SA0→SA9, marc conceptual mínim, ètica de dades i ús responsable d'assistents d'IA (integritat acadèmica).
 
 ## Pòsters d'aula (projectar / imprimir)
