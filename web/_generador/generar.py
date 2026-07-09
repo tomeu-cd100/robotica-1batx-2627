@@ -122,7 +122,8 @@ SECTION_BY_KEY = {s["key"]: s for s in SECTIONS}
 
 # Pàgines especials de l'arrel del repositori
 ROOT_PAGES = [
-    {"src": "GUIA_INICI_DOCENT.md", "out": "guia-inici.html", "title": "Guia d'inici docent"},
+    {"src": "GUIA_INICI_DOCENT.md", "out": "guia-inici.html",
+     "title": "Guia d'inici docent", "public": "docent"},
 ]
 
 # Menú superior per audiència: (href des de l'arrel, etiqueta, clau activa).
@@ -203,8 +204,8 @@ def classify_public(section_key: str, src: Path) -> str:
         return "docent"
     name = src.name
     parts = src.parts
-    # Solucionari de reptes -> docent
-    if section_key == "reptes" and "Solucionari" in parts:
+    # Qualsevol carpeta "Solucionari" (de reptes o de classes) -> docent
+    if "Solucionari" in parts:
         return "docent"
     # Material transversal 00-general
     if "00_General" in parts:
@@ -365,7 +366,8 @@ def discover() -> tuple[list[Page], dict, dict, list[dict], list[dict], dict]:
     for rp in ROOT_PAGES:
         src = ROOT / rp["src"]
         if src.exists():
-            pages.append(Page(src, "inici", rp["out"], rp["title"], None, "special"))
+            pages.append(Page(src, "inici", rp["out"], rp["title"], None, "special",
+                              rp.get("public", "alumnat")))
             md_map[str(src.resolve())] = rp["out"]
     md_map[str((ROOT / "README.md").resolve())] = "index.html"
 
