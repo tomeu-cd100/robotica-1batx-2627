@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 320" width="700" height="320" role="img" aria-labelledby="t d">
+  <title id="t">Seguidor de línia amb sensors infrarojos</title>
+  <desc id="d">Els sensors infrarojos van sota el robot i miren el terra. El fons blanc reflecteix molt (el sensor llegeix clar) i la línia negra reflecteix poc (llegeix fosc). Comparant els dos sensors, el robot corregeix la direcció per seguir la línia.</desc>
+  <style>
+    .fr{fill:#f6faf9;stroke:#d7e6e5;stroke-width:1.5}
+    .body{fill:#eaf3f2;stroke:#0891b2;stroke-width:2}
+    .floor{fill:#ffffff;stroke:#cbd5e1;stroke-width:1.5}
+    .line{fill:#111827}
+    .sensor{fill:#7c3aed}
+    .cap{font:700 13px system-ui,'Segoe UI',sans-serif;fill:#0e1b1c}
+    .mut{font:600 12px system-ui,'Segoe UI',sans-serif;fill:#4f6d6e}
+    .ray{stroke:#f59e0b;stroke-width:2}
+  </style>
+  <rect class="fr" x="1" y="1" width="698" height="318" rx="14"/>
+
+  <!-- Terra (vista de secció) -->
+  <rect class="floor" x="60" y="210" width="580" height="60" rx="4"/>
+  <rect class="line" x="300" y="210" width="70" height="60"/>
+  <text class="mut" x="150" y="292" text-anchor="middle">fons blanc → molt reflex (clar)</text>
+  <text class="mut" x="335" y="200" text-anchor="middle">línia negra</text>
+  <text class="mut" x="540" y="292" text-anchor="middle">poc reflex (fosc)</text>
+
+  <!-- Robot (secció) -->
+  <rect class="body" x="250" y="110" width="200" height="60" rx="10"/>
+  <text class="cap" x="350" y="146" text-anchor="middle">Robot (vista de secció)</text>
+
+  <!-- Dos sensors sota el robot -->
+  <rect class="sensor" x="288" y="170" width="24" height="18" rx="3"/>
+  <rect class="sensor" x="388" y="170" width="24" height="18" rx="3"/>
+  <text class="mut" x="300" y="164" text-anchor="middle">IR esq</text>
+  <text class="mut" x="400" y="164" text-anchor="middle">IR dret</text>
+
+  <!-- Raigs cap al terra i rebot -->
+  <line class="ray" x1="300" y1="188" x2="300" y2="210"/>
+  <line class="ray" x1="400" y1="188" x2="400" y2="210"/>
+  <!-- rebot fort (blanc) a esquerra -->
+  <path d="M300,210 l16,-16" stroke="#f59e0b" stroke-width="2"/>
+  <path d="M316,194 l-7,0 l2,6z" fill="#f59e0b"/>
+  <!-- rebot feble (negre) a dreta: fletxa petita -->
+  <path d="M400,210 l8,-8" stroke="#f59e0b" stroke-width="1.4" opacity="0.5"/>
+
+  <text class="mut" x="350" y="308" text-anchor="middle">Comparant els dos sensors, el robot corregeix la direcció per no sortir de la línia.</text>
+</svg>

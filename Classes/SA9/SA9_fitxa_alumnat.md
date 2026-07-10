@@ -47,9 +47,17 @@
 
 ## 4 · Planificació
 Useu [`plantilles/Planificacio_agile_PLANTILLA.md`](plantilles/Planificacio_agile_PLANTILLA.md) (To Do / Fent / Fet).
+
+![Taulell àgil (kanban) amb tres columnes —per fer, fent i fet— per on les tasques avancen d'esquerra a dreta a mesura que l'equip les completa](img/sa9-taulell-agile.svg)
+
 - Fita S2: __________  · Fita S3: __________  · Fita S4: __________
 
 ## 5 · Proves i iteracions
+
+> Apliqueu el **mètode de projecte** de tot el curs: després de provar, milloreu i torneu a provar.
+
+![El mètode de projecte del curs: analitzar, dissenyar, prototipar, provar i millorar; després de millorar es torna a provar i el cicle es repeteix en iteracions](img/sa9-metode-projecte.svg)
+
 | Versió | Què fallava | Què hem canviat | Resultat |
 |---|---|---|---|
 | v1 | | | |

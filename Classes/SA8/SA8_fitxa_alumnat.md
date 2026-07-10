@@ -46,6 +46,9 @@ Dissenya un sistema IoT del teu entorn (mínim ètic obligatori):
 ### 3 · Introducció a la IA (S3)
 1. Carrega [`03_ia_gestos.py`](codi/03_ia_gestos.py). Quins gestos classifica? __________
 2. Diferència entre **regles fetes a mà** i **aprenentatge automàtic**: ____
+
+![Dues maneres de classificar un gest: amb regles, una persona escriu les condicions (if/else); amb aprenentatge automàtic, es donen molts exemples etiquetats i un model n'aprèn els patrons](img/sa8-ia-regles-aprenentatge.svg)
+
 3. **De regles a ML real:** fes [`SA8_practica_teachable_machine.md`](SA8_practica_teachable_machine.md) (entrena amb exemples). Classes i exemples per classe: __________
 4. **Biaix:** amb qui podria fallar el teu classificador i per què? ____
 

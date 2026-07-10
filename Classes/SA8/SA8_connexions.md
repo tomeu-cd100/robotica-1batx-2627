@@ -5,10 +5,7 @@
 - Totes dues amb el **mateix `group`** (`radio.config(group=...)`).
 - El receptor es deixa connectat per **USB** a l'ordinador per registrar dades pel **port sèrie** (es poden copiar a un full de càlcul i fer-ne un gràfic).
 
-```
-[ micro:bit EMISSOR ]  --(radio)-->  [ micro:bit RECEPTOR ]  --(USB)-->  PC (registre)
-   mesura T / llum                       mostra i imprimeix
-```
+![Telemetria: una micro:bit emissora mesura temperatura o llum i ho envia per ràdio a una micro:bit receptora, que ho mostra i ho imprimeix per USB a un ordinador on es registra i es fa un gràfic](img/sa8-telemetria.svg)
 
 ## Sensors usats (integrats)
 | Magnitud | Instrucció |
@@ -21,10 +18,7 @@
 - Programació en **C++ (Arduino IDE)** amb el paquet de plaques ESP32.
 - Cal **SSID i contrasenya** d'una xarxa **2,4 GHz** i, per a MQTT, un *broker* (p. ex. de proves públic).
 - Vegeu `codi/04_esp32_telemetria.ino` (esquelet comentat).
-
-```
-[ ESP32 ] --WiFi--> [ broker MQTT / panell ] --> visualitzacio
-```
+- Flux: **ESP32 → (WiFi) → broker MQTT / panell → visualització**.
 
 > ▶ **Simulació interactiva (Wokwi, ESP32 + potenciòmetre, lectura per WiFi):** <https://wokwi.com/projects/468088488537422849>
 > Projecte al repositori: [`Simulacions/Wokwi/SA8_telemetria_esp32/`](../../Simulacions/Wokwi/SA8_telemetria_esp32/). A la simulació, l'ESP32 es connecta a la xarxa **`Wokwi-GUEST`** (sense clau); per a una placa real, posa les teves dades de WiFi.

@@ -19,24 +19,12 @@ Consulta la documentació de la teva Imagina 3dBot i anota:
 
 ## Cinemàtica diferencial (concepte)
 
-```
-   [Motor ESQ]      [Motor DRET]
-        |                |
-     velocitat         velocitat
-        \________________/
-   ESQ = DRET  -> recte endavant
-   ESQ > DRET  -> gira a la dreta
-   ESQ < DRET  -> gira a l'esquerra
-   sentits oposats -> gir sobre si mateix
-```
+![Cinemàtica diferencial: si les dues rodes van igual el robot va recte; si l'esquerra va més ràpida gira a la dreta; si la dreta va més ràpida gira a l'esquerra; amb sentits oposats gira sobre si mateix](img/sa7-cinematica-diferencial.svg)
 
 ## Sensors de línia (IR)
 Es col·loquen **sota** el robot, mirant el terra. Detecten línia negra (poc reflex) vs fons blanc (molt reflex). Cal **calibrar** el llindar i l'alçada respecte al terra.
 
-```
-Fons blanc  -> sensor llegeix "clar"
-Linia negra -> sensor llegeix "fosc"
-```
+![Seguidor de línia: els sensors infrarojos sota el robot miren el terra; el fons blanc reflecteix molt (clar) i la línia negra poc (fosc), i comparant els dos sensors el robot corregeix la direcció](img/sa7-seguidor-linia.svg)
 
 ## Ultrasons (frontal)
 Muntat al davant per mesurar la distància a obstacles (mateix principi que SA3/SA4: TRIG=sortida, ECHO=entrada).

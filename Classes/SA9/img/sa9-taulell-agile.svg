@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 320" width="720" height="320" role="img" aria-labelledby="t d">
+  <title id="t">Taulell àgil de l'equip (kanban)</title>
+  <desc id="d">Taulell amb tres columnes: per fer (To Do), fent i fet. Les tasques es mouen d'esquerra a dreta a mesura que avancen. Ajuda a repartir la feina i veure el progrés de l'equip.</desc>
+  <style>
+    .fr{fill:#f6faf9;stroke:#d7e6e5;stroke-width:1.5}
+    .col{fill:#ffffff;stroke:#d7e6e5;stroke-width:1.5}
+    .hd{font:700 14px system-ui,'Segoe UI',sans-serif;fill:#0e1b1c}
+    .card{fill:#eaf3f2;stroke:#0891b2;stroke-width:1.4}
+    .cardf{fill:#dcfce7;stroke:#16a34a;stroke-width:1.4}
+    .ct{font:600 12px system-ui,'Segoe UI',sans-serif;fill:#0e1b1c}
+    .mut{font:600 12px system-ui,'Segoe UI',sans-serif;fill:#4f6d6e}
+  </style>
+  <defs><marker id="m" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#4f6d6e"/></marker></defs>
+  <rect class="fr" x="1" y="1" width="718" height="318" rx="14"/>
+
+  <!-- Columna To Do -->
+  <rect class="col" x="30" y="56" width="200" height="230" rx="10"/>
+  <text class="hd" x="130" y="82" text-anchor="middle">Per fer (To Do)</text>
+  <rect class="card" x="48" y="100" width="164" height="40" rx="6"/><text class="ct" x="60" y="124">Muntar el xassís</text>
+  <rect class="card" x="48" y="150" width="164" height="40" rx="6"/><text class="ct" x="60" y="174">Sensor de línia</text>
+  <rect class="card" x="48" y="200" width="164" height="40" rx="6"/><text class="ct" x="60" y="224">Escriure la defensa</text>
+
+  <!-- Columna Fent -->
+  <rect class="col" x="260" y="56" width="200" height="230" rx="10"/>
+  <text class="hd" x="360" y="82" text-anchor="middle">Fent</text>
+  <rect class="card" x="278" y="100" width="164" height="40" rx="6"/><text class="ct" x="290" y="124">Codi de moviment</text>
+  <rect class="card" x="278" y="150" width="164" height="40" rx="6"/><text class="ct" x="290" y="174">Provar la pista</text>
+
+  <!-- Columna Fet -->
+  <rect class="col" x="490" y="56" width="200" height="230" rx="10"/>
+  <text class="hd" x="590" y="82" text-anchor="middle">Fet</text>
+  <rect class="cardf" x="508" y="100" width="164" height="40" rx="6"/><text class="ct" x="520" y="124">Triar el repte</text>
+  <rect class="cardf" x="508" y="150" width="164" height="40" rx="6"/><text class="ct" x="520" y="174">Repartir rols</text>
+
+  <!-- fletxes de progrés -->
+  <path d="M232,270 H258" stroke="#4f6d6e" stroke-width="2" marker-end="url(#m)" fill="none"/>
+  <path d="M462,270 H488" stroke="#4f6d6e" stroke-width="2" marker-end="url(#m)" fill="none"/>
+  <text class="mut" x="360" y="308" text-anchor="middle">Les tasques avancen d'esquerra a dreta.</text>
+</svg>

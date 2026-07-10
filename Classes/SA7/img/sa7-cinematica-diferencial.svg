@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 300" width="760" height="300" role="img" aria-labelledby="t d">
+  <title id="t">Cinemàtica diferencial d'un robot de dues rodes</title>
+  <desc id="d">Segons la velocitat de cada roda: si les dues van igual, el robot va recte; si l'esquerra va més ràpida gira a la dreta; si la dreta va més ràpida gira a l'esquerra; si giren en sentits oposats, el robot gira sobre si mateix.</desc>
+  <style>
+    .fr{fill:#f6faf9;stroke:#d7e6e5;stroke-width:1.5}
+    .body{fill:#eaf3f2;stroke:#0891b2;stroke-width:2}
+    .wheel{fill:#1f2937}
+    .cap{font:700 13px system-ui,'Segoe UI',sans-serif;fill:#0e1b1c}
+    .mut{font:600 11.5px system-ui,'Segoe UI',sans-serif;fill:#4f6d6e}
+    .arr{fill:none;stroke:#0891b2;stroke-width:3}
+  </style>
+  <defs>
+    <marker id="m" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#0891b2"/></marker>
+  </defs>
+  <rect class="fr" x="1" y="1" width="758" height="298" rx="14"/>
+
+  <!-- Plantilla de robot reutilitzada 4 cops (centres x=95,275,455,635 ; y=130) -->
+  <!-- Cas 1: recte -->
+  <g>
+    <rect class="body" x="60" y="100" width="70" height="60" rx="8"/>
+    <rect class="wheel" x="48" y="104" width="12" height="52" rx="3"/>
+    <rect class="wheel" x="130" y="104" width="12" height="52" rx="3"/>
+    <path class="arr" d="M95,96 V56" marker-end="url(#m)"/>
+    <text class="cap" x="95" y="196" text-anchor="middle">Recte</text>
+    <text class="mut" x="95" y="214" text-anchor="middle">ESQ = DRET</text>
+  </g>
+  <!-- Cas 2: gira dreta (esq més ràpida) -->
+  <g>
+    <rect class="body" x="240" y="100" width="70" height="60" rx="8"/>
+    <rect class="wheel" x="228" y="98" width="12" height="64" rx="3"/>
+    <rect class="wheel" x="310" y="110" width="12" height="40" rx="3"/>
+    <path class="arr" d="M270,96 q40,-6 46,34" marker-end="url(#m)"/>
+    <text class="cap" x="275" y="196" text-anchor="middle">Gira a la dreta</text>
+    <text class="mut" x="275" y="214" text-anchor="middle">ESQ &gt; DRET</text>
+  </g>
+  <!-- Cas 3: gira esquerra (dret més ràpida) -->
+  <g>
+    <rect class="body" x="420" y="100" width="70" height="60" rx="8"/>
+    <rect class="wheel" x="408" y="110" width="12" height="40" rx="3"/>
+    <rect class="wheel" x="490" y="98" width="12" height="64" rx="3"/>
+    <path class="arr" d="M480,96 q-40,-6 -46,34" marker-end="url(#m)"/>
+    <text class="cap" x="455" y="196" text-anchor="middle">Gira a l'esquerra</text>
+    <text class="mut" x="455" y="214" text-anchor="middle">ESQ &lt; DRET</text>
+  </g>
+  <!-- Cas 4: gir sobre si mateix (oposats) -->
+  <g>
+    <rect class="body" x="600" y="100" width="70" height="60" rx="8"/>
+    <rect class="wheel" x="588" y="104" width="12" height="52" rx="3"/>
+    <rect class="wheel" x="670" y="104" width="12" height="52" rx="3"/>
+    <path class="arr" d="M635,90 A42,42 0 1,1 605,102" marker-end="url(#m)"/>
+    <text class="cap" x="635" y="196" text-anchor="middle">Gir sobre si</text>
+    <text class="mut" x="635" y="214" text-anchor="middle">sentits oposats</text>
+  </g>
+
+  <text class="mut" x="380" y="256" text-anchor="middle">La diferència de velocitat entre les dues rodes determina la trajectòria.</text>
+</svg>
