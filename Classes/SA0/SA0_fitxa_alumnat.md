@@ -6,6 +6,18 @@
 
 ---
 
+## Les activitats · al Google Classroom
+
+Les activitats d'aquesta fitxa es fan **en línia**, dins la tasca de Classroom (formulari amb autocorrecció a les activitats 2 i 3):
+
+> 👉 **[Obre la tasca: SA0 · Fitxa d'autoaprenentatge (Google Classroom)](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODcwNTEwMDkwMTY1/details)**
+
+Tingues a mà el [`SA0_vocabulari_essencial.md`](SA0_vocabulari_essencial.md) i el [`SA0_guia_programacio.md`](SA0_guia_programacio.md) mentre la fas.
+
+<!-- web:only-github -->
+
+---
+
 ## Activitat 1 · Entrada – Procés – Sortida
 
 Per a cada sistema, indica què **percep** (entrada), què **decideix** (procés) i què **fa** (sortida).
@@ -116,6 +128,8 @@ while ____:
 ```
 
 > **Pista:** mira la Part B i la taula comparativa (Part C) de la guia.
+
+<!-- /web:only-github -->
 
 ---
 
