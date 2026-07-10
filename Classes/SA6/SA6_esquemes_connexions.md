@@ -1,27 +1,13 @@
 # SA6 · Esquemes i connexions
 
-> Reproduïbles a **Tinkercad** o **Wokwi**. La "temperatura" es llegeix amb una **NTC** en divisor de tensió (es pot substituir per un **potenciòmetre** per simular-la).
-
-## Llegenda dels diagrames
-```
---[ 10k ]--    resistencia (el numero indica el valor)
-|>|            LED ( |> = anode , | = catode )
-+              nus de connexio comu
-[A0]           pin analogic (lectura 0..1023)
-~              pin amb PWM
-```
+> Reproduïbles a **Tinkercad** o **Wokwi**. La "temperatura" es llegeix amb una **NTC** en divisor de tensió (es pot substituir per un **potenciòmetre** per simular-la). Els conceptes de control (llaç tancat, histèresi) són a la **[fitxa base](SA6_fitxa_alumnat.md)**.
 
 ---
 
 ## 1. Sensor de temperatura NTC (divisor de tensió)
 
-```
-5V ---- NTC ----+---- [A0]      (punt mig: lectura analogica)
-                |
-              --[ 10k ]--
-                |
-               GND
-```
+**Mateix divisor de tensió que la LDR de la SA3**, però amb una **NTC**: `5V → NTC → punt mig (A0) → 10 kΩ → GND`. El punt mig es llegeix per **A0**.
+
 > **Alternativa per a proves:** un **potenciòmetre** al pin A0 simula el canvi de "temperatura".
 
 ---
@@ -33,9 +19,7 @@
 | 9 ~ | LED indicador / sortida | 220 Ω | GND |
 | — | Ventilador petit (opcional) | via **transistor/relé** | no directament al pin |
 
-```
-Pin 9~ --[ 220R ]--|>|-- GND      (per a control proporcional cal PWM)
-```
+> LED bàsic al pin **9~** (com el de la SA1); per al **control proporcional** cal que el pin tingui `~` (PWM).
 > ⚠️ No connectis un motor/ventilador **directament** al pin: usa transistor o relé.
 
 ---
@@ -48,11 +32,7 @@ Pin 9~ --[ 220R ]--|>|-- GND      (per a control proporcional cal PWM)
 | A1 | LDR (alternativa de sensor) | divisor 10 kΩ | — |
 | 7 / 8 | LED estat verd / vermell | 220 Ω c/u | GND |
 
-```
-Pin 2 ---- polsador ---- GND          (INPUT_PULLUP)
-Pin 7 --[ 220R ]--|>|-- GND           (LED verd)
-Pin 8 --[ 220R ]--|>|-- GND           (LED vermell)
-```
+> Polsador amb `INPUT_PULLUP` (com el de la SA3) i dos LED d'estat bàsics (pins 7 i 8).
 
 ---
 

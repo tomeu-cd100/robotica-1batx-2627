@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 300" width="740" height="300" role="img" aria-labelledby="t d">
+  <title id="t">Servo controlat per potenciòmetre</title>
+  <desc id="d">El potenciòmetre (entrada analògica A0) marca la posició; l'Arduino la converteix i envia el senyal pel pin 9 al servo, que gira de 0 a 180 graus. El servo té tres cables: GND, V+ (5 V) i senyal.</desc>
+  <style>
+    .fr{fill:#f6faf9;stroke:#d7e6e5;stroke-width:1.5}
+    .wire{fill:none;stroke-width:2.2}
+    .ard{fill:#eaf3f2;stroke:#0891b2;stroke-width:1.8}
+    .pin{font:700 12px 'Consolas',monospace;fill:#0c6e70}
+    .lbl{font:700 13px system-ui,'Segoe UI',sans-serif;fill:#0e1b1c}
+    .mut{font:600 12px system-ui,'Segoe UI',sans-serif;fill:#4f6d6e}
+  </style>
+  <rect class="fr" x="1" y="1" width="738" height="298" rx="14"/>
+
+  <!-- Potenciòmetre -->
+  <circle cx="88" cy="120" r="40" fill="#ffffff" stroke="#0e1b1c" stroke-width="2"/>
+  <line x1="88" y1="120" x2="88" y2="86" stroke="#0e1b1c" stroke-width="3"/>
+  <text class="lbl" x="88" y="180" text-anchor="middle">Potenciòmetre</text>
+  <text class="mut" x="88" y="198" text-anchor="middle">(entrada)</text>
+  <!-- 3 potes -->
+  <line class="wire" stroke="#dc2626" x1="60" y1="150" x2="60" y2="175"/><text class="mut" x="52" y="192" fill="#dc2626">5V</text>
+  <line class="wire" stroke="#0891b2" x1="88" y1="160" x2="88" y2="175"/>
+  <line class="wire" stroke="#0e1b1c" x1="116" y1="150" x2="116" y2="175"/><text class="mut" x="112" y="192" fill="#0e1b1c">GND</text>
+
+  <!-- Arduino -->
+  <rect class="ard" x="270" y="80" width="150" height="120" rx="10"/>
+  <text class="pin" x="345" y="108" text-anchor="middle">Arduino</text>
+  <text class="pin" x="288" y="140" text-anchor="start">A0</text>
+  <text class="pin" x="402" y="140" text-anchor="end">9</text>
+  <text class="mut" x="345" y="170" text-anchor="middle">llegeix i</text>
+  <text class="mut" x="345" y="186" text-anchor="middle">converteix</text>
+
+  <!-- Cursor pot -> A0 -->
+  <path class="wire" stroke="#0891b2" d="M88,175 V220 H288 V140"/>
+  <text class="mut" x="150" y="212" fill="#0891b2">cursor → A0</text>
+
+  <!-- Senyal pin 9 -> servo -->
+  <path class="wire" stroke="#ca8a04" d="M420,132 H470"/>
+  <text class="mut" x="445" y="122" text-anchor="middle" fill="#ca8a04">pin 9</text>
+
+  <!-- Servo -->
+  <rect x="470" y="96" width="110" height="90" rx="8" fill="#1e3a8a" stroke="#0e1b1c" stroke-width="2"/>
+  <text x="525" y="176" text-anchor="middle" fill="#e5e7eb" style="font:700 12px system-ui,sans-serif">Servo</text>
+  <!-- eix + braç a 45° -->
+  <circle cx="525" cy="130" r="8" fill="#e5e7eb"/>
+  <line x1="525" y1="130" x2="575" y2="105" stroke="#e5e7eb" stroke-width="5" stroke-linecap="round"/>
+  <!-- arc de gir -->
+  <path d="M585,150 A60,60 0 0,0 585,110" fill="none" stroke="#22d3ee" stroke-width="2"/>
+  <text class="mut" x="600" y="134">0–180°</text>
+  <!-- cables servo -->
+  <text class="mut" x="470" y="205">senyal · V+ (5V) · GND</text>
+</svg>

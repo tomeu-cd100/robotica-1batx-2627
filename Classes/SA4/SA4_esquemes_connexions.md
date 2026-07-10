@@ -2,15 +2,6 @@
 
 > ⚠️ **Regla d'or:** **massa comuna** (uneix el GND de l'Arduino amb el GND de l'alimentació del motor) i **mai** alimentis motors/servos des del pin 5V de l'Arduino si en mous més d'un.
 
-## Llegenda dels diagrames
-```
---[ 220R ]--   resistencia
-|>|            LED ( |> = anode , | = catode )
--->            senyal / cap a
-+              nus de connexio comu (massa comuna GND)
-~              pin amb PWM
-```
-
 ---
 
 ## 1. Servo controlat per potenciòmetre (`01_servo_potenciometre.ino`)
@@ -24,10 +15,7 @@
 
 **Potenciòmetre:** extrems a 5 V i GND; cursor a **A0**.
 
-```
-Servo:  senyal --> Pin 9     V+ --> 5V     GND --> GND
-Pot:    5V -- [ pot ] -- GND     cursor --> [A0]
-```
+![El potenciòmetre (entrada, cursor a A0) marca la posició; l'Arduino la converteix i envia el senyal pel pin 9 al servo, que gira de 0 a 180 graus](img/sa4-servo-potenciometre.svg)
 
 ---
 
@@ -42,11 +30,7 @@ Pot:    5V -- [ pot ] -- GND     cursor --> [A0]
 | +12V (VS) | + alimentació externa (piles) |
 | GND | GND piles **i** GND Arduino (massa comuna) |
 
-```
-Arduino:  Pin 5~ --> ENA    Pin 7 --> IN1    Pin 8 --> IN2    GND --+
-Piles:    (+) --> VS(+12V)        (-) --> GND -------------------+--(massa comuna)
-Motor:    OUT1 -- motor -- OUT2
-```
+![Motor DC amb pont H L298N: l'Arduino controla ENA (pin 5, velocitat PWM), IN1 (pin 7) i IN2 (pin 8, direcció); el motor va a OUT1 i OUT2; les piles alimenten +12V; i el GND de l'Arduino, el de les piles i el del L298N s'uneixen en una massa comuna](img/sa4-pont-h-l298n.svg)
 
 ---
 
@@ -59,10 +43,7 @@ Igual que el muntatge 2 **+** sensor d'ultrasons:
 | TRIG / ECHO | Pin 12 / Pin 11 |
 | VCC / GND | 5V / GND |
 
-```
-HC-SR04:  TRIG --> Pin 12    ECHO --> Pin 11    VCC=5V  GND=GND
-(la resta, com el muntatge 2: pont H + motor + massa comuna)
-```
+> La resta és com el muntatge 2 (pont H + motor + massa comuna). El sensor d'ultrasons es connecta com a la SA3.
 
 ---
 
@@ -74,11 +55,7 @@ HC-SR04:  TRIG --> Pin 12    ECHO --> Pin 11    VCC=5V  GND=GND
 | 12 / 11 | HC-SR04 TRIG / ECHO | — | VCC=5V, GND=GND |
 | 8 | LED indicador | 220 Ω | GND |
 
-```
-Servo:    senyal --> Pin 9     (V+ i GND segons alimentacio)
-HC-SR04:  TRIG --> Pin 12    ECHO --> Pin 11
-Pin 8 --[ 220R ]--|>|-- GND          (LED)
-```
+> Combina el servo (apartat 1) amb el sensor d'ultrasons (pin 12/11) i un LED indicador bàsic (pin 8).
 
 ---
 

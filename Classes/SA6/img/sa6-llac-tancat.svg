@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 300" width="760" height="300" role="img" aria-labelledby="t d">
+  <title id="t">Sistema de control en llaç tancat</title>
+  <desc id="d">La consigna es compara amb la mesura del sensor per obtenir l'error. El controlador actua sobre l'actuador, que modifica el sistema; el sensor mesura el resultat i el realimenta cap al comparador. Aquest bucle és el llaç tancat.</desc>
+  <style>
+    .fr{fill:#f6faf9;stroke:#d7e6e5;stroke-width:1.5}
+    .box{fill:#eaf3f2;stroke:#0891b2;stroke-width:1.8}
+    .boxt{font:700 13px system-ui,'Segoe UI',sans-serif;fill:#0e1b1c}
+    .wire{fill:none;stroke:#0e1b1c;stroke-width:2.2}
+    .fb{fill:none;stroke:#b45309;stroke-width:2.2}
+    .lbl{font:600 12px system-ui,'Segoe UI',sans-serif;fill:#4f6d6e}
+    .fbl{font:600 12px system-ui,'Segoe UI',sans-serif;fill:#b45309}
+  </style>
+  <defs>
+    <marker id="a1" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#0e1b1c"/></marker>
+    <marker id="a2" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#b45309"/></marker>
+  </defs>
+  <rect class="fr" x="1" y="1" width="758" height="298" rx="14"/>
+
+  <!-- Consigna -->
+  <text class="boxt" x="30" y="104" >Consigna</text>
+  <line class="wire" x1="30" y1="115" x2="118" y2="115" marker-end="url(#a1)"/>
+
+  <!-- Comparador (cercle ⊕) -->
+  <circle cx="140" cy="115" r="22" fill="#ffffff" stroke="#0e1b1c" stroke-width="2"/>
+  <text x="140" y="121" text-anchor="middle" style="font:700 18px system-ui,sans-serif;fill:#0e1b1c">−</text>
+  <text x="126" y="100" style="font:700 13px system-ui,sans-serif;fill:#0e1b1c">+</text>
+
+  <!-- error -->
+  <line class="wire" x1="162" y1="115" x2="214" y2="115" marker-end="url(#a1)"/>
+  <text class="lbl" x="188" y="106" text-anchor="middle">error</text>
+
+  <!-- Controlador -->
+  <rect class="box" x="216" y="90" width="110" height="50" rx="8"/>
+  <text class="boxt" x="271" y="120" text-anchor="middle">Controlador</text>
+  <line class="wire" x1="326" y1="115" x2="366" y2="115" marker-end="url(#a1)"/>
+
+  <!-- Actuador -->
+  <rect class="box" x="368" y="90" width="100" height="50" rx="8"/>
+  <text class="boxt" x="418" y="120" text-anchor="middle">Actuador</text>
+  <line class="wire" x1="468" y1="115" x2="508" y2="115" marker-end="url(#a1)"/>
+
+  <!-- Sistema -->
+  <rect class="box" x="510" y="90" width="120" height="50" rx="8"/>
+  <text class="boxt" x="570" y="120" text-anchor="middle">Sistema</text>
+
+  <!-- Sortida -->
+  <line class="wire" x1="630" y1="115" x2="710" y2="115" marker-end="url(#a1)"/>
+  <text class="lbl" x="700" y="106" text-anchor="end">sortida</text>
+
+  <!-- Realimentació via Sensor -->
+  <path class="fb" d="M670,115 V210 H360 V210"/>
+  <rect class="box" x="300" y="185" width="110" height="50" rx="8" stroke="#b45309"/>
+  <text class="boxt" x="355" y="215" text-anchor="middle">Sensor</text>
+  <path class="fb" d="M300,210 H140 V137" marker-end="url(#a2)"/>
+  <text class="fbl" x="500" y="204" text-anchor="middle">realimentació (feedback)</text>
+
+  <text class="lbl" x="380" y="275" text-anchor="middle">El sensor mesura el resultat i el compara amb la consigna: així el sistema es corregeix sol.</text>
+</svg>

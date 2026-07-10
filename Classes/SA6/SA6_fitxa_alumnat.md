@@ -29,16 +29,17 @@
 
 ### 1 · Llaç obert vs llaç tancat (S1)
 0. **PREDIU:** mirant `01_llac_obert_vs_tancat.ino`, quin mode corregirà sol les pertorbacions? ______________________
-1. Carrega, prova els dos modes i comprova. Completa el diagrama de blocs:
-```
-[ Consigna ] → ( error ) → [ CONTROLADOR ] → [ ACTUADOR ] → [ PROCÉS ] → sortida
-                  ↑________________ [ SENSOR ] ___________________|
-```
+1. Carrega, prova els dos modes i comprova. Fixa't en el diagrama de blocs del **llaç tancat**:
+
+![Diagrama de blocs del llaç tancat: consigna, comparador amb l'error, controlador, actuador i sistema; el sensor mesura la sortida i la realimenta cap al comparador](img/sa6-llac-tancat.svg)
+
 2. Diferència principal entre llaç obert i tancat: ______________________
 
 ### 2 · Termòstat amb histèresi (S2)
 1. Carrega `02_termostat_histeresi.ino`. Llindars: encén a ____ · apaga a ____
 2. Què passaria **sense** histèresi (un sol llindar)? ______________________
+
+![Gràfica de la histèresi: la sortida de l'actuador segons la temperatura, amb un llindar baix i un d'alt i una zona morta al mig on l'actuador manté l'estat](img/sa6-histeresi.svg)
 
 ### 3 · Màquina d'estats (S3)
 1. Carrega `03_maquina_estats.ino`. Estats: ______________________

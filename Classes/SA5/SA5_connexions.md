@@ -2,6 +2,12 @@
 
 > La micro:bit porta molts sensors **integrats**, així que la majoria d'activitats **no necessiten muntatge**. El Micro:shield s'usa per a perifèrics externs.
 
+![La placa micro:bit amb les seves parts: matriu de 25 LED, botons A i B, sensors integrats (acceleròmetre, llum, temperatura, ràdio), connector de vora amb els pins P0, P1, P2, 3V i GND, USB i botó de reset](img/sa5-microbit-features.svg)
+
+![Fotografia d'una placa micro:bit real (v2)](img/microbit-foto.jpg)
+
+> *Fotografia: micro:bit, per [SimonWaldherr](https://commons.wikimedia.org/wiki/File:Bbc_micro_bit.jpg) — llicència [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).*
+
 ## Entorn de programació
 - **Editor Python micro:bit:** https://python.microbit.org (recomanat; té simulador).
 - **Thonny:** opció d'escriptori (mode "BBC micro:bit").
@@ -26,9 +32,9 @@ Els pins **0, 1, 2** són d'E/S de propòsit general (cocodril o shield):
 | Potenciòmetre/sensor analògic | P1 (`pin1.read_analog()` → 0-1023) |
 | Polsador extern | P2 (`pin2.read_digital()`) |
 
-```
-micro:bit:  P0, P1, P2  +  3V  +  GND   (via pinces de cocodril o Micro:shield)
-```
+> Els pins **P0, P1, P2** i l'alimentació **3V**/**GND** són al connector de vora (vegeu la placa etiquetada de dalt); s'hi accedeix amb pinces de cocodril o el Micro:shield.
 
 ## Per a la ràdio (SA5 · activitat 4)
 Calen **2 micro:bit** amb el **mateix `group`** (p. ex. `radio.config(group=10)`). Cada placa pot enviar i rebre.
+
+![Dues micro:bit amb el mateix grup de ràdio (group=10) s'envien i reben missatges entre elles](img/sa5-radio.svg)
