@@ -50,6 +50,7 @@ El contingut de cada SA es llista a **5 llocs**: taula del README de SA · llist
 - **C · 8 mencions amb ruta vella** corregides a `SA9_guia_docent`, `07_Rubriques` (×2), `Reptes/README` (×2) i `GUIA_INICI` (×3).
 - **E · Nom del 25 % unificat** a **«Quadern tècnic i pràctiques»** a 24 fitxers (doc 06, full de qualificació, 9 fitxes, 8 checklists docent, tasca Classroom, guies del quadern).
 - **Verificat**: 0 rutes velles · 0 variants del nom antic · 0 enllaços `.md` trencats a tot el repo · build del web net.
+- **D · Redundància estructural (resolt 2026-07-10)**: la taula «Contingut actual» del LLEGEIX-ME (que duplicava sessions i codi de cada README de SA i havia divergit) → substituïda per un **índex lleuger SA + Tema** amb enllaç a la **portada de cada SA** (font única) i pointer al mapa de seqüenciació. Es manté la vista de conjunt sense el detall volàtil. Les altres 4 aparicions (README de SA, llista web generada, checklist docent, guia docent) tenen propòsit propi i es conserven (decisió prèvia de mantenir la taula del README).
 
 ## Conclusió
 El material **és clar en el nivell que més importa** (documents d'aula: fitxes, guies, reptes, checklists) i les dades són coherents entre capes. El problema d'usabilitat real és **de manteniment de la capa d'orientació**: els documents que diuen «on és cada cosa» (guia d'inici, LLEGEIX-ME) han quedat enrere respecte de l'evolució del material (reestructuració 00_General, web amb vistes, checklists, quadern). És exactament el tipus de document que més llegeix qui arriba de nou — i per això és la prioritat.

@@ -10,20 +10,24 @@ Material llest per a l'aula, organitzat per situació d'aprenentatge (SA). Cada 
 
 > El registre de l'alumnat viu al seu **quadern tècnic**: guia, regles i plantilla d'entrada a [`00_Quadern_tecnic.md`](00_Quadern_tecnic.md) (per al docent, tasca de Classroom a punt a [`00_Quadern_tecnic_tasca_classroom.md`](00_Quadern_tecnic_tasca_classroom.md)).
 
-## Contingut actual
+## Les 9 SA (índex)
 
-| SA | Tema | Sessions | Codi |
-|---|---|---|---|
-| **SA0** | Vocabulari essencial i bases de programació (material transversal de suport) | — | Fragments dins els `.md` |
-| **SA1** | Introducció a la robòtica i sistemes embeguts | 3 | `blink` · `blink_repte` · `blink_millis` · `sos_morse` |
-| **SA2** | Sortides digitals i PWM | 4 | `01_led_basic` · `02_semafor` · `03_fade_pwm` · `04_rgb` · `05_panell_senyalitzacio` |
-| **SA3** | Entrades i sensors | 4 | `01_polsador_debounce` · `02_potenciometre_ldr` · `03_ultrasons_funcio` · `04_alarma_aparcament` |
-| **SA4** | Moviment: servos, motors i ponts H | 4 | `01_servo_potenciometre` · `02_motor_pont_h` · `03_sensor_velocitat` · `04_barrera_automatica` |
-| **SA5** | micro:bit i MicroPython | 3-4 | `01_name_badge.py` · `02_passes.py` · `03_nightlight.py` · `04_radio_dau.py` |
-| **SA6** | Sistemes de control | 4 | `01_llac_obert_vs_tancat` · `02_termostat_histeresi` · `03_maquina_estats` · `04_control_proporcional` |
-| **SA7** | Robòtica mòbil (Imagina 3dBot) | 4 | `01_moviment_basic` · `02_trajectoria_quadrat` · `03_evita_obstacles` · `04_seguidor_linia` |
-| **SA8** | IoT i IA | 3 | `01_telemetria_emissor.py` · `02_telemetria_receptor.py` · `03_ia_gestos.py` · `04_esp32_telemetria.ino` |
-| **SA9** | Projecte final integrador | 5 | `plantilles/` (banc de reptes, planificació, dossier, codi base) |
+Vista d'un cop d'ull. **El detall de cada SA** (materials, sessions i codi) és a la seva **portada** — la font única, sempre al dia. La **visió de conjunt, hores i maquinari** són al mapa de seqüenciació.
+
+| SA | Tema | Portada |
+|---|---|---|
+| **SA0** | Vocabulari essencial i bases de programació *(material transversal)* | [obre →](../SA0/README.md) |
+| **SA1** | Introducció a la robòtica i sistemes embeguts | [obre →](../SA1/README.md) |
+| **SA2** | Sortides digitals i PWM | [obre →](../SA2/README.md) |
+| **SA3** | Entrades i sensors | [obre →](../SA3/README.md) |
+| **SA4** | Moviment: servos, motors i ponts H | [obre →](../SA4/README.md) |
+| **SA5** | micro:bit i MicroPython | [obre →](../SA5/README.md) |
+| **SA6** | Sistemes de control | [obre →](../SA6/README.md) |
+| **SA7** | Robòtica mòbil (Imagina 3dBot) | [obre →](../SA7/README.md) |
+| **SA8** | IoT i IA | [obre →](../SA8/README.md) |
+| **SA9** | Projecte final integrador | [obre →](../SA9/README.md) |
+
+> 🗺️ Calendari, hores i maquinari per SA: [`Programació didàctica/08_Sequenciacio_temporal_anual.md`](../../Programació%20didàctica/08_Sequenciacio_temporal_anual.md).
 
 ## Notes
 - El codi d'Arduino (`.ino`) usa **Arduino UNO** + kit Keyestudio/BQ; el de **SA5 és MicroPython (`.py`)** per a micro:bit (editor python.microbit.org / Thonny).
