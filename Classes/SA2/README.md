@@ -4,12 +4,19 @@ Segona situació d'aprenentatge (**8 h · 4 sessions**, 1r trimestre). Es passa 
 
 ## Itinerari per sessions
 
-> Ordre de treball recomanat. La font única de cada activitat és la **fitxa base** ([`SA2_fitxa_alumnat.md`](SA2_fitxa_alumnat.md)); la resta de documents hi donen suport.
+> La teva feina és a la **[fitxa base](SA2_fitxa_alumnat.md)**. Aquesta ruta et diu què toca fer a cada sessió i què necessites en aquell moment.
 
-1. **Sessió 1 · Variables i la primera sortida** — sortida digital amb constants i variables.
-2. **Sessió 2 · Estructures de control: el semàfor** — `for`/`if` i temporització. Munta els circuits amb [esquemes i connexions](SA2_esquemes_connexions.md).
-3. **Sessió 3 · PWM: intensitat i color** — `analogWrite`, `map()` i LED RGB. Codi a [`codi/`](codi/).
-4. **Sessió 4 · Producte: panell de senyalització** — RGB (estat) + so + relé (rúbriques R1 codi, R2 circuit).
+1. **Sessió 1 · Variables i la primera sortida** — fes l'[Activitat 1 de la fitxa](SA2_fitxa_alumnat.md#1-led-basic-i-variables-s1).
+2. **Sessió 2 · El semàfor** — fes l'[Activitat 2](SA2_fitxa_alumnat.md#2-semafor-s2), amb l'[esquema del circuit](SA2_esquemes_connexions.md).
+3. **Sessió 3 · PWM: intensitat i color** — fes l'[Activitat 3](SA2_fitxa_alumnat.md#3-pwm-intensitat-i-color-s3), amb el [codi](codi/).
+4. **Sessió 4 · Producte: panell de senyalització** — fes l'[Activitat 4](SA2_fitxa_alumnat.md#4-producte-panell-de-senyalitzacio-s4) (s'avalua amb R1 codi + R2 circuit).
+5. **Abans d'entregar** — repassa [el meu checklist](SA2_checklist_alumnat.md).
+
+### Si vols més
+
+- [Fitxa ampliada](SA2_fitxa_ampliada.md) — aprofundiment i ampliacions.
+- [Qüestionari de conceptes](SA2_questionari_conceptes.md) — per repassar.
+- [Reptes de la SA2](../../Reptes/Reptes_SA2.md) — tria el teu context.
 
 <!-- web:only-github -->
 ## Contingut
