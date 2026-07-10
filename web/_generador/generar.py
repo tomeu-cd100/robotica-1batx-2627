@@ -602,9 +602,11 @@ def short_label(title: str) -> str:
     return title
 
 
-def _link(href, label, actiu, tri=None, docent=False):
+def _link(href, label, actiu, tri=None, docent=False, amagat=False):
     cls = ' class="actiu"' if actiu else ""
-    li_cls = ' class="nomes-docent"' if docent else ""
+    li_classes = [c for c, on in (("nomes-docent", docent),
+                                  ("amagat-alumnat", amagat)) if on]
+    li_cls = f' class="{" ".join(li_classes)}"' if li_classes else ""
     dot = f' <span class="tri-dot" data-tri="{tri}"></span>' if tri else ""
     return f'<li{li_cls}><a href="{href}"{cls}>{label}{dot}</a></li>'
 
@@ -660,9 +662,13 @@ def sidebar_html(section_key: str, current_out: str, pages: list[Page]) -> str:
                 label = "Codi"
             else:
                 label = html.escape(short_label(p.title))
+            es_consulta = any(k in p.out_rel.lower() for k in NOMES_CONSULTA)
+            if p.out_rel == current_out:
+                es_consulta = False
             items.append(_link(rel_url(current_out, p.out_rel), label,
                                p.out_rel == current_out,
-                               docent=(p.public == "docent")))
+                               docent=(p.public == "docent"),
+                               amagat=es_consulta))
         grp_cls = "sb-grup nomes-docent" if grp_docent else "sb-grup"
         out.append(f'<details class="{grp_cls}"{open_attr}>{summary}<ul>'
                    + "".join(items) + "</ul></details>")
@@ -813,6 +819,10 @@ DOC_ORDRE_CLAUS = ["guia-docent", "guia", "fitxa-alumnat", "vocabulari",
                    "recursos", "practica", "checklist-alumnat", "__codi__",
                    "fitxa-ampliada", "questionari", "checklist-docent"]
 
+# Material que existeix per a l'alumnat però NOMÉS com a consulta opcional
+# («Si vols més»): fora del pager i del sidebar en vista alumnat.
+NOMES_CONSULTA = ("fitxa-ampliada", "questionari")
+
 
 def doc_ordre(p: Page):
     """Ordre pedagògic dels materials d'una SA (l'ordre de la ruta)."""
@@ -885,7 +895,8 @@ def build_sequences(pages: list[Page]) -> dict[str, str]:
         full = render_pager(label, items, "docent")
         for out_rel, htmlp in full.items():
             pager[out_rel] = htmlp
-        alum_items = [p for p in items if p.public == "alumnat"]
+        alum_items = [p for p in items if p.public == "alumnat"
+                      and not any(k in p.out_rel.lower() for k in NOMES_CONSULTA)]
         if len(alum_items) >= 2:
             alum = render_pager(label, alum_items, "alumnat")
             for out_rel, htmlp in alum.items():
