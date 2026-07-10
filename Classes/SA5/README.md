@@ -4,11 +4,18 @@ Cinquena situació d'aprenentatge (**7 h · 3-4 sessions**, 2n trimestre). **Can
 
 ## Itinerari per sessions
 
-> Ordre de treball recomanat. La font única de cada activitat és la **fitxa base** ([`SA5_fitxa_alumnat.md`](SA5_fitxa_alumnat.md)); la resta de documents hi donen suport.
+> La teva feina és a la **[fitxa base](SA5_fitxa_alumnat.md)**. Aquesta ruta et diu què toca fer a cada sessió i què necessites en aquell moment.
 
-1. **Sessió 1 · Primers passos amb MicroPython** — matriu LED, botons i indentació de Python.
-2. **Sessió 2 · Sensors integrats** — acceleròmetre i sensor de llum. Connexions a [`SA5_connexions.md`](SA5_connexions.md).
-3. **Sessió 3 · Ràdio i comparació de paradigmes** — comunicació entre plaques + taula comparativa C++/Python (rúbriques R1 codi, R4 documentació).
+1. **Sessió 1 · Primers passos amb MicroPython** — fes l'[Activitat 1 de la fitxa](SA5_fitxa_alumnat.md#1-name-badge-s1), amb les [connexions i l'entorn](SA5_connexions.md).
+2. **Sessió 2 · Sensors integrats** — fes l'[Activitat 2](SA5_fitxa_alumnat.md#2-sensors-integrats-s2).
+3. **Sessió 3 · Ràdio i comparació de paradigmes** — fes l'[Activitat 3](SA5_fitxa_alumnat.md#3-radio-s3), amb el [codi](codi/).
+4. **Producte · comparació C++/Python** — fes l'[Activitat 4](SA5_fitxa_alumnat.md#4-producte-comparacio-c-python) (s'avalua amb R1 codi + R4 documentació).
+5. **Abans d'entregar** — repassa [el meu checklist](SA5_checklist_alumnat.md).
+
+### Si vols més
+
+- [Fitxa ampliada](SA5_fitxa_ampliada.md) — aprofundiment i ampliacions.
+- [Reptes de la SA5](../../Reptes/Reptes_SA5.md) — tria el teu context.
 
 <!-- web:only-github -->
 ## Contingut

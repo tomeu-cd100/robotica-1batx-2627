@@ -4,11 +4,17 @@ Vuitena situació d'aprenentatge (**6 h · 3 sessions**, 3r trimestre). El siste
 
 ## Itinerari per sessions
 
-> Ordre de treball recomanat. La font única de cada activitat és la **fitxa base** ([`SA8_fitxa_alumnat.md`](SA8_fitxa_alumnat.md)); la resta de documents hi donen suport.
+> La teva feina és a la **[fitxa base](SA8_fitxa_alumnat.md)**. Aquesta ruta et diu què toca fer a cada sessió i què necessites en aquell moment.
 
-1. **Sessió 1 · Telemetria: el robot que informa** — enviar/rebre dades de sensors per ràdio. Connexions a [`SA8_connexions.md`](SA8_connexions.md).
-2. **Sessió 2 · IoT: arquitectura, aplicacions i riscos** — Internet de les coses i privacitat.
-3. **Sessió 3 · Introducció a la IA: de les regles a l'aprenentatge** — classificar gestos + reflexió ètica (rúbriques R1, R3, R4).
+1. **Sessió 1 · Telemetria** — fes l'[Activitat 1 de la fitxa](SA8_fitxa_alumnat.md#1-telemetria-s1), amb les [connexions](SA8_connexions.md).
+2. **Sessió 2 · IoT: arquitectura, aplicacions i riscos** — fes l'[Activitat 2](SA8_fitxa_alumnat.md#2-disseny-iot-s2).
+3. **Sessió 3 · Introducció a la IA** — fes l'[Activitat 3](SA8_fitxa_alumnat.md#3-introduccio-a-la-ia-s3) i la [pràctica de Teachable Machine](SA8_practica_teachable_machine.md) (s'avalua amb R1, R3, R4).
+4. **Abans d'entregar** — repassa [el meu checklist](SA8_checklist_alumnat.md).
+
+### Si vols més
+
+- [Fitxa ampliada](SA8_fitxa_ampliada.md) — aprofundiment i ampliacions.
+- [Reptes de la SA8](../../Reptes/Reptes_SA8.md) — tria el teu context.
 
 <!-- web:only-github -->
 ## Contingut

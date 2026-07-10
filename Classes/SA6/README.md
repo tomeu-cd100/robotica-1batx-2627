@@ -4,12 +4,18 @@ Sisena situació d'aprenentatge (**8 h · 4 sessions**, 2n trimestre). El sistem
 
 ## Itinerari per sessions
 
-> Ordre de treball recomanat. La font única de cada activitat és la **fitxa base** ([`SA6_fitxa_alumnat.md`](SA6_fitxa_alumnat.md)); la resta de documents hi donen suport.
+> La teva feina és a la **[fitxa base](SA6_fitxa_alumnat.md)**. Aquesta ruta et diu què toca fer a cada sessió i què necessites en aquell moment.
 
-1. **Sessió 1 · Què és un sistema de control?** — llaç obert vs tancat, consigna i error.
-2. **Sessió 2 · Control tot/res i histèresi** — termòstat amb dos llindars. Munta amb [esquemes i connexions](SA6_esquemes_connexions.md).
-3. **Sessió 3 · Màquines d'estats** — `enum`/`switch` per organitzar el comportament.
-4. **Sessió 4 · Control proporcional** — base del PID; producte documentat amb diagrama de blocs (rúbriques R1, R3, R4).
+1. **Sessió 1 · Què és un sistema de control?** — fes l'[Activitat 1 de la fitxa](SA6_fitxa_alumnat.md#1-llac-obert-vs-llac-tancat-s1).
+2. **Sessió 2 · Control tot/res i histèresi** — fes l'[Activitat 2](SA6_fitxa_alumnat.md#2-termostat-amb-histeresi-s2), amb els [esquemes de connexió](SA6_esquemes_connexions.md).
+3. **Sessió 3 · Màquines d'estats** — fes l'[Activitat 3](SA6_fitxa_alumnat.md#3-maquina-destats-s3), amb el [codi](codi/).
+4. **Sessió 4 · Control proporcional** — fes l'[Activitat 4](SA6_fitxa_alumnat.md#4-control-proporcional-s4-ampliacio-opcional) (s'avalua amb R1, R3, R4).
+5. **Abans d'entregar** — repassa [el meu checklist](SA6_checklist_alumnat.md).
+
+### Si vols més
+
+- [Fitxa ampliada](SA6_fitxa_ampliada.md) — aprofundiment i ampliacions.
+- [Reptes de la SA6](../../Reptes/Reptes_SA6.md) — tria el teu context.
 
 <!-- web:only-github -->
 ## Contingut
