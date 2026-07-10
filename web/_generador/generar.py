@@ -302,6 +302,19 @@ def wrap_tables(body: str) -> str:
     return body.replace("</table>", "</table></div>")
 
 
+def marca_ruta(body: str) -> str:
+    """A les portades de SA, embolcalla la secció «Itinerari…» (des del seu
+    <h2> fins al <h2> següent) amb <section class="ruta"> perquè el CSS la
+    renderitzi com a passos. Si no hi ha itinerari, no fa res."""
+    m = re.search(r'<h2 id="itinerari[^>]*>.*?</h2>', body)
+    if not m:
+        return body
+    nxt = body.find("<h2", m.end())
+    end = nxt if nxt != -1 else len(body)
+    return (body[:m.start()] + '<section class="ruta">'
+            + body[m.start():end] + "</section>" + body[end:])
+
+
 def strip_github_only(text: str) -> str:
     """Treu del text Markdown els blocs marcats amb
     `<!-- web:only-github -->` … `<!-- /web:only-github -->`.
@@ -1280,8 +1293,8 @@ def subindex_extra(section_key: str, group_key: str, current_out: str,
     titol = ("Tot el material de la SA" if detect_sa(group_key) is not None
              else "Materials d'aquest apartat")
     return ("".join(start)
-            + f'<h2 class="seccio-sep">{titol}</h2>'
-            + '<div class="card-grid">' + "".join(cards) + "</div>")
+            + f'<div class="material-sa"><h2 class="seccio-sep">{titol}</h2>'
+            + '<div class="card-grid">' + "".join(cards) + "</div></div>")
 
 
 # ---------------------------------------------------------------------------
@@ -1696,6 +1709,9 @@ def main():
         body = wrap_tables(body)
         body = rewrite_links(body, p.src, p.out_rel, md_map, code_map, sim_map,
                              copied_imgs, md_title_map)
+        if p.kind == "index" and detect_sa(p.out_rel) is not None \
+                and p.section == "classes":
+            body = marca_ruta(body)
         toc = toc_html(md)
         extra = ""
         pre = ""

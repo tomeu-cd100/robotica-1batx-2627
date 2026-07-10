@@ -665,6 +665,45 @@ a.sa-fil-pill:hover { border-color: var(--accent); color: var(--accent); text-de
   .stepper .step-ic { display: none; }
 }
 
+/* «La teva ruta» — passos de la SA (portada, vista alumnat i docent) */
+.ruta { margin: 1.2rem 0; }
+.ruta > ol {
+  list-style: none; margin: 1rem 0 0; padding: 0;
+  counter-reset: pas;
+}
+.ruta > ol > li {
+  counter-increment: pas; position: relative;
+  margin: 0 0 .6rem; padding: .7rem .9rem .7rem 3.4rem;
+  border: 1px solid var(--border); border-left: 4px solid var(--tri, var(--accent));
+  border-radius: var(--radi-s); background: var(--surface);
+}
+.ruta > ol > li::before {
+  content: counter(pas); position: absolute; left: .9rem; top: 50%;
+  transform: translateY(-50%);
+  width: 1.9rem; height: 1.9rem; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  background: color-mix(in srgb, var(--tri, var(--accent)) 14%, transparent);
+  color: var(--tri, var(--accent));
+  font-weight: 700; font-size: .95rem;
+}
+/* capsa «Si vols més» (h3 + llista que el segueix) */
+.ruta h3 {
+  margin: 1.4rem 0 .4rem; font-size: 1rem; color: var(--muted);
+}
+.ruta h3 + ul {
+  margin: 0; padding: .8rem 1rem; list-style: none;
+  border: 1px dashed var(--border-fort); border-radius: var(--radi-s);
+  background: color-mix(in srgb, var(--surface) 60%, transparent);
+}
+.ruta h3 + ul li { margin: .25rem 0; }
+
+/* Vista alumnat: fora la graella de material, el «comença aquí» de la
+   portada i la barra «Tot sobre la SAx» (a Classes). El docent ho veu tot. */
+html[data-vista="alumnat"] [data-section="classes"] .material-sa,
+html[data-vista="alumnat"] [data-section="classes"] .comenca-aqui.portada-alumnat,
+html[data-vista="alumnat"] [data-section="classes"] .sa-fil,
+html[data-vista="alumnat"] .sidebar .amagat-alumnat { display: none; }
+
 /* ---------- Impressió / PDF ---------- */
 @page { size: A4; margin: 15mm 14mm 16mm; }
 @media print {
