@@ -2,6 +2,7 @@
 
 Material **transversal de suport** (no és una SA amb sessions pròpies). Reuneix en un sol lloc el **vocabulari** de tot el curs i una **guia per aprendre a programar** la placa (Arduino C/C++ i MicroPython per a micro:bit), amb els conceptes bàsics ben explicats. Serveix de **base prèvia a la SA1** i de **punt de consulta** transversal per a totes les SA (SA1–SA9). No consumeix sessions del calendari ni qualifica.
 
+<!-- web:only-github -->
 ## Contingut
 
 | Fitxer | Públic | Descripció |
@@ -12,6 +13,8 @@ Material **transversal de suport** (no és una SA amb sessions pròpies). Reunei
 | [`SA0_guia_docent.md`](SA0_guia_docent.md) | Docent | Referència densa: com integrar la SA0, mapa vocabulari↔SA↔programació didàctica, precisions tècniques i **solucionari** de la fitxa. |
 | [`SA0_checklist_docent.md`](SA0_checklist_docent.md) | Docent | **Checklist** (una cara) de desplegament: integració en 3 escenaris, precisions tècniques i diversitat. |
 | [`SA0_checklist_alumnat.md`](SA0_checklist_alumnat.md) | Alumnat | **Checklist** (una cara) d'autodiagnòstic (no qualifica): què necessito + autoavaluació amb semàfor. |
+
+<!-- /web:only-github -->
 
 ## Com usar-la
 

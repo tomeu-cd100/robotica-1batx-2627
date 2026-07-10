@@ -2,6 +2,15 @@
 
 Vuitena situació d'aprenentatge (**6 h · 3 sessions**, 3r trimestre). El sistema es **connecta** i comença a **decidir**: **telemetria** (enviar/rebre dades de sensors per ràdio), concepte d'**Internet de les coses** amb les seves aplicacions i **riscos**, i una **introducció a la IA** (classificar gestos amb l'acceleròmetre), amb reflexió **ètica i de privacitat**. Maquinari: micro:bit + Micro:shield (ESP32 opcional). Programació oficial: [`Programació didàctica/17_SA8_IoT_IA.md`](../../Programació%20didàctica/17_SA8_IoT_IA.md).
 
+## Itinerari per sessions
+
+> Ordre de treball recomanat. La font única de cada activitat és la **fitxa base** ([`SA8_fitxa_alumnat.md`](SA8_fitxa_alumnat.md)); la resta de documents hi donen suport.
+
+1. **Sessió 1 · Telemetria: el robot que informa** — enviar/rebre dades de sensors per ràdio. Connexions a [`SA8_connexions.md`](SA8_connexions.md).
+2. **Sessió 2 · IoT: arquitectura, aplicacions i riscos** — Internet de les coses i privacitat.
+3. **Sessió 3 · Introducció a la IA: de les regles a l'aprenentatge** — classificar gestos + reflexió ètica (rúbriques R1, R3, R4).
+
+<!-- web:only-github -->
 ## Contingut
 
 | Fitxer | Descripció |
@@ -22,6 +31,8 @@ Vuitena situació d'aprenentatge (**6 h · 3 sessions**, 3r trimestre). El siste
 | [`02_telemetria_receptor.py`](codi/02_telemetria_receptor.py) | micro:bit que rep, mostra i registra pel port sèrie. |
 | [`03_ia_gestos.py`](codi/03_ia_gestos.py) | Classificació de gestos amb l'acceleròmetre (IA basada en regles). |
 | `04_esp32_telemetria.ino` | *(Opcional)* ESP32 que publica dades per WiFi. |
+
+<!-- /web:only-github -->
 
 ## Producte i avaluació
 

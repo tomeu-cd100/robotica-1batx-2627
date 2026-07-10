@@ -2,6 +2,16 @@
 
 Quarta situació d'aprenentatge (**8 h · 4 sessions**, 2n trimestre). El sistema **es mou**: control de posició amb **servomotor**, control de velocitat i direcció d'un **motor DC** amb **driver/pont H** i alimentació externa, i integració sensor → moviment. Maquinari: Arduino UNO + servo SG90 + motor DC + L298N. Programació oficial: [`Programació didàctica/13_SA4_Moviment_servos_motors.md`](../../Programació%20didàctica/13_SA4_Moviment_servos_motors.md).
 
+## Itinerari per sessions
+
+> Ordre de treball recomanat. La font única de cada activitat és la **fitxa base** ([`SA4_fitxa_alumnat.md`](SA4_fitxa_alumnat.md)); la resta de documents hi donen suport.
+
+1. **Sessió 1 · El servomotor** — llibreria `Servo.h`, posició 0-180° amb potenciòmetre.
+2. **Sessió 2 · Motor DC i pont H** — direcció i velocitat (PWM). Munta amb [esquemes i connexions](SA4_esquemes_connexions.md) (massa comuna!).
+3. **Sessió 3 · Del sensor al moviment** — la percepció regula el moviment (ultrasons → velocitat).
+4. **Sessió 4 · Producte: barrera automàtica** — mecanisme motoritzat controlat per sensor (rúbriques R1, R2, R3 parcial).
+
+<!-- web:only-github -->
 ## Contingut
 
 | Fitxer | Descripció |
@@ -23,6 +33,8 @@ Quarta situació d'aprenentatge (**8 h · 4 sessions**, 2n trimestre). El sistem
 | `03_sensor_velocitat.ino` | Ultrasons regula la velocitat del motor (percepció → moviment). |
 | `04_barrera_automatica.ino` | Producte: barrera amb servo activada per sensor. |
 | [`05_dos_leds_millis/05_dos_leds_millis.ino`](codi/05_dos_leds_millis/05_dos_leds_millis.ino) | **Bastida (opcional, 10')**: dos LEDs a ritmes diferents **sense `delay()`** (patró `millis()`). Prepara la **màquina d'estats de la SA6**. |
+
+<!-- /web:only-github -->
 
 ## Producte i avaluació
 

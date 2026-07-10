@@ -4,6 +4,16 @@ Setena situació d'aprenentatge (**8 h · 4 sessions**, 3r trimestre). El robot 
 
 > ⚙️ **Important:** la 3dBot és Arduino-compatible, però **els pins dels motors depenen del model**. Cada `.ino` té un bloc `// === PINS (AJUSTAR) ===`: cal posar-hi els pins reals abans de pujar. La lògica no s'ha de tocar.
 
+## Itinerari per sessions
+
+> Ordre de treball recomanat. La font única de cada activitat és la **fitxa base** ([`SA7_fitxa_alumnat.md`](SA7_fitxa_alumnat.md)); la resta de documents hi donen suport. Recorda ajustar el bloc `// === PINS (AJUSTAR) ===` de cada `.ino`.
+
+1. **Sessió 1 · Moviment i cinemàtica diferencial** — funcions de moviment del robot.
+2. **Sessió 2 · Trajectòries programades** — quadrat i calibratge del gir de 90°.
+3. **Sessió 3 · Evitar obstacles (comportament reactiu)** — llaç tancat amb ultrasons. Connexions a [esquemes i connexions](SA7_esquemes_connexions.md).
+4. **Sessió 4 · Seguidor de línia + repte de pista** — sensors IR; repte autònom (rúbriques R1, R3, R4).
+
+<!-- web:only-github -->
 ## Contingut
 
 | Fitxer | Descripció |
@@ -24,6 +34,8 @@ Setena situació d'aprenentatge (**8 h · 4 sessions**, 3r trimestre). El robot 
 | `02_trajectoria_quadrat.ino` | Trajectòria programada i calibratge del gir de 90°. |
 | `03_evita_obstacles.ino` | Comportament reactiu (llaç tancat) amb ultrasons. |
 | `04_seguidor_linia.ino` | Seguidor de línia amb sensors IR. |
+
+<!-- /web:only-github -->
 
 ## Producte i avaluació
 

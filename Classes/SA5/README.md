@@ -2,6 +2,15 @@
 
 Cinquena situació d'aprenentatge (**7 h · 3-4 sessions**, 2n trimestre). **Canvi de plataforma i de llenguatge**: de l'Arduino (C/C++) a la **micro:bit** amb **MicroPython**. Es treballen la matriu LED i els botons, els sensors integrats (acceleròmetre, llum), la **comunicació per ràdio** entre plaques i una **comparació explícita C/C++ ↔ Python**. Programació oficial: [`Programació didàctica/14_SA5_microbit_micropython.md`](../../Programació%20didàctica/14_SA5_microbit_micropython.md).
 
+## Itinerari per sessions
+
+> Ordre de treball recomanat. La font única de cada activitat és la **fitxa base** ([`SA5_fitxa_alumnat.md`](SA5_fitxa_alumnat.md)); la resta de documents hi donen suport.
+
+1. **Sessió 1 · Primers passos amb MicroPython** — matriu LED, botons i indentació de Python.
+2. **Sessió 2 · Sensors integrats** — acceleròmetre i sensor de llum. Connexions a [`SA5_connexions.md`](SA5_connexions.md).
+3. **Sessió 3 · Ràdio i comparació de paradigmes** — comunicació entre plaques + taula comparativa C++/Python (rúbriques R1 codi, R4 documentació).
+
+<!-- web:only-github -->
 ## Contingut
 
 | Fitxer | Descripció |
@@ -22,6 +31,8 @@ Cinquena situació d'aprenentatge (**7 h · 3-4 sessions**, 2n trimestre). **Can
 | [`02_passes.py`](codi/02_passes.py) | Comptapassos amb l'acceleròmetre (llindar + antirebot). |
 | [`03_nightlight.py`](codi/03_nightlight.py) | Llum automàtic amb el sensor de llum. |
 | [`04_radio_dau.py`](codi/04_radio_dau.py) | Dau digital + comunicació per ràdio entre dues plaques. |
+
+<!-- /web:only-github -->
 
 ## Producte i avaluació
 

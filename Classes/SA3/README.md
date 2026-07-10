@@ -2,6 +2,16 @@
 
 Tercera situació d'aprenentatge (**8 h · 4 sessions**, 1r trimestre). El sistema comença a **percebre l'entorn**: entrades digitals (polsador amb *pull-up* i antirebot), entrades analògiques (potenciòmetre, LDR), sensor d'ultrasons i **funcions** pròpies, amb depuració pel monitor/traçador sèrie. Maquinari: Arduino UNO + Keyestudio. Programació oficial: [`Programació didàctica/12_SA3_Entrades_sensors.md`](../../Programació%20didàctica/12_SA3_Entrades_sensors.md).
 
+## Itinerari per sessions
+
+> Ordre de treball recomanat. La font única de cada activitat és la **fitxa base** ([`SA3_fitxa_alumnat.md`](SA3_fitxa_alumnat.md)); la resta de documents hi donen suport.
+
+1. **Sessió 1 · Entrades digitals i monitor sèrie** — polsador amb `INPUT_PULLUP` i antirebot.
+2. **Sessió 2 · Entrades analògiques** — potenciòmetre i LDR, `map()`, llum automàtic.
+3. **Sessió 3 · Sensor de distància i funcions** — ultrasons i codi modular. Munta amb [esquemes i connexions](SA3_esquemes_connexions.md).
+4. **Sessió 4 · Producte: alarma/aparcament** — sensor → actuador segons distància (rúbriques R1 codi, R2 circuit).
+
+<!-- web:only-github -->
 ## Contingut
 
 | Fitxer | Descripció |
@@ -22,6 +32,8 @@ Tercera situació d'aprenentatge (**8 h · 4 sessions**, 1r trimestre). El siste
 | `02_potenciometre_ldr.ino` | Entrades analògiques (`analogRead`), `map()` i llum automàtic. |
 | `03_ultrasons_funcio.ino` | Funció `mesuraDistancia()` i Serial Plotter. |
 | `04_alarma_aparcament.ino` | Producte: sensor → actuador segons distància. |
+
+<!-- /web:only-github -->
 
 ## Producte i avaluació
 

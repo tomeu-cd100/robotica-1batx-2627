@@ -2,6 +2,16 @@
 
 Segona situació d'aprenentatge (**8 h · 4 sessions**, 1r trimestre). Es passa d'encendre un LED (SA1) a **controlar múltiples sortides digitals i regular-les amb PWM**: semàfors, efecte *fade*, LED RGB i un panell de senyalització amb so i relé. Maquinari: Arduino UNO + kit Keyestudio/BQ. Programació oficial: [`Programació didàctica/11_SA2_Sortides_digitals_PWM.md`](../../Programació%20didàctica/11_SA2_Sortides_digitals_PWM.md).
 
+## Itinerari per sessions
+
+> Ordre de treball recomanat. La font única de cada activitat és la **fitxa base** ([`SA2_fitxa_alumnat.md`](SA2_fitxa_alumnat.md)); la resta de documents hi donen suport.
+
+1. **Sessió 1 · Variables i la primera sortida** — sortida digital amb constants i variables.
+2. **Sessió 2 · Estructures de control: el semàfor** — `for`/`if` i temporització. Munta els circuits amb [esquemes i connexions](SA2_esquemes_connexions.md).
+3. **Sessió 3 · PWM: intensitat i color** — `analogWrite`, `map()` i LED RGB. Codi a [`codi/`](codi/).
+4. **Sessió 4 · Producte: panell de senyalització** — RGB (estat) + so + relé (rúbriques R1 codi, R2 circuit).
+
+<!-- web:only-github -->
 ## Contingut
 
 | Fitxer | Descripció |
@@ -23,6 +33,8 @@ Segona situació d'aprenentatge (**8 h · 4 sessions**, 1r trimestre). Es passa 
 | `03_fade_pwm.ino` | PWM amb `analogWrite` i funció `map()`. |
 | `04_rgb.ino` | Barreja de colors amb LED RGB. |
 | `05_panell_senyalitzacio.ino` | Producte: RGB (estat) + piezo (avís) + relé (càrrega). |
+
+<!-- /web:only-github -->
 
 ## Producte i avaluació
 

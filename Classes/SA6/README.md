@@ -2,6 +2,16 @@
 
 Sisena situació d'aprenentatge (**8 h · 4 sessions**, 2n trimestre). El sistema passa de *reaccionar* a **regular-se sol**: **llaç obert vs tancat**, realimentació, consigna i error, control **tot/res amb histèresi**, **màquines d'estats** (`enum`/`switch`) i introducció al **control proporcional**. Maquinari: Arduino UNO + sensors/actuadors. Programació oficial: [`Programació didàctica/15_SA6_Sistemes_control.md`](../../Programació%20didàctica/15_SA6_Sistemes_control.md).
 
+## Itinerari per sessions
+
+> Ordre de treball recomanat. La font única de cada activitat és la **fitxa base** ([`SA6_fitxa_alumnat.md`](SA6_fitxa_alumnat.md)); la resta de documents hi donen suport.
+
+1. **Sessió 1 · Què és un sistema de control?** — llaç obert vs tancat, consigna i error.
+2. **Sessió 2 · Control tot/res i histèresi** — termòstat amb dos llindars. Munta amb [esquemes i connexions](SA6_esquemes_connexions.md).
+3. **Sessió 3 · Màquines d'estats** — `enum`/`switch` per organitzar el comportament.
+4. **Sessió 4 · Control proporcional** — base del PID; producte documentat amb diagrama de blocs (rúbriques R1, R3, R4).
+
+<!-- web:only-github -->
 ## Contingut
 
 | Fitxer | Descripció |
@@ -22,6 +32,8 @@ Sisena situació d'aprenentatge (**8 h · 4 sessions**, 2n trimestre). El sistem
 | `02_termostat_histeresi.ino` | Control tot/res amb dos llindars (histèresi). |
 | `03_maquina_estats.ino` | Màquina d'estats finits amb `enum`/`switch`. |
 | `04_control_proporcional.ino` | Regulació proporcional bàsica (base del PID). |
+
+<!-- /web:only-github -->
 
 ## Producte i avaluació
 
