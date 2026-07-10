@@ -829,7 +829,7 @@ def sa_fil_html(sa: int, current_out: str, fil: dict) -> str:
 # pàgines de codi (kind == "code").
 DOC_ORDRE_CLAUS = ["guia-docent", "guia", "fitxa-alumnat", "vocabulari",
                    "prova", "normes", "esquemes", "connexions", "poster",
-                   "recursos", "practica", "checklist-alumnat", "__codi__",
+                   "recursos", "practica", "__codi__", "checklist-alumnat",
                    "fitxa-ampliada", "questionari", "checklist-docent"]
 
 # Material que existeix per a l'alumnat però NOMÉS com a consulta opcional
