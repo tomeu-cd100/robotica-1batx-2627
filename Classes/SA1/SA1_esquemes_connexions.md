@@ -2,37 +2,19 @@
 
 > Tot reproduïble a **Tinkercad Circuits** (tinkercad.com) o **Wokwi** (wokwi.com). A la SA1 només es necessita **un LED**; si s'usa el LED **intern** (pin 13) no cal cap component extern. El LED **extern** sempre porta una **resistència de 220 Ω** en sèrie i el càtode (pota curta / costat pla) va a **GND**.
 
-## Llegenda dels diagrames de connexió
-```
---[ 220R ]--   resistencia (el numero indica el valor en ohms)
-|>|            LED ( |> = anode/pota llarga , | = catode/pota curta )
-+              nus de connexio comu (p. ex. la linia de GND)
-~              pin amb PWM
-```
-
 ---
 
 ## 1. Anatomia de la placa Arduino UNO (Activitat 2)
 
 Aquest apartat dona suport a l'**Activitat 2** de la fitxa. Es projecta primer la **versió etiquetada** (model) i, després, l'alumnat etiqueta la **versió muda**.
 
+![Fotografia d'una placa Arduino UNO real](img/arduino-uno-foto.jpg)
+
+> *Fotografia: Arduino Uno R3, per [SparkFun Electronics](https://commons.wikimedia.org/wiki/File:Arduino_Uno_-_R3.jpg) — llicència [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/).*
+
 ### 1.1. Versió etiquetada (model del docent)
 
-```
-                       ┌─────── USB (programació + alimentació)
-                       │   ┌─── Connector d'alimentació (7-12 V)
-                       ▼   ▼
-                  ┌──────────────────────────────────────┐
-   PINS DIGITALS  │  [ 13 12 ~11 ~10 ~9  8 | 7 ~6 ~5 4 ~3 2 1 0 ] │  ← (~ = PWM)
-   (entrada/      │                                        │
-    sortida)      │            ARDUINO  UNO                │
-                  │         ┌──────────────┐               │
-                  │         │ ATmega328P   │ ← MICROCONTROLADOR (el "cervell")
-                  │         └──────────────┘               │
-                  │  [ IOREF RESET 3V3 5V GND GND Vin ]     │  ← PINS D'ALIMENTACIÓ
-   ALIMENTACIÓ →  │  [ A0 A1 A2 A3 A4 A5 ]                  │  ← ENTRADES ANALÒGIQUES
-                  └──────────────────────────────────────┘
-```
+![Esquema de la placa Arduino UNO amb les parts etiquetades: connector USB, connector d'alimentació, pins digitals 0-13 amb PWM, microcontrolador ATmega328P, LED intern L al pin 13, pins d'alimentació i entrades analògiques A0-A5](img/sa1-placa-uno-etiquetada.svg)
 
 | Part | Funció |
 |---|---|
@@ -46,26 +28,11 @@ Aquest apartat dona suport a l'**Activitat 2** de la fitxa. Es projecta primer l
 
 ### 1.2. Versió muda (per imprimir / projectar)
 
-L'alumnat escriu el nom de cada part als requadres `[ ____ ]`.
+L'alumnat escriu el nom de cada part al requadre numerat corresponent.
 
-```
-                       ┌─────── [ ____________ ]
-                       │   ┌─── [ ____________ ]
-                       ▼   ▼
-                  ┌──────────────────────────────────────┐
-  [ __________ ]  │  [ 13 12 ~11 ~10 ~9  8 | 7 ~6 ~5 4 ~3 2 1 0 ] │
-                  │            ARDUINO  UNO                │
-                  │         ┌──────────────┐               │
-                  │         │              │ ← [ ____________ ]
-                  │         └──────────────┘               │
-  [ __________ ]  │  [ IOREF RESET 3V3 5V GND GND Vin ]     │
-  [ __________ ]  │  [ A0 A1 A2 A3 A4 A5 ]                  │
-                  └──────────────────────────────────────┘
-```
+![Esquema mut de la placa Arduino UNO amb set requadres numerats i buits per escriure el nom de cada part](img/sa1-placa-uno-muda.svg)
 
-> **Imatges reals recomanades** (per projectar o imprimir en color):
-> - Diagrama oficial de la placa: documentació d'Arduino — *Arduino UNO Rev3* (`docs.arduino.cc`).
-> - Vista interactiva: crea el circuit a **Tinkercad** i fes captura de la placa amb les etiquetes.
+> **Solució (per al docent):** 1 · Connector USB · 2 · Connector d'alimentació (7-12 V) · 3 · Pins digitals 0-13 (`~` = PWM) · 4 · LED intern «L» (pin 13) · 5 · Microcontrolador (ATmega328P) · 6 · Pins d'alimentació (5V, GND…) · 7 · Entrades analògiques (A0-A5).
 
 ---
 
@@ -88,9 +55,7 @@ No cal cap component: el LED marcat amb **L** ja està connectat internament al 
 | LED (ànode +) | Pin 13 → 220 Ω → ànode | Pota **llarga** = + |
 | LED (càtode −) | GND | Pota **curta** / costat pla |
 
-```
-Pin 13 --[ 220R ]--|>|-- GND
-```
+![Circuit: el pin 13 va a una resistència de 220 ohms, després a l'ànode (pota llarga, +) del LED, i el càtode (pota curta, −) del LED va a GND](img/sa1-circuit-blink.svg)
 
 > ⚠️ **Sempre** la resistència de 220 Ω en sèrie: sense ella el LED rep massa corrent i es pot fondre.
 > El mateix esquema serveix per als sketches d'ampliació `blink_millis` i `sos_morse`.

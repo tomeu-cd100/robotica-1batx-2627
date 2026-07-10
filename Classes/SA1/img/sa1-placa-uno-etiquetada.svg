@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 470" width="860" height="470" role="img" aria-labelledby="t d">
+  <title id="t">Anatomia de la placa Arduino UNO (etiquetada)</title>
+  <desc id="d">Placa Arduino UNO amb les parts assenyalades: connector USB, connector d'alimentació, pins digitals 0 a 13 amb PWM, microcontrolador ATmega328P, LED intern L al pin 13, pins d'alimentació i entrades analògiques A0 a A5.</desc>
+  <style>
+    .fr{fill:#f6faf9;stroke:#d7e6e5;stroke-width:1.5}
+    .board{fill:#0c6e70;stroke:#08595b;stroke-width:2}
+    .hdr{fill:#14181a}
+    .pinlbl{font:600 12px 'Consolas',monospace;fill:#eaf3f2}
+    .pinnum{font:700 12px 'Consolas',monospace;fill:#0e1b1c}
+    .chip{fill:#1b2426;stroke:#0a1112;stroke-width:1.5}
+    .chiptxt{font:700 13px 'Consolas',monospace;fill:#eaf3f2}
+    .callbox{fill:#ffffff;stroke:#b7d0cf;stroke-width:1.2}
+    .call{font:600 12.5px system-ui,'Segoe UI',sans-serif;fill:#0e1b1c}
+    .lead{stroke:#4f6d6e;stroke-width:1.4;fill:none}
+    .dot{fill:#4f6d6e}
+  </style>
+  <rect class="fr" x="1" y="1" width="858" height="468" rx="14"/>
+
+  <!-- Placa -->
+  <rect class="board" x="150" y="150" width="560" height="180" rx="10"/>
+
+  <!-- Connector USB (surt per l'esquerra a dalt) -->
+  <rect x="112" y="176" width="46" height="46" rx="3" fill="#c8ced1" stroke="#8b979a" stroke-width="1.5"/>
+  <!-- Connector alimentació (jack, esquerra a baix) -->
+  <rect x="116" y="262" width="42" height="36" rx="6" fill="#14181a" stroke="#000" stroke-width="1.5"/>
+  <circle cx="137" cy="280" r="7" fill="#3a4446"/>
+
+  <!-- Capçalera pins digitals (dalt) -->
+  <rect class="hdr" x="172" y="164" width="516" height="20" rx="3"/>
+  <!-- Pins digitals: 13 12 ~11 ~10 ~9 8 7 ~6 ~5 4 ~3 2 1 0 -->
+  <g class="pinlbl" text-anchor="middle">
+    <text x="190" y="178">13</text><text x="228" y="178">12</text>
+    <text x="266" y="178">~11</text><text x="304" y="178">~10</text>
+    <text x="342" y="178">~9</text><text x="380" y="178">8</text>
+    <text x="418" y="178">7</text><text x="456" y="178">~6</text>
+    <text x="494" y="178">~5</text><text x="532" y="178">4</text>
+    <text x="570" y="178">~3</text><text x="608" y="178">2</text>
+    <text x="646" y="178">1</text><text x="672" y="178">0</text>
+  </g>
+
+  <!-- LED intern L (prop del pin 13) -->
+  <circle cx="196" cy="205" r="9" fill="#f59e0b" stroke="#b45309" stroke-width="1.5"/>
+  <text x="196" y="209" text-anchor="middle" fill="#0e1b1c" style="font:700 11px monospace">L</text>
+
+  <!-- Microcontrolador -->
+  <rect class="chip" x="360" y="222" width="150" height="60" rx="4"/>
+  <circle cx="372" cy="234" r="3" fill="#3a4446"/>
+  <text class="chiptxt" x="435" y="257" text-anchor="middle">ATmega328P</text>
+
+  <!-- Capçalera alimentació (baix esquerra) -->
+  <rect class="hdr" x="196" y="296" width="228" height="20" rx="3"/>
+  <g class="pinlbl" text-anchor="middle">
+    <text x="222" y="310">RST</text><text x="264" y="310">3V3</text>
+    <text x="304" y="310">5V</text><text x="344" y="310">GND</text>
+    <text x="392" y="310">Vin</text>
+  </g>
+  <!-- Capçalera analògica (baix dreta) -->
+  <rect class="hdr" x="452" y="296" width="220" height="20" rx="3"/>
+  <g class="pinlbl" text-anchor="middle">
+    <text x="474" y="310">A0</text><text x="512" y="310">A1</text>
+    <text x="550" y="310">A2</text><text x="588" y="310">A3</text>
+    <text x="626" y="310">A4</text><text x="660" y="310">A5</text>
+  </g>
+
+  <!-- Retols amb línies guia -->
+  <!-- USB -->
+  <rect class="callbox" x="28" y="120" width="120" height="34" rx="7"/>
+  <text class="call" x="88" y="141" text-anchor="middle">Connector USB</text>
+  <path class="lead" d="M135,154 L135,176"/>
+  <circle class="dot" cx="135" cy="176" r="2.5"/>
+
+  <!-- Jack -->
+  <rect class="callbox" x="18" y="316" width="132" height="34" rx="7"/>
+  <text class="call" x="84" y="337" text-anchor="middle">Alimentació 7–12 V</text>
+  <path class="lead" d="M137,316 L137,298"/>
+  <circle class="dot" cx="137" cy="298" r="2.5"/>
+
+  <!-- Pins digitals -->
+  <rect class="callbox" x="300" y="96" width="270" height="34" rx="7"/>
+  <text class="call" x="435" y="117" text-anchor="middle">Pins digitals 0–13  ·  ~ = PWM</text>
+  <path class="lead" d="M435,130 L435,164"/>
+  <circle class="dot" cx="435" cy="164" r="2.5"/>
+
+  <!-- LED -->
+  <rect class="callbox" x="592" y="120" width="176" height="34" rx="7"/>
+  <text class="call" x="680" y="141" text-anchor="middle">LED intern «L» (pin 13)</text>
+  <path class="lead" d="M592,140 C420,150 250,180 205,200"/>
+  <circle class="dot" cx="205" cy="200" r="2.5"/>
+
+  <!-- Microcontrolador -->
+  <rect class="callbox" x="560" y="222" width="270" height="46" rx="7"/>
+  <text class="call" x="695" y="240" text-anchor="middle">Microcontrolador (ATmega328P)</text>
+  <text class="call" x="695" y="257" text-anchor="middle">el «cervell»: executa el programa</text>
+  <path class="lead" d="M560,250 L510,252"/>
+  <circle class="dot" cx="510" cy="252" r="2.5"/>
+
+  <!-- Alimentació -->
+  <rect class="callbox" x="120" y="392" width="210" height="34" rx="7"/>
+  <text class="call" x="225" y="413" text-anchor="middle">Pins d'alimentació (5V, GND…)</text>
+  <path class="lead" d="M290,392 L310,318"/>
+  <circle class="dot" cx="310" cy="318" r="2.5"/>
+
+  <!-- Analògiques -->
+  <rect class="callbox" x="470" y="392" width="230" height="34" rx="7"/>
+  <text class="call" x="585" y="413" text-anchor="middle">Entrades analògiques (A0–A5)</text>
+  <path class="lead" d="M560,392 L560,318"/>
+  <circle class="dot" cx="560" cy="318" r="2.5"/>
+</svg>

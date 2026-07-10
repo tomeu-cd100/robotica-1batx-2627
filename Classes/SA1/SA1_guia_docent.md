@@ -149,7 +149,7 @@ A la SA1 hem fet **parpellejar un LED** (una sortida digital senzilla). A la **S
 |---|---|
 | **Bastida (qui ho necessita)** | Apartats guiats de la fitxa i del pòster; la versió **etiquetada** de la placa com a referència; treball en **parella heterogènia** segons la diagnòstica. |
 | **+ Ampliació (qui va sobrat)** | Sketches `blink_millis.ino` (sense `delay()`) i `sos_morse.ino` (funcions); investigar un robot industrial/IA i preparar defensa oral d'1 min. |
-| **Diversitat lingüística/lectora** | Glossari mínim a la pissarra (sensor, actuador, procés, embegut); diagrames ASCII i imatges en lloc de text dens. |
+| **Diversitat lingüística/lectora** | Glossari mínim a la pissarra (sensor, actuador, procés, embegut); diagrames i imatges (model E-P-S, placa, circuit) en lloc de text dens. |
 | **Sense maquinari per a tothom** | Tot és reproduïble a **Tinkercad**/**Wokwi**; es pot treballar amb el LED **intern** (pin 13) sense cablejar res. |
 
 > **Avaluació formativa:** comparteix les rúbriques **R4** i **R5** amb l'alumnat **abans** de començar el producte (vegeu [`Programació didàctica/07_Rubriques.md`](../../Programació%20didàctica/07_Rubriques.md)).

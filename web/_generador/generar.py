@@ -302,6 +302,18 @@ def wrap_tables(body: str) -> str:
     return body.replace("</table>", "</table></div>")
 
 
+def strip_github_only(text: str) -> str:
+    """Treu del text Markdown els blocs marcats amb
+    `<!-- web:only-github -->` … `<!-- /web:only-github -->`.
+
+    Serveix per a contingut que només té sentit a GitHub (p. ex. una taula de
+    fitxers), perquè al web ja el genera el mateix generador (targetes, sidebar)
+    i es duplicaria. A GitHub els comentaris HTML són invisibles i el bloc es
+    veu; al web, aquest bloc s'elimina abans de convertir-lo. Font única."""
+    return re.sub(r"<!--\s*web:only-github\s*-->.*?<!--\s*/web:only-github\s*-->\s*",
+                  "", text, flags=re.DOTALL)
+
+
 # ---------------------------------------------------------------------------
 # Descobriment de pàgines
 # ---------------------------------------------------------------------------
@@ -621,7 +633,10 @@ def sidebar_html(section_key: str, current_out: str, pages: list[Page]) -> str:
                          docent=(p.public == "docent")))
     out.append("</ul>")
 
-    # grups (subcarpetes) plegables
+    # grups (subcarpetes): sidebar compacte. Només el grup actiu (la SA on
+    # ets) es desplega amb totes les seves pàgines; la resta de SA es redueixen
+    # a un sol enllaç a la seva portada, per alleugerir el lateral i el pes de
+    # cada HTML.
     for gk in sorted(groups, key=group_sort_key):
         gps = groups[gk]
         gps.sort(key=lambda p: (0 if p.kind == "index" else 1, doc_ordre(p)))
@@ -629,6 +644,12 @@ def sidebar_html(section_key: str, current_out: str, pages: list[Page]) -> str:
         idx = next((p for p in gps if p.kind == "index"), None)
         tri = group_tri(gk)
         dot = f'<span class="tri-dot" data-tri="{tri}"></span>' if tri else ""
+        grp_docent = bool(gps) and all(p.public == "docent" for p in gps)
+        if not in_group and idx is not None:
+            link_cls = "sb-grup-link nomes-docent" if grp_docent else "sb-grup-link"
+            out.append(f'<a class="{link_cls}" href="{rel_url(current_out, idx.out_rel)}">'
+                       f'<span>{html.escape(group_label(gk))}</span>{dot}</a>')
+            continue
         open_attr = " open" if in_group else ""
         summary = f'<summary><span>{html.escape(group_label(gk))}</span>{dot}</summary>'
         items = []
@@ -642,7 +663,6 @@ def sidebar_html(section_key: str, current_out: str, pages: list[Page]) -> str:
             items.append(_link(rel_url(current_out, p.out_rel), label,
                                p.out_rel == current_out,
                                docent=(p.public == "docent")))
-        grp_docent = bool(gps) and all(p.public == "docent" for p in gps)
         grp_cls = "sb-grup nomes-docent" if grp_docent else "sb-grup"
         out.append(f'<details class="{grp_cls}"{open_attr}>{summary}<ul>'
                    + "".join(items) + "</ul></details>")
@@ -741,6 +761,28 @@ def build_sa_fil(pages: list[Page]) -> dict[int, list[tuple[str, str]]]:
         if items:
             fil[sa] = items
     return fil
+
+
+def stepper_html(section_key: str, out_rel: str) -> str:
+    """Barra de progrés del curs (SA0 → SA9) per a les pàgines de Classes.
+    Ressalta la SA actual i acoloreix cada pas segons el seu trimestre
+    (reutilitza `data-tri`). A les pàgines sense SA (índex, transversal) no
+    ressalta cap pas i serveix de navegació ràpida entre unitats."""
+    if section_key != "classes":
+        return ""
+    cur = detect_sa(out_rel)
+    steps = []
+    for sa in range(0, 10):
+        tri = 0 if sa == 0 else sa_trimestre(sa)
+        href = rel_url(out_rel, f"classes/sa{sa}/index.html")
+        actiu = " actiu" if sa == cur else ""
+        aria = ' aria-current="page"' if sa == cur else ""
+        steps.append(f'<a class="step{actiu}" data-tri="{tri}" href="{href}"{aria} '
+                     f'title="SA{sa} · {html.escape(SA_TITLES.get(sa, ""))}">'
+                     f'<span class="step-ic">{SA_ICONES.get(sa, "")}</span>'
+                     f'<span class="step-n">SA{sa}</span></a>')
+    return ('<nav class="stepper" aria-label="Progrés del curs (les 9 SA)">'
+            + "".join(steps) + "</nav>")
 
 
 def sa_fil_html(sa: int, current_out: str, fil: dict) -> str:
@@ -860,6 +902,7 @@ def page_shell(*, out_rel, section_key, title, content_html, toc="",
         print_cap = (f'<div class="print-cap"><div class="pc-site">{html.escape(SITE_TITLE)}</div>'
                      f'<div class="pc-tit">{html.escape(title)}</div></div>')
     sidebar = sidebar_html(section_key, out_rel, pages)
+    stepper = stepper_html(section_key, out_rel)
     has_sidebar = "amb-sidebar" if sidebar else "sense-sidebar"
     toc_block = toc or ""
     layout_class = "amb-toc" if toc_block else "sense-toc"
@@ -906,6 +949,7 @@ def page_shell(*, out_rel, section_key, title, content_html, toc="",
     <div class="avis-docent">📎 Aquesta pàgina és <strong>material per al docent</strong>. Actives la vista docent al botó de dalt.</div>
     {print_cap}
     {breadcrumb_html(out_rel, section_key, title, {p.out_rel for p in pages})}
+    {stepper}
     {pdf_block}
     {tri_badge}
     <article class="prose">
@@ -1638,7 +1682,7 @@ def main():
     for p in pages:
         if p.kind in ("code", "sim"):
             continue
-        text = p.src.read_text(encoding="utf-8")
+        text = strip_github_only(p.src.read_text(encoding="utf-8"))
         md = make_md()
         body = md.convert(text)
         body = wrap_tables(body)

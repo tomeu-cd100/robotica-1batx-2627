@@ -278,6 +278,16 @@ body.sense-sidebar .sidebar { display: none; }
 .sb-grup ul { margin: 0 0 .3rem; padding: 0; }
 .sb-grup ul a { padding-left: 1rem; font-size: .86rem; }
 
+/* sidebar compacte: SA no activa = un sol enllaç a la portada */
+.sb-grup-link {
+  display: flex; align-items: center; gap: .4rem; margin: .15rem 0;
+  padding: .5rem .6rem; font-size: .86rem; font-weight: 700; color: var(--text);
+  border-top: 1px solid var(--border); border-radius: var(--radi-s);
+}
+.sb-grup-link:hover { background: var(--surface-2); text-decoration: none; color: var(--accent); }
+.sb-grup-link span:first-child { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.sb-grup-link .tri-dot { margin-left: auto; }
+
 /* ---------- Contingut / prose ---------- */
 main { min-width: 0; }
 .breadcrumb { font-size: .85rem; color: var(--muted); margin-bottom: 1rem; }
@@ -631,12 +641,36 @@ a.sa-fil-pill:hover { border-color: var(--accent); color: var(--accent); text-de
   .pager-a.buit { display: none; }
 }
 
+/* Barra de progrés del curs (stepper SA0 → SA9) */
+.stepper {
+  display: flex; gap: .3rem; margin: 0 0 1.1rem; padding-bottom: .1rem;
+  overflow-x: auto; -webkit-overflow-scrolling: touch;
+}
+.stepper .step {
+  display: flex; flex-direction: column; align-items: center; gap: .1rem;
+  flex: 1 1 0; min-width: 44px; padding: .35rem .2rem;
+  border: 1px solid var(--border); border-radius: var(--radi-s);
+  border-bottom: 3px solid var(--tri, var(--border));
+  background: var(--surface); color: var(--muted); font-size: .72rem;
+}
+.stepper .step:hover { border-color: var(--tri, var(--accent)); text-decoration: none; color: var(--text); }
+.stepper .step-ic { font-size: 1rem; line-height: 1; }
+.stepper .step-n { font-weight: 700; letter-spacing: .02em; }
+.stepper .step.actiu {
+  background: color-mix(in srgb, var(--tri) 14%, transparent);
+  color: var(--text); border-color: var(--tri);
+}
+@media (max-width: 640px) {
+  .stepper .step { min-width: 40px; }
+  .stepper .step-ic { display: none; }
+}
+
 /* ---------- Impressió / PDF ---------- */
 @page { size: A4; margin: 15mm 14mm 16mm; }
 @media print {
   .topbar, .sidebar, .toc, .peu, .breadcrumb, .skip,
   .pagina-eines, .menu-btn, .badge-tri, .copia-btn,
-  .sa-fil, .pager, .pauta-box { display: none !important; }
+  .sa-fil, .pager, .pauta-box, .stepper { display: none !important; }
   html, body { background: #fff !important; color: #000; font-size: 11pt; }
   .layout, body.sense-toc .layout, body.sense-sidebar .layout {
     display: block; max-width: 100%; padding: 0; margin: 0; gap: 0;

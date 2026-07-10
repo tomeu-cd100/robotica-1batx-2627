@@ -30,6 +30,8 @@
 ### 1 · Entrada – Procés – Sortida
 Completa: què *percep* (entrada), què *decideix* (procés) i què *fa* (sortida).
 
+![Model entrada-procés-sortida: els sensors (entrada) porten al cervell (procés), que porta als actuadors (sortida), amb l'exemple del semàfor](img/sa1-model-eps.svg)
+
 | Sistema | Entrada (sensors) | Procés (decisió) | Sortida (actuadors) |
 |---|---|---|---|
 | Rentadora | | | |
@@ -48,9 +50,10 @@ Llegeix [`SA1_normes_seguretat.md`](SA1_normes_seguretat.md) i **signa** el full
 
 ### 4 · El teu primer programa (`Blink`) — PRIMM
 0. **PREDIU** (sense pujar-lo encara): què creus que farà el LED? ______________________
-1. **Investiga** `blink.ino`: què hi ha a `setup()`? ______ a `loop()`? ______ què fa `delay(1000)`? ______
-2. **Modifica** el temps perquè parpellegi més ràpid. Valor: ______
-3. **Repte** (`blink_repte.ino`): fes 3 parpellejos ràpids i una pausa llarga, i que es repeteixi.
+1. **EXECUTA**: puja `blink.ino` i observa. Coincideix amb la teva predicció? **Sí / No** — què has vist de diferent? ______________________
+2. **Investiga** `blink.ino`: què hi ha a `setup()`? ______ a `loop()`? ______ què fa `delay(1000)`? ______
+3. **Modifica** el temps perquè parpellegi més ràpid. Valor: ______
+4. **Crea un repte** (`blink_repte.ino`): fes 3 parpellejos ràpids i una pausa llarga, i que es repeteixi.
 
 ## Producte · Fitxa-pòster
 Tria un **robot real** i analitza'l amb [`SA1_poster_robot_plantilla.md`](SA1_poster_robot_plantilla.md) (entrada-procés-sortida + dilema ètic). S'avalua amb la rúbrica **R4**.
