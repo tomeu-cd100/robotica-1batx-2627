@@ -305,12 +305,12 @@ missatge = radio.receive() # el receptor rep (o None si no hi ha res)
 
 ## Mètode per llegir codi: PRIMM
 
-No copiïs codi sense entendre'l. Segueix aquests passos:
+No copiïs codi sense entendre'l. Segueix aquests passos (les sigles **PRIMM** venen de l'anglès: *Predict, Run, Investigate, Modify, Make*):
 
-1. **P**redir — abans d'executar, escriu què creus que farà.
-2. **E**xecutar — carrega'l i comprova si encertaves.
-3. **I**nvestigar — entén què fa cada línia.
-4. **M**odificar — canvia coses i observa l'efecte.
-5. **C**rear — escriu el teu propi a partir del que has après.
+1. **Predir** (*Predict*) — abans d'executar, escriu què creus que farà.
+2. **Executar** (*Run*) — carrega'l i comprova si encertaves.
+3. **Investigar** (*Investigate*) — entén què fa cada línia.
+4. **Modificar** (*Modify*) — canvia coses i observa l'efecte.
+5. **Crear** (*Make*) — escriu el teu propi a partir del que has après.
 
 > Predir **abans** de provar és el pas que més t'ajuda a aprendre de veritat. → Practica-ho a **[`SA0_fitxa_alumnat.md`](SA0_fitxa_alumnat.md)**.

@@ -11,7 +11,7 @@
   (quin       (com ho        (construeixo   (funciona?  (com ho
    problema?)  penso fer?)    una versió)    on falla?)  faig millor?)
 ```
-I llegim/escrivim codi amb **PRIMM**: **P**redir · **E**xecutar · **I**nvestigar · **M**odificar · **C**rear.
+I llegim/escrivim codi amb **PRIMM** (de l'anglès *Predict, Run, Investigate, Modify, Make*): **Predir** · **Executar** · **Investigar** · **Modificar** · **Crear**.
 
 ---
 
