@@ -16,6 +16,8 @@
 4. La placa **executa** el programa, encara que la desconnectis de l'ordinador (queda gravat).
 
 > Pots fer tot això sense placa física a **Tinkercad Circuits** o **Wokwi**.
+>
+> **Treballes amb Chromebook?** El flux és el mateix amb el **web editor** al navegador: vegeu la [`SA0_guia_web_editor_chromebook.md`](SA0_guia_web_editor_chromebook.md).
 
 ---
 

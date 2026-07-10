@@ -7,7 +7,7 @@
 ## 🧰 1. Preparar i repartir (inici de curs)
 - [ ] Repartir/enllaçar el [`SA0_vocabulari_essencial.md`](SA0_vocabulari_essencial.md) (glossari per SA, projectable i imprimible com a "diccionari de butxaca")
 - [ ] Repartir/enllaçar la [`SA0_guia_programacio.md`](SA0_guia_programacio.md) (Arduino + MicroPython + comparativa)
-- [ ] Proposar la [`SA0_fitxa_alumnat.md`](SA0_fitxa_alumnat.md) com a **autodiagnòstic voluntari** la 1a setmana (15–20' dins la SA1)
+- [ ] Proposar la [`SA0_fitxa_alumnat.md`](SA0_fitxa_alumnat.md) com a **autodiagnòstic voluntari** la 1a setmana (15–20' dins la SA1) — es respon a la **tasca de Classroom** del tema SA0 (Google Form, sense nota, act. 2-3 autocorrectives)
 - [ ] Tenir a mà el **solucionari de la fitxa** (dins [`SA0_guia_docent.md`](SA0_guia_docent.md))
 - [ ] Presentar la **rutina DEPURA** (s'usarà a totes les SA)
 

@@ -13,12 +13,15 @@ La SA0 reuneix en un sol lloc el **vocabulari** i els **conceptes de programaci�
 |---|---|---|
 | [`SA0_vocabulari_essencial.md`](SA0_vocabulari_essencial.md) | Alumnat | Consulta contínua. Glossari **per SA**. Projectable; també imprimible com a "diccionari de butxaca". |
 | [`SA0_guia_programacio.md`](SA0_guia_programacio.md) | Alumnat | Lectura/consulta. Conceptes Arduino (A) + MicroPython (B) + comparativa (C). Referència en resoldre reptes. |
-| [`SA0_fitxa_alumnat.md`](SA0_fitxa_alumnat.md) | Alumnat | Autoaprenentatge (no qualifica). Diagnòstic informal abans de SA1; deures de repàs per a qui ho necessiti. |
+| [`SA0_guia_web_editor_chromebook.md`](SA0_guia_web_editor_chromebook.md) | Alumnat | Via Chromebook (Arduino Web Editor): posada en marxa i flux. Plataforma mixta amb l'IDE d'escriptori. |
+| [`SA0_fitxa_alumnat.md`](SA0_fitxa_alumnat.md) | Alumnat | Autoaprenentatge (no qualifica). Diagnòstic informal abans de SA1; deures de repàs per a qui ho necessiti. **Es fa en línia:** tasca de Google Classroom (tema SA0) amb Google Form; les activitats 2 i 3 s'autocorregeixen. |
+| [`SA0_checklist_alumnat.md`](SA0_checklist_alumnat.md) | Alumnat | Autodiagnòstic d'una cara (no qualifica): què necessito + semàfor. |
+| [`SA0_checklist_docent.md`](SA0_checklist_docent.md) | Docent | Checklist de desplegament: preparació, integració, precisions i diversitat. |
 | `SA0_guia_docent.md` | Docent | Aquest document: integració, mapa i solucionari. |
 
 ## Com integrar-la (3 escenaris)
 
-1. **Inici de curs (recomanat):** repartir el vocabulari i la guia com a material de referència; proposar la fitxa com a **autodiagnòstic** voluntari la primera setmana. No ocupa sessió sencera; 15–20 min de presentació dins la SA1.
+1. **Inici de curs (recomanat):** repartir el vocabulari i la guia com a material de referència; proposar la fitxa com a **autodiagnòstic** voluntari la primera setmana. No ocupa sessió sencera; 15–20 min de presentació dins la SA1. La fitxa es respon **en línia**: tasca de Classroom (tema SA0, sense nota) amb Google Form; el solucionari d'aquest document serveix per a les respostes obertes (les activitats 2 i 3 s'autocorregeixen al Form).
 2. **Bastida puntual (atenció a la diversitat):** derivar a seccions concretes l'alumnat que necessiti reforç (p. ex., "repassa A6. `if/else`" abans de la SA3).
 3. **Pont a MicroPython:** abans de la SA5, fer llegir la Part B i la taula comparativa (Part C) per amortir el canvi de llenguatge.
 

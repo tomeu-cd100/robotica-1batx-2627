@@ -45,6 +45,21 @@ A `Classes/SA0/SA0_fitxa_alumnat.md` les **activitats 1-6** s'han embolcallat am
 
 **Efecte col·lateral acceptat:** el PDF de la fitxa es genera de l'HTML del web, així que també queda sense activitats (només enllaç a Classroom). La versió imprimible completa és el md de GitHub.
 
+## 5. Auditoria de coherència de la SA0 i correccions
+
+Anàlisi completa de la SA0 (7 documents + web + Classroom) amb 8 correccions aplicades:
+
+1. **Referències trencades al web:** la fitxa citava «Activitat 5» i «Activitats 4 i 6» que ja no es veuen al web (són al Form); ara són autodescriptives («Detecta l'error», «llegir i predir codi»…).
+2. **Duplicació eliminada:** exit ticket, pregunta ODS i autoavaluació eren al web **i** al Form; ara al web són `web:only-github` (només Form en línia, paper des de GitHub).
+3. **Vestigi de paper:** línia «Nom/Parella/Data» fora del web (`web:only-github`).
+4. **Itinerari a la portada SA0:** secció «Itinerari (per on començo?)» en veu d'alumnat (vocabulari → guia → fitxa a Classroom → checklist), renderitzada com a `.ruta` (com les SA1-SA9); instruccions de docent separades a «Per al docent: com integrar-la».
+5. **Ordre del pager corregit** (`generar.py`, `DOC_ORDRE_CLAUS`): `vocabulari` ara va abans de les guies i la fitxa (abans sortia *després* de la fitxa). Només afecta SA0 (cap altra SA té pàgina de vocabulari). Ruta alumnat resultant: Presentació → Vocabulari → Guia programació → Guia Chromebook → Fitxa → Checklist.
+6. **Referència creuada que faltava:** la guia de programació (A0) ara enllaça la guia del web editor per a Chromebooks (abans només existia el sentit invers).
+7. **Doc drift:** README i guia docent no llistaven `SA0_guia_web_editor_chromebook.md` (ni els checklists a la guia docent); taules completades.
+8. **Docs docents al dia:** guia docent i checklist docent ara mencionen la tasca de Classroom (Form, sense nota, act. 2-3 autocorrectives).
+
+**Punts forts confirmats (no tocats):** cadena d'enllaços vocabulari→guia→fitxa→Classroom, progressió A0→A9, solucionari alineat amb el Form (verificat), precisions tècniques, missatge «no qualifica» consistent.
+
 ## Pendent / següents passos
 
 - Revisar el Form a la interfície (l'API no permet pujar imatges de codi amb format; el codi va en text pla als encapçalaments).

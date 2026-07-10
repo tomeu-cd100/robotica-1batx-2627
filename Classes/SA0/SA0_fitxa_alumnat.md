@@ -1,6 +1,10 @@
 # SA0 · Fitxa d'alumnat — Vocabulari i primeres passes amb el codi
 
+<!-- web:only-github -->
+
 **Nom:** ______________________  **Parella:** ______________________  **Data:** __________
+
+<!-- /web:only-github -->
 
 > Aquesta fitxa és d'**autoaprenentatge**: pots fer-la sol/a o en parella, amb el [`SA0_vocabulari_essencial.md`](SA0_vocabulari_essencial.md) i el [`SA0_guia_programacio.md`](SA0_guia_programacio.md) al costat. No es qualifica: serveix perquè arribis a la SA1 amb la base posada.
 
@@ -139,12 +143,14 @@ Quan un codi no fa el que esperes, segueix la **rutina DEPURA** (la faràs servi
 
 > **D**escriu (què esperaves vs què passa) · **E**xamina (missatge d'error, la línia) · **P**rova una hipòtesi cada cop · **U**bica el problema · **R**epara i torna a provar · **A**punta-ho.
 
-L'**Activitat 5** d'aquesta fitxa ja és una depuració: aplica-hi la **D** i la **E**.
+L'activitat **«Detecta l'error»** (Activitat 5) ja és una depuració: aplica-hi la **D** i la **E**.
 
 ## Pensament computacional d'aquesta SA
 
 - **Abstracció:** posar nom als conceptes (sensor, actuador, sketch…) per pensar i comunicar millor.
-- **Lectura d'algorismes:** seguir un codi pas a pas i **predir-ne** el resultat (Activitats 4 i 6).
+- **Lectura d'algorismes:** seguir un codi pas a pas i **predir-ne** el resultat (activitats de **llegir i predir codi** i de **traduir Arduino↔MicroPython**).
+
+<!-- web:only-github -->
 
 ## Exit ticket
 
@@ -169,3 +175,5 @@ Entendre els sistemes que ens envolten és **alfabetització tecnològica**. **O
 | Saber on consultar un terme que no recordo | | | |
 
 > Si tens dos o més 🔴, repassa el [`SA0_vocabulari_essencial.md`](SA0_vocabulari_essencial.md) i el [`SA0_guia_programacio.md`](SA0_guia_programacio.md) abans de la SA1. **No passa res**: per això existeix la SA0.
+
+<!-- /web:only-github -->
