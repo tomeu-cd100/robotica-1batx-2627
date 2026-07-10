@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 340" width="760" height="340" role="img" aria-labelledby="t d">
+  <title id="t">Què és el PWM (modulació per amplada de pols)</title>
+  <desc id="d">El PWM encén i apaga la sortida molt de pressa. Com més percentatge de temps encès (cicle de treball), més brillantor mitjana del LED: 20% poca llum, 50% mitja, 80% molta.</desc>
+  <style>
+    .fr{fill:#f6faf9;stroke:#d7e6e5;stroke-width:1.5}
+    .cap{font:700 15px system-ui,'Segoe UI',sans-serif;fill:#0e1b1c}
+    .sub{font:600 12.5px system-ui,'Segoe UI',sans-serif;fill:#4f6d6e}
+    .wave{fill:none;stroke:#0891b2;stroke-width:2.5}
+    .axis{stroke:#b7d0cf;stroke-width:1.2}
+    .pct{font:700 20px system-ui,sans-serif;fill:#0c6e70}
+  </style>
+  <rect class="fr" x="1" y="1" width="758" height="338" rx="14"/>
+  <text class="cap" x="30" y="36">PWM = encendre i apagar molt de pressa</text>
+  <text class="sub" x="30" y="58">El % de temps encès (cicle de treball) marca la brillantor mitjana del LED</text>
+
+  <!-- Fila 1: 20% -->
+  <text class="pct" x="60" y="112" text-anchor="middle">20%</text>
+  <line class="axis" x1="120" y1="118" x2="560" y2="118"/>
+  <path class="wave" d="M120,95 h22 v23 h88 v-23 h22 v23 h88 v-23 h22 v23 h88 v-23 h22 v23 h56"/>
+  <circle cx="640" cy="106" r="20" fill="#fde68a" stroke="#b45309" stroke-width="1.5"/>
+  <text class="sub" x="640" y="146" text-anchor="middle">poca llum</text>
+
+  <!-- Fila 2: 50% -->
+  <text class="pct" x="60" y="200" text-anchor="middle">50%</text>
+  <line class="axis" x1="120" y1="206" x2="560" y2="206"/>
+  <path class="wave" d="M120,183 h55 v23 h55 v-23 h55 v23 h55 v-23 h55 v23 h55 v-23 h55 v23 h5"/>
+  <circle cx="640" cy="194" r="20" fill="#fbbf24" stroke="#b45309" stroke-width="1.5"/>
+  <text class="sub" x="640" y="234" text-anchor="middle">mitja llum</text>
+
+  <!-- Fila 3: 80% -->
+  <text class="pct" x="60" y="288" text-anchor="middle">80%</text>
+  <line class="axis" x1="120" y1="294" x2="560" y2="294"/>
+  <path class="wave" d="M120,271 h88 v23 h22 v-23 h88 v23 h22 v-23 h88 v23 h22 v-23 h88 v23 h22"/>
+  <circle cx="640" cy="282" r="20" fill="#f59e0b" stroke="#b45309" stroke-width="2"/>
+  <text class="sub" x="640" y="322" text-anchor="middle">molta llum</text>
+
+  <!-- eix temps -->
+  <text class="sub" x="340" y="326" text-anchor="middle">temps →</text>
+</svg>

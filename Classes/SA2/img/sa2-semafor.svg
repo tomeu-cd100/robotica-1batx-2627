@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 340" width="620" height="340" role="img" aria-labelledby="t d">
+  <title id="t">Circuit del semàfor amb tres LED</title>
+  <desc id="d">Els pins 8, 9 i 10 controlen tres LED (vermell, groc i verd); cadascun porta una resistència de 220 ohms i tots els càtodes van a una línia comuna de GND.</desc>
+  <style>
+    .fr{fill:#f6faf9;stroke:#d7e6e5;stroke-width:1.5}
+    .wire{fill:none;stroke:#0e1b1c;stroke-width:2.2}
+    .pad{fill:#ffffff;stroke:#0891b2;stroke-width:2}
+    .padtxt{font:700 13px 'Consolas',monospace;fill:#0c6e70}
+    .lbl{font:600 13px system-ui,'Segoe UI',sans-serif;fill:#0e1b1c}
+    .gnd{font:700 13px system-ui,sans-serif;fill:#0e1b1c}
+  </style>
+  <rect class="fr" x="1" y="1" width="618" height="338" rx="14"/>
+
+  <!-- Tres files: vermell (pin8), groc (pin9), verd (pin10) -->
+  <!-- y centres: 70, 150, 230 -->
+  <!-- Pin pads -->
+  <rect class="pad" x="30" y="52" width="74" height="34" rx="7"/><text class="padtxt" x="67" y="74" text-anchor="middle">PIN 8</text>
+  <rect class="pad" x="30" y="132" width="74" height="34" rx="7"/><text class="padtxt" x="67" y="154" text-anchor="middle">PIN 9</text>
+  <rect class="pad" x="30" y="212" width="74" height="34" rx="7"/><text class="padtxt" x="67" y="234" text-anchor="middle">PIN 10</text>
+
+  <!-- Resistors + LEDs per fila -->
+  <!-- Fila vermell y=69 -->
+  <line class="wire" x1="104" y1="69" x2="150" y2="69"/>
+  <polyline class="wire" points="150,69 158,69 162,60 170,78 178,60 186,78 194,60 198,69 236,69"/>
+  <polygon points="236,55 236,83 264,69" fill="#ef4444" stroke="#991b1b" stroke-width="2"/>
+  <line class="wire" x1="264" y1="53" x2="264" y2="85"/>
+  <line class="wire" x1="264" y1="69" x2="470" y2="69"/>
+  <text class="lbl" x="150" y="42">vermell · 220 Ω</text>
+
+  <!-- Fila groc y=149 -->
+  <line class="wire" x1="104" y1="149" x2="150" y2="149"/>
+  <polyline class="wire" points="150,149 158,149 162,140 170,158 178,140 186,158 194,140 198,149 236,149"/>
+  <polygon points="236,135 236,163 264,149" fill="#facc15" stroke="#a16207" stroke-width="2"/>
+  <line class="wire" x1="264" y1="133" x2="264" y2="165"/>
+  <line class="wire" x1="264" y1="149" x2="470" y2="149"/>
+  <text class="lbl" x="150" y="122">groc · 220 Ω</text>
+
+  <!-- Fila verd y=229 -->
+  <line class="wire" x1="104" y1="229" x2="150" y2="229"/>
+  <polyline class="wire" points="150,229 158,229 162,220 170,238 178,220 186,238 194,220 198,229 236,229"/>
+  <polygon points="236,215 236,243 264,229" fill="#22c55e" stroke="#166534" stroke-width="2"/>
+  <line class="wire" x1="264" y1="213" x2="264" y2="245"/>
+  <line class="wire" x1="264" y1="229" x2="470" y2="229"/>
+  <text class="lbl" x="150" y="202">verd · 220 Ω</text>
+
+  <!-- Bus GND comú (vertical a x=470) -->
+  <line class="wire" x1="470" y1="69" x2="470" y2="285"/>
+  <line class="wire" x1="470" y1="285" x2="500" y2="285"/>
+  <!-- símbol GND -->
+  <line class="wire" x1="500" y1="265" x2="500" y2="285"/>
+  <line class="wire" x1="476" y1="285" x2="524" y2="285"/>
+  <line class="wire" x1="484" y1="298" x2="516" y2="298"/>
+  <line class="wire" x1="492" y1="311" x2="508" y2="311"/>
+  <text class="gnd" x="500" y="332" text-anchor="middle">GND comú</text>
+</svg>

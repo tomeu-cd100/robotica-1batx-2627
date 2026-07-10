@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 300" width="660" height="300" role="img" aria-labelledby="t d">
+  <title id="t">Polsador amb resistència de pull-up interna</title>
+  <desc id="d">Amb INPUT_PULLUP, una resistència interna de l'Arduino connecta el pin 2 a 5 V, així el pin està a HIGH en repòs. El polsador connecta el pin 2 a GND: en prémer, el pin passa a LOW. No cal resistència externa.</desc>
+  <style>
+    .fr{fill:#f6faf9;stroke:#d7e6e5;stroke-width:1.5}
+    .wire{fill:none;stroke:#0e1b1c;stroke-width:2.2}
+    .chip{fill:#eaf3f2;stroke:#0891b2;stroke-width:1.8}
+    .dash{fill:none;stroke:#0891b2;stroke-width:2;stroke-dasharray:5 4}
+    .lbl{font:600 13px system-ui,'Segoe UI',sans-serif;fill:#0e1b1c}
+    .mut{font:600 12px system-ui,'Segoe UI',sans-serif;fill:#4f6d6e}
+    .pin{font:700 12px 'Consolas',monospace;fill:#0c6e70}
+    .hi{font:700 13px system-ui,sans-serif;fill:#16a34a}
+    .lo{font:700 13px system-ui,sans-serif;fill:#dc2626}
+  </style>
+  <rect class="fr" x="1" y="1" width="658" height="298" rx="14"/>
+
+  <!-- Bloc Arduino amb pull-up intern -->
+  <rect class="chip" x="40" y="60" width="230" height="180" rx="10"/>
+  <text class="lbl" x="60" y="88">Arduino · INPUT_PULLUP</text>
+  <!-- 5V node -->
+  <circle cx="90" cy="120" r="3" fill="#0e1b1c"/>
+  <text class="pin" x="70" y="124" text-anchor="end">5V</text>
+  <line class="wire" x1="90" y1="120" x2="90" y2="130"/>
+  <!-- resistència interna (dashed zigzag) -->
+  <polyline class="dash" points="90,130 90,138 80,142 100,150 80,158 100,166 90,170 90,178"/>
+  <text class="mut" x="108" y="156">resistència interna</text>
+  <!-- pin 2 node -->
+  <line class="wire" x1="90" y1="178" x2="90" y2="200"/>
+  <circle cx="90" cy="200" r="3" fill="#0e1b1c"/>
+  <text class="pin" x="108" y="204">PIN 2</text>
+  <!-- sortida cap al polsador -->
+  <line class="wire" x1="90" y1="200" x2="270" y2="200"/>
+
+  <!-- Polsador -->
+  <line class="wire" x1="270" y1="200" x2="360" y2="200"/>
+  <rect x="360" y="176" width="70" height="48" rx="6" fill="#ffffff" stroke="#0e1b1c" stroke-width="2"/>
+  <line class="wire" x1="376" y1="200" x2="392" y2="200"/>
+  <line class="wire" x1="404" y1="200" x2="414" y2="200"/>
+  <line x1="384" y1="186" x2="410" y2="186" stroke="#0e1b1c" stroke-width="2.2"/>
+  <line x1="397" y1="186" x2="397" y2="178" stroke="#0e1b1c" stroke-width="2.2"/>
+  <text class="lbl" x="395" y="166" text-anchor="middle">polsador</text>
+  <line class="wire" x1="430" y1="200" x2="520" y2="200"/>
+
+  <!-- GND -->
+  <line class="wire" x1="520" y1="200" x2="520" y2="222"/>
+  <line class="wire" x1="496" y1="222" x2="544" y2="222"/>
+  <line class="wire" x1="504" y1="234" x2="536" y2="234"/>
+  <line class="wire" x1="512" y1="246" x2="528" y2="246"/>
+  <text class="lbl" x="520" y="270" text-anchor="middle">GND</text>
+
+  <!-- Estats -->
+  <text class="hi" x="90" y="272">En repòs: pin = HIGH (5 V)</text>
+  <text class="lo" x="360" y="272">En prémer: pin = LOW (0 V)</text>
+</svg>

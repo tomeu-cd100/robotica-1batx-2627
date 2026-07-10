@@ -2,15 +2,6 @@
 
 > Reproduïbles a **Tinkercad** o **Wokwi**.
 
-## Llegenda dels diagrames
-```
---[ 10k ]--    resistencia (el numero indica el valor)
-|>|            LED ( |> = anode , | = catode )
-+              nus de connexio comu
--->            senyal / cap a
-[A0]           pin analogic (lectura 0..1023)
-```
-
 ---
 
 ## 1. Polsador amb pull-up intern (`01_polsador_debounce.ino`)
@@ -21,11 +12,9 @@
 | GND | Polsador (pota B) | — | |
 | 8 | LED (opcional) | 220 Ω → GND | feedback |
 
-```
-Pin 2 ---- polsador ---- GND
-Pin 8 --[ 220R ]--|>|-- GND      (LED opcional de feedback)
-```
-> Amb `INPUT_PULLUP` no cal resistència externa: el pin està a **HIGH** en repòs i passa a **LOW** en prémer.
+![Polsador amb pull-up intern: una resistència interna de l'Arduino manté el pin 2 a HIGH (5 V) en repòs; el polsador connecta el pin 2 a GND i el passa a LOW en prémer](img/sa3-polsador-pullup.svg)
+
+> Amb `INPUT_PULLUP` no cal resistència externa: el pin està a **HIGH** en repòs i passa a **LOW** en prémer. El LED de feedback (pin 8) és un LED bàsic com el de la SA1.
 
 ---
 
@@ -39,21 +28,18 @@ Pin 8 --[ 220R ]--|>|-- GND      (LED opcional de feedback)
 | Central (cursor) | A0 |
 
 **LDR** (divisor de tensió amb 10 kΩ):
-```
-5V ---- LDR ----+---- [A1]      (punt mig: el llegim)
-                |
-              --[ 10k ]--
-                |
-               GND
-```
-**Sortida:** LED al pin **9~** per regular intensitat:
-```
-Pin 9~ --[ 220R ]--|>|-- GND
-```
+
+![Divisor de tensió amb LDR: entre 5 V i GND, la LDR i una resistència de 10 kΩ en sèrie; el punt mig es connecta a l'entrada analògica A1. Amb més llum baixa la resistència de la LDR i canvia la tensió del punt mig](img/sa3-divisor-ldr.svg)
+
+**Sortida:** LED bàsic al pin **9~** (com el de la SA1) per regular-ne la intensitat amb PWM.
 
 ---
 
 ## 3. Sensor d'ultrasons HC-SR04 (`03_ultrasons_funcio.ino`)
+
+![Fotografia del sensor d'ultrasons HC-SR04](img/hc-sr04-foto.jpg)
+
+> *Fotografia: HC-SR04, per [SparkFun Electronics](https://commons.wikimedia.org/wiki/File:SparkFun_HC-SR04_Ultrasonic-Sensor_13959-01a.jpg) — llicència [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/).*
 
 | Pin sensor | Pin Arduino |
 |---|---|
@@ -62,10 +48,7 @@ Pin 9~ --[ 220R ]--|>|-- GND
 | TRIG | 12 (sortida) |
 | ECHO | 11 (entrada) |
 
-```
-HC-SR04:  VCC --> 5V    GND --> GND
-          TRIG --> Pin 12     ECHO --> Pin 11
-```
+![Connexió del HC-SR04 a l'Arduino: VCC a 5 V, TRIG al pin 12, ECHO al pin 11 i GND a GND; el sensor emet ultrasons que reboten en un obstacle i el temps de rebot dona la distància](img/sa3-ultrasons.svg)
 
 ---
 
@@ -77,11 +60,7 @@ HC-SR04:  VCC --> 5V    GND --> GND
 | 8 | LED indicador | 220 Ω | GND |
 | 6 | Brunzidor piezo (+) | — | (−) a GND |
 
-```
-HC-SR04:  TRIG --> Pin 12    ECHO --> Pin 11    VCC=5V  GND=GND
-Pin 8 --[ 220R ]--|>|-- GND          (LED)
-Pin 6 -- piezo(+) ... piezo(-) -- GND
-```
+> Combina el sensor d'ultrasons (apartat 3) amb un LED (pin 8) i un brunzidor piezo (pin 6) com a sortides.
 > El codi tracta la lectura **0** (sense eco) com a "molt lluny" (retorna 400) per evitar falses alarmes.
 
 ---

@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 300" width="700" height="300" role="img" aria-labelledby="t d">
+  <title id="t">Connexió del sensor d'ultrasons HC-SR04</title>
+  <desc id="d">El sensor HC-SR04 té quatre pins: VCC a 5 V, TRIG al pin 12, ECHO al pin 11 i GND a GND. Emet ultrasons que reboten en un obstacle; el temps del rebot dona la distància.</desc>
+  <style>
+    .fr{fill:#f6faf9;stroke:#d7e6e5;stroke-width:1.5}
+    .wire{fill:none;stroke-width:2.2}
+    .lbl{font:700 12px 'Consolas',monospace}
+    .mut{font:600 12.5px system-ui,'Segoe UI',sans-serif;fill:#4f6d6e}
+    .ard{fill:#eaf3f2;stroke:#0891b2;stroke-width:1.8}
+    .pin{font:700 12px 'Consolas',monospace;fill:#0c6e70}
+  </style>
+  <rect class="fr" x="1" y="1" width="698" height="298" rx="14"/>
+
+  <!-- Arduino block -->
+  <rect class="ard" x="34" y="70" width="120" height="170" rx="10"/>
+  <text class="pin" x="94" y="96" text-anchor="middle">Arduino</text>
+  <text class="pin" x="146" y="122" text-anchor="end">5V</text>
+  <text class="pin" x="146" y="158" text-anchor="end">12</text>
+  <text class="pin" x="146" y="194" text-anchor="end">11</text>
+  <text class="pin" x="146" y="230" text-anchor="end">GND</text>
+
+  <!-- HC-SR04 module -->
+  <rect x="360" y="80" width="150" height="150" rx="8" fill="#1e3a8a" stroke="#0e1b1c" stroke-width="2"/>
+  <circle cx="398" cy="130" r="26" fill="#9ca3af" stroke="#e5e7eb" stroke-width="3"/>
+  <circle cx="472" cy="130" r="26" fill="#9ca3af" stroke="#e5e7eb" stroke-width="3"/>
+  <rect x="416" y="118" width="38" height="24" rx="3" fill="#111827"/>
+  <text x="435" y="212" text-anchor="middle" fill="#e5e7eb" style="font:700 13px system-ui,sans-serif">HC-SR04</text>
+
+  <!-- Wires (colors per senyal) -->
+  <!-- VCC (vermell) 5V -> module top-left -->
+  <path class="wire" stroke="#dc2626" d="M154,118 H300 V250 H384"/>
+  <!-- TRIG (groc) pin12 -> -->
+  <path class="wire" stroke="#ca8a04" d="M154,154 H286 V250 H414"/>
+  <!-- ECHO (verd) pin11 -> -->
+  <path class="wire" stroke="#16a34a" d="M154,190 H272 V250 H444"/>
+  <!-- GND (negre) -->
+  <path class="wire" stroke="#0e1b1c" d="M154,226 H258 V250 H474"/>
+  <text class="mut" x="230" y="120" fill="#dc2626">VCC</text>
+  <text class="mut" x="220" y="150" fill="#ca8a04">TRIG</text>
+  <text class="mut" x="206" y="186" fill="#16a34a">ECHO</text>
+
+  <!-- Ones d'ultrasons cap a obstacle -->
+  <g fill="none" stroke="#0891b2" stroke-width="2">
+    <path d="M528,110 q16,20 0,40"/>
+    <path d="M544,100 q24,30 0,60"/>
+    <path d="M560,92 q32,38 0,76"/>
+  </g>
+  <rect x="600" y="96" width="20" height="70" rx="3" fill="#4f6d6e"/>
+  <text class="mut" x="610" y="186" text-anchor="middle">obstacle</text>
+  <text class="mut" x="548" y="278" text-anchor="middle">temps de rebot = distància</text>
+</svg>

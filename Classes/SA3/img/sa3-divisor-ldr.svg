@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" width="640" height="360" role="img" aria-labelledby="t d">
+  <title id="t">Divisor de tensió amb LDR</title>
+  <desc id="d">Entre 5 V i GND hi ha en sèrie la LDR i una resistència de 10 kΩ. El punt mig es connecta a l'entrada analògica A1. Quan hi ha més llum, la resistència de la LDR baixa i la tensió del punt mig canvia, i A1 llegeix un valor diferent.</desc>
+  <style>
+    .fr{fill:#f6faf9;stroke:#d7e6e5;stroke-width:1.5}
+    .wire{fill:none;stroke:#0e1b1c;stroke-width:2.2}
+    .lbl{font:700 13px system-ui,'Segoe UI',sans-serif;fill:#0e1b1c}
+    .mut{font:600 12.5px system-ui,'Segoe UI',sans-serif;fill:#4f6d6e}
+    .pin{font:700 13px 'Consolas',monospace;fill:#0c6e70}
+    .rail{font:700 14px system-ui,sans-serif;fill:#0e1b1c}
+  </style>
+  <rect class="fr" x="1" y="1" width="638" height="358" rx="14"/>
+
+  <!-- 5V a dalt -->
+  <text class="rail" x="220" y="46" text-anchor="middle">5 V</text>
+  <line class="wire" x1="220" y1="54" x2="220" y2="80"/>
+
+  <!-- LDR (rectangle amb dues fletxes de llum) -->
+  <rect x="196" y="80" width="48" height="70" rx="6" fill="#ffffff" stroke="#0e1b1c" stroke-width="2"/>
+  <line x1="210" y1="95" x2="230" y2="135" stroke="#0e1b1c" stroke-width="2"/>
+  <line x1="222" y1="95" x2="214" y2="118" stroke="#0e1b1c" stroke-width="1.6"/>
+  <path d="M170,92 l22,8" stroke="#f59e0b" stroke-width="2"/><path d="M192,100 l-8,-1 l3,-6z" fill="#f59e0b"/>
+  <path d="M170,112 l22,8" stroke="#f59e0b" stroke-width="2"/><path d="M192,120 l-8,-1 l3,-6z" fill="#f59e0b"/>
+  <text class="lbl" x="256" y="120">LDR</text>
+  <text class="mut" x="256" y="138">(varia amb la llum)</text>
+
+  <!-- punt mig -->
+  <line class="wire" x1="220" y1="150" x2="220" y2="185"/>
+  <circle cx="220" cy="185" r="4" fill="#0e1b1c"/>
+  <!-- branca cap a A1 -->
+  <line class="wire" x1="220" y1="185" x2="380" y2="185"/>
+  <rect x="380" y="168" width="66" height="34" rx="7" fill="#ffffff" stroke="#0891b2" stroke-width="2"/>
+  <text class="pin" x="413" y="190" text-anchor="middle">A1</text>
+  <text class="mut" x="300" y="176" text-anchor="middle">punt mig (el llegim)</text>
+
+  <!-- 10k resistor -->
+  <line class="wire" x1="220" y1="185" x2="220" y2="205"/>
+  <polyline class="wire" points="220,205 220,213 210,217 230,225 210,233 230,241 220,245 220,253"/>
+  <text class="lbl" x="248" y="234">10 kΩ</text>
+
+  <!-- GND -->
+  <line class="wire" x1="220" y1="253" x2="220" y2="278"/>
+  <line class="wire" x1="196" y1="278" x2="244" y2="278"/>
+  <line class="wire" x1="204" y1="290" x2="236" y2="290"/>
+  <line class="wire" x1="212" y1="302" x2="228" y2="302"/>
+  <text class="lbl" x="220" y="326" text-anchor="middle">GND</text>
+
+  <!-- Explicació -->
+  <text class="mut" x="470" y="250">Més llum</text>
+  <text class="mut" x="470" y="270">→ menys resistència LDR</text>
+  <text class="mut" x="470" y="290">→ canvia la tensió del</text>
+  <text class="mut" x="470" y="310">   punt mig → A1 (0..1023)</text>
+</svg>

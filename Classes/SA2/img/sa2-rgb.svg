@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 320" width="660" height="320" role="img" aria-labelledby="t d">
+  <title id="t">Circuit del LED RGB de càtode comú</title>
+  <desc id="d">Els pins PWM 9, 10 i 11 controlen els canals vermell, verd i blau del LED RGB, cadascun amb una resistència de 220 ohms; el càtode comú va a GND. Barrejant els tres canals amb PWM s'obtenen molts colors.</desc>
+  <style>
+    .fr{fill:#f6faf9;stroke:#d7e6e5;stroke-width:1.5}
+    .wire{fill:none;stroke:#0e1b1c;stroke-width:2.2}
+    .pad{fill:#ffffff;stroke:#0891b2;stroke-width:2}
+    .padtxt{font:700 12px 'Consolas',monospace;fill:#0c6e70}
+    .lbl{font:700 13px system-ui,'Segoe UI',sans-serif}
+    .note{font:600 12.5px system-ui,'Segoe UI',sans-serif;fill:#4f6d6e}
+  </style>
+  <defs>
+    <radialGradient id="rgbdome" cx="50%" cy="45%" r="60%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="55%" stop-color="#e879f9"/>
+      <stop offset="100%" stop-color="#7c3aed"/>
+    </radialGradient>
+  </defs>
+  <rect class="fr" x="1" y="1" width="658" height="318" rx="14"/>
+
+  <!-- Pins -->
+  <rect class="pad" x="26" y="52" width="72" height="32" rx="7"/><text class="padtxt" x="62" y="73" text-anchor="middle">PIN 9~</text>
+  <rect class="pad" x="26" y="132" width="72" height="32" rx="7"/><text class="padtxt" x="62" y="153" text-anchor="middle">PIN 10~</text>
+  <rect class="pad" x="26" y="212" width="72" height="32" rx="7"/><text class="padtxt" x="62" y="233" text-anchor="middle">PIN 11~</text>
+
+  <!-- Resistors -->
+  <g>
+    <!-- R (vermell) fila y=68 -->
+    <line class="wire" x1="98" y1="68" x2="140" y2="68"/>
+    <polyline class="wire" points="140,68 147,68 151,60 159,76 167,60 175,76 183,60 187,68 220,68"/>
+    <line class="wire" x1="220" y1="68" x2="360" y2="118"/>
+    <text class="lbl" x="150" y="46" fill="#ef4444">R · 220 Ω</text>
+    <!-- G (verd) fila y=148 -->
+    <line class="wire" x1="98" y1="148" x2="140" y2="148"/>
+    <polyline class="wire" points="140,148 147,148 151,140 159,156 167,140 175,156 183,140 187,148 220,148"/>
+    <line class="wire" x1="220" y1="148" x2="360" y2="140"/>
+    <text class="lbl" x="150" y="126" fill="#16a34a">G · 220 Ω</text>
+    <!-- B (blau) fila y=228 -->
+    <line class="wire" x1="98" y1="228" x2="140" y2="228"/>
+    <polyline class="wire" points="140,228 147,228 151,220 159,236 167,220 175,236 183,220 187,228 220,228"/>
+    <line class="wire" x1="220" y1="228" x2="360" y2="162"/>
+    <text class="lbl" x="150" y="206" fill="#2563eb">B · 220 Ω</text>
+  </g>
+
+  <!-- Paquet RGB LED -->
+  <rect x="360" y="96" width="120" height="88" rx="10" fill="#ffffff" stroke="#0e1b1c" stroke-width="2"/>
+  <circle cx="420" cy="140" r="30" fill="url(#rgbdome)" stroke="#0e1b1c" stroke-width="1.5"/>
+  <text class="note" x="420" y="200" text-anchor="middle">LED RGB</text>
+  <!-- llegendes potes -->
+  <text class="padtxt" x="352" y="122" text-anchor="end" fill="#ef4444">R</text>
+  <text class="padtxt" x="352" y="144" text-anchor="end" fill="#16a34a">G</text>
+  <text class="padtxt" x="352" y="166" text-anchor="end" fill="#2563eb">B</text>
+
+  <!-- Càtode comú -> GND -->
+  <line class="wire" x1="420" y1="184" x2="420" y2="250"/>
+  <line class="wire" x1="420" y1="250" x2="560" y2="250"/>
+  <line class="wire" x1="560" y1="230" x2="560" y2="250"/>
+  <line class="wire" x1="536" y1="250" x2="584" y2="250"/>
+  <line class="wire" x1="544" y1="262" x2="576" y2="262"/>
+  <line class="wire" x1="552" y1="274" x2="568" y2="274"/>
+  <text class="lbl" x="560" y="296" text-anchor="middle" fill="#0e1b1c">GND</text>
+  <text class="note" x="420" y="238" text-anchor="middle">càtode comú</text>
+
+  <text class="note" x="500" y="120">Barreja R+G+B</text>
+  <text class="note" x="500" y="140">amb PWM =</text>
+  <text class="note" x="500" y="160">molts colors</text>
+</svg>

@@ -2,15 +2,6 @@
 
 > Reproduïbles a **Tinkercad Circuits** o **Wokwi**. Tots els LED porten **resistència de 220 Ω** en sèrie; el càtode (pota curta) va a **GND**.
 
-## Llegenda dels diagrames
-```
---[ 220R ]--   resistencia (el numero indica el valor en ohms)
-|>|            LED ( |> = anode/pota llarga , | = catode/pota curta )
-+              nus de connexio comu (p. ex. la linia de GND)
-~              pin amb PWM (sortida analogica)
-(+)/(-)        terminal positiu / negatiu d'un component
-```
-
 ---
 
 ## 1. LED bàsic (`01_led_basic.ino`)
@@ -19,9 +10,7 @@
 |---|---|---|---|
 | 8 | LED | 220 Ω | GND |
 
-```
-Pin 8 --[ 220R ]--|>|-- GND
-```
+> Mateix circuit d'un LED que a la SA1 (pin → 220 Ω → ànode; càtode → GND).
 
 ---
 
@@ -33,24 +22,21 @@ Pin 8 --[ 220R ]--|>|-- GND
 | 9 | LED groc | 220 Ω | GND |
 | 10 | LED verd | 220 Ω | GND |
 
-```
-Pin  8 --[ 220R ]--|>|--+   LED vermell
-Pin  9 --[ 220R ]--|>|--+   LED groc
-Pin 10 --[ 220R ]--|>|--+   LED verd
-GND --------------------+
-```
+![Circuit del semàfor: els pins 8, 9 i 10 controlen tres LED (vermell, groc, verd), cadascun amb 220 Ω, amb els càtodes a una línia comuna de GND](img/sa2-semafor.svg)
 
 ---
 
 ## 3. Fade PWM (`03_fade_pwm.ino`)
 
+Cal un pin amb `~` (PWM). El **PWM** encén i apaga la sortida molt de pressa: el **percentatge de temps encès** (cicle de treball) marca la brillantor mitjana.
+
+![Concepte de PWM: tres cicles de treball (20%, 50%, 80%) amb els seus senyals quadrats i la brillantor resultant del LED (poca, mitja, molta llum)](img/sa2-pwm-concept.svg)
+
 | Pin | Component | Via | Cap a |
 |---|---|---|---|
 | 9 ~ | LED | 220 Ω | GND |
 
-```
-Pin 9~ --[ 220R ]--|>|-- GND      (cal pin amb ~ per al PWM)
-```
+> Circuit igual que un LED bàsic, però el pin **ha de tenir `~`** (3, 5, 6, 9, 10, 11) per fer `analogWrite`.
 
 ---
 
@@ -62,11 +48,8 @@ Pin 9~ --[ 220R ]--|>|-- GND      (cal pin amb ~ per al PWM)
 | 10 | Verd (G) | 220 Ω | càtode comú |
 | 11 | Blau (B) | 220 Ω | càtode comú |
 
-```
-Pin  9~ --[ 220R ]-- R --+
-Pin 10~ --[ 220R ]-- G --+--(catode comu)-- GND
-Pin 11~ --[ 220R ]-- B --+
-```
+![Circuit del LED RGB de càtode comú: els pins PWM 9, 10 i 11 alimenten els canals vermell, verd i blau amb 220 Ω cadascun; el càtode comú va a GND](img/sa2-rgb.svg)
+
 > Si el teu LED RGB és d'**ànode comú**, el comú va a **5 V** i els valors PWM s'inverteixen (255 = apagat).
 
 ---
@@ -79,11 +62,7 @@ Pin 11~ --[ 220R ]-- B --+
 | 6 | Brunzidor piezo (+) | — | (−) a GND |
 | 7 | Mòdul relé (IN) | — | VCC=5 V, GND=GND del mòdul |
 
-```
-Pin 9~,10~,11~ --[ 220R ]-- (R,G,B) --+--(catode comu)-- GND
-Pin 6 ---------- piezo(+) ... piezo(-) -- GND
-Pin 7 ---------- IN (rele)   |   VCC=5V   GND=GND
-```
+> Combina el LED RGB (apartat 4) amb un brunzidor piezo al pin 6 i un mòdul relé al pin 7.
 > ⚠️ El relé permet controlar càrregues; a l'aula es connecta a **baixa tensió** (LED de 5 V, petit motor). **No** connectar 230 V.
 
 ---
