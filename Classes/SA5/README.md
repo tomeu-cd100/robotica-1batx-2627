@@ -4,7 +4,7 @@ Cinquena situació d'aprenentatge (**7 h · 3-4 sessions**, 2n trimestre). **Can
 
 ## Itinerari per sessions
 
-> La teva feina és a la **[fitxa base](SA5_fitxa_alumnat.md)**. Aquesta ruta et diu què toca fer a cada sessió i què necessites en aquell moment.
+> La teva feina és a la **[fitxa base](SA5_fitxa_alumnat.md)**. Aquesta ruta et diu què toca fer a cada sessió i què necessites en aquell moment. Les respostes de la fitxa es lliuren a la **[tasca de Classroom](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODcwNTE3NDYxNTQy/details)**.
 
 1. **Sessió 1 · Primers passos amb MicroPython** — fes l'[Activitat 1 de la fitxa](SA5_fitxa_alumnat.md#1-name-badge-s1), amb les [connexions i l'entorn](SA5_connexions.md).
 2. **Sessió 2 · Sensors integrats** — fes l'[Activitat 2](SA5_fitxa_alumnat.md#2-sensors-integrats-s2).

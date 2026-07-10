@@ -4,7 +4,7 @@ Segona situació d'aprenentatge (**8 h · 4 sessions**, 1r trimestre). Es passa 
 
 ## Itinerari per sessions
 
-> La teva feina és a la **[fitxa base](SA2_fitxa_alumnat.md)**. Aquesta ruta et diu què toca fer a cada sessió i què necessites en aquell moment.
+> La teva feina és a la **[fitxa base](SA2_fitxa_alumnat.md)**. Aquesta ruta et diu què toca fer a cada sessió i què necessites en aquell moment. Les respostes de la fitxa es lliuren a la **[tasca de Classroom](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODcwNTEzOTQ1NjAz/details)**.
 
 1. **Sessió 1 · Variables i la primera sortida** — fes l'[Activitat 1 de la fitxa](SA2_fitxa_alumnat.md#1-led-basic-i-variables-s1).
 2. **Sessió 2 · El semàfor** — fes l'[Activitat 2](SA2_fitxa_alumnat.md#2-semafor-s2), amb l'[esquema del circuit](SA2_esquemes_connexions.md).

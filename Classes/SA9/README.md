@@ -4,7 +4,7 @@ Novena i última situació d'aprenentatge (**10 h · 5 sessions**, 3r trimestre)
 
 ## Itinerari per sessions (per fases)
 
-> El projecte segueix el **mètode de projecte** del curs. La teva feina d'equip és a la **[fitxa base](SA9_fitxa_alumnat.md)** amb les [plantilles](plantilles/).
+> El projecte segueix el **mètode de projecte** del curs. La teva feina d'equip és a la **[fitxa base](SA9_fitxa_alumnat.md)** amb les [plantilles](plantilles/). Les respostes de la fitxa es lliuren a la **[tasca de Classroom](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODcwNTE3OTM1Nzkw/details)** (una per equip).
 
 1. **Sessió 1 · Idear** — trieu repte al [banc de reptes](plantilles/Banc_de_reptes.md), formeu equips i planifiqueu amb el [taulell àgil](plantilles/Planificacio_agile_PLANTILLA.md); ompliu el [disseny de la fitxa](SA9_fitxa_alumnat.md#3-disseny).
 2. **Sessió 2 · Prototipar** — munteu el prototip mínim viable i el primer codi; seguiu la [planificació](SA9_fitxa_alumnat.md#4-planificacio).

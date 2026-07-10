@@ -1,6 +1,10 @@
 # SA6 · Fitxa base — Sistemes de control · *que el sistema es reguli sol*
 
+<!-- web:only-github -->
+
 **Nom:** ______________________  **Parella:** ______________________  **Data:** __________
+
+<!-- /web:only-github -->
 
 > Faràs que el sistema **es reguli sol**. Nucli: llaç obert/tancat, histèresi i màquines d'estats. El control proporcional és **+ampliació** (opcional).
 
@@ -24,6 +28,16 @@
 > Escala de nota 0-10, rúbriques i tot el sistema: **[Com s'avalua la matèria](../00_General/00_Avaluacio_per_alumnat.md)**.
 
 ---
+
+## Les activitats · al Google Classroom
+
+Aquesta fitxa es respon **en línia**, a la tasca de Google Classroom (val **10 punts**):
+
+> 👉 **[Obre la tasca: SA6 · Fitxa base (Google Classroom)](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODcwNTE2NDU2MzYx/details)**
+
+Si la tasca encara no t'apareix al Classroom, és que la SA encara no ha començat. En aquesta pàgina hi tens els **objectius i l'avaluació** (a dalt) i la rutina **DEPURA** (a sota).
+
+<!-- web:only-github -->
 
 ## El que has de fer
 
@@ -59,8 +73,12 @@
 **Producte:** un sistema de control documentat. S'avalua amb **R1**, **R3** i **R4**.
 **Defensa (2-3', nivell T2):** problema → solució → **una decisió tècnica justificada** (per què aquests llindars? per què aquests estats?) + 2 preguntes. Ja no n'hi ha prou amb el minut de T1: vegeu l'escala a [`../00_General/00_Guia_defensa_oral.md`](../00_General/00_Guia_defensa_oral.md).
 
+<!-- /web:only-github -->
+
 ## Si t'encalles (DEPURA)
 > **D**escriu · **E**xamina (**Serial Plotter**: la sortida segueix la consigna o oscil·la?) · **P**rova una hipòtesi cada cop · **U**bica · **R**epara · **A**punta-ho. Encara encallat? **[Targeta de rescat](../00_General/00_Targetes_rescat.md)** (comença per la 🟢).
+
+<!-- web:only-github -->
 
 ## M'autoavaluo (Insuficient · Suficient/Bé · Notable · Excel·lent — la nota és 0-10)
 | Criteri | Insuficient | Suficient/Bé | Notable | Excel·lent |
@@ -75,5 +93,7 @@
 - **Què és la realimentació en un sistema de control?** _________________
 - **Per què serveix la histèresi?** ___________________________________
 - **Un error i com l'he resolt:** _____________________________________
+
+<!-- /web:only-github -->
 
 > 📌 **Vols més?** +Reptes (semàfor adaptatiu, Kp massa gran), rols, coavaluació, exit ticket, pensament computacional i ODS → **[SA6_fitxa_ampliada.md](SA6_fitxa_ampliada.md)**

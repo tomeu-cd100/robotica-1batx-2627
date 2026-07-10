@@ -1,6 +1,10 @@
 # SA8 · Fitxa base — IoT i IA · *connecta el sistema i decideix amb dades*
 
+<!-- web:only-github -->
+
 **Nom:** ______________________  **Equip:** ______________________  **Data:** __________
+
+<!-- /web:only-github -->
 
 > Connectaràs dispositius (telemetria/IoT) i faràs que el sistema "reconegui" patrons (IA). Pensa també en l'**ètica de les dades**.
 
@@ -23,6 +27,16 @@
 > Escala de nota 0-10, rúbriques i tot el sistema: **[Com s'avalua la matèria](../00_General/00_Avaluacio_per_alumnat.md)**.
 
 ---
+
+## Les activitats · al Google Classroom
+
+Aquesta fitxa es respon **en línia**, a la tasca de Google Classroom (val **10 punts**):
+
+> 👉 **[Obre la tasca: SA8 · Fitxa base (Google Classroom)](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODcwNTE3MTIxMDY0/details)**
+
+Si la tasca encara no t'apareix al Classroom, és que la SA encara no ha començat. En aquesta pàgina hi tens els **objectius i l'avaluació** (a dalt) i la rutina **DEPURA** (a sota).
+
+<!-- web:only-github -->
 
 ## El que has de fer
 
@@ -56,8 +70,12 @@ Dissenya un sistema IoT del teu entorn (mínim ètic obligatori):
 
 **Producte:** sistema connectat o classificador + reflexió ètica. S'avalua amb **R1**, **R3** i **R4**.
 
+<!-- /web:only-github -->
+
 ## Si t'encalles (DEPURA)
 > **D**escriu · **E**xamina (dades al sèrie: arriben? ben etiquetades?) · **P**rova una hipòtesi cada cop · **U**bica · **R**epara · **A**punta-ho. Comprova el mateix `group` de ràdio a les dues plaques. Encara encallat? **[Targeta de rescat](../00_General/00_Targetes_rescat.md)** (comença per la 🟢).
+
+<!-- web:only-github -->
 
 ## M'autoavaluo (Insuficient · Suficient/Bé · Notable · Excel·lent — la nota és 0-10)
 | Criteri | Insuficient | Suficient/Bé | Notable | Excel·lent |
@@ -77,6 +95,8 @@ Dissenya un sistema IoT del teu entorn (mínim ètic obligatori):
 > *La IA t'ha d'ajudar a APRENDRE. Declarar-ho no baixa nota; amagar-ho o no saber-ho explicar, sí. Abans de preguntar, aplica DEPURA.* (Vegeu `../00_IA_a_la_materia.md` §5.)
 - **Eina i per a què:** _______________________________________________
 - **Què he canviat / entès jo** (sé explicar cada línia?): ______________
+
+<!-- /web:only-github -->
 
 > 💻 **Sense placa?** micro:bit a [python.microbit.org](https://python.microbit.org); telemetria ESP32 a `Simulacions/Wokwi/SA8_telemetria_esp32/`.
 > 📌 **Vols més?** +Reptes (estació meteo, alerta), rols, coavaluació, exit ticket, pensament computacional i ODS → **[SA8_fitxa_ampliada.md](SA8_fitxa_ampliada.md)**

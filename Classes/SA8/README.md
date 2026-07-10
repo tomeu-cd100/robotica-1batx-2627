@@ -4,7 +4,7 @@ Vuitena situació d'aprenentatge (**6 h · 3 sessions**, 3r trimestre). El siste
 
 ## Itinerari per sessions
 
-> La teva feina és a la **[fitxa base](SA8_fitxa_alumnat.md)**. Aquesta ruta et diu què toca fer a cada sessió i què necessites en aquell moment.
+> La teva feina és a la **[fitxa base](SA8_fitxa_alumnat.md)**. Aquesta ruta et diu què toca fer a cada sessió i què necessites en aquell moment. Les respostes de la fitxa es lliuren a la **[tasca de Classroom](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODcwNTE3MTIxMDY0/details)**.
 
 1. **Sessió 1 · Telemetria** — fes l'[Activitat 1 de la fitxa](SA8_fitxa_alumnat.md#1-telemetria-s1), amb les [connexions](SA8_connexions.md).
 2. **Sessió 2 · IoT: arquitectura, aplicacions i riscos** — fes l'[Activitat 2](SA8_fitxa_alumnat.md#2-disseny-iot-s2).

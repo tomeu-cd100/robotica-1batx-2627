@@ -1,6 +1,10 @@
 # SA7 · Fitxa base — Robòtica mòbil · *com es mou i gira un robot*
 
+<!-- web:only-github -->
+
 **Nom:** ______________________  **Equip:** ______________________  **Data:** __________
+
+<!-- /web:only-github -->
 
 > Ara el robot es mou sol! Programaràs moviment, trajectòries i comportaments autònoms. Recorda **ajustar els pins** segons la teva placa.
 
@@ -23,6 +27,16 @@
 > Escala de nota 0-10, rúbriques i tot el sistema: **[Com s'avalua la matèria](../00_General/00_Avaluacio_per_alumnat.md)**.
 
 ---
+
+## Les activitats · al Google Classroom
+
+Aquesta fitxa es respon **en línia**, a la tasca de Google Classroom (val **10 punts**):
+
+> 👉 **[Obre la tasca: SA7 · Fitxa base (Google Classroom)](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODcwNTE4MDMwMTA4/details)**
+
+Si la tasca encara no t'apareix al Classroom, és que la SA encara no ha començat. En aquesta pàgina hi tens els **objectius i l'avaluació** (a dalt) i la rutina **DEPURA** (a sota).
+
+<!-- web:only-github -->
 
 ## El que has de fer
 
@@ -56,8 +70,12 @@
 
 **Producte:** comportament autònom + registre d'iteracions. S'avalua amb **R1**, **R3** i **R4**.
 
+<!-- /web:only-github -->
+
 ## Si t'encalles (DEPURA)
 > **D**escriu · **E**xamina (què fa el robot de debò) · **P**rova una hipòtesi cada cop · **U**bica · **R**epara · **A**punta-ho. Comprova el bloc `// === PINS (AJUSTAR) ===` i prova **una funció de moviment cada cop**. Encara encallat? **[Targeta de rescat](../00_General/00_Targetes_rescat.md)** (comença per la 🟢).
+
+<!-- web:only-github -->
 
 ## M'autoavaluo (Insuficient · Suficient/Bé · Notable · Excel·lent — la nota és 0-10)
 | Criteri | Insuficient | Suficient/Bé | Notable | Excel·lent |
@@ -72,5 +90,7 @@
 - **Què és la cinemàtica diferencial?** _______________________________
 - **Per què el control per temps no és precís?** ______________________
 - **Una millora que ha funcionat:** ___________________________________
+
+<!-- /web:only-github -->
 
 > 📌 **Vols més?** +Reptes (repartidor, explorador, gir proporcional), rols, coavaluació, exit ticket, pensament computacional i ODS → **[SA7_fitxa_ampliada.md](SA7_fitxa_ampliada.md)**

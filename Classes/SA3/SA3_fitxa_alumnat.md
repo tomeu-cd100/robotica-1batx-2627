@@ -1,6 +1,10 @@
 # SA3 · Fitxa base — Entrades i sensors · *fes que el sistema percebi el món*
 
+<!-- web:only-github -->
+
 **Nom:** ______________________  **Parella:** ______________________  **Data:** __________
+
+<!-- /web:only-github -->
 
 > Ara el sistema **percep** l'entorn. Treballaràs entrades digitals i analògiques, el monitor sèrie i les funcions.
 
@@ -23,6 +27,16 @@
 > Escala de nota 0-10, rúbriques i tot el sistema: **[Com s'avalua la matèria](../00_General/00_Avaluacio_per_alumnat.md)**.
 
 ---
+
+## Les activitats · al Google Classroom
+
+Aquesta fitxa es respon **en línia**, a la tasca de Google Classroom (val **10 punts**):
+
+> 👉 **[Obre la tasca: SA3 · Fitxa base (Google Classroom)](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODcwNTE4MDEwMzM3/details)**
+
+Si la tasca encara no t'apareix al Classroom, és que la SA encara no ha començat. En aquesta pàgina hi tens els **objectius i l'avaluació** (a dalt) i la rutina **DEPURA** (a sota).
+
+<!-- web:only-github -->
 
 ## El que has de fer
 
@@ -59,8 +73,12 @@ Dissenya un avís que depèn de la distància:
 
 **Defensa (1'):** explica el teu sistema i una aplicació real. S'avalua amb **R1** i **R2**.
 
+<!-- /web:only-github -->
+
 ## Si t'encalles (DEPURA)
 > **D**escriu · **E**xamina (**Monitor sèrie!**) · **P**rova una hipòtesi cada cop · **U**bica · **R**epara · **A**punta-ho. Revisa l'alimentació del sensor (VCC/GND). Encara encallat? **[Targeta de rescat](../00_General/00_Targetes_rescat.md)** (comença per la 🟢).
+
+<!-- web:only-github -->
 
 ## M'autoavaluo (Insuficient · Suficient/Bé · Notable · Excel·lent — la nota és 0-10)
 | Criteri | Insuficient | Suficient/Bé | Notable | Excel·lent |
@@ -75,5 +93,7 @@ Dissenya un avís que depèn de la distància:
 - **Diferència entre entrada digital i analògica:** ______________________
 - **Per a què serveix una funció?** ___________________________________
 - **Un error i com l'he resolt:** _____________________________________
+
+<!-- /web:only-github -->
 
 > 📌 **Vols més?** +Reptes (llindar ajustable, instrument), rols, coavaluació, exit ticket, pensament computacional i ODS → **[SA3_fitxa_ampliada.md](SA3_fitxa_ampliada.md)**

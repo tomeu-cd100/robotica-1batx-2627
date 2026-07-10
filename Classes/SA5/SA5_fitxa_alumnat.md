@@ -1,6 +1,10 @@
 # SA5 · Fitxa base — micro:bit i MicroPython · *els mateixos conceptes, un altre llenguatge*
 
+<!-- web:only-github -->
+
 **Nom:** ______________________  **Parella:** ______________________  **Data:** __________
+
+<!-- /web:only-github -->
 
 > Canvies de llenguatge: ara **Python** sobre micro:bit. Atenció a la **indentació** (en Python és obligatòria!).
 
@@ -23,6 +27,16 @@
 > Escala de nota 0-10, rúbriques i tot el sistema: **[Com s'avalua la matèria](../00_General/00_Avaluacio_per_alumnat.md)**.
 
 ---
+
+## Les activitats · al Google Classroom
+
+Aquesta fitxa es respon **en línia**, a la tasca de Google Classroom (val **10 punts**):
+
+> 👉 **[Obre la tasca: SA5 · Fitxa base (Google Classroom)](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODcwNTE3NDYxNTQy/details)**
+
+Si la tasca encara no t'apareix al Classroom, és que la SA encara no ha començat. En aquesta pàgina hi tens els **objectius i l'avaluació** (a dalt) i la rutina **DEPURA** (a sota).
+
+<!-- web:only-github -->
 
 ## El que has de fer
 
@@ -57,8 +71,12 @@ Tria un dels reptes com a producte i completa la comparació amb un programa sen
 
 S'avalua amb **R1** (codi) i **R4** (comparació).
 
+<!-- /web:only-github -->
+
 ## Si t'encalles (DEPURA)
 > **D**escriu · **E**xamina (errors de Python, **indentació**) · **P**rova una hipòtesi cada cop · **U**bica · **R**epara · **A**punta-ho. Comprova que el codi és a `main.py`. Encara encallat? **[Targeta de rescat](../00_General/00_Targetes_rescat.md)** (comença per la 🟢).
+
+<!-- web:only-github -->
 
 ## M'autoavaluo (Insuficient · Suficient/Bé · Notable · Excel·lent — la nota és 0-10)
 | Criteri | Insuficient | Suficient/Bé | Notable | Excel·lent |
@@ -73,6 +91,8 @@ S'avalua amb **R1** (codi) i **R4** (comparació).
 - **Per què la indentació és important en Python?** ____________________
 - **Avantatge d'usar sensors integrats:** _____________________________
 - **Un error i com l'he resolt:** _____________________________________
+
+<!-- /web:only-github -->
 
 > 💻 **Sense placa?** Prova el codi al **simulador** [python.microbit.org](https://python.microbit.org).
 > 📌 **Vols més?** +Reptes (wearable, xarxa de 3+ plaques), rols, coavaluació, exit ticket, pensament computacional i ODS → **[SA5_fitxa_ampliada.md](SA5_fitxa_ampliada.md)**

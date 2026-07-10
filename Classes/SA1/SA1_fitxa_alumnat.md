@@ -1,6 +1,10 @@
 # SA1 · Fitxa base — Què és un robot?
 
+<!-- web:only-github -->
+
 **Nom:** ______________________  **Parella:** ______________________  **Data:** __________
+
+<!-- /web:only-github -->
 
 > Descobriràs què és un robot i un sistema embegut, coneixeràs la placa Arduino i faràs el teu primer programa.
 
@@ -24,6 +28,16 @@
 > Escala de nota 0-10, rúbriques i tot el sistema: **[Com s'avalua la matèria](../00_General/00_Avaluacio_per_alumnat.md)**.
 
 ---
+
+## Les activitats · al Google Classroom
+
+Aquesta fitxa es respon **en línia**, a la tasca de Google Classroom (val **10 punts**):
+
+> 👉 **[Obre la tasca: SA1 · Fitxa base (Google Classroom)](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODcwNTEwOTcwMDE1/details)**
+
+En aquesta pàgina hi tens el que necessites mentre treballes: els **objectius i l'avaluació** (a dalt) i la rutina **DEPURA** (a sota).
+
+<!-- web:only-github -->
 
 ## El que has de fer
 
@@ -58,8 +72,12 @@ Llegeix [`SA1_normes_seguretat.md`](SA1_normes_seguretat.md) i **signa** el full
 ## Producte · Fitxa-pòster
 Tria un **robot real** i analitza'l amb [`SA1_poster_robot_plantilla.md`](SA1_poster_robot_plantilla.md) (entrada-procés-sortida + dilema ètic). S'avalua amb la rúbrica **R4**.
 
+<!-- /web:only-github -->
+
 ## Si t'encalles (DEPURA)
 > **D**escriu (què esperaves vs què passa) · **E**xamina (LED, error, Monitor Sèrie) · **P**rova una hipòtesi cada cop · **U**bica el problema · **R**epara i torna a provar · **A**punta-ho al quadern. Si demanes ajuda, explica **què ja has provat**. Encara encallat? Agafa una **[targeta de rescat](../00_General/00_Targetes_rescat.md)** — comença per la pista 🟢.
+
+<!-- web:only-github -->
 
 ## M'autoavaluo (Insuficient · Suficient/Bé · Notable · Excel·lent — la nota és 0-10)
 | Criteri | Insuficient | Suficient/Bé | Notable | Excel·lent |
@@ -74,5 +92,7 @@ Tria un **robot real** i analitza'l amb [`SA1_poster_robot_plantilla.md`](SA1_po
 - **Què he après:** ___________________________________________________
 - **El repte i com l'he resolt** (què havia de fer, què vaig predir, com): ___________________________________________________
 - **Un error i com l'he resolt:** _____________________________________
+
+<!-- /web:only-github -->
 
 > 📌 **Vols més?** Ampliacions (`blink_millis`, `sos_morse`), reptes ⭐, rols de la parella, coavaluació, exit ticket, pensament computacional i ODS → **[SA1_fitxa_ampliada.md](SA1_fitxa_ampliada.md)**

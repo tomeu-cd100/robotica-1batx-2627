@@ -1,6 +1,10 @@
 # SA4 · Fitxa base — Moviment: servos, motors i ponts H · *fes que les coses es moguin*
 
+<!-- web:only-github -->
+
 **Nom:** ______________________  **Parella:** ______________________  **Data:** __________
+
+<!-- /web:only-github -->
 
 > Faràs moure el sistema: posició amb servo i velocitat/direcció amb motor DC. Recorda la **massa comuna** i **no alimentar motors des de l'Arduino**.
 
@@ -22,6 +26,16 @@
 > Escala de nota 0-10, rúbriques i tot el sistema: **[Com s'avalua la matèria](../00_General/00_Avaluacio_per_alumnat.md)**.
 
 ---
+
+## Les activitats · al Google Classroom
+
+Aquesta fitxa es respon **en línia**, a la tasca de Google Classroom (val **10 punts**):
+
+> 👉 **[Obre la tasca: SA4 · Fitxa base (Google Classroom)](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODcwNTEzNjkxNjIy/details)**
+
+Si la tasca encara no t'apareix al Classroom, és que la SA encara no ha començat. En aquesta pàgina hi tens els **objectius i l'avaluació** (a dalt) i la rutina **DEPURA** (a sota).
+
+<!-- web:only-github -->
 
 ## El que has de fer
 
@@ -64,8 +78,12 @@ Barrera que s'obre quan arriba un vehicle i es tanca sola.
 - Angle tancat: ____° · obert: ____° · temps obert: ____ s · detecció: ____ cm
 - **Defensa (1'):** funcionament + una aplicació real. S'avalua amb **R1**, **R2** i **R3**.
 
+<!-- /web:only-github -->
+
 ## Si t'encalles (DEPURA)
 > **D**escriu · **E**xamina · **P**rova una hipòtesi cada cop · **U**bica · **R**epara · **A**punta-ho. Comprova la **massa comuna** i que el motor **no** s'alimenta del 5V de l'Arduino. Encara encallat? **[Targeta de rescat](../00_General/00_Targetes_rescat.md)** (comença per la 🟢).
+
+<!-- web:only-github -->
 
 ## M'autoavaluo (Insuficient · Suficient/Bé · Notable · Excel·lent — la nota és 0-10)
 | Criteri | Insuficient | Suficient/Bé | Notable | Excel·lent |
@@ -80,5 +98,7 @@ Barrera que s'obre quan arriba un vehicle i es tanca sola.
 - **Per què cal un pont H / driver?** _________________________________
 - **Què és la massa comuna i per què és important?** ___________________
 - **Un error i com l'he resolt:** _____________________________________
+
+<!-- /web:only-github -->
 
 > 📌 **Vols més?** +Reptes (ventilador, braç dispensador, rampa d'acceleració), rols, coavaluació, exit ticket, pensament computacional i ODS → **[SA4_fitxa_ampliada.md](SA4_fitxa_ampliada.md)**

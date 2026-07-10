@@ -1,6 +1,10 @@
 # SA9 · Fitxa base — Repte final integrador · *el teu sistema: de la idea a la demo*
 
+<!-- web:only-github -->
+
 **Equip:** ______________________  **Membres:** ______________________  **Data:** __________
+
+<!-- /web:only-github -->
 
 > El projecte final: dissenyareu, construireu, programareu i defensareu un sistema robòtic autònom. Useu les **plantilles** de `plantilles/`.
 
@@ -26,6 +30,16 @@
 > Escala de nota 0-10, rúbriques i tot el sistema: **[Com s'avalua la matèria](../00_General/00_Avaluacio_per_alumnat.md)**.
 
 ---
+
+## La fitxa d'equip · al Google Classroom
+
+Aquesta fitxa es respon **en línia**, a la tasca de Google Classroom (**una resposta per equip**, val **10 punts**):
+
+> 👉 **[Obre la tasca: SA9 · Fitxa base (Google Classroom)](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODcwNTE3OTM1Nzkw/details)**
+
+Si la tasca encara no us apareix al Classroom, és que la SA encara no ha començat. En aquesta pàgina hi teniu els **objectius i l'avaluació** (a dalt) i la rutina **DEPURA** (a sota).
+
+<!-- web:only-github -->
 
 ## 1 · El nostre repte
 - **Repte triat:** _____________________________________________________
@@ -67,8 +81,12 @@ Useu [`plantilles/Planificacio_agile_PLANTILLA.md`](plantilles/Planificacio_agil
 - Qui explica cada part: ______________________  · Demostració preparada: sí / no
 - **Reflexió ètica/sostenibilitat:** impacte del sistema: ______________________
 
+<!-- /web:only-github -->
+
 ## Si t'encalles (DEPURA)
 > Prova **per parts** (cada mòdul per separat). **D**escriu · **E**xamina · **P**rova una hipòtesi cada cop · **U**bica (aïlla el mòdul) · **R**epara · **A**punta-ho al dossier. Encara encallats? **[Targetes de rescat](../00_General/00_Targetes_rescat.md)** — la T9.1 és exactament per a això.
+
+<!-- web:only-github -->
 
 ## M'autoavaluo (equip · Insuficient · Suficient/Bé · Notable · Excel·lent — 0-10)
 | Criteri | Insuficient | Suficient/Bé | Notable | Excel·lent |
@@ -83,5 +101,7 @@ Useu [`plantilles/Planificacio_agile_PLANTILLA.md`](plantilles/Planificacio_agil
 - [ ] Codi comentat a la carpeta
 - [ ] Defensa oral preparada
 - [ ] Autoavaluació i coavaluació
+
+<!-- /web:only-github -->
 
 > 📌 **Vols més?** Guió ampliat, coavaluació i exit ticket final del curs → **[SA9_fitxa_ampliada.md](SA9_fitxa_ampliada.md)**

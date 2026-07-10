@@ -4,7 +4,7 @@ Tercera situació d'aprenentatge (**8 h · 4 sessions**, 1r trimestre). El siste
 
 ## Itinerari per sessions
 
-> La teva feina és a la **[fitxa base](SA3_fitxa_alumnat.md)**. Aquesta ruta et diu què toca fer a cada sessió i què necessites en aquell moment.
+> La teva feina és a la **[fitxa base](SA3_fitxa_alumnat.md)**. Aquesta ruta et diu què toca fer a cada sessió i què necessites en aquell moment. Les respostes de la fitxa es lliuren a la **[tasca de Classroom](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODcwNTE4MDEwMzM3/details)**.
 
 1. **Sessió 1 · Entrades digitals i monitor sèrie** — fes l'[Activitat 1 de la fitxa](SA3_fitxa_alumnat.md#1-polsador-i-monitor-serie-s1).
 2. **Sessió 2 · Entrades analògiques** — fes l'[Activitat 2](SA3_fitxa_alumnat.md#2-entrades-analogiques-s2).
