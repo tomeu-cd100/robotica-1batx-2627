@@ -2,24 +2,20 @@
 
 Primera situació d'aprenentatge del curs (**6 h · 3 sessions**, 1r trimestre). Introdueix el concepte de **robot** i **sistema embegut**, el model **entrada → procés → sortida**, l'arquitectura d'**Arduino UNO**, les **normes de seguretat** i el primer programa (`Blink`). Maquinari: Arduino UNO (demostració) + simulador **Tinkercad**. Programació oficial: [`Programació didàctica/10_SA1_Introduccio_robotica.md`](../../Programació%20didàctica/10_SA1_Introduccio_robotica.md).
 
-## Itinerari de la SA (per sessions)
+## Itinerari per sessions
 
-> Ordre de treball recomanat. La font única de cada activitat és la **fitxa base** ([`SA1_fitxa_alumnat.md`](SA1_fitxa_alumnat.md)); la resta de documents hi donen suport.
+> La teva feina és a la **[fitxa base](SA1_fitxa_alumnat.md)**. Aquesta ruta et diu què toca fer a cada sessió i què necessites en aquell moment.
 
-**🟦 Sessió 1 (2 h) · Què és un robot?**
-1. Model **entrada → procés → sortida** i anàlisi de 3 sistemes → fitxa base, *Activitat 1*.
-2. [Prova diagnòstica](SA1_prova_diagnostica.md) (no qualifica; serveix per fer parelles heterogènies).
-3. Presentació del **mètode de projecte** i primera entrada al **quadern tècnic**.
+1. **Sessió 1 · Què és un robot?** — fes l'[Activitat 1 de la fitxa](SA1_fitxa_alumnat.md#1-entrada-proces-sortida) i respon la [prova diagnòstica](SA1_prova_diagnostica.md) (no qualifica).
+2. **Sessió 2 · La placa i la seguretat** — fes l'[Activitat 2](SA1_fitxa_alumnat.md#2-la-placa-arduino-uno) amb els [esquemes de la placa](SA1_esquemes_connexions.md), i fes l'[Activitat 3](SA1_fitxa_alumnat.md#3-normes-de-seguretat): llegeix i signa les [normes de seguretat](SA1_normes_seguretat.md).
+3. **Sessió 3 · El teu primer programa** — fes l'[Activitat 4](SA1_fitxa_alumnat.md#4-el-teu-primer-programa-blink-primm) amb el [codi](codi/), i comença la [fitxa-pòster](SA1_poster_robot_plantilla.md) (el producte de la SA).
+4. **Abans d'entregar** — repassa [el meu checklist](SA1_checklist_alumnat.md).
 
-**🟦 Sessió 2 (2 h) · Arquitectura i seguretat**
-1. Anatomia de la placa UNO: etiqueta l'esquema mut → [esquemes i connexions](SA1_esquemes_connexions.md), *Activitat 2*.
-2. [Normes de seguretat](SA1_normes_seguretat.md): llegir i **signar** el full.
-3. Entorn: tour de l'**Arduino IDE** i **Tinkercad** (primer circuit virtual).
+### Si vols més
 
-**🟦 Sessió 3 (2 h) · El primer programa**
-1. `Blink` amb el mètode **PRIMM** (predir → executar → investigar → modificar) → fitxa base, *Activitat 4*.
-2. Repte [`blink_repte.ino`](codi/blink_repte/blink_repte.ino) i ampliacions ([`blink_millis`](codi/blink_millis/blink_millis.ino), [`sos_morse`](codi/sos_morse/sos_morse.ino)).
-3. Mini-debat **ètic** (ODS) i tria del robot per a la [fitxa-pòster](SA1_poster_robot_plantilla.md).
+- [Fitxa ampliada](SA1_fitxa_ampliada.md) — rols, coavaluació, ODS i ampliacions.
+- [Qüestionari de conceptes](SA1_questionari_conceptes.md) — per repassar.
+- [Reptes de la SA1](../../Reptes/Reptes_SA1.md) — tria el teu context.
 
 ## Producte i avaluació
 

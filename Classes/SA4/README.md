@@ -4,12 +4,18 @@ Quarta situació d'aprenentatge (**8 h · 4 sessions**, 2n trimestre). El sistem
 
 ## Itinerari per sessions
 
-> Ordre de treball recomanat. La font única de cada activitat és la **fitxa base** ([`SA4_fitxa_alumnat.md`](SA4_fitxa_alumnat.md)); la resta de documents hi donen suport.
+> La teva feina és a la **[fitxa base](SA4_fitxa_alumnat.md)**. Aquesta ruta et diu què toca fer a cada sessió i què necessites en aquell moment.
 
-1. **Sessió 1 · El servomotor** — llibreria `Servo.h`, posició 0-180° amb potenciòmetre.
-2. **Sessió 2 · Motor DC i pont H** — direcció i velocitat (PWM). Munta amb [esquemes i connexions](SA4_esquemes_connexions.md) (massa comuna!).
-3. **Sessió 3 · Del sensor al moviment** — la percepció regula el moviment (ultrasons → velocitat).
-4. **Sessió 4 · Producte: barrera automàtica** — mecanisme motoritzat controlat per sensor (rúbriques R1, R2, R3 parcial).
+1. **Sessió 1 · El servomotor** — fes l'[Activitat 1 de la fitxa](SA4_fitxa_alumnat.md#1-servomotor-s1).
+2. **Sessió 2 · Motor DC i pont H** — fes l'[Activitat 2](SA4_fitxa_alumnat.md#2-motor-dc-i-pont-h-s2), amb els [esquemes de connexió](SA4_esquemes_connexions.md) (compte amb la massa comuna!).
+3. **Sessió 3 · Del sensor al moviment** — fes l'[Activitat 3](SA4_fitxa_alumnat.md#3-del-sensor-al-moviment-s3), amb el [codi](codi/).
+4. **Sessió 4 · Producte: barrera automàtica** — fes l'[Activitat 4](SA4_fitxa_alumnat.md#4-producte-barrera-automatica-s4) (s'avalua amb R1, R2, R3 parcial).
+5. **Abans d'entregar** — repassa [el meu checklist](SA4_checklist_alumnat.md).
+
+### Si vols més
+
+- [Fitxa ampliada](SA4_fitxa_ampliada.md) — aprofundiment i ampliacions.
+- [Reptes de la SA4](../../Reptes/Reptes_SA4.md) — tria el teu context.
 
 <!-- web:only-github -->
 ## Contingut

@@ -4,12 +4,18 @@ Tercera situació d'aprenentatge (**8 h · 4 sessions**, 1r trimestre). El siste
 
 ## Itinerari per sessions
 
-> Ordre de treball recomanat. La font única de cada activitat és la **fitxa base** ([`SA3_fitxa_alumnat.md`](SA3_fitxa_alumnat.md)); la resta de documents hi donen suport.
+> La teva feina és a la **[fitxa base](SA3_fitxa_alumnat.md)**. Aquesta ruta et diu què toca fer a cada sessió i què necessites en aquell moment.
 
-1. **Sessió 1 · Entrades digitals i monitor sèrie** — polsador amb `INPUT_PULLUP` i antirebot.
-2. **Sessió 2 · Entrades analògiques** — potenciòmetre i LDR, `map()`, llum automàtic.
-3. **Sessió 3 · Sensor de distància i funcions** — ultrasons i codi modular. Munta amb [esquemes i connexions](SA3_esquemes_connexions.md).
-4. **Sessió 4 · Producte: alarma/aparcament** — sensor → actuador segons distància (rúbriques R1 codi, R2 circuit).
+1. **Sessió 1 · Entrades digitals i monitor sèrie** — fes l'[Activitat 1 de la fitxa](SA3_fitxa_alumnat.md#1-polsador-i-monitor-serie-s1).
+2. **Sessió 2 · Entrades analògiques** — fes l'[Activitat 2](SA3_fitxa_alumnat.md#2-entrades-analogiques-s2).
+3. **Sessió 3 · Sensor de distància i funcions** — fes l'[Activitat 3](SA3_fitxa_alumnat.md#3-ultrasons-i-funcions-s3), amb els [esquemes de connexió](SA3_esquemes_connexions.md) i el [codi](codi/).
+4. **Sessió 4 · Producte: alarma/aparcament** — fes l'[Activitat 4](SA3_fitxa_alumnat.md#4-producte-alarma-aparcament-s4) (s'avalua amb R1 codi + R2 circuit).
+5. **Abans d'entregar** — repassa [el meu checklist](SA3_checklist_alumnat.md).
+
+### Si vols més
+
+- [Fitxa ampliada](SA3_fitxa_ampliada.md) — aprofundiment i ampliacions.
+- [Reptes de la SA3](../../Reptes/Reptes_SA3.md) — tria el teu context.
 
 <!-- web:only-github -->
 ## Contingut
