@@ -834,7 +834,7 @@ DOC_ORDRE_CLAUS = ["guia-docent", "guia", "fitxa-alumnat", "vocabulari",
 
 # Material que existeix per a l'alumnat però NOMÉS com a consulta opcional
 # («Si vols més»): fora del pager i del sidebar en vista alumnat.
-NOMES_CONSULTA = ("fitxa-ampliada", "questionari")
+NOMES_CONSULTA = ("fitxa-ampliada", "questionari", "recursos-video")
 
 
 def doc_ordre(p: Page):
