@@ -804,17 +804,25 @@ def sa_fil_html(sa: int, current_out: str, fil: dict) -> str:
 
 
 # --- Seqüències «anterior / següent» (itinerari pautat dins de cada bloc) ---
+# Ordre canònic dels materials d'una SA: primer el camí de l'alumnat
+# (fitxa → suports → checklist → codi), després el material opcional
+# (ampliada, qüestionari) i el del docent. "__codi__" és el rang de les
+# pàgines de codi (kind == "code").
+DOC_ORDRE_CLAUS = ["guia-docent", "guia", "fitxa-alumnat", "vocabulari",
+                   "prova", "normes", "esquemes", "connexions", "poster",
+                   "recursos", "practica", "checklist-alumnat", "__codi__",
+                   "fitxa-ampliada", "questionari", "checklist-docent"]
+
+
 def doc_ordre(p: Page):
-    """Ordre pedagògic dels materials d'una SA (guia → fitxa → esquemes → codi)."""
+    """Ordre pedagògic dels materials d'una SA (l'ordre de la ruta)."""
     n = p.out_rel.lower()
-    rang = 9
-    for i, clau in enumerate(["guia", "fitxa-alumnat", "fitxa", "vocabulari",
-                               "prova", "normes", "esquemes", "connexions",
-                               "poster", "recursos", "practica"]):
-        if clau in n:
-            rang = i
-            break
-    return (p.kind == "code", rang, p.out_rel)
+    if p.kind == "code":
+        return (DOC_ORDRE_CLAUS.index("__codi__"), n)
+    for i, clau in enumerate(DOC_ORDRE_CLAUS):
+        if clau != "__codi__" and clau in n:
+            return (i, n)
+    return (len(DOC_ORDRE_CLAUS), n)
 
 
 def build_sequences(pages: list[Page]) -> dict[str, str]:
@@ -1233,17 +1241,6 @@ def subindex_extra(section_key: str, group_key: str, current_out: str,
     if not gps:
         return ""
 
-    def ordre(p):
-        n = p.out_rel.lower()
-        rang = 9
-        for i, clau in enumerate(["guia", "fitxa-alumnat", "fitxa", "vocabulari",
-                                   "prova", "normes", "esquemes", "connexions",
-                                   "poster", "recursos", "practica"]):
-            if clau in n:
-                rang = i
-                break
-        return (p.kind == "code", rang, p.out_rel)
-
     # Bloc «Comença aquí» destacat, per vista
     def _find(*subs):
         return next((p for p in gps if any(s in p.out_rel.lower() for s in subs)), None)
@@ -1265,7 +1262,7 @@ def subindex_extra(section_key: str, group_key: str, current_out: str,
                      f'<div class="card-grid">{cards_do}</div></div>')
 
     cards = []
-    for p in sorted(gps, key=ordre):
+    for p in sorted(gps, key=doc_ordre):
         title = "Codi de les pràctiques" if p.kind == "code" else p.title
         cards.append(doc_card(rel_url(current_out, p.out_rel), title, p.kind,
                               docent=(p.public == "docent")))
