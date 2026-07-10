@@ -37,3 +37,8 @@ desktop.ini
 # Material massa gros per a GitHub (>100 MB). El contingut ja es guarda
 # descomprimit a la carpeta "Fitxes STEAM Cards curs 2020-2021/".
 Recursos/Fitxes STEAM Cards curs 2020-2021-*.zip
+
+# Eina local d'automatitzacio del Google Classroom (scripts Node +
+# node_modules + credentials.json). NO ha d'anar al repo public:
+# conte credencials i pesa >100 MB. Es material de treball de la maquina.
+Material Classroom/
