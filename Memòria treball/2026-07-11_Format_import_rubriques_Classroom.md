@@ -39,7 +39,22 @@ Tasques amb 2+ rúbriques → cal una sola rúbrica que concateni els blocs de c
 | Combinada R1+R2 · Codi i circuit | 8 | SA2, SA3 | `1MmiBPzmJClFBBaj4RRoV17d0eZzKS5KRvOsg7JTCF-Q` |
 | Combinada R1+R2+R4 · Prova pràctica T1 | 12 | Prova T1 | `1jwyZGF5yH26yTuTcQBJn4qT-CiZ6B_LKTyj_Q0IeWbw` |
 
-Assignació de rúbrica per tasca de T1: **SA1→R4** (simple), **SA2→R1+R2**, **SA3→R1+R2**, **Prova T1→R1+R2+R4**. Config a `MERGES` dins l'script.
+## Mapa complet del curs (quina rúbrica per tasca)
+
+Font: seccions «Producte i avaluació» de cada `Classes/SAn/README.md` i `Avaluació/Prova_practica_T*.md`.
+
+| Tasca | Rúbriques | Fitxer a importar |
+|---|---|---|
+| SA1 pòster | R4 | Rúbrica R4 (simple) |
+| SA2, SA3 | R1+R2 | Combinada R1+R2 |
+| Prova T1 | R1+R2+R4 | Combinada R1+R2+R4 |
+| SA4 | R1+R2+R3 | Combinada R1+R2+R3 |
+| SA5 | R1+R4 | Combinada R1+R4 |
+| SA6, SA7, SA8 | R1+R3+R4 | Combinada R1+R3+R4 |
+| Prova T2, Prova T3 | R1+R3+R4 | Combinada R1+R3+R4 (la mateixa) |
+| SA9 | R1+R2+R3+R4+R5 | Combinada Totes (20 criteris) |
+
+Simples disponibles: **R1, R2, R3, R4, R5**. Fusions (`MERGES` a l'script): R1R2, R1R2R4, R1R2R3, R1R4, R1R3R4, R1R2R3R4R5. Totes a la **carpeta dedicada de rúbriques** (Drive). Regenerar-ne qualsevol: `node crear_rubriques_importables.js <clau>` (o `merge` per totes les fusions T1).
 
 ## Pendent (test decisiu)
 
