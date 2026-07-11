@@ -2,6 +2,8 @@
 
 **Nom:** ______________________  **Parella:** ______________________  **Data:** __________
 
+> 📄 **[Versió PDF per imprimir i omplir a mà](pdf/SA3_checklist_alumnat.pdf)**
+
 > Ara el sistema **percep** el món. Marca cada cosa quan la tinguis feta. ⚠️ La S4 inclou la **prova pràctica T1**.
 
 ## ✅ Abans d'acabar aquesta SA he de…

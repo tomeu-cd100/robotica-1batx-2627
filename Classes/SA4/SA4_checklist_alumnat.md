@@ -2,6 +2,8 @@
 
 **Nom:** ______________________  **Parella:** ______________________  **Data:** __________
 
+> 📄 **[Versió PDF per imprimir i omplir a mà](pdf/SA4_checklist_alumnat.pdf)**
+
 > Faràs moure el sistema. ⚠️ Recorda la **massa comuna** i **no alimentis motors des de l'Arduino**.
 
 ## ✅ Abans d'acabar aquesta SA he de…

@@ -2,6 +2,8 @@
 
 **Nom:** ______________________  **Parella:** ______________________  **Data:** __________
 
+> 📄 **[Versió PDF per imprimir i omplir a mà](pdf/SA6_checklist_alumnat.pdf)**
+
 > Faràs que el sistema **es reguli sol**. ⚠️ La S4 inclou la **prova pràctica T2**. El control proporcional és **+ampliació** (opcional).
 
 ## ✅ Abans d'acabar aquesta SA he de…

@@ -2,6 +2,8 @@
 
 **Nom:** ______________________  **Parella:** ______________________  **Data:** __________
 
+> 📄 **[Versió PDF per imprimir i omplir a mà](pdf/SA1_checklist_alumnat.pdf)**
+
 > Marca cada cosa quan la tinguis feta. Serveix per no oblidar-te res i per saber com vas.
 
 ## ✅ Abans d'acabar aquesta SA he de…

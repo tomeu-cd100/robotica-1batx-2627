@@ -2,6 +2,8 @@
 
 **Nom:** ______________________  **Parella:** ______________________  **Data:** __________
 
+> 📄 **[Versió PDF per imprimir i omplir a mà](pdf/SA2_checklist_alumnat.pdf)**
+
 > Marca cada cosa quan la tinguis feta. Recorda: **cada LED amb resistència de 220 Ω** i polaritat correcta.
 
 ## ✅ Abans d'acabar aquesta SA he de…

@@ -2,6 +2,8 @@
 
 **Nom:** ______________________  **Equip:** ______________________  **Data:** __________
 
+> 📄 **[Versió PDF per imprimir i omplir a mà](pdf/SA8_checklist_alumnat.pdf)**
+
 > Connectaràs dispositius (telemetria/IoT) i faràs que el sistema "reconegui" patrons (IA). ⚠️ Pensa també en l'**ètica de les dades**.
 
 ## ✅ Abans d'acabar aquesta SA he de…

@@ -2,6 +2,8 @@
 
 **Nom:** ______________________  **Equip:** ______________________  **Data:** __________
 
+> 📄 **[Versió PDF per imprimir i omplir a mà](pdf/SA7_checklist_alumnat.pdf)**
+
 > Ara el robot es mou sol! ⚠️ Recorda **ajustar els pins** (`// === PINS (AJUSTAR) ===`) segons la teva placa.
 
 ## ✅ Abans d'acabar aquesta SA he de…

@@ -2,6 +2,8 @@
 
 > Es llegeixen en veu alta a la **Sessió 2**, es comenten amb exemples i cada alumne/a **signa** el compromís del final. El full signat es guarda a la carpeta del grup.
 
+> 📄 **[Versió PDF per imprimir i signar](pdf/SA1_normes_seguretat.pdf)**
+
 ---
 
 ## 1. Abans de connectar res

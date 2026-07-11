@@ -2,6 +2,8 @@
 
 **Nom:** ______________________  **Parella:** ______________________  **Data:** __________
 
+> 📄 **[Versió PDF per imprimir i omplir a mà](pdf/SA5_checklist_alumnat.pdf)**
+
 > Canvies de llenguatge: ara **Python** sobre micro:bit. ⚠️ Atenció a la **indentació** (en Python és obligatòria!).
 
 ## ✅ Abans d'acabar aquesta SA he de…

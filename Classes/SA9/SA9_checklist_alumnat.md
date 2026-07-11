@@ -2,6 +2,8 @@
 
 **Equip:** ______________________  **Membres:** ______________________  **Data:** __________
 
+> 📄 **[Versió PDF per imprimir i omplir a mà](pdf/SA9_checklist_alumnat.pdf)**
+
 > El projecte de síntesi del curs: de la idea a la demo, **sencer i en autonomia**. Feu servir les **plantilles** de `plantilles/`.
 
 ## ✅ Al llarg de la SA, com a equip hem de…

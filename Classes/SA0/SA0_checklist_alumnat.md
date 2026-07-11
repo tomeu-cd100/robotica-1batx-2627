@@ -2,6 +2,8 @@
 
 **Nom:** ______________________  **Data:** __________
 
+> 📄 **[Versió PDF per imprimir i omplir a mà](pdf/SA0_checklist_alumnat.pdf)**
+
 > Aquest checklist **no es qualifica**. Serveix perquè arribis a la SA1 amb el vocabulari i les bases del codi posades. Fes-lo sol/a o en parella amb el vocabulari i la guia al costat.
 
 ## ✅ Per estar a punt hauria de…
