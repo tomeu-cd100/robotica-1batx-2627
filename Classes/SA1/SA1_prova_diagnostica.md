@@ -2,6 +2,8 @@
 
 > **No qualifica.** Serveix per conèixer el punt de partida de cada alumne/a i **formar parelles heterogènies** (qui té experiència amb qui no en té). Durada orientativa: **15-20 min**, individual.
 
+> 👉 **Es respon en línia:** **[Prova diagnòstica SA1 (Google Classroom)](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODcwNTM2NzE0Njcx/details)**. La Part B s'autocorregeix dins el formulari (informatiu, sense nota). A sota tens la **versió imprimible** i la clau de correcció.
+
 **Nom:** ______________________  **Data:** __________
 
 ---
@@ -87,9 +89,11 @@ ___________________________________________________________________
 
 ---
 
-## Versió Google Forms (llesta per copiar)
+<!-- web:only-github -->
 
-> Crea un formulari nou a **Google Forms**, activa **"Convertir en qüestionari"** (Configuració → Qüestionaris) i marca les respostes correctes de la Part B per a l'**autocorrecció** (recorda: el resultat és informatiu, no qualifica). Tipus de pregunta indicat a cada bloc.
+## Versió Google Forms (referència de muntatge)
+
+> El formulari **ja està creat i publicat** a Classroom (enllaç a dalt). Es va generar amb `Material Classroom/crear_diagnostica_sa1.js` (mode qüestionari + autocorrecció de la Part B). Aquesta és l'especificació font, per si cal recrear-lo o modificar-lo. Tipus de pregunta indicat a cada bloc.
 
 **Títol del formulari:** `SA1 · Prova diagnòstica — Què sé abans de començar?`
 **Descripció:** `Aquesta prova no es qualifica. Ens ajuda a saber d'on partim i a formar bones parelles de treball.`
@@ -116,3 +120,6 @@ ___________________________________________________________________
 - P11. Escriu un robot/aparell automàtic de casa teva i explica com creus que "sap" què ha de fer.
 
 > **Recollida de resultats:** Respostes → full de càlcul vinculat. Ordena per la puntuació de la Part B i pel P1 per formar **parelles heterogènies** amb un clic.
+
+<!-- /web:only-github -->
+

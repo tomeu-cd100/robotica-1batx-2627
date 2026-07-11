@@ -6,7 +6,7 @@ Primera situació d'aprenentatge del curs (**6 h · 3 sessions**, 1r trimestre).
 
 > La teva feina és a la **[fitxa base](SA1_fitxa_alumnat.md)**. Aquesta ruta et diu què toca fer a cada sessió i què necessites en aquell moment. Les respostes de la fitxa es lliuren a la **[tasca de Classroom](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODcwNTEwOTcwMDE1/details)**.
 
-1. **Sessió 1 · Què és un robot?** — fes l'[Activitat 1 de la fitxa](SA1_fitxa_alumnat.md#1-entrada-proces-sortida) i respon la [prova diagnòstica](SA1_prova_diagnostica.md) (no qualifica).
+1. **Sessió 1 · Què és un robot?** — fes l'[Activitat 1 de la fitxa](SA1_fitxa_alumnat.md#1-entrada-proces-sortida) i respon la **[prova diagnòstica (Google Classroom)](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODcwNTM2NzE0Njcx/details)** (no qualifica; [versió imprimible](SA1_prova_diagnostica.md)).
 2. **Sessió 2 · La placa i la seguretat** — fes l'[Activitat 2](SA1_fitxa_alumnat.md#2-la-placa-arduino-uno) amb els [esquemes de la placa](SA1_esquemes_connexions.md), i fes l'[Activitat 3](SA1_fitxa_alumnat.md#3-normes-de-seguretat): llegeix i signa les [normes de seguretat](SA1_normes_seguretat.md).
 3. **Sessió 3 · El teu primer programa** — fes l'[Activitat 4](SA1_fitxa_alumnat.md#4-el-teu-primer-programa-blink-primm) amb el [codi](codi/), i comença la [fitxa-pòster](SA1_poster_robot_plantilla.md) (el producte de la SA).
 4. **Abans d'entregar** — repassa [el meu checklist](SA1_checklist_alumnat.md).
