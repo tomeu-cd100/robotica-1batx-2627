@@ -30,6 +30,17 @@ Detalls que importen:
   - R4 `1Ec4KpJ83-DM5Oe-Vhjt5vrPfOtEAPpyVmIjE8_y4BA4`
   - R5 `1viuoz4Y_W8tPeV2oi-5EPBJg2jx8RGcx6uz2HV9uczY`
 
+## Rúbriques FUSIONADES (Classroom = 1 rúbrica per tasca)
+
+Tasques amb 2+ rúbriques → cal una sola rúbrica que concateni els blocs de criteris (capçalera `v1.0-s` una sola vegada). Els criteris es prefixen amb `R#· ` per traçabilitat. `crear_rubriques_importables.js merge` genera:
+
+| Fitxer | Criteris | Per a | fileId |
+|---|---|---|---|
+| Combinada R1+R2 · Codi i circuit | 8 | SA2, SA3 | `1MmiBPzmJClFBBaj4RRoV17d0eZzKS5KRvOsg7JTCF-Q` |
+| Combinada R1+R2+R4 · Prova pràctica T1 | 12 | Prova T1 | `1jwyZGF5yH26yTuTcQBJn4qT-CiZ6B_LKTyj_Q0IeWbw` |
+
+Assignació de rúbrica per tasca de T1: **SA1→R4** (simple), **SA2→R1+R2**, **SA3→R1+R2**, **Prova T1→R1+R2+R4**. Config a `MERGES` dins l'script.
+
 ## Pendent (test decisiu)
 
 - Confirmar que Classroom **importa un full no exportat per ell mateix** (mateixa estructura). Si NO: pla B = copiar la R1 que funciona (procedència Classroom) i sobreescriure només les cel·les de dades amb Sheets API (cal scope `spreadsheets`, reconsentiment).
