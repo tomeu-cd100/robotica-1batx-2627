@@ -1,5 +1,7 @@
 # 2026-07-11 · Rúbriques R1-R5 com a Google Sheets (carpeta del curs)
 
+> ⚠️ **SUPERAT (mateix dia).** Aquests 5 Sheets «de consulta» (graella llegible) es van **esborrar** perquè es confonien amb les versions **importables** al selector de Classroom. Les rúbriques bones (format d'importació provat) són a `2026-07-11_Format_import_rubriques_Classroom.md`, en una carpeta dedicada de rúbriques. Els enllaços de sota ja **no** funcionen.
+
 Generades les **5 rúbriques** de la matèria (`Programació didàctica/07_Rubriques.md`) com a **Google Sheets natius**, un fitxer per rúbrica, a la carpeta de Drive del curs (`1vUzzhLBIArNcRaWdz-nMMtn1R-2l4rMn`).
 
 | Fitxer | Enllaç |
