@@ -6,8 +6,9 @@ Fulls per **omplir/recollir en paper** convertits a PDF net i versionats al repo
 
 - **SA1 · Normes de seguretat** (full de compromís amb **signatura**).
 - **10 checklists d'alumnat** (SA0-SA9): autoavaluació amb graella **semàfor** per pintar.
-- Ubicació: **`Classes/SAn/pdf/<nom>.pdf`** (al costat del seu material).
-- No s'hi inclouen les fitxes (ja són a Classroom) ni altres documents.
+- **2 fulls de producte** (afegits després): **SA1 pòster-robot** i **plantilla de disseny d'objecte** (`00_General`).
+- Ubicació: **`Classes/SAn/pdf/<nom>.pdf`** (al costat del seu material; `00_General/pdf/` per al full general).
+- No s'hi inclouen les fitxes (ja són a Classroom) ni altres documents. **Total: 13 PDF.**
 
 ## Eina nova: `web/_generador/generar_fulls_imprimibles.py`
 
@@ -31,7 +32,14 @@ Fulls per **omplir/recollir en paper** convertits a PDF net i versionats al repo
 - Consola de Windows en cp1252: cal `sys.stdout.reconfigure(encoding="utf-8")` per imprimir ✓/emojis al log.
 - Chrome amb `Start-Process -Wait` (o `subprocess.run`) per esperar l'escriptura del PDF; el `file://` ha de ser una URI Windows correcta (`Path.as_uri()`), no `/c/...`.
 
-## Pendent / possible ampliació
+## Ampliacions del convertidor (per als fulls de producte)
 
-- Si es volen també els fulls de **producte** (SA1 pòster-robot, plantilla disseny d'objecte): afegir-los a `TARGETS`.
+- **Blocs de codi** (```` ``` ````) → `<pre>` monospace (diagrames ASCII: E-P-S, caixa d'esbós).
+- **Llistes numerades** (`N.`) → `<ol>` (requisits mínims, decisions de disseny).
+- **Regla horitzontal** (`---`) → `<hr>` (abans sortia com a text).
+- Rúbriques amb `☐` es mantenen tal qual (caselles per marcar).
+
+## Pendent
+
 - Les fitxes base segueixen a Classroom (Google Form); no es fan en PDF imprimible.
+- Nota f-string (Py 3.11): cap backslash dins l'expressió d'una f-string (treure `re.sub` a una variable).

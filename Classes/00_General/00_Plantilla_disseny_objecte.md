@@ -4,6 +4,8 @@
 
 **Nom/Equip:** ______________________  **SA:** ______  **Data:** __________
 
+> 📄 **[Versió PDF per imprimir i omplir a mà](pdf/00_Plantilla_disseny_objecte.pdf)**
+
 **Nom de l'objecte:** ________________________________________________
 
 ---

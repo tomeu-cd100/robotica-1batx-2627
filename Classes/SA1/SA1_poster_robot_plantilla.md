@@ -4,6 +4,8 @@
 
 **Autoria:** ______________________  **Grup:** __________  **Data:** __________
 
+> 📄 **[Versió PDF per imprimir (A3/A4)](pdf/SA1_poster_robot_plantilla.pdf)**
+
 ---
 
 ## Tria del robot

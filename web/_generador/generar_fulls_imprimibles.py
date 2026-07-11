@@ -35,7 +35,10 @@ CLASSES = REPO / "Classes"
 # Fulls a convertir: (md relatiu a Classes, "checklist" | "normes")
 TARGETS = [
     ("SA1/SA1_normes_seguretat.md", "normes"),
-] + [(f"SA{n}/SA{n}_checklist_alumnat.md", "checklist") for n in range(0, 10)]
+] + [(f"SA{n}/SA{n}_checklist_alumnat.md", "checklist") for n in range(0, 10)] + [
+    ("SA1/SA1_poster_robot_plantilla.md", "checklist"),
+    ("00_General/00_Plantilla_disseny_objecte.md", "checklist"),
+]
 
 CHROME_CANDIDATES = [
     r"C:/Program Files/Google/Chrome/Application/chrome.exe",
@@ -74,8 +77,12 @@ CSS = """
                   border-radius: 2px; margin-top: 1.5pt; }
   ul.plain { margin: 4pt 0; padding-left: 20pt; }
   ul.plain li { margin: 3pt 0; }
-  ol.normes { margin: 0; padding-left: 20pt; }
-  ol.normes li { margin: 3pt 0; }
+  ol.normes, ol.num { margin: 4pt 0; padding-left: 20pt; }
+  ol.normes li, ol.num li { margin: 3pt 0; }
+  pre { font-family: Consolas, "Courier New", monospace; font-size: 8.4pt;
+        line-height: 1.2; background: #f7f7f7; border: 1px solid #e0e0e0;
+        border-radius: 4px; padding: 6pt 8pt; white-space: pre; overflow: hidden;
+        margin: 6pt 0; }
   /* Graella semàfor */
   table.grid { width: 100%; border-collapse: collapse; margin: 6pt 0; }
   table.grid th, table.grid td { border: 1px solid #bbb; padding: 5pt 7pt; }
@@ -93,6 +100,7 @@ CSS = """
                padding: 9pt 12pt; background: #f6fbfe; page-break-inside: avoid; }
   .destacats .t { font-weight: 600; margin: 0 0 8pt; }
   strong { font-weight: 700; }
+  hr { border: 0; border-top: 1px solid #ddd; margin: 9pt 0; }
 """
 
 
@@ -165,7 +173,15 @@ def md_to_body(md: str) -> tuple[str, str]:
         if not s:
             i += 1
             continue
-        if s.startswith("# "):
+        if s.startswith("```"):
+            i += 1
+            code = []
+            while i < len(lines) and not lines[i].strip().startswith("```"):
+                code.append(lines[i])
+                i += 1
+            i += 1  # tanca ```
+            out.append(f"<pre>{html.escape(chr(10).join(code))}</pre>")
+        elif s.startswith("# "):
             title = s[2:].strip()
             out.append(f"<h1>{inline(title)}</h1>")
             i += 1
@@ -195,6 +211,9 @@ def md_to_body(md: str) -> tuple[str, str]:
                 rows.append(lines[i])
                 i += 1
             out.append(render_table(rows))
+        elif re.fullmatch(r"[-*_]{3,}", s):
+            out.append("<hr>")
+            i += 1
         elif is_identity(s):
             out.append(render_identity(s))
             i += 1
@@ -204,6 +223,13 @@ def md_to_body(md: str) -> tuple[str, str]:
                 items.append(f"<li>{inline(lines[i].strip()[2:])}</li>")
                 i += 1
             out.append(f'<ul class="plain">{"".join(items)}</ul>')
+        elif re.match(r"\d+\.\s", s):
+            items = []
+            while i < len(lines) and re.match(r"\d+\.\s", lines[i].strip()):
+                txt = re.sub(r"^\d+\.\s+", "", lines[i].strip())
+                items.append(f"<li>{inline(txt)}</li>")
+                i += 1
+            out.append(f'<ol class="num">{"".join(items)}</ol>')
         else:
             out.append(f"<p>{inline(s)}</p>")
             i += 1
