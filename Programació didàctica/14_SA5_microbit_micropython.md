@@ -3,7 +3,7 @@
 | | |
 |---|---|
 | **Trimestre** | 2n |
-| **Durada** | 7 h (3-4 sessions) |
+| **Durada** | 6 h (3 sessions + 4a opcional d'ampliació) |
 | **Maquinari** | micro:bit + Micro:shield (sensors externs) |
 | **Llenguatge** | MicroPython (amb MakeCode com a pont) |
 
@@ -31,7 +31,7 @@ Sintaxi de Python (indentació, variables, funcions); E/S de micro:bit (matriu L
 | **1** | Editor Python micro:bit. Matriu LED, botons. "Name badge" i animacions. Indentació i variables. |
 | **2** | Sensors integrats: acceleròmetre (detector de moviment/passes), temperatura, llum (nightlight). Funcions en Python. |
 | **3** | **Ràdio**: missatgeria/comandament entre dues micro:bit. Mini-projecte: "dau digital" o "pedra-paper-tisora" per ràdio. |
-| **4 (opc./+ampliació)** | **Taula comparativa C++ ↔ Python** d'un mateix programa (p. ex. comptador). Reflexió sobre paradigmes. |
+| **4 (opcional, fora del còmput)** | **Taula comparativa C++ ↔ Python** d'un mateix programa (p. ex. comptador). Reflexió sobre paradigmes. *Si no es fa la sessió, la comparativa es completa dins el tancament de la S3 (15').* |
 
 ## Producte
 Aplicació amb micro:bit que usa sensors i/o ràdio (comptapassos, nightlight, joc per ràdio) + taula comparativa C++/Python al quadern.

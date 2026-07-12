@@ -98,7 +98,7 @@ Amb 2 h setmanals, el que es va aprendre a l'octubre arriba esborrat al febrer s
 
 *Respostes: ① `map(x, 0, 1023, 0, 255)`. ② més petita (menys llum = lectura més baixa, amb el divisor del material del curs); l'important és que ho justifiquin mirant valors reals. ③ veure què llegeix la placa per depurar/calibrar; `Serial.begin(9600)` i `Serial.println(x)`.*
 
-### SA3 · Sessió 4 — abans del «Producte: alarma/aparcament» *(sessió que acull la prova T1)*
+### SA3 · Sessió 4 — dia de la **prova T1** *(graella opcional: només com a escalfament de 3' abans de repartir la prova; el producte es va tancar a la S3)*
 > **P①** Completa: distància (cm) = temps · ______ / 2. Per què es divideix entre 2?
 > **P②** Què vol dir que una funció **retorna** un valor? Què retorna `mesuraDistancia()`?
 > **P③** (fons d'armari, SA1) El sistema alarma d'aparcament sencer: identifica'n entrada, procés i sortida.
@@ -187,7 +187,7 @@ Amb 2 h setmanals, el que es va aprendre a l'octubre arriba esborrat al febrer s
 
 *Respostes: ① histèresi; evita que l'actuador commuti sense parar quan la lectura balla al voltant de la consigna. ② guardes `millis()` en una variable i compares si ha passat prou temps (`if (millis() - inici >= interval)`). ③ 3 (verd/groc/vermell); el pas del temps — avui ho formalitzem com a **màquina d'estats**.*
 
-### SA6 · Sessió 4 — abans de «Control proporcional» *(sessió que acull la prova T2)*
+### SA6 · Sessió 4 — dia de la **prova T2** *(graella opcional: només com a escalfament de 3' abans de repartir la prova; el producte es va tancar a la S3 i el proporcional és +ampliació)*
 > **P①** Una màquina d'estats té dues coses: **estats** i **transicions**. Al semàfor adaptatiu, digues 2 estats i 1 transició.
 > **P②** (SA5) Prediu aquest MicroPython: `if temperature() > 25:` seguit de `display.show(Image.NO)` indentat — què fa i cada quan?
 > **P③** (SA3) El divisor de tensió LDR + 10 kΩ: per què no podem connectar la LDR sola directament a A0?

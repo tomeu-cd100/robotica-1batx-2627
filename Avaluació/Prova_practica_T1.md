@@ -1,7 +1,7 @@
 # Prova pràctica — Trimestre 1 (SA1-SA3)
 ## "Llum de seguretat intel·ligent"
 
-**Durada:** 2 h · **Material:** Arduino UNO, protoboard, LDR + 10 kΩ, LED + 220 Ω, polsador, brunzidor piezo, cables. Es permet consultar esquemes i quadern tècnic.
+**Durada:** una sessió sencera — **la S4 de la SA3** (~95-100' efectius de prova, més instruccions i recollida) · **Individual** · **Material:** Arduino UNO, protoboard, LDR + 10 kΩ, LED + 220 Ω, polsador, brunzidor piezo, cables. Es permet consultar esquemes i quadern tècnic.
 
 ### Competències i criteris avaluats
 - **CE-R1** (programar) → CA1.1 · **CE-R2** (circuits) → CA2.1, CA2.2

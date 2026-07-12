@@ -12,6 +12,7 @@
 
 | Necessites… | Vés a… |
 |---|---|
+| **És el teu primer any? Què és nucli i què pot esperar** | `Classes/00_General/00_Mode_supervivencia.md` (les 3 rutines no negociables + ordre d'adopció de la resta) |
 | Visió de conjunt i decisions del curs | `Programació didàctica/00_Index_general.md` |
 | Com donar **una sessió concreta** | `Classes/SAx/SAx_guia_docent.md` (fases, temps, errors freqüents) |
 | Recordatori d'una cara per SA (docent i alumnat) | `Classes/SAx/SAx_checklist_docent.md` · `SAx_checklist_alumnat.md` |
@@ -30,15 +31,27 @@
 
 ## 1 · Abans de la primera classe — engegada tècnica
 
-### 1.1. Instal·la i prova l'Arduino IDE (≈ 30 min)
+### 1.1. Tria la teva via de programació (i prova-la!)
+
+> ⚠️ **L'aula real treballa amb Chromebooks.** L'alumnat programarà l'Arduino amb el **Web Editor** (`create.arduino.cc/editor`) des del Chromebook — **no** amb l'IDE d'escriptori. Prepara **primer** la via A (la de l'alumnat) i després la B (la teva màquina i el pla B).
+
+**Via A — Chromebook + Arduino Web Editor (la de l'alumnat, ≈ 30 min):**
+1. Llegeix la guia pas a pas: [`Classes/SA0/SA0_guia_web_editor_chromebook.md`](Classes/SA0/SA0_guia_web_editor_chromebook.md) (posada en marxa, flux de treball i problemes freqüents).
+2. **Prova el flux amb un Chromebook real del centre**: inici de sessió al compte Arduino, app/connector instal·lat (o demana a l'administrador que el desplegui), placa connectada, **Blink** carregat.
+3. Verifica que la **xarxa del centre** no bloqueja `create.arduino.cc` ni els permisos USB del navegador. Si res d'això falla el primer dia, el pla B és el simulador (Tinkercad/Wokwi).
+
+**Via B — Arduino IDE d'escriptori (per a la teva màquina i com a pla B, ≈ 30 min):**
 1. Descarrega l'**Arduino IDE** de [arduino.cc/en/software](https://www.arduino.cc/en/software) i instal·la'l.
 2. **Driver CH340 (important amb plaques clòniques/econòmiques):** molts UNO no oficials porten el xip **CH340**; a Windows sovint cal instal·lar-ne el driver perquè aparegui el port. Cerca "driver CH340" del fabricant del teu kit. (Les plaques oficials no ho necessiten.)
 3. Connecta una placa amb un **cable USB de dades** (no de només càrrega) i selecciona **Eines → Placa → Arduino UNO** i **Eines → Port → (el que aparegui)**.
 4. **Càrrega de prova:** `Fitxer → Exemples → 01.Basics → Blink` i prem **Puja (→)**. Si el LED "L" parpelleja, l'entorn funciona.
 
+> Els conceptes i el codi són **idèntics** a totes dues vies; només canvia l'eina. La plataforma és **mixta**: web editor a l'aula, IDE on convingui.
+
 ### 1.2. Comptes i editors en línia (≈ 20 min)
 | Eina | Per a què | Compte? |
 |---|---|---|
+| **Arduino Web Editor** (create.arduino.cc/editor) | Programar l'Arduino des del **Chromebook** (via A de l'aula) | **Sí** (compte Arduino; segueix el criteri del centre) |
 | **Tinkercad Circuits** (tinkercad.com) | Simular Arduino/circuits; **Classes** per a l'alumnat | Sí (docent); l'alumnat pot entrar amb codi de classe sense correu |
 | **Wokwi** (wokwi.com) | Simular Arduino/ESP32; tens els projectes del curs ja fets | Recomanat (Google/GitHub) |
 | **Editor Python micro:bit** (python.microbit.org) | MicroPython; flasheig per WebUSB | No cal |
@@ -54,7 +67,8 @@
 - Comprova que tens **prou cables USB de dades** i preses de corrent als llocs de treball.
 
 ### 1.4. Checklist de la primera setmana
-- [ ] Arduino IDE instal·lat i **Blink** carregat en una placa de prova.
+- [ ] **Via A provada amb un Chromebook real:** compte Arduino, app/connector del Web Editor, **Blink** carregat des del navegador; xarxa del centre verificada.
+- [ ] Via B a la teva màquina: Arduino IDE instal·lat i **Blink** carregat en una placa de prova.
 - [ ] Driver CH340 instal·lat si cal (el port apareix).
 - [ ] Compte de Tinkercad (i classe creada) + accés a Wokwi.
 - [ ] Editor Python de micro:bit provat (flasheig d'un `display.scroll("Hola")`).

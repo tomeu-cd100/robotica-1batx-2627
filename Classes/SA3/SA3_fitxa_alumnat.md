@@ -17,8 +17,8 @@
 
 | Què lliuro | Rúbrica | On compta |
 |---|---|---|
-| **Alarma / sensor d'aparcament** (producte, S4) + defensa d'1' | **R1** i **R2** | Projectes (45 %) |
-| **Prova T1** (individual, dins la S4) | **R1, R2, R4** | Proves (20 %) |
+| **Alarma / sensor d'aparcament** (producte, **S3**) + defensa d'1' | **R1** i **R2** | Projectes (45 %) |
+| **Prova T1** (individual, **la S4 sencera**) | **R1, R2, R4** | Proves (20 %) |
 | **Quadern tècnic** (pseudocodi, calibratges, errors) | **R4** | Quadern tècnic i pràctiques (25 %) |
 | Mini-check individual (inici S3) | semàfor | **No qualifica** (m'avisa abans de la prova) |
 
@@ -53,17 +53,15 @@ Si la tasca encara no t'apareix al Classroom, és que la SA encara no ha començ
 3. **Racó de mesura (multímetre):** tensió al punt mig del divisor = ______ V · lectura del programa = ______ → lectura/1023 · 5 V = ______ V. Coincideixen? ____
 4. **Llum automàtic:** el LED s'encén quan la lectura de la LDR és ____ que ______.
 
-### 3 · Ultrasons i funcions (S3)
+### 3 · Ultrasons, funcions i PRODUCTE: alarma / aparcament (S3)
 1. Munta l'HC-SR04 (TRIG=12, ECHO=11). Carrega `03_ultrasons_funcio.ino`, obre el **Serial Plotter**.
 2. distància (cm) = temps · ______ / 2.
 3. Què **retorna** la funció `mesuraDistancia()`? ______________________
-4. **Repte:** funció que retorna la **mitjana de 3 mesures** (per què millora?).
-
-### 4 · Producte: alarma / aparcament (S4)
+4. *(+ Ampliació)* funció que retorna la **mitjana de 3 mesures** (per què millora?).
 
 > ✏️ **Nou hàbit — dissenya abans de codificar:** escriu al quadern el **pseudocodi** del teu sistema (3–5 línies, paraules teves: *"REPETEIX: llegeix distància; SI < 10 → …"*) o un diagrama de flux, i ensenya'l **abans** d'obrir l'editor. A partir d'ara ho faràs a cada repte.
 
-Dissenya un avís que depèn de la distància:
+Ara el **producte** (es tanca avui — la S4 és la prova T1): dissenya un avís que depèn de la distància:
 
 | Distància | LED | So (piezo) |
 |---|---|---|
@@ -71,7 +69,10 @@ Dissenya un avís que depèn de la distància:
 | 10–30 cm | | |
 | < 10 cm (molt a prop) | | |
 
-**Defensa (1'):** explica el teu sistema i una aplicació real. S'avalua amb **R1** i **R2**.
+**Defensa (1', a peu de taula durant la S3):** explica el teu sistema i una aplicació real. S'avalua amb **R1** i **R2**.
+
+### 4 · Prova pràctica T1 (S4, individual)
+La sessió 4 **sencera** és la **prova T1**: individual, amb el teu kit, i pots consultar **el teu quadern i els esquemes**. Nucli ben fet = 5-6; ampliacions = 7-10. Per això el quadern al dia és el teu millor material permès.
 
 <!-- /web:only-github -->
 

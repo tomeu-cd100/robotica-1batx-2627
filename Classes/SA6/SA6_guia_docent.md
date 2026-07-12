@@ -52,12 +52,15 @@
 
 ---
 
-## SESSIÓ 3 (2 h) — Màquines d'estats
-- **Activació (10'):** *"Com es programa una seqüència amb diversos passos i condicions?"*
-- **Modelatge (30'):** `03_maquina_estats.ino`. `enum` d'estats + `switch`; transicions per **temps** o per **esdeveniment** (polsador). Exemple: procés (espera → fase 1 → fase 2 → fet).
+## SESSIÓ 3 (2 h) — Màquines d'estats + tancament del producte
+
+> El producte de la SA **es tanca en aquesta sessió** (la S4 és, sencera, la prova T2).
+
+- **Mini-check individual (10', a l'inici, substitueix la graella):** diagnosticar el "clic-clic" del termòstat i escriure els dos llindars ([banc](../00_General/00_Mini_checks_individuals.md)).
+- **Modelatge (25'):** `03_maquina_estats.ino`. `enum` d'estats + `switch`; transicions per **temps** o per **esdeveniment** (polsador). Exemple: procés (espera → fase 1 → fase 2 → fet).
 - **Pràctica guiada (30'):** implementen la màquina d'estats i la proven.
-- **Repte (40'):** afegir un estat nou o una transició condicional; **+ repte:** semàfor adaptatiu (canvia segons polsador de vianant).
-- **Tancament (10'):** quadern (diagrama d'estats).
+- **Repte (40'):** afegir un estat nou o una transició condicional; **+ repte:** semàfor adaptatiu (canvia segons polsador de vianant). **Defenses de 2-3' a peu de taula:** mentre treballen, passa per les parelles i escolta la defensa del producte (problema → solució → **una decisió tècnica justificada**: per què aquests llindars? per què aquests estats?).
+- **Tancament (15'):** quadern (diagrama d'estats + diagrama de blocs); autoavaluació amb rúbriques.
 
 **Punt clau:** una **màquina d'estats** organitza comportaments complexos en estats clars i transicions; evita el codi espagueti i no bloqueja (s'usa amb `millis()`).
 
@@ -65,19 +68,21 @@
 
 ---
 
-## SESSIÓ 4 (2 h) — Control proporcional
+## SESSIÓ 4 (2 h) — PROVA PRÀCTICA T2 (individual)
 
-> 📋 **Aquesta sessió allotja la prova pràctica trimestral T2** (vegeu [`Avaluació/Prova_practica_T2.md`](../../Avaluació/Prova_practica_T2.md) i [`Programació didàctica/08_Sequenciacio_temporal_anual.md`](../../Programació%20didàctica/08_Sequenciacio_temporal_anual.md)): el repte de control d'aquesta sessió **fa de prova T2** i no afegeix hores extra.
+> 📋 **Aquesta sessió és, sencera, la prova trimestral T2** ([`Avaluació/Prova_practica_T2.md`](../../Avaluació/Prova_practica_T2.md)): individual, dues parts (control Arduino + micro:bit), quadern i esquemes consultables. **No s'hi programa cap altra activitat** ([`08_Sequenciacio`](../../Programació%20didàctica/08_Sequenciacio_temporal_anual.md)).
 
-> ⚖️ **Nivell exigible:** el **nucli** d'aquesta SA és **llaç obert/tancat + histèresi + màquina d'estats**. El **control proporcional és +ampliació** (notable/excel·lent), coherent amb la graella de la prova T2 (el nucli avaluable és el control tot/res amb histèresi). Amb poc temps, prioritza consolidar la màquina d'estats; ofereix el proporcional a qui vagi sobrat.
+- **Instruccions (5-10'):** material (kit + 2 micro:bit per alumne/a segons dotació), què es pot consultar, estructura per nivells (nucli = histèresi; ampliacions = indicador, proporcional, ràdio).
+- **Prova (95-100'):** Part A (control de temperatura amb histèresi) + Part B (estació remota micro:bit). El docent només resol incidències de material.
+- **Tancament (10'):** recollida; recordar el **pla de millora personal** (es reprèn a l'inici de la SA7).
 
-- **Activació (10'):** *"I si la resposta fos més suau, proporcional a com de lluny estem de l'objectiu?"*
-- **Modelatge (25'):** `04_control_proporcional.ino`. Concepte d'**error** i de **sortida proporcional** (P): com més gran l'error, més actuació. Introducció a l'estabilitat.
-- **Pràctica guiada (35'):** regulació proporcional (p. ex. velocitat del ventilador segons la temperatura).
-- **Repte (40'):** comparar **tot/res vs proporcional** amb el Serial Plotter; ajustar la constant `Kp`; **+ repte:** discutir què passa si `Kp` és massa gran.
-- **Tancament (15'):** quadern + autoavaluació.
+### +Ampliació: control proporcional (fora de sessió)
 
-**Punt clau:** el control **proporcional** dosifica l'actuació segons l'error → resposta més suau i estable que el tot/res. (És la base del control **PID**, que es veurà en cursos superiors.)
+> ⚖️ **Nivell exigible:** el **nucli** d'aquesta SA és **llaç obert/tancat + histèresi + màquina d'estats**. El **control proporcional és +ampliació** (notable/excel·lent), coherent amb la graella de la prova T2. **Ja no té sessió pròpia:** és material per a qui va sobrat.
+
+- **Material:** `04_control_proporcional.ino` + simulació Wokwi + repte ⭐ SA6_C (regulador proporcional) de [`Reptes/Reptes_SA6.md`](../../Reptes/Reptes_SA6.md).
+- **Quan:** dins la S2/S3 per a parelles que acaben aviat; a casa amb Wokwi; o com a ampliació de la prova T2 (l'enunciat ja la preveu al nivell excel·lent).
+- **Idea clau a transmetre:** el control **proporcional** dosifica l'actuació segons l'**error** → resposta més suau que el tot/res; si `Kp` és massa gran, oscil·la (limitar amb `constrain`). És la base del **PID** (cursos superiors).
 
 **Producte:** sistema de control documentat (termòstat amb histèresi o procés amb màquina d'estats) amb **diagrama de blocs** i anàlisi de la resposta.
 **Avaluació:** rúbriques **R1** (codi), **R3** (control), **R4** (documentació).
@@ -85,10 +90,10 @@
 ### Mapa d'avaluació (traçabilitat)
 | Instrument | Què evidencia | Criteri | Rúbrica |
 |---|---|---|---|
-| Producte (termòstat / màquina d'estats) | Implementar un sistema de control i explicar-lo | CA3.1 | R3 |
-| Repte (dissenyar una màquina d'estats) | `enum`/`switch`, transicions, no bloqueig (`millis()`) | CA1.1, CA3.1 | R1, R3 |
+| Producte (termòstat / màquina d'estats, **S3**) + defensa 2-3' | Implementar un sistema de control i explicar-lo | CA3.1 | R3 |
+| **Prova T2 (S4, individual)** | Control amb histèresi + programa micro:bit en solitari | CA1.1, CA1.2, CA3.1 | R1, R3, R4 |
 | Quadern (diagrama de blocs + anàlisi) | Consigna, error, realimentació; anàlisi de la resposta | CA3.1 | R4 |
-| Observació + Serial Plotter | Histèresi, ajust de `Kp`, comparació tot/res vs proporcional | CA3.1 | R3 |
+| Observació + Serial Plotter | Histèresi; (+ampliació) ajust de `Kp`, tot/res vs proporcional | CA3.1 | R3 |
 
 *(CA1.1 = programar en C/C++; CA3.1 = implementar sistemes de control (llaç obert/tancat, màquines d'estats) i explicar-ne el funcionament. Vegeu [`Programació didàctica/06_Avaluacio_criteris_qualificacio.md`](../../Programació%20didàctica/06_Avaluacio_criteris_qualificacio.md). Comparteix R1, R3 i R4 **abans** de començar.)*
 
@@ -109,7 +114,7 @@
 - **S1 · `01_llac_obert_vs_tancat`:** dibuixa el **diagrama de blocs** (consigna → error → actuador → sensor/realimentació). Pregunta: *"què passa si trec el sensor?"* → llaç obert ("confia" que tot anirà bé). *Error a anticipar:* confondre realimentació amb la sortida.
 - **S2 · `02_termostat_histeresi`:** mostra l'**oscil·lació** amb un sol llindar i com **dos llindars** la maten. Demana predir el comportament a prop de la consigna. *Error a anticipar:* parpelleig per no posar histèresi.
 - **S3 · `03_maquina_estats` (`enum`/`switch`):** recorre cada **estat** (què fa) i les seves **transicions** (quan canvia). Recorda la **bastida `millis()`** (no bloquejar). *Error a anticipar:* un `case` sense transició → la màquina es "penja".
-- **S4 · `04_control_proporcional`:** al **Serial Plotter**, compara **tot/res vs proporcional**. Demana predir què passa si `Kp` és enorme. *Error a anticipar:* oscil·lació per `Kp` massa gran (limita amb `constrain`).
+- **S4 (prova T2):** cap modelatge — sessió de prova individual. *(Si algú fa l'ampliació del proporcional: al **Serial Plotter**, comparar tot/res vs proporcional; predir què passa si `Kp` és enorme; limitar amb `constrain`.)*
 
 ## Atenció a la diversitat (DUA)
 
@@ -134,7 +139,7 @@ Parelles amb **rols rotatius**: Coordinador/a · Programador/a · Enginyer/a de 
 ## Avaluació formativa (instruments)
 
 - **Diana d'autoavaluació** (fitxa) · **Coavaluació** "2 estrelles i un desig" · **Exit ticket** de tancament.
-- **Mini-check individual** (10', **inici de la S3** — la S4 acull la prova T2 —, no qualifica): diagnosticar el "clic-clic" del termòstat i escriure els dos llindars (histèresi). Vegeu [`../00_General/00_Mini_checks_individuals.md`](../00_General/00_Mini_checks_individuals.md).
+- **Mini-check individual** (10', **inici de la S3** — la S4 és la prova T2 —, no qualifica): diagnosticar el "clic-clic" del termòstat i escriure els dos llindars (histèresi). Vegeu [`../00_General/00_Mini_checks_individuals.md`](../00_General/00_Mini_checks_individuals.md).
 
 ## Connexió amb la IA (llavor)
 

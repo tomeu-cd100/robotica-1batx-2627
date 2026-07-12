@@ -8,7 +8,7 @@ El curs treballa en parelles i equips, i gairebé tots els productes són col·l
 
 ## Rutina (10 minuts)
 
-1. **Quan:** a l'**inici de la sessió indicada** de cada SA (normalment la darrera; a SA3 i SA6, la penúltima, perquè la darrera acull la prova trimestral). **Aquell dia el mini-check substitueix la graella d'activació** (`00_Banc_activacio_repas.md`): també és recuperació.
+1. **Quan:** a l'**inici de la sessió indicada** de cada SA (normalment la darrera; a SA3 i SA6, la penúltima, perquè la darrera **és, sencera, la prova trimestral**). **Aquell dia el mini-check substitueix la graella d'activació** (`00_Banc_activacio_repas.md`): també és recuperació.
 2. **Com:** individual, **sense apunts ni parella**, en paper o a l'editor amb el projector apagat. 10' clavats.
 3. **Correcció:** no es puntua. El docent fa una passada ràpida amb **semàfor**:
    - 🟢 **Ho fa sol** (errors de detall com a molt).
@@ -33,7 +33,7 @@ El curs treballa en parelles i equips, i gairebé tots els productes són col·l
 **🟢** estructura completa i correcta · **🟡** estructura bé, errors de sintaxi · **🔴** barreja `setup()`/`loop()` o no arrenca.
 **Reforç 🔴:** `SA0_guia_programacio.md` A1–A4 (esquelet, sortides digitals).
 
-## SA3 · Mini-check (inici de la Sessió 3 — la S4 acull la prova T1)
+## SA3 · Mini-check (inici de la Sessió 3 — la S4 és, sencera, la prova T1)
 
 **Enunciat (projectar):**
 > Tens `int llum = analogRead(A1);` dins del `loop()`. **(a)** Escriu l'`if/else` perquè el LED del pin 9 s'encengui quan `llum` sigui **més petit que 300** i s'apagui altrament. **(b)** Entre quins valors es mou `llum`?
@@ -60,7 +60,7 @@ El curs treballa en parelles i equips, i gairebé tots els productes són col·l
 **🟢** funciona tal qual · **🟡** oblida l'import o un `sleep` · **🔴** indentació incoherent (no ha interioritzat que és sintaxi).
 **Reforç 🔴:** `SA0_guia_programacio.md` Part B (MicroPython) + simulador de python.microbit.org.
 
-## SA6 · Mini-check (inici de la Sessió 3 — la S4 acull la prova T2)
+## SA6 · Mini-check (inici de la Sessió 3 — la S4 és, sencera, la prova T2)
 
 **Enunciat (projectar):**
 > Un termòstat encén la calefacció quan `temp < 25` i l'apaga quan `temp >= 25`. A la pràctica, el relé fa **clic-clic sense parar** al voltant de 25 °C. **(a)** Per què passa? **(b)** Reescriu les condicions perquè no passi (pista: dos llindars).

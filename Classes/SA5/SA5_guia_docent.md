@@ -1,6 +1,6 @@
 # SA5 · Guia docent — micro:bit i MicroPython: un altre paradigma
 
-**Durada:** 7 h (3-4 sessions) · **Maquinari:** micro:bit + Micro:shield · **Llenguatge:** MicroPython
+**Durada:** 6 h (3 sessions; la comparativa C++↔Python es tanca dins la S3 o com a 4a sessió opcional d'ampliació) · **Maquinari:** micro:bit + Micro:shield · **Llenguatge:** MicroPython
 **Referència:** [`Programació didàctica/14_SA5_microbit_micropython.md`](../../Programació%20didàctica/14_SA5_microbit_micropython.md) · **Connexions:** [`SA5_connexions.md`](SA5_connexions.md)
 
 ## Objectius de la SA

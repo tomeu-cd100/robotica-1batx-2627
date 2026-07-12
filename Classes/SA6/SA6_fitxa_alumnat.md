@@ -18,8 +18,8 @@
 
 | Què lliuro | Rúbrica | On compta |
 |---|---|---|
-| **Sistema de control documentat** (producte) + defensa de 2-3' | **R1**, **R3** i **R4** | Projectes (45 %) |
-| **Prova T2** (individual, dins la S4; el nucli és la histèresi) | **R1, R3, R4** | Proves (20 %) |
+| **Sistema de control documentat** (producte, **S3**) + defensa de 2-3' | **R1**, **R3** i **R4** | Projectes (45 %) |
+| **Prova T2** (individual, **la S4 sencera**; el nucli és la histèresi) | **R1, R3, R4** | Proves (20 %) |
 | **Quadern tècnic** (diagrama d'estats, diagrama de blocs, errors) | **R4** | Quadern tècnic i pràctiques (25 %) |
 | Mini-check individual (inici S3) | semàfor | **No qualifica** (m'avisa abans de la prova) |
 
@@ -62,16 +62,19 @@ Si la tasca encara no t'apareix al Classroom, és que la SA encara no ha començ
 
 > 💡 Si t'encalles muntant el patró, parteix de l'esquelet `03_maquina_estats_BASTIDA` (el patró `enum`/`switch` + `millis()` ja hi és; tu omples els `// TODO`). El `millis()` no bloquejant ja el vas practicar a la SA4 (`05_dos_leds_millis`).
 
-### 4 · Control proporcional (S4) · **+Ampliació (opcional)**
-> Aquesta part és **per a qui vagi sobrat**: el nucli de la SA són la histèresi i la màquina d'estats.
+### 4 · Prova pràctica T2 (S4, individual)
+La sessió 4 **sencera** és la **prova T2**: individual, dues parts (control amb histèresi + micro:bit), i pots consultar **el teu quadern i els esquemes**. El nucli (histèresi) ben fet = 5-6; ampliacions = 7-10.
+
+### +Ampliació (opcional) · Control proporcional
+> **Per a qui vagi sobrat** (dins S2/S3 si acabes aviat, a casa amb Wokwi, o com a ampliació de la prova): el nucli de la SA són la histèresi i la màquina d'estats.
 1. Carrega `04_control_proporcional.ino`. Què és l'**error**? ______________________
 2. Com afecta `Kp` a la resposta? ______________________
 3. **Repte:** compara tot/res vs proporcional al Serial Plotter. Quin és més estable? ____
 
 > ✏️ **Dissenya abans de codificar:** aquí el pseudocodi és el **diagrama d'estats** que has dibuixat (activitat 3.2): cada estat i cada fletxa han d'existir abans que el `switch`. No escriguis cap `case` que no sigui al dibuix.
 
-**Producte:** un sistema de control documentat. S'avalua amb **R1**, **R3** i **R4**.
-**Defensa (2-3', nivell T2):** problema → solució → **una decisió tècnica justificada** (per què aquests llindars? per què aquests estats?) + 2 preguntes. Ja no n'hi ha prou amb el minut de T1: vegeu l'escala a [`../00_General/00_Guia_defensa_oral.md`](../00_General/00_Guia_defensa_oral.md).
+**Producte:** un sistema de control documentat, **tancat a la S3**. S'avalua amb **R1**, **R3** i **R4**.
+**Defensa (2-3', a peu de taula durant la S3, nivell T2):** problema → solució → **una decisió tècnica justificada** (per què aquests llindars? per què aquests estats?) + 2 preguntes. Ja no n'hi ha prou amb el minut de T1: vegeu l'escala a [`../00_General/00_Guia_defensa_oral.md`](../00_General/00_Guia_defensa_oral.md).
 
 <!-- /web:only-github -->
 

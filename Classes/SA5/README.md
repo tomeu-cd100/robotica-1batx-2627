@@ -1,6 +1,6 @@
 # SA5 · micro:bit i MicroPython: un altre paradigma
 
-Cinquena situació d'aprenentatge (**7 h · 3-4 sessions**, 2n trimestre). **Canvi de plataforma i de llenguatge**: de l'Arduino (C/C++) a la **micro:bit** amb **MicroPython**. Es treballen la matriu LED i els botons, els sensors integrats (acceleròmetre, llum), la **comunicació per ràdio** entre plaques i una **comparació explícita C/C++ ↔ Python**. Programació oficial: [`Programació didàctica/14_SA5_microbit_micropython.md`](../../Programació%20didàctica/14_SA5_microbit_micropython.md).
+Cinquena situació d'aprenentatge (**6 h · 3 sessions** + 4a opcional d'ampliació, 2n trimestre). **Canvi de plataforma i de llenguatge**: de l'Arduino (C/C++) a la **micro:bit** amb **MicroPython**. Es treballen la matriu LED i els botons, els sensors integrats (acceleròmetre, llum), la **comunicació per ràdio** entre plaques i una **comparació explícita C/C++ ↔ Python**. Programació oficial: [`Programació didàctica/14_SA5_microbit_micropython.md`](../../Programació%20didàctica/14_SA5_microbit_micropython.md).
 
 ## Itinerari per sessions
 

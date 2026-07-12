@@ -8,8 +8,8 @@ Tercera situació d'aprenentatge (**8 h · 4 sessions**, 1r trimestre). El siste
 
 1. **Sessió 1 · Entrades digitals i monitor sèrie** — fes l'[Activitat 1 de la fitxa](SA3_fitxa_alumnat.md#1-polsador-i-monitor-serie-s1).
 2. **Sessió 2 · Entrades analògiques** — fes l'[Activitat 2](SA3_fitxa_alumnat.md#2-entrades-analogiques-s2).
-3. **Sessió 3 · Sensor de distància i funcions** — fes l'[Activitat 3](SA3_fitxa_alumnat.md#3-ultrasons-i-funcions-s3), amb els [esquemes de connexió](SA3_esquemes_connexions.md) i el [codi](codi/).
-4. **Sessió 4 · Producte: alarma/aparcament** — fes l'[Activitat 4](SA3_fitxa_alumnat.md#4-producte-alarma-aparcament-s4) (s'avalua amb R1 codi + R2 circuit).
+3. **Sessió 3 · Funcions + Producte: alarma/aparcament** — fes l'[Activitat 3](SA3_fitxa_alumnat.md#3-ultrasons-funcions-i-producte-alarma--aparcament-s3), amb els [esquemes de connexió](SA3_esquemes_connexions.md) i el [codi](codi/). El producte s'avalua amb R1 (codi) + R2 (circuit) i **es tanca avui**.
+4. **Sessió 4 · Prova pràctica T1** — individual, la sessió sencera; pots consultar el teu quadern i els esquemes.
 5. **Abans d'entregar** — repassa [el meu checklist](SA3_checklist_alumnat.md).
 
 ### Si vols més
@@ -43,8 +43,9 @@ Tercera situació d'aprenentatge (**8 h · 4 sessions**, 1r trimestre). El siste
 
 ## Producte i avaluació
 
-- **Producte:** sistema sensor → actuador (alarma de proximitat o llum automàtic) amb codi modular (funcions).
-- **Criteris:** CA1.1, CA2.1, CA2.2 · **Rúbriques:** **R1** (codi) i **R2** (circuit).
+- **Producte:** sistema sensor → actuador (alarma de proximitat o llum automàtic) amb codi modular (funcions). **Es tanca a la S3.**
+- **Prova T1:** la S4 sencera, individual (`Avaluació/Prova_practica_T1.md`).
+- **Criteris:** CA1.1, CA2.1, CA2.2 · **Rúbriques:** **R1** (codi) i **R2** (circuit); prova amb R1, R2, R4.
 
 ## Continuïtat
 

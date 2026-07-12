@@ -1,6 +1,6 @@
 # SA5 · Checklist docent — micro:bit i MicroPython
 
-**7 h (3–4 sessions) · micro:bit + Micro:shield · Llenguatge MicroPython · Criteris CA1.2, CA3.1 · Rúbriques R1 (codi), R4 (documentació/comparativa)**
+**6 h (3 sessions + 4a opcional d'ampliació) · micro:bit + Micro:shield · Llenguatge MicroPython · Criteris CA1.2, CA3.1 · Rúbriques R1 (codi), R4 (documentació/comparativa)**
 
 > Eina d'acció d'una cara. Condensa la [`SA5_guia_docent.md`](SA5_guia_docent.md). Marca `[x]` a mesura que ho tinguis fet.
 

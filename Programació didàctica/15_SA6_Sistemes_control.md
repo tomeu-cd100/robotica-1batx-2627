@@ -30,14 +30,14 @@ Sistema de control; **llaç obert vs llaç tancat**; realimentació, consigna i 
 |---|---|
 | **1** | Concepte de control. Llaç obert (temporitzat) vs tancat (amb sensor). Diagrama de blocs. |
 | **2** | **Termòstat** tot/res amb NTC + actuador (LED/ventilador) i histèresi. |
-| **3** | **Màquina d'estats**: implementació amb `switch`/enum (p. ex. seqüència d'un rentat o d'un semàfor adaptatiu). |
-| **4** | Introducció a la **regulació proporcional** (control de llum o velocitat segons error). Documentació i comparació de respostes. |
+| **3** | **Màquina d'estats**: implementació amb `switch`/enum (p. ex. seqüència d'un rentat o d'un semàfor adaptatiu). **Tancament del producte** (documentació + defensa 2-3'). |
+| **4** | **Prova pràctica T2** (individual, sessió sencera — vegeu `Avaluació/Prova_practica_T2.md`). La **regulació proporcional** és **+ampliació** (material i repte ⭐ per a qui va sobrat; no és nucli). |
 
 ## Producte
-Sistema de control documentat (termòstat amb histèresi o procés amb màquina d'estats) amb diagrama de blocs i anàlisi de la resposta.
+Sistema de control documentat (termòstat amb histèresi o procés amb màquina d'estats) amb diagrama de blocs i anàlisi de la resposta. **Es tanca a la S3**; la S4 és la prova T2 individual.
 
 ## Avaluació
-- Instruments: producte + quadern (diagrama + anàlisi) + repte (dissenyar una màquina d'estats).
+- Instruments: producte (S3) + quadern (diagrama + anàlisi) + **prova pràctica T2** (S4, individual).
 - Rúbriques: **R1**, **R3** (control), **R4** (documentació).
 
 ## Atenció a la diversitat

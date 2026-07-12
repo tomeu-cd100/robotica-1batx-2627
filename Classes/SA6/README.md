@@ -8,8 +8,8 @@ Sisena situació d'aprenentatge (**8 h · 4 sessions**, 2n trimestre). El sistem
 
 1. **Sessió 1 · Què és un sistema de control?** — fes l'[Activitat 1 de la fitxa](SA6_fitxa_alumnat.md#1-llac-obert-vs-llac-tancat-s1).
 2. **Sessió 2 · Control tot/res i histèresi** — fes l'[Activitat 2](SA6_fitxa_alumnat.md#2-termostat-amb-histeresi-s2), amb els [esquemes de connexió](SA6_esquemes_connexions.md).
-3. **Sessió 3 · Màquines d'estats** — fes l'[Activitat 3](SA6_fitxa_alumnat.md#3-maquina-destats-s3), amb el [codi](codi/).
-4. **Sessió 4 · Control proporcional** — fes l'[Activitat 4](SA6_fitxa_alumnat.md#4-control-proporcional-s4-ampliacio-opcional) (s'avalua amb R1, R3, R4).
+3. **Sessió 3 · Màquines d'estats + tancament del producte** — fes l'[Activitat 3](SA6_fitxa_alumnat.md#3-maquina-destats-s3), amb el [codi](codi/). El producte (s'avalua amb R1, R3, R4) i la defensa de 2-3' **es tanquen avui**.
+4. **Sessió 4 · Prova pràctica T2** — individual, la sessió sencera; pots consultar el teu quadern i els esquemes. El [control proporcional](SA6_fitxa_alumnat.md#ampliacio-opcional--control-proporcional) és **+ampliació opcional**.
 5. **Abans d'entregar** — repassa [el meu checklist](SA6_checklist_alumnat.md).
 
 ### Si vols més
@@ -43,7 +43,8 @@ Sisena situació d'aprenentatge (**8 h · 4 sessions**, 2n trimestre). El sistem
 
 ## Producte i avaluació
 
-- **Producte:** sistema de control documentat (termòstat amb histèresi o procés amb màquina d'estats) amb **diagrama de blocs** i anàlisi de la resposta.
+- **Producte:** sistema de control documentat (termòstat amb histèresi o procés amb màquina d'estats) amb **diagrama de blocs** i anàlisi de la resposta. **Es tanca a la S3.**
+- **Prova T2:** la S4 sencera, individual (`Avaluació/Prova_practica_T2.md`).
 - **Criteris:** CA3.1, CA1.1 · **Rúbriques:** **R1** (codi), **R3** (control), **R4** (documentació).
 
 ## Continuïtat

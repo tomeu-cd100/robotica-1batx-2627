@@ -30,15 +30,15 @@ Entrades digitals (`digitalRead`, *pull-up*, *debounce*); entrades analògiques 
 |---|---|
 | **1** | Polsador amb *pull-up* intern; `digitalRead`; **debounce**. Comptador de premudes (Serial Monitor). |
 | **2** | Entrades analògiques: potenciòmetre i **LDR**. `analogRead` (0-1023), `map()`. Llum automàtic (LDR→LED). |
-| **3** | Sensor de distància **ultrasons**: escriure una **funció** `mesuraDistancia()`. Visualització amb Serial Plotter. |
-| **4** | Repte: **"sistema d'alarma/aparcament"** (ultrasons + LED/piezo segons distància). Documentació i proves. |
+| **3** | Sensor de distància **ultrasons**: escriure una **funció** `mesuraDistancia()`. Serial Plotter. **Producte: "sistema d'alarma/aparcament"** (ultrasons + LED/piezo segons distància) amb mini-defensa. |
+| **4** | **Prova pràctica T1** (individual, sessió sencera — vegeu `Avaluació/Prova_practica_T1.md`). |
 
 ## Producte
-Sistema sensor→actuador (alarma de proximitat o llum automàtic) amb codi modular (funcions) i registre de mesures al quadern.
+Sistema sensor→actuador (alarma de proximitat o llum automàtic) amb codi modular (funcions) i registre de mesures al quadern. **Es tanca a la S3**; la S4 és la prova T1 individual.
 
 ## Avaluació
-- Instruments: producte + quadern + repte de codi (escriure una funció de lectura).
-- Rúbriques: **R1**, **R2**.
+- Instruments: producte (S3) + quadern + **prova pràctica T1** (S4, individual).
+- Rúbriques: **R1**, **R2** (producte); R1, R2, R4 (prova).
 
 ## Atenció a la diversitat
 - **Bastida:** simulació prèvia a Wokwi/Tinkercad; funció model proporcionada.

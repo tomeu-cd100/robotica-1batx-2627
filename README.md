@@ -5,6 +5,8 @@ Material docent complet per a la matèria optativa **Robòtica** de 1r de Batxil
 > **2 hores setmanals · curs anual (≈70 h) · nivell alt · en català**
 > Programació real amb **Arduino (C/C++)** i **micro:bit (MicroPython)**, electrònica, sistemes de control i robòtica mòbil.
 
+> 🌐 **Tot el material, com a web navegable:** <https://tomeu-cd100.github.io/robotica-1batx-2627/> — amb **vista Alumnat** (per defecte) i **vista Docent**, cercador i PDF imprimibles. És la manera més còmoda de consultar-lo.
+
 ---
 
 ## 🎯 Plantejament

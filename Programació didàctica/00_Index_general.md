@@ -62,7 +62,7 @@
 | 1r | SA2 | Sortides digitals i PWM: dona vida als actuadors | 8 | Arduino + KS0011 | C/C++ |
 | 1r | SA3 | Entrades i sensors: el robot percep | 8 | Arduino + KS0011 | C/C++ |
 | 2n | SA4 | Moviment: servos, motors i ponts H | 8 | Arduino + KS0011 | C/C++ |
-| 2n | SA5 | micro:bit i MicroPython: un altre paradigma | 7 | micro:bit + Micro:shield | Python |
+| 2n | SA5 | micro:bit i MicroPython: un altre paradigma | 6 | micro:bit + Micro:shield | Python |
 | 2n | SA6 | Sistemes de control: llaç obert/tancat i màquines d'estats | 8 | Arduino / micro:bit | C++ / Python |
 | 3r | SA7 | Robòtica mòbil: cinemàtica i trajectòries | 8 | Imagina 3dBot | C/C++ |
 | 3r | SA8 | IoT i IA: el robot connectat i intel·ligent | 6 | micro:bit ràdio / ESP32* | Python / C++ |
@@ -70,4 +70,4 @@
 
 *ESP32 opcional segons disponibilitat.*
 
-**Total: ≈ 69 h** (+ marge per a avaluacions i imprevistos fins a ~70 h).
+**Total: ≈ 68 h** (+ marge ~2 h per a diagnòstic i imprevistos fins a 70 h). Les proves T1 i T2 ocupen, senceres, la S4 de SA3 i SA6 (vegeu `08_Sequenciacio_temporal_anual.md`).

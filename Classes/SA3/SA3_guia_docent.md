@@ -53,34 +53,38 @@
 
 ---
 
-## SESSIÓ 3 (2 h) — Sensor de distància i funcions
-- **Activació (10'):** *"Com mesura distàncies un cotxe en aparcar?"* → ultrasons.
-- **Modelatge (30'):** `03_ultrasons_funcio.ino`. Principi de l'eco (`pulseIn`), càlcul de distància, i sobretot **escriure una funció** `mesuraDistancia()` que retorna un valor.
-- **Pràctica guiada (30'):** munten l'HC-SR04; visualitzen la distància amb **Serial Plotter**.
-- **Repte (40'):** funció que retorna la distància mitjana de 3 mesures (filtre); **+ repte:** detectar si un objecte s'acosta o s'allunya.
-- **Tancament (10'):** quadern (codi de la funció).
+## SESSIÓ 3 (2 h) — Funcions + PRODUCTE: alarma/aparcament
 
-**Punt clau:** una **funció** encapsula una tasca i en retorna un resultat → codi més net i reutilitzable. `pulseIn` mesura el temps de l'eco; distància (cm) = temps · 0,034 / 2.
+> El producte de la SA **es tanca en aquesta sessió** (la S4 és, sencera, la prova T1). El repte de la sessió **és** el producte.
+
+- **Mini-check individual (10', a l'inici, substitueix la graella):** `if/else` sobre una lectura analògica ([banc](../00_General/00_Mini_checks_individuals.md)).
+- **Modelatge (25'):** `03_ultrasons_funcio.ino`. Principi de l'eco (`pulseIn`), càlcul de distància, i sobretot **escriure una funció** `mesuraDistancia()` que retorna un valor.
+- **Pràctica guiada (25'):** munten l'HC-SR04; visualitzen la distància amb **Serial Plotter**.
+- **Repte-PRODUCTE (45'):** `04_alarma_aparcament.ino` com a referència. **Pseudocodi primer** (3-5 línies al quadern), després integren ultrasons + LED/piezo amb **avís per trams o proporcional a la distància**; cada parella personalitza llindars. **Mini-defensa d'1' a peu de taula:** mentre treballen, passa per cada parella i fes-los explicar sistema + una aplicació real (és la defensa de nivell T1).
+- **Tancament (15'):** documentar esquema i codi al quadern; autoavaluació amb rúbriques.
+
+**Punt clau:** una **funció** encapsula una tasca i en retorna un resultat. `pulseIn` mesura el temps de l'eco; distància (cm) = temps · 0,034 / 2. *(+ Ampliació per a qui va sobrat: funció que retorna la mitjana de 3 mesures; detectar si l'objecte s'acosta o s'allunya.)*
+
+**Producte:** sistema sensor→actuador (alarma de proximitat o llum automàtic) amb codi modular (funcions).
+**Avaluació del producte:** rúbriques **R1** (codi) i **R2** (circuit).
 
 ---
 
-## SESSIÓ 4 (2 h) — Producte: alarma/aparcament
+## SESSIÓ 4 (2 h) — PROVA PRÀCTICA T1 (individual)
 
-> 📋 **Aquesta sessió allotja la prova pràctica trimestral T1** (vegeu [`Avaluació/Prova_practica_T1.md`](../../Avaluació/Prova_practica_T1.md) i [`Programació didàctica/08_Sequenciacio_temporal_anual.md`](../../Programació%20didàctica/08_Sequenciacio_temporal_anual.md)): el producte/repte d'aquesta sessió **fa de prova T1** i no afegeix hores extra.
+> 📋 **Aquesta sessió és, sencera, la prova trimestral T1** ([`Avaluació/Prova_practica_T1.md`](../../Avaluació/Prova_practica_T1.md)): individual, amb kit propi (n'hi ha un per alumne/a), quadern i esquemes consultables. **No s'hi programa cap altra activitat** — una prova individual de ~100' i una sessió de producte no caben juntes ([`08_Sequenciacio`](../../Programació%20didàctica/08_Sequenciacio_temporal_anual.md)).
 
-- **Activació (10'):** presentació del repte.
-- **Pràctica (70'):** `04_alarma_aparcament.ino`. Integren ultrasons + LED/piezo amb **avís proporcional a la distància** (com més a prop, més ràpid el so). Cada parella personalitza llindars.
-- **Documentació + defensa (30'):** esquema, codi comentat, mini-defensa.
-- **Tancament (10'):** autoavaluació.
+- **Instruccions (5-10'):** repartir material, recordar què es pot consultar (quadern, esquemes) i l'estructura per nivells (nucli = 5-6; ampliacions = 7-10).
+- **Prova (95-100'):** cada alumne/a munta i programa la "llum de seguretat intel·ligent". El docent només resol incidències de material (placa/cable espatllats), no dubtes de contingut.
+- **Tancament (10'):** recollida ordenada; recordar el **pla de millora personal** (3 línies al quadern quan rebin el retorn — es reprèn a l'inici de la SA4).
 
-**Producte:** sistema sensor→actuador (alarma de proximitat o llum automàtic) amb codi modular (funcions).
-**Avaluació:** rúbriques **R1** (codi) i **R2** (circuit). Repte individual: escriure una funció de lectura.
+**Sense graella d'activació ni mini-check** (el mini-check va ser a la S3). Qui acabi abans: ampliacions de la mateixa prova o reptes ⭐ de la SA.
 
 ### Mapa d'avaluació (traçabilitat)
 | Instrument | Què evidencia | Criteri | Rúbrica |
 |---|---|---|---|
-| Producte (alarma/llum automàtic) | Percepció → acció amb codi modular | CA2.1, CA2.2 | R1, R2 |
-| Repte de codi (funció de lectura) | Funcions, `digitalRead`/`analogRead`, `map()` | CA1.1 | R1 |
+| Producte (alarma/llum automàtic, **S3**) | Percepció → acció amb codi modular | CA2.1, CA2.2 | R1, R2 |
+| **Prova T1 (S4, individual)** | Circuit + codi + documentació en solitari | CA1.1, CA2.1, CA2.2 | R1, R2, R4 |
 | Quadern tècnic | Taula de lectures, codi de la funció, errors | CA1.1, CA2.2 | R1 |
 | Observació + depuració sèrie | Ús del monitor/traçador, divisor de tensió | CA2.2 | R2 |
 
@@ -103,8 +107,8 @@
 
 - **S1 · `01_polsador_debounce` (`INPUT_PULLUP`):** analogia — *el pin està "agafat" a HIGH i prémer l'estira a LOW* (lògica invertida). Pregunta: *"per què, sense antirebot, una sola premuda en compta diverses?"* *Error a anticipar:* sorpresa per la lògica invertida.
 - **S2 · `02_potenciometre_ldr` (`analogRead`, `map()`):** obre el **Monitor Sèrie** i mou el potenciòmetre **en directe** perquè vegin els 0–1023. Pregunta: *"com passo de 0–1023 a 0–255?"* → `map()`. *Error a anticipar:* divisor de tensió de la LDR mal connectat (lectures 0 o 1023).
-- **S3 · `03_ultrasons_funcio` (funcions):** modela **escriure una funció** `mesuraDistancia()` i com **retorna** un valor. Pregunta: *"quin avantatge té encapsular-ho en una funció?"* *Error a anticipar:* TRIG i ECHO intercanviats.
-- **S4 · `04_alarma_aparcament` (integració):** mostra'l com a integració sensor→actuador; pregunta com fer l'**avís proporcional** a la distància.
+- **S3 · `03_ultrasons_funcio` + `04_alarma` (funcions i integració):** modela **escriure una funció** `mesuraDistancia()` i com **retorna** un valor. Pregunta: *"quin avantatge té encapsular-ho en una funció?"* Per al producte, mostra el `04` com a integració sensor→actuador i pregunta com fer l'**avís proporcional**. *Error a anticipar:* TRIG i ECHO intercanviats.
+- **S4 (prova T1):** cap modelatge — sessió de prova individual.
 
 ## Atenció a la diversitat (DUA)
 
@@ -127,7 +131,7 @@ Parelles amb **rols rotatius** (un canvi per sessió): Coordinador/a · Programa
 ## Avaluació formativa (instruments)
 
 - **Diana d'autoavaluació** (fitxa) sobre 3 criteris clau · **Coavaluació** "2 estrelles i un desig" · **Exit ticket** de tancament.
-- **Mini-check individual** (10', **inici de la S3** — la S4 acull la prova T1 —, no qualifica): `if/else` sobre una lectura analògica. Detecta qui encara no programa sol abans de la prova. Vegeu [`../00_General/00_Mini_checks_individuals.md`](../00_General/00_Mini_checks_individuals.md).
+- **Mini-check individual** (10', **inici de la S3** — la S4 és la prova T1 —, no qualifica): `if/else` sobre una lectura analògica. Detecta qui encara no programa sol abans de la prova. Vegeu [`../00_General/00_Mini_checks_individuals.md`](../00_General/00_Mini_checks_individuals.md).
 
 ## Connexió amb la IA (llavor)
 
