@@ -17,6 +17,8 @@
 - Editor Python de micro:bit / Thonny.
 - **Sessió 3 (ML):** 1 ordinador/tauleta amb **navegador i càmera/micròfon** per parella (Teachable Machine). *Pla B: demostració projectada del docent.*
 
+> 🆘 **Pla B sense maquinari (Wokwi no simula micro:bit):** el **simulador de python.microbit.org** cobreix sensors i pantalla (l'`03_ia_gestos.py` s'hi pot provar amb els gestos simulats), però **no la ràdio entre plaques**: si falten micro:bit a la S1, les parelles programen emissor i receptor al simulador i la transmissió real es fa com a **demo projectada del docent** amb 2 plaques. La S2 (disseny IoT) i la S3 (Teachable Machine) no necessiten placa.
+
 ## Codi de suport (`codi/`)
 | Fitxer | Contingut |
 |---|---|

@@ -4,6 +4,8 @@
 
 **Com llegir cada entrada:** **Terme** → definició curta → *analogia o exemple del dia a dia* → on apareix.
 
+> 🔀 **Vols el terme en anglès** (per buscar a la referència d'Arduino, fòrums o *datasheets*)? És a l'altre diccionari del curs: el **[glossari tècnic català ↔ anglès](../00_General/00_Glossari_tecnic.md)**, organitzat per blocs temàtics.
+
 ---
 
 ## Bloc 0 · Paraules que sentiràs des del primer dia

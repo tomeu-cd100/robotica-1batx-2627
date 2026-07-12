@@ -141,6 +141,8 @@ Amb 2 h setmanals, el que es va aprendre a l'octubre arriba esborrat al febrer s
 
 ## SA5 · micro:bit i MicroPython
 
+> ⚠️ **Manteniment del C++ durant la SA5:** aquestes setmanes l'alumnat viu en Python, però a la SA6 tornarà a l'Arduino per fer el salt més gran del curs (màquines d'estats + `millis()`). Per això **cada graella de SA5 té almenys una pregunta de C++**, i com a mínim una demana **escriure'n** (no només recordar-lo). No les substitueixis per preguntes de Python.
+
 ### SA5 · Sessió 1 — abans de «Primers passos amb MicroPython»
 > **P①** `millis()` vs `delay()`: quina de les dues deixa el programa "lliure" per fer altres coses mentre espera, i per què?
 > **P②** (SA3) Rang d'`analogRead` i rang d'`analogWrite` a Arduino (els dos números).
@@ -157,10 +159,10 @@ Amb 2 h setmanals, el que es va aprendre a l'octubre arriba esborrat al febrer s
 
 ### SA5 · Sessió 3 — abans de «Ràdio i comparació de paradigmes»
 > **P①** El comptapassos comptava de més. Quin era el problema i com es va arreglar? (pista: també passava amb els polsadors d'Arduino)
-> **P②** (SA3) Com es diu aquesta mateixa tècnica quan la vam fer amb un polsador a Arduino?
+> **P②** (SA3, **escriu C++ de memòria**) Escriu l'`if` d'Arduino que encén el LED del pin 9 quan `analogRead(A1)` baixa de 300 (dues línies: lectura i condició).
 > **P③** (SA2) Digues **dues** diferències de sintaxi entre C++ i Python que ja hagis trobat.
 
-*Respostes: ① una sacsejada dispara moltes deteccions seguides; s'afegeix una pausa/llindar després de detectar. ② antirebot (*debounce*). ③ p. ex.: `;` i `{}` a C++ vs res i indentació a Python; `void setup()` vs `def`/cos directe; tipus explícits (`int`) vs sense declarar.*
+*Respostes: ① una sacsejada dispara moltes deteccions seguides; s'afegeix una pausa/llindar després de detectar (l'**antirebot** que ja vam fer amb el polsador a la SA3). ② `int llum = analogRead(A1); if (llum < 300) { digitalWrite(9, HIGH); }` (variants correctes valen; vigilar `;` i claus — a la SA6 tornem a C++!). ③ p. ex.: `;` i `{}` a C++ vs res i indentació a Python; `void setup()` vs `def`/cos directe; tipus explícits (`int`) vs sense declarar.*
 
 ---
 

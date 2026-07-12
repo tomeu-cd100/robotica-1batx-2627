@@ -13,6 +13,8 @@
 - Micro:shield (per a perifèrics externs, opcional).
 - Entorn: **editor Python de micro:bit** (python.microbit.org) o **Thonny**. MakeCode com a pont.
 
+> 🆘 **Pla B sense maquinari (Wokwi no simula micro:bit):** el **simulador integrat de python.microbit.org** cobreix matriu LED, botons, acceleròmetre (gestos), llum i temperatura — S1 i S2 senceres es poden fer sense placa. El que **no** cobreix és la **ràdio entre dues plaques** (S3): si falten micro:bit, fes la ràdio com a **demo projectada del docent** amb 2 plaques i que les parelles programin l'emissor/receptor al simulador (el codi es verifica igual; només la transmissió és a la demo).
+
 ## Codi de suport (`codi/`)
 | Fitxer | Contingut |
 |---|---|

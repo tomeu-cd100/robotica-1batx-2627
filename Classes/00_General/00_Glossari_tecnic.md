@@ -3,6 +3,8 @@
 > **Per a l'alumnat.** La documentació real de la professió — *datasheets*, fòrums, la referència d'Arduino i de MicroPython — és **en anglès**. Aquest glossari és el pont: el terme en català (com en diem a classe), el terme en anglès (com el trobaràs quan busquis) i què vol dir en una línia.
 >
 > **Hàbit del quadern:** a cada SA, apunta-hi **3 termes nous** amb les teves paraules, amb l'anglès inclòs. A final de curs tindràs el teu diccionari d'enginyer/a.
+>
+> 🔀 **No trobes el terme aquí?** Busca'l al **[vocabulari essencial de la SA0](../SA0/SA0_vocabulari_essencial.md)**: és l'altre diccionari del curs, organitzat **SA per SA** i amb **analogies del dia a dia**. Aquest glossari serveix per a l'**anglès tècnic**; aquell, per entendre el concepte la primera vegada.
 
 ## ⚡ Electrònica
 

@@ -36,6 +36,7 @@ Les 5 rúbriques del curs, en una línia cadascuna:
 | **Prova diagnòstica** (SA1) | Saber d'on parteix cadascú i fer parelles equilibrades. |
 | **Graella d'activació** (cada sessió) | Recordar el que vas aprendre fa setmanes perquè no s'esborri. Respondre-la malament **no penalitza**: avisa. |
 | **Mini-check individual** (un per SA) | 10 minuts de codi tot sol. És el teu **radar**: et diu si vas bé abans que ho digui una prova. |
+| **Qüestionari de repàs** (un per SA, al Classroom) | Autocorrectiu i **repetible**: fes-lo en tancar la SA i torna-hi setmanes després perquè no s'esborri. Si al mini-check vas treure 🔴, comença per aquí. |
 | **Diana, exit ticket, coavaluació** | Saber on ets i donar/rebre retorn. Serveixen per millorar, no per puntuar. |
 
 **Escriu-hi la veritat.** Aquestes eines només et poden ajudar si mostren com vas de debò.
