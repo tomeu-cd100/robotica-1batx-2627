@@ -136,11 +136,22 @@
       if (!q) { tanca(); return; }
       var vista = doc.getAttribute("data-vista") || "alumnat";
       var termes = q.split(/\s+/);
-      resultats = index.filter(function (it) {
-        if (vista === "alumnat" && it.p === "docent") return false;
+      // Dues passades: primer títol+secció (més rellevant), després el cos.
+      var alTitol = [], alCos = [];
+      index.forEach(function (it) {
+        if (vista === "alumnat" && it.p === "docent") return;
         var heu = normalitza(it.t + " " + it.s);
-        return termes.every(function (t) { return heu.indexOf(t) !== -1; });
-      }).slice(0, 12);
+        if (termes.every(function (t) { return heu.indexOf(t) !== -1; })) {
+          alTitol.push(it);
+          return;
+        }
+        if (!it.b) return;
+        var tot = heu + " " + normalitza(it.b);
+        if (termes.every(function (t) { return tot.indexOf(t) !== -1; })) {
+          alCos.push(it);
+        }
+      });
+      resultats = alTitol.concat(alCos).slice(0, 12);
       pinta();
     }
 

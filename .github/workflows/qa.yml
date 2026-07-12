@@ -1,0 +1,61 @@
+name: QA del material (enllaços, cobertura, hores, codi)
+
+# Xarxa de seguretat: falla el push si hi ha enllaços trencats al web generat,
+# una SA incompleta, hores que no quadren, errors de sintaxi als .py d'alumnat
+# o sketches .ino que no compilen per a Arduino UNO.
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  qa-material:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clona el repositori
+        uses: actions/checkout@v4
+
+      - name: Prepara Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Instal·la les dependències del generador
+        run: pip install -r web/_generador/requirements.txt
+
+      - name: Genera el web
+        run: python web/_generador/generar.py
+
+      - name: Genera els PDF (perquè el link-check els pugui verificar)
+        run: python web/_generador/generar_pdf.py
+
+      - name: QA (enllaços, cobertura de SA, hores, sintaxi Python)
+        run: python tools/qa.py
+
+  compilar-sketches:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clona el repositori
+        uses: actions/checkout@v4
+
+      - name: Compila tots els sketches d'Arduino UNO
+        uses: arduino/compile-sketches@v1
+        with:
+          fqbn: arduino:avr:uno
+          libraries: |
+            - name: Servo
+          sketch-paths: |
+            - Classes/SA1/codi
+            - Classes/SA2/codi
+            - Classes/SA3/codi
+            - Classes/SA4/codi
+            - Classes/SA6/codi
+            - Classes/SA7/codi
+          # SA8/codi/04_esp32_telemetria és per a ESP32 (opcional): fora de l'abast UNO.
+          # SA9: el codi el crea l'alumnat (només plantilla).
+          verbose: false

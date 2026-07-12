@@ -255,6 +255,24 @@ def slugify(text: str) -> str:
     return text.strip("-") or "x"
 
 
+BODY_CERCA_MAX = 1500  # caràcters de cos per pàgina a l'índex de cerca
+
+
+def text_pla_cerca(html_body: str) -> str:
+    """Text pla del cos d'una pàgina per a l'índex de cerca.
+
+    Treu blocs de codi (no volem que 'href' o variables d'exemple apareguin
+    com a text), després la resta d'etiquetes, i compacta espais. Es retalla
+    a BODY_CERCA_MAX per contenir la mida de cerca-index.js.
+    """
+    text = re.sub(r"(?s)<pre.*?</pre>", " ", html_body)
+    text = re.sub(r"(?s)<(script|style).*?</\1>", " ", text)
+    text = re.sub(r"<[^>]+>", " ", text)
+    text = html.unescape(text)
+    text = re.sub(r"\s+", " ", text).strip()
+    return text[:BODY_CERCA_MAX]
+
+
 def detect_sa(name: str) -> int | None:
     m = re.search(r"sa\s*([0-9])", name, re.IGNORECASE)
     return int(m.group(1)) if m else None
@@ -487,6 +505,12 @@ def rewrite_links(html_body: str, src_file: Path, out_rel: str,
         readme = target / "README.md"
         if str(readme.resolve()) in md_map:
             return rel_url(out_rel, md_map[str(readme.resolve())]) + frag
+        # Carpeta de codi (p. ex. "codi/") -> pàgina de codi dels seus sketches
+        if target.is_dir():
+            tk = str(target)
+            for k, (page, _anchor) in code_map.items():
+                if k.startswith(tk + "\\") or k.startswith(tk + "/"):
+                    return rel_url(out_rel, page) + frag
         # Imatge -> copiar a assets/img
         if target.suffix.lower() in IMG_EXT and target.exists():
             name = copy_image(target, copied_imgs)
@@ -1744,7 +1768,8 @@ def main():
         dest.parent.mkdir(parents=True, exist_ok=True)
         dest.write_text(full, encoding="utf-8")
         search_index.append({"t": p.title, "s": SECTION_BY_KEY.get(p.section, {}).get("title", "Inici"),
-                             "u": p.out_rel, "tri": p.trimester, "p": p.public})
+                             "u": p.out_rel, "tri": p.trimester, "p": p.public,
+                             "b": text_pla_cerca(content)})
 
     # Pàgines de codi
     for g in code_groups:
