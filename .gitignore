@@ -38,6 +38,11 @@ desktop.ini
 # descomprimit a la carpeta "Fitxes STEAM Cards curs 2020-2021/".
 Recursos/Fitxes STEAM Cards curs 2020-2021-*.zip
 
+# Llibres i manuals de TERCERS (STEAMakers, ArduinoBlocks, Innova Didactic...):
+# copyright d'altri, no poden anar en un repo public CC BY-SA. Es consulten en
+# local (copia del docent) i l'Excel de Recursos en te els enllacos originals.
+Recursos/_tercers_nomes_local/
+
 # Eina local d'automatitzacio del Google Classroom (scripts Node +
 # node_modules + credentials.json). NO ha d'anar al repo public:
 # conte credencials i pesa >100 MB. Es material de treball de la maquina.
