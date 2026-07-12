@@ -1664,8 +1664,10 @@ if (!u) {
   msg('No s\'ha indicat cap document.');
 } else if (x === 'pdf') {
   try {
-    const pdfjs = await import('https://cdn.jsdelivr.net/npm/pdfjs-dist@4.7.76/build/pdf.min.mjs');
-    pdfjs.GlobalWorkerOptions.workerSrc = 'https://cdn.jsdelivr.net/npm/pdfjs-dist@4.7.76/build/pdf.worker.min.mjs';
+    // pdf.js allotjat en local (assets/vendor/pdfjs, versio 4.7.76 fixada):
+    // el visor funciona sense CDN, en xarxes filtrades i offline.
+    const pdfjs = await import('./assets/vendor/pdfjs/pdf.min.mjs');
+    pdfjs.GlobalWorkerOptions.workerSrc = 'assets/vendor/pdfjs/pdf.worker.min.mjs';
     const pdf = await pdfjs.getDocument({ url: u }).promise;
     cont.innerHTML = '';
     for (let n = 1; n <= pdf.numPages; n++) {
@@ -1680,8 +1682,10 @@ if (!u) {
     msg('No s\'ha pogut mostrar el PDF aquí (potser sense connexió). <a href="' + gh + '" target="_blank" rel="noopener">Obre\'l a GitHub ↗</a>');
   }
 } else if (office.includes(x)) {
+  // Avis de privadesa: la previsualitzacio Office passa pel visor de Microsoft.
   const src = 'https://view.officeapps.live.com/op/embed.aspx?src=' + encodeURIComponent(u);
-  cont.innerHTML = '<iframe class="visor-iframe" src="' + src + '" allowfullscreen></iframe>';
+  cont.innerHTML = '<p class="visor-msg" style="margin-bottom:.5rem">Aquesta previsualització usa el visor en línia de Microsoft (el document és públic al repositori). Si ho prefereixes, <a href="' + gh + '" target="_blank" rel="noopener">obre\'l directament a GitHub ↗</a>.</p>' +
+    '<iframe class="visor-iframe" src="' + src + '" allowfullscreen></iframe>';
 } else {
   msg('Aquest tipus de fitxer no es pot previsualitzar al web. <a href="' + gh + '" target="_blank" rel="noopener">Descarrega\'l des de GitHub ↗</a>');
 }

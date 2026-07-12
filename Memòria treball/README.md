@@ -77,3 +77,4 @@ Cada nou avenç → **document nou** anomenat amb la data (`AAAA-MM-DD_descripci
 | 2026-07-11 | [`2026-07-11_Prova_diagnostica_SA1_a_Classroom.md`](2026-07-11_Prova_diagnostica_SA1_a_Classroom.md) | Prova diagnòstica SA1 convertida en Google Form + tasca de Classroom |
 | 2026-07-11 | [`2026-07-11_Rubriques_R1-R5_com_a_Google_Sheets.md`](2026-07-11_Rubriques_R1-R5_com_a_Google_Sheets.md) | Rúbriques R1-R5 com a Google Sheets (carpeta del curs) |
 | 2026-07-12 | [`2026-07-12_Analisi_ulls_nous_professor_i_alumne.md`](2026-07-12_Analisi_ulls_nous_professor_i_alumne.md) | Anàlisi "ulls nous": professor que entoma la matèria i alumne que la cursa |
+| 2026-07-12 | [`2026-07-12_Aplicacio_blocs_A_B_C.md`](2026-07-12_Aplicacio_blocs_A_B_C.md) | Aplicació dels blocs A, B i C de la 6a ronda («ulls nous») |
