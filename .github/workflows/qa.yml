@@ -26,7 +26,10 @@ jobs:
           cache: pip
 
       - name: Instal·la les dependències del generador
-        run: pip install -r web/_generador/requirements.txt
+        run: pip install -r web/_generador/requirements.txt pytest
+
+      - name: Tests del generador (lògica pura)
+        run: python -m pytest web/_generador/tests -q
 
       - name: Genera el web
         run: python web/_generador/generar.py

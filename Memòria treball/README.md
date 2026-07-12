@@ -78,3 +78,4 @@ Cada nou avenç → **document nou** anomenat amb la data (`AAAA-MM-DD_descripci
 | 2026-07-11 | [`2026-07-11_Rubriques_R1-R5_com_a_Google_Sheets.md`](2026-07-11_Rubriques_R1-R5_com_a_Google_Sheets.md) | Rúbriques R1-R5 com a Google Sheets (carpeta del curs) |
 | 2026-07-12 | [`2026-07-12_Analisi_ulls_nous_professor_i_alumne.md`](2026-07-12_Analisi_ulls_nous_professor_i_alumne.md) | Anàlisi "ulls nous": professor que entoma la matèria i alumne que la cursa |
 | 2026-07-12 | [`2026-07-12_Aplicacio_blocs_A_B_C.md`](2026-07-12_Aplicacio_blocs_A_B_C.md) | Aplicació dels blocs A, B i C de la 6a ronda («ulls nous») |
+| 2026-07-12 | [`2026-07-12_Purga_historic_i_refactor_generador.md`](2026-07-12_Purga_historic_i_refactor_generador.md) | Purga de l'històric git (C2) i primer pas del refactor del generador (P4+P5) |

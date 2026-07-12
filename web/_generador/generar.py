@@ -236,63 +236,13 @@ def is_activitat(src: Path) -> bool:
     return False
 
 
-def pdf_out_for(out_rel: str) -> str:
-    """Ruta de sortida del PDF (relativa a web/) per a una pàgina HTML."""
-    return "pdf/" + out_rel[:-5] + ".pdf"  # treu .html
-
-
 # ---------------------------------------------------------------------------
-# Utilitats
+# Utilitats pures: viuen al paquet generador/ (amb tests a tests/)
 # ---------------------------------------------------------------------------
-def strip_accents(text: str) -> str:
-    return "".join(c for c in unicodedata.normalize("NFKD", text)
-                   if not unicodedata.combining(c))
-
-
-def slugify(text: str) -> str:
-    text = strip_accents(text).lower()
-    text = re.sub(r"[^a-z0-9]+", "-", text)
-    return text.strip("-") or "x"
-
-
-BODY_CERCA_MAX = 1500  # caràcters de cos per pàgina a l'índex de cerca
-
-
-def text_pla_cerca(html_body: str) -> str:
-    """Text pla del cos d'una pàgina per a l'índex de cerca.
-
-    Treu blocs de codi (no volem que 'href' o variables d'exemple apareguin
-    com a text), després la resta d'etiquetes, i compacta espais. Es retalla
-    a BODY_CERCA_MAX per contenir la mida de cerca-index.js.
-    """
-    text = re.sub(r"(?s)<pre.*?</pre>", " ", html_body)
-    text = re.sub(r"(?s)<(script|style).*?</\1>", " ", text)
-    text = re.sub(r"<[^>]+>", " ", text)
-    text = html.unescape(text)
-    text = re.sub(r"\s+", " ", text).strip()
-    return text[:BODY_CERCA_MAX]
-
-
-def detect_sa(name: str) -> int | None:
-    m = re.search(r"sa\s*([0-9])", name, re.IGNORECASE)
-    return int(m.group(1)) if m else None
-
-
-def first_h1(md_text: str) -> str | None:
-    for line in md_text.splitlines():
-        s = line.strip()
-        if s.startswith("# "):
-            return re.sub(r"\s+", " ", s[2:].strip())
-    return None
-
-
-def rel_url(from_out: str, to_out: str) -> str:
-    """Ruta relativa (POSIX) entre dues sortides relatives a l'arrel del web."""
-    from pathlib import PurePosixPath
-    import os
-    base = PurePosixPath(from_out).parent
-    rel = os.path.relpath(to_out, str(base))
-    return rel.replace("\\", "/")
+from generador.utils import (  # noqa: E402
+    BODY_CERCA_MAX, apply_outside_code, detect_sa, first_h1, pdf_out_for,
+    rel_url, slugify, strip_accents, text_pla_cerca,
+)
 
 
 def depth_prefix(out_rel: str) -> str:
@@ -541,8 +491,6 @@ def rewrite_links(html_body: str, src_file: Path, out_rel: str,
             return f'{m.group(1)}="{new}" target="_blank" rel="noopener"'
         return f'{m.group(1)}="{new if new else href}"'
 
-    html_body = re.sub(r'(href)="([^"]+)"', repl_href, html_body)
-
     def repl_src(m):
         src = m.group(1)
         if src.startswith(("http://", "https://", "data:")):
@@ -550,15 +498,20 @@ def rewrite_links(html_body: str, src_file: Path, out_rel: str,
         new = resolve(src)
         return f'src="{new if new else src}"' if new else m.group(0)
 
-    html_body = re.sub(r'src="([^"]+)"', repl_src, html_body)
+    def repl_mdtext(m):
+        titol = md_title_map.get(m.group(1)) if md_title_map else None
+        return ">" + html.escape(titol) + "</a>" if titol else m.group(0)
 
-    # Text visible d'un enllaç que és un nom de fitxer .md -> títol humà
-    if md_title_map:
-        def repl_mdtext(m):
-            titol = md_title_map.get(m.group(1))
-            return ">" + html.escape(titol) + "</a>" if titol else m.group(0)
-        html_body = re.sub(r'>([^<>]+\.md)</a>', repl_mdtext, html_body)
-    return html_body
+    # La reescriptura NO entra mai dins de <pre>/<code>: el codi d'exemple
+    # (un href="..." literal en un fragment) és contingut, no navegació (P5).
+    def reescriu(segment: str) -> str:
+        segment = re.sub(r'(href)="([^"]+)"', repl_href, segment)
+        segment = re.sub(r'src="([^"]+)"', repl_src, segment)
+        if md_title_map:
+            segment = re.sub(r'>([^<>]+\.md)</a>', repl_mdtext, segment)
+        return segment
+
+    return apply_outside_code(html_body, reescriu)
 
 
 def copy_image(src: Path, copied: dict) -> str:
