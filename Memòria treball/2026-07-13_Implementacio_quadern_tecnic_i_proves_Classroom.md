@@ -44,15 +44,22 @@ Diagnòstic previ: les **3 proves ja estaven dissenyades** (una per trimestre,
   i **Prova T3** — les proves al tema «Proves i avaluació», amb l'enunciat del web
   com a material.
 
+## Actualització (mateix dia): OAuth amb control total del Classroom
+
+El docent ha reautoritzat amb els àmbits ampliats (decisió: **control total del
+Classroom**). `_form_sa_lib.js` ara demana: `classroom.courses` (lectura+escriptura),
+`coursework.students`, `courseworkmaterials`, `announcements`, `topics`, `rosters` i
+`profile.emails` (a més de `forms.body` i `drive.file`). Amb això:
+
+- **Material «📓 Quadern tècnic» creat** (DRAFT, tema «Quadern tècnic», 4 enllaços:
+  guia web + 3 PDF). Nota API: els *courseWorkMaterials* en DRAFT no retornen
+  `alternateLink`; l'URL es construeix amb base64 (`/c/<courseId>/m/<id>/details`).
+- Àmbits verificats amb `courses.get` (escriptura) i `students.list`.
+- El docent ha **publicat** les 8 tasques de T2/T3 (ja no són DRAFT).
+
 ## Pendent (cal acció del docent)
 
-- **Material «📓 Quadern tècnic» al Classroom**: el script `crear_material_quadern.js`
-  està a punt, però el token OAuth no té l'àmbit `classroom.courseworkmaterials`
-  (les *tasques* usen `coursework.students`, per això s'han pogut crear). L'àmbit ja
-  és afegit a `_form_sa_lib.js`; cal **esborrar `token.json` i tornar a executar**
-  qualsevol script per reautoritzar al navegador, i llavors
-  `node crear_material_quadern.js`. (Alternativa: crear el material a mà seguint
-  `00_Quadern_tecnic_tasca_classroom.md`.)
+- **Publicar** el material «📓 Quadern tècnic» quan toqui (és en DRAFT).
 - **Imprimir** els quaderns del T1 (un per alumne, **a doble cara**) abans de
   començar el curs — afegit a la checklist de la `GUIA_INICI_DOCENT.md`.
 
