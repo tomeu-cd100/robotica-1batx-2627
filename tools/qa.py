@@ -10,6 +10,9 @@ Comprova (i falla amb exit != 0 si troba res):
   3. Coherència horària: la taula de `08_Sequenciacio_temporal_anual.md`
      ha de sumar les hores del subtotal declarat.
   4. Sintaxi de tots els `.py` d'alumnat (py_compile; no s'executen).
+  5. Quadern tècnic: les sessions de `web/_generador/quadern_sessions.py`
+     quadren amb el quadre d'hores (doc 08) i amb els títols de sessió de
+     les guies docents; avisa si falten els PDF generats.
 
 Ús:  py tools/qa.py          (cal haver generat el web abans per al punt 1;
                               si web/ no té HTML, el punt 1 s'omet amb avís)
@@ -141,11 +144,54 @@ def comprova_python() -> None:
     print(f"4) Python d'alumnat: {len(set(fitxers))} fitxers, {fallats} amb errors de sintaxi.")
 
 
+# --- 5 · Quadern tècnic: sincronitzat amb guies i quadre d'hores -------------
+def comprova_quadern() -> None:
+    sys.path.insert(0, str(ARREL / "web" / "_generador"))
+    import quadern_sessions as q
+
+    doc = (ARREL / "Programació didàctica" / "08_Sequenciacio_temporal_anual.md")
+    text = doc.read_text(encoding="utf-8")
+    hores = {f"SA{m.group(1)}": int(m.group(2)) for m in
+             re.finditer(r"\|\s*SA(\d)\s*[*†]?\s*\|[^|]+\|\s*(\d+)\s*\|", text)}
+    fallats = 0
+    for t, sessions in q.SESSIONS.items():
+        per_sa: dict[str, int] = {}
+        for s in sessions:
+            per_sa[s["sa"]] = per_sa.get(s["sa"], 0) + 1
+        for sa, n in per_sa.items():
+            if hores.get(sa) != n * 2:
+                errors.append(f"[quadern] {sa}: {n} sessions ({n*2} h) però el "
+                              f"doc 08 en declara {hores.get(sa)} h")
+                fallats += 1
+        if [s for s in sessions if s.get("prova")] != sessions[-1:]:
+            errors.append(f"[quadern] T{t}: la sessió de prova ha de ser exactament l'última")
+            fallats += 1
+        # Títols coherents amb les guies docents (SA9 usa fases, no capçaleres SESSIÓ).
+        for s in sessions:
+            if s["sa"] == "SA9":
+                continue
+            guia = (ARREL / "Classes" / s["sa"] /
+                    f"{s['sa']}_guia_docent.md").read_text(encoding="utf-8")
+            cap = re.search(rf"^## SESSIÓ {s['s']} \(2 h\) — (.+)$", guia, re.M)
+            if not cap or cap.group(1).strip() != s["titol"]:
+                errors.append(f"[quadern] {s['sa']} S{s['s']}: títol «{s['titol']}» "
+                              f"no coincideix amb la guia docent")
+                fallats += 1
+    for t in q.SESSIONS:
+        pdf = ARREL / "Classes" / "00_General" / "pdf" / f"Quadern_tecnic_T{t}.pdf"
+        if not pdf.exists():
+            avisos.append(f"[quadern] falta {pdf.relative_to(ARREL)} "
+                          f"(genera'l amb generar_quadern_tecnic.py)")
+    total = sum(len(s) for s in q.SESSIONS.values())
+    print(f"5) Quadern tècnic: {total} sessions, {fallats} incoherències.")
+
+
 def main() -> int:
     comprova_enllacos_web()
     comprova_cobertura_sa()
     comprova_hores()
     comprova_python()
+    comprova_quadern()
     for a in avisos:
         print(f"⚠️  {a}")
     if errors:
