@@ -59,9 +59,11 @@ Classroom**). `_form_sa_lib.js` ara demana: `classroom.courses` (lectura+escript
 
 ## Pendent (cal acció del docent)
 
-- **Publicar** el material «📓 Quadern tècnic» quan toqui (és en DRAFT).
 - **Imprimir** els quaderns del T1 (un per alumne, **a doble cara**) abans de
   començar el curs — afegit a la checklist de la `GUIA_INICI_DOCENT.md`.
+
+(El material «📓 Quadern tècnic» i les 8 tasques de T2/T3 ja estan **publicats**
+pel docent al Classroom, mateix dia.)
 
 ## Verificació
 
