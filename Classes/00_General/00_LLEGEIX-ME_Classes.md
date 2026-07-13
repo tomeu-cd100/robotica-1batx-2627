@@ -8,7 +8,7 @@ Material llest per a l'aula, organitzat per situació d'aprenentatge (SA). Cada 
 - **Esquemes** (`SAx_esquemes_connexions.md`; a SA5 i SA8, `SAx_connexions.md`): taules de connexió pin-a-pin (reproduïbles a Tinkercad/Wokwi). *(SA1–SA8.)*
 - **Codi** (`codi/*.ino` o `*.py`): sketches comentats, oberts directament a l'IDE o l'editor de micro:bit.
 
-> El registre de l'alumnat viu al seu **quadern tècnic**: guia, regles i plantilla d'entrada a [`00_Quadern_tecnic.md`](00_Quadern_tecnic.md) (per al docent, tasca de Classroom a punt a [`00_Quadern_tecnic_tasca_classroom.md`](00_Quadern_tecnic_tasca_classroom.md)).
+> El registre de l'alumnat viu al seu **quadern tècnic** en paper: guia, regles i **PDF imprimible per trimestre** (un full per sessió) a [`00_Quadern_tecnic.md`](00_Quadern_tecnic.md) (per al docent, tasca de Classroom a punt a [`00_Quadern_tecnic_tasca_classroom.md`](00_Quadern_tecnic_tasca_classroom.md)).
 
 ## Les 9 SA (índex)
 

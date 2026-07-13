@@ -7,7 +7,7 @@
 | Part | Pes | Què hi entra | Com anar-hi bé |
 |---|---|---|---|
 | **Projectes i productes** | **45 %** | El producte de cada SA (panell, alarma, barrera, sistema de control, robot…) i la seva defensa. | Fes-lo funcionar, però sobretot **entén-lo**: a la defensa t'ho preguntaran. |
-| **Quadern tècnic i pràctiques** | **25 %** | El teu quadern: pseudocodi, esquemes, errors i com els has resolt, reflexions. | **Escriu-hi cada sessió** (no tot al final). Un error ben documentat hi suma. |
+| **Quadern tècnic i pràctiques** | **25 %** | El teu [**quadern imprès**](00_Quadern_tecnic.md) (un per trimestre, un full per sessió): apunts, pseudocodi, esquemes, errors i com els has resolt, reflexions. | **Escriu-hi cada sessió** (no tot al final). Un error ben documentat hi suma. |
 | **Proves pràctiques** | **20 %** | Una prova per trimestre (T1, T2, T3), integrada a l'última sessió de SA3, SA6 i SA9. | Practica **tot sol** abans: els mini-checks t'avisen a temps de com vas. |
 | **Actitud, cooperació i autoregulació** | **10 %** | Com treballes en equip, com gestiones els errors, material i terminis. | Fes el teu rol, rota'l, i quan t'encallis aplica DEPURA abans de rendir-te. |
 
@@ -51,7 +51,7 @@ En aquesta matèria **equivocar-se és part del contingut**: tot falla la primer
 ## 5 · Les proves pràctiques (una per trimestre)
 
 - **T1 i T2 es fan individualment**; la T3 (robot) en parella, amb preguntes individuals a la defensa.
-- **Pots consultar el teu quadern i els esquemes** durant la prova: no s'avalua la memòria, sinó que sàpigues fer i trobar. (Un quadern ben portat és el teu millor material permès.)
+- **Pots consultar el teu quadern i els esquemes** durant la prova: no s'avalua la memòria, sinó que sàpigues fer i trobar. (Un [quadern](00_Quadern_tecnic.md) ben portat és el teu millor material permès — per això és **en paper**.)
 - Estan **per nivells**: el nucli ben fet és un 5-6; cada ampliació puja cap al 7-10. Tria fins on arribes.
 - Després de cada prova escriuràs el **pla de millora personal** (3 línies): què m'ha fallat, què practicaré, com ho comprovaré. Es reprèn a l'inici de la SA següent.
 

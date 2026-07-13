@@ -1,12 +1,12 @@
 # 📓 Quadern tècnic · Tasca de Classroom (per al docent)
 
-> Text i configuració **a punt d'enganxar** per desplegar el quadern tècnic al Google Classroom del grup. Dues peces: una **tasca inicial** (setmana 1, crea el Doc de cada alumne) i una **tasca de lliurament per SA** (repetible, amb la rúbrica R4). Guia de l'alumnat: [`00_Quadern_tecnic.md`](00_Quadern_tecnic.md).
+> Text i configuració **a punt d'enganxar** per desplegar el quadern tècnic al Google Classroom del grup. El quadern és **en paper** (un quadern imprès per trimestre, PDF a [`00_Quadern_tecnic.md`](00_Quadern_tecnic.md)); el Classroom serveix per **presentar-lo** i per **recollir les evidències** (fotos de les pàgines) al final de cada SA, amb la rúbrica R4.
 
-## Pas 0 · Prepara el Doc plantilla (5 minuts, un sol cop)
+## Pas 0 · Imprimeix els quaderns (un cop per trimestre)
 
-1. Crea un Google Doc al teu Drive amb el títol **`Quadern tècnic — PLANTILLA`**.
-2. Enganxa-hi la capçalera i la **plantilla d'entrada** de [`00_Quadern_tecnic.md`](00_Quadern_tecnic.md) (o baixa'n el PDF i copia el bloc «Plantilla d'una entrada»).
-3. Deixa-hi una primera pàgina amb les **5 regles** perquè cada alumne les tingui al seu propi Doc.
+1. Baixa el PDF del trimestre (`Classes/00_General/pdf/Quadern_tecnic_Tn.pdf`).
+2. Imprimeix-ne **un per alumne, a doble cara** (cada sessió de 2 h = un full físic) i grapa'l o enquaderna'l.
+3. Reparteix-los la **primera sessió del trimestre**; recorda que és el material permès a la prova.
 
 ---
 
@@ -14,22 +14,22 @@
 
 **Configuració a Classroom:**
 - **Tema:** `Quadern tècnic` (crea'l; hi aniran tots els lliuraments).
-- **Adjunt:** el Doc `Quadern tècnic — PLANTILLA` → **«Fes una còpia per a cada alumne»** ⚠️ (aquesta opció no es pot canviar després de publicar).
+- **Adjunt:** enllaç a la pàgina «Quadern tècnic» del material del curs (i el PDF del trimestre, per si algú el perd).
 - **Punts:** *Sense qualificació* (la nota va a les tasques per SA).
 - **Termini:** final de la primera setmana.
 
-**Títol:** `📓 El teu quadern tècnic — crea'l i fes la primera entrada`
+**Títol:** `📓 El teu quadern tècnic — fes-lo teu`
 
 **Instruccions (enganxa-les tal qual):**
 
-> Aquest Doc és el teu **quadern tècnic**: el diari de treball de tota la matèria. Compta el **25 %** de la nota i **el podràs consultar a les proves**.
+> El quadern imprès que t'han donat és el teu **quadern tècnic**: el diari de treball de tota la matèria. Compta el **25 %** de la nota i **el podràs consultar a les proves** — és el teu millor material permès.
 >
 > Què has de fer ara:
-> 1. Obre el teu Doc (Classroom te n'ha fet una còpia amb el teu nom) i llegeix les **5 regles** de la primera pàgina.
-> 2. Canvia el títol per `Quadern tècnic — [El teu nom]`.
-> 3. **No el lliuris i te n'oblidis**: hi escriuràs **a cada sessió** (2-3 minuts). Els esquemes, fes-los **a mà**, fotografia'ls i enganxa'ls.
+> 1. Escriu el teu **nom i grup** a la portada i llegeix la pàgina «Com s'usa i com s'avalua».
+> 2. Porta'l **cada dia** a classe: hi escriuràs **a cada sessió** (2-3 minuts), amb els esquemes fets **a mà** sobre la quadrícula.
+> 3. Si el perds, torna a imprimir el PDF enllaçat (però les teves pàgines escrites no tornen: cuida'l).
 >
-> Guia completa i plantilla: enllaç del material del curs (secció «Quadern tècnic»).
+> Com a resposta a aquesta tasca, escriu una línia: «Quadern rebut i portada omplerta».
 
 ---
 
@@ -37,7 +37,7 @@
 
 **Configuració a Classroom:**
 - **Tema:** `Quadern tècnic`.
-- **Adjunt de l'alumne:** l'alumne **adjunta el seu mateix Doc** des de Drive (no en creïs còpia nova).
+- **Adjunt de l'alumne:** **fotos de les pàgines** de la SA (fetes amb el mòbil o la càmera del Chromebook).
 - **Punts:** `30` (rúbrica de 3 criteris × 10; per al registre 0-10, divideix entre 3).
 - **Rúbrica:** la R4 adaptada al quadern (vegeu-la a sota; s'introdueix un cop i es **reutilitza** a cada tasca amb «Torna a fer servir la rúbrica»).
 - **Termini:** última sessió de la SA.
@@ -46,12 +46,12 @@
 
 **Instruccions (enganxa-les i canvia la SA):**
 
-> Lliura el teu quadern amb l'**entrada de la SA_ completa** (els 6 apartats de la plantilla):
-> 1 objectiu i esquema (foto de l'esquema a mà) · 2 pseudocodi/diagrama · 3 codi i decisions · 4 proves i errors (DEPURA) · 5 què he après · 6 ús d'IA (si n'hi ha hagut).
+> **Fotografia les pàgines del teu quadern d'aquesta SA** (totes les sessions, davant i darrere) i puja-les aquí. Comprova abans que hi tens els 6 apartats coberts:
+> 1 objectiu i esquema (a mà, sobre la quadrícula) · 2 pseudocodi/diagrama · 3 codi i decisions · 4 proves i errors (DEPURA, la caixa «Error del dia») · 5 què he après · 6 ús d'IA (si n'hi ha hagut).
 >
-> Recorda: un **error ben documentat suma**; les preguntes concretes d'aquesta SA són a la secció «Quadern tècnic» de la fitxa.
+> Recorda: un **error ben documentat suma**; les preguntes concretes d'aquesta SA són a la secció «Quadern tècnic» de la fitxa. Les fotos han de ser **llegibles** (bona llum, sense retallar marges).
 >
-> Com lliurar-ho: **Afegeix → Google Drive → el teu Doc del quadern** → Lliura.
+> Com lliurar-ho: **Afegeix → Fitxer → les fotos de les pàgines** → Lliura.
 
 ---
 
@@ -69,7 +69,7 @@ Tres criteris de la **R4** (la «Defensa oral» s'avalua al producte, no aquí).
 
 ## Consells de correcció (perquè sigui sostenible)
 
-- **Mostreig, no lectura íntegra**: mira l'entrada de la SA i 1-2 punts a fons (p. ex. l'error documentat); comenta-hi directament al Doc.
-- **Historial de revisions** (Fitxer → Historial de versions): és la teva evidència d'**autoria i treball continuat**, i el detector natural del «tot escrit la nit abans» — coherent amb la política d'IA del curs.
+- **Mostreig, no lectura íntegra**: mira les pàgines de la SA i 1-2 punts a fons (p. ex. l'error documentat); el comentari, a la tasca de Classroom o directament al quadern en paper.
+- **Evidència d'autoria i treball continuat:** el quadern s'escriu **a l'aula, sessió a sessió** (data a cada full, tinta i lletra pròpies) — el detector natural del «tot escrit la nit abans» és passejar-se i cop d'ull setmanal, coherent amb la política d'IA del curs.
 - La nota de registre pot ser **acumulada per trimestre** (mitjana de les SA del trimestre) dins la dimensió «Quadern tècnic i pràctiques» (25 %).
 - Recorda que l'alumnat **pot consultar el quadern a les proves**: anuncia-ho — és el millor incentiu perquè el portin al dia.
