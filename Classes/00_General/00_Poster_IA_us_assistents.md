@@ -6,10 +6,7 @@
 
 ## 🧭 La regla d'or
 
-```
-   La IA t'ha d'ajudar a APRENDRE,
-   no a SALTAR-TE l'aprenentatge.
-```
+<div class="banner">La IA t'ha d'ajudar a <span class="em">APRENDRE</span>,<br>no a <span class="em">saltar-te</span> l'aprenentatge.</div>
 
 **Abans de preguntar a una IA → fes DEPURA primer.** La IA és l'**últim recurs**, no el primer reflex.
 
@@ -17,35 +14,40 @@
 
 ## 🚦 Semàfor d'usos
 
-```
-┌────────────────────────────────────────────────────────────────────┐
-│ 🟢 SÍ (t'ajuda a aprendre)                                          │
-│   · Que t'EXPLIQUI un error o un concepte                          │
-│   · Demanar EXEMPLES d'una funció (map(), radio.send()...)         │
-│   · Que et FACI PREGUNTES per repassar                            │
-│   · Demanar IDEES per a un repte (i triar-ne tu)                  │
-├────────────────────────────────────────────────────────────────────┤
-│ 🟡 AMB CURA (revisa-ho sempre)                                     │
-│   · Que SUGGEREIXI estructura → la reescric jo                    │
-│   · Generar un ESBORRANY → el reviso, el provo i el modifico      │
-│   · Millorar la REDACCIÓ d'una reflexió MEVA                      │
-├────────────────────────────────────────────────────────────────────┤
-│ 🔴 NO (és fer trampa)                                              │
-│   · Enganxar l'enunciat i lliurar la resposta SENSE entendre-la   │
-│   · Que faci TOTA la pràctica o el quadern i copiar-ho            │
-│   · Presentar com a PROPI codi/text que NO pots explicar          │
-│   · Fer-la servir en una PROVA on no està permesa                 │
-└────────────────────────────────────────────────────────────────────┘
-```
+<div class="semafor">
+  <div class="col si">
+    <div class="cap">🟢 SÍ (t'ajuda a aprendre)</div>
+    <ul>
+      <li>Que t'<b>expliqui</b> un error o un concepte</li>
+      <li>Demanar <b>exemples</b> d'una funció (<code>map()</code>, <code>radio.send()</code>…)</li>
+      <li>Que et <b>faci preguntes</b> per repassar</li>
+      <li>Demanar <b>idees</b> per a un repte (i triar-ne tu)</li>
+    </ul>
+  </div>
+  <div class="col cur">
+    <div class="cap">🟡 Amb cura (revisa-ho sempre)</div>
+    <ul>
+      <li>Que <b>suggereixi</b> estructura → la reescric jo</li>
+      <li>Generar un <b>esborrany</b> → el reviso, el provo i el modifico</li>
+      <li>Millorar la <b>redacció</b> d'una reflexió <b>meva</b></li>
+    </ul>
+  </div>
+  <div class="col no">
+    <div class="cap">🔴 No (és fer trampa)</div>
+    <ul>
+      <li>Enganxar l'enunciat i lliurar la resposta <b>sense entendre-la</b></li>
+      <li>Que faci <b>tota</b> la pràctica o el quadern i copiar-ho</li>
+      <li>Presentar com a <b>propi</b> codi/text que <b>no</b> pots explicar</li>
+      <li>Fer-la servir en una <b>prova</b> on no està permesa</li>
+    </ul>
+  </div>
+</div>
 
 ---
 
 ## 🔍 La prova de foc: "EXPLICA-HO"
 
-```
-   Si fas servir codi o text d'una IA,
-   has de poder explicar CADA LÍNIA.
-```
+<div class="banner">Si fas servir codi o text d'una IA,<br>has de poder explicar <span class="em">cada línia</span>.</div>
 El profe pot assenyalar qualsevol línia i preguntar *"què fa i per què?"*.
 Si no ho saps explicar → **no t'ha servit per aprendre** (i pot baixar nota).
 
@@ -55,12 +57,12 @@ Si no ho saps explicar → **no t'ha servit per aprendre** (i pot baixar nota).
 
 Al **quadern tècnic**, si has fet servir IA, anota:
 
-```
-He fet servir [eina] per: ____________________
-Li he demanat: "____________________"
-M'ha donat: ____________________
-Què he canviat / entès jo: ____________________
-```
+<div class="declara">
+  <p>He fet servir <span class="buit">[eina]</span> per: <span class="buit"></span></p>
+  <p>Li he demanat: «<span class="buit"></span>»</p>
+  <p>M'ha donat: <span class="buit"></span></p>
+  <p>Què he canviat / entès jo: <span class="buit"></span></p>
+</div>
 
 > **Declarar l'ús és honest. Amagar-lo o no saber-lo explicar, NO.**
 
@@ -68,11 +70,11 @@ Què he canviat / entès jo: ____________________
 
 ## ⚠️ Tres avisos
 
-```
-  · PRIVADESA   → no enganxis dades personals (noms, fotos...)
-  · S'INVENTA   → la IA "al·lucina" amb seguretat → PROVA sempre el codi
-  · NO ÉS MÀGIA → troba patrons; no "entén". Pot equivocar-se.
-```
+<div class="avisos">
+  <div class="avis"><div class="ic">🔒</div><b>Privadesa</b><small>no enganxis dades personals (noms, fotos…)</small></div>
+  <div class="avis"><div class="ic">🎭</div><b>S'inventa</b><small>«al·lucina» amb seguretat → prova sempre el codi</small></div>
+  <div class="avis"><div class="ic">🧩</div><b>No és màgia</b><small>troba patrons; no «entén». Pot equivocar-se.</small></div>
+</div>
 
 ---
 

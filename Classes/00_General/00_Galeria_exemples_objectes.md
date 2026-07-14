@@ -20,12 +20,7 @@
 ## 3 · Idear i dissenyar
 - **Esbós:** cub de 8 cm amb una cara difusora; el botó al lateral; sortida del USB per darrere.
 
-```
-        ┌─────────┐
-        │ ░░░░░░░ │  ← cara difusora (paper vegetal)
-        │ ░░░░░░░ │
-        └──○──────┘  ○ = botó d'estat
-```
+![Croquis de la llum d'estat EstaLlum: un cub amb una cara difusora de paper vegetal que mostra els tres estats de color (verd = lliure, groc = un moment, vermell = no molestar) i un botó d'estat al lateral.](img/galeria-estallum.svg)
 - **Forma i mida:** cub ~8 cm. · **Materials:** cartró ploma + paper vegetal de difusor (o carcassa impresa en filament translúcid).
 
 ## 4 · Prototipar
@@ -79,14 +74,7 @@
 ## 3 · Idear i dissenyar
 - **Esbós:** caixa transparent (ampolla gran tallada o marc imprès amb làmines) amb la planta a dins; ventilador a una paret; electrònica en un calaix sec a sota.
 
-```
-     ┌───────────────┐
-     │   🌱  (planta) │
-     │            ▤▤▤ │ ← ventilador
-     ├───────────────┤
-     │  [ electrònica]│ ← calaix sec, separat
-     └───────────────┘
-```
+![Croquis del mini-hivernacle HortBox: una caixa transparent amb la planta a dins, un ventilador a una paret i, a sota, un calaix sec separat per a l'electrònica.](img/galeria-hortbox.svg)
 - **Materials:** ampolla/PET reutilitzat o metacrilat; base de fusta; suport de sensor imprès.
 
 ## 4 · Prototipar

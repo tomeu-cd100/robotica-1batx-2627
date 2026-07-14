@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 300" role="img"
+     aria-label="Croquis del mini-hivernacle HortBox: caixa transparent amb una planta a dins, un ventilador a una paret i, a sota, un calaix sec separat per a l'electrònica.">
+  <style>
+    .bg{fill:#ffffff;stroke:#cbd8d7;stroke-width:2}
+    .glass{fill:#eef6f6;stroke:#26484a;stroke-width:2.5}
+    .drawer{fill:#e5eeee;stroke:#26484a;stroke-width:2.5}
+    .lbl{font:600 13px "Segoe UI",Arial,sans-serif;fill:#26484a}
+    .tag{font:700 12px "Segoe UI",Arial,sans-serif;fill:#0c6e70}
+    .lead{stroke:#7d9a9a;stroke-width:1.5;fill:none}
+  </style>
+  <rect class="bg" x="1" y="1" width="418" height="298" rx="14"/>
+  <!-- campana transparent -->
+  <rect class="glass" x="120" y="55" width="150" height="120" rx="8"/>
+  <!-- planta -->
+  <path d="M195 150 q-4 -30 -20 -42 q20 2 22 26 q6 -34 22 -40 q0 30 -18 40 q10 -6 22 -4 q-12 14 -28 12 z" fill="#1f8a3b"/>
+  <rect x="178" y="150" width="34" height="12" rx="2" fill="#b85c1a"/>
+  <!-- ventilador a la paret dreta -->
+  <circle cx="246" cy="88" r="18" fill="#ffffff" stroke="#26484a" stroke-width="2.5"/>
+  <g fill="#0c6e70">
+    <path d="M246 88 q-14 -6 -14 -16 q10 2 14 16z"/>
+    <path d="M246 88 q6 -14 16 -14 q-2 10 -16 14z"/>
+    <path d="M246 88 q14 6 14 16 q-10 -2 -14 -16z"/>
+    <path d="M246 88 q-6 14 -16 14 q2 -10 16 -14z"/>
+  </g>
+  <circle cx="246" cy="88" r="3.5" fill="#26484a"/>
+  <!-- separador i calaix de l'electrònica -->
+  <rect class="drawer" x="120" y="195" width="150" height="55" rx="8"/>
+  <rect x="138" y="212" width="60" height="22" rx="3" fill="#cddede" stroke="#7d9a9a" stroke-width="1.5"/>
+  <circle cx="150" cy="223" r="3" fill="#0c6e70"/>
+  <circle cx="162" cy="223" r="3" fill="#b85c1a"/>
+  <!-- etiquetes -->
+  <path class="lead" d="M264 88 H300"/>
+  <text x="305" y="92" class="tag">ventilador</text>
+  <path class="lead" d="M205 120 H300"/>
+  <text x="305" y="124" class="tag">planta</text>
+  <path class="lead" d="M270 222 H300"/>
+  <text x="305" y="219" class="lbl">calaix sec</text>
+  <text x="305" y="235" class="lbl">(electrònica)</text>
+</svg>

@@ -283,6 +283,34 @@ def marca_ruta(body: str) -> str:
             + body[m.start():end] + "</section>" + body[end:])
 
 
+_TARGETA_RE = re.compile(
+    r'<p><strong>(T\d.*?)</strong></p>\s*<ul>(.*?)</ul>', re.DOTALL)
+_NIVELL = (("🟢", "n-verd"), ("🟡", "n-groc"), ("🔴", "n-vermell"))
+
+
+def marca_targetes(body: str) -> str:
+    """Converteix cada targeta de rescat (`**Tn.m · «…»**` seguit d'una llista
+    🟢/🟡/🔴) en una `<div class="targeta">` apilada, amb la capçalera i les
+    files de nivell acolorides. Manté el markdown font net i llegible a GitHub;
+    tota la presentació viu al generador i al CSS (`.targeta`)."""
+    def _li(m: re.Match) -> str:
+        obri = m.group(1)  # etiquetes/atributs del <li> original
+        cos = m.group(2)
+        for emoji, classe in _NIVELL:
+            if cos.lstrip().startswith(emoji):
+                cos = cos.lstrip()[len(emoji):].lstrip()
+                return f'<li class="{classe}"{obri}>{cos}</li>'
+        return m.group(0)
+
+    def _card(m: re.Match) -> str:
+        titol, llista = m.group(1), m.group(2)
+        llista = re.sub(r'<li([^>]*)>(.*?)</li>', _li, llista, flags=re.DOTALL)
+        return (f'<div class="targeta"><div class="cap">{titol}</div>'
+                f'<ul>{llista}</ul></div>')
+
+    return _TARGETA_RE.sub(_card, body)
+
+
 def strip_github_only(text: str) -> str:
     """Treu del text Markdown els blocs marcats amb
     `<!-- web:only-github -->` … `<!-- /web:only-github -->`.
@@ -1693,6 +1721,8 @@ def main():
         if p.kind == "index" and detect_sa(p.out_rel) is not None \
                 and p.section == "classes":
             body = marca_ruta(body)
+        if p.src.name == "00_Targetes_rescat.md":
+            body = marca_targetes(body)
         toc = toc_html(md)
         extra = ""
         pre = ""
