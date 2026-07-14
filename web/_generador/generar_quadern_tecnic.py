@@ -114,7 +114,18 @@ CSS = """
 
 # Quadrícula de punts cada 5 mm: files de caràcters «·». El text queda
 # VECTORIAL al PDF (gradients i SVG es rasteritzen i el fitxer es dispara).
-DOTS = '<div class="dots">' + ('<div class="df">' + "·" * 37 + "</div>") * 50 + "</div>"
+# El nombre de files es tria perquè el darrer renglo càpiga SENCER dins la
+# caixa (`.dots`, alçada constant a cada tipus de pàgina); si sobren files,
+# `overflow:hidden` tallava l'última pel mig i el marc «es tallava».
+# Alçades mesurades de la caixa: davant ~237 mm · darrere ~193 mm · prova
+# davant ~232 mm (5 mm per fila → deixa ~2 mm de marge fins al marc).
+DOTS_DAVANT = 47
+DOTS_DARRERE = 38
+DOTS_PROVA_DAVANT = 46
+
+
+def dots(files: int) -> str:
+    return '<div class="dots">' + ('<div class="df">' + "·" * 37 + "</div>") * files + "</div>"
 
 
 def esc(t: str) -> str:
@@ -165,10 +176,10 @@ def pagines_sessio(t: int, i: int, total: int, s: dict) -> list[str]:
         f'<div>📚 <strong>Vocabulari:</strong> <span class="vocab">{esc(s["vocab"])}</span></div></div>'
         f'<div class="etiq">✍️ Apunts · esquemes · pseudocodi (esquemes i '
         f'diagrames, a mà i amb retolador fi)</div>'
-        f'{DOTS}</div>')
+        f'{dots(DOTS_DAVANT)}</div>')
     darrere = (
         f'<div class="page">{cap_sessio(t, i, total, s, continuacio=True)}'
-        f'{DOTS}'
+        f'{dots(DOTS_DARRERE)}'
         f'{peu_tancament()}</div>')
     return [davant, darrere]
 
@@ -190,7 +201,7 @@ def pagines_prova(t: int, i: int, total: int, s: dict) -> list[str]:
         f'puja cap al 7-10.</div>'
         f'<div class="etiq">✍️ Full de treball de la prova (esquema · '
         f'pseudocodi · càlculs · anotacions)</div>'
-        f'{DOTS}</div>')
+        f'{dots(DOTS_PROVA_DAVANT)}</div>')
 
     if p["reflexio_final"]:
         cos = (
@@ -225,7 +236,7 @@ def pagines_prova(t: int, i: int, total: int, s: dict) -> list[str]:
         '<td class="paint"></td><td class="paint"></td></tr></tbody></table>')
     darrere = (
         f'<div class="page">{cap_sessio(t, i, total, s, continuacio=True)}'
-        f'{DOTS}'
+        f'{dots(DOTS_DARRERE)}'
         f'<div class="peu">{cos}{balanc}</div></div>')
     return [davant, darrere]
 
