@@ -199,6 +199,148 @@ const TRIMESTRALS = [
   },
 ];
 
+// Retroacció per pregunta (mateix ordre que les qs de cada SA — si mous o afegeixes una
+// pregunta, mou la seva línia aquí). Una frase que explica el PERQUÈ: es mostra tant si
+// s'encerta (reforç) com si es falla (micro-lliçó al moment de l'error).
+const FEEDBACK = {
+  SA0: [
+    'Primer les persones: avisar de seguida permet actuar abans que el problema creixi.',
+    'Les màquines només s\'operen amb carnet i permís: és la regla que fa possible tot el taller.',
+    'Res que pengi a prop d\'una màquina: cabells recollits, mànigues i cordons controlats.',
+    'L\'error documentat ensenya; el que s\'amaga es repeteix.',
+    'El passaport registra carnets, insígnies i progrés: la teva trajectòria maker.',
+    'Un prototip existeix per provar-lo i millorar-lo: fallar-hi és part del pla.',
+    'L\'avaluació 0 serveix per saber d\'on partim i formar equips equilibrats — sense nota.',
+    'Cada carnet es guanya amb un checkpoint: 3 preguntes de protocol + 1 demostració.',
+  ],
+  SA1: [
+    'Vermell pur = tall · negre = gravat: la làser només entén aquest codi.',
+    'Les fonts són text; la làser vol camins: Camí → Objecte a camí.',
+    'Si el document és en píxels, les mides no són reals: sempre en mm.',
+    'Mínim Ø 4 mm perquè hi passi l\'anella del clauer.',
+    'La làser mai es queda sola: sempre hi ha algú vigilant fins que acaba.',
+    'El PVC allibera gasos tòxics en cremar-se: prohibit sempre, sense excepcions.',
+    'Sense nom i carpeta correctes, la peça no entra al batch i es perd.',
+    'El carnet 🔴 es guanya al checkpoint i és el que et permet operar la làser.',
+  ],
+  SA2: [
+    'Vectoritzar = convertir píxels en camins (línies) que la làser pot seguir.',
+    'El vector s\'escala sense perdre qualitat; els píxels es pixelen.',
+    'Unió i diferència combinen o resten formes: així neixen formes noves.',
+    'Un node és un punt que defineix el camí: movent nodes, canvies la forma.',
+    'Silueta simple i d\'alt contrast = vectorització neta al primer intent.',
+    'Peces juntes i ben distribuïdes = menys material malbaratat i menys temps de làser.',
+    'Com al clauer de SA1: el text sempre convertit a camí abans d\'anar a la làser.',
+    'Tall i gravat necessiten potències diferents: per això van en capes separades.',
+  ],
+  SA3: [
+    'El kerf és el material que el feix es "menja": ~0,1-0,2 mm per costat del tall.',
+    'El tall surt més ample del dibuixat: sense preveure el kerf, l\'encaix balla.',
+    'Ranura una mica més estreta + kerf que eixampla = encaix ferm.',
+    'Necessitat → idea → disseny → fabricació → millora: sempre en aquest ordre.',
+    'Un requisit és obligatori: si no es compleix, el producte no serveix.',
+    'Iterar = provar, detectar què falla i fer la versió millorada: el cor del disseny.',
+    'Pestanyes i ranures a mida del gruix del material: unió ferma sense cola.',
+    'Rols amb rotació: responsabilitat clara avui, i tothom passa per tot durant el curs.',
+  ],
+  SA4: [
+    'X amplada, Y fondària, Z alçada: el volum té tres dimensions.',
+    'Un "forat" és un cos transparent que buida la peça quan s\'hi agrupa.',
+    'Sense Agrupar, el forat només és un cos transparent posat a sobre.',
+    'La tecla D baixa la peça al pla: res pot quedar flotant o la impressió falla.',
+    '.STL és el format que el laminador entén.',
+    '≥3 cossos + ≥1 forat i màxim ~50 mm: els límits que fan possible el batch.',
+    'Pla i sense suports = entra a la placa compartida: menys temps i menys material.',
+    'Escalar amb sentit = mides reals comprovades amb regle i proporcions mantingudes.',
+  ],
+  SA5: [
+    'Laminar converteix l\'STL en capes i instruccions que la impressora entén.',
+    'Més farciment = més resistència però més temps i material: es tria segons l\'ús.',
+    'Per sota de 3 mm la paret surt fràgil: és el llindar de sempre del curs.',
+    'La primera capa es refreda massa de pressa i les vores s\'aixequen: adherència!',
+    'El brim és una vorera que augmenta la superfície enganxada de la primera capa.',
+    '< 1 h i < 40 g per peça: el límit que fa que tothom pugui imprimir.',
+    'Si la primera capa s\'enganxa bé, la resta va sola; si no, espagueti.',
+    'La impressió mai és exacta: sense marge, dues peces "perfectes" no encaixen.',
+  ],
+  SA6: [
+    'Empatitzar = observar i escoltar l\'usuari: la necessitat real, no la imaginada.',
+    'Els requisits surten de l\'entrevista i l\'observació, no del que és fàcil de fer.',
+    'La impressora és el coll d\'ampolla: la cua es planifica o algú es queda sense peça.',
+    'El límit < 1 h / < 40 g també val en equip: cada peça compta.',
+    'Cap peça va a la màquina sense el 🚦 semàfor validat per l\'operador/a de l\'equip.',
+    'El feedback de l\'usuari descobreix el que l\'equip no veu: d\'aquí surt la versió 2.',
+    'Assemblatge = peces coordinades que encaixen: cal la mida comuna acordada abans.',
+    'Comunicar l\'impacte = explicar què millora en la vida de l\'usuari real.',
+  ],
+  SA7: [
+    'La càmera 360 captura tot l\'entorn: la imatge s\'explora girant.',
+    'El punt de captura és el lloc triat per a cada foto 360 del tour.',
+    'No hi ha "fora de pla": si no t\'amagues, surts a la foto.',
+    'Trípode (o superfície estable) + bona llum sense contrallums = captura utilitzable.',
+    'Només surt qui ha donat permís: drets d\'imatge, sempre.',
+    'Un tour navegable = escenes 360 connectades amb títols i etiquetes.',
+    'El carnet 🟢 inclou drets d\'imatge, espais a evitar i on s\'amaga qui captura.',
+    'Un tour s\'acaba de debò quan arriba a una audiència real (web, QR…).',
+  ],
+  SA8: [
+    'Immersió = la sensació de ser DINS de l\'escena virtual.',
+    'Amb mareig: aturar-se, treure\'s les ulleres, seure i avisar. Sempre.',
+    'Sessions curtes i amb pauses: ho marca el protocol d\'ús de la VR.',
+    'Lents amb microfibra i interfície facial neta entre usuaris.',
+    'El guia vigila l\'espai del company: la seguretat en VR és cosa de dos.',
+    'El carnet 🔵: temps màxim, protocol de mareig, higiene — i fer de guia.',
+    'Explorable = objectes col·locats amb sentit + alguna interacció per descobrir.',
+    'La VR té beneficis reals (formació, patrimoni, medicina) i riscos reals (vista, abús de pantalla).',
+  ],
+  SA9: [
+    'Integrador = fabricació (làser/3D) + immersiu (360/VR): tot el curs en un projecte.',
+    'Una fita té data: què ha d\'estar acabat i quan. Sense data, no és fita.',
+    'El temps de màquina és limitat: planificar és repartir-lo entre tots.',
+    'El portafoli recull les teves evidències i reflexions de tot el curs.',
+    'Un bon estand mostra el producte i l\'explica de manera clara a un públic real.',
+    '10 persones dins l\'aula Maker: la seguretat també mana el dia gran.',
+    'Diagnosticar en veu alta (què esperava, què passa, hipòtesi) és demostrar coneixement.',
+    'Transferir = usar el que has après en situacions noves: l\'objectiu final del curs.',
+  ],
+  T1: [
+    'Nom = negre (gravat) · contorn = vermell fi (tall).',
+    'El vermell (tall) que queda solt cau; el gravat negre no cau mai.',
+    'El kerf fa el tall més ample: la ranura es dissenya més estreta que el material.',
+    'Document sempre en mm: els píxels enganyen les mides.',
+    'Convertit a camí, el text es grava igual a qualsevol ordinador, tingui la font o no.',
+    'Aturar la màquina i avisar: mai aigua ni bufar.',
+    'Necessitat → idea → disseny → fabricació → millora.',
+    'Targeta del Museu + versió 2: l\'error documentat és aprenentatge, no fracàs.',
+    'Alt contrast i simplicitat = vector net.',
+    'Una planxa ben aprofitada estalvia material i minuts de làser per a tothom.',
+  ],
+  T2: [
+    'El forat només buida quan AGRUPES peça + forat.',
+    'D de "drop": la peça baixa al pla de treball.',
+    '.STL per imprimir (com .SVG per a la làser).',
+    'Si supera el límit: reduir mida o farciment i tornar a laminar — una iteració més.',
+    '≥3 mm de paret: el llindar del curs perquè la peça no es trenqui.',
+    'El forat una mica més gran que l\'objecte (~0,5 mm de marge) o no hi entrarà.',
+    'La primera capa és el moment crític: placa neta i brim si cal.',
+    'Els requisits surten de l\'usuari real: entrevista i observació.',
+    'Vermell = tall · negre = gravat: el codi de colors no caduca mai.',
+    'Kerf i tolerància són marges de mida: preveure\'ls és dissenyar bé.',
+  ],
+  T3: [
+    'La càmera 360 ho veu tot: qui captura queda fora d\'escena.',
+    'Sense permís no es publica: es repeteix la captura o es descarta.',
+    'Parar, treure\'s les ulleres, seure i avisar.',
+    'Vigilar l\'espai del company mentre porta les ulleres: seguretat de dos.',
+    'Una fita és un punt de control amb data: què i quan.',
+    '1 evidència per trimestre amb reflexió + fitxa i diari de SA9 + «El meu viatge maker».',
+    '10 persones dins l\'aula Maker, comptades a la porta.',
+    'Explicar què esperava / què passa / la hipòtesi: diagnosticar és saber-ne.',
+    '< 1 h i < 40 g per peça, fins a l\'últim dia de curs.',
+    'Sense carnet no s\'opera cap màquina — tampoc a la Fira.',
+  ],
+};
+
 function buildRequests(saDef) {
   const descripcio = saDef.topicSA
     ? `Mini-lliga de la setmana de Fira: ${saDef.tema}. Barreja el que has après aquest trimestre (i abans!). NO qualifica: en enviar veuràs les solucions. Repeteix-lo tants cops com vulguis — recordar més tard és el que consolida.`
@@ -211,17 +353,62 @@ function buildRequests(saDef) {
   ];
   let index = 0;
   requests.push({ createItem: { item: { title: 'Nom i cognoms', questionItem: { question: { required: true, textQuestion: { paragraph: false } } } }, location: { index: index++ } } });
-  for (const [title, opcions, correcta] of saDef.qs) {
+  for (const [i, [title, opcions, correcta]] of saDef.qs.entries()) {
     requests.push({ createItem: { item: {
       title,
-      questionItem: { question: {
-        required: true,
-        grading: { pointValue: 1, correctAnswers: { answers: [{ value: opcions[correcta] }] } },
-        choiceQuestion: { type: 'RADIO', options: opcions.map(v => ({ value: v })) }
-      } }
+      questionItem: { question: gradedQuestion(saDef, i, opcions, correcta) }
     }, location: { index: index++ } } });
   }
   return requests;
+}
+
+// Pregunta amb qualificació i retroacció (si n'hi ha al mapa FEEDBACK).
+function gradedQuestion(saDef, i, opcions, correcta) {
+  const grading = { pointValue: 1, correctAnswers: { answers: [{ value: opcions[correcta] }] } };
+  const fb = (FEEDBACK[saDef.sa] || [])[i];
+  if (fb) {
+    grading.whenRight = { text: `✅ Exacte. ${fb}` };
+    grading.whenWrong = { text: `🔎 Fixa-t'hi: ${fb}` };
+  }
+  return {
+    required: true,
+    grading,
+    choiceQuestion: { type: 'RADIO', options: opcions.map(v => ({ value: v })) }
+  };
+}
+
+// Afegeix la retroacció a preguntes de Forms JA CREATS (in place, per títol de pregunta).
+// Idempotent: salta les preguntes que ja tenen whenWrong.
+async function afegirRetroaccio(auth) {
+  const drive = google.drive({ version: 'v3', auth });
+  const forms = google.forms({ version: 'v1', auth });
+  for (const saDef of [...SAS, ...TRIMESTRALS]) {
+    const titolForm = saDef.topicSA
+      ? `${saDef.sa} · ${saDef.tema}`
+      : `${saDef.sa} · Qüestionari de repàs — ${saDef.tema}`;
+    const search = await drive.files.list({
+      q: `name = '${titolForm.replace(/'/g, "\\'")}' and mimeType = 'application/vnd.google-apps.form' and trashed = false`,
+      fields: 'files(id)'
+    });
+    const f = (search.data.files || [])[0];
+    if (!f) { console.log(`⚠️  Form no trobat: ${titolForm}`); continue; }
+    const form = await forms.forms.get({ formId: f.id });
+    const items = form.data.items || [];
+    const requests = [];
+    for (const [i, [title, opcions, correcta]] of saDef.qs.entries()) {
+      const idx = items.findIndex(it => it.title === title);
+      if (idx === -1) { console.log(`   ⚠️  Pregunta no trobada a ${saDef.sa}: ${title.slice(0, 50)}…`); continue; }
+      if (items[idx].questionItem?.question?.grading?.whenWrong) continue; // ja té retroacció
+      requests.push({ updateItem: {
+        item: { itemId: items[idx].itemId, title, questionItem: { question: gradedQuestion(saDef, i, opcions, correcta) } },
+        location: { index: idx },
+        updateMask: 'questionItem.question'
+      } });
+    }
+    if (!requests.length) { console.log(`↩️  ${saDef.sa}: ja tenia tota la retroacció.`); continue; }
+    await forms.forms.batchUpdate({ formId: f.id, requestBody: { requests } });
+    console.log(`✅ ${saDef.sa}: retroacció afegida a ${requests.length} preguntes.`);
+  }
 }
 
 function escriuBancMd() {
@@ -253,6 +440,8 @@ function escriuBancMd() {
         opcions.forEach((o, j) => {
           out += j === correcta ? `   - **${o}** ✔️\n` : `   - ${o}\n`;
         });
+        const fb = (FEEDBACK[s.sa] || [])[i];
+        if (fb) out += `   💡 *${fb}*\n`;
       });
     }
     return out;
@@ -274,6 +463,13 @@ async function main() {
   if (process.argv.includes('--nomes-md')) {
     escriuBancMd();
     console.log('📄 Només banc: Avaluació/Questionaris_repas.md regenerat (cap crida a Google).');
+    return;
+  }
+  if (process.argv.includes('--retroaccio')) {
+    const auth = await getAuthClient();
+    await afegirRetroaccio(auth);
+    escriuBancMd();
+    console.log('\n🏆 Retroacció aplicada als Forms existents + banc regenerat.');
     return;
   }
   const auth = await getAuthClient();
