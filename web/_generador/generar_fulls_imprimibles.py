@@ -40,6 +40,14 @@ TARGETS = [
     ("00_General/00_Plantilla_disseny_objecte.md", "checklist"),
 ]
 
+# Fulls que JA són HTML complet i autocontingut (disseny propi per a A4): es
+# converteixen a PDF tal qual, sense passar pel Markdown. Rellotge més llarg
+# perquè carreguin fonts/icones de CDN abans d'imprimir.
+RAW_HTML = [
+    "00_General/impresos/Fitxes_Arduino_UNO.html",
+    "00_General/impresos/Blocs_Programacio_Offline.html",
+]
+
 CHROME_CANDIDATES = [
     r"C:/Program Files/Google/Chrome/Application/chrome.exe",
     r"C:/Program Files (x86)/Google/Chrome/Application/chrome.exe",
@@ -282,12 +290,13 @@ def wrap(title: str, body: str) -> str:
             f"<body>{body}</body></html>")
 
 
-def print_pdf(browser: str, html_path: Path, pdf_path: Path, profile: str) -> bool:
+def print_pdf(browser: str, html_path: Path, pdf_path: Path, profile: str,
+              budget: int = 4000) -> bool:
     pdf_path.parent.mkdir(parents=True, exist_ok=True)
     cmd = [browser, "--headless=new", "--disable-gpu",
            *([] if sys.platform == "win32" else ["--no-sandbox"]),
            "--no-pdf-header-footer", "--run-all-compositor-stages-before-draw",
-           "--virtual-time-budget=4000", f"--user-data-dir={profile}",
+           f"--virtual-time-budget={budget}", f"--user-data-dir={profile}",
            f"--print-to-pdf={pdf_path}", html_path.as_uri()]
     subprocess.run(cmd, capture_output=True, text=True)
     return pdf_path.exists() and pdf_path.stat().st_size > 0
@@ -316,6 +325,21 @@ def main():
             tmp_html.write_text(html_doc, encoding="utf-8")
             pdf_path = md_path.parent / "pdf" / (md_path.stem + ".pdf")
             if print_pdf(browser, tmp_html, pdf_path, profile):
+                print(f"  ✓ {pdf_path.relative_to(REPO)}")
+                ok += 1
+            else:
+                print(f"  ⚠ no generat: {rel}")
+                fail += 1
+
+        # Fulls que ja són HTML autocontingut: s'imprimeixen tal qual.
+        for rel in RAW_HTML:
+            src = CLASSES / rel
+            if not src.exists():
+                print(f"  ⚠ falta: {rel}")
+                fail += 1
+                continue
+            pdf_path = CLASSES / "00_General" / "pdf" / (src.stem + ".pdf")
+            if print_pdf(browser, src, pdf_path, profile, budget=10000):
                 print(f"  ✓ {pdf_path.relative_to(REPO)}")
                 ok += 1
             else:

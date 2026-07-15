@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blocs de Programació Offline d'Arduino UNO · Fitxes per a Taula</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome / Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        :root {
+            --bg-main: #0B0F19;
+            --bg-card: #131A2A;
+            --bg-card-hover: #1A2338;
+            --border-color: #232E4A;
+            --text-main: #F1F5F9;
+            --text-muted: #94A3B8;
+            --accent-teal: #00979D;
+            --accent-cyan: #06B6D4;
+            --accent-green: #10B981;
+            --accent-amber: #F59E0B;
+            --accent-purple: #8B5CF6;
+            --accent-pink: #EC4899;
+            --accent-red: #EF4444;
+            --code-bg: #0D121E;
+            --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            min-height: 100vh;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(0, 151, 157, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(139, 92, 246, 0.08) 0%, transparent 40%);
+            background-attachment: fixed;
+        }
+
+        h1, h2, h3, h4, .brand-font {
+            font-family: 'Outfit', sans-serif;
+        }
+
+        code, pre, .code-font {
+            font-family: 'Fira Code', monospace;
+        }
+
+        /* HEADER NAVBAR */
+        .app-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(11, 15, 25, 0.88);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 2rem;
+        }
+
+        .header-container {
+            max-width: 1450px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-icon {
+            width: 44px;
+            height: 44px;
+            background: linear-gradient(135deg, var(--accent-amber), #B45309);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            color: white;
+            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.35);
+        }
+
+        .logo-title {
+            font-size: 1.35rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            background: linear-gradient(90deg, #FFFFFF, #94A3B8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .logo-subtitle {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.65rem 1.15rem;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 0.88rem;
+            cursor: pointer;
+            transition: var(--transition);
+            border: 1px solid transparent;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-amber), #D97706);
+            color: white;
+            box-shadow: 0 4px 14px rgba(245, 158, 11, 0.35);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(245, 158, 11, 0.5);
+        }
+
+        .btn-outline {
+            background: rgba(255, 255, 255, 0.04);
+            border-color: var(--border-color);
+            color: var(--text-main);
+        }
+
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.09);
+            border-color: #3B4D7B;
+        }
+
+        /* INFO PEDAGÒGICA BANNER */
+        .pedagogy-banner {
+            max-width: 1450px;
+            margin: 1.5rem auto 1rem auto;
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.12), rgba(239, 68, 68, 0.12));
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            border-radius: 14px;
+            padding: 1rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        /* CONTROLS BAR */
+        .controls-bar {
+            max-width: 1450px;
+            margin: 0 auto 1.5rem auto;
+            padding: 0 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        .search-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .search-input-wrapper {
+            position: relative;
+            flex: 1;
+            min-width: 280px;
+            max-width: 500px;
+        }
+
+        .search-input-wrapper i {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+        }
+
+        .search-input {
+            width: 100%;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 0.75rem 1rem 0.75rem 2.75rem;
+            color: var(--text-main);
+            font-size: 0.95rem;
+            transition: var(--transition);
+            outline: none;
+        }
+
+        .search-input:focus {
+            border-color: var(--accent-amber);
+            box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.2);
+        }
+
+        .stats-badge {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 0.5rem 1rem;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .stats-badge strong {
+            color: var(--accent-amber);
+            font-weight: 700;
+        }
+
+        /* CATEGORY PILLS */
+        .category-pills {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            overflow-x: auto;
+            padding-bottom: 0.5rem;
+            scrollbar-width: thin;
+        }
+
+        .cat-pill {
+            padding: 0.45rem 1rem;
+            border-radius: 30px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            color: var(--text-muted);
+            cursor: pointer;
+            white-space: nowrap;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .cat-pill:hover {
+            color: var(--text-main);
+            border-color: #3B4D7B;
+        }
+
+        .cat-pill.active {
+            color: #FFFFFF;
+            border-color: transparent;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+
+        .cat-pill[data-cat="all"].active { background: #3B82F6; }
+        .cat-pill[data-cat="estructura"].active { background: var(--accent-teal); }
+        .cat-pill[data-cat="digital"].active { background: var(--accent-green); }
+        .cat-pill[data-cat="analogic"].active { background: var(--accent-amber); }
+        .cat-pill[data-cat="temps"].active { background: var(--accent-purple); }
+        .cat-pill[data-cat="control"].active { background: var(--accent-pink); }
+        .cat-pill[data-cat="sensors"].active { background: #059669; }
+        .cat-pill[data-cat="actuadors"].active { background: #7C3AED; }
+
+        /* GRID FOR SCREEN VIEW */
+        .blocks-grid {
+            max-width: 1450px;
+            margin: 0 auto 4rem auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 1.2rem;
+        }
+
+        /* BLOCK CARD DESIGN (SCREEN) */
+        .block-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-left: 6px solid #64748B;
+            border-radius: 12px;
+            padding: 1rem 1.25rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 0.6rem;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .block-card:hover {
+            transform: translateY(-3px);
+            border-color: #3D5082;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+        }
+
+        .block-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.5rem;
+        }
+
+        .block-id {
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            letter-spacing: 0.5px;
+        }
+
+        .block-cat-badge {
+            font-size: 0.68rem;
+            font-weight: 700;
+            padding: 0.18rem 0.5rem;
+            border-radius: 12px;
+            text-transform: uppercase;
+        }
+
+        .block-code {
+            font-family: 'Fira Code', monospace;
+            font-size: 1.05rem;
+            font-weight: 700;
+            line-height: 1.4;
+            word-break: break-all;
+            background: var(--code-bg);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 0.6rem 0.75rem;
+            border-radius: 8px;
+        }
+
+        .block-blank {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px dashed rgba(255, 255, 255, 0.4);
+            color: #FCD34D;
+            padding: 0 0.4rem;
+            border-radius: 4px;
+            font-size: 0.95rem;
+        }
+
+        .block-sub {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        /* =========================================================
+           PRINT STYLES (@media print)
+           Dissenyat al mil·límetre per a fulls A4 (16 blocs per full!)
+           Graella 2 columnes x 8 files amb alçada exacta de 32mm
+           per apilar sobre la taula i programar offline
+           ========================================================= */
+        @media print {
+            @page {
+                size: A4 portrait;
+                margin: 8mm;
+            }
+
+            body {
+                background: #FFFFFF !important;
+                color: #000000 !important;
+                font-family: 'Plus Jakarta Sans', sans-serif !important;
+            }
+
+            .app-header,
+            .controls-bar,
+            .pedagogy-banner {
+                display: none !important;
+            }
+
+            .blocks-grid {
+                max-width: 100% !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                display: grid !important;
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 3.5mm !important;
+            }
+
+            /* 16 blocs per full A4 (2 columnes x 8 files de 32mm) */
+            .block-card {
+                break-inside: avoid !important;
+                page-break-inside: avoid !important;
+                height: 32mm !important;
+                max-height: 32mm !important;
+                overflow: hidden !important;
+                background: #FFFFFF !important;
+                border: 1.2px dashed #64748B !important; /* LÍNEA DE TALL PER RETALLAR */
+                border-left: 5.5px solid #000000 !important; /* Es reemplaça pel color de categoria inline */
+                border-radius: 5px !important;
+                padding: 2mm 3.5mm !important;
+                display: flex !important;
+                flex-direction: column !important;
+                justify-content: space-between !important;
+                box-shadow: none !important;
+                margin: 0 !important;
+                position: relative !important;
+            }
+
+            /* Salt de pàgina cada 16 blocs (2 columnes x 8 files) */
+            .block-card:nth-child(16n) {
+                break-after: page !important;
+                page-break-after: always !important;
+            }
+
+            .block-card::after {
+                content: "✂️";
+                position: absolute;
+                bottom: 1.5px;
+                right: 3px;
+                font-size: 6pt;
+                color: #94A3B8;
+            }
+
+            .block-top {
+                margin-bottom: 0.5mm !important;
+            }
+
+            .block-id {
+                color: #475569 !important;
+                font-size: 6.5pt !important;
+            }
+
+            .block-cat-badge {
+                font-size: 6pt !important;
+                border: 1px solid #CBD5E1 !important;
+                background: #F8FAFC !important;
+                color: #1E293B !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            .block-code {
+                background: #F8FAFC !important;
+                border: 1px solid #CBD5E1 !important;
+                color: #0F172A !important;
+                font-size: 10pt !important;
+                padding: 1.5mm 2.5mm !important;
+                border-radius: 4px !important;
+                font-weight: 700 !important;
+                line-height: 1.2 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            .block-blank {
+                background: #FFFFFF !important;
+                border: 1.2px solid #000000 !important;
+                color: #000000 !important;
+                font-weight: bold !important;
+                padding: 0 1.5mm !important;
+            }
+
+            .block-sub {
+                color: #334155 !important;
+                font-size: 6.8pt !important;
+            }
+
+            /* Contrast acolorid per a impressió nítida */
+            .syntax-kw { color: #0284C7 !important; font-weight: bold !important; }
+            .syntax-fn { color: #B45309 !important; font-weight: bold !important; }
+            .syntax-const { color: #E11D48 !important; font-weight: bold !important; }
+            .syntax-param { color: #059669 !important; font-weight: bold !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR HEADER -->
+    <header class="app-header">
+        <div class="header-container">
+            <div class="logo-area">
+                <div class="logo-icon">
+                    <i class="fa-solid fa-puzzle-piece"></i>
+                </div>
+                <div>
+                    <div class="logo-title">ARDUINO UNO · Blocs de Programació Offline</div>
+                    <div class="logo-subtitle">Fitxes horitzontals per apilar sobre la taula · 1r de Batxillerat</div>
+                </div>
+            </div>
+
+            <div class="header-actions">
+                <a href="Fitxes_Arduino_UNO.html" class="btn btn-outline">
+                    <i class="fa-solid fa-book"></i> Veure Fitxes amb Explicació
+                </a>
+                <button class="btn btn-primary" onclick="window.print()">
+                    <i class="fa-solid fa-print"></i> Imprimir Blocs (16 per Full A4)
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- BANNER CONSELL -->
+    <div class="pedagogy-banner">
+        <div>
+            <strong style="color: var(--accent-amber);"><i class="fa-solid fa-hands-clapping"></i> Com fer servir les Fitxes de Programació Offline a l'Aula:</strong>
+            <div style="color: var(--text-muted); font-size: 0.88rem; margin-top: 4px;">
+                Imprimeix i retalla aquests <strong>48 blocs de codi</strong>. Els alumnes poden construir programes físicament sobre la taula col·locant les fitxes una sota l'altra (de dalt a baix) i omplint els buits <code>[ ___ ]</code> amb llapis o fitxes de paràmetre!
+            </div>
+        </div>
+        <span class="stats-badge">
+            Total peces: <strong>48</strong> (3 fulls A4 exactes)
+        </span>
+    </div>
+
+    <!-- CONTROLS BAR -->
+    <section class="controls-bar">
+        <div class="search-row">
+            <div class="search-input-wrapper">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="searchInput" class="search-input" placeholder="Cerca bloc o ordre (ex: setup, pinMode, if, delay, servo...)" oninput="filterBlocks()">
+            </div>
+            <div class="stats-badge">
+                Mostrant <strong id="visibleCount">48</strong> blocs
+            </div>
+        </div>
+
+        <div class="category-pills" id="categoryPills">
+            <button class="cat-pill active" data-cat="all" onclick="setCategory('all')">
+                <i class="fa-solid fa-border-all"></i> Tots els Blocs (48)
+            </button>
+            <button class="cat-pill" data-cat="estructura" onclick="setCategory('estructura')">
+                <i class="fa-solid fa-sitemap"></i> Estructura & Claudàtors
+            </button>
+            <button class="cat-pill" data-cat="digital" onclick="setCategory('digital')">
+                <i class="fa-solid fa-toggle-on"></i> Pins Digitals
+            </button>
+            <button class="cat-pill" data-cat="analogic" onclick="setCategory('analogic')">
+                <i class="fa-solid fa-wave-square"></i> Analògic & PWM
+            </button>
+            <button class="cat-pill" data-cat="temps" onclick="setCategory('temps')">
+                <i class="fa-solid fa-stopwatch"></i> Temps & Pauses
+            </button>
+            <button class="cat-pill" data-cat="control" onclick="setCategory('control')">
+                <i class="fa-solid fa-code-branch"></i> Control SI/Bucle
+            </button>
+            <button class="cat-pill" data-cat="sensors" onclick="setCategory('sensors')">
+                <i class="fa-solid fa-satellite-dish"></i> Sensors & Clima
+            </button>
+            <button class="cat-pill" data-cat="actuadors" onclick="setCategory('actuadors')">
+                <i class="fa-solid fa-gears"></i> Servos, Motors & LCD
+            </button>
+        </div>
+    </section>
+
+    <!-- GRID DE BLOCS -->
+    <main class="blocks-grid" id="blocksGrid">
+        <!-- Generat amb Javascript -->
+    </main>
+
+    <script>
+        // LLISTA DELS 48 BLOCS DE PROGRAMACIÓ OFFLINE PER A TAULA
+        const CODING_BLOCKS = [
+            // ==================== ESTRUCTURA I CLAUDÀTORS (1-8) ====================
+            {
+                id: 1, category: "estructura", catLabel: "ESTRUCTURA", color: "#00979D",
+                codeHtml: `<span class="syntax-kw">void</span> <span class="syntax-fn">setup</span>() {`,
+                desc: "Inici del bloc de configuració (execució única)"
+            },
+            {
+                id: 2, category: "estructura", catLabel: "ESTRUCTURA", color: "#00979D",
+                codeHtml: `<span class="syntax-kw">void</span> <span class="syntax-fn">loop</span>() {`,
+                desc: "Inici del bucle principal del programa"
+            },
+            {
+                id: 3, category: "estructura", catLabel: "CLAUDÀTOR", color: "#00979D",
+                codeHtml: `}`,
+                desc: "Tancament de bloc / funció"
+            },
+            {
+                id: 4, category: "estructura", catLabel: "CLAUDÀTOR", color: "#00979D",
+                codeHtml: `}`,
+                desc: "Tancament de bloc / funció (còpia #2)"
+            },
+            {
+                id: 5, category: "estructura", catLabel: "CLAUDÀTOR", color: "#00979D",
+                codeHtml: `}`,
+                desc: "Tancament de bloc / funció (còpia #3)"
+            },
+            {
+                id: 6, category: "estructura", catLabel: "CLAUDÀTOR", color: "#00979D",
+                codeHtml: `}`,
+                desc: "Tancament de bloc / funció (còpia #4)"
+            },
+            {
+                id: 7, category: "estructura", catLabel: "COMENTARI", color: "#64748B",
+                codeHtml: `<span class="syntax-kw">// <span class="block-blank">____________</span></span>`,
+                desc: "Comentari explicatiu per al programa"
+            },
+            {
+                id: 8, category: "estructura", catLabel: "LLIBRERIA", color: "#00979D",
+                codeHtml: `<span class="syntax-kw">#include</span> &lt;<span class="block-blank">________</span>.h&gt;`,
+                desc: "Importar llibreria de components"
+            },
+
+            // ==================== PINS DIGITALS (9-16) ====================
+            {
+                id: 9, category: "digital", catLabel: "DIGITAL E/S", color: "#10B981",
+                codeHtml: `  <span class="syntax-fn">pinMode</span>( <span class="block-blank">PIN</span> , <span class="syntax-const">OUTPUT</span> );`,
+                desc: "Configurar pin digital com a SORTIDA d'actuador"
+            },
+            {
+                id: 10, category: "digital", catLabel: "DIGITAL E/S", color: "#10B981",
+                codeHtml: `  <span class="syntax-fn">pinMode</span>( <span class="block-blank">PIN</span> , <span class="syntax-const">INPUT</span> );`,
+                desc: "Configurar pin digital com a ENTRADA de sensor"
+            },
+            {
+                id: 11, category: "digital", catLabel: "DIGITAL E/S", color: "#10B981",
+                codeHtml: `  <span class="syntax-fn">pinMode</span>( <span class="block-blank">PIN</span> , <span class="syntax-const">INPUT_PULLUP</span> );`,
+                desc: "Configurar pin amb resistència interna Pull-Up"
+            },
+            {
+                id: 12, category: "digital", catLabel: "DIGITAL SORTIDA", color: "#10B981",
+                codeHtml: `  <span class="syntax-fn">digitalWrite</span>( <span class="block-blank">PIN</span> , <span class="syntax-const">HIGH</span> );`,
+                desc: "Activar sortida digital a 5V (Encendre)"
+            },
+            {
+                id: 13, category: "digital", catLabel: "DIGITAL SORTIDA", color: "#10B981",
+                codeHtml: `  <span class="syntax-fn">digitalWrite</span>( <span class="block-blank">PIN</span> , <span class="syntax-const">HIGH</span> );`,
+                desc: "Activar sortida digital a 5V (Còpia #2)"
+            },
+            {
+                id: 14, category: "digital", catLabel: "DIGITAL SORTIDA", color: "#10B981",
+                codeHtml: `  <span class="syntax-fn">digitalWrite</span>( <span class="block-blank">PIN</span> , <span class="syntax-const">LOW</span> );`,
+                desc: "Desactivar sortida digital a 0V (Apagar)"
+            },
+            {
+                id: 15, category: "digital", catLabel: "DIGITAL SORTIDA", color: "#10B981",
+                codeHtml: `  <span class="syntax-fn">digitalWrite</span>( <span class="block-blank">PIN</span> , <span class="syntax-const">LOW</span> );`,
+                desc: "Desactivar sortida digital a 0V (Còpia #2)"
+            },
+            {
+                id: 16, category: "digital", catLabel: "DIGITAL ENTRADA", color: "#10B981",
+                codeHtml: `  <span class="syntax-kw">int</span> estat = <span class="syntax-fn">digitalRead</span>( <span class="block-blank">PIN</span> );`,
+                desc: "Llegir estat digital d'un botó o sensor (HIGH/LOW)"
+            },
+
+            // ==================== TEMPS I PAUSES (17-20) ====================
+            {
+                id: 17, category: "temps", catLabel: "TEMPS", color: "#8B5CF6",
+                codeHtml: `  <span class="syntax-fn">delay</span>( <span class="block-blank">1000</span> );`,
+                desc: "Espera de 1 segon exacte (1000 mil·lisegons)"
+            },
+            {
+                id: 18, category: "temps", catLabel: "TEMPS", color: "#8B5CF6",
+                codeHtml: `  <span class="syntax-fn">delay</span>( <span class="block-blank">___</span> );`,
+                desc: "Pausa personalitzable en mil·lisegons"
+            },
+            {
+                id: 19, category: "temps", catLabel: "TEMPS", color: "#8B5CF6",
+                codeHtml: `  <span class="syntax-fn">delay</span>( <span class="block-blank">___</span> );`,
+                desc: "Pausa personalitzable (Còpia #2)"
+            },
+            {
+                id: 20, category: "temps", catLabel: "TEMPS", color: "#8B5CF6",
+                codeHtml: `  <span class="syntax-kw">unsigned long</span> ara = <span class="syntax-fn">millis</span>();`,
+                desc: "Llegir rellotge intern en mil·lisegons"
+            },
+
+            // ==================== ANALÒGIC I PWM (21-26) ====================
+            {
+                id: 21, category: "analogic", catLabel: "ANALÒGIC", color: "#F59E0B",
+                codeHtml: `  <span class="syntax-kw">int</span> valor = <span class="syntax-fn">analogRead</span>( A<span class="block-blank">_</span> );`,
+                desc: "Llegir entrada analògica A0..A5 (0 a 1023)"
+            },
+            {
+                id: 22, category: "analogic", catLabel: "ANALÒGIC", color: "#F59E0B",
+                codeHtml: `  <span class="syntax-kw">int</span> llum = <span class="syntax-fn">analogRead</span>( A0 );`,
+                desc: "Llegir sensor de llum LDR o potenciòmetre"
+            },
+            {
+                id: 23, category: "analogic", catLabel: "PWM SORTIDA", color: "#F59E0B",
+                codeHtml: `  <span class="syntax-fn">analogWrite</span>( <span class="block-blank">PIN~</span> , <span class="block-blank">VALOR</span> );`,
+                desc: "Sortida PWM proporcional entre 0 i 255"
+            },
+            {
+                id: 24, category: "analogic", catLabel: "PWM SORTIDA", color: "#F59E0B",
+                codeHtml: `  <span class="syntax-fn">analogWrite</span>( <span class="block-blank">PIN~</span> , <span class="block-blank">VALOR</span> );`,
+                desc: "Sortida PWM proporcional (Còpia #2)"
+            },
+            {
+                id: 25, category: "analogic", catLabel: "CONVERSIÓ", color: "#F59E0B",
+                codeHtml: `  map( <span class="block-blank">val</span> , 0, 1023, 0, <span class="block-blank">___</span> );`,
+                desc: "Mapejar rang (ex: de 0..1023 a 0..180 graus)"
+            },
+            {
+                id: 26, category: "analogic", catLabel: "VARIABLE", color: "#F59E0B",
+                codeHtml: `  <span class="syntax-kw">int</span> <span class="block-blank">nom</span> = <span class="block-blank">valor</span>;`,
+                desc: "Declarar o modificar una variable entera"
+            },
+
+            // ==================== CONTROL DE FLUX I SÈRIE (27-34) ====================
+            {
+                id: 27, category: "control", catLabel: "CONDICIONAL", color: "#EC4899",
+                codeHtml: `  <span class="syntax-kw">if</span> ( <span class="block-blank">CONDICIÓ</span> ) {`,
+                desc: "Inici de decisió SI es compleix la condició"
+            },
+            {
+                id: 28, category: "control", catLabel: "CONDICIONAL", color: "#EC4899",
+                codeHtml: `  } <span class="syntax-kw">else</span> {`,
+                desc: "Bloc alternatiu SINÓ del condicional if"
+            },
+            {
+                id: 29, category: "control", catLabel: "COMPARACIÓ", color: "#EC4899",
+                codeHtml: `  <span class="block-blank">var</span> == <span class="block-blank">HIGH</span>`,
+                desc: "Peça lògica d'igualtat per posar dins del if"
+            },
+            {
+                id: 30, category: "control", catLabel: "COMPARACIÓ", color: "#EC4899",
+                codeHtml: `  <span class="block-blank">var</span> &lt; <span class="block-blank">300</span>`,
+                desc: "Peça lògica menor que (ex: foscor o obstacle)"
+            },
+            {
+                id: 31, category: "control", catLabel: "BUCLE FOR", color: "#EC4899",
+                codeHtml: `  <span class="syntax-kw">for</span> (<span class="syntax-kw">int</span> i=0; i &lt; <span class="block-blank">10</span>; i++) {`,
+                desc: "Bucle per repetir una acció N vegades"
+            },
+            {
+                id: 32, category: "control", catLabel: "BUCLE WHILE", color: "#EC4899",
+                codeHtml: `  <span class="syntax-kw">while</span> ( <span class="block-blank">CONDICIÓ</span> ) {`,
+                desc: "Bucle mentre es compleixi una condició"
+            },
+            {
+                id: 33, category: "control", catLabel: "MONITOR SÈRIE", color: "#06B6D4",
+                codeHtml: `  <span class="syntax-fn">Serial</span>.<span class="syntax-fn">begin</span>(9600);`,
+                desc: "Iniciar comunicació amb el PC al setup()"
+            },
+            {
+                id: 34, category: "control", catLabel: "MONITOR SÈRIE", color: "#06B6D4",
+                codeHtml: `  <span class="syntax-fn">Serial</span>.<span class="syntax-fn">println</span>( <span class="block-blank">dada</span> );`,
+                desc: "Enviar dades o text al Monitor Sèrie amb salt"
+            },
+
+            // ==================== SENSORS ESPECÍFICS (35-40) ====================
+            {
+                id: 35, category: "sensors", catLabel: "ULTRASONS", color: "#059669",
+                codeHtml: `  <span class="syntax-kw">long</span> t = <span class="syntax-fn">pulseIn</span>(ECHO, <span class="syntax-const">HIGH</span>);`,
+                desc: "Llegir temps de retorn de l'eco d'ultrasons"
+            },
+            {
+                id: 36, category: "sensors", catLabel: "ULTRASONS", color: "#059669",
+                codeHtml: `  <span class="syntax-kw">int</span> cm = t / 58;`,
+                desc: "Convertir temps d'ultrasons en centímetres"
+            },
+            {
+                id: 37, category: "sensors", catLabel: "CLIMA DHT", color: "#D97706",
+                codeHtml: `  <span class="syntax-kw">float</span> temp = dht.<span class="syntax-fn">readTemperature</span>();`,
+                desc: "Llegir temperatura en graus Celsius del DHT11"
+            },
+            {
+                id: 38, category: "sensors", catLabel: "CLIMA DHT", color: "#D97706",
+                codeHtml: `  <span class="syntax-kw">float</span> hum = dht.<span class="syntax-fn">readHumidity</span>();`,
+                desc: "Llegir percentatge d'humitat del DHT11"
+            },
+            {
+                id: 39, category: "sensors", catLabel: "SENSOR IR", color: "#059669",
+                codeHtml: `  <span class="syntax-kw">int</span> linia = <span class="syntax-fn">digitalRead</span>( <span class="block-blank">PIN</span> );`,
+                desc: "Llegir sensor seguidor de línia o presència PIR"
+            },
+            {
+                id: 40, category: "sensors", catLabel: "JOYSTICK", color: "#D97706",
+                codeHtml: `  <span class="syntax-kw">int</span> eixX = <span class="syntax-fn">analogRead</span>(A0);`,
+                desc: "Llegir posició X del joystick analògic"
+            },
+
+            // ==================== ACTUADORS I SERVOS (41-48) ====================
+            {
+                id: 41, category: "actuadors", catLabel: "SERVOMOTOR", color: "#7C3AED",
+                codeHtml: `  brac.<span class="syntax-fn">attach</span>( <span class="block-blank">PIN</span> );`,
+                desc: "Enllaçar servomotor al pin digital (al setup)"
+            },
+            {
+                id: 42, category: "actuadors", catLabel: "SERVOMOTOR", color: "#7C3AED",
+                codeHtml: `  brac.<span class="syntax-fn">write</span>( <span class="block-blank">GRAUS</span> );`,
+                desc: "Moure servomotor a l'angle indicat (0° a 180°)"
+            },
+            {
+                id: 43, category: "actuadors", catLabel: "BRUNZIDOR", color: "#7C3AED",
+                codeHtml: `  <span class="syntax-fn">tone</span>( <span class="block-blank">PIN</span> , <span class="block-blank">HZ</span> , <span class="block-blank">MS</span> );`,
+                desc: "Fer sonar nota musical en Hertz durant ms"
+            },
+            {
+                id: 44, category: "actuadors", catLabel: "BRUNZIDOR", color: "#7C3AED",
+                codeHtml: `  <span class="syntax-fn">noTone</span>( <span class="block-blank">PIN</span> );`,
+                desc: "Aturar immediatament el so del brunzidor"
+            },
+            {
+                id: 45, category: "actuadors", catLabel: "PANTALLA LCD", color: "#0284C7",
+                codeHtml: `  lcd.<span class="syntax-fn">setCursor</span>( <span class="block-blank">COL</span> , <span class="block-blank">FILA</span> );`,
+                desc: "Posicionar cursor del LCD I2C (columna 0..15, fila 0..1)"
+            },
+            {
+                id: 46, category: "actuadors", catLabel: "PANTALLA LCD", color: "#0284C7",
+                codeHtml: `  lcd.<span class="syntax-fn">print</span>( "<span class="block-blank">____________</span>" );`,
+                desc: "Mostrar text a la pantalla LCD 16x2"
+            },
+            {
+                id: 47, category: "actuadors", catLabel: "MOTOR DC L298N", color: "#7C3AED",
+                codeHtml: `  <span class="syntax-fn">digitalWrite</span>(IN1, <span class="syntax-const">HIGH</span>); <span class="syntax-fn">digitalWrite</span>(IN2, <span class="syntax-const">LOW</span>);`,
+                desc: "Girar motor DC cap ENDAVANT al controlador"
+            },
+            {
+                id: 48, category: "actuadors", catLabel: "MOTOR DC L298N", color: "#7C3AED",
+                codeHtml: `  <span class="syntax-fn">analogWrite</span>(ENA, <span class="block-blank">VELOCITAT</span>);`,
+                desc: "Regular velocitat del motor DC (0 a 255)"
+            },
+
+            // ==================== FULL 4: PACK D'EXPANSIÓ DE REPETICIÓ (49-64) ====================
+            {
+                id: 49, category: "digital", catLabel: "DIGITAL E/S", color: "#10B981",
+                codeHtml: `  <span class="syntax-fn">pinMode</span>( <span class="block-blank">PIN</span> , <span class="syntax-const">OUTPUT</span> );`,
+                desc: "Configurar pin digital com a SORTIDA (Còpia #2)"
+            },
+            {
+                id: 50, category: "digital", catLabel: "DIGITAL E/S", color: "#10B981",
+                codeHtml: `  <span class="syntax-fn">pinMode</span>( <span class="block-blank">PIN</span> , <span class="syntax-const">OUTPUT</span> );`,
+                desc: "Configurar pin digital com a SORTIDA (Còpia #3)"
+            },
+            {
+                id: 51, category: "digital", catLabel: "DIGITAL SORTIDA", color: "#10B981",
+                codeHtml: `  <span class="syntax-fn">digitalWrite</span>( <span class="block-blank">PIN</span> , <span class="syntax-const">HIGH</span> );`,
+                desc: "Activar sortida digital a 5V (Còpia #3)"
+            },
+            {
+                id: 52, category: "digital", catLabel: "DIGITAL SORTIDA", color: "#10B981",
+                codeHtml: `  <span class="syntax-fn">digitalWrite</span>( <span class="block-blank">PIN</span> , <span class="syntax-const">HIGH</span> );`,
+                desc: "Activar sortida digital a 5V (Còpia #4)"
+            },
+            {
+                id: 53, category: "digital", catLabel: "DIGITAL SORTIDA", color: "#10B981",
+                codeHtml: `  <span class="syntax-fn">digitalWrite</span>( <span class="block-blank">PIN</span> , <span class="syntax-const">LOW</span> );`,
+                desc: "Desactivar sortida digital a 0V (Còpia #3)"
+            },
+            {
+                id: 54, category: "digital", catLabel: "DIGITAL SORTIDA", color: "#10B981",
+                codeHtml: `  <span class="syntax-fn">digitalWrite</span>( <span class="block-blank">PIN</span> , <span class="syntax-const">LOW</span> );`,
+                desc: "Desactivar sortida digital a 0V (Còpia #4)"
+            },
+            {
+                id: 55, category: "temps", catLabel: "TEMPS", color: "#8B5CF6",
+                codeHtml: `  <span class="syntax-fn">delay</span>( <span class="block-blank">___</span> );`,
+                desc: "Pausa personalitzable (Còpia #3)"
+            },
+            {
+                id: 56, category: "temps", catLabel: "TEMPS", color: "#8B5CF6",
+                codeHtml: `  <span class="syntax-fn">delay</span>( <span class="block-blank">___</span> );`,
+                desc: "Pausa personalitzable (Còpia #4)"
+            },
+            {
+                id: 57, category: "estructura", catLabel: "CLAUDÀTOR", color: "#00979D",
+                codeHtml: `}`,
+                desc: "Tancament de bloc / funció (Còpia #5)"
+            },
+            {
+                id: 58, category: "estructura", catLabel: "CLAUDÀTOR", color: "#00979D",
+                codeHtml: `}`,
+                desc: "Tancament de bloc / funció (Còpia #6)"
+            },
+            {
+                id: 59, category: "control", catLabel: "CONDICIONAL", color: "#EC4899",
+                codeHtml: `  <span class="syntax-kw">if</span> ( <span class="block-blank">CONDICIÓ</span> ) {`,
+                desc: "Inici de decisió SI es compleix la condició (Còpia #2)"
+            },
+            {
+                id: 60, category: "control", catLabel: "CONDICIONAL", color: "#EC4899",
+                codeHtml: `  } <span class="syntax-kw">else</span> {`,
+                desc: "Bloc alternatiu SINÓ (Còpia #2)"
+            },
+            {
+                id: 61, category: "analogic", catLabel: "VARIABLE", color: "#F59E0B",
+                codeHtml: `  <span class="syntax-kw">int</span> <span class="block-blank">nom</span> = <span class="block-blank">valor</span>;`,
+                desc: "Declarar o modificar variable entera (Còpia #2)"
+            },
+            {
+                id: 62, category: "digital", catLabel: "DIGITAL ENTRADA", color: "#10B981",
+                codeHtml: `  <span class="syntax-kw">int</span> estat = <span class="syntax-fn">digitalRead</span>( <span class="block-blank">PIN</span> );`,
+                desc: "Llegir estat digital d'un botó o sensor (Còpia #2)"
+            },
+            {
+                id: 63, category: "analogic", catLabel: "ANALÒGIC", color: "#F59E0B",
+                codeHtml: `  <span class="syntax-kw">int</span> valor = <span class="syntax-fn">analogRead</span>( A<span class="block-blank">_</span> );`,
+                desc: "Llegir entrada analògica A0..A5 (Còpia #2)"
+            },
+            {
+                id: 64, category: "estructura", catLabel: "COMENTARI", color: "#64748B",
+                codeHtml: `<span class="syntax-kw">// <span class="block-blank">___________________________</span></span>`,
+                desc: "Comentari explicatiu per al programa (Còpia #3)"
+            }
+        ];
+
+        let currentCat = 'all';
+
+        window.addEventListener('DOMContentLoaded', () => {
+            renderBlocks();
+        });
+
+        function renderBlocks() {
+            const container = document.getElementById('blocksGrid');
+            const query = document.getElementById('searchInput').value.toLowerCase().trim();
+
+            const filtered = CODING_BLOCKS.filter(b => {
+                const matchCat = (currentCat === 'all' || b.category === currentCat);
+                const matchQuery = !query ||
+                    b.codeHtml.toLowerCase().includes(query) ||
+                    b.desc.toLowerCase().includes(query) ||
+                    b.catLabel.toLowerCase().includes(query);
+                return matchCat && matchQuery;
+            });
+
+            container.innerHTML = '';
+
+            filtered.forEach(b => {
+                const card = document.createElement('article');
+                card.className = 'block-card';
+                card.style.borderLeftColor = b.color;
+
+                card.innerHTML = `
+                    <div class="block-top">
+                        <span class="block-id"><i class="fa-solid fa-puzzle-piece" style="color: ${b.color};"></i> BLOC #${String(b.id).padStart(2, '0')}</span>
+                        <span class="block-cat-badge" style="background: ${b.color}20; color: ${b.color}; border: 1px solid ${b.color}40;">
+                            ${b.catLabel}
+                        </span>
+                    </div>
+                    <div class="block-code">
+                        ${b.codeHtml}
+                    </div>
+                    <div class="block-sub">
+                        <i class="fa-solid fa-circle-info" style="color: ${b.color};"></i> ${b.desc}
+                    </div>
+                `;
+
+                container.appendChild(card);
+            });
+
+            document.getElementById('visibleCount').textContent = filtered.length;
+        }
+
+        function setCategory(cat) {
+            currentCat = cat;
+            document.querySelectorAll('.cat-pill').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.cat === cat);
+            });
+            renderBlocks();
+        }
+
+        function filterBlocks() {
+            renderBlocks();
+        }
+    </script>
+</body>
+</html>

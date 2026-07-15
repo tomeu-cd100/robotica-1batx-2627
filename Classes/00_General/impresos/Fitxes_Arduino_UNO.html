@@ -1,0 +1,1791 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitxes Visuals d'Arduino UNO · Conceptes Claus i Comandaments</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome / Icons via CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        :root {
+            --bg-main: #0B0F19;
+            --bg-card: #131A2A;
+            --bg-card-hover: #1A2338;
+            --border-color: #232E4A;
+            --text-main: #F1F5F9;
+            --text-muted: #94A3B8;
+            --accent-teal: #00979D;
+            --accent-cyan: #06B6D4;
+            --accent-green: #10B981;
+            --accent-amber: #F59E0B;
+            --accent-purple: #8B5CF6;
+            --accent-pink: #EC4899;
+            --accent-red: #EF4444;
+            --code-bg: #0D121E;
+            --shadow-glow: 0 0 25px rgba(0, 151, 157, 0.15);
+            --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            min-height: 100vh;
+            background-image: 
+                radial-gradient(circle at 15% 15%, rgba(0, 151, 157, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 85% 85%, rgba(139, 92, 246, 0.08) 0%, transparent 40%);
+            background-attachment: fixed;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, .brand-font {
+            font-family: 'Outfit', sans-serif;
+        }
+
+        code, pre, .code-font {
+            font-family: 'Fira Code', monospace;
+        }
+
+        /* NAVBAR HEADER */
+        .app-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(11, 15, 25, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 2rem;
+        }
+
+        .header-container {
+            max-width: 1450px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-icon {
+            width: 44px;
+            height: 44px;
+            background: linear-gradient(135deg, var(--accent-teal), #006D72);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+            box-shadow: 0 4px 15px rgba(0, 151, 157, 0.4);
+        }
+
+        .logo-title {
+            font-size: 1.35rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            background: linear-gradient(90deg, #FFFFFF, #94A3B8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .logo-subtitle {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        /* CONTROLS AREA */
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.65rem 1.15rem;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 0.88rem;
+            cursor: pointer;
+            transition: var(--transition);
+            border: 1px solid transparent;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-teal), #007D82);
+            color: white;
+            box-shadow: 0 4px 14px rgba(0, 151, 157, 0.35);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 151, 157, 0.5);
+        }
+
+        .btn-outline {
+            background: rgba(255, 255, 255, 0.04);
+            border-color: var(--border-color);
+            color: var(--text-main);
+        }
+
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.09);
+            border-color: #3B4D7B;
+        }
+
+        .btn-outline.active {
+            background: rgba(0, 151, 157, 0.15);
+            border-color: var(--accent-teal);
+            color: var(--accent-cyan);
+        }
+
+        /* HERO & FILTER SECTION */
+        .controls-bar {
+            max-width: 1450px;
+            margin: 1.5rem auto 1rem auto;
+            padding: 0 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        .search-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .search-input-wrapper {
+            position: relative;
+            flex: 1;
+            min-width: 280px;
+            max-width: 500px;
+        }
+
+        .search-input-wrapper i {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+        }
+
+        .search-input {
+            width: 100%;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 0.75rem 1rem 0.75rem 2.75rem;
+            color: var(--text-main);
+            font-size: 0.95rem;
+            transition: var(--transition);
+            outline: none;
+        }
+
+        .search-input:focus {
+            border-color: var(--accent-teal);
+            box-shadow: 0 0 0 3px rgba(0, 151, 157, 0.2);
+        }
+
+        .stats-badge {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 0.5rem 1rem;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .stats-badge strong {
+            color: var(--accent-cyan);
+            font-weight: 700;
+        }
+
+        /* CATEGORY PILLS */
+        .category-pills {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            overflow-x: auto;
+            padding-bottom: 0.5rem;
+            scrollbar-width: thin;
+        }
+
+        .cat-pill {
+            padding: 0.45rem 1rem;
+            border-radius: 30px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            color: var(--text-muted);
+            cursor: pointer;
+            white-space: nowrap;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .cat-pill:hover {
+            color: var(--text-main);
+            border-color: #3B4D7B;
+        }
+
+        .cat-pill.active {
+            color: #FFFFFF;
+            border-color: transparent;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+
+        /* Category specific accent colors */
+        .cat-pill[data-cat="all"].active { background: #3B82F6; }
+        .cat-pill[data-cat="estructura"].active { background: var(--accent-teal); }
+        .cat-pill[data-cat="digital"].active { background: var(--accent-green); }
+        .cat-pill[data-cat="analogic"].active { background: var(--accent-amber); }
+        .cat-pill[data-cat="temps"].active { background: var(--accent-purple); }
+        .cat-pill[data-cat="control"].active { background: var(--accent-pink); }
+        .cat-pill[data-cat="serie"].active { background: var(--accent-cyan); }
+        .cat-pill[data-cat="variables"].active { background: var(--accent-red); }
+        .cat-pill[data-cat="sensors_dig"].active { background: #059669; }
+        .cat-pill[data-cat="sensors_ana"].active { background: #D97706; }
+        .cat-pill[data-cat="actuadors"].active { background: #7C3AED; }
+        .cat-pill[data-cat="pantalles"].active { background: #0284C7; }
+
+        /* SELECTION TOOLBAR */
+        .selection-toolbar {
+            max-width: 1450px;
+            margin: 0.5rem auto 0;
+            padding: 0.75rem 2rem;
+            background: rgba(19, 26, 42, 0.6);
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .selection-left {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        /* MAIN GRID CONTAINER */
+        .cards-container {
+            max-width: 1450px;
+            margin: 1.5rem auto 4rem auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 1.5rem;
+        }
+
+        /* CARD DESIGN (SCREEN MODE) */
+        .card-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 18px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            transition: var(--transition);
+            position: relative;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+        }
+
+        .card-item:hover {
+            transform: translateY(-5px);
+            border-color: #3D5082;
+            box-shadow: 0 14px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Top Color Accent Bar */
+        .card-top-bar {
+            height: 6px;
+            width: 100%;
+        }
+
+        .card-header {
+            padding: 1.1rem 1.25rem 0.8rem 1.25rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 0.5rem;
+        }
+
+        .header-left {
+            display: flex;
+            flex-direction: column;
+            gap: 0.35rem;
+        }
+
+        .card-id {
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .cat-tag {
+            font-size: 0.72rem;
+            font-weight: 700;
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+            text-transform: uppercase;
+        }
+
+        .select-checkbox {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            accent-color: var(--accent-teal);
+        }
+
+        /* L'ORDRE / COMMAND SECTION */
+        .command-box {
+            margin: 0.8rem 1.25rem;
+            background: var(--code-bg);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 0.9rem 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .command-label {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.08);
+            color: var(--text-muted);
+            font-size: 0.65rem;
+            font-weight: 700;
+            padding: 0.15rem 0.6rem;
+            border-bottom-left-radius: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .command-syntax {
+            font-family: 'Fira Code', monospace;
+            font-size: 1.05rem;
+            font-weight: 700;
+            line-height: 1.4;
+            word-break: break-word;
+        }
+
+        .syntax-kw { color: #38BDF8; }     /* void, int, if, else... */
+        .syntax-fn { color: #FBBF24; }     /* digitalWrite, pinMode... */
+        .syntax-const { color: #F43F5E; }  /* HIGH, LOW, INPUT... */
+        .syntax-param { color: #A7F3D0; }  /* pin, valor... */
+
+        /* L'EXPLICACIÓ SECTION */
+        .explanation-section {
+            padding: 0 1.25rem 1.25rem 1.25rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.85rem;
+            flex: 1;
+        }
+
+        .exp-title {
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .exp-text {
+            font-size: 0.92rem;
+            line-height: 1.55;
+            color: #E2E8F0;
+        }
+
+        /* Parameters List inside explanation */
+        .params-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+            background: rgba(255, 255, 255, 0.02);
+            padding: 0.6rem 0.75rem;
+            border-radius: 8px;
+            border-left: 3px solid #4B5563;
+        }
+
+        .param-item {
+            font-size: 0.83rem;
+            line-height: 1.4;
+        }
+
+        .param-name {
+            font-family: 'Fira Code', monospace;
+            font-weight: 600;
+            color: var(--accent-cyan);
+            background: rgba(6, 182, 212, 0.12);
+            padding: 0.1rem 0.4rem;
+            border-radius: 4px;
+        }
+
+        /* Mini Example snippet */
+        .mini-example {
+            background: var(--code-bg);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 8px;
+            padding: 0.65rem 0.8rem;
+            margin-top: auto;
+        }
+
+        .mini-example-header {
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            margin-bottom: 0.35rem;
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+            font-weight: 600;
+        }
+
+        .mini-example pre {
+            font-size: 0.82rem;
+            color: #D1D5DB;
+            white-space: pre-wrap;
+            line-height: 1.45;
+        }
+
+        .pro-tip {
+            font-size: 0.8rem;
+            color: #FCD34D;
+            background: rgba(245, 158, 11, 0.1);
+            border: 1px solid rgba(245, 158, 11, 0.25);
+            padding: 0.5rem 0.75rem;
+            border-radius: 8px;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+        }
+
+        .pro-tip i {
+            margin-top: 2px;
+            color: var(--accent-amber);
+        }
+
+        /* STUDY GAME MODAL (INTERACTIVE FLASHCARD DECK) */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(5, 8, 15, 0.85);
+            backdrop-filter: blur(15px);
+            z-index: 1000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .study-modal {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            width: 100%;
+            max-width: 680px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.6);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .study-header {
+            padding: 1.25rem 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .study-body {
+            padding: 2rem;
+            min-height: 380px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .study-footer {
+            padding: 1rem 1.5rem;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(0,0,0,0.15);
+        }
+
+        /* PRINT INSTRUCTIONS BAR (hidden by default on screen) */
+        .print-help-banner {
+            max-width: 1450px;
+            margin: 0 auto 1.5rem auto;
+            background: linear-gradient(135deg, rgba(0, 151, 157, 0.15), rgba(6, 182, 212, 0.15));
+            border: 1px solid rgba(0, 151, 157, 0.3);
+            border-radius: 14px;
+            padding: 1rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        /* =========================================================
+           PRINT STYLES (@media print)
+           Dissenyat al mil·límetre per a fulls A4 (4 cartes exactes per full)
+           amb línies de tall per retallar amb tisores ✂️
+           ========================================================= */
+        @media print {
+            @page {
+                size: A4 portrait;
+                margin: 8mm;
+            }
+
+            body {
+                background: #FFFFFF !important;
+                color: #000000 !important;
+                font-family: 'Plus Jakarta Sans', sans-serif !important;
+            }
+
+            /* Hide everything that isn't the print grid */
+            .app-header,
+            .controls-bar,
+            .selection-toolbar,
+            .print-help-banner,
+            .modal-overlay {
+                display: none !important;
+            }
+
+            .cards-container {
+                max-width: 100% !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                display: grid !important;
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 5mm !important;
+            }
+
+            /* 4 cartes exactes per full A4 (graella 2 columnes x 2 files) */
+            .card-item {
+                break-inside: avoid !important;
+                page-break-inside: avoid !important;
+                height: 124mm !important; /* Mida perfecta perquè càpiguen 2 files per full A4 sense saltar de pàgina */
+                max-height: 124mm !important;
+                overflow: hidden !important;
+                background: #FFFFFF !important;
+                border: 1.5px dashed #64748B !important; /* LÍNEA DE TALL DISCONTÍNUA PER RETALLAR */
+                border-radius: 6px !important;
+                box-shadow: none !important;
+                color: #0F172A !important;
+                position: relative !important;
+                display: flex !important;
+                flex-direction: column !important;
+                margin: 0 !important;
+            }
+
+            /* Salt de pàgina net cada 4 cartes (2 columnes x 2 files) */
+            .card-item:nth-child(4n) {
+                break-after: page !important;
+                page-break-after: always !important;
+            }
+
+            /* Tisores d'indicació de retall a la cantonada superior dreta */
+            .card-item::after {
+                content: "✂️ RETALLAR";
+                position: absolute;
+                bottom: 2.5px;
+                right: 6px;
+                font-size: 6.5pt;
+                color: #64748B;
+                font-weight: bold;
+                letter-spacing: 0.5px;
+            }
+
+            .card-top-bar {
+                height: 4.5px !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            .card-header {
+                padding: 2.5mm 4mm 1.5mm 4mm !important;
+                border-bottom: 1px solid #E2E8F0 !important;
+            }
+
+            .card-id {
+                color: #334155 !important;
+                font-size: 7.5pt !important;
+            }
+
+            .cat-tag {
+                font-size: 6.8pt !important;
+                border: 1px solid #CBD5E1 !important;
+                color: #1E293B !important;
+                background: #F8FAFC !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            .select-checkbox {
+                display: none !important;
+            }
+
+            .command-box {
+                margin: 2mm 4mm !important;
+                background: #F8FAFC !important;
+                border: 1.2px solid #CBD5E1 !important;
+                padding: 2.5mm 3mm !important;
+                border-radius: 5px !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            .command-label {
+                background: #E2E8F0 !important;
+                color: #334155 !important;
+                font-size: 6pt !important;
+            }
+
+            .command-syntax {
+                font-size: 9.8pt !important;
+                color: #0F172A !important;
+            }
+
+            /* Dark syntax colors adapted for print high-contrast */
+            .syntax-kw { color: #0284C7 !important; font-weight: bold !important; }
+            .syntax-fn { color: #B45309 !important; font-weight: bold !important; }
+            .syntax-const { color: #E11D48 !important; font-weight: bold !important; }
+            .syntax-param { color: #059669 !important; font-weight: bold !important; }
+
+            .explanation-section {
+                padding: 0 4mm 3mm 4mm !important;
+                gap: 1.5mm !important;
+            }
+
+            .exp-title {
+                color: #475569 !important;
+                font-size: 7pt !important;
+            }
+
+            .exp-text {
+                color: #1E293B !important;
+                font-size: 8pt !important;
+                line-height: 1.28 !important;
+            }
+
+            .params-list {
+                background: #F1F5F9 !important;
+                border-left: 2px solid #475569 !important;
+                padding: 1.5mm 2.5mm !important;
+            }
+
+            .param-item {
+                color: #1E293B !important;
+                font-size: 7.3pt !important;
+            }
+
+            .param-name {
+                background: #E2E8F0 !important;
+                color: #0F172A !important;
+            }
+
+            .mini-example {
+                background: #F8FAFC !important;
+                border: 1px solid #CBD5E1 !important;
+                padding: 1.5mm 2.5mm !important;
+            }
+
+            .mini-example-header {
+                color: #475569 !important;
+                font-size: 6.8pt !important;
+            }
+
+            .mini-example pre {
+                color: #0F172A !important;
+                font-size: 7.2pt !important;
+                line-height: 1.2 !important;
+            }
+
+            .pro-tip {
+                background: #FFFBEB !important;
+                border: 1px solid #FCD34D !important;
+                color: #92400E !important;
+                font-size: 7pt !important;
+                padding: 1.5mm 2.5mm !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- CAPÇALERA / NAVBAR -->
+    <header class="app-header">
+        <div class="header-container">
+            <div class="logo-area">
+                <div class="logo-icon">
+                    <i class="fa-solid fa-microchip"></i>
+                </div>
+                <div>
+                    <div class="logo-title">ARDUINO UNO · Fitxes Visuals de Programació</div>
+                    <div class="logo-subtitle">Joc de Cartes Didàctic · 1r de Batxillerat Robòtica</div>
+                </div>
+            </div>
+
+            <div class="header-actions">
+                <a href="Blocs_Programacio_Offline.html" class="btn btn-outline" style="border-color: #F59E0B; color: #FCD34D;">
+                    <i class="fa-solid fa-puzzle-piece"></i> Blocs Offline (Taula)
+                </a>
+                <button class="btn btn-outline" id="btnStudyMode" onclick="openStudyDeck()">
+                    <i class="fa-solid fa-layer-group"></i> Mode Estudi
+                </button>
+                <button class="btn btn-outline" id="btnSelectAllToggle" onclick="toggleSelectAll()">
+                    <i class="fa-regular fa-square-check"></i> Seleccionar Totes
+                </button>
+                <button class="btn btn-primary" onclick="window.print()">
+                    <i class="fa-solid fa-print"></i> Imprimir Fitxes (A4 Retallable)
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- BANNER CONSELL D'IMPRESSIÓ (Només pantalla) -->
+    <div class="print-help-banner">
+        <div>
+            <strong style="color: var(--accent-cyan);"><i class="fa-solid fa-scissors"></i> Llest per Imprimir com a Joc de Cartes!</strong>
+            <span style="color: var(--text-muted); margin-left: 8px;">
+                Fes clic a <strong>Imprimir Fitxes</strong> i el sistema organitzarà automàticament <strong>4 cartes exactes per full A4</strong> amb línies de tall discontínues per retallar amb tisores.
+            </span>
+        </div>
+        <span class="stats-badge" style="background: rgba(0,0,0,0.3);">
+            Fitxes seleccionades: <strong id="selectedCountBadge">40</strong>/40
+        </span>
+    </div>
+
+    <!-- CONTROLS I FILTRES -->
+    <section class="controls-bar">
+        <div class="search-row">
+            <div class="search-input-wrapper">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="searchInput" class="search-input" placeholder="Cerca concepte (ex: ultrasons, servo, led, pinMode, if...)" oninput="filterCards()">
+            </div>
+
+            <div class="stats-badge">
+                <i class="fa-solid fa-cubes"></i> Mostrant <strong id="visibleCount">40</strong> concepte(s)
+            </div>
+        </div>
+
+        <div class="category-pills" id="categoryPills">
+            <button class="cat-pill active" data-cat="all" onclick="setCategory('all')">
+                <i class="fa-solid fa-border-all"></i> Totes les Fitxes (40)
+            </button>
+            <button class="cat-pill" data-cat="estructura" onclick="setCategory('estructura')">
+                <i class="fa-solid fa-sitemap"></i> Estructura & Base
+            </button>
+            <button class="cat-pill" data-cat="digital" onclick="setCategory('digital')">
+                <i class="fa-solid fa-toggle-on"></i> Pins Digitals E/S
+            </button>
+            <button class="cat-pill" data-cat="analogic" onclick="setCategory('analogic')">
+                <i class="fa-solid fa-wave-square"></i> Analògic & PWM
+            </button>
+            <button class="cat-pill" data-cat="temps" onclick="setCategory('temps')">
+                <i class="fa-solid fa-stopwatch"></i> Temps & Temporització
+            </button>
+            <button class="cat-pill" data-cat="control" onclick="setCategory('control')">
+                <i class="fa-solid fa-code-branch"></i> Control de Flux
+            </button>
+            <button class="cat-pill" data-cat="serie" onclick="setCategory('serie')">
+                <i class="fa-solid fa-desktop"></i> Monitor Sèrie
+            </button>
+            <button class="cat-pill" data-cat="variables" onclick="setCategory('variables')">
+                <i class="fa-solid fa-database"></i> Variables & Tipus
+            </button>
+            <button class="cat-pill" data-cat="sensors_dig" onclick="setCategory('sensors_dig')">
+                <i class="fa-solid fa-satellite-dish"></i> Sensors Digitals & IR
+            </button>
+            <button class="cat-pill" data-cat="sensors_ana" onclick="setCategory('sensors_ana')">
+                <i class="fa-solid fa-temperature-half"></i> Sensors Analògics
+            </button>
+            <button class="cat-pill" data-cat="actuadors" onclick="setCategory('actuadors')">
+                <i class="fa-solid fa-gears"></i> Motors, Servos & So
+            </button>
+            <button class="cat-pill" data-cat="pantalles" onclick="setCategory('pantalles')">
+                <i class="fa-solid fa-tv"></i> LEDs RGB & Pantalles LCD
+            </button>
+        </div>
+    </section>
+
+    <!-- GRAELLA DE CARTES -->
+    <main class="cards-container" id="cardsGrid">
+        <!-- Generat automàticament per Javascript -->
+    </main>
+
+    <!-- MODAL DE JOC D'ESTUDI / FLASHCARDS INTERACTIVES -->
+    <div class="modal-overlay" id="studyModal">
+        <div class="study-modal">
+            <div class="study-header">
+                <div>
+                    <h3 id="studyCardTitle" style="font-size: 1.2rem;">Mode Estudi · Fitxa #01</h3>
+                    <div style="font-size: 0.8rem; color: var(--text-muted);" id="studyCardSub">Intenta recordar què fa abans de revelar-ho!</div>
+                </div>
+                <button class="btn btn-outline" onclick="closeStudyDeck()" style="padding: 0.4rem 0.8rem;">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="study-body" id="studyCardContent">
+                <!-- Carta del mode estudi -->
+            </div>
+            <div class="study-footer">
+                <button class="btn btn-outline" onclick="prevStudyCard()">
+                    <i class="fa-solid fa-arrow-left"></i> Anterior
+                </button>
+                <span id="studyCardCounter" style="font-weight: 700; color: var(--accent-cyan);">1 / 24</span>
+                <button class="btn btn-primary" onclick="nextStudyCard()">
+                    Següent <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // DADES COMPLETES DE LES 24 FITXES ARDUINO UNO
+        const ARDUINO_CARDS = [
+            // ==================== ESTRUCTURA I BASE ====================
+            {
+                id: 1,
+                category: "estructura",
+                catLabel: "Estructura & Base",
+                color: "#00979D",
+                cmdLabel: "Funció Inicial",
+                syntaxHtml: `<span class="syntax-kw">void</span> <span class="syntax-fn">setup</span>() {\n  <span class="syntax-kw">// Codi d'inicialització</span>\n}`,
+                title: "Configuració Inicial (setup)",
+                expl: "És la primera funció que executa la placa Arduino just en encendre's o prémer el botó de Reset. <strong>S'executa una única vegada</strong>.",
+                params: [
+                    { name: "Ús principal", text: "Configurar pins amb pinMode(), iniciar el Monitor Sèrie o sensors." }
+                ],
+                example: `void setup() {\n  pinMode(13, OUTPUT); // LED integrat com a sortida\n}`,
+                tip: "Tot programa d'Arduino necessita obligatòriament la funció setup(), encara que estigui buida."
+            },
+            {
+                id: 2,
+                category: "estructura",
+                catLabel: "Estructura & Base",
+                color: "#00979D",
+                cmdLabel: "Bucle Principal",
+                syntaxHtml: `<span class="syntax-kw">void</span> <span class="syntax-fn">loop</span>() {\n  <span class="syntax-kw">// Codi repetitiu</span>\n}`,
+                title: "Bucle d'Execució Continu (loop)",
+                expl: "És el cor del programa. Un cop finalitza el setup(), tot el codi de dins del <strong>loop() es repeteix infinitament</strong> una i altra vegada.",
+                params: [
+                    { name: "Ús principal", text: "Llegir sensors contínuament, prendre decisions i controlar actuadors." }
+                ],
+                example: `void loop() {\n  digitalWrite(13, HIGH);\n  delay(1000);\n}`,
+                tip: "El loop() s'executa milers de vegades per segon llevat que usem pauses com delay()."
+            },
+            {
+                id: 3,
+                category: "estructura",
+                catLabel: "Estructura & Base",
+                color: "#00979D",
+                cmdLabel: "Sintaxi / Comentaris",
+                syntaxHtml: `<span class="syntax-kw">// Comentari de línia</span>\n<span class="syntax-kw">/* Comentari de\n   múltiples línies */</span>`,
+                title: "Comentaris i Documentació",
+                expl: "Línies de text que el microcontrolador <strong>ignora per complet</strong>. Serveixen perquè el programador expliqui què fa cada part del codi.",
+                params: [
+                    { name: "//", text: "Comenta només la línia actual fins al final de la línia." },
+                    { name: "/* ... */", text: "Comenta blocs sencers de diverses línies de codi." }
+                ],
+                example: `// Activem el motor d'avançament\ndigitalWrite(8, HIGH);`,
+                tip: "Utilitza comentaris per provar de desactivar línies de codi quan estiguis buscant errors (debug)."
+            },
+            {
+                id: 4,
+                category: "estructura",
+                catLabel: "Estructura & Base",
+                color: "#00979D",
+                cmdLabel: "Directiva Preprocessador",
+                syntaxHtml: `<span class="syntax-kw">#include</span> &lt;Llibreria.h&gt;`,
+                title: "Importar Llibreries",
+                expl: "Permet carregar conjunts de funcions especials preparades per controlar components complexos com servomotors, pantalles LCD o sensors I2C.",
+                params: [
+                    { name: "<Llibreria.h>", text: "Nom del fitxer de la llibreria entre claudàtors angulars o cometes." }
+                ],
+                example: `#include <Servo.h>\nServo meuServo; // Objecte servo`,
+                tip: "ATENCIÓ: La directiva #include no porta punt i coma (;) al final!"
+            },
+
+            // ==================== PINS DIGITALS E/S ====================
+            {
+                id: 5,
+                category: "digital",
+                catLabel: "Pins Digitals E/S",
+                color: "#10B981",
+                cmdLabel: "Configuració de Pin",
+                syntaxHtml: `<span class="syntax-fn">pinMode</span>(<span class="syntax-param">pin</span>, <span class="syntax-const">MODO</span>);`,
+                title: "Configurar Mode del Pin (pinMode)",
+                expl: "Indica a l'Arduino UNO si un pin digital concret funcionarà com a <strong>entrada (llegir)</strong> o com a <strong>sortida (enviar voltatge)</strong>.",
+                params: [
+                    { name: "pin", text: "Número de pin de l'Arduino UNO (ex: 2..13 o A0..A5)." },
+                    { name: "MODO", text: "INPUT (entrada), OUTPUT (sortida) o INPUT_PULLUP (resistència interna)." }
+                ],
+                example: `void setup() {\n  pinMode(9, OUTPUT); // Pin 9 per al LED\n  pinMode(2, INPUT);  // Pin 2 per al botó\n}`,
+                tip: "Sempre s'ha de configurar al setup() abans d'utilitzar digitalWrite o digitalRead."
+            },
+            {
+                id: 6,
+                category: "digital",
+                catLabel: "Pins Digitals E/S",
+                color: "#10B981",
+                cmdLabel: "Escriptura Digital",
+                syntaxHtml: `<span class="syntax-fn">digitalWrite</span>(<span class="syntax-param">pin</span>, <span class="syntax-const">ESTAT</span>);`,
+                title: "Enviar Senyal Digital (digitalWrite)",
+                expl: "Envia 5 Volts o 0 Volts per un pin prèviament configurat com a OUTPUT. Permet encendre/apagar LEDs, relés, brunzidors o motors.",
+                params: [
+                    { name: "pin", text: "Número del pin digital de sortida." },
+                    { name: "ESTAT", text: "HIGH (actiu / 5 Volts) o LOW (apagat / 0 Volts)." }
+                ],
+                example: `digitalWrite(13, HIGH); // Encén el LED\ndelay(500);\ndigitalWrite(13, LOW);  // Apaga el LED`,
+                tip: "HIGH és equivalent a escriure 1 (5V) i LOW és equivalent a 0 (GND)."
+            },
+            {
+                id: 7,
+                category: "digital",
+                catLabel: "Pins Digitals E/S",
+                color: "#10B981",
+                cmdLabel: "Lectura Digital",
+                syntaxHtml: `<span class="syntax-kw">int</span> valor = <span class="syntax-fn">digitalRead</span>(<span class="syntax-param">pin</span>);`,
+                title: "Llegir Sensor Digital (digitalRead)",
+                expl: "Llegeix l'estat elèctric d'un pin digital configurat com a INPUT. Retorna un valor digital cert/fals segons si hi ha voltatge o no.",
+                params: [
+                    { name: "pin", text: "Número de pin on està connectat el polsador, sensor IR o final de cursa." },
+                    { name: "Retorn", text: "HIGH (si detecta 5V) o LOW (si està a 0V / GND)." }
+                ],
+                example: `int estatBoto = digitalRead(2);\nif (estatBoto == HIGH) {\n  digitalWrite(13, HIGH);\n}`,
+                tip: "Si un polsador no usa resistència Pull-Down o Pull-Up, pot donar falses lectures (efecte antena flotant)."
+            },
+            {
+                id: 8,
+                category: "digital",
+                catLabel: "Pins Digitals E/S",
+                color: "#10B981",
+                cmdLabel: "Constants d'Estat",
+                syntaxHtml: `<span class="syntax-const">HIGH</span>  |  <span class="syntax-const">LOW</span>\n<span class="syntax-const">INPUT</span> |  <span class="syntax-const">OUTPUT</span> | <span class="syntax-const">INPUT_PULLUP</span>`,
+                title: "Constants Especials d'Arduino",
+                expl: "Són paraules reservades del llenguatge Arduino que faciliten la comprensió del codi representant estats lògics i de configuració.",
+                params: [
+                    { name: "HIGH / LOW", text: "Nivell alt (5V / cert) o nivell baix (0V / fals)." },
+                    { name: "INPUT_PULLUP", text: "Activa la resistència interna de 20kΩ cap a 5V (ideal per a polsadors a GND)." }
+                ],
+                example: `pinMode(2, INPUT_PULLUP);\n// Amb INPUT_PULLUP, en prémer el botó llegeix LOW!`,
+                tip: "Sempre s'escriuen en MAJÚSCULES. Si les escrius en minúscules, el compilador donarà error."
+            },
+
+            // ==================== ANALÒGIC I PWM ====================
+            {
+                id: 9,
+                category: "analogic",
+                catLabel: "Analògic & PWM",
+                color: "#F59E0B",
+                cmdLabel: "Lectura Analògica (ADC)",
+                syntaxHtml: `<span class="syntax-kw">int</span> lectura = <span class="syntax-fn">analogRead</span>(<span class="syntax-param">pinA</span>);`,
+                title: "Llegir Sensor Analògic (analogRead)",
+                expl: "Llegeix el voltatge d'un sensor continu en els pins A0 fins a A5. El convertidor analògic-digital (10 bits) transforma de 0..5V a un número de <strong>0 a 1023</strong>.",
+                params: [
+                    { name: "pinA", text: "Pins analògics d'Arduino UNO: A0, A1, A2, A3, A4 o A5." },
+                    { name: "Retorn", text: "Nombre enter entre 0 (0 Volts) i 1023 (5 Volts)." }
+                ],
+                example: `int llum = analogRead(A0); // LDR sensor\nif (llum < 300) {\n  digitalWrite(13, HIGH); // És fosc\n}`,
+                tip: "Els pins A0-A5 no necessiten pinMode() per ser utilitzats amb analogRead()."
+            },
+            {
+                id: 10,
+                category: "analogic",
+                catLabel: "Analògic & PWM",
+                color: "#F59E0B",
+                cmdLabel: "Sortida PWM (~)",
+                syntaxHtml: `<span class="syntax-fn">analogWrite</span>(<span class="syntax-param">pinPWM</span>, <span class="syntax-param">valor</span>);`,
+                title: "Modulació d'Amplada de Pols (analogWrite)",
+                expl: "Genera una ona digital ràpida (PWM) per simular sortides de voltatge entremig (de 0 a 5V). Permet regular la intensitat d'un LED o la velocitat d'un motor DC.",
+                params: [
+                    { name: "pinPWM", text: "Només pins marcats amb ~ a la placa UNO: 3, 5, 6, 9, 10, 11." },
+                    { name: "valor", text: "Nombre de 8 bits entre 0 (apagat 0%) i 255 (màxim 100%)." }
+                ],
+                example: `analogWrite(9, 128); // LED al 50% de lluentor\nanalogWrite(9, 255); // LED al 100%`,
+                tip: "Si uses analogWrite en un pin sense el símbol ~ només farà HIGH (si > 127) o LOW."
+            },
+            {
+                id: 11,
+                category: "analogic",
+                catLabel: "Analògic & PWM",
+                color: "#F59E0B",
+                cmdLabel: "Conversió d'Escala",
+                syntaxHtml: `<span class="syntax-fn">map</span>(<span class="syntax-param">val</span>, <span class="syntax-param">inMin</span>, <span class="syntax-param">inMax</span>, <span class="syntax-param">outMin</span>, <span class="syntax-param">outMax</span>);`,
+                title: "Mapejar un Rang (map)",
+                expl: "Converteix proporcionalment un nombre d'un interval d'entrada a un nou interval de sortida. Imprescindible per adaptar lectures analògiques a servomotors o PWM.",
+                params: [
+                    { name: "inMin / inMax", text: "Rang original (ex: de 0 a 1023 al llegir un potenciòmetre)." },
+                    { name: "outMin / outMax", text: "Rang desitjat (ex: 0 a 180 graus per a un Servomotor o 0..255 per PWM)." }
+                ],
+                example: `int pot = analogRead(A0); // 0..1023\nint angle = map(pot, 0, 1023, 0, 180);\nmeuServo.write(angle);`,
+                tip: "La funció map utilitza matemàtiques enteres, no genera nombres decimals."
+            },
+            {
+                id: 12,
+                category: "analogic",
+                catLabel: "Analògic & PWM",
+                color: "#F59E0B",
+                cmdLabel: "Límits de Seguretat",
+                syntaxHtml: `<span class="syntax-fn">constrain</span>(<span class="syntax-param">x</span>, <span class="syntax-param">a</span>, <span class="syntax-param">b</span>);`,
+                title: "Limitar Valors (constrain)",
+                expl: "Assegura que un número es mantingui sempre dins del rang permès [a, b]. Si és menor que 'a', retorna 'a'; si és major que 'b', retorna 'b'.",
+                params: [
+                    { name: "x", text: "El valor o variable que volem controlar." },
+                    { name: "a / b", text: "Límit inferior (mínim permès) i límit superior (màxim permès)." }
+                ],
+                example: `int velocitat = constrain(sensor, 0, 255);\nanalogWrite(9, velocitat);`,
+                tip: "Molt útil per evitar que valors extrems d'un sensor facin malbé un actuador."
+            },
+
+            // ==================== TEMPS I TEMPORITZACIÓ ====================
+            {
+                id: 13,
+                category: "temps",
+                catLabel: "Temps & Temporització",
+                color: "#8B5CF6",
+                cmdLabel: "Pausa en Mil·lisegons",
+                syntaxHtml: `<span class="syntax-fn">delay</span>(<span class="syntax-param">ms</span>);`,
+                title: "Aturar Execució (delay)",
+                expl: "Atura completament el microcontrolador durant el temps especificat en <strong>mil·lisegons</strong> (1 segon = 1000 ms). Durant la pausa, Arduino no fa res més.",
+                params: [
+                    { name: "ms", text: "Durada de la pausa en mil·lisegons (ex: 500 = mig segon)." }
+                ],
+                example: `digitalWrite(13, HIGH);\ndelay(1000); // Espera 1 segon exacte\ndigitalWrite(13, LOW);`,
+                tip: "ALERTA: Un delay() llarg impedeix llegir polsadors o sensors mentre espera (bloqueig)."
+            },
+            {
+                id: 14,
+                category: "temps",
+                catLabel: "Temps & Temporització",
+                color: "#8B5CF6",
+                cmdLabel: "Temps Intern Multitasca",
+                syntaxHtml: `<span class="syntax-kw">unsigned long</span> t = <span class="syntax-fn">millis</span>();`,
+                title: "Temps Des de l'Encesa (millis)",
+                expl: "Retorna el nombre de mil·lisegons transcorreguts des que la placa Arduino va arrencar. Permet fer temporitzacions <strong>sense bloquejar el programa</strong>.",
+                params: [
+                    { name: "Retorn", text: "Un nombre gran de tipus 'unsigned long' (es reinicia al cap de 49 dies)." }
+                ],
+                example: `unsigned long ara = millis();\nif (ara - ultimTemps >= 1000) {\n  ultimTemps = ara;\n  // Executa acció cada segon sense delay!\n}`,
+                tip: "És la tècnica clau per fer robots multitasca (ex: moure motor mentre llegeixes ultrasons)."
+            },
+            {
+                id: 15,
+                category: "temps",
+                catLabel: "Temps & Temporització",
+                color: "#8B5CF6",
+                cmdLabel: "Pausa en Microsegons",
+                syntaxHtml: `<span class="syntax-fn">delayMicroseconds</span>(<span class="syntax-param">us</span>);`,
+                title: "Aturada de Precisió (delayMicroseconds)",
+                expl: "Pausa el programa durant un nombre determinat de <strong>microsegons</strong> (1 segon = 1.000.000 µs). Essencial per generar impulsos molt ràpids.",
+                params: [
+                    { name: "us", text: "Temps d'espera en microsegons (recomanat entre 2 i 16383 µs)." }
+                ],
+                example: `// Pols Trigger per a sensor ultrasons HC-SR04\ndigitalWrite(TRIG_PIN, HIGH);\ndelayMicroseconds(10); // Pols de 10 µs\ndigitalWrite(TRIG_PIN, LOW);`,
+                tip: "És la funció utilitzada per controlar sensors d'ultrasons o motors pas a pas."
+            },
+
+            // ==================== CONTROL DE FLUX I CONDICIONALS ====================
+            {
+                id: 16,
+                category: "control",
+                catLabel: "Control de Flux",
+                color: "#EC4899",
+                cmdLabel: "Condicional SI / SINÓ",
+                syntaxHtml: `<span class="syntax-kw">if</span> (<span class="syntax-param">condició</span>) {\n  <span class="syntax-kw">// Si és CERT</span>\n} <span class="syntax-kw">else</span> {\n  <span class="syntax-kw">// Si és FALS</span>\n}`,
+                title: "Presa de Decisions (if / else)",
+                expl: "Comprova una condició. Si es compleix (és certa), executa el primer bloc de codi; si no es compleix, executa el bloc dins d'else.",
+                params: [
+                    { name: "condició", text: "Comparació lògica (ex: distància < 20 o digitalRead(2) == HIGH)." }
+                ],
+                example: `if (distancia < 15) {\n  digitalWrite(BUZZER, HIGH); // Obstacle!\n} else {\n  digitalWrite(BUZZER, LOW);  // Lliure\n}`,
+                tip: "ALERTA: Per comparar igualtat s'usa doble igual '=='! Un sol '=' és per assignar valor."
+            },
+            {
+                id: 17,
+                category: "control",
+                catLabel: "Control de Flux",
+                color: "#EC4899",
+                cmdLabel: "Operadors de Comparació",
+                syntaxHtml: `==  !=  &lt;  &gt;  &lt;=  &gt;=\n&amp;&amp; (I)    || (O)    ! (NO)`,
+                title: "Operadors Relacionals i Lògics",
+                expl: "Símbols que permeten comparar valors o combinar diverses condicions dins d'un 'if' o un 'while'.",
+                params: [
+                    { name: "== / !=", text: "És igual a / És diferent de." },
+                    { name: "&& / ||", text: "I lògic (ambdues certes) / O lògic (almenys una certa)." }
+                ],
+                example: `if (llum < 200 && presencia == HIGH) {\n  // S'encén només si és fosc I hi ha algú\n}`,
+                tip: "Utilitza parèntesis ( ) per agrupar condicions complexes amb claredat."
+            },
+            {
+                id: 18,
+                category: "control",
+                catLabel: "Control de Flux",
+                color: "#EC4899",
+                cmdLabel: "Bucle de Repetició",
+                syntaxHtml: `<span class="syntax-kw">for</span> (<span class="syntax-kw">int</span> i = 0; i &lt; 10; i++) {\n  <span class="syntax-kw">// Repetir 10 cops</span>\n}`,
+                title: "Bucle Comptat (for)",
+                expl: "Repeteix un bloc de codi un nombre exacte de vegades utilitzant una variable comptadora que s'incrementa o decrementa a cada volta.",
+                params: [
+                    { name: "int i = 0", text: "Valor inicial del comptador." },
+                    { name: "i < 10", text: "Condició de continuïtat (mentre sigui cert, repeteix)." },
+                    { name: "i++", text: "Increment a cada pas (i++ suma 1, i-- resta 1)." }
+                ],
+                example: `// Fer fer un parpelleig ràpid 5 vegades\nfor (int i = 0; i < 5; i++) {\n  digitalWrite(13, HIGH); delay(100);\n  digitalWrite(13, LOW); delay(100);\n}`,
+                tip: "Molt pràctic per escombrar posicions d'un servomotor o recórrer un vector de LEDs."
+            },
+            {
+                id: 19,
+                category: "control",
+                catLabel: "Control de Flux",
+                color: "#EC4899",
+                cmdLabel: "Bucle Condicional",
+                syntaxHtml: `<span class="syntax-kw">while</span> (<span class="syntax-param">condició</span>) {\n  <span class="syntax-kw">// Repetir mentre sigui cert</span>\n}`,
+                title: "Bucle Mentre (while)",
+                expl: "Executa un bloc d'instruccions de manera repetida i contínua <strong>mentre la condició sigui vertadera</strong>.",
+                params: [
+                    { name: "condició", text: "Expressió que s'evalua abans de cada repetició del bucle." }
+                ],
+                example: `// Esperar fins que l'usuari premi el botó al pin 2\nwhile (digitalRead(2) == LOW) {\n  // No fa res fins a prémer el botó\n}`,
+                tip: "Assegura't que la condició pugui canviar dins del bucle, o es quedarà penjat en un bucle infinit!"
+            },
+
+            // ==================== MONITOR SÈRIE ====================
+            {
+                id: 20,
+                category: "serie",
+                catLabel: "Monitor Sèrie",
+                color: "#06B6D4",
+                cmdLabel: "Iniciar Connexió Sèrie",
+                syntaxHtml: `<span class="syntax-fn">Serial</span>.<span class="syntax-fn">begin</span>(9600);`,
+                title: "Iniciar Monitor Sèrie (Serial.begin)",
+                expl: "Obre el port de comunicació USB entre la placa Arduino UNO i l'ordinador perquè puguem veure dades o depurar errors per pantalla.",
+                params: [
+                    { name: "9600", text: "Velocitat de transmissió en bauds (bits per segon). 9600 és l'estàndard." }
+                ],
+                example: `void setup() {\n  Serial.begin(9600); // Obrim comunicació\n  Serial.println("Robot iniciat!");\n}`,
+                tip: "Assegura't que la velocitat al desplegable del Monitor Sèrie coincideixi amb el begin()."
+            },
+            {
+                id: 21,
+                category: "serie",
+                catLabel: "Monitor Sèrie",
+                color: "#06B6D4",
+                cmdLabel: "Imprimir al Monitor",
+                syntaxHtml: `<span class="syntax-fn">Serial</span>.<span class="syntax-fn">print</span>(<span class="syntax-param">dada</span>);\n<span class="syntax-fn">Serial</span>.<span class="syntax-fn">println</span>(<span class="syntax-param">dada</span>);`,
+                title: "Enviar Dades al PC (print / println)",
+                expl: "Envia textos, números o el valor de les variables cap al Monitor Sèrie del PC. <strong>println</strong> afegeix un salt de línia al final (Enter).",
+                params: [
+                    { name: "Serial.print", text: "Escriu a continuació a la mateixa línia." },
+                    { name: "Serial.println", text: "Escriu i passa a la línia següent." }
+                ],
+                example: `int dist = 25;\nSerial.print("Distància: ");\nSerial.print(dist);\nSerial.println(" cm");`,
+                tip: "És la millor eina per comprovar si un sensor llegeix correctament a l'aula!"
+            },
+
+            // ==================== VARIABLES I TIPUS DE DADES ====================
+            {
+                id: 22,
+                category: "variables",
+                catLabel: "Variables & Tipus",
+                color: "#EF4444",
+                cmdLabel: "Nombre Enter",
+                syntaxHtml: `<span class="syntax-kw">int</span> nomVariable = <span class="syntax-param">125</span>;`,
+                title: "Variable d'Enter (int)",
+                expl: "Emmagatzema nombres enters (sense decimals) de 16 bits. És el tipus de dada més habitual en programació d'Arduino.",
+                params: [
+                    { name: "Rang de int", text: "Des de -32.768 fins a 32.767." },
+                    { name: "Ús", text: "Comptadors, números de pin, lectures analògiques o temps curts." }
+                ],
+                example: `int comptador = 0;\ncomptador = comptador + 1; // Suma 1`,
+                tip: "Si necessites nombres molt grans com millis(), utilitza 'unsigned long'."
+            },
+            {
+                id: 23,
+                category: "variables",
+                catLabel: "Variables & Tipus",
+                color: "#EF4444",
+                cmdLabel: "Booleà / Decimal",
+                syntaxHtml: `<span class="syntax-kw">bool</span> actiu = <span class="syntax-const">true</span>;\n<span class="syntax-kw">float</span> temp = <span class="syntax-param">24.5</span>;`,
+                title: "Booleans (bool) i Decimals (float)",
+                expl: "Tipus de dades especialitzats per a estats lògics i per a dades científiques amb decimals (com sensors de temperatura).",
+                params: [
+                    { name: "bool", text: "Només pot valer true (cert / 1) o false (fals / 0)." },
+                    { name: "float", text: "Nombre amb punts decimals de precisió (ex: 3.14 o 24.85)." }
+                ],
+                example: `float voltatge = analogRead(A0) * (5.0 / 1023.0);\nSerial.println(voltatge);`,
+                tip: "Els càlculs amb float són més lents a Arduino UNO; utilitza'ls només quan calguin decimals."
+            },
+            {
+                id: 24,
+                category: "variables",
+                catLabel: "Variables & Tipus",
+                color: "#EF4444",
+                cmdLabel: "Constant Immutable",
+                syntaxHtml: `<span class="syntax-kw">const int</span> <span class="syntax-param">PIN_LED</span> = 13;`,
+                title: "Definir Constants (const)",
+                expl: "Declara un valor que <strong>mai canviarà</strong> durant tot el programa. Protegeix el codi d'accidents i fa que sigui molt fàcil modificar pins.",
+                params: [
+                    { name: "const", text: "Impedeix que cap instrucció pugui sobreescriure aquesta variable per error." }
+                ],
+                example: `const int TRIG_PIN = 9;\nconst int ECHO_PIN = 10;`,
+                tip: "És bona pràctica escriure els noms de constants en MAJÚSCULES per distingir-les."
+            },
+
+            // ==================== SENSORS DIGITALS I AMBIENTALS ====================
+            {
+                id: 25,
+                category: "sensors_dig",
+                catLabel: "Sensors Digitals & IR",
+                color: "#059669",
+                cmdLabel: "Ultrasons 4 Pins",
+                syntaxHtml: `<span class="syntax-param">VCC</span> &rarr; 5V | <span class="syntax-param">GND</span> &rarr; GND\n<span class="syntax-param">TRIG</span> &rarr; Sortida | <span class="syntax-param">ECHO</span> &rarr; Entrada`,
+                title: "Sensor d'Ultrasons (HC-SR04)",
+                expl: "Mesura distàncies sense contacte enviant un pols d'ultrasons per <strong>Trig</strong> i cronometrant el temps fins a rebre l'eco per <strong>Echo</strong>.",
+                params: [
+                    { name: "Càlcul cm", text: "distancia = (tempsEcho / 2) / 29.1 (velocitat del so a l'aire)." }
+                ],
+                example: `digitalWrite(TRIG, HIGH); delayMicroseconds(10); digitalWrite(TRIG, LOW);\nlong t = pulseIn(ECHO, HIGH);\nint cm = t / 58;`,
+                tip: "El sensor HC-SR04 mesura bé entre 2 cm i 400 cm. Evita superfícies toves que absorbeixin el so."
+            },
+            {
+                id: 26,
+                category: "sensors_dig",
+                catLabel: "Sensors Digitals & IR",
+                color: "#059669",
+                cmdLabel: "Botó amb Pull-Up",
+                syntaxHtml: `<span class="syntax-fn">pinMode</span>(2, <span class="syntax-const">INPUT_PULLUP</span>);\n<span class="syntax-kw">int</span> estat = <span class="syntax-fn">digitalRead</span>(2);`,
+                title: "Polsador / Botó Digital",
+                expl: "Un botó mecànic que tanca o obre un circuit. Amb la configuració <strong>INPUT_PULLUP</strong> s'estalvia la resistència externa connectant un pol a GND.",
+                params: [
+                    { name: "Lògica inversa", text: "Amb INPUT_PULLUP: LOW = botó premut, HIGH = botó lliure." }
+                ],
+                example: `if (digitalRead(2) == LOW) {\n  digitalWrite(13, HIGH); // Botó premut!\n}`,
+                tip: "Si el botó fa salts en prémer-lo (rebot mecànic), afegeix un petit delay(50) antibot."
+            },
+            {
+                id: 27,
+                category: "sensors_dig",
+                catLabel: "Sensors Digitals & IR",
+                color: "#059669",
+                cmdLabel: "Detecció Infraroja PIR",
+                syntaxHtml: `<span class="syntax-param">VCC</span> &rarr; 5V | <span class="syntax-param">OUT</span> &rarr; Pin Digital\n<span class="syntax-kw">int</span> moviment = <span class="syntax-fn">digitalRead</span>(PIN_PIR);`,
+                title: "Sensor de Moviment PIR (HC-SR501)",
+                expl: "Detecta la presència i moviment de persones o animals mesurant els canvis en la radiació infraroja tèrmica del seu voltant.",
+                params: [
+                    { name: "Retorn OUT", text: "HIGH (5V) quan detecta moviment en el seu radi, LOW quan està quiet." }
+                ],
+                example: `if (digitalRead(8) == HIGH) {\n  Serial.println("Alarma: Moviment detectat!");\n}`,
+                tip: "Té 2 potenciòmetres taronja per ajustar la sensibilitat (distància) i el temps d'activació."
+            },
+            {
+                id: 28,
+                category: "sensors_dig",
+                catLabel: "Sensors Digitals & IR",
+                color: "#059669",
+                cmdLabel: "Infraroig Reflexiu",
+                syntaxHtml: `<span class="syntax-param">VCC</span> &rarr; 5V | <span class="syntax-param">DO</span> &rarr; Pin Digital\n<span class="syntax-kw">int</span> linia = <span class="syntax-fn">digitalRead</span>(PIN_IR);`,
+                title: "Sensor Seguidor de Línia (TCRT5000)",
+                expl: "Emet llum infraroja i mesura quanta es reflecteix. Imprescindible en robots segueix-línies per distingir el terra blanc de la línia negra.",
+                params: [
+                    { name: "Reflexió", text: "Blanc reflecteix llum (LOW digital o voltatge alt), Negre absorbeix llum." }
+                ],
+                example: `if (digitalRead(3) == HIGH) {\n  // Ha trobat línia negra! Gira el motor\n}`,
+                tip: "Pots ajustar el cargol del potenciòmetre blau del mòdul per calibrar-lo amb la llum de l'aula."
+            },
+
+            // ==================== SENSORS ANALÒGICS ====================
+            {
+                id: 29,
+                category: "sensors_ana",
+                catLabel: "Sensors Analògics",
+                color: "#D97706",
+                cmdLabel: "Llum (Fotorresistència)",
+                syntaxHtml: `<span class="syntax-kw">int</span> llum = <span class="syntax-fn">analogRead</span>(A0);`,
+                title: "Sensor de Llum LDR",
+                expl: "Resistència que varia segons la llum que rep. Muntada en divisor de tensió amb una resistència de 10kΩ, dà lectures de 0 a 1023 a un pin analògic.",
+                params: [
+                    { name: "Valors típics", text: "Més llum = valor més alt (ex: > 700), Fosc = valor més baix (ex: < 200)." }
+                ],
+                example: `int lluentor = analogRead(A0);\nif (lluentor < 250) {\n  digitalWrite(LED_FAROLA, HIGH); // És de nit\n}`,
+                tip: "Calibra sempre comprovant els valors al Monitor Sèrie, ja que cada aula té una il·luminació diferent."
+            },
+            {
+                id: 30,
+                category: "sensors_ana",
+                catLabel: "Sensors Analògics",
+                color: "#D97706",
+                cmdLabel: "Resistència Giratòria",
+                syntaxHtml: `<span class="syntax-param">Extrems</span> &rarr; 5V i GND | <span class="syntax-param">Centre</span> &rarr; A0\n<span class="syntax-kw">int</span> pos = <span class="syntax-fn">analogRead</span>(A0);`,
+                title: "Potenciòmetre (Rotatori o Lineal)",
+                expl: "Component manual de 3 pins. Al girar la roda, el pin central varia el voltatge de 0V a 5V proporcionalment, donant un valor exacte entre 0 i 1023.",
+                params: [
+                    { name: "Ús principal", text: "Regular velocitat de motors, posició manual de servos o menús LCD." }
+                ],
+                example: `int angle = map(analogRead(A0), 0, 1023, 0, 180);\nservo.write(angle);`,
+                tip: "Si al girar a la dreta el valor disminueix en lloc d'augmentar, intercanvia els cables de 5V i GND."
+            },
+            {
+                id: 31,
+                category: "sensors_ana",
+                catLabel: "Sensors Analògics",
+                color: "#D97706",
+                cmdLabel: "Llibreria DHT",
+                syntaxHtml: `<span class="syntax-kw">#include</span> &lt;DHT.h&gt;\n<span class="syntax-kw">float</span> temp = dht.<span class="syntax-fn">readTemperature</span>();`,
+                title: "Sensor Clima DHT11 / DHT22",
+                expl: "Sensor digital ambiental capaç de mesurar la temperatura en graus Celsius i la humitat relativa (%) amb un sol cable de dades.",
+                params: [
+                    { name: "readTemperature()", text: "Retorna un float amb els graus Celsius (ex: 22.5)." },
+                    { name: "readHumidity()", text: "Retorna el percentatge d'humitat relativa (0 a 100%)." }
+                ],
+                example: `float t = dht.readTemperature();\nSerial.print("Temp: "); Serial.println(t);`,
+                tip: "El DHT11 pot trigar fins a 2 segons entre lectura i lectura; no cridis la funció més ràpid."
+            },
+            {
+                id: 32,
+                category: "sensors_ana",
+                catLabel: "Sensors Analògics",
+                color: "#D97706",
+                cmdLabel: "Controlador 2 Eixos",
+                syntaxHtml: `<span class="syntax-param">VRX</span> &rarr; A0 | <span class="syntax-param">VRY</span> &rarr; A1 | <span class="syntax-param">SW</span> &rarr; Pin 2`,
+                title: "Joystick Analògic (X, Y + Botó)",
+                expl: "Combina dos potenciòmetres perpendiculars (eix X i eix Y) que retornen valors de 0 a 1023 (reposant al centre ~512) més un polsador central (SW).",
+                params: [
+                    { name: "Centre reposat", text: "Valors aproximats de 500..525 tant a X com a Y." },
+                    { name: "Extrems", text: "0 = Esquerra/Abaix màxim, 1023 = Dreta/Amunt màxim." }
+                ],
+                example: `int x = analogRead(A0);\nif (x < 200) { Serial.println("Esquerra"); }\nif (x > 800) { Serial.println("Dreta"); }`,
+                tip: "El botó SW és digital i connecta a GND; recorda configurar-lo com a INPUT_PULLUP."
+            },
+
+            // ==================== MOTORS, SERVOS I SO ====================
+            {
+                id: 33,
+                category: "actuadors",
+                catLabel: "Motors, Servos & So",
+                color: "#7C3AED",
+                cmdLabel: "Posicionament Angular",
+                syntaxHtml: `<span class="syntax-kw">#include</span> &lt;Servo.h&gt;\nservo.<span class="syntax-fn">write</span>(<span class="syntax-param">graus</span>);`,
+                title: "Servomotor d'Angle (SG90 / MG995)",
+                expl: "Motor amb reductora i control intern que es posiciona amb precisió en qualsevol angle entre <strong>0° i 180°</strong>. Cable taronja/groc al pin digital.",
+                params: [
+                    { name: "servo.attach(pin)", text: "Es posa al setup() per enllaçar el servo al pin digital d'Arduino." },
+                    { name: "graus", text: "Angle desitjat entre 0 i 180 (ex: 90 és el centre exacte)." }
+                ],
+                example: `#include <Servo.h>\nServo brac;\nvoid setup() { brac.attach(9); }\nvoid loop() { brac.write(90); }`,
+                tip: "Si uses 2 o més servos, alimenta'ls amb piles externes de 5V o USB; l'Arduino UNO no dona prou corrent."
+            },
+            {
+                id: 34,
+                category: "actuadors",
+                catLabel: "Motors, Servos & So",
+                color: "#7C3AED",
+                cmdLabel: "Motor Corrent Continu",
+                syntaxHtml: `<span class="syntax-fn">analogWrite</span>(<span class="syntax-param">pinMotor</span>, <span class="syntax-param">velocitat</span>);`,
+                title: "Motor DC + Transistor / Relé",
+                expl: "Motor que gira contínuament en aplicar voltatge. Com que consumeix molt corrent, s'ha de controlar mitjançant un transistor (TIP120/MOSFET) o relé.",
+                params: [
+                    { name: "velocitat PWM", text: "Valor de 0 (aturat) a 255 (màx rpm) al pin de la base del transistor." }
+                ],
+                example: `analogWrite(PIN_MOTOR, 180); // Gira a velocitat mitjana-alta`,
+                tip: "ALERTA: Mai connectis un motor DC directament a un pin d'Arduino o el cremaràs immediatament!"
+            },
+            {
+                id: 35,
+                category: "actuadors",
+                catLabel: "Motors, Servos & So",
+                color: "#7C3AED",
+                cmdLabel: "Control 2 Motors (Pont H)",
+                syntaxHtml: `<span class="syntax-param">IN1/IN2</span> &rarr; Sentit | <span class="syntax-param">ENA</span> &rarr; PWM Velocitat`,
+                title: "Controlador de Motors L298N (Pont H)",
+                expl: "Mòdul electrònic de potència que permet controlar de forma independent el <strong>sentit de gir i la velocitat</strong> de 2 motors DC alhora.",
+                params: [
+                    { name: "IN1 HIGH + IN2 LOW", text: "El motor gira cap endavant." },
+                    { name: "IN1 LOW + IN2 HIGH", text: "El motor gira cap enrere." }
+                ],
+                example: `digitalWrite(IN1, HIGH); digitalWrite(IN2, LOW); // Endavant\nanalogWrite(ENA, 200); // Velocitat`,
+                tip: "Uneix sempre el cable GND del mòdul L298N amb el GND de l'Arduino perquè comparteixin referència."
+            },
+            {
+                id: 36,
+                category: "actuadors",
+                catLabel: "Motors, Servos & So",
+                color: "#7C3AED",
+                cmdLabel: "Generació de Notes",
+                syntaxHtml: `<span class="syntax-fn">tone</span>(<span class="syntax-param">pin</span>, <span class="syntax-param">freq</span>, <span class="syntax-param">durada_ms</span>);\n<span class="syntax-fn">noTone</span>(<span class="syntax-param">pin</span>);`,
+                title: "Brunzidor / Buzzer (tone / noTone)",
+                expl: "Genera sons i notes musicals enviant una freqüència en Hertz a un altaveu o brunzidor passiu. Permet fer alarmes acústiques al robot.",
+                params: [
+                    { name: "freq", text: "Freqüència en Hz (ex: 440 Hz és un La, 262 Hz és un Do central)." },
+                    { name: "noTone(pin)", text: "Atura immediatament la nota que estava sonant en aquell pin." }
+                ],
+                example: `tone(8, 440, 300); // Nota La (440Hz) durant 300 ms`,
+                tip: "Els brunzidors 'actius' piten només posant digitalWrite(HIGH); els 'passius' necessiten tone()."
+            },
+
+            // ==================== PANTALLES I LEDS RGB ====================
+            {
+                id: 37,
+                category: "pantalles",
+                catLabel: "LEDs RGB & Pantalles",
+                color: "#0284C7",
+                cmdLabel: "Barreja de Color (R,G,B)",
+                syntaxHtml: `<span class="syntax-fn">analogWrite</span>(PIN_R, <span class="syntax-param">255</span>);\n<span class="syntax-fn">analogWrite</span>(PIN_G, <span class="syntax-param">100</span>);`,
+                title: "LED RGB (3 Pins PWM)",
+                expl: "Integra 3 LEDs (Vermell, Verd i Blau) dins de la mateixa càpsula. Regulant la intensitat PWM de cada color es pot generar qualsevol color de l'arc de Sant Martí.",
+                params: [
+                    { name: "Càtode Comú (-)", text: "El pin més llarg va a GND. Escriure 255 és màxima lluentor." },
+                    { name: "Ànode Comú (+)", text: "El pin més llarg va a 5V. Funciona al revés: 0 és màxim color!" }
+                ],
+                example: `// Color Magenta (Vermell + Blau)\nanalogWrite(PIN_R, 255); analogWrite(PIN_G, 0); analogWrite(PIN_B, 255);`,
+                tip: "Posa sempre una resistència de protecció (220Ω o 330Ω) a cadascun dels 3 pins de color."
+            },
+            {
+                id: 38,
+                category: "pantalles",
+                catLabel: "LEDs RGB & Pantalles",
+                color: "#0284C7",
+                cmdLabel: "Pantalla 4 Cables (I2C)",
+                syntaxHtml: `<span class="syntax-kw">#include</span> &lt;LiquidCrystal_I2C.h&gt;\nlcd.<span class="syntax-fn">setCursor</span>(0, 0); lcd.<span class="syntax-fn">print</span>("Hola!");`,
+                title: "Pantalla LCD 16x2 amb I2C",
+                expl: "Pantalla alfanumèrica amb 2 files de 16 caràcters. Gràcies a l'adaptador I2C del darrere només necessita 4 cables: VCC, GND, SDA i SCL.",
+                params: [
+                    { name: "Connexions UNO", text: "SDA &rarr; pin A4  |  SCL &rarr; pin A5." },
+                    { name: "setCursor(col, fila)", text: "Posiciona el cursor: columna 0..15, fila 0 (a dalt) o 1 (a sota)." }
+                ],
+                example: `lcd.init(); lcd.backlight();\nlcd.setCursor(0, 0); lcd.print("Robot Llest");`,
+                tip: "Si s'encén la llum però no es llegeix el text, gira el cargol blau de contrast del darrere."
+            },
+            {
+                id: 39,
+                category: "pantalles",
+                catLabel: "LEDs RGB & Pantalles",
+                color: "#0284C7",
+                cmdLabel: "LEDs Adreçables",
+                syntaxHtml: `<span class="syntax-kw">#include</span> &lt;Adafruit_NeoPixel.h&gt;\ntira.<span class="syntax-fn">setPixelColor</span>(num, R, G, B);`,
+                title: "Tira LED NeoPixel (WS2812B)",
+                expl: "LEDs RGB intel·ligents en tira o anell on cada LED es pot il·luminar amb un color diferent utilitzant només <strong>1 únic pin digital d'Arduino</strong>.",
+                params: [
+                    { name: "setPixelColor(i, r, g, b)", text: "Tria el LED número 'i' i el seu color (r, g, b de 0 a 255)." },
+                    { name: "tira.show()", text: "Envia les dades perquè els LEDs s'il·luminin amb els canvis." }
+                ],
+                example: `tira.setPixelColor(0, 255, 0, 0); // 1r LED en Vermell\ntira.show();`,
+                tip: "Les tires NeoPixel necessiten molt corrent a 5V; no encenguis molts LEDs al blanc màxim des de l'UNO."
+            },
+            {
+                id: 40,
+                category: "pantalles",
+                catLabel: "LEDs RGB & Pantalles",
+                color: "#0284C7",
+                cmdLabel: "Motor Rotació 360",
+                syntaxHtml: `<span class="syntax-kw">#include</span> &lt;Servo.h&gt;\nservo360.<span class="syntax-fn">write</span>(<span class="syntax-param">velocitat</span>);`,
+                title: "Servomotor Rotació Contínua (360°)",
+                expl: "Un servo modificat que no s'atura en un angle sinó que gira com un motor DC amb les rodes d'un robot, controlat per la funció de servo.",
+                params: [
+                    { name: "write(90)", text: "Aturat completament (punt mort)." },
+                    { name: "write(180) / write(0)", text: "Gira a màxima velocitat endavant (180) o cap enrere (0)." }
+                ],
+                example: `servoEsquerra.write(180); // Endavant\nservoDreta.write(0);      // Endavant (roda oposada)`,
+                tip: "És el motor més fàcil per construir un robot mòbil de 2 rodes a 1r de Batxillerat sense necessitat de L298N!"
+            }
+        ];
+
+        let currentCategory = 'all';
+        let selectedCardIds = new Set(ARDUINO_CARDS.map(c => c.id));
+        let studyCurrentIndex = 0;
+
+        // INICIALITZAR APP
+        window.addEventListener('DOMContentLoaded', () => {
+            renderCards();
+            updateStats();
+        });
+
+        // RENDERITZAR GRAELLA DE CARTES
+        function renderCards() {
+            const container = document.getElementById('cardsGrid');
+            const query = document.getElementById('searchInput').value.toLowerCase().trim();
+
+            const filtered = ARDUINO_CARDS.filter(card => {
+                const matchCat = (currentCategory === 'all' || card.category === currentCategory);
+                const matchSearch = !query || 
+                    card.title.toLowerCase().includes(query) ||
+                    card.syntaxHtml.toLowerCase().includes(query) ||
+                    card.expl.toLowerCase().includes(query) ||
+                    card.cmdLabel.toLowerCase().includes(query);
+                return matchCat && matchSearch;
+            });
+
+            // Per imprimir correctament, mostrem només les que coincideixen i/o estan seleccionades
+            container.innerHTML = '';
+
+            if (filtered.length === 0) {
+                container.innerHTML = `
+                    <div style="grid-column: 1/-1; text-align: center; padding: 4rem 1rem; color: var(--text-muted);">
+                        <i class="fa-solid fa-magnifying-glass" style="font-size: 2.5rem; margin-bottom: 1rem; opacity: 0.4;"></i>
+                        <h3>No s'ha trobat cap fitxa amb aquesta cerca</h3>
+                        <p style="margin-top: 0.5rem;">Prova amb paraules com "pinMode", "if", "analogRead" o "LED"</p>
+                    </div>
+                `;
+                document.getElementById('visibleCount').textContent = "0";
+                return;
+            }
+
+            filtered.forEach(card => {
+                const isSelected = selectedCardIds.has(card.id);
+
+                const cardEl = document.createElement('article');
+                cardEl.className = 'card-item';
+                cardEl.style.display = isSelected ? 'flex' : 'flex'; // Per a control interactiu
+
+                // Llista de paràmetres HTML
+                const paramsHtml = card.params.map(p => `
+                    <div class="param-item">
+                        <span class="param-name">${p.name}</span>
+                        <span style="color: #CBD5E1;">${p.text}</span>
+                    </div>
+                `).join('');
+
+                cardEl.innerHTML = `
+                    <div class="card-top-bar" style="background-color: ${card.color};"></div>
+                    <div class="card-header">
+                        <div class="header-left">
+                            <div class="card-id">
+                                <i class="fa-solid fa-microchip" style="color: ${card.color};"></i>
+                                FITXA #${String(card.id).padStart(2, '0')}
+                            </div>
+                            <h3 style="font-size: 1.15rem; color: #FFFFFF; font-weight: 700; margin-top: 2px;">
+                                ${card.title}
+                            </h3>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.6rem;">
+                            <span class="cat-tag" style="background: ${card.color}20; color: ${card.color}; border: 1px solid ${card.color}40;">
+                                ${card.catLabel}
+                            </span>
+                            <input type="checkbox" class="select-checkbox" 
+                                ${isSelected ? 'checked' : ''} 
+                                onchange="toggleCardSelect(${card.id}, this.checked)"
+                                title="Seleccionar per imprimir">
+                        </div>
+                    </div>
+
+                    <!-- L'ORDRE / SINTAXI -->
+                    <div class="command-box">
+                        <span class="command-label">L'ORDRE · SINTAXI</span>
+                        <pre class="command-syntax">${card.syntaxHtml}</pre>
+                    </div>
+
+                    <!-- L'EXPLICACIÓ I EXEMPLE -->
+                    <div class="explanation-section">
+                        <div>
+                            <div class="exp-title">
+                                <i class="fa-solid fa-circle-info"></i> L'EXPLICACIÓ
+                            </div>
+                            <p class="exp-text" style="margin-top: 4px;">
+                                ${card.expl}
+                            </p>
+                        </div>
+
+                        ${card.params && card.params.length > 0 ? `
+                        <div class="params-list">
+                            ${paramsHtml}
+                        </div>
+                        ` : ''}
+
+                        <div class="mini-example">
+                            <div class="mini-example-header">
+                                <i class="fa-solid fa-code"></i> EXEMPLE PRÀCTIC EXPRÉS:
+                            </div>
+                            <pre>${card.example}</pre>
+                        </div>
+
+                        ${card.tip ? `
+                        <div class="pro-tip">
+                            <i class="fa-solid fa-lightbulb"></i>
+                            <div><strong>Consell Robòtica:</strong> ${card.tip}</div>
+                        </div>
+                        ` : ''}
+                    </div>
+                `;
+
+                container.appendChild(cardEl);
+            });
+
+            document.getElementById('visibleCount').textContent = filtered.length;
+        }
+
+        // CANVI DE CATEGORIA
+        function setCategory(cat) {
+            currentCategory = cat;
+            document.querySelectorAll('.cat-pill').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.cat === cat);
+            });
+            renderCards();
+        }
+
+        // CERCA
+        function filterCards() {
+            renderCards();
+        }
+
+        // SELECCIÓ INDIVIDUAL DE CARTES
+        function toggleCardSelect(id, checked) {
+            if (checked) {
+                selectedCardIds.add(id);
+            } else {
+                selectedCardIds.delete(id);
+            }
+            updateStats();
+        }
+
+        // SELECCIONAR TOTES / CAP
+        function toggleSelectAll() {
+            if (selectedCardIds.size === ARDUINO_CARDS.length) {
+                selectedCardIds.clear();
+            } else {
+                selectedCardIds = new Set(ARDUINO_CARDS.map(c => c.id));
+            }
+            renderCards();
+            updateStats();
+        }
+
+        function updateStats() {
+            const count = selectedCardIds.size;
+            document.getElementById('selectedCountBadge').textContent = count;
+            const btn = document.getElementById('btnSelectAllToggle');
+            if (count === ARDUINO_CARDS.length) {
+                btn.innerHTML = `<i class="fa-regular fa-square"></i> Desseleccionar Totes`;
+            } else {
+                btn.innerHTML = `<i class="fa-regular fa-square-check"></i> Seleccionar Totes (${count})`;
+            }
+        }
+
+        // ==================== MODE ESTUDI (FLASHCARDS JOC) ====================
+        function openStudyDeck() {
+            studyCurrentIndex = 0;
+            document.getElementById('studyModal').classList.add('active');
+            renderStudyCard();
+        }
+
+        function closeStudyDeck() {
+            document.getElementById('studyModal').classList.remove('active');
+        }
+
+        function renderStudyCard() {
+            const card = ARDUINO_CARDS[studyCurrentIndex];
+            document.getElementById('studyCardTitle').textContent = `Fitxa #${String(card.id).padStart(2, '0')} · ${card.title}`;
+            document.getElementById('studyCardCounter').textContent = `${studyCurrentIndex + 1} / ${ARDUINO_CARDS.length}`;
+
+            const contentEl = document.getElementById('studyCardContent');
+            contentEl.innerHTML = `
+                <div style="background: var(--code-bg); border: 1px solid var(--border-color); border-radius: 16px; padding: 1.5rem; text-align: center; margin-bottom: 1.5rem;">
+                    <span class="cat-tag" style="background: ${card.color}20; color: ${card.color}; border: 1px solid ${card.color}40; margin-bottom: 1rem; display: inline-block;">
+                        ${card.catLabel}
+                    </span>
+                    <pre class="command-syntax" style="font-size: 1.35rem; margin: 0.5rem 0;">${card.syntaxHtml}</pre>
+                </div>
+
+                <div id="studyRevealBox" style="text-align: center;">
+                    <button class="btn btn-primary" onclick="revealStudyAnswer(${card.id})" style="padding: 0.8rem 2rem; font-size: 1rem;">
+                        <i class="fa-solid fa-eye"></i> Revelar Explicació i Exemple
+                    </button>
+                </div>
+
+                <div id="studyAnswerArea" style="display: none; border-top: 1px solid var(--border-color); padding-top: 1.25rem;">
+                    <h4 style="color: var(--accent-cyan); font-size: 1.05rem; margin-bottom: 0.5rem;">
+                        <i class="fa-solid fa-circle-info"></i> Què fa aquesta ordre?
+                    </h4>
+                    <p style="font-size: 0.98rem; line-height: 1.6; color: #E2E8F0; margin-bottom: 1rem;">
+                        ${card.expl}
+                    </p>
+                    <div class="mini-example" style="text-align: left;">
+                        <div class="mini-example-header"><i class="fa-solid fa-code"></i> EXEMPLE D'ÚS:</div>
+                        <pre>${card.example}</pre>
+                    </div>
+                </div>
+            `;
+        }
+
+        function revealStudyAnswer(id) {
+            document.getElementById('studyRevealBox').style.display = 'none';
+            document.getElementById('studyAnswerArea').style.display = 'block';
+        }
+
+        function nextStudyCard() {
+            studyCurrentIndex = (studyCurrentIndex + 1) % ARDUINO_CARDS.length;
+            renderStudyCard();
+        }
+
+        function prevStudyCard() {
+            studyCurrentIndex = (studyCurrentIndex - 1 + ARDUINO_CARDS.length) % ARDUINO_CARDS.length;
+            renderStudyCard();
+        }
+
+        // Tancar modal amb la tecla Escape
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeStudyDeck();
+            if (document.getElementById('studyModal').classList.contains('active')) {
+                if (e.key === 'ArrowRight') nextStudyCard();
+                if (e.key === 'ArrowLeft') prevStudyCard();
+            }
+        });
+    </script>
+</body>
+</html>
