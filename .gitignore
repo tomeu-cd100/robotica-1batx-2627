@@ -47,4 +47,9 @@ Recursos/_tercers_nomes_local/
 # Eina local d'automatitzacio del Google Classroom (scripts Node +
 # node_modules + credentials.json). NO ha d'anar al repo public:
 # conte credencials i pesa >100 MB. Es material de treball de la maquina.
-Material Classroom/
+# S'ignora tot el contingut EXCEPTE alguns scripts reutilitzables (sense
+# secrets: llegeixen token.json en temps d'execucio, no l'incrusten).
+Material Classroom/*
+!Material Classroom/crear_questionaris_conceptes_forms.js
+!Material Classroom/adjuntar_questionaris_classroom.js
+!Material Classroom/actualitzar_fitxes_pdf.js
