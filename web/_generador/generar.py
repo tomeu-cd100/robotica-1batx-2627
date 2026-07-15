@@ -1318,6 +1318,65 @@ def find_out(pages: list[Page], src_name: str, fallback: str) -> str:
     return fallback
 
 
+# ---------------------------------------------------------------------------
+# Fulls imprimibles autocontinguts (HTML propi, no passa pel Markdown) que
+# també es publiquen a la web: HTML interactiu + PDF per imprimir.
+# Font versionada: Classes/00_General/impresos/. Vegeu generar_fulls_imprimibles.py.
+# ---------------------------------------------------------------------------
+IMPRESOS_SRC = ROOT / "Classes" / "00_General" / "impresos"
+IMPRESOS = [
+    {"file": "Fitxes_Arduino_UNO.html",
+     "title": "Fitxes visuals d'Arduino UNO",
+     "desc": "Conceptes clau i comandaments de programació en targetes, per "
+             "consultar i imprimir."},
+    {"file": "Blocs_Programacio_Offline.html",
+     "title": "Blocs de programació offline",
+     "desc": "48 blocs de codi retallables per construir programes sobre la "
+             "taula, sense ordinador."},
+]
+
+
+def copia_impresos(search_index: list) -> None:
+    """Copia els HTML imprimibles a web/impresos/ i el seu PDF ja generat (i
+    verificat, amb rellotge llarg per al CDN) de Classes/00_General/pdf/ a
+    web/pdf/impresos/, i els posa a l'índex de cerca. No passa per generar_pdf.py:
+    així el PDF web és el mateix full validat, sense risc de render incomplet."""
+    out_dir = WEB / "impresos"
+    out_dir.mkdir(parents=True, exist_ok=True)
+    pdf_out = WEB / "pdf" / "impresos"
+    pdf_src_dir = ROOT / "Classes" / "00_General" / "pdf"
+    for it in IMPRESOS:
+        src = IMPRESOS_SRC / it["file"]
+        if not src.exists():
+            continue
+        (out_dir / it["file"]).write_text(
+            src.read_text(encoding="utf-8"), encoding="utf-8")
+        stem = Path(it["file"]).stem
+        pdf_src = pdf_src_dir / f"{stem}.pdf"
+        if pdf_src.exists():
+            pdf_out.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(pdf_src, pdf_out / f"{stem}.pdf")
+        search_index.append({"t": it["title"], "s": "Recursos imprimibles",
+                             "u": f"impresos/{it['file']}", "tri": None, "p": "alumnat"})
+
+
+def impresos_card_html(from_out_rel: str) -> str:
+    """Targeta amb enllaç a l'HTML interactiu i al PDF de cada imprimible,
+    amb URL relatives a la pàgina `from_out_rel`."""
+    lis = []
+    for it in IMPRESOS:
+        stem = Path(it["file"]).stem
+        hurl = rel_url(from_out_rel, f"impresos/{it['file']}")
+        purl = rel_url(from_out_rel, f"pdf/impresos/{stem}.pdf")
+        lis.append(
+            f'<li><a href="{hurl}"><strong>{html.escape(it["title"])}</strong></a>'
+            f' — {html.escape(it["desc"])} '
+            f'<a href="{purl}">(PDF per imprimir)</a></li>')
+    return ('<section class="impresos-arduino">'
+            '<h2>Material imprimible d\'Arduino</h2>'
+            '<ul>' + "".join(lis) + "</ul></section>")
+
+
 def hub_urls(pages: list[Page]) -> dict[str, str]:
     """URL (des de l'arrel) dels documents que enllacen la portada i els hubs."""
     outs = {p.out_rel for p in pages}
@@ -1568,6 +1627,10 @@ def render_hub_alumnat(pages: list[Page]) -> str:
   <li><a href="reptes/index.html">Reptes</a> — cada SA en té per triar: agafa el context que t'enganxi més.</li>
 </ol>
 
+<h2 class="seccio-sep">Fitxes d'Arduino per tenir a mà</h2>
+<p class="seccio-intro">Consulta-les al navegador o imprimeix-les per treballar sobre paper.</p>
+{impresos_card_html("alumnat.html")}
+
 <h2 class="seccio-sep">Les 9 situacions d'aprenentatge</h2>
 <p class="seccio-intro">Clica una SA per anar al seu material d'aula.</p>
 {sa_grid_html(pages)}
@@ -1709,6 +1772,7 @@ def main():
         shutil.rmtree(IMG_OUT)
 
     write_pygments_css()
+    copia_impresos(search_index)  # fitxes Arduino a web/impresos/ + web/pdf/impresos/
 
     # Pàgines de documents
     for p in pages:
@@ -1737,6 +1801,10 @@ def main():
             else:
                 grp = page_group(p.section, p.out_rel)
                 extra = subindex_extra(p.section, grp, p.out_rel, pages)
+                # Fitxes Arduino imprimibles: a la portada de SA1 (primer
+                # contacte) i SA2 (programació de valent).
+                if p.section == "classes" and detect_sa(p.out_rel) in (1, 2):
+                    extra += "\n" + impresos_card_html(p.out_rel)
         content = (pre + "\n" if pre else "") + body + ("\n" + extra if extra else "")
         # Fil transversal de la SA + paginador d'itinerari (navegació pautada)
         sa = detect_sa(p.out_rel)
