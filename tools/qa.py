@@ -96,6 +96,8 @@ def comprova_cobertura_sa() -> None:
             base / f"{sa}_fitxa_ampliada.md",
             base / f"{sa}_checklist_docent.md",
             base / f"{sa}_checklist_alumnat.md",
+            base / f"{sa}_questionari_conceptes.md",  # retrieval (pas «Consolida»)
+            base / f"{sa}_exemple_resolt.md",          # model «jo ho faig»
         ]
         if n <= 8:
             esq = base / f"{sa}_esquemes_connexions.md"
