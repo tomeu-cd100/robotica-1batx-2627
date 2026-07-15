@@ -46,7 +46,7 @@ Pins habituals: LED `A` (ànode) / `C` (càtode) · resistència `1` / `2` · Ar
 | SA4 Servos | Arduino UNO | ✅ (servo); motor/pont H L298N limitat |
 | SA5 micro:bit | micro:bit + MicroPython | ❌ **no simulable** |
 | SA6 Control | Arduino UNO | ✅ |
-| SA7 Robòtica mòbil | Imagina 3dBot (propietària) | ❌ no simulable |
+| SA7 Robòtica mòbil | Imagina 3dBot (propietària) | ❌ el robot no és simulable · ✅ *sandbox de lògica* (`SA7_robot_reactiu`: UNO+HC-SR04+LEDs) per provar la decisió reactiva |
 | SA8 IoT / IA | ESP32 (IoT) **i** micro:bit (IA gestos) | ✅ part ESP32; ❌ part micro:bit |
 
 > ⚠️ **Limitació de Wokwi descoberta (2026-06-28): no simula el BBC micro:bit amb MicroPython.** Les úniques plaques que executen MicroPython a Wokwi són Raspberry Pi Pico i ESP32. Per tant, les pràctiques de **SA5** i la **part de gestos de SA8** (micro:bit) **no es poden portar a Wokwi**; es queden amb els diagrames i el codi a `Classes/`. Per a SA8 sí que es porta la pràctica **IoT amb ESP32** (`04_esp32_telemetria`), adaptada a la xarxa simulada `Wokwi-GUEST`.
@@ -59,10 +59,11 @@ Per a les pràctiques que **no** es poden portar a Wokwi, alternatives de simula
 |---|---|
 | **SA5 micro:bit** | **Simulador oficial** a [python.microbit.org](https://python.microbit.org) — executa el codi al navegador i mostra la matriu LED, els botons i els sensors (sense placa). Alternativa: **Open Roberta Lab**. |
 | **SA8 part micro:bit (gestos)** | Mateix **simulador** python.microbit.org per provar `03_ia_gestos.py` (acceleròmetre/gestos simulables amb el ratolí). |
-| **SA7 Imagina 3dBot** | No simulable: **demo projectada** del robot real, **vídeo** de les iteracions, o traçar la lògica sobre el **diagrama de decisió**; el repte de pista es fa amb el robot físic en equips. |
+| **SA7 Imagina 3dBot** | El robot NO és simulable: **demo projectada** del robot real, **vídeo** de les iteracions, o traçar la lògica sobre el **diagrama de decisió**; el repte de pista es fa amb el robot físic en equips. **Novetat:** hi ha un *sandbox de lògica* a Wokwi (`SA7_robot_reactiu`) — no és el robot, però permet provar el cicle percepció→decisió→acció (ultrasons → LEDs verd/groc/vermell) abans de tocar-lo. |
 
 > ⚠️ **La ràdio (SA5/SA8) no es prova amb un sol simulador** (cal comunicació *entre* plaques): per a la part de ràdio calen **dues plaques reals** o una **demostració del docent**. El simulador serveix per a la lògica de cada placa per separat.
 
 ## Estat de l'escalat
 - **Fet i publicat (públic):** SA1, SA2, SA3, SA4, SA6, SA8 (ESP32). → 6 projectes amb enllaç interactiu.
-- **No aplicable a Wokwi (amb pla B a la taula de dalt):** SA5 i SA7 (i la part micro:bit de SA8).
+- **Sandbox de lògica (no el robot):** SA7 (`SA7_robot_reactiu`) — provable a wokwi.com, pendent de desar-hi com a públic.
+- **No aplicable a Wokwi (amb pla B a la taula de dalt):** SA5 i la part micro:bit de SA8 (el ROBOT de SA7 tampoc; només se'n simula la lògica).

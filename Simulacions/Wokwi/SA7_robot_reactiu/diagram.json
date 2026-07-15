@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "author": "Robotica 1 Batx",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 0, "left": 0, "attrs": {} },
+    { "type": "wokwi-hc-sr04", "id": "sonar", "top": -180, "left": 200, "attrs": { "distance": "25" } },
+    { "type": "wokwi-led", "id": "ledV", "top": -120, "left": 100, "attrs": { "color": "green" } },
+    { "type": "wokwi-led", "id": "ledG", "top": -120, "left": 160, "attrs": { "color": "yellow" } },
+    { "type": "wokwi-led", "id": "ledR", "top": -120, "left": 220, "attrs": { "color": "red" } },
+    { "type": "wokwi-resistor", "id": "rV", "top": 20, "left": 100, "attrs": { "value": "220" } },
+    { "type": "wokwi-resistor", "id": "rG", "top": 20, "left": 160, "attrs": { "value": "220" } },
+    { "type": "wokwi-resistor", "id": "rR", "top": 20, "left": 220, "attrs": { "value": "220" } }
+  ],
+  "connections": [
+    [ "sonar:VCC", "uno:5V", "red", [] ],
+    [ "sonar:GND", "uno:GND.1", "black", [] ],
+    [ "sonar:TRIG", "uno:12", "blue", [] ],
+    [ "sonar:ECHO", "uno:11", "green", [] ],
+
+    [ "uno:8", "rV:1", "green", [] ],
+    [ "rV:2", "ledV:A", "green", [] ],
+    [ "uno:4", "rG:1", "gold", [] ],
+    [ "rG:2", "ledG:A", "gold", [] ],
+    [ "uno:7", "rR:1", "red", [] ],
+    [ "rR:2", "ledR:A", "red", [] ],
+
+    [ "ledV:C", "uno:GND.2", "black", [] ],
+    [ "ledG:C", "ledV:C", "black", [] ],
+    [ "ledR:C", "ledG:C", "black", [] ]
+  ]
+}
