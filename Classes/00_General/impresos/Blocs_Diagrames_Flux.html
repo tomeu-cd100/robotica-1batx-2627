@@ -16,60 +16,61 @@
   *{box-sizing:border-box; -webkit-print-color-adjust:exact; print-color-adjust:exact;}
   html,body{margin:0; padding:0;}
   body{font-family:system-ui,"Segoe UI",Roboto,Arial,sans-serif; color:var(--ink); font-size:11pt; line-height:1.35;}
-  @page{ size:A4; margin:11mm; }
+  @page{ size:A4; margin:10mm; }
 
-  h1{font-size:17.5pt; margin:0 0 3pt;}
-  h2{font-size:12.5pt; margin:13pt 0 7pt; padding-bottom:3pt; border-bottom:2px solid var(--frame);}
+  h1{font-size:18pt; margin:0 0 3pt;}
+  h2{font-size:15pt; margin:0 0 3mm; padding-bottom:3pt; border-bottom:2px solid var(--frame);}
   .sub{color:#4f6d6e; margin:0 0 8pt; font-size:10.5pt;}
+  .cat{color:#4f6d6e; margin:0 0 6mm; font-size:10.5pt;}
 
   .como{border:1.6px solid var(--frame); background:var(--paper); border-radius:12px; padding:8pt 12pt; margin:6pt 0;}
   .como b{color:var(--term-d);}
   .como ol{margin:5pt 0 0; padding-left:18pt;} .como li{margin:2pt 0;}
   .tip{color:var(--io); font-weight:600;}
 
-  /* ---- clau dels símbols (el que ensenya la notació) ---- */
+  /* clau dels símbols */
   .clau{display:flex; flex-wrap:wrap; gap:4mm; margin:4pt 0 2pt;}
   .clau .item{flex:1 1 30%; min-width:52mm; display:flex; align-items:center; gap:3mm;
               border:1.4px solid var(--frame); border-radius:10px; padding:4pt 6pt; background:#fff;}
-  .clau .mini{flex:0 0 auto;}
   .clau .txt{font-size:9.3pt; line-height:1.25;} .clau .txt b{display:block; font-size:10pt;}
 
-  /* ---- graella de peces retallables ---- */
-  .grid{display:flex; flex-wrap:wrap; gap:5mm; margin:5pt 0 2pt;}
-  .cut{border:1.4px dashed #9fb9b8; border-radius:10px; padding:4mm;
+  /* seccions: cada categoria a la seva pàgina */
+  .pagina{break-before:page;}
+  .grid{display:flex; flex-wrap:wrap; gap:8mm; margin:0;}
+  .cut{border:1.5px dashed #9fb9b8; border-radius:12px; padding:6mm;
        display:flex; align-items:center; justify-content:center; background:#fff;}
 
   .shape{display:flex; align-items:center; justify-content:center; text-align:center;
-         font-weight:600; font-size:9.6pt; box-shadow:0 1px 2px rgba(14,27,28,.10); padding:2mm;}
+         font-weight:600; box-shadow:0 1px 3px rgba(14,27,28,.12); padding:3mm;}
   .blank{color:#9fb9b8; font-weight:500; font-style:italic;}
 
-  /* Terminal: OVAL (inici/fi) */
-  .terminal{width:42mm; height:14mm; border-radius:999px; background:var(--term);
-            border:2px solid var(--term-d); color:#fff; font-size:11pt; letter-spacing:.4px;}
-  /* Procés: RECTANGLE (una acció) */
-  .proces{width:50mm; height:15mm; background:var(--proc-bg); border:2px solid var(--proc); color:var(--ink);}
+  /* --- formes GRANS (per manipular millor) --- */
+  /* Terminal: OVAL */
+  .terminal{width:74mm; height:24mm; border-radius:999px; background:var(--term);
+            border:2.4px solid var(--term-d); color:#fff; font-size:15pt; letter-spacing:.5px;}
+  /* Procés: RECTANGLE */
+  .proces{width:80mm; height:26mm; background:var(--proc-bg); border:2.4px solid var(--proc);
+          color:var(--ink); font-size:13.5pt;}
   /* Entrada/Sortida: PARAL·LELOGRAM */
-  .io{width:50mm; height:15mm; background:var(--io-bg); border:2px solid var(--io);
-      color:var(--ink); transform:skewX(-16deg);}
+  .io{width:80mm; height:26mm; background:var(--io-bg); border:2.4px solid var(--io);
+      color:var(--ink); font-size:13.5pt; transform:skewX(-16deg);}
   .io > span{display:inline-block; transform:skewX(16deg);}
   /* Decisió: ROMBE */
-  .decwrap{width:44mm; height:30mm; position:relative;}
-  .decision{position:absolute; inset:0; margin:auto; width:29mm; height:29mm; background:var(--dec-bg);
-            border:2px solid var(--dec); transform:rotate(45deg); border-radius:5px; box-shadow:0 1px 2px rgba(14,27,28,.10);}
+  .decwrap{width:70mm; height:52mm; position:relative;}
+  .decision{position:absolute; inset:0; margin:auto; width:50mm; height:50mm; background:var(--dec-bg);
+            border:2.4px solid var(--dec); transform:rotate(45deg); border-radius:8px; box-shadow:0 1px 3px rgba(14,27,28,.12);}
   .dectxt{position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
-          text-align:center; font-weight:700; color:#6b21a8; font-size:8.4pt; padding:3mm;}
+          text-align:center; font-weight:700; color:#6b21a8; font-size:12pt; padding:6mm;}
   /* Connector: CERCLE */
-  .conn{width:15mm; height:15mm; border-radius:999px; background:var(--conn-bg);
-        border:2px solid var(--conn); color:#0f766e; font-weight:800; font-size:13pt;}
+  .conn{width:26mm; height:26mm; border-radius:999px; background:var(--conn-bg);
+        border:2.4px solid var(--conn); color:#0f766e; font-weight:800; font-size:18pt;}
 
-  /* fletxes i etiquetes */
   .arrow svg{display:block;}
-  .lab{height:11mm; border-radius:7px; border:2px dashed var(--io); color:var(--io);
-       font-weight:800; font-size:11pt; background:#fff; width:24mm;}
+  .lab{height:16mm; border-radius:9px; border:2.4px dashed var(--io); color:var(--io);
+       font-weight:800; font-size:15pt; background:#fff; width:36mm;}
   .lab.si{border-style:solid; border-color:var(--term); color:var(--term-d);}
 
-  .pagebreak{break-before:page;}
-  footer{margin-top:10pt; color:#6b8483; font-size:8.5pt; border-top:1px solid var(--frame); padding-top:5pt;}
+  footer{margin-top:8mm; color:#6b8483; font-size:8.5pt; border-top:1px solid var(--frame); padding-top:5pt;}
 </style>
 </head>
 <body>
@@ -80,7 +81,7 @@
 <div class="como">
   <b>Com s'usa (abans d'escriure codi):</b>
   <ol>
-    <li><b>Retalla</b> les peces per la línia de punts i, si pots, <b>plastifica-les</b>.</li>
+    <li><b>Retalla</b> les peces per la línia de punts i, si pots, <b>plastifica-les</b> (són grans, més fàcils de manipular).</li>
     <li><b>Munta el diagrama</b> de dalt a baix: <b>Inici → passos → Fi</b>, unint les peces amb <b>fletxes</b>.</li>
     <li>A cada <b>decisió</b> (rombe), surten dues fletxes: <b>SÍ</b> i <b>NO</b>.</li>
     <li>Als buits, <b>escriu amb retolador</b> (sobre el plàstic s'esborra).</li>
@@ -90,29 +91,34 @@
 
 <h2>La clau dels símbols (com en informàtica)</h2>
 <div class="clau">
-  <div class="item"><span class="mini shape terminal" style="width:26mm;height:9mm;font-size:8pt">Inici / Fi</span>
+  <div class="item"><span class="shape terminal" style="width:26mm;height:9mm;font-size:8pt">Inici / Fi</span>
     <span class="txt"><b>Terminal (oval)</b>On comença i on acaba el procés.</span></div>
-  <div class="item"><span class="mini shape proces" style="width:26mm;height:9mm;font-size:8pt">acció</span>
+  <div class="item"><span class="shape proces" style="width:26mm;height:9mm;font-size:8pt">acció</span>
     <span class="txt"><b>Procés (rectangle)</b>Un pas: una operació o instrucció.</span></div>
-  <div class="item"><span class="mini shape io" style="width:26mm;height:9mm;font-size:8pt"><span>llegir / mostrar</span></span>
+  <div class="item"><span class="shape io" style="width:26mm;height:9mm;font-size:8pt"><span>llegir / mostrar</span></span>
     <span class="txt"><b>Entrada/Sortida (paral·lelogram)</b>Llegir dades o mostrar-les/enviar-les.</span></div>
-  <div class="item"><span class="mini" style="position:relative;width:20mm;height:14mm"><span class="shape decision" style="width:12mm;height:12mm;position:absolute;inset:0;margin:auto"></span><span class="dectxt" style="font-size:7pt">?</span></span>
+  <div class="item"><span style="position:relative;width:20mm;height:14mm;display:inline-block"><span class="shape decision" style="width:12mm;height:12mm;position:absolute;inset:0;margin:auto"></span><span class="dectxt" style="font-size:7pt">?</span></span>
     <span class="txt"><b>Decisió (rombe)</b>Una pregunta SÍ/NO que bifurca el flux (<code>if</code>).</span></div>
-  <div class="item"><span class="mini shape conn" style="width:9mm;height:9mm;font-size:9pt">A</span>
+  <div class="item"><span class="shape conn" style="width:9mm;height:9mm;font-size:9pt">A</span>
     <span class="txt"><b>Connector (cercle)</b>Uneix dues parts del diagrama (un salt).</span></div>
-  <div class="item"><span class="mini arrow"><svg width="30" height="16"><path d="M2,8 L22,8" stroke="#0e1b1c" stroke-width="2.4" fill="none"/><path d="M20,3 L28,8 L20,13 Z" fill="#0e1b1c"/></svg></span>
+  <div class="item"><span class="arrow"><svg width="30" height="16"><path d="M2,8 L22,8" stroke="#0e1b1c" stroke-width="2.4" fill="none"/><path d="M20,3 L28,8 L20,13 Z" fill="#0e1b1c"/></svg></span>
     <span class="txt"><b>Línia de flux (fletxa)</b>L'ordre en què es fan els passos.</span></div>
 </div>
 
+<section class="pagina">
 <h2>Terminal — Inici / Fi (oval)</h2>
+<p class="cat">On comença i on acaba el procés.</p>
 <div class="grid">
   <div class="cut"><div class="shape terminal">INICI</div></div>
   <div class="cut"><div class="shape terminal">FI</div></div>
   <div class="cut"><div class="shape terminal blank">_______</div></div>
   <div class="cut"><div class="shape terminal blank">_______</div></div>
 </div>
+</section>
 
+<section class="pagina">
 <h2>Procés — accions (rectangle)</h2>
+<p class="cat">Cada peça és un pas: una operació o instrucció.</p>
 <div class="grid">
   <div class="cut"><div class="shape proces">Configuro els pins</div></div>
   <div class="cut"><div class="shape proces">Encenc el LED</div></div>
@@ -127,9 +133,11 @@
   <div class="cut"><div class="shape proces blank">escriu-hi…</div></div>
   <div class="cut"><div class="shape proces blank">escriu-hi…</div></div>
 </div>
+</section>
 
-<div class="pagebreak"></div>
+<section class="pagina">
 <h2>Entrada / Sortida (paral·lelogram)</h2>
+<p class="cat">Llegir dades (entrada) o mostrar-les / enviar-les (sortida).</p>
 <div class="grid">
   <div class="cut"><div class="shape io"><span>Llegeixo el sensor</span></div></div>
   <div class="cut"><div class="shape io"><span>Llegeixo un botó</span></div></div>
@@ -140,8 +148,11 @@
   <div class="cut"><div class="shape io blank"><span>escriu-hi…</span></div></div>
   <div class="cut"><div class="shape io blank"><span>escriu-hi…</span></div></div>
 </div>
+</section>
 
+<section class="pagina">
 <h2>Decisió — pregunta SÍ/NO (rombe)</h2>
+<p class="cat">Una pregunta que bifurca el flux (<code>if</code>): en surten dues fletxes, SÍ i NO.</p>
 <div class="grid">
   <div class="cut"><div class="decwrap"><div class="decision"></div><div class="dectxt">valor &gt; llindar?</div></div></div>
   <div class="cut"><div class="decwrap"><div class="decision"></div><div class="dectxt">botó premut?</div></div></div>
@@ -149,36 +160,33 @@
   <div class="cut"><div class="decwrap"><div class="decision"></div><div class="dectxt">funciona?</div></div></div>
   <div class="cut"><div class="decwrap"><div class="decision"></div><div class="dectxt blank">…?</div></div></div>
   <div class="cut"><div class="decwrap"><div class="decision"></div><div class="dectxt blank">…?</div></div></div>
-  <div class="cut"><div class="decwrap"><div class="decision"></div><div class="dectxt blank">…?</div></div></div>
-  <div class="cut"><div class="decwrap"><div class="decision"></div><div class="dectxt blank">…?</div></div></div>
 </div>
+</section>
 
+<section class="pagina">
 <h2>Connectors, fletxes i etiquetes</h2>
+<p class="cat">Cercle = salt/unió. Fletxes = l'ordre dels passos. SÍ/NO = sortides d'una decisió.</p>
 <div class="grid">
   <div class="cut"><div class="shape conn">A</div></div>
   <div class="cut"><div class="shape conn">B</div></div>
   <div class="cut"><div class="shape conn blank">◯</div></div>
-  <!-- fletxa avall -->
-  <div class="cut"><div class="arrow"><svg width="20" height="52" viewBox="0 0 20 52"><path d="M10,2 L10,42" fill="none" stroke="#0e1b1c" stroke-width="3"/><path d="M3,38 L10,50 L17,38 Z" fill="#0e1b1c"/></svg></div></div>
-  <div class="cut"><div class="arrow"><svg width="20" height="52" viewBox="0 0 20 52"><path d="M10,2 L10,42" fill="none" stroke="#0e1b1c" stroke-width="3"/><path d="M3,38 L10,50 L17,38 Z" fill="#0e1b1c"/></svg></div></div>
-  <div class="cut"><div class="arrow"><svg width="20" height="52" viewBox="0 0 20 52"><path d="M10,2 L10,42" fill="none" stroke="#0e1b1c" stroke-width="3"/><path d="M3,38 L10,50 L17,38 Z" fill="#0e1b1c"/></svg></div></div>
-  <!-- cantonades (branques) -->
-  <div class="cut"><div class="arrow"><svg width="54" height="40" viewBox="0 0 54 40"><path d="M4,8 L40,8 L40,30" fill="none" stroke="#0e1b1c" stroke-width="3"/><path d="M33,26 L40,38 L47,26 Z" fill="#0e1b1c"/></svg></div></div>
-  <div class="cut"><div class="arrow"><svg width="54" height="40" viewBox="0 0 54 40"><path d="M50,8 L14,8 L14,30" fill="none" stroke="#0e1b1c" stroke-width="3"/><path d="M7,26 L14,38 L21,26 Z" fill="#0e1b1c"/></svg></div></div>
-  <!-- bucle -->
-  <div class="cut"><div class="arrow"><svg width="70" height="52" viewBox="0 0 70 52"><path d="M60,6 L14,6 L14,44 L52,44" fill="none" stroke="#0e1b1c" stroke-width="3"/><path d="M48,37 L60,44 L48,51 Z" fill="#0e1b1c"/></svg></div></div>
-</div>
-<div class="grid">
+  <div class="cut"><div class="arrow"><svg width="28" height="76" viewBox="0 0 28 76"><path d="M14,3 L14,62" fill="none" stroke="#0e1b1c" stroke-width="4"/><path d="M5,56 L14,74 L23,56 Z" fill="#0e1b1c"/></svg></div></div>
+  <div class="cut"><div class="arrow"><svg width="28" height="76" viewBox="0 0 28 76"><path d="M14,3 L14,62" fill="none" stroke="#0e1b1c" stroke-width="4"/><path d="M5,56 L14,74 L23,56 Z" fill="#0e1b1c"/></svg></div></div>
+  <div class="cut"><div class="arrow"><svg width="28" height="76" viewBox="0 0 28 76"><path d="M14,3 L14,62" fill="none" stroke="#0e1b1c" stroke-width="4"/><path d="M5,56 L14,74 L23,56 Z" fill="#0e1b1c"/></svg></div></div>
+  <div class="cut"><div class="arrow"><svg width="80" height="58" viewBox="0 0 80 58"><path d="M5,10 L58,10 L58,44" fill="none" stroke="#0e1b1c" stroke-width="4"/><path d="M49,38 L58,56 L67,38 Z" fill="#0e1b1c"/></svg></div></div>
+  <div class="cut"><div class="arrow"><svg width="80" height="58" viewBox="0 0 80 58"><path d="M75,10 L22,10 L22,44" fill="none" stroke="#0e1b1c" stroke-width="4"/><path d="M13,38 L22,56 L31,38 Z" fill="#0e1b1c"/></svg></div></div>
+  <div class="cut"><div class="arrow"><svg width="100" height="76" viewBox="0 0 100 76"><path d="M86,8 L20,8 L20,64 L74,64" fill="none" stroke="#0e1b1c" stroke-width="4"/><path d="M68,55 L86,64 L68,73 Z" fill="#0e1b1c"/></svg></div></div>
   <div class="cut"><div class="shape lab si">SÍ</div></div>
   <div class="cut"><div class="shape lab si">SÍ</div></div>
   <div class="cut"><div class="shape lab">NO</div></div>
   <div class="cut"><div class="shape lab">NO</div></div>
 </div>
+</section>
 
 <footer>
   Material imprimible de Robòtica · 1r de Batxillerat (LOMLOE). Símbols normalitzats de diagrama de flux
-  (terminal, procés, entrada/sortida, decisió, connector). Retalla, plastifica i reutilitza amb retolador
-  esborrable. Es correspon amb els diagrames de flux de cada SA. Llicència CC BY-SA 4.0.
+  (terminal, procés, entrada/sortida, decisió, connector). Peces grans per retallar, plastificar i reutilitzar
+  amb retolador esborrable. Es correspon amb els diagrames de flux de cada SA. Llicència CC BY-SA 4.0.
 </footer>
 
 </body>
