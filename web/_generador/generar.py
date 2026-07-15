@@ -836,12 +836,14 @@ DOC_ORDRE_CLAUS = ["guia-docent", "vocabulari", "guia", "diagnostica",
                    "fitxa-alumnat", "banc-de-reptes", "planificacio",
                    "prova", "normes", "esquemes", "connexions",
                    "recursos", "__codi__", "practica", "poster", "dossier",
-                   "checklist-alumnat",
-                   "fitxa-ampliada", "questionari", "checklist-docent"]
+                   "questionari", "checklist-alumnat",
+                   "fitxa-ampliada", "checklist-docent"]
 
 # Material que existeix per a l'alumnat però NOMÉS com a consulta opcional
-# («Si vols més»): fora del pager i del sidebar en vista alumnat.
-NOMES_CONSULTA = ("fitxa-ampliada", "questionari", "recursos-video")
+# («Si vols més»): fora del pager i del sidebar en vista alumnat. El
+# qüestionari de conceptes SÍ que és al camí (pas «Consolida»: recuperació
+# abans de l'autoavaluació).
+NOMES_CONSULTA = ("fitxa-ampliada", "recursos-video")
 
 
 def doc_ordre(p: Page):
