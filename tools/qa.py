@@ -186,12 +186,43 @@ def comprova_quadern() -> None:
     print(f"5) Quadern tècnic: {total} sessions, {fallats} incoherències.")
 
 
+# --- 6 · Ordre de l'itinerari: cap pàgina sense clau a DOC_ORDRE_CLAUS -------
+def comprova_ordre_itinerari() -> None:
+    """Cada pàgina d'una SA ha de tenir una clau a DOC_ORDRE_CLAUS; si no,
+    cau al calaix de sastre del final de l'itinerari sense avisar. Reutilitza
+    la llista real de generar.py per no desincronitzar-se."""
+    classes = WEB / "classes"
+    sa_dirs = sorted(d for d in classes.glob("sa*") if d.is_dir()) if classes.exists() else []
+    if not sa_dirs:
+        avisos.append("web/classes sense SA: check d'ordre omès (genera el web abans).")
+        return
+    sys.path.insert(0, str(ARREL / "web" / "_generador"))
+    import generar as g
+    claus = [k for k in g.DOC_ORDRE_CLAUS if k != "__codi__"]
+    sense_clau = 0
+    for d in sa_dirs:
+        for pag in sorted(d.rglob("*.html")):
+            rel = pag.relative_to(d)
+            nom = pag.name.lower()
+            # Salta portada i pàgines de codi (ordre propi via __codi__).
+            if nom in ("index.html", "codi.html") or "codi" in rel.parts:
+                continue
+            ruta = str(rel).lower().replace(os.sep, "/")
+            if not any(c in ruta for c in claus):
+                errors.append(f"[ordre] {pag.relative_to(WEB)}: cap clau a "
+                              f"DOC_ORDRE_CLAUS (cauria al final de l'itinerari; "
+                              f"afegeix-ne una a generar.py)")
+                sense_clau += 1
+    print(f"6) Ordre itinerari: {len(sa_dirs)} SA, {sense_clau} pàgines sense clau d'ordre.")
+
+
 def main() -> int:
     comprova_enllacos_web()
     comprova_cobertura_sa()
     comprova_hores()
     comprova_python()
     comprova_quadern()
+    comprova_ordre_itinerari()
     for a in avisos:
         print(f"⚠️  {a}")
     if errors:
