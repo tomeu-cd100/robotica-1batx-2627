@@ -8,6 +8,8 @@
 
 ---
 
+![Pont H L298N per controlar el sentit i la velocitat d'un motor](img/sa4-pont-h-l298n.svg)
+
 ## 🔑 El repte model
 
 > Fer un **ventilador orientable de sobretaula**: un **servo** que **orienta el cap** (l'apunta a un

@@ -8,6 +8,8 @@
 
 ---
 
+![Comunicació per ràdio entre dues plaques micro:bit](img/sa5-radio.svg)
+
 ## 🔑 El repte model
 
 > Fer una **sentinella de temperatura**: la micro:bit mostra la temperatura a la matriu de LED i, quan

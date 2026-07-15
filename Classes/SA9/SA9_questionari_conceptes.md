@@ -9,6 +9,8 @@
 
 ---
 
+![Mètode de projecte iteratiu: analitzar, dissenyar, construir, provar, millorar](img/sa9-metode-projecte.svg)
+
 ## Preguntes (tria una resposta)
 
 1. El **mètode de projecte** del curs segueix aquest ordre de fases…

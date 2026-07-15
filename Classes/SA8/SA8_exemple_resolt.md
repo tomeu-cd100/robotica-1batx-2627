@@ -8,6 +8,8 @@
 
 ---
 
+![Telemetria: mesurar dades en un lloc i transmetre-les sense fils](img/sa8-telemetria.svg)
+
 ## 🔑 El repte model
 
 > Fer un **sensor de moviment sense fils**: una micro:bit **emissora** mesura la **força del

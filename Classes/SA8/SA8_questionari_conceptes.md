@@ -8,6 +8,8 @@
 
 ---
 
+![Comportament programat amb regles davant d'après amb dades (IA)](img/sa8-ia-regles-aprenentatge.svg)
+
 ## Preguntes (tria una resposta)
 
 1. La **telemetria** consisteix a…

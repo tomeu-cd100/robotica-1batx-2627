@@ -9,6 +9,8 @@
 
 ---
 
+![Polsador amb resistència de pull-up interna (INPUT_PULLUP)](img/sa3-polsador-pullup.svg)
+
 ## Preguntes (tria una resposta)
 
 1. Per llegir l'estat d'una **entrada digital** (un polsador) s'escriu…

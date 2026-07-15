@@ -8,6 +8,8 @@
 
 ---
 
+![Histèresi: dos llindars amb una zona morta per evitar el parpelleig](img/sa6-histeresi.svg)
+
 ## 🔑 El repte model
 
 > Controlar el **nivell d'un dipòsit d'aigua**: una **bomba** l'omple quan el nivell baixa

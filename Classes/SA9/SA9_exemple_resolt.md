@@ -9,6 +9,8 @@
 
 ---
 
+![Taulell àgil amb les columnes Per fer, Fent i Fet](img/sa9-taulell-agile.svg)
+
 ## 🔑 El repte model
 
 > Un equip fictici, **els «Repartidors»**, vol un **robot que reparteix objectes petits per l'aula**:

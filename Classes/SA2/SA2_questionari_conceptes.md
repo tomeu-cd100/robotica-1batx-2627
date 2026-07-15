@@ -8,6 +8,8 @@
 
 ---
 
+![LED RGB: barrejant vermell, verd i blau s'obté qualsevol color](img/sa2-rgb.svg)
+
 ## Preguntes (tria una resposta)
 
 1. En un *sketch* d'Arduino, el bloc `setup()`…

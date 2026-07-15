@@ -9,6 +9,8 @@
 
 ---
 
+![Divisor de tensió amb una LDR per mesurar la llum ambiental](img/sa3-divisor-ldr.svg)
+
 ## 🔑 El repte model
 
 > Fer una **llum de nit automàtica**: un LED que **s'encén sol quan es fa fosc** i s'apaga quan

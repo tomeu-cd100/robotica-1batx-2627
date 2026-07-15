@@ -8,6 +8,8 @@
 
 ---
 
+![Control de llaç tancat: el sensor realimenta el sistema per corregir l'error](img/sa6-llac-tancat.svg)
+
 ## Preguntes (tria una resposta)
 
 1. Quina és la diferència principal entre **llaç obert** i **llaç tancat**?

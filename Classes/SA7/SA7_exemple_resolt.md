@@ -8,6 +8,8 @@
 
 ---
 
+![Seguidor de línia amb sensors infrarojos](img/sa7-seguidor-linia.svg)
+
 ## 🔑 El repte model
 
 > Fer un **robot prudent**: mira endavant amb l'ultrasons i **manté una distància de seguretat** a

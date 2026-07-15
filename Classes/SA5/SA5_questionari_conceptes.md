@@ -8,6 +8,8 @@
 
 ---
 
+![Components de la placa micro:bit: matriu de LED, botons i sensors](img/sa5-microbit-features.svg)
+
 ## Preguntes (tria una resposta)
 
 1. En MicroPython, la línia que dona accés a la matriu de LED, els botons i els sensors de la micro:bit és…

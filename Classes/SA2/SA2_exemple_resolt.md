@@ -7,6 +7,8 @@
 
 ---
 
+![Seqüència d'un semàfor amb tres LED](img/sa2-semafor.svg)
+
 ## 🔑 El repte model
 
 > Fer una **llum de posició** (un LED blanc/vermell) que **respiri suaument** (s'encén i

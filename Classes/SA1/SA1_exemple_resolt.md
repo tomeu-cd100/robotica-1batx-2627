@@ -8,6 +8,8 @@
 
 ---
 
+![Circuit del Blink: un LED amb resistència connectat a un pin de sortida](img/sa1-circuit-blink.svg)
+
 ## 🔑 El repte model
 
 > Agafo un robot quotidià —un **aspirador robot**— i l'**analitzo amb el model entrada → procés →

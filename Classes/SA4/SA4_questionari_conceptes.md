@@ -8,6 +8,8 @@
 
 ---
 
+![Servo controlat amb un potenciòmetre](img/sa4-servo-potenciometre.svg)
+
 ## Preguntes (tria una resposta)
 
 1. Quina és la diferència principal entre un **servomotor** i un **motor DC**?

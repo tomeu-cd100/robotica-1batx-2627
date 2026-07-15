@@ -9,6 +9,8 @@
 
 ---
 
+![Cinemàtica diferencial d'un robot de dues rodes](img/sa7-cinematica-diferencial.svg)
+
 ## Preguntes (tria una resposta)
 
 1. La **cinemàtica diferencial** d'un robot de dues rodes vol dir que…

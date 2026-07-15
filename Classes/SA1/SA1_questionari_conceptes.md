@@ -9,6 +9,8 @@
 
 ---
 
+![Model entrada-procés-sortida d'un robot](img/sa1-model-eps.svg)
+
 ## Preguntes (tria una resposta)
 
 1. Què distingeix un **robot** d'una màquina qualsevol (per exemple, un martell)?
