@@ -24,12 +24,12 @@
 
 3. Per configurar un pin com a sortida s'escriu…
    - a) `digitalRead(PIN);`
-   - b) `pinMode(PIN, OUTPUT);`
+   - b) **`pinMode(PIN, OUTPUT);`**
    - c) `analogRead(PIN);`
    - d) `Serial.begin(PIN);`
 
 4. Per encendre un LED connectat a un pin digital s'escriu…
-   - a) `digitalWrite(PIN, HIGH);`
+   - a) **`digitalWrite(PIN, HIGH);`**
    - b) `digitalWrite(PIN, LOW);`
    - c) `pinMode(PIN, INPUT);`
    - d) `delay(PIN);`
