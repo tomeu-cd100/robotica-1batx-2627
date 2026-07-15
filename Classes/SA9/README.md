@@ -2,6 +2,8 @@
 
 Novena i última situació d'aprenentatge (**10 h · 5 sessions**, 3r trimestre). És el **projecte de síntesi** del curs: en equip, l'alumnat dissenya, construeix, programa, documenta i defensa un **sistema robòtic autònom** que resol un repte real, integrant **tot l'après (SA1-SA8)**. Opció de vincular-lo a una **competició** (WRO, RoboCup Junior, FTC) o al **Treball de Recerca**. Maquinari i llenguatge **lliures**. Programació oficial: [`Programació didàctica/18_SA9_Projecte_final.md`](../../Programació%20didàctica/18_SA9_Projecte_final.md).
 
+![Mètode de projecte: analitzar, dissenyar, construir, provar i millorar de manera iterativa](img/sa9-metode-projecte.svg)
+
 ## Itinerari per sessions (per fases)
 
 > El projecte segueix el **mètode de projecte** del curs. La teva feina d'equip és a la **[fitxa base](SA9_fitxa_alumnat.md)** amb les [plantilles](plantilles/). Les respostes de la fitxa es lliuren a la **[tasca de Classroom](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODcwNTE3OTM1Nzkw/details)** (una per equip).
