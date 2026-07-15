@@ -835,8 +835,8 @@ def sa_fil_html(sa: int, current_out: str, fil: dict) -> str:
 DOC_ORDRE_CLAUS = ["guia-docent", "vocabulari", "guia", "diagnostica",
                    "fitxa-alumnat", "banc-de-reptes", "planificacio",
                    "prova", "normes", "esquemes", "connexions",
-                   "recursos", "exemple", "__codi__", "practica", "poster",
-                   "dossier", "questionari", "checklist-alumnat",
+                   "recursos", "diagrama", "exemple", "__codi__", "practica",
+                   "poster", "dossier", "questionari", "checklist-alumnat",
                    "fitxa-ampliada", "checklist-docent"]
 
 # Material que existeix per a l'alumnat però NOMÉS com a consulta opcional
