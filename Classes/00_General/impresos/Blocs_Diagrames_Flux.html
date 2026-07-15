@@ -36,9 +36,10 @@
 
   /* seccions: cada categoria a la seva pàgina */
   .pagina{break-before:page;}
-  .grid{display:flex; flex-wrap:wrap; gap:8mm; margin:0;}
-  .cut{border:1.5px dashed #9fb9b8; border-radius:12px; padding:6mm;
-       display:flex; align-items:center; justify-content:center; background:#fff;}
+  .grid{display:flex; flex-wrap:wrap; gap:6mm; margin:0;}
+  .cut{border:1.5px dashed #9fb9b8; border-radius:12px; padding:5mm;
+       display:flex; align-items:center; justify-content:center; background:#fff;
+       break-inside:avoid; page-break-inside:avoid;}
 
   .shape{display:flex; align-items:center; justify-content:center; text-align:center;
          font-weight:600; box-shadow:0 1px 3px rgba(14,27,28,.12); padding:3mm;}
@@ -49,11 +50,11 @@
   .terminal{width:74mm; height:24mm; border-radius:999px; background:var(--term);
             border:2.4px solid var(--term-d); color:#fff; font-size:15pt; letter-spacing:.5px;}
   /* Procés: RECTANGLE */
-  .proces{width:80mm; height:26mm; background:var(--proc-bg); border:2.4px solid var(--proc);
-          color:var(--ink); font-size:13.5pt;}
+  .proces{width:72mm; height:21mm; background:var(--proc-bg); border:2.4px solid var(--proc);
+          color:var(--ink); font-size:12pt;}
   /* Entrada/Sortida: PARAL·LELOGRAM */
-  .io{width:80mm; height:26mm; background:var(--io-bg); border:2.4px solid var(--io);
-      color:var(--ink); font-size:13.5pt; transform:skewX(-16deg);}
+  .io{width:72mm; height:21mm; background:var(--io-bg); border:2.4px solid var(--io);
+      color:var(--ink); font-size:12pt; transform:skewX(-16deg);}
   .io > span{display:inline-block; transform:skewX(16deg);}
   /* Decisió: ROMBE */
   .decwrap{width:70mm; height:52mm; position:relative;}
