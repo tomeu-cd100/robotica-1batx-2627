@@ -298,12 +298,15 @@ def print_pdf(browser: str, html_path: Path, pdf_path: Path, profile: str,
     # antic fent passar el check de mida (evita committar una versio desfasada).
     if pdf_path.exists():
         pdf_path.unlink()
-    cmd = [browser, "--headless=new", "--disable-gpu",
-           *([] if sys.platform == "win32" else ["--no-sandbox"]),
-           "--no-pdf-header-footer", "--run-all-compositor-stages-before-draw",
-           f"--virtual-time-budget={budget}", f"--user-data-dir={profile}",
-           f"--print-to-pdf={pdf_path}", html_path.as_uri()]
-    subprocess.run(cmd, capture_output=True, text=True)
+    # Perfil FRESC per render: compartir-lo entre molts renders fa que Chrome
+    # reutilitzi la cau i de tant en tant surti una versio desfasada.
+    with tempfile.TemporaryDirectory(prefix="fullpdf1_") as prof:
+        cmd = [browser, "--headless=new", "--disable-gpu", "--disk-cache-size=1",
+               *([] if sys.platform == "win32" else ["--no-sandbox"]),
+               "--no-pdf-header-footer", "--run-all-compositor-stages-before-draw",
+               f"--virtual-time-budget={budget}", f"--user-data-dir={prof}",
+               f"--print-to-pdf={pdf_path}", html_path.as_uri()]
+        subprocess.run(cmd, capture_output=True, text=True)
     return pdf_path.exists() and pdf_path.stat().st_size > 0
 
 
