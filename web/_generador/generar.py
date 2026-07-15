@@ -1335,6 +1335,10 @@ IMPRESOS = [
      "title": "Blocs de programació offline",
      "desc": "48 blocs de codi retallables per construir programes sobre la "
              "taula, sense ordinador."},
+    {"file": "Blocs_Diagrames_Flux.html",
+     "title": "Peces per muntar diagrames de flux",
+     "desc": "Caixes, decisions i fletxes retallables (per plastificar) per "
+             "dissenyar el flux abans de programar."},
 ]
 
 

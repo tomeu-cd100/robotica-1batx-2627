@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Peces retallables per muntar diagrames de flux · Robòtica 1r Batx</title>
+<style>
+  :root{
+    --teal:#0891b2; --teal-d:#0e7490; --teal-bg:#eaf3f2;
+    --amber:#b45309; --amber-d:#7c3a06; --amber-bg:#fff7ed;
+    --ink:#0e1b1c; --frame:#d7e6e5; --paper:#f6faf9;
+  }
+  *{box-sizing:border-box; -webkit-print-color-adjust:exact; print-color-adjust:exact;}
+  html,body{margin:0; padding:0;}
+  body{font-family:system-ui,"Segoe UI",Roboto,Arial,sans-serif; color:var(--ink); font-size:11pt; line-height:1.35;}
+  @page{ size:A4; margin:11mm; }
+
+  h1{font-size:18pt; margin:0 0 4pt;}
+  h2{font-size:12.5pt; color:var(--teal-d); margin:14pt 0 7pt; padding-bottom:3pt;
+     border-bottom:2px solid var(--frame);}
+  .sub{color:#4f6d6e; margin:0 0 8pt; font-size:10.5pt;}
+
+  .como{border:1.6px solid var(--frame); background:var(--paper); border-radius:12px;
+        padding:9pt 12pt; margin:6pt 0 4pt;}
+  .como b{color:var(--teal-d);}
+  .como ol{margin:5pt 0 0; padding-left:18pt;}
+  .como li{margin:2pt 0;}
+  .tip{color:var(--amber-d); font-weight:600;}
+
+  /* graella de peces retallables */
+  .grid{display:flex; flex-wrap:wrap; gap:5mm; margin:6pt 0 2pt;}
+  .cut{border:1.4px dashed #9fb9b8; border-radius:10px; padding:4mm;
+       display:flex; align-items:center; justify-content:center; background:#fff;}
+  .cut .hint{position:absolute;}
+
+  /* formes (mateix estil que els SVG del curs) */
+  .shape{display:flex; align-items:center; justify-content:center; text-align:center;
+         font-weight:600; box-shadow:0 1px 2px rgba(14,27,28,.10);}
+  .action{width:52mm; height:16mm; border-radius:9px; background:var(--teal-bg);
+          border:2px solid var(--teal); color:var(--ink); font-size:10pt; padding:2mm;}
+  .startend{width:44mm; height:14mm; border-radius:999px; background:var(--teal);
+            border:2px solid var(--teal-d); color:#fff; font-size:11pt; letter-spacing:.4px;}
+  .blank{color:#9fb9b8; font-weight:500; font-style:italic;}
+
+  /* rombe de decisió */
+  .decwrap{width:46mm; height:30mm; position:relative;}
+  .decision{position:absolute; inset:0; margin:auto; width:30mm; height:30mm;
+            background:var(--amber-bg); border:2px solid var(--amber);
+            transform:rotate(45deg); border-radius:6px;
+            box-shadow:0 1px 2px rgba(14,27,28,.10);}
+  .dectxt{position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+          text-align:center; font-weight:700; color:var(--amber-d); font-size:8.6pt; padding:3mm;}
+
+  /* fletxes i etiquetes */
+  .arrow svg{display:block;}
+  .lab{width:24mm; height:11mm; border-radius:7px; border:2px dashed var(--amber);
+       color:var(--amber-d); font-weight:800; font-size:11pt; background:#fff;}
+  .lab.si{border-style:solid; border-color:var(--teal); color:var(--teal-d);}
+
+  .pagebreak{break-before:page;}
+  footer{margin-top:10pt; color:#6b8483; font-size:8.5pt; border-top:1px solid var(--frame); padding-top:5pt;}
+  .leg{font-size:9.5pt; color:#4f6d6e;}
+  .leg b{color:var(--ink);}
+</style>
+</head>
+<body>
+
+<h1>🧩 Peces per muntar diagrames de flux</h1>
+<p class="sub">Robòtica · 1r de Batxillerat — <b>posa el cervell en marxa abans de programar</b>.</p>
+
+<div class="como">
+  <b>Com s'usa (abans d'escriure codi):</b>
+  <ol>
+    <li><b>Retalla</b> les peces per la línia de punts i, si pots, <b>plastifica-les</b>.</li>
+    <li><b>Munta el diagrama</b> sobre la taula: comença per <span style="color:var(--teal-d);font-weight:700">INICI</span>, encadena <b>accions</b> (caixes teal) i <b>decisions</b> (rombes ambre) amb les <b>fletxes</b>.</li>
+    <li>Als buits, <b>escriu amb retolador</b> (sobre el plàstic s'esborra). A les decisions, marca les sortides amb <b>SÍ / NO</b>.</li>
+    <li>Quan una part <b>es repeteix</b>, tanca-la amb la fletxa de <span class="tip">bucle</span>.</li>
+    <li>Comprova el flux amb un company i <b>només llavors</b> passa'l a codi.</li>
+  </ol>
+</div>
+
+<p class="leg"><b>Llegenda:</b> <b style="color:var(--teal-d)">■ Inici/Fi</b> (píndola) · <b style="color:var(--teal-d)">▭ Acció</b> (una instrucció) · <b style="color:var(--amber-d)">◆ Decisió</b> (<code>if</code>, surt per cada cas) · <b style="color:var(--amber-d)">➜ Fletxa</b> (per on continua) · <span class="tip">↺ Bucle</span> (torna i repeteix).</p>
+
+<h2>Inici i fi</h2>
+<div class="grid">
+  <div class="cut"><div class="shape startend">INICI</div></div>
+  <div class="cut"><div class="shape startend">FI</div></div>
+  <div class="cut"><div class="shape startend blank">_______</div></div>
+  <div class="cut"><div class="shape startend blank">_______</div></div>
+</div>
+
+<h2>Accions (caixes teal) — instruccions habituals</h2>
+<div class="grid">
+  <div class="cut"><div class="shape action">Configuro els pins (setup)</div></div>
+  <div class="cut"><div class="shape action">Encenc el LED</div></div>
+  <div class="cut"><div class="shape action">Apago el LED</div></div>
+  <div class="cut"><div class="shape action">Espero un temps (delay)</div></div>
+  <div class="cut"><div class="shape action">Llegeixo el sensor</div></div>
+  <div class="cut"><div class="shape action">Llegeixo un botó</div></div>
+  <div class="cut"><div class="shape action">Moc el motor endavant</div></div>
+  <div class="cut"><div class="shape action">Aturo el motor</div></div>
+  <div class="cut"><div class="shape action">Giro (dreta / esquerra)</div></div>
+  <div class="cut"><div class="shape action">Mostro a la pantalla</div></div>
+  <div class="cut"><div class="shape action">Envio dades per ràdio</div></div>
+  <div class="cut"><div class="shape action">Sumo 1 al comptador</div></div>
+</div>
+
+<h2>Accions en blanc (escriu-hi la teva)</h2>
+<div class="grid">
+  <div class="cut"><div class="shape action blank">escriu-hi…</div></div>
+  <div class="cut"><div class="shape action blank">escriu-hi…</div></div>
+  <div class="cut"><div class="shape action blank">escriu-hi…</div></div>
+  <div class="cut"><div class="shape action blank">escriu-hi…</div></div>
+  <div class="cut"><div class="shape action blank">escriu-hi…</div></div>
+  <div class="cut"><div class="shape action blank">escriu-hi…</div></div>
+  <div class="cut"><div class="shape action blank">escriu-hi…</div></div>
+  <div class="cut"><div class="shape action blank">escriu-hi…</div></div>
+</div>
+
+<div class="pagebreak"></div>
+<h2>Decisions (rombes ambre) — <code>if</code></h2>
+<div class="grid">
+  <div class="cut"><div class="decwrap"><div class="decision"></div><div class="dectxt">valor &gt; llindar?</div></div></div>
+  <div class="cut"><div class="decwrap"><div class="decision"></div><div class="dectxt">botó premut?</div></div></div>
+  <div class="cut"><div class="decwrap"><div class="decision"></div><div class="dectxt">hi ha obstacle?</div></div></div>
+  <div class="cut"><div class="decwrap"><div class="decision"></div><div class="dectxt">funciona?</div></div></div>
+  <div class="cut"><div class="decwrap"><div class="decision"></div><div class="dectxt blank">…?</div></div></div>
+  <div class="cut"><div class="decwrap"><div class="decision"></div><div class="dectxt blank">…?</div></div></div>
+  <div class="cut"><div class="decwrap"><div class="decision"></div><div class="dectxt blank">…?</div></div></div>
+  <div class="cut"><div class="decwrap"><div class="decision"></div><div class="dectxt blank">…?</div></div></div>
+</div>
+
+<h2>Fletxes i etiquetes</h2>
+<div class="grid">
+  <!-- fletxa avall -->
+  <div class="cut"><div class="arrow"><svg width="20" height="54" viewBox="0 0 20 54"><path d="M10,2 L10,44" fill="none" stroke="#0891b2" stroke-width="3"/><path d="M3,40 L10,52 L17,40 Z" fill="#0891b2"/></svg></div></div>
+  <div class="cut"><div class="arrow"><svg width="20" height="54" viewBox="0 0 20 54"><path d="M10,2 L10,44" fill="none" stroke="#0891b2" stroke-width="3"/><path d="M3,40 L10,52 L17,40 Z" fill="#0891b2"/></svg></div></div>
+  <div class="cut"><div class="arrow"><svg width="20" height="54" viewBox="0 0 20 54"><path d="M10,2 L10,44" fill="none" stroke="#0891b2" stroke-width="3"/><path d="M3,40 L10,52 L17,40 Z" fill="#0891b2"/></svg></div></div>
+  <!-- fletxa cantonada (per branques) -->
+  <div class="cut"><div class="arrow"><svg width="54" height="40" viewBox="0 0 54 40"><path d="M4,8 L40,8 L40,30" fill="none" stroke="#0891b2" stroke-width="3"/><path d="M33,26 L40,38 L47,26 Z" fill="#0891b2"/></svg></div></div>
+  <div class="cut"><div class="arrow"><svg width="54" height="40" viewBox="0 0 54 40"><path d="M50,8 L14,8 L14,30" fill="none" stroke="#0891b2" stroke-width="3"/><path d="M7,26 L14,38 L21,26 Z" fill="#0891b2"/></svg></div></div>
+  <!-- fletxa de bucle (ambre) -->
+  <div class="cut"><div class="arrow"><svg width="70" height="54" viewBox="0 0 70 54"><path d="M60,6 L14,6 L14,46 L52,46" fill="none" stroke="#b45309" stroke-width="3"/><path d="M48,39 L60,46 L48,53 Z" fill="#b45309"/><text x="8" y="30" transform="rotate(-90 8 30)" text-anchor="middle" font-family="system-ui" font-weight="700" font-size="9" fill="#b45309">es repeteix</text></svg></div></div>
+</div>
+<div class="grid">
+  <div class="cut"><div class="shape lab si">SÍ</div></div>
+  <div class="cut"><div class="shape lab si">SÍ</div></div>
+  <div class="cut"><div class="shape lab">NO</div></div>
+  <div class="cut"><div class="shape lab">NO</div></div>
+  <div class="cut"><div class="shape lab" style="width:34mm; font-size:9pt;">↺ es repeteix</div></div>
+  <div class="cut"><div class="shape lab" style="width:34mm; font-size:9pt; border-color:var(--teal); color:var(--teal-d);">↺ mentre…</div></div>
+</div>
+
+<footer>
+  Material imprimible de Robòtica · 1r de Batxillerat (LOMLOE). Retalla, plastifica i reutilitza amb retolador esborrable.
+  Es correspon amb els diagrames de flux digitals de cada SA. Llicència CC BY-SA 4.0.
+</footer>
+
+</body>
+</html>

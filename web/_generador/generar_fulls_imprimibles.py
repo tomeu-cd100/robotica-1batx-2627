@@ -46,6 +46,7 @@ TARGETS = [
 RAW_HTML = [
     "00_General/impresos/Fitxes_Arduino_UNO.html",
     "00_General/impresos/Blocs_Programacio_Offline.html",
+    "00_General/impresos/Blocs_Diagrames_Flux.html",
 ]
 
 CHROME_CANDIDATES = [
