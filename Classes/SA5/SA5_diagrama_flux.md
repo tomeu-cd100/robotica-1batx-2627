@@ -4,57 +4,12 @@
 
 ## El flux
 
-```
-        ┌──────────────────────────────┐
-        │ [ Engego la ràdio (una sola  │
-        │   vegada, FORA del bucle):   │
-        │   radio.on() + group ]       │
-        └──────────────┬───────────────┘
-                       ↓
-        ╔══════════════════════════════╗
-        ║        while True:           ║   ← es repeteix per sempre
-        ╚══════════════┬═══════════════╝
-                       ↓
-        ┌──────────────────────────────┐
-        │ [ Llegeixo el sensor         │
-        │   integrat → graus ]         │
-        └──────────────┬───────────────┘
-                       ↓
-              < graus >= LLINDAR ? >
-               │SÍ              │NO
-               ↓                ↓
-   ┌────────────────────┐  ┌────────────────────┐
-   │ [ Mostro alerta a  │  │ [ Mostro la mesura │
-   │   la matriu +      │  │   a la matriu ]    │
-   │   radio.send("!")] │  └─────────┬──────────┘
-   └─────────┬──────────┘            │
-             └───────────┬───────────┘
-                         ↓
-        ┌──────────────────────────────┐
-        │ [ missatge = radio.receive() │
-        │   (None si no arriba res) ]  │
-        └──────────────┬───────────────┘
-                       ↓
-              < missatge == "!" ? >
-               │SÍ              │NO
-               ↓                │
-   ┌────────────────────┐       │
-   │ [ Mostro símbol    │       │
-   │   d'alerta rebut ] │       │
-   └─────────┬──────────┘       │
-             └───────────┬──────┘
-                         ↓
-                 [ sleep — ritme ]
-                         ↓
-                 └──── torno amunt ────┐
-                 (una altra volta del  │
-                  while True:) ────────┘
-```
-
+![Diagrama de flux de la SA5](img/sa5-flux.svg)
 ## Llegenda
-- `[ ... ]` = una **acció**.
-- `< ... ? >` = una **decisió** (`if`): SÍ / NO.
-- `↓` `→` = per on continua.
+- Caixa **fosca** = **inici**.
+- Caixa **teal** `[ ... ]` = una **acció** (una instrucció o bloc de codi).
+- **Rombe ambre** `< ... ? >` = una **decisió** (`if`): en surt una branca per cada cas.
+- **Fletxa ambre** = **bucle**: torna enrere i es repeteix.
 
 ## Del diagrama al codi
 - **Engegar la ràdio (fora del bucle)** → `radio.on()` i `radio.config(group=GROUP)`, **abans** del `while True:` (només cal una vegada).

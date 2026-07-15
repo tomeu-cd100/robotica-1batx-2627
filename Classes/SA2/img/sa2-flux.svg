@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 546" width="720" height="546" role="img" aria-labelledby="t d"><title id="t">Flux del semafor</title><desc id="d">Despres de configurar els pins, el loop repeteix la seqüencia de fases: vermell, verd i groc, cadascuna amb el seu temps.</desc><style>
+  .fr{fill:#f6faf9;stroke:#d7e6e5;stroke-width:1.5}
+  .box{fill:#eaf3f2;stroke:#0891b2;stroke-width:1.8}
+  .start{fill:#0891b2;stroke:#0e7490;stroke-width:1.8}
+  .startt{font:700 14px system-ui,'Segoe UI',sans-serif;fill:#ffffff}
+  .dec{fill:#fff7ed;stroke:#b45309;stroke-width:1.9}
+  .boxt{font:600 13.5px system-ui,'Segoe UI',sans-serif;fill:#0e1b1c}
+  .dect{font:700 13px system-ui,'Segoe UI',sans-serif;fill:#7c3a06}
+  .wire{fill:none;stroke:#0891b2;stroke-width:2.3}
+  .loop{fill:none;stroke:#b45309;stroke-width:2.3;stroke-dasharray:1 0}
+  .lbl{font:700 12px system-ui,'Segoe UI',sans-serif;fill:#b45309}
+  .yes{font:700 12px system-ui,'Segoe UI',sans-serif;fill:#0e7490}
+</style><defs><marker id="m" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#0891b2"/></marker><marker id="mo" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#b45309"/></marker></defs><rect class="fr" x="1" y="1" width="718" height="544" rx="14"/><path class="wire" d="M360,98 L360,142" marker-end="url(#m)"/><path class="wire" d="M360,196 L360,240" marker-end="url(#m)"/><path class="wire" d="M360,294 L360,338" marker-end="url(#m)"/><path class="wire" d="M360,392 L360,436" marker-end="url(#m)"/><rect class="start" x="210" y="46" width="300" height="52" rx="11"/><text class="startt" x="360" y="72" text-anchor="middle">Engego la placa</text><rect class="box" x="210" y="144" width="300" height="52" rx="11"/><text class="boxt" x="360" y="170" text-anchor="middle">setup(): configuro els 3 LED</text><rect class="box" x="210" y="242" width="300" height="52" rx="11"/><text class="boxt" x="360" y="268" text-anchor="middle">Fase VERMELL (encendre, esperar)</text><rect class="box" x="210" y="340" width="300" height="52" rx="11"/><text class="boxt" x="360" y="366" text-anchor="middle">Fase VERD (encendre, esperar)</text><rect class="box" x="210" y="438" width="300" height="52" rx="11"/><text class="boxt" x="360" y="464" text-anchor="middle">Fase GROC (encendre, esperar)</text><path class="loop" d="M360,490 L180,490 L40,490 L40,268 L208,268" marker-end="url(#mo)"/><text class="lbl" x="48" y="379" transform="rotate(-90 48 379)" text-anchor="middle">es repeteix</text></svg>

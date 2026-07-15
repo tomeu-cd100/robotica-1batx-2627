@@ -4,49 +4,12 @@
 
 ## El flux
 
-```
-              ┌───────────────────────────┐
-              │  INICI (setup)            │
-              │  [ pinMode LED, OUTPUT ]  │
-              │  [ Serial.begin(9600) ]   │
-              └───────────────────────────┘
-                            │
-                            ↓
-        ╔═══════════════════════════════════════╗
-        ║  BUCLE (loop) — es repeteix sempre    ║
-        ╚═══════════════════════════════════════╝
-                            │
-                            ↓
-              ┌───────────────────────────┐
-              │ [ llum = analogRead(LDR) ]│   ← llegeixo el sensor (0..1023)
-              └───────────────────────────┘
-                            │
-                            ↓
-              ┌───────────────────────────┐
-              │ [ Serial.println(llum) ]  │   ← mostro el valor per calibrar
-              └───────────────────────────┘
-                            │
-                            ↓
-                 < llum < LLINDAR ? >
-                    │              │
-                 SÍ │              │ NO
-      (fa fosc)     ↓              ↓   (hi ha llum)
-        ┌────────────────────┐  ┌────────────────────┐
-        │ [ LED = HIGH ]     │  │ [ LED = LOW ]      │
-        │   encén la llum    │  │   apaga la llum    │
-        └────────────────────┘  └────────────────────┘
-                    │              │
-                    └──────┬───────┘
-                           ↓
-                    [ delay(100) ]
-                           │
-                           └────────→ torna al BUCLE ↑
-```
-
+![Diagrama de flux de la SA3](img/sa3-flux.svg)
 ## Llegenda
-- `[ ... ]` = una **acció**.
-- `< ... ? >` = una **decisió** (`if`): SÍ / NO.
-- `↓` `→` = per on continua.
+- Caixa **fosca** = **inici**.
+- Caixa **teal** `[ ... ]` = una **acció** (una instrucció o bloc de codi).
+- **Rombe ambre** `< ... ? >` = una **decisió** (`if`): en surt una branca per cada cas.
+- **Fletxa ambre** = **bucle**: torna enrere i es repeteix.
 
 ## Del diagrama al codi
 - `[ llum = analogRead(LDR) ]` → `int llum = llegeixLlum();` (la funció fa `analogRead`, dona 0..1023).

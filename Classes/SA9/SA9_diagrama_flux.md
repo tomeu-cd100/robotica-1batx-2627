@@ -4,58 +4,12 @@
 
 ## El flux
 
-```
-        ┌──────────────────────────────┐
-        │ [ ANALITZAR: entendre el     │
-        │   repte → llista de          │
-        │   requisits (mínims +        │
-        │   desitjables) i triar l'MVP]│
-        └──────────────┬───────────────┘
-                       ↓
-        ┌──────────────────────────────┐
-        │ [ DISSENYAR: planificar,      │
-        │   repartir rols i omplir el   │
-        │   taulell (Per fer/Fent/Fet) ]│
-        └──────────────┬───────────────┘
-                       ↓
-        ╔══════════════════════════════╗
-        ║   INICI D'UNA ITERACIÓ        ║  ← una volta del cicle
-        ╚══════════════┬═══════════════╝
-                       ↓
-        ┌──────────────────────────────┐
-        │ [ CONSTRUIR: muntar i         │
-        │   programar UNA cosa cada     │
-        │   cop (mòduls provables) ]    │
-        └──────────────┬───────────────┘
-                       ↓
-        ┌──────────────────────────────┐
-        │ [ PROVAR: mesurar per parts   │
-        │   i comparar amb els          │
-        │   requisits ]                 │
-        └──────────────┬───────────────┘
-                       ↓
-              < funciona? >
-               │SÍ              │NO
-               ↓                ↓
-   ┌────────────────────┐  ┌────────────────────┐
-   │ [ DOCUMENTAR el    │  │ [ MILLORAR: trobar │
-   │   dossier i        │  │   què falla i      │
-   │   LLIURAR ]        │  │   corregir-ho ]    │
-   └─────────┬──────────┘  └─────────┬──────────┘
-             ↓                       │
-          ( FI )                     │ torno a CONSTRUIR
-                                     └────► (nova iteració) ──┐
-                                                              │
-        ╔═════════════════════════════════════════════════╗  │
-        ║   ...i el cicle CONSTRUIR → PROVAR es repeteix   ║◄─┘
-        ║   (millorar i tornar a provar) fins que funciona ║
-        ╚═════════════════════════════════════════════════╝
-```
-
+![Diagrama de flux de la SA9](img/sa9-flux.svg)
 ## Llegenda
-- `[ ... ]` = un **pas** del projecte.
-- `< ... ? >` = una **decisió** o punt de control.
-- `↓` `→` = per on continua; **fletxa de tornada** = iteració (millorar i repetir).
+- Caixa **fosca** = **inici**.
+- Caixa **teal** `[ ... ]` = una **acció** (una instrucció o bloc de codi).
+- **Rombe ambre** `< ... ? >` = una **decisió** (`if`): en surt una branca per cada cas.
+- **Fletxa ambre** = **bucle**: torna enrere i es repeteix.
 
 ## Del diagrama a la pràctica
 - **ANALITZAR i DISSENYAR** → §1 de la `SA9_fitxa_alumnat` (requisits mínims vs. desitjables, triar l'**MVP**) i el **taulell àgil** de `Planificacio_agile_PLANTILLA` amb els rols repartits.

@@ -4,52 +4,12 @@
 
 ## El flux
 
-```
-              ┌───────────────────────────┐
-              │  INICI (setup)            │
-              │  [ pinMode motors, OUTPUT]│
-              │  [ pinMode TRIG/ECHO ]    │
-              └───────────────────────────┘
-                            │
-                            ↓
-        ╔═══════════════════════════════════════╗
-        ║  BUCLE (loop) — es repeteix sempre    ║
-        ╚═══════════════════════════════════════╝
-                            │
-                            ↓
-              ┌───────────────────────────┐
-              │ [ d = distancia() ]       │   ← PERCEPCIÓ: llegeixo l'ultrasons (cm)
-              └───────────────────────────┘
-                            │
-                            ↓
-                   < d < A_PROP ? >
-                    │              │
-                 SÍ │              │ NO
-     (massa a prop) ↓              ↓
-        ┌────────────────────┐     │
-        │ [ enrere() ]       │     │
-        │   recula           │     │
-        └────────────────────┘     ↓
-                    │        < d > A_LLUNY ? >
-                    │          │            │
-                    │       SÍ │            │ NO
-                    │ (lliure) ↓            ↓ (zona de confort)
-                    │  ┌──────────────┐  ┌──────────────┐
-                    │  │ [ endavant()]│  │ [ atura() ]  │
-                    │  │   avança     │  │   espera     │
-                    │  └──────────────┘  └──────────────┘
-                    │          │            │
-                    └──────────┴─────┬──────┘
-                                     ↓
-                              [ delay(50) ]
-                                     │
-                                     └────────→ torna al BUCLE ↑
-```
-
+![Diagrama de flux de la SA7](img/sa7-flux.svg)
 ## Llegenda
-- `[ ... ]` = una **acció**.
-- `< ... ? >` = una **decisió** (`if`): SÍ / NO.
-- `↓` `→` = per on continua.
+- Caixa **fosca** = **inici**.
+- Caixa **teal** `[ ... ]` = una **acció** (una instrucció o bloc de codi).
+- **Rombe ambre** `< ... ? >` = una **decisió** (`if`): en surt una branca per cada cas.
+- **Fletxa ambre** = **bucle**: torna enrere i es repeteix.
 
 ## Del diagrama al codi
 - `[ d = distancia() ]` → `float d = distancia();` — **PERCEPCIÓ**: una lectura de l'ultrasons per cicle.

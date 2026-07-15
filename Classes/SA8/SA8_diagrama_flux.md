@@ -4,57 +4,12 @@
 
 ## El flux
 
-```
-         PLACA EMISSORA                    │              PLACA RECEPTORA
-   (mesura i envia)                        │        (rep, registra i avisa)
-                                           │
- ┌──────────────────────────────┐         │       ┌──────────────────────────────┐
- │ [ Engego la ràdio (FORA del  │         │       │ [ Engego la ràdio (FORA del  │
- │   bucle): radio.on() +       │         │       │   bucle): radio.on() +       │
- │   config(group=GROUP) ]      │         │       │   config(group=GROUP) ]      │
- └──────────────┬───────────────┘         │       └──────────────┬───────────────┘
-                ↓                          │                      ↓
- ╔══════════════════════════════╗         │       ╔══════════════════════════════╗
- ║        while True:           ║         │       ║        while True:           ║
- ╚══════════════┬═══════════════╝         │       ╚══════════════┬═══════════════╝
-                ↓                          │                      ↓
- ┌──────────────────────────────┐         │       ┌──────────────────────────────┐
- │ [ Mesuro el sensor →         │         │       │ [ missatge = radio.receive() │
- │   valor (ex. temperatura) ]  │         │       │   (None si no arriba res) ]  │
- └──────────────┬───────────────┘         │       └──────────────┬───────────────┘
-                ↓                          │                      ↓
- ┌──────────────────────────────┐         │             < missatge existeix? >
- │ [ Construeixo la dada        │         │              │SÍ              │NO
- │   ETIQUETADA: "T:" + valor ] │         │              ↓                │
- └──────────────┬───────────────┘         │   ┌────────────────────┐      │
-                ↓             ....ràdio....│...│ [ print(missatge)  │      │
- ┌──────────────────────────────┐   )))   │   │   → port sèrie ]   │      │
- │ [ radio.send(dada) ]  ─────────────────────▶└─────────┬──────────┘      │
- └──────────────┬───────────────┘         │              ↓                │
-                ↓                          │   ┌────────────────────┐      │
- ┌──────────────────────────────┐         │   │ [ Separo etiqueta  │      │
- │ [ sleep(PERIODE) — espero ]  │         │   │   i valor pel ":" ]│      │
- └──────────────┬───────────────┘         │   └─────────┬──────────┘      │
-                ↓                          │             ↓                 │
-        └── torno amunt ──┐                │       < valor > LLINDAR ? >   │
-        (una altra volta) │                │        │SÍ            │NO     │
-                          ↑                │        ↓              │       │
-                                           │  ┌───────────┐  ┌──────────┐  │
-                                           │  │ [ AVÍS a  │  │ [ Tot    │  │
-                                           │  │   pantalla]│ │   OK ]   │  │
-                                           │  └─────┬─────┘  └────┬─────┘  │
-                                           │        └──────┬──────┘        │
-                                           │               ↓               │
-                                           │        [ sleep — ritme ]      │
-                                           │               ↓               ↓
-                                           │        └──── torno amunt ─────┘
-                                           │        (una altra volta)
-```
-
+![Diagrama de flux de la SA8](img/sa8-flux.svg)
 ## Llegenda
-- `[ ... ]` = una **acció**.
-- `< ... ? >` = una **decisió** (`if`): SÍ / NO.
-- `↓` `→` = per on continua.
+- Caixa **fosca** = **inici**.
+- Caixa **teal** `[ ... ]` = una **acció** (una instrucció o bloc de codi).
+- **Rombe ambre** `< ... ? >` = una **decisió** (`if`): en surt una branca per cada cas.
+- **Fletxa ambre** = **bucle**: torna enrere i es repeteix.
 
 ## Del diagrama al codi
 - **Engegar la ràdio (fora del bucle)** → `radio.on()` i `radio.config(group=GROUP)` a **totes dues** plaques, **abans** del `while True:` i amb el **mateix** `GROUP`.

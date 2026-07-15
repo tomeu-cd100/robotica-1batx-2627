@@ -4,57 +4,12 @@
 
 ## El flux
 
-```
-              ┌────────────────────────────────┐
-              │  INICI (setup)                 │
-              │  [ pinMode BOMBA/LEDs, OUTPUT ]│
-              │  [ pinMode POLSADOR, PULLUP ]  │
-              │  [ estat = REPOS ]             │
-              └────────────────────────────────┘
-                             │
-                             ↓
-        ╔════════════════════════════════════════════╗
-        ║  BUCLE (loop) — es repeteix sempre         ║
-        ╚════════════════════════════════════════════╝
-                             │
-                             ↓
-              ┌────────────────────────────────┐
-              │ [ nivell = analogRead(SENSOR) ]│  ← realimentació: sempre llegim
-              └────────────────────────────────┘
-                             │
-                             ↓
-                  < en quin ESTAT som? >
-        ┌────────────────────┼────────────────────┐
-        ↓ REPOS              ↓ OMPLINT             ↓ ALARMA
-┌──────────────────┐ ┌──────────────────┐ ┌──────────────────┐
-│ [ bomba OFF ]    │ │ [ bomba ON ]     │ │ [ bomba OFF ]    │
-│ [ verd ON ]      │ │ [ vermell ON ]   │ │ [ vermell parpa.]│
-└──────────────────┘ └──────────────────┘ └──────────────────┘
-        │                    │                    │
-        ↓                    ↓                    ↓
-  < nivell <         < nivell >           < polsador
-    BAIX ? >           ALT ? >              premut ? >
-    │      │           │      │             │      │
- SÍ │      │ NO     SÍ │      │ NO       SÍ │      │ NO
-    ↓      │           ↓      │             ↓      │
- passa a  │        passa a   │          passa a   │
- OMPLINT  │        REPOS     │          REPOS     │
-    │     │           │      ↓             │      │
-    │     │           │  < massa           │      │
-    │     │           │    estona? >       │      │
-    │     │           │    │      │        │      │
-    │     │        SÍ │    │      │ NO     │      │
-    │     │  passa a  ↓    │      │        │      │
-    │     │  ALARMA ──┘    │      │        │      │
-    └─────┴───────────────┴──────┴────────┴──────┘
-                             │
-                             └────────→ torna al BUCLE ↑
-```
-
+![Diagrama de flux de la SA6](img/sa6-flux.svg)
 ## Llegenda
-- `[ ... ]` = una **acció**.
-- `< ... ? >` = una **decisió** (`if`): SÍ / NO.
-- `↓` `→` = per on continua.
+- Caixa **fosca** = **inici**.
+- Caixa **teal** `[ ... ]` = una **acció** (una instrucció o bloc de codi).
+- **Rombe ambre** `< ... ? >` = una **decisió** (`if`): en surt una branca per cada cas.
+- **Fletxa ambre** = **bucle**: torna enrere i es repeteix.
 
 ## Del diagrama al codi
 - `[ nivell = analogRead(SENSOR) ]` → `int nivell = analogRead(SENSOR);` — la realimentació del **llaç tancat**: es llegeix a cada volta, mai dins d'un `delay` llarg.

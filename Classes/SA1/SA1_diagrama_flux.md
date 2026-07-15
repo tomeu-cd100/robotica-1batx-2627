@@ -4,50 +4,12 @@
 
 ## El flux
 
-```
-           ┌─────────────────────────┐
-           │  Encendre / reiniciar   │
-           │        la placa         │
-           └───────────┬─────────────┘
-                       │
-                       ↓
-        ══════════ setup() ══════════   (s'executa UN SOL COP)
-                       │
-                       ↓
-          [ Configurar el pin 13
-            com a SORTIDA (OUTPUT) ]
-                       │
-                       ↓
-        ═══════════ loop() ═══════════   (es repeteix per sempre)
-                       │
-                       ↓
-   ┌──────────────────────────────────────┐
-   │  [ Encendre el LED (HIGH) ]          │
-   │                │                     │
-   │                ↓                     │
-   │  [ Esperar 100 ms  → batec curt ]    │
-   │                │                     │
-   │                ↓                     │
-   │  [ Apagar el LED (LOW) ]             │
-   │                │                     │
-   │                ↓                     │
-   │  [ Esperar 2000 ms → pausa llarga ]  │
-   │                │                     │
-   │                ↓                     │
-   │        < S'ha aturat la placa ? >    │
-   │            NO │        │ SÍ          │
-   └───────────────┘        └────────────┘
-                   │                │
-       (torna a dalt del loop)      ↓
-                   ↑            ┌────────┐
-                   └────────────│  Fi    │
-                                └────────┘
-```
-
+![Diagrama de flux de la SA1](img/sa1-flux.svg)
 ## Llegenda
-- `[ ... ]` = una **acció** (una instrucció o bloc de codi).
-- `< ... ? >` = una **decisió** (`if`): se surt per **SÍ** o per **NO**.
-- `↓` `→` = per on continua el flux.
+- Caixa **fosca** = **inici**.
+- Caixa **teal** `[ ... ]` = una **acció** (una instrucció o bloc de codi).
+- **Rombe ambre** `< ... ? >` = una **decisió** (`if`): en surt una branca per cada cas.
+- **Fletxa ambre** = **bucle**: torna enrere i es repeteix.
 
 ## Del diagrama al codi
 - **Configurar el pin com a SORTIDA** → `pinMode(LED, OUTPUT);` dins de `setup()` (només un cop).

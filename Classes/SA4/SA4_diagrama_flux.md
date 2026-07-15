@@ -4,64 +4,14 @@
 
 ## El flux
 
-```
-           ┌─────────────────────────┐
-           │  Encendre / reiniciar   │
-           │        la placa         │
-           └───────────┬─────────────┘
-                       │
-                       ↓
-        ══════════ setup() ══════════   (s'executa UN SOL COP)
-                       │
-                       ↓
-          [ Configurar ENA, IN1, IN2
-              com a SORTIDA (OUTPUT) ]
-                       │
-                       ↓
-        ═══════════ loop() ═══════════   (es repeteix per sempre)
-                       │
-                       ↓
-   ┌──────────────────────────────────────────────┐
-   │  [ endavant() ]                              │
-   │     └─ IN1=HIGH, IN2=LOW  (sentit)           │
-   │        analogWrite(ENA, velocitat) (PWM)     │
-   │                │                             │
-   │                ↓                             │
-   │  [ Esperar un temps → avança ]               │
-   │                │                             │
-   │                ↓                             │
-   │  [ atura() ]                                 │
-   │     └─ IN1=LOW, IN2=LOW, ENA=0  (frena)      │
-   │                │                             │
-   │                ↓                             │
-   │  [ enrere() ]                                │
-   │     └─ IN1=LOW, IN2=HIGH  (sentit contrari)  │
-   │        analogWrite(ENA, velocitat) (PWM)     │
-   │                │                             │
-   │                ↓                             │
-   │  [ Esperar un temps → recula ]               │
-   │                │                             │
-   │                ↓                             │
-   │  [ atura() ]                                 │
-   │     └─ IN1=LOW, IN2=LOW, ENA=0  (frena)      │
-   │                │                             │
-   │                ↓                             │
-   │        < S'ha aturat la placa ? >            │
-   │            NO │            │ SÍ              │
-   └───────────────┘            └────────────────┘
-                   │                    │
-       (torna a dalt del loop)          ↓
-                   ↑                ┌────────┐
-                   └────────────────│  Fi    │
-                                    └────────┘
-```
-
+![Diagrama de flux de la SA4](img/sa4-flux.svg)
 > **El truc del pont H:** `endavant()` i `enrere()` només es diferencien en **quin pin va a HIGH**. Intercanviar `IN1`/`IN2` inverteix el **sentit**; `analogWrite(ENA, …)` regula la **velocitat**. Tota la màgia del pont H és aquesta.
 
 ## Llegenda
-- `[ ... ]` = una **acció** (aquí, cridar una funció-gest: `endavant()`, `atura()`, `enrere()`).
-- `< ... ? >` = una **decisió** (`if`): se surt per **SÍ** o per **NO**.
-- `↓` `→` = per on continua el flux.
+- Caixa **fosca** = **inici**.
+- Caixa **teal** `[ ... ]` = una **acció** (una instrucció o bloc de codi).
+- **Rombe ambre** `< ... ? >` = una **decisió** (`if`): en surt una branca per cada cas.
+- **Fletxa ambre** = **bucle**: torna enrere i es repeteix.
 
 ## Del diagrama al codi
 - **Configurar ENA, IN1, IN2 com a SORTIDA** → `pinMode(ENA, OUTPUT);` `pinMode(IN1, OUTPUT);` `pinMode(IN2, OUTPUT);` dins de `setup()` (només un cop).
