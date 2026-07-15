@@ -56,12 +56,13 @@
   .io{width:72mm; height:21mm; background:var(--io-bg); border:2.4px solid var(--io);
       color:var(--ink); font-size:12pt; transform:skewX(-16deg);}
   .io > span{display:inline-block; transform:skewX(16deg);}
-  /* Decisió: ROMBE */
-  .decwrap{width:70mm; height:52mm; position:relative;}
-  .decision{position:absolute; inset:0; margin:auto; width:50mm; height:50mm; background:var(--dec-bg);
-            border:2.4px solid var(--dec); transform:rotate(45deg); border-radius:8px; box-shadow:0 1px 3px rgba(14,27,28,.12);}
+  /* Decisió: ROMBE — el costat girat 45° té diagonal costat*1.41, ha de cabre
+     dins del contenidor (54 mm) i, per tant, dins del quadrat de tall. */
+  .decwrap{width:54mm; height:54mm; position:relative;}
+  .decision{position:absolute; inset:0; margin:auto; width:37mm; height:37mm; background:var(--dec-bg);
+            border:2.4px solid var(--dec); transform:rotate(45deg); border-radius:7px; box-shadow:0 1px 3px rgba(14,27,28,.12);}
   .dectxt{position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
-          text-align:center; font-weight:700; color:#6b21a8; font-size:12pt; padding:6mm;}
+          text-align:center; font-weight:700; color:#6b21a8; font-size:10.5pt; padding:9mm;}
   /* Connector: CERCLE */
   .conn{width:26mm; height:26mm; border-radius:999px; background:var(--conn-bg);
         border:2.4px solid var(--conn); color:#0f766e; font-weight:800; font-size:18pt;}
