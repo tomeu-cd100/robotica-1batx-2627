@@ -294,6 +294,10 @@ def wrap(title: str, body: str) -> str:
 def print_pdf(browser: str, html_path: Path, pdf_path: Path, profile: str,
               budget: int = 4000) -> bool:
     pdf_path.parent.mkdir(parents=True, exist_ok=True)
+    # Esborra la sortida abans de renderitzar: si Chrome falla, no queda el PDF
+    # antic fent passar el check de mida (evita committar una versio desfasada).
+    if pdf_path.exists():
+        pdf_path.unlink()
     cmd = [browser, "--headless=new", "--disable-gpu",
            *([] if sys.platform == "win32" else ["--no-sandbox"]),
            "--no-pdf-header-footer", "--run-all-compositor-stages-before-draw",
