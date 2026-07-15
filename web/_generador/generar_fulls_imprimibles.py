@@ -297,7 +297,11 @@ def print_pdf(browser: str, html_path: Path, pdf_path: Path, profile: str,
     # Esborra la sortida abans de renderitzar: si Chrome falla, no queda el PDF
     # antic fent passar el check de mida (evita committar una versio desfasada).
     if pdf_path.exists():
-        pdf_path.unlink()
+        try:
+            pdf_path.unlink()
+        except PermissionError:
+            print(f"  ⚠ {pdf_path.name}: bloquejat (tanca'l al visor). No regenerat.")
+            return False
     # Perfil FRESC per render: compartir-lo entre molts renders fa que Chrome
     # reutilitzi la cau i de tant en tant surti una versio desfasada.
     with tempfile.TemporaryDirectory(prefix="fullpdf1_") as prof:
