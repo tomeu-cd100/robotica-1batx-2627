@@ -13,8 +13,8 @@
 
 1. La **cinemàtica diferencial** d'un robot de dues rodes vol dir que…
    - a) Totes les rodes es mouen amb un únic motor central.
-   - b) **Es controla el moviment variant la velocitat de cada roda per separat.**
-   - c) El robot gira amb un volant, com un cotxe.
+   - b) El robot gira amb un volant, com un cotxe.
+   - c) **Es controla el moviment variant la velocitat de cada roda per separat.**
    - d) Les rodes sempre han d'anar exactament igual.
 
 2. Perquè el robot vagi **recte**, les dues rodes han d'anar…
@@ -25,9 +25,9 @@
 
 3. Per **girar cap a la dreta** (sense aturar-se), la roda esquerra ha d'anar…
    - a) Més lenta que la dreta.
-   - b) **Més ràpida que la dreta.**
-   - c) Igual que la dreta.
-   - d) Cap enrere sempre.
+   - b) Igual que la dreta.
+   - c) Cap enrere sempre.
+   - d) **Més ràpida que la dreta.**
 
 4. Escrivim funcions com `endavant()`, `gira_dreta()` o `atura()`. Descompondre el moviment
    en **funcions** fa que el codi…
@@ -37,8 +37,8 @@
    - d) No es pugui modificar.
 
 5. Fer un gir de 90° **per temps** (p. ex. girar durant 400 ms)…
-   - a) És sempre exacte.
-   - b) **És senzill però poc precís: depèn de la bateria i de la superfície.**
+   - a) **És senzill però poc precís: depèn de la bateria i de la superfície.**
+   - b) És sempre exacte.
    - c) No cal calibrar-lo mai.
    - d) Funciona sense motors.
 
@@ -57,20 +57,20 @@
 8. Els **sensors de línia (IR)** es col·loquen sota el robot mirant el terra. Sobre una
    línia negra i un fons blanc…
    - a) Tots dos punts donen el mateix valor.
-   - b) **El fons blanc reflecteix molt i la línia negra poc; comparant els sensors, el robot corregeix la direcció.**
-   - c) El sensor mesura la distància en centímetres.
-   - d) La línia negra reflecteix més llum que el fons blanc.
+   - b) El sensor mesura la distància en centímetres.
+   - c) La línia negra reflecteix més llum que el fons blanc.
+   - d) **El fons blanc reflecteix molt i la línia negra poc; comparant els sensors, el robot corregeix la direcció.**
 
 9. **Calibrar el llindar** dels sensors IR vol dir…
    - a) Canviar els pins dels motors.
-   - b) **Ajustar el valor que separa "línia" de "fons" segons la pista i l'alçada al terra.**
-   - c) Apagar els sensors.
+   - b) Apagar els sensors.
+   - c) **Ajustar el valor que separa "línia" de "fons" segons la pista i l'alçada al terra.**
    - d) Augmentar la velocitat del robot.
 
 10. Un **comportament reactiu** (evita-obstacles o seguidor) es programa dins del `loop()`
     seguint el cicle…
-    - a) Acció → percepció → decisió, un sol cop.
-    - b) **Percepció (llegir sensors) → decisió → acció (moure motors), repetit contínuament.**
+    - a) **Percepció (llegir sensors) → decisió → acció (moure motors), repetit contínuament.**
+    - b) Acció → percepció → decisió, un sol cop.
     - c) Una única lectura a l'inici i prou.
     - d) Només decisió, sense llegir cap sensor.
 
@@ -93,7 +93,7 @@ ___________________________________________________________________
 
 | Pregunta | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
 |---|---|---|---|---|---|---|---|---|---|---|
-| **Resposta** | b | a | b | b | b | c | b | b | b | b |
+| **Resposta** | c | a | d | b | a | c | b | d | c | a |
 
 > **Barem orientatiu:** 10 preguntes × 1 punt = 10. La pregunta 11 pot pujar nota
 > (aplicació) o quedar fora del còmput.
@@ -113,16 +113,16 @@ ___________________________________________________________________
 - Grup/classe — *Resposta curta*.
 
 **Preguntes 1-10** (tipus: *Opció múltiple*; **1 punt** cadascuna; correcta en **negreta**)
-1. La cinemàtica diferencial vol dir… → Un motor central / **Variar la velocitat de cada roda per separat** / Gira amb volant / Rodes sempre iguals.
+1. La cinemàtica diferencial vol dir… → Un motor central / Gira amb volant / **Variar la velocitat de cada roda per separat** / Rodes sempre iguals.
 2. Perquè vagi recte, les rodes han d'anar… → **Mateixa velocitat i sentit** / Velocitats diferents / Una aturada / Sentits oposats.
-3. Per girar a la dreta, la roda esquerra ha d'anar… → Més lenta / **Més ràpida que la dreta** / Igual / Cap enrere.
+3. Per girar a la dreta, la roda esquerra ha d'anar… → Més lenta / Igual / Cap enrere / **Més ràpida que la dreta**.
 4. Descompondre el moviment en funcions fa que el codi… → Més lent / **Més clar i reutilitzable** / Sense motors / No modificable.
-5. Un gir de 90° per temps… → Sempre exacte / **Senzill però poc precís (bateria/superfície)** / No cal calibrar / Sense motors.
+5. Un gir de 90° per temps… → **Senzill però poc precís (bateria/superfície)** / Sempre exacte / No cal calibrar / Sense motors.
 6. El bloc `// === PINS (AJUSTAR) ===`… → Lògica que no es mira / Esborra el programa / **On es posen els pins reals de motors i sensors** / Apaga el robot.
 7. L'ultrasons de l'evita-obstacles serveix per… → Seguir línia / **Mesurar la distància a un obstacle** / Regular velocitat / Llegir temperatura.
-8. Els sensors IR sobre línia negra i fons blanc… → Mateix valor / **El blanc reflecteix molt i el negre poc; es compara i corregeix** / Mesuren cm / El negre reflecteix més.
-9. Calibrar el llindar dels IR vol dir… → Canviar pins de motors / **Ajustar el valor que separa línia de fons** / Apagar sensors / Pujar velocitat.
-10. El comportament reactiu al `loop()` segueix… → Acció→percepció→decisió un cop / **Percepció→decisió→acció, repetit contínuament** / Una lectura a l'inici / Només decisió.
+8. Els sensors IR sobre línia negra i fons blanc… → Mateix valor / Mesuren cm / El negre reflecteix més / **El blanc reflecteix molt i el negre poc; es compara i corregeix**.
+9. Calibrar el llindar dels IR vol dir… → Canviar pins de motors / Apagar sensors / **Ajustar el valor que separa línia de fons** / Pujar velocitat.
+10. El comportament reactiu al `loop()` segueix… → **Percepció→decisió→acció, repetit contínuament** / Acció→percepció→decisió un cop / Una lectura a l'inici / Només decisió.
 
 **Pregunta 11** (tipus: *Paràgraf*; sense puntuació) — descriure el `loop()` d'un evita-obstacles amb l'ultrasons.
 

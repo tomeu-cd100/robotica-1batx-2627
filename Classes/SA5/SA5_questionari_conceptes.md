@@ -11,22 +11,22 @@
 ## Preguntes (tria una resposta)
 
 1. En MicroPython, la línia que dona accés a la matriu de LED, els botons i els sensors de la micro:bit és…
-   - a) `#include <microbit.h>`
-   - b) **`from microbit import *`**
+   - a) **`from microbit import *`**
+   - b) `#include <microbit.h>`
    - c) `import Arduino`
    - d) `void setup()`
 
 2. En Python, la **indentació** (els espais al principi de línia)…
    - a) És només estètica i es pot ometre.
-   - b) **És sintaxi: marca quins blocs de codi van junts i és obligatòria.**
-   - c) Substitueix el punt i coma `;`.
+   - b) Substitueix el punt i coma `;`.
+   - c) **És sintaxi: marca quins blocs de codi van junts i és obligatòria.**
    - d) Només cal dins de `setup()`.
 
 3. Si barreges tabuladors i espais o sagnes malament una línia, l'error típic de Python és…
    - a) `digitalWrite error`
-   - b) **`IndentationError`**
+   - b) `radio not found`
    - c) `SyntaxError: missing ;`
-   - d) `radio not found`
+   - d) **`IndentationError`**
 
 4. Quina diferència hi ha entre `display.show("Hola")` i `display.scroll("Hola")`?
    - a) Cap, són sinònims.
@@ -35,15 +35,15 @@
    - d) `scroll()` apaga la placa.
 
 5. En un programa de MicroPython per a la micro:bit, el codi que s'ha de repetir contínuament es posa dins de…
-   - a) `void loop()`
-   - b) **`while True:`**
+   - a) **`while True:`**
+   - b) `void loop()`
    - c) `setup()`
    - d) `if button_a:`
 
 6. Per fer un **comptapassos** o detectar que sacsegem la placa, quin sensor integrat s'utilitza?
    - a) El sensor de llum.
-   - b) **L'acceleròmetre** (p. ex. `accelerometer.was_gesture("shake")`).
-   - c) La ràdio.
+   - b) La ràdio.
+   - c) **L'acceleròmetre** (p. ex. `accelerometer.was_gesture("shake")`).
    - d) El termòmetre.
 
 7. La instrucció `display.read_light_level()` retorna un valor dins del rang…
@@ -54,14 +54,14 @@
 
 8. Perquè dues micro:bit es comuniquin per **ràdio**, la condició imprescindible és que…
    - a) Estiguin connectades pel cable USB.
-   - b) **Comparteixin el mateix `group`** (p. ex. `radio.config(group=10)` a totes dues).
+   - b) Facin servir `Serial.begin()`.
    - c) Tinguin el mateix nom d'alumne.
-   - d) Facin servir `Serial.begin()`.
+   - d) **Comparteixin el mateix `group`** (p. ex. `radio.config(group=10)` a totes dues).
 
 9. En el codi de la ràdio, quines instruccions **envien** i **reben** un missatge, respectivament?
    - a) `display.show()` i `display.scroll()`
-   - b) **`radio.send()` i `radio.receive()`**
-   - c) `radio.on()` i `radio.off()`
+   - b) `radio.on()` i `radio.off()`
+   - c) **`radio.send()` i `radio.receive()`**
    - d) `send()` i `print()`
 
 10. Comparant Arduino (C/C++) i micro:bit (Python), quina equivalència és **correcta**?
@@ -88,7 +88,7 @@ ___________________________________________________________________
 
 | Pregunta | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
 |---|---|---|---|---|---|---|---|---|---|---|
-| **Resposta** | b | b | b | b | b | b | b | b | b | b |
+| **Resposta** | a | c | d | b | a | c | b | d | c | b |
 
 > **Barem orientatiu:** 10 preguntes × 1 punt = 10. La pregunta 11 pot pujar nota
 > (aplicació) o quedar fora del còmput.
@@ -108,15 +108,15 @@ ___________________________________________________________________
 - Grup/classe — *Resposta curta*.
 
 **Preguntes 1-10** (tipus: *Opció múltiple*; **1 punt** cadascuna; correcta en **negreta**)
-1. Accés a LED/botons/sensors → `#include <microbit.h>` / **`from microbit import *`** / `import Arduino` / `void setup()`.
-2. La indentació en Python… → És estètica / **És sintaxi i obligatòria** / Substitueix el `;` / Només dins `setup()`.
-3. Error per sagnar malament → `digitalWrite error` / **`IndentationError`** / `SyntaxError: missing ;` / `radio not found`.
+1. Accés a LED/botons/sensors → **`from microbit import *`** / `#include <microbit.h>` / `import Arduino` / `void setup()`.
+2. La indentació en Python… → És estètica / Substitueix el `;` / **És sintaxi i obligatòria** / Només dins `setup()`.
+3. Error per sagnar malament → `digitalWrite error` / `radio not found` / `SyntaxError: missing ;` / **`IndentationError`**.
 4. `show()` vs `scroll()` → Són iguals / **`show()` fix i `scroll()` desplaça** / Un per números i l'altre per lletres / `scroll()` apaga la placa.
-5. Codi que es repeteix sempre → `void loop()` / **`while True:`** / `setup()` / `if button_a:`.
-6. Sensor per comptapassos/sacsejar → Llum / **Acceleròmetre** / Ràdio / Termòmetre.
+5. Codi que es repeteix sempre → **`while True:`** / `void loop()` / `setup()` / `if button_a:`.
+6. Sensor per comptapassos/sacsejar → Llum / Ràdio / **Acceleròmetre** / Termòmetre.
 7. Rang de `read_light_level()` → 0-1023 / **0-255** / 0-5 / `HIGH`/`LOW`.
-8. Condició per a la ràdio → Cable USB / **Mateix `group`** / Mateix nom d'alumne / `Serial.begin()`.
-9. Enviar i rebre per ràdio → `show()`/`scroll()` / **`radio.send()`/`radio.receive()`** / `radio.on()`/`radio.off()` / `send()`/`print()`.
+8. Condició per a la ràdio → Cable USB / `Serial.begin()` / Mateix nom d'alumne / **Mateix `group`**.
+9. Enviar i rebre per ràdio → `show()`/`scroll()` / `radio.on()`/`radio.off()` / **`radio.send()`/`radio.receive()`** / `send()`/`print()`.
 10. Equivalència C++ ↔ Python → Python acaba amb `;` / **`{ }` de C++ ↔ indentació de Python** / `while True:` ↔ `setup()` / Python tanca amb `END`.
 
 **Pregunta 11** (tipus: *Paràgraf*; sense puntuació) — descriure un `while True:` amb cor + desplaçar el nom amb el botó A.

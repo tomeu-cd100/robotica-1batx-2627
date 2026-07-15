@@ -12,39 +12,39 @@
 ## Preguntes (tria una resposta)
 
 1. Per llegir l'estat d'una **entrada digital** (un polsador) s'escriu…
-   - a) `digitalWrite(PIN, HIGH);`
-   - b) **`digitalRead(PIN);`**
+   - a) **`digitalRead(PIN);`**
+   - b) `digitalWrite(PIN, HIGH);`
    - c) `analogWrite(PIN, 255);`
    - d) `pinMode(PIN, OUTPUT);`
 
 2. Per llegir un **sensor analògic** (potenciòmetre, LDR) s'escriu…
    - a) `digitalRead(PIN);`
-   - b) **`analogRead(PIN);`**
-   - c) `Serial.begin(PIN);`
+   - b) `Serial.begin(PIN);`
+   - c) **`analogRead(PIN);`**
    - d) `delay(PIN);`
 
 3. La funció `analogRead()` en un Arduino UNO retorna un valor dins del rang…
    - a) 0 a 255.
-   - b) **0 a 1023.**
+   - b) 0 a 100.
    - c) 0 a 5.
-   - d) 0 a 100.
+   - d) **0 a 1023.**
 
 4. Amb `pinMode(2, INPUT_PULLUP);`, quan el polsador **NO** està premut, el pin llegeix…
-   - a) **`HIGH` (en repòs).**
-   - b) `LOW` (en repòs).
+   - a) `LOW` (en repòs).
+   - b) **`HIGH` (en repòs).**
    - c) Un valor entre 0 i 1023.
    - d) Res, cal esperar a prémer.
 
 5. Quin avantatge té fer servir `INPUT_PULLUP`?
-   - a) Fa que el LED brilli més.
-   - b) **Estalvia haver de posar una resistència externa al polsador.**
+   - a) **Estalvia haver de posar una resistència externa al polsador.**
+   - b) Fa que el LED brilli més.
    - c) Converteix el pin en una sortida PWM.
    - d) Accelera el `loop()`.
 
 6. Per què cal l'**antirebot** (*debounce*) en un polsador?
    - a) Perquè el polsador consumeixi menys corrent.
-   - b) **Perquè una sola premuda no es compti diverses vegades** (el contacte "rebota").
-   - c) Perquè el pin passi a analògic.
+   - b) Perquè el pin passi a analògic.
+   - c) **Perquè una sola premuda no es compti diverses vegades** (el contacte "rebota").
    - d) No serveix per a res.
 
 7. La LDR es connecta en un **divisor de tensió** amb una resistència de 10 kΩ. Per què?
@@ -55,14 +55,14 @@
 
 8. Vols passar una lectura de `analogRead` (0-1023) al rang de `analogWrite` (0-255). Quina funció ho fa?
    - a) `delay()`
-   - b) **`map()`**
+   - b) `Serial.begin()`
    - c) `pinMode()`
-   - d) `Serial.begin()`
+   - d) **`map()`**
 
 9. En un sensor d'ultrasons HC-SR04, si intercanvies els pins **TRIG** i **ECHO**…
    - a) El sensor mesura amb més precisió.
-   - b) **La distància surt sempre 0 o un valor molt gran** (no funciona bé).
-   - c) El LED s'encén sol.
+   - b) El LED s'encén sol.
+   - c) **La distància surt sempre 0 o un valor molt gran** (no funciona bé).
    - d) No passa res, són intercanviables.
 
 10. Què vol dir que una **funció** com `mesuraDistancia()` **retorna** un valor?
@@ -88,7 +88,7 @@ ___________________________________________________________________
 
 | Pregunta | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
 |---|---|---|---|---|---|---|---|---|---|---|
-| **Resposta** | b | b | b | a | b | b | b | b | b | b |
+| **Resposta** | a | c | d | b | a | c | b | d | c | b |
 
 > **Barem orientatiu:** 10 preguntes × 1 punt = 10. La pregunta 11 pot pujar nota
 > (aplicació) o quedar fora del còmput.
@@ -108,15 +108,15 @@ ___________________________________________________________________
 - Grup/classe — *Resposta curta*.
 
 **Preguntes 1-10** (tipus: *Opció múltiple*; **1 punt** cadascuna; correcta en **negreta**)
-1. Llegir una entrada digital → `digitalWrite` / **`digitalRead`** / `analogWrite` / `pinMode`.
-2. Llegir un sensor analògic → `digitalRead` / **`analogRead`** / `Serial.begin` / `delay`.
-3. Rang de `analogRead` (UNO) → 0-255 / **0-1023** / 0-5 / 0-100.
-4. Amb `INPUT_PULLUP` en repòs el pin llegeix → **`HIGH`** / `LOW` / valor 0-1023 / res.
-5. Avantatge de `INPUT_PULLUP` → LED més brillant / **estalvia una resistència externa** / pin PWM / accelera el loop.
-6. Per què l'antirebot → menys corrent / **una premuda no compti diverses vegades** / passa a analògic / no serveix.
+1. Llegir una entrada digital → **`digitalRead`** / `digitalWrite` / `analogWrite` / `pinMode`.
+2. Llegir un sensor analògic → `digitalRead` / `Serial.begin` / **`analogRead`** / `delay`.
+3. Rang de `analogRead` (UNO) → 0-255 / 0-100 / 0-5 / **0-1023**.
+4. Amb `INPUT_PULLUP` en repòs el pin llegeix → `LOW` / **`HIGH`** / valor 0-1023 / res.
+5. Avantatge de `INPUT_PULLUP` → **estalvia una resistència externa** / LED més brillant / pin PWM / accelera el loop.
+6. Per què l'antirebot → menys corrent / passa a analògic / **una premuda no compti diverses vegades** / no serveix.
 7. Per què divisor de tensió amb la LDR → limitar corrent / **convertir resistència variable en tensió mesurable** / més brillantor / la LDR ho necessita.
-8. Passar 0-1023 a 0-255 → `delay` / **`map`** / `pinMode` / `Serial.begin`.
-9. TRIG i ECHO intercanviats a l'HC-SR04 → més precisió / **distància sempre 0 o molt gran** / LED s'encén sol / són intercanviables.
+8. Passar 0-1023 a 0-255 → `delay` / `Serial.begin` / `pinMode` / **`map`**.
+9. TRIG i ECHO intercanviats a l'HC-SR04 → més precisió / LED s'encén sol / **distància sempre 0 o molt gran** / són intercanviables.
 10. Que una funció "retorna" un valor → apaga la placa / **dona un resultat que el programa pot fer servir** / es repeteix sempre / només es crida un cop.
 
 **Pregunta 11** (tipus: *Paràgraf*; sense puntuació) — descriure un llum automàtic amb LDR i llindar.
