@@ -832,7 +832,8 @@ def sa_fil_html(sa: int, current_out: str, fil: dict) -> str:
 # (fitxa → suports → checklist → codi), després el material opcional
 # (ampliada, qüestionari) i el del docent. "__codi__" és el rang de les
 # pàgines de codi (kind == "code").
-DOC_ORDRE_CLAUS = ["guia-docent", "vocabulari", "guia", "fitxa-alumnat",
+DOC_ORDRE_CLAUS = ["guia-docent", "vocabulari", "guia", "diagnostica",
+                   "fitxa-alumnat",
                    "prova", "normes", "esquemes", "connexions", "poster",
                    "recursos", "practica", "__codi__", "checklist-alumnat",
                    "fitxa-ampliada", "questionari", "checklist-docent"]
