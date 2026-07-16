@@ -41,43 +41,61 @@ taules). «Endavant» a tota la resta.
 QA final: **net** (239 pàgines, 0 enllaços trencats, hores 68/68, 34 sessions
 coherents, 10 tests del generador). Fulls imprimibles regenerats (16 PDF).
 
+## Segona tanda (mateixa nit)
+
+També s'han aplicat els pendents «no bloquejants» principals:
+
+- **`Material Classroom/config.js`** (config única del curs: COURSE_ID, carpeta Drive,
+  categories de nota amb avís de caducitat) + **`estat_classroom.js`** (estat real del
+  Classroom via API, llista els ids de categories per al curs nou). Tots dos versionats.
+- **`REPO_SLUG`/`SITE_TITLE`/`SITE_TAGLINE` parametritzats** per variable d'entorn a
+  `generar.py`; `generar_quadern_tecnic.py` importa `PAGES_BASE` (fora el literal).
+- **`qa.py` amb 4 checks nous** (7 PII amb allowlist, 8 validesa de PDF versionats,
+  9 mojibake, 10 py_compile del solucionari). SA5 no té .ino; el de SA8 és ESP32
+  (exclòs del job UNO expressament — decisió correcta, no es toca).
+- **Tests nous del generador**: `tests/test_generar_nucli.py` (rewrite_links/resolve,
+  classify_public, is_activitat) — 25 tests en total, tots verds.
+- **`generador/navegador.py`**: `find_browser` únic per als 3 scripts de PDF.
+- **Fites als 24 reptes ⭐⭐⭐** (SA1-SA8): 3 fites validables per repte.
+- **Pla B de CA2.2 sense multímetres** (Tinkercad + `analogRead` calibrat) a la guia
+  SA2 i nota a la R2.
+- **README §«Publica la teva pròpia còpia»** (fork: Pages, REPO_SLUG, Chrome, OAuth).
+- **06 §«Les tres escales que conviuen»** (pes intern de SA / /10 de Classroom /
+  ponderació trimestral).
+- **Neteja**: esborrats els monolits locals `crear_i_penjar_sa0.js`/`sa1.js` i el
+  **`token.json`** (scopes reduïts: el proper script demanarà autorització al
+  navegador amb els àmbits mínims).
+- **Anàlisi de disseny instruccional**: vegeu
+  `2026-07-17_Analisi_disseny_instruccional.md` (necessitats per subgrups, teories
+  aplicades/pendents, proposta «Auditoria IoT» per a SA8 S2 i 5 recomanacions).
+
 ## ⚠️ Accions immediates la propera sessió
 
-1. **Reautoritzar Google**: els scopes han canviat → **esborrar
-   `Material Classroom/token.json`** i executar qualsevol script perquè torni a
-   demanar autorització al navegador. Fins llavors, els scripts de Classroom fallaran
-   amb el token vell si Google valida els àmbits.
+1. **Reautoritzar Google**: `token.json` ja està esborrat; el primer script de
+   Classroom que s'executi obrirà el navegador per autoritzar amb els scopes mínims.
 2. **L'altra màquina ha de RECLONAR** (no fer pull): l'historial s'ha reescrit per
    segona vegada (filter-repo del 17-07).
-3. **Verificar el CI verd** a GitHub després del force push (pages + qa + sketches).
+3. **Verificar el CI verd** a GitHub (la 1a tanda ja era verda; la 2a s'ha pujat
+   després).
 4. Còpies de seguretat: bundle pre-purga a la carpeta temporal de la sessió (efímer) i
    mirror del 12-07 a `Documents/robotica-backup-mirror-20260712.git` (**anterior** a
    la feina d'avui; un cop el CI sigui verd i l'altra màquina recloni, es poden
    esborrar tots dos).
 
-## Pendents de la crítica (no bloquejants, per ordre de valor)
+## Pendents que queden (després de les dues tandes)
 
-- **Config central del Classroom**: `COURSE_ID`, `DRIVE_FOLDER_ID`, ids de categories
-  de nota (caduquen cada curs!, `adjuntar_questionaris_classroom.js:18-22`) i
-  `WEB_BASE` dispersos per ~10 fitxers → un únic `config.js`.
-- **Parametritzar `REPO_SLUG`/`SITE_TITLE`** a `generar.py` (i el literal duplicat a
-  `generar_quadern_tecnic.py`) perquè un fork no apunti al repo original.
-- **Checks nous a `qa.py`**: PII/emails als md versionats, avís de PDF de tercers,
-  validesa real dels PDF (pàgines, no només mida > 0), mojibake, `.py` de
-  `Reptes/Solucionari/`; afegir SA5/SA8 al job de compilació de sketches si tenen .ino.
-- **Tests de `resolve()`/`rewrite_links()`** (el codi més arriscat del generador, ara
-  sense test unitari) i de `classify_public`/`is_activitat`.
-- **Unificar**: `find_browser` copiat a 3 scripts → mòdul compartit; el parser
-  Markdown artesà de `generar_fulls_imprimibles.py` vs python-markdown (dos motors).
-- **Itinerari d'altes capacitats**: les «+ampliacions» d'una línia no són bastida;
-  falten fites i solucionari per als reptes ⭐⭐⭐ (p. ex. PID de SA6).
-- **CA2.2 / multímetres**: la mesura física real penja de 2-3 multímetres que potser
-  no hi són; decidir pla B avaluable (o comprar-ne).
-- **Traçabilitat Classroom**: estat global del que està publicat (reconciliar amb
-  l'API), en lloc dels `resultats_*.json` per script.
-- **Documentar l'arrencada d'un fork** al README (canviar config, activar Pages,
-  dependència de Chrome per als PDF).
-- **Neteja local**: esborrar els monolits morts `crear_i_penjar_sa0.js`/`sa1.js`
-  (no versionats) quan es confirmi que res no en depèn.
-- **Escales de nota**: conciliar en un paràgraf del 06 els tres sistemes (25 % intern
-  de SA, /10 de la tasca Classroom, 20 % proves del global) per evitar confusions.
+- **Solucionari dels reptes ⭐⭐⭐**: les fites ja hi són; falten les solucions
+  completes al `Reptes/Solucionari/` (24 reptes; els .ino han de compilar per a UNO).
+- **Unificar el motor de Markdown**: el parser artesà de
+  `generar_fulls_imprimibles.py` vs python-markdown del web (dos motors, possible
+  divergència de render); feina gran, valorar Jinja2 dins del refactor P4 pendent.
+- **Validesa "forta" dels PDF generats**: comptar pàgines (no només capçalera+mida) i
+  reintents a `generar_pdf.py` si Chrome talla per `--virtual-time-budget`.
+- **Sincronia .md ↔ PDF imprimibles**: cap check detecta un checklist editat sense
+  regenerar el seu PDF (valorar hash del .md dins del PDF o data comparada a qa.py).
+- **Aplicar les recomanacions LXD** de `2026-07-17_Analisi_disseny_instruccional.md`:
+  sobretot l'«Auditoria IoT» de SA8 S2 (cost ~2 h) i la targeta de represa de ràdio
+  abans de SA8.
+- **Job de CI per a l'ESP32** (opcional): l'únic .ino de SA8 és ESP32 i queda fora del
+  job UNO; compilar-lo demanaria FQBN esp32 a part.
+- **Enllaços externs**: cap check els valida (arduino.cc, Wokwi, visor d'Office).

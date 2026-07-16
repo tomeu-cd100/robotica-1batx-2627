@@ -42,6 +42,8 @@
 **Punt clau:** sempre **resistència limitadora** (220 Ω) en sèrie amb el LED; pota llarga = ànode (+).
 
 > 🔌 **Racó de mesura (dins la pràctica guiada, ~5' per parella):** munta un punt amb **multímetre** i fes-hi passar les parelles rotativament amb el seu circuit encès: mesurar la **tensió entre les potes del LED** (~2 V) i **a la resistència** (~3 V), i comprovar que sumen ~5 V. És la primera vegada que *veuen* la llei de la malla en un circuit seu (connexió amb Física) i l'única evidència de **mesura física real** de la CA2.2/R2 fins ara. Amb 2-3 multímetres n'hi ha prou (el taller de tecnologia acostuma a tenir-ne); si no n'hi ha cap, fes-ho com a demo projectada amb el teu.
+>
+> **Pla B sense multímetres (evidència CA2.2 igualment):** cada parella replica el seu circuit a **Tinkercad**, hi connecta el **multímetre simulat** i fa les dues mesures (LED i resistència) amb **captura de pantalla al quadern** + comprovació que sumen 5 V. Completa-ho amb una mesura «per programari» calibrada: llegir el mateix divisor de tensió amb `analogRead` i convertir el valor ADC a volts (`v = lectura * 5.0 / 1023`), comparant-lo amb el valor simulat. La R2 accepta aquestes dues evidències com a «mesura i interpretació de magnituds» quan no hi ha instrument físic; deixa-ho anotat al quadern («mesura simulada per manca d'instrument»).
 
 ---
 

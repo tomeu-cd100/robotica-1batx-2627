@@ -34,6 +34,8 @@ Rúbriques reutilitzables amb **quatre nivells**, cadascun lligat a una **banda 
 | **Mesura/diagnòstic** | No mesura ni interpreta. | Mesura amb ajuda. | Mesura i interpreta senyals. | Diagnostica avaries amb autonomia. |
 | **Seguretat** | No aplica normes. | Aplica amb recordatoris. | Aplica les normes. | Model de bones pràctiques. |
 
+> **Nota (Mesura/diagnòstic):** quan no hi ha instrument físic disponible, són evidència vàlida la **mesura amb el multímetre simulat de Tinkercad** (amb captura al quadern) i la **conversió calibrada d'`analogRead` a volts**, anotades com a mesura simulada (vegeu el «Racó de mesura» i el pla B de la guia de la SA2).
+
 ## R3 · Rúbrica de projecte i robot
 
 | Criteri | Insuficient | Suficient/Bé | Notable | Excel·lent |

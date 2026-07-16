@@ -39,6 +39,16 @@ L'avaluació és **competencial, contínua, formativa i global**, d'acord amb el
 
 > Recomanació: ponderació **per competències** dins de cada dimensió. La qualificació trimestral i final s'expressa amb un enter **del 0 al 10 (sense decimals)**, com estableix el Decret 171/2022.
 
+### Les tres escales que conviuen (i com es relacionen)
+
+Perquè no es confonguin, al material hi apareixen **tres nombres diferents** que no són el mateix:
+
+1. **Pesos interns d'una SA** (a cada fitxa: «el pòster compta el 45 %, el quadern el 25 %…»): reparteixen la nota **dels productes d'aquella SA** entre els seus lliuraments. No són la nota del trimestre.
+2. **El /10 de cada tasca del Classroom**: és la qualificació **d'aquell lliurament concret** (la fitxa sencera de la SA), amb l'escala 0-10 de la matèria. Alimenta la dimensió que li toca (normalment «Projectes i productes» o «Quadern»), però **no és** la nota de la SA ni del trimestre.
+3. **La ponderació global del trimestre** (taula de dalt: 45/25/20/10): és l'única que produeix la qualificació trimestral, combinant totes les SA del trimestre.
+
+Regla ràpida: *pes intern → dins de la SA · /10 de Classroom → un lliurament · 45/25/20/10 → el trimestre.*
+
 ## 6.4. Caràcter continu i recuperació
 
 - L'avaluació és **contínua**: cada trimestre integra i consolida el següent.
