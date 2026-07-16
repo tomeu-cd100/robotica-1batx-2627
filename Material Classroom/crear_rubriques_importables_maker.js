@@ -121,6 +121,15 @@ const RUBRIQUES = {
   ]},
 };
 
+// Rúbriques COMBINADES per als productes de trimestre/curs (SA3/SA6/SA9): Classroom només
+// admet UNA rúbrica per tasca, així que la tasca de lliurament usa la rúbrica de la SA
+// sencera + l'única fila de la de producte final que hi aporta dimensió nova (la qualitat
+// del disseny i la fabricació; la resta de files de PF ja tenen equivalent a la de la SA).
+const QUALITAT_PF = RUBRIQUES.PF.criteris[1];
+RUBRIQUES.SA3C = { nom: 'SA3 combinada ⭐ (SA3 + qualitat del producte final) — per a la tasca de lliurament', criteris: [...RUBRIQUES.SA3.criteris, QUALITAT_PF] };
+RUBRIQUES.SA6C = { nom: 'SA6 combinada ⭐ (SA6 + qualitat del producte final) — per a la tasca de lliurament', criteris: [...RUBRIQUES.SA6.criteris, QUALITAT_PF] };
+RUBRIQUES.SA9C = { nom: 'SA9 combinada ⭐ (SA9 + qualitat del producte final) — per a la tasca de lliurament', criteris: [...RUBRIQUES.SA9.criteris, QUALITAT_PF] };
+
 const cell = (v) => `"${String(v).replace(/"/g, '""')}"`;
 const row = (arr) => arr.map(cell).join(',');
 
