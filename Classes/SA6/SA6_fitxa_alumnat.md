@@ -65,6 +65,8 @@ Si la tasca encara no t'apareix al Classroom, és que la SA encara no ha començ
 ### 4 · Prova pràctica T2 (S4, individual)
 La sessió 4 **sencera** és la **prova T2**: individual, dues parts (control amb histèresi + micro:bit), i pots consultar **el teu quadern i els esquemes**. El nucli (histèresi) ben fet = 5-6; ampliacions = 7-10.
 
+> 🐍 **La Part B és en MicroPython i fa setmanes que fas C++!** Abans de la prova, repassa la targeta [`00_Repas_expres_MicroPython.md`](../00_General/00_Repas_expres_MicroPython.md) (10-15': taula C++↔Python, els 5 patrons de la prova i un autotest). Si no superes l'autotest, refés les activitats 1-2 de la [fitxa de la SA5](../SA5/SA5_fitxa_alumnat.md).
+
 ### +Ampliació (opcional) · Control proporcional
 > **Per a qui vagi sobrat** (dins S2/S3 si acabes aviat, a casa amb Wokwi, o com a ampliació de la prova): el nucli de la SA són la histèresi i la màquina d'estats.
 1. Carrega `04_control_proporcional.ino`. Què és l'**error**? ______________________

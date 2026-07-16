@@ -195,6 +195,7 @@ GENERAL_ALUMNAT = {
     "00_Avaluacio_per_alumnat.md", "00_Fitxes_referencia_tecnica.md",
     "00_Plantilla_disseny_objecte.md", "00_Galeria_exemples_objectes.md",
     "00_Poster_IA_us_assistents.md", "00_Quadern_tecnic.md",
+    "00_Repas_expres_MicroPython.md",
 }
 
 

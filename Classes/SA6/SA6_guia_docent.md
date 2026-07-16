@@ -37,6 +37,8 @@
 - **Repte (40'):** dibuixar el diagrama de blocs del seu sistema; identificar entrada/sortida/realimentació; **+ repte:** pensar 3 exemples reals de cada tipus.
 - **Tancament (10'):** quadern (diagrama).
 
+> ⏱️ **Marge:** el temps efectiu real és ~100' (arrencada + recollida), no 120'. Si vas just, retalla primer: **el «+ repte» (3 exemples reals de cada tipus)**.
+
 **Punt clau:** el **llaç tancat** corregeix segons el que mesura (realimentació); el **llaç obert** "confia" que tot anirà bé.
 
 ---
@@ -47,6 +49,8 @@
 - **Pràctica guiada (35'):** termòstat amb NTC + LED/ventilador i histèresi.
 - **Repte (40'):** ajustar la finestra d'histèresi i observar l'efecte; **+ repte:** afegir indicador d'estat (verd/vermell).
 - **Tancament (10'):** quadern (gràfic del comportament).
+
+> ⏱️ **Marge:** el temps efectiu real és ~100' (arrencada + recollida), no 120'. Si vas just, retalla primer: **el «+ repte» (indicador verd/vermell)**. Recorda repartir la **targeta de represa de MicroPython** com a deures (vegeu més avall).
 
 **Punt clau:** la **histèresi** (encendre a un llindar i apagar a un altre) evita commutacions ràpides al voltant de la consigna.
 
@@ -62,9 +66,21 @@
 - **Repte (40'):** afegir un estat nou o una transició condicional; **+ repte:** semàfor adaptatiu (canvia segons polsador de vianant). **Defenses de 2-3' a peu de taula:** mentre treballen, passa per les parelles i escolta la defensa del producte (problema → solució → **una decisió tècnica justificada**: per què aquests llindars? per què aquests estats?).
 - **Tancament (15'):** quadern (diagrama d'estats + diagrama de blocs); autoavaluació amb rúbriques.
 
+> ⏱️ **Marge:** el temps efectiu real és ~100', i **aquesta és la sessió més carregada del trimestre** (mini-check + concepte nou + producte + defenses). Retalla d'entrada: **el «+ repte» (semàfor adaptatiu)** i, si cal, redueix el Repte a **una sola transició nova**. El mini-check, la màquina d'estats i les defenses a peu de taula **no es toquen**.
+
 **Punt clau:** una **màquina d'estats** organitza comportaments complexos en estats clars i transicions; evita el codi espagueti i no bloqueja (s'usa amb `millis()`).
 
 > 🧩 **Bastida `millis()` (clau per a aquesta sessió):** el patró no bloquejant amb `millis()` es **practica a la SA4** amb [`05_dos_leds_millis`](../SA4/codi/05_dos_leds_millis/05_dos_leds_millis.ino) (dos LED a ritmes diferents sense `delay()`). Si no s'ha fet, dedica-hi **~10'** ara com a escalfament. Per a qui s'encalli, reparteix l'esquelet [`03_maquina_estats_BASTIDA`](codi/03_maquina_estats_BASTIDA/03_maquina_estats_BASTIDA.ino): té el patró (`enum`/`switch` + `millis()`) ja muntat i només cal omplir els `// TODO` (comportament i transicions de cada estat).
+
+---
+
+## 🐍 Represa de MicroPython (entre la S2 i la prova T2)
+
+> **Per què:** des de la SA5 no s'ha tocat Python (la SA6 és C++), però la **Part B de la prova T2 és en MicroPython**. Sense una represa explícita, l'alumnat arriba a la prova amb 4 setmanes de C++ al cap i la sintaxi de Python rovellada.
+
+- **S2 (deures):** reparteix la targeta [`00_Repas_expres_MicroPython.md`](../00_General/00_Repas_expres_MicroPython.md) (taula C++↔Python + els 5 patrons de la prova + autotest amb solucions). 10-15' a casa, amb el simulador si no tenen placa.
+- **S3 (5', després del mini-check):** «Python flash» col·lectiu — projecta la targeta i demana en veu alta: *com s'escriu aquest `if` en Python? què retorna `radio.receive()` si no hi ha res?* Dos o tres ping-pongs en tenen prou per reactivar-ho.
+- **Qui suspèn l'autotest** (no sap fer el patró llindar+alerta sense mirar): que refaci les activitats 1-2 de la fitxa de SA5 abans de la prova.
 
 ---
 

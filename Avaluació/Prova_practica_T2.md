@@ -19,6 +19,9 @@ Construeix un **control de temperatura** que reguli un ventilador (o LED PWM):
 4. **Ampliació (excel·lent):** implementa **control proporcional** (la velocitat depèn de l'error) i visualitza-ho al **Serial Plotter**.
 
 ### PART B — micro:bit (4 punts)
+
+> 🐍 Fa setmanes que treballes en C++: **repassa MicroPython abans de la prova** amb la targeta `Classes/00_General/00_Repas_expres_MicroPython.md` (el docent la reparteix a la S2 de la SA6).
+
 Programa una **estació remota** en MicroPython:
 1. **Nivell satisfactori:** mostra la temperatura/llum i, si supera un llindar, mostra una alerta (Image.NO).
 2. **Ampliació:** **envia la lectura per ràdio** a una segona placa que la rep i la mostra.
@@ -47,7 +50,34 @@ Tots dos programes funcionant + **quadern**: diagrama de blocs del control (Part
 
 ## Solució orientativa (docent)
 
-### Part A — control proporcional (inclou la base de histèresi com a alternativa)
+> ⚠️ **Nota física:** `analogRead` d'una NTC dona un valor ADC (0-1023), **no graus**. Comparar amb `CONSIGNA=500` és una simplificació acceptada per a la prova (per això es permet el potenciòmetre com a simulació); si surt a la conversa, deixa clar que convertir ADC → °C demana calibratge (equació de Steinhart-Hart o taula), fora de l'abast de la prova.
+
+### Part A — solució del NUCLI: control tot/res amb histèresi (3 punts)
+
+El mínim exigible és aquest (dos llindars per evitar el «clic-clic» al voltant de la consigna):
+
+```cpp
+const int SENSOR=A0, VENTILADOR=9, LED_V=7, LED_R=8;
+const int LLINDAR_ON=520;    // engega per sobre (mes calent)
+const int LLINDAR_OFF=480;   // atura per sota (mes fred) -> banda de 40
+bool refrigerant = false;
+void setup(){ pinMode(VENTILADOR,OUTPUT); pinMode(LED_V,OUTPUT); pinMode(LED_R,OUTPUT); Serial.begin(9600); }
+void loop(){
+  int t = analogRead(SENSOR);
+  if (t > LLINDAR_ON)  refrigerant = true;    // massa calent: engega
+  if (t < LLINDAR_OFF) refrigerant = false;   // prou fred: atura
+  // entre els dos llindars NO canvia d'estat: aixo es la histeresi
+  digitalWrite(VENTILADOR, refrigerant ? HIGH : LOW);
+  digitalWrite(LED_R, refrigerant ? HIGH : LOW);
+  digitalWrite(LED_V, refrigerant ? LOW : HIGH);
+  Serial.print(t); Serial.print(" "); Serial.println(refrigerant ? 255 : 0);
+  delay(50);
+}
+```
+
+**Què mirar en corregir el nucli:** (1) dos llindars diferents i separats (no un de sol); (2) l'estat es manté dins la banda; (3) l'indicador coincideix amb l'estat. Error típic: un sol `if (t > LLINDAR)` — això és tot/res **sense** histèresi (satisfactori incomplet).
+
+### Part A — ampliació d'excel·lent: control proporcional
 ```cpp
 const int SENSOR=A0, VENTILADOR=9, LED_V=7, LED_R=8;
 const int CONSIGNA=500;
