@@ -39,14 +39,15 @@ const RUBRIQUES = {
     ['Disseny vectorial (CA2.1)', ['Encara no completa el disseny', 'Usa formes bàsiques amb ajuda', 'Usa formes, text i operacions de camí', 'Domina operacions de camí i vectorització amb autonomia']],
     ['Geometria i mesura (CA2.3)', ['Encara no pren les mides correctes', 'Mides aproximades', 'Mides correctes', 'Mides precises i material optimitzat']],
     ['Preparació i fabricació làser (CA3.1)', ['Fitxer encara no apte', 'Alguns elements a la capa/color equivocat', 'Capes tall/gravat correctes', 'Paràmetres i capes optimitzats']],
-    ['Idear i triar solució (CA1.2)', ['Encara no proposa idees', 'Proposa una sola idea, sense comparar-ne d\'altres', 'Prova diverses idees i en tria una amb motiu', 'Compara idees i justifica l\'elecció']],
+    ['Idear i triar solució per al destinatari (CA1.1/1.2)', ['Encara no proposa idees', 'Proposa una sola idea, sense comparar-ne d\'altres', 'Prova diverses idees i en tria una amb motiu, pensant en qui el rebrà', 'Compara idees i justifica l\'elecció segons el destinatari']],
+    ['Resol incidències de fabricació (CA3.3)', ['Encara es bloqueja quan el resultat no surt', 'Ho resol amb ajuda contínua', 'Detecta el problema (paràmetres, capa, fitxer) i el corregeix', 'Anticipa el problema amb proves sobre retalls abans de tallar']],
     ['Sostenibilitat del material (CA6.2)', ['Encara malgasta material', 'Deixa força espai buit a la planxa', 'Aprofita bé la planxa (≤10 mm entre dissenys)', 'Optimitza i proposa millores']],
     ['Documentació (CA5.2)', ['Encara no documenta', 'Incompleta', 'Completa amb evidència', 'Completa i reflexiva']],
   ]},
   SA3: { nom: 'SA3 · Projecte làser: la meva identitat ⭐ (producte T1)', criteris: [
-    ['Procés tecnològic complet (CA1.1-1.3)', ['Encara sense procés', 'Procés bàsic amb ajuda', 'Detecta necessitat, idea i planifica', 'Procés rigorós i ben justificat']],
+    ['Procés tecnològic complet (CA1.1/CA1.2/CA1.3)', ['Encara sense procés', 'Procés bàsic amb ajuda', 'Detecta necessitat, idea i planifica', 'Procés rigorós i ben justificat']],
     ['Disseny de peces i unions (CA2.1/2.3)', ['Peces encara no vàlides', 'Peces simples, encaix fallit', 'Peces correctes que encaixen', 'Disseny precís d\'unions optimitzades']],
-    ['Fabricació i iteració (CA3.1/3.3)', ['Encara no fabrica', 'Fabrica amb molta ajuda', 'Prova la mostra d\'encaix i millora el prototip almenys un cop', 'Itera més d\'una vegada o anticipa el kerf sense refer cap peça']],
+    ['Fabricació i iteració (CA1.4/CA3.1/3.3)', ['Encara no fabrica', 'Fabrica amb molta ajuda', 'Prova la mostra d\'encaix i millora el prototip almenys un cop', 'Itera més d\'una vegada o anticipa el kerf sense refer cap peça']],
     ['Funcionalitat del producte (CA3.3)', ['Encara no funciona', 'Funció mínima', 'Compleix la funció', 'Supera els requisits']],
     ['Treball en equip (CA5.1)', ['Encara no col·labora', 'Col·labora puntualment', 'Assumeix el seu rol', 'Fa avançar l\'equip i ajuda']],
     ['Comunicació/presentació (CA5.3)', ['Encara no presenta', 'Presentació confusa', 'Presentació clara, seguint el guió repte→solució→com ho hem fet', 'Presentació clara i, a més, respon preguntes del públic']],
@@ -63,27 +64,28 @@ const RUBRIQUES = {
   SA5: { nom: 'SA5 · Modelatge 3D funcional (peça útil)', criteris: [
     ['Detectar necessitat i mesurar (CA1.1/2.3)', ['Encara no defineix el problema', 'Problema vague, mides imprecises', 'Problema clar i mides reals', 'Problema ben definit i mides precises amb toleràncies']],
     ['Disseny 3D funcional (CA2.2)', ['Encara no imprimible', 'Disseny bàsic amb ajuda', 'Disseny correcte i imprimible', 'Disseny optimitzat per a la impressió']],
-    ['Iteració digital v1→v2 (CA1.4)', ['Encara no revisa el disseny', 'Fa canvis amb molta ajuda', 'Fa la v2 a partir del retorn i explica un canvi', 'Itera amb criteri i justifica cada canvi']],
-    ['Laminat i impressió (CA3.2)', ['Encara no prepara la impressió', 'Lamina amb molta ajuda', 'Lamina amb paràmetres correctes i dins el límit (< 1 h, < 40 g)', 'Optimitza paràmetres (temps/material/qualitat)']],
+    ['Iteració digital v1→v2 (CA1.2/1.4)', ['Encara no revisa el disseny', 'Fa canvis amb molta ajuda', 'Fa la v2 a partir del retorn, tria entre alternatives i explica un canvi', 'Itera amb criteri i justifica cada canvi']],
+    ['Laminat i impressió (CA3.2/CA6.2)', ['Encara no prepara la impressió', 'Lamina amb molta ajuda', 'Lamina amb paràmetres correctes i dins el límit (< 1 h, < 40 g: temps i material justos)', 'Optimitza paràmetres (temps/material/qualitat)']],
     ['Resolució d\'incidències (CA3.3)', ['Encara es bloqueja davant l\'error', 'Demana ajuda', 'Resol incidències bàsiques', 'Diagnostica i preveu problemes']],
-    ['Funcionalitat', ['Encara no funciona', 'Funció parcial', 'Compleix la funció', 'Supera els requisits']],
+    ['Funcionalitat (CA1.1/CA3.3)', ['Encara no funciona', 'Funció parcial', 'Compleix la funció per a la necessitat detectada', 'Supera els requisits']],
     ['Documentació (CA5.2)', ['Encara no documenta', 'Incompleta', 'Fitxa tècnica completa', 'Completa i reflexiva']],
   ]},
   SA6: { nom: 'SA6 · Repte de disseny 3D ⭐ (producte T2)', criteris: [
     ['Empatia i requisits (CA1.1)', ['Encara no considera l\'usuari', 'Requisits vagues o inventats', '≥3 requisits i ≥1 restricció que surten de l\'usuari', 'Anàlisi acurada de necessitats i restriccions']],
-    ['Idear i planificar (CA1.2/1.3)', ['Encara sense pla', 'Pla incomplet', 'Idees, elecció i repartiment', 'Pla rigorós i ben justificat']],
+    ['Idear i planificar (CA1.2/CA1.3)', ['Encara sense pla', 'Pla incomplet', 'Idees, elecció i repartiment', 'Pla rigorós i ben justificat']],
     ['Disseny 3D de conjunt (CA2.2/2.3)', ['Peces encara no vàlides', 'Peces simples', 'Cada peça fa la seva funció (i si n\'hi ha més d\'una, encaixen)', 'Conjunt optimitzat i coherent']],
     ['Impressió i iteració (CA3.2/3.3)', ['Encara no imprimeix', 'Imprimeix amb ajuda', 'Imprimeix, prova amb l\'usuari i aplica una millora', 'Itera més d\'un cop i justifica cada canvi amb el feedback']],
     ['Impacte / funcionalitat (CA3.3)', ['Encara no resol el repte', 'Solució parcial', 'Resol el repte', 'Solució excel·lent amb valor afegit']],
     ['Treball en equip (CA5.1)', ['Encara no col·labora', 'Col·labora puntualment', 'Assumeix el rol', 'Coordina i fa avançar l\'equip']],
     ['Comunicació (CA5.3)', ['Encara no presenta', 'Confusa', 'Clara, seguint el guió repte→usuari→solució→impacte', 'A més, mostra l\'evidència de la prova amb l\'usuari i respon preguntes']],
+    ['Documentació (CA5.2)', ['Encara no documenta', 'Incompleta', 'Completa', 'Completa i reflexiva']],
     ['Contribució individual identificable (CA5.1/5.2)', ['Encara no es pot identificar què ha aportat', 'S\'identifica la seva aportació amb l\'ajuda del diari i dels rols', 'La seva peça (taula «Peça / Responsable» de la fitxa) és identificable i la sap explicar', 'Contribució clara i, a més, explica com la seva peça es connecta amb el conjunt']],
   ]},
   SA7: { nom: 'SA7 · Captura el món en 360 (tour virtual)', criteris: [
     ['Captura 360 (CA4.1)', ['Encara no captura', 'Captures amb ajuda i defectes', 'Captura correcta: horitzó recte, sense zones borroses i amb detalls a l\'ombra', 'Captures acurades (llum, enquadrament, neteja)']],
     ['Resol incidències de captura (CA3.3)', ['Encara no sap què fer si la captura surt malament', 'Ho resol amb ajuda contínua', 'Detecta el problema (moguda, fosca, algú al pla) i torna a capturar', 'Anticipa els problemes i ajusta abans de capturar']],
     ['Muntatge del tour (CA4.2)', ['Encara no munta', 'Tour bàsic incomplet', 'Tour navegable amb etiquetes', 'Tour ric, ben estructurat i atractiu']],
-    ['Ús segur del visor VR (CA4.3)', ['Encara no segueix el protocol', 'Necessita recordatoris', 'Segueix les 4 regles VR i fa de guia', 'Ús segur autònom i ajuda els companys']],
+    ['Ús segur del visor VR (CA4.3/CA6.1)', ['Encara no segueix el protocol', 'Necessita recordatoris', 'Segueix les 4 regles VR i fa de guia', 'Ús segur autònom i ajuda els companys']],
     ['Ètica i drets d\'imatge (CA6.3)', ['Encara no té en compte la privadesa', 'Necessita recordatoris', 'Respecta drets i permisos', 'Actua èticament i ho argumenta']],
     ['Treball en equip (CA5.1)', ['Encara no col·labora', 'Col·labora puntualment', 'Assumeix el rol', 'Coordina l\'equip']],
     ['Comunicació (CA5.3)', ['Encara no presenta el tour', 'Confusa', 'Clara', 'Clara i, a més, adaptada a l\'audiència (respon preguntes, convida a navegar)']],
@@ -164,8 +166,20 @@ async function main() {
   for (const key of ids) {
     const rub = RUBRIQUES[key];
     if (!rub) { console.log(`⚠️  clau desconeguda: ${key}`); continue; }
-    if (results[key]?.fileId) { console.log(`↩️  Ja existeix (${key}): ${results[key].url}`); continue; }
     const nom = `Rúbrica ${rub.nom} (importable a Classroom)`;
+    if (results[key]?.fileId) {
+      // Ja existeix: refresca el CONTINGUT del Sheet in place (mateix fileId → mateixa URL).
+      console.log(`🔄 Actualitzant "${nom}" (${rub.criteris.length} criteris)...`);
+      await drive.files.update({
+        fileId: results[key].fileId,
+        media: { mimeType: 'text/csv', body: buildCsv(rub.criteris) },
+        fields: 'id',
+      });
+      results[key] = { ...results[key], nom, criteris: rub.criteris.length };
+      fs.writeFileSync(RESULTATS, JSON.stringify(results, null, 2));
+      console.log(`✅ actualitzada: ${results[key].url}`);
+      continue;
+    }
     console.log(`📊 Creant "${nom}" (${rub.criteris.length} criteris)...`);
     const res = await drive.files.create({
       requestBody: { name: nom, mimeType: 'application/vnd.google-apps.spreadsheet', parents: [folderId] },
