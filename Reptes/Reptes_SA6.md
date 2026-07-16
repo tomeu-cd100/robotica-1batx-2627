@@ -25,6 +25,12 @@
 2. *(notable)* Permet **ajustar la consigna** amb un potenciòmetre.
 3. *(⭐⭐⭐)* Afegeix **dos modes** (fred/calor) amb una màquina d'estats.
 
+    **Fites** (valida-les en ordre):
+    1. El **diagrama d'estats** és en paper abans de programar: estats, transicions i els llindars concrets de cadascuna.
+    2. El mode calor funciona **sol** amb la seva histèresi (dos llindars), com el termòstat de classe.
+    3. La commutació fred↔calor té una **banda morta** entre modes: mai s'encenen tots dos ni oscil·la al voltant del canvi.
+
+
 ---
 
 ## 🚦 Repte B · Semàfor adaptatiu (màquina d'estats)
@@ -44,6 +50,12 @@
 2. *(notable)* Afegeix un estat de **parpelleig groc** (mode nocturn).
 3. *(⭐⭐⭐)* Coordina **dos semàfors** d'un encreuament amb estats complementaris.
 
+    **Fites** (valida-les en ordre):
+    1. La **taula d'estats** de l'encreuament és en paper: per a cada fase, què mostra A i què mostra B (quan A és verd, B és vermell...).
+    2. Hi ha **un sol `enum`** amb els estats de l'encreuament sencer (no dues màquines independents) i les transicions van amb `millis()`.
+    3. El cicle complet és estable amb fases de groc, i **mai** hi ha els dos semàfors en verd (comprova-ho mirant 2 minuts seguits).
+
+
 ---
 
 ## ⚙️ Repte C · Regulador proporcional
@@ -62,6 +74,12 @@
 1. *(bàsica)* Ajusta la **constant proporcional (Kp)** i observa l'efecte.
 2. *(notable)* Compara amb un **control tot-o-res** i documenta la diferència.
 3. *(⭐⭐⭐)* Aplica-ho a un **motor** (velocitat proporcional a la distància d'un ultrasons).
+
+    **Fites** (valida-les en ordre):
+    1. La distància es llegeix **estable** (mitjana de 3-5 lectures) i es mostra al Serial Plotter.
+    2. La velocitat surt de `Kp * (distancia - consigna)` amb `constrain(0, 255)` i el motor respon en la **direcció correcta**.
+    3. El comportament prop de la consigna és suau: documenta al quadern els valors de `Kp` provats i què passa quan és massa gran (oscil·la).
+
 
 ---
 

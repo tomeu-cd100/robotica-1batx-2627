@@ -25,6 +25,11 @@
 2. *(notable)* Combina **dos patrons** alternats (flaix curt + llum llarga) amb un bucle `for`.
 3. *(⭐⭐⭐)* Afegeix un **segon LED** (far secundari) amb un ritme diferent i sincronitzat.
 
+    **Fites** (valida-les en ordre):
+    1. El far secundari (pin 12) parpelleja sol amb el seu propi ritme, en un sketch de prova a part.
+    2. Els dos LEDs conviuen al mateix sketch **sense aturar-se l'un a l'altre** (pista: un dels dos no pot dependre de `delay()`; investiga `millis()`).
+    3. Els dos patrons es mantenen estables durant 1 minut seguit: el far principal no es va desfasant per culpa del secundari.
+
 ---
 
 ## 🚲 Repte B · Llum de bicicleta intel·ligent
@@ -44,6 +49,11 @@
 2. *(notable)* Programa una **seqüència d'emergència** (3 flaixos ràpids + pausa) amb bucle `for`.
 3. *(⭐⭐⭐)* Encapsula cada mode en una **funció pròpia** (`mode_emergencia()`...).
 
+    **Fites** (valida-les en ordre):
+    1. Un primer mode funciona dins una funció (p. ex. `mode_rapid()`) cridada des del `loop()`, exactament igual que abans d'encapsular-lo.
+    2. Tots els modes són funcions amb **paràmetres** (p. ex. nombre de repeticions o durada), sense codi duplicat entre elles.
+    3. El `loop()` queda reduït a 3–4 línies llegibles que només criden les funcions en ordre.
+
 ---
 
 ## 📡 Repte C · Missatge en Morse
@@ -62,6 +72,11 @@
 1. *(bàsica)* Usa **variables** per al temps del punt i deriva'n la ratlla (×3).
 2. *(notable)* Crea les **funcions** `punt()` i `ratlla()` i compon el missatge cridant-les.
 3. *(⭐⭐⭐)* Envia **les teves inicials** respectant les pauses entre lletres i paraules.
+
+    **Fites** (valida-les en ordre):
+    1. Tens escrites en paper les seqüències punt/ratlla de les teves inicials i les **quatre durades** (punt, ratlla, pausa entre símbols, pausa entre lletres), totes derivades de la unitat de punt.
+    2. La primera inicial s'emet correcta, amb pausa d'1 unitat entre símbols i de 3 unitats en acabar la lletra.
+    3. Les dues inicials completes s'emeten en bucle amb pausa de 7 unitats entre repeticions, i un company amb la taula Morse davant les desxifra sense veure el teu codi.
 
 ---
 

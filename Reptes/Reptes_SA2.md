@@ -25,6 +25,11 @@
 2. *(notable)* Afegeix un **semàfor de vianants** coordinat (verd vianants quan vermell cotxes).
 3. *(⭐⭐⭐)* Encapsula cada fase en una **funció** i fes el cicle net al `loop()`.
 
+    **Fites** (valida-les en ordre):
+    1. Una fase (p. ex. "cotxes passen") viu dins una funció que deixa **els tres LEDs** a l'estat correcte, i el semàfor funciona igual que abans.
+    2. Totes les fases són funcions i el `loop()` només les crida en ordre: no hi queda cap `digitalWrite` solt.
+    3. Canviar la durada d'una fase vol dir tocar **un sol número** (constant o paràmetre): prova-ho i comprova que res més no es desquadra.
+
 ---
 
 ## 💡 Repte B · Llum d'ambient regulable
@@ -44,6 +49,11 @@
 2. *(notable)* Passa a un **LED RGB** i fes una transició entre **dos colors**.
 3. *(⭐⭐⭐)* Programa un **cicle de colors** (arc de Sant Martí) barrejant els tres canals.
 
+    **Fites** (valida-les en ordre):
+    1. Tens una funció `color(r, g, b)` que fixa els tres canals amb una sola crida, provada amb 3–4 colors fixos (vermell, groc, cian...).
+    2. Una transició entre **dos** colors surt suau amb un `for` (un canal puja mentre l'altre baixa, sense salts visibles).
+    3. El cicle complet passa per tota la roda de color i torna exactament al color inicial, repetint-se sense cap tall brusc.
+
 ---
 
 ## 📊 Repte C · Indicador de nivell (barra de LED)
@@ -62,6 +72,11 @@
 1. *(bàsica)* Recorre els LED amb un **bucle `for`** i un array de pins.
 2. *(notable)* Fes que el nivell **pugi i baixi** en bucle (efecte VU-mètre).
 3. *(⭐⭐⭐)* Substitueix l'últim LED per un **RGB** que passi de verd a vermell segons el nivell.
+
+    **Fites** (valida-les en ordre):
+    1. El LED RGB mostra **verd fix** amb nivell baix i **vermell fix** amb nivell alt (els dos casos extrems, forçats al codi).
+    2. Amb `map()` calcules els components vermell i verd a partir del nivell, i els valors surten coherents pel Monitor Sèrie (0–255, un puja quan l'altre baixa).
+    3. Mentre la barra puja i baixa, el color canvia **gradualment** i sempre és coherent amb el nombre de LEDs encesos.
 
 ---
 

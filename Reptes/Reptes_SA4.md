@@ -29,6 +29,12 @@
 2. *(notable)* Dispensa **una dosi** per activació (un sol cicle, evita repeticions amb *debounce*).
 3. *(⭐⭐⭐)* Coordina **dos servos** (p. ex. base + pinça) per a una tasca completa de "agafa i deixa".
 
+    **Fites** (valida-les en ordre):
+    1. Cada servo funciona **per separat** en un sketch de prova, amb els seus angles límit trobats i anotats al quadern (no forcis mai el topall).
+    2. La seqüència completa existeix amb **funcions pròpies** (`mou_base(angle)`, `mou_pinca(angle)`) i pauses entre moviments; la pinça no es mou mentre la base gira.
+    3. El cicle "agafa i deixa" es repeteix **3 cops seguits** sense recol·locar res a mà.
+
+
 > **Cap a SA5/SA6:** el moviment manual amb potenciòmetre evolucionarà cap a **moviment suau amb control proporcional / màquina d'estats** (SA6). El **comandament per micro:bit** (SA5) és una **via avançada i opcional**: cal un pont de comunicació (vegeu la nota tècnica a `Programació didàctica/08c_Projectes_vida_real.md`). La via recomanada manté el control al mateix Arduino (potenciòmetre/joystick).
 
 ---
@@ -52,6 +58,12 @@
 2. *(notable)* Obre amb **ultrasons** (detecta el cotxe) i tanca sol passat un temps.
 3. *(⭐⭐⭐)* Afegeix un **LED/semàfor** coordinat (vermell tancada, verd oberta).
 
+    **Fites** (valida-les en ordre):
+    1. L'estat de la barrera viu en **una sola variable** (p. ex. `oberta`) i el LED es pinta a partir d'ella, no de lectures soltes.
+    2. El semàfor només passa a verd quan el servo **ha acabat** el moviment d'obertura (no a mig camí).
+    3. Prova d'estrès: 10 obertures/tancaments seguits sense que LED i barrera quedin mai incoherents.
+
+
 > **Continuïtat de trimestre:** aquesta barrera reaprofita la senyalització de SA2 i la detecció de SA3; és la versió "amb moviment" del peatge intel·ligent del 1r trimestre.
 
 ---
@@ -74,6 +86,12 @@
 1. *(bàsica)* Regula la **velocitat** amb PWM des d'un potenciòmetre.
 2. *(notable)* Afegeix **canvi de sentit** (endavant/enrere) amb el pont H.
 3. *(⭐⭐⭐)* Programa una **seqüència** (accelera, manté, frena) amb funcions.
+
+    **Fites** (valida-les en ordre):
+    1. `accelera()` funciona sola: rampa de PWM de 0 al valor objectiu, sense salts bruscos audibles.
+    2. Les tres fases són **funcions amb paràmetres** (velocitat objectiu, durada) sense codi duplicat.
+    3. La seqüència completa s'encadena amb transicions suaus i el `loop()` queda en 3-4 línies llegibles.
+
 
 > **Cap a SA7:** el control de motor DC amb pont H és la base de la **locomoció del robot mòbil** del 3r trimestre.
 

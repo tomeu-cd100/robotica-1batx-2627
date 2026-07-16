@@ -25,6 +25,12 @@
 2. *(notable)* El receptor **registra** o calcula màxim/mínim/mitjana.
 3. *(⭐⭐⭐)* Porta la telemetria a un **ESP32 amb WiFi** (avançat) o a un full de càlcul.
 
+    **Fites** (valida-les en ordre):
+    1. La dada arriba al **monitor sèrie** del dispositiu de sortida (ESP32 o receptor) de manera contínua.
+    2. **Una** dada de prova arriba al servei de destinació (full de càlcul via formulari/webhook) amb confirmació que s'ha rebut.
+    3. Registre automàtic cada X segons durant **10 minuts**, amb hora i valor a cada fila; talls de xarxa no pengen el programa.
+
+
 ---
 
 ## 🚨 Repte B · Sistema d'alerta a distància
@@ -44,6 +50,12 @@
 2. *(notable)* Afegeix **confirmació (ACK)** del receptor o diversos nivells d'alerta.
 3. *(⭐⭐⭐)* Xarxa de **diversos emissors** identificats que reporten a un sol receptor.
 
+    **Fites** (valida-les en ordre):
+    1. Un emissor envia el seu **identificador** dins del missatge (p. ex. `"A:23"`), no només el valor.
+    2. El receptor **separa** id i valor i els mostra per separat al sèrie.
+    3. **Tres emissors alhora** sense barrejar dades (una columna per emissor) i el receptor detecta si un emissor **calla** massa estona.
+
+
 ---
 
 ## ✋ Repte C · Control per gestos (IA)
@@ -62,6 +74,12 @@
 1. *(bàsica)* Afegeix un **tercer gest** i la seva acció.
 2. *(notable)* Usa els gestos per **controlar un altre dispositiu** per ràdio (comandament gestual).
 3. *(⭐⭐⭐)* Entrena/ajusta un **model senzill** de classificació amb dades pròpies (ML educatiu).
+
+    **Fites** (valida-les en ordre):
+    1. Dataset **propi** recollit i etiquetat: mínim 20 mostres per classe, anotant les condicions de recollida.
+    2. El model encerta amb mostres **noves** (que no ha vist en entrenar), no només amb les d'entrenament.
+    3. Prova de **biaix**: mostres d'una persona diferent (o condicions diferents) i anàlisi al quadern de per què falla o aguanta.
+
 
 ---
 

@@ -25,6 +25,12 @@
 2. *(notable)* Fixa un **objectiu** (p. ex. 20 passos) i mostra una **icona** en assolir-lo.
 3. *(⭐⭐⭐)* Mostra una **barra de progrés** amb els LEDs cap a l'objectiu.
 
+    **Fites** (valida-les en ordre):
+    1. Els passos es compten i es mostren com a **nombre** (`display.scroll`) de manera fiable.
+    2. La conversió passos → columnes enceses (0-5) funciona provada amb **valors fixos** abans de connectar-la al comptador real.
+    3. La barra s'actualitza en temps real i **només es redibuixa quan canvia** (sense parpelleig constant).
+
+
 ---
 
 ## 🌃 Repte B · Llum de nit intel·ligent
@@ -44,6 +50,12 @@
 2. *(notable)* Afegeix **histèresi** (dos llindars) per evitar parpelleigs.
 3. *(⭐⭐⭐)* Ajusta la **brillantor** de la imatge segons la foscor.
 
+    **Fites** (valida-les en ordre):
+    1. La lectura de llum es mostra en pantalla per conèixer el **rang real** de l'aula (anota mínim i màxim al quadern).
+    2. La conversió llum → brillantor (0-9) funciona amb els llindars del teu rang, no amb valors inventats.
+    3. La brillantor és **estable** (mitjana de diverses lectures): no tremola quan la llum vacil·la una mica.
+
+
 ---
 
 ## 🎲 Repte C · Joc o missatges per ràdio
@@ -62,6 +74,12 @@
 1. *(bàsica)* Afegeix una **animació** abans de mostrar el resultat.
 2. *(notable)* *(joc)* porta el **recompte** de tirades; *(ràdio)* respon amb un **ACK** (confirmació).
 3. *(⭐⭐⭐)* Combina-ho: un **joc multijugador per ràdio** entre dos micro:bits.
+
+    **Fites** (valida-les en ordre):
+    1. Ping-pong bàsic: un missatge fa anada i tornada entre les dues plaques del **mateix grup** de ràdio.
+    2. El **protocol del joc** està escrit en paper (quins missatges hi ha, qui comença) i implementat en una direcció.
+    3. Partida completa amb marcador; si l'altra placa **no respon** (timeout), el joc ho diu en lloc de quedar penjat.
+
 
 ---
 

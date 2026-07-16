@@ -25,6 +25,11 @@
 2. *(notable)* Afegeix **histèresi** (dos llindars) perquè no parpellegi al capvespre.
 3. *(⭐⭐⭐)* Regula la **brillantor** del LED amb PWM segons la foscor (com més fosc, més llum).
 
+    **Fites** (valida-les en ordre):
+    1. Coneixes el rang **real** de la LDR a l'aula (valor amb llum plena i tapada del tot), observat al Monitor Sèrie i apuntat al quadern.
+    2. Amb `map()` converteixes la lectura en una brillantor 0–255 **invertida** (més fosc → valor més alt) i el número surt sempre dins de rang pel Monitor Sèrie (mira `constrain()`).
+    3. El LED queda apagat del tot amb llum plena, brilla al màxim a les fosques i fa una transició **contínua** (sense salts) entremig.
+
 ---
 
 ## 🅿️ Repte B · Sensor d'aparcament (antixoc)
@@ -44,6 +49,11 @@
 2. *(notable)* Fes **tres trams** (lluny/mig/a prop) amb avisos diferents.
 3. *(⭐⭐⭐)* Avís **proporcional**: el ritme del parpelleig/so augmenta com més a prop.
 
+    **Fites** (valida-les en ordre):
+    1. La distància en cm surt fiable i contínua pel Monitor Sèrie (descarta lectures 0 o fora de rang).
+    2. L'**interval entre bips** es calcula amb `map()` a partir de la distància: comprova els números pel Monitor Sèrie abans d'escoltar res.
+    3. El ritme s'accelera de manera contínua en acostar-te i, per sota d'una distància crítica, passa a **so continu** (com els sensors reals).
+
 ---
 
 ## 🎛️ Repte C · Instrument o comptador interactiu
@@ -62,6 +72,11 @@
 1. *(bàsica)* Mostra el valor/recompte de forma clara al Monitor Sèrie.
 2. *(notable)* Mapeja l'entrada (`map()`) a un rang útil (p. ex. 0–255 de PWM).
 3. *(⭐⭐⭐)* Combina **dues entrades** (potenciòmetre + polsador) per a un mini-instrument.
+
+    **Fites** (valida-les en ordre):
+    1. Cada entrada funciona **per separat** al mateix circuit: el potenciòmetre regula (PWM) i el polsador compta amb *debounce*.
+    2. Les dues conviuen al mateix `loop()` sense bloquejar-se (cap `delay()` llarg que faci perdre premudes).
+    3. La combinació té sentit d'instrument (p. ex. el polsador canvia el mode o dispara la nota que el potenciòmetre afina): fes-ne una demostració d'ús davant d'algú.
 
 ---
 

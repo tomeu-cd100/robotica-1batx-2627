@@ -26,6 +26,12 @@
 2. *(notable)* **Calibra** els temps de gir perquè els angles siguin precisos.
 3. *(⭐⭐⭐)* Encadena una **ruta amb diverses parades** i senyalitza-les amb un LED/so.
 
+    **Fites** (valida-les en ordre):
+    1. Un **tram únic** (recte + parada + senyal) funciona de manera fiable i repetible.
+    2. La ruta és **dades, no codi duplicat**: una taula/llista de trams (distància o temps, gir) que el programa recorre.
+    3. Una ruta de 4+ trams es completa **3 cops seguits** amb un error final de menys de ~20 cm.
+
+
 ---
 
 ## 🧭 Repte B · Robot explorador (evita obstacles)
@@ -45,6 +51,12 @@
 2. *(notable)* **Estratègia** de navegació: mira a banda i banda i tria el costat més lliure.
 3. *(⭐⭐⭐)* Combina amb un **mode de cerca** (explora fins a trobar pas) sense quedar encallat.
 
+    **Fites** (valida-les en ordre):
+    1. L'evita-obstacles bàsic ja és **fiable** (10 obstacles seguits sense xocar).
+    2. El robot **detecta que està encallat** (p. ex. gira X cops seguits o la distància no canvia) i ho senyalitza.
+    3. Estratègia de sortida provada: **2 minuts en un recinte tancat** sense quedar aturat ni entrar en bucle.
+
+
 ---
 
 ## 🏁 Repte C · Seguidor de línia
@@ -63,6 +75,12 @@
 1. *(bàsica)* Afegeix un **cronòmetre** del recorregut (Monitor Sèrie).
 2. *(notable)* Suavitza les correccions per anar **més ràpid sense sortir-se**.
 3. *(⭐⭐⭐)* Implementa un **control proporcional** (gir ∝ desviació) — pont amb la SA6.
+
+    **Fites** (valida-les en ordre):
+    1. La **desviació** respecte de la línia es llegeix i es mostra **amb signe** (esquerra negativa, dreta positiva).
+    2. La correcció `gir = Kp * desviacio` s'aplica als dos motors amb `constrain` i corregeix en la **direcció correcta**.
+    3. El robot segueix la línia **sense zig-zag exagerat**; documenta al quadern els `Kp` provats (petit = lent, gran = oscil·la).
+
 
 ---
 
