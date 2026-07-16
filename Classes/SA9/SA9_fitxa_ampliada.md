@@ -37,7 +37,7 @@
 Useu [`plantilles/Planificacio_agile_PLANTILLA.md`](plantilles/Planificacio_agile_PLANTILLA.md) (taulell To Do / Fent / Fet).
 - Fita sessió 2: ____________________________________________________
 - Fita sessió 3: ____________________________________________________
-- Fita sessió 4: ____________________________________________________
+- Fita sessió 4 (dossier + defensa): _________________________________
 
 ## 5. Proves i iteracions
 | Versió | Què fallava | Què hem canviat | Resultat |
@@ -45,7 +45,7 @@ Useu [`plantilles/Planificacio_agile_PLANTILLA.md`](plantilles/Planificacio_agil
 | v1 | | | |
 | v2 | | | |
 
-## 6. Defensa (sessió 5)
+## 6. Defensa (sessió 4; la sessió 5 és la prova pràctica T3, individual)
 - Qui explica cada part: ____________________________________________
 - Demostració preparada: sí / no
 - **Reflexió ètica/sostenibilitat:** impacte del nostre sistema: ____________

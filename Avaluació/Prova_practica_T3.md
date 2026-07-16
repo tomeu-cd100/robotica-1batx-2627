@@ -1,9 +1,20 @@
 # Prova pràctica — Trimestre 3 (SA7-SA9)
 ## "Robot autònom + sistema connectat"
 
-**Durada:** 2 h · **Material:** robot mòbil (Imagina 3dBot) + pista de proves; micro:bit. Es permet consultar esquemes i quadern.
+**Durada:** 2 h (la **S5 de la SA9**, sencera) · **Material:** robot mòbil (Imagina 3dBot) + pista de proves; micro:bit. Es permet consultar esquemes i quadern.
 
-> ℹ️ Al 3r trimestre **el pes principal de l'avaluació és el projecte final (SA9)** amb les rúbriques R1-R5 i el dossier tècnic. Aquesta prova pràctica **complementa** el projecte i comprova destreses de robòtica i integració.
+> ℹ️ Al 3r trimestre **el pes principal de l'avaluació és el projecte final (SA9)** amb les rúbriques R1-R5 i el dossier tècnic. Aquesta prova pràctica és un instrument **separat i individual**: comprova destreses de robòtica i integració (SA7-SA8), puntua només a la dimensió «Proves pràctiques» (20 %) i **no reavalua el projecte** (que ja ha estat defensat a la S4).
+
+### Logística: estacions rotatives (pocs robots, tot el grup alhora)
+
+Amb 2-3 robots i pistes no es pot fer la Part A tothom alhora. Organització de la sessió:
+
+1. **Tota la classe comença per la Part B** (micro:bit, a la seva taula): és individual i no necessita robot. Temps recomanat: 40-45'.
+2. **Part A per torns a les estacions de pista** (10-12' per persona i estació), mentre la resta acaba la Part B i **prepara i verifica el codi de la Part A al banc o al simulador** (Wokwi) abans del seu torn.
+3. Ordre de torns publicat a l'inici; qui ha passat per la pista completa la documentació del quadern.
+4. El docent només observa i cronometra a la pista; la correcció de codi es fa després amb el quadern i el codi lliurat.
+
+> Amb 20 alumnes, 2 pistes i torns de 10-12', la Part A ocupa ~60' en paral·lel a la Part B: quadra dins dels ~100' efectius de la sessió si els torns comencen al minut 40.
 
 ### Competències i criteris avaluats
 - **CE-R4** (robots) → CA4.1, CA4.2 · **CE-R3** (control) → CA3.1

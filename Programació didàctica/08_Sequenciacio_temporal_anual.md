@@ -15,14 +15,14 @@ Distribució en **3 trimestres** i **9 situacions d'aprenentatge (SA)**.
 | | | SA6 † | Sistemes de control: llaç obert/tancat i màquines d'estats | 8 |
 | **3r** | s25-s35 | SA7 | Robòtica mòbil: cinemàtica i trajectòries | 8 |
 | | | SA8 | IoT i IA: el robot connectat i intel·ligent | 6 |
-| | | SA9 | Repte final integrador (opció competició) | 10 |
+| | | SA9 † | Repte final integrador (opció competició) | 10 |
 | | | | **Subtotal SA** | **68 h** |
 | | | | **Marge (diagnòstic, avaluació, imprevistos)** | **~2 h** |
 | | | | **Total** | **70 h** |
 
 > **\*** SA amb **4a sessió de producte comprimible**: les **8 h (4 sessions)** són el còmput de referència; la S4 és la sessió de producte, però si el calendari real ho exigeix el **repte de la S3 pot fer de producte** i la S4 s'allibera (vegeu el pla de contingència).
 >
-> **†** SA la **4a sessió de la qual és, sencera, la prova pràctica trimestral** (T1 a SA3, T2 a SA6): el producte de parella es tanca a la **S3** i la S4 és la prova **individual**. Cap activitat de sessió no competeix amb la prova (vegeu «Marge i integració de l'avaluació»).
+> **†** SA la **darrera sessió de la qual és, sencera, la prova pràctica trimestral** (T1 a SA3 i T2 a SA6: la S4; T3 a SA9: la S5): el producte es tanca a la sessió anterior i la darrera sessió és la prova **individual**. Cap activitat de sessió no competeix amb la prova (vegeu «Marge i integració de l'avaluació»).
 >
 > **SA5** compta 6 h (3 sessions); la comparativa C++↔Python de la antiga 4a sessió es fa dins el tancament de la S3 i com a **+ampliació**.
 
@@ -34,7 +34,7 @@ Per garantir la **viabilitat real** del curs (2 h/setmana ≈ 70 h), s'apliquen 
 2. **Proves pràctiques amb sessió pròpia dins de la SA (T1 i T2):** les proves (`Avaluació/Prova_practica_T1/T2/T3`) ocupen **una sessió sencera**, comptada **dins de les 8 h** de la SA de tancament del trimestre — no s'hi barreja cap altra activitat:
    - **T1** → la **S4 de SA3 és, sencera, la prova** (individual). El producte de parella de la SA3 es tanca a la **S3** (el repte de la S3 és el producte).
    - **T2** → la **S4 de SA6 és, sencera, la prova** (individual). El producte es tanca a la **S3** i el **control proporcional passa a +ampliació** (ja ho era: el nucli avaluable és la histèresi).
-   - **T3** → dins la SA9 (demostració + defensa, ja prevista: aquí sí que la prova **és** el tancament del projecte).
+   - **T3** → la **S5 de SA9 és, sencera, la prova** (individual, **per estacions rotatives**: la part de micro:bit es fa a la taula i la part de robot per torns a les pistes disponibles). El projecte es tanca a la **S4** (dossier + defensa oral; amb més de 6 equips, defenses esglaonades des de la S3, ja previstes a la guia). La prova és **independent del projecte**: avalua destreses individuals de SA7-SA8 i puntua només a la dimensió «Proves pràctiques» (20 %); el projecte puntua a «Projectes i productes» — cap evidència no compta dues vegades.
 
 > Vegeu la ponderació a `06_Avaluacio_criteris_qualificacio.md` (dimensió "Proves pràctiques", 20 %). **Per què així:** una prova individual de ~100' i una sessió de producte en parella amb defensa **no caben en la mateixa sessió de 2 h**; fer-ho explícit evita descobrir-ho al desembre. El cost (1 sessió per trimestre) ja està comptat dins les hores de la SA.
 

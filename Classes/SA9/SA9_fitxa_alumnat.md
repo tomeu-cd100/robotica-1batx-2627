@@ -64,7 +64,7 @@ Useu [`plantilles/Planificacio_agile_PLANTILLA.md`](plantilles/Planificacio_agil
 
 ![Taulell àgil (kanban) amb tres columnes —per fer, fent i fet— per on les tasques avancen d'esquerra a dreta a mesura que l'equip les completa](img/sa9-taulell-agile.svg)
 
-- Fita S2: __________  · Fita S3: __________  · Fita S4: __________
+- Fita S2: __________  · Fita S3: __________  · Fita S4 (dossier + defensa): __________
 
 ## 5 · Proves i iteracions
 
@@ -77,9 +77,11 @@ Useu [`plantilles/Planificacio_agile_PLANTILLA.md`](plantilles/Planificacio_agil
 | v1 | | | |
 | v2 | | | |
 
-## 6 · Defensa (S5)
+## 6 · Defensa (S4)
 - Qui explica cada part: ______________________  · Demostració preparada: sí / no
 - **Reflexió ètica/sostenibilitat:** impacte del sistema: ______________________
+
+> 📋 La **S5 és la prova pràctica del trimestre** (individual, amb el robot per torns a la pista i el micro:bit a la taula). No és sessió de projecte: el dossier i la defensa es tanquen a la S4.
 
 <!-- /web:only-github -->
 

@@ -11,14 +11,15 @@
 - [ ] Material lliure disponible (Arduino / micro:bit / 3dBot) + components reutilitzables
 - [ ] **Preparar la prova pràctica T3** (robot + sistema connectat)
 - [ ] Compartir **TOTES les rúbriques R1–R5** amb l'alumnat *abans* de començar
-- [ ] Planificar **defenses esglaonades** si hi ha més de 6 equips (~12–15'/equip; avançar-ne 2–3 a final de S3/S4)
+- [ ] Planificar **defenses esglaonades** si hi ha més de 6 equips (~12–15'/equip; avançar-ne 2–3 a final de la S3)
+- [ ] Preparar la **logística de la prova T3 (S5)**: estacions rotatives, ordre de torns, 2-3 pistes
 
 ## ⏱️ 2. Moments (fites parcials per sessió — evita el "tot l'últim dia")
 - [ ] **S1 · Idear:** referent (1') Cynthia Breazeal · presentar repte + banc · formar equips i rols · requisits, esbós, taulell àgil
 - [ ] **S2 · Prototipar:** MVP muntat + primer codi (des de `Codi_base_PLANTILLA/`) · **fita S2 fixada**
-- [ ] **S3 · Provar:** proves sistemàtiques + registre d'errors + **1a iteració** · (defenses avançades d'equips llestos)
-- [ ] **S4 · Millorar i documentar:** **2a iteració** + **code review** + redacció del dossier tècnic
-- [ ] **S5 · Comunicar:** defenses orals + demostració · coavaluació · reflexió final del curs
+- [ ] **S3 · Provar i millorar:** proves sistemàtiques + registre d'errors + **iteracions** + code review · (defenses avançades d'equips llestos)
+- [ ] **S4 · Comunicar:** dossier tècnic tancat · defenses orals + demostració · coavaluació · reflexió final del curs
+- [ ] **S5 · PROVA PRÀCTICA T3:** individual, per **estacions rotatives** (micro:bit a la taula, robot per torns)
 - ⚠️ *Vigilar:* repte massa ambiciós (reduir abast) · rols difusos (assignar al taulell) · sense proves incrementals (provar per parts)
 
 ## 📊 3. Avaluació i evidències (a recollir)

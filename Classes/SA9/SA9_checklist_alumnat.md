@@ -10,9 +10,9 @@
 - [ ] **S1 · Idear:** triar el **repte**, definir els **requisits mínims**, esbós i **repartir rols**
 - [ ] **S1 · Planificar:** muntar el **taulell àgil** (To Do / Fent / Fet) amb fites per sessió
 - [ ] **S2 · Prototipar:** MVP muntat + primer codi (des de `Codi_base_PLANTILLA/`)
-- [ ] **S3 · Provar:** provar **per parts**, registrar errors i fer la **1a iteració**
-- [ ] **S4 · Millorar:** **2a iteració** + redactar el **dossier tècnic**
-- [ ] **S5 · Comunicar:** preparar i fer la **defensa oral + demostració** (cadascú explica la seva part)
+- [ ] **S3 · Provar i millorar:** provar **per parts**, registrar errors i **iterar** (v1 → v2 → …)
+- [ ] **S4 · Comunicar:** tancar el **dossier tècnic** + fer la **defensa oral + demostració** (cadascú explica la seva part)
+- [ ] **S5 · Prova pràctica T3:** prova **individual** (robot per torns a la pista + micro:bit a la taula) — no és sessió de projecte
 
 ## 📦 Entrega final (tot ha d'estar fet)
 - [ ] **Sistema funcional** que compleix els requisits mínims → *R1, R2, R3*

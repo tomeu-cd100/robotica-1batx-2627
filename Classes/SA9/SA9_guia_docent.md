@@ -28,23 +28,29 @@ Aquesta SA **tanca el mètode de projecte** introduït a la **SA1** i practicat 
 | Analitzar | S1 (Idear): repte, requisits, esbós |
 | Dissenyar | S1 (Idear): planificació i rols |
 | Prototipar | S2 (Prototipar): MVP i primer codi |
-| Provar | S3 (Provar): proves i 1a iteració |
-| Millorar | S4 (Millorar): 2a iteració + dossier |
-| *(Comunicar)* | S5 (Comunicar): defensa oral |
+| Provar | S3 (Provar i millorar): proves + iteracions |
+| Millorar | S3-S4: 2a iteració + dossier |
+| *(Comunicar)* | S4 (Comunicar): defensa oral |
+
+> La **S5 no és de projecte**: és, sencera, la **prova pràctica T3** (individual), vegeu `Avaluació/Prova_practica_T3.md` i el quadre de la seqüenciació anual.
 
 > A diferència de les altres SA, aquí l'alumnat **no llegeix codi donat** (no hi ha PRIMM): **escriu el seu propi codi** a partir de `Codi_base_PLANTILLA/`, aplicant de forma autònoma tot el que ha après.
 
 ---
 
-## Seqüència de sessions (5 × 2 h)
+## Seqüència de sessions (5 × 2 h: 4 de projecte + prova T3)
 
 | Sessió | Fase | Activitat docent | Activitat alumnat |
 |---|---|---|---|
 | **1** | **Idear** | Presenta el repte i el `Banc_de_reptes`. Forma equips i rols. | Trien repte, defineixen requisits, esbós, planificació (taulell àgil). |
 | **2** | **Prototipar** | Acompanya el muntatge i el primer codi. | Munten el prototip mínim viable; primer codi (esquelet). |
-| **3** | **Provar** | Fomenta proves sistemàtiques i registre d'errors. | Proven, detecten errors, **primera iteració** de millora. |
-| **4** | **Millorar i documentar** | Revisa codi (code review); guia la documentació. | **Segona iteració**; redacten el dossier tècnic. |
-| **5** | **Comunicar** | Organitza les defenses; modera. | **Defensa oral** + demostració; coavaluació; reflexió final. |
+| **3** | **Provar i millorar** | Fomenta proves sistemàtiques i registre d'errors; code review. Primeres defenses esglaonades si un equip ja té prototip llest. | Proven, detecten errors, **primera iteració** de millora i inici de la segona; avancen el dossier. |
+| **4** | **Comunicar** | Organitza i modera les defenses; recull els dossiers. | Tanquen el **dossier tècnic**; **defensa oral** + demostració; coavaluació; reflexió final. |
+| **5** | **PROVA PRÀCTICA T3** | Munta les **estacions rotatives** (pistes + robots) i gestiona els torns. | **Prova individual** (`Avaluació/Prova_practica_T3.md`): part micro:bit a la taula, part de robot per torns a la pista. |
+
+> ⚠️ La 2a iteració «formal» de l'antiga S4 queda repartida entre la S3 (fer-la) i la feina fora d'aula (documentar-la). Si un equip no hi arriba, la **versió nucli** (requisits mínims demostrables) segueix sent assoliment satisfactori — vegeu la fitxa.
+
+> ⏱️ **Marge:** compta ~100' efectius per sessió, no 120'. Al projecte, el que cau primer si es va just és sempre l'**abast del repte** (targeta T9.2, versió nucli), mai les proves per parts ni el dossier.
 
 > 🔭 **Referent (1', a l'inici de la S1):** **Cynthia Breazeal**, fundadora de la robòtica social — el destinatari del vostre sistema és sempre una persona. Tanca la galeria del curs; si voleu, afegiu-hi el referent de proximitat (**Núria Salán**, UPC). Guió: [`../00_General/00_Referents_tecnologia.md`](../00_General/00_Referents_tecnologia.md).
 
@@ -58,6 +64,7 @@ Aquesta SA **tanca el mètode de projecte** introduït a la **SA1** i practicat 
 - **Totes les rúbriques** (R1-R5). Pes destacat dins de la dimensió "Projectes i productes" del trimestre.
 - Inclou **autoavaluació i coavaluació** (procés d'equip).
 - Lliurables: **sistema funcional + dossier tècnic + defensa oral**.
+- La **prova T3 (S5) és un instrument a part**: individual, puntua a la dimensió «Proves pràctiques» (20 %) i **no reavalua el projecte** — comprova destreses de SA7-SA8 (robot mòbil + integració micro:bit).
 
 ### Mapa d'avaluació (traçabilitat)
 | Instrument | Què evidencia | Criteri | Rúbrica |
@@ -74,7 +81,7 @@ Aquesta SA **tanca el mètode de projecte** introduït a la **SA1** i practicat 
 - Tenir el **banc de reptes amb nivells** perquè cada equip triï segons ambició (atenció a la diversitat).
 - Oferir el **[`00_Banc_objectes_disseny.md`](../00_General/00_Banc_objectes_disseny.md)** com a font d'idees: el projecte final pot ser un **objecte real amb carcassa/maqueta** (disseny de producte), no només un muntatge. Inclou rúbrica de producte i pautes de fabricació (cartró/impressió 3D, ecodisseny ODS 12).
 - Fixar **fites parcials** (checklist) a cada sessió per evitar deixar-ho tot per al final.
-- **Defenses esglaonades si hi ha més de 6 equips:** 5' + preguntes + canvi de muntatge ≈ 12-15' per equip; una sola S5 no dona. Programa 2-3 defenses al final de S3 i S4 (equips amb prototip llest) i la resta a la S5. Escala, guió i errors típics de la defensa: [`../00_General/00_Guia_defensa_oral.md`](../00_General/00_Guia_defensa_oral.md).
+- **Defenses esglaonades si hi ha més de 6 equips:** 5' + preguntes + canvi de muntatge ≈ 12-15' per equip; una sola S4 no dona. Programa 2-3 defenses al final de la S3 (equips amb prototip llest) i la resta a la S4. Escala, guió i errors típics de la defensa: [`../00_General/00_Guia_defensa_oral.md`](../00_General/00_Guia_defensa_oral.md).
 - Recordar criteris d'**ètica i sostenibilitat** (reutilització de components, impacte).
 - Si s'opta per **competició**, alinear el repte amb el reglament corresponent.
 

@@ -15,7 +15,7 @@
 
 > Un equip fictici, **els «Repartidors»**, vol un **robot que reparteix objectes petits per l'aula**:
 > agafa un sobre d'un punt de sortida i el porta fins a una taula marcada, esquivant el que trobi pel
-> camí. Tenen **5 sessions**. Com **enfoquen** el projecte perquè arribi a funcionar i estigui documentat?
+> camí. Tenen **4 sessions de projecte** (la 5a és la prova pràctica T3). Com **enfoquen** el projecte perquè arribi a funcionar i estigui documentat?
 
 Fixeu-vos: aquest repte **no és cap dels del banc** (ni seguidor de línia, ni evita-obstacles, ni braç
 classificador) — combina trossos de diversos. Per això us serveix de **model del mètode**, no de solució
@@ -70,8 +70,8 @@ Programació: codi i depuració · Documentació: fa fotos i omple el dossier **
 | Sessió (fita) | Objectiu concret | Iteració |
 |---|---|---|
 | S2 (Prototipar) | **MVP:** es mou i s'atura davant d'un obstacle | — |
-| S3 (Provar) | Prova per parts; corregeix el que falli | **v1 → v2** |
-| S4 (Millorar) | Afegeix **un** desitjable (agafar el sobre) + dossier | **v2 → v3** |
+| S3 (Provar i millorar) | Prova per parts; corregeix el que falli; si hi ha marge, **un** desitjable (agafar el sobre) | **v1 → v2 (→ v3)** |
+| S4 (Comunicar) | Dossier tancat + defensa amb demostració | — |
 
 **e) Pseudocodi de l'MVP** (només per fixar la lògica; encara *no* és el producte):
 
@@ -116,8 +116,8 @@ repeteix sempre:
   no saben **quin** mòdul falla. *Solució:* **MVP primer** i afegir d'un en un, provant per parts.
 - **No documenten fins al final** → arriben a la defensa sense fotos ni registre d'iteracions i el dossier
   (R4) queda buit. *Solució:* el rol de documentació **anota i fotografia des de la S1**.
-- **Ho deixen per a l'últim dia** (sense fites parcials) → a la S4 encara munten maquinari i no arriben a
-  provar. *Solució:* **una fita tancada per sessió** i mirar el taulell cada dia.
+- **Ho deixen per a l'últim dia** (sense fites parcials) → el dia de la defensa (S4) encara munten maquinari
+  i no arriben a provar. *Solució:* **una fita tancada per sessió** i mirar el taulell cada dia.
 - **Rols difusos** («ja ho farà algú») → dues persones toquen el mateix codi i la resta espera. *Solució:*
   **assignar i registrar rols** al taulell; cada targeta té un responsable.
 
@@ -129,7 +129,7 @@ repeteix sempre:
 > moure's i aturar-se amb els **ultrasons**. Bona decisió: a la v1 no frenava a temps perquè el `LLINDAR`
 > era massa petit; el vam pujar a 15 cm (v2) i ja s'atura bé. Vam **provar per parts** (primer els motors
 > sols, després el sensor sol) i així vam trobar de seguida que el problema era el llindar, no el motor.
-> El servo per agafar el sobre queda per a la S4 com a **millora**. **Evidència:** foto del taulell amb
+> El servo per agafar el sobre queda com a **millora** per al final de la S3, si hi ha marge. **Evidència:** foto del taulell amb
 > les targetes mogudes + vídeo del robot aturant-se davant la mà.
 
 **Per què és una bona entrada:** usa el **vocabulari clau** (MVP, iteració, llindar, provar per parts),

@@ -31,9 +31,9 @@
 |---|---|---|
 | **1** | **Idear** | Design thinking: repte, requisits, esbós. Repartiment de rols. Planificació (taulell àgil). |
 | **2** | **Prototipar** | Muntatge i primer codi (prototip mínim viable). |
-| **3** | **Provar** | Proves, identificació d'errors, primera iteració de millora. |
-| **4** | **Millorar i documentar** | Segona iteració; redacció de la documentació tècnica. |
-| **5** | **Comunicar** | **Defensa oral** + demostració. Coavaluació. Reflexió final i ètica. |
+| **3** | **Provar i millorar** | Proves, identificació d'errors, iteracions de millora; avanç del dossier. |
+| **4** | **Comunicar** | Dossier tècnic tancat. **Defensa oral** + demostració. Coavaluació. Reflexió final i ètica. |
+| **5** | **Prova pràctica T3** | **Individual, per estacions rotatives** (`Avaluació/Prova_practica_T3.md`): no és sessió de projecte. |
 
 ## Producte
 Sistema robòtic autònom funcional + **dossier tècnic** (anàlisi, esquemes, codi comentat, proves, millores, conclusions) + **defensa oral**.
@@ -42,6 +42,7 @@ Sistema robòtic autònom funcional + **dossier tècnic** (anàlisi, esquemes, c
 - Instruments: producte final, dossier tècnic, defensa oral, observació del procés, coavaluació i autoavaluació.
 - Rúbriques: **R1, R2, R3, R4, R5** (totes).
 - **Pes destacat** dins de la dimensió "Projectes i productes" del trimestre.
+- La **prova pràctica T3** (S5) és un instrument **separat**: puntua a «Proves pràctiques» (20 %) i no reavalua el projecte.
 
 ## Atenció a la diversitat
 - **Bastida:** banc de reptes amb diferents nivells de dificultat; plantilla de dossier; fites parcials amb checklist.
