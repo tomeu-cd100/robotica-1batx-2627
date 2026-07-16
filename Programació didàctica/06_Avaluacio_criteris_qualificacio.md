@@ -42,8 +42,26 @@ L'avaluació és **competencial, contínua, formativa i global**, d'acord amb el
 ## 6.4. Caràcter continu i recuperació
 
 - L'avaluació és **contínua**: cada trimestre integra i consolida el següent.
-- **Activitats de recuperació** individualitzades quan no s'assoleixen les competències d'una SA (millora del producte/codi, no "examen de recuperació" memorístic).
-- Cada producte admet **iteracions de millora** dins el termini (cultura de prototip).
+- Cada producte admet **iteracions de millora** dins el termini (cultura de prototip): la primera «recuperació» és no arribar a necessitar-ne.
+
+### Recuperació trimestral (instruments concrets)
+
+Qui no assoleix el trimestre (qualificació < 5) rep, la **primera setmana del trimestre següent**, un **pla de recuperació individual** d'una pàgina: quins CA té pendents (segons el `Full_seguiment_grup.md`), quina evidència nova se li demana i la **data límit (3 setmanes)**. L'instrument depèn de la dimensió no assolida:
+
+| Dimensió suspesa | Instrument de recuperació | Criteri de «recuperat» |
+|---|---|---|
+| **Proves pràctiques** (20 %) | **Repetició individual de la prova** en versió equivalent (mateixa estructura nucli/ampliacions, enunciat variat), en una sessió acordada. | Nucli de la prova complet i funcional (≥ 5 a la graella). |
+| **Projectes i productes** (45 %) | **Millora del producte** amb 2-3 requisits explícits per escrit + **defensa curta (5')** individual. | Requisits complerts i defensa que demostra comprensió (mateixa rúbrica de la SA). |
+| **Quadern tècnic** (25 %) | Posar el quadern **al dia** (entrades que falten, amb les evidències disponibles) + validació del docent. | Totes les sessions del trimestre documentades amb el mínim de la R4. |
+| **Actitud** (10 %) | No es «recupera» amb una tasca: compromisos concrets al pla + seguiment d'observació el trimestre següent. | Observació sistemàtica favorable durant 3 setmanes. |
+
+La qualificació de la dimensió recuperada **substitueix** l'anterior (no se'n fa mitjana): recuperar vol dir assolir, no compensar.
+
+### Recuperació de final de curs
+
+- **Qui arriba al juny amb un trimestre pendent:** la **SA9 és la primera via** — el projecte final integra CA de tot el curs, i el pla individual hi fixa quines evidències pendents pot certificar (p. ex. CA3.1 al sistema de control del robot).
+- **Qui en té més d'un o no els certifica via SA9:** **prova pràctica global de síntesi** (individual, mateixa estructura nucli/ampliacions que T1-T3, muntatge + programa + documentació breu, amb quadern consultable) sobre els CA pendents + lliurament del **quadern al dia**.
+- **Convocatòria extraordinària** (si el calendari del centre en preveu per a 1r de Batxillerat): mateixa prova pràctica global + quadern; es publica amb antelació **què entra** (llista de CA pendents personalitzada).
 
 ## 6.5. Avaluació formativa i retorn
 

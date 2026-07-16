@@ -50,7 +50,7 @@ En aquesta matèria **equivocar-se és part del contingut**: tot falla la primer
 
 ## 5 · Les proves pràctiques (una per trimestre)
 
-- **T1 i T2 es fan individualment**; la T3 (robot) en parella, amb preguntes individuals a la defensa.
+- **Les tres proves es fan individualment**; a la T3 (robot) la part de micro:bit es fa a la taula i la part de robot **per torns a la pista** (estacions rotatives).
 - **Pots consultar el teu quadern i els esquemes** durant la prova: no s'avalua la memòria, sinó que sàpigues fer i trobar. (Un [quadern](00_Quadern_tecnic.md) ben portat és el teu millor material permès — per això és **en paper**.)
 - Estan **per nivells**: el nucli ben fet és un 5-6; cada ampliació puja cap al 7-10. Tria fins on arribes.
 - Després de cada prova escriuràs el **pla de millora personal** (3 línies): què m'ha fallat, què practicaré, com ho comprovaré. Es reprèn a l'inici de la SA següent.
@@ -58,6 +58,8 @@ En aquesta matèria **equivocar-se és part del contingut**: tot falla la primer
 ## 6 · Si una SA no et surt bé
 
 La recuperació és **millorar el producte o el codi** dins del termini (cultura de prototip: itera!), no un examen memorístic. Parla amb el docent, pacta què has de millorar i lliura-ho.
+
+**Si suspens el trimestre:** la primera setmana del següent rebràs un **pla de recuperació** d'una pàgina amb què tens pendent, què has de lliurar i la data límit (3 setmanes). Segons què hagi fallat: repetir la **prova** (versió equivalent), **millorar el producte** i defensar-lo (5'), o posar el **quadern al dia**. La nota nova **substitueix** la vella. Al juny, el **projecte final (SA9)** és la primera via per certificar el que tinguis pendent; si no n'hi ha prou, hi ha una **prova pràctica global** amb el mateix format nucli/ampliacions de sempre.
 
 ## 7 · Si fas servir IA (ChatGPT i companyia)
 
