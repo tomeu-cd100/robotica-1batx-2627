@@ -1099,7 +1099,9 @@ def section_documents(section_key: str, current_out: str) -> str:
     src_dir = ROOT / sec["src"]
     if not src_dir.exists():
         return ""
-    docs = sorted([p for p in src_dir.rglob("*") if p.suffix.lower() in DOC_EXT])
+    docs = sorted([p for p in src_dir.rglob("*") if p.suffix.lower() in DOC_EXT
+                   and not any(part.startswith("_")
+                               for part in p.relative_to(src_dir).parts)])
     if not docs:
         return ""
     prefix = depth_prefix(current_out)
@@ -1134,7 +1136,9 @@ def section_gallery(section_key: str, current_out: str, copied_imgs: dict) -> st
     if not sec:
         return ""
     src_dir = ROOT / sec["src"]
-    imgs = sorted([p for p in src_dir.rglob("*") if p.suffix.lower() in IMG_EXT])
+    imgs = sorted([p for p in src_dir.rglob("*") if p.suffix.lower() in IMG_EXT
+                   and not any(part.startswith("_")
+                               for part in p.relative_to(src_dir).parts)])
     if not imgs:
         return ""
     prefix = depth_prefix(current_out)

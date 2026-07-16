@@ -20,3 +20,7 @@ Els **PDF de llibres i manuals d'editors externs** (STEAMakers FreeBook, manuals
 
 - **Enllaços originals** de cadascun: al full de càlcul `Recursos_Professorat_Robotica_1Batx.xlsx` (columna d'enllaç).
 - **Còpia local del docent**: carpeta `Recursos/_tercers_nomes_local/` (fora del control de versions).
+
+## Nota sobre les Fitxes STEAM Cards (2026-07-17)
+
+La carpeta *Fitxes STEAM Cards curs 2020-2021* (239 PDF, ~132 MB) **també ha sortit del repositori i de l'històric**: tot i ser material d'ús del centre, la seva autoria no és pròpia i no pot anar sota la CC BY-SA (a més era el gruix del pes del clonatge). Es conserva a `Recursos/_tercers_nomes_local/` a la màquina del docent.
