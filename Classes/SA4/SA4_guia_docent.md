@@ -36,6 +36,8 @@
 - **Repte (40'):** "escombrada" automàtica (vaivé 0↔180) suau; **+ repte:** dos servos coordinats.
 - **Tancament (10'):** quadern (esquema + codi).
 
+> ⏱️ **Marge:** el temps efectiu real és ~100' (arrencada + recollida), no 120'. Si vas just, retalla primer: **+ repte: dos servos coordinats**.
+
 **Punt clau:** el servo es controla per posició (angle); s'alimenta a 5 V però si en mous diversos cal **alimentació externa** (no des del pin 5V de l'Arduino).
 
 ---
@@ -46,6 +48,8 @@
 - **Pràctica guiada (30'):** munten el motor amb L298N i alimentació externa; gir endavant/enrere; control de velocitat.
 - **Repte (40'):** funcions `endavant(vel)`, `enrere(vel)`, `atura()`; seqüència de moviments; **+ repte:** rampa d'acceleració.
 - **Tancament (10'):** quadern.
+
+> ⏱️ **Marge:** el temps efectiu real és ~100' (arrencada + recollida), no 120'. Si vas just, retalla primer: **+ repte: rampa d'acceleració**.
 
 **Punt clau:** un pin d'Arduino dona poc corrent → el **driver** amplifica. **Sempre** unir el GND de l'Arduino amb el GND de l'alimentació del motor (massa comuna). Mai alimentar el motor des del pin 5V.
 
@@ -58,6 +62,8 @@
 - **Repte (40'):** aturar el motor per sota d'un llindar de seguretat; **+ repte:** invertir el sentit segons distància.
 - **Tancament (10'):** quadern (taula distància→velocitat).
 
+> ⏱️ **Marge:** el temps efectiu real és ~100' (arrencada + recollida), no 120'. Si vas just, retalla primer: **+ repte: invertir el sentit segons distància**.
+
 **Punt clau:** la sortida (moviment) depèn de l'entrada (sensor) → primer pas cap al **control** (SA6) i la robòtica mòbil (SA7).
 
 ---
@@ -67,6 +73,8 @@
 - **Pràctica (70'):** `04_barrera_automatica.ino`. Barrera amb **servo** que s'obre quan l'ultrasons detecta un vehicle a prop i es tanca passat un temps, amb LED indicador. Cada parella personalitza temps i angles.
 - **Documentació + defensa (30'):** esquema, codi comentat, mini-defensa.
 - **Tancament (10'):** autoavaluació.
+
+> ⏱️ **Marge:** el temps efectiu real és ~100' (arrencada + recollida), no 120'. Si vas just, retalla primer: **la personalització de temps i angles al final de la Pràctica (70')**.
 
 **Producte:** mecanisme motoritzat controlat per sensor (barrera, braç o ventilador regulable).
 **Avaluació:** rúbriques **R1** (codi), **R2** (circuit), **R3** parcial (control).

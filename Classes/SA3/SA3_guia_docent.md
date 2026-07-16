@@ -36,6 +36,8 @@
 - **Repte (40'):** el polsador encén/apaga un LED a cada premuda (mode *toggle*); **+ repte:** comptar fins a 5 i reiniciar.
 - **Tancament (10'):** quadern.
 
+> ⏱️ **Marge:** el temps efectiu real és ~100' (arrencada + recollida), no 120'. Si vas just, retalla primer: **el «+ repte» (comptar fins a 5 i reiniciar)**.
+
 **Punt clau:** amb `INPUT_PULLUP` el pin llegeix **HIGH en repòs** i **LOW en prémer** (lògica invertida). El *debounce* evita lectures múltiples per un sol clic.
 
 ---
@@ -46,6 +48,8 @@
 - **Pràctica guiada (35'):** llegeixen potenciòmetre (A0) i LDR (A1) al monitor; regulen la intensitat d'un LED amb el potenciòmetre (PWM).
 - **Repte (40'):** **llum automàtic** (LDR → LED s'encén si fa fosc) amb llindar; **+ repte:** llindar ajustable amb el potenciòmetre.
 - **Tancament (10'):** quadern (taula de lectures).
+
+> ⏱️ **Marge:** el temps efectiu real és ~100' (arrencada + recollida), no 120'. Si vas just, retalla primer: **el «+ repte» (llindar ajustable amb el potenciòmetre)**.
 
 **Punt clau:** `analogRead` retorna 0-1023; `analogWrite` necessita 0-255 → cal **`map()`**. El divisor de tensió converteix la resistència variable (LDR/NTC) en tensió mesurable.
 
@@ -62,6 +66,8 @@
 - **Pràctica guiada (25'):** munten l'HC-SR04; visualitzen la distància amb **Serial Plotter**.
 - **Repte-PRODUCTE (45'):** `04_alarma_aparcament.ino` com a referència. **Pseudocodi primer** (3-5 línies al quadern), després integren ultrasons + LED/piezo amb **avís per trams o proporcional a la distància**; cada parella personalitza llindars. **Mini-defensa d'1' a peu de taula:** mentre treballen, passa per cada parella i fes-los explicar sistema + una aplicació real (és la defensa de nivell T1).
 - **Tancament (15'):** documentar esquema i codi al quadern; autoavaluació amb rúbriques.
+
+> ⏱️ **Marge:** el temps efectiu real és ~100', i aquesta sessió és la més carregada del trimestre. Retalla d'entrada: **les ampliacions (mitjana de 3 mesures / detectar acostament-allunyament)** (i si cal, **la visualització amb Serial Plotter de la pràctica guiada — redueix-la a una comprovació ràpida al Monitor Sèrie**).
 
 **Punt clau:** una **funció** encapsula una tasca i en retorna un resultat. `pulseIn` mesura el temps de l'eco; distància (cm) = temps · 0,034 / 2. *(+ Ampliació per a qui va sobrat: funció que retorna la mitjana de 3 mesures; detectar si l'objecte s'acosta o s'allunya.)*
 

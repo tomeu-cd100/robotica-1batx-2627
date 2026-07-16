@@ -37,6 +37,8 @@
 - **Repte (40'):** parpelleig amb temps definits per variables; **+ repte:** patró Morse d'una lletra.
 - **Tancament (10'):** esquema i codi al quadern.
 
+> ⏱️ **Marge:** el temps efectiu real és ~100' (arrencada + recollida), no 120'. Si vas just, retalla primer: **el «+ repte» (patró Morse d'una lletra)**.
+
 **Punt clau:** sempre **resistència limitadora** (220 Ω) en sèrie amb el LED; pota llarga = ànode (+).
 
 > 🔌 **Racó de mesura (dins la pràctica guiada, ~5' per parella):** munta un punt amb **multímetre** i fes-hi passar les parelles rotativament amb el seu circuit encès: mesurar la **tensió entre les potes del LED** (~2 V) i **a la resistència** (~3 V), i comprovar que sumen ~5 V. És la primera vegada que *veuen* la llei de la malla en un circuit seu (connexió amb Física) i l'única evidència de **mesura física real** de la CA2.2/R2 fins ara. Amb 2-3 multímetres n'hi ha prou (el taller de tecnologia acostuma a tenir-ne); si no n'hi ha cap, fes-ho com a demo projectada amb el teu.
@@ -50,6 +52,8 @@
 - **Repte (40'):** afegir **fase nocturna** (groc intermitent) activable; **+ repte:** semàfor de vianants amb segon grup de LED.
 - **Tancament (10'):** quadern.
 
+> ⏱️ **Marge:** el temps efectiu real és ~100' (arrencada + recollida), no 120'. Si vas just, retalla primer: **el «+ repte» (semàfor de vianants)**.
+
 **Punt clau:** `delay()` bloqueja el programa; per a sistemes que han de fer diverses coses alhora s'usa `millis()` (es treballarà més endavant).
 
 ---
@@ -61,6 +65,8 @@
 - **Repte (40'):** crear 5 colors propis i una transició suau entre dos colors; **+ repte:** arc de Sant Martí cíclic.
 - **Tancament (10'):** quadern (taula de colors RGB provats).
 
+> ⏱️ **Marge:** el temps efectiu real és ~100' (arrencada + recollida), no 120'. Si vas just, retalla primer: **el «+ repte» (arc de Sant Martí cíclic)**.
+
 **Punt clau:** PWM només als pins amb `~` (3, 5, 6, 9, 10, 11). Valors 0-255.
 
 ---
@@ -70,6 +76,8 @@
 - **Pràctica (70'):** `05_panell_senyalitzacio.ino` com a base. Integren **LED RGB (estat) + piezo (avís) + relé (càrrega)**. Cada parella personalitza estats i seqüència.
 - **Documentació + defensa (30'):** completen esquema i codi comentat; mini-defensa (1') del seu panell.
 - **Tancament (10'):** autoavaluació amb rúbriques.
+
+> ⏱️ **Marge:** el temps efectiu real és ~100' (arrencada + recollida), no 120'. Si vas just, retalla primer: **la personalització extra d'estats i seqüència (dins la Pràctica; limita el panell a 2-3 estats)**.
 
 **Producte:** dispositiu de senyalització programable (semàfor amb fase nocturna o panell d'estat RGB + so + càrrega).
 **Avaluació:** rúbriques **R1** (codi) i **R2** (circuit).

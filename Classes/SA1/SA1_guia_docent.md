@@ -53,6 +53,8 @@ La SA1 no només respon *"què és un robot?"*: també presenta **com treballare
 | Diagnòstic | 30' | Passa la **prova diagnòstica** ([`SA1_prova_diagnostica.md`](SA1_prova_diagnostica.md); no qualifica). | Responen individualment. |
 | Tancament | 10' | Recull conclusions; presenta el **mètode de projecte** (pòster a l'aula) com a forma de treball del curs; obre el quadern tècnic. | Primera entrada al quadern. |
 
+> ⏱️ **Marge:** el temps efectiu real és ~100' (arrencada + recollida), no 120'. Si vas just, retalla primer: **la Pràctica «anàlisi de 3 sistemes» (fes-ne només 2)**.
+
 > 🔭 **Referent (1', dins l'Activació):** **Margaret Hamilton** — el programari de vol de l'Apollo i el naixement de l'«enginyeria del programari». Ganxo i guió: [`../00_General/00_Referents_tecnologia.md`](../00_General/00_Referents_tecnologia.md).
 
 **Punts clau:** tot sistema automàtic té sensors (entrada), un "cervell" (procés) i actuadors (sortida). El robot és un sistema embegut amb capacitat d'actuar sobre l'entorn. **Tot el curs** treballarem amb el cicle analitzar → dissenyar → prototipar → provar → millorar.
@@ -78,6 +80,8 @@ La SA1 no només respon *"què és un robot?"*: també presenta **com treballare
 | Pràctica | 50' | Tour guiat de l'**Arduino IDE** i de **Tinkercad** (crear compte de classe, primer circuit virtual). | Creen el seu primer circuit a Tinkercad (LED + placa). |
 | Tancament | 10' | Resol dubtes de l'entorn. | Entrada al quadern: captura del circuit. |
 
+> ⏱️ **Marge:** el temps efectiu real és ~100' (arrencada + recollida), no 120'. Si vas just, retalla primer: **el tour guiat de l'Arduino IDE (dins la Pràctica; prioritza el primer circuit a Tinkercad)**.
+
 **Punts clau:**
 - **Digital** = dos estats (0/5 V, LOW/HIGH). **Analògic** = valors continus (0–5 V → 0–1023).
 - Pins `~` = PWM. Pins `A0-A5` = entrades analògiques.
@@ -97,6 +101,8 @@ La SA1 no només respon *"què és un robot?"*: també presenta **com treballare
 | **Modificar** | 25' | Demana canviar el temps i el patró de parpelleig. | Modifiquen `delay` i observen l'efecte. |
 | **Crear** | 30' | Proposa el **repte de parpelleig variable** (`blink_repte.ino`). Per a qui acaba aviat, **ampliacions** (`blink_millis.ino`, `sos_morse.ino`). | Resolen; comparen solucions. |
 | **Debat + tancament** | 20' | Mini-debat **ètica de l'automatització** (ODS); presenta la **fitxa-pòster** ([`SA1_poster_robot_plantilla.md`](SA1_poster_robot_plantilla.md)). | Reflexió escrita al quadern; trien el robot del pòster. |
+
+> ⏱️ **Marge:** el temps efectiu real és ~100' (arrencada + recollida), no 120'. Si vas just, retalla primer: **les ampliacions de la fase «Crear» (`blink_millis`/`sos_morse`)**.
 
 **Errors freqüents i solució:**
 | Error | Causa | Solució |

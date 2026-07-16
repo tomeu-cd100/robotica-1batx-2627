@@ -42,6 +42,8 @@
 - **Repte (40'):** badge d'emocions (botó A: contenta, botó B: trista); **+ repte:** animació pròpia amb diverses imatges.
 - **Tancament (10'):** quadern; primera fila de la **taula comparativa** C++/Python.
 
+> ⏱️ **Marge:** el temps efectiu real és ~100' (arrencada + recollida), no 120'. Si vas just, retalla primer: **+ repte: animació pròpia amb diverses imatges**.
+
 **Punt clau:** en Python la **indentació no és estètica, és sintaxi**. No hi ha `;` ni `{}`. El simulador integrat permet provar sense placa.
 
 ---
@@ -53,6 +55,8 @@
 - **Repte (40'):** detector d'inclinació (nivell) o termòmetre amb avís; **+ repte:** registrar dades i mostrar màxim/mínim.
 - **Tancament (10'):** quadern.
 
+> ⏱️ **Marge:** el temps efectiu real és ~100' (arrencada + recollida), no 120'. Si vas just, retalla primer: **+ repte: registrar dades i mostrar màxim/mínim**.
+
 **Punt clau:** els sensors integrats permeten projectes sense electrònica externa → ràpid prototipatge. Cal **filtrar/llindar** les lectures (com a Arduino).
 
 ---
@@ -63,6 +67,8 @@
 - **Pràctica guiada (35'):** dau digital que es comparteix per ràdio entre dues plaques.
 - **Repte (40'):** "pedra-paper-tisora" per ràdio o comandament a distància; **+ repte:** xarxa de 3+ plaques.
 - **Comparació + tancament (15'):** completar la **taula comparativa C++ ↔ Python** d'un mateix programa (p. ex. comptador) i reflexionar sobre els dos paradigmes.
+
+> ⏱️ **Marge:** el temps efectiu real és ~100' (arrencada + recollida), no 120'. Si vas just, retalla primer: **+ repte: xarxa de 3+ plaques**.
 
 **Punt clau:** dues plaques han de compartir el **mateix `group`** per comunicar-se. Comparació: Python (sintaxi neta, sense tipus explícits, ràpid de prototipar) vs C/C++ (més control del maquinari, tipat, eficiència).
 

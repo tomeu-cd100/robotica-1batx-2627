@@ -41,6 +41,8 @@ La **Imagina 3dBot** és Arduino-compatible, però **els pins dels motors depene
 - **Repte (40'):** seqüència de moviments (p. ex. "balla"); **+ repte:** ajustar velocitats per anar recte (compensar desviació).
 - **Tancament (10'):** quadern (taula de funcions i efecte).
 
+> ⏱️ **Marge:** el temps efectiu real és ~100' (arrencada + recollida), no 120'. Si vas just, retalla primer: **+ repte: ajustar velocitats per anar recte**.
+
 **Punt clau:** en un robot diferencial, **les dues rodes a la mateixa velocitat = recte**; **velocitats/sentits diferents = gir**. Cal calibrar perquè vagi recte de debò.
 
 ---
@@ -51,6 +53,8 @@ La **Imagina 3dBot** és Arduino-compatible, però **els pins dels motors depene
 - **Pràctica guiada (35'):** recorren un quadrat; mesuren l'error i ajusten el temps de gir.
 - **Repte (40'):** recorregut amb forma definida (triangle, "L"); **+ repte:** tornar al punt de sortida.
 - **Tancament (10'):** quadern (temps de gir calibrat).
+
+> ⏱️ **Marge:** el temps efectiu real és ~100' (arrencada + recollida), no 120'. Si vas just, retalla primer: **+ repte: tornar al punt de sortida**.
 
 **Punt clau:** el control per **temps** és senzill però poc precís (depèn de bateria/superfície). Per això més endavant s'usa **realimentació** (sensors) → connexió amb SA6.
 
@@ -63,6 +67,8 @@ La **Imagina 3dBot** és Arduino-compatible, però **els pins dels motors depene
 - **Repte (40'):** millorar l'estratègia (girar a un costat aleatori, retrocedir abans de girar); **+ repte:** combinar amb la distància (com més a prop, gir més tancat).
 - **Tancament (10'):** quadern (diagrama de la decisió).
 
+> ⏱️ **Marge:** el temps efectiu real és ~100' (arrencada + recollida), no 120'. Si vas just, retalla primer: **+ repte: combinar amb la distància (gir més tancat)**.
+
 **Punt clau:** és un **control en llaç tancat** (el sensor decideix l'acció). L'estratègia es pot modelar com una **màquina d'estats** (SA6).
 
 ---
@@ -73,6 +79,8 @@ La **Imagina 3dBot** és Arduino-compatible, però **els pins dels motors depene
 - **Pràctica guiada (35'):** calibren i proven el seguidor a la pista.
 - **Repte de pista (40'):** completar el recorregut autònom; **mesurar temps**; iterar per millorar; **+ repte:** correcció proporcional (suau).
 - **Tancament + autoavaluació (10').**
+
+> ⏱️ **Marge:** el temps efectiu real és ~100' (arrencada + recollida), no 120'. Si vas just, retalla primer: **+ repte: correcció proporcional (suau)**.
 
 **Producte:** robot mòbil que completa un repte autònom (seguir línia o evitar obstacles) amb codi modular i **registre d'iteracions de millora**.
 **Avaluació:** rúbriques **R1** (codi), **R3** (robot/control), **R4** (documentació).

@@ -43,6 +43,8 @@
 - **Repte (40'):** enviar dues magnituds amb etiqueta (p. ex. `"T:23"`, `"L:120"`); **+ repte:** alerta quan se supera un llindar.
 - **Tancament (10'):** quadern (mostra de dades registrades).
 
+> ⏱️ **Marge:** el temps efectiu real és ~100' (arrencada + recollida), no 120'. Si vas just, retalla primer: **el «+ repte» (alerta per llindar) del Repte**.
+
 **Punt clau:** la **telemetria** és mesurar en un lloc i transmetre les dades a un altre. És la base de l'IoT.
 
 ---
@@ -54,6 +56,8 @@
 - **Repte (30'):** completar la fitxa de disseny IoT amb mesures de **seguretat/privacitat**.
 - **Tancament (10').**
 
+> ⏱️ **Marge:** el temps efectiu real és ~100' (arrencada + recollida), no 120'. Si vas just, retalla primer: **la demostració opcional amb ESP32 (dins l'Explicació)**.
+
 **Punt clau:** connectar-ho tot té avantatges i **riscos**; el disseny responsable inclou pensar en dades i privacitat (CC, ODS).
 
 ---
@@ -64,6 +68,8 @@
 - **Pràctica guiada (25'):** proven i ajusten el classificador per **regles**.
 - **De regles a ML real (35'):** fes el salt amb la **pràctica de Teachable Machine** ([`SA8_practica_teachable_machine.md`](SA8_practica_teachable_machine.md)): l'alumnat **recull exemples**, **entrena** un classificador (imatge/so/postura), el **prova** i el **trenca a propòsit** per veure'n els límits. *(Sense maquinari extra; Pla B amb demostració projectada — vegeu la pràctica.)* **Alternativa amb la placa:** extensió **ML/"AI" de MakeCode** per a micro:bit (recollir mostres de moviment i entrenar).
 - **Reflexió ètica + tancament (15'):** biaixos, dades i usos responsables de la IA. Usa el marc de la secció **"Ètica de dades i IA"** (RGPD, biaix, consentiment) i una de les seves preguntes de mini-debat.
+
+> ⏱️ **Marge:** el temps efectiu real és ~100' (arrencada + recollida), no 120'. Si vas just, retalla primer: **la Pràctica guiada d'ajust del classificador per regles**.
 
 **Punt clau:** una "IA" pot ser tan simple com un conjunt de **regles** sobre dades; el **ML** **aprèn** les regles a partir d'**exemples** (dades d'entrenament). Tots dos depenen de **bones dades**: *garbage in, garbage out*.
 
