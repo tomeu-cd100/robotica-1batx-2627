@@ -54,6 +54,8 @@ Material Classroom/*
 # depenen via import; sense elles el codi publicat no s'executa en un clone.
 !Material Classroom/_form_sa_lib.js
 !Material Classroom/sa_definicions.js
+!Material Classroom/config.js
+!Material Classroom/estat_classroom.js
 !Material Classroom/crear_questionaris_conceptes_forms.js
 !Material Classroom/adjuntar_questionaris_classroom.js
 !Material Classroom/actualitzar_fitxes_pdf.js

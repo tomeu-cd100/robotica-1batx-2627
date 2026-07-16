@@ -29,9 +29,10 @@ const SCOPES = [
 const CREDENTIALS_PATH = path.join(__dirname, 'credentials.json');
 const TOKEN_PATH = path.join(__dirname, 'token.json');
 
-export const COURSE_ID = '868858694512';
-export const DRIVE_FOLDER_ID = '1vUzzhLBIArNcRaWdz-nMMtn1R-2l4rMn';
-export const WEB_BASE = 'https://tomeu-cd100.github.io/robotica-1batx-2627/classes';
+// La identitat del curs viu a config.js (un sol lloc per canviar de curs);
+// es re-exporta aquí perquè els scripts existents no es trenquin.
+export { COURSE_ID, DRIVE_FOLDER_ID, WEB_BASE } from './config.js';
+import { COURSE_ID, DRIVE_FOLDER_ID } from './config.js';
 
 // --- Helpers per escriure definicions compactes ---------------------------
 export const AUTOAVAL_COLS = ['Insuficient', 'Suficient/Bé', 'Notable', 'Excel·lent'];

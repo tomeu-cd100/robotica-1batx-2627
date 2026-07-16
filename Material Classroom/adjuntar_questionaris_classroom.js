@@ -11,15 +11,14 @@
  */
 import { google } from 'googleapis';
 import { getAuthClient, COURSE_ID, DRIVE_FOLDER_ID } from './_form_sa_lib.js';
+import { GRADE_CATEGORIES, SA_TRIMESTRE } from './config.js';
 
 const APPLY = process.env.APPLY === '1';
 
-// SA -> categoria de nota (trimestre)
-const CAT = {
-  1: { id: '870540828382', name: 'T1' }, 2: { id: '870540828382', name: 'T1' }, 3: { id: '870540828382', name: 'T1' },
-  4: { id: '870540828383', name: 'T2' }, 5: { id: '870540828383', name: 'T2' }, 6: { id: '870540828383', name: 'T2' },
-  7: { id: '870540828384', name: 'T3' }, 8: { id: '870540828384', name: 'T3' }, 9: { id: '870540828384', name: 'T3' },
-};
+// SA -> categoria de nota (trimestre), des del config central.
+// ⚠️ Els ids de categoria caduquen amb cada curs nou: vegeu config.js.
+const CAT = Object.fromEntries(
+  Object.entries(SA_TRIMESTRE).map(([sa, t]) => [sa, GRADE_CATEGORIES[t]]));
 
 async function main() {
   const auth = await getAuthClient();
