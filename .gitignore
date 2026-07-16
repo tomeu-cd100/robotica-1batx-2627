@@ -50,7 +50,15 @@ Recursos/_tercers_nomes_local/
 # S'ignora tot el contingut EXCEPTE alguns scripts reutilitzables (sense
 # secrets: llegeixen token.json en temps d'execucio, no l'incrusten).
 Material Classroom/*
+# Llibreria compartida + definicions (sense secrets): els scripts de sota en
+# depenen via import; sense elles el codi publicat no s'executa en un clone.
+!Material Classroom/_form_sa_lib.js
+!Material Classroom/sa_definicions.js
 !Material Classroom/crear_questionaris_conceptes_forms.js
 !Material Classroom/adjuntar_questionaris_classroom.js
 !Material Classroom/actualitzar_fitxes_pdf.js
 !Material Classroom/crear_rubriques_importables_maker.js
+!Material Classroom/crear_questionaris_repas_maker.js
+!Material Classroom/actualitzar_form_gruix_sa5_maker.mjs
+!Material Classroom/moure_carpetes_maker_a_treball.mjs
+!Material Classroom/preparar_drive_maker_inici_curs.mjs

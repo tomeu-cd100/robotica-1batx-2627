@@ -120,6 +120,20 @@ async function main() {
 
     if (!APPLY) continue;
 
+    // Idempotència: si ja hi ha un Form amb aquest nom a la carpeta del curs
+    // (creat per aquesta app), no se'n crea un segon.
+    const existents = await drive.files.list({
+      q: `name = '${banc.titol.replace(/'/g, "\\'")}' and '${DRIVE_FOLDER_ID}' in parents and trashed = false`,
+      fields: 'files(id, name)',
+    });
+    if ((existents.data.files || []).length) {
+      const dupId = existents.data.files[0].id;
+      console.log(`    ⏭️ ja existeix a Drive (${dupId}) — no es duplica`);
+      resultats.push({ sa, edit: `https://docs.google.com/forms/d/${dupId}/edit`,
+                       respon: '(ja existia)' });
+      continue;
+    }
+
     const created = await forms.forms.create({
       requestBody: { info: { title: banc.titol, documentTitle: banc.titol } },
     });
