@@ -19,7 +19,6 @@ from __future__ import annotations
 
 import json
 import os
-import shutil
 import subprocess
 import sys
 import tempfile
@@ -29,30 +28,8 @@ SCRIPT_DIR = Path(__file__).resolve().parent
 WEB = SCRIPT_DIR.parent
 MANIFEST = SCRIPT_DIR / "_activitats.json"
 
-CHROME_CANDIDATES = [
-    r"C:/Program Files/Google/Chrome/Application/chrome.exe",
-    r"C:/Program Files (x86)/Google/Chrome/Application/chrome.exe",
-    r"C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe",
-    r"C:/Program Files/Microsoft/Edge/Application/msedge.exe",
-]
-# Noms d'executable a buscar al PATH (Linux/macOS, runners de CI)
-PATH_NAMES = ["google-chrome", "google-chrome-stable", "chromium",
-              "chromium-browser", "chrome", "msedge"]
-
-
-def find_browser() -> str:
-    env = os.environ.get("CHROME_BIN")
-    if env and Path(env).exists():
-        return env
-    for c in CHROME_CANDIDATES:
-        if Path(c).exists():
-            return c
-    for name in PATH_NAMES:
-        found = shutil.which(name)
-        if found:
-            return found
-    sys.exit("No s'ha trobat Chrome ni Edge. Instal·la'n un, posa la ruta a "
-             "CHROME_BIN o edita CHROME_CANDIDATES.")
+sys.path.insert(0, str(SCRIPT_DIR))
+from generador.navegador import find_browser  # noqa: E402
 
 
 def main():

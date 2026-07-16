@@ -17,7 +17,6 @@ from __future__ import annotations
 import html
 import os
 import re
-import shutil
 import subprocess
 import sys
 import tempfile
@@ -48,15 +47,6 @@ RAW_HTML = [
     "00_General/impresos/Blocs_Programacio_Offline.html",
     "00_General/impresos/Blocs_Diagrames_Flux.html",
 ]
-
-CHROME_CANDIDATES = [
-    r"C:/Program Files/Google/Chrome/Application/chrome.exe",
-    r"C:/Program Files (x86)/Google/Chrome/Application/chrome.exe",
-    r"C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe",
-    r"C:/Program Files/Microsoft/Edge/Application/msedge.exe",
-]
-PATH_NAMES = ["google-chrome", "google-chrome-stable", "chromium",
-              "chromium-browser", "chrome", "msedge"]
 
 CSS = """
   @page { size: A4; margin: 15mm 15mm 13mm; }
@@ -113,18 +103,7 @@ CSS = """
 """
 
 
-def find_browser() -> str:
-    env = os.environ.get("CHROME_BIN")
-    if env and Path(env).exists():
-        return env
-    for c in CHROME_CANDIDATES:
-        if Path(c).exists():
-            return c
-    for name in PATH_NAMES:
-        found = shutil.which(name)
-        if found:
-            return found
-    sys.exit("No s'ha trobat Chrome ni Edge (posa la ruta a CHROME_BIN).")
+from generador.navegador import find_browser  # noqa: E402  (re-exportat per a generar_quadern_tecnic)
 
 
 # --- Inline Markdown -> HTML -----------------------------------------------

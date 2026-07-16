@@ -21,6 +21,7 @@ import tempfile
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+from generar import PAGES_BASE  # noqa: E402
 from generar_fulls_imprimibles import find_browser, print_pdf  # noqa: E402
 from quadern_sessions import PROVES, SA_TRIMESTRE, SESSIONS  # noqa: E402
 
@@ -259,7 +260,7 @@ def portada(t: int, sessions: list[dict]) -> str:
         f'aliat el dia de la prova.<br><br>'
         f'<strong>Aquest trimestre:</strong> {sas}.</div>'
         f'<div class="peu-portada">Tot el material del curs: '
-        f'tomeu-cd100.github.io/robotica-1batx-2627</div></div>')
+        f'{PAGES_BASE.removeprefix("https://")}</div></div>')
 
 
 def pagina_us(t: int, sessions: list[dict]) -> str:

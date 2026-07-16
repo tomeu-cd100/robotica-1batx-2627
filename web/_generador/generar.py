@@ -38,9 +38,11 @@ ROOT = WEB.parent                                      # arrel del repositori
 ASSETS = WEB / "assets"
 IMG_OUT = ASSETS / "img"
 
-SITE_TITLE = "Robòtica · 1r de Batxillerat"
-SITE_TAGLINE = "Material docent · LOMLOE Catalunya · curs 2026-2027"
-REPO_URL = "https://github.com/tomeu-cd100/robotica-1batx-2627"
+# Identitat del lloc i del repo. Un fork ho canvia amb variables d'entorn
+# (o editant els valors per defecte): REPO_SLUG="usuari/repo" py generar.py
+SITE_TITLE = os.environ.get("SITE_TITLE", "Robòtica · 1r de Batxillerat")
+SITE_TAGLINE = os.environ.get("SITE_TAGLINE",
+                              "Material docent · LOMLOE Catalunya · curs 2026-2027")
 
 
 def build_date() -> str:
@@ -74,7 +76,9 @@ DOC_EXT = {".pdf", ".xlsx", ".xls", ".pptx", ".ppt", ".docx", ".doc",
            ".csv", ".odt", ".ods", ".zip"}
 
 # Bases de GitHub per enllaçar/visualitzar documents sense copiar-los al web
-REPO_SLUG = "tomeu-cd100/robotica-1batx-2627"
+REPO_SLUG = os.environ.get("REPO_SLUG", "tomeu-cd100/robotica-1batx-2627")
+REPO_URL = f"https://github.com/{REPO_SLUG}"
+PAGES_BASE = f"https://{REPO_SLUG.split('/')[0]}.github.io/{REPO_SLUG.split('/')[1]}"
 RAW_BASE = f"https://raw.githubusercontent.com/{REPO_SLUG}/main/"
 TREE_BASE = f"https://github.com/{REPO_SLUG}/tree/main/"
 BLOB_BASE = f"https://github.com/{REPO_SLUG}/blob/main/"

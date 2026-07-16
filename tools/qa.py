@@ -13,6 +13,12 @@ Comprova (i falla amb exit != 0 si troba res):
   5. Quadern tècnic: les sessions de `web/_generador/quadern_sessions.py`
      quadren amb el quadre d'hores (doc 08) i amb els títols de sessió de
      les guies docents; avisa si falten els PDF generats.
+  6. Ordre de l'itinerari: cap pàgina de SA sense clau a DOC_ORDRE_CLAUS.
+  7. PII: cap adreça de correu als fitxers versionats .md/.js/.py/.html
+     (allowlist per als correus de coautoria; el del docent només avisa).
+  8. PDF committats: capçalera %PDF- i mida > 1 KB.
+  9. Mojibake: cap seqüència «Ã», «â€», «Â·» als .md versionats.
+ 10. Sintaxi dels `.py` del solucionari (Reptes/**), com el punt 4.
 
 Ús:  py tools/qa.py          (cal haver generat el web abans per al punt 1;
                               si web/ no té HTML, el punt 1 s'omet amb avís)
@@ -23,6 +29,7 @@ import html.parser
 import os
 import py_compile
 import re
+import subprocess
 import sys
 import urllib.parse
 from pathlib import Path
@@ -218,6 +225,101 @@ def comprova_ordre_itinerari() -> None:
     print(f"6) Ordre itinerari: {len(sa_dirs)} SA, {sense_clau} pàgines sense clau d'ordre.")
 
 
+# --- 7 · PII: cap adreça de correu als fitxers versionats --------------------
+def fitxers_versionats(*patrons: str) -> list[Path]:
+    """Fitxers sota control de versions que casen amb els patrons donats.
+    core.quotepath=false + -z: rutes amb accents senceres, separades per NUL."""
+    try:
+        sortida = subprocess.run(
+            ["git", "-c", "core.quotepath=false", "ls-files", "-z", "--", *patrons],
+            cwd=ARREL, capture_output=True, check=True).stdout
+    except (OSError, subprocess.CalledProcessError):
+        avisos.append("git ls-files no disponible: checks sobre fitxers versionats omesos.")
+        return []
+    return [ARREL / p for p in sortida.decode("utf-8").split("\0") if p]
+
+
+CORREU_RE = re.compile(r"[\w.+-]+@[\w-]+\.[\w.]+")
+CORREUS_PERMESOS = {"noreply@anthropic.com"}  # coautoria dels commits
+# Partit en dos perquè aquest mateix fitxer no dispari el check.
+CORREU_DOCENT = "tomeu@" + "conselldecent.com"
+
+
+def comprova_pii() -> None:
+    fitxers = fitxers_versionats("*.md", "*.js", "*.py", "*.html")
+    fallats = 0
+    for f in fitxers:
+        if not f.exists():
+            continue
+        for num, linia in enumerate(
+                f.read_text(encoding="utf-8", errors="replace").splitlines(), 1):
+            for m in CORREU_RE.finditer(linia):
+                correu = m.group(0).rstrip(".")
+                if correu in CORREUS_PERMESOS:
+                    continue
+                on = f"{f.relative_to(ARREL)}:{num}"
+                if correu == CORREU_DOCENT:
+                    avisos.append(f"[pii] {on}: correu del docent ({correu})")
+                else:
+                    errors.append(f"[pii] {on}: adreça de correu «{correu}»")
+                    fallats += 1
+    print(f"7) PII (correus): {len(fitxers)} fitxers, {fallats} adreces no permeses.")
+
+
+# --- 8 · PDF committats: capçalera i mida mínimes -----------------------------
+def comprova_pdfs() -> None:
+    fitxers = fitxers_versionats("*.pdf")
+    fallats = 0
+    for f in fitxers:
+        if not f.exists():
+            errors.append(f"[pdf] {f.relative_to(ARREL)}: versionat però absent del disc")
+            fallats += 1
+            continue
+        with f.open("rb") as fh:
+            capçalera = fh.read(5)
+        mida = f.stat().st_size
+        if capçalera != b"%PDF-":
+            errors.append(f"[pdf] {f.relative_to(ARREL)}: no comença per %PDF-")
+            fallats += 1
+        elif mida <= 1024:
+            errors.append(f"[pdf] {f.relative_to(ARREL)}: només {mida} B (≤ 1 KB)")
+            fallats += 1
+    print(f"8) PDF versionats: {len(fitxers)} fitxers, {fallats} invàlids.")
+
+
+# --- 9 · Mojibake als .md versionats ------------------------------------------
+SEQ_MOJIBAKE = ("Ã", "â€", "Â·")  # «Ã», «â€», «Â·»
+
+
+def comprova_mojibake() -> None:
+    fitxers = fitxers_versionats("*.md")
+    fallats = 0
+    for f in fitxers:
+        if not f.exists():
+            continue
+        for num, linia in enumerate(
+                f.read_text(encoding="utf-8", errors="replace").splitlines(), 1):
+            seqs = [s for s in SEQ_MOJIBAKE if s in linia]
+            if seqs:
+                errors.append(f"[mojibake] {f.relative_to(ARREL)}:{num}: "
+                              f"conté {', '.join('«' + s + '»' for s in seqs)}")
+                fallats += 1
+    print(f"9) Mojibake: {len(fitxers)} .md, {fallats} línies sospitoses.")
+
+
+# --- 10 · Sintaxi dels .py del solucionari (Reptes/**) ------------------------
+def comprova_python_reptes() -> None:
+    fitxers = sorted((ARREL / "Reptes").rglob("*.py"))
+    fallats = 0
+    for f in fitxers:
+        try:
+            py_compile.compile(str(f), doraise=True)
+        except py_compile.PyCompileError as e:
+            errors.append(f"[python-reptes] {f.relative_to(ARREL)}: {e.msg.splitlines()[0]}")
+            fallats += 1
+    print(f"10) Python del solucionari: {len(fitxers)} fitxers, {fallats} amb errors de sintaxi.")
+
+
 def main() -> int:
     comprova_enllacos_web()
     comprova_cobertura_sa()
@@ -225,6 +327,10 @@ def main() -> int:
     comprova_python()
     comprova_quadern()
     comprova_ordre_itinerari()
+    comprova_pii()
+    comprova_pdfs()
+    comprova_mojibake()
+    comprova_python_reptes()
     for a in avisos:
         print(f"⚠️  {a}")
     if errors:
