@@ -132,18 +132,27 @@ També s'han aplicat els pendents «no bloquejants» principals:
    la feina d'avui; un cop el CI sigui verd i l'altra màquina recloni, es poden
    esborrar tots dos).
 
-## Pendents que queden (després de les TRES tandes)
+## Cinquena tanda (17-07): motor Markdown unificat
 
-- **Unificar el motor de Markdown**: el parser artesà de
-  `generar_fulls_imprimibles.py` vs python-markdown del web (dos motors, possible
-  divergència de render); feina gran, valorar Jinja2 dins del refactor P4 pendent.
-- **Recomanacions LXD restants** (de `2026-07-17_Analisi_disseny_instruccional.md`
-  §4): micro-eleccions d'alumne a cada SA (llistes de 3 opcions per repte),
-  pregunta fixa de feedback de procés al diari de bord, i tauler visible de
-  progressió dels reptes ⭐ per equip.
-- **Publicar al Classroom** l'auditoria IoT i la targeta de ràdio quan es
-  reautoritzi Google (targetes com a material de la SA8).
+- **`generar_fulls_imprimibles.py` ja NO té parser artesà:** converteix amb
+  **python-markdown** (les mateixes extensions que el web) + post-procés de
+  paper (enllaços aplanats, caselles reals, camps `___` **protegits abans de
+  convertir** — el motor els partiria com a èmfasi —, graella semàfor, filtre
+  **per paràgraf** de l'avís del PDF perquè python-markdown fusiona blockquotes
+  adjacents). Un sol comportament de render a tot el curs.
+- **Verificació:** regressió de text visible abans/després als 14 fulls (cap
+  pèrdua; els «:» d'etiquetes ara es conserven), 11 tests nous (44 en total),
+  17 PDF regenerats i tots els fulls d'una cara segueixen sent d'1 pàgina.
+- També: script `tools/reclonar_altra_maquina.ps1` (reclonatge segur d'un sol
+  clic per a les altres màquines; one-liner amb iwr|iex al comentari).
+
+## Pendents que queden (després de les CINC tandes)
+
 - **Provar al maquinari real** les solucions ⭐⭐⭐ corregides (compilen i estan
   alineades amb les fites, però l'avís del solucionari segueix vigent: validar a
   placa/Tinkercad, especialment SA7 amb els pins del 3dBot i el nearest centroid
   de SA8-C).
+- **Publicar (des de DRAFT)** els 2 materials nous del Classroom quan comenci la SA8.
+- **Ullada visual del docent als 17 PDF imprimibles** (el motor ha canviat: el
+  text està verificat, l'estètica fina no).
+- **Reclonar l'altra màquina** (script llest) i, fet això, esborrar els backups.
