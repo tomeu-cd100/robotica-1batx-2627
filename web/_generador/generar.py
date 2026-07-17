@@ -199,7 +199,7 @@ GENERAL_ALUMNAT = {
     "00_Avaluacio_per_alumnat.md", "00_Fitxes_referencia_tecnica.md",
     "00_Plantilla_disseny_objecte.md", "00_Galeria_exemples_objectes.md",
     "00_Poster_IA_us_assistents.md", "00_Quadern_tecnic.md",
-    "00_Repas_expres_MicroPython.md",
+    "00_Repas_expres_MicroPython.md", "00_Repas_expres_Radio.md",
 }
 
 
@@ -840,7 +840,8 @@ def sa_fil_html(sa: int, current_out: str, fil: dict) -> str:
 DOC_ORDRE_CLAUS = ["guia-docent", "vocabulari", "guia", "diagnostica",
                    "fitxa-alumnat", "banc-de-reptes", "planificacio",
                    "prova", "normes", "esquemes", "connexions",
-                   "recursos", "diagrama", "exemple", "__codi__", "practica",
+                   "recursos", "diagrama", "exemple", "__codi__", "auditoria",
+                   "practica",
                    "poster", "dossier", "questionari", "checklist-alumnat",
                    "fitxa-ampliada", "checklist-docent"]
 

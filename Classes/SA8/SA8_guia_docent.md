@@ -36,6 +36,9 @@
 ---
 
 ## SESSIÓ 1 (2 h) — Telemetria: el robot que informa
+
+> 📡 **Abans de la sessió (represa espaiada):** la ràdio no es toca des de la S3 de la SA5. Reparteix (o envia pel Classroom) la targeta [`00_Repas_expres_Radio.md`](../00_General/00_Repas_expres_Radio.md) la setmana anterior, i dedica els primers 5' de l'activació a l'autotest de la targeta («les tres línies que preparen la ràdio»).
+
 - **Activació (10'):** *"Com sap el teu mòbil la temperatura de casa quan ets fora?"* → telemetria/IoT.
 - 🔭 **Referent (1', dins l'activació):** **Fei-Fei Li** (ImageNet: sense bones dades no hi ha bona IA) i menció d'**Hedy Lamarr** (salt de freqüència, 1942) ([guió](../00_General/00_Referents_tecnologia.md)).
 - **Modelatge (25'):** [`01_telemetria_emissor.py`](codi/01_telemetria_emissor.py) + [`02_telemetria_receptor.py`](codi/02_telemetria_receptor.py). Enviar dades amb `radio.send()`; rebre-les i **registrar-les pel port sèrie** (per fer-ne després un gràfic/full de càlcul).
@@ -49,16 +52,19 @@
 
 ---
 
-## SESSIÓ 2 (2 h) — IoT: arquitectura, aplicacions i riscos
-- **Activació (10'):** exemples d'IoT (llars, ciutats, indústria, salut).
-- **Explicació (30'):** arquitectura **dispositiu → xarxa → núvol → app**; protocols (ràdio, WiFi/MQTT). **Riscos:** privacitat, seguretat, dependència. *(Opcional: demostració amb `04_esp32_telemetria.ino` publicant dades per WiFi.)*
-- **Pràctica/disseny (40'):** cada equip **dissenya en paper** un petit sistema IoT (què mesura, com ho transmet, qui ho fa servir, quins riscos té).
-- **Repte (30'):** completar la fitxa de disseny IoT amb mesures de **seguretat/privacitat**.
-- **Tancament (10').**
+## SESSIÓ 2 (2 h) — IoT: arquitectura, aplicacions i riscos (auditoria d'un producte real)
 
-> ⏱️ **Marge:** el temps efectiu real és ~100' (arrencada + recollida), no 120'. Si vas just, retalla primer: **la demostració opcional amb ESP32 (dins l'Explicació)**.
+> Sessió amb format d'**auditoria per rol** — material de l'activitat: [`SA8_auditoria_iot.md`](SA8_auditoria_iot.md) (8 targetes de producte + plantilla d'informe).
 
-**Punt clau:** connectar-ho tot té avantatges i **riscos**; el disseny responsable inclou pensar en dades i privacitat (CC, ODS).
+- **Ganxo (10'):** projecta 3 productes de les targetes (polsera esportiva, càmera domèstica, altaveu amb assistent) i pregunta: *"què saben de tu, per on viatja, i qui més ho pot veure?"* Vot a mà alçada: quin comprarien. **No responguis encara** — l'auditoria ho farà.
+- **Mini-lliçó (15'):** l'arquitectura **dispositiu → xarxa → núvol → app** dibuixada **sobre un dels 3 productes del ganxo**, no en abstracte. El vocabulari (BLE/WiFi, MQTT, broker, xifratge) entra **etiquetant el dibuix**. *(Opcional: demostració amb `04_esp32_telemetria.ino` publicant dades per WiFi.)*
+- **Auditoria per parelles (40'):** cada parella **tria una targeta** de producte i fa d'**auditors de privacitat**: omplen l'**informe d'auditoria** d'1 pàgina (diagrama de la SEVA arquitectura, 3 dades personals, 2 riscos concrets, 2 recomanacions). La secció «Ètica de dades i IA» d'aquesta guia és la font de consulta, no contingut a dictar.
+- **Peritatge creuat (20'):** cada parella presenta l'informe en **90 segons** a una altra, que fa d'**advocada del fabricant** (ha de rebatre un risc); després es giren els papers. Força l'argumentació amb el vocabulari tècnic.
+- **Tancament (10'):** exit ticket — *"quina dada teva viatja ara mateix per una arquitectura com aquesta, i on es podria interceptar?"* — + entrada de quadern.
+
+> ⏱️ **Marge:** el temps efectiu real és ~100' (arrencada + recollida), no 120'. Si vas just, retalla primer: **la demostració opcional amb ESP32 (dins la Mini-lliçó)**; després, escurça el peritatge a una sola ronda.
+
+**Punt clau:** connectar-ho tot té avantatges i **riscos**; el disseny responsable inclou pensar en dades i privacitat (CC, ODS). **Pont a la S3:** els mateixos productes reapareixen a la sessió d'IA (*"i si el producte, a més, decideix?"*).
 
 ---
 
@@ -80,7 +86,7 @@
 | Instrument | Què evidencia | Criteri | Rúbrica |
 |---|---|---|---|
 | Producte (telemetria o IA de gestos) | Integrar tecnologia emergent (IoT/IA) en un sistema | CA4.2 | R3, R1 |
-| Fitxa de disseny IoT | Arquitectura, riscos de privacitat/seguretat | CA4.2 | R4 |
+| Informe d'auditoria IoT ([`SA8_auditoria_iot.md`](SA8_auditoria_iot.md)) | Arquitectura, riscos de privacitat/seguretat, impacte ètic | CA4.2, CA5.3 | R4 |
 | Quadern (dades + reflexió ètica) | Registre de dades i valoració ètica (ODS) | CA4.2 | R4 |
 | Coavaluació | Treball d'equip i decisions de disseny responsable | CA3.1 | R4 |
 
@@ -117,7 +123,7 @@
 > Frases i preguntes clau per al **Modelatge** de cada sessió (què mirar, què preguntar abans d'executar, error a anticipar).
 
 - **S1 · `01/02_telemetria` (emissor/receptor):** mostra el parell `radio.send()` / `radio.receive()` i com **registrar pel port sèrie** (per fer-ne després un gràfic). Recalca el **mateix `group`** a les dues plaques. *Error a anticipar:* dades barrejades per no etiquetar-les (`"T:23"`).
-- **S2 · IoT (disseny, sense codi):** dibuixa l'arquitectura **dispositiu → xarxa → núvol → app**. Pregunta pels **riscos**: *"qui té aquestes dades? què passa si algú les intercepta?"*. *Error a anticipar:* veure l'IoT com a "màgia" sense riscos.
+- **S2 · IoT (auditoria, sense codi):** dibuixa l'arquitectura **dispositiu → xarxa → núvol → app** sobre un producte concret de les [targetes](SA8_auditoria_iot.md), etiquetant fletxes amb el protocol. Pregunta pels **riscos**: *"qui té aquestes dades? què passa si algú les intercepta?"*. *Error a anticipar:* riscos genèrics («et poden hackejar») en lloc d'ubicats al diagrama; i veure l'IoT com a "màgia" sense riscos.
 - **S3 · `03_ia_gestos` (IA):** distingeix **regles fetes a mà** vs **aprenentatge automàtic (ML)**. Insisteix: cal **mesurar valors reals** abans de fixar llindars. Tanca amb **biaix i ètica** de les dades. *Error a anticipar:* fixar llindars "a ull" sense mesurar.
 
 ## Atenció a la diversitat (DUA)

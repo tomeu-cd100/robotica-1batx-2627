@@ -19,7 +19,7 @@
 |---|---|---|
 | **Sistema connectat o classificador** (producte) | **R1** i **R3** | Projectes (45 %) |
 | **Reflexió ètica** (privacitat, biaix, consentiment) | **R4** | Projectes (45 %) |
-| **Quadern tècnic** (dades enviades, disseny IoT, errors) | **R4** | Quadern tècnic i pràctiques (25 %) |
+| **Quadern tècnic** (dades enviades, informe d'auditoria IoT, errors) | **R4** | Quadern tècnic i pràctiques (25 %) |
 | Mini-check individual (inici S3) | semàfor | **No qualifica** (em situa) |
 
 > 🪜 **Versió nucli (ja és assoliment satisfactori):** telemetria d'**una** magnitud etiquetada que es rep i es mostra + reflexió ètica amb un risc i una mesura. **Versió completa:** dues magnituds o alerta per llindar (o classificador entrenat i provat), amb el biaix analitzat.
@@ -41,21 +41,26 @@ Si la tasca encara no t'apareix al Classroom, és que la SA encara no ha començ
 ## El que has de fer
 
 ### 1 · Telemetria (S1)
+> 📡 La ràdio et sona llunyana (SA5)? Repassa-la en 10' amb la targeta **[Repàs exprés de la ràdio](../00_General/00_Repas_expres_Radio.md)** abans de començar.
+
 0. **PREDIU:** amb [`01_telemetria_emissor.py`](codi/01_telemetria_emissor.py) i [`02_telemetria_receptor.py`](codi/02_telemetria_receptor.py), què mostrarà la receptora? ______________________
 1. Carrega'ls en dues plaques (mateix `group`) i comprova.
 2. Quines magnituds envies? __________ Cada quant? __________
 3. **Repte:** envia dues magnituds etiquetades (`T:..`, `L:..`).
 
-### 2 · Disseny IoT (S2)
-Dissenya un sistema IoT del teu entorn (mínim ètic obligatori):
+### 2 · Auditoria d'un producte IoT (S2)
+Amb la teva parella, feu d'**auditors de privacitat** d'un producte real: trieu una targeta de **[SA8_auditoria_iot.md](SA8_auditoria_iot.md)** i ompliu l'**informe d'auditoria** (mínim ètic obligatori):
 
-| Element | La teva proposta |
+| Secció de l'informe | La vostra auditoria |
 |---|---|
-| Què mesura | |
-| Com transmet les dades | |
-| **Recull alguna dada personal?** | |
-| **Consentiment:** qui l'autoritza? | |
-| Un risc de privacitat + una mesura per reduir-lo | |
+| Producte auditat | |
+| Diagrama **dispositiu → xarxa → núvol → app** (dibuixa'l al quadern) | ☐ fet |
+| **3 dades personals** que recull | |
+| **Risc tècnic** (on del diagrama es pot interceptar) | |
+| **Risc de privacitat** (qui sap què no hauria de saber) | |
+| Recomanació al **fabricant** + al **comprador** | |
+
+Després, **peritatge creuat**: presenteu-lo en 90 segons a una altra parella (que farà d'advocada del fabricant) i gireu els papers.
 
 ### 3 · Introducció a la IA (S3)
 1. Carrega [`03_ia_gestos.py`](codi/03_ia_gestos.py). Quins gestos classifica? __________

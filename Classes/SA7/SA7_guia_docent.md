@@ -78,7 +78,7 @@ La **Imagina 3dBot** és Arduino-compatible, però **els pins dels motors depene
 - **Modelatge (25'):** `04_seguidor_linia.ino`. Lectura dels sensors IR; lògica de correcció (si es desvia, corregir cap a la línia).
 - **Pràctica guiada (35'):** calibren i proven el seguidor a la pista.
 - **Repte de pista (40'):** completar el recorregut autònom; **mesurar temps**; iterar per millorar; **+ repte:** correcció proporcional (suau).
-- **Tancament + autoavaluació (10').**
+- **Tancament + autoavaluació (10').** 📡 **Deures de represa (2'):** reparteix (o envia pel Classroom) la targeta [`00_Repas_expres_Radio.md`](../00_General/00_Repas_expres_Radio.md) — la ràdio micro:bit no es toca des de la SA5 i la S1 de la SA8 hi arrenca.
 
 > ⏱️ **Marge:** el temps efectiu real és ~100' (arrencada + recollida), no 120'. Si vas just, retalla primer: **+ repte: correcció proporcional (suau)**.
 

@@ -9,7 +9,7 @@ Vuitena situació d'aprenentatge (**6 h · 3 sessions**, 3r trimestre). El siste
 > La teva feina és a la **[fitxa base](SA8_fitxa_alumnat.md)**. Aquesta ruta et diu què toca fer a cada sessió i què necessites en aquell moment. Les respostes de la fitxa es lliuren a la **[tasca de Classroom](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODcwNTE3MTIxMDY0/details)**.
 
 1. **Sessió 1 · Telemetria** — fes l'[Activitat 1 de la fitxa](SA8_fitxa_alumnat.md#1-telemetria-s1), amb les [connexions](SA8_connexions.md).
-2. **Sessió 2 · IoT: arquitectura, aplicacions i riscos** — fes l'[Activitat 2](SA8_fitxa_alumnat.md#2-disseny-iot-s2).
+2. **Sessió 2 · IoT: auditoria d'un producte real** — tria una targeta de [`SA8_auditoria_iot.md`](SA8_auditoria_iot.md) i omple l'informe (Activitat 2 de la [fitxa](SA8_fitxa_alumnat.md)).
 3. **Sessió 3 · Introducció a la IA** — fes l'[Activitat 3](SA8_fitxa_alumnat.md#3-introduccio-a-la-ia-s3) i la [pràctica de Teachable Machine](SA8_practica_teachable_machine.md) (s'avalua amb R1, R3, R4).
 4. **Abans d'entregar** — repassa [el meu checklist](SA8_checklist_alumnat.md).
 
@@ -28,6 +28,7 @@ Vuitena situació d'aprenentatge (**6 h · 3 sessions**, 3r trimestre). El siste
 | [`SA8_fitxa_ampliada.md`](SA8_fitxa_ampliada.md) | **Versió ampliada** (aprofundiment): totes les rutines (rols, coavaluació, exit ticket, ODS, PC) i ampliacions. |
 | [`SA8_checklist_docent.md`](SA8_checklist_docent.md) | **Checklist docent** (una cara): logística prèvia, punts de control per sessió, avaluació i diversitat. |
 | [`SA8_checklist_alumnat.md`](SA8_checklist_alumnat.md) | **Checklist alumnat** (una cara): què he de fer/lliurar + autoavaluació amb semàfor. |
+| [`SA8_auditoria_iot.md`](SA8_auditoria_iot.md) | **Auditoria d'un producte IoT** (S2): 8 targetes de producte + informe d'auditoria + peritatge creuat. |
 | [`SA8_connexions.md`](SA8_connexions.md) | Connexions (micro:bit emissor/receptor, Micro:shield, ESP32 opcional). |
 | `codi/` | Programes MicroPython + un sketch ESP32 (vegeu la taula següent). |
 

@@ -9,7 +9,7 @@
 ## ✅ Abans d'acabar aquesta SA he de…
 - [ ] Enviar i rebre **dades a distància** (telemetria per ràdio, mateix `group`) i registrar-les (S1)
 - [ ] Enviar una **magnitud etiquetada** (`T:23`) i, si puc, dues
-- [ ] **Dissenyar un sistema IoT** i omplir el mínim ètic (dada personal? consentiment? risc + mesura) (S2)
+- [ ] **Auditar un producte IoT real** (informe: diagrama, 3 dades, 2 riscos, 2 recomanacions) i defensar-lo al peritatge creuat (S2)
 - [ ] Entendre la diferència entre **regles fetes a mà** i **aprenentatge automàtic** (S3)
 - [ ] **Entrenar un classificador** amb Teachable Machine i pensar-ne el **biaix**
 - [ ] ✏️ Escriure **un repte a full en blanc** (emissor o receptor des de l'editor buit)

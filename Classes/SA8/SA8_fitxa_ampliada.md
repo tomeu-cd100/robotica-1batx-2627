@@ -24,8 +24,8 @@
 
 4. **Repte:** envia dues magnituds etiquetades (`T:..`, `L:..`). **+ Repte:** alerta per llindar.
 
-## Activitat 2 · Disseny IoT (S2)
-Dissenya un sistema IoT del teu entorn (hort, aula, casa...):
+## Activitat 2 · Disseny IoT (S2, després de l'auditoria)
+A la S2 has **auditat** un producte del mercat ([SA8_auditoria_iot.md](SA8_auditoria_iot.md)). Ara canvia de bàndol: dissenya un sistema IoT del teu entorn (hort, aula, casa...) **que passaria la teva pròpia auditoria**:
 
 | Element | La teva proposta |
 |---|---|

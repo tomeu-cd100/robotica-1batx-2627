@@ -29,7 +29,7 @@
 | Sessió | Activitats |
 |---|---|
 | **1** | **Telemetria**: una micro:bit envia dades (temperatura/llum) i una altra les rep i mostra/registra. (Opció ESP32: enviar a un panell/MQTT.) |
-| **2** | Concepte d'IoT: arquitectura, aplicacions i **riscos** (privacitat/seguretat). Disseny d'un petit sistema connectat. |
+| **2** | Concepte d'IoT: arquitectura, aplicacions i **riscos** (privacitat/seguretat). **Auditoria per parelles d'un producte IoT real** (informe + peritatge creuat). |
 | **3** | **Introducció a la IA**: recollir dades de l'acceleròmetre i classificar gestos (model senzill / regles entrenades). Reflexió ètica. |
 
 ## Producte
