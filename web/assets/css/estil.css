@@ -916,3 +916,18 @@ table.vocab td:first-child { white-space: nowrap; }
   .flux .pas, .depura .pas, .rols .rol, .semafor .col, .avisos .avis,
   .trio .b, .targeta, .banner, .declara { break-inside: avoid; }
 }
+
+/* ---------- Porta de la vista docent (fricció, no seguretat) ---------- */
+[data-ocult-docent] { display: none !important; }
+.porta-docent { display: flex; justify-content: center; padding: 3rem 1rem; }
+.porta-docent-caixa {
+  max-width: 26rem; padding: 1.5rem 1.75rem; border-radius: 12px;
+  border: 1px solid var(--vora, #ccc); background: var(--fons-eleva, #fff);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, .12);
+}
+.porta-docent-nota { font-size: .9em; opacity: .8; }
+.porta-docent-caixa label { display: block; margin: .75rem 0 .5rem; }
+.porta-docent-input { margin-left: .4rem; padding: .35rem .5rem; }
+.porta-docent-botons { display: flex; gap: .6rem; margin-top: .6rem; }
+.porta-docent-err { color: #b3261e; font-weight: 600; }
+[data-tema="fosc"] .porta-docent-err { color: #ff8a80; }

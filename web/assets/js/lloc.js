@@ -72,18 +72,92 @@
     });
   }
 
-  /* ---------- Vista docent / alumnat ---------- */
+  /* ---------- Vista docent / alumnat (amb porta de contrasenya) ---------- */
+  /* FRICCIÓ, no seguretat: tot el material és públic al repositori (CC BY-SA).
+     La porta només evita que l'alumnat entri a la vista docent per curiositat.
+     Per canviar la contrasenya: py tools/canvia_contrasenya_docent.py */
+  var DOCENT_HASH = "10d9c1b3";
+
+  function clauDocent(text) {
+    var h = 5381;
+    for (var i = 0; i < text.length; i++) { h = ((h << 5) + h + text.charCodeAt(i)) >>> 0; }
+    return h.toString(16);
+  }
+  function docentDesbloquejat() {
+    try { return localStorage.getItem("docentClau") === DOCENT_HASH; } catch (e) { return false; }
+  }
+  function provaContrasenya(text) {
+    if (text === null || clauDocent(text) !== DOCENT_HASH) return false;
+    try { localStorage.setItem("docentClau", DOCENT_HASH); } catch (e) {}
+    return true;
+  }
+  function posaVista(nova) {
+    doc.setAttribute("data-vista", nova);
+    try { localStorage.setItem("vista", nova); } catch (e) {}
+  }
+
+  /* Si la vista docent ve recordada d'abans però la clau no hi és (o ha
+     canviat), torna a l'alumnat: la porta es passa un cop per navegador. */
+  if (doc.getAttribute("data-vista") === "docent" && !docentDesbloquejat()) {
+    posaVista("alumnat");
+  }
+
   var vistaBtn = document.querySelector(".vista-btn");
   if (vistaBtn) {
     var vAra = doc.getAttribute("data-vista") || "alumnat";
     vistaBtn.setAttribute("aria-pressed", vAra === "docent" ? "true" : "false");
     vistaBtn.addEventListener("click", function () {
       var nova = doc.getAttribute("data-vista") === "docent" ? "alumnat" : "docent";
-      doc.setAttribute("data-vista", nova);
-      try { localStorage.setItem("vista", nova); } catch (e) {}
+      if (nova === "docent" && !docentDesbloquejat()) {
+        var t = window.prompt("Contrasenya de la vista docent:");
+        if (!provaContrasenya(t)) {
+          if (t !== null) { window.alert("Contrasenya incorrecta."); }
+          anuncia("Contrasenya incorrecta.");
+          return;
+        }
+      }
+      posaVista(nova);
       vistaBtn.setAttribute("aria-pressed", nova === "docent" ? "true" : "false");
       anuncia(nova === "docent" ? "Vista docent activada." : "Vista alumnat activada.");
     });
+  }
+
+  /* Porta a les pàgines de material docent obertes per URL directa */
+  if (document.body.getAttribute("data-public") === "docent" && !docentDesbloquejat()) {
+    var contingut = document.getElementById("contingut") || document.querySelector("main");
+    if (contingut) {
+      contingut.setAttribute("data-ocult-docent", "");
+      var porta = document.createElement("div");
+      porta.className = "porta-docent";
+      porta.innerHTML =
+        '<div class="porta-docent-caixa" role="dialog" aria-labelledby="porta-docent-tit">' +
+        '<p id="porta-docent-tit"><strong>🔒 Material del docent.</strong> Aquesta pàgina és per al professorat.</p>' +
+        '<p class="porta-docent-nota">Ets alumne? Torna enrere: tot el que necessites és a la teva vista.</p>' +
+        '<label>Contrasenya: <input type="password" class="porta-docent-input" autocomplete="off"></label>' +
+        '<div class="porta-docent-botons">' +
+        '<button type="button" class="porta-docent-entra">Entra</button>' +
+        '<button type="button" class="porta-docent-enrere">← Enrere</button></div>' +
+        '<p class="porta-docent-err" hidden>Contrasenya incorrecta.</p></div>';
+      contingut.parentNode.insertBefore(porta, contingut);
+      var input = porta.querySelector(".porta-docent-input");
+      var err = porta.querySelector(".porta-docent-err");
+      function entra() {
+        if (provaContrasenya(input.value)) {
+          porta.remove();
+          contingut.removeAttribute("data-ocult-docent");
+          anuncia("Vista docent desbloquejada.");
+        } else {
+          err.hidden = false;
+          input.select();
+        }
+      }
+      porta.querySelector(".porta-docent-entra").addEventListener("click", entra);
+      input.addEventListener("keydown", function (e) { if (e.key === "Enter") entra(); });
+      porta.querySelector(".porta-docent-enrere").addEventListener("click", function () {
+        if (history.length > 1) { history.back(); } else { location.href = "./"; }
+      });
+      input.focus();
+    }
   }
 
   /* ---------- Botons de copiar codi ---------- */

@@ -62,6 +62,7 @@ El material és reutilitzable tal qual (CC BY-SA), i el web es reconstrueix sol.
 3. **Identitat del web**: el generador llegeix `REPO_SLUG`, `SITE_TITLE` i `SITE_TAGLINE` de variables d'entorn (valors per defecte a `web/_generador/generar.py`). Al CI del fork, defineix-les com a *variables* del repositori o edita els valors per defecte; si no, tots els enllaços a documents (visor, GitHub) apuntaran al repo original.
 4. **PDFs en local**: els scripts `generar_pdf.py`, `generar_fulls_imprimibles.py` i `generar_quadern_tecnic.py` necessiten **Chrome o Edge** (o la variable `CHROME_BIN`). Els PDF dels checklists i el quadern tècnic estan versionats: si edites els `.md` font, regenera'ls amb els dos últims scripts.
 5. **Google Classroom** (opcional): els scripts de `Material Classroom/` demanen un projecte propi a Google Cloud Console (OAuth client → `credentials.json`, mai al repo) i el `config.js` amb els ids del teu curs (obtén els ids de categories amb `node estat_classroom.js`).
+6. **Contrasenya de la vista docent**: la vista docent del web té una porta de contrasenya (fricció perquè l'alumnat no hi entri per curiositat; **no és seguretat**: el material continua sent públic al repositori). Posa-hi la teva amb `py tools/canvia_contrasenya_docent.py` i commiteja el canvi.
 
 ---
 
