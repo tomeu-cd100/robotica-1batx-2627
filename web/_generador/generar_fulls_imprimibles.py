@@ -4,9 +4,11 @@ Genera PDF imprimibles (per omplir/recollir en paper) dels fulls d'alumnat
 que no passen pel pipeline d'activitats: el full de normes de seguretat (amb
 signatura) i els 10 checklists d'alumnat (SA0-SA9, amb autoavaluació semàfor).
 
-- Converteix el Markdown a un HTML d'impressió net (A4), amb caselles reals,
-  graella semàfor per pintar i línies per escriure (nom, data, signatura).
-- Imprimeix cada HTML a PDF amb Chrome/Edge headless (sense dependències).
+- Converteix el Markdown amb el MATEIX motor que el web (python-markdown) i
+  aplica un post-procés de paper: caselles reals, graella semàfor per pintar
+  i línies per escriure (nom, data, signatura). Un sol comportament de
+  render a tot el curs: el que es veu al web és el que s'imprimeix.
+- Imprimeix cada HTML a PDF amb Chrome/Edge headless.
 - Desa cada PDF al costat del seu material: Classes/SAn/pdf/<nom>.pdf
 
 Ús:
@@ -58,8 +60,10 @@ CSS = """
   h1 { font-size: 16.5pt; margin: 0 0 8pt; }
   h2 { font-size: 12pt; margin: 13pt 0 5pt; padding-bottom: 2pt;
        border-bottom: 1px solid #ccc; }
-  .callout { background: #eaf4fb; border-left: 4px solid #2b8ac6;
+  .callout, blockquote { background: #eaf4fb; border-left: 4px solid #2b8ac6;
              padding: 6pt 10pt; margin: 8pt 0; font-size: 10pt; }
+  blockquote p { margin: 3pt 0; }
+  h3 { font-size: 11pt; margin: 9pt 0 4pt; }
   p { margin: 5pt 0; }
   code { font-family: Consolas, "Courier New", monospace; font-size: 9.6pt;
          background: #f2f2f2; padding: 0 2px; border-radius: 3px; }
@@ -75,10 +79,10 @@ CSS = """
   ul.check li { display: flex; align-items: flex-start; gap: 8pt; margin: 4pt 0; }
   ul.check .box { flex: 0 0 auto; width: 12pt; height: 12pt; border: 1.3px solid #333;
                   border-radius: 2px; margin-top: 1.5pt; }
-  ul.plain { margin: 4pt 0; padding-left: 20pt; }
-  ul.plain li { margin: 3pt 0; }
-  ol.normes, ol.num { margin: 4pt 0; padding-left: 20pt; }
-  ol.normes li, ol.num li { margin: 3pt 0; }
+  ul.plain, ul:not(.check) { margin: 4pt 0; padding-left: 20pt; }
+  ul.plain li, ul:not(.check) li { margin: 3pt 0; }
+  ol.normes, ol.num, ol { margin: 4pt 0; padding-left: 20pt; }
+  ol.normes li, ol.num li, ol li { margin: 3pt 0; }
   pre { font-family: Consolas, "Courier New", monospace; font-size: 8.4pt;
         line-height: 1.2; background: #f7f7f7; border: 1px solid #e0e0e0;
         border-radius: 4px; padding: 6pt 8pt; white-space: pre; overflow: hidden;
@@ -108,122 +112,101 @@ from generador.navegador import find_browser  # noqa: E402  (re-exportat per a g
 from generador.pdfutil import escriu_marca, hash_font, pdf_valid  # noqa: E402
 
 
-# --- Inline Markdown -> HTML -----------------------------------------------
-def inline(text: str) -> str:
-    text = re.sub(r"\[([^\]]+)\]\([^)]+\)", r"\1", text)   # enllaç -> text
-    text = html.escape(text)
-    text = re.sub(r"`([^`]+)`", r"<code>\1</code>", text)
-    text = re.sub(r"\*\*([^*]+)\*\*", r"<strong>\1</strong>", text)
-    text = re.sub(r"(?<!\*)\*([^*]+)\*(?!\*)", r"<em>\1</em>", text)
-    text = re.sub(r"_{3,}", '<span class="fill-inline"></span>', text)
-    return text
+# --- Markdown -> HTML (MATEIX motor que el web) + post-procés de paper ------
+# El .md es converteix amb python-markdown (com generar.py: un sol
+# comportament de render a tot el curs) i després es transforma l'HTML per al
+# paper: enllaços aplanats, caselles reals, línies per escriure i graella
+# semàfor per pintar.
+import markdown as md_lib  # noqa: E402
+
+_EXTENSIONS = ["extra", "sane_lists"]
+_SEMAFOR = ("🔴", "🟡", "🟢")
 
 
-def is_identity(line: str) -> bool:
-    return bool(re.match(r"\*\*[^*]+:\*\*\s*_+", line.strip()))
+def fora_callouts_de_pdf(h: str) -> str:
+    """Un full imprimible no s'enllaça a si mateix: fora l'avís del PDF.
+    Es filtra PER PARÀGRAF (python-markdown fusiona blockquotes adjacents:
+    esborrar el bloc sencer s'enduria el text veí) i abans d'aplanar els
+    enllaços, quan els href encara hi són."""
+    def neteja(m):
+        cos = re.sub(r"<p>(?:(?!</p>).)*?(?:\.pdf|pdf/)(?:(?!</p>).)*?</p>",
+                     "", m.group(1), flags=re.S)
+        if not re.sub(r"<[^>]+>", "", cos).strip():
+            return ""  # blockquote buit del tot: fora
+        return "<blockquote>" + cos + "</blockquote>"
+    return re.sub(r"<blockquote>(.*?)</blockquote>", neteja, h, flags=re.S)
 
 
-def render_identity(line: str) -> str:
-    labels = re.findall(r"\*\*([^*]+?):\*\*\s*_+", line)
-    fields = "".join(
-        f'<div class="field"><span class="et">{html.escape(l)}</span>'
-        f'<span class="line"></span></div>' for l in labels)
-    return f'<div class="fields">{fields}</div>'
+def aplana_enllacos(h: str) -> str:
+    """En paper no es pot clicar: enllaç -> només el text."""
+    return re.sub(r"<a [^>]*>(.*?)</a>", r"\1", h, flags=re.S)
 
 
-def render_table(rows: list[str]) -> str:
-    def cells(r):
-        return [c.strip() for c in r.strip().strip("|").split("|")]
-    header = cells(rows[0])
-    body = [cells(r) for r in rows[2:]]  # rows[1] = separador ---
-    semaphore = any(("🔴" in c or "🟡" in c or "🟢" in c) for c in header)
-    thead = "<tr>" + "".join(f"<th>{inline(c)}</th>" for c in header) + "</tr>"
-    trs = []
-    for r in body:
-        first = f'<td class="lab">{inline(r[0]) if r else ""}</td>'
-        if semaphore:
-            paint = "".join('<td class="paint"></td>' for _ in header[1:])
-            trs.append("<tr>" + first + paint + "</tr>")
-        else:
-            rest = "".join(f"<td>{inline(c)}</td>" for c in r[1:])
-            trs.append("<tr>" + first + rest + "</tr>")
-    return (f'<table class="grid"><thead>{thead}</thead>'
-            f'<tbody>{"".join(trs)}</tbody></table>')
+# Els runs de _ s'han de protegir ABANS de convertir: el motor de Markdown
+# els interpretaria com a marques d'èmfasi i els partiria.
+_LINIA = "%%LINIA%%"
+
+
+def protegeix_camps(md: str) -> str:
+    return re.sub(r"_{3,}", _LINIA, md)
+
+
+def camps_per_omplir(h: str) -> str:
+    """Runs de 3+ guions baixos (protegits) -> línia per escriure-hi a mà."""
+    h = h.replace(_LINIA, '<span class="fill-inline"></span>')
+    return re.sub(r"_{3,}", '<span class="fill-inline"></span>', h)
+
+
+def caselles(h: str) -> str:
+    """`- [ ]` -> casella real per marcar amb boli."""
+    h = re.sub(r"<li>\s*\[[ xX]\]\s*(.*?)</li>",
+               r'<li><span class="box"></span><span>\1</span></li>', h, flags=re.S)
+    return re.sub(r"<ul>(\s*<li><span class=\"box\">)",
+                  r'<ul class="check">\1', h)
+
+
+def taules(h: str) -> str:
+    """Totes les taules -> .grid; si la capçalera té 🔴🟡🟢, el cos es buida
+    en cel·les .paint per pintar-hi el semàfor a mà."""
+    def una(m):
+        t = m.group(0)
+        t = re.sub(r"<table[^>]*>", '<table class="grid">', t, count=1)
+        cap = re.search(r"<thead>.*?</thead>", t, re.S)
+        if not (cap and any(s in cap.group(0) for s in _SEMAFOR)):
+            return t
+        def fila(mf):
+            cel = re.findall(r"<td[^>]*>.*?</td>", mf.group(0), re.S)
+            if not cel:
+                return mf.group(0)
+            primera = re.sub(r"<td[^>]*>", '<td class="lab">', cel[0], count=1)
+            return ("<tr>" + primera +
+                    '<td class="paint"></td>' * (len(cel) - 1) + "</tr>")
+        cos = re.search(r"<tbody>.*?</tbody>", t, re.S)
+        if cos:
+            nou = re.sub(r"<tr>.*?</tr>", fila, cos.group(0), flags=re.S)
+            t = t.replace(cos.group(0), nou)
+        return t
+    return re.sub(r"<table[^>]*>.*?</table>", una, h, flags=re.S)
+
+
+def inline_md(text: str) -> str:
+    """Una línia de Markdown -> HTML inline (sense <p>), ja apte per a paper."""
+    h = md_lib.markdown(protegeix_camps(text), extensions=_EXTENSIONS).strip()
+    h = re.sub(r"^<p>|</p>$", "", h, flags=re.S)
+    return camps_per_omplir(aplana_enllacos(h))
 
 
 def md_to_body(md: str) -> tuple[str, str]:
     """Retorna (títol, html del cos) per a un full de checklist."""
-    lines = md.splitlines()
-    title = ""
-    out = []
-    i = 0
-    while i < len(lines):
-        line = lines[i]
-        s = line.strip()
-        if not s:
-            i += 1
-            continue
-        if s.startswith("```"):
-            i += 1
-            code = []
-            while i < len(lines) and not lines[i].strip().startswith("```"):
-                code.append(lines[i])
-                i += 1
-            i += 1  # tanca ```
-            out.append(f"<pre>{html.escape(chr(10).join(code))}</pre>")
-        elif s.startswith("# "):
-            title = s[2:].strip()
-            out.append(f"<h1>{inline(title)}</h1>")
-            i += 1
-        elif s.startswith("## "):
-            out.append(f"<h2>{inline(s[3:].strip())}</h2>")
-            i += 1
-        elif s.startswith("> "):
-            block = []
-            while i < len(lines) and lines[i].strip().startswith(">"):
-                block.append(lines[i].strip()[1:].strip())
-                i += 1
-            joined = " ".join(block)
-            # Un full imprimible no s'enllaça a si mateix: salta l'avís del PDF.
-            if ".pdf)" in joined or "](pdf/" in joined:
-                continue
-            out.append(f'<div class="callout">{inline(joined)}</div>')
-        elif re.match(r"- \[[ xX]\] ", s):
-            items = []
-            while i < len(lines) and re.match(r"- \[[ xX]\] ", lines[i].strip()):
-                txt = re.sub(r"- \[[ xX]\] ", "", lines[i].strip())
-                items.append(f'<li><span class="box"></span><span>{inline(txt)}</span></li>')
-                i += 1
-            out.append(f'<ul class="check">{"".join(items)}</ul>')
-        elif s.startswith("|"):
-            rows = []
-            while i < len(lines) and lines[i].strip().startswith("|"):
-                rows.append(lines[i])
-                i += 1
-            out.append(render_table(rows))
-        elif re.fullmatch(r"[-*_]{3,}", s):
-            out.append("<hr>")
-            i += 1
-        elif is_identity(s):
-            out.append(render_identity(s))
-            i += 1
-        elif s.startswith("- "):
-            items = []
-            while i < len(lines) and lines[i].strip().startswith("- "):
-                items.append(f"<li>{inline(lines[i].strip()[2:])}</li>")
-                i += 1
-            out.append(f'<ul class="plain">{"".join(items)}</ul>')
-        elif re.match(r"\d+\.\s", s):
-            items = []
-            while i < len(lines) and re.match(r"\d+\.\s", lines[i].strip()):
-                txt = re.sub(r"^\d+\.\s+", "", lines[i].strip())
-                items.append(f"<li>{inline(txt)}</li>")
-                i += 1
-            out.append(f'<ol class="num">{"".join(items)}</ol>')
-        else:
-            out.append(f"<p>{inline(s)}</p>")
-            i += 1
-    return title, "\n".join(out)
+    m = re.search(r"^# (.+)$", md, re.M)
+    title = re.sub(r"[*`]", "", m.group(1)).strip() if m else ""
+    h = md_lib.markdown(protegeix_camps(md), extensions=_EXTENSIONS)
+    h = fora_callouts_de_pdf(h)
+    h = aplana_enllacos(h)
+    h = caselles(h)
+    h = taules(h)
+    h = camps_per_omplir(h)
+    return title, h
 
 
 def render_norms_body(md: str) -> tuple[str, str]:
@@ -233,7 +216,7 @@ def render_norms_body(md: str) -> tuple[str, str]:
              "exemples i cada alumne/a <strong>signa</strong> el compromís del final. "
              "El full signat es guarda a la carpeta del grup.")
     # Extreu les 12 normes (línies "N. ...") en ordre.
-    normes = [inline(m.group(2)) for m in
+    normes = [inline_md(m.group(2)) for m in
               (re.match(r"(\d+)\.\s+(.*)", l.strip()) for l in md.splitlines()) if m]
     seccions = [
         ("1. Abans de connectar res", normes[0:3]),
