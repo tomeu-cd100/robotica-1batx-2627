@@ -23,6 +23,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from generar import PAGES_BASE  # noqa: E402
 from generar_fulls_imprimibles import find_browser, print_pdf  # noqa: E402
+from generador.pdfutil import escriu_marca, hash_font  # noqa: E402
 from quadern_sessions import PROVES, SA_TRIMESTRE, SESSIONS  # noqa: E402
 
 try:
@@ -328,6 +329,12 @@ def main():
             tmp_html.write_text(quadern_html(t), encoding="utf-8")
             pdf = DESTI / f"Quadern_tecnic_T{t}.pdf"
             if print_pdf(browser, tmp_html, pdf, tmp):
+                # La font del quadern són les DADES de quadern_sessions.py:
+                # la marca permet a tools/qa.py detectar dades editades
+                # sense regenerar els PDF.
+                font = (Path(__file__).with_name("quadern_sessions.py")
+                        .read_text(encoding="utf-8"))
+                escriu_marca(pdf, hash_font(font))
                 pags = 2 + 2 * len(SESSIONS[t])
                 print(f"  ✓ {pdf.relative_to(REPO)} ({pags} pàgines previstes)")
             else:

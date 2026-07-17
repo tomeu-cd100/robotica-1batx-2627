@@ -69,6 +69,42 @@ També s'han aplicat els pendents «no bloquejants» principals:
   `2026-07-17_Analisi_disseny_instruccional.md` (necessitats per subgrups, teories
   aplicades/pendents, proposta «Auditoria IoT» per a SA8 S2 i 5 recomanacions).
 
+## Tercera tanda (17-07, continuació)
+
+- **Solucionari ⭐⭐⭐ auditat i alineat:** els 24 `ampliat` ja contenien AMPLIACIO 3,
+  però una auditoria fites↔codi (2 agents) va trobar **18 desalineats** (el codi no
+  feia el que les fites, escrites ahir, exigeixen validar). Corregits tots (4 agents
+  + revisió): paràmetres/dedup (SA1-B, SA4), Serial per validar (SA2-C, SA3-A/B),
+  temps Morse exactes (SA1-C), variable d'estat (SA4-A), seqüència executada (SA4-B),
+  columnes+redibuixat (SA5-A), mitjanes de lectures (SA5-B, SA6-C), joc amb marcador
+  i timeout (SA5-C), termostat fred/calor automàtic amb banda morta i 2 actuadors
+  (SA6-A), ruta com a dades (SA7-A), detecció d'encallament (SA7-B), **sketch ESP32
+  nou** amb webhook i reconnexió no bloquejant (SA8-A,
+  `Solucionari/SA8/A_estacio_meteo_esp32/`), CSV multi-emissor + detecció de muts
+  (SA8-B) i **ML real per centroides** entrenat amb dades pròpies (SA8-C).
+- **CI reforçat:** el job UNO ara compila **també el Solucionari** (SA1-SA4, SA6,
+  SA7) i hi ha **job nou d'ESP32** (esp32:esp32:esp32) per a `04_esp32_telemetria` i
+  el sketch nou del solucionari.
+- **LXD aplicat — Auditoria IoT (SA8 S2):** nou `Classes/SA8/SA8_auditoria_iot.md`
+  (8 targetes de producte genèric + informe d'auditoria d'1 pàgina + peritatge
+  creuat); S2 de la guia reestructurada (ganxo/mini-lliçó/auditoria/peritatge/exit
+  ticket), fitxa base (activitat 2), fitxa ampliada (disseny propi com a extensió),
+  checklists, doc 17, README de SA8, quadern (títol S2) i mapa d'avaluació
+  (informe → CA4.2+CA5.3, R4) sincronitzats.
+- **LXD aplicat — targeta de represa de ràdio:** nou
+  `Classes/00_General/00_Repas_expres_Radio.md` (5 línies de la ràdio + patró de
+  telemetria + autotest; vista alumnat), enllaçada des del tancament de SA7 S4, la
+  S1 de SA8 (guia) i la fitxa de SA8.
+- **Validesa forta de PDF + sincronia .md↔PDF:** nou `generador/pdfutil.py`
+  (recompte de pàgines reals, marca `%font-md-sha1:` després de l'%%EOF amb hash
+  normalitzat a LF); `generar_pdf.py` i `generar_fulls_imprimibles.py` amb
+  **reintents** amb pressupost creixent si Chrome talla; el quadern marca amb el
+  hash de `quadern_sessions.py`; **check 8 del QA ampliat** (pàgines ≥ 1 + font
+  canviada sense regenerar = error); 8 tests nous (33 en total). Els 19 PDF
+  imprimibles/quaderns regenerats amb marca.
+- **Check 11 nou (opt-in):** validació d'enllaços externs amb
+  `QA_ENLLACOS_EXTERNS=1` (mai no bloqueja el CI; avisos).
+
 ## ⚠️ Accions immediates la propera sessió
 
 1. **Reautoritzar Google**: `token.json` ja està esborrat; el primer script de
@@ -82,20 +118,18 @@ També s'han aplicat els pendents «no bloquejants» principals:
    la feina d'avui; un cop el CI sigui verd i l'altra màquina recloni, es poden
    esborrar tots dos).
 
-## Pendents que queden (després de les dues tandes)
+## Pendents que queden (després de les TRES tandes)
 
-- **Solucionari dels reptes ⭐⭐⭐**: les fites ja hi són; falten les solucions
-  completes al `Reptes/Solucionari/` (24 reptes; els .ino han de compilar per a UNO).
 - **Unificar el motor de Markdown**: el parser artesà de
   `generar_fulls_imprimibles.py` vs python-markdown del web (dos motors, possible
   divergència de render); feina gran, valorar Jinja2 dins del refactor P4 pendent.
-- **Validesa "forta" dels PDF generats**: comptar pàgines (no només capçalera+mida) i
-  reintents a `generar_pdf.py` si Chrome talla per `--virtual-time-budget`.
-- **Sincronia .md ↔ PDF imprimibles**: cap check detecta un checklist editat sense
-  regenerar el seu PDF (valorar hash del .md dins del PDF o data comparada a qa.py).
-- **Aplicar les recomanacions LXD** de `2026-07-17_Analisi_disseny_instruccional.md`:
-  sobretot l'«Auditoria IoT» de SA8 S2 (cost ~2 h) i la targeta de represa de ràdio
-  abans de SA8.
-- **Job de CI per a l'ESP32** (opcional): l'únic .ino de SA8 és ESP32 i queda fora del
-  job UNO; compilar-lo demanaria FQBN esp32 a part.
-- **Enllaços externs**: cap check els valida (arduino.cc, Wokwi, visor d'Office).
+- **Recomanacions LXD restants** (de `2026-07-17_Analisi_disseny_instruccional.md`
+  §4): micro-eleccions d'alumne a cada SA (llistes de 3 opcions per repte),
+  pregunta fixa de feedback de procés al diari de bord, i tauler visible de
+  progressió dels reptes ⭐ per equip.
+- **Publicar al Classroom** l'auditoria IoT i la targeta de ràdio quan es
+  reautoritzi Google (targetes com a material de la SA8).
+- **Provar al maquinari real** les solucions ⭐⭐⭐ corregides (compilen i estan
+  alineades amb les fites, però l'avís del solucionari segueix vigent: validar a
+  placa/Tinkercad, especialment SA7 amb els pins del 3dBot i el nearest centroid
+  de SA8-C).

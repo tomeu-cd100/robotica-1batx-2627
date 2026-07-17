@@ -30,6 +30,11 @@ MANIFEST = SCRIPT_DIR / "_activitats.json"
 
 sys.path.insert(0, str(SCRIPT_DIR))
 from generador.navegador import find_browser  # noqa: E402
+from generador.pdfutil import pdf_valid  # noqa: E402
+
+# Pressupostos creixents de --virtual-time-budget: si Chrome talla el render
+# (PDF truncat o sense pàgines), es reintenta amb més temps virtual.
+BUDGETS = (4000, 8000, 16000)
 
 
 def main():
@@ -57,24 +62,31 @@ def main():
                 fail += 1
                 continue
             pdf_abs.parent.mkdir(parents=True, exist_ok=True)
-            cmd = [
-                browser,
-                "--headless=new",
-                "--disable-gpu",
-                *sandbox_flags,
-                "--no-pdf-header-footer",
-                "--run-all-compositor-stages-before-draw",
-                "--virtual-time-budget=4000",
-                f"--user-data-dir={profile}",
-                f"--print-to-pdf={pdf_abs}",
-                html_abs.as_uri(),
-            ]
-            res = subprocess.run(cmd, capture_output=True, text=True)
-            if pdf_abs.exists() and pdf_abs.stat().st_size > 0:
+            res = None
+            for budget in BUDGETS:
+                cmd = [
+                    browser,
+                    "--headless=new",
+                    "--disable-gpu",
+                    *sandbox_flags,
+                    "--no-pdf-header-footer",
+                    "--run-all-compositor-stages-before-draw",
+                    f"--virtual-time-budget={budget}",
+                    f"--user-data-dir={profile}",
+                    f"--print-to-pdf={pdf_abs}",
+                    html_abs.as_uri(),
+                ]
+                res = subprocess.run(cmd, capture_output=True, text=True)
+                if pdf_valid(pdf_abs):
+                    break
+                if budget != BUDGETS[-1]:
+                    print(f"  … reintent amb més temps ({budget} ms no ha bastat): {e['pdf']}")
+            if pdf_valid(pdf_abs):
                 ok += 1
             else:
                 fail += 1
-                print(f"  ⚠ no s'ha generat: {e['pdf']}\n    {res.stderr.strip()[:300]}")
+                print(f"  ⚠ no s'ha generat (o ha sortit truncat): {e['pdf']}\n"
+                      f"    {res.stderr.strip()[:300]}")
 
     print(f"Fet. {ok} PDF generats a web/pdf/" + (f", {fail} amb error." if fail else "."))
     if fail:

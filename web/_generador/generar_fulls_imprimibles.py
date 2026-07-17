@@ -104,6 +104,7 @@ CSS = """
 
 
 from generador.navegador import find_browser  # noqa: E402  (re-exportat per a generar_quadern_tecnic)
+from generador.pdfutil import escriu_marca, hash_font, pdf_valid  # noqa: E402
 
 
 # --- Inline Markdown -> HTML -----------------------------------------------
@@ -283,14 +284,19 @@ def print_pdf(browser: str, html_path: Path, pdf_path: Path, profile: str,
             return False
     # Perfil FRESC per render: compartir-lo entre molts renders fa que Chrome
     # reutilitzi la cau i de tant en tant surti una versio desfasada.
-    with tempfile.TemporaryDirectory(prefix="fullpdf1_") as prof:
-        cmd = [browser, "--headless=new", "--disable-gpu", "--disk-cache-size=1",
-               *([] if sys.platform == "win32" else ["--no-sandbox"]),
-               "--no-pdf-header-footer", "--run-all-compositor-stages-before-draw",
-               f"--virtual-time-budget={budget}", f"--user-data-dir={prof}",
-               f"--print-to-pdf={pdf_path}", html_path.as_uri()]
-        subprocess.run(cmd, capture_output=True, text=True)
-    return pdf_path.exists() and pdf_path.stat().st_size > 0
+    # Si Chrome talla el render (PDF truncat o sense pàgines), es reintenta
+    # amb el doble i el quàdruple de temps virtual.
+    for factor in (1, 2, 4):
+        with tempfile.TemporaryDirectory(prefix="fullpdf1_") as prof:
+            cmd = [browser, "--headless=new", "--disable-gpu", "--disk-cache-size=1",
+                   *([] if sys.platform == "win32" else ["--no-sandbox"]),
+                   "--no-pdf-header-footer", "--run-all-compositor-stages-before-draw",
+                   f"--virtual-time-budget={budget * factor}", f"--user-data-dir={prof}",
+                   f"--print-to-pdf={pdf_path}", html_path.as_uri()]
+            subprocess.run(cmd, capture_output=True, text=True)
+        if pdf_valid(pdf_path):
+            return True
+    return False
 
 
 def main():
@@ -316,6 +322,9 @@ def main():
             tmp_html.write_text(html_doc, encoding="utf-8")
             pdf_path = md_path.parent / "pdf" / (md_path.stem + ".pdf")
             if print_pdf(browser, tmp_html, pdf_path, profile):
+                # Marca de sincronia: tools/qa.py detecta un .md editat
+                # sense regenerar el seu PDF comparant aquest hash.
+                escriu_marca(pdf_path, hash_font(md))
                 print(f"  ✓ {pdf_path.relative_to(REPO)}")
                 ok += 1
             else:
@@ -331,6 +340,7 @@ def main():
                 continue
             pdf_path = CLASSES / "00_General" / "pdf" / (src.stem + ".pdf")
             if print_pdf(browser, src, pdf_path, profile, budget=10000):
+                escriu_marca(pdf_path, hash_font(src.read_text(encoding="utf-8")))
                 print(f"  ✓ {pdf_path.relative_to(REPO)}")
                 ok += 1
             else:

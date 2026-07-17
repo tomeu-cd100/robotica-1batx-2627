@@ -16,9 +16,12 @@ Comprova (i falla amb exit != 0 si troba res):
   6. Ordre de l'itinerari: cap pàgina de SA sense clau a DOC_ORDRE_CLAUS.
   7. PII: cap adreça de correu als fitxers versionats .md/.js/.py/.html
      (allowlist per als correus de coautoria; el del docent només avisa).
-  8. PDF committats: capçalera %PDF- i mida > 1 KB.
+  8. PDF committats: capçalera %PDF-, mida > 1 KB, ≥ 1 pàgina real i marca
+     de sincronia amb la font (.md editat sense regenerar el PDF = error).
   9. Mojibake: cap seqüència «Ã», «â€», «Â·» als .md versionats.
  10. Sintaxi dels `.py` del solucionari (Reptes/**), com el punt 4.
+ 11. Enllaços externs (OPT-IN amb QA_ENLLACOS_EXTERNS=1: depèn de la xarxa;
+     mai no bloqueja el CI — els caiguts surten com a avís).
 
 Ús:  py tools/qa.py          (cal haver generat el web abans per al punt 1;
                               si web/ no té HTML, el punt 1 s'omet amb avís)
@@ -266,8 +269,11 @@ def comprova_pii() -> None:
     print(f"7) PII (correus): {len(fitxers)} fitxers, {fallats} adreces no permeses.")
 
 
-# --- 8 · PDF committats: capçalera i mida mínimes -----------------------------
+# --- 8 · PDF committats: validesa forta + sincronia amb la font ---------------
 def comprova_pdfs() -> None:
+    sys.path.insert(0, str(ARREL / "web" / "_generador"))
+    from generador.pdfutil import hash_font, llegeix_marca, num_pagines
+
     fitxers = fitxers_versionats("*.pdf")
     fallats = 0
     for f in fitxers:
@@ -284,7 +290,44 @@ def comprova_pdfs() -> None:
         elif mida <= 1024:
             errors.append(f"[pdf] {f.relative_to(ARREL)}: només {mida} B (≤ 1 KB)")
             fallats += 1
-    print(f"8) PDF versionats: {len(fitxers)} fitxers, {fallats} invàlids.")
+        elif num_pagines(f) < 1:
+            errors.append(f"[pdf] {f.relative_to(ARREL)}: 0 pàgines (render "
+                          f"truncat de Chrome? regenera'l)")
+            fallats += 1
+
+    # Sincronia font ↔ PDF: cada full imprimible i quadern porta una marca
+    # amb el hash de la seva font. Si la font ha canviat sense regenerar el
+    # PDF, error; si el PDF encara no té marca (anterior al sistema), avís.
+    import generar_fulls_imprimibles as gfi
+
+    parelles: list[tuple[Path, Path]] = []
+    for rel, _ in gfi.TARGETS:
+        md = ARREL / "Classes" / rel
+        parelles.append((md, md.parent / "pdf" / (md.stem + ".pdf")))
+    for rel in gfi.RAW_HTML:
+        src = ARREL / "Classes" / rel
+        parelles.append((src, ARREL / "Classes" / "00_General" / "pdf" /
+                         (src.stem + ".pdf")))
+    quadern_py = ARREL / "web" / "_generador" / "quadern_sessions.py"
+    for pdf in sorted((ARREL / "Classes" / "00_General" / "pdf")
+                      .glob("Quadern_tecnic_T*.pdf")):
+        parelles.append((quadern_py, pdf))
+
+    desfasats = 0
+    for font, pdf in parelles:
+        if not font.exists() or not pdf.exists():
+            continue  # l'absència ja l'informen altres checks
+        marca = llegeix_marca(pdf)
+        if marca is None:
+            avisos.append(f"[pdf-sync] {pdf.relative_to(ARREL)}: sense marca de "
+                          f"sincronia (regenera'l per activar-la)")
+        elif marca != hash_font(font.read_text(encoding="utf-8")):
+            errors.append(f"[pdf-sync] {pdf.relative_to(ARREL)}: la font "
+                          f"{font.relative_to(ARREL)} ha canviat després de "
+                          f"generar el PDF (regenera'l)")
+            desfasats += 1
+    print(f"8) PDF versionats: {len(fitxers)} fitxers, {fallats} invàlids, "
+          f"{desfasats} desfasats de la font.")
 
 
 # --- 9 · Mojibake als .md versionats ------------------------------------------
@@ -320,6 +363,61 @@ def comprova_python_reptes() -> None:
     print(f"10) Python del solucionari: {len(fitxers)} fitxers, {fallats} amb errors de sintaxi.")
 
 
+# --- 11 · Enllaços externs (OPT-IN: QA_ENLLACOS_EXTERNS=1) ---------------------
+RE_URL_EXTERN = re.compile(r"https?://[^\s)\"'<>\]]+")
+DOMINIS_IGNORATS = (
+    # el web propi i serveis que responen 4xx/redireccions a robots sense sessió
+    "classroom.google.com", "docs.google.com", "drive.google.com",
+    "github.com/tomeu-cd100",
+)
+
+
+def comprova_enllacos_externs() -> None:
+    """Valida (HEAD/GET) els enllaços externs dels .md versionats. Només
+    s'executa amb QA_ENLLACOS_EXTERNS=1: depèn de la xarxa (lent i volàtil,
+    la del centre bloqueja dominis), així que mai no bloqueja el CI de push.
+    Els problemes surten com a AVÍS, no com a error."""
+    if os.environ.get("QA_ENLLACOS_EXTERNS") != "1":
+        print("11) Enllaços externs: omès (activa'l amb QA_ENLLACOS_EXTERNS=1).")
+        return
+    import urllib.error
+    import urllib.request
+
+    urls: dict[str, Path] = {}
+    for f in fitxers_versionats("*.md"):
+        if not f.exists():
+            continue
+        for m in RE_URL_EXTERN.finditer(f.read_text(encoding="utf-8", errors="replace")):
+            url = m.group(0).rstrip(".,;:!?")
+            if not any(d in url for d in DOMINIS_IGNORATS):
+                urls.setdefault(url, f)
+    caiguts = 0
+    for url, origen in sorted(urls.items()):
+        peticio = urllib.request.Request(
+            url, method="HEAD", headers={"User-Agent": "Mozilla/5.0 (qa-curs)"})
+        try:
+            with urllib.request.urlopen(peticio, timeout=10) as resp:
+                codi = resp.status
+        except urllib.error.HTTPError as e:
+            # Alguns servidors rebutgen HEAD: reintenta amb GET abans d'avisar.
+            if e.code in (403, 405):
+                try:
+                    peticio = urllib.request.Request(
+                        url, headers={"User-Agent": "Mozilla/5.0 (qa-curs)"})
+                    with urllib.request.urlopen(peticio, timeout=10) as resp:
+                        codi = resp.status
+                except Exception as e2:
+                    codi = getattr(e2, "code", str(e2))
+            else:
+                codi = e.code
+        except Exception as e:
+            codi = str(e)
+        if codi != 200:
+            avisos.append(f"[extern] {url} → {codi} (a {origen.relative_to(ARREL)})")
+            caiguts += 1
+    print(f"11) Enllaços externs: {len(urls)} URL úniques, {caiguts} amb problemes (avís).")
+
+
 def main() -> int:
     comprova_enllacos_web()
     comprova_cobertura_sa()
@@ -331,6 +429,7 @@ def main() -> int:
     comprova_pdfs()
     comprova_mojibake()
     comprova_python_reptes()
+    comprova_enllacos_externs()
     for a in avisos:
         print(f"⚠️  {a}")
     if errors:
