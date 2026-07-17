@@ -21,7 +21,8 @@ async function main() {
   const classroom = google.classroom({ version: 'v1', auth });
 
   const curs = await ambReintents(
-    () => classroom.courses.get({ courseId: COURSE_ID }), 'llegir curs');
+    // Compte: courses.get vol el parametre "id" (courseWork/topics volen "courseId")
+    () => classroom.courses.get({ id: COURSE_ID }), 'llegir curs');
   console.log(`\n=== ${curs.data.name} (${COURSE_ID}) · ${curs.data.courseState} ===`);
 
   const cats = curs.data.gradebookSettings?.gradeCategories || [];

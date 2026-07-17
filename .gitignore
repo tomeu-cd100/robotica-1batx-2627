@@ -56,6 +56,7 @@ Material Classroom/*
 !Material Classroom/sa_definicions.js
 !Material Classroom/config.js
 !Material Classroom/estat_classroom.js
+!Material Classroom/crear_materials_enllac.js
 !Material Classroom/crear_questionaris_conceptes_forms.js
 !Material Classroom/adjuntar_questionaris_classroom.js
 !Material Classroom/actualitzar_fitxes_pdf.js
