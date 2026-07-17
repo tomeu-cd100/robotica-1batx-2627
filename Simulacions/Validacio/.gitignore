@@ -1,0 +1,8 @@
+# Artefactes de la validació per simulació (regenerables)
+build/
+logs/
+*.hex
+*.elf
+*.bin
+*.map
+resultats.json

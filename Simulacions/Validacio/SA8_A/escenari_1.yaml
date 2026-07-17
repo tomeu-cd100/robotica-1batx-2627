@@ -1,0 +1,13 @@
+name: 'SA8-A ESP32 original - sense WiFi el programa no es penja'
+version: 1
+author: 'validacio'
+steps:
+  # Firmware ORIGINAL del solucionari (SSID placeholder EL_TEU_WIFI: la xarxa
+  # no existeix a Wokwi). Valida la fita 3: reconnexio no bloquejant.
+  - wait-serial: 'Estacio meteo ESP32'
+  # Primer cicle (t=30 s): dada al monitor serie encara que no hi hagi xarxa (fita 1).
+  - wait-serial: 't=30 s  valor='
+  - wait-serial: 'sense WiFi: dada no enviada, el programa continua'
+  # Segon cicle (t=60 s): el loop segueix girant, cap espera bloquejant (fita 3).
+  - wait-serial: 't=60 s  valor='
+  - wait-serial: 'sense WiFi: dada no enviada, el programa continua'

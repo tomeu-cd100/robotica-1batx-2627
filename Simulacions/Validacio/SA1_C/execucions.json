@@ -1,0 +1,8 @@
+[
+  {
+    "escenari": "escenari_1.yaml",
+    "timeout_ms": 60000,
+    "descripcio": "Fites 2-3: la T i la C s'emeten amb ratlles llargues i punts curts, pausa de 3 unitats entre lletres, pausa de 7 unitats entre repeticions i repetició en bucle",
+    "diagrama": "diagram.json"
+  }
+]

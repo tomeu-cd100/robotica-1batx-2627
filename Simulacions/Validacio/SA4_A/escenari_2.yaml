@@ -1,0 +1,12 @@
+name: 'SA4-A sense vehicle, barrera tancada i vermell estable'
+version: 1
+author: 'validacio'
+# Diagrama: diagram.json (vehicle a 100 cm -> mai per sota del llindar de 15 cm).
+# La barrera no s ha d obrir mai: vermell(8)=1 i verd(7)=0 en tot moment.
+steps:
+  - delay: 500ms
+  - expect-pin: { part-id: uno, pin: 8, value: 1 }
+  - expect-pin: { part-id: uno, pin: 7, value: 0 }
+  - delay: 2500ms
+  - expect-pin: { part-id: uno, pin: 8, value: 1 }
+  - expect-pin: { part-id: uno, pin: 7, value: 0 }

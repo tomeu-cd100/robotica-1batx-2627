@@ -1,0 +1,49 @@
+name: 'SA6-B mode nocturn: groc intermitent als dos semafors i sortida'
+version: 1
+author: 'validacio'
+steps:
+  # El parpelleig del nocturn depen del temps absolut: groc = (millis()/500) % 2
+  # (ON a les finestres [500,1000), [1500,2000)... OFF a [0,500), [1000,1500)...).
+  # Es mostreja al mig de cada mitja finestra (marge 250 ms).
+
+  # t = 1000 ms: sanitat, encara en VERD normal.
+  - delay: 1000ms
+  - expect-pin: { part-id: uno, pin: 10, value: 1 }
+
+  # Boto de mode nocturn (pin 3): entra a E_NOCTURN immediatament.
+  - set-control: { part-id: btn2, control: pressed, value: 1 }
+  - delay: 200ms
+  - set-control: { part-id: btn2, control: pressed, value: 0 }
+
+  # t = 1750 ms (finestra [1500,2000) -> ON): groc dels DOS semafors ences,
+  # tota la resta apagada (ni verds ni vermells en mode nocturn).
+  - delay: 550ms
+  - expect-pin: { part-id: uno, pin: 9, value: 1 }
+  - expect-pin: { part-id: uno, pin: A2, value: 1 }
+  - expect-pin: { part-id: uno, pin: 10, value: 0 }
+  - expect-pin: { part-id: uno, pin: 8, value: 0 }
+  - expect-pin: { part-id: uno, pin: A1, value: 0 }
+  - expect-pin: { part-id: uno, pin: A3, value: 0 }
+
+  # t = 2250 ms (finestra [2000,2500) -> OFF): els grocs s'apaguen (parpelleig real).
+  - delay: 500ms
+  - expect-pin: { part-id: uno, pin: 9, value: 0 }
+  - expect-pin: { part-id: uno, pin: A2, value: 0 }
+
+  # t = 2750 ms (finestra [2500,3000) -> ON): continua parpellejant en sincronia.
+  - delay: 500ms
+  - expect-pin: { part-id: uno, pin: 9, value: 1 }
+  - expect-pin: { part-id: uno, pin: A2, value: 1 }
+
+  # Boto de vianants (pin 2): surt del nocturn i torna al cicle normal en VERD.
+  - set-control: { part-id: btn1, control: pressed, value: 1 }
+  - delay: 200ms
+  - set-control: { part-id: btn1, control: pressed, value: 0 }
+
+  # t = 3250 ms: VERD normal de nou (S2 torna a VERMELL complementari).
+  - delay: 300ms
+  - expect-pin: { part-id: uno, pin: 10, value: 1 }
+  - expect-pin: { part-id: uno, pin: 9, value: 0 }
+  - expect-pin: { part-id: uno, pin: 8, value: 0 }
+  - expect-pin: { part-id: uno, pin: A1, value: 0 }
+  - expect-pin: { part-id: uno, pin: A3, value: 1 }

@@ -1,0 +1,4 @@
+[wokwi]
+version = 1
+firmware = "A_estacio_meteo_esp32.ino.merged.bin"
+elf = "A_estacio_meteo_esp32.ino.elf"

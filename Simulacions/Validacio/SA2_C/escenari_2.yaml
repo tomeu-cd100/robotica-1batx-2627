@@ -1,0 +1,31 @@
+name: 'SA2-C valors del map i VU-metre puja-baixa'
+version: 1
+author: 'validacio'
+steps:
+  # Fita 2: valors del map() coherents pel Monitor Serie (0-255, un puja quan l'altre baixa).
+  # Valors exactes amb la divisio entera de map():
+  #   nivell 0 -> vermell=0,   verd=255
+  #   nivell 1 -> vermell=63,  verd=192
+  #   nivell 2 -> vermell=127, verd=128
+  #   nivell 3 -> vermell=191, verd=64
+  #   nivell 4 -> vermell=255, verd=0
+  # Fita 3 (parcial): a nivell 2, la barra te exactament 2 LEDs encesos (pins 4 i 5).
+
+  # Pujada 0 -> 4
+  - wait-serial: 'nivell=0  vermell=0  verd=255'
+  - wait-serial: 'nivell=1  vermell=63  verd=192'
+  - wait-serial: 'nivell=2  vermell=127  verd=128'
+  - delay: 100ms
+  - expect-pin: { part-id: uno, pin: 4, value: 1 }
+  - expect-pin: { part-id: uno, pin: 5, value: 1 }
+  - expect-pin: { part-id: uno, pin: 6, value: 0 }
+  - expect-pin: { part-id: uno, pin: 7, value: 0 }
+  - wait-serial: 'nivell=3  vermell=191  verd=64'
+  - wait-serial: 'nivell=4  vermell=255  verd=0'
+
+  # Baixada 4 -> 0 (el bucle de baixada torna a imprimir nivell=4)
+  - wait-serial: 'nivell=4  vermell=255  verd=0'
+  - wait-serial: 'nivell=3  vermell=191  verd=64'
+  - wait-serial: 'nivell=2  vermell=127  verd=128'
+  - wait-serial: 'nivell=1  vermell=63  verd=192'
+  - wait-serial: 'nivell=0  vermell=0  verd=255'

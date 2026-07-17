@@ -1,0 +1,13 @@
+name: 'SA3-B tram a prop amb so continu (5 cm)'
+version: 1
+author: 'validacio'
+steps:
+  # Variant diagram_5cm.json: distancia fixa de 5 cm (< PROP = 10 cm).
+  - delay: 500ms
+  - wait-serial: 'distancia='                              # fita 1: distancia pel Monitor Serie
+  - wait-serial: '(a prop, so continu)'                    # fita 3: per sota la distancia critica
+  - delay: 300ms
+  - expect-pin: { part-id: uno, pin: 8, value: 1 }      # LED fix ences (HIGH mantingut)
+  # El tram es mante mentre la distancia no canvia.
+  - wait-serial: '(a prop, so continu)'
+  - expect-pin: { part-id: uno, pin: 8, value: 1 }

@@ -1,0 +1,30 @@
+name: 'SA3-C potenciometre regula PWM i polsador compta amb debounce'
+version: 1
+author: 'validacio'
+steps:
+  - delay: 500ms
+
+  # Pot al maxim: analogRead 1023 -> map -> 255 -> analogWrite(255) = HIGH continu al pin 9.
+  - set-control: { part-id: pot1, control: position, value: 1 }
+  - delay: 300ms
+  - expect-pin: { part-id: uno, pin: 9, value: 1 }      # fita 1: el pot regula la brillantor
+
+  # Primera premuda (INPUT_PULLUP: pressed -> LOW). ATENCIO: wait-serial nomes
+  # casa amb sortida POSTERIOR a l'inici del pas -> cap delay entre premuda i espera.
+  - set-control: { part-id: btn1, control: pressed, value: 1 }
+  - wait-serial: 'Premudes: 1'                             # fita 1: el polsador compta
+  - delay: 200ms
+  - set-control: { part-id: btn1, control: pressed, value: 0 }
+  - delay: 200ms
+
+  # Pot al minim: analogRead 0 -> map -> 0 -> analogWrite(0) = LOW continu al pin 9.
+  - set-control: { part-id: pot1, control: position, value: 0 }
+  - delay: 300ms
+  - expect-pin: { part-id: uno, pin: 9, value: 0 }      # el PWM segueix el pot en tot moment
+
+  # Segona premuda: el comptador continua mentre el PWM va canviant (loop sense bloquejos).
+  - set-control: { part-id: btn1, control: pressed, value: 1 }
+  - wait-serial: 'Premudes: 2'                             # fita 2: conviuen al mateix loop
+  - delay: 100ms
+  - set-control: { part-id: btn1, control: pressed, value: 0 }
+  - delay: 100ms

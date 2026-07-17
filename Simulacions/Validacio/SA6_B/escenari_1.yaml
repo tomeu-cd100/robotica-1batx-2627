@@ -1,0 +1,65 @@
+name: 'SA6-B cicle encreuament, complementarietat i polsador de vianants'
+version: 1
+author: 'validacio'
+steps:
+  # El codi NO fa servir Serial: tot es valida amb temps determinista + expect-pin.
+  # Cicle S1: VERD 0-4000 -> GROC 4000-5500 -> VERMELL 5500-9500 -> VERD 9500-13500...
+  # S2 (pins A1 verd / A2 groc / A3 vermell) es complementari: verd nomes quan S1 vermell.
+  # Es mostreja al mig de cada finestra (marge >=500 ms per l'arrencada).
+
+  # t = 2000 ms: S1 VERD. S2 en VERMELL (mai dos verds alhora).
+  - delay: 2000ms
+  - expect-pin: { part-id: uno, pin: 10, value: 1 }
+  - expect-pin: { part-id: uno, pin: 9, value: 0 }
+  - expect-pin: { part-id: uno, pin: 8, value: 0 }
+  - expect-pin: { part-id: uno, pin: A1, value: 0 }
+  - expect-pin: { part-id: uno, pin: A3, value: 1 }
+
+  # t = 4700 ms: S1 GROC (fase de transicio present). S2 continua en VERMELL.
+  - delay: 2700ms
+  - expect-pin: { part-id: uno, pin: 9, value: 1 }
+  - expect-pin: { part-id: uno, pin: 10, value: 0 }
+  - expect-pin: { part-id: uno, pin: 8, value: 0 }
+  - expect-pin: { part-id: uno, pin: A1, value: 0 }
+  - expect-pin: { part-id: uno, pin: A3, value: 1 }
+
+  # t = 6700 ms: S1 VERMELL i NOMES ara S2 passa a VERD (estats complementaris).
+  - delay: 2000ms
+  - expect-pin: { part-id: uno, pin: 8, value: 1 }
+  - expect-pin: { part-id: uno, pin: 10, value: 0 }
+  - expect-pin: { part-id: uno, pin: 9, value: 0 }
+  - expect-pin: { part-id: uno, pin: A1, value: 1 }
+  - expect-pin: { part-id: uno, pin: A3, value: 0 }
+
+  # t = 10700 ms: segon cicle, S1 VERD de nou (9500-13500): el cicle es estable.
+  - delay: 4000ms
+  - expect-pin: { part-id: uno, pin: 10, value: 1 }
+  - expect-pin: { part-id: uno, pin: A1, value: 0 }
+  - expect-pin: { part-id: uno, pin: A3, value: 1 }
+
+  # Polsador de vianants durant el VERD: com que ja portem >1000 ms de verd,
+  # el semafor avanca cap a GROC de seguida (sense polsador duraria fins a 13500).
+  - set-control: { part-id: btn1, control: pressed, value: 1 }
+  - delay: 200ms
+  - set-control: { part-id: btn1, control: pressed, value: 0 }
+
+  # t = 11400 ms: GROC (10700-12200) gracies a la peticio de vianants. Mai salta
+  # de verd a vermell directament: la fase de groc hi es igualment (seguretat).
+  - delay: 500ms
+  - expect-pin: { part-id: uno, pin: 9, value: 1 }
+  - expect-pin: { part-id: uno, pin: 10, value: 0 }
+  - expect-pin: { part-id: uno, pin: A3, value: 1 }
+
+  # t = 13100 ms: VERMELL (12200-16200): els vianants (S2 verd) poden passar.
+  - delay: 1700ms
+  - expect-pin: { part-id: uno, pin: 8, value: 1 }
+  - expect-pin: { part-id: uno, pin: 10, value: 0 }
+  - expect-pin: { part-id: uno, pin: A1, value: 1 }
+
+  # t = 16700 ms: el cicle continua amb normalitat (VERD 16200-20200, la peticio
+  # de vianants s'ha esborrat en acabar el vermell).
+  - delay: 3600ms
+  - expect-pin: { part-id: uno, pin: 10, value: 1 }
+  - expect-pin: { part-id: uno, pin: 8, value: 0 }
+  - expect-pin: { part-id: uno, pin: A1, value: 0 }
+  - expect-pin: { part-id: uno, pin: A3, value: 1 }

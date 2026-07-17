@@ -1,0 +1,33 @@
+# SA1-B ampliat: comportament observable dels tres modes en ordre.
+# Linia de temps (pin 13), cicle de 7280 ms:
+#   modeRapid(5):      5 x (H200/L200)      -> 0-2000
+#   modeLent(3):       3 x (H700/L700)      -> 2000-6200
+#   modeEmergencia(3): 3 x (H80/L80) + L600 -> 6200-7280
+# Els flaixos de 80 ms son massa curts per mostrejar-los amb marge fiable:
+# es valida la pausa llarga d'emergencia i el reinici del cicle.
+name: 'SA1-B modes rapid lent emergencia en ordre'
+version: 1
+author: 'validacio'
+steps:
+  # Mode rapid (200/200): t=150 HIGH, t=350 LOW, t=550 HIGH
+  - delay: 150ms
+  - expect-pin: { part-id: uno, pin: 13, value: 1 }
+  - delay: 200ms
+  - expect-pin: { part-id: uno, pin: 13, value: 0 }
+  - delay: 200ms
+  - expect-pin: { part-id: uno, pin: 13, value: 1 }
+  # Mode lent (700/700): t=2350 HIGH (2000-2700), t=3050 LOW, t=3750 HIGH
+  - delay: 1800ms
+  - expect-pin: { part-id: uno, pin: 13, value: 1 }
+  - delay: 700ms
+  - expect-pin: { part-id: uno, pin: 13, value: 0 }
+  - delay: 700ms
+  - expect-pin: { part-id: uno, pin: 13, value: 1 }
+  # Pausa llarga d'emergencia: t=6980, mig de la finestra LOW 6680-7280
+  - delay: 3230ms
+  - expect-pin: { part-id: uno, pin: 13, value: 0 }
+  # Reinici del cicle (mode rapid altre cop): t=7430 HIGH (7280-7480), t=7630 LOW
+  - delay: 450ms
+  - expect-pin: { part-id: uno, pin: 13, value: 1 }
+  - delay: 200ms
+  - expect-pin: { part-id: uno, pin: 13, value: 0 }

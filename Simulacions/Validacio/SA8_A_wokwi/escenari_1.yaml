@@ -1,0 +1,13 @@
+name: 'SA8-A ESP32 cami felic - webhook amb confirmacio HTTP'
+version: 1
+author: 'validacio'
+steps:
+  # Arrencada + connexio a Wokwi-GUEST. Interval escurcat a 5 s a la copia.
+  - wait-serial: 'Estacio meteo ESP32'
+  # Fita 1: la dada surt de manera continua pel monitor serie amb marca de temps.
+  - wait-serial: 't=5 s  valor='
+  # Fita 2: cada enviament comprova el codi HTTP com a confirmacio (200 o 302).
+  - wait-serial: 'CONFIRMAT: dada rebuda (HTTP'
+  # Fita 3: enviament automatic periodic (segon cicle amb marca de temps nova).
+  - wait-serial: 't=1'
+  - wait-serial: 'CONFIRMAT: dada rebuda (HTTP'

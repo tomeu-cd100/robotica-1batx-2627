@@ -1,0 +1,20 @@
+[
+  {
+    "escenari": "escenari_1.yaml",
+    "timeout_ms": 60000,
+    "descripcio": "Sensor d'aparcament ampliat, tram LLUNY (80 cm): la distància surt contínua pel Monitor Sèrie (fita 1), el codi anuncia «lluny, sense avís» i el LED (pin 8) i el piezo (pin 6) queden en repòs.",
+    "diagrama": "diagram_80cm.json"
+  },
+  {
+    "escenari": "escenari_2.yaml",
+    "timeout_ms": 60000,
+    "descripcio": "Sensor d'aparcament ampliat, tram MIG (20 cm): l'interval entre bips es calcula amb map() i es publica pel Monitor Sèrie abans d'escoltar res (fita 2), i es recalcula a cada cicle.",
+    "diagrama": "diagram_20cm.json"
+  },
+  {
+    "escenari": "escenari_3.yaml",
+    "timeout_ms": 60000,
+    "descripcio": "Sensor d'aparcament ampliat, tram A PROP (5 cm): per sota la distància crítica passa a so continu (fita 3) amb el LED fix encès al pin 8.",
+    "diagrama": "diagram_5cm.json"
+  }
+]

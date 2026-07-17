@@ -1,0 +1,8 @@
+[
+  {
+    "escenari": "escenari_1.yaml",
+    "timeout_ms": 60000,
+    "descripcio": "Instrument ampliat: el potenciòmetre regula el PWM del pin 9 (extrems 255→HIGH i 0→LOW deterministes) mentre el polsador amb debounce compta «Premudes: 1» i «Premudes: 2» pel Monitor Sèrie — les dues entrades conviuen al mateix loop() sense bloquejar-se.",
+    "diagrama": "diagram.json"
+  }
+]

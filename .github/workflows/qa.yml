@@ -86,4 +86,5 @@ jobs:
           sketch-paths: |
             - Classes/SA8/codi/04_esp32_telemetria
             - Reptes/Solucionari/SA8/A_estacio_meteo_esp32
+            - Simulacions/Validacio/SA8_A_wokwi/src
           verbose: false

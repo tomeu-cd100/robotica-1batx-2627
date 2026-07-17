@@ -1,0 +1,21 @@
+# SA1-A ampliat: fita 3 (estabilitat durant 1 minut).
+# Cicle del far principal: 4200 ms (comenca a 0, 4200, 8400... 29400 (x7), 58800 (x14)).
+# FAR2 commuta cada 250 ms des de t=0. Es mostreja a mitjan simulacio (t~30 s)
+# i passat el minut (t~60 s): si algun dels dos patrons es desfases, la fase
+# absoluta ja no quadraria i l'expect-pin fallaria.
+name: 'SA1-A fita 3 estabilitat 60 s'
+version: 1
+author: 'validacio'
+steps:
+  # t=30150: cicle 7 del principal (llum llarga 29400-31400); FAR2 LOW (30000-30250)
+  - delay: 30150ms
+  - expect-pin: { part-id: uno, pin: 13, value: 1 }
+  - expect-pin: { part-id: uno, pin: 12, value: 0 }
+  # t=59900: cicle 14 (llum llarga 58800-60800); FAR2 HIGH (59750-60000)
+  - delay: 29750ms
+  - expect-pin: { part-id: uno, pin: 13, value: 1 }
+  - expect-pin: { part-id: uno, pin: 12, value: 1 }
+  # t=60150: el principal segueix la llum llarga i FAR2 ha commutat (LOW 60000-60250)
+  - delay: 250ms
+  - expect-pin: { part-id: uno, pin: 13, value: 1 }
+  - expect-pin: { part-id: uno, pin: 12, value: 0 }

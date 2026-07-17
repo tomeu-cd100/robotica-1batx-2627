@@ -1,0 +1,14 @@
+name: 'SA3-A LDR real - lectura continua i map invers correcte'
+version: 1
+author: 'validacio'
+steps:
+  # LIMITS del modul wokwi-photoresistor-sensor:
+  #  - la sortida AO es INVERTIDA respecte al divisor LDR-10k del repte:
+  #    mes lux -> lectura mes BAIXA (lux per defecte -> 250; lux=10000 -> 39),
+  #  - el rang observat no arriba als llindars 350/450 del codi.
+  # Amb el modul validem la fita 1 (lectura continua al Monitor Serie) i els
+  # dos punts del map() invers; les fites 2-3 es validen a escenari_2 amb pot.
+  - delay: 500ms
+  - wait-serial: 'llum=250  brillantor=73'                 # fita 1 + punt 1 del map (250 -> 73)
+  - set-control: { part-id: ldr1, control: lux, value: 10000 }
+  - wait-serial: 'llum=39  brillantor=227'                 # punt 2 del map (39 -> 227), sempre dins 0-255

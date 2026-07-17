@@ -1,0 +1,14 @@
+{
+  "repte": "SA4-C · Brac/dispensador amb servo (ampliat)",
+  "firmware": "../build/SA4_C/ampliat.ino.hex",
+  "nota": "El firmware nomes te sortides de servo (PWM 50 Hz als pins 9 i 10), sense LEDs ni Serial: cap fita es pot assertar de manera fiable amb els passos de wokwi-cli. L'execucio es una prova de fum; la validacio de les fites es fa visualment a Wokwi web (vegeu README).",
+  "execucions": [
+    {
+      "id": "fum-una-premuda",
+      "diagrama": "diagram.json",
+      "escenari": "escenari_1.yaml",
+      "timeout_ms": 12000,
+      "descripcio": "Prova de fum: arrencada, potenciometre en mode repos, una premuda curta que dispara els 3 cicles agafa-i-deixa (6,6 s bloquejats) i retorn al mode repos sense penjar-se (sanitat al pin 13)."
+    }
+  ]
+}

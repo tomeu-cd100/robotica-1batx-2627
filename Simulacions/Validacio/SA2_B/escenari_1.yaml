@@ -1,0 +1,42 @@
+name: 'SA2-B roda de color per segments'
+version: 1
+author: 'validacio'
+steps:
+  # El sketch fa 5 trams de 256 passos x 8 ms = 2048 ms cadascun (cicle total 10240 ms):
+  #   0-2048     vermell->blau  (G = 0 tot el tram)
+  #   2048-4096  blau->vermell  (G = 0 tot el tram)
+  #   4096-6144  vermell->verd  (B = 0 tot el tram)
+  #   6144-8192  verd->blau     (R = 0 tot el tram)
+  #   8192-10240 blau->vermell  (G = 0 tot el tram)
+  # Els canals intermedis son PWM (estat instantani no determinista): nomes es
+  # comprova el canal que ha d'estar APAGAT (analogWrite 0 = LOW constant),
+  # mostrejant al mig de cada tram (marge ~1000 ms per l'arrencada).
+
+  # t = 2000 ms: tram vermell->blau, canal verd (pin 10) apagat.
+  - delay: 2000ms
+  - expect-pin: { part-id: uno, pin: 10, value: 0 }
+
+  # t = 3072 ms: tram blau->vermell (tornada), canal verd apagat.
+  - delay: 1072ms
+  - expect-pin: { part-id: uno, pin: 10, value: 0 }
+
+  # t = 5120 ms: tram vermell->verd, canal blau (pin 11) apagat.
+  - delay: 2048ms
+  - expect-pin: { part-id: uno, pin: 11, value: 0 }
+
+  # t = 7168 ms: tram verd->blau, canal vermell (pin 9) apagat.
+  - delay: 2048ms
+  - expect-pin: { part-id: uno, pin: 9, value: 0 }
+
+  # t = 9216 ms: tram blau->vermell, canal verd apagat.
+  - delay: 2048ms
+  - expect-pin: { part-id: uno, pin: 10, value: 0 }
+
+  # Segon cicle: el patro es repeteix identic (torna al color inicial sense tall).
+  # t = 12240 ms: mig del 1r tram del 2n cicle (10240-12288), verd apagat.
+  - delay: 3024ms
+  - expect-pin: { part-id: uno, pin: 10, value: 0 }
+
+  # t = 15360 ms: mig del 3r tram del 2n cicle (14336-16384), blau apagat.
+  - delay: 3120ms
+  - expect-pin: { part-id: uno, pin: 11, value: 0 }

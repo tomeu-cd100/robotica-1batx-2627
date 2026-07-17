@@ -1,0 +1,11 @@
+name: 'SA3-B tram mig amb interval calculat per map (20 cm)'
+version: 1
+author: 'validacio'
+steps:
+  # Variant diagram_20cm.json: distancia fixa de 20 cm (entre PROP = 10 i LLUNY = 30).
+  - delay: 500ms
+  - wait-serial: 'distancia='                              # fita 1: distancia pel Monitor Serie
+  - wait-serial: 'interval='                               # fita 2: interval de bip calculat amb map()
+  # L'interval es recalcula i es publica a cada cicle (bip + LED intermitent).
+  - wait-serial: 'interval='
+  - wait-serial: 'interval='

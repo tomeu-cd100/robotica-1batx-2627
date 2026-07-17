@@ -1,0 +1,20 @@
+{ "version": 1, "author": "validacio", "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 0, "left": 0, "attrs": {} },
+    { "type": "wokwi-hc-sr04", "id": "ultra1", "top": -200, "left": 110, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "pot_kp", "top": -120, "left": 260, "attrs": {} },
+    { "type": "wokwi-pushbutton", "id": "btn1", "top": 130, "left": 280, "attrs": { "color": "blue" } },
+    { "type": "wokwi-led", "id": "led1", "top": -110, "left": 110, "attrs": { "color": "white" } },
+    { "type": "wokwi-resistor", "id": "r1", "top": 20, "left": 110, "attrs": { "value": "220" } }
+  ],
+  "connections": [
+    [ "ultra1:VCC", "uno:5V", "red", [] ],
+    [ "ultra1:TRIG", "uno:12", "orange", [] ],
+    [ "ultra1:ECHO", "uno:11", "yellow", [] ],
+    [ "ultra1:GND", "uno:GND.1", "black", [] ],
+    [ "pot_kp:VCC", "uno:5V", "red", [] ],
+    [ "pot_kp:GND", "uno:GND.1", "black", [] ],
+    [ "pot_kp:SIG", "uno:A0", "green", [] ],
+    [ "uno:2", "btn1:1.l", "blue", [] ], [ "btn1:2.l", "uno:GND.3", "black", [] ],
+    [ "uno:5", "r1:1", "purple", [] ], [ "r1:2", "led1:A", "purple", [] ], [ "led1:C", "uno:GND.2", "black", [] ]
+  ] }

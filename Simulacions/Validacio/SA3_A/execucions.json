@@ -1,0 +1,14 @@
+[
+  {
+    "escenari": "escenari_1.yaml",
+    "timeout_ms": 60000,
+    "descripcio": "LDR real: la lectura crua surt contínua pel Monitor Sèrie (fita 1) i el map() invers és correcte en dos punts (250→73, 39→227), sempre dins 0-255. Límit: el mòdul LDR de Wokwi té la polaritat invertida respecte al divisor del repte i no arriba als llindars 350/450.",
+    "diagrama": "diagram.json"
+  },
+  {
+    "escenari": "escenari_2.yaml",
+    "timeout_ms": 60000,
+    "descripcio": "Potenciòmetre a A0 (rang complet, mateix firmware): amb llum plena la brillantor queda clampada a 0 per constrain() i el pin 9 apagat del tot; a les fosques brillantor=255 i pin encès continu; en tornar la llum s'apaga (fites 2 i 3).",
+    "diagrama": "diagram_pot.json"
+  }
+]

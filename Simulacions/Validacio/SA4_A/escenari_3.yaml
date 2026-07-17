@@ -1,0 +1,49 @@
+name: 'SA4-A estres, 10 cicles seguits sense incoherencia LED-barrera'
+version: 1
+author: 'validacio'
+# Diagrama: diagram_10cm.json (vehicle sempre a 10 cm -> la barrera cicla sola).
+# Periode d un cicle: ~4517 ms (obrir 728 + obert 3000 + tancar 728 + espera 60 + mesura ~1).
+# Finestra verda de cada cicle k: [k*4517+730, k*4517+4460] (marge > 1.8 s al punt mig).
+# Finestra vermella entre cicles: [k*4517+4460, k*4517+5250] (s asserta nomes als 3 primers
+# cicles, on la deriva acumulada encara es negligible respecte al marge de ~390 ms).
+# Fita 3: 10 obertures/tancaments seguits amb el semafor sempre coherent.
+steps:
+  - delay: 2600ms
+  - expect-pin: { part-id: uno, pin: 7, value: 1 }   # cicle 1 obert
+  - expect-pin: { part-id: uno, pin: 8, value: 0 }
+  - delay: 2250ms
+  - expect-pin: { part-id: uno, pin: 8, value: 1 }   # cicle 1 tancat
+  - expect-pin: { part-id: uno, pin: 7, value: 0 }
+  - delay: 2267ms
+  - expect-pin: { part-id: uno, pin: 7, value: 1 }   # cicle 2 obert
+  - expect-pin: { part-id: uno, pin: 8, value: 0 }
+  - delay: 2250ms
+  - expect-pin: { part-id: uno, pin: 8, value: 1 }   # cicle 2 tancat
+  - expect-pin: { part-id: uno, pin: 7, value: 0 }
+  - delay: 2267ms
+  - expect-pin: { part-id: uno, pin: 7, value: 1 }   # cicle 3 obert
+  - expect-pin: { part-id: uno, pin: 8, value: 0 }
+  - delay: 2250ms
+  - expect-pin: { part-id: uno, pin: 8, value: 1 }   # cicle 3 tancat
+  - expect-pin: { part-id: uno, pin: 7, value: 0 }
+  - delay: 2267ms
+  - expect-pin: { part-id: uno, pin: 7, value: 1 }   # cicle 4 obert
+  - expect-pin: { part-id: uno, pin: 8, value: 0 }
+  - delay: 4517ms
+  - expect-pin: { part-id: uno, pin: 7, value: 1 }   # cicle 5 obert
+  - expect-pin: { part-id: uno, pin: 8, value: 0 }
+  - delay: 4517ms
+  - expect-pin: { part-id: uno, pin: 7, value: 1 }   # cicle 6 obert
+  - expect-pin: { part-id: uno, pin: 8, value: 0 }
+  - delay: 4517ms
+  - expect-pin: { part-id: uno, pin: 7, value: 1 }   # cicle 7 obert
+  - expect-pin: { part-id: uno, pin: 8, value: 0 }
+  - delay: 4517ms
+  - expect-pin: { part-id: uno, pin: 7, value: 1 }   # cicle 8 obert
+  - expect-pin: { part-id: uno, pin: 8, value: 0 }
+  - delay: 4517ms
+  - expect-pin: { part-id: uno, pin: 7, value: 1 }   # cicle 9 obert
+  - expect-pin: { part-id: uno, pin: 8, value: 0 }
+  - delay: 4517ms
+  - expect-pin: { part-id: uno, pin: 7, value: 1 }   # cicle 10 obert
+  - expect-pin: { part-id: uno, pin: 8, value: 0 }

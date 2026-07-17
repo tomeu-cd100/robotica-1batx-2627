@@ -1,0 +1,4 @@
+[wokwi]
+version = 1
+firmware = "ampliat.ino.hex"
+elf = "ampliat.ino.elf"

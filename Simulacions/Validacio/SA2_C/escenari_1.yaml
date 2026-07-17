@@ -1,0 +1,30 @@
+name: 'SA2-C extrems del RGB i de la barra'
+version: 1
+author: 'validacio'
+steps:
+  # Fita 1: verd fix amb nivell baix, vermell fix amb nivell alt.
+  # A nivell 0: analogWrite R=0 (LOW constant), G=255 (HIGH constant), B=0.
+  # A nivell 4: analogWrite R=255 (HIGH constant), G=0 (LOW constant), B=0.
+  # Extrems 0/255 son deterministes amb expect-pin (no hi ha PWM intermig).
+  # El sketch imprimeix la linia despres de fixar els pins i despres fa delay(300):
+  # 100 ms despres de la linia els pins encara aguanten.
+
+  - wait-serial: 'nivell=0  vermell=0  verd=255'
+  - delay: 100ms
+  - expect-pin: { part-id: uno, pin: 4, value: 0 }
+  - expect-pin: { part-id: uno, pin: 5, value: 0 }
+  - expect-pin: { part-id: uno, pin: 6, value: 0 }
+  - expect-pin: { part-id: uno, pin: 7, value: 0 }
+  - expect-pin: { part-id: uno, pin: 9, value: 0 }
+  - expect-pin: { part-id: uno, pin: 10, value: 1 }
+  - expect-pin: { part-id: uno, pin: 11, value: 0 }
+
+  - wait-serial: 'nivell=4  vermell=255  verd=0'
+  - delay: 100ms
+  - expect-pin: { part-id: uno, pin: 4, value: 1 }
+  - expect-pin: { part-id: uno, pin: 5, value: 1 }
+  - expect-pin: { part-id: uno, pin: 6, value: 1 }
+  - expect-pin: { part-id: uno, pin: 7, value: 1 }
+  - expect-pin: { part-id: uno, pin: 9, value: 1 }
+  - expect-pin: { part-id: uno, pin: 10, value: 0 }
+  - expect-pin: { part-id: uno, pin: 11, value: 0 }

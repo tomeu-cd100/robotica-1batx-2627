@@ -1,0 +1,14 @@
+{ "version": 1, "author": "validacio", "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 0, "left": 0, "attrs": {} },
+    { "type": "wokwi-servo", "id": "servo1", "top": -180, "left": 220, "attrs": {} },
+    { "type": "wokwi-servo", "id": "servo2", "top": -60, "left": 220, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "pot1", "top": 100, "left": 120, "attrs": { "value": "0" } },
+    { "type": "wokwi-pushbutton", "id": "btn1", "top": 100, "left": 300, "attrs": { "color": "green" } }
+  ],
+  "connections": [
+    [ "servo1:PWM", "uno:9", "green", [] ], [ "servo1:V+", "uno:5V", "red", [] ], [ "servo1:GND", "uno:GND.1", "black", [] ],
+    [ "servo2:PWM", "uno:10", "green", [] ], [ "servo2:V+", "uno:5V", "red", [] ], [ "servo2:GND", "uno:GND.2", "black", [] ],
+    [ "pot1:VCC", "uno:5V", "red", [] ], [ "pot1:GND", "uno:GND.3", "black", [] ], [ "pot1:SIG", "uno:A0", "blue", [] ],
+    [ "uno:2", "btn1:1.l", "purple", [] ], [ "btn1:2.l", "uno:GND.3", "black", [] ]
+  ] }

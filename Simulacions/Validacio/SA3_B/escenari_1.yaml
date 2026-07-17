@@ -1,0 +1,14 @@
+name: 'SA3-B tram lluny sense cap avis (80 cm)'
+version: 1
+author: 'validacio'
+steps:
+  # Variant diagram_80cm.json: distancia fixa de 80 cm (> LLUNY = 30 cm).
+  - delay: 500ms
+  - wait-serial: 'distancia='                              # fita 1: distancia continua pel Monitor Serie
+  - wait-serial: '(lluny, sense avis)'                     # tram lluny detectat
+  - delay: 300ms
+  - expect-pin: { part-id: uno, pin: 8, value: 0 }      # LED apagat (digitalWrite LOW mantingut)
+  - expect-pin: { part-id: uno, pin: 6, value: 0 }      # piezo en silenci (noTone)
+  # Es mante estable: la lectura es repeteix cada cicle sense canviar de tram.
+  - wait-serial: '(lluny, sense avis)'
+  - expect-pin: { part-id: uno, pin: 8, value: 0 }

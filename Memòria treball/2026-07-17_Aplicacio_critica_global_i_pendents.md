@@ -146,12 +146,15 @@ També s'han aplicat els pendents «no bloquejants» principals:
 - També: script `tools/reclonar_altra_maquina.ps1` (reclonatge segur d'un sol
   clic per a les altres màquines; one-liner amb iwr|iex al comentari).
 
-## Pendents que queden (després de les CINC tandes)
+## Pendents que queden (després de les SIS tandes)
 
-- **Provar al maquinari real** les solucions ⭐⭐⭐ corregides (compilen i estan
-  alineades amb les fites, però l'avís del solucionari segueix vigent: validar a
-  placa/Tinkercad, especialment SA7 amb els pins del 3dBot i el nearest centroid
-  de SA8-C).
+- ~~Provar en simulació les solucions ⭐⭐⭐~~ ✅ FET (17-07, 6a tanda): 27/27
+  execucions wokwi-cli (SA1-SA4, SA6, SA8-A ESP32), SA8-C validat amb harness
+  d'escriptori (6/6 mostres noves) i SA5/SA8-B al simulador de micro:bit; cap
+  error de codi trobat. Vegeu `2026-07-17_Validacio_simulador_reptes_tres_estrelles.md`.
+- **Maquinari real (setembre)**: SA7 amb els pins del 3dBot (no simulable),
+  ràdio física micro:bit, WiFi real de l'ESP32 (+ Google Form, resposta 302) i
+  comprovació del mòdul LDR físic (el simulat té la polaritat invertida).
 - **Publicar (des de DRAFT)** els 2 materials nous del Classroom quan comenci la SA8.
 - ~~Ullada visual del docent als 17 PDF imprimibles~~ ✅ FETA (17-07): «tot
   perfecte».

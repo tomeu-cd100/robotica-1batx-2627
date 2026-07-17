@@ -1,0 +1,28 @@
+name: 'SA3-A constrain i extrems amb potenciometre a A0'
+version: 1
+author: 'validacio'
+steps:
+  # Variant amb pot a A0 (diagram_pot.json): rang 0-1023 complet, el mateix
+  # firmware. El modul LDR de Wokwi satura a ~250 i no arriba als llindars.
+  # NOTA: la histeresi (ampliacio 2) no es observable per pin: entre 350 i 450
+  # la brillantor ja es 0 pel constrain, encesa o no. No es una fita del three-star.
+  - delay: 500ms
+
+  # Llum plena (pot 0.5 ~ 511 > 450): brillantor clampada a 0 i LED apagat del tot.
+  - set-control: { part-id: pot1, control: position, value: 0.5 }
+  - wait-serial: 'brillantor=0'                            # fita 2: constrain mai fora de 0-255
+  - delay: 250ms
+  - expect-pin: { part-id: uno, pin: 9, value: 0 }         # fita 3: apagat amb llum plena
+
+  # Fosca total (pot 0.0 -> lectura 0): brillantor=255 -> analogWrite(255) = HIGH continu.
+  - set-control: { part-id: pot1, control: position, value: 0 }
+  - wait-serial: 'brillantor=255'                          # fita 3: maxim a les fosques
+  - delay: 250ms
+  - expect-pin: { part-id: uno, pin: 9, value: 1 }
+
+  # Torna la llum plena: s'apaga de nou (els valors intermedis 73/227 de
+  # l'escenari_1 evidencien la transicio continua de la fita 3).
+  - set-control: { part-id: pot1, control: position, value: 0.6 }
+  - wait-serial: 'brillantor=0'
+  - delay: 250ms
+  - expect-pin: { part-id: uno, pin: 9, value: 0 }

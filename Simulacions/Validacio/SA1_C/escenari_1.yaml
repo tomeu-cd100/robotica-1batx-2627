@@ -1,0 +1,40 @@
+# SA1-C ampliat: inicials "TC" en Morse amb pauses reglamentaries.
+# PUNT=250 ms, RATLLA=750 ms, pausa entre simbols 1 unitat, entre lletres 3, entre repeticions 7.
+# Linia de temps (pin 13), cicle de 6000 ms:
+#   T: ratlla H 0-750, L 750-1000 (+PAUSA_LLETRA) -> LOW total 750-1500 (3 unitats)
+#   C: ratlla H 1500-2250, L-2500 | punt H 2500-2750, L-3000 |
+#      ratlla H 3000-3750, L-4000 | punt H 4000-4250, L-4500 |
+#      +PAUSA_PARAULA -> LOW total 4250-6000 (7 unitats)
+#   Repeticio: T torna a comencar a 6000.
+name: 'SA1-C morse TC pauses lletra i paraula'
+version: 1
+author: 'validacio'
+steps:
+  # T: la ratlla es llarga (HIGH tant a t=150 com a t=600, dins 0-750)
+  - delay: 150ms
+  - expect-pin: { part-id: uno, pin: 13, value: 1 }
+  - delay: 450ms
+  - expect-pin: { part-id: uno, pin: 13, value: 1 }
+  # Pausa de lletra: t=1125, mig de la finestra LOW 750-1500 (3 unitats)
+  - delay: 525ms
+  - expect-pin: { part-id: uno, pin: 13, value: 0 }
+  # C, primera ratlla: t=1875 (1500-2250)
+  - delay: 750ms
+  - expect-pin: { part-id: uno, pin: 13, value: 1 }
+  # C, primer punt: es curt (HIGH a t=2650 dins 2500-2750, LOW 250 ms despres)
+  - delay: 775ms
+  - expect-pin: { part-id: uno, pin: 13, value: 1 }
+  - delay: 250ms
+  - expect-pin: { part-id: uno, pin: 13, value: 0 }
+  # C, segona ratlla: t=3375 (3000-3750)
+  - delay: 475ms
+  - expect-pin: { part-id: uno, pin: 13, value: 1 }
+  # C, segon punt: t=4150 (4000-4250)
+  - delay: 775ms
+  - expect-pin: { part-id: uno, pin: 13, value: 1 }
+  # Pausa de paraula (7 unitats): t=5250, ben endins de la finestra LOW 4250-6000
+  - delay: 1100ms
+  - expect-pin: { part-id: uno, pin: 13, value: 0 }
+  # El missatge es repeteix en bucle: la T torna a t=6375 (6000-6750)
+  - delay: 1125ms
+  - expect-pin: { part-id: uno, pin: 13, value: 1 }

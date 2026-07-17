@@ -1,0 +1,8 @@
+[
+  {
+    "escenari": "escenari_1.yaml",
+    "timeout_ms": 60000,
+    "descripcio": "Termòstat ampliat: amb la consigna al mig recorre CALOR→REPOS→FRED→REPOS→CALOR movent el pot de temperatura; comprova la histèresi de cada mode (dins la banda morta l'actuador actiu es manté encès i des de REPOS no s'engega res) i que després de cada transició mai hi ha els dos actuadors (pins 9 i 10) encesos alhora.",
+    "diagrama": "diagram.json"
+  }
+]

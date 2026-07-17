@@ -1,0 +1,27 @@
+name: 'SA4-B canvi de sentit amb el polsador entre cicles'
+version: 1
+author: 'validacio'
+# Potenciometre fix a 1023 (attrs) -> cicles de 4.56 s (rampa 1.53 + mante 1.5 + rampa 1.53).
+# El polsador es mante premut de t=2.0s a t=6.0s: nomes cobreix UNA frontera de cicle
+# (t=4.56s), aixi actualitzaSentit() inverteix el sentit exactament un cop.
+# Cicle 2 (invertit): rampa 4.60..6.13, mante 6.13..7.63 (pin 5 HIGH constant).
+steps:
+  - delay: 1000ms
+  # t=1000 ms: cicle 1 endavant
+  - expect-pin: { part-id: uno, pin: 7, value: 1 }
+  - expect-pin: { part-id: uno, pin: 8, value: 0 }
+  - delay: 1000ms
+  # t=2000 ms: premem i mantenim el polsador (INPUT_PULLUP, pin 2 a GND)
+  - set-control: { part-id: btn1, control: pressed, value: 1 }
+  - delay: 3500ms
+  # t=5500 ms: el cicle 2 ja gira enrere (IN1/IN2 intercanviats)
+  - expect-pin: { part-id: uno, pin: 7, value: 0 }
+  - expect-pin: { part-id: uno, pin: 8, value: 1 }
+  - delay: 500ms
+  # t=6000 ms: deixem anar el polsador abans de la frontera seguent (t=9.16s)
+  - set-control: { part-id: btn1, control: pressed, value: 0 }
+  - delay: 900ms
+  # t=6900 ms (fase mante del cicle 2): velocitat plena en sentit invers
+  - expect-pin: { part-id: uno, pin: 5, value: 1 }
+  - expect-pin: { part-id: uno, pin: 7, value: 0 }
+  - expect-pin: { part-id: uno, pin: 8, value: 1 }

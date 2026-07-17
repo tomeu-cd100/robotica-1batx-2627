@@ -1,0 +1,24 @@
+name: 'SA4-C prova de fum, una premuda dispara els 3 cicles'
+version: 1
+author: 'validacio'
+# LIMIT IMPORTANT: aquest firmware nomes te sortides de servo (pins 9 i 10, polsos
+# PWM de 50 Hz) i cap LED ni Serial. Un expect-pin instantani sobre un pin de servo
+# no es fiable i l angle NO es pot assertar per escenari: aquest escenari es una
+# PROVA DE FUM deterministica (la simulacio arrenca, accepta la premuda que engega
+# els 3 cicles de dispensaDosi -> 3 x 2.2 s = 6.6 s bloquejats -- i sobreviu).
+# El pin 13 (mai usat pel firmware) fa d assercio de sanitat: si el programa es
+# pengues o el binari fos un altre, res no garanteix que segueixi a 0.
+steps:
+  - delay: 200ms
+  - expect-pin: { part-id: uno, pin: 13, value: 0 }
+  # mode repos: el potenciometre mou la base (nomes visible a Wokwi web)
+  - set-control: { part-id: pot1, control: position, value: 0.5 }
+  - delay: 300ms
+  # t=500 ms: premuda curta -> flanc de baixada amb antirebot -> 3 x dispensaDosi()
+  - set-control: { part-id: btn1, control: pressed, value: 1 }
+  - delay: 100ms
+  - set-control: { part-id: btn1, control: pressed, value: 0 }
+  # els 3 cicles bloquegen el loop ~6.6 s; esperem que acabin i que el programa
+  # torni al mode repos sense penjar-se
+  - delay: 7000ms
+  - expect-pin: { part-id: uno, pin: 13, value: 0 }

@@ -1,0 +1,25 @@
+name: 'SA4-A deteccio, semafor coherent i verd nomes en acabar'
+version: 1
+author: 'validacio'
+# Diagrama: diagram_10cm.json (vehicle a 10 cm -> deteccio immediata).
+# Cronologia del firmware (sense Serial, timing determinista):
+#   t=0        estat inicial: tancada -> vermell(8)=1, verd(7)=0
+#   t=0..0.73s obertura suau (91 passos x 8 ms); el semafor NO canvia fins al final
+#   t=0.73s    oberta=true -> verd=1, vermell=0 (finestra verda fins ~4.46s, inclou el tancament)
+#   t=4.46s    oberta=false -> vermell=1, verd=0
+steps:
+  - delay: 100ms
+  - expect-pin: { part-id: uno, pin: 8, value: 1 }
+  - expect-pin: { part-id: uno, pin: 7, value: 0 }
+  - delay: 300ms
+  # t=400 ms: servo a mig cami d obrir -> el verd ENCARA ha d estar apagat (fita 2)
+  - expect-pin: { part-id: uno, pin: 7, value: 0 }
+  - expect-pin: { part-id: uno, pin: 8, value: 1 }
+  - delay: 1600ms
+  # t=2000 ms: barrera oberta (finestra verda 0.73s-4.46s)
+  - expect-pin: { part-id: uno, pin: 7, value: 1 }
+  - expect-pin: { part-id: uno, pin: 8, value: 0 }
+  - delay: 2900ms
+  # t=4900 ms: barrera tancada de nou (finestra vermella 4.46s-5.25s)
+  - expect-pin: { part-id: uno, pin: 8, value: 1 }
+  - expect-pin: { part-id: uno, pin: 7, value: 0 }

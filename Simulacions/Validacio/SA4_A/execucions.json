@@ -1,0 +1,28 @@
+{
+  "repte": "SA4-A · Barrera automatica (ampliat)",
+  "firmware": "../build/SA4_A/ampliat.ino.hex",
+  "nota": "L'HC-SR04 no te control d'escenari a wokwi-cli: la distancia es fixa per variant de diagrama. Abans de cada execucio, copieu el fitxer del camp 'diagrama' sobre diagram.json (o passeu-lo com a diagrama del projecte).",
+  "execucions": [
+    {
+      "id": "deteccio-semafor",
+      "diagrama": "diagram_10cm.json",
+      "escenari": "escenari_1.yaml",
+      "timeout_ms": 10000,
+      "descripcio": "Vehicle a 10 cm: vermell inicial, verd apagat a mig moviment (fita 2), verd amb barrera oberta i vermell en tancar (variable d'estat unica, fita 1)."
+    },
+    {
+      "id": "sense-vehicle",
+      "diagrama": "diagram.json",
+      "escenari": "escenari_2.yaml",
+      "timeout_ms": 8000,
+      "descripcio": "Vehicle a 100 cm: la barrera no s'obre mai i el vermell queda estable (control negatiu del llindar de 15 cm)."
+    },
+    {
+      "id": "estres-10-cicles",
+      "diagrama": "diagram_10cm.json",
+      "escenari": "escenari_3.yaml",
+      "timeout_ms": 50000,
+      "descripcio": "Prova d'estres de la fita 3: 10 cicles d'obertura/tancament seguits amb el semafor coherent a cada cicle (verd als 10; vermell verificat als 3 primers)."
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+name: 'SA4-B sequencia accelera-mante-frena amb velocitat del potenciometre'
+version: 1
+author: 'validacio'
+# El potenciometre comenca a 1023 (attrs del diagrama) -> objectiu 255 des del 1r cicle.
+# Cronologia deterministica del cicle 1 (ENA=5, IN1=7, IN2=8):
+#   t=0..1.53s   accelera: rampa 0->255 (51 passos x 30 ms); IN1=1/IN2=0 des de ~1 ms
+#   t=1.53..3.03 mante: analogWrite(5,255) -> pin 5 HIGH constant
+#   t=3.03..4.56 frena: rampa 255->0; acaba amb analogWrite(5,0) -> pin 5 LOW constant
+# A t=2.2s posem el potenciometre a 0: el cicle 2 (t>=4.56s) te objectiu 0 i no
+# escriu res -> el pin 5 queda a 0 (el motor s ha aturat del tot).
+steps:
+  - delay: 500ms
+  # t=500 ms (mig de la rampa): sentit endavant fixat des del primer pas
+  - expect-pin: { part-id: uno, pin: 7, value: 1 }
+  - expect-pin: { part-id: uno, pin: 8, value: 0 }
+  - delay: 1700ms
+  # t=2200 ms (fase mante a 255): PWM 255 = HIGH constant al pin 5
+  - expect-pin: { part-id: uno, pin: 5, value: 1 }
+  - expect-pin: { part-id: uno, pin: 7, value: 1 }
+  - expect-pin: { part-id: uno, pin: 8, value: 0 }
+  - set-control: { part-id: pot1, control: position, value: 0 }
+  - delay: 3300ms
+  # t=5500 ms: frena() ha acabat a 0 i el cicle nou (objectiu 0) no engega res;
+  # el sentit es conserva als pins del pont H
+  - expect-pin: { part-id: uno, pin: 5, value: 0 }
+  - expect-pin: { part-id: uno, pin: 7, value: 1 }
+  - expect-pin: { part-id: uno, pin: 8, value: 0 }

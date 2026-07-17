@@ -1,0 +1,8 @@
+[
+  {
+    "escenari": "escenari_1.yaml",
+    "timeout_ms": 60000,
+    "descripcio": "Llum d'ambient ampliada: comprova l'estructura de la roda de color (quin canal RGB és a zero a cada tram de 2048 ms, durant un cicle sencer i l'inici del segon) amb temporització determinista; els canals en PWM intermedi no són comprovables amb expect-pin.",
+    "diagrama": "diagram.json"
+  }
+]

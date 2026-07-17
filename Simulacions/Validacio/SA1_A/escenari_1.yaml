@@ -1,0 +1,31 @@
+# SA1-A ampliat: fites 1 i 2 del repte estrella.
+# El sketch no fa Serial.print: es valida per mostreig de pins al mig
+# de cada finestra (marge >= 100 ms respecte a qualsevol canvi).
+# Linia de temps (pin 13): HIGH 0-2000, LOW 2000-2400, HIGH 2400-2600, LOW 2600-3000...
+# Linia de temps (pin 12): commuta cada 250 ms (LOW en arrencar, primer canvi a ~250 ms).
+name: 'SA1-A fites 1-2 far secundari simultani'
+version: 1
+author: 'validacio'
+steps:
+  # t=400: dins la llum llarga del far principal, FAR2 a la finestra HIGH 250-500
+  - delay: 400ms
+  - expect-pin: { part-id: uno, pin: 13, value: 1 }
+  - expect-pin: { part-id: uno, pin: 12, value: 1 }
+  # t=650: el principal segueix ences i FAR2 ha canviat (finestra LOW 500-750)
+  - delay: 250ms
+  - expect-pin: { part-id: uno, pin: 13, value: 1 }
+  - expect-pin: { part-id: uno, pin: 12, value: 0 }
+  # t=900: FAR2 torna a HIGH (750-1000) mentre el principal continua ences
+  - delay: 250ms
+  - expect-pin: { part-id: uno, pin: 13, value: 1 }
+  - expect-pin: { part-id: uno, pin: 12, value: 1 }
+  # t=2150: pausa del principal (2000-2400); FAR2 a la finestra LOW 2000-2250
+  - delay: 1250ms
+  - expect-pin: { part-id: uno, pin: 13, value: 0 }
+  - expect-pin: { part-id: uno, pin: 12, value: 0 }
+  # t=2550: primer flaix curt del principal (2400-2600)
+  - delay: 400ms
+  - expect-pin: { part-id: uno, pin: 13, value: 1 }
+  # t=2850: pausa entre flaixos (2600-3000)
+  - delay: 300ms
+  - expect-pin: { part-id: uno, pin: 13, value: 0 }

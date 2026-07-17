@@ -1,0 +1,61 @@
+name: 'SA6-A termostat fred-calor: estats, histeresi i banda morta'
+version: 1
+author: 'validacio'
+steps:
+  # Consigna al mig (0.5 -> analogRead ~511). Llindars amb MARGE=40:
+  #   REPOS -> CALOR si t < 471 ; REPOS -> FRED si t > 551
+  #   CALOR -> REPOS si t >= 511 ; FRED -> REPOS si t <= 511
+  # El loop escriu "estat=... t=... consigna=..." cada ~100 ms.
+  - set-control: { part-id: pot_consigna, control: position, value: 0.5 }
+  - set-control: { part-id: pot_temp, control: position, value: 0.2 }
+  - delay: 400ms
+
+  # t ~ 204 < 471: fa massa fred -> estat CALOR, calefactor (9) ences, ventilador (10) apagat.
+  - wait-serial: 'estat=CALOR'
+  - expect-pin: { part-id: uno, pin: 9, value: 1 }
+  - expect-pin: { part-id: uno, pin: 10, value: 0 }
+
+  # Histeresi del mode calor (fita 2): t ~ 481, DINS la banda morta (471-551) pero
+  # per sota de la consigna (511): el calefactor ha de continuar ences (no s'atura
+  # fins a la consigna). Un codi sense histeresi passaria a REPOS i fallaria aqui.
+  - set-control: { part-id: pot_temp, control: position, value: 0.47 }
+  - delay: 600ms
+  - wait-serial: 'estat=CALOR'
+  - expect-pin: { part-id: uno, pin: 9, value: 1 }
+  - expect-pin: { part-id: uno, pin: 10, value: 0 }
+
+  # t ~ 532 >= consigna: el mode calor s'atura -> REPOS. Banda morta (fita 3):
+  # cap dels dos actuadors ences.
+  - set-control: { part-id: pot_temp, control: position, value: 0.52 }
+  - wait-serial: 'estat=REPOS'
+  - expect-pin: { part-id: uno, pin: 9, value: 0 }
+  - expect-pin: { part-id: uno, pin: 10, value: 0 }
+
+  # t ~ 818 > 551: fa massa calor -> estat FRED, ventilador (10) ences, calefactor (9) apagat.
+  - set-control: { part-id: pot_temp, control: position, value: 0.8 }
+  - wait-serial: 'estat=FRED'
+  - expect-pin: { part-id: uno, pin: 10, value: 1 }
+  - expect-pin: { part-id: uno, pin: 9, value: 0 }
+
+  # Histeresi del mode fred: t ~ 532 (dins la banda morta pero > consigna):
+  # el ventilador continua ences. Des de REPOS aquest valor no engegaria res:
+  # nomes la histeresi explica que segueixi en FRED.
+  - set-control: { part-id: pot_temp, control: position, value: 0.52 }
+  - delay: 600ms
+  - wait-serial: 'estat=FRED'
+  - expect-pin: { part-id: uno, pin: 10, value: 1 }
+  - expect-pin: { part-id: uno, pin: 9, value: 0 }
+
+  # t ~ 491 <= consigna: el mode fred s'atura -> REPOS, tot apagat de nou.
+  - set-control: { part-id: pot_temp, control: position, value: 0.48 }
+  - wait-serial: 'estat=REPOS'
+  - expect-pin: { part-id: uno, pin: 9, value: 0 }
+  - expect-pin: { part-id: uno, pin: 10, value: 0 }
+
+  # Torna a fer fred: la maquina d'estats fa el cicle sencer FRED->REPOS->CALOR
+  # havent travessat TOTA la banda morta (mai s'encenen tots dos alhora:
+  # despres de cada transicio hem comprovat els DOS pins).
+  - set-control: { part-id: pot_temp, control: position, value: 0.2 }
+  - wait-serial: 'estat=CALOR'
+  - expect-pin: { part-id: uno, pin: 9, value: 1 }
+  - expect-pin: { part-id: uno, pin: 10, value: 0 }

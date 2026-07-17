@@ -1,0 +1,14 @@
+[
+  {
+    "escenari": "escenari_1.yaml",
+    "timeout_ms": 60000,
+    "descripcio": "Indicador de nivell ampliat: comprova els dos extrems del LED RGB (verd fix amb nivell 0, vermell fix amb nivell 4) i que la barra és tota apagada / tota encesa en cada cas, sincronitzant amb el Monitor Sèrie.",
+    "diagrama": "diagram.json"
+  },
+  {
+    "escenari": "escenari_2.yaml",
+    "timeout_ms": 60000,
+    "descripcio": "Indicador de nivell ampliat: valida per sèrie tots els valors del map() (0-255, vermell puja quan verd baixa) durant una pujada i una baixada completes del VU-mètre, i que amb nivell 2 la barra té exactament 2 LEDs encesos.",
+    "diagrama": "diagram.json"
+  }
+]

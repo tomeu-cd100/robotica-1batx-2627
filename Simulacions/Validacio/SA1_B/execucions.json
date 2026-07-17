@@ -1,0 +1,8 @@
+[
+  {
+    "escenari": "escenari_1.yaml",
+    "timeout_ms": 60000,
+    "descripcio": "Comportament dels tres modes en ordre (ràpid 200 ms, lent 700 ms, pausa d'emergència) i reinici correcte del cicle: efecte observable de les fites 1-3; l'estructura del codi es revisa a mà",
+    "diagrama": "diagram.json"
+  }
+]

@@ -1,0 +1,8 @@
+[
+  {
+    "escenari": "escenari_1.yaml",
+    "timeout_ms": 60000,
+    "descripcio": "Regulador proporcional ampliat (motor substituït per LED al pin ENA=5): lluny de la consigna la sortida satura a 255 (pin 5 HIGH continu) amb la direcció del pont H correcta (IN1=1, IN2=0); més a prop que la consigna el constrain la clampa a 0; el polsador alterna a tot-o-res (0 a prop, 200 exacte lluny) i torna; amb Kp=0 la sortida és 0 malgrat l'error gran (efecte de Kp).",
+    "diagrama": "diagram.json"
+  }
+]

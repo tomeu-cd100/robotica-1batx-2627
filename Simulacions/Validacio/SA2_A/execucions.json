@@ -1,0 +1,14 @@
+[
+  {
+    "escenari": "escenari_1.yaml",
+    "timeout_ms": 60000,
+    "descripcio": "Semàfor ampliat: comprova les tres fases (verd cotxes, groc, vermell cotxes) mostrejant al mig de cada finestra, i que el semàfor de vianants va coordinat (verd vianants només quan vermell cotxes).",
+    "diagrama": "diagram.json"
+  },
+  {
+    "escenari": "escenari_2.yaml",
+    "timeout_ms": 60000,
+    "descripcio": "Semàfor ampliat: comprova que el segon cicle repeteix les fases amb les mateixes durades (9500 ms per cicle), és a dir que el loop() net no desquadra la seqüència.",
+    "diagrama": "diagram.json"
+  }
+]

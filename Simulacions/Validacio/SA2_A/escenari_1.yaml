@@ -1,0 +1,30 @@
+name: 'SA2-A fases del semafor i vianants coordinats'
+version: 1
+author: 'validacio'
+steps:
+  # Cicle: verd cotxes 4000 ms -> groc 1500 ms -> vermell cotxes 4000 ms (total 9500 ms).
+  # Es mostreja al mig de cada finestra (marge ampli per l'arrencada, ~0-100 ms).
+
+  # t = 2000 ms: fase "cotxes passen" (0-4000). Verd cotxes ences, vianants en vermell.
+  - delay: 2000ms
+  - expect-pin: { part-id: uno, pin: 10, value: 1 }
+  - expect-pin: { part-id: uno, pin: 9, value: 0 }
+  - expect-pin: { part-id: uno, pin: 8, value: 0 }
+  - expect-pin: { part-id: uno, pin: 11, value: 1 }
+  - expect-pin: { part-id: uno, pin: 12, value: 0 }
+
+  # t = 4750 ms: fase "atencio" (4000-5500). Nomes groc cotxes; vianants segueixen en vermell.
+  - delay: 2750ms
+  - expect-pin: { part-id: uno, pin: 9, value: 1 }
+  - expect-pin: { part-id: uno, pin: 10, value: 0 }
+  - expect-pin: { part-id: uno, pin: 8, value: 0 }
+  - expect-pin: { part-id: uno, pin: 11, value: 1 }
+  - expect-pin: { part-id: uno, pin: 12, value: 0 }
+
+  # t = 7500 ms: fase "vianants passen" (5500-9500). Vermell cotxes i verd vianants.
+  - delay: 2750ms
+  - expect-pin: { part-id: uno, pin: 8, value: 1 }
+  - expect-pin: { part-id: uno, pin: 9, value: 0 }
+  - expect-pin: { part-id: uno, pin: 10, value: 0 }
+  - expect-pin: { part-id: uno, pin: 11, value: 0 }
+  - expect-pin: { part-id: uno, pin: 12, value: 1 }

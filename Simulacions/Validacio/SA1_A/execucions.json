@@ -1,0 +1,14 @@
+[
+  {
+    "escenari": "escenari_1.yaml",
+    "timeout_ms": 60000,
+    "descripcio": "Fites 1-2: el far secundari (pin 12) parpelleja amb ritme propi mentre el principal (pin 13) fa la llum llarga i els flaixos curts, sense aturar-se l'un a l'altre",
+    "diagrama": "diagram.json"
+  },
+  {
+    "escenari": "escenari_2.yaml",
+    "timeout_ms": 90000,
+    "descripcio": "Fita 3: els dos patrons mantenen la fase absoluta esperada a t=30 s i passat 1 minut de simulació (cap desfasament acumulat)",
+    "diagrama": "diagram.json"
+  }
+]

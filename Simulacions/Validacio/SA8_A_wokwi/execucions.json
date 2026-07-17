@@ -1,0 +1,8 @@
+[
+  {
+    "escenari": "escenari_1.yaml",
+    "timeout_ms": 60000,
+    "descripcio": "Còpia amb Wokwi-GUEST i webhook cap a example.com: la dada surt contínua amb marca de temps (fita 1), cada enviament rep confirmació HTTP 200/302 (fita 2) i el cicle es repeteix automàticament (fita 3).",
+    "diagrama": "diagram.json"
+  }
+]

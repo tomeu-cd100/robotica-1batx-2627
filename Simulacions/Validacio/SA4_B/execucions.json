@@ -1,0 +1,21 @@
+{
+  "repte": "SA4-B · Ventilador/vehicle amb motor DC (ampliat)",
+  "firmware": "../build/SA4_B/ampliat.ino.hex",
+  "nota": "El motor DC + pont H no existeixen a Wokwi estandard: al diagrama el motor es substitueix per un LED al pin PWM ENA (5) i dos LEDs de sentit a IN1 (7) i IN2 (8). El potenciometre arrenca a 1023 via attrs perque el primer cicle sigui deterministic.",
+  "execucions": [
+    {
+      "id": "sequencia-velocitat",
+      "diagrama": "diagram.json",
+      "escenari": "escenari_1.yaml",
+      "timeout_ms": 10000,
+      "descripcio": "Sequencia accelera-mante-frena: sentit fixat durant la rampa, ENA constant HIGH a la fase mante (PWM 255) i ENA a 0 quan frena() acaba i el potenciometre es a 0."
+    },
+    {
+      "id": "canvi-sentit",
+      "diagrama": "diagram.json",
+      "escenari": "escenari_2.yaml",
+      "timeout_ms": 10000,
+      "descripcio": "Polsador mantingut sobre exactament una frontera de cicle: IN1/IN2 s'intercanvien (enrere) i el cicle seguent fa la fase mante a velocitat plena en sentit invers."
+    }
+  ]
+}

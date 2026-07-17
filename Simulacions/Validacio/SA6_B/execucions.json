@@ -1,0 +1,14 @@
+[
+  {
+    "escenari": "escenari_1.yaml",
+    "timeout_ms": 60000,
+    "descripcio": "Semàfor adaptatiu ampliat: dos cicles complets mostrejant al mig de cada fase (verd/groc/vermell de S1) comprovant a cada mostra que S2 és complementari (verd de S2 només amb vermell de S1, mai els dos verds); el polsador de vianants escurça el verd però passa igualment pel groc abans del vermell, i la petició s'esborra en acabar.",
+    "diagrama": "diagram.json"
+  },
+  {
+    "escenari": "escenari_2.yaml",
+    "timeout_ms": 60000,
+    "descripcio": "Semàfor adaptatiu ampliat, mode nocturn: el botó B entra a l'estat de groc intermitent (ON-OFF-ON a finestres de 500 ms) amb els grocs dels DOS semàfors sincronitzats i la resta de llums apagada; el botó de vianants en surt i el cicle normal es reprèn en verd amb S2 complementari.",
+    "diagrama": "diagram.json"
+  }
+]

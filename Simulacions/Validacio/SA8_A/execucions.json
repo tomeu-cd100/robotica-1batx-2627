@@ -1,0 +1,8 @@
+[
+  {
+    "escenari": "escenari_1.yaml",
+    "timeout_ms": 120000,
+    "descripcio": "Firmware original intacte (SSID placeholder → mai connecta): la dada surt igualment pel monitor sèrie a t=30 i t=60 s i el programa anota «sense WiFi… continua» sense penjar-se mai (fita 3, reconnexió no bloquejant).",
+    "diagrama": "diagram.json"
+  }
+]

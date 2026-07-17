@@ -1,0 +1,58 @@
+name: 'SA6-C proporcional amb ultrasons: direccio, saturacio, tot-o-res i Kp'
+version: 1
+author: 'validacio'
+steps:
+  # El motor DC no es simulable amb wokwi-cli: el LED del pin 5 (ENA, PWM) fa de
+  # substitut. Els pins de direccio del pont H (IN1=7, IN2=8) es comproven igualment.
+  # El loop escriu "P <dist> <vel>" o "ONOFF <dist> <vel>" cada ~100-150 ms.
+  # Consigna = 25 cm. Kp = analogRead(A0)/512 (pot al maxim -> Kp ~ 2).
+
+  - set-control: { part-id: pot_kp, control: position, value: 1 }
+  - set-control: { part-id: ultra1, control: distance, value: 200 }
+  - delay: 600ms
+
+  # Mode proporcional actiu d'entrada i distancia/velocitat al Monitor Serie.
+  - wait-serial: 'P '
+
+  # Lluny (200 cm): error ~ 175, v = Kp*error ~ 350 -> constrain a 255 ->
+  # analogWrite(5,255) = HIGH continu. Direccio del pont H fixa: IN1=1, IN2=0.
+  - delay: 1200ms
+  - expect-pin: { part-id: uno, pin: 5, value: 1 }
+  - expect-pin: { part-id: uno, pin: 7, value: 1 }
+  - expect-pin: { part-id: uno, pin: 8, value: 0 }
+
+  # Mes a prop que la consigna (5 cm): error negatiu -> v negativa -> constrain a 0
+  # -> motor parat. La direccio de la correccio es la correcta (fita 2).
+  - set-control: { part-id: ultra1, control: distance, value: 5 }
+  - delay: 1200ms
+  - expect-pin: { part-id: uno, pin: 5, value: 0 }
+  - expect-pin: { part-id: uno, pin: 7, value: 1 }
+
+  # AMPLIACIO 2: el polsador alterna a control tot-o-res.
+  - set-control: { part-id: btn1, control: pressed, value: 1 }
+  - delay: 300ms
+  - set-control: { part-id: btn1, control: pressed, value: 0 }
+  - wait-serial: 'ONOFF '
+
+  # Tot-o-res a prop (5 cm < consigna): velocitat 0 exacta -> pin 5 LOW.
+  - delay: 600ms
+  - expect-pin: { part-id: uno, pin: 5, value: 0 }
+
+  # Tot-o-res lluny (100 cm): velocitat 200 exacta (" 200" al final de la linia;
+  # la distancia impresa ~100 no pot generar el mateix text).
+  - set-control: { part-id: ultra1, control: distance, value: 100 }
+  - wait-serial: ' 200'
+
+  # Torna al mode proporcional amb el mateix polsador.
+  - set-control: { part-id: btn1, control: pressed, value: 1 }
+  - delay: 300ms
+  - set-control: { part-id: btn1, control: pressed, value: 0 }
+  - wait-serial: 'P '
+
+  # AMPLIACIO 1: efecte de Kp. Amb Kp = 0 (pot a 0) la sortida es 0 encara que
+  # l'error sigui gran (100 cm de distancia): el motor s'atura.
+  - set-control: { part-id: pot_kp, control: position, value: 0 }
+  - delay: 1200ms
+  - expect-pin: { part-id: uno, pin: 5, value: 0 }
+  - expect-pin: { part-id: uno, pin: 7, value: 1 }
+  - expect-pin: { part-id: uno, pin: 8, value: 0 }
