@@ -192,7 +192,7 @@ def sa_trimestre(n: int) -> int:
 # Seccions senceres que són material del docent
 DOCENT_SECTIONS = {"programacio", "normativa", "avaluacio", "recursos"}
 # Fitxers de Classes que són del docent (per patró de nom)
-DOCENT_NAME_HINTS = ("_guia_docent", "_checklist_docent")
+DOCENT_NAME_HINTS = ("_guia_docent", "_checklist_docent", "_solucions")
 # 00-general: material transversal visible a l'alumnat (la resta, docent)
 GENERAL_ALUMNAT = {
     "00_Targetes_rescat.md", "00_Glossari_tecnic.md",

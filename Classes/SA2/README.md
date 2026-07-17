@@ -18,6 +18,7 @@ Segona situació d'aprenentatge (**8 h · 4 sessions**, 1r trimestre). Es passa 
 
 - [Fitxa ampliada](SA2_fitxa_ampliada.md) — aprofundiment i ampliacions.
 - [Qüestionari de conceptes](SA2_questionari_conceptes.md) — per repassar.
+- [Solucions del qüestionari](SA2_questionari_conceptes_solucions.md) — clau de correcció (docent).
 - [Reptes de la SA2](../../Reptes/Reptes_SA2.md) — tria el teu context.
 
 <!-- web:only-github -->

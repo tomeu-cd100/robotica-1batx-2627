@@ -4,6 +4,12 @@
 > Es pot fer servir com a **repàs formatiu** o com a **prova curta qualificable**
 > (10 preguntes × 1 punt = **nota 0-10**). Durada orientativa: **15-20 min**, individual.
 
+> **📲 Fes-lo al Classroom.** Aquest qüestionari és una **tasca
+> autocorrectiva** al Google Classroom del curs:
+> **[obre «SA4 · Qüestionari de conceptes»](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODcwNzE3NjQzMTUw/details)**
+> (cal el compte del centre). Aquesta pàgina és la versió per repassar
+> o fer en paper; les solucions són al full del docent.
+
 **Nom:** ______________________  **Grup:** __________  **Data:** __________
 
 ---
@@ -15,11 +21,11 @@
 1. Quina és la diferència principal entre un **servomotor** i un **motor DC**?
    - a) No n'hi ha cap, són el mateix.
    - b) El motor DC controla l'angle exacte i el servo gira sense parar.
-   - c) **El servo controla la *posició* (angle 0-180°); el motor DC fa un gir continu.**
+   - c) El servo controla la *posició* (angle 0-180°); el motor DC fa un gir continu.
    - d) El servo només funciona amb piles i el motor DC amb USB.
 
 2. Quina **llibreria** cal incloure per controlar un servo a l'Arduino?
-   - a) **`Servo.h`**
+   - a) `Servo.h`
    - b) `Ultrasonic.h`
    - c) `Wire.h`
    - d) No cal cap llibreria.
@@ -28,29 +34,29 @@
    - a) Giri 90 voltes.
    - b) Esperi 90 mil·lisegons.
    - c) Llegeixi el valor del pin 90.
-   - d) **Es col·loqui a la posició de 90 graus.**
+   - d) Es col·loqui a la posició de 90 graus.
 
 4. Quin és el rang d'angles habitual de `write()` en un servo estàndard?
    - a) 0 a 90 graus.
-   - b) **0 a 180 graus.**
+   - b) 0 a 180 graus.
    - c) 0 a 255 graus.
    - d) 0 a 1023 graus.
 
 5. Per controlar el servo amb un potenciòmetre (`analogRead` dona 0-1023) fem servir…
    - a) `delay(1023);`
    - b) `digitalWrite(valor, HIGH);`
-   - c) **`map(valor, 0, 1023, 0, 180)` per reescalar la lectura a graus.**
+   - c) `map(valor, 0, 1023, 0, 180)` per reescalar la lectura a graus.
    - d) `Serial.begin(180);`
 
 6. Per què **no** es connecta un motor DC directament a un pin de l'Arduino i cal un **driver (pont H)**?
-   - a) **Perquè un pin dona molt poc corrent; el driver l'amplifica des d'una alimentació externa.**
+   - a) Perquè un pin dona molt poc corrent; el driver l'amplifica des d'una alimentació externa.
    - b) Perquè el pin no té prou tensió i el motor cremaria l'USB.
    - c) Perquè el motor només entén senyals analògics.
    - d) No cal driver, es pot connectar directament sense problema.
 
 7. Al pont H **L298N**, quin senyal regula la **velocitat** del motor?
    - a) `IN1` en HIGH.
-   - b) **`ENA` amb un valor PWM (`analogWrite`).**
+   - b) `ENA` amb un valor PWM (`analogWrite`).
    - c) El pin GND.
    - d) La tensió de les piles, que no es pot canviar.
 
@@ -58,10 +64,10 @@
    - a) Regular la velocitat.
    - b) Alimentar l'Arduino.
    - c) Llegir la distància de l'ultrasons.
-   - d) **Determinar el *sentit* de gir del motor.**
+   - d) Determinar el *sentit* de gir del motor.
 
 9. Segons la lògica del pont H, si `IN1` i `IN2` estan **tots dos a LOW**, el motor…
-   - a) **S'atura (no gira).**
+   - a) S'atura (no gira).
    - b) Gira endavant a màxima velocitat.
    - c) Gira enrere.
    - d) Fa un pols i es reinicia.
@@ -69,7 +75,7 @@
 10. Què és la **massa comuna** i per què és imprescindible?
     - a) Un cable de dades entre l'Arduino i el motor.
     - b) La distància mínima de seguretat de l'ultrasons.
-    - c) **Unir el GND de l'Arduino amb el GND de l'alimentació del motor perquè comparteixin la mateixa referència.**
+    - c) Unir el GND de l'Arduino amb el GND de l'alimentació del motor perquè comparteixin la mateixa referència.
     - d) El pin de 5V de l'Arduino.
 
 ---
@@ -83,47 +89,6 @@
 ___________________________________________________________________
 
 ___________________________________________________________________
-
----
-
-## Clau de correcció (ús del professorat)
-
-| Pregunta | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
-|---|---|---|---|---|---|---|---|---|---|---|
-| **Resposta** | c | a | d | b | c | a | b | d | a | c |
-
-> **Barem orientatiu:** 10 preguntes × 1 punt = 10. La pregunta 11 pot pujar nota
-> (aplicació) o quedar fora del còmput.
-
----
-
-## Versió Google Forms (llesta per copiar)
-
-> Crea un formulari nou a **Google Forms**, activa **"Convertir en qüestionari"** i marca
-> la resposta correcta de cada pregunta. Assigna **1 punt** a les preguntes 1-10.
-
-**Títol:** `SA4 · Conceptes — Moviment: servos, motors i ponts H`
-**Descripció:** `Comprovació dels conceptes de moviment de la SA4 (servo, motor DC, pont H).`
-
-**Camps inicials**
-- Nom i cognoms — *Resposta curta* (obligatori).
-- Grup/classe — *Resposta curta*.
-
-**Preguntes 1-10** (tipus: *Opció múltiple*; **1 punt** cadascuna; correcta en **negreta**)
-1. Servo vs motor DC → Són el mateix / El motor controla l'angle / **El servo controla la posició (0-180°); el motor DC gira continu** / El servo va amb piles i el motor amb USB.
-2. Llibreria per al servo → **`Servo.h`** / `Ultrasonic.h` / `Wire.h` / Cap.
-3. `servo.write(90)` → Gira 90 voltes / Espera 90 ms / Llegeix el pin 90 / **Es col·loca a 90 graus**.
-4. Rang de `write()` del servo → 0-90 / **0-180** / 0-255 / 0-1023.
-5. Servo amb potenciòmetre → `delay(1023)` / `digitalWrite` / **`map(valor, 0, 1023, 0, 180)`** / `Serial.begin(180)`.
-6. Per què cal un pont H → **Un pin dona poc corrent; el driver l'amplifica des d'alimentació externa** / El pin cremaria l'USB / El motor només entén analògic / No cal.
-7. Velocitat al L298N → `IN1` en HIGH / **`ENA` amb PWM (`analogWrite`)** / El pin GND / La tensió de les piles fixa.
-8. `IN1` i `IN2` → Regulen la velocitat / Alimenten l'Arduino / Llegeixen l'ultrasons / **Determinen el sentit de gir**.
-9. `IN1` i `IN2` tots dos LOW → **S'atura** / Endavant màxim / Enrere / Fa un pols i es reinicia.
-10. La massa comuna → Cable de dades / Distància de seguretat / **Unir el GND de l'Arduino amb el GND de l'alimentació del motor** / El pin de 5V.
-
-**Pregunta 11** (tipus: *Paràgraf*; sense puntuació) — descriure les funcions `endavant(vel)`, `enrere(vel)` i `atura()` amb els valors d'`IN1`, `IN2` i `ENA`.
-
-> **Recollida:** Respostes → full de càlcul vinculat, amb la nota de l'1 al 10 autocalculada.
 
 ---
 

@@ -41,6 +41,7 @@ Primera situació d'aprenentatge del curs (**6 h · 3 sessions**, 1r trimestre).
 | [`SA1_normes_seguretat.md`](SA1_normes_seguretat.md) | Full de normes de seguretat del laboratori, **per signar**. |
 | [`SA1_poster_robot_plantilla.md`](SA1_poster_robot_plantilla.md) | Plantilla del **producte de la SA**: fitxa-pòster d'anàlisi d'un robot real. |
 | [`SA1_questionari_conceptes.md`](SA1_questionari_conceptes.md) | Qüestionari de conceptes (robot, sistema embegut i placa UNO): repàs formatiu o prova curta qualificable (10 preguntes). |
+| [`SA1_questionari_conceptes_solucions.md`](SA1_questionari_conceptes_solucions.md) | Clau de correcció i versió Google Forms del qüestionari (material del docent). |
 | `codi/` | Sketches d'Arduino (vegeu la taula següent). |
 
 ### Codi (`codi/`)
