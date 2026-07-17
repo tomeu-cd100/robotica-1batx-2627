@@ -154,7 +154,7 @@ def peu_tancament(pendent: bool = True) -> str:
         'un error ben documentat suma nota</div>',
         '<div class="linia"><span class="et">Què passava?</span><span class="r"></span></div>',
         '<div class="linia"><span class="et">Com l\'he trobat?</span><span class="r"></span></div>',
-        '<div class="linia"><span class="et">Com l\'he resolt?</span><span class="r"></span></div></div>',
+        '<div class="linia"><span class="et">Com l\'he resolt? Quina estratègia m\'ha servit?</span><span class="r"></span></div></div>',
         '<table class="sem"><thead><tr><th>Autoavaluació d\'avui (pinta\'n un)</th>'
         '<th>🔴</th><th>🟡</th><th>🟢</th></tr></thead><tbody>',
         '<tr><td>He entès el que hem treballat</td>'

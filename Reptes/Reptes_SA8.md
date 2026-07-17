@@ -83,6 +83,13 @@
 
 ---
 
+## 🎨 Fes-lo teu (tria abans de començar)
+
+> El repte fixa **què** ha de fer el sistema; **el context el poses tu**. Tria i anota-ho al quadern:
+> - **A:** decideix **on és la teva estació** (hort, aula, finestra, terrari) i quines dues magnituds hi importen de debò.
+> - **B:** tria **què vigila l'alerta**: una porta, una planta seca, la nevera oberta, la temperatura del servidor de l'institut…
+> - **C:** defineix **els teus gestos i les seves accions**: quins moviments controlen què.
+
 ## Material necessari (segons repte)
 - **Dos** micro:bits (emissor/receptor) + piles · sensors integrats (temperatura, llum, acceleròmetre) · *(opcional)* ESP32 + WiFi per al repte A avançat · python.microbit.org / **Thonny**.
 

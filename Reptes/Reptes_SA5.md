@@ -83,6 +83,13 @@
 
 ---
 
+## 🎨 Fes-lo teu (tria abans de començar)
+
+> El repte fixa **què** ha de fer el sistema; **el context el poses tu**. Tria i anota-ho al quadern:
+> - **A:** decideix **quina activitat teva compta**: passes, salts a la corda, cops de rem… i quin objectiu diari hi poses.
+> - **B:** calibra la llum amb **la foscor real de la teva habitació** i tria la icona que s'hi encén.
+> - **C:** inventa **les regles del teu joc** de ràdio (què s'envia, qui guanya, quants punts).
+
 ## Material necessari (segons repte)
 - micro:bit (+ piles) · per al repte C (ràdio): **dos** micro:bits · ordinador amb python.microbit.org o **Thonny** · *(no cal cablejar: tot és integrat)*.
 

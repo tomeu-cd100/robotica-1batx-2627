@@ -80,6 +80,13 @@
 
 ---
 
+## 🎨 Fes-lo teu (tria abans de començar)
+
+> El repte fixa **què** ha de fer el sistema; **el context el poses tu**. Tria i anota-ho al quadern:
+> - **A:** decideix **on aniria la teva llum** (passadís, caseta, escala…) i mesura la foscor real d'allà per fixar el llindar.
+> - **B:** dissenya **el so d'avís**: quines freqüències i quin ritme avisen millor sense molestar.
+> - **C:** tria **quin instrument o efecte** fas: theremin, sirena, comptador de gols…
+
 ## Material necessari (segons repte)
 - Arduino UNO + USB · LDR / sensor d'ultrasons HC-SR04 / potenciòmetre / polsador · LED + resistència (o brunzidor) · resistència de 10 kΩ per a divisor/pull-up · o **Tinkercad/Wokwi**.
 

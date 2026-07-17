@@ -105,10 +105,24 @@ També s'han aplicat els pendents «no bloquejants» principals:
 - **Check 11 nou (opt-in):** validació d'enllaços externs amb
   `QA_ENLLACOS_EXTERNS=1` (mai no bloqueja el CI; avisos).
 
+## Quarta tanda (17-07): reauth Google + LXD restant
+
+- **Google reautoritzat** ✅ (scopes mínims; el docent va acceptar el consentiment).
+  Bug corregit a `estat_classroom.js` (`courses.get` vol `id`, no `courseId`).
+  `estat_classroom.json` regenerat: 81 tasques, categories T1/T2/T3 confirmades.
+- **Materials publicats al Classroom** (DRAFT, tema SA8) amb el nou
+  `crear_materials_enllac.js` (idempotent, materials-enllaç al web): l'auditoria
+  IoT i la targeta de ràdio. Publicar-los des del Classroom quan toqui.
+- **LXD restant aplicat:** bloc **«🎨 Fes-lo teu»** (3 micro-eleccions de context)
+  als 8 bancs de reptes; pregunta fixa d'**estratègia** («Com l'he resolt? Quina
+  estratègia m'ha servit?») a la caixa Error del dia del quadern imprès (sense
+  créixer d'alçada) i al mapa dels 6 apartats; nou
+  `Classes/00_General/00_Tauler_reptes.md` (constel·lació per equips, imprimible
+  17è, vista alumnat, enllaçat des de `Reptes/README.md`).
+
 ## ⚠️ Accions immediates la propera sessió
 
-1. **Reautoritzar Google**: `token.json` ja està esborrat; el primer script de
-   Classroom que s'executi obrirà el navegador per autoritzar amb els scopes mínims.
+1. ~~Reautoritzar Google~~ ✅ FET a la 4a tanda (token nou amb scopes mínims).
 2. **L'altra màquina ha de RECLONAR** (no fer pull): l'historial s'ha reescrit per
    segona vegada (filter-repo del 17-07).
 3. **Verificar el CI verd** a GitHub (la 1a tanda ja era verda; la 2a s'ha pujat

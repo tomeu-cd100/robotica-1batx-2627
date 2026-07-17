@@ -8,8 +8,13 @@ Aquesta carpeta conté, **per a cada situació d'aprenentatge (SA1–SA8)**, **t
 
 1. Llegeix els **tres** reptes de la SA.
 2. Tria el que més et motivi (el context, no la dificultat: tots parteixen del mateix mínim).
-3. Decideix fins on vols arribar amb les **ampliacions**.
-4. Pots **proposar un repte propi** amb el vistiplau del professorat, sempre que treballi els continguts de la SA.
+3. Personalitza'l amb el bloc **«🎨 Fes-lo teu»** del banc (el context el poses tu) i anota la decisió al quadern.
+4. Decideix fins on vols arribar amb les **ampliacions**.
+5. Pots **proposar un repte propi** amb el vistiplau del professorat, sempre que treballi els continguts de la SA.
+
+## 🌟 El tauler de l'aula
+
+La progressió dels reptes de tots els equips es pinta al **[tauler de reptes de l'aula](../Classes/00_General/00_Tauler_reptes.md)** (constel·lació per equips, no rànquing individual): ⭐ mínim, ⭐⭐ ampliacions, ⭐⭐⭐ amb les fites validades en ordre.
 
 ## Contingut
 

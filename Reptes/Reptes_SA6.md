@@ -83,6 +83,13 @@
 
 ---
 
+## 🎨 Fes-lo teu (tria abans de començar)
+
+> El repte fixa **què** ha de fer el sistema; **el context el poses tu**. Tria i anota-ho al quadern:
+> - **A:** decideix **què climatitza el termostat** (terrari, hivernacle, habitació…) i busca la **consigna real** que necessita.
+> - **B:** modela **un encreuament que coneguis**: quina via té prioritat i per què.
+> - **C:** tria **què manté a distància** el regulador: un ventilador que segueix la mà, una barrera suau, un vehicle que no xoca…
+
 ## Material necessari (segons repte)
 - Arduino UNO + USB · sensor (temperatura/LDR/ultrasons) o potenciòmetre simulador · LED/ventilador/motor segons repte · o **Tinkercad/Wokwi**.
 

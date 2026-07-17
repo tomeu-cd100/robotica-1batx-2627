@@ -55,6 +55,7 @@ Que el quadern estigui **complet i al dia**, que expliquis les teves **decisions
 - Què fallava: ______________________
 - Com ho he trobat (què vaig examinar, quina hipòtesi): ______________________
 - Com ho he resolt: ______________________
+- **Quina estratègia m'ha servit quan m'he encallat** (i tornaria a fer servir): ______________________
 
 **5 · Què he après / reflexió**
 - La idea més important d'aquesta SA: ______________________

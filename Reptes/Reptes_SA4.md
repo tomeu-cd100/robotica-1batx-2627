@@ -97,6 +97,13 @@
 
 ---
 
+## 🎨 Fes-lo teu (tria abans de començar)
+
+> El repte fixa **què** ha de fer el sistema; **el context el poses tu**. Tria i anota-ho al quadern:
+> - **A:** decideix **què protegeix la barrera**: pàrquing, peatge, pas de granja… i quins temps d'obertura necessita.
+> - **B:** tria **què mou el motor**: ventilador, vehicle, molinet, plataforma giratòria…
+> - **C:** decideix **què dispensa el braç** (llaminadures? cargols? menjar de peixos?) i quanta dosi per cicle.
+
 ## Material necessari (segons repte)
 - Arduino UNO + USB · servo SG90 / motor DC + **pont H** (L298N o similar) · **font d'alimentació externa** per als motors · polsador/potenciòmetre/ultrasons segons repte · o **Tinkercad/Wokwi**.
 - **Repte C (braç):** preveure **2 servos** i una **estructura** (cartró, fusta o impressió 3D) per equip.

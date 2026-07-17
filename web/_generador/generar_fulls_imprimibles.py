@@ -37,6 +37,7 @@ TARGETS = [
 ] + [(f"SA{n}/SA{n}_checklist_alumnat.md", "checklist") for n in range(0, 10)] + [
     ("SA1/SA1_poster_robot_plantilla.md", "checklist"),
     ("00_General/00_Plantilla_disseny_objecte.md", "checklist"),
+    ("00_General/00_Tauler_reptes.md", "checklist"),
 ]
 
 # Fulls que JA són HTML complet i autocontingut (disseny propi per a A4): es

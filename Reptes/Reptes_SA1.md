@@ -80,6 +80,13 @@
 
 ---
 
+## 🎨 Fes-lo teu (tria abans de començar)
+
+> El repte fixa **què** ha de fer el sistema; **el context el poses tu**. Tria i anota-ho al quadern — un producte amb decisions teves sempre s'explica i es defensa millor:
+> - **A:** inventa el **codi de llum del teu far** (o busca el d'un far real de la costa) i justifica els temps.
+> - **B:** decideix **quins modes** tindria la llum de bici que tu compraries, i en quin ordre.
+> - **C:** tria el **missatge**: les teves inicials, un mot curt, un senyal secret de la parella.
+
 ## Material necessari (qualsevol dels tres)
 - Arduino UNO + cable USB (o LED intern del pin 13) · 1 LED + resistència 220 Ω + cables (si és muntatge real) · o **Tinkercad/Wokwi**.
 

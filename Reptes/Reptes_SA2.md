@@ -80,6 +80,13 @@
 
 ---
 
+## 🎨 Fes-lo teu (tria abans de començar)
+
+> El repte fixa **què** ha de fer el sistema; **el context el poses tu**. Tria i anota-ho al quadern:
+> - **A:** temporitza el semàfor amb **un encreuament real que coneguis** (quant dura el verd de veritat?).
+> - **B:** tria **l'ambient** de la llum: quins colors, per a quina habitació o moment.
+> - **C:** decideix **què representa la barra**: volum, nivell d'un dipòsit, intensitat de llum… i posa-li unitats.
+
 ## Material necessari (segons repte)
 - Arduino UNO + cable USB · LEDs (3–5) + resistències 220 Ω (o LED RGB) · cables / placa de proves · o **Tinkercad/Wokwi**.
 

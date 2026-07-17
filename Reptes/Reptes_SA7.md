@@ -84,6 +84,13 @@
 
 ---
 
+## 🎨 Fes-lo teu (tria abans de començar)
+
+> El repte fixa **què** ha de fer el robot; **el context el poses tu**. Tria i anota-ho al quadern:
+> - **A:** dibuixa **el plànol del teu recorregut de repartiment** (quins «carrers», quantes parades) abans de programar-lo.
+> - **B:** posa **nom i escenari a la missió** d'exploració (cova, magatzem, Mart…) i decideix què senyalitza el robot quan troba algú/alguna cosa.
+> - **C:** dissenya **la teva pista**: quants revolts, quin traçat posa a prova el teu seguidor.
+
 ## Material necessari
 - Robot **Imagina 3dBot** (xassís + motors + pont H integrat) · sensor d'ultrasons (repte B) · mòdul de sensors IR (repte C) · piles/bateria · cinta/circuit de línia (repte C) · manual de la placa per als **pins**.
 
