@@ -12,9 +12,11 @@ const int LED = 13;
 // AMPLIACIO 1: tot deriva del temps del punt
 const int PUNT = 250;
 const int RATLLA = PUNT * 3;
-const int PAUSA_SENYAL = PUNT;       // entre punts/ratlles d'una lletra
-const int PAUSA_LLETRA = PUNT * 3;   // entre lletres
-const int PAUSA_PARAULA = PUNT * 7;  // entre paraules
+const int PAUSA_SENYAL = PUNT;       // 1 unitat entre punts/ratlles d'una lletra
+// punt() i ratlla() ja acaben amb PAUSA_SENYAL (1 unitat): les pauses
+// addicionals son de 2 i 6 unitats perque els TOTALS siguin 3 i 7.
+const int PAUSA_LLETRA = PUNT * 2;   // + 1 del final del simbol = 3 unitats totals
+const int PAUSA_PARAULA = PUNT * 6;  // + 1 del final del simbol = 7 unitats totals
 
 // AMPLIACIO 2: funcions basiques
 void punt()   { digitalWrite(LED, HIGH); delay(PUNT);   digitalWrite(LED, LOW); delay(PAUSA_SENYAL); }
@@ -28,8 +30,8 @@ void loop() {
   // AMPLIACIO 3: inicials "TC"
   // T = -
   ratlla();
-  delay(PAUSA_LLETRA);
+  delay(PAUSA_LLETRA);    // total 3 unitats (ja portem 1 unitat del final del simbol)
   // C = -.-.
   ratlla(); punt(); ratlla(); punt();
-  delay(PAUSA_PARAULA);   // fi del missatge, pausa de paraula abans de repetir
+  delay(PAUSA_PARAULA);   // total 7 unitats entre repeticions (idem: ja en portem 1)
 }

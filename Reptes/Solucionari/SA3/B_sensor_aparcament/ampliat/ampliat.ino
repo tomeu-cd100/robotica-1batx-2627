@@ -28,21 +28,27 @@ void setup() {
 
 void loop() {
   float d = mesuraDistancia();
-  Serial.println(d);
+  Serial.print("distancia=");
+  Serial.print(d);
 
   if (d > LLUNY) {
     // AMPLIACIO 2: tram lluny -> tot tranquil
+    Serial.println("  (lluny, sense avis)");
     digitalWrite(LED, LOW);
     noTone(PIEZO);
     delay(60);
   } else if (d > PROP) {
     // AMPLIACIO 2 + 3: tram mig -> bips amb ritme proporcional a la distancia
     int interval = map((int)d, PROP, LLUNY, 100, 600);  // mes a prop -> mes rapid
+    // AMPLIACIO 3: distancia i interval junts, per comprovar el map() abans d'escoltar res
+    Serial.print("  interval=");
+    Serial.println(interval);
     tone(PIEZO, 1500, 50);
     digitalWrite(LED, HIGH); delay(interval);
     digitalWrite(LED, LOW);  delay(interval);
   } else {
     // tram a prop -> avis continu
+    Serial.println("  (a prop, so continu)");
     digitalWrite(LED, HIGH);
     tone(PIEZO, 2500);
     delay(60);

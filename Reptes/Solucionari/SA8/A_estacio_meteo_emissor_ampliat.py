@@ -1,7 +1,8 @@
 # Solucionari Repte SA8-A · Estacio meteo - EMISSOR (AMPLIAT)
 # AMPLIACIO 1: envia diverses magnituds etiquetades (temperatura i llum).
-# AMPLIACIO 3: alternativa avancada -> portar la telemetria a un ESP32 amb WiFi
-#   (vegeu Classes/SA8/codi/04_esp32_telemetria.ino). Aqui ho deixem per radio.
+# AMPLIACIO 3: el micro:bit no te WiFi -> la solucio completa es un sketch
+#   d'ESP32: vegeu A_estacio_meteo_esp32/A_estacio_meteo_esp32.ino (webhook
+#   cap a un full de calcul). Aqui ho deixem per radio.
 # NOTA: cada equip, un group propi (evita interferencies).
 
 from microbit import *

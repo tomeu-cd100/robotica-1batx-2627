@@ -9,8 +9,17 @@ LLINDAR_FOSC = 40   # per sota: encen
 LLINDAR_CLAR = 80   # per sobre: apaga
 ences = False
 
+def llum_mitjana():
+    # AMPLIACIO 3 (fita 3): mitjana de 5 lectures per una brillantor ESTABLE
+    # (una sola lectura tremola quan la llum vacil-la una mica)
+    total = 0
+    for _ in range(5):
+        total = total + display.read_light_level()
+        sleep(10)
+    return total // 5
+
 while True:
-    llum = display.read_light_level()
+    llum = llum_mitjana()
 
     # AMPLIACIO 1: calibratge -> mostra el valor amb el boto A
     if button_a.is_pressed():

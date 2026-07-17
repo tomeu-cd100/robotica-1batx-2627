@@ -1,5 +1,7 @@
 # Solucionari Repte SA8-A · Estacio meteo - RECEPTOR (AMPLIAT)
 # AMPLIACIO 2: registra i calcula maxim, minim i mitjana de la temperatura.
+# AMPLIACIO 3: vegeu A_estacio_meteo_esp32/A_estacio_meteo_esp32.ino
+#   (sketch d'ESP32 amb WiFi que porta la telemetria a un full de calcul).
 # Separa el missatge "T:23;L:120" en parts i en treu la temperatura.
 
 from microbit import *

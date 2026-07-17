@@ -59,6 +59,31 @@ jobs:
             - Classes/SA4/codi
             - Classes/SA6/codi
             - Classes/SA7/codi
-          # SA8/codi/04_esp32_telemetria és per a ESP32 (opcional): fora de l'abast UNO.
+            - Reptes/Solucionari/SA1
+            - Reptes/Solucionari/SA2
+            - Reptes/Solucionari/SA3
+            - Reptes/Solucionari/SA4
+            - Reptes/Solucionari/SA6
+            - Reptes/Solucionari/SA7
+          # SA8/codi/04_esp32_telemetria és per a ESP32: vegeu el job compilar-esp32.
           # SA9: el codi el crea l'alumnat (només plantilla).
+          # Solucionari SA5/SA8: MicroPython (.py), el vigila tools/qa.py (py_compile).
+          verbose: false
+
+  compilar-esp32:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clona el repositori
+        uses: actions/checkout@v4
+
+      - name: Compila el sketch d'ESP32 (SA8, opcional al curs)
+        uses: arduino/compile-sketches@v1
+        with:
+          fqbn: esp32:esp32:esp32
+          platforms: |
+            - name: esp32:esp32
+              source-url: https://espressif.github.io/arduino-esp32/package_esp32_index.json
+          sketch-paths: |
+            - Classes/SA8/codi/04_esp32_telemetria
+            - Reptes/Solucionari/SA8/A_estacio_meteo_esp32
           verbose: false

@@ -15,6 +15,9 @@ const int ANGLE_TANCAT = 0, ANGLE_OBERT = 90;
 const int DIST_DETECCIO = 15;   // cm
 const int TEMPS_OBERT = 3000;   // ms
 
+// AMPLIACIO 3: l'estat de la barrera viu en UNA sola variable
+bool oberta = false;
+
 float mesuraDistancia() {
   digitalWrite(TRIG, LOW);  delayMicroseconds(2);
   digitalWrite(TRIG, HIGH); delayMicroseconds(10);
@@ -30,8 +33,9 @@ void mouSuau(int desde, int fins) {
   else              for (int a = desde; a >= fins; a--) { barrera.write(a); delay(8); }
 }
 
-void semafor(bool oberta) {
-  // AMPLIACIO 3
+// AMPLIACIO 3: el semafor es pinta SEMPRE a partir de la variable d'estat,
+// mai de lectures soltes: LED i barrera no poden quedar incoherents.
+void semafor() {
   digitalWrite(LED_VERD, oberta ? HIGH : LOW);
   digitalWrite(LED_VERMELL, oberta ? LOW : HIGH);
 }
@@ -41,17 +45,19 @@ void setup() {
   pinMode(TRIG, OUTPUT); pinMode(ECHO, INPUT);
   pinMode(LED_VERMELL, OUTPUT); pinMode(LED_VERD, OUTPUT);
   barrera.write(ANGLE_TANCAT);
-  semafor(false);
+  semafor();   // pinta l'estat inicial (tancada -> vermell)
 }
 
 void loop() {
   float d = mesuraDistancia();
   if (d > 0 && d < DIST_DETECCIO) {   // AMPLIACIO 2: vehicle detectat
     mouSuau(ANGLE_TANCAT, ANGLE_OBERT);
-    semafor(true);
+    oberta = true;    // l'estat canvia NOMES quan el moviment ha acabat
+    semafor();
     delay(TEMPS_OBERT);
     mouSuau(ANGLE_OBERT, ANGLE_TANCAT);
-    semafor(false);
+    oberta = false;   // idem en tancar
+    semafor();
   }
   delay(60);
 }

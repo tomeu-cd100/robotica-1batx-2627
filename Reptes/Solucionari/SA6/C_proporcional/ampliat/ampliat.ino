@@ -23,6 +23,20 @@ float mesuraDistancia() {
   return t * 0.034 / 2.0;
 }
 
+float distanciaMitjana() {
+  // AMPLIACIO 3 (fita 1): mitjana de 3 lectures per tenir una distancia ESTABLE
+  // (descarta les lectures amb timeout, que retornen 400)
+  float suma = 0;
+  int valides = 0;
+  for (int i = 0; i < 3; i++) {
+    float d = mesuraDistancia();
+    if (d < 400) { suma += d; valides++; }
+    delay(10);   // petit espaiat perque els ecos no es trepitgin
+  }
+  if (valides == 0) return 400;   // cap lectura valida
+  return suma / valides;
+}
+
 void motor(int velocitat) {
   digitalWrite(IN1, HIGH); digitalWrite(IN2, LOW);
   analogWrite(ENA, constrain(velocitat, 0, 255));
@@ -41,7 +55,7 @@ void loop() {
   if (estat == LOW && estatAnterior == HIGH) { modeProporcional = !modeProporcional; delay(40); }
   estatAnterior = estat;
 
-  float d = mesuraDistancia();
+  float d = distanciaMitjana();   // fita 1: lectura estable (mitjana de 3)
   float error = d - CONSIGNA;          // AMPLIACIO 3: error de distancia
 
   int velocitat;

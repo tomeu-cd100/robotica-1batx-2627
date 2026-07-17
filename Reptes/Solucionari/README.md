@@ -22,9 +22,13 @@ Solucionari/
 ├── SA6/  A_termostat/ · B_semafor_adaptatiu/ · C_proporcional/ (.ino)
 ├── SA7/  A_repartidor/ · B_explorador/ · C_seguidor_linia/ (.ino)
 └── SA8/  A_estacio_meteo*.py · B_alerta*.py · C_gestos*.py
+      └── A_estacio_meteo_esp32/ (.ino d'ESP32: l'ampliació ⭐⭐⭐ del repte A
+          és WiFi + webhook, fora de l'abast del micro:bit)
 ```
 
 ## Notes
 - Comentaris en català **sense accents** als fitxers de codi (convenció del curs, evita problemes de codificació).
 - Pins coherents amb el material de `Classes/SAx/codi/`.
 - Enunciats dels reptes: `Reptes/Reptes_SAx.md`. Vocabulari i bases: `Classes/SA0/`.
+- Cada `ampliat` cobreix **les tres ampliacions**, incloses les **fites** de la ⭐⭐⭐ tal com estan redactades al repte (alineació auditada el 17-07-2026).
+- **El CI compila** tots els `.ino` d'UNO del solucionari (SA1-SA4, SA6, SA7) i el d'ESP32 de SA8; els `.py` passen py_compile a `tools/qa.py`.
