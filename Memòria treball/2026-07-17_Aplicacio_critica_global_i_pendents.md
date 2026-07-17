@@ -153,6 +153,6 @@ També s'han aplicat els pendents «no bloquejants» principals:
   placa/Tinkercad, especialment SA7 amb els pins del 3dBot i el nearest centroid
   de SA8-C).
 - **Publicar (des de DRAFT)** els 2 materials nous del Classroom quan comenci la SA8.
-- **Ullada visual del docent als 17 PDF imprimibles** (el motor ha canviat: el
-  text està verificat, l'estètica fina no).
+- ~~Ullada visual del docent als 17 PDF imprimibles~~ ✅ FETA (17-07): «tot
+  perfecte».
 - **Reclonar l'altra màquina** (script llest) i, fet això, esborrar els backups.
