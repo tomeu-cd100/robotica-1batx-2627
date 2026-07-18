@@ -8,8 +8,8 @@ difference() {
         cube([costat, paret, ample]);
         cube([paret, costat, ample]);
     }
-    translate([costat - 6, -1, ample / 2])
+    translate([5, -1, ample / 2])
         rotate([-90, 0, 0]) cylinder(h = paret + 2, d = 3.4, $fn = 24);
-    translate([-1, costat - 6, ample / 2])
+    translate([-1, 5, ample / 2])
         rotate([0, 90, 0]) cylinder(h = paret + 2, d = 3.4, $fn = 24);
 }

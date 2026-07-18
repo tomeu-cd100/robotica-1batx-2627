@@ -50,19 +50,22 @@ Dossier de cada robot (peces, esquema de muntatge, cablatge i rúbrica):
 | T2 | S4 de SA4 | Mateixa palanca (repte de la S3 fa de producte) | Tall làser i muntatge del braç de 3 GDL (base, colze, pinça) |
 | T3 | Sessió 0 del trimestre | Comprimir SA8 de 6 a 4 h (fusió de S1+S2) i traslladar les 2 h alliberades a l'inici del trimestre | Muntatge del xassís del rover (2 pisos), abans de començar SA7 |
 
-> ⚠️ Les tres palanques de contingència del curs queden **totes gastades** en
-> fabricació: el marge del calendari és pràcticament **zero**. Senyal
+> ⚠️ D'aquestes tres palanques, ja en queden **dues gastades** en fabricació:
+> la primera (usada dues vegades, a la S4 de SA2 i a la S4 de SA4) i la
+> segona (SA8 de 6 a 4 h). Només resta la tercera (SA7 de 8 a 6 h) com a
+> **últim recurs**: el marge del calendari és pràcticament **zero**. Senyal
 > d'alerta: si el T1 no tanca SA3 al desembre, la mascota de gener es
 > reparteix amb les peces **pretallades pel docent** en lloc d'esperar una
 > sessió de tall addicional.
 
 ## Com funciona una sessió de fabricació
 
-1. **Abans de la sessió**, cada parella té el seu fitxer personalitzat (les
-   zones de gravat de la plantilla) validat pel docent.
-2. **Durant la sessió**, el docent opera la làser; l'alumnat hi assisteix
-   per **rotacions** (grups de 2-3 parelles, 10-15 min cadascun) mentre la
-   resta munta l'estructura ja tallada o avança en la programació.
+1. **Abans de la sessió**, la parella porta l'esborrany de la cara fet (de
+   casa o del tancament de la S3 anterior).
+2. **Durant la sessió**, s'ajusta l'esborrany al fitxer, el docent el valida
+   i es talla per **rotacions** (grups de 2-3 parelles, 10-15 min cadascun)
+   mentre la resta munta l'estructura ja tallada o avança en la
+   programació.
 3. Les **impressions 3D** es llancen entre sessions: el docent gestiona la
    cua de la impressora fora de l'horari de classe.
 4. Es manté un **full de cua públic per màquina**, amb les columnes

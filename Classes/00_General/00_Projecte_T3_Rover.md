@@ -73,12 +73,15 @@ parelles tallen igual. El **pis superior** porta una zona vermella reservada
 perquè cada parella hi **gravi el nom** del seu rover; res més es toca.
 
 Flux de fabricació:
-1. El docent llança el tall de `rover.svg` per **lots** durant la sessió 0
+1. Cada parella prepara el nom del seu rover (la zona de gravat del pis
+   superior) al **tancament del 2n trimestre** (~20 min) o de casa, i el
+   docent el valida **abans de la sessió 0**.
+2. El docent llança el tall de `rover.svg` per **lots** durant la sessió 0
    del trimestre (nesting de diverses parelles per tauler).
-2. Cada parella recull el seu joc de dues plaques i la roda boja i el
+3. Cada parella recull el seu joc de dues plaques i la roda boja i el
    suport de l'HC-SR04 impresos prèviament.
-3. Muntatge sencer a la mateixa sessió (sessió 0, vegeu més avall).
-4. El full de cua públic per màquina (parella · fitxer · estat) es manté
+4. Muntatge sencer a la mateixa sessió (sessió 0, vegeu més avall).
+5. El full de cua públic per màquina (parella · fitxer · estat) es manté
    igual que per als altres robots del curs.
 
 ## Muntatge
@@ -152,7 +155,7 @@ torna a tocar en tot el trimestre.
 |---|---|---|---|
 | SA7 | S1-S4 | Cinemàtica diferencial, trajectòries, evitar obstacles (ultrasons) i seguidor de línia (IR): el rover **és** la plataforma de la SA. | `Reptes_SA7.md` |
 | SA8 | S1-S4 | Micro:bit al pis superior: telemetria per ràdio (distància, estat del rover) cap a una micro:bit base amb pantalla OLED KS0271; MPU6050 opcional com a ampliació. | `Reptes_SA8.md` |
-| SA9 | — | Repte final i competició amb el mateix rover; al juny, desmuntatge i retorn de l'electrònica als kits. | `Reptes_SA9.md` (si existeix) |
+| SA9 | — | Repte final i competició amb el mateix rover; al juny, desmuntatge i retorn de l'electrònica als kits. | [`README de la SA9`](../SA9/README.md) |
 
 **Producte final (SA9):** el rover autònom capaç de completar el repte final
 i la competició de fi de curs, amb telemetria per ràdio funcionant.

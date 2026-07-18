@@ -116,8 +116,9 @@
 > 🤖 **Fil conductor de robots:** si el curs segueix el fil conductor
 > ([`00_Fil_conductor_robots.md`](../00_General/00_Fil_conductor_robots.md)),
 > aquesta S4 és la **sessió de fabricació de la mascota**: el repte de la S3 fa
-> de producte (palanca oficial del pla de contingència) i la sessió es dedica a
-> personalitzar la cara i tallar les caixes per rotacions
+> de producte (palanca oficial del pla de contingència). La parella porta
+> l'esborrany de la cara fet (de casa o del tancament de la S3); a la S4
+> s'ajusta, el docent el valida i es talla per rotacions
 > ([dossier](../00_General/00_Projecte_T1_Mascota.md)). El mini-check de la S4
 > es manté a l'inici de la sessió.
 

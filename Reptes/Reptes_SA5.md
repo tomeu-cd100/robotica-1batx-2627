@@ -126,4 +126,4 @@ Aquest trimestre tot suma cap al **braç robòtic** ([dossier](../Classes/00_Gen
 
 - **Repte C (joc o missatges per ràdio)** → el comandament del braç: el mateix ping-pong per ràdio entre les dues micro:bit de la parella és la base de com la segona micro:bit envia inclinació i botons perquè la primera mogui el braç.
 
-El braç que vau muntar a SA4 es re-cableja ara al micro:bit; la ràdio que programeu aquí és **directament** el comandament sense fils que li dona SA6.
+El braç que vau muntar a SA4 es re-cableja ara al micro:bit; la ràdio que programeu aquí és **directament** el comandament sense fils del braç, que a SA6 s'integrarà a la màquina d'estats.

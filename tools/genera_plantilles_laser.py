@@ -49,6 +49,16 @@ def mascota():
                        (x + 8, y + h - 8), (x + w - 8, y + h - 8)]:
             e.append(cercle(fx, fy, M3))
 
+    def orella(x, y):
+        """Peça d'orella retallable: contorn de tall (cercle Ø45 + pestanya
+        10x15 mm per encolar-la al caire superior del frontal) i un contorn
+        de gravat interior perque cada equip hi retalli la seva forma."""
+        cx, cy = x + 22.5, y + 15 + 22.5
+        e.append(rect(x + 17.5, y, 10, 15))          # pestanya d'enganxar
+        e.append(cercle(cx, cy, 45))                 # contorn de tall
+        e.append(cercle(cx, cy, 30, GRAVAT))          # contorn de gravat (personalitzable)
+        e.append(etiqueta(x, y + 15 + 45 + 8, "ORELLA x2 - retalla la teva forma"))
+
     # Frontal 120x100: ulls, PIR, reixeta brunzidor, zona de cara gravable
     e.append(rect(0, 0, 120, 100))
     forats_escaire(0, 0, 120, 100)
@@ -72,10 +82,15 @@ def mascota():
         e.append(etiqueta(x0 + 4, 12, nom))
     # Base i tapa 120x106 (la tapa amb pas de cables)
     e.append(rect(0, 105, 120, 106))
+    forats_escaire(0, 105, 120, 106)
     e.append(etiqueta(4, 117, "BASE"))
     e.append(rect(125, 105, 120, 106))
+    forats_escaire(125, 105, 120, 106)
     e.append(rect(175, 150, 16, 10))        # pas de cables de la tapa
     e.append(etiqueta(129, 117, "TAPA"))
+    # Orelles (x2): peces retallables per personalitzar, zona lliure del tauler
+    orella(260, 105)
+    orella(370, 105)
     desa("mascota.svg", 465, 215, e)
 
 
@@ -137,6 +152,8 @@ def rover():
     for fx, fy in [(175, 10), (315, 10), (175, 110), (315, 110)]:
         e.append(cercle(fx, fy, M3))
     e.append(rect(230, 50, 30, 12))         # pas de cables
+    e.append(cercle(230, 20, M3))           # suport HC-SR04 (2 forats, 30 mm entre centres)
+    e.append(cercle(260, 20, M3))
     e.append(rect(185, 70, 120, 40, GRAVAT, r=4))  # nom de l'equip gravat
     e.append(etiqueta(215, 12, "PIS SUPERIOR - grava el nom"))
     desa("rover.svg", 330, 125, e)

@@ -133,7 +133,7 @@ Aporta **comunicació, actuadors i sensors avançats** per a control, IoT i IA.
 
 ---
 
-## Única compra pendent: pont H L298N (SA4)
+## Compra pendent: pont H L298N (SA4)
 
 | Element | Per a què | Acció | Quant. orient. | Cost |
 |---|---|---|---|---|
@@ -159,8 +159,8 @@ consumeix consumibles propis, no coberts pels 3 kits:
 
 **Total orientatiu: 130-180 €.**
 
-> ℹ️ El **pont H L298N** ja consta com a única compra pendent a la secció
-> anterior («Única compra pendent: pont H L298N»), amb la quantitat ampliada
+> ℹ️ El **pont H L298N** ja consta com a compra pendent a la secció
+> anterior («Compra pendent: pont H L298N»), amb la quantitat ampliada
 > a **×14** per cobrir també el seu ús al rover de SA7-SA9. La resta
 > d'electrònica dels tres robots (Arduino UNO, sensors, servos, micro:bit...)
 > surt dels **kits d'aula existents** i es **retorna al juny**.

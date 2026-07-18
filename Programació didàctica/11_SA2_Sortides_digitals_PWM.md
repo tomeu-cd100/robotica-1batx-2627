@@ -37,7 +37,9 @@ Estructura del sketch; variables, constants i operadors; `pinMode`, `digitalWrit
 > ([`Classes/00_General/00_Fil_conductor_robots.md`](../Classes/00_General/00_Fil_conductor_robots.md)),
 > la sessió 4 és també la **sessió de fabricació de la mascota** (tall làser
 > i muntatge, [dossier](../Classes/00_General/00_Projecte_T1_Mascota.md)):
-> el repte de la sessió 3 fa de producte.
+> el repte de la sessió 3 fa de producte. La parella porta l'esborrany de la
+> cara fet (de casa o del tancament de la sessió 3); a la sessió 4 s'ajusta,
+> el docent el valida i es talla per rotacions.
 
 ## Producte
 Un dispositiu de senyalització programable (p. ex. semàfor amb fase nocturna intermitent o llum d'estat RGB) amb codi comentat i esquema.

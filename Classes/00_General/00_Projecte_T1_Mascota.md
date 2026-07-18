@@ -62,8 +62,11 @@ Peces impreses en 3D: [`../../Recursos/peces_3d/escaire_caixa.scad`](../../Recur
 
 La plantilla `mascota.svg` és **fixa** (línies negres de tall i forats de
 muntatge): cap equip la toca. El que cada parella personalitza és **NOMÉS la
-zona vermella** de gravat —la cara (forma dels ulls, celles, boca) i les
-orelles— sobre una **còpia pròpia** del fitxer.
+zona vermella**, sobre una **còpia pròpia** del fitxer: la cara (forma dels
+ulls, celles, boca) al frontal, de gravat; i les **2 peces d'orella**
+(etiquetades «ORELLA x2 - retalla la teva forma»), on el contorn de gravat
+interior és només una guia i cada equip hi retalla la seva pròpia forma sobre
+la peça en brut.
 
 Flux de personalització:
 1. Cada parella fa una **còpia** del fitxer `mascota.svg` amb el nom del seu
@@ -82,8 +85,9 @@ guia completa: [`../../Recursos/plantilles_laser/LLEGEIX-ME.md`](../../Recursos/
 
 ## Muntatge
 
-1. Munta la **base** i els **quatre laterals** de la caixa amb els 8
-   escaires impresos (2 per cantonada), sense encolar encara.
+1. Munta la **base** i els **quatre laterals** de la caixa amb 6 dels 8
+   escaires impresos, sense encolar encara (els 2 restants es reserven per a
+   la tapa, al pas 7).
 2. Fixa la **breadboard amb l'Arduino UNO** a la base, deixant els ports USB
    i d'alimentació accessibles per una obertura lateral.
 3. Encaixa els **difusors d'ull** al frontal i passa-hi els cables de la
@@ -93,7 +97,7 @@ guia completa: [`../../Recursos/plantilles_laser/LLEGEIX-ME.md`](../../Recursos/
 5. Encaixa el **micròfon** i el **TEMT6000** darrere la reixeta central.
 6. Cablatge complet segons la taula de baix; comprova totes les connexions
    **abans** de tancar la caixa.
-7. Tanca la **tapa superior** amb els últims dos escaires, deixant-la
+7. Tanca la **tapa superior** amb els 2 escaires restants, deixant-la
    desmuntable (sense encolar) per si cal repassar el cablatge.
 8. Prova d'encesa: comprova que els ulls s'encenen amb el color correcte
    abans de donar la mascota per acabada.
