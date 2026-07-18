@@ -114,3 +114,15 @@
 - **Diferenciació:** el mínim assegura la base (seqüència/fade/barra); les ampliacions porten a arrays, RGB i funcions.
 - **Gestió d'aula:** el repte A enllaça amb `02_semafor`; el B amb `03_fade_pwm`/`04_rgb`; el C amb `05_panell_senyalitzacio`. Tot simulable.
 - **Vincle avaluació:** producte amb esquema (R2/R4) coherent amb el material de la SA2.
+
+---
+
+## 🤖 Cap al robot del trimestre
+
+Aquest trimestre tot suma cap a la **mascota reactiva** ([dossier](../Classes/00_General/00_Projecte_T1_Mascota.md) · [fil conductor](../Classes/00_General/00_Fil_conductor_robots.md)):
+
+- **Repte A (semàfor)** → el codi de colors d'humor de la mascota (contenta/neutra/enfadada) als ulls NeoPixel.
+- **Repte B (llum d'ambient)** → la «respiració» dels ulls quan la mascota dorm.
+- **Repte C (indicador de nivell)** → el termòmetre d'emoció de la mascota: el LED RGB passa de verd a vermell segons la seva intensitat (tranquil·la ↔ molt excitada), igual que la barra puja i baixa amb el nivell.
+
+El que programes al repte és **directament** una expressió de la teva mascota: guarda el codi, que el reutilitzaràs quan la caixa estigui tallada.

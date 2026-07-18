@@ -114,3 +114,15 @@
 - **Diferenciació:** el mínim (llegir + decidir) és comú; la histèresi i la resposta proporcional connecten amb la SA6.
 - **Gestió d'aula:** insistir en l'ús del **Monitor Sèrie** com a eina de depuració. Tot simulable a Tinkercad (ultrasons i LDR inclosos).
 - **Vincle avaluació:** R1 + R2 + R4; pont natural cap a control (SA6).
+
+---
+
+## 🤖 Cap al robot del trimestre
+
+Aquest trimestre tot suma cap a la **mascota reactiva** ([dossier](../Classes/00_General/00_Projecte_T1_Mascota.md) · [fil conductor](../Classes/00_General/00_Fil_conductor_robots.md)):
+
+- **Repte A (llum automàtica nocturna)** → el sensor TEMT6000 de la mascota: **dorm** (ulls apagats) quan es fa fosc i es **desperta** amb la llum del dia.
+- **Repte B (sensor d'aparcament)** → el PIR de la mascota: **saluda** (parpelleig o so) quan algú **s'hi acosta**, amb la mateixa lògica de trams que l'avís antixoc.
+- **Repte C (instrument o comptador)** → el polsador de la mascota: cada **carícia** (premuda) li canvia l'humor o li dispara una animació, com el comptador que has programat.
+
+El micròfon i el DHT11 de la caixa —despertar-se amb una picada de mans, reaccionar a la temperatura— són les altres reaccions que hi afegeixes en muntar la mascota a la S4, amb la mateixa lògica entrada→decisió del repte que hagis triat. El producte final de SA3-S3 és la mascota muntada amb **≥3 reaccions sensor→comportament** i la seva fitxa de personalitat.
