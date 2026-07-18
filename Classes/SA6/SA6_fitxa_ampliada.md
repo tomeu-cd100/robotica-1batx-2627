@@ -40,6 +40,64 @@
 ```
 3. **Repte:** afegeix un estat nou o una transició condicional. Quin? ____________
 
+### 📐 La recepta: d'`if-else` infinits a màquina d'estats
+
+Quan un programa ha de «recordar en quin punt està», la temptació és apilar `if-else` amb variables booleanes… i al tercer estat ja ningú no sap què passa:
+
+```cpp
+// AIXI NO: al tercer estat ja no se sap que passa
+bool enMarxa = false;
+bool acabat = false;
+bool pausat = false;
+if (enMarxa && !acabat && !pausat) { ... }
+else if (!enMarxa && acabat) { ... }
+else if (pausat && enMarxa) { ... }   // aquesta combinacio... pot passar?
+```
+
+La màquina d'estats ho substitueix per **una sola variable** que només pot valer un dels estats del teu **diagrama**. Plantilla (la mateixa que fa servir tot el codi de la SA6):
+
+```cpp
+// 1) Un estat per cada "casella" del teu diagrama (ni un mes)
+enum Estat { ESPERA, FEINA, FET };
+Estat estat = ESPERA;            // estat inicial
+
+unsigned long tEstat = 0;        // quan hem entrat a l'estat actual
+
+// 2) TOTS els canvis d'estat passen per aqui (i el cronometre es reinicia)
+void canviaEstat(Estat nou) {
+  estat = nou;
+  tEstat = millis();
+}
+
+void loop() {
+  // 3) Un unic switch: cada case = QUE FA l'estat + QUAN EN SURT
+  switch (estat) {
+
+    case ESPERA:
+      // que fa: sortides de l'estat (LEDs, motor...)
+      // quan en surt: una condicio observable (boto, sensor, temps)
+      if (condicio) canviaEstat(FEINA);
+      break;
+
+    case FEINA:
+      // transicio per temps SENSE delay(): el loop mai no es bloqueja
+      if (millis() - tEstat > 3000) canviaEstat(FET);
+      break;
+
+    case FET:
+      // ...i sempre alguna sortida cap a un altre estat!
+      break;
+  }
+}
+```
+
+**Les 3 regles del patró** (si les segueixes, no et perds mai):
+1. **Un `enum`, una variable**: l'estat és **un** i només un — mai booleans que es poden contradir.
+2. **Cada `case` respon dues preguntes**: *què fa* el sistema en aquest estat i *quan i cap a on en surt*. Un estat sense sortida = sistema penjat (targeta de rescat T6.2).
+3. **Cap `delay()` llarg**: les esperes es fan comparant `millis() - tEstat`, perquè el `loop()` ha de continuar llegint sensors i polsadors mentre «espera».
+
+> ✏️ El `switch` és la **transcripció literal** del teu diagrama d'estats (activitat 3.2): cada casella un `case`, cada fletxa un `canviaEstat()`. Si al codi hi ha un `case` que no és al dibuix (o al revés), un dels dos menteix.
+
 ## Activitat 4 · Control proporcional (S4)
 1. Carrega `04_control_proporcional.ino`. Què és l'**error**? ____________________
 2. Com afecta la constant `Kp` a la resposta? ___________________________

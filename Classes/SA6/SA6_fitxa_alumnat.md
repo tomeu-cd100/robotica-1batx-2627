@@ -60,7 +60,7 @@ Si la tasca encara no t'apareix al Classroom, és que la SA encara no ha començ
 2. Dibuixa el **diagrama d'estats** (estats i transicions).
 3. **Repte:** afegeix un estat nou o una transició condicional.
 
-> 💡 Si t'encalles muntant el patró, parteix de l'esquelet `03_maquina_estats_BASTIDA` (el patró `enum`/`switch` + `millis()` ja hi és; tu omples els `// TODO`). El `millis()` no bloquejant ja el vas practicar a la SA4 (`05_dos_leds_millis`).
+> 💡 Si t'encalles muntant el patró, parteix de l'esquelet `03_maquina_estats_BASTIDA` (el patró `enum`/`switch` + `millis()` ja hi és; tu omples els `// TODO`). El `millis()` no bloquejant ja el vas practicar a la SA4 (`05_dos_leds_millis`). Vols la **recepta del patró** (per què `enum` + `switch` i no una pila d'`if-else`) amb les 3 regles? → [fitxa ampliada, «La recepta»](SA6_fitxa_ampliada.md).
 
 ### 4 · Prova pràctica T2 (S4, individual)
 La sessió 4 **sencera** és la **prova T2**: individual, dues parts (control amb histèresi + micro:bit), i pots consultar **el teu quadern i els esquemes**. El nucli (histèresi) ben fet = 5-6; ampliacions = 7-10.

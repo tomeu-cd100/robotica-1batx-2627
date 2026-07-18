@@ -23,12 +23,16 @@ Comprova (i falla amb exit != 0 si troba res):
  11. Enllaços externs (OPT-IN amb QA_ENLLACOS_EXTERNS=1: depèn de la xarxa;
      mai no bloqueja el CI — els caiguts surten com a avís).
 
+Abans de res (punt 0) comprova que els paquets del generador (markdown,
+pygments) estan instal·lats: sense ells els punts 6 i 8 petarien a mig camí.
+
 Ús:  py tools/qa.py          (cal haver generat el web abans per al punt 1;
                               si web/ no té HTML, el punt 1 s'omet amb avís)
 """
 from __future__ import annotations
 
 import html.parser
+import importlib.util
 import os
 import py_compile
 import re
@@ -467,7 +471,23 @@ def comprova_enllacos_externs() -> None:
     print(f"11) Enllaços externs: {len(urls)} URL úniques, {caiguts} amb problemes (avís).")
 
 
+def comprova_dependencies() -> None:
+    """Els checks 6 i 8 importen mòduls del generador (generar.py,
+    generar_fulls_imprimibles.py) que depenen de paquets externs. Sense ells,
+    el QA petava amb un ModuleNotFoundError a mig camí: millor fallar aquí,
+    d'hora i amb la instrucció d'instal·lació."""
+    falten = [p for p in ("markdown", "pygments") if importlib.util.find_spec(p) is None]
+    if falten:
+        print("0) Dependències del generador: FALTA " + " i ".join(falten) + ".")
+        print("   El QA les necessita (checks 6 i 8 importen el generador).")
+        print("   Instal·la-les amb:")
+        print("     py -m pip install -r web/_generador/requirements.txt")
+        sys.exit(2)
+    print("0) Dependències del generador (markdown, pygments): instal·lades.")
+
+
 def main() -> int:
+    comprova_dependencies()
     comprova_enllacos_web()
     comprova_cobertura_sa()
     comprova_hores()

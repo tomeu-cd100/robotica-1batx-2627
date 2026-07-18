@@ -10,6 +10,8 @@
 4. **Apunta al quadern** quina targeta i quin nivell has usat (p. ex. «T4.1 🟡»). **No penalitza** — al contrari: documentar com t'has desencallat puntua a R4. El que sí que penalitza és copiar la solució del costat sense entendre-la.
 5. **Regla d'or:** la pista et torna a posar en marxa; **no et fa la feina**.
 
+> 🩺 **Sospites del maquinari** (cable trencat, curt, res que s'encén)? Abans de cridar el docent, passa el **[diagnòstic exprés de maquinari](00_Checklist_taller_avaries.md)**: 4 passos amb el multímetre.
+
 > **Per al docent:** imprimeix i retalla les targetes (racó de material), o projecta'n una quan mitja classe s'encalla al mateix lloc. El nivell més alt que ha necessitat cada alumne/a es pot anotar a la graella de grup ([`Avaluació/Full_seguiment_grup.md`](../../Avaluació/Full_seguiment_grup.md)): és un senyal formatiu, no una nota. Les targetes estan alineades amb les taules «Errors freqüents» de cada guia docent.
 
 ---
