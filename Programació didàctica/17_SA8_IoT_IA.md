@@ -39,7 +39,7 @@
 |---|---|
 | **1** | **Telemetria**: una micro:bit envia dades (temperatura/llum) i una altra les rep i mostra/registra. (Opció ESP32: enviar a un panell/MQTT.) |
 | **2** | Concepte d'IoT: arquitectura, aplicacions i **riscos** (privacitat/seguretat). **Auditoria per parelles d'un producte IoT real** (informe + peritatge creuat). |
-| **3** | **Introducció a la IA**: recollir dades de l'acceleròmetre i classificar gestos (model senzill / regles entrenades). Reflexió ètica. |
+| **3** | **Introducció a la IA** en escala de tres graons: llindar (conegut de SA3/SA6) → regles combinades (classificador de gestos amb l'acceleròmetre, amb els valors anotats a la SA5) → ML real (Teachable Machine). Reflexió ètica. |
 
 ## Producte
 Sistema connectat que recull i comunica dades (telemetria) o classifica un gest/patró amb IA senzilla, amb una reflexió escrita sobre ètica i privacitat.

@@ -29,7 +29,7 @@ Els sabers s'organitzen en **sis blocs**, coherents amb el bloc *Automatització
 
 ## Bloc D · Programació en MicroPython (micro:bit)
 - Sintaxi de Python: indentació, variables, tipus, funcions.
-- E/S de la micro:bit: matriu LED, botons, sensors integrats (acceleròmetre, brúixola, temperatura, llum).
+- E/S de la micro:bit: matriu LED, botons, sensors integrats (acceleròmetre, temperatura, llum).
 - Pins i perifèrics externs amb Micro:shield.
 - Comunicació per **ràdio** entre plaques.
 - Comparació de paradigmes C/C++ ↔ Python (tipat, sintaxi, casos d'ús).

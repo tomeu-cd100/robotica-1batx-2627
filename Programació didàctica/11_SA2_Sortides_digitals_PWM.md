@@ -13,7 +13,7 @@
 - **Competències clau:** STEM, CD.
 
 ## Sabers (Blocs B i C)
-Estructura del sketch; variables, constants i operadors; `pinMode`, `digitalWrite`, `delay`; **PWM** (`analogWrite`); estructures de control; LED, LED RGB, piezo, relé; protoboard i esquemes.
+Estructura del sketch; variables, constants i operadors; `pinMode`, `digitalWrite`, `delay`; **PWM** (`analogWrite`); estructures de control (`for`, `if`, `switch`); llei d'Ohm aplicada (càlcul de la resistència limitadora); LED, LED RGB, piezo, relé; protoboard i esquemes.
 
 ## Objectius d'aprenentatge
 1. Escriure programes amb variables, constants i estructures de control.
@@ -28,8 +28,8 @@ Estructura del sketch; variables, constants i operadors; `pinMode`, `digitalWrit
 
 | Sessió | Activitats |
 |---|---|
-| **1** | `Blink` real amb LED + resistència. Variables i constants (`const int LED = 13;`). Esquema al quadern. **+ repte:** parpelleig variable. |
-| **2** | Estructures de control: `for` i `if`. Repte **semàfor** (3 LED) amb temporització. Antipatró `delay` vs `millis()` (introducció). |
+| **1** | `Blink` real amb LED + resistència. Variables i constants (`const int LED = 13;`). **Càlcul de la resistència limitadora amb la llei d'Ohm** (R = (5−2) V / 20 mA → 220 Ω comercial). Esquema al quadern. **+ repte:** parpelleig variable. |
+| **2** | Estructures de control: `for`, `if` i **`switch`** (semàfor com a variable de fase — llavor de les màquines d'estats de la SA6). Repte **semàfor** (3 LED) amb temporització. Antipatró `delay` vs `millis()` (introducció). |
 | **3** | **PWM** amb `analogWrite`: efecte *fade* i LED RGB (barreja de colors). Funció `map()` aplicada a nivells. |
 | **4** | Repte integrador: **"panell de senyalització"** (LED RGB + piezo + relé per a una càrrega). Documentació i mini-defensa. |
 

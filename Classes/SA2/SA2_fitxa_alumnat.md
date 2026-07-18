@@ -11,7 +11,7 @@
 ## 🎯 Objectius i avaluació
 
 **En acabar aquesta SA podré:**
-1. Escriure programes amb **variables, `if` i `for`** que controlin llums i so.
+1. Escriure programes amb **variables, `if`, `for` i `switch`** que controlin llums i so.
 2. **Graduar** intensitat i color amb PWM (`analogWrite`, 0–255, pins `~`).
 3. Muntar circuits correctes (resistència, polaritat) i **mesurar-hi tensions** amb el multímetre.
 
@@ -43,13 +43,15 @@ En aquesta pàgina hi tens el que necessites mentre treballes: els **objectius i
 0. **PREDIU:** mirant `01_led_basic.ino`, què farà el LED? ______________________
 1. Munta un LED al pin 8. Carrega `01_led_basic.ino` i comprova la predicció.
 2. Canvia el temps d'encès/apagat amb una **variable** `temps`. Valor provat: ______
-3. **Racó de mesura (multímetre):** amb el LED encès, tensió al LED = ______ V · a la resistència = ______ V · suma ≈ ______ V. Què hi observes? ______________________
-4. **Repte:** escriu el codi Morse d'una lletra (· curt / − llarg). Lletra: ____
+3. **D'on surt el 220 Ω?** Calcula amb la llei d'Ohm: R = (5 − 2) V / 0,02 A = ______ Ω. Per què usem 220 Ω i no aquest valor exacte? ______________________
+4. **Racó de mesura (multímetre):** amb el LED encès, tensió al LED = ______ V · a la resistència = ______ V · suma ≈ ______ V. Què hi observes? ______________________
+5. **Repte:** escriu el codi Morse d'una lletra (· curt / − llarg). Lletra: ____
 
 ### 2 · Semàfor (S2)
 1. Munta 3 LED (vermell-8, groc-9, verd-10). Carrega `02_semafor.ino`.
 2. Durada de cada fase: vermell ____ s · verd ____ s · groc ____ s.
-3. **Repte:** afegeix una **fase nocturna** (groc intermitent).
+3. Reescriu el semàfor amb **`switch`** sobre una variable `fase` (0-1-2). Què passa si oblides un `break`? ______________________
+4. **Repte:** afegeix una **fase nocturna** (groc intermitent) com a fase nova del `switch`.
 
 ### 3 · PWM: intensitat i color (S3)
 1. Efecte *fade* amb `03_fade_pwm.ino` (pin 9). Rang d'`analogWrite`: ____ a ____
@@ -77,7 +79,7 @@ Dissenya un panell que indiqui **estats** amb color + so + una càrrega (relé):
 ## M'autoavaluo (Insuficient · Suficient/Bé · Notable · Excel·lent — la nota és 0-10)
 | Criteri | Insuficient | Suficient/Bé | Notable | Excel·lent |
 |---|---|---|---|---|
-| Programo seqüències amb `for`/`if` i variables | ☐ | ☐ | ☐ | ☐ |
+| Programo seqüències amb `for`/`if`/`switch` i variables | ☐ | ☐ | ☐ | ☐ |
 | Regulo intensitat/color amb PWM (`analogWrite`, `map`) | ☐ | ☐ | ☐ | ☐ |
 | Munto el circuit amb resistència i polaritat correctes | ☐ | ☐ | ☐ | ☐ |
 

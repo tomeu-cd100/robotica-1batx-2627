@@ -79,7 +79,12 @@
 
 ## SESSIÓ 3 (2 h) — Introducció a la IA: de les regles a l'aprenentatge
 - **Activació (10'):** *"Com pot un sistema 'reconèixer' un gest o decidir per si sol?"*
-- **Modelatge (25'):** [`03_ia_gestos.py`](codi/03_ia_gestos.py). Recollir dades de l'acceleròmetre i **classificar** gestos (pla, dret, inclinat, sacseig) amb **regles** a partir dels valors. Explicar la diferència entre **regles fetes a mà** i **aprenentatge automàtic (ML)** real (vegeu el marc de `../00_IA_a_la_materia.md` §4).
+- **Modelatge (25'):** [`03_ia_gestos.py`](codi/03_ia_gestos.py). Presenta-ho com una **escala de tres graons**, perquè el salt a la IA no sigui al buit sinó des de coses que ja saben fer:
+  1. **Un llindar** (ja ho saben: l'alarma de la SA3, el termòstat de la SA6) — *"si x > 300, alerta"*: classifica en 2 classes amb 1 valor.
+  2. **Regles combinades** (el que es fa avui): diversos valors (3 eixos de l'acceleròmetre) i diverses regles → 4 gestos (pla, dret, inclinat, sacseig). Encara les escrivim **a mà**. Recupera els **valors d'acceleròmetre anotats al quadern a la SA5 S2**: són el punt de partida per fixar els llindars sense fer-ho «a ull».
+  3. **ML** (el bloc següent): quan les classes són massa complexes per escriure'n regles (una cara, un so), les regles **s'aprenen dels exemples**.
+
+  Explicar la diferència entre **regles fetes a mà** i **aprenentatge automàtic (ML)** real (vegeu el marc de `../00_IA_a_la_materia.md` §4).
 - **Pràctica guiada (25'):** proven i ajusten el classificador per **regles**.
 - **De regles a ML real (35'):** fes el salt amb la **pràctica de Teachable Machine** ([`SA8_practica_teachable_machine.md`](SA8_practica_teachable_machine.md)): l'alumnat **recull exemples**, **entrena** un classificador (imatge/so/postura), el **prova** i el **trenca a propòsit** per veure'n els límits. *(Sense maquinari extra; Pla B amb demostració projectada — vegeu la pràctica.)* **Alternativa amb la placa:** extensió **ML/"AI" de MakeCode** per a micro:bit (recollir mostres de moviment i entrenar).
 - **Reflexió ètica + tancament (15'):** biaixos, dades i usos responsables de la IA. Usa el marc de la secció **"Ètica de dades i IA"** (RGPD, biaix, consentiment) i una de les seves preguntes de mini-debat.

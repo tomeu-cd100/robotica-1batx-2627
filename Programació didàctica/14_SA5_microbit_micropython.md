@@ -13,7 +13,7 @@
 - **Competències clau:** STEM, CD, CPSAA.
 
 ## Sabers (Bloc D)
-Sintaxi de Python (indentació, variables, funcions); E/S de micro:bit (matriu LED, botons, acceleròmetre, brúixola, temperatura, llum); pins externs amb Micro:shield; **comunicació per ràdio**; comparació C/C++ ↔ Python.
+Sintaxi de Python (indentació, variables, funcions); E/S de micro:bit (matriu LED, botons, acceleròmetre, temperatura, llum); pins externs amb Micro:shield; **comunicació per ràdio**; comparació C/C++ ↔ Python.
 
 ## Objectius d'aprenentatge
 1. Escriure programes en **MicroPython** amb la sintaxi correcta (indentació!).
@@ -29,7 +29,7 @@ Sintaxi de Python (indentació, variables, funcions); E/S de micro:bit (matriu L
 | Sessió | Activitats |
 |---|---|
 | **1** | Editor Python micro:bit. Matriu LED, botons. "Name badge" i animacions. Indentació i variables. |
-| **2** | Sensors integrats: acceleròmetre (detector de moviment/passes), temperatura, llum (nightlight). Funcions en Python. |
+| **2** | Sensors integrats: acceleròmetre (detector de moviment/passes), temperatura, llum (nightlight). Funcions en Python. Al tancament, **anotar valors reals de l'acceleròmetre** per postura (llavor del classificador de gestos de la SA8). |
 | **3** | **Ràdio**: missatgeria/comandament entre dues micro:bit. Mini-projecte: "dau digital" o "pedra-paper-tisora" per ràdio. |
 | **4 (opcional, fora del còmput)** | **Taula comparativa C++ ↔ Python** d'un mateix programa (p. ex. comptador). Reflexió sobre paradigmes. *Si no es fa la sessió, la comparativa es completa dins el tancament de la S3 (15').* |
 

@@ -69,6 +69,13 @@ La **Imagina 3dBot** és Arduino-compatible, però **els pins dels motors depene
 
 **Punt clau:** el control per **temps** és senzill però poc precís (depèn de bateria/superfície). Per això més endavant s'usa **realimentació** (sensors) → connexió amb SA6.
 
+> 📐 **Full de càlcul previ (10', dins el Modelatge — no saltis directament a provar temps a ull):** abans de calibrar, fes fer aquests tres càlculs al quadern (connexió amb **Matemàtiques I**):
+> 1. **Perímetre de la roda:** mesura el diàmetre D → perímetre = π·D. Cada volta de roda = ____ cm.
+> 2. **Velocitat real:** el robot recorre 1 m; cronometra → v = ____ cm/s. Predicció: quant de temps per recórrer 50 cm?
+> 3. **Gir de 90° sobre si mateix** (rodes en sentits oposats): cada roda recorre un arc = (π·L)/4, on **L** = distància entre rodes. Amb la v del pas 2, temps teòric de gir = ____ s.
+>
+> Després **comparen el temps teòric amb el calibrat**: la diferència (fregament, bateria, inèrcia) és exactament el motiu del Punt clau — per què el control per temps no és fiable. Així la **cinemàtica diferencial** deixa de ser una frase i passa a ser un càlcul que han fet.
+
 ---
 
 ## SESSIÓ 3 (2 h) — Evitar obstacles (comportament reactiu)
@@ -92,6 +99,8 @@ La **Imagina 3dBot** és Arduino-compatible, però **els pins dels motors depene
 - **Tancament + autoavaluació (10').** 📡 **Deures de represa (2'):** reparteix (o envia pel Classroom) la targeta [`00_Repas_expres_Radio.md`](../00_General/00_Repas_expres_Radio.md) — la ràdio micro:bit no es toca des de la SA5 i la S1 de la SA8 hi arrenca.
 
 > ⏱️ **Marge:** el temps efectiu real és ~100' (arrencada + recollida), no 120'. Si vas just, retalla primer: **+ repte: correcció proporcional (suau)**.
+
+> ⚖️ **Pont del control proporcional (per al «+ repte», ~5' si algú l'agafa):** el proporcional era **+ampliació a la SA6** — part de l'alumnat no l'ha vist. Abans de deixar-los amb el repte, recorda la idea en una línia: **correcció = Kp·error**, on l'error és *com de lluny és el robot del centre de la línia*. Com més desviat, més gir; a prop del centre, correcció suau (per això no fa ziga-zaga com el tot/res). Qui va fer l'ampliació de SA6 ho reconeixerà; qui no, en té prou amb això per provar-ho. Segueix sent **+ampliació**: el nucli de la SA és el seguidor tot/res.
 
 **Producte:** robot mòbil que completa un repte autònom (seguir línia o evitar obstacles) amb codi modular i **registre d'iteracions de millora**.
 **Avaluació:** rúbriques **R1** (codi), **R3** (robot/control), **R4** (documentació).

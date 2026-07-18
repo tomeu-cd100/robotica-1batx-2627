@@ -18,6 +18,7 @@
 |---|---|
 | `01_led_basic.ino` | Encendre/apagar un LED al pin 8. |
 | `02_semafor.ino` | Semàfor de 3 LED amb temporització. |
+| `02b_semafor_switch.ino` | El mateix semàfor amb `switch` sobre una variable de fase (llavor de la SA6). |
 | `03_fade_pwm.ino` | Efecte *fade* amb PWM. |
 | `04_rgb.ino` | Barreja de colors amb LED RGB. |
 | `05_panell_senyalitzacio.ino` | Producte integrador (RGB + piezo + relé). |
@@ -41,6 +42,8 @@
 
 **Punt clau:** sempre **resistència limitadora** (220 Ω) en sèrie amb el LED; pota llarga = ànode (+).
 
+> ⚡ **D'on surt el 220 Ω? (llei d'Ohm aplicada, ~10' dins el Modelatge):** no donis el valor per rebut — calcula'l a la pissarra amb l'alumnat: el LED cau ~2 V i vol ~20 mA, així que R = (5 − 2) V / 0,02 A = **150 Ω** → agafem el **valor comercial superior (220 Ω)** per marge de seguretat. És l'única aparició explícita de la **llei d'Ohm** al curs (connexió amb Física): el Racó de mesura de sota tanca el cercle, perquè les tensions mesurades (~2 V + ~3 V) són exactament les del càlcul.
+
 > 🔌 **Racó de mesura (dins la pràctica guiada, ~5' per parella):** munta un punt amb **multímetre** i fes-hi passar les parelles rotativament amb el seu circuit encès: mesurar la **tensió entre les potes del LED** (~2 V) i **a la resistència** (~3 V), i comprovar que sumen ~5 V. És la primera vegada que *veuen* la llei de la malla en un circuit seu (connexió amb Física) i l'única evidència de **mesura física real** de la CA2.2/R2 fins ara. Amb 2-3 multímetres n'hi ha prou (el taller de tecnologia acostuma a tenir-ne); si no n'hi ha cap, fes-ho com a demo projectada amb el teu.
 >
 > **Pla B sense multímetres (evidència CA2.2 igualment):** cada parella replica el seu circuit a **Tinkercad**, hi connecta el **multímetre simulat** i fa les dues mesures (LED i resistència) amb **captura de pantalla al quadern** + comprovació que sumen 5 V. Completa-ho amb una mesura «per programari» calibrada: llegir el mateix divisor de tensió amb `analogRead` i convertir el valor ADC a volts (`v = lectura * 5.0 / 1023`), comparant-lo amb el valor simulat. La R2 accepta aquestes dues evidències com a «mesura i interpretació de magnituds» quan no hi ha instrument físic; deixa-ho anotat al quadern («mesura simulada per manca d'instrument»).
@@ -49,14 +52,14 @@
 
 ## SESSIÓ 2 (2 h) — Estructures de control: el semàfor
 - **Activació (10'):** com es repeteix una seqüència? → bucles.
-- **Modelatge (25'):** `02_semafor.ino`. `for`, `if`, ordre de les fases. Introducció a `millis()` vs `delay()` (concepte, sense aprofundir).
+- **Modelatge (25'):** `02_semafor.ino`. `for`, `if`, ordre de les fases. Variant amb **`switch` sobre una variable `fase`** (0-vermell, 1-verd, 2-groc): mateixa seqüència, codi més llegible — és la llavor de les **màquines d'estats** de la SA6. Introducció a `millis()` vs `delay()` (concepte, sense aprofundir).
 - **Pràctica guiada (35'):** munten 3 LED (pins 8-9-10) i programen el cicle.
 - **Repte (40'):** afegir **fase nocturna** (groc intermitent) activable; **+ repte:** semàfor de vianants amb segon grup de LED.
 - **Tancament (10'):** quadern.
 
 > ⏱️ **Marge:** el temps efectiu real és ~100' (arrencada + recollida), no 120'. Si vas just, retalla primer: **el «+ repte» (semàfor de vianants)**.
 
-**Punt clau:** `delay()` bloqueja el programa; per a sistemes que han de fer diverses coses alhora s'usa `millis()` (es treballarà més endavant).
+**Punt clau:** `delay()` bloqueja el programa; per a sistemes que han de fer diverses coses alhora s'usa `millis()`. **Itinerari del concepte:** aquí es presenta; a la **SA4** es practica (mini-pràctica `05_dos_leds_millis`); a la **SA6** s'usa de debò (màquina d'estats no bloquejant).
 
 ---
 
@@ -109,7 +112,7 @@
 > Frases i preguntes clau per al **Modelatge** de cada sessió (què mirar, què preguntar abans d'executar, error a anticipar).
 
 - **S1 · `01_led_basic` (constants):** mostra per què `const int LED = 8;` és millor que escriure `8` per tot arreu. Pregunta: *"si moc el LED al pin 7, quantes línies he de canviar?"* *Error a anticipar:* oblidar `pinMode(LED, OUTPUT)`.
-- **S2 · `02_semafor` (`for`/`if`):** recorre el `loop()` en veu alta com una **recepta seqüencial**. Demana **predir l'ordre** d'encesa abans d'executar. Verbalitza: *`delay()` bloqueja — mentre espera, no passa res més*. *Error a anticipar:* esperar que els LED canviïn alhora.
+- **S2 · `02_semafor` (`for`/`if`/`switch`):** recorre el `loop()` en veu alta com una **recepta seqüencial**. Demana **predir l'ordre** d'encesa abans d'executar. Verbalitza: *`delay()` bloqueja — mentre espera, no passa res més*. En mostrar la variant amb `switch`, pregunta: *"quantes fases té el semàfor? i si n'hi afegim una quarta (nocturna), on aniria?"* *Error a anticipar:* esperar que els LED canviïn alhora; oblidar el `break` de cada `case`.
 - **S3 · `03_fade_pwm` / `04_rgb` (PWM, `map()`):** contrasta `digitalWrite` (0/1) amb `analogWrite` (**0–255**). Demana predir què fa el valor **128**. Mantra: *PWM només als pins `~`*. *Error a anticipar:* barrejar el rang 0–1023 (lectura) amb 0–255 (PWM).
 - **S4 · `05_panell` (integració):** no facis codi nou; mostra'l com a **integració** i pregunta com combinarien estat (RGB) + avís (piezo) + càrrega (relé).
 

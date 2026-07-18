@@ -49,11 +49,11 @@
 ---
 
 ## SESSIÓ 2 (2 h) — Sensors integrats
-- **Activació (10'):** *"Quins sensors porta de sèrie la micro:bit?"* (acceleròmetre, brúixola, temperatura, llum).
+- **Activació (10'):** *"Quins sensors porta de sèrie la micro:bit?"* (acceleròmetre, temperatura, llum; també porta brúixola, però no la treballem al curs).
 - **Modelatge (25'):** [`02_passes.py`](codi/02_passes.py) (acceleròmetre, `get_strength`, llindar i antirebot) i [`03_nightlight.py`](codi/03_nightlight.py) (`display.read_light_level()`).
 - **Pràctica guiada (35'):** comptapassos i llum automàtic.
 - **Repte (40'):** detector d'inclinació (nivell) o termòmetre amb avís; **+ repte:** registrar dades i mostrar màxim/mínim.
-- **Tancament (10'):** quadern.
+- **Tancament (10'):** quadern. **Sembra per a la SA8:** cada parella anota al quadern els **valors reals de l'acceleròmetre** en 3-4 postures (pla, dret, inclinat, sacseig — `x`, `y`, `get_strength()`): a la S3 de la SA8 seran el punt de partida del classificador de gestos, i estalvien fixar llindars «a ull».
 
 > ⏱️ **Marge:** el temps efectiu real és ~100' (arrencada + recollida), no 120'. Si vas just, retalla primer: **+ repte: registrar dades i mostrar màxim/mínim**.
 

@@ -30,7 +30,7 @@ Actuadors de moviment: servomotor (PWM, llibreria `Servo`), motor DC, **driver/p
 |---|---|
 | **1** | Servo amb llibreria `Servo`: posicionament 0-180°. Barrera/braç controlat per potenciòmetre. |
 | **2** | Motor DC + **pont H**: gir endavant/enrere; control de velocitat amb PWM. Seguretat amb alimentació externa. |
-| **3** | Integració sensor→actuador: potenciòmetre/ultrasons que regula velocitat o posició. |
+| **3** | Integració sensor→actuador: potenciòmetre/ultrasons que regula velocitat o posició. **Bastida `millis()`** (mini-pràctica de temporització no bloquejant, prepara la màquina d'estats de la SA6). |
 | **4** | Repte: **"barrera automàtica"** o **"ventilador regulable"** (sensor + actuador + indicador). Documentació. |
 
 > 🤖 **Fil conductor de robots:** amb el fil conductor actiu

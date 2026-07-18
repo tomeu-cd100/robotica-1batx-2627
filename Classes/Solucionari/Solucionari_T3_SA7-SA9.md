@@ -95,7 +95,7 @@ void loop(){}
 ## SA8
 
 ### + Repte: afegir una classe de gest nova al classificador
-Afegeix una regla nova a `classifica()` (p. ex. detectar "GIR" amb la brúixola o un llindar combinat):
+Afegeix una regla nova a `classifica()` (p. ex. detectar "GIR" amb un llindar combinat dels eixos):
 ```python
 def classifica(x, y, z):
     if accelerometer.was_gesture("shake"):

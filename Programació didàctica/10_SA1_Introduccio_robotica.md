@@ -28,7 +28,7 @@ Concepte de robot i de sistema embegut; arquitectura del microcontrolador; senya
 
 | Sessió | Activitats |
 |---|---|
-| **1** | Pluja d'idees sobre robots quotidians. Model entrada-procés-sortida. Anàlisi de 3 sistemes reals (rentadora, dron, semàfor). **Prova diagnòstica** de coneixements previs (programació/electrònica). |
+| **1** | Pluja d'idees sobre robots quotidians. Model entrada-procés-sortida. Anàlisi de 3 sistemes reals (rentadora, dron, semàfor). Presentació del **mètode de projecte** amb el seu nom formal (**design thinking**), que la SA9 reprèn. **Prova diagnòstica** de coneixements previs (programació/electrònica). |
 | **2** | Arquitectura d'Arduino UNO: pins, alimentació, USB. Senyal analògic vs digital. Normes de seguretat (full signat). Tour de l'Arduino IDE i Tinkercad. |
 | **3** | Lectura guiada del primer sketch (`Blink`): `setup()`/`loop()`. Modificació de temps en simulador. Mini-debat: **ètica i impacte** de l'automatització (ODS). Obertura del **quadern tècnic**. |
 

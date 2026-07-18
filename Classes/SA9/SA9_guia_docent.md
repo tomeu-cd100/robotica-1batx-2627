@@ -21,7 +21,7 @@ Projecte de **síntesi** del curs: en equip, l'alumnat dissenya, construeix, pro
 | `Codi_base_PLANTILLA/` | Esquelet de codi modular per començar (sketch en carpeta pròpia, llest per a l'Arduino IDE). |
 
 ## Mètode de projecte (culminació del curs)
-Aquesta SA **tanca el mètode de projecte** introduït a la **SA1** i practicat a totes les SA: *analitzar → dissenyar → prototipar → provar → millorar*. Les cinc fases de la seqüència s'hi corresponen directament:
+Aquesta SA **tanca el mètode de projecte** introduït a la **SA1** i practicat a totes les SA: *analitzar → dissenyar → prototipar → provar → millorar* — el nom formal, **design thinking**, ja es va presentar a la SA1 S1 amb el pòster del mètode, de manera que aquí és **repesca**, no estrena. Les cinc fases de la seqüència s'hi corresponen directament:
 
 | Fase del cicle (SA1) | Sessió SA9 |
 |---|---|

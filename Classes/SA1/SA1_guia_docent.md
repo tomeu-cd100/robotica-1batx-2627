@@ -31,6 +31,8 @@
 
 La SA1 no només respon *"què és un robot?"*: també presenta **com treballarem** a totes les SA. És el cicle d'enginyeria que es repetirà fins al projecte final (SA9) i que avalua la **CA5.1** (*gestionar un projecte tecnològic complet: anàlisi → prototip → millora*).
 
+> 💡 **Digues-li pel nom des del primer dia:** aquest cicle és la versió d'aula del **design thinking** (empatitzar → definir → idear → prototipar → testejar). Anomena'l així en presentar el pòster: quan a la **SA9 S1** aparegui el design thinking formal (amb prototip mínim viable i taulell àgil), serà una **repesca** d'un nom que ja coneixen, no una metodologia nova estrenada a última hora.
+
 | Fase | Pregunta clau | A la SA1 es viu així… |
 |---|---|---|
 | **1. Analitzar** | Quin problema/repte tinc? Què necessito? | Entendre el repte del `Blink` i descompondre'l (entrada-procés-sortida). |

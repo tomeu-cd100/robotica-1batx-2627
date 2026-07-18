@@ -52,9 +52,13 @@ Si la tasca encara no t'apareix al Classroom, és que la SA encara no ha començ
 3. **Repte:** seqüència de "ball".
 
 ### 2 · Trajectòries (S2)
-1. Recorre un **quadrat** amb `02_trajectoria_quadrat.ino`. Gir de 90° = ______ ms.
-2. Quant s'allunya del punt inicial després d'una volta? ______ cm. Per què? ____
-3. **Repte:** triangle o forma "L".
+1. **Full de càlcul previ** (abans de provar res!):
+   - Diàmetre de la roda D = ____ cm → perímetre = π·D = ____ cm/volta.
+   - El robot recorre 1 m en ____ s → velocitat = ____ cm/s.
+   - Gir de 90° sobre si mateix: cada roda fa un arc = (π·L)/4 (L = distància entre rodes = ____ cm) → temps **teòric** de gir = ____ s.
+2. Recorre un **quadrat** amb `02_trajectoria_quadrat.ino`. Gir de 90° **calibrat** = ______ ms. Diferència amb el teòric = ______ ms. A què creus que es deu? ____________
+3. Quant s'allunya del punt inicial després d'una volta? ______ cm. Per què? ____
+4. **Repte:** triangle o forma "L".
 
 ### 3 · Evita-obstacles (S3)
 1. Carrega `03_evita_obstacles.ino`. A quina distància gira? ______ cm.
