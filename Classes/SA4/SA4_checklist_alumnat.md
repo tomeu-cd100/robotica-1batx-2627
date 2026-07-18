@@ -14,6 +14,7 @@
 - [ ] **Dissenyar abans de codificar:** pseudocodi de la barrera al quadern
 - [ ] Lliurar la **barrera automàtica** i defensar-la 1' → *R1, R2 i R3* (S4)
 - [ ] Tenir el **quadern tècnic** al dia (per què cal un pont H, què és la massa comuna, un error resolt)
+- [ ] 🤖 Guardar el codi de control de servos: seran les **articulacions del braç** (el robot del trimestre) → [dossier](../00_General/00_Projecte_T2_Brac.md)
 
 ## 🚦 Com vaig? (pinta el teu nivell)
 | Ja sé… | 🔴 Encara no | 🟡 A mitges | 🟢 Sí |

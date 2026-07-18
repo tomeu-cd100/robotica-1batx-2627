@@ -14,6 +14,7 @@
 - [ ] Lliurar l'**app micro:bit** (un dels reptes) → *R1*
 - [ ] Completar la **taula comparativa C++ ↔ Python** → *R4*
 - [ ] Tenir el **quadern tècnic** al dia (per què la indentació importa, avantatge dels sensors integrats, un error resolt)
+- [ ] 🤖 Guardar el codi de comunicació per ràdio: serà el **comandament del braç** (el robot del trimestre) → [dossier](../00_General/00_Projecte_T2_Brac.md)
 
 ## 🚦 Com vaig? (pinta el teu nivell)
 | Ja sé… | 🔴 Encara no | 🟡 A mitges | 🟢 Sí |

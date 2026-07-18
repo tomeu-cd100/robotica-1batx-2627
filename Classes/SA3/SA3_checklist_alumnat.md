@@ -15,6 +15,7 @@
 - [ ] Lliurar l'**alarma / sensor d'aparcament** i defensar-la 1' a peu de taula → *R1 i R2* (S3)
 - [ ] Fer la **prova T1** (S4, individual — amb el quadern al dia com a material permès)
 - [ ] Tenir el **quadern tècnic** al dia (digital vs analògic, per a què serveix una funció, un error resolt)
+- [ ] 🤖 Tancar la **mascota** (el robot del trimestre): presentar el muntatge, el circuit i el codi al dossier → [dossier](../00_General/00_Projecte_T1_Mascota.md)
 
 ## 🚦 Com vaig? (pinta el teu nivell)
 | Ja sé… | 🔴 Encara no | 🟡 A mitges | 🟢 Sí |

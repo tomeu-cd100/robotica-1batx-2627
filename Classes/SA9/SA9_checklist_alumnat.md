@@ -13,6 +13,7 @@
 - [ ] **S3 · Provar i millorar:** provar **per parts**, registrar errors i **iterar** (v1 → v2 → …)
 - [ ] **S4 · Comunicar:** tancar el **dossier tècnic** + fer la **defensa oral + demostració** (cadascú explica la seva part)
 - [ ] **S5 · Prova pràctica T3:** prova **individual** (robot per torns a la pista + micro:bit a la taula) — no és sessió de projecte
+- [ ] 🤖 Tancar el projecte amb el **rover** (el robot del trimestre) al repte final → [dossier](../00_General/00_Projecte_T3_Rover.md)
 
 ## 📦 Entrega final (tot ha d'estar fet)
 - [ ] **Sistema funcional** que compleix els requisits mínims → *R1, R2, R3*

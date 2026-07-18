@@ -15,6 +15,7 @@
 - [ ] Lliurar el **sistema de control documentat** i defensar-lo **2–3'** a peu de taula (una decisió tècnica justificada) → *R1, R3, R4* (S3)
 - [ ] Fer la **prova T2** (S4, individual — amb el quadern al dia com a material permès)
 - [ ] Tenir el **quadern tècnic** al dia (què és la realimentació, per què serveix la histèresi, un error resolt)
+- [ ] 🤖 Tancar el **braç** (el robot del trimestre): la màquina d'estats amb aturada d'emergència n'és el control complet → [dossier](../00_General/00_Projecte_T2_Brac.md)
 
 ## 🚦 Com vaig? (pinta el teu nivell)
 | Ja sé… | 🔴 Encara no | 🟡 A mitges | 🟢 Sí |

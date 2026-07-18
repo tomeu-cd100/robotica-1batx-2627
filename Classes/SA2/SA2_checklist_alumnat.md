@@ -13,6 +13,7 @@
 - [ ] Regular **intensitat i color** amb PWM (`analogWrite`, `map`) i crear colors RGB (S3)
 - [ ] Lliurar el **panell de senyalització** (estat RGB + so + relé) i defensar-lo 1' → *R1 i R2* (S4)
 - [ ] Tenir el **quadern tècnic** al dia (esquema, diferència `digitalWrite`/`analogWrite`, un error resolt)
+- [ ] 🤖 Guardar el codi del panell (colors, animacions i sons): és el de la teva **mascota** (el robot del trimestre) → [dossier](../00_General/00_Projecte_T1_Mascota.md)
 
 ## 🚦 Com vaig? (pinta el teu nivell)
 | Ja sé… | 🔴 Encara no | 🟡 A mitges | 🟢 Sí |

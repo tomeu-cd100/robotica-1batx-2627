@@ -14,6 +14,7 @@
 - [ ] ✏️ Escriure **un repte a full en blanc** (només pseudocodi + full-xuleta, editor buit) — entrenament per a la SA9
 - [ ] Lliurar el **comportament autònom** + el **registre d'iteracions** → *R1, R3, R4*
 - [ ] Tenir el **quadern tècnic** al dia (què és la cinemàtica diferencial, per què el control per temps no és precís, una millora que ha funcionat)
+- [ ] 🤖 Treballar tota la SA sobre el meu **rover** (el robot del trimestre): cinemàtica, trajectòries i comportaments autònoms → [dossier](../00_General/00_Projecte_T3_Rover.md)
 
 ## 🚦 Com vaig? (pinta el teu nivell)
 | Ja sé… | 🔴 Encara no | 🟡 A mitges | 🟢 Sí |
