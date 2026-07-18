@@ -9,10 +9,10 @@ Aquest document deixa **constància del maquinari que el centre ja té** per a l
 
 - **3 kits combinats per alumne** (hi ha tants kits com alumnes): Kit 1 (Arduino Starter Kit oficial) + Kit 2 (sensors bàsics Keyestudio) + Kit 3 (sensors avançats Keyestudio).
 - **1 micro:bit (+ Micro:shield) per alumne.**
-- **Placa/robot Imagina 3dBot** (per a robòtica mòbil, SA7).
+- **Placa/robot Imagina 3dBot** (reserva/pla B per a la SA7: la SA7 s'imparteix amb el **rover propi de cada parella**, fil conductor de T3).
 - **Alimentació i cables al centre:** piles AA + carregador, piles 9V (alim. UNO sense USB), cables **micro-USB** per als micro:bit.
 
-> ✅ Amb aquesta dotació, **les 9 SA queden cobertes**. L'única compra pendent és el **pont H L298N** per a la SA4 (vegeu el final del document).
+> ✅ Amb aquesta dotació, **les 9 SA queden cobertes**. La compra pendent és el **pont H L298N** més els consumibles del fil conductor de robots (vegeu «Compres del fil conductor de robots» al final del document).
 
 ---
 
@@ -67,10 +67,10 @@ Aporta els **sensors de percepció** i les **peces mecàniques** de robòtica m�
 | SA3 | TEMT6000 (llum), LM35 (temperatura), HC-SR04 (ultrasons), PIR, humitat de terra. |
 | SA4 | Micro servos i motoreductor (moviment); el motoreductor fa de motor discret per a la lliçó del pont H. |
 | SA6 | LM35 + actuador per al **termòstat** (llaç tancat). |
-| SA7 | Motoreductors, rodes, seguidor de línia i ultrasò → **repuesto/alternativa** a la Imagina 3dBot. |
+| SA7 | Motoreductors, rodes, seguidor de línia i ultrasò → **reserva/pla B** si cal, davant el rover propi de cada parella. |
 | SA8 | Pantalla OLED per mostrar dades. |
 
-> ℹ️ La SA7 s'imparteix amb la **Imagina 3dBot**; les peces de robot d'aquest kit queden com a **material de reserva** (avaries) o per a una construcció alternativa a SA9.
+> ℹ️ La SA7 s'imparteix amb el **rover propi de cada parella** (fil conductor de T3); la **Imagina 3dBot** i les peces de robot d'aquest kit queden com a **material de reserva/pla B** (avaries) o per a una construcció alternativa a SA9.
 
 ---
 
@@ -155,7 +155,7 @@ consumeix consumibles propis, no coberts pels 3 kits:
 | Filament PLA | 2-3 bobines per curs |
 | Portapiles 6×AA | ×12 |
 | Cargols M3 + separadors | segons muntatge |
-| Canicas 16 mm (roda boja del rover) | ×15 |
+| Caniques de 16 mm (per a la roda boja del rover) | ×15 |
 
 **Total orientatiu: 130-180 €.**
 

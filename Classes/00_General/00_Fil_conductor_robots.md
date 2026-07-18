@@ -77,6 +77,7 @@ Dossier de cada robot (peces, esquema de muntatge, cablatge i rúbrica):
 | Filament PLA | 2-3 bobines per curs |
 | Portapiles 6×AA | ×12 |
 | Cargols M3 + separadors | segons muntatge |
+| Caniques de 16 mm (roda boja) | ×15 (cost negligible) |
 | Pont H L298N | ×14 (12 parelles + reserva) |
 
 **Total orientatiu: 130-180 €.** La resta d'electrònica (Arduino UNO,

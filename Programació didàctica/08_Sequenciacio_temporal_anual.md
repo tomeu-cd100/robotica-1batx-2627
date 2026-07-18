@@ -91,7 +91,7 @@ Trimestre 2 — CONTROL I SENSORS
   SA6 ─ Sistemes de control (llaç obert/tancat, màquines d'estats)
         ▼ (l'alumnat controla moviment i realimentació)
 Trimestre 3 — ROBÒTICA I INTEGRACIÓ
-  SA7 ─ Robòtica mòbil (Imagina 3dBot): seguir línia / evitar obstacles
+  SA7 ─ Robòtica mòbil (rover propi; 3dBot de reserva): seguir línia / evitar obstacles
   SA8 ─ IoT/IA: telemetria, dades, introducció a la IA
   SA9 ─ Repte final: projecte autònom + documentació + defensa
 ```
