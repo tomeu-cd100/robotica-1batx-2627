@@ -363,6 +363,55 @@ def comprova_python_reptes() -> None:
     print(f"10) Python del solucionari: {len(fitxers)} fitxers, {fallats} amb errors de sintaxi.")
 
 
+# --- 12 · Bloc «Què has d'entregar» de cada SA -------------------------------
+def comprova_lliurables() -> None:
+    """El README de cada SA té el bloc «📦 Què has d'entregar» sincronitzat
+    amb les sessions reals de quadern_sessions.py (files S-n, fila de prova,
+    files ⭐/📓 sempre i 🤖 a SA2-SA9)."""
+    sys.path.insert(0, str(ARREL / "web" / "_generador"))
+    import quadern_sessions as q
+
+    sessions_sa: dict[str, int] = {}
+    prova_sa: dict[str, int] = {}
+    for sessions in q.SESSIONS.values():
+        for s in sessions:
+            sessions_sa[s["sa"]] = sessions_sa.get(s["sa"], 0) + 1
+            if s.get("prova"):
+                prova_sa[s["sa"]] = s["s"]
+
+    fallats = 0
+    for n in range(1, 10):
+        sa = f"SA{n}"
+        text = (ARREL / "Classes" / sa / "README.md").read_text(encoding="utf-8")
+        m = re.search(r"^## 📦 Què has d'entregar\n(.*?)(?=^## |\Z)",
+                      text, re.M | re.S)
+        if not m:
+            errors.append(f"[lliurables] {sa}: falta el bloc «📦 Què has d'entregar» al README")
+            fallats += 1
+            continue
+        bloc = m.group(1)
+        files_s = re.findall(r"^\|\s*S(\d+)\s*\|", bloc, re.M)
+        if len(files_s) != sessions_sa[sa]:
+            errors.append(f"[lliurables] {sa}: {len(files_s)} files de sessió "
+                          f"però la SA té {sessions_sa[sa]} sessions")
+            fallats += 1
+        if sa in prova_sa:
+            fila = re.search(rf"^\|\s*S{prova_sa[sa]}\s*\|(.*)$", bloc, re.M)
+            if not fila or "Prova pràctica" not in fila.group(1):
+                errors.append(f"[lliurables] {sa}: la fila S{prova_sa[sa]} "
+                              f"ha de contenir «Prova pràctica»")
+                fallats += 1
+        for icona, cal in (("⭐", True), ("📓", True), ("🤖", n >= 2)):
+            te = bool(re.search(rf"^\|\s*{icona}\s*\|", bloc, re.M))
+            if cal and not te:
+                errors.append(f"[lliurables] {sa}: falta la fila {icona}")
+                fallats += 1
+            elif not cal and te:
+                errors.append(f"[lliurables] {sa}: la fila {icona} no hi va (SA1 sense robot)")
+                fallats += 1
+    print(f"12) Lliurables per SA: 9 README, {fallats} incoherències.")
+
+
 # --- 11 · Enllaços externs (OPT-IN: QA_ENLLACOS_EXTERNS=1) ---------------------
 RE_URL_EXTERN = re.compile(r"https?://[^\s)\"'<>\]]+")
 DOMINIS_IGNORATS = (
@@ -430,6 +479,7 @@ def main() -> int:
     comprova_mojibake()
     comprova_python_reptes()
     comprova_enllacos_externs()
+    comprova_lliurables()
     for a in avisos:
         print(f"⚠️  {a}")
     if errors:
