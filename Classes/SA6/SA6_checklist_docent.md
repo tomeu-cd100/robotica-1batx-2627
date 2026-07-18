@@ -15,6 +15,7 @@
 ## ⏱️ 2. Moments (punts de control per sessió)
 
 **Sessió 1 — Què és un sistema de control?**
+- [ ] **«C++ flash» (5', dins l'activació):** traduir 2-3 línies Python→C++ en veu alta (targeta [`00_Repas_expres_Cpp.md`](../00_General/00_Repas_expres_Cpp.md), repartida com a deures a la SA5 S3)
 - [ ] Referent (1') Irmgard Flügge-Lotz · conceptes: consigna, realimentació, error, actuador
 - [ ] `01_llac_obert_vs_tancat` + **diagrama de blocs**
 - ⚠️ *Error:* confondre realimentació amb la sortida

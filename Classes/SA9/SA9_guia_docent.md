@@ -45,7 +45,7 @@ Aquesta SA **tanca el mètode de projecte** introduït a la **SA1** i practicat 
 | **1** | **Idear** | Presenta el repte i el `Banc_de_reptes`. Forma equips i rols. | Trien repte, defineixen requisits, esbós, planificació (taulell àgil). |
 | **2** | **Prototipar** | Acompanya el muntatge i el primer codi. | Munten el prototip mínim viable; primer codi (esquelet). |
 | **3** | **Provar i millorar** | Fomenta proves sistemàtiques i registre d'errors; code review. Primeres defenses esglaonades si un equip ja té prototip llest. | Proven, detecten errors, **primera iteració** de millora i inici de la segona; avancen el dossier. |
-| **4** | **Comunicar** | Organitza i modera les defenses; recull els dossiers. | Tanquen el **dossier tècnic**; **defensa oral** + demostració; coavaluació; reflexió final. |
+| **4** | **Comunicar** | Organitza i modera les defenses; recull els dossiers. La defensa i la **coavaluació** es fan amb la **mini-rúbrica R4·DO** ([`07_Rubriques.md`](../../Programació%20didàctica/07_Rubriques.md)) — la mateixa des de la SA2, ara al nivell alt (decisions **i alternatives descartades**, reconèixer límits). | Tanquen el **dossier tècnic**; **defensa oral** + demostració; coavaluació; reflexió final. |
 | **5** | **PROVA PRÀCTICA T3** | Munta les **estacions rotatives** (pistes + robots) i gestiona els torns. | **Prova individual** (`Avaluació/Prova_practica_T3.md`): part micro:bit a la taula, part de robot per torns a la pista. |
 
 > ⚠️ La 2a iteració «formal» de l'antiga S4 queda repartida entre la S3 (fer-la) i la feina fora d'aula (documentar-la). Si un equip no hi arriba, la **versió nucli** (requisits mínims demostrables) segueix sent assoliment satisfactori — vegeu la fitxa.

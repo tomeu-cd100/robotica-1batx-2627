@@ -201,11 +201,11 @@ Amb 2 h setmanals, el que es va aprendre a l'octubre arriba esborrat al febrer s
 ## SA7 · Robòtica mòbil
 
 ### SA7 · Sessió 1 — abans de «Moviment i cinemàtica diferencial»
-> **P①** Control proporcional: com es calcula la correcció? Què passa si l'error és zero?
+> **P①** En un sistema de control: què és l'**error**? Escriu-ne la fórmula amb consigna i mesura. *(Només si vas fer l'ampliació del proporcional: com l'usa per calcular la correcció?)*
 > **P②** (SA6) Histèresi en una frase i un exemple fora del termòstat.
 > **P③** (SA4) Per moure un motor DC en els dos sentits necessites un component clau i una norma d'alimentació: quins?
 
-*Respostes: ① correcció proporcional a l'error (sortida = Kp·error); si l'error és 0, no corregeix. ② dos llindars per no commutar contínuament (p. ex. llums automàtics que no parpellegin al capvespre). ③ pont H; alimentació externa amb massa comuna.*
+*Respostes: ① error = consigna − mesura (què vull − què tinc); (+ampliació) correcció = Kp·error, i si l'error és 0 no corregeix. ② dos llindars per no commutar contínuament (p. ex. llums automàtics que no parpellegin al capvespre). ③ pont H; alimentació externa amb massa comuna.*
 
 ### SA7 · Sessió 2 — abans de «Trajectòries programades»
 > **P①** Amb rodes independents: què fan les dues rodes perquè el robot giri sobre si mateix? I per fer una corba suau?

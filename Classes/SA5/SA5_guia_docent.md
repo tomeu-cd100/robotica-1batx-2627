@@ -66,7 +66,7 @@
 - **Modelatge (25'):** [`04_radio_dau.py`](codi/04_radio_dau.py). Mòdul `radio`: `radio.on()`, `radio.config(group=...)`, `send()`, `receive()`. Gestos (`was_gesture("shake")`) i `random`.
 - **Pràctica guiada (35'):** dau digital que es comparteix per ràdio entre dues plaques.
 - **Repte (40'):** "pedra-paper-tisora" per ràdio o comandament a distància; **+ repte:** xarxa de 3+ plaques.
-- **Comparació + tancament (15'):** completar la **taula comparativa C++ ↔ Python** d'un mateix programa (p. ex. comptador) i reflexionar sobre els dos paradigmes.
+- **Comparació + tancament (15'):** completar la **taula comparativa C++ ↔ Python** d'un mateix programa (p. ex. comptador) i reflexionar sobre els dos paradigmes. **Deures de represa (2'):** reparteix (o envia pel Classroom) la targeta [`00_Repas_expres_Cpp.md`](../00_General/00_Repas_expres_Cpp.md) — després de 3 setmanes de Python, la SA6 torna a C++ i la sintaxi (`;`, claus, tipus) arriba rovellada. És la targeta bessona de la de MicroPython que es reparteix abans de la prova T2.
 
 > ⏱️ **Marge:** el temps efectiu real és ~100' (arrencada + recollida), no 120'. Si vas just, retalla primer: **+ repte: xarxa de 3+ plaques**.
 

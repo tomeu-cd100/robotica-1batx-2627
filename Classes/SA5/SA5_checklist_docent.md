@@ -28,6 +28,7 @@
 - [ ] `04_radio_dau`: `radio.on()`, `radio.config(group=...)`, `send()`/`receive()`, gestos
 - [ ] **Mini-check individual** a l'inici (10', no qualifica): programa MicroPython de memòria (vigilar indentació)
 - [ ] Completar la **taula comparativa C++ ↔ Python** i reflexionar sobre els dos paradigmes
+- [ ] **Deures de represa:** repartir la targeta [`00_Repas_expres_Cpp.md`](../00_General/00_Repas_expres_Cpp.md) (la SA6 torna a C++)
 - ⚠️ *Clau:* dues plaques han de compartir el **mateix `group`** · *Error:* oblidar `radio.on()`
 
 ## 📊 3. Avaluació i evidències (a recollir)

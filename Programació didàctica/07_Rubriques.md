@@ -54,6 +54,27 @@ Rúbriques reutilitzables amb **quatre nivells**, cadascun lligat a una **banda 
 | **Defensa oral** | No defensa la solució. | Defensa amb dificultats. | Defensa clara. | Defensa convincent i respon dubtes. |
 | **Terminologia** | Incorrecta. | Bàsica. | Adequada. | Precisa i professional. |
 
+### R4·DO — Mini-rúbrica de la defensa oral (detall del criteri «Defensa oral» de la R4)
+
+Les defenses orals **es repeteixen tot el curs** (SA2 S4, SA4 S4, SA6 S3, SA9 S4) però fins ara només tenien una fila genèrica a la R4. Aquesta mini-rúbrica de **3 indicadors** la desplega, es comparteix amb l'alumnat **des de la SA2** i fa visible la progressió; també serveix per **calibrar la coavaluació** (l'alumnat que escolta valora amb els mateixos 3 indicadors).
+
+| Indicador | Insuficient (0–4) | Suficient/Bé (5–6) | Notable (7–8) | Excel·lent (9–10) |
+|---|---|---|---|---|
+| **Claredat** (què fa el sistema) | No se n'entén el funcionament. | S'entén amb esforç o llegint el codi. | Explicació clara i ordenada (problema → solució). | Clara, concisa i adaptada a qui escolta. |
+| **Decisió tècnica justificada** (el *per què*) | Cap decisió justificada («ho hem fet així»). | Anomena una decisió però la justifica vagament. | Justifica **una decisió** amb argument tècnic (per què aquests llindars/estats/components). | Justifica decisions i **alternatives descartades**. |
+| **Resposta a preguntes** | No respon o respon fora de tema. | Respon parcialment. | Respon amb precisió. | Respon i **reconeix límits** («això fallaria si…»). |
+
+**Progressió esperada al llarg del curs** (mateixos indicadors, exigència creixent):
+
+| Moment | Format | Nivell esperat |
+|---|---|---|
+| **SA2 S4** (mini-defensa, 1') | Davant el docent | Claredat; la decisió justificada s'hi **inicia** |
+| **SA4 S4** (mini-defensa, 1-2') | Davant el docent | Claredat + una decisió justificada |
+| **SA6 S3** (defensa a peu de taula, 2-3') | Docent, durant el repte | Els 3 indicadors (la guia ja demana «una decisió tècnica justificada») |
+| **SA9 S4** (defensa final + demo) | Grup classe + coavaluació | Els 3 indicadors al nivell alt; coavaluació amb la mateixa mini-rúbrica |
+
+> La nota de la defensa **continua entrant per la R4** (fila «Defensa oral»): aquesta mini-rúbrica és el **desglossament formatiu** d'aquella fila, no una rúbrica nova al còmput.
+
 ## R5 · Rúbrica d'actitud, cooperació i autoregulació
 
 | Criteri | Insuficient | Suficient/Bé | Notable | Excel·lent |

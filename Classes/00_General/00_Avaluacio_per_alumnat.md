@@ -47,6 +47,7 @@ En aquesta matèria **equivocar-se és part del contingut**: tot falla la primer
 
 - Un **error documentat al quadern** (què passava, com el vas trobar amb DEPURA, com el vas resoldre) **puja** la nota de R1 i R4. Amagar errors no.
 - Si la demo **falla en directe** durant una defensa, no és un zero: explica què esperaves, què passa i quina és la teva hipòtesi. Diagnosticar en veu alta **també és competència**.
+- Totes les defenses del curs (SA2 → SA9) es valoren amb els mateixos **3 indicadors**: **claredat** (què fa el sistema), **una decisió tècnica justificada** (el *per què*: llindars, estats, components) i **respondre preguntes**. Comença treballant el primer; al final del curs se t'esperen els tres. La mini-rúbrica completa és a les rúbriques de la matèria (R4·DO).
 
 ## 5 · Les proves pràctiques (una per trimestre)
 

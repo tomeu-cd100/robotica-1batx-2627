@@ -28,7 +28,7 @@ Sistema de control; **llaç obert vs llaç tancat**; realimentació, consigna i 
 
 | Sessió | Activitats |
 |---|---|
-| **1** | Concepte de control. Llaç obert (temporitzat) vs tancat (amb sensor). Diagrama de blocs. |
+| **1** | «C++ flash» de reentrada (5': traducció Python→C++ amb la targeta de repàs exprés). Concepte de control. Llaç obert (temporitzat) vs tancat (amb sensor). Diagrama de blocs. |
 | **2** | **Termòstat** tot/res amb NTC + actuador (LED/ventilador) i histèresi. |
 | **3** | **Màquina d'estats**: implementació amb `switch`/enum (p. ex. seqüència d'un rentat o d'un semàfor adaptatiu). **Tancament del producte** (documentació + defensa 2-3'). |
 | **4** | **Prova pràctica T2** (individual, sessió sencera — vegeu `Avaluació/Prova_practica_T2.md`). La **regulació proporcional** és **+ampliació** (material i repte ⭐ per a qui va sobrat; no és nucli). |

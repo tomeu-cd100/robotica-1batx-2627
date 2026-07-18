@@ -73,7 +73,7 @@
 ## SESSIÓ 4 (2 h) — Producte: barrera automàtica
 - **Activació (10'):** presentació del repte.
 - **Pràctica (70'):** `04_barrera_automatica.ino`. Barrera amb **servo** que s'obre quan l'ultrasons detecta un vehicle a prop i es tanca passat un temps, amb LED indicador. Cada parella personalitza temps i angles.
-- **Documentació + defensa (30'):** esquema, codi comentat, mini-defensa.
+- **Documentació + defensa (30'):** esquema, codi comentat, mini-defensa (1-2') amb la **mini-rúbrica R4·DO** ([`07_Rubriques.md`](../../Programació%20didàctica/07_Rubriques.md)): a més de la claredat (SA2), ara s'espera **una decisió tècnica justificada** (per què aquest llindar de distància, per què aquests angles).
 - **Tancament (10'):** autoavaluació.
 
 > ⏱️ **Marge:** el temps efectiu real és ~100' (arrencada + recollida), no 120'. Si vas just, retalla primer: **la personalització de temps i angles al final de la Pràctica (70')**.

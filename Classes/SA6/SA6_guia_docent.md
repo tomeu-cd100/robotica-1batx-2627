@@ -30,6 +30,9 @@
 ---
 
 ## SESSIÓ 1 (2 h) — Què és un sistema de control?
+
+> 🔄 **Reentrada a C++ (abans de la sessió):** l'alumnat porta 3 setmanes en Python (SA5) i avui torna a C++. La targeta [`00_Repas_expres_Cpp.md`](../00_General/00_Repas_expres_Cpp.md) s'ha repartit com a deures al tancament de la SA5 S3. Dedica **5' de l'activació** a un «C++ flash»: projecta 2-3 línies de Python (`if t > 28:`) i demana traduir-les en veu alta a C++ (parèntesis, claus, `;`). Qui falli l'autotest de la targeta: derivar a `SA0_guia_programacio.md` Part A abans de la S2.
+
 - **Activació (10'):** *"Per què un aire condicionat no encén i apaga sense parar?"*
 - 🔭 **Referent (1', dins l'activació):** **Irmgard Flügge-Lotz**, teòrica del control discontinu (tot/res) — exactament la histèresi d'aquesta SA ([guió](../00_General/00_Referents_tecnologia.md)).
 - **Modelatge (25'):** conceptes: **consigna, sensor (realimentació), error, actuador**. **Llaç obert** (sense sensor, temporitzat) vs **llaç tancat** (amb sensor). **Diagrama de blocs**.
@@ -63,7 +66,7 @@
 - **Mini-check individual (10', a l'inici, substitueix la graella):** diagnosticar el "clic-clic" del termòstat i escriure els dos llindars ([banc](../00_General/00_Mini_checks_individuals.md)).
 - **Modelatge (25'):** `03_maquina_estats.ino`. `enum` d'estats + `switch`; transicions per **temps** o per **esdeveniment** (polsador). Exemple: procés (espera → fase 1 → fase 2 → fet).
 - **Pràctica guiada (30'):** implementen la màquina d'estats i la proven.
-- **Repte (40'):** afegir un estat nou o una transició condicional; **+ repte:** semàfor adaptatiu (canvia segons polsador de vianant). **Defenses de 2-3' a peu de taula:** mentre treballen, passa per les parelles i escolta la defensa del producte (problema → solució → **una decisió tècnica justificada**: per què aquests llindars? per què aquests estats?).
+- **Repte (40'):** afegir un estat nou o una transició condicional; **+ repte:** semàfor adaptatiu (canvia segons polsador de vianant). **Defenses de 2-3' a peu de taula:** mentre treballen, passa per les parelles i escolta la defensa del producte (problema → solució → **una decisió tècnica justificada**: per què aquests llindars? per què aquests estats?). Valora amb els 3 indicadors de la **mini-rúbrica R4·DO** ([`07_Rubriques.md`](../../Programació%20didàctica/07_Rubriques.md)) — a aquestes altures del curs ja s'esperen tots tres.
 - **Tancament (15'):** quadern (diagrama d'estats + diagrama de blocs); autoavaluació amb rúbriques.
 
 > ⏱️ **Marge:** el temps efectiu real és ~100', i **aquesta és la sessió més carregada del trimestre** (mini-check + concepte nou + producte + defenses). Retalla d'entrada: **el «+ repte» (semàfor adaptatiu)** i, si cal, redueix el Repte a **una sola transició nova**. El mini-check, la màquina d'estats i les defenses a peu de taula **no es toquen**.

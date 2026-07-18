@@ -30,7 +30,7 @@ Sintaxi de Python (indentació, variables, funcions); E/S de micro:bit (matriu L
 |---|---|
 | **1** | Editor Python micro:bit. Matriu LED, botons. "Name badge" i animacions. Indentació i variables. |
 | **2** | Sensors integrats: acceleròmetre (detector de moviment/passes), temperatura, llum (nightlight). Funcions en Python. Al tancament, **anotar valors reals de l'acceleròmetre** per postura (llavor del classificador de gestos de la SA8). |
-| **3** | **Ràdio**: missatgeria/comandament entre dues micro:bit. Mini-projecte: "dau digital" o "pedra-paper-tisora" per ràdio. |
+| **3** | **Ràdio**: missatgeria/comandament entre dues micro:bit. Mini-projecte: "dau digital" o "pedra-paper-tisora" per ràdio. Deures: targeta de **repàs exprés de C++** (la SA6 torna a C++ després de 3 setmanes de Python). |
 | **4 (opcional, fora del còmput)** | **Taula comparativa C++ ↔ Python** d'un mateix programa (p. ex. comptador). Reflexió sobre paradigmes. *Si no es fa la sessió, la comparativa es completa dins el tancament de la S3 (15').* |
 
 ## Producte

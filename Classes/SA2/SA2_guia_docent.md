@@ -79,7 +79,7 @@
 ## SESSIÓ 4 (2 h) — Producte: panell de senyalització
 - **Activació (10'):** presentació del repte integrador.
 - **Pràctica (70'):** `05_panell_senyalitzacio.ino` com a base. Integren **LED RGB (estat) + piezo (avís) + relé (càrrega)**. Cada parella personalitza estats i seqüència.
-- **Documentació + defensa (30'):** completen esquema i codi comentat; mini-defensa (1') del seu panell.
+- **Documentació + defensa (30'):** completen esquema i codi comentat; mini-defensa (1') del seu panell amb la **mini-rúbrica de defensa oral R4·DO** ([`07_Rubriques.md`](../../Programació%20didàctica/07_Rubriques.md)) — és la **primera** defensa del curs: comparteix els 3 indicadors abans (claredat · decisió justificada · respondre preguntes) i exigeix sobretot el primer.
 - **Tancament (10'):** autoavaluació amb rúbriques.
 
 > ⏱️ **Marge:** el temps efectiu real és ~100' (arrencada + recollida), no 120'. Si vas just, retalla primer: **la personalització extra d'estats i seqüència (dins la Pràctica; limita el panell a 2-3 estats)**.
