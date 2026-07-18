@@ -134,3 +134,13 @@
 - **Errors freqüents:** oblidar `#include <Servo.h>` i `attach()`; motor que no gira per manca de pont H/alimentació; sentit invertit (intercanviar sortides del pont H).
 - **Diferenciació:** el mínim és mou-un-actuador-amb-una-entrada; les ampliacions porten a PWM, sentit, *debounce* i coordinació de dos actuadors.
 - **Gestió d'aula:** si no hi ha ponts H per a tothom, simular a Tinkercad o compartir per torns; el repte A enllaça amb `04_barrera_automatica`. Per al braç (C), una estructura comuna impresa en 3D estalvia temps de muntatge.
+
+---
+
+## 🤖 Cap al robot del trimestre
+
+Aquest trimestre tot suma cap al **braç robòtic** ([dossier](../Classes/00_General/00_Projecte_T2_Brac.md) · [fil conductor](../Classes/00_General/00_Fil_conductor_robots.md)):
+
+- **Repte C (braç robòtic)** → cada articulació del braç: el control per potenciòmetre és el mode manual de la base, el colze i la pinça, i la seqüència "agafa i deixa" amb funcions pròpies és el registre/replay de moviments que SA6 convertirà en un mode de la màquina d'estats.
+
+El braç que munteu a la S4 és **el mateix braç** que programeu al repte: guarda el codi, que el reutilitzaràs quan et re-cablegis al micro:bit a SA5.

@@ -117,3 +117,13 @@
 - **Diferenciació:** el mínim és un llaç tancat bàsic; histèresi, estats i proporcionalitat escalen la dificultat.
 - **Gestió d'aula:** un **potenciòmetre** pot simular qualsevol sensor per centrar-se en el control. Connecta amb la SA3 (sensors) i la SA4 (actuadors).
 - **Vincle avaluació:** R1 + R3 + R4; conceptes clau de cara al projecte final (SA9).
+
+---
+
+## 🤖 Cap al robot del trimestre
+
+Aquest trimestre tot suma cap al **braç robòtic** ([dossier](../Classes/00_General/00_Projecte_T2_Brac.md) · [fil conductor](../Classes/00_General/00_Fil_conductor_robots.md)):
+
+- **Repte B (semàfor adaptatiu)** → els modes del braç: la mateixa lògica de màquina d'estats (una sola variable d'estat, transicions controlades, mai dos estats incompatibles alhora) governa repòs/manual/replay/emergència al braç.
+
+El sensor de col·lisió del braç fa d'entrada d'emergència: igual que el polsador de vianants força una transició segura al semàfor, un xoc força el braç a l'estat d'emergència i atura els servos. La histèresi d'aquest bloc es treballa amb el termòstat (repte A); el braç n'és la màquina d'estats.

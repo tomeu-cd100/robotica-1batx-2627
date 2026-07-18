@@ -117,3 +117,13 @@
 - **Diferenciació:** el mínim usa una entrada integrada; les ampliacions porten a histèresi, `random`, recompte i ràdio.
 - **Gestió d'aula:** el **simulador** permet treballar sense maquinari; per al repte C cal aparellar grups de 2 micro:bits. Recomanar repassar `Classes/SA0/SA0_guia_programacio.md` (Part B i taula comparativa).
 - **Vincle avaluació:** R1 (codi Python) + R3 + R4; punt fort per consolidar el **transfer** de conceptes entre llenguatges.
+
+---
+
+## 🤖 Cap al robot del trimestre
+
+Aquest trimestre tot suma cap al **braç robòtic** ([dossier](../Classes/00_General/00_Projecte_T2_Brac.md) · [fil conductor](../Classes/00_General/00_Fil_conductor_robots.md)):
+
+- **Repte C (joc o missatges per ràdio)** → el comandament del braç: el mateix ping-pong per ràdio entre les dues micro:bit de la parella és la base de com la segona micro:bit envia inclinació i botons perquè la primera mogui el braç.
+
+El braç que vau muntar a SA4 es re-cableja ara al micro:bit; la ràdio que programeu aquí és **directament** el comandament sense fils que li dona SA6.
