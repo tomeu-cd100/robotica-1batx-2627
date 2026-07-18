@@ -6,6 +6,17 @@ Cinquena situació d'aprenentatge (**6 h · 3 sessions** + 4a opcional d'ampliac
 
 > *Fotografia: micro:bit, per [SimonWaldherr](https://commons.wikimedia.org/wiki/File:Bbc_micro_bit.jpg) — llicència [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).*
 
+## 📦 Què has d'entregar
+
+| Quan | Lliurable | On es lliura |
+|---|---|---|
+| S1 | [Activitat 1 · Name badge](SA5_fitxa_alumnat.md#1-name-badge-s1) | [Tasca de Classroom](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODcwNTE3NDYxNTQy/details) |
+| S2 | [Activitat 2 · Sensors integrats](SA5_fitxa_alumnat.md#2-sensors-integrats-s2) | Mateixa tasca de Classroom |
+| S3 | [Activitat 3 · Ràdio](SA5_fitxa_alumnat.md#3-radio-s3) | Mateixa tasca de Classroom |
+| ⭐ | [Repte triat (A, B o C)](../../Reptes/Reptes_SA5.md) | El docent el valida i pinteu l'estrella al [tauler de reptes](../00_General/00_Tauler_reptes.md) |
+| 📓 | Full del quadern tècnic de cada sessió | En paper, en acabar la sessió |
+| 🤖 | El comandament per ràdio del braç (les dues micro:bit de la parella) | Es reaprofiten al robot del trimestre: [dossier del braç](../00_General/00_Projecte_T2_Brac.md) |
+
 ## Itinerari per sessions
 
 > La teva feina és a la **[fitxa base](SA5_fitxa_alumnat.md)**. Aquesta ruta et diu què toca fer a cada sessió i què necessites en aquell moment. Les respostes de la fitxa es lliuren a la **[tasca de Classroom](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODcwNTE3NDYxNTQy/details)**.

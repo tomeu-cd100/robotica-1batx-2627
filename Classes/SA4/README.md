@@ -4,6 +4,18 @@ Quarta situació d'aprenentatge (**8 h · 4 sessions**, 2n trimestre). El sistem
 
 ![Servo controlat amb un potenciòmetre: la posició del comandament fixa l'angle del servo](img/sa4-servo-potenciometre.svg)
 
+## 📦 Què has d'entregar
+
+| Quan | Lliurable | On es lliura |
+|---|---|---|
+| S1 | [Activitat 1 · Servomotor](SA4_fitxa_alumnat.md#1-servomotor-s1) | [Tasca de Classroom](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODcwNTEzNjkxNjIy/details) |
+| S2 | [Activitat 2 · Motor DC i pont H](SA4_fitxa_alumnat.md#2-motor-dc-i-pont-h-s2) | Mateixa tasca de Classroom |
+| S3 | [Activitat 3 · Del sensor al moviment](SA4_fitxa_alumnat.md#3-del-sensor-al-moviment-s3) | Mateixa tasca de Classroom |
+| S4 | [Activitat 4 · Producte: barrera automàtica](SA4_fitxa_alumnat.md#4-producte-barrera-automatica-s4) | Mateixa tasca de Classroom |
+| ⭐ | [Repte triat (A, B o C)](../../Reptes/Reptes_SA4.md) | El docent el valida i pinteu l'estrella al [tauler de reptes](../00_General/00_Tauler_reptes.md) |
+| 📓 | Full del quadern tècnic de cada sessió | En paper, en acabar la sessió |
+| 🤖 | Les articulacions del braç (control de servos amb potenciòmetres) | Es reaprofiten al robot del trimestre: [dossier del braç](../00_General/00_Projecte_T2_Brac.md) |
+
 ## Itinerari per sessions
 
 > La teva feina és a la **[fitxa base](SA4_fitxa_alumnat.md)**. Aquesta ruta et diu què toca fer a cada sessió i què necessites en aquell moment. Les respostes de la fitxa es lliuren a la **[tasca de Classroom](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODcwNTEzNjkxNjIy/details)**.

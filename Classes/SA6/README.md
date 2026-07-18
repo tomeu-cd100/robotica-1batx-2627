@@ -4,6 +4,18 @@ Sisena situació d'aprenentatge (**8 h · 4 sessions**, 2n trimestre). El sistem
 
 ![Control de llaç tancat: el sensor mesura la sortida i el sistema corregeix segons l'error](img/sa6-llac-tancat.svg)
 
+## 📦 Què has d'entregar
+
+| Quan | Lliurable | On es lliura |
+|---|---|---|
+| S1 | [Activitat 1 · Llaç obert vs llaç tancat](SA6_fitxa_alumnat.md#1-llac-obert-vs-llac-tancat-s1) | [Tasca de Classroom](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODcwNTE2NDU2MzYx/details) |
+| S2 | [Activitat 2 · Termòstat amb histèresi](SA6_fitxa_alumnat.md#2-termostat-amb-histeresi-s2) | Mateixa tasca de Classroom |
+| S3 | [Activitat 3 · Màquina d'estats](SA6_fitxa_alumnat.md#3-maquina-destats-s3) | Mateixa tasca de Classroom |
+| S4 | **Prova pràctica T2 (individual)** | A l'aula, sessió sencera |
+| ⭐ | [Repte triat (A, B o C)](../../Reptes/Reptes_SA6.md) | El docent el valida i pinteu l'estrella al [tauler de reptes](../00_General/00_Tauler_reptes.md) |
+| 📓 | Full del quadern tècnic de cada sessió | En paper, en acabar la sessió |
+| 🤖 | El braç amb màquina d'estats i emergència (el producte de la SA, es tanca a la S3) | Es reaprofiten al robot del trimestre: [dossier del braç](../00_General/00_Projecte_T2_Brac.md) |
+
 ## Itinerari per sessions
 
 > La teva feina és a la **[fitxa base](SA6_fitxa_alumnat.md)**. Aquesta ruta et diu què toca fer a cada sessió i què necessites en aquell moment. Les respostes de la fitxa es lliuren a la **[tasca de Classroom](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODcwNTE2NDU2MzYx/details)**.
