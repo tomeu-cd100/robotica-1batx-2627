@@ -4,6 +4,18 @@ Segona situació d'aprenentatge (**8 h · 4 sessions**, 1r trimestre). Es passa 
 
 ![Concepte del PWM: la sortida s'encén i s'apaga molt de pressa per regular la intensitat](img/sa2-pwm-concept.svg)
 
+## 📦 Què has d'entregar
+
+| Quan | Lliurable | On es lliura |
+|---|---|---|
+| S1 | [Activitat 1 · LED bàsic i variables](SA2_fitxa_alumnat.md#1-led-basic-i-variables-s1) | [Tasca de Classroom](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODcwNTEzOTQ1NjAz/details) |
+| S2 | [Activitat 2 · El semàfor](SA2_fitxa_alumnat.md#2-semafor-s2) | Mateixa tasca de Classroom |
+| S3 | [Activitat 3 · PWM: intensitat i color](SA2_fitxa_alumnat.md#3-pwm-intensitat-i-color-s3) | Mateixa tasca de Classroom |
+| S4 | [Activitat 4 · Producte: panell de senyalització](SA2_fitxa_alumnat.md#4-producte-panell-de-senyalitzacio-s4) | Mateixa tasca de Classroom |
+| ⭐ | [Repte triat (A, B o C)](../../Reptes/Reptes_SA2.md) | El docent el valida i pinteu l'estrella al [tauler de reptes](../00_General/00_Tauler_reptes.md) |
+| 📓 | Full del quadern tècnic de cada sessió | En paper, en acabar la sessió |
+| 🤖 | Les expressions de la mascota (llums, colors i sons dels reptes) | Es reaprofiten al robot del trimestre: [dossier de la mascota](../00_General/00_Projecte_T1_Mascota.md) |
+
 ## Itinerari per sessions
 
 > La teva feina és a la **[fitxa base](SA2_fitxa_alumnat.md)**. Aquesta ruta et diu què toca fer a cada sessió i què necessites en aquell moment. Les respostes de la fitxa es lliuren a la **[tasca de Classroom](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODcwNTEzOTQ1NjAz/details)**.

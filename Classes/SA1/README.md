@@ -6,6 +6,16 @@ Primera situació d'aprenentatge del curs (**6 h · 3 sessions**, 1r trimestre).
 
 > *Fotografia: Arduino Uno R3, per [SparkFun Electronics](https://commons.wikimedia.org/wiki/File:Arduino_Uno_-_R3.jpg) — llicència [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/).*
 
+## 📦 Què has d'entregar
+
+| Quan | Lliurable | On es lliura |
+|---|---|---|
+| S1 | [Activitat 1 · Entrada, procés, sortida](SA1_fitxa_alumnat.md#1-entrada-proces-sortida) i la [prova diagnòstica](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODcwNTM2NzE0Njcx/details) (no qualifica) | [Tasca de Classroom](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODcwNTEwOTcwMDE1/details) |
+| S2 | [Activitat 2 · La placa Arduino UNO](SA1_fitxa_alumnat.md#2-la-placa-arduino-uno) i [Activitat 3 · Normes de seguretat](SA1_fitxa_alumnat.md#3-normes-de-seguretat) (signades) | Mateixa tasca de Classroom |
+| S3 | [Activitat 4 · El teu primer programa (Blink)](SA1_fitxa_alumnat.md#4-el-teu-primer-programa-blink-primm) i inici de la [fitxa-pòster](SA1_poster_robot_plantilla.md) | Mateixa tasca de Classroom |
+| ⭐ | [Repte triat (A, B o C)](../../Reptes/Reptes_SA1.md) | El docent el valida i pinteu l'estrella al [tauler de reptes](../00_General/00_Tauler_reptes.md) |
+| 📓 | Full del quadern tècnic de cada sessió | En paper, en acabar la sessió |
+
 ## Itinerari per sessions
 
 > La teva feina és a la **[fitxa base](SA1_fitxa_alumnat.md)**. Aquesta ruta et diu què toca fer a cada sessió i què necessites en aquell moment. Les respostes de la fitxa es lliuren a la **[tasca de Classroom](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODcwNTEwOTcwMDE1/details)**.

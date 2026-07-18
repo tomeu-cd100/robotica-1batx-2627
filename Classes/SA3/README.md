@@ -6,6 +6,18 @@ Tercera situació d'aprenentatge (**8 h · 4 sessions**, 1r trimestre). El siste
 
 > *Fotografia: HC-SR04, per [SparkFun Electronics](https://commons.wikimedia.org/wiki/File:SparkFun_HC-SR04_Ultrasonic-Sensor_13959-01a.jpg) — llicència [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/).*
 
+## 📦 Què has d'entregar
+
+| Quan | Lliurable | On es lliura |
+|---|---|---|
+| S1 | [Activitat 1 · Polsador i monitor sèrie](SA3_fitxa_alumnat.md#1-polsador-i-monitor-serie-s1) | [Tasca de Classroom](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODcwNTE4MDEwMzM3/details) |
+| S2 | [Activitat 2 · Entrades analògiques](SA3_fitxa_alumnat.md#2-entrades-analogiques-s2) | Mateixa tasca de Classroom |
+| S3 | [Activitat 3 · Ultrasons, funcions i producte: alarma/aparcament](SA3_fitxa_alumnat.md#3-ultrasons-funcions-i-producte-alarma--aparcament-s3) | Mateixa tasca de Classroom |
+| S4 | **Prova pràctica T1 (individual)** | A l'aula, sessió sencera |
+| ⭐ | [Repte triat (A, B o C)](../../Reptes/Reptes_SA3.md) | El docent el valida i pinteu l'estrella al [tauler de reptes](../00_General/00_Tauler_reptes.md) |
+| 📓 | Full del quadern tècnic de cada sessió | En paper, en acabar la sessió |
+| 🤖 | La mascota muntada amb ≥3 reaccions (el producte de la SA, es tanca a la S3) | [Dossier de la mascota](../00_General/00_Projecte_T1_Mascota.md) |
+
 ## Itinerari per sessions
 
 > La teva feina és a la **[fitxa base](SA3_fitxa_alumnat.md)**. Aquesta ruta et diu què toca fer a cada sessió i què necessites en aquell moment. Les respostes de la fitxa es lliuren a la **[tasca de Classroom](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODcwNTE4MDEwMzM3/details)**.
