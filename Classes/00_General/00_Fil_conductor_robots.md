@@ -31,9 +31,9 @@ cada bloc de SA es materialitza en una peça física del robot del trimestre.
 
 | Trimestre | Robot | Arquetip | SA que hi aporten | On es tanca (producte) |
 |---|---|---|---|---|
-| 1r | Mascota reactiva | robot social | SA2, SA3 | Producte de SA3 (mascota amb ≥3 reaccions sensor→comportament + fitxa de personalitat) |
-| 2n | Braç robòtic | robot manipulador | SA4, SA5, SA6 | Producte de SA6 (braç amb màquina d'estats i sensor de col·lisió com a final de carrera) |
-| 3r | Rover autònom | robot mòbil | SA7, SA8, SA9 | Plataforma de SA7, ampliada a SA8 (telemetria) i repte final a SA9 |
+| 1r | Mascota reactiva | robot social | SA2, SA3 | Producte SA3 (mascota amb ≥3 reaccions sensor→comportament + fitxa de personalitat; tancat a S3, S4 = prova T1 intacta) |
+| 2n | Braç robòtic | robot manipulador | SA4, SA5, SA6 | Producte SA6 (braç amb màquina d'estats i sensor de col·lisió com a final de carrera; tancat a S3, S4 = prova T2 intacta) |
+| 3r | Rover autònom | robot mòbil | SA7, SA8, SA9 | Plataforma de SA7 i base del repte SA9 |
 
 <!-- web:only-github -->
 Dossier de cada robot (peces, esquema de muntatge, cablatge i rúbrica):
@@ -53,7 +53,7 @@ Dossier de cada robot (peces, esquema de muntatge, cablatge i rúbrica):
 > ⚠️ Les tres palanques de contingència del curs queden **totes gastades** en
 > fabricació: el marge del calendari és pràcticament **zero**. Senyal
 > d'alerta: si el T1 no tanca SA3 al desembre, la mascota de gener es
-> reparteix amb les peces **pretallades pel docent** enlloc d'esperar una
+> reparteix amb les peces **pretallades pel docent** en lloc d'esperar una
 > sessió de tall addicional.
 
 ## Com funciona una sessió de fabricació

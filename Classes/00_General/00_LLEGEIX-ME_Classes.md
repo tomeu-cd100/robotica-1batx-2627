@@ -10,8 +10,6 @@ Material llest per a l'aula, organitzat per situació d'aprenentatge (SA). Cada 
 
 > El registre de l'alumnat viu al seu **quadern tècnic** en paper: guia, regles i **PDF imprimible per trimestre** (un full per sessió) a [`00_Quadern_tecnic.md`](00_Quadern_tecnic.md) (per al docent, tasca de Classroom a punt a [`00_Quadern_tecnic_tasca_classroom.md`](00_Quadern_tecnic_tasca_classroom.md)).
 
-> **El fil conductor dels tres robots trimestrals** (mascota, braç, rover): [`00_Fil_conductor_robots.md`](00_Fil_conductor_robots.md) — l'arquetip i les SA que hi aporten, el calendari de fabricació i el material/pressupost.
-
 ## Les 9 SA (índex)
 
 Vista d'un cop d'ull. **El detall de cada SA** (materials, sessions i codi) és a la seva **portada** — la font única, sempre al dia. La **visió de conjunt, hores i maquinari** són al mapa de seqüenciació.
@@ -32,6 +30,7 @@ Vista d'un cop d'ull. **El detall de cada SA** (materials, sessions i codi) és 
 > 🗺️ Calendari, hores i maquinari per SA: [`Programació didàctica/08_Sequenciacio_temporal_anual.md`](../../Programació%20didàctica/08_Sequenciacio_temporal_anual.md).
 
 ## Notes
+- **El fil conductor dels tres robots:** [`00_Fil_conductor_robots.md`](00_Fil_conductor_robots.md) — els tres robots trimestrals (mascota, braç, rover) i el calendari de fabricació.
 - El codi d'Arduino (`.ino`) usa **Arduino UNO** + kit Keyestudio/BQ; el de **SA5 és MicroPython (`.py`)** per a micro:bit (editor python.microbit.org / Thonny).
 - Comentaris en català sense accents als fitxers de codi per evitar problemes de codificació.
 - Els esquemes es poden muntar físicament o simular a **Tinkercad Circuits** / **Wokwi** abans del muntatge real.
