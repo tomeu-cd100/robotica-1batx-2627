@@ -102,3 +102,5 @@ Barrera que s'obre quan arriba un vehicle i es tanca sola.
 <!-- /web:only-github -->
 
 > 📌 **Vols més?** +Reptes (ventilador, braç dispensador, rampa d'acceleració), rols, coavaluació, exit ticket, pensament computacional i ODS → **[SA4_fitxa_ampliada.md](SA4_fitxa_ampliada.md)**
+
+> 🤖 **Cap al robot del trimestre:** el control de servos amb potenciòmetre que has après avui són les **articulacions del braç**. Guarda el codi: el reaprofitaràs al muntatge. Peces, muntatge i cablatge: **[dossier del braç](../00_General/00_Projecte_T2_Brac.md)**.

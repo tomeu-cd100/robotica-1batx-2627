@@ -94,3 +94,5 @@ Si la tasca encara no t'apareix al Classroom, és que la SA encara no ha començ
 <!-- /web:only-github -->
 
 > 📌 **Vols més?** +Reptes (repartidor, explorador, gir proporcional), rols, coavaluació, exit ticket, pensament computacional i ODS → **[SA7_fitxa_ampliada.md](SA7_fitxa_ampliada.md)**
+
+> 🤖 **Cap al robot del trimestre:** tota aquesta SA la treballes sobre el teu **rover**, muntat a la sessió 0. Cinemàtica, trajectòries i comportaments autònoms són el control del robot del trimestre — consulta el **[dossier del rover](../00_General/00_Projecte_T3_Rover.md)** per a pins i cablatge.

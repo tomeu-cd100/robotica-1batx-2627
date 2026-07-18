@@ -102,3 +102,5 @@ La sessió 4 **sencera** és la **prova T2**: individual, dues parts (control am
 <!-- /web:only-github -->
 
 > 📌 **Vols més?** +Reptes (semàfor adaptatiu, Kp massa gran), rols, coavaluació, exit ticket, pensament computacional i ODS → **[SA6_fitxa_ampliada.md](SA6_fitxa_ampliada.md)**
+
+> 🤖 **Cap al robot del trimestre:** avui tanques el **braç**: la màquina d'estats amb aturada d'emergència que has programat n'és el control complet. És el robot d'aquest trimestre — presenta'l al **[dossier del braç](../00_General/00_Projecte_T2_Brac.md)**.

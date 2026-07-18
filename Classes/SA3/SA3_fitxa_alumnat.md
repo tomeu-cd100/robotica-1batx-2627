@@ -98,3 +98,5 @@ La sessió 4 **sencera** és la **prova T1**: individual, amb el teu kit, i pots
 <!-- /web:only-github -->
 
 > 📌 **Vols més?** +Reptes (llindar ajustable, instrument), rols, coavaluació, exit ticket, pensament computacional i ODS → **[SA3_fitxa_ampliada.md](SA3_fitxa_ampliada.md)**
+
+> 🤖 **Cap al robot del trimestre:** avui tanques la teva **mascota**: el muntatge amb el sensor d'ultrasons i com a mínim 3 reaccions és el producte d'aquesta SA. Presenta'l amb el circuit i el codi de les activitats anteriors al **[dossier de la mascota](../00_General/00_Projecte_T1_Mascota.md)**.

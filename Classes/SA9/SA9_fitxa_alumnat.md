@@ -107,3 +107,5 @@ Useu [`plantilles/Planificacio_agile_PLANTILLA.md`](plantilles/Planificacio_agil
 <!-- /web:only-github -->
 
 > 📌 **Vols més?** Guió ampliat, coavaluació i exit ticket final del curs → **[SA9_fitxa_ampliada.md](SA9_fitxa_ampliada.md)**
+
+> 🤖 **Cap al robot del trimestre:** el projecte final es tanca amb el **rover** al repte final i, si toca, a competició. Documenta-ho al **[dossier del rover](../00_General/00_Projecte_T3_Rover.md)**.
