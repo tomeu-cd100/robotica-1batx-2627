@@ -108,10 +108,12 @@ Aporta **comunicació, actuadors i sensors avançats** per a control, IoT i IA.
 | Element | Quant. | On s'utilitza |
 |---|---|---|
 | **micro:bit V2 + Micro:shield** | 1 per alumne | **SA5** (MicroPython) i **SA8** (telemetria per ràdio). |
-| **Imagina 3dBot** (xassís + motors + driver) | dotació de centre | **SA7** (robòtica mòbil: seguir línia, evitar obstacles). |
+| **Imagina 3dBot** (xassís + motors + driver) | dotació de centre | **SA7**: reserva / pla B si el rover del fil conductor no arriba muntat a temps o pateix una avaria — vegeu [`../Classes/00_General/00_Projecte_T3_Rover.md`](../Classes/00_General/00_Projecte_T3_Rover.md). |
 | **Piles AA + carregador** | centre | Alimentació externa de motors (SA4) i robots. |
 | **Piles 9V** | centre | Alimentar la UNO sense cable USB (opcional). |
 | **Cables micro-USB** | centre | Programació dels micro:bit (SA5/SA8). |
+| **Talladora làser xTool S1** | fabricació dels 3 robots del fil conductor | Sessions de fabricació de T1/T2/T3 — vegeu [`../Classes/00_General/00_Fil_conductor_robots.md`](../Classes/00_General/00_Fil_conductor_robots.md). |
+| **Impressora 3D Bambu Lab P2S Combo** | fabricació dels 3 robots del fil conductor | Peces auxiliars impreses (roda boja, suports, escaires) dels 3 robots. |
 
 ---
 
@@ -125,7 +127,7 @@ Aporta **comunicació, actuadors i sensors avançats** per a control, IoT i IA.
 | **SA4** Moviment | servos, motor DC, **pont H L298N** | Kit 1 + 2 + *compra* | 🟡 falta L298N |
 | **SA5** micro:bit | micro:bit + Micro:shield | micro:bit | ✅ |
 | **SA6** Control | sensor temp + relé/actuador | Kit 1 + 2 + 3 | ✅ |
-| **SA7** Robòtica mòbil | Imagina 3dBot + seguidor + ultrasò | Imagina 3dBot (+ Kit 2 reserva) | ✅ |
+| **SA7** Robòtica mòbil | Rover del fil conductor (L298N + seguidor + ultrasò) + Imagina 3dBot com a reserva/pla B | Fil conductor (Kit 1 + 2 + compra) + Imagina 3dBot de reserva | ✅ |
 | **SA8** IoT/IA | micro:bit ràdio + MPU6050 + sensors + OLED | micro:bit + Kit 2 + 3 | ✅ |
 | **SA9** Projecte final | tot el material | Tots | ✅ |
 
@@ -135,9 +137,33 @@ Aporta **comunicació, actuadors i sensors avançats** per a control, IoT i IA.
 
 | Element | Per a què | Acció | Quant. orient. | Cost |
 |---|---|---|---|---|
-| **Driver pont H L298N** (o L293D / motor shield) | SA4: ensenyar el **pont H** amb un motor discret a la breadboard (la Imagina 3dBot ja porta driver integrat) | **1r: revisar si n'hi ha al departament** (és habitual tenir-ne de cursos anteriors). Si no → **comprar.** | ~1 per parella + 2–3 de reserva | ~2–3 €/u |
+| **Driver pont H L298N** (o L293D / motor shield) | SA4: ensenyar el **pont H** amb un motor discret a la breadboard (la Imagina 3dBot ja porta driver integrat); el rover del fil conductor de T3 en reutilitza un per parella | **1r: revisar si n'hi ha al departament** (és habitual tenir-ne de cursos anteriors). Si no → **comprar.** | **×14** (12 parelles + 2 de reserva) | ~2–3 €/u |
 
-> 💡 No és bloquejant: el L298N **no s'usa fins a la SA4**, així que es pot començar el curs sense tenir-lo resolt. És el component **més barat** de tota la programació.
+> 💡 No és bloquejant: el L298N **no s'usa fins a la SA4**, així que es pot començar el curs sense tenir-lo resolt. És el component **més barat** de tota la programació. La quantitat (×14) ja té en compte que el mateix L298N de SA4 es reutilitza al rover de SA7-SA9 (fil conductor T3): no calen unitats addicionals.
+
+---
+
+## Compres del fil conductor de robots
+
+A més del L298N (secció anterior), la fabricació dels tres robots del fil
+conductor ([`../Classes/00_General/00_Fil_conductor_robots.md`](../Classes/00_General/00_Fil_conductor_robots.md))
+consumeix consumibles propis, no coberts pels 3 kits:
+
+| Material | Quantitat orientativa |
+|---|---|
+| DM 3 mm | ~12 taulers per trimestre |
+| Filament PLA | 2-3 bobines per curs |
+| Portapiles 6×AA | ×12 |
+| Cargols M3 + separadors | segons muntatge |
+| Canicas 16 mm (roda boja del rover) | ×15 |
+
+**Total orientatiu: 130-180 €.**
+
+> ℹ️ El **pont H L298N** ja consta com a única compra pendent a la secció
+> anterior («Única compra pendent: pont H L298N»), amb la quantitat ampliada
+> a **×14** per cobrir també el seu ús al rover de SA7-SA9. La resta
+> d'electrònica dels tres robots (Arduino UNO, sensors, servos, micro:bit...)
+> surt dels **kits d'aula existents** i es **retorna al juny**.
 
 ---
 

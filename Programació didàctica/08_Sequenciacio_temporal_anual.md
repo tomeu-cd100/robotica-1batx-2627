@@ -50,6 +50,33 @@ El marge real (~2 h) és **més petit que les pèrdues habituals** d'un curs (fe
 
 **Senyal d'alerta per decidir a temps:** si en acabar el **1r trimestre no s'ha tancat la SA3**, activa la retallada 2 ja al gener (no esperis al maig); si a **Setmana Santa no s'ha tancat la SA6**, activa també la 3.
 
+## Fil conductor de robots i ús del marge
+
+El curs aplica el **fil conductor de tres robots** (un robot real per
+parella cada trimestre, construït amb la talladora làser i la impressora 3D
+de l'aula): vegeu
+[`../Classes/00_General/00_Fil_conductor_robots.md`](../Classes/00_General/00_Fil_conductor_robots.md).
+Cada sessió de fabricació del fil conductor **consumeix per endavant** una de
+les retallades del pla de contingència anterior; cal deixar-ho explícit aquí
+perquè no es descobreixi al març.
+
+| Trimestre | Sessió de fabricació | Retallada del pla de contingència que s'hi gasta |
+|---|---|---|
+| 1r | S4 de SA2 | Primera retallada (S4 de SA2 comprimible: el repte de la S3 fa de producte) |
+| 2n | S4 de SA4 | Primera retallada (S4 de SA4 comprimible: el repte de la S3 fa de producte) |
+| 3r | Sessió 0 del trimestre | Segona retallada (SA8 comprimible de 6 h a 4 h; les 2 h alliberades es traslladen a l'inici del T3, abans de començar SA7) |
+
+> ⚠️ Amb el fil conductor en marxa, la **primera i la segona retallada** del
+> pla de contingència queden **assignades per endavant** a la fabricació dels
+> robots, no disponibles com a marge davant d'imprevistos: el marge efectiu
+> real és **≈ 0 h**. L'única palanca que queda lliure és la **tercera
+> retallada** (SA7 de 8 h a 6 h, últim recurs).
+>
+> **Senyal d'alerta:** si en acabar el 1r trimestre no s'ha tancat la SA3 (el
+> mateix senyal que activa la retallada 2 més amunt), la mascota es reparteix
+> a l'alumnat amb les peces **pretallades pel docent**, en lloc d'esperar una
+> sessió de tall làser addicional.
+
 ## Fil conductor i progressió
 
 ```
