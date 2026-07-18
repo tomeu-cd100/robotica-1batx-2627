@@ -130,12 +130,12 @@ S4 de SA3 és la prova pràctica **T1**, amb la mascota ja tancada.
 
 ## Rúbrica del robot (producte SA3)
 
-| Criteri | Expert | Avançat | Aprenent | Novell |
+| Criteri | Insuficient (0-4) | Suficient/Bé (5-6) | Notable (7-8) | Excel·lent (9-10) |
 |---|---|---|---|---|
-| **R1 · Fabricació i muntatge** | Caixa ferma, cablejat endreçat i etiquetat, res solt ni curtcircuitat. | Caixa ferma i cablejat endreçat, sense etiquetar. | Caixa funcional però amb algun cable fluix o desordenat. | Caixa inestable o cablejat insegur. |
-| **R2 · Funcionament** | Totes les sortides i sensors funcionen a la primera i de manera fiable. | Totes les sortides i sensors funcionen, amb algun ajust. | La majoria de sortides i sensors funcionen. | Sortides o sensors clau no funcionen. |
-| **R3 · Comportaments** | ≥3 reaccions sensor→resposta, totes coherents amb la personalitat i ben calibrades. | ≥3 reaccions sensor→resposta, coherents amb la personalitat. | 2 reaccions sensor→resposta, o coherència parcial. | Menys de 2 reaccions, o sense relació amb cap personalitat. |
-| **R4 · Fitxa de personalitat i demostració** | Fitxa completa i defensa oral que explica i justifica cada reacció. | Fitxa completa i defensa oral clara. | Fitxa bàsica o defensa amb ajuda. | Sense fitxa o sense poder explicar el funcionament. |
+| **R1 · Fabricació i muntatge** | Caixa inestable o cablejat insegur. | Caixa funcional però amb algun cable fluix o desordenat. | Caixa ferma i cablejat endreçat, sense etiquetar. | Caixa ferma, cablejat endreçat i etiquetat, res solt ni curtcircuitat. |
+| **R2 · Funcionament** | Sortides o sensors clau no funcionen. | La majoria de sortides i sensors funcionen. | Totes les sortides i sensors funcionen, amb algun ajust. | Totes les sortides i sensors funcionen a la primera i de manera fiable. |
+| **R3 · Comportaments** | Menys de 2 reaccions, o sense relació amb cap personalitat. | 2 reaccions sensor→resposta, o coherència parcial. | ≥3 reaccions sensor→resposta, coherents amb la personalitat. | ≥3 reaccions sensor→resposta, totes coherents amb la personalitat i ben calibrades. |
+| **R4 · Fitxa de personalitat i demostració** | Sense fitxa o sense poder explicar el funcionament. | Fitxa bàsica o defensa amb ajuda. | Fitxa completa i defensa oral clara. | Fitxa completa i defensa oral que explica i justifica cada reacció. |
 
 ## Problemes freqüents
 
