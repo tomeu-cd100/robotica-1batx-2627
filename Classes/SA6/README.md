@@ -14,7 +14,7 @@ Sisena situació d'aprenentatge (**8 h · 4 sessions**, 2n trimestre). El sistem
 | S4 | **Prova pràctica T2 (individual)** | A l'aula, sessió sencera |
 | ⭐ | [Repte triat (A, B o C)](../../Reptes/Reptes_SA6.md) | El docent el valida i pinteu l'estrella al [tauler de reptes](../00_General/00_Tauler_reptes.md) |
 | 📓 | Full del quadern tècnic de cada sessió | En paper, en acabar la sessió |
-| 🤖 | El braç amb màquina d'estats i emergència (el producte de la SA, es tanca a la S3) | Es reaprofiten al robot del trimestre: [dossier del braç](../00_General/00_Projecte_T2_Brac.md) |
+| 🤖 | El braç amb màquina d'estats i emergència (el producte de la SA, es tanca a la S3) | És el robot del trimestre: [dossier del braç](../00_General/00_Projecte_T2_Brac.md) |
 
 ## Itinerari per sessions
 

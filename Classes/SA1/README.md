@@ -12,7 +12,7 @@ Primera situació d'aprenentatge del curs (**6 h · 3 sessions**, 1r trimestre).
 |---|---|---|
 | S1 | [Activitat 1 · Entrada, procés, sortida](SA1_fitxa_alumnat.md#1-entrada-proces-sortida) i la [prova diagnòstica](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODcwNTM2NzE0Njcx/details) (no qualifica) | [Tasca de Classroom](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODcwNTEwOTcwMDE1/details) |
 | S2 | [Activitat 2 · La placa Arduino UNO](SA1_fitxa_alumnat.md#2-la-placa-arduino-uno) i [Activitat 3 · Normes de seguretat](SA1_fitxa_alumnat.md#3-normes-de-seguretat) (signades) | Mateixa tasca de Classroom |
-| S3 | [Activitat 4 · El teu primer programa (Blink)](SA1_fitxa_alumnat.md#4-el-teu-primer-programa-blink-primm) i inici de la [fitxa-pòster](SA1_poster_robot_plantilla.md) | Mateixa tasca de Classroom |
+| S3 | [Activitat 4 · El teu primer programa (Blink)](SA1_fitxa_alumnat.md#4-el-teu-primer-programa-blink-primm) i la [fitxa-pòster](SA1_poster_robot_plantilla.md) (el producte de la SA — es comença avui i s'entrega a la mateixa tasca) | Mateixa tasca de Classroom |
 | ⭐ | [Repte triat (A, B o C)](../../Reptes/Reptes_SA1.md) | El docent el valida i pinteu l'estrella al [tauler de reptes](../00_General/00_Tauler_reptes.md) |
 | 📓 | Full del quadern tècnic de cada sessió | En paper, en acabar la sessió |
 

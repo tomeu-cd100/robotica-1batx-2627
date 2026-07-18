@@ -391,9 +391,9 @@ def comprova_lliurables() -> None:
             continue
         bloc = m.group(1)
         files_s = re.findall(r"^\|\s*S(\d+)\s*\|", bloc, re.M)
-        if len(files_s) != sessions_sa[sa]:
+        if len(files_s) != sessions_sa.get(sa, 0):
             errors.append(f"[lliurables] {sa}: {len(files_s)} files de sessió "
-                          f"però la SA té {sessions_sa[sa]} sessions")
+                          f"però la SA té {sessions_sa.get(sa, 0)} sessions")
             fallats += 1
         if sa in prova_sa:
             fila = re.search(rf"^\|\s*S{prova_sa[sa]}\s*\|(.*)$", bloc, re.M)
