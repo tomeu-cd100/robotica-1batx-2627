@@ -201,6 +201,8 @@ GENERAL_ALUMNAT = {
     "00_Poster_IA_us_assistents.md", "00_Quadern_tecnic.md",
     "00_Repas_expres_MicroPython.md", "00_Repas_expres_Radio.md",
     "00_Tauler_reptes.md",
+    "00_Fil_conductor_robots.md", "00_Projecte_T1_Mascota.md",
+    "00_Projecte_T2_Brac.md", "00_Projecte_T3_Rover.md",
 }
 
 
