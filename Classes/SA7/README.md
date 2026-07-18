@@ -6,6 +6,18 @@ Setena situació d'aprenentatge (**8 h · 4 sessions** + sessió 0 de muntatge, 
 
 ![Cinemàtica diferencial: variant la velocitat de cada roda el robot va recte o gira](img/sa7-cinematica-diferencial.svg)
 
+## 📦 Què has d'entregar
+
+| Quan | Lliurable | On es lliura |
+|---|---|---|
+| S1 | [Activitat 1 · Moviment i cinemàtica](SA7_fitxa_alumnat.md#1-moviment-i-cinematica-s1) | [Tasca de Classroom](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODcwNTE4MDMwMTA4/details) |
+| S2 | [Activitat 2 · Trajectòries programades](SA7_fitxa_alumnat.md#2-trajectories-s2) | Mateixa tasca de Classroom |
+| S3 | [Activitat 3 · Evitar obstacles](SA7_fitxa_alumnat.md#3-evita-obstacles-s3) | Mateixa tasca de Classroom |
+| S4 | [Activitat 4 · Seguidor de línia + repte de pista](SA7_fitxa_alumnat.md#4-seguidor-de-linia-repte-de-pista-s4) | Mateixa tasca de Classroom |
+| ⭐ | [Repte triat (A, B o C)](../../Reptes/Reptes_SA7.md) | El docent el valida i pinteu l'estrella al [tauler de reptes](../00_General/00_Tauler_reptes.md) |
+| 📓 | Full del quadern tècnic de cada sessió | En paper, en acabar la sessió |
+| 🤖 | El rover muntat i funcionant | és la plataforma de tota la SA: [dossier del rover](../00_General/00_Projecte_T3_Rover.md) |
+
 ## Itinerari per sessions
 
 > La teva feina és a la **[fitxa base](SA7_fitxa_alumnat.md)**. Aquesta ruta et diu què toca fer a cada sessió i què necessites en aquell moment. Les respostes de la fitxa es lliuren a la **[tasca de Classroom](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODcwNTE4MDMwMTA4/details)**.

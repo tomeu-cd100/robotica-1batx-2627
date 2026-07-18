@@ -4,6 +4,19 @@ Novena i última situació d'aprenentatge (**10 h · 5 sessions**, 3r trimestre)
 
 ![Mètode de projecte: analitzar, dissenyar, construir, provar i millorar de manera iterativa](img/sa9-metode-projecte.svg)
 
+## 📦 Què has d'entregar
+
+| Quan | Lliurable | On es lliura |
+|---|---|---|
+| S1 | [Sessió 1 · Idear (disseny de l'equip)](SA9_fitxa_alumnat.md#3-disseny) | [Tasca de Classroom (una per equip)](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODcwNTE3OTM1Nzkw/details) |
+| S2 | [Sessió 2 · Prototipar (planificació)](SA9_fitxa_alumnat.md#4-planificacio) | Mateixa tasca de Classroom |
+| S3 | [Sessió 3 · Provar (proves i iteracions)](SA9_fitxa_alumnat.md#5-proves-i-iteracions) | Mateixa tasca de Classroom |
+| S4 | [Sessió 4 · Comunicar (defensa)](SA9_fitxa_alumnat.md#6-defensa-s4) | Mateixa tasca de Classroom |
+| S5 | **Prova pràctica T3 (individual, per estacions)** | A l'aula, sessió sencera |
+| ⭐ | [Repte final integrador](plantilles/Banc_de_reptes.md) | El docent el valida com a part del producte del projecte, a la defensa de la S4 |
+| 📓 | Full del quadern tècnic de cada sessió | En paper, en acabar la sessió |
+| 🤖 | El rover al repte final i la competició | Es tanca al dossier del rover: [dossier del rover](../00_General/00_Projecte_T3_Rover.md) |
+
 ## Itinerari per sessions (per fases)
 
 > El projecte segueix el **mètode de projecte** del curs. La teva feina d'equip és a la **[fitxa base](SA9_fitxa_alumnat.md)** amb les [plantilles](plantilles/). Les respostes de la fitxa es lliuren a la **[tasca de Classroom](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODcwNTE3OTM1Nzkw/details)** (una per equip).

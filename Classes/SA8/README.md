@@ -4,6 +4,17 @@ Vuitena situació d'aprenentatge (**6 h · 3 sessions**, 3r trimestre). El siste
 
 ![Telemetria: una placa mesura dades en un lloc i les transmet sense fils a una altra](img/sa8-telemetria.svg)
 
+## 📦 Què has d'entregar
+
+| Quan | Lliurable | On es lliura |
+|---|---|---|
+| S1 | [Activitat 1 · Telemetria](SA8_fitxa_alumnat.md#1-telemetria-s1) | [Tasca de Classroom](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODcwNTE3MTIxMDY0/details) |
+| S2 | [Activitat 2 · Auditoria d'un producte IoT](SA8_fitxa_alumnat.md#2-auditoria-dun-producte-iot-s2) | Mateixa tasca de Classroom |
+| S3 | [Activitat 3 · Introducció a la IA](SA8_fitxa_alumnat.md#3-introduccio-a-la-ia-s3) | Mateixa tasca de Classroom |
+| ⭐ | [Repte triat (A, B o C)](../../Reptes/Reptes_SA8.md) | El docent el valida i pinteu l'estrella al [tauler de reptes](../00_General/00_Tauler_reptes.md) |
+| 📓 | Full del quadern tècnic de cada sessió | En paper, en acabar la sessió |
+| 🤖 | La telemetria del rover (micro:bit al rover + base amb OLED) | Es registra al dossier del rover: [dossier del rover](../00_General/00_Projecte_T3_Rover.md) |
+
 ## Itinerari per sessions
 
 > La teva feina és a la **[fitxa base](SA8_fitxa_alumnat.md)**. Aquesta ruta et diu què toca fer a cada sessió i què necessites en aquell moment. Les respostes de la fitxa es lliuren a la **[tasca de Classroom](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODcwNTE3MTIxMDY0/details)**.
