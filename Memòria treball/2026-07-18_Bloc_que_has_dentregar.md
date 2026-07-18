@@ -41,3 +41,12 @@ tocar la taula.
 Spec + pla + 5 tasques amb subagents (implementador + revisor per tasca) i
 revisió final de branca amb el model més capaç: veredicte «Llest» amb 5
 minors, 4 arreglats i 1 adjudicat. 8 commits, QA i tests del generador verds.
+
+## Addenda (mateix dia): robots a fitxes i checklists
+
+El docent va detectar que **el material de treball de l'alumne** (fitxa base,
+checklist) no anomenava mai els robots — el fil conductor vivia només als
+README, reptes i dossiers. S'ha afegit un requadre «🤖 Cap al robot del
+trimestre» al final de les 8 fitxes d'alumnat (SA2-SA9) i un ítem 🤖 a la
+llista «Què he de fer» de les 8 checklists, amb els PDF imprimibles de les
+checklists regenerats (QA #8 sincronitzat).
