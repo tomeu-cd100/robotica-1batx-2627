@@ -8,13 +8,16 @@
 
 ## El robot
 
-El rover és un xassís de DM 3 mm de **dos pisos**: al **pis inferior** hi ha
-els dos **motoreductors** amb rodes, la **roda boja** de suport i el pont H
-**L298N**; al **pis superior** hi ha l'Arduino **UNO**, el sensor
-d'ultrasons **HC-SR04** mirant endavant i, a SA8, la **micro:bit**. És el
-mateix comportament autònom que ja feia la Imagina 3dBot a SA7 —seguir línia,
-evitar obstacles—, però ara **construït i conegut per dins**: cada parella
-sap exactament on va cada cable perquè l'ha cablejat ella mateixa.
+El rover és un xassís de DM 3 mm amb **encaixos tallats a làser** (disseny
+d'Antonio Romero, provat en tall real — vegeu el crèdit a la llista de
+peces): el cos porta els dos **motoreductors** amb rodes als suports
+d'encaix, la **roda boja** de suport darrere i, fixats amb brides o velcro,
+el pont H **L298N**, l'Arduino **UNO** amb la breadboard i el **portapiles**.
+L'**HC-SR04** mira endavant al seu suport imprès i, a SA8, s'hi afegeix la
+**micro:bit**. És el mateix comportament autònom que ja feia la Imagina
+3dBot a SA7 —seguir línia, evitar obstacles—, però ara **construït i conegut
+per dins**: cada parella sap exactament on va cada cable perquè l'ha
+cablejat ella mateixa.
 
 L'avantatge clau de tenir un rover propi és que els **pins són idèntics per
 a tota l'aula**: el bloc `// === PINS (AJUSTAR) ===` que porten tots els
@@ -22,14 +25,16 @@ a tota l'aula**: el bloc `// === PINS (AJUSTAR) ===` que porten tots els
 dossier, i ja no es torna a tocar en tot el trimestre.
 
 ```
-   PIS SUPERIOR                    PIS INFERIOR
-  ┌───────────────────┐           ┌───────────────────┐
-  │  [ UNO+breadboard ]│           │  motor·L   ...  motor·R
-  │  (micro:bit, SA8)  │           │     (KS9008, dos costats)
-  │                    │           │                    │
-  │ [HC-SR04] ← davant │           │   [L298N]  [roda boja]
-  └───────────────────┘           └───────────────────┘
-        ↑ separadors M3 uneixen els dos pisos
+              XASSÍS (vista de dalt)
+  ┌────────────────────────────────────┐
+  │ [HC-SR04] ← davant                 │
+  │  motor·L ═╣          ╠═ motor·R    │   ← suports de motor amb ENCAIXOS
+  │   [ UNO+breadboard ]  [L298N]      │   ← fixats amb brides/velcro
+  │   [ portapiles 6xAA ]              │
+  │        (micro:bit, SA8)            │
+  │            [roda boja] ← darrere   │
+  └────────────────────────────────────┘
+   sota: 2 seguidors de línia KS0050 mirant a terra
 ```
 
 Què fa: a **SA7** és la **plataforma** dels reptes de trajectòria, evitar
@@ -43,7 +48,7 @@ micro:bit base amb pantalla OLED; a **SA9** el rover és la plataforma del
 
 | Peça | Origen | Quantitat |
 |---|---|---|
-| Plaques de DM (pis inferior + pis superior) | Plantilla `rover.svg`, tall làser | 2 |
+| Xassís de DM amb encaixos (disseny d'**Antonio Romero**, geometria provada) | Plantilla `xassis_rover_ARomero.svg`, tall làser | 1 planxa |
 | Roda boja (per a canica 16 mm) | `roda_boja.scad`, impressió 3D | 1 |
 | Suport frontal HC-SR04 | `suport_hcsr04.scad`, impressió 3D | 1 |
 | Canica de 16 mm (per a la roda boja) | Material del centre | 1 |
@@ -54,57 +59,68 @@ micro:bit base amb pantalla OLED; a **SA9** el rover és la plataforma del
 | Sensor de col·lisió KS0021 (para-xocs) | Kit 2 | 1 |
 | Portapiles 6×AA | Material del centre | 1 |
 | Arduino UNO + breadboard petita | Kit 1 | 1 |
-| Brides | Material del centre | segons muntatge |
-| Separadors M3 (uneixen els dos pisos) | Material del centre | 4 |
+| Brides i velcro (fixació de l'electrònica al xassís) | Material del centre | segons muntatge |
 | Cargols M3 | Material del centre | segons muntatge |
 
 <!-- web:only-github -->
-Plantilla de tall làser: [`../../Recursos/plantilles_laser/rover.svg`](../../Recursos/plantilles_laser/rover.svg).
+Plantilla de tall làser (xassís oficial): [`../../Recursos/plantilles_laser/xassis_rover_ARomero.svg`](../../Recursos/plantilles_laser/xassis_rover_ARomero.svg)
+(alternativa de 2 pisos, no provada: [`../../Recursos/plantilles_laser/rover.svg`](../../Recursos/plantilles_laser/rover.svg)).
 Peces impreses en 3D: [`../../Recursos/peces_3d/roda_boja.scad`](../../Recursos/peces_3d/roda_boja.scad),
 [`../../Recursos/peces_3d/suport_hcsr04.scad`](../../Recursos/peces_3d/suport_hcsr04.scad).
 <!-- /web:only-github -->
 
+> 🏅 **Crèdit del xassís:** disseny d'**Antonio Romero** (2026), del material
+> «Vehicle amb micro:bit (II)», derivat del Taller 8 «Prepara't per construir
+> el vehicle del futur» del programa **Connectem amb les plaques** (XTEC).
+> Llicència del fitxer del xassís: **CC BY-NC-SA 4.0**. És un disseny amb
+> **encaixos ja provats en un tall real** — per això el fem servir.
+
 ## Fabricació i personalització
 
-A diferència de la mascota, el `rover.svg` **no té zona de gravat lliure**:
-són dues plaques funcionals (pis inferior amb forats per als motors i la
-roda boja, pis superior amb forat per al suport de l'HC-SR04) que totes les
-parelles tallen igual. El **pis superior** porta una zona vermella reservada
-perquè cada parella hi **gravi el nom** del seu rover; res més es toca.
+El xassís del rover és el disseny **provat** d'Antonio Romero (vegeu el
+crèdit de dalt): una planxa de ~132 × 138 mm amb el cos i els **suports de
+motor amb encaixos** que es munten sense cola. Les línies de tall **no es
+toquen** (els encaixos estan calibrats); la personalització del rover és el
+**nom de l'equip**, que es pot gravar en una zona lliure del cos o
+retolar-hi després del tall.
+
+L'electrònica del curs (UNO + breadboard petita, L298N i portapiles) **no va
+cargolada**: es fixa amb **brides i velcro** sobre el xassís — les posicions
+definitives es decideixen amb el xassís tallat a la mà (l'espai és just i
+val més adaptar-se al muntatge real que fixar forats a cegues).
 
 Flux de fabricació:
-1. Cada parella prepara el nom del seu rover (la zona de gravat del pis
-   superior) al **tancament del 2n trimestre** (~20 min) o de casa, i el
-   docent el valida **abans de la sessió 0**.
-2. El docent llança el tall de `rover.svg` per **lots** durant la sessió 0
-   del trimestre (nesting de diverses parelles per tauler).
-3. Cada parella recull el seu joc de dues plaques i la roda boja i el
-   suport de l'HC-SR04 impresos prèviament.
+1. Cada parella prepara el gravat o retolació del nom al **tancament del 2n
+   trimestre** (~20 min) o de casa, i el docent el valida **abans de la
+   sessió 0**.
+2. El docent llança el tall de `xassis_rover_ARomero.svg` per **lots**
+   durant la sessió 0 del trimestre (nesting de diverses parelles per
+   tauler).
+3. Cada parella recull el seu xassís i la roda boja i el suport de
+   l'HC-SR04 impresos prèviament.
 4. Muntatge sencer a la mateixa sessió (sessió 0, vegeu més avall).
 5. El full de cua públic per màquina (parella · fitxer · estat) es manté
    igual que per als altres robots del curs.
 
 ## Muntatge
 
-1. Munta els **dos motoreductors** amb les rodes KS9008 als laterals del
-   **pis inferior**, i la **roda boja** (`roda_boja.scad` + canica de
-   16 mm) al centre-davant, com a tercer punt de suport.
-2. Cargola el **L298N** al pis inferior, a prop dels motors, amb els
-   cables prou llargs per arribar als separadors.
-3. Uneix el **pis superior** al pis inferior amb els **4 separadors M3**,
-   deixant espai per passar els cables entre pisos.
-4. Fixa la **breadboard amb l'Arduino UNO** al pis superior, amb els ports
-   accessibles per una obertura lateral.
-5. Cargola el **suport de l'HC-SR04** (`suport_hcsr04.scad`) al davant del
-   pis superior, amb el sensor mirant endavant.
-6. Enganxa els **dos seguidors de línia KS0050** sota el pis inferior,
-   mirant a terra, un a l'esquerra i un a la dreta del centre.
+1. Encaixa el **xassís** seguint la guia de muntatge del disseny original
+   (els suports de motor s'encaixen al cos, sense cola).
+2. Munta els **dos motoreductors** amb les rodes KS9008 als suports
+   d'encaix, i la **roda boja** (`roda_boja.scad` + canica de 16 mm) al
+   darrere, com a tercer punt de suport.
+3. Fixa el **L298N** amb brida o velcro, a prop dels motors.
+4. Fixa la **breadboard amb l'Arduino UNO** i el **portapiles 6×AA** amb
+   brides o velcro, amb els ports de la UNO accessibles i els cables de
+   piles arribant al L298N.
+5. Munta el **suport de l'HC-SR04** (`suport_hcsr04.scad`) al davant, amb
+   el sensor mirant endavant.
+6. Enganxa els **dos seguidors de línia KS0050** sota el xassís, mirant a
+   terra, un a l'esquerra i un a la dreta del centre.
 7. Munta el **sensor de col·lisió** (para-xocs) al davant, per sobre de
    l'HC-SR04, orientat perquè detecti un xoc frontal.
 8. Cablatge complet segons la taula de baix; comprova totes les connexions
    **abans** d'alimentar els motors.
-9. Fixa el **portapiles 6×AA** al pis inferior amb brides, amb els cables
-   accessibles cap al L298N.
 
 > ⚠️ **GND comú:** és l'error més freqüent del rover. Les piles alimenten
 > el L298N i el L298N alimenta la UNO (5 V); si el **GND** de les piles, el
@@ -139,7 +155,7 @@ abans de programar-lo:
 | Temps | Què es fa |
 |---|---|
 | 0-15' | Repartiment de peces per parella i comprovació que hi és tot (llista de peces de dalt). |
-| 15-60' | Xassís: motors, roda boja i unió dels dos pisos amb els separadors. |
+| 15-60' | Xassís: encaixos del cos, motors, roda boja i fixació de l'electrònica amb brides/velcro. |
 | 60-90' | Cablatge complet amb la taula d'aquest dossier (L298N, HC-SR04, seguidors, para-xocs, alimentació amb GND comú). |
 | 90-120' | Test de fum: puja un sketch de prova (motors endavant/enrere + lectura d'ultrasons per Serial) i comprova que respon abans de tancar la sessió. |
 
@@ -182,7 +198,9 @@ i la competició de fi de curs, amb telemetria per ràdio funcionant.
 > **Pla B:** si un rover no arriba muntat a temps per a la SA7 (fabricació
 > endarrerida) o no arriba viu a SA9 (avaria), la parella passa a la Imagina
 > 3dBot o al xassís de reserva del Kit 2; els `.ino` són els mateixos
-> canviant només el bloc `// === PINS (AJUSTAR) ===`.
+> canviant només el bloc `// === PINS (AJUSTAR) ===`. Si el xassís
+> d'encaixos no anés bé amb la nostra electrònica, hi ha l'alternativa de
+> **2 pisos** (`rover.svg`, del generador propi, pendent de tall de prova).
 
 ---
 

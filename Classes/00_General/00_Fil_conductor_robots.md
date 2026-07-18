@@ -112,7 +112,8 @@ sobre les **zones vermelles** de la plantilla.
 - Plantilles de tall làser (SVG, un fitxer per robot) i la seva guia:
   [`../../Recursos/plantilles_laser/mascota.svg`](../../Recursos/plantilles_laser/mascota.svg),
   [`../../Recursos/plantilles_laser/brac.svg`](../../Recursos/plantilles_laser/brac.svg),
-  [`../../Recursos/plantilles_laser/rover.svg`](../../Recursos/plantilles_laser/rover.svg) ·
+  [`../../Recursos/plantilles_laser/xassis_rover_ARomero.svg`](../../Recursos/plantilles_laser/xassis_rover_ARomero.svg)
+  (xassís del rover: disseny d'**Antonio Romero**, CC BY-NC-SA 4.0, geometria provada) ·
   [`../../Recursos/plantilles_laser/LLEGEIX-ME.md`](../../Recursos/plantilles_laser/LLEGEIX-ME.md)
 - Peces impreses en 3D (OpenSCAD) i la seva guia:
   [`../../Recursos/peces_3d/escaire_caixa.scad`](../../Recursos/peces_3d/escaire_caixa.scad),

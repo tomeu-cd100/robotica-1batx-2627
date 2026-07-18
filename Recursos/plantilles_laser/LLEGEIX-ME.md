@@ -14,19 +14,31 @@ es poden importar directament sense reescalar.
 | --- | --- | --- |
 | `mascota.svg` | Mascota | 465 × 215 mm |
 | `brac.svg` | Braç | 285 × 150 mm |
-| `rover.svg` | Rover | 330 × 125 mm |
+| `xassis_rover_ARomero.svg` | **Rover (xassís oficial)** | 132 × 138 mm |
+| `rover.svg` | Rover (alternativa de 2 pisos, no provada) | 330 × 125 mm |
+
+> 🏅 **Crèdit del xassís del rover:** disseny d'**Antonio Romero** (2026), del
+> material «Vehicle amb micro:bit (II)», derivat del Taller 8 del programa
+> «Connectem amb les plaques» (XTEC). Llicència d'aquest fitxer:
+> **CC BY-NC-SA 4.0** (diferent de la resta del curs, que és CC BY-SA 4.0).
+> És l'únic xassís amb **geometria provada en un tall real**; els encaixos i
+> les línies de tall NO es toquen. L'electrònica del curs (UNO + L298N +
+> portapiles) s'hi fixa amb brides o velcro; les posicions definitives es
+> validen amb el xassís tallat a la mà.
 
 ## Com regenerar-les
 
-Els SVG **no s'editen a mà**. Es generen a partir de l'script
-`tools/genera_plantilles_laser.py`:
+`mascota.svg`, `brac.svg` i `rover.svg` **no s'editen a mà**: es generen a
+partir de l'script `tools/genera_plantilles_laser.py`:
 
 ```
 py tools/genera_plantilles_laser.py
 ```
 
 Si cal canviar una mida, un forat o una etiqueta, modifica l'script i torna'l
-a executar; això sobreescriu els tres fitxers d'aquesta carpeta.
+a executar; això sobreescriu aquests tres fitxers. El
+`xassis_rover_ARomero.svg` és un disseny extern (vegeu el crèdit) i queda
+**fora del generador**: no es regenera ni es modifica.
 
 ## Com importar-les a xTool Creative Space
 

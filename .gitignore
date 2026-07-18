@@ -43,6 +43,10 @@ Recursos/Fitxes STEAM Cards curs 2020-2021-*.zip
 # copyright d'altri, no poden anar en un repo public CC BY-SA. Es consulten en
 # local (copia del docent) i l'Excel de Recursos en te els enllacos originals.
 Recursos/_tercers_nomes_local/
+# Material del vehicle micro:bit d'Antonio Romero (CC BY-NC-SA): 101 MB de
+# .hex de MakeCode, guies PDF i fotos — nomes local. L'unic fitxer que es
+# versiona es la copia amb credit a Recursos/plantilles_laser/xassis_rover_ARomero.svg.
+Recursos/rover/
 
 # Eina local d'automatitzacio del Google Classroom (scripts Node +
 # node_modules + credentials.json). NO ha d'anar al repo public:

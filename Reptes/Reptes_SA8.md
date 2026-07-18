@@ -124,7 +124,7 @@
 
 Aquest trimestre tot suma cap al **rover autònom** ([dossier](../Classes/00_General/00_Projecte_T3_Rover.md) · [fil conductor](../Classes/00_General/00_Fil_conductor_robots.md)):
 
-- **Repte A (estació meteorològica connectada)** i **repte B (alerta a distància)** → la telemetria del rover: la mateixa parella emissor/receptor per ràdio és com el rover envia distància i estat des de la micro:bit del pis superior cap a la micro:bit base amb pantalla OLED.
+- **Repte A (estació meteorològica connectada)** i **repte B (alerta a distància)** → la telemetria del rover: la mateixa parella emissor/receptor per ràdio és com el rover envia distància i estat des de la micro:bit de bord cap a la micro:bit base amb pantalla OLED.
 - **Repte C (control per gestos)** → ampliació opcional del comandament del rover.
 
 El rover connectat a SA8 —sensors + moviment de SA7, telemetria de SA8— és directament la plataforma amb què s'arriba al repte final de SA9.

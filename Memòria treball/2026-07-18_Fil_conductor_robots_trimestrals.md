@@ -57,10 +57,25 @@ generador web OK. La revisió final va detectar i corregir 12 incoherències
 (geometria de plantilles incloses: forats alineats escaire↔panells,
 roda boja↔pis inferior, suport HC-SR04↔pis superior).
 
+## Addenda (mateix dia): xassís del rover d'Antonio Romero
+
+El docent ha aportat el material «Vehicle amb micro:bit» d'**Antonio Romero**
+(CC BY-NC-SA 4.0, derivat del Taller 8 de «Connectem amb les plaques», XTEC):
+guies PDF (cartó/làser/3D), 66 programes MakeCode i un **xassís de tall làser
+JA PROVAT** en tall real. Decisió del docent: **adoptar aquest xassís com a
+oficial del rover T3** (amb crèdit i llicència pròpia del fitxer,
+`Recursos/plantilles_laser/xassis_rover_ARomero.svg`), mantenir la nostra
+electrònica UNO + L298N fixada amb brides/velcro, i descartar la part de
+càmera IA (el centre no en té). El `rover.svg` de 2 pisos queda com a
+alternativa no provada. La carpeta font (`Recursos/rover/`, 101 MB de .hex i
+PDF) queda **fora del repositori** (gitignored) — només es versiona l'SVG
+amb el crèdit.
+
 ## Pendent
 
-- **Setembre (maquinari real):** tall de prova de les 3 plantilles amb DM real
-  (ajustar folgances segons kerf del làser), impressió de prova dels 5 SCAD,
-  validar l'alimentació dels 3 servos del braç i el L298N del rover. S'afegeix
-  a la llista de pendents de maquinari real ja existent.
+- **Setembre (maquinari real):** tall de prova de les plantilles pròpies amb
+  DM real (mascota i braç; el xassís Romero ja està provat), impressió de
+  prova dels 5 SCAD, validar l'alimentació dels 3 servos del braç i el L298N
+  del rover, i decidir les posicions definitives de l'electrònica sobre el
+  xassís Romero. S'afegeix a la llista de pendents de maquinari real.
 - Fotos de robots muntats per als dossiers quan hi hagi prototips.
