@@ -118,3 +118,13 @@
 - **Diferenciació:** el mínim és moviment autònom amb funcions; trajectòries precises, estratègies i control proporcional escalen.
 - **Gestió d'aula:** reservar **espai de proves**; treballar per torns si hi ha pocs robots; el repte C necessita un circuit de línia preparat. Seguretat: robots a terra, no a la taula.
 - **Vincle avaluació:** R1 + R3 + R5; el repte C connecta amb el control proporcional (SA6) i prepara el projecte (SA9).
+
+---
+
+## 🤖 Cap al robot del trimestre
+
+El robot d'aquesta SA és el **TEU rover** ([dossier](../Classes/00_General/00_Projecte_T3_Rover.md) · [fil conductor](../Classes/00_General/00_Fil_conductor_robots.md)): aquest trimestre s'obre amb el rover autònom de dos pisos que heu muntat vosaltres mateixos a la sessió 0.
+
+- **Repte A (robot repartidor)**, **repte B (robot explorador)** i **repte C (seguidor de línia)** → les tres capacitats es proven directament sobre el vostre rover, no sobre la Imagina 3dBot.
+
+El bloc `// === PINS (AJUSTAR) ===` dels `.ino` de SA7 ja es va fixar a la sessió 0 amb la taula de cablatge del dossier del rover: no el torneu a tocar en tot el trimestre.
