@@ -16,7 +16,7 @@ Setena situació d'aprenentatge (**8 h · 4 sessions** + sessió 0 de muntatge, 
 | S4 | [Activitat 4 · Seguidor de línia + repte de pista](SA7_fitxa_alumnat.md#4-seguidor-de-linia-repte-de-pista-s4) | Mateixa tasca de Classroom |
 | ⭐ | [Repte triat (A, B o C)](../../Reptes/Reptes_SA7.md) | El docent el valida i pinteu l'estrella al [tauler de reptes](../00_General/00_Tauler_reptes.md) |
 | 📓 | Full del quadern tècnic de cada sessió | En paper, en acabar la sessió |
-| 🤖 | El rover muntat i funcionant | és la plataforma de tota la SA: [dossier del rover](../00_General/00_Projecte_T3_Rover.md) |
+| 🤖 | El rover muntat i funcionant | És la plataforma de tota la SA: [dossier del rover](../00_General/00_Projecte_T3_Rover.md) |
 
 ## Itinerari per sessions
 

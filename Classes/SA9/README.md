@@ -24,8 +24,8 @@ Novena i última situació d'aprenentatge (**10 h · 5 sessions**, 3r trimestre)
 1. **Sessió 1 · Idear** — trieu repte al [banc de reptes](plantilles/Banc_de_reptes.md), formeu equips i planifiqueu amb el [taulell àgil](plantilles/Planificacio_agile_PLANTILLA.md); ompliu el [disseny de la fitxa](SA9_fitxa_alumnat.md#3-disseny).
 2. **Sessió 2 · Prototipar** — munteu el prototip mínim viable i el primer codi; seguiu la [planificació](SA9_fitxa_alumnat.md#4-planificacio).
 3. **Sessió 3 · Provar** — proves sistemàtiques i **primera iteració** ([proves i iteracions](SA9_fitxa_alumnat.md#5-proves-i-iteracions)).
-4. **Sessió 4 · Millorar i documentar** — **segona iteració** + [dossier tècnic](plantilles/Dossier_tecnic_PLANTILLA.md).
-5. **Sessió 5 · Comunicar** — [defensa oral](SA9_fitxa_alumnat.md#6-defensa-s5) + demostració i coavaluació (s'avalua amb **totes** les rúbriques R1-R5).
+4. **Sessió 4 · Millorar, documentar i comunicar** — **segona iteració** + [dossier tècnic](plantilles/Dossier_tecnic_PLANTILLA.md) + [defensa oral](SA9_fitxa_alumnat.md#6-defensa-s4) amb demostració i coavaluació (s'avalua amb **totes** les rúbriques R1-R5).
+5. **Sessió 5 · Prova pràctica T3** — prova **individual, per estacions rotatives** (sessió sencera; el projecte ja s'ha tancat a la S4).
 6. **Abans d'entregar** — repassa [el nostre checklist](SA9_checklist_alumnat.md).
 
 ### Si vols més

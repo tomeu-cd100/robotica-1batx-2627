@@ -16,7 +16,7 @@ Tercera situació d'aprenentatge (**8 h · 4 sessions**, 1r trimestre). El siste
 | S4 | **Prova pràctica T1 (individual)** | A l'aula, sessió sencera |
 | ⭐ | [Repte triat (A, B o C)](../../Reptes/Reptes_SA3.md) | El docent el valida i pinteu l'estrella al [tauler de reptes](../00_General/00_Tauler_reptes.md) |
 | 📓 | Full del quadern tècnic de cada sessió | En paper, en acabar la sessió |
-| 🤖 | La mascota muntada amb ≥3 reaccions (el producte de la SA, es tanca a la S3) | [Dossier de la mascota](../00_General/00_Projecte_T1_Mascota.md) |
+| 🤖 | La mascota muntada amb ≥3 reaccions (el producte de la SA, es tanca a la S3) | Es presenta amb la resta del producte: [dossier de la mascota](../00_General/00_Projecte_T1_Mascota.md) |
 
 ## Itinerari per sessions
 
