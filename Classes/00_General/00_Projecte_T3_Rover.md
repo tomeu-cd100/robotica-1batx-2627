@@ -176,6 +176,7 @@ i la competició de fi de curs, amb telemetria per ràdio funcionant.
 | Lectures d'ultrasons erràtiques | GND no comú entre HC-SR04, UNO i L298N, o cable massa llarg. | Uneix tots els GND i escurça el cablatge del sensor si cal. |
 | La UNO es reinicia en moure els motors | Alimentada per USB en lloc dels 5 V del L298N. | Alimenta la UNO des del L298N, mai per USB, quan els motors funcionen. |
 
-> **Pla B:** si un rover no arriba viu a SA9, la parella passa a la Imagina
+> **Pla B:** si un rover no arriba muntat a temps per a la SA7 (fabricació
+> endarrerida) o no arriba viu a SA9 (avaria), la parella passa a la Imagina
 > 3dBot o al xassís de reserva del Kit 2; els `.ino` són els mateixos
 > canviant només el bloc `// === PINS (AJUSTAR) ===`.
