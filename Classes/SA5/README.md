@@ -12,7 +12,7 @@ Cinquena situació d'aprenentatge (**6 h · 3 sessions** + 4a opcional d'ampliac
 |---|---|---|
 | S1 | [Activitat 1 · Name badge](SA5_fitxa_alumnat.md#1-name-badge-s1) | [Tasca de Classroom](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODcwNTE3NDYxNTQy/details) |
 | S2 | [Activitat 2 · Sensors integrats](SA5_fitxa_alumnat.md#2-sensors-integrats-s2) | Mateixa tasca de Classroom |
-| S3 | [Activitat 3 · Ràdio](SA5_fitxa_alumnat.md#3-radio-s3) | Mateixa tasca de Classroom |
+| S3 | [Activitat 3 · Ràdio](SA5_fitxa_alumnat.md#3-radio-s3) i [Activitat 4 · Producte: comparació C++/Python](SA5_fitxa_alumnat.md#4-producte-comparacio-c-python) (es tanca dins la S3) | Mateixa tasca de Classroom |
 | ⭐ | [Repte triat (A, B o C)](../../Reptes/Reptes_SA5.md) | El docent el valida i pinteu l'estrella al [tauler de reptes](../00_General/00_Tauler_reptes.md) |
 | 📓 | Full del quadern tècnic de cada sessió | En paper, en acabar la sessió |
 | 🤖 | El comandament per ràdio del braç (les dues micro:bit de la parella) | Es reaprofiten al robot del trimestre: [dossier del braç](../00_General/00_Projecte_T2_Brac.md) |
