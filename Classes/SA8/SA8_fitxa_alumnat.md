@@ -106,4 +106,4 @@ Després, **peritatge creuat**: presenteu-lo en 90 segons a una altra parella (q
 > 💻 **Sense placa?** micro:bit a [python.microbit.org](https://python.microbit.org); telemetria ESP32 a `Simulacions/Wokwi/SA8_telemetria_esp32/`.
 > 📌 **Vols més?** +Reptes (estació meteo, alerta), rols, coavaluació, exit ticket, pensament computacional i ODS → **[SA8_fitxa_ampliada.md](SA8_fitxa_ampliada.md)**
 
-> 🤖 **Cap al robot del trimestre:** la telemetria que has programat avui és el sistema micro:bit + OLED que connectaràs al **rover**. Guarda el codi: es registra al **[dossier del rover](../00_General/00_Projecte_T3_Rover.md)**.
+> 🤖 **Cap al robot del trimestre:** la telemetria que has programat avui és la del teu **rover**: una micro:bit al rover envia dades per ràdio a la base amb pantalla OLED. Guarda el codi: es registra al **[dossier del rover](../00_General/00_Projecte_T3_Rover.md)**.
