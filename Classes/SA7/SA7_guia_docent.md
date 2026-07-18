@@ -31,6 +31,17 @@ La **Imagina 3dBot** és Arduino-compatible, però **els pins dels motors depene
 - **Pont (d'on venim / on anem):** ve de la **SA6** (control: llaç tancat i màquines d'estats) → portem a la **SA8** (IoT i IA). L'evita-obstacles i el seguidor de línia són **control en llaç tancat** (SA6) aplicat al moviment.
 - **Retirada de bastida — repte "a full en blanc" (nou en aquesta SA):** cada parella escriu **un** dels reptes amb l'**editor buit** — només el seu pseudocodi i el full-xuleta de crides (`motors()`, `dist()`…), sense obrir cap sketch fet. És el penúltim graó abans de la SA9 (vegeu `Programació didàctica/04_Metodologia.md` §4.2 bis). El paper del docent: **no deixar obrir el sketch de referència fins que el pseudocodi estigui ensenyat**; si s'encallen, la pista és el pseudocodi, no el codi fet.
 
+> 🤖 **Fil conductor de robots:** si el curs segueix el fil conductor
+> ([`00_Fil_conductor_robots.md`](../00_General/00_Fil_conductor_robots.md)),
+> el trimestre obre amb una **sessió 0 de muntatge del rover** (2 h) abans de
+> començar aquesta SESSIÓ 1: les 2 h surten de comprimir SA8 de 6 a 4 h
+> (palanca oficial). El pla detallat de la sessió 0 (repartiment de peces,
+> xassís, cablatge, test de fum) és al
+> [dossier del rover, secció «Sessió 0 de muntatge»](../00_General/00_Projecte_T3_Rover.md#sessió-0-de-muntatge-2-h) —
+> no es duplica aquí. Amb el fil conductor, la SA7 es fa amb el **rover
+> propi** de cada parella; la Imagina 3dBot queda de **reserva** (pla B, vegeu
+> el dossier) per si un rover no arriba a temps.
+
 ---
 
 ## SESSIÓ 1 (2 h) — Moviment i cinemàtica diferencial

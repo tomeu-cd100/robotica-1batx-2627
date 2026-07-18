@@ -33,6 +33,15 @@
 - **Pont (d'on venim / on anem):** ve de la **SA7** (robot mòbil) → portem a la **SA9** (projecte final). Reprèn el **fil dels dos llenguatges** (Python/C++) obert a la **SA5**; les peces d'aquí (dades, connexió, decisió) es poden **integrar** al projecte final.
 - **Retirada de bastida — repte "a full en blanc" (últim graó abans de la SA9):** de la parella emissor/receptor de telemetria, **una de les dues meitats** s'escriu amb l'editor buit (pseudocodi propi + xuleta de `radio`); l'altra pot partir del codi donat. Vegeu `Programació didàctica/04_Metodologia.md` §4.2 bis.
 
+> 🤖 **Fil conductor de robots:** si el curs segueix el fil conductor
+> ([`00_Fil_conductor_robots.md`](../00_General/00_Fil_conductor_robots.md)),
+> aquesta SA s'imparteix en **4 h** en lloc de 6: la **S1 (telemetria) i la S2
+> (disseny IoT) es fusionen** en una única sessió de 4 h — la mateixa fusió
+> que ja preveu el pla de contingència d'aquesta guia. Les **2 h alliberades**
+> es traslladen a l'inici del 3r trimestre com a **sessió 0 de muntatge del
+> rover** (SA7). La **S3 d'IA es manté sencera** (2 h), sense canvis.
+> Detall del rover: [dossier T3](../00_General/00_Projecte_T3_Rover.md).
+
 ---
 
 ## SESSIÓ 1 (2 h) — Telemetria: el robot que informa

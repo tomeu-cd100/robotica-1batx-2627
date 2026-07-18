@@ -33,6 +33,12 @@ Estructura del sketch; variables, constants i operadors; `pinMode`, `digitalWrit
 | **3** | **PWM** amb `analogWrite`: efecte *fade* i LED RGB (barreja de colors). Funció `map()` aplicada a nivells. |
 | **4** | Repte integrador: **"panell de senyalització"** (LED RGB + piezo + relé per a una càrrega). Documentació i mini-defensa. |
 
+> 🤖 **Fil conductor de robots:** amb el fil conductor actiu
+> ([`Classes/00_General/00_Fil_conductor_robots.md`](../Classes/00_General/00_Fil_conductor_robots.md)),
+> la sessió 4 és també la **sessió de fabricació de la mascota** (tall làser
+> i muntatge, [dossier](../Classes/00_General/00_Projecte_T1_Mascota.md)):
+> el repte de la sessió 3 fa de producte.
+
 ## Producte
 Un dispositiu de senyalització programable (p. ex. semàfor amb fase nocturna intermitent o llum d'estat RGB) amb codi comentat i esquema.
 

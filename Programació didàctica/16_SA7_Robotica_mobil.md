@@ -24,6 +24,15 @@ Robòtica mòbil; xassís i rodes; **cinemàtica diferencial**; algorismes de co
 ## Repte/pregunta inicial
 > *"Com fa un robot per girar exactament 90° i per no xocar mai?"*
 
+> 🤖 **Fil conductor de robots:** amb el fil conductor actiu
+> ([`Classes/00_General/00_Fil_conductor_robots.md`](../Classes/00_General/00_Fil_conductor_robots.md)),
+> el trimestre s'obre amb una **sessió 0 (2 h)** de muntatge del rover propi
+> (pla detallat al
+> [dossier T3](../Classes/00_General/00_Projecte_T3_Rover.md), secció
+> «Sessió 0 de muntatge»), abans de la sessió 1; les 2 h surten de comprimir
+> SA8 de 6 a 4 h. La SA es fa amb el **rover propi**; la Imagina 3dBot queda
+> de reserva.
+
 ## Seqüència de sessions
 
 | Sessió | Activitats |

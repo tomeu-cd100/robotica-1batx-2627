@@ -33,6 +33,13 @@ Actuadors de moviment: servomotor (PWM, llibreria `Servo`), motor DC, **driver/p
 | **3** | Integració sensor→actuador: potenciòmetre/ultrasons que regula velocitat o posició. |
 | **4** | Repte: **"barrera automàtica"** o **"ventilador regulable"** (sensor + actuador + indicador). Documentació. |
 
+> 🤖 **Fil conductor de robots:** amb el fil conductor actiu
+> ([`Classes/00_General/00_Fil_conductor_robots.md`](../Classes/00_General/00_Fil_conductor_robots.md)),
+> la sessió 4 és també la **sessió de fabricació del braç** (tall làser i
+> muntatge del braç de 3 GDL,
+> [dossier](../Classes/00_General/00_Projecte_T2_Brac.md)): el repte de la
+> sessió 3 fa de producte.
+
 ## Producte
 Mecanisme motoritzat controlat per sensor (barrera, braç o ventilador) amb control de direcció/velocitat i codi modular.
 

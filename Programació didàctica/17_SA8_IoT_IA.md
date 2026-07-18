@@ -24,6 +24,15 @@
 ## Repte/pregunta inicial
 > *"Com pot un sistema aprendre a reconèixer un gest o decidir per si sol?"*
 
+> 🤖 **Fil conductor de robots:** amb el fil conductor actiu
+> ([`Classes/00_General/00_Fil_conductor_robots.md`](../Classes/00_General/00_Fil_conductor_robots.md)),
+> aquesta SA s'imparteix en **4 h**: les sessions 1 (telemetria) i 2 (disseny
+> IoT) es fusionen en una sola sessió (mateixa fusió que ja preveu la
+> retallada de calendari de
+> [`08_Sequenciacio_temporal_anual.md`](08_Sequenciacio_temporal_anual.md)).
+> Les 2 h alliberades passen a ser la **sessió 0** de muntatge del rover
+> (SA7). La sessió 3 d'IA es manté sencera.
+
 ## Seqüència de sessions
 
 | Sessió | Activitats |

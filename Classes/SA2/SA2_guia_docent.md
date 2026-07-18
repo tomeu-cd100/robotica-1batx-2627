@@ -113,6 +113,14 @@
 - **S3 · `03_fade_pwm` / `04_rgb` (PWM, `map()`):** contrasta `digitalWrite` (0/1) amb `analogWrite` (**0–255**). Demana predir què fa el valor **128**. Mantra: *PWM només als pins `~`*. *Error a anticipar:* barrejar el rang 0–1023 (lectura) amb 0–255 (PWM).
 - **S4 · `05_panell` (integració):** no facis codi nou; mostra'l com a **integració** i pregunta com combinarien estat (RGB) + avís (piezo) + càrrega (relé).
 
+> 🤖 **Fil conductor de robots:** si el curs segueix el fil conductor
+> ([`00_Fil_conductor_robots.md`](../00_General/00_Fil_conductor_robots.md)),
+> aquesta S4 és la **sessió de fabricació de la mascota**: el repte de la S3 fa
+> de producte (palanca oficial del pla de contingència) i la sessió es dedica a
+> personalitzar la cara i tallar les caixes per rotacions
+> ([dossier](../00_General/00_Projecte_T1_Mascota.md)). El mini-check de la S4
+> es manté a l'inici de la sessió.
+
 ## Atenció a la diversitat (DUA)
 
 | Via | Mesura |

@@ -108,6 +108,14 @@
 - **S3 · `03_sensor_velocitat` (percepció→acció):** mostra com `map()` converteix **distància → velocitat**. Pregunta: *"què ha de passar a la distància mínima de seguretat?"*
 - **S4 · `04_barrera_automatica` (integració):** mostra'l com a integració; pregunta com personalitzarien temps i angles.
 
+> 🤖 **Fil conductor de robots:** si el curs segueix el fil conductor
+> ([`00_Fil_conductor_robots.md`](../00_General/00_Fil_conductor_robots.md)),
+> aquesta S4 és la **sessió de fabricació del braç**: el repte de la S3 fa de
+> producte (mateixa palanca oficial del pla de contingència) i la sessió es
+> dedica al tall làser i muntatge del braç de 3 GDL (base, colze, pinça)
+> ([dossier](../00_General/00_Projecte_T2_Brac.md)). El mini-check de la S4
+> es manté a l'inici de la sessió.
+
 ## Atenció a la diversitat (DUA)
 
 | Via | Mesura |
