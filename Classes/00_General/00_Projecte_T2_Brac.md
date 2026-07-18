@@ -45,7 +45,7 @@ intel·ligent.
 
 | Peça | Origen | Quantitat |
 |---|---|---|
-| Peces de DM 3 mm (base, torres, segments, suport pinça) | Plantilla `brac.svg`, tall làser | 7 |
+| Peces de DM 3 mm (base, torres, segments, suport pinça) | Plantilla `brac.svg`, tall làser | 6 |
 | Dits de pinça | `dit_pinca.scad`, impressió 3D | 2 |
 | Servo Starter (articulació de base) | Kit 1 | 1 |
 | Micro servo KS0194 (colze i pinça) | Kit 2 | 2 |
