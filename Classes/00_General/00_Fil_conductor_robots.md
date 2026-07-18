@@ -35,28 +35,33 @@ cada bloc de SA es materialitza en una peça física del robot del trimestre.
 | 2n | Braç robòtic | robot manipulador | SA4, SA5, SA6 | Producte SA6 (braç amb màquina d'estats i sensor de col·lisió com a final de carrera; tancat a S3, S4 = prova T2 intacta) |
 | 3r | Rover autònom | robot mòbil | SA7, SA8, SA9 | Plataforma de SA7 i base del repte SA9 |
 
-<!-- web:only-github -->
 Dossier de cada robot (peces, esquema de muntatge, cablatge i rúbrica):
-[`00_Projecte_T1_Mascota.md`](00_Projecte_T1_Mascota.md) ·
-[`00_Projecte_T2_Brac.md`](00_Projecte_T2_Brac.md) ·
-[`00_Projecte_T3_Rover.md`](00_Projecte_T3_Rover.md)
-<!-- /web:only-github -->
+[🐣 la mascota](00_Projecte_T1_Mascota.md) ·
+[🦾 el braç](00_Projecte_T2_Brac.md) ·
+[🚗 el rover](00_Projecte_T3_Rover.md)
 
 ## Calendari de fabricació
 
-| Trimestre | Sessió de fabricació | D'on surt l'hora | Què s'hi fa |
-|---|---|---|---|
-| T1 | S4 de SA2 | Palanca oficial del pla de contingència: el repte de la S3 fa de producte, i S4 queda alliberada | Tall làser de la caixa comuna i gravat de cares/orelles personalitzades; muntatge inicial de la mascota |
-| T2 | S4 de SA4 | Mateixa palanca (repte de la S3 fa de producte) | Tall làser i muntatge del braç de 3 GDL (base, colze, pinça) |
-| T3 | Sessió 0 del trimestre | Comprimir SA8 de 6 a 4 h (fusió de S1+S2) i traslladar les 2 h alliberades a l'inici del trimestre | Muntatge del xassís del rover (2 pisos), abans de començar SA7 |
+| Trimestre | Sessió de fabricació | Què s'hi fa |
+|---|---|---|
+| T1 | S4 de SA2 | Tall làser de la caixa comuna i gravat de cares/orelles personalitzades; muntatge inicial de la mascota |
+| T2 | S4 de SA4 | Tall làser i muntatge del braç de 3 GDL (base, colze, pinça) |
+| T3 | Sessió 0 del trimestre (abans de SA7) | Muntatge del xassís del rover (2 pisos) |
 
-> ⚠️ D'aquestes tres palanques, ja en queden **dues gastades** en fabricació:
-> la primera (usada dues vegades, a la S4 de SA2 i a la S4 de SA4) i la
-> segona (SA8 de 6 a 4 h). Només resta la tercera (SA7 de 8 a 6 h) com a
-> **últim recurs**: el marge del calendari és pràcticament **zero**. Senyal
+<div class="nomes-docent" markdown="1">
+
+> 🧑‍🏫 **D'on surten les hores (nota per al docent):** T1 i T2 usen la
+> palanca oficial del pla de contingència (el repte de la S3 fa de producte i
+> la S4 queda alliberada); T3 comprimeix SA8 de 6 a 4 h (fusió de S1+S2) i
+> trasllada les 2 h a l'inici del trimestre. D'aquestes palanques, ja en
+> queden **dues gastades**: només resta la tercera (SA7 de 8 a 6 h) com a
+> **últim recurs** — el marge del calendari és pràcticament **zero**. Senyal
 > d'alerta: si el T1 no tanca SA3 al desembre, la mascota de gener es
 > reparteix amb les peces **pretallades pel docent** en lloc d'esperar una
-> sessió de tall addicional.
+> sessió de tall addicional. Detall complet al document
+> [08 · Seqüenciació temporal anual](../../Programació%20didàctica/08_Sequenciacio_temporal_anual.md).
+
+</div>
 
 ## Com funciona una sessió de fabricació
 
@@ -74,7 +79,15 @@ Dossier de cada robot (peces, esquema de muntatge, cablatge i rúbrica):
 
 ## Material i pressupost
 
-| Material | Quantitat orientativa |
+L'estructura de cada robot (fusta tallada a làser i peces impreses en 3D) és
+**vostra i personalitzada**; l'electrònica (Arduino UNO, sensors, servos,
+micro:bit...) surt dels **kits d'aula** i es **retorna al juny**: els tres
+robots són desmuntables perquè els components tornin a circular curs rere
+curs.
+
+<div class="nomes-docent" markdown="1">
+
+| Material (compra del centre) | Quantitat orientativa |
 |---|---|
 | DM 3 mm | ~12 taulers per trimestre |
 | Filament PLA | 2-3 bobines per curs |
@@ -83,12 +96,17 @@ Dossier de cada robot (peces, esquema de muntatge, cablatge i rúbrica):
 | Caniques de 16 mm (roda boja) | ×15 (cost negligible) |
 | Pont H L298N | ×14 (12 parelles + reserva) |
 
-**Total orientatiu: 130-180 €.** La resta d'electrònica (Arduino UNO,
-sensors, servos, micro:bit...) surt dels **kits d'aula existents** i es
-**retorna al juny**: els tres robots són desmuntables perquè els components
-tornin a circular curs rere curs.
+**Total orientatiu: 130-180 €.** Detall al document
+[09c · Inventari del maquinari](../../Programació%20didàctica/09c_Inventari_kits_disponibles.md).
+
+</div>
 
 ## On són les plantilles
+
+Els fitxers font de les plantilles (tall làser i peces 3D) viuen al
+**repositori de GitHub del curs**, no en aquesta web: a l'aula sempre es
+treballa sobre la còpia que us passa el docent, i la personalització es fa
+sobre les **zones vermelles** de la plantilla.
 
 <!-- web:only-github -->
 - Plantilles de tall làser (SVG, un fitxer per robot) i la seva guia:

@@ -183,3 +183,7 @@ i la competició de fi de curs, amb telemetria per ràdio funcionant.
 > endarrerida) o no arriba viu a SA9 (avaria), la parella passa a la Imagina
 > 3dBot o al xassís de reserva del Kit 2; els `.ino` són els mateixos
 > canviant només el bloc `// === PINS (AJUSTAR) ===`.
+
+---
+
+⬅️ Torna al teu camí: [SA7 (itinerari per sessions)](../SA7/README.md) · [Reptes de la SA7](../../Reptes/Reptes_SA7.md) · [Reptes de la SA8](../../Reptes/Reptes_SA8.md) · [El fil conductor dels tres robots](00_Fil_conductor_robots.md)

@@ -677,6 +677,17 @@ def sidebar_html(section_key: str, current_out: str, pages: list[Page]) -> str:
             link_cls = "sb-grup-link nomes-docent" if grp_docent else "sb-grup-link"
             out.append(f'<a class="{link_cls}" href="{rel_url(current_out, idx.out_rel)}">'
                        f'<span>{html.escape(group_label(gk))}</span>{dot}</a>')
+            # Si l'índex del grup és docent però el grup té pàgines públiques,
+            # la vista alumnat necessita un destí públic: es dupliquen els
+            # enllaços (nomes-docent → índex · nomes-alumnat → 1a pàgina pública).
+            if not grp_docent and idx.public == "docent":
+                publica = next((p for p in gps if p.public == "alumnat"), None)
+                if publica is not None:
+                    out[-1] = out[-1].replace('class="sb-grup-link"',
+                                              'class="sb-grup-link nomes-docent"')
+                    out.append(f'<a class="sb-grup-link nomes-alumnat" '
+                               f'href="{rel_url(current_out, publica.out_rel)}">'
+                               f'<span>{html.escape(group_label(gk))}</span>{dot}</a>')
             continue
         open_attr = " open" if in_group else ""
         summary = f'<summary><span>{html.escape(group_label(gk))}</span>{dot}</summary>'
@@ -840,7 +851,8 @@ def sa_fil_html(sa: int, current_out: str, fil: dict) -> str:
 # (fitxa → suports → checklist → codi), després el material opcional
 # (ampliada, qüestionari) i el del docent. "__codi__" és el rang de les
 # pàgines de codi (kind == "code").
-DOC_ORDRE_CLAUS = ["guia-docent", "vocabulari", "guia", "diagnostica",
+DOC_ORDRE_CLAUS = ["fil-conductor", "projecte-t",
+                   "guia-docent", "vocabulari", "guia", "diagnostica",
                    "fitxa-alumnat", "banc-de-reptes", "planificacio",
                    "prova", "normes", "esquemes", "connexions",
                    "recursos", "diagrama", "exemple", "__codi__", "auditoria",
@@ -1476,6 +1488,7 @@ def render_home(pages: list[Page]) -> str:
       <li><a href="guia-inici.html">Guia d'inici docent</a> — instal·lació, comptes, checklist i pla B.</li>
       <li><a href="{u_met}">Metodologia</a> — com és una sessió tipus i com es treballa.</li>
       <li><a href="{u_seq}">Calendari del curs</a> — seqüència de SA i pla de contingència.</li>
+      <li><a href="classes/00-general/00-fil-conductor-robots.html">Els tres robots del curs</a> — el fil conductor: què es construeix cada trimestre i quan es fabrica.</li>
     </ol>
   </div>
   <div class="ruta-card">

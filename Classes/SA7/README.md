@@ -1,8 +1,8 @@
 # SA7 · Robòtica mòbil: cinemàtica i trajectòries
 
-Setena situació d'aprenentatge (**8 h · 4 sessions**, 3r trimestre). El robot **es mou sol**: control diferencial de motors, **trajectòries** programades (quadrat, recorregut) i **comportaments autònoms** (evita-obstacles amb ultrasons, seguidor de línia amb IR), amb proves i **iteració**. Maquinari: placa Imagina 3dBot (Arduino) + sensors. Programació oficial: [`Programació didàctica/16_SA7_Robotica_mobil.md`](../../Programació%20didàctica/16_SA7_Robotica_mobil.md).
+Setena situació d'aprenentatge (**8 h · 4 sessions** + sessió 0 de muntatge, 3r trimestre). El robot **es mou sol**: control diferencial de motors, **trajectòries** programades (quadrat, recorregut) i **comportaments autònoms** (evita-obstacles amb ultrasons, seguidor de línia amb IR), amb proves i **iteració**. Maquinari: **el teu rover**, el robot que la teva parella munta a la **sessió 0** ([dossier del rover](../00_General/00_Projecte_T3_Rover.md)); la placa Imagina 3dBot queda de **reserva** (pla B). Programació oficial: [`Programació didàctica/16_SA7_Robotica_mobil.md`](../../Programació%20didàctica/16_SA7_Robotica_mobil.md).
 
-> ⚙️ **Important:** la 3dBot és Arduino-compatible, però **els pins dels motors depenen del model**. Cada `.ino` té un bloc `// === PINS (AJUSTAR) ===`: cal posar-hi els pins reals abans de pujar. La lògica no s'ha de tocar.
+> ⚙️ **Important:** cada `.ino` té un bloc `// === PINS (AJUSTAR) ===`. Amb el **rover propi**, els pins són els de la [taula de cablatge del dossier](../00_General/00_Projecte_T3_Rover.md) — es fixen **una sola vegada** i valen per a tota l'aula. Si treballes amb la 3dBot de reserva, els pins dels motors **depenen del model**: posa-hi els reals abans de pujar. La lògica no s'ha de tocar.
 
 ![Cinemàtica diferencial: variant la velocitat de cada roda el robot va recte o gira](img/sa7-cinematica-diferencial.svg)
 
@@ -10,6 +10,7 @@ Setena situació d'aprenentatge (**8 h · 4 sessions**, 3r trimestre). El robot 
 
 > La teva feina és a la **[fitxa base](SA7_fitxa_alumnat.md)**. Aquesta ruta et diu què toca fer a cada sessió i què necessites en aquell moment. Les respostes de la fitxa es lliuren a la **[tasca de Classroom](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODcwNTE4MDMwMTA4/details)**.
 
+0. **Sessió 0 · Muntatge del rover** — abans de començar, la teva parella construeix el rover: peces, muntatge pas a pas, cablatge i test de fum al **[dossier del rover](../00_General/00_Projecte_T3_Rover.md)** (hi ha el pla de la sessió sencer).
 1. **Sessió 1 · Moviment i cinemàtica diferencial** — fes l'[Activitat 1 de la fitxa](SA7_fitxa_alumnat.md#1-moviment-i-cinematica-s1) (ajusta els pins del teu robot al bloc `// === PINS (AJUSTAR) ===` de cada `.ino`).
 2. **Sessió 2 · Trajectòries programades** — fes l'[Activitat 2](SA7_fitxa_alumnat.md#2-trajectories-s2).
 3. **Sessió 3 · Evitar obstacles** — fes l'[Activitat 3](SA7_fitxa_alumnat.md#3-evita-obstacles-s3), amb els [esquemes de connexió](SA7_esquemes_connexions.md).

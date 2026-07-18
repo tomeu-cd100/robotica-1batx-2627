@@ -150,3 +150,7 @@ S4 de SA3 és la prova pràctica **T1**, amb la mascota ja tancada.
 | El micròfon no detecta res | Llindar analògic mal calibrat per al soroll de l'aula. | Llegeix valors reals al Monitor Sèrie i recalibra el llindar. |
 | El DHT11 llegeix `NaN` | Pin equivocat o llibreria `DHT` no instal·lada/mal configurada. | Comprova el pin (D4) i que el tipus de sensor a la llibreria sigui `DHT11`. |
 | La caixa no tanca bé | Escaires mal orientats o forats de muntatge desalineats. | Torna a muntar els escaires seguint l'ordre del pas de muntatge; no forcis les peces. |
+
+---
+
+⬅️ Torna al teu camí: [Reptes de la SA2](../../Reptes/Reptes_SA2.md) · [Reptes de la SA3](../../Reptes/Reptes_SA3.md) · [El fil conductor dels tres robots](00_Fil_conductor_robots.md)

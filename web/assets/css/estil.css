@@ -733,6 +733,9 @@ html[data-vista="alumnat"] .sidebar .amagat-alumnat { display: none; }
    ============================================================ */
 /* Per defecte (vista docent) es veu tot; la vista alumnat amaga .nomes-docent */
 html[data-vista="alumnat"] .nomes-docent { display: none !important; }
+/* Invers: elements només per a la vista alumnat (p. ex. enllaç de grup del
+   sidebar quan l'índex del grup és material docent) */
+html[data-vista="docent"] .nomes-alumnat { display: none !important; }
 
 /* Portada: bloc alumnat visible per defecte, ocult en vista docent */
 html[data-vista="docent"] .portada-alumnat { display: none; }

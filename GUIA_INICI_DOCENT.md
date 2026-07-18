@@ -13,6 +13,7 @@
 | Necessites… | Vés a… |
 |---|---|
 | **És el teu primer any? Què és nucli i què pot esperar** | `Classes/00_General/00_Mode_supervivencia.md` (les 3 rutines no negociables + ordre d'adopció de la resta) |
+| **Els tres robots del curs** (fil conductor: què es construeix cada trimestre, quan es fabrica, què cal comprar) | `Classes/00_General/00_Fil_conductor_robots.md` (+ dossiers `00_Projecte_T1_Mascota.md`, `00_Projecte_T2_Brac.md`, `00_Projecte_T3_Rover.md`) |
 | Visió de conjunt i decisions del curs | `Programació didàctica/00_Index_general.md` |
 | Com donar **una sessió concreta** | `Classes/SAx/SAx_guia_docent.md` (fases, temps, errors freqüents) |
 | Recordatori d'una cara per SA (docent i alumnat) | `Classes/SAx/SAx_checklist_docent.md` · `SAx_checklist_alumnat.md` |

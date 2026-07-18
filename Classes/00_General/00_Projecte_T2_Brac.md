@@ -172,3 +172,7 @@ pràctica **T2**, amb el braç ja tancat.
 | La ràdio no arriba | Les dues micro:bit tenen **grups diferents**. | Comprova que el `group` sigui **el número de la parella** a totes dues plaques. |
 | El braç cau | Parell insuficient per al pes que aixeca. | Escurça els segments o limita la càrrega que agafa la pinça. |
 | La micro:bit es reinicia en moure servos | Servos alimentats pel USB de la micro:bit en lloc del Micro:shield. | Alimentació externa del shield, mai el connector USB. |
+
+---
+
+⬅️ Torna al teu camí: [Reptes de la SA4](../../Reptes/Reptes_SA4.md) · [Reptes de la SA5](../../Reptes/Reptes_SA5.md) · [Reptes de la SA6](../../Reptes/Reptes_SA6.md) · [El fil conductor dels tres robots](00_Fil_conductor_robots.md)
