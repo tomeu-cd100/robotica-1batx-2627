@@ -41,7 +41,7 @@ def desa(nom, ample, alt, elements):
 
 def mascota():
     """Caixa 120x100x100 (frontal, darrere, 2 laterals, base, tapa).
-    Unio amb escaires impreses en 3D i cargols M3 (forats a 8 mm del caire)."""
+    Unió amb escaires impreses en 3D i cargols M3 (forats a 8 mm del caire)."""
     e = []
 
     def forats_escaire(x, y, w, h):

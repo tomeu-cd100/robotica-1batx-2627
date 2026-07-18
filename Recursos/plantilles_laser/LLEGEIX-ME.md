@@ -34,7 +34,7 @@ a executar; això sobreescriu els tres fitxers d'aquesta carpeta.
 2. Assigna la potència i la velocitat de tall a les línies **negres** i la
    configuració de gravat (potència baixa, més passades) a les línies
    **vermelles**, segons el gruix real del DM disponible (referència: 3 mm).
-3. Comprova sempre a la previsualització que cap peça se surt del tauler de
+3. Comprova sempre a la previsualització que cap peça surt del tauler de
    treball abans de llançar el tall.
 
 ## Personalització
