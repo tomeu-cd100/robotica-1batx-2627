@@ -8,22 +8,24 @@
 
 ## El robot
 
-La mascota és una capsa de fusta DM amb cara: dos **ulls** fets amb NeoPixel i
-difusor imprès en 3D, una **reixeta** que amaga el micròfon i el sensor de
-llum, i un **PIR** que mira cap enfora per detectar qui s'hi acosta. Per fora
-sembla un joguet; per dins és el mateix Arduino UNO i breadboard que ja es fa
-servir a classe, muntats dins d'una caixa que li dona forma i personalitat.
+La mascota és una capsa de fusta DM amb cara de criatura: dos **ulls** fets
+amb NeoPixel i difusor imprès en 3D, un **nas** que en realitat és el sensor
+PIR mirant cap enfora, i una **boca somrient tallada al làser** que fa de
+sortida de so del brunzidor i de finestra per al micròfon i el sensor de
+llum. Celles i galtes van gravades, i dues **orelles** (una de rodona i una
+de gat) s'encaixen a les ranures de la tapa. Per fora sembla un joguet; per
+dins és el mateix Arduino UNO i breadboard que ja es fa servir a classe.
 
 ```
-        ______________________
-       /   ⊙ orella    orella ⊙  \
-      /                            \
-     |   ●        ▢▢▢        ●     |   ← ● ulls (NeoPixel + difusor)
-     |            reixeta          |   ← ▢▢▢ reixeta (micròfon + TEMT6000)
-     |          [ PIR ]            |   ← PIR de moviment (frontal, cap enfora)
-      \___________________________/
-              |  polsador  |            ← polsador al llom (carícia)
-              |____________|
+         ⊙ orella        orella ⊙       ← encaixades a la tapa
+        __|______________________|__
+       |    ~~~           ~~~      |    ← celles (gravat)
+       |    ●               ●      |    ← ● ulls (NeoPixel + difusor)
+       |  (galta)  (PIR)  (galta)  |    ← el PIR és el nas
+       |        \________/         |    ← boca somrient TALLADA
+       |__________________________ |      (so del brunzidor + micròfon
+              |  polsador  |               + TEMT6000 darrere)
+              |____________|            ← polsador al llom (carícia)
 ```
 
 Què fa: **expressa emocions** amb llum i so —els ulls canvien de color i el
@@ -62,11 +64,12 @@ Peces impreses en 3D: [`../../Recursos/peces_3d/escaire_caixa.scad`](../../Recur
 
 La plantilla `mascota.svg` és **fixa** (línies negres de tall i forats de
 muntatge): cap equip la toca. El que cada parella personalitza és **NOMÉS la
-zona vermella**, sobre una **còpia pròpia** del fitxer: la cara (forma dels
-ulls, celles, boca) al frontal, de gravat; i les **2 peces d'orella**
-(etiquetades «ORELLA x2 - retalla la teva forma»), on el contorn de gravat
-interior és només una guia i cada equip hi retalla la seva pròpia forma sobre
-la peça en brut.
+zona vermella**, sobre una **còpia pròpia** del fitxer: les celles, les
+galtes i el contorn de cara del frontal (gravat), i el dibuix interior de les
+**2 orelles** (etiquetades «ORELLES x2 - encaixen a la tapa»). Les formes per
+defecte (orella rodona i orella de gat) ja són retallables tal qual; qui
+vulgui una forma pròpia pot redibuixar el contorn negre de l'orella sempre
+que **mantingui la pestanya de 10 mm** que encaixa a la ranura de la tapa.
 
 Flux de personalització:
 1. Cada parella fa una **còpia** del fitxer `mascota.svg` amb el nom del seu
@@ -94,11 +97,13 @@ guia completa: [`../../Recursos/plantilles_laser/LLEGEIX-ME.md`](../../Recursos/
    tira NeoPixel per darrere.
 4. Munta el **PIR** mirant cap enfora pel forat frontal i el **polsador**
    al llom (accessible des de fora).
-5. Encaixa el **micròfon** i el **TEMT6000** darrere la reixeta central.
+5. Munta el **brunzidor**, el **micròfon** i el **TEMT6000** darrere la
+   **boca somrient** (el forat tallat fa de sortida de so i d'entrada de llum).
 6. Cablatge complet segons la taula de baix; comprova totes les connexions
    **abans** de tancar la caixa.
-7. Tanca la **tapa superior** amb els 2 escaires restants, deixant-la
-   desmuntable (sense encolar) per si cal repassar el cablatge.
+7. Encaixa les **2 orelles** a les ranures de la tapa i tanca la **tapa
+   superior** amb els 2 escaires restants, deixant-la desmuntable (sense
+   encolar) per si cal repassar el cablatge.
 8. Prova d'encesa: comprova que els ulls s'encenen amb el color correcte
    abans de donar la mascota per acabada.
 

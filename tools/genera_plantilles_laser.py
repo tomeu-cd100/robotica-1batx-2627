@@ -30,6 +30,14 @@ def etiqueta(x, y, txt, mida=5):
             f'font-size="{mida}" fill="#ff0000">{txt}</text>')
 
 
+def cami(d, estil=TALL):
+    return f'<path d="{d}" {estil}/>'
+
+
+def ellipse(cx, cy, rx, ry, estil=TALL):
+    return f'<ellipse cx="{cx}" cy="{cy}" rx="{rx}" ry="{ry}" {estil}/>'
+
+
 def desa(nom, ample, alt, elements):
     cos = "\n".join(elements)
     doc = (f'<svg xmlns="http://www.w3.org/2000/svg" width="{ample}mm" '
@@ -49,26 +57,41 @@ def mascota():
                        (x + 8, y + h - 8), (x + w - 8, y + h - 8)]:
             e.append(cercle(fx, fy, M3))
 
-    def orella(x, y):
-        """Peça d'orella retallable: contorn de tall (cercle Ø45 + pestanya
-        10x15 mm per encolar-la al caire superior del frontal) i un contorn
-        de gravat interior perque cada equip hi retalli la seva forma."""
-        cx, cy = x + 22.5, y + 15 + 22.5
-        e.append(rect(x + 17.5, y, 10, 15))          # pestanya d'enganxar
-        e.append(cercle(cx, cy, 45))                 # contorn de tall
+    def orella_rodona(x, y):
+        """Orella rodona Ø45 amb pestanya 10x15 mm INTEGRADA al contorn (una
+        sola peça de tall) que s'encaixa a la ranura de la tapa."""
+        cx, cy = x + 22.5, y + 22.5
+        # punts on la pestanya talla el cercle: x = cx±5, y = cy+21.94
+        yt = round(cy + (22.5 ** 2 - 5 ** 2) ** 0.5, 2)
+        e.append(cami(f"M {cx - 5} {yt} L {cx - 5} {yt + 15} L {cx + 5} {yt + 15} "
+                      f"L {cx + 5} {yt} A 22.5 22.5 0 1 0 {cx - 5} {yt} Z"))
         e.append(cercle(cx, cy, 30, GRAVAT))          # contorn de gravat (personalitzable)
-        e.append(etiqueta(x, y + 15 + 45 + 8, "ORELLA x2 - retalla la teva forma"))
 
-    # Frontal 120x100: ulls, PIR, reixeta brunzidor, zona de cara gravable
+    def orella_gat(x, y):
+        """Orella triangular de gat amb la mateixa pestanya integrada."""
+        b = y + 45                                    # línia de base del triangle
+        e.append(cami(f"M {x} {b} Q {x + 8} {b - 40} {x + 22.5} {b - 45} "
+                      f"Q {x + 37} {b - 40} {x + 45} {b} "
+                      f"L {x + 27.5} {b} L {x + 27.5} {b + 15} "
+                      f"L {x + 17.5} {b + 15} L {x + 17.5} {b} Z"))
+        e.append(cami(f"M {x + 9} {b - 8} Q {x + 22.5} {b - 34} {x + 36} {b - 8}",
+                      GRAVAT))                        # traç interior de gravat
+
+    # Frontal 120x100: cara de criatura — ulls, PIR com a nas, boca somrient
+    # tallada (fa de sortida de so del brunzidor), celles i galtes gravades
     e.append(rect(0, 0, 120, 100))
     forats_escaire(0, 0, 120, 100)
-    e.append(cercle(40, 35, 16))            # ull esquerre (difusor NeoPixel)
-    e.append(cercle(80, 35, 16))            # ull dret
-    e.append(cercle(60, 78, 23))            # finestra del sensor PIR
-    for i in range(5):                      # reixeta del brunzidor
-        e.append(rect(20, 60 + i * 4, 18, 2))
-    e.append(rect(30, 15, 60, 55, GRAVAT, r=4))   # zona de cara personalitzable
-    e.append(etiqueta(34, 12, "FRONTAL - personalitza la cara"))
+    e.append(cercle(60, 54, 84, GRAVAT))    # contorn de la cara (guia per decorar)
+    e.append(cercle(38, 32, 16))            # ull esquerre (difusor NeoPixel)
+    e.append(cercle(82, 32, 16))            # ull dret
+    e.append(cami("M 28 20 Q 38 14 48 20", GRAVAT))   # cella esquerra
+    e.append(cami("M 72 20 Q 82 14 92 20", GRAVAT))   # cella dreta
+    e.append(cercle(60, 56, 23))            # finestra del PIR: el nas de la mascota
+    e.append(cercle(27, 58, 10, GRAVAT))    # galta esquerra
+    e.append(cercle(93, 58, 10, GRAVAT))    # galta dreta
+    e.append(cami("M 40 78 Q 60 86 80 78 Q 60 96 40 78 Z"))  # boca somrient
+    # (tall tancat: el forat fa de sortida de so del brunzidor, muntat darrere)
+    e.append(etiqueta(24, 10, "FRONTAL - decora la cara (vermell = gravat)", 4))
     # Darrere 120x100: forat USB + alimentacio
     e.append(rect(125, 0, 120, 100))
     forats_escaire(125, 0, 120, 100)
@@ -87,10 +110,14 @@ def mascota():
     e.append(rect(125, 105, 120, 106))
     forats_escaire(125, 105, 120, 106)
     e.append(rect(175, 150, 16, 10))        # pas de cables de la tapa
+    e.append(rect(150, 128, 10.4, 3.4))     # ranura de l'orella esquerra
+    e.append(rect(205, 128, 10.4, 3.4))     # ranura de l'orella dreta
     e.append(etiqueta(129, 117, "TAPA"))
-    # Orelles (x2): peces retallables per personalitzar, zona lliure del tauler
-    orella(260, 105)
-    orella(370, 105)
+    # Orelles (x2, formes diferents per defecte): s'encaixen a les ranures de
+    # la tapa; cada equip pot retallar la seva forma o quedar-se aquestes
+    orella_rodona(260, 115)
+    orella_gat(370, 115)
+    e.append(etiqueta(262, 200, "ORELLES x2 - encaixen a la tapa", 4.5))
     desa("mascota.svg", 465, 215, e)
 
 

@@ -4,16 +4,16 @@
 <circle cx="112" cy="8" r="1.6" fill="none" stroke="#000000" stroke-width="0.2"/>
 <circle cx="8" cy="92" r="1.6" fill="none" stroke="#000000" stroke-width="0.2"/>
 <circle cx="112" cy="92" r="1.6" fill="none" stroke="#000000" stroke-width="0.2"/>
-<circle cx="40" cy="35" r="8.0" fill="none" stroke="#000000" stroke-width="0.2"/>
-<circle cx="80" cy="35" r="8.0" fill="none" stroke="#000000" stroke-width="0.2"/>
-<circle cx="60" cy="78" r="11.5" fill="none" stroke="#000000" stroke-width="0.2"/>
-<rect x="20" y="60" width="18" height="2" rx="0" fill="none" stroke="#000000" stroke-width="0.2"/>
-<rect x="20" y="64" width="18" height="2" rx="0" fill="none" stroke="#000000" stroke-width="0.2"/>
-<rect x="20" y="68" width="18" height="2" rx="0" fill="none" stroke="#000000" stroke-width="0.2"/>
-<rect x="20" y="72" width="18" height="2" rx="0" fill="none" stroke="#000000" stroke-width="0.2"/>
-<rect x="20" y="76" width="18" height="2" rx="0" fill="none" stroke="#000000" stroke-width="0.2"/>
-<rect x="30" y="15" width="60" height="55" rx="4" fill="none" stroke="#ff0000" stroke-width="0.2"/>
-<text x="34" y="12" font-family="sans-serif" font-size="5" fill="#ff0000">FRONTAL - personalitza la cara</text>
+<circle cx="60" cy="54" r="42.0" fill="none" stroke="#ff0000" stroke-width="0.2"/>
+<circle cx="38" cy="32" r="8.0" fill="none" stroke="#000000" stroke-width="0.2"/>
+<circle cx="82" cy="32" r="8.0" fill="none" stroke="#000000" stroke-width="0.2"/>
+<path d="M 28 20 Q 38 14 48 20" fill="none" stroke="#ff0000" stroke-width="0.2"/>
+<path d="M 72 20 Q 82 14 92 20" fill="none" stroke="#ff0000" stroke-width="0.2"/>
+<circle cx="60" cy="56" r="11.5" fill="none" stroke="#000000" stroke-width="0.2"/>
+<circle cx="27" cy="58" r="5.0" fill="none" stroke="#ff0000" stroke-width="0.2"/>
+<circle cx="93" cy="58" r="5.0" fill="none" stroke="#ff0000" stroke-width="0.2"/>
+<path d="M 40 78 Q 60 86 80 78 Q 60 96 40 78 Z" fill="none" stroke="#000000" stroke-width="0.2"/>
+<text x="24" y="10" font-family="sans-serif" font-size="4" fill="#ff0000">FRONTAL - decora la cara (vermell = gravat)</text>
 <rect x="125" y="0" width="120" height="100" rx="0" fill="none" stroke="#000000" stroke-width="0.2"/>
 <circle cx="133" cy="8" r="1.6" fill="none" stroke="#000000" stroke-width="0.2"/>
 <circle cx="237" cy="8" r="1.6" fill="none" stroke="#000000" stroke-width="0.2"/>
@@ -45,13 +45,12 @@
 <circle cx="133" cy="203" r="1.6" fill="none" stroke="#000000" stroke-width="0.2"/>
 <circle cx="237" cy="203" r="1.6" fill="none" stroke="#000000" stroke-width="0.2"/>
 <rect x="175" y="150" width="16" height="10" rx="0" fill="none" stroke="#000000" stroke-width="0.2"/>
+<rect x="150" y="128" width="10.4" height="3.4" rx="0" fill="none" stroke="#000000" stroke-width="0.2"/>
+<rect x="205" y="128" width="10.4" height="3.4" rx="0" fill="none" stroke="#000000" stroke-width="0.2"/>
 <text x="129" y="117" font-family="sans-serif" font-size="5" fill="#ff0000">TAPA</text>
-<rect x="277.5" y="105" width="10" height="15" rx="0" fill="none" stroke="#000000" stroke-width="0.2"/>
-<circle cx="282.5" cy="142.5" r="22.5" fill="none" stroke="#000000" stroke-width="0.2"/>
-<circle cx="282.5" cy="142.5" r="15.0" fill="none" stroke="#ff0000" stroke-width="0.2"/>
-<text x="260" y="173" font-family="sans-serif" font-size="5" fill="#ff0000">ORELLA x2 - retalla la teva forma</text>
-<rect x="387.5" y="105" width="10" height="15" rx="0" fill="none" stroke="#000000" stroke-width="0.2"/>
-<circle cx="392.5" cy="142.5" r="22.5" fill="none" stroke="#000000" stroke-width="0.2"/>
-<circle cx="392.5" cy="142.5" r="15.0" fill="none" stroke="#ff0000" stroke-width="0.2"/>
-<text x="370" y="173" font-family="sans-serif" font-size="5" fill="#ff0000">ORELLA x2 - retalla la teva forma</text>
+<path d="M 277.5 159.44 L 277.5 174.44 L 287.5 174.44 L 287.5 159.44 A 22.5 22.5 0 1 0 277.5 159.44 Z" fill="none" stroke="#000000" stroke-width="0.2"/>
+<circle cx="282.5" cy="137.5" r="15.0" fill="none" stroke="#ff0000" stroke-width="0.2"/>
+<path d="M 370 160 Q 378 120 392.5 115 Q 407 120 415 160 L 397.5 160 L 397.5 175 L 387.5 175 L 387.5 160 Z" fill="none" stroke="#000000" stroke-width="0.2"/>
+<path d="M 379 152 Q 392.5 126 406 152" fill="none" stroke="#ff0000" stroke-width="0.2"/>
+<text x="262" y="200" font-family="sans-serif" font-size="4.5" fill="#ff0000">ORELLES x2 - encaixen a la tapa</text>
 </svg>
