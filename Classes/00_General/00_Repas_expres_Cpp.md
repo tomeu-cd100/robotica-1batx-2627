@@ -4,6 +4,8 @@
 
 **Durada:** 10-15' de repàs autònom · **Maquinari:** cap (o [Wokwi](https://wokwi.com) per provar sense placa)
 
+> 📄 **[Versió PDF per imprimir i repartir](pdf/00_Repas_expres_Cpp.pdf)** (les solucions de l'autotest hi surten obertes)
+
 ## 1 · El canvi de xip: de Python a C++
 
 | Què | MicroPython (micro:bit, SA5) | C++ (Arduino, SA6) |
@@ -61,7 +63,7 @@ if (millis() - inici >= 1000) {
 2. A un `switch`, què passa si oblides el `break` d'un `case`?
 3. Per què en un sistema de control fem servir `millis()` en lloc de `delay()`?
 
-<details><summary>Solucions</summary>
+<details markdown="1"><summary>Solucions</summary>
 
 1.
 ```cpp

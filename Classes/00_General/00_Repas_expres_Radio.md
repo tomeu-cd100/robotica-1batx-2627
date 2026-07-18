@@ -4,6 +4,8 @@
 
 **Durada:** 10' de repàs autònom · **Maquinari:** cap (la ràdio **no** funciona al simulador: repassa el codi i valida'l a classe amb 2 plaques)
 
+> 📄 **[Versió PDF per imprimir i repartir](pdf/00_Repas_expres_Radio.pdf)** (les solucions de l'autotest hi surten obertes)
+
 ## 1 · Les 5 línies que fan tota la ràdio
 
 ```python
@@ -44,7 +46,7 @@ L'**etiqueta** (`"T:23"`, `"L:120"`) és el que permet enviar **més d'una magni
 2. La companya envia `radio.send(25)` i el programa peta. Per què, i com s'arregla?
 3. El receptor no mostra mai res i cap dels dos programes dona error. Quina és la primera cosa que comproves?
 
-<details><summary>Solucions</summary>
+<details markdown="1"><summary>Solucions</summary>
 
 1.
 ```python

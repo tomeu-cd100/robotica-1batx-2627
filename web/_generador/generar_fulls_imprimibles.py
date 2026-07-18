@@ -33,13 +33,18 @@ SCRIPT_DIR = Path(__file__).resolve().parent
 REPO = SCRIPT_DIR.parent.parent
 CLASSES = REPO / "Classes"
 
-# Fulls a convertir: (md relatiu a Classes, "checklist" | "normes")
+# Fulls a convertir: (md relatiu a Classes, "checklist" | "normes" | "targeta")
 TARGETS = [
     ("SA1/SA1_normes_seguretat.md", "normes"),
 ] + [(f"SA{n}/SA{n}_checklist_alumnat.md", "checklist") for n in range(0, 10)] + [
     ("SA1/SA1_poster_robot_plantilla.md", "checklist"),
     ("00_General/00_Plantilla_disseny_objecte.md", "checklist"),
     ("00_General/00_Tauler_reptes.md", "checklist"),
+    # Targetes de repàs exprés: es reparteixen en paper com a deures de represa
+    # (SA6 S2 la de MicroPython, SA5 S3 la de C++, SA7 S4 la de ràdio).
+    ("00_General/00_Repas_expres_MicroPython.md", "targeta"),
+    ("00_General/00_Repas_expres_Cpp.md", "targeta"),
+    ("00_General/00_Repas_expres_Radio.md", "targeta"),
 ]
 
 # Fulls que JA són HTML complet i autocontingut (disseny propi per a A4): es
@@ -105,6 +110,11 @@ CSS = """
   .destacats .t { font-weight: 600; margin: 0 0 8pt; }
   strong { font-weight: 700; }
   hr { border: 0; border-top: 1px solid #ddd; margin: 9pt 0; }
+  /* Targetes de repàs: solucions de l'autotest obertes en paper */
+  details { display: block; border: 1px solid #cfe3f0; border-radius: 4px;
+            padding: 5pt 9pt; margin: 6pt 0; background: #f8fcff;
+            page-break-inside: avoid; }
+  details > summary { font-weight: 600; margin-bottom: 4pt; list-style: none; }
 """
 
 
@@ -301,6 +311,10 @@ def main():
             else:
                 title, body = md_to_body(md)
                 # el <h1> ja surt del cos per als checklists
+            if kind == "targeta":
+                # En paper no hi ha desplegables: les solucions de l'autotest
+                # surten obertes (la targeta és d'autoestudi a casa).
+                body = body.replace("<details>", "<details open>")
             html_doc = wrap(title, body)
             tmp_html = Path(htmldir) / (md_path.stem + ".html")
             tmp_html.write_text(html_doc, encoding="utf-8")

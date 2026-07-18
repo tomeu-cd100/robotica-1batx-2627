@@ -4,6 +4,8 @@
 
 **Durada:** 10-15' de repàs autònom · **Maquinari:** cap (o un micro:bit / [simulador](https://python.microbit.org/v/3))
 
+> 📄 **[Versió PDF per imprimir i repartir](pdf/00_Repas_expres_MicroPython.pdf)** (les solucions de l'autotest hi surten obertes)
+
 ## 1 · El canvi de xip: de C++ a Python
 
 | Què | C++ (Arduino, SA6) | MicroPython (micro:bit, SA5) |
@@ -56,7 +58,7 @@ if m:
 2. Per què cal `radio.config(group=10)` a **totes dues** plaques?
 3. Què retorna `radio.receive()` quan no ha arribat res, i com ho comproves?
 
-<details><summary>Solucions</summary>
+<details markdown="1"><summary>Solucions</summary>
 
 1.
 ```python
