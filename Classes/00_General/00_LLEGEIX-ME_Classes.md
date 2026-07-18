@@ -10,6 +10,8 @@ Material llest per a l'aula, organitzat per situació d'aprenentatge (SA). Cada 
 
 > El registre de l'alumnat viu al seu **quadern tècnic** en paper: guia, regles i **PDF imprimible per trimestre** (un full per sessió) a [`00_Quadern_tecnic.md`](00_Quadern_tecnic.md) (per al docent, tasca de Classroom a punt a [`00_Quadern_tecnic_tasca_classroom.md`](00_Quadern_tecnic_tasca_classroom.md)).
 
+> **El fil conductor dels tres robots trimestrals** (mascota, braç, rover): [`00_Fil_conductor_robots.md`](00_Fil_conductor_robots.md) — l'arquetip i les SA que hi aporten, el calendari de fabricació i el material/pressupost.
+
 ## Les 9 SA (índex)
 
 Vista d'un cop d'ull. **El detall de cada SA** (materials, sessions i codi) és a la seva **portada** — la font única, sempre al dia. La **visió de conjunt, hores i maquinari** són al mapa de seqüenciació.
