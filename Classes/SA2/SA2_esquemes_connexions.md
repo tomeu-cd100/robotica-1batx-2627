@@ -33,6 +33,14 @@
 
 ![Muntatge del semàfor a la protoboard: cada pin (8, 9, 10) va amb un cable de color a la seva columna, passa per la resistència de 220 ohms que salta el canal central, arriba a l'ànode del LED, i el càtode es connecta amb un pont al carril blau de massa, que torna al GND de l'Arduino](img/sa2-semafor-protoboard.svg)
 
+**Al simulador i amb components reals:**
+
+![Captura de Tinkercad del semàfor a la protoboard: tres LED (verd, groc i vermell) amb la seva resistència de 220 ohms, cables de senyal cap als pins 8, ~9 i ~10 de l'Arduino UNO i cable negre de retorn a GND](img/sa2-tinkercad-semafor.png)
+
+![Fotografia del muntatge real del semàfor: protoboard amb els tres LED (el vermell encès), resistències de 220 ohms, cables taronja de senyal cap als pins digitals de l'Arduino UNO i cable blanc de retorn a GND](img/sa2-muntatge-real-semafor.jpg)
+
+> Fixa-t'hi: al muntatge real els colors dels cables no importen (aquí taronja i blanc), però **el camí elèctric és idèntic** al del diagrama: pin digital → resistència → ànode del LED → càtode → GND.
+
 ---
 
 ## 3. Fade PWM (`03_fade_pwm.ino`)
