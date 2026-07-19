@@ -4,6 +4,8 @@
 
 > 🧑‍🎓 **Quan toca obrir-la?** És **opcional**: quan porteu la **fitxa base al dia** i vulgueu més (rutines completes, guió detallat). Algunes rutines (coavaluació, exit ticket) les activarà el **docent** a l'aula quan toqui.
 
+> 🗺️ **Quan s'usa cada apartat:** **§1–§2** (repte i rols) a la **S1** · **§3–§4** (disseny i planificació) entre la **S1 i la S2** (el taulell es manté viu tota la SA) · **§5** (proves i iteracions) durant la construcció (**S2–S4**) · **§6** a la **defensa (S4)** — la S5 és la prova T3, individual · **Si t'encalles** i **Pensament computacional**: durant tot el projecte · **Diana**, **Coavaluació** i **Exit ticket final**: en tancar · l'**Entrega final (checklist)** es repassa abans de la defensa.
+
 **Equip:** ______________________  **Membres:** ______________________  **Data:** __________
 
 > És el projecte final: dissenyareu, construireu, programareu i defensareu un sistema robòtic autònom. Useu les **plantilles** de la carpeta `plantilles/`.
