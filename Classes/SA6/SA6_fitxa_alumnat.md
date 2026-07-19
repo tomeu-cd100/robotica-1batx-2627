@@ -80,6 +80,9 @@ La sessió 4 **sencera** és la **prova T2**: individual, dues parts (control am
 
 <!-- /web:only-github -->
 
+## Producte · Sistema de control documentat
+Es **tanca a la S3**: un sistema de control amb **diagrama d'estats** i llindars justificats. **Defensa de 2-3'** (nivell T2): problema → solució → una **decisió tècnica justificada** + 2 preguntes ([guia de la defensa oral](../00_General/00_Guia_defensa_oral.md)). S'avalua amb **R1**, **R3** i **R4**.
+
 ## Si t'encalles (DEPURA)
 > **D**escriu · **E**xamina (**Serial Plotter**: la sortida segueix la consigna o oscil·la?) · **P**rova una hipòtesi cada cop · **U**bica · **R**epara · **A**punta-ho. Encara encallat? **[Targeta de rescat](../00_General/00_Targetes_rescat.md)** (comença per la 🟢).
 

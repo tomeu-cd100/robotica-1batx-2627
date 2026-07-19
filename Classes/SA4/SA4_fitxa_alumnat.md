@@ -80,6 +80,9 @@ Barrera que s'obre quan arriba un vehicle i es tanca sola.
 
 <!-- /web:only-github -->
 
+## Producte · Barrera automàtica
+Es fa a la **S4**: una barrera que **s'obre en detectar el vehicle i es tanca sola** (servo + sensor). Escriu primer el **pseudocodi** al quadern (3–5 línies). **Defensa d'1'**: funcionament + una aplicació real. S'avalua amb **R1**, **R2** i **R3**.
+
 ## Si t'encalles (DEPURA)
 > **D**escriu · **E**xamina · **P**rova una hipòtesi cada cop · **U**bica · **R**epara · **A**punta-ho. Comprova la **massa comuna** i que el motor **no** s'alimenta del 5V de l'Arduino. Encara encallat? **[Targeta de rescat](../00_General/00_Targetes_rescat.md)** (comença per la 🟢).
 

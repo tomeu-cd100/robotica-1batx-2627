@@ -77,6 +77,9 @@ Després, **peritatge creuat**: presenteu-lo en 90 segons a una altra parella (q
 
 <!-- /web:only-github -->
 
+## Producte · Sistema connectat o classificador
+Tria: un **sistema connectat** (telemetria per ràdio) o un **classificador** (Teachable Machine), amb la **reflexió ètica** corresponent. S'avalua amb **R1**, **R3** i **R4**.
+
 ## Si t'encalles (DEPURA)
 > **D**escriu · **E**xamina (dades al sèrie: arriben? ben etiquetades?) · **P**rova una hipòtesi cada cop · **U**bica · **R**epara · **A**punta-ho. Comprova el mateix `group` de ràdio a les dues plaques. Encara encallat? **[Targeta de rescat](../00_General/00_Targetes_rescat.md)** (comença per la 🟢).
 

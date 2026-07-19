@@ -73,6 +73,9 @@ S'avalua amb **R1** (codi) i **R4** (comparació).
 
 <!-- /web:only-github -->
 
+## Producte · La teva app micro:bit
+Tria **un dels reptes** de la SA com a producte i completa la **comparació C++ ↔ Python** amb el teu programa. El pseudocodi és el mateix en els dos llenguatges: només canvia la sintaxi. S'avalua amb **R1** (codi) i **R4** (comparació).
+
 ## Si t'encalles (DEPURA)
 > **D**escriu · **E**xamina (errors de Python, **indentació**) · **P**rova una hipòtesi cada cop · **U**bica · **R**epara · **A**punta-ho. Comprova que el codi és a `main.py`. Encara encallat? **[Targeta de rescat](../00_General/00_Targetes_rescat.md)** (comença per la 🟢).
 

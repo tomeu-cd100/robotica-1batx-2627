@@ -85,6 +85,9 @@ Useu [`plantilles/Planificacio_agile_PLANTILLA.md`](plantilles/Planificacio_agil
 
 <!-- /web:only-github -->
 
+## Producte · El projecte final
+El **sistema funcional** del vostre equip + el **[dossier tècnic](plantilles/Dossier_tecnic_PLANTILLA.md)** + la **defensa oral (5' + preguntes)**. Organitzeu la feina amb el **[taulell àgil](plantilles/Planificacio_agile_PLANTILLA.md)**.
+
 ## Si t'encalles (DEPURA)
 > Prova **per parts** (cada mòdul per separat). **D**escriu · **E**xamina · **P**rova una hipòtesi cada cop · **U**bica (aïlla el mòdul) · **R**epara · **A**punta-ho al dossier. Encara encallats? **[Targetes de rescat](../00_General/00_Targetes_rescat.md)** — la T9.1 és exactament per a això.
 

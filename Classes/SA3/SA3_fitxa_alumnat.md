@@ -76,6 +76,9 @@ La sessió 4 **sencera** és la **prova T1**: individual, amb el teu kit, i pots
 
 <!-- /web:only-github -->
 
+## Producte · Alarma / sensor d'aparcament
+Es **tanca a la S3** (la S4 és la prova T1): un avís de **LED + so** que canvia segons la **distància** mesurada. **Defensa d'1'** a peu de taula. S'avalua amb **R1** i **R2**.
+
 ## Si t'encalles (DEPURA)
 > **D**escriu · **E**xamina (**Monitor sèrie!**) · **P**rova una hipòtesi cada cop · **U**bica · **R**epara · **A**punta-ho. Revisa l'alimentació del sensor (VCC/GND). Encara encallat? **[Targeta de rescat](../00_General/00_Targetes_rescat.md)** (comença per la 🟢).
 

@@ -76,6 +76,9 @@ Si la tasca encara no t'apareix al Classroom, és que la SA encara no ha començ
 
 <!-- /web:only-github -->
 
+## Producte · Comportament autònom del rover
+Es demostra **a la pista (S4)**: un comportament autònom + el **registre d'iteracions** (temps de volta i millores entre intents). S'avalua amb **R1**, **R3** i **R4**.
+
 ## Si t'encalles (DEPURA)
 > **D**escriu · **E**xamina (què fa el robot de debò) · **P**rova una hipòtesi cada cop · **U**bica · **R**epara · **A**punta-ho. Comprova el bloc `// === PINS (AJUSTAR) ===` i prova **una funció de moviment cada cop**. Encara encallat? **[Targeta de rescat](../00_General/00_Targetes_rescat.md)** (comença per la 🟢).
 

@@ -71,6 +71,9 @@ Dissenya un panell que indiqui **estats** amb color + so + una càrrega (relé):
 
 <!-- /web:only-github -->
 
+## Producte · Panell de senyalització
+Es fa a la **S4**: un panell que indica **estats** (tot correcte / avís / alarma) amb **color (RGB) + so (piezo) + relé**. **Defensa d'1'**: què fa el teu panell i una millora possible. S'avalua amb **R1** (codi) i **R2** (circuit).
+
 ## Si t'encalles (DEPURA)
 > **D**escriu · **E**xamina (LED, error, Monitor Sèrie) · **P**rova una hipòtesi cada cop · **U**bica · **R**epara · **A**punta-ho. Revisa la **resistència** i la **polaritat** de cada LED. Encara encallat? **[Targeta de rescat](../00_General/00_Targetes_rescat.md)** (comença per la 🟢).
 
