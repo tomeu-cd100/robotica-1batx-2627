@@ -1,6 +1,8 @@
 # SA1 · Fitxa-pòster: "Analitzem un robot real"
 
-> **Producte de la SA1.** Individual o en parella. Es pot fer en **paper (A3)**, amb **Canva/Google Presentacions** o **Genially**. S'avalua amb la rúbrica **R4** (documentació i comunicació). Comparteix la rúbrica amb l'alumnat **abans** de començar.
+> 🧭 Aquesta plantilla és el **producte de la SA1**: es **comença a la sessió 3**, després de l'Activitat 4 (`Blink`). Si has arribat aquí navegant i encara no toca, torna a l'itinerari de la portada de la SA.
+
+> Individual o en parella. Es pot fer en **paper (A3)**, amb **Canva/Google Presentacions** o **Genially**. S'avalua amb la rúbrica **R4** (documentació i comunicació). Comparteix la rúbrica amb l'alumnat **abans** de començar.
 
 **Autoria:** ______________________  **Grup:** __________  **Data:** __________
 
