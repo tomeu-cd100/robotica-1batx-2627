@@ -1,5 +1,7 @@
 # SA5 · Connexions i entorn
 
+> 🧑‍🎓 **Quan toca?** Obre-la a la **S1** per preparar l'**entorn** i torna-hi quan una activitat usi maquinari: sensors integrats → Activitat 2 (S2) · ràdio → Activitat 3 (S3) · Micro:shield → només si el teu repte usa perifèrics externs.
+
 > La micro:bit porta molts sensors **integrats**, així que la majoria d'activitats **no necessiten muntatge**. El Micro:shield s'usa per a perifèrics externs.
 
 ![La placa micro:bit amb les seves parts: matriu de 25 LED, botons A i B, sensors integrats (acceleròmetre, llum, temperatura, ràdio), connector de vora amb els pins P0, P1, P2, 3V i GND, USB i botó de reset](img/sa5-microbit-features.svg)
@@ -34,7 +36,7 @@ Els pins **0, 1, 2** són d'E/S de propòsit general (cocodril o shield):
 
 > Els pins **P0, P1, P2** i l'alimentació **3V**/**GND** són al connector de vora (vegeu la placa etiquetada de dalt); s'hi accedeix amb pinces de cocodril o el Micro:shield.
 
-## Per a la ràdio (SA5 · activitat 4)
+## Per a la ràdio (SA5 · Activitat 3, S3)
 Calen **2 micro:bit** amb el **mateix `group`** (p. ex. `radio.config(group=10)`). Cada placa pot enviar i rebre.
 
 ![Dues micro:bit amb el mateix grup de ràdio (group=10) s'envien i reben missatges entre elles](img/sa5-radio.svg)

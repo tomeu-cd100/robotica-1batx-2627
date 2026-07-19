@@ -1,5 +1,7 @@
 # SA6 · Esquemes i connexions
 
+> 🧑‍🎓 **Quan toca?** Tingues aquesta pàgina oberta **mentre muntes**. Correspondència amb la fitxa: **§1–§2** → Activitat 2 (S2, termòstat amb histèresi) · **§3** → Activitat 3 (S3, màquina d'estats) · el **resum de pins** serveix per a tots els sketches de la SA.
+
 > Reproduïbles a **Tinkercad** o **Wokwi**. La "temperatura" es llegeix amb una **NTC** en divisor de tensió (es pot substituir per un **potenciòmetre** per simular-la). Els conceptes de control (llaç tancat, histèresi) són a la **[fitxa base](SA6_fitxa_alumnat.md)**.
 
 ---

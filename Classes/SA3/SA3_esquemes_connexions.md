@@ -1,5 +1,7 @@
 # SA3 · Esquemes i connexions
 
+> 🧑‍🎓 **Quan toca?** Tingues aquesta pàgina oberta **mentre muntes** cada circuit. Correspondència amb la fitxa: **§1** → Activitat 1 (S1) · **§2** → Activitat 2 (S2) · **§3–§4** → Activitat 3 i el producte (S3).
+
 > Reproduïbles a **Tinkercad** o **Wokwi**.
 
 ---

@@ -1,5 +1,7 @@
 # SA7 · Esquemes i connexions
 
+> 🧑‍🎓 **Quan toca?** El **Pas 1 (pins)** es fa **abans de tot** (sessió 0/1): sense els pins correctes cap sketch no mou res. Després: cinemàtica → Activitat 1 (S1) · ultrasons → Activitat 3 (S3) · sensors de línia → Activitat 4 (S4). La pista la prepara el docent.
+
 > La **Imagina 3dBot** ja porta integrats els motors i (segons model) sensors. El punt crític és **saber a quins pins estan connectats** per posar-los al codi.
 
 ## Pas 1 · Identificar els pins (segons el manual de la placa)

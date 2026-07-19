@@ -1,5 +1,7 @@
 # SA1 · Esquemes i connexions
 
+> 🧑‍🎓 **Quan toca?** Tingues aquesta pàgina oberta **mentre muntes**. Correspondència amb la fitxa: **§1** → Activitat 2 (S2, anatomia de la placa) · **§2** → Activitat 4 (S3, `Blink`) · **§3** → sempre, abans de pujar codi.
+
 > Tot reproduïble a **Tinkercad Circuits** (tinkercad.com) o **Wokwi** (wokwi.com). A la SA1 només es necessita **un LED**; si s'usa el LED **intern** (pin 13) no cal cap component extern. El LED **extern** sempre porta una **resistència de 220 Ω** en sèrie i el càtode (pota curta / costat pla) va a **GND**.
 
 ---
