@@ -2,6 +2,8 @@
 
 > 🧑‍🎓 **Quan toca mirar-lo?** A la **S1 (Idear)**, quan el vostre equip **ja ha triat el repte** i abans d'omplir el taulell. És un projecte **anàleg i deliberadament diferent** per veure *com es gestiona*, no què s'ha de copiar.
 
+> 🗺️ **Com es llegeix per apartats:** **🔑 El repte model** primer, per situar-vos · **🧭 Com ho penso** abans de planificar el **vostre** projecte (el raonament de retallar fins a l'MVP) · **💡 La solució anotada** (el *procés*, no codi) després del vostre primer taulell, per comparar · **🔬 Provo i mesuro** quan itereu: copieu-ne el **mètode** · **⚠️ Contraexemple** quan el projecte s'encalli — i com a repàs abans de la defensa · **📔 Diari de bord** quan escrigueu la vostra entrada del quadern.
+
 > **Nota docent:** mostra'l **a la S1 (Idear), després que cada equip hagi triat el repte** i abans
 > d'omplir el taulell. No és cap solució del banc de reptes: és un projecte **anàleg i deliberadament
 > diferent** perquè l'alumnat vegi *com es gestiona un projecte* (analitzar → MVP → iterar → documentar),

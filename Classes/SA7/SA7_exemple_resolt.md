@@ -2,6 +2,8 @@
 
 > 🧑‍🎓 **Quan toca mirar-lo?** Després del teu **primer intent** amb l'evita-obstacles de l'**Activitat 3 (S3)** — mai abans. És un comportament **anàleg** (mantenir la distància, no esquivar) per veure *com es pensa*, no una solució per copiar.
 
+> 🗺️ **Com es llegeix per apartats:** **🔑 El repte model** primer, per situar-te · **🧭 Com ho penso** abans d'escriure el **teu** codi (és l'apartat més important: el raonament) · **💡 La solució anotada** només **després del teu intent**, per comparar · **🔬 Provo i mesuro** quan provis el teu: copia'n el **mètode**, no el resultat · **⚠️ Contraexemple** quan una cosa no rutlli — i com a repàs abans d'entregar · **📔 Diari de bord** quan escriguis la teva entrada del quadern.
+
 > **Nota docent:** mostra'l **després del primer intent** amb `03_evita_obstacles.ino`, mai abans.
 > No és la solució del repte de pista (S3/S4): és un problema **anàleg** resolt pas a pas perquè
 > l'alumnat vegi *com es pensa* un comportament autònom, no què s'ha de copiar. Comenta en veu

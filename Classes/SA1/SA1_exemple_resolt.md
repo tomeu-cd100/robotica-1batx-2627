@@ -2,6 +2,8 @@
 
 > 🧑‍🎓 **Quan toca mirar-lo?** Després del teu **primer intent** amb la taula E-P-S de l'**Activitat 1 (S1)** i amb el `blink.ino` de l'**Activitat 4 (S3)** — mai abans. És un problema **anàleg** per veure *com es pensa*, no una solució per copiar: el pòster l'has de fer amb el **teu** robot.
 
+> 🗺️ **Com es llegeix per apartats:** **🔑 El repte model** primer, per situar-te · **🧭 Com ho penso** abans d'escriure el **teu** codi (és l'apartat més important: el raonament) · **💡 La solució anotada** només **després del teu intent**, per comparar · **🔬 Provo i mesuro** quan provis el teu: copia'n el **mètode**, no el resultat · **⚠️ Contraexemple** quan una cosa no rutlli — i com a repàs abans d'entregar · **📔 Diari de bord** quan escriguis la teva entrada del quadern.
+
 > **Nota docent:** mostra'l **després del primer intent** amb l'Activitat 1 (taula E-P-S) i amb
 > `blink.ino`, mai abans. No és la solució del pòster (que cada alumne/a fa amb el **seu** robot):
 > és un problema **anàleg** resolt pas a pas perquè l'alumnat vegi *com es pensa* un sistema, no

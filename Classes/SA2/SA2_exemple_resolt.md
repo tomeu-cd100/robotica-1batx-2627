@@ -2,6 +2,8 @@
 
 > 🧑‍🎓 **Quan toca mirar-lo?** Després del teu **primer intent** amb el *fade* de l'**Activitat 3 (S3)** — mai abans. És un problema **anàleg** per veure *com es pensa*, no la solució del panell de la S4.
 
+> 🗺️ **Com es llegeix per apartats:** **🔑 El repte model** primer, per situar-te · **🧭 Com ho penso** abans d'escriure el **teu** codi (és l'apartat més important: el raonament) · **💡 La solució anotada** només **després del teu intent**, per comparar · **🔬 Provo i mesuro** quan provis el teu: copia'n el **mètode**, no el resultat · **⚠️ Contraexemple** quan una cosa no rutlli — i com a repàs abans d'entregar · **📔 Diari de bord** quan escriguis la teva entrada del quadern.
+
 > **Nota docent:** mostra'l **després del primer intent** amb `03_fade_pwm.ino`, mai abans.
 > No és la solució del panell (S4): és un problema **anàleg** resolt pas a pas perquè
 > l'alumnat vegi *com es pensa*, no què s'ha de copiar. Comenta en veu alta el pas «🧭 Com ho

@@ -2,6 +2,8 @@
 
 > 🧑‍🎓 **Quan toca mirar-lo?** Després del teu **primer intent** amb el potenciòmetre i la LDR de l'**Activitat 2 (S2)** — mai abans. És un problema **anàleg** per veure *com es pensa*, no la solució de l'alarma/aparcament de la S3 (però el **mètode** és el mateix).
 
+> 🗺️ **Com es llegeix per apartats:** **🔑 El repte model** primer, per situar-te · **🧭 Com ho penso** abans d'escriure el **teu** codi (és l'apartat més important: el raonament) · **💡 La solució anotada** només **després del teu intent**, per comparar · **🔬 Provo i mesuro** quan provis el teu: copia'n el **mètode**, no el resultat · **⚠️ Contraexemple** quan una cosa no rutlli — i com a repàs abans d'entregar · **📔 Diari de bord** quan escriguis la teva entrada del quadern.
+
 > **Nota docent:** mostra'l **després del primer intent** amb `02_potenciometre_ldr.ino`, mai abans.
 > No és la solució del producte (l'alarma/aparcament de la S3): és un problema **anàleg** resolt pas
 > a pas perquè l'alumnat vegi *com es pensa* un sistema que **percep i decideix**, no què s'ha de
