@@ -8,7 +8,7 @@ Distribució en **3 trimestres** i **9 situacions d'aprenentatge (SA)**.
 | Trim. | Setmanes aprox. | SA | Títol | Hores |
 |---|---|---|---|---|
 | **1r** | s1-s12 | SA1 | Què és un robot? Sistemes embeguts i mètode de projecte | 6 |
-| | | SA2 * | Sortides digitals i PWM: dona vida als actuadors | 8 |
+| | | SA2 * | Sortides digitals i PWM (*Pulse Width Modulation*): dona vida als actuadors | 8 |
 | | | SA3 † | Entrades i sensors: el robot percep | 8 |
 | **2n** | s13-s24 | SA4 * | Moviment: servos, motors i ponts H | 8 |
 | | | SA5 | micro:bit i MicroPython: un altre paradigma | 6 |

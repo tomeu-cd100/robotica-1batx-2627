@@ -1,4 +1,4 @@
-# SA2 · Sortides digitals i PWM: dona vida als actuadors
+# SA2 · Sortides digitals i PWM (*Pulse Width Modulation*): dona vida als actuadors
 
 | | |
 |---|---|

@@ -59,7 +59,7 @@
 | Trim. | SA | Títol | Hores | Maquinari | Llenguatge |
 |---|---|---|---|---|---|
 | 1r | SA1 | Què és un robot? Sistemes embeguts i mètode de projecte | 6 | Arduino / simulador | — / C++ |
-| 1r | SA2 | Sortides digitals i PWM: dona vida als actuadors | 8 | Arduino + KS0011 | C/C++ |
+| 1r | SA2 | Sortides digitals i PWM (*Pulse Width Modulation*): dona vida als actuadors | 8 | Arduino + KS0011 | C/C++ |
 | 1r | SA3 | Entrades i sensors: el robot percep | 8 | Arduino + KS0011 | C/C++ |
 | 2n | SA4 | Moviment: servos, motors i ponts H | 8 | Arduino + KS0011 | C/C++ |
 | 2n | SA5 | micro:bit i MicroPython: un altre paradigma | 6 | micro:bit + Micro:shield | Python |

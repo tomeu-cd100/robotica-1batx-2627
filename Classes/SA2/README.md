@@ -1,4 +1,4 @@
-# SA2 · Sortides digitals i PWM: dona vida als actuadors
+# SA2 · Sortides digitals i PWM (*Pulse Width Modulation*): dona vida als actuadors
 
 Segona situació d'aprenentatge (**8 h · 4 sessions**, 1r trimestre). Es passa d'encendre un LED (SA1) a **controlar múltiples sortides digitals i regular-les amb PWM**: semàfors, efecte *fade*, LED RGB i un panell de senyalització amb so i relé. Maquinari: Arduino UNO + kit Keyestudio/BQ. Programació oficial: [`Programació didàctica/11_SA2_Sortides_digitals_PWM.md`](../../Programació%20didàctica/11_SA2_Sortides_digitals_PWM.md).
 
