@@ -3,6 +3,8 @@
 **Durada:** 6 h (3 sessions de 2 h) · **Maquinari:** Arduino UNO (demostració) + Tinkercad · **Llenguatge:** lectura de C/C++
 **Referència:** [`Programació didàctica/10_SA1_Introduccio_robotica.md`](../../Programació%20didàctica/10_SA1_Introduccio_robotica.md)
 
+> 🧭 **Com s'usa aquesta guia.** **Abans de la SA:** objectius, materials i documents de la carpeta (la logística, al checklist docent). **A cada sessió:** la secció «SESSIÓ n» corresponent, amb el «Guió de modelatge» a mà. **Durant tota la SA:** diversitat, rols cooperatius i pensament computacional. **En avaluar:** «Avaluació formativa (instruments)». **Per contextualitzar:** referent, context real i ODS.
+
 ## Objectius de la SA
 1. Definir robot i sistema embegut; identificar entrada-procés-sortida.
 2. Reconèixer l'arquitectura d'Arduino i la diferència analògic/digital.

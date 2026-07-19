@@ -3,6 +3,8 @@
 **Durada:** 10 h (5 sessions) · **Maquinari:** lliure (Arduino / micro:bit / Imagina 3dBot) · **Llenguatge:** lliure (C/C++ i/o Python)
 **Referència:** [`Programació didàctica/18_SA9_Projecte_final.md`](../../Programació%20didàctica/18_SA9_Projecte_final.md)
 
+> 🧭 **Com s'usa aquesta guia.** **Abans de la SA:** sentit, objectius i materials/plantilles. **A cada sessió:** la seqüència (5 × 2 h), els rols i les orientacions per al docent. **En avaluar:** «Avaluació». **Durant tot el projecte:** pensament computacional i els errors freqüents de gestió.
+
 ## Sentit de la SA
 Projecte de **síntesi** del curs: en equip, l'alumnat dissenya, construeix, programa, documenta i defensa un **sistema robòtic autònom** que resol un repte real. Integra tot l'après (SA1-SA8). Opció de vincular-lo a una **competició** (WRO, RoboCup Junior, FTC) o al futur **Treball de Recerca**.
 

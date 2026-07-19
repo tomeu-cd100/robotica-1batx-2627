@@ -3,6 +3,8 @@
 **Durada:** 6 h (3 sessions; la comparativa C++↔Python es tanca dins la S3 o com a 4a sessió opcional d'ampliació) · **Maquinari:** micro:bit + Micro:shield · **Llenguatge:** MicroPython
 **Referència:** [`Programació didàctica/14_SA5_microbit_micropython.md`](../../Programació%20didàctica/14_SA5_microbit_micropython.md) · **Connexions:** [`SA5_connexions.md`](SA5_connexions.md)
 
+> 🧭 **Com s'usa aquesta guia.** **Abans de la SA:** objectius, material i codi de suport (la logística, al checklist docent). **A cada sessió:** la secció «SESSIÓ n» corresponent, amb el «Guió de modelatge» i els «Errors freqüents» a mà. **Durant tota la SA:** diversitat (DUA), rols cooperatius i pensament computacional. **En avaluar:** «Avaluació formativa (instruments)». **Per contextualitzar:** context real i ODS.
+
 ## Objectius de la SA
 1. Escriure programes en **MicroPython** amb la sintaxi correcta (**indentació!**).
 2. Usar els **sensors integrats** de la micro:bit i la comunicació per **ràdio**.

@@ -3,6 +3,8 @@
 **Durada:** 8 h (4 sessions) · **Maquinari:** Placa **Imagina 3dBot (Arduino)** + sensors de línia (IR) i de distància (ultrasons) · **Llenguatge:** C/C++
 **Referència:** [`Programació didàctica/16_SA7_Robotica_mobil.md`](../../Programació%20didàctica/16_SA7_Robotica_mobil.md) · **Esquemes:** [`SA7_esquemes_connexions.md`](SA7_esquemes_connexions.md)
 
+> 🧭 **Com s'usa aquesta guia.** **Abans de la SA:** objectius, material i codi de suport (la logística, al checklist docent). **A cada sessió:** la secció «SESSIÓ n» corresponent, amb el «Guió de modelatge» i els «Errors freqüents» a mà. **Durant tota la SA:** diversitat (DUA), rols cooperatius i pensament computacional. **En avaluar:** «Avaluació formativa (instruments)». **Per contextualitzar:** context real i ODS.
+
 ## Objectius de la SA
 1. Programar el moviment d'un robot mòbil (endavant, gir, aturada) amb **control diferencial**.
 2. Dissenyar i programar **trajectòries** (quadrat, recorregut definit).

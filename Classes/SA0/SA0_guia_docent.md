@@ -3,6 +3,8 @@
 **Naturalesa:** material **transversal de suport**, no una SA amb sessions pròpies. **Públic:** referència per al docent.
 **Llenguatges:** Arduino C/C++ i MicroPython (micro:bit). **Vincle:** base prèvia a `Programació didàctica/10_SA1...` i transversal a SA1–SA9.
 
+> 🧭 **Com s'usa aquesta guia.** **Abans de començar el curs:** què és la SA0, com integrar-la (3 escenaris) i el mapa vocabulari ↔ SA. **Mentre l'alumnat fa la fitxa:** el solucionari i les precisions tècniques. **Transversal:** diversitat, pensament computacional i context real.
+
 ## Què és la SA0 i per què
 
 La SA0 reuneix en un sol lloc el **vocabulari** i els **conceptes de programació** que les SA1–SA9 donen per coneguts. Evita repetir definicions a cada unitat i ofereix a l'alumnat un únic punt de consulta. No consumeix sessions del calendari (la matèria té 2 h setmanals): s'usa com a **material de referència** i **bastida** segons necessitat.
