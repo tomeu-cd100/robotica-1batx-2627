@@ -29,6 +29,10 @@
 
 ![Circuit del semàfor: els pins 8, 9 i 10 controlen tres LED (vermell, groc, verd), cadascun amb 220 Ω, amb els càtodes a una línia comuna de GND](img/sa2-semafor.svg)
 
+**El mateix circuit, muntat a la protoboard:**
+
+![Muntatge del semàfor a la protoboard: cada pin (8, 9, 10) va amb un cable de color a la seva columna, passa per la resistència de 220 ohms que salta el canal central, arriba a l'ànode del LED, i el càtode es connecta amb un pont al carril blau de massa, que torna al GND de l'Arduino](img/sa2-semafor-protoboard.svg)
+
 ---
 
 ## 3. Fade PWM (`03_fade_pwm.ino`)

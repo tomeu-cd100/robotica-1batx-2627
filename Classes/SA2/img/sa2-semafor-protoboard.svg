@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 560" width="760" height="560" role="img" aria-labelledby="t d">
+  <title id="t">Muntatge del semàfor a la protoboard</title>
+  <desc id="d">Protoboard amb tres LED (vermell, groc i verd). Cada pin de l'Arduino (8, 9 i 10) va amb un cable a la protoboard, passa per una resistència de 220 ohms que salta el canal central, arriba a l'ànode del LED, i el càtode de cada LED es connecta amb un pont al carril blau de massa, que torna al GND de l'Arduino.</desc>
+  <style>
+    .fr{fill:#f6faf9;stroke:#d7e6e5;stroke-width:1.5}
+    .bb{fill:#efe9df;stroke:#cfc4ae;stroke-width:1.5}
+    .canal{fill:#e3dbc9}
+    .hole{fill:#b9ad93}
+    .wire{fill:none;stroke:#0e1b1c;stroke-width:3;stroke-linecap:round}
+    .wV{fill:none;stroke:#dc2626;stroke-width:3.5;stroke-linecap:round}
+    .wG{fill:none;stroke:#ca8a04;stroke-width:3.5;stroke-linecap:round}
+    .wVd{fill:none;stroke:#16a34a;stroke-width:3.5;stroke-linecap:round}
+    .wN{fill:none;stroke:#0e1b1c;stroke-width:3.5;stroke-linecap:round}
+    .res{fill:none;stroke:#0e1b1c;stroke-width:2.4;stroke-linejoin:round}
+    .leg{fill:none;stroke:#6b7280;stroke-width:2}
+    .pad{fill:#ffffff;stroke:#0891b2;stroke-width:2}
+    .padtxt{font:700 12px 'Consolas',monospace;fill:#0c6e70}
+    .lbl{font:600 13px system-ui,'Segoe UI',sans-serif;fill:#0e1b1c}
+    .lbl2{font:500 12px system-ui,'Segoe UI',sans-serif;fill:#475569}
+    .board{fill:#0e7490;stroke:#155e75;stroke-width:2}
+    .btxt{font:800 16px system-ui,sans-serif;fill:#ffffff}
+  </style>
+  <rect class="fr" x="1" y="1" width="758" height="558" rx="14"/>
+
+  <!-- ================== PROTOBOARD ================== -->
+  <rect class="bb" x="50" y="36" width="660" height="222" rx="8"/>
+  <!-- carril de massa (blau, a dalt) -->
+  <line x1="70" y1="56" x2="690" y2="56" stroke="#2563eb" stroke-width="2"/>
+  <g class="hole">
+    <circle cx="90" cy="70" r="2.6"/><circle cx="130" cy="70" r="2.6"/><circle cx="170" cy="70" r="2.6"/><circle cx="210" cy="70" r="2.6"/><circle cx="250" cy="70" r="2.6"/><circle cx="290" cy="70" r="2.6"/><circle cx="330" cy="70" r="2.6"/><circle cx="370" cy="70" r="2.6"/><circle cx="410" cy="70" r="2.6"/><circle cx="450" cy="70" r="2.6"/><circle cx="490" cy="70" r="2.6"/><circle cx="530" cy="70" r="2.6"/><circle cx="570" cy="70" r="2.6"/><circle cx="610" cy="70" r="2.6"/><circle cx="650" cy="70" r="2.6"/>
+  </g>
+  <text class="lbl" x="62" y="75" fill="#2563eb">−</text>
+  <text class="lbl2" x="690" y="50" text-anchor="end">carril de massa (GND)</text>
+
+  <!-- camp superior de forats -->
+  <g class="hole">
+    <circle cx="90" cy="100" r="2.6"/><circle cx="130" cy="100" r="2.6"/><circle cx="170" cy="100" r="2.6"/><circle cx="210" cy="100" r="2.6"/><circle cx="250" cy="100" r="2.6"/><circle cx="290" cy="100" r="2.6"/><circle cx="330" cy="100" r="2.6"/><circle cx="370" cy="100" r="2.6"/><circle cx="410" cy="100" r="2.6"/><circle cx="450" cy="100" r="2.6"/><circle cx="490" cy="100" r="2.6"/><circle cx="530" cy="100" r="2.6"/><circle cx="570" cy="100" r="2.6"/><circle cx="610" cy="100" r="2.6"/><circle cx="650" cy="100" r="2.6"/>
+    <circle cx="90" cy="152" r="2.6"/><circle cx="130" cy="152" r="2.6"/><circle cx="250" cy="152" r="2.6"/><circle cx="290" cy="152" r="2.6"/><circle cx="330" cy="152" r="2.6"/><circle cx="430" cy="152" r="2.6"/><circle cx="470" cy="152" r="2.6"/><circle cx="510" cy="152" r="2.6"/><circle cx="610" cy="152" r="2.6"/><circle cx="650" cy="152" r="2.6"/>
+  </g>
+  <!-- canal central -->
+  <rect class="canal" x="50" y="166" width="660" height="14"/>
+  <!-- camp inferior de forats -->
+  <g class="hole">
+    <circle cx="90" cy="196" r="2.6"/><circle cx="130" cy="196" r="2.6"/><circle cx="250" cy="196" r="2.6"/><circle cx="290" cy="196" r="2.6"/><circle cx="330" cy="196" r="2.6"/><circle cx="430" cy="196" r="2.6"/><circle cx="470" cy="196" r="2.6"/><circle cx="510" cy="196" r="2.6"/><circle cx="610" cy="196" r="2.6"/><circle cx="650" cy="196" r="2.6"/>
+    <circle cx="90" cy="232" r="2.6"/><circle cx="130" cy="232" r="2.6"/><circle cx="170" cy="232" r="2.6"/><circle cx="210" cy="232" r="2.6"/><circle cx="250" cy="232" r="2.6"/><circle cx="290" cy="232" r="2.6"/><circle cx="330" cy="232" r="2.6"/><circle cx="370" cy="232" r="2.6"/><circle cx="410" cy="232" r="2.6"/><circle cx="450" cy="232" r="2.6"/><circle cx="490" cy="232" r="2.6"/><circle cx="530" cy="232" r="2.6"/><circle cx="570" cy="232" r="2.6"/><circle cx="610" cy="232" r="2.6"/><circle cx="650" cy="232" r="2.6"/>
+  </g>
+
+  <!-- ========= LED VERMELL (pin 8) — columna ànode x=190, càtode x=210 ========= -->
+  <circle cx="200" cy="120" r="15" fill="#ef4444" stroke="#991b1b" stroke-width="2.5"/>
+  <line class="leg" x1="190" y1="132" x2="190" y2="152"/>
+  <line class="leg" x1="210" y1="132" x2="210" y2="152"/>
+  <!-- pont càtode → carril de massa -->
+  <polyline class="wN" points="210,88 210,70"/>
+  <!-- resistència: salta el canal (columna ànode) -->
+  <polyline class="res" points="190,152 190,160 184,166 196,172 184,178 196,184 184,190 190,194 190,200"/>
+  <text class="lbl2" x="150" y="180" text-anchor="end">220 Ω</text>
+  <!-- cable de senyal cap al pin 8 -->
+  <polyline class="wV" points="190,232 190,300 233,336"/>
+  <text class="lbl" x="222" y="120">vermell</text>
+
+  <!-- ========= LED GROC (pin 9) — ànode x=370, càtode x=390 ========= -->
+  <circle cx="380" cy="120" r="15" fill="#facc15" stroke="#a16207" stroke-width="2.5"/>
+  <line class="leg" x1="370" y1="132" x2="370" y2="152"/>
+  <line class="leg" x1="390" y1="132" x2="390" y2="152"/>
+  <polyline class="wN" points="390,88 390,70"/>
+  <polyline class="res" points="370,152 370,160 364,166 376,172 364,178 376,184 364,190 370,194 370,200"/>
+  <text class="lbl2" x="330" y="180" text-anchor="end">220 Ω</text>
+  <polyline class="wG" points="370,232 370,300 358,336"/>
+  <text class="lbl" x="402" y="120">groc</text>
+
+  <!-- ========= LED VERD (pin 10) — ànode x=550, càtode x=570 ========= -->
+  <circle cx="560" cy="120" r="15" fill="#22c55e" stroke="#166534" stroke-width="2.5"/>
+  <line class="leg" x1="550" y1="132" x2="550" y2="152"/>
+  <line class="leg" x1="570" y1="132" x2="570" y2="152"/>
+  <polyline class="wN" points="570,88 570,70"/>
+  <polyline class="res" points="550,152 550,160 544,166 556,172 544,178 556,184 544,190 550,194 550,200"/>
+  <text class="lbl2" x="510" y="180" text-anchor="end">220 Ω</text>
+  <polyline class="wVd" points="550,232 550,300 483,336"/>
+  <text class="lbl" x="582" y="120">verd</text>
+
+  <!-- ========= retorn de massa: carril → GND ========= -->
+  <polyline class="wN" points="70,56 70,290 108,336"/>
+
+  <!-- ================== ARDUINO UNO ================== -->
+  <rect class="board" x="70" y="330" width="620" height="180" rx="12"/>
+  <!-- pads de la filera digital -->
+  <rect class="pad" x="86" y="336" width="44" height="26" rx="5"/><text class="padtxt" x="108" y="354" text-anchor="middle">GND</text>
+  <rect class="pad" x="214" y="336" width="38" height="26" rx="5"/><text class="padtxt" x="233" y="354" text-anchor="middle">8</text>
+  <rect class="pad" x="339" y="336" width="38" height="26" rx="5"/><text class="padtxt" x="358" y="354" text-anchor="middle">~9</text>
+  <rect class="pad" x="464" y="336" width="38" height="26" rx="5"/><text class="padtxt" x="483" y="354" text-anchor="middle">~10</text>
+  <text class="btxt" x="380" y="450" text-anchor="middle">ARDUINO UNO</text>
+
+  <!-- ================== LLEGENDA ================== -->
+  <text class="lbl2" x="70" y="530">Pota llarga = ànode (+), cap a la resistència · pota curta = càtode (−), cap al carril de massa.</text>
+  <text class="lbl2" x="70" y="548">Els forats d'una mateixa columna van connectats: per això el pont del càtode surt més amunt.</text>
+</svg>
