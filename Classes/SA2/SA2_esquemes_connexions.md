@@ -35,7 +35,9 @@
 
 **Al simulador i amb components reals:**
 
-![Captura de Tinkercad del semàfor a la protoboard: tres LED (verd, groc i vermell) amb la seva resistència de 220 ohms, cables de senyal cap als pins 8, ~9 i ~10 de l'Arduino UNO i cable negre de retorn a GND](img/sa2-tinkercad-semafor.png)
+![Captura de Tinkercad del semàfor a la protoboard: tres LED (verd, groc i vermell) amb la seva resistència de 220 ohms, els càtodes amb cables negres al carril de massa, cables vermells de senyal cap als pins 8, ~9 i ~10 de l'Arduino UNO i retorn del carril a GND](img/sa2-tinkercad-semafor.png)
+
+▶ **Obre la simulació a Tinkercad** (pots fer *Copy and Tinker* per modificar-la): <https://www.tinkercad.com/things/aYZvUenzQ6c-sa2-semafor?sharecode=RK48gLo9I5cgj1lBzIenLJUhcTMZFcBzePUGJtUvltU>
 
 ![Fotografia del muntatge real del semàfor: protoboard amb els tres LED (el vermell encès), resistències de 220 ohms, cables taronja de senyal cap als pins digitals de l'Arduino UNO i cable blanc de retorn a GND](img/sa2-muntatge-real-semafor.jpg)
 
