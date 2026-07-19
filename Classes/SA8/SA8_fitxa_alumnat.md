@@ -48,6 +48,8 @@ Si la tasca encara no t'apareix al Classroom, és que la SA encara no ha començ
 2. Quines magnituds envies? __________ Cada quant? __________
 3. **Repte:** envia dues magnituds etiquetades (`T:..`, `L:..`).
 
+> 💡 Si t'encalles amb l'emissora, parteix de l'esquelet `04_telemetria_emissor_BASTIDA.py`: la ràdio i el `group` ja estan configurats; tu omples la mesura i l'enviament etiquetat.
+
 ### 2 · Auditoria d'un producte IoT (S2)
 Amb la teva parella, feu d'**auditors de privacitat** d'un producte real: trieu una targeta de **[SA8_auditoria_iot.md](SA8_auditoria_iot.md)** i ompliu l'**informe d'auditoria** (mínim ètic obligatori):
 

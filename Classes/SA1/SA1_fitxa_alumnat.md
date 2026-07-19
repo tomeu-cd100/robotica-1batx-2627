@@ -69,6 +69,8 @@ Llegeix [`SA1_normes_seguretat.md`](SA1_normes_seguretat.md) i **signa** el full
 3. **Modifica** el temps perquè parpellegi més ràpid. Valor: ______
 4. **Crea un repte** (`blink_repte.ino`): fes 3 parpellejos ràpids i una pausa llarga, i que es repeteixi.
 
+> 💡 Si t'encalles escrivint el teu primer sketch, parteix de l'esquelet `02_senyal_estat_BASTIDA`: l'estructura `setup()`/`loop()` i el `pinMode()` ja hi són; tu omples els `// TODO`.
+
 <!-- /web:only-github -->
 
 ## Producte · Fitxa-pòster
