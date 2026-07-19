@@ -1,6 +1,6 @@
 # SA1 · Normes de seguretat del laboratori de robòtica
 
-> Es llegeixen en veu alta a la **Sessió 2**, es comenten amb exemples i cada alumne/a **signa** el compromís del final. El full signat es guarda a la carpeta del grup.
+> 🧑‍🎓 **Quan toca?** A la **Sessió 2**, dins l'**Activitat 3 de la fitxa**: es llegeixen en veu alta, es comenten amb exemples i **signes** el compromís del final — que val per a **tot el curs**. Les 2 normes que triïs es traslladen a la fitxa. El full signat es guarda a la carpeta del grup.
 
 > 📄 **[Versió PDF per imprimir i signar](pdf/SA1_normes_seguretat.pdf)**
 
