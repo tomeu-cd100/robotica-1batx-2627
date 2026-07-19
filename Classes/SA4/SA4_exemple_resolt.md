@@ -1,5 +1,7 @@
 # SA4 · Exemple resolt (model «jo ho faig») — Ventilador orientable de sobretaula
 
+> 🧑‍🎓 **Quan toca mirar-lo?** Després del teu **primer intent** amb el servo de l'**Activitat 1 (S1)** i el pont H de l'**Activitat 2 (S2)** — mai abans. És un problema **anàleg** per veure *com es pensa*, no la solució de la barrera de la S4.
+
 > **Nota docent:** mostra'l **després del primer intent** amb `01_servo_potenciometre.ino` i
 > `02_motor_pont_h.ino`, mai abans. No és la solució de la barrera (S4): és un problema **anàleg**
 > resolt pas a pas perquè l'alumnat vegi *com es pensa*, no què s'ha de copiar. Comenta en veu alta

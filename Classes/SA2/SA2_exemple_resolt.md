@@ -1,5 +1,7 @@
 # SA2 · Exemple resolt (model «jo ho faig») — Llum de posició que respira
 
+> 🧑‍🎓 **Quan toca mirar-lo?** Després del teu **primer intent** amb el *fade* de l'**Activitat 3 (S3)** — mai abans. És un problema **anàleg** per veure *com es pensa*, no la solució del panell de la S4.
+
 > **Nota docent:** mostra'l **després del primer intent** amb `03_fade_pwm.ino`, mai abans.
 > No és la solució del panell (S4): és un problema **anàleg** resolt pas a pas perquè
 > l'alumnat vegi *com es pensa*, no què s'ha de copiar. Comenta en veu alta el pas «🧭 Com ho

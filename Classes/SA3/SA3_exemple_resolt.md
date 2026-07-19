@@ -1,5 +1,7 @@
 # SA3 · Exemple resolt (model «jo ho faig») — Llum de nit automàtica
 
+> 🧑‍🎓 **Quan toca mirar-lo?** Després del teu **primer intent** amb el potenciòmetre i la LDR de l'**Activitat 2 (S2)** — mai abans. És un problema **anàleg** per veure *com es pensa*, no la solució de l'alarma/aparcament de la S3 (però el **mètode** és el mateix).
+
 > **Nota docent:** mostra'l **després del primer intent** amb `02_potenciometre_ldr.ino`, mai abans.
 > No és la solució del producte (l'alarma/aparcament de la S3): és un problema **anàleg** resolt pas
 > a pas perquè l'alumnat vegi *com es pensa* un sistema que **percep i decideix**, no què s'ha de

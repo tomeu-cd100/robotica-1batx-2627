@@ -1,5 +1,7 @@
 # SA5 · Exemple resolt (model «jo ho faig») — Sentinella de temperatura per ràdio
 
+> 🧑‍🎓 **Quan toca mirar-lo?** Després del teu **primer intent** amb els sensors de l'**Activitat 2 (S2)** i la ràdio de l'**Activitat 3 (S3)** — mai abans. És un problema **anàleg** per veure *com es pensa* en Python, no la solució del teu producte.
+
 > **Nota docent:** mostra'l **després del primer intent** amb `02_passes.py` i `04_radio_dau.py`, mai abans.
 > No és la solució del producte (comptapassos, nightlight ni joc per ràdio): és un problema **anàleg**
 > resolt pas a pas perquè l'alumnat vegi *com es pensa* en Python, no què s'ha de copiar. Comenta en

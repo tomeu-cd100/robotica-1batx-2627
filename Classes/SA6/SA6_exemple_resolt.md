@@ -1,5 +1,7 @@
 # SA6 · Exemple resolt (model «jo ho faig») — Dipòsit d'aigua que es reomple sol
 
+> 🧑‍🎓 **Quan toca mirar-lo?** Després del teu **primer intent** amb la histèresi de l'**Activitat 2 (S2)** i la màquina d'estats de l'**Activitat 3 (S3)** — mai abans. És un problema **anàleg** per veure *com es pensa* un llaç tancat, no la solució del teu producte.
+
 > **Nota docent:** mostra'l **després del primer intent** amb `02_termostat_histeresi.ino`
 > i `03_maquina_estats.ino`, mai abans. No és la solució del producte (S3, la prova T2): és un
 > problema **anàleg** resolt pas a pas perquè l'alumnat vegi *com es pensa* un llaç tancat, no

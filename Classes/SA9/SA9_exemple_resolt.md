@@ -1,5 +1,7 @@
 # SA9 · Exemple resolt (model «jo ho faig») — Com un equip enfoca un projecte: el «robot repartidor»
 
+> 🧑‍🎓 **Quan toca mirar-lo?** A la **S1 (Idear)**, quan el vostre equip **ja ha triat el repte** i abans d'omplir el taulell. És un projecte **anàleg i deliberadament diferent** per veure *com es gestiona*, no què s'ha de copiar.
+
 > **Nota docent:** mostra'l **a la S1 (Idear), després que cada equip hagi triat el repte** i abans
 > d'omplir el taulell. No és cap solució del banc de reptes: és un projecte **anàleg i deliberadament
 > diferent** perquè l'alumnat vegi *com es gestiona un projecte* (analitzar → MVP → iterar → documentar),

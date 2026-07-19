@@ -1,5 +1,7 @@
 # SA8 · Exemple resolt (model «jo ho faig») — Sensor de moviment sense fils
 
+> 🧑‍🎓 **Quan toca mirar-lo?** Després del teu **primer intent** amb la telemetria de l'**Activitat 1 (S1)** — mai abans. És un problema **anàleg** (una altra magnitud) per veure *com es pensa*, no la solució del teu producte.
+
 > **Nota docent:** mostra'l **després del primer intent** amb `01_telemetria_emissor.py`
 > i `02_telemetria_receptor.py`, mai abans. No és la solució del producte (telemetria de
 > temperatura/llum): és un problema **anàleg** —una magnitud diferent— resolt pas a pas
