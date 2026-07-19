@@ -3,6 +3,8 @@
 > **Per a qui és?** Per a tothom. És el mapa dels tres robots que cada parella
 > construeix durant el curs i de com cada SA hi aporta una peça. El docent hi
 > té el calendari de fabricació; l'alumnat, la visió de cap a on va cada repte.
+> **Quan toca?** Mira'l a l'**inici de cada trimestre** (per saber quin robot toca
+> i què hi aportarà cada SA) i quan un repte digui «cap al robot del trimestre».
 
 **Durada:** tot el curs · **Maquinari:** talladora làser xTool S1, impressora 3D Bambu Lab P2S Combo, kits d'aula
 

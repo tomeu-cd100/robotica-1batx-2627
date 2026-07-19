@@ -1,6 +1,7 @@
 # Pòster d'aula — Com treballem a Robòtica
 
 > Recurs **per projectar o imprimir** (A3) i tenir sempre visible. Reuneix les rutines de treball comunes a totes les SA: mètode de projecte, depuració, rols i autoavaluació.
+> **Quan toca?** Es **penja la primera setmana** (es presenta a la SA1) i queda a la paret **tot el curs**: s'hi assenyala cada cop que algú pregunta «i ara què faig?».
 
 ---
 

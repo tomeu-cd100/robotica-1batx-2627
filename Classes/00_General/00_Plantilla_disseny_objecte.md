@@ -1,6 +1,7 @@
 # Plantilla de disseny d'objecte
 
 > **Full de treball imprimible (A4).** Omple'l per dissenyar el teu objecte, des de la idea fins al producte. Es treballa amb el [`00_Banc_objectes_disseny.md`](00_Banc_objectes_disseny.md) al costat.
+> **Quan toca?** Quan hagis **triat un objecte** del banc (com a producte alternatiu, repte obert o projecte de SA9) — abans mira la [galeria d'exemples](00_Galeria_exemples_objectes.md) per veure el nivell esperat.
 
 **Nom/Equip:** ______________________  **SA:** ______  **Data:** __________
 

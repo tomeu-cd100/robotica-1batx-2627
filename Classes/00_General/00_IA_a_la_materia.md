@@ -1,6 +1,7 @@
 # 00 · La Intel·ligència Artificial a la matèria (guia transversal)
 
 > **Per a qui és aquest document?** Per al **professorat**. Explica **com s'introdueix la IA al llarg de tot el curs** (no només a la SA8), amb quin marc conceptual mínim, com tractar-la **èticament** i com gestionar l'**ús d'assistents d'IA** (tipus ChatGPT/Copilot) a l'aula amb **integritat acadèmica**. És un mapa de conjunt: el desplegament concret viu a cada SA.
+> **Quan s'usa?** Llegeix-lo **en preparar el curs** (el protocol d'assistents es presenta la **primera setmana**, amb el pòster) i repassa la secció de cada SA abans de començar-la.
 
 ---
 

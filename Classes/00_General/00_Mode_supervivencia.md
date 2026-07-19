@@ -1,6 +1,7 @@
 # 🧗 Mode supervivència — per si és el teu primer any amb aquest material
 
 > **Per a qui és?** Per al **docent que entoma la matèria per primera vegada**. Aquest material té moltes rutines (graelles, referents, racó de mesura, exit tickets, coavaluació…), totes justificades — però **ningú no les pot executar totes bé la primera setmana**. Aquesta pàgina et diu què és nucli i en quin ordre incorporar la resta, perquè no intentis fer-ho tot de cop i acabis no fent res.
+> **Quan es llegeix?** **Abans de començar el curs** (al setembre, amb la logística), i torna-hi a **final de cada trimestre** per decidir quina rutina nova incorpores.
 
 ---
 

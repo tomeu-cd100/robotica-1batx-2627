@@ -1,6 +1,7 @@
 # 00 · Guia de la defensa oral (escala de progressió del curs)
 
 > **Per a qui és?** Docent i alumnat. La **defensa oral** s'avalua amb la rúbrica **R4** des de la SA1, i culmina a la SA9 amb una defensa completa. Perquè el salt no es faci de cop, l'exigència **creix per graons planificats** — com el codi (PRIMM → full en blanc), la comunicació també té la seva retirada de bastida.
+> **Quan toca?** Obre-la **abans de preparar cada defensa de producte** (mira només el graó del teu trimestre) i, el docent, en dissenyar-ne l'avaluació.
 
 ## L'escala (què s'exigeix a cada trimestre)
 

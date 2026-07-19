@@ -3,6 +3,8 @@
 > Annex de **consulta ràpida** per a l'alumnat i el professorat. Recull conceptes que
 > apareixen a diverses SA (pins de la placa, aïllament amb optoacoblador, tipus de sensors,
 > biosensors). No és una unitat: és material de **referència** per tenir a mà.
+> **Quan toca?** No es llegeix de dalt a baix: obre'l **quan un concepte t'aparegui** en una
+> SA i vulguis el detall (o el docent t'hi enviï).
 
 ---
 

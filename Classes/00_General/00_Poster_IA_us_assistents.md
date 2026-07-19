@@ -1,6 +1,7 @@
 # Pòster d'aula — Fer servir la IA amb cap
 
 > Recurs **per projectar o imprimir** (A4/A3) i tenir visible. Concreta el protocol d'ús d'assistents d'IA de [`00_IA_a_la_materia.md`](00_IA_a_la_materia.md) (§5). Pensat per a qualsevol activitat amb codi.
+> **Quan toca?** Es **presenta la primera setmana** (amb el protocol d'IA) i es penja **tot el curs**; s'hi torna explícitament a la **SA8** (introducció a la IA).
 
 ---
 

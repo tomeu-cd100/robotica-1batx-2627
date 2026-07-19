@@ -1,6 +1,7 @@
 # Mapa del curs · de cada SA a un objecte real
 
 > Vista de conjunt **per projectar**: què aprens a cada SA i quins objectes pots dissenyar-hi. Detall i briefing a [`00_Banc_objectes_disseny.md`](00_Banc_objectes_disseny.md).
+> **Quan toca?** El docent el projecta **en presentar el curs o obrir una SA**; l'alumnat hi torna **quan tria objecte** (producte alternatiu, repte obert o projecte de SA9).
 
 ```
         EL SISTEMA...        APRENS A...                  OBJECTES QUE POTS DISSENYAR

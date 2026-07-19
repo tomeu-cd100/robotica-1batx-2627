@@ -1,6 +1,8 @@
 # Com s'avalua aquesta matèria — guia per a l'alumnat
 
 > Aquesta pàgina és **per a tu**. Explica d'on surt la teva nota, què compta i què no, i com pots anar bé a la matèria. No hi ha lletra petita: tot el que es qualifica **ho sabràs abans de començar**.
+>
+> 🧑‍🎓 **Quan toca?** Llegeix-la **la primera setmana de curs** i torna-hi **abans de cada entrega** (les fitxes hi enllacen des de «Com m'avaluaran»).
 
 ## 1 · D'on surt la nota (les 4 parts)
 

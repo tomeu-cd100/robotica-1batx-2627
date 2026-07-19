@@ -4,6 +4,8 @@
 
 Es pot fer servir com a **alternativa al producte de la SA**, com a **repte obert**, o com a **llavor del projecte de SA9**.
 
+> 🧑‍🎓 **Quan toca obrir-lo?** Quan **triïs el producte o el repte** d'una SA i vulguis donar-li forma d'objecte real, o a la **S1 de la SA9** per buscar idea de projecte. Es treballa amb la [`00_Plantilla_disseny_objecte.md`](00_Plantilla_disseny_objecte.md).
+
 ---
 
 ## El procés de disseny d'un objecte (integrat amb el mètode de projecte)

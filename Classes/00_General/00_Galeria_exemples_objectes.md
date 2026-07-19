@@ -1,6 +1,7 @@
 # Galeria d'exemples resolts — objectes de disseny
 
 > Dos objectes desenvolupats **de punta a punta** com a **model**: mostren com es veu la [`00_Plantilla_disseny_objecte.md`](00_Plantilla_disseny_objecte.md) ben omplerta. Útils per ensenyar el nivell esperat (no per copiar: l'alumnat dissenya el seu).
+> **Quan toca mirar-la?** **Abans d'omplir la teva plantilla** de disseny (per veure el nivell esperat) i **després del teu primer esbós** (per comparar i millorar) — com els exemples resolts de cada SA.
 
 ---
 
