@@ -2,6 +2,8 @@
 
 > 📄 **Versió ampliada**: conté totes les rutines (coavaluació, exit ticket…) i el guió complet del projecte. La fitxa que fa **tot l'equip** és la base: **[SA9_fitxa_alumnat.md](SA9_fitxa_alumnat.md)**.
 
+> 🧑‍🎓 **Quan toca obrir-la?** És **opcional**: quan porteu la **fitxa base al dia** i vulgueu més (rutines completes, guió detallat). Algunes rutines (coavaluació, exit ticket) les activarà el **docent** a l'aula quan toqui.
+
 **Equip:** ______________________  **Membres:** ______________________  **Data:** __________
 
 > És el projecte final: dissenyareu, construireu, programareu i defensareu un sistema robòtic autònom. Useu les **plantilles** de la carpeta `plantilles/`.

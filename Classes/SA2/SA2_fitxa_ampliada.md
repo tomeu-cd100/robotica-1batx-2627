@@ -2,6 +2,8 @@
 
 > 📄 **Versió ampliada**: conté totes les activitats, rutines (coavaluació, exit ticket, ODS…) i ampliacions. La fitxa que fa **tot l'alumnat** és la base: **[SA2_fitxa_alumnat.md](SA2_fitxa_alumnat.md)**.
 
+> 🧑‍🎓 **Quan toca obrir-la?** És **opcional**: quan portis la **fitxa base al dia** i vulguis més (ampliacions, rols, pensament computacional). Algunes rutines (coavaluació, exit ticket) les activarà el **docent** a l'aula quan toqui.
+
 **Nom:** ______________________  **Parella:** ______________________  **Data:** __________
 
 > Aprendràs a controlar LED, color i so, i a regular la intensitat amb PWM. Recorda: **cada LED amb resistència de 220 Ω** i polaritat correcta.
