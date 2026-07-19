@@ -2,7 +2,9 @@
 
 Codi de **solució de referència** per als 3 reptes de cada SA (SA1–SA8) de la carpeta `Reptes/`. **Material per al docent.**
 
-> ⚠️ **Avís de verificació.** Aquestes solucions s'han escrit amb cura però **no s'han provat al maquinari real**. Abans d'usar-les, verifica-les a **Tinkercad/Wokwi** o a la placa. A la **SA7** (Imagina 3dBot) cal **ajustar els pins** dels motors segons el manual. Hi pot haver més d'una solució vàlida.
+> 🧭 **Quan s'usa.** En **validar el repte ⭐ d'una parella** (comparar amb la referència abans de pintar l'estrella al tauler) o per **preparar-te la SA**. **No es passa a l'alumnat**: el repte és seu — si estan encallats, primer la rutina DEPURA i les targetes de rescat. Recorda que **hi pot haver més d'una solució vàlida**: la referència és un contrast, no l'única resposta bona.
+
+> ⚠️ **Avís de verificació.** Les solucions **ampliades s'han validat en simulació** contra les fites dels reptes ⭐⭐⭐, executant el firmware AVR real amb *wokwi-cli* (vegeu [`Simulacions/Validacio/`](../../Simulacions/Validacio/README.md)); el CI en compila els `.ino` i comprova la sintaxi dels `.py`. **Encara no s'han provat al maquinari real.** A la **SA7** (Imagina 3dBot) cal **ajustar els pins** dels motors segons el manual.
 
 ## Estructura
 
