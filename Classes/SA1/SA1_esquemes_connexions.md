@@ -60,6 +60,18 @@ No cal cap component: el LED marcat amb **L** ja està connectat internament al 
 > ⚠️ **Sempre** la resistència de 220 Ω en sèrie: sense ella el LED rep massa corrent i es pot fondre.
 > El mateix esquema serveix per als sketches d'ampliació `blink_millis` i `sos_morse`.
 
+### 2.3. El mateix circuit, muntat de veritat (variant al pin 8)
+
+El circuit de l'opció B funciona a **qualsevol pin digital**: aquí el tens muntat al **pin 8**, primer al simulador i després amb components reals. Si canvies de pin, només cal canviar el número al codi (`digitalWrite(8, HIGH);` en lloc de `13`).
+
+![Captura de Tinkercad: Arduino UNO amb un LED verd i una resistència de 220 ohms a la protoboard, cable vermell del pin 8 a la resistència i cable negre de GND al càtode del LED](img/sa1-tinkercad-blink-pin8.png)
+
+▶ **Obre la simulació a Tinkercad** (pots fer *Copy and Tinker* per modificar-la): <https://www.tinkercad.com/things/frRjKG3t65m-sa1blinkinternledopciob?sharecode=GAxNpImV4w6b7voAyfgleBhy6jWHl5doUDeHF35HlTc>
+
+![Fotografia del muntatge real: Arduino UNO connectat a una protoboard amb un LED verd encès i una resistència, amb el cable de senyal al pin 8 i el retorn a GND](img/sa1-muntatge-real-pin8.jpg)
+
+> Fixa-t'hi: al muntatge real els colors dels cables no importen (aquí verd i blanc), però **el camí elèctric és idèntic** al de l'esquema: pin digital → resistència → ànode del LED → càtode → GND.
+
 ---
 
 ## 3. Comprovació ràpida (abans de pujar el codi)
