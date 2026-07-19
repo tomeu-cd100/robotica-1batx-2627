@@ -10,7 +10,10 @@
 |---|---|---|---|
 | 8 | LED | 220 Ω | GND |
 
-> Mateix circuit d'un LED que a la SA1 (pin → 220 Ω → ànode; càtode → GND).
+![Captura de Tinkercad: Arduino UNO amb un LED verd i una resistència de 220 ohms a la protoboard, cable vermell del pin 8 a la resistència i cable negre de GND al càtode del LED](../SA1/img/sa1-tinkercad-blink-pin8.png)
+
+> Mateix circuit d'un LED que a la SA1 (pin → 220 Ω → ànode; càtode → GND), i **exactament al pin 8** com aquí.
+> ▶ Pots obrir-lo fet a **Tinkercad** (*Copy and Tinker* per modificar-lo): <https://www.tinkercad.com/things/frRjKG3t65m-sa1blinkinternledopciob?sharecode=GAxNpImV4w6b7voAyfgleBhy6jWHl5doUDeHF35HlTc>
 
 ---
 

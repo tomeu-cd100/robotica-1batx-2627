@@ -1,6 +1,6 @@
 # SA8 · Diagrama de flux — Telemetria IoT (micro:bit + MicroPython)
 
-> **Per a qui és?** Alumnat. És el mateix que fa el programa, però **dibuixat**. Mira'l **abans de programar**; després l'exemple resolt i el codi.
+> **Per a qui és?** Alumnat. És la **telemetria emissora → receptora** de l'**Activitat 1 (S1)**, però **dibuixada**. Mira'l **abans de programar** aquella activitat; després l'exemple resolt i el codi.
 
 ## El flux
 

@@ -1,6 +1,6 @@
 # SA5 · Diagrama de flux — Sentinella de sensor per ràdio (micro:bit + MicroPython)
 
-> **Per a qui és?** Alumnat. És el mateix que fa el programa, però **dibuixat**. Mira'l **abans de programar**; després l'exemple resolt i el codi.
+> **Per a qui és?** Alumnat. És el **sentinella de sensor per ràdio** de l'**Activitat 3 (S3)**, però **dibuixat**. Mira'l **abans de programar** aquella activitat; després l'exemple resolt i el codi. A les sessions 1 i 2 encara no et cal: segueix l'itinerari de la portada.
 
 ## El flux
 

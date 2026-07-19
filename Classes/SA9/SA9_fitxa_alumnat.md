@@ -33,7 +33,7 @@
 
 ## La fitxa d'equip · al Google Classroom
 
-Aquesta fitxa es respon **en línia**, a la tasca de Google Classroom (**una resposta per equip**, val **10 punts**):
+Aquesta fitxa es respon **en línia**, a la tasca de Google Classroom (**una resposta per equip**, val **10 punts**). **No cal respondre-la d'entrada**: cada apartat porta el seu **enunciat dins de la tasca**, i l'**itinerari de la portada de la SA** us diu què toca a cada sessió. Obriu-la quan comenceu i aneu-la responent a mesura que el projecte avança:
 
 > 👉 **[Obre la tasca: SA9 · Fitxa base (Google Classroom)](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODcwNTE3OTM1Nzkw/details)**
 

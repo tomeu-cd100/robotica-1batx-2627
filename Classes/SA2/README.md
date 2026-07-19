@@ -22,7 +22,7 @@ Segona situació d'aprenentatge (**8 h · 4 sessions**, 1r trimestre). Es passa 
 
 1. **Sessió 1 · Variables i la primera sortida** — fes l'[Activitat 1 de la fitxa](SA2_fitxa_alumnat.md#1-led-basic-i-variables-s1).
 2. **Sessió 2 · El semàfor** — fes l'[Activitat 2](SA2_fitxa_alumnat.md#2-semafor-s2), amb l'[esquema del circuit](SA2_esquemes_connexions.md).
-3. **Sessió 3 · PWM: intensitat i color** — fes l'[Activitat 3](SA2_fitxa_alumnat.md#3-pwm-intensitat-i-color-s3), amb el [codi](codi/).
+3. **Sessió 3 · PWM: intensitat i color** — fes l'[Activitat 3](SA2_fitxa_alumnat.md#3-pwm-intensitat-i-color-s3), amb el [diagrama de flux del *fade*](SA2_diagrama_flux.md) i el [codi](codi/).
 4. **Sessió 4 · Producte: panell de senyalització** — fes l'[Activitat 4](SA2_fitxa_alumnat.md#4-producte-panell-de-senyalitzacio-s4) (s'avalua amb R1 codi + R2 circuit).
 5. **Abans d'entregar** — repassa [el meu checklist](SA2_checklist_alumnat.md).
 

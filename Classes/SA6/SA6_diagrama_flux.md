@@ -1,6 +1,6 @@
 # SA6 · Diagrama de flux — Llaç tancat amb histèresi i màquina d'estats
 
-> **Per a qui és?** Alumnat. És el mateix que fa el programa, però **dibuixat**. Mira'l **abans de programar**; després l'exemple resolt i el codi.
+> **Per a qui és?** Alumnat. És el **termòstat amb histèresi i la màquina d'estats** de les **Activitats 2 i 3 (S2–S3)**, però **dibuixat**. Mira'l **abans de programar** aquelles activitats; després l'exemple resolt i el codi.
 
 ## El flux
 

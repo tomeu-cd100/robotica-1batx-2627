@@ -30,7 +30,7 @@
 
 ## Les activitats · al Google Classroom
 
-Aquesta fitxa es respon **en línia**, a la tasca de Google Classroom (val **10 punts**):
+Aquesta fitxa es respon **en línia**, a la tasca de Google Classroom (val **10 punts**). **No cal que la responguis d'entrada**: cada activitat porta el seu **enunciat dins de la tasca**, i l'**itinerari de la portada de la SA** et diu quina toca a cada sessió. Obre-la quan comencis a treballar-hi i ves-la responent a mesura que avances:
 
 > 👉 **[Obre la tasca: SA5 · Fitxa base (Google Classroom)](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODcwNTE3NDYxNTQy/details)**
 

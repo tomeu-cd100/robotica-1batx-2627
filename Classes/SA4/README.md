@@ -21,7 +21,7 @@ Quarta situació d'aprenentatge (**8 h · 4 sessions**, 2n trimestre). El sistem
 > La teva feina és a la **[fitxa base](SA4_fitxa_alumnat.md)**. Aquesta ruta et diu què toca fer a cada sessió i què necessites en aquell moment. Les respostes de la fitxa es lliuren a la **[tasca de Classroom](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODcwNTEzNjkxNjIy/details)**.
 
 1. **Sessió 1 · El servomotor** — fes l'[Activitat 1 de la fitxa](SA4_fitxa_alumnat.md#1-servomotor-s1).
-2. **Sessió 2 · Motor DC i pont H** — fes l'[Activitat 2](SA4_fitxa_alumnat.md#2-motor-dc-i-pont-h-s2), amb els [esquemes de connexió](SA4_esquemes_connexions.md) (compte amb la massa comuna!).
+2. **Sessió 2 · Motor DC i pont H** — fes l'[Activitat 2](SA4_fitxa_alumnat.md#2-motor-dc-i-pont-h-s2), amb els [esquemes de connexió](SA4_esquemes_connexions.md) (compte amb la massa comuna!) i el [diagrama de flux de les funcions de moviment](SA4_diagrama_flux.md).
 3. **Sessió 3 · Del sensor al moviment** — fes l'[Activitat 3](SA4_fitxa_alumnat.md#3-del-sensor-al-moviment-s3), amb el [codi](codi/).
 4. **Sessió 4 · Producte: barrera automàtica** — fes l'[Activitat 4](SA4_fitxa_alumnat.md#4-producte-barrera-automatica-s4) (s'avalua amb R1, R2, R3 parcial).
 5. **Abans d'entregar** — repassa [el meu checklist](SA4_checklist_alumnat.md).

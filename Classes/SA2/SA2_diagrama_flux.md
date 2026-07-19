@@ -1,6 +1,6 @@
 # SA2 · Diagrama de flux — Llum que respira amb PWM (bucle *fade*)
 
-> **Per a qui és?** Alumnat. És el mateix que fa el programa, però **dibuixat**. Mira'l **abans de programar**; després l'exemple resolt i el codi.
+> **Per a qui és?** Alumnat. És el programa del *fade* de l'**Activitat 3 · PWM (S3)**, però **dibuixat**. Mira'l **abans de programar** aquella activitat; després l'exemple resolt i el codi. A les sessions 1 i 2 encara no et cal: segueix l'itinerari de la portada.
 
 ## El flux
 

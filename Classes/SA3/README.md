@@ -23,7 +23,7 @@ Tercera situació d'aprenentatge (**8 h · 4 sessions**, 1r trimestre). El siste
 > La teva feina és a la **[fitxa base](SA3_fitxa_alumnat.md)**. Aquesta ruta et diu què toca fer a cada sessió i què necessites en aquell moment. Les respostes de la fitxa es lliuren a la **[tasca de Classroom](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODcwNTE4MDEwMzM3/details)**.
 
 1. **Sessió 1 · Entrades digitals i monitor sèrie** — fes l'[Activitat 1 de la fitxa](SA3_fitxa_alumnat.md#1-polsador-i-monitor-serie-s1).
-2. **Sessió 2 · Entrades analògiques** — fes l'[Activitat 2](SA3_fitxa_alumnat.md#2-entrades-analogiques-s2).
+2. **Sessió 2 · Entrades analògiques** — fes l'[Activitat 2](SA3_fitxa_alumnat.md#2-entrades-analogiques-s2), amb el [diagrama de flux de la decisió per llindar](SA3_diagrama_flux.md).
 3. **Sessió 3 · Funcions + Producte: alarma/aparcament** — fes l'[Activitat 3](SA3_fitxa_alumnat.md#3-ultrasons-funcions-i-producte-alarma--aparcament-s3), amb els [esquemes de connexió](SA3_esquemes_connexions.md) i el [codi](codi/). El producte s'avalua amb R1 (codi) + R2 (circuit) i **es tanca avui**.
 4. **Sessió 4 · Prova pràctica T1** — individual, la sessió sencera; pots consultar el teu quadern i els esquemes.
 5. **Abans d'entregar** — repassa [el meu checklist](SA3_checklist_alumnat.md).

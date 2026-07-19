@@ -1,6 +1,6 @@
 # SA7 · Diagrama de flux — Robot mòbil reactiu (percepció → decisió → acció)
 
-> **Per a qui és?** Alumnat. És el mateix que fa el programa, però **dibuixat**. Mira'l **abans de programar**; després l'exemple resolt i el codi.
+> **Per a qui és?** Alumnat. És l'**evita-obstacles** de l'**Activitat 3 (S3)**, però **dibuixat** — el cicle *percep → decideix → actua* de tota la SA. Mira'l **abans de programar** aquella activitat; després l'exemple resolt i el codi.
 
 ## El flux
 

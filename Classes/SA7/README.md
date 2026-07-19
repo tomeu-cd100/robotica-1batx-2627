@@ -25,7 +25,7 @@ Setena situació d'aprenentatge (**8 h · 4 sessions** + sessió 0 de muntatge, 
 0. **Sessió 0 · Muntatge del rover** — abans de començar, la teva parella construeix el rover: peces, muntatge pas a pas, cablatge i test de fum al **[dossier del rover](../00_General/00_Projecte_T3_Rover.md)** (hi ha el pla de la sessió sencer).
 1. **Sessió 1 · Moviment i cinemàtica diferencial** — fes l'[Activitat 1 de la fitxa](SA7_fitxa_alumnat.md#1-moviment-i-cinematica-s1) (ajusta els pins del teu robot al bloc `// === PINS (AJUSTAR) ===` de cada `.ino`).
 2. **Sessió 2 · Trajectòries programades** — fes l'[Activitat 2](SA7_fitxa_alumnat.md#2-trajectories-s2).
-3. **Sessió 3 · Evitar obstacles** — fes l'[Activitat 3](SA7_fitxa_alumnat.md#3-evita-obstacles-s3), amb els [esquemes de connexió](SA7_esquemes_connexions.md).
+3. **Sessió 3 · Evitar obstacles** — fes l'[Activitat 3](SA7_fitxa_alumnat.md#3-evita-obstacles-s3), amb els [esquemes de connexió](SA7_esquemes_connexions.md) i el [diagrama de flux percep → decideix → actua](SA7_diagrama_flux.md).
 4. **Sessió 4 · Seguidor de línia + repte de pista** — fes l'[Activitat 4](SA7_fitxa_alumnat.md#4-seguidor-de-linia-repte-de-pista-s4), amb el [codi](codi/) (s'avalua amb R1, R3, R4).
 5. **Abans d'entregar** — repassa [el meu checklist](SA7_checklist_alumnat.md).
 

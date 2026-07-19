@@ -1,6 +1,6 @@
 # SA3 · Diagrama de flux — Decisió per llindar (llegir → comparar → actuar)
 
-> **Per a qui és?** Alumnat. És el mateix que fa el programa, però **dibuixat**. Mira'l **abans de programar**; després l'exemple resolt i el codi.
+> **Per a qui és?** Alumnat. És el **llum automàtic amb la LDR** de l'**Activitat 2 (S2)**, però **dibuixat** — i el patró *llegir → comparar → actuar* que reutilitzaràs al producte de la S3. Mira'l **abans de programar** aquella activitat; després l'exemple resolt i el codi.
 
 ## El flux
 

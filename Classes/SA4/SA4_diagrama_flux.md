@@ -1,6 +1,6 @@
 # SA4 · Diagrama de flux — seqüència de moviment amb funcions (una funció per gest)
 
-> **Per a qui és?** Alumnat. És el mateix que fa el programa, però **dibuixat**. Mira'l **abans de programar** per tenir el pla al cap; després l'exemple resolt i el codi.
+> **Per a qui és?** Alumnat. Són les **funcions de moviment del pont H** (`endavant`, `enrere`, `atura`) de l'**Activitat 2 (S2)**, però **dibuixades** — la base del producte de la S4. Mira'l **abans de programar** aquella activitat per tenir el pla al cap; després l'exemple resolt i el codi.
 
 ## El flux
 

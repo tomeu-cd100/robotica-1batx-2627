@@ -1,6 +1,6 @@
 # SA1 · Diagrama de flux — el batec d'un robot (`setup` un cop, `loop` per sempre)
 
-> **Per a qui és?** Alumnat. És el mateix que fa el programa, però **dibuixat**. Mira'l **abans de programar** per tenir el pla al cap; després l'exemple resolt i el codi.
+> **Per a qui és?** Alumnat. És el programa del **batec** (el `Blink` de l'**Activitat 4 · S3**), però **dibuixat**. Mira'l **abans de programar** aquella activitat per tenir el pla al cap; després l'exemple resolt i el codi. Fins a la S3 encara no et cal: segueix l'itinerari de la portada.
 
 ## El flux
 
