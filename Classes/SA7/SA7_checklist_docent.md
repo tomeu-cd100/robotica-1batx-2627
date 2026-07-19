@@ -2,7 +2,7 @@
 
 **8 h (4 sessions) · Imagina 3dBot (Arduino) + sensors IR i ultrasons · Criteris CA1.1, CA3.1, CA4.1 · Rúbriques R1 (codi), R3 (robot/control), R4 (documentació)**
 
-> Eina d'acció d'una cara. Condensa la [`SA7_guia_docent.md`](SA7_guia_docent.md). Marca `[x]` a mesura que ho tinguis fet.
+> Eina d'acció d'una cara. Condensa la [`SA7_guia_docent.md`](SA7_guia_docent.md). Marca `[x]` a mesura que ho tinguis fet. **Quan s'usa:** imprimeix-lo en **preparar la SA** (§1) i tingues-lo **a taula a cada sessió** (§2–§4).
 
 ## 🧰 1. Logística prèvia (preparar abans de començar la SA)
 - [ ] Imagina 3dBot muntada per equip (motors, rodes, **bateria carregada**), cable de programació

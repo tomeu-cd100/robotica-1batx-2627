@@ -2,7 +2,7 @@
 
 **10 h (5 sessions) · Maquinari i llenguatge lliures (Arduino / micro:bit / Imagina 3dBot) · Criteris CA2.1, CA3.1, CA4.1, CA5.1, CA5.2, CA5.3 · TOTES les rúbriques R1–R5**
 
-> Eina d'acció d'una cara. Condensa la [`SA9_guia_docent.md`](SA9_guia_docent.md). Projecte de **síntesi** del curs (autonomia total, sense PRIMM).
+> Eina d'acció d'una cara. Condensa la [`SA9_guia_docent.md`](SA9_guia_docent.md). Projecte de **síntesi** del curs (autonomia total, sense PRIMM). **Quan s'usa:** imprimeix-lo en **preparar la SA** (§1) i tingues-lo **a taula a cada sessió** (§2–§4).
 
 ## 🧰 1. Logística prèvia (preparar abans de començar la SA)
 - [ ] Tenir a punt les **plantilles**: `Banc_de_reptes` · `Planificacio_agile_PLANTILLA` · `Dossier_tecnic_PLANTILLA` · `Codi_base_PLANTILLA/`

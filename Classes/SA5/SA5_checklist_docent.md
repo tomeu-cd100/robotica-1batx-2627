@@ -2,7 +2,7 @@
 
 **6 h (3 sessions + 4a opcional d'ampliació) · micro:bit + Micro:shield · Llenguatge MicroPython · Criteris CA1.2, CA3.1 · Rúbriques R1 (codi), R4 (documentació/comparativa)**
 
-> Eina d'acció d'una cara. Condensa la [`SA5_guia_docent.md`](SA5_guia_docent.md). Marca `[x]` a mesura que ho tinguis fet.
+> Eina d'acció d'una cara. Condensa la [`SA5_guia_docent.md`](SA5_guia_docent.md). Marca `[x]` a mesura que ho tinguis fet. **Quan s'usa:** imprimeix-lo en **preparar la SA** (§1) i tingues-lo **a taula a cada sessió** (§2–§4).
 
 ## 🧰 1. Logística prèvia (preparar abans de començar la SA)
 - [ ] **2 plaques micro:bit per parella** (calen per practicar la ràdio) + cables USB

@@ -2,7 +2,7 @@
 
 **6 h (3 sessions) · Arduino UNO + Tinkercad · Criteris CA5.1, CA5.3 · Rúbriques R4 (documentació) i R5 (actitud)**
 
-> Eina d'acció d'una cara. Condensa la [`SA1_guia_docent.md`](SA1_guia_docent.md) en punts verificables. Marca `[x]` a mesura que ho tinguis fet.
+> Eina d'acció d'una cara. Condensa la [`SA1_guia_docent.md`](SA1_guia_docent.md) en punts verificables. Marca `[x]` a mesura que ho tinguis fet. **Quan s'usa:** imprimeix-lo en **preparar la SA** (§1) i tingues-lo **a taula a cada sessió** (§2–§4).
 
 ## 🧰 1. Logística prèvia (preparar abans de començar la SA)
 - [ ] Arduino UNO + cable USB a punt (demostració i, si n'hi ha, per parelles)

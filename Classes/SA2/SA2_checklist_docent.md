@@ -2,7 +2,7 @@
 
 **8 h (4 sessions) · Arduino UNO + kit Keyestudio/BQ · Criteris CA1.1, CA2.1, CA2.2 · Rúbriques R1 (codi), R2 (circuit), R4 (quadern)**
 
-> Eina d'acció d'una cara. Condensa la [`SA2_guia_docent.md`](SA2_guia_docent.md). Marca `[x]` a mesura que ho tinguis fet.
+> Eina d'acció d'una cara. Condensa la [`SA2_guia_docent.md`](SA2_guia_docent.md). Marca `[x]` a mesura que ho tinguis fet. **Quan s'usa:** imprimeix-lo en **preparar la SA** (§1) i tingues-lo **a taula a cada sessió** (§2–§4).
 
 ## 🧰 1. Logística prèvia (preparar abans de començar la SA)
 - [ ] Material per parella: Arduino UNO + USB, protoboard, cables dupont
