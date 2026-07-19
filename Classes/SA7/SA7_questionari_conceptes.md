@@ -1,5 +1,7 @@
 # SA7 · Qüestionari de conceptes (robòtica mòbil: moviment i comportaments autònoms)
 
+> 🧑‍🎓 **Quan toca fer-lo?** En acabar les activitats de la SA, com a **consolidació** abans de repassar el checklist d'entrega — i torna-hi com a **repàs** abans de la prova T3. Si es fa com a prova curta qualificable, el docent anunciarà el dia.
+
 > **Ús.** Comprovació breu dels conceptes de robòtica mòbil de la SA7 (cinemàtica
 > diferencial, trajectòries, evita-obstacles i seguidor de línia). Es pot fer servir com a
 > **repàs formatiu** o com a **prova curta qualificable** (10 preguntes × 1 punt = **nota

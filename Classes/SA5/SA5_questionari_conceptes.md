@@ -1,5 +1,7 @@
 # SA5 · Qüestionari de conceptes (micro:bit i MicroPython)
 
+> 🧑‍🎓 **Quan toca fer-lo?** En acabar les activitats de la SA, com a **consolidació** abans de repassar el checklist d'entrega — i torna-hi com a **repàs** abans de la prova T2 (la sessió 4 de la SA6). Si es fa com a prova curta qualificable, el docent anunciarà el dia.
+
 > **Ús.** Comprovació breu dels conceptes de MicroPython, sensors integrats i ràdio de la SA5.
 > Es pot fer servir com a **repàs formatiu** o com a **prova curta qualificable**
 > (10 preguntes × 1 punt = **nota 0-10**). Durada orientativa: **15-20 min**, individual.

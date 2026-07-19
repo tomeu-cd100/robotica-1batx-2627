@@ -1,5 +1,7 @@
 # SA1 · Qüestionari de conceptes (què és un robot i la placa Arduino UNO)
 
+> 🧑‍🎓 **Quan toca fer-lo?** En acabar les activitats de la SA, com a **consolidació** abans de repassar el checklist d'entrega — i torna-hi com a **repàs** abans de la prova T1 (la sessió 4 de la SA3). Si es fa com a prova curta qualificable, el docent anunciarà el dia.
+
 > **Ús.** Comprovació breu dels conceptes clau de la SA1: robot, sistema embegut,
 > model entrada-procés-sortida, anatomia de la placa Arduino UNO i mètode de projecte.
 > Es pot fer servir com a **repàs formatiu** o com a **prova curta qualificable**

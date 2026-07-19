@@ -1,5 +1,7 @@
 # SA9 · Qüestionari de conceptes (projecte de síntesi: mètode, planificació i documentació)
 
+> 🧑‍🎓 **Quan toca fer-lo?** En acabar les activitats de la SA, com a **consolidació** abans de repassar el checklist d'entrega — i torna-hi com a **repàs** abans de la prova T3. Si es fa com a prova curta qualificable, el docent anunciarà el dia.
+
 > **Ús.** Comprovació breu dels conceptes de **gestió de projecte** de la SA9 (mètode,
 > planificació àgil, iteracions, documentació i treball en equip). Es pot fer servir com a
 > **repàs formatiu** o com a **prova curta qualificable** (10 preguntes × 1 punt =
