@@ -1,5 +1,7 @@
 # Reptes SA8 · IoT i Intel·ligència Artificial
 
+> 🧑‍🎓 **Quan toca fer-ne un?** És l'**ampliació ⭐** de la SA: comença'l quan tinguis el **nucli al dia** (les activitats de la fitxa). Tria'n **UN**, ensenya'l al docent perquè el validi i pinta l'estrella al [tauler de reptes](../Classes/00_General/00_Tauler_reptes.md).
+
 **Tria UN dels tres reptes.** Tots **connecten o fan intel·ligent** un sistema: envien/reben dades o usen un model per decidir. Mateix requisit mínim, ampliacions graduades. Base en **micro:bit/MicroPython** (l'ESP32 és opcional/avançat).
 
 > **Continguts SA8:** IoT, telemetria (emissor/receptor), ràdio, IA (gestos), ESP32 (opcional). · **Codi base:** `Classes/SA8/codi/` (`.py` + `esp32_telemetria.ino`).

@@ -4,6 +4,8 @@
 
 > 📄 **[Versió PDF per imprimir i omplir a mà](pdf/SA2_checklist_alumnat.pdf)**
 
+> 🧑‍🎓 **Quan toca?** Tingues-lo obert **durant tota la SA** (marca a mesura que avances) i repassa'l **sencer abans d'entregar** — és l'últim pas de l'itinerari.
+
 > Marca cada cosa quan la tinguis feta. Recorda: **cada LED amb resistència de 220 Ω** i polaritat correcta.
 
 ## ✅ Abans d'acabar aquesta SA he de…

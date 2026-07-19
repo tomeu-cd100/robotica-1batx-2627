@@ -4,6 +4,8 @@
 
 > 📄 **[Versió PDF per imprimir i omplir a mà](pdf/SA7_checklist_alumnat.pdf)**
 
+> 🧑‍🎓 **Quan toca?** Tingues-lo obert **durant tota la SA** (marca a mesura que avances) i repassa'l **sencer abans d'entregar** — és l'últim pas de l'itinerari.
+
 > Ara el robot es mou sol! ⚠️ Recorda **ajustar els pins** (`// === PINS (AJUSTAR) ===`) segons la teva placa.
 
 ## ✅ Abans d'acabar aquesta SA he de…

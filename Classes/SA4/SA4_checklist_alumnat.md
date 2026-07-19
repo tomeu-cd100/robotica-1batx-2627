@@ -4,6 +4,8 @@
 
 > 📄 **[Versió PDF per imprimir i omplir a mà](pdf/SA4_checklist_alumnat.pdf)**
 
+> 🧑‍🎓 **Quan toca?** Tingues-lo obert **durant tota la SA** (marca a mesura que avances) i repassa'l **sencer abans d'entregar** — és l'últim pas de l'itinerari.
+
 > Faràs moure el sistema. ⚠️ Recorda la **massa comuna** i **no alimentis motors des de l'Arduino**.
 
 ## ✅ Abans d'acabar aquesta SA he de…

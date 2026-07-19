@@ -1,5 +1,7 @@
 # Reptes SA7 · Robòtica mòbil (Imagina 3dBot)
 
+> 🧑‍🎓 **Quan toca fer-ne un?** És l'**ampliació ⭐** de la SA: comença'l quan tinguis el **nucli al dia** (les activitats de la fitxa). Tria'n **UN**, ensenya'l al docent perquè el validi i pinta l'estrella al [tauler de reptes](../Classes/00_General/00_Tauler_reptes.md).
+
 **Tria UN dels tres reptes.** Tots fan que un **robot mòbil es desplaci de forma autònoma** amb una lògica pròpia. Mateix requisit mínim, ampliacions graduades.
 
 > ⚠️ **Important:** cal **ajustar els pins** dels motors al codi segons el manual de la placa (bloc marcat als `.ino`).

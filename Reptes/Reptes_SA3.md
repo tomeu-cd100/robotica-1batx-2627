@@ -1,5 +1,7 @@
 # Reptes SA3 · Entrades i sensors
 
+> 🧑‍🎓 **Quan toca fer-ne un?** És l'**ampliació ⭐** de la SA: comença'l quan tinguis el **nucli al dia** (les activitats de la fitxa). Tria'n **UN**, ensenya'l al docent perquè el validi i pinta l'estrella al [tauler de reptes](../Classes/00_General/00_Tauler_reptes.md).
+
 **Tria UN dels tres reptes.** Tots **llegeixen un sensor** i **decideixen una acció** amb `if/else` (model entrada→procés→sortida complet). Mateix requisit mínim, ampliacions graduades. Simulables a Tinkercad/Wokwi.
 
 > **Continguts SA3:** polsador i *debounce*, potenciòmetre, LDR, ultrasons, `analogRead` (0–1023), condicionals. · **Codi base:** `Classes/SA3/codi/`.

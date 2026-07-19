@@ -1,5 +1,7 @@
 # Reptes SA1 · Introducció: primer programa amb un LED
 
+> 🧑‍🎓 **Quan toca fer-ne un?** És l'**ampliació ⭐** de la SA: comença'l quan tinguis el **nucli al dia** (les activitats de la fitxa). Tria'n **UN**, ensenya'l al docent perquè el validi i pinta l'estrella al [tauler de reptes](../Classes/00_General/00_Tauler_reptes.md).
+
 **Tria UN dels tres reptes.** Tots controlen un **LED** amb sortides digitals (`pinMode`, `digitalWrite`, `delay`) i el model **entrada→procés→sortida**. Parteixen del mateix **requisit mínim** i creixen amb **ampliacions**. Es poden muntar a Tinkercad o amb el LED intern (pin 13).
 
 > **Continguts SA1:** robot i sistema embegut, digital vs analògic, esquelet `setup()`/`loop()`, primer codi (`Blink`). · **Vocabulari/bases:** `Classes/SA0/`.

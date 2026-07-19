@@ -1,5 +1,7 @@
 # Reptes SA5 · micro:bit i MicroPython
 
+> 🧑‍🎓 **Quan toca fer-ne un?** És l'**ampliació ⭐** de la SA: comença'l quan tinguis el **nucli al dia** (les activitats de la fitxa). Tria'n **UN**, ensenya'l al docent perquè el validi i pinta l'estrella al [tauler de reptes](../Classes/00_General/00_Tauler_reptes.md). A la SA5, a més, **un dels reptes és el teu producte** (Activitat 4): tria'l a la S3.
+
 **Tria UN dels tres reptes.** Tots es programen en **MicroPython** per a **micro:bit**, fent servir les entrades i sensors **integrats** i la pantalla de LEDs. Mateix requisit mínim, ampliacions graduades. Editor: python.microbit.org (té simulador) o Thonny.
 
 > **Continguts SA5:** MicroPython (indentació, `while True`), `display`, botons, acceleròmetre, sensor de llum, ràdio. · **Codi base:** `Classes/SA5/codi/` (`.py`).

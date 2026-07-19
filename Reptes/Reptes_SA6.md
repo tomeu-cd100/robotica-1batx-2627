@@ -1,5 +1,7 @@
 # Reptes SA6 · Sistemes de control
 
+> 🧑‍🎓 **Quan toca fer-ne un?** És l'**ampliació ⭐** de la SA: comença'l quan tinguis el **nucli al dia** (les activitats de la fitxa). Tria'n **UN**, ensenya'l al docent perquè el validi i pinta l'estrella al [tauler de reptes](../Classes/00_General/00_Tauler_reptes.md).
+
 **Tria UN dels tres reptes.** Tots implementen un **llaç de control** (mesurar → comparar amb una consigna → actuar). Mateix requisit mínim, ampliacions graduades. Integren sensors (SA3) i actuadors (SA2/SA4). Simulables a Tinkercad/Wokwi.
 
 > **Continguts SA6:** llaç obert vs tancat, realimentació, consigna, histèresi, màquina d'estats, control proporcional. · **Codi base:** `Classes/SA6/codi/`.

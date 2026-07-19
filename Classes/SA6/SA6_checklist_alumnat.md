@@ -4,6 +4,8 @@
 
 > 📄 **[Versió PDF per imprimir i omplir a mà](pdf/SA6_checklist_alumnat.pdf)**
 
+> 🧑‍🎓 **Quan toca?** Tingues-lo obert **durant tota la SA** (marca a mesura que avances) i repassa'l **sencer abans d'entregar** — és l'últim pas de l'itinerari.
+
 > Faràs que el sistema **es reguli sol**. ⚠️ La S4 **és, sencera, la prova pràctica T2** (individual): el producte es tanca a la S3. El control proporcional és **+ampliació** (opcional).
 
 ## ✅ Abans d'acabar aquesta SA he de…

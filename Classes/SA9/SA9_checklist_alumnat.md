@@ -4,6 +4,8 @@
 
 > 📄 **[Versió PDF per imprimir i omplir a mà](pdf/SA9_checklist_alumnat.pdf)**
 
+> 🧑‍🎓 **Quan toca?** Tingues-lo obert **durant tota la SA** (marca a mesura que avances) i repassa'l **sencer abans d'entregar** — és l'últim pas de l'itinerari.
+
 > El projecte de síntesi del curs: de la idea a la demo, **sencer i en autonomia**. Feu servir les **plantilles** de `plantilles/`.
 
 ## ✅ Al llarg de la SA, com a equip hem de…

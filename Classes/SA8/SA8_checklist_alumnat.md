@@ -4,6 +4,8 @@
 
 > 📄 **[Versió PDF per imprimir i omplir a mà](pdf/SA8_checklist_alumnat.pdf)**
 
+> 🧑‍🎓 **Quan toca?** Tingues-lo obert **durant tota la SA** (marca a mesura que avances) i repassa'l **sencer abans d'entregar** — és l'últim pas de l'itinerari.
+
 > Connectaràs dispositius (telemetria/IoT) i faràs que el sistema "reconegui" patrons (IA). ⚠️ Pensa també en l'**ètica de les dades**.
 
 ## ✅ Abans d'acabar aquesta SA he de…

@@ -1,5 +1,7 @@
 # SA9 · Banc de reptes (per nivells)
 
+> 🧑‍🎓 **Quan toca triar-lo?** A la **S1 (Idear)**, en equip: és el **punt de partida del projecte final**, no una ampliació. El docent el valida com a part del producte, a la defensa de la S4.
+
 Tria un repte segons l'ambició de l'equip. Tots integren electrònica + programació + control. Els ⭐ indiquen dificultat.
 
 ## Nivell ⭐ (assolible amb el que sabem)

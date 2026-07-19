@@ -4,6 +4,8 @@
 
 > 📄 **[Versió PDF per imprimir i omplir a mà](pdf/SA3_checklist_alumnat.pdf)**
 
+> 🧑‍🎓 **Quan toca?** Tingues-lo obert **durant tota la SA** (marca a mesura que avances) i repassa'l **sencer abans d'entregar** — és l'últim pas de l'itinerari.
+
 > Ara el sistema **percep** el món. Marca cada cosa quan la tinguis feta. ⚠️ La S4 **és, sencera, la prova pràctica T1** (individual): el producte es tanca a la S3.
 
 ## ✅ Abans d'acabar aquesta SA he de…

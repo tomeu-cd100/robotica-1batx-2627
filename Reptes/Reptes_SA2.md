@@ -1,5 +1,7 @@
 # Reptes SA2 · Sortides digitals i PWM
 
+> 🧑‍🎓 **Quan toca fer-ne un?** És l'**ampliació ⭐** de la SA: comença'l quan tinguis el **nucli al dia** (les activitats de la fitxa). Tria'n **UN**, ensenya'l al docent perquè el validi i pinta l'estrella al [tauler de reptes](../Classes/00_General/00_Tauler_reptes.md).
+
 **Tria UN dels tres reptes.** Tots coordinen **diverses sortides** i/o fan servir **PWM** (`analogWrite`, 0–255, pins `~`). Mateix requisit mínim, ampliacions graduades. Simulables a Tinkercad/Wokwi.
 
 > **Continguts SA2:** múltiples sortides digitals, PWM i brillantor, LED RGB, seqüències. · **Codi base:** `Classes/SA2/codi/`.

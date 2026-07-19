@@ -1,5 +1,7 @@
 # Reptes SA4 · Moviment: servos, motors i ponts H
 
+> 🧑‍🎓 **Quan toca fer-ne un?** És l'**ampliació ⭐** de la SA: comença'l quan tinguis el **nucli al dia** (les activitats de la fitxa). Tria'n **UN**, ensenya'l al docent perquè el validi i pinta l'estrella al [tauler de reptes](../Classes/00_General/00_Tauler_reptes.md).
+
 **Tria UN dels tres reptes.** Tots **controlen un actuador de moviment** (servo o motor DC) **segons una entrada**. Mateix requisit mínim, ampliacions graduades. Atenció: els motors necessiten **alimentació externa** i seguretat.
 
 > **Format "producte real":** cada repte simula un **encàrrec professional**. Hi trobaràs **qui** us el demana (client), **quin producte** heu de lliurar i **per a què** serveix al món real. El requisit tècnic és el mateix d'abans; el marc us ajuda a decidir disseny i prioritats com ho faria un equip d'enginyeria.
