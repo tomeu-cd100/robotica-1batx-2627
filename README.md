@@ -66,6 +66,12 @@ El material és reutilitzable tal qual (CC BY-SA), i el web es reconstrueix sol.
 
 ---
 
+## ✍️ Autoria
+
+Concepció i direcció pedagògica: **Tomeu Riera**. Material elaborat amb l'assistència de **[Claude Code](https://claude.com/claude-code)** (Anthropic), sota la supervisió i revisió del docent.
+
+---
+
 ## 📄 Llicència
 
 Aquest material es publica sota llicència **[Creative Commons Reconeixement-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/deed.ca)**.

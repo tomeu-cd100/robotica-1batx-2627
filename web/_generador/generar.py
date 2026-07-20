@@ -1023,7 +1023,7 @@ def page_shell(*, out_rel, section_key, title, content_html, toc="",
   {toc_block}
 </div>
 <footer class="peu">
-  <p>{html.escape(SITE_TITLE)} · material sota llicència <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca" target="_blank" rel="noopener">CC BY-SA 4.0</a>.</p>
+  <p>{html.escape(SITE_TITLE)} · Tomeu Riera, amb l'assistència de <a href="https://claude.com/claude-code" target="_blank" rel="noopener">Claude Code</a> · material sota llicència <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca" target="_blank" rel="noopener">CC BY-SA 4.0</a>.</p>
   <p><a href="{REPO_URL}" target="_blank" rel="noopener">Repositori a GitHub</a> · web generat el {BUILD_DATE}.</p>
 </footer>
 <script src="{prefix}assets/js/cerca-index.js"></script>
@@ -1725,6 +1725,7 @@ def render_visor() -> str:
 </div>
 <footer class="peu">
   <p>%%TITLE%% · visor de documents. Els fitxers es carreguen des del <a href="%%REPO%%" target="_blank" rel="noopener">repositori a GitHub</a>.</p>
+  <p>Tomeu Riera, amb l'assistència de <a href="https://claude.com/claude-code" target="_blank" rel="noopener">Claude Code</a> · material sota llicència <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca" target="_blank" rel="noopener">CC BY-SA 4.0</a>.</p>
 </footer>
 <script type="module">
 const p = new URLSearchParams(location.search);

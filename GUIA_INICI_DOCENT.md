@@ -153,4 +153,4 @@ No cal ser enginyer/a, però sí tenir aquesta base. Si algun punt et balla, ded
 
 ---
 
-*Aquesta guia complementa el `README.md` (visió i estructura) i la `Programació didàctica/` (el perquè didàctic). Material sota llicència CC BY-SA 4.0.*
+*Aquesta guia complementa el `README.md` (visió i estructura) i la `Programació didàctica/` (el perquè didàctic). Concepció i direcció pedagògica: Tomeu Riera; material elaborat amb l'assistència de Claude Code (Anthropic). Llicència CC BY-SA 4.0.*
