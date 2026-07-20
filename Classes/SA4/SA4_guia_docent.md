@@ -16,12 +16,16 @@
 - Servo SG90, motor DC, mòdul driver **L298N** (o pont H del kit), portapiles/alimentació externa (4×AA o font), potenciòmetre, sensor d'ultrasons.
 
 ## Codi de suport (`codi/`)
+
+> Cada sketch té la seva **pàgina de pràctica** (per què es fa + codi explicat per blocs, l'`EXPLICACIO.md` de la seva carpeta): és el text que l'alumnat pot rellegir si falta a classe o repassa a casa. El guió oral de sota continua sent teu.
+
 | Fitxer | Contingut |
 |---|---|
 | `01_servo_potenciometre.ino` | Servo controlat per potenciòmetre. |
-| `02_motor_pont_h.ino` | Motor DC: direcció + velocitat (PWM) amb L298N. |
+| `02_motor_pont_h.ino` | Motor DC: direcció + velocitat (PWM) amb L298N (amb esquelet «Si t'encalles» a la seva pàgina). |
 | `03_sensor_velocitat.ino` | Ultrasons regula la velocitat del motor. |
 | `04_barrera_automatica.ino` | Producte: barrera amb servo activada per sensor. |
+| `05_dos_leds_millis.ino` | Mini-pràctica S3 (opcional, 10'): dos LED sense `delay()` (patró `millis()`, prepara la SA6). |
 
 ## Mètode de projecte i continuïtat
 - **Cicle de treball** (com a tot el curs): *analitzar → dissenyar → prototipar → provar → millorar* (vegeu SA1). El **producte** n'és el recorregut complet i el **quadern tècnic** el documenta.
@@ -124,7 +128,7 @@
 
 | Via | Mesura |
 |---|---|
-| **Bastida** (qui s'encalla) | Moure el servo a **angles fixos** abans del control amb potenciòmetre; donar la **taula de lògica del pont H** ja resolta; parella heterogènia. |
+| **Bastida** (qui s'encalla) | Moure el servo a **angles fixos** abans del control amb potenciòmetre; donar la **taula de lògica del pont H** ja resolta; l'**esquelet amb `// TODO`** de les funcions de moviment a la secció «Si t'encalles» de la [pàgina de la pràctica del motor](codi/02_motor_pont_h/EXPLICACIO.md); parella heterogènia. |
 | **+ Ampliació** (qui va sobrat) | Dos servos coordinats, rampa d'acceleració, invertir sentit per distància; reptes ⭐ de [`Reptes/Reptes_SA4.md`](../../Reptes/Reptes_SA4.md). |
 | **Representació múltiple** | Esquema del pont H, simulació Wokwi (servo), vídeo del moviment, codi comentat. |
 | **Implicació** | Cada parella tria angles, temps i el mecanisme (barrera, braç, ventilador). |

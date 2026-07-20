@@ -384,6 +384,10 @@ def discover() -> tuple[list[Page], dict, dict, list[dict], list[dict], dict]:
         if not src_dir.exists():
             continue
         for md_path in sorted(src_dir.rglob("*.md")):
+            # Les EXPLICACIO.md dins de codi/ no són pàgines soltes: es
+            # rendericen com a pàgina de pràctica (vegeu add_code_group).
+            if "codi" in md_path.relative_to(src_dir).parts[:-1]:
+                continue
             out_rel = out_for_md(sec["key"], md_path, src_dir)
             text = md_path.read_text(encoding="utf-8")
             title = first_h1(text) or md_path.stem
@@ -409,12 +413,32 @@ def discover() -> tuple[list[Page], dict, dict, list[dict], list[dict], dict]:
         files = sorted([p for p in base.rglob("*") if p.suffix.lower() in CODE_EXT])
         if not files:
             return
+        practiques_dir = out_rel[:-len(".html")]  # p. ex. classes/sa2/codi
         items = []
         for f in files:
             rel = f.relative_to(base)
             anchor = slugify(str(rel.with_suffix("")))
-            items.append({"path": f, "rel": str(rel).replace("\\", "/"), "anchor": anchor})
-            code_map[str(f.resolve())] = (out_rel, anchor)
+            item = {"path": f, "rel": str(rel).replace("\\", "/"), "anchor": anchor}
+            # Pàgina de pràctica pròpia: sketch d'alumnat amb una EXPLICACIO.md
+            # al costat (per què es fa + el codi per blocs). El fitxer principal
+            # d'un sketch en carpeta és el que duu el nom de la carpeta.
+            if f.parent.name == "codi":
+                expl = f.with_name(f.stem + "_EXPLICACIO.md")
+            elif f.stem == f.parent.name:
+                expl = f.parent / "EXPLICACIO.md"
+            else:
+                expl = None
+            if section_key == "classes" and expl is not None and expl.exists():
+                page_out = f"{practiques_dir}/{slugify(f.stem)}.html"
+                titol = first_h1(expl.read_text(encoding="utf-8")) or f.stem
+                item.update(expl=expl, page_out=page_out, title=titol)
+                code_map[str(f.resolve())] = (page_out, "")
+                md_map[str(expl.resolve())] = page_out
+                pages.append(Page(expl, section_key, page_out, titol, tri,
+                                  "practica", "alumnat"))
+            else:
+                code_map[str(f.resolve())] = (out_rel, anchor)
+            items.append(item)
         pub = "docent" if "Solucionari" in base.parts else "alumnat"
         code_groups.append({"label": label, "out_rel": out_rel,
                             "section": section_key, "tri": tri, "items": items,
@@ -486,7 +510,7 @@ def rewrite_links(html_body: str, src_file: Path, out_rel: str,
             return rel_url(out_rel, md_map[key]) + frag
         if key in code_map:
             page, anchor = code_map[key]
-            return rel_url(out_rel, page) + "#" + anchor
+            return rel_url(out_rel, page) + ("#" + anchor if anchor else "")
         if key in sim_map:
             return rel_url(out_rel, sim_map[key]) + frag
         # Carpeta -> index.html d'aquesta carpeta?
@@ -643,7 +667,8 @@ def sidebar_html(section_key: str, current_out: str, pages: list[Page]) -> str:
     if section_key == "inici" or section_key in HUB_KEYS:
         return ""
     root_index = f"{section_key}/index.html"
-    sec_pages = [p for p in pages if p.section == section_key and p.out_rel != root_index]
+    sec_pages = [p for p in pages if p.section == section_key and p.out_rel != root_index
+                 and p.kind != "practica"]  # les pràctiques pengen de la pàgina Codi
 
     groups: dict[str, list[Page]] = {}
     for p in sec_pages:
@@ -896,7 +921,7 @@ def build_sequences(pages: list[Page]) -> dict[str, str]:
 
     # Classes: dins de cada SA, presentació → guia → fitxes → esquemes → codi
     for sa in range(0, 10):
-        grp = [p for p in pages if p.section == "classes"
+        grp = [p for p in pages if p.section == "classes" and p.kind != "practica"
                and page_group("classes", p.out_rel) == f"sa{sa}"]
         if not grp:
             continue
@@ -1087,23 +1112,36 @@ def capcalera_codi(path: Path) -> tuple[str, str]:
 
 def render_code_page(group: dict, pages: list[Page], extra_nav: str = "") -> str:
     formatter = HtmlFormatter(cssclass="highlight", nowrap=False)
+    te_practiques = any("page_out" in it for it in group["items"])
+    if te_practiques:
+        intro = ('Cada pràctica té la seva pàgina: què es pretén, el codi '
+                 'explicat per blocs i el fitxer complet per copiar a l\'IDE.')
+    else:
+        intro = ('Fitxers de codi font. Desplega cada fitxer per llegir-lo i '
+                 'fes servir el botó <strong>Copia</strong> per dur-lo a '
+                 'l\'IDE d\'Arduino o a l\'editor de micro:bit.')
     parts = [f'<h1>{html.escape(group["label"])}</h1>',
-             '<p class="codi-intro">Fitxers de codi font. Desplega cada fitxer per '
-             'llegir-lo i fes servir el botó <strong>Copia</strong> per dur-lo a '
-             'l\'IDE d\'Arduino o a l\'editor de micro:bit.</p>']
+             f'<p class="codi-intro">{intro}</p>']
     caps = {it["anchor"]: capcalera_codi(it["path"]) for it in group["items"]}
     # índex de fitxers amb l'etiqueta «quan es fa» i la descripció de capçalera
     parts.append('<ul class="codi-llista">')
     for it in group["items"]:
         desc, quan = caps[it["anchor"]]
-        li = f'<li><a href="#{it["anchor"]}"><code>{html.escape(it["rel"])}</code></a>'
+        if "page_out" in it:
+            href = rel_url(group["out_rel"], it["page_out"])
+            li = (f'<li><a href="{href}"><strong>{html.escape(it["title"])}</strong></a> '
+                  f'<code>{html.escape(it["rel"])}</code>')
+        else:
+            li = f'<li><a href="#{it["anchor"]}"><code>{html.escape(it["rel"])}</code></a>'
         if quan:
             li += f' <span class="codi-quan">{html.escape(quan)}</span>'
-        if desc:
+        if desc and "page_out" not in it:
             li += f' — <span class="codi-desc">{html.escape(desc)}</span>'
         parts.append(li + "</li>")
     parts.append("</ul>")
     for it in group["items"]:
+        if "page_out" in it:
+            continue  # el codi complet viu a la pàgina de la pràctica
         code = it["path"].read_text(encoding="utf-8", errors="replace")
         highlighted = highlight(code, lexer_for(it["path"]), formatter)
         desc, quan = caps[it["anchor"]]
@@ -1124,6 +1162,65 @@ def render_code_page(group: dict, pages: list[Page], extra_nav: str = "") -> str
     return page_shell(out_rel=group["out_rel"], section_key=group["section"],
                       title=group["label"], content_html=content,
                       tri=group["tri"], pages=pages, public=group.get("public", "alumnat"))
+
+
+def pager_practiques(group: dict, practs: list[dict], i: int) -> str:
+    """Paginador ‹ pràctica anterior · índex · següent › d'una pàgina de pràctica."""
+    cur = practs[i]
+    prev_p = practs[i - 1] if i > 0 else None
+    next_p = practs[i + 1] if i < len(practs) - 1 else None
+    parts = ['<nav class="pager" aria-label="Pràctiques de la SA">']
+    if prev_p:
+        parts.append(f'<a class="pager-a prev" href="{rel_url(cur["page_out"], prev_p["page_out"])}">'
+                     f'<span class="pager-dir">← Anterior</span>'
+                     f'<span class="pager-tit">{html.escape(prev_p["title"])}</span></a>')
+    else:
+        parts.append('<span class="pager-a buit"></span>')
+    idx_href = rel_url(cur["page_out"], group["out_rel"])
+    parts.append(f'<a class="pager-seq" href="{idx_href}">{html.escape(group["label"])} '
+                 f'· {i + 1}/{len(practs)}</a>')
+    if next_p:
+        parts.append(f'<a class="pager-a next" href="{rel_url(cur["page_out"], next_p["page_out"])}">'
+                     f'<span class="pager-dir">Següent →</span>'
+                     f'<span class="pager-tit">{html.escape(next_p["title"])}</span></a>')
+    else:
+        parts.append('<span class="pager-a buit"></span>')
+    parts.append("</nav>")
+    return "".join(parts)
+
+
+def render_practica_page(item: dict, group: dict, pages: list[Page], md_map: dict,
+                         code_map: dict, sim_map: dict, copied_imgs: dict,
+                         md_title_map: dict, extra_nav: str = "") -> tuple[str, str]:
+    """Pàgina pròpia d'una pràctica: l'EXPLICACIO.md (per què es fa + codi per
+    blocs) i, al final, el fitxer complet plegat amb el botó Copia. El codi
+    sencer mai apareix desplegat d'entrada: primer la comprensió."""
+    formatter = HtmlFormatter(cssclass="highlight", nowrap=False)
+    text = strip_github_only(item["expl"].read_text(encoding="utf-8"))
+    md = make_md()
+    body = wrap_tables(md.convert(text))
+    body = rewrite_links(body, item["expl"], item["page_out"], md_map, code_map,
+                         sim_map, copied_imgs, md_title_map)
+    toc = toc_html(md)
+    code = item["path"].read_text(encoding="utf-8", errors="replace")
+    highlighted = highlight(code, lexer_for(item["path"]), formatter)
+    _desc, quan = capcalera_codi(item["path"])
+    quan_html = (f'<span class="codi-quan">{html.escape(quan)}</span>'
+                 if quan else "")
+    body += (
+        '\n<h2 id="codi-complet">El codi complet</h2>'
+        f'<details class="codi-bloc" id="{item["anchor"]}">'
+        f'<summary class="codi-cap"><code class="codi-nom">{html.escape(item["rel"])}</code>'
+        f'{quan_html}'
+        f'<button class="copia-btn" type="button">Copia</button></summary>'
+        f'<div class="codi-cos">{highlighted}</div></details>'
+    )
+    if extra_nav:
+        body += "\n" + extra_nav
+    full = page_shell(out_rel=item["page_out"], section_key=group["section"],
+                      title=item["title"], content_html=body, toc=toc,
+                      tri=group["tri"], pages=pages, public="alumnat")
+    return full, body
 
 
 def render_sim_page(group: dict, pages: list[Page]) -> str:
@@ -1274,7 +1371,8 @@ def tri_blocks_html(entries: list[tuple]) -> str:
 
 def section_index_extra(section_key: str, current_out: str, pages: list[Page]) -> str:
     root_index = f"{section_key}/index.html"
-    sec_pages = [p for p in pages if p.section == section_key and p.out_rel != root_index]
+    sec_pages = [p for p in pages if p.section == section_key and p.out_rel != root_index
+                 and p.kind != "practica"]  # el recompte de materials no les inclou
 
     groups: dict[str, list[Page]] = {}
     for p in sec_pages:
@@ -1864,7 +1962,7 @@ def main():
 
     # Pàgines de documents
     for p in pages:
-        if p.kind in ("code", "sim"):
+        if p.kind in ("code", "sim", "practica"):
             continue
         text = strip_github_only(p.src.read_text(encoding="utf-8"))
         md = make_md()
@@ -1917,6 +2015,7 @@ def main():
                              "b": text_pla_cerca(content)})
 
     # Pàgines de codi
+    n_practiques = 0
     for g in code_groups:
         extra_nav = ""
         sa = detect_sa(g["out_rel"])
@@ -1929,6 +2028,23 @@ def main():
         dest.write_text(full, encoding="utf-8")
         search_index.append({"t": g["label"], "s": SECTION_BY_KEY[g["section"]]["title"],
                              "u": g["out_rel"], "tri": g["tri"], "p": g.get("public", "alumnat")})
+        # Pàgines de pràctica (una per sketch amb EXPLICACIO.md)
+        practs = [it for it in g["items"] if "page_out" in it]
+        for i, it in enumerate(practs):
+            nav = ""
+            if sa and 1 <= sa <= 9:
+                nav += sa_fil_html(sa, it["page_out"], sa_fil)
+            nav += pager_practiques(g, practs, i)
+            full, cos = render_practica_page(it, g, pages, md_map, code_map,
+                                             sim_map, copied_imgs, md_title_map, nav)
+            dest = WEB / it["page_out"]
+            dest.parent.mkdir(parents=True, exist_ok=True)
+            dest.write_text(full, encoding="utf-8")
+            search_index.append({"t": it["title"],
+                                 "s": SECTION_BY_KEY[g["section"]]["title"],
+                                 "u": it["page_out"], "tri": g["tri"],
+                                 "p": "alumnat", "b": text_pla_cerca(cos)})
+            n_practiques += 1
 
     # Pàgines de simulacions Wokwi
     for g in sim_groups:
@@ -1966,8 +2082,9 @@ def main():
     (SCRIPT_DIR / "_activitats.json").write_text(
         json.dumps(pdf_manifest, ensure_ascii=False, indent=1), encoding="utf-8")
 
-    print(f"  · {len([p for p in pages if p.kind not in ('code', 'sim')])} pàgines de document")
+    print(f"  · {len([p for p in pages if p.kind not in ('code', 'sim', 'practica')])} pàgines de document")
     print(f"  · {len(code_groups)} pàgines de codi")
+    print(f"  · {n_practiques} pàgines de pràctica")
     print(f"  · {len(sim_groups)} pàgines de simulació")
     print(f"  · {len(copied_imgs)} imatges copiades")
     print(f"  · {len(search_index)} entrades a l'índex de cerca")

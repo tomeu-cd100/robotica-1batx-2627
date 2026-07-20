@@ -16,12 +16,14 @@
 - NTC + resistència 10 kΩ, LDR + 10 kΩ, LED (o petit ventilador via transistor/relé), polsador.
 
 ## Codi de suport (`codi/`)
+
+> Cada sketch té la seva **pàgina de pràctica** (per què es fa + codi explicat per blocs, l'`EXPLICACIO.md` de la seva carpeta): és el text que l'alumnat pot rellegir si falta a classe o repassa a casa. El guió oral de sota continua sent teu.
+
 | Fitxer | Contingut |
 |---|---|
 | `01_llac_obert_vs_tancat.ino` | Comparació dels dos tipus de control. |
 | `02_termostat_histeresi.ino` | Control tot/res amb histèresi. |
-| `03_maquina_estats.ino` | Màquina d'estats amb `enum`/`switch`. |
-| [`03_maquina_estats_BASTIDA/03_maquina_estats_BASTIDA.ino`](codi/03_maquina_estats_BASTIDA/03_maquina_estats_BASTIDA.ino) | **Bastida**: el patró (`enum`/`switch` + `millis()`) ja muntat; l'alumnat només omple els `// TODO`. |
+| `03_maquina_estats.ino` | Màquina d'estats amb `enum`/`switch`. La seva pàgina inclou l'**esquelet «Si t'encalles»** (el patró `enum`/`switch` + `millis()` ja muntat; l'alumnat només omple els `// TODO`). |
 | `04_control_proporcional.ino` | Regulació proporcional bàsica **(+ampliació, no nucli)**. |
 
 ## Mètode de projecte i continuïtat
@@ -75,7 +77,7 @@
 
 **Punt clau:** una **màquina d'estats** organitza comportaments complexos en estats clars i transicions; evita el codi espagueti i no bloqueja (s'usa amb `millis()`).
 
-> 🧩 **Bastida `millis()` (clau per a aquesta sessió):** el patró no bloquejant amb `millis()` es **practica a la SA4** amb [`05_dos_leds_millis`](../SA4/codi/05_dos_leds_millis/05_dos_leds_millis.ino) (dos LED a ritmes diferents sense `delay()`). Si no s'ha fet, dedica-hi **~10'** ara com a escalfament. Per a qui s'encalli, reparteix l'esquelet [`03_maquina_estats_BASTIDA`](codi/03_maquina_estats_BASTIDA/03_maquina_estats_BASTIDA.ino): té el patró (`enum`/`switch` + `millis()`) ja muntat i només cal omplir els `// TODO` (comportament i transicions de cada estat).
+> 🧩 **Bastida `millis()` (clau per a aquesta sessió):** el patró no bloquejant amb `millis()` es **practica a la SA4** amb [`05_dos_leds_millis`](../SA4/codi/05_dos_leds_millis/05_dos_leds_millis.ino) (dos LED a ritmes diferents sense `delay()`). Si no s'ha fet, dedica-hi **~10'** ara com a escalfament. Per a qui s'encalli, reparteix l'esquelet de la secció «Si t'encalles» de la [pàgina de la pràctica de la màquina d'estats](codi/03_maquina_estats/EXPLICACIO.md): té el patró (`enum`/`switch` + `millis()`) ja muntat i només cal omplir els `// TODO` (comportament i transicions de cada estat).
 
 ---
 
@@ -141,7 +143,7 @@
 
 | Via | Mesura |
 |---|---|
-| **Bastida** (qui s'encalla) | Donar el **diagrama de blocs** parcialment fet; començar amb el termòstat tot/res abans del proporcional; parella heterogènia. |
+| **Bastida** (qui s'encalla) | Donar el **diagrama de blocs** parcialment fet; començar amb el termòstat tot/res abans del proporcional; l'**esquelet amb `// TODO`** de la secció «Si t'encalles» de la [pàgina de la pràctica de la màquina d'estats](codi/03_maquina_estats/EXPLICACIO.md); parella heterogènia. |
 | **+ Ampliació** (qui va sobrat) | Afegir estats, comparar tot/res vs P, ajustar `Kp`; reptes ⭐ de [`Reptes/Reptes_SA6.md`](../../Reptes/Reptes_SA6.md). |
 | **Representació múltiple** | Diagrama de blocs i d'estats, **Serial Plotter** (resposta visual), simulació Wokwi. |
 | **Implicació** | Cada parella tria el procés a controlar i la finestra d'histèresi. |

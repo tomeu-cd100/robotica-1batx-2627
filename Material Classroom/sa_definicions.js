@@ -322,7 +322,7 @@ export const DEFINICIONS = {
       p('Què passaria SENSE histèresi (un sol llindar)?'),
 
       t('Activitat 3 · Màquina d’estats (S3)',
-        "Carrega 03_maquina_estats.ino. Dibuixa el diagrama d'estats al quadern (estats i transicions). Si t'encalles, parteix de l'esquelet 03_maquina_estats_BASTIDA."),
+        "Carrega 03_maquina_estats.ino. Dibuixa el diagrama d'estats al quadern (estats i transicions). Si t'encalles, parteix de l'esquelet de la secció «Si t'encalles» de la pàgina de la pràctica de 03_maquina_estats (al web)."),
       s('Quins estats té la màquina?'),
       p('Descriu el teu diagrama d’estats (estats i transicions; el dibuix va al quadern)'),
       p('Repte: quin estat nou o transició condicional hi has afegit?'),

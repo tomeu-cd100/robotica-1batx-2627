@@ -30,4 +30,10 @@ Material docent en **català** (Robòtica 1r Batx, LOMLOE). Markdown font única
   `**Durada:** … · **Maquinari:** …`.
 - Directives del generador en comentaris HTML: `<!-- web:only-github -->…<!-- /web:only-github -->`.
 - Material transversal a `Classes/00_General/` amb capçalera `> **Per a qui és?**`.
+- **Pàgines de pràctica**: cada sketch d'alumnat (`Classes/SAn/codi/`) duu una
+  `EXPLICACIO.md` al costat (`<nom>_EXPLICACIO.md` si el sketch és un fitxer solt) que el
+  generador converteix en pàgina pròpia (per què es fa + codi per blocs + fitxer complet
+  plegat). Les bastides NO són sketches: viuen com a secció «🧗 Si t'encalles» (bloc
+  `<details markdown="1">`) dins de l'explicació de la pràctica base. Ho vigila
+  `tools/qa.py:comprova_explicacions()`.
 - Commits en català, tipus Conventional Commits.

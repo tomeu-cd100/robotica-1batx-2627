@@ -18,6 +18,9 @@
 > 🆘 **Pla B sense maquinari (Wokwi no simula micro:bit):** el **simulador integrat de python.microbit.org** cobreix matriu LED, botons, acceleròmetre (gestos), llum i temperatura — S1 i S2 senceres es poden fer sense placa. El que **no** cobreix és la **ràdio entre dues plaques** (S3): si falten micro:bit, fes la ràdio com a **demo projectada del docent** amb 2 plaques i que les parelles programin l'emissor/receptor al simulador (el codi es verifica igual; només la transmissió és a la demo).
 
 ## Codi de suport (`codi/`)
+
+> Cada programa té la seva **pàgina de pràctica** (per què es fa + codi explicat per blocs, el `<nom>_EXPLICACIO.md` del costat de cada `.py`): és el text que l'alumnat pot rellegir si falta a classe o repassa a casa. El guió oral de sota continua sent teu.
+
 | Fitxer | Contingut |
 |---|---|
 | [`01_name_badge.py`](codi/01_name_badge.py) | Matriu LED, botons, imatges. |
@@ -109,7 +112,7 @@
 
 | Via | Mesura |
 |---|---|
-| **Bastida** (qui s'encalla) | **MakeCode (blocs)** com a pont abans del Python; **simulador** (python.microbit.org) per provar sense placa; donar l'esquelet `while True:` indentat. |
+| **Bastida** (qui s'encalla) | **MakeCode (blocs)** com a pont abans del Python; **simulador** (python.microbit.org) per provar sense placa; l'**esquelet amb `# TODO`** de la secció «Si t'encalles» de la [pàgina de la pràctica del llum de nit](codi/03_nightlight_EXPLICACIO.md). |
 | **+ Ampliació** (qui va sobrat) | Xarxa de 3+ plaques per ràdio, registre de màx/mín, animacions pròpies; reptes ⭐ de [`Reptes/Reptes_SA5.md`](../../Reptes/Reptes_SA5.md). |
 | **Representació múltiple** | Blocs ↔ codi, simulador visual, taula comparativa C++/Python. |
 | **Implicació** | Cada parella tria el projecte (badge, comptapassos, nightlight o joc per ràdio). |

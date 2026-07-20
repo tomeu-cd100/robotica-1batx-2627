@@ -27,6 +27,6 @@
 | Explicar el diagrama de blocs del meu control | | | |
 
 ## 🆘 Si m'encallo
-Segueixo **DEPURA**: **D**escriu · **E**xamina (**Serial Plotter**: la sortida segueix la consigna o oscil·la?) · **P**rova una hipòtesi cada cop · **U**bica · **R**epara · **A**punta. Si m'encallo amb el patró, parteixo de l'esquelet `03_maquina_estats_BASTIDA`. Encara encallat? **[Targeta de rescat](../00_General/00_Targetes_rescat.md)** (començo per la 🟢).
+Segueixo **DEPURA**: **D**escriu · **E**xamina (**Serial Plotter**: la sortida segueix la consigna o oscil·la?) · **P**rova una hipòtesi cada cop · **U**bica · **R**epara · **A**punta. Si m'encallo amb el patró, parteixo de l'esquelet de la secció «Si t'encalles» de la [pàgina de la pràctica de la màquina d'estats](codi/03_maquina_estats/EXPLICACIO.md). Encara encallat? **[Targeta de rescat](../00_General/00_Targetes_rescat.md)** (començo per la 🟢).
 
 > Tens dos o més 🔴? Repassa el material **abans de la prova T2**. La **versió nucli** (termòstat amb histèresi documentat) ja és assoliment satisfactori.

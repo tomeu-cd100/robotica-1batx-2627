@@ -7,7 +7,7 @@
 ## 🧰 1. Logística prèvia (preparar abans de començar la SA)
 - [ ] Material per parella: Arduino UNO + USB, protoboard, cables
 - [ ] Components: NTC + 10 kΩ, LDR + 10 kΩ, LED (o ventilador via transistor/relé), polsador
-- [ ] Sketches provats: `01_llac_obert_vs_tancat` · `02_termostat_histeresi` · `03_maquina_estats` (+ **BASTIDA**) · `04_control_proporcional`
+- [ ] Sketches provats: `01_llac_obert_vs_tancat` · `02_termostat_histeresi` · `03_maquina_estats` · `04_control_proporcional`
 - [ ] **Preparar la prova pràctica T2** ([`Avaluació/Prova_practica_T2.md`](../../Avaluació/Prova_practica_T2.md)) — ocupa la S4 sencera (individual; kit + micro:bit per alumne/a)
 - [ ] Repassar el patró `millis()` no bloquejant (bastida SA4 `05_dos_leds_millis`) per si cal escalfament
 - [ ] Compartir rúbriques **R1, R3 i R4** amb l'alumnat *abans* del producte
@@ -26,7 +26,7 @@
 
 **Sessió 3 — Màquines d'estats + tancament del producte**
 - [ ] **Mini-check individual** a l'inici (10', no qualifica): dos llindars d'histèresi
-- [ ] `03_maquina_estats`: `enum` + `switch`, transicions per temps o esdeveniment · repartir la **BASTIDA** (`// TODO`) a qui s'encalli
+- [ ] `03_maquina_estats`: `enum` + `switch`, transicions per temps o esdeveniment · repartir l'**esquelet «Si t'encalles»** (`// TODO`, a la [pàgina de la pràctica](codi/03_maquina_estats/EXPLICACIO.md)) a qui s'encalli
 - [ ] **Defenses 2–3' a peu de taula** durant el repte (decisió tècnica justificada) + documentació + autoavaluació
 - ⚠️ *Error:* un `case` sense transició → la màquina es "penja"
 
@@ -44,7 +44,7 @@
 - [ ] Coavaluació + **exit tickets** + registre **0–10**
 
 ## 🪜 4. Atenció a la diversitat (previst per aquesta SA)
-- [ ] **Bastida:** diagrama de blocs parcialment fet · termòstat tot/res abans del proporcional · esquelet `03_maquina_estats_BASTIDA` · parella heterogènia
+- [ ] **Bastida:** diagrama de blocs parcialment fet · termòstat tot/res abans del proporcional · esquelet «Si t'encalles» de la [pàgina de la màquina d'estats](codi/03_maquina_estats/EXPLICACIO.md) · parella heterogènia
 - [ ] **+ Ampliació:** afegir estats · comparar tot/res vs P · ajustar `Kp` · [reptes ⭐ SA6](../../Reptes/Reptes_SA6.md)
 - [ ] **Representació múltiple:** diagrames de blocs i d'estats · **Serial Plotter** · Wokwi
 - [ ] ♿ **Accessibilitat (daltonisme):** indicador verd/vermell amb pista no cromàtica (posició, etiqueta ON/OFF, parpelleig)

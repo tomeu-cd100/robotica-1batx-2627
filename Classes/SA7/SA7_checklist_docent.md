@@ -42,7 +42,7 @@
 - [ ] Coavaluació entre equips + **exit tickets** + registre **0–10**
 
 ## 🪜 4. Atenció a la diversitat (previst per aquesta SA)
-- [ ] **Bastida:** provar **una funció de moviment cada cop** · donar el bloc de pins ja ajustat · rols clars
+- [ ] **Bastida:** provar **una funció de moviment cada cop** · donar el bloc de pins ja ajustat · esquelet «Si t'encalles» de la pàgina de l'evita-obstacles (`codi/03_evita_obstacles/EXPLICACIO.md`) · rols clars
 - [ ] **+ Ampliació:** gir proporcional a la proximitat · correcció suau del seguidor · tornar al punt de sortida · [reptes ⭐ SA7](../../Reptes/Reptes_SA7.md)
 - [ ] ✏️ **Retirada de bastida — repte "a full en blanc":** un repte amb l'editor buit (només pseudocodi + full-xuleta de crides). No deixar obrir el sketch de referència fins tenir el pseudocodi
 - [ ] 🤖 **Llavor IA (2–3'):** comportament **programat** (regles) vs **après** (visió per computador, milions d'exemples) → SA8

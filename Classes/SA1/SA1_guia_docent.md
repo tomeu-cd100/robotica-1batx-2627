@@ -27,6 +27,8 @@
 | [`SA1_poster_robot_plantilla.md`](SA1_poster_robot_plantilla.md) | Producte de la SA (es pot iniciar a la Sessió 3). |
 | `codi/` | `blink`, `blink_repte` i ampliacions `blink_millis`, `sos_morse`. |
 
+> Cada sketch de `codi/` té la seva **pàgina de pràctica** (per què es fa + codi explicat per blocs, l'`EXPLICACIO.md` de la seva carpeta): és el text que l'alumnat pot rellegir si falta a classe o repassa a casa. El «Guió de modelatge» oral de sota continua sent teu.
+
 ---
 
 ## El mètode de projecte (fil conductor del curs)
@@ -157,7 +159,7 @@ A la SA1 hem fet **parpellejar un LED** (una sortida digital senzilla). A la **S
 
 | Necessitat | Mesura |
 |---|---|
-| **Bastida (qui ho necessita)** | Apartats guiats de la fitxa i del pòster; la versió **etiquetada** de la placa com a referència; treball en **parella heterogènia** segons la diagnòstica. |
+| **Bastida (qui ho necessita)** | Apartats guiats de la fitxa i del pòster; la versió **etiquetada** de la placa com a referència; l'**esquelet amb `// TODO`** de la secció «Si t'encalles» de la [pàgina de la pràctica del repte](codi/blink_repte/EXPLICACIO.md); treball en **parella heterogènia** segons la diagnòstica. |
 | **+ Ampliació (qui va sobrat)** | Sketches `blink_millis.ino` (sense `delay()`) i `sos_morse.ino` (funcions); investigar un robot industrial/IA i preparar defensa oral d'1 min. |
 | **Diversitat lingüística/lectora** | Glossari mínim a la pissarra (sensor, actuador, procés, embegut); diagrames i imatges (model E-P-S, placa, circuit) en lloc de text dens. |
 | **Sense maquinari per a tothom** | Tot és reproduïble a **Tinkercad**/**Wokwi**; es pot treballar amb el LED **intern** (pin 13) sense cablejar res. |

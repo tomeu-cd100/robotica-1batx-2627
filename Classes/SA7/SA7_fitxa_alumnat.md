@@ -65,7 +65,7 @@ Si la tasca encara no t'apareix al Classroom, és que la SA encara no ha començ
 2. Dibuixa la **decisió** (percepció → acció).
 3. **Repte:** millora l'estratègia (retrocedir, gir aleatori).
 
-> 💡 Si t'encalles amb el cicle, parteix de l'esquelet `05_robot_reactiu_BASTIDA`: les funcions de moviment i `distancia()` ja estan fetes i provades; tu omples el `loop()` amb percepció → decisió → acció.
+> 💡 Si t'encalles amb el cicle, parteix de l'**esquelet** de la secció «Si t'encalles» de la [pàgina de la pràctica de l'evita-obstacles](codi/03_evita_obstacles/EXPLICACIO.md): les funcions de moviment i `distancia()` ja estan fetes i provades; tu omples el `loop()` amb percepció → decisió → acció.
 
 ### 4 · Seguidor de línia + repte de pista (S4)
 1. Calibra els sensors: valor "línia" = ______ / "fons" = ______

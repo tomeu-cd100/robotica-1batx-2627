@@ -54,8 +54,10 @@ Setena situació d'aprenentatge (**8 h · 4 sessions** + sessió 0 de muntatge, 
 |---|---|
 | `01_moviment_basic.ino` | Funcions de moviment i cinemàtica diferencial. |
 | `02_trajectoria_quadrat.ino` | Trajectòria programada i calibratge del gir de 90°. |
-| `03_evita_obstacles.ino` | Comportament reactiu (llaç tancat) amb ultrasons. |
+| `03_evita_obstacles.ino` | Comportament reactiu (llaç tancat) amb ultrasons (amb esquelet «Si t'encalles» a la seva pàgina). |
 | `04_seguidor_linia.ino` | Seguidor de línia amb sensors IR. |
+
+Cada sketch té la seva **pàgina de pràctica** a la web (per què es fa + codi explicat per blocs); a GitHub, l'explicació és a l'`EXPLICACIO.md` de la carpeta del sketch.
 
 <!-- /web:only-github -->
 

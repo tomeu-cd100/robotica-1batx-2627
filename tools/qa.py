@@ -22,6 +22,8 @@ Comprova (i falla amb exit != 0 si troba res):
  10. Sintaxi dels `.py` del solucionari (Reptes/**), com el punt 4.
  11. Enllaços externs (OPT-IN amb QA_ENLLACOS_EXTERNS=1: depèn de la xarxa;
      mai no bloqueja el CI — els caiguts surten com a avís).
+ 13. Pàgines de pràctica: cada sketch d'alumnat té la seva EXPLICACIO.md
+     (pàgina de pràctica a la web) i no queda cap sketch *_BASTIDA solt.
 
 Abans de res (punt 0) comprova que els paquets del generador (markdown,
 pygments) estan instal·lats: sense ells els punts 6 i 8 petarien a mig camí.
@@ -416,6 +418,42 @@ def comprova_lliurables() -> None:
     print(f"12) Lliurables per SA: 9 README, {fallats} incoherències.")
 
 
+# --- 13 · Pàgines de pràctica: cada sketch d'alumnat té la seva explicació ---
+def comprova_explicacions() -> None:
+    """Cada sketch d'alumnat (Classes/SAn/codi) ha de tenir l'explicació que
+    el generador converteix en pàgina de pràctica: EXPLICACIO.md dins de la
+    carpeta del sketch, o <nom>_EXPLICACIO.md al costat si és un fitxer solt.
+    També vigila que no reapareguin sketches *_BASTIDA: les bastides viuen
+    fusionades a la secció «Si t'encalles» de la pràctica base."""
+    total = 0
+    fallats = 0
+    for sa_dir in sorted((ARREL / "Classes").glob("SA*")):
+        codi = sa_dir / "codi"
+        if not codi.exists():
+            continue
+        for f in sorted(codi.rglob("*")):
+            if f.suffix.lower() not in {".ino", ".py"} or "__pycache__" in f.parts:
+                continue
+            rel = f.relative_to(ARREL)
+            if "_BASTIDA" in f.stem:
+                errors.append(f"[explicacions] {rel}: sketch _BASTIDA solt "
+                              f"(fusiona'l a la secció «Si t'encalles» de la pràctica base)")
+                fallats += 1
+                continue
+            if f.parent == codi:                      # fitxer solt (micro:bit)
+                expl = f.with_name(f.stem + "_EXPLICACIO.md")
+            elif f.stem == f.parent.name:             # fitxer principal del sketch
+                expl = f.parent / "EXPLICACIO.md"
+            else:
+                continue                              # fitxer auxiliar (.h, etc.)
+            total += 1
+            if not expl.exists():
+                errors.append(f"[explicacions] {rel}: falta {expl.name} "
+                              f"(pàgina de pràctica sense explicació)")
+                fallats += 1
+    print(f"13) Pàgines de pràctica: {total} sketches, {fallats} sense explicació.")
+
+
 # --- 11 · Enllaços externs (OPT-IN: QA_ENLLACOS_EXTERNS=1) ---------------------
 RE_URL_EXTERN = re.compile(r"https?://[^\s)\"'<>\]]+")
 DOMINIS_IGNORATS = (
@@ -500,6 +538,7 @@ def main() -> int:
     comprova_python_reptes()
     comprova_enllacos_externs()
     comprova_lliurables()
+    comprova_explicacions()
     for a in avisos:
         print(f"⚠️  {a}")
     if errors:

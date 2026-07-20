@@ -59,7 +59,7 @@ Si la tasca encara no t'apareix al Classroom, és que la SA encara no ha començ
 3. Com es regula la **velocitat**? Per quin pin? ______________________
 4. **Repte:** funcions `endavant(vel)`, `enrere(vel)`, `atura()`.
 
-> 💡 Si t'encalles amb les funcions, parteix de l'esquelet `06_moviment_BASTIDA`: el `loop()` ja les crida en ordre; tu omples cada funció amb els `digitalWrite` (sentit) i `analogWrite` (velocitat).
+> 💡 Si t'encalles amb les funcions, parteix de l'**esquelet** de la secció «Si t'encalles» de la [pàgina de la pràctica del motor](codi/02_motor_pont_h/EXPLICACIO.md): el `loop()` ja les crida en ordre; tu omples cada funció amb els `digitalWrite` (sentit) i `analogWrite` (velocitat).
 
 ### 3 · Del sensor al moviment (S3)
 1. Connecta l'ultrasons i fes que la **velocitat depengui de la distància**:

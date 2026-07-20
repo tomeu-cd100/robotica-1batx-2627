@@ -20,6 +20,9 @@ La **Imagina 3dBot** és Arduino-compatible, però **els pins dels motors depene
 - **Circuit de proves** a terra: pista amb línia negra i recorregut amb obstacles.
 
 ## Codi de suport (`codi/`)
+
+> Cada sketch té la seva **pàgina de pràctica** (per què es fa + codi explicat per blocs, l'`EXPLICACIO.md` de la seva carpeta): és el text que l'alumnat pot rellegir si falta a classe o repassa a casa. El guió oral de sota continua sent teu.
+
 | Fitxer | Contingut |
 |---|---|
 | `01_moviment_basic.ino` | Funcions `endavant`, `enrere`, `gira_dreta`, `gira_esquerra`, `atura`. |
@@ -140,7 +143,7 @@ La **Imagina 3dBot** és Arduino-compatible, però **els pins dels motors depene
 
 | Via | Mesura |
 |---|---|
-| **Bastida** (qui s'encalla) | Provar **una funció de moviment cada cop** abans de la trajectòria; donar el bloc de pins ja ajustat; equips heterogenis amb rols clars. |
+| **Bastida** (qui s'encalla) | Provar **una funció de moviment cada cop** abans de la trajectòria; donar el bloc de pins ja ajustat; l'**esquelet amb `// TODO`** de la secció «Si t'encalles» de la [pàgina de la pràctica de l'evita-obstacles](codi/03_evita_obstacles/EXPLICACIO.md); equips heterogenis amb rols clars. |
 | **+ Ampliació** (qui va sobrat) | Gir proporcional a la proximitat, correcció suau del seguidor, tornar al punt de sortida; reptes ⭐ de [`Reptes/Reptes_SA7.md`](../../Reptes/Reptes_SA7.md). |
 | **Representació múltiple** | Diagrama de decisió (percepció→acció), demostració física, vídeo de les iteracions. |
 | **Implicació** | Cada equip tria l'estratègia i el repte de pista; competició amistosa per temps. |

@@ -51,10 +51,13 @@ Segona situació d'aprenentatge (**8 h · 4 sessions**, 1r trimestre). Es passa 
 | Sketch | Què mostra |
 |---|---|
 | `01_led_basic.ino` | Sortida digital amb constants i variables. |
-| `02_semafor.ino` | Estructures de control (`for`, `if`) i temporització. |
+| `02_semafor.ino` | Estructures de control (`for`, `if`) i temporització (amb esquelet «Si t'encalles» a la seva pàgina). |
+| `02b_semafor_switch.ino` | El mateix semàfor amb `switch` sobre una variable de fase (llavor de la SA6). |
 | `03_fade_pwm.ino` | PWM amb `analogWrite` i funció `map()`. |
 | `04_rgb.ino` | Barreja de colors amb LED RGB. |
 | `05_panell_senyalitzacio.ino` | Producte: RGB (estat) + piezo (avís) + relé (càrrega). |
+
+Cada sketch té la seva **pàgina de pràctica** a la web (per què es fa + codi explicat per blocs); a GitHub, l'explicació és a l'`EXPLICACIO.md` de la carpeta del sketch.
 
 <!-- /web:only-github -->
 

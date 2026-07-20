@@ -53,7 +53,7 @@ En aquesta pàgina hi tens el que necessites mentre treballes: els **objectius i
 3. Reescriu el semàfor amb **`switch`** sobre una variable `fase` (0-1-2). Què passa si oblides un `break`? ______________________
 4. **Repte:** afegeix una **fase nocturna** (groc intermitent) com a fase nova del `switch`.
 
-> 💡 Si t'encalles muntant el semàfor, parteix de l'esquelet `06_semafor_BASTIDA`: pins i `setup()` ja fets; tu omples els `// TODO` de les fases (i, al final, un groc que «respira» amb PWM).
+> 💡 Si t'encalles muntant el semàfor, parteix de l'**esquelet** de la secció «Si t'encalles» de la [pàgina de la pràctica del semàfor](codi/02_semafor/EXPLICACIO.md): pins i `setup()` ja fets; tu omples els `// TODO` de les fases (i, al final, un groc que «respira» amb PWM).
 
 ### 3 · PWM: intensitat i color (S3)
 1. Efecte *fade* amb `03_fade_pwm.ino` (pin 9). Rang d'`analogWrite`: ____ a ____

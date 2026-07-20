@@ -38,7 +38,7 @@
 - [ ] Coavaluació + **exit tickets** + registre **0–10**
 
 ## 🪜 4. Atenció a la diversitat (previst per aquesta SA)
-- [ ] **Bastida:** **MakeCode (blocs)** com a pont abans del Python · **simulador** per provar sense placa · donar l'esquelet `while True:` indentat
+- [ ] **Bastida:** **MakeCode (blocs)** com a pont abans del Python · **simulador** per provar sense placa · esquelet «Si t'encalles» de la [pàgina del llum de nit](codi/03_nightlight_EXPLICACIO.md)
 - [ ] **+ Ampliació:** xarxa de 3+ plaques per ràdio · registre de màx/mín · animacions pròpies · [reptes ⭐ SA5](../../Reptes/Reptes_SA5.md)
 - [ ] **Representació múltiple:** blocs ↔ codi · simulador visual · taula comparativa
 - [ ] **Rescat:** [targetes de rescat](../00_General/00_Targetes_rescat.md) 🟢🟡🔴 a qui s'encalli

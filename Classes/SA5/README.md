@@ -51,8 +51,10 @@ Cinquena situació d'aprenentatge (**6 h · 3 sessions** + 4a opcional d'ampliac
 |---|---|
 | [`01_name_badge.py`](codi/01_name_badge.py) | Matriu LED, botons i imatges; indentació de Python. |
 | [`02_passes.py`](codi/02_passes.py) | Comptapassos amb l'acceleròmetre (llindar + antirebot). |
-| [`03_nightlight.py`](codi/03_nightlight.py) | Llum automàtic amb el sensor de llum. |
+| [`03_nightlight.py`](codi/03_nightlight.py) | Llum automàtic amb el sensor de llum (amb esquelet «Si t'encalles» a la seva pàgina). |
 | [`04_radio_dau.py`](codi/04_radio_dau.py) | Dau digital + comunicació per ràdio entre dues plaques. |
+
+Cada programa té la seva **pàgina de pràctica** a la web (per què es fa + codi explicat per blocs); a GitHub, l'explicació és al `<nom>_EXPLICACIO.md` del costat de cada `.py`.
 
 <!-- /web:only-github -->
 

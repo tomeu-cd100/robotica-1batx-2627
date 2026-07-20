@@ -22,12 +22,15 @@
 > 🆘 **Pla B sense maquinari (Wokwi no simula micro:bit):** el **simulador de python.microbit.org** cobreix sensors i pantalla (l'`03_ia_gestos.py` s'hi pot provar amb els gestos simulats), però **no la ràdio entre plaques**: si falten micro:bit a la S1, les parelles programen emissor i receptor al simulador i la transmissió real es fa com a **demo projectada del docent** amb 2 plaques. La S2 (disseny IoT) i la S3 (Teachable Machine) no necessiten placa.
 
 ## Codi de suport (`codi/`)
+
+> Cada sketch té la seva **pàgina de pràctica** (per què es fa + codi explicat per blocs, el `*_EXPLICACIO.md` del costat de cada `.py` i l'`EXPLICACIO.md` de la carpeta de l'ESP32): és el text que l'alumnat pot rellegir si falta a classe o repassa a casa. El guió oral de sota continua sent teu.
+
 | Fitxer | Contingut |
 |---|---|
 | [`01_telemetria_emissor.py`](codi/01_telemetria_emissor.py) | micro:bit que envia dades de sensors per ràdio. |
 | [`02_telemetria_receptor.py`](codi/02_telemetria_receptor.py) | micro:bit que rep, mostra i registra (sèrie). |
 | [`03_ia_gestos.py`](codi/03_ia_gestos.py) | Classificació de gestos amb l'acceleròmetre (IA basada en regles). |
-| `04_esp32_telemetria.ino` | *(Opcional)* ESP32 que publica dades per WiFi. |
+| [`04_esp32_telemetria.ino`](codi/04_esp32_telemetria/04_esp32_telemetria.ino) | *(Opcional)* ESP32 que publica dades per WiFi. |
 
 ## Mètode de projecte i continuïtat
 - **Cicle de treball** (com a tot el curs): *analitzar → dissenyar → prototipar → provar → millorar* (vegeu SA1). El disseny IoT (S2) treballa especialment la fase **analitzar** (requisits, riscos).
@@ -146,7 +149,7 @@
 
 | Via | Mesura |
 |---|---|
-| **Bastida** (qui s'encalla) | Donar emissor i receptor ja fets per modificar-los; **simulador** micro:bit i Wokwi (ESP32); equips heterogenis. |
+| **Bastida** (qui s'encalla) | Donar emissor i receptor ja fets per modificar-los; l'**esquelet amb `# TODO`** de la secció «Si t'encalles» de la [pàgina de la pràctica de l'emissor](codi/01_telemetria_emissor_EXPLICACIO.md); **simulador** micro:bit i Wokwi (ESP32); equips heterogenis. |
 | **+ Ampliació** (qui va sobrat) | Dues magnituds etiquetades, alerta per llindar, classe nova de gest, **ML real** (Teachable Machine: exportar model; o MakeCode ML); reptes ⭐ de [`Reptes/Reptes_SA8.md`](../../Reptes/Reptes_SA8.md). |
 | **Representació múltiple** | Dades en taula i gràfic, diagrama d'arquitectura IoT, simuladors. |
 | **Implicació** | Cada equip tria el sistema IoT del seu entorn (hort, aula, casa). |

@@ -8,7 +8,7 @@
 - [ ] Material per parella: Arduino UNO + USB, protoboard, cables
 - [ ] Actuadors: servo **SG90**, motor DC, driver **L298N**, potenciòmetre, ultrasons
 - [ ] **Alimentació externa** (portapiles 4×AA o font) per als motors — imprescindible
-- [ ] Sketches provats: `01_servo_potenciometre` · `02_motor_pont_h` · `03_sensor_velocitat` · `04_barrera_automatica`
+- [ ] Sketches provats: `01_servo_potenciometre` · `02_motor_pont_h` · `03_sensor_velocitat` · `04_barrera_automatica` · `05_dos_leds_millis` (mini-pràctica opcional S3)
 - [ ] Simulació **Wokwi** (servo) i, si pots, vídeo del moviment de referència
 - [ ] Compartir rúbriques **R1, R2 i R3** amb l'alumnat *abans* del producte
 

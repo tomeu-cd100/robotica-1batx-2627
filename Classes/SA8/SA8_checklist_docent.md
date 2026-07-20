@@ -37,7 +37,7 @@
 - [ ] **Coavaluació** (treball d'equip, disseny responsable) + **exit tickets** + registre **0–10**
 
 ## 🪜 4. Atenció a la diversitat (previst per aquesta SA)
-- [ ] **Bastida:** emissor i receptor ja fets per modificar · simulador micro:bit i Wokwi (ESP32) · equips heterogenis
+- [ ] **Bastida:** emissor i receptor ja fets per modificar · esquelet «Si t'encalles» a la pàgina de la pràctica de l'emissor · simulador micro:bit i Wokwi (ESP32) · equips heterogenis
 - [ ] **+ Ampliació:** dues magnituds etiquetades · alerta per llindar · classe nova de gest · **ML real** (Teachable Machine / MakeCode ML) · [reptes ⭐ SA8](../../Reptes/Reptes_SA8.md)
 - [ ] ✏️ **Retirada de bastida — "a full en blanc":** l'emissor **o** el receptor escrit des de zero (últim graó abans de la SA9)
 - [ ] **Representació múltiple:** dades en taula i gràfic · diagrama d'arquitectura IoT · simuladors

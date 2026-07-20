@@ -137,7 +137,7 @@
 
 - 🟢 De l'estat on s'ha quedat, quina condició l'hauria de fer **sortir**? Es pot arribar a complir mai?
 - 🟡 Al teu **diagrama d'estats**, cada estat necessita almenys una fletxa de sortida amb una condició observable. Compara el diagrama amb el `case` corresponent: falta la transició o no es compleix mai.
-- 🔴 Afegeix `Serial.println(estat);` al començament del `loop()` i mira el Monitor sèrie: veuràs exactament a quin estat es queda i podràs mirar només aquell `case`. (Si el patró se't fa bola: esquelet `03_maquina_estats_BASTIDA`.)
+- 🔴 Afegeix `Serial.println(estat);` al començament del `loop()` i mira el Monitor sèrie: veuràs exactament a quin estat es queda i podràs mirar només aquell `case`. (Si el patró se't fa bola: l'esquelet «Si t'encalles» de la [pàgina de la pràctica de la màquina d'estats](../SA6/codi/03_maquina_estats/EXPLICACIO.md).)
 
 **T6.3 · «La lectura de temperatura balla»**
 

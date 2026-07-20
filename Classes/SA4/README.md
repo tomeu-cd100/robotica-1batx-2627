@@ -49,10 +49,12 @@ Quarta situació d'aprenentatge (**8 h · 4 sessions**, 2n trimestre). El sistem
 | Sketch | Què mostra |
 |---|---|
 | `01_servo_potenciometre.ino` | Llibreria `Servo.h`; posició 0-180° controlada per potenciòmetre. |
-| `02_motor_pont_h.ino` | Motor DC: direcció (`IN1`/`IN2`) i velocitat (PWM a `ENA`). |
+| `02_motor_pont_h.ino` | Motor DC: direcció (`IN1`/`IN2`) i velocitat (PWM a `ENA`), amb funcions pròpies (amb esquelet «Si t'encalles» a la seva pàgina). |
 | `03_sensor_velocitat.ino` | Ultrasons regula la velocitat del motor (percepció → moviment). |
 | `04_barrera_automatica.ino` | Producte: barrera amb servo activada per sensor. |
-| [`05_dos_leds_millis/05_dos_leds_millis.ino`](codi/05_dos_leds_millis/05_dos_leds_millis.ino) | **Bastida (opcional, 10')**: dos LEDs a ritmes diferents **sense `delay()`** (patró `millis()`). Prepara la **màquina d'estats de la SA6**. |
+| `05_dos_leds_millis.ino` | **Mini-pràctica (opcional, 10')**: dos LEDs a ritmes diferents **sense `delay()`** (patró `millis()`). Prepara la **màquina d'estats de la SA6**. |
+
+Cada sketch té la seva **pàgina de pràctica** a la web (per què es fa + codi explicat per blocs); a GitHub, l'explicació és a l'`EXPLICACIO.md` de la carpeta del sketch.
 
 <!-- /web:only-github -->
 

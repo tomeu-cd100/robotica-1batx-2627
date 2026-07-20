@@ -16,6 +16,9 @@
 - LED (vermell, groc, verd), 1 LED RGB (càtode comú), resistències 220 Ω, brunzidor piezo, mòdul relé.
 
 ## Codi de suport (carpeta `codi/`)
+
+> Cada sketch té la seva **pàgina de pràctica** (per què es fa + codi explicat per blocs, l'`EXPLICACIO.md` de la seva carpeta): és el text que l'alumnat pot rellegir si falta a classe o repassa a casa. El guió oral de sota continua sent teu.
+
 | Fitxer | Contingut |
 |---|---|
 | `01_led_basic.ino` | Encendre/apagar un LED al pin 8. |
@@ -131,7 +134,7 @@
 
 | Via | Mesura |
 |---|---|
-| **Bastida** (qui s'encalla) | Començar amb **1 LED** abans del semàfor de 3; donar la seqüència de fases en comentaris per completar; parella heterogènia. |
+| **Bastida** (qui s'encalla) | Començar amb **1 LED** abans del semàfor de 3; l'**esquelet amb `// TODO`** de la secció «Si t'encalles» de la [pàgina de la pràctica del semàfor](codi/02_semafor/EXPLICACIO.md); parella heterogènia. |
 | **+ Ampliació** (qui va sobrat) | Fase nocturna, semàfor de vianants, arc de Sant Martí RGB; reptes ⭐ de [`Reptes/Reptes_SA2.md`](../../Reptes/Reptes_SA2.md). |
 | **Representació múltiple** | Esquema de connexions, **simulació Wokwi** (semàfor), codi comentat. |
 | **Implicació** | Cada parella tria estats i colors del seu panell i quin repte amplia. |

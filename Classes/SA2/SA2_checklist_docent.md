@@ -8,7 +8,7 @@
 - [ ] Material per parella: Arduino UNO + USB, protoboard, cables dupont
 - [ ] Components: LED (vermell/groc/verd), 1 LED RGB (càtode comú), resistències **220 Ω**, brunzidor piezo, mòdul relé
 - [ ] **2–3 multímetres** per al racó de mesura (o el teu per a demo projectada)
-- [ ] Sketches provats: `01_led_basic` · `02_semafor` · `03_fade_pwm` · `04_rgb` · `05_panell_senyalitzacio`
+- [ ] Sketches provats: `01_led_basic` · `02_semafor` (+ variant `02b_semafor_switch`) · `03_fade_pwm` · `04_rgb` · `05_panell_senyalitzacio`
 - [ ] Simulació **Wokwi** del semàfor a punt (representació múltiple)
 - [ ] Compartir rúbriques **R1 i R2** amb l'alumnat *abans* del producte
 

@@ -51,7 +51,7 @@ Si la tasca encara no t'apareix al Classroom, és que la SA encara no ha començ
 2. Llum automàtic ([`03_nightlight.py`](codi/03_nightlight.py)): rang de `read_light_level()` = ____ a ____
 3. **Repte:** detector d'inclinació o termòmetre amb avís.
 
-> 💡 Si t'encalles, parteix de l'esquelet `05_vigilant_BASTIDA.py`: el `while True:` i el `LLINDAR` ja hi són; tu omples la lectura del sensor integrat i la resposta a la matriu (mateix patró que `02_passes.py`).
+> 💡 Si t'encalles, parteix de l'**esquelet** de la secció «Si t'encalles» de la [pàgina de la pràctica del llum de nit](codi/03_nightlight_EXPLICACIO.md): el `while True:` i el `LLINDAR` ja hi són; tu omples la lectura del sensor integrat i la resposta a la matriu (mateix patró que `02_passes.py`).
 
 ### 3 · Ràdio (S3)
 1. Carrega [`04_radio_dau.py`](codi/04_radio_dau.py) en **dues** plaques. Què han de compartir? __________

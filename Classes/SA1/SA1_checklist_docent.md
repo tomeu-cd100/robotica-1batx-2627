@@ -42,6 +42,6 @@
 - [ ] Traspassar valoracions al registre (nota **0–10**)
 
 ## 🪜 4. Atenció a la diversitat (previst per aquesta SA)
-- [ ] **Bastida:** esquema etiquetat de referència · parella heterogènia (segons diagnòstica) · treball amb LED intern (pin 13)
+- [ ] **Bastida:** esquema etiquetat de referència · esquelet «Si t'encalles» (a la pàgina de la pràctica del repte) · parella heterogènia (segons diagnòstica) · treball amb LED intern (pin 13)
 - [ ] **+ Ampliació:** `blink_millis` (sense `delay()`) · `sos_morse` (funcions) · defensa oral d'1' d'un robot industrial/IA
 - [ ] **Rescat:** recordar les [targetes de rescat](../00_General/00_Targetes_rescat.md) 🟢🟡🔴 a qui s'encalli

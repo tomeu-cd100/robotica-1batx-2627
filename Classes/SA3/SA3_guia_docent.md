@@ -16,6 +16,9 @@
 - Polsador, potenciòmetre, LDR + resistència 10 kΩ, NTC + 10 kΩ, sensor d'ultrasons HC-SR04, LED, brunzidor piezo.
 
 ## Codi de suport (carpeta `codi/`)
+
+> Cada sketch té la seva **pàgina de pràctica** (per què es fa + codi explicat per blocs, l'`EXPLICACIO.md` de la seva carpeta): és el text que l'alumnat pot rellegir si falta a classe o repassa a casa. El guió oral de sota continua sent teu.
+
 | Fitxer | Contingut |
 |---|---|
 | `01_polsador_debounce.ino` | Entrada digital amb *pull-up* i antirebot; comptador. |
@@ -122,7 +125,7 @@
 
 | Via | Mesura |
 |---|---|
-| **Bastida** (qui s'encalla) | Començar amb el **polsador** (digital) abans de l'analògic; donar la funció `mesuraDistancia()` ja escrita per llegir-la i usar-la; parella heterogènia. |
+| **Bastida** (qui s'encalla) | Començar amb el **polsador** (digital) abans de l'analògic; donar la funció `mesuraDistancia()` ja escrita per llegir-la i usar-la; l'**esquelet amb `// TODO`** del llum automàtic a la secció «Si t'encalles» de la [pàgina de la pràctica d'entrades analògiques](codi/02_potenciometre_ldr/EXPLICACIO.md); parella heterogènia. |
 | **+ Ampliació** (qui va sobrat) | Mitjana de 3 mesures, detectar acostament/allunyament; reptes ⭐ de [`Reptes/Reptes_SA3.md`](../../Reptes/Reptes_SA3.md). |
 | **Representació múltiple** | Esquema, **Serial Plotter** (dada visual), simulació Wokwi, codi comentat. |
 | **Implicació** | Cada parella tria llindars i el tipus d'avís del seu producte. |

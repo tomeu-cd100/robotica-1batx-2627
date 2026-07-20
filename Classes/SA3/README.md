@@ -55,6 +55,8 @@ Tercera situació d'aprenentatge (**8 h · 4 sessions**, 1r trimestre). El siste
 | `03_ultrasons_funcio.ino` | Funció `mesuraDistancia()` i Serial Plotter. |
 | `04_alarma_aparcament.ino` | Producte: sensor → actuador segons distància. |
 
+Cada sketch té la seva **pàgina de pràctica** a la web (per què es fa + codi explicat per blocs); a GitHub, l'explicació és a l'`EXPLICACIO.md` de la carpeta del sketch.
+
 <!-- /web:only-github -->
 
 ## Producte i avaluació

@@ -47,10 +47,12 @@ Vuitena situació d'aprenentatge (**6 h · 3 sessions**, 3r trimestre). El siste
 
 | Programa | Què mostra |
 |---|---|
-| [`01_telemetria_emissor.py`](codi/01_telemetria_emissor.py) | micro:bit que envia dades de sensors per ràdio. |
+| [`01_telemetria_emissor.py`](codi/01_telemetria_emissor.py) | micro:bit que envia dades de sensors per ràdio (amb esquelet «Si t'encalles» a la seva pàgina). |
 | [`02_telemetria_receptor.py`](codi/02_telemetria_receptor.py) | micro:bit que rep, mostra i registra pel port sèrie. |
 | [`03_ia_gestos.py`](codi/03_ia_gestos.py) | Classificació de gestos amb l'acceleròmetre (IA basada en regles). |
-| `04_esp32_telemetria.ino` | *(Opcional)* ESP32 que publica dades per WiFi. |
+| [`04_esp32_telemetria.ino`](codi/04_esp32_telemetria/04_esp32_telemetria.ino) | *(Opcional)* ESP32 que publica dades per WiFi. |
+
+Cada sketch té la seva **pàgina de pràctica** a la web (per què es fa + codi explicat per blocs); a GitHub, l'explicació és al `*_EXPLICACIO.md` del costat de cada `.py` (i a l'`EXPLICACIO.md` de la carpeta de l'ESP32).
 
 <!-- /web:only-github -->
 

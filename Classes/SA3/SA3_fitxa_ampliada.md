@@ -37,7 +37,7 @@
 3. Què **retorna** la funció `mesuraDistancia()`? __________________________
 4. **Repte:** funció que retorna la **mitjana de 3 mesures**. Per què millora la lectura? ____________
 
-## Activitat 4 · Producte: alarma / aparcament (S4)
+## Activitat 4 · Producte: alarma / aparcament (S3)
 Dissenya un avís que depèn de la distància:
 
 | Distància | LED | So (piezo) |

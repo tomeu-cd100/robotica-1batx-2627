@@ -50,8 +50,10 @@ Sisena situació d'aprenentatge (**8 h · 4 sessions**, 2n trimestre). El sistem
 |---|---|
 | `01_llac_obert_vs_tancat.ino` | Comparació dels dos tipus de control amb el mateix muntatge. |
 | `02_termostat_histeresi.ino` | Control tot/res amb dos llindars (histèresi). |
-| `03_maquina_estats.ino` | Màquina d'estats finits amb `enum`/`switch`. |
+| `03_maquina_estats.ino` | Màquina d'estats finits amb `enum`/`switch` (amb esquelet «Si t'encalles» a la seva pàgina). |
 | `04_control_proporcional.ino` | Regulació proporcional bàsica (base del PID). |
+
+Cada sketch té la seva **pàgina de pràctica** a la web (per què es fa + codi explicat per blocs); a GitHub, l'explicació és a l'`EXPLICACIO.md` de la carpeta del sketch.
 
 <!-- /web:only-github -->
 

@@ -53,7 +53,7 @@ Si la tasca encara no t'apareix al Classroom, és que la SA encara no ha començ
 3. **Racó de mesura (multímetre):** tensió al punt mig del divisor = ______ V · lectura del programa = ______ → lectura/1023 · 5 V = ______ V. Coincideixen? ____
 4. **Llum automàtic:** el LED s'encén quan la lectura de la LDR és ____ que ______.
 
-> 💡 Si t'encalles amb el llindar, parteix de l'esquelet `05_sensor_llindar_BASTIDA`: la lectura i el Monitor sèrie ja hi són; tu omples la comparació amb el llindar i què fa cada cas.
+> 💡 Si t'encalles amb el llindar, parteix de l'**esquelet** de la secció «Si t'encalles» de la [pàgina de la pràctica d'entrades analògiques](codi/02_potenciometre_ldr/EXPLICACIO.md): la lectura i el Monitor sèrie ja hi són; tu omples la comparació amb el llindar i què fa cada cas.
 
 ### 3 · Ultrasons, funcions i PRODUCTE: alarma / aparcament (S3)
 1. Munta l'HC-SR04 (TRIG=12, ECHO=11). Carrega `03_ultrasons_funcio.ino`, obre el **Serial Plotter**.
