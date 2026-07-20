@@ -31,14 +31,7 @@ ___________________________________________________________________
 
 Omple el diagrama amb el que **percep**, com **decideix** i què **fa**:
 
-```
-   ENTRADA               PROCÉS                 SORTIDA
- (sensors)            (microcontrolador)       (actuadors)
-┌───────────┐        ┌───────────────┐        ┌───────────┐
-│           │  ───►  │               │  ───►  │           │
-│           │        │               │        │           │
-└───────────┘        └───────────────┘        └───────────┘
-```
+![Diagrama per omplir del model entrada-procés-sortida: tres blocs buits amb línies per escriure-hi, units per fletxes — entrada (sensors, què percep?), procés (cervell, què decideix?) i sortida (actuadors, què fa?)](img/sa1-model-eps-buit.svg)
 
 | Bloc | Què hi poso |
 |---|---|
