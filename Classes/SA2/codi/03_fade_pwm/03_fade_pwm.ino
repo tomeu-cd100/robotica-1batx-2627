@@ -4,6 +4,7 @@
   Circuit: Pin 9 (~PWM) -> [220 ohm] -> LED(+) ; LED(-) -> GND
   analogWrite() accepta valors de 0 (apagat) a 255 (maxima intensitat).
   Nomes funciona en pins amb el simbol ~ (3, 5, 6, 9, 10, 11).
+  Quan: S3 - modelatge
 */
 
 const int LED = 9;   // ha de ser un pin PWM (~)

@@ -4,6 +4,7 @@
   Exemple: regular la velocitat d'un ventilador (PWM, pin 9) segons la "temperatura" (A0).
   Com mes calor per sobre de la consigna, mes velocitat.
   Compara'l amb el control tot/res (02): la resposta es mes suau.
+  Quan: S2-S3 - repte + (qui va sobrat)
 */
 
 const int SENSOR = A0;

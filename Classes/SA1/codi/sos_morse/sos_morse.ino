@@ -4,6 +4,7 @@
   Punt = parpelleig curt; ratlla = parpelleig llarg.
   Mostra com encapsular accions repetides en FUNCIONS propies
   (punt() i ratlla()), millorant la llegibilitat del codi (rubrica R1).
+  Quan: S3 - repte + (qui va sobrat)
 */
 
 const int LED = 13;

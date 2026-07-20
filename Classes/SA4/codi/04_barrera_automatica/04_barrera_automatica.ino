@@ -3,6 +3,7 @@
   Barrera amb servo que s'obre quan l'ultrasons detecta un vehicle a prop
   i es tanca passat un temps. LED indicador d'estat.
   Circuit: servo senyal=9 ; HC-SR04 TRIG=12 ECHO=11 ; LED=8.
+  Quan: S4 - producte
 */
 
 #include <Servo.h>

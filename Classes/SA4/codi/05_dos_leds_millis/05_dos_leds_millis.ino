@@ -6,6 +6,7 @@
   Aquest patro amb millis() es la base de la maquina d'estats de la SA6.
 
   Munta: LED al pin 7 i LED al pin 8 (amb la seva resistencia).
+  Quan: S3 - repte + (prepara la SA6)
 */
 
 const int LED_A = 7;

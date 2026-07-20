@@ -4,6 +4,7 @@
   - El potenciometre regula la intensitat d'un LED (PWM, pin 9).
   - La LDR encen el LED si fa fosc (llum automatic) - repte resolt amb llindar.
   Circuit: pot. cursor -> A0 ; LDR en divisor amb 10k -> A1 ; LED pin 9 (~).
+  Quan: S2 - modelatge
 */
 
 const int POT = A0;

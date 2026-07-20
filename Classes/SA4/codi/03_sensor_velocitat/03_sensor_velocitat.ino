@@ -3,6 +3,7 @@
   La distancia mesurada per l'ultrasons regula la velocitat del motor.
   Com mes a prop, mes lent; per sota d'un llindar de seguretat, s'atura.
   Circuit: ENA=5, IN1=7, IN2=8 ; HC-SR04 TRIG=12, ECHO=11.
+  Quan: S3 - modelatge
 */
 
 const int ENA = 5, IN1 = 7, IN2 = 8;

@@ -4,6 +4,7 @@
   Llegeix un sensor (NTC o potenciometre) a A0 i activa una sortida (pin 9).
   Encen quan la lectura supera LLINDAR_ALT i apaga quan baixa de LLINDAR_BAIX.
   (La lectura 0-1023 fa de "temperatura"; mes valor = mes calor.)
+  Quan: S2 - modelatge
 */
 
 const int SENSOR = A0;

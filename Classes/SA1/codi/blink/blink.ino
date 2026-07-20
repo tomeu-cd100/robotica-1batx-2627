@@ -5,6 +5,7 @@
   Connexions: vegeu SA1_esquemes_connexions.md (apartat 2).
   Objectiu: entendre setup(), loop(), pinMode, digitalWrite i delay.
   Reptes: blink_repte.ino (basic) i, com a ampliacio, blink_millis.ino i sos_morse.ino.
+  Quan: S3 - modelatge
 */
 
 const int LED = 13;   // Numero de pin on hi ha el LED (constant: no canvia)

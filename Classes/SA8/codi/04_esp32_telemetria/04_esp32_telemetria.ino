@@ -6,6 +6,7 @@
   Requereix: paquet de plaques ESP32 a l'Arduino IDE i una xarxa WiFi 2,4 GHz.
 
   >>> POSA LES TEVES DADES DE WIFI <<<
+  Quan: S2 - demo opcional (IoT/WiFi)
 */
 
 #include <WiFi.h>

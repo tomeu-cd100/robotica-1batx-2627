@@ -6,6 +6,7 @@
   Tu nomes has d'OMPLIR els // TODO: que fa cada estat i quan canvia.
 
   Munta: polsador al pin 2 (INPUT_PULLUP), LEDs als pins 7 i 8, sortida al 9.
+  Quan: S3 - bastida de la maquina d'estats
 */
 
 const int POLSADOR = 2;

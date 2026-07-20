@@ -4,6 +4,7 @@
   Cal CALIBRAR el temps de gir (T_GIR_90) perque el gir sigui de 90 graus reals.
 
   === PINS (AJUSTAR) ===
+  Quan: S2 - modelatge
 */
 
 const int ESQ_DIR = 4, ESQ_VEL = 5, DRET_DIR = 7, DRET_VEL = 6;

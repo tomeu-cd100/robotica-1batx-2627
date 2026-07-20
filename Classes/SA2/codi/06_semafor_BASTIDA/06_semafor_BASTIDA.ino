@@ -15,6 +15,7 @@
 
   Aixo compila tal qual (els // TODO: son comentaris). No fa res visible
   fins que omplis les fases.
+  Quan: S2 - bastida del semafor
 */
 
 const int VERMELL = 8;

@@ -484,6 +484,12 @@ body.sense-toc .prose, body.sense-sidebar .prose { max-width: 78ch; }
 .codi-intro { color: var(--muted); }
 .codi-llista { columns: 1; }
 .codi-llista .codi-desc { color: var(--muted); font-size: .88rem; }
+.codi-quan {
+  display: inline-block; flex: none; white-space: nowrap;
+  font-size: .72rem; font-weight: 700; padding: .1rem .55rem; border-radius: 999px;
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+  color: var(--accent); border: 1px solid color-mix(in srgb, var(--accent) 35%, transparent);
+}
 .codi-bloc { margin: 1rem 0; border: 1px solid var(--border); border-radius: var(--radi); overflow: hidden; box-shadow: var(--ombra); }
 .codi-cap {
   display: flex; align-items: center; justify-content: space-between; gap: .8rem;

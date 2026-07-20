@@ -4,6 +4,7 @@
   Exemple: procés de 4 estats (ESPERA -> FASE1 -> FASE2 -> FET) que avança
   amb un polsador (pin 2) i amb temps. LEDs d'estat als pins 7 i 8, sortida 9.
   No fa servir delay llargs: usa millis() per no bloquejar.
+  Quan: S3 - modelatge
 */
 
 const int POLSADOR = 2;

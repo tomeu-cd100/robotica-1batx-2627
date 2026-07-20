@@ -3,6 +3,7 @@
   Controla la posicio d'un servo (pin 9) amb un potenciometre (A0).
   Llibreria estandard Servo.h.
   Circuit: servo senyal=9, V+=5V, GND=GND ; potenciometre cursor=A0.
+  Quan: S1 - modelatge
 */
 
 #include <Servo.h>

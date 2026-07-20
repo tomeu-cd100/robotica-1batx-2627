@@ -5,6 +5,7 @@
   Si la teva placa dona lectura ANALOGICA, usa analogRead i un llindar.
 
   === PINS (AJUSTAR) ===
+  Quan: S4 - modelatge i repte de pista
 */
 
 const int ESQ_DIR = 4, ESQ_VEL = 5, DRET_DIR = 7, DRET_VEL = 6;

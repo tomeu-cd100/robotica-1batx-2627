@@ -7,6 +7,7 @@
   llavor de les maquines d'estats que veurem a la SA6.
   Circuit: vermell=8, groc=9, verd=10 (cada un amb 220 ohm a GND)
   Repte: afegeix una fase 3 (nocturna, groc intermitent).
+  Quan: S2 - variant amb switch (llavor de SA6)
 */
 
 const int VERMELL = 8;

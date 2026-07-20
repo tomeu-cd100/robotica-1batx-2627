@@ -1,6 +1,7 @@
 # SA8 - 02_telemetria_receptor.py
 # micro:bit RECEPTOR: rep les dades per radio, les mostra i les imprimeix
 # pel port serie (print) per poder-les registrar/graficar a l'ordinador.
+# Quan: S1 - modelatge
 
 from microbit import *
 import radio

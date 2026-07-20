@@ -5,6 +5,7 @@
   Per que importa: amb delay() la placa queda "congelada"; amb millis()
   podria fer altres coses alhora (llegir un boto, un sensor...). Es la base
   del control de sistemes que faran diverses tasques a la vegada.
+  Quan: S3 - repte + (qui va sobrat)
 */
 
 const int LED = 13;

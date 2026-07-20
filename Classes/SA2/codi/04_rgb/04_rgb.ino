@@ -4,6 +4,7 @@
   Circuit: R=9, G=10, B=11 (cada un amb 220 ohm). Catode comu a GND.
   Cada color es controla amb PWM (0-255).
   NOTA: si el teu LED es d'anode comu, el comu va a 5V i els valors s'inverteixen.
+  Quan: S3 - modelatge
 */
 
 const int R = 9;

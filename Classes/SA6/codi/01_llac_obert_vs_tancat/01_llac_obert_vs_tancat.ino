@@ -5,6 +5,7 @@
   - Llaç tancat: encen/apaga segons la lectura del sensor (realimentacio).
   Circuit: sensor (NTC o pot) a A0 ; sortida (LED/ventilador) a pin 9.
   Canvia la variable MODE per provar cada cas.
+  Quan: S1 - modelatge
 */
 
 const int SENSOR = A0;

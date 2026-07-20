@@ -1,6 +1,7 @@
 # SA5 - 02_passes.py
 # Comptapassos amb l'acceleròmetre de la micro:bit.
 # En repos la "força" val ~1024 (mil-li-g). Un pas/sacseig la fa pujar.
+# Quan: S2 - modelatge
 
 from microbit import *
 

@@ -3,6 +3,7 @@
   Semafor de 3 LED amb temporitzacio.
   Circuit: vermell=8, groc=9, verd=10 (cada un amb 220 ohm a GND)
   Repte resolt: variable NOCTURN per activar el groc intermitent.
+  Quan: S2 - modelatge
 */
 
 const int VERMELL = 8;

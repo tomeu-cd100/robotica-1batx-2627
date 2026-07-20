@@ -3,6 +3,7 @@
   Sensor d'ultrasons HC-SR04. Aprenem a escriure una FUNCIO que retorna un valor.
   Circuit: TRIG=12, ECHO=11, VCC=5V, GND=GND.
   Visualitza la distancia amb el Serial Plotter (Eines > Serial Plotter).
+  Quan: S3 - modelatge
 */
 
 const int TRIG = 12;

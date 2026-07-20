@@ -4,6 +4,7 @@
   Mostra l'us d'un bucle for i de variables per als temps.
   Connexions: vegeu SA1_esquemes_connexions.md (apartat 2).
   Ampliacio posterior: blink_millis.ino (sense delay) i sos_morse.ino (funcions).
+  Quan: S3 - repte
 */
 
 const int LED = 13;

@@ -4,6 +4,7 @@
   Circuit: R=9, G=10, B=11 (220 ohm, catode comu a GND)
            piezo (+)=6 ; rele IN=7
   Estats: CORRECTE (verd), AVIS (groc + so curt), ALARMA (vermell + so llarg + rele ON)
+  Quan: S4 - producte
 */
 
 const int R = 9, G = 10, B = 11;   // LED RGB

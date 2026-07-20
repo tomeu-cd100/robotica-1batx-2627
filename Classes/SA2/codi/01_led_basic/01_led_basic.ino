@@ -2,6 +2,7 @@
   SA2 - 01_led_basic.ino
   Encendre i apagar un LED extern (pin 8) usant una variable per al temps.
   Circuit: Pin 8 -> [220 ohm] -> LED(+) ; LED(-) -> GND
+  Quan: S1 - modelatge
 */
 
 const int LED = 8;     // pin del LED (constant)

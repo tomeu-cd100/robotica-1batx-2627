@@ -3,6 +3,7 @@
   Entrada digital amb pull-up intern + antirebot (debounce). Compta premudes.
   Circuit: polsador entre pin 2 i GND. (Opcional) LED al pin 8.
   Amb INPUT_PULLUP: en repos = HIGH, en premer = LOW.
+  Quan: S1 - modelatge
 */
 
 const int POLSADOR = 2;

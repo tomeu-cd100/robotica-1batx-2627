@@ -7,6 +7,7 @@
 
   Metode SA3: llegir analogic (0..1023) -> comparar amb un llindar -> decidir.
   Munta: sensor analogic (LDR/pot en divisor) -> A1 ; LED -> [220 ohm] -> pin 9 (~) -> GND.
+  Quan: S2 - bastida del llum automatic
 */
 
 const int SENSOR = A1;      // entrada analogica (punt mig del divisor)

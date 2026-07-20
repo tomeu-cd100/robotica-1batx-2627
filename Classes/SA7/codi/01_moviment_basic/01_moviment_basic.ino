@@ -6,6 +6,7 @@
   === PINS (AJUSTAR segons el manual de la teva placa) ===
   Cada motor te un pin de DIRECCIO i un de VELOCITAT (PWM).
   Si la teva placa usa dos pins de direccio per motor (IN1/IN2), adapta les funcions.
+  Quan: S1 - modelatge
 */
 
 const int ESQ_DIR = 4;    // direccio motor esquerre   <-- AJUSTAR

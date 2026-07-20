@@ -2,6 +2,7 @@
 # Dau digital + comunicacio per radio entre dues micro:bit.
 # Sacseja la placa per llançar el dau; el resultat s'envia a l'altra placa.
 # IMPORTANT: les dues plaques han de tenir el MATEIX group.
+# Quan: S3 - modelatge
 
 from microbit import *
 import random

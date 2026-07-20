@@ -5,6 +5,7 @@
 # sensor i enviar la dada ETIQUETADA (per exemple "T:23") per radio.
 #
 # Recorda: la placa RECEPTORA ha de tenir EXACTAMENT el mateix group.
+# Quan: S1 - bastida de la telemetria
 
 from microbit import *
 import radio

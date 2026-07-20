@@ -3,6 +3,7 @@
   Alarma de proximitat tipus sensor d'aparcament.
   Com mes a prop esta l'objecte, mes rapid sona el piezo i mes "alerta" el LED.
   Circuit: HC-SR04 TRIG=12 ECHO=11 ; LED=8 ; piezo=6.
+  Quan: S3 - producte
 */
 
 const int TRIG = 12;

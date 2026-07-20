@@ -7,6 +7,7 @@
 #
 # Idea: un "vigilant" que llegeix UN sensor integrat i, si passa el LLINDAR,
 # avisa a la matriu; si no, ensenya un estat de repos.
+# Quan: S2 - bastida (patro sensor + llindar)
 
 from microbit import *
 

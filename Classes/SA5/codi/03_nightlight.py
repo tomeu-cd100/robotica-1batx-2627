@@ -1,6 +1,7 @@
 # SA5 - 03_nightlight.py
 # Llum automatic: la micro:bit s'encen quan fa fosc.
 # Usa el sensor de llum de la propia matriu LED: display.read_light_level() (0..255).
+# Quan: S2 - modelatge
 
 from microbit import *
 

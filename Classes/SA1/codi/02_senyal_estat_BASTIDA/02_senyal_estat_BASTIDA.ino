@@ -23,6 +23,7 @@
 
   Maquinari: LED intern de la placa (pin 13). No cal cablejar res.
   Repte: quan funcioni, prova de fer un patro amb DOS temps diferents.
+  Quan: S3 - bastida del repte
 */
 
 const int LED = 13;   // Numero de pin on hi ha el LED (constant: no canvia)

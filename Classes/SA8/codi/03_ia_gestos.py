@@ -3,6 +3,7 @@
 # Llegeix x, y, z i decideix en quina posicio esta la placa.
 # Es una "IA" senzilla feta a ma; el ML real APREN les regles a partir d'exemples
 # (es pot explorar amb l'extensio "Code & AI" de MakeCode).
+# Quan: S3 - modelatge
 
 from microbit import *
 

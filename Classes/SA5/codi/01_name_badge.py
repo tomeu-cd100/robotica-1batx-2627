@@ -1,6 +1,7 @@
 # SA5 - 01_name_badge.py
 # Matriu LED, botons i imatges amb micro:bit (MicroPython).
 # Boto A: mostra el nom. Boto B: cara contenta. En repos: cor.
+# Quan: S1 - modelatge
 
 from microbit import *
 

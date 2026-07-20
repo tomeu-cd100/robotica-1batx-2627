@@ -3,6 +3,7 @@
   Motor DC amb driver pont H (L298N): direccio i velocitat.
   Circuit: ENA=5 (PWM), IN1=7, IN2=8. Alimentacio externa al motor. MASSA COMUNA.
   Demostra funcions propies: endavant(), enrere(), atura().
+  Quan: S2 - modelatge
 */
 
 const int ENA = 5;   // PWM: velocitat

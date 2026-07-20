@@ -1,6 +1,7 @@
 # SA8 - 01_telemetria_emissor.py
 # micro:bit EMISSOR: mesura temperatura i llum i les envia per radio.
 # La placa receptora ha de tenir el MATEIX group.
+# Quan: S1 - modelatge
 
 from microbit import *
 import radio

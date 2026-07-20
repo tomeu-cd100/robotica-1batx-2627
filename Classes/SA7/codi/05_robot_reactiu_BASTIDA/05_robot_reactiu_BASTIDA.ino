@@ -12,6 +12,7 @@
 
   Munta: motors (2 pins per motor: DIRECCIO + VELOCITAT PWM) i un
   ultrasons frontal (TRIG i ECHO). AJUSTA els pins al teu maquinari.
+  Quan: S3 - bastida de l'evita-obstacles
 */
 
 // === PINS (AJUSTAR segons el manual de la teva placa) ===

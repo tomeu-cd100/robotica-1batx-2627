@@ -4,6 +4,7 @@
   retrocedeix una mica i gira. Control en llac tancat (el sensor decideix).
 
   === PINS (AJUSTAR) ===
+  Quan: S3 - modelatge
 */
 
 const int ESQ_DIR = 4, ESQ_VEL = 5, DRET_DIR = 7, DRET_VEL = 6;

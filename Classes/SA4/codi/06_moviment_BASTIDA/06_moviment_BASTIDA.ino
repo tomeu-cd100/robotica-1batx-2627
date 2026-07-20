@@ -14,6 +14,7 @@
     - Per ATURAR: els dos IN a LOW i analogWrite(ENA, 0).
 
   Circuit: ENA=5 (PWM), IN1=7, IN2=8. Motor amb alimentacio externa. MASSA COMUNA.
+  Quan: S2 - bastida del motor
 */
 
 const int ENA = 5;   // PWM: velocitat

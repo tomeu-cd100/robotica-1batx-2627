@@ -1046,16 +1046,18 @@ def lexer_for(path: Path):
         return get_lexer_by_name("text")
 
 
-def descripcio_codi(path: Path) -> str:
-    """Primera línia útil del comentari de capçalera d'un fitxer de codi.
+def capcalera_codi(path: Path) -> tuple[str, str]:
+    """(descripció, quan) del comentari de capçalera d'un fitxer de codi.
 
-    Salta la línia amb el nom del fitxer i torna la primera frase descriptiva;
-    cadena buida si el fitxer no comença amb cap comentari."""
+    La descripció és la primera línia útil (saltant la línia amb el nom del
+    fitxer); «quan» és el contingut d'una línia opcional `Quan: ...`, que
+    situa el fitxer a la sessió/activitat on es fa servir."""
     try:
-        lines = path.read_text(encoding="utf-8", errors="replace").splitlines()[:12]
+        lines = path.read_text(encoding="utf-8", errors="replace").splitlines()[:30]
     except OSError:
-        return ""
+        return "", ""
     nom = path.name.lower()
+    desc = quan = ""
     dins_bloc = False
     for ln in lines:
         s = ln.strip()
@@ -1074,9 +1076,13 @@ def descripcio_codi(path: Path) -> str:
                 s = s.split("*/", 1)[0]
                 dins_bloc = False
             s = s.strip("* ").strip()
-        if s and nom not in s.lower():
-            return s
-    return ""
+        if s.lower().startswith("quan:"):
+            quan = s[5:].strip()
+        elif s and not desc and nom not in s.lower():
+            desc = s
+        if desc and quan:
+            break
+    return desc, quan
 
 
 def render_code_page(group: dict, pages: list[Page], extra_nav: str = "") -> str:
@@ -1085,25 +1091,30 @@ def render_code_page(group: dict, pages: list[Page], extra_nav: str = "") -> str
              '<p class="codi-intro">Fitxers de codi font. Desplega cada fitxer per '
              'llegir-lo i fes servir el botó <strong>Copia</strong> per dur-lo a '
              'l\'IDE d\'Arduino o a l\'editor de micro:bit.</p>']
-    descs = {it["anchor"]: descripcio_codi(it["path"]) for it in group["items"]}
-    # índex de fitxers amb la descripció de capçalera de cada sketch
+    caps = {it["anchor"]: capcalera_codi(it["path"]) for it in group["items"]}
+    # índex de fitxers amb l'etiqueta «quan es fa» i la descripció de capçalera
     parts.append('<ul class="codi-llista">')
     for it in group["items"]:
+        desc, quan = caps[it["anchor"]]
         li = f'<li><a href="#{it["anchor"]}"><code>{html.escape(it["rel"])}</code></a>'
-        if descs[it["anchor"]]:
-            li += f' — <span class="codi-desc">{html.escape(descs[it["anchor"]])}</span>'
+        if quan:
+            li += f' <span class="codi-quan">{html.escape(quan)}</span>'
+        if desc:
+            li += f' — <span class="codi-desc">{html.escape(desc)}</span>'
         parts.append(li + "</li>")
     parts.append("</ul>")
     for it in group["items"]:
         code = it["path"].read_text(encoding="utf-8", errors="replace")
         highlighted = highlight(code, lexer_for(it["path"]), formatter)
-        desc = descs[it["anchor"]]
+        desc, quan = caps[it["anchor"]]
+        quan_html = (f'<span class="codi-quan">{html.escape(quan)}</span>'
+                     if quan else "")
         desc_html = (f'<span class="codi-desc">{html.escape(desc)}</span>'
                      if desc else "")
         parts.append(
             f'<details class="codi-bloc" id="{it["anchor"]}">'
             f'<summary class="codi-cap"><code class="codi-nom">{html.escape(it["rel"])}</code>'
-            f'{desc_html}'
+            f'{quan_html}{desc_html}'
             f'<button class="copia-btn" type="button">Copia</button></summary>'
             f'<div class="codi-cos">{highlighted}</div></details>'
         )
