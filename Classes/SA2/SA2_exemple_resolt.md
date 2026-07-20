@@ -22,6 +22,10 @@
 Fa servir només conceptes de la SA2: `const`, `for`, `digitalWrite`/`analogWrite` (PWM), `delay`.
 El circuit és el mateix que el *fade*: **Pin 9 (`~`) → [220 Ω] → LED(+) → LED(−) → GND**.
 
+![Captura de Tinkercad del circuit del fade: Arduino UNO amb un LED verd a la protoboard, resistència de 220 ohms en sèrie, cable vermell de senyal del pin ~9 i cable negre de GND al carril de massa](img/sa2-tinkercad-fade.png)
+
+▶ **Obre la simulació a Tinkercad** (pots fer *Copy and Tinker* per modificar-la): <https://www.tinkercad.com/things/c4frTqo45MQ-sa2-fade-pwm?sharecode=uEsFwkit-32KF6Z7yrBhDhUSFmkHnfpc53kKWrXdrfc>
+
 ---
 
 ## 🧭 Com ho penso (abans d'escriure codi)
@@ -87,6 +91,28 @@ void loop() {
 - **Constants amb nom** (`PAS`, `ESPERA`) en lloc de números solts: canvio la velocitat en **un sol lloc**.
 - **Una funció per comportament**: el `loop()` es llegeix com una frase (`respira()` i després `alarma()`).
 - Faig servir `analogWrite` **només** on cal graduar (respirar) i `digitalWrite` per encendre/apagar del tot (pampallugues): trio l'eina segons el que necessito.
+
+<details markdown="1"><summary>🧒 Explica-m'ho com si tingués 5 anys</summary>
+
+Imagina que el LED és una **llumeta que dorm i somia**. 🌙
+
+**Les tres notes a la nevera** (les constants de dalt). Abans de començar, deixem tres notes apuntades perquè no se'ns oblidin:
+
+- **On viu la llumeta?** A la porta número 9. És una porta màgica (té una titlla `~`) que sap fer llum forta, fluixeta i mitjana. Les portes normals només saben encendre i apagar del tot.
+- **Com de gran és cada passet?** 5. Passets petits = respira a poc a poc; passets grans = respira de pressa.
+- **Quanta estona ens quedem a cada passet?** 12 «momentets» (mil·lisegons). És com comptar «un…» abans de fer el passet següent.
+
+**`respira()` — la llumeta agafa aire.** 😮‍💨 El primer bucle fa pujar la llum passet a passet, del 0 (adormida del tot) fins al 255 (ben desperta i brillant). Com quan infles un globus: buf, buf, buf… cada `analogWrite` és una mica més d'aire, i el `delay` és esperar un momentet entre buf i buf. El segon bucle fa el mateix però al revés: desinfla el globus a poc a poc fins que la llum s'apaga del tot. Pujar + baixar = **una respiració sencera**, com quan dorms: agafes aire… el deixes anar…
+
+**`alarma()` — la llumeta s'espanta!** 🚨 Aquí no cal fer-ho suau: la llumeta fa **3 picades d'ullet ben ràpides**. Encesa del tot! Apagada! Encesa! Apagada! Encesa! Apagada! El `for` amb `i < 3` és qui compta: «una, dues i tres — prou». I com que és tot-o-res, fem servir `digitalWrite` (l'interruptor normal), no cal la porta màgica.
+
+**`setup()` — preparar-se.** Només passa una vegada, en endollar: diem a l'Arduino «la porta 9 és per **treure** llum» (`OUTPUT`), no per escoltar.
+
+**`loop()` — el conte que no s'acaba mai.** L'Arduino és molt obedient però una mica tossut: fa la llista i torna a començar, per sempre: respira tranquil·la… 😴 s'espanta i fa 3 pampallugues! 😱 i torna a començar. Així fins que el desendolles.
+
+**El truc de màgia de debò** (per si preguntes «com fa la mitja llum?»): la porta 9 en realitat només sap encendre i apagar — però ho fa **tan i tan de pressa** (centenars de cops per segon) que els teus ulls es deixen enganyar. Si està encesa la meitat del temps, tu veus mitja llum. Com quan mous la mà molt ràpid i sembla que hi hagi boira: això és el **PWM**.
+
+</details>
 
 ---
 
