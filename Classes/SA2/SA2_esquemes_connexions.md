@@ -115,6 +115,12 @@ El camí elèctric és el mateix del semàfor, però **tres vegades dins d'un so
 > Combina el LED RGB (apartat 4) amb un brunzidor piezo al pin 6 i un mòdul relé al pin 7.
 > ⚠️ El relé permet controlar càrregues; a l'aula es connecta a **baixa tensió** (LED de 5 V, petit motor). **No** connectar 230 V.
 
+**Al simulador:**
+
+![Captura de Tinkercad del circuit del panell de senyalització: LED RGB de 4 potes a la protoboard amb les tres resistències de 220 ohms cap als pins ~9, ~10 i ~11, brunzidor piezo connectat al mòdul relé i cables vermells de senyal des dels pins 6 i 7 de l'Arduino UNO](img/sa2-tinkercad-panell.png)
+
+▶ **Obre la simulació a Tinkercad** (pots fer *Copy and Tinker* per modificar-la): <https://www.tinkercad.com/things/3eQhVzZTaCk-sa2-panell-de-senyalitzacio?sharecode=mfYAeNXK_DMBMN2YTYYJx3SthfZXTAW_xf2isvFoPWg>
+
 ---
 
 ## Simulació interactiva (Wokwi)
