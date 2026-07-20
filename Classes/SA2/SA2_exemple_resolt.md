@@ -11,7 +11,7 @@
 
 ---
 
-![Seqüència d'un semàfor amb tres LED](img/sa2-semafor.svg)
+![Gràfic d'intensitat del LED al llarg del temps: una rampa suau que puja i baixa (respira, amb analogWrite), tres polsos tot-o-res (alarma, amb digitalWrite) i el cicle que es repeteix](img/sa2-respiracio.svg)
 
 ## 🔑 El repte model
 

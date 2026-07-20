@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 300" width="760" height="300" role="img" aria-labelledby="t d">
+  <title id="t">Intensitat del LED al llarg del temps: respiració i alarma</title>
+  <desc id="d">Gràfic d'intensitat (0 a 255) en funció del temps: primer una rampa suau que puja i baixa (la funció respira amb analogWrite), després tres polsos quadrats tot-o-res (la funció alarma amb digitalWrite), i una segona respiració en traç discontinu que indica que el cicle es repeteix.</desc>
+  <style>
+    .fr{fill:#f6faf9;stroke:#d7e6e5;stroke-width:1.5}
+    .eix{stroke:#64748b;stroke-width:2}
+    .max{stroke:#94a3b8;stroke-width:1.3;stroke-dasharray:6 5}
+    .resp{fill:none;stroke:#0891b2;stroke-width:3.5;stroke-linecap:round;stroke-linejoin:round}
+    .alar{fill:none;stroke:#dc2626;stroke-width:3.5;stroke-linecap:round;stroke-linejoin:round}
+    .rep{fill:none;stroke:#94a3b8;stroke-width:3;stroke-dasharray:7 6;stroke-linecap:round;stroke-linejoin:round}
+    .lbl{font:600 13px system-ui,'Segoe UI',sans-serif;fill:#0e1b1c}
+    .lbl2{font:500 12px system-ui,'Segoe UI',sans-serif;fill:#475569}
+    .mono{font:700 12px 'Consolas',monospace;fill:#0c6e70}
+  </style>
+  <rect class="fr" x="1" y="1" width="758" height="298" rx="14"/>
+
+  <!-- Eixos -->
+  <line class="eix" x1="60" y1="240" x2="720" y2="240"/>
+  <line class="eix" x1="60" y1="240" x2="60" y2="55"/>
+  <line class="max" x1="60" y1="70" x2="720" y2="70"/>
+  <text class="lbl2" x="52" y="245" text-anchor="end">0</text>
+  <text class="lbl2" x="52" y="74" text-anchor="end">255</text>
+  <text class="lbl2" x="720" y="258" text-anchor="end">temps</text>
+  <text class="lbl2" x="64" y="48">intensitat (0–255)</text>
+
+  <!-- respira(): rampa que puja i baixa -->
+  <polyline class="resp" points="60,240 170,70 280,240"/>
+  <text class="mono" x="170" y="272" text-anchor="middle">respira()</text>
+  <text class="lbl2" x="170" y="288" text-anchor="middle">puja i baixa suau (analogWrite)</text>
+
+  <!-- alarma(): 3 polsos tot-o-res -->
+  <polyline class="alar" points="300,240 300,70 330,70 330,240 360,240 360,70 390,70 390,240 420,240 420,70 450,70 450,240"/>
+  <text class="mono" x="375" y="272" text-anchor="middle">alarma()</text>
+  <text class="lbl2" x="375" y="288" text-anchor="middle">3 pampallugues (digitalWrite)</text>
+
+  <!-- el cicle es repeteix -->
+  <polyline class="rep" points="470,240 580,70 690,240"/>
+  <text class="lbl2" x="580" y="272" text-anchor="middle">i el loop() torna a començar…</text>
+</svg>
