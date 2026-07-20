@@ -2,6 +2,8 @@
 
 > 🧑‍🎓 **Quan toca mirar-lo?** Després del teu **primer intent** amb la histèresi de l'**Activitat 2 (S2)** i la màquina d'estats de l'**Activitat 3 (S3)** — mai abans. És un problema **anàleg** per veure *com es pensa* un llaç tancat, no la solució del teu producte.
 
+> 🔗 **D'on ve i on va.** Aquest exemple és el **bessó comentat** de la pràctica [Termòstat amb histèresi: dos llindars contra el clic-clic](codi/02_termostat_histeresi/EXPLICACIO.md) — i hi suma la [màquina d'estats de la Pràctica 3](codi/03_maquina_estats/EXPLICACIO.md): la mateixa histèresi amb la lògica **girada** (la bomba engega quan el sensor **baixa**) i un context expressament diferent. Serveix per veure **com es pensa**, no per copiar-lo. Quan l'hagis entès, torna a la pàgina de la pràctica i fes-la teva.
+
 > 🗺️ **Com es llegeix per apartats:** **🔑 El repte model** primer, per situar-te · **🧭 Com ho penso** abans d'escriure el **teu** codi (és l'apartat més important: el raonament) · **💡 La solució anotada** només **després del teu intent**, per comparar · **🔬 Provo i mesuro** quan provis el teu: copia'n el **mètode**, no el resultat · **⚠️ Contraexemple** quan una cosa no rutlli — i com a repàs abans d'entregar · **📔 Diari de bord** quan escriguis la teva entrada del quadern.
 
 > **Nota docent:** mostra'l **després del primer intent** amb `02_termostat_histeresi.ino`

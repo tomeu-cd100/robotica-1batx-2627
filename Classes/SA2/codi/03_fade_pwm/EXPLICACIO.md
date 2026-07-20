@@ -58,4 +58,4 @@ Mateixa estructura amb els tres elements girats: comença a 255, condició `>= 0
 
 - **Ara mateix:** el [LED RGB](../04_rgb/04_rgb.ino) són **tres** PWM alhora — un per color.
 - **Repte S3:** transició suau entre dos colors = dos *fades* coordinats. La funció `map()` (converteix un rang en un altre) t'hi pot ajudar.
-- **Exemple resolt:** el [llum de posició amb respiració](../../SA2_exemple_resolt.md) és aquest patró aplicat i comentat pas a pas.
+- **Exemple resolt:** el [llum de posició amb respiració](../../SA2_exemple_resolt.md) és el **bessó** d'aquesta pràctica — el mateix patró amb un muntatge i un context expressament diferents, comentat pas a pas amb tot el raonament. Mira'l després del teu primer intent.

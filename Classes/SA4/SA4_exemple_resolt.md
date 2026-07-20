@@ -2,6 +2,8 @@
 
 > 🧑‍🎓 **Quan toca mirar-lo?** Després del teu **primer intent** amb el servo de l'**Activitat 1 (S1)** i el pont H de l'**Activitat 2 (S2)** — mai abans. És un problema **anàleg** per veure *com es pensa*, no la solució de la barrera de la S4.
 
+> 🔗 **D'on ve i on va.** Aquest exemple és el **bessó comentat** de la pràctica [Motor DC i pont H: sentit, velocitat i funcions pròpies](codi/02_motor_pont_h/EXPLICACIO.md) — amb el servo de la [Pràctica 1](codi/01_servo_potenciometre/EXPLICACIO.md) afegit al capdamunt: la mateixa idea (**una funció per gest** sobre el pont H) amb un muntatge i un context expressament diferents. Serveix per veure **com es pensa**, no per copiar-lo. Quan l'hagis entès, torna a la pàgina de la pràctica i fes-la teva.
+
 > 🗺️ **Com es llegeix per apartats:** **🔑 El repte model** primer, per situar-te · **🧭 Com ho penso** abans d'escriure el **teu** codi (és l'apartat més important: el raonament) · **💡 La solució anotada** només **després del teu intent**, per comparar · **🔬 Provo i mesuro** quan provis el teu: copia'n el **mètode**, no el resultat · **⚠️ Contraexemple** quan una cosa no rutlli — i com a repàs abans d'entregar · **📔 Diari de bord** quan escriguis la teva entrada del quadern.
 
 > **Nota docent:** mostra'l **després del primer intent** amb `01_servo_potenciometre.ino` i

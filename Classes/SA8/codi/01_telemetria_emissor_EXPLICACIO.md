@@ -109,4 +109,5 @@ while True:
 
 - **Ara mateix:** aquesta és la meitat que **parla**; sense l'altra no veus res. Carrega la [receptora](02_telemetria_receptor.py) a la segona placa (mateix `group`!) i tanca el circuit.
 - **Repte de la S1:** tria les **teves** magnituds i el teu ritme; i si vas fort, que la receptora doni una **alerta per llindar**.
+- **Després del primer intent:** compara el teu raonament amb l'[exemple resolt](../SA8_exemple_resolt.md) (el sensor de moviment sense fils), el **bessó comentat** d'aquesta parella de pràctiques — mateix esquema emissor/receptor, una altra magnitud.
 - **Cap al rover:** la micro:bit del **rover del trimestre** és exactament aquest programa amb altres sensors — mesura a bord i envia a la base.

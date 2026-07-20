@@ -50,8 +50,17 @@ pont SA2→SA6, PWM i rangs 0–255 vs 0–1023, `INPUT_PULLUP` i antirebot, `pu
 retorn 0), pont H, histèresi, `enum`, control proporcional, ràdio micro:bit i protocol
 emissor/receptor, WiFi a l'ESP32.
 
+## Unificació exemples resolts ↔ pàgines de pràctica (mateix dia)
+
+Decisió del docent: «unifica-ho». Cada `SAn_exemple_resolt.md` declara ara el seu **bessó**
+amb un blockquote «🔗 D'on ve i on va» (enllaç a la pàgina de pràctica; el sketch de
+l'exemple continua sent expressament diferent perquè es pensi, no es copiï), i la pàgina de
+pràctica bessona enllaça l'exemple a «On ho aplicaràs» («mira'l després del primer intent»).
+Bessons: SA1→blink · SA2→03_fade_pwm · SA3→02_potenciometre_ldr · SA4→02_motor_pont_h ·
+SA5→04_radio_dau · SA6→02_termostat_histeresi · SA7→03_evita_obstacles ·
+SA8→01+02_telemetria (parella) · SA9→(gestió de projecte; el pseudocodi de l'MVP enllaça
+la P3 de SA7 com a patró).
+
 ## Pendent
 
 - Cap PDF nou: les pàgines de pràctica són material de consulta web (no full imprimible).
-- L'exemple resolt de cada SA segueix comentant el seu sketch «bessó»; ara les pàgines de
-  pràctica el complementen (no s'ha unificat: decisió no presa).

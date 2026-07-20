@@ -81,4 +81,5 @@ I el `try/except`? És l'assegurança: si un dia arriba un missatge estrany (mal
 - **Ara mateix:** amb l'[emissora](01_telemetria_emissor.py) a l'altra placa, tanca la parella i **registra una estona de dades** per a la mostra del quadern.
 - **Repte de la S1:** l'alerta per llindar ja la tens muntada — fes-la teva (una altra magnitud, un altre avís) o gestiona també la segona dada (`L:`).
 - **Repte «a full en blanc»:** una de les dues meitats de la telemetria l'escriuràs des de l'editor buit; entendre aquest desmuntatge del protocol és tenir-ne mig camí fet.
+- **Després del primer intent:** compara el teu raonament amb l'[exemple resolt](../SA8_exemple_resolt.md) (el sensor de moviment sense fils), el **bessó comentat** d'aquesta parella de pràctiques — mateix desmuntatge del protocol i mateixa regla de llindar, amb una altra magnitud.
 - **Cap al rover:** la **base** del rover del trimestre és aquest programa amb pantalla OLED: rep la telemetria del rover i la mostra.

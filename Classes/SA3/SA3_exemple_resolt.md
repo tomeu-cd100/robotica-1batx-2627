@@ -2,6 +2,8 @@
 
 > 🧑‍🎓 **Quan toca mirar-lo?** Després del teu **primer intent** amb el potenciòmetre i la LDR de l'**Activitat 2 (S2)** — mai abans. És un problema **anàleg** per veure *com es pensa*, no la solució de l'alarma/aparcament de la S3 (però el **mètode** és el mateix).
 
+> 🔗 **D'on ve i on va.** Aquest exemple és el **bessó comentat** de la pràctica [Entrades analògiques: potenciòmetre i LDR](codi/02_potenciometre_ldr/EXPLICACIO.md): el mateix mètode (llegir → calibrar amb el Monitor → decidir per llindar) amb un muntatge i un context expressament diferents — perquè vegis **com es pensa**, no per copiar-lo. Quan l'hagis entès, torna a la pàgina de la pràctica i fes-la teva.
+
 > 🗺️ **Com es llegeix per apartats:** **🔑 El repte model** primer, per situar-te · **🧭 Com ho penso** abans d'escriure el **teu** codi (és l'apartat més important: el raonament) · **💡 La solució anotada** només **després del teu intent**, per comparar · **🔬 Provo i mesuro** quan provis el teu: copia'n el **mètode**, no el resultat · **⚠️ Contraexemple** quan una cosa no rutlli — i com a repàs abans d'entregar · **📔 Diari de bord** quan escriguis la teva entrada del quadern.
 
 > **Nota docent:** mostra'l **després del primer intent** amb `02_potenciometre_ldr.ino`, mai abans.

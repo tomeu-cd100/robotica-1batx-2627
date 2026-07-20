@@ -2,6 +2,8 @@
 
 > 🧑‍🎓 **Quan toca mirar-lo?** Després del teu **primer intent** amb la taula E-P-S de l'**Activitat 1 (S1)** i amb el `blink.ino` de l'**Activitat 4 (S3)** — mai abans. És un problema **anàleg** per veure *com es pensa*, no una solució per copiar: el pòster l'has de fer amb el **teu** robot.
 
+> 🔗 **D'on ve i on va.** Aquest exemple és el **bessó comentat** de la pràctica [Blink: el primer programa](codi/blink/EXPLICACIO.md): la mateixa idea (un LED que marca un ritme amb `digitalWrite` i `delay`) amb un context expressament diferent — un **batec** en lloc d'un parpelleig — perquè vegis **com es pensa**, no per copiar-lo. Quan l'hagis entès, torna a la pàgina de la pràctica i fes-la teva.
+
 > 🗺️ **Com es llegeix per apartats:** **🔑 El repte model** primer, per situar-te · **🧭 Com ho penso** abans d'escriure el **teu** codi (és l'apartat més important: el raonament) · **💡 La solució anotada** només **després del teu intent**, per comparar · **🔬 Provo i mesuro** quan provis el teu: copia'n el **mètode**, no el resultat · **⚠️ Contraexemple** quan una cosa no rutlli — i com a repàs abans d'entregar · **📔 Diari de bord** quan escriguis la teva entrada del quadern.
 
 > **Nota docent:** mostra'l **després del primer intent** amb l'Activitat 1 (taula E-P-S) i amb

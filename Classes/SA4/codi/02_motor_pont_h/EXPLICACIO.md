@@ -143,4 +143,5 @@ void loop() {
 
 - **Repte de la S2:** una seqüència de moviments pròpia amb les teves funcions; **+ repte:** rampa d'acceleració (un `for` que apuja la velocitat a poc a poc).
 - **A la S3:** el [sensor de velocitat](../03_sensor_velocitat/03_sensor_velocitat.ino) reutilitza `endavant()` i `atura()` tal quals — les funcions ben fetes es reciclen.
+- **Exemple resolt:** el [ventilador orientable de sobretaula](../../SA4_exemple_resolt.md) és el **bessó** d'aquesta pràctica, comentat pas a pas: els mateixos gestos amb pont H (`bufa`/`expulsa`/`atura` en lloc d'`endavant`/`enrere`/`atura`) més un servo al capdamunt — mira-te'l després del teu primer intent.
 - **Més enllà:** dos motors amb pont H són les **rodes del rover** de la robòtica mòbil (SA7).

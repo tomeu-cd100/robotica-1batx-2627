@@ -4,6 +4,8 @@
 
 > 🗺️ **Com es llegeix per apartats:** **🔑 El repte model** primer, per situar-te · **🧭 Com ho penso** abans d'escriure el **teu** codi (és l'apartat més important: el raonament) · **💡 La solució anotada** només **després del teu intent**, per comparar · **🔬 Provo i mesuro** quan provis el teu: copia'n el **mètode**, no el resultat · **⚠️ Contraexemple** quan una cosa no rutlli — i com a repàs abans d'entregar · **📔 Diari de bord** quan escriguis la teva entrada del quadern.
 
+> 🔗 **D'on ve i on va.** Aquest exemple és el **bessó comentat** de la parella de pràctiques [Telemetria, l'emissor](codi/01_telemetria_emissor_EXPLICACIO.md) i [Telemetria, el receptor](codi/02_telemetria_receptor_EXPLICACIO.md): el mateix esquema emissor/receptor amb una magnitud expressament diferent (moviment en lloc de temperatura/llum) — serveix per veure **com es pensa**, no per copiar-lo. Quan l'hagis entès, torna a les pàgines de les pràctiques i fes-les teves.
+
 > **Nota docent:** mostra'l **després del primer intent** amb `01_telemetria_emissor.py`
 > i `02_telemetria_receptor.py`, mai abans. No és la solució del producte (telemetria de
 > temperatura/llum): és un problema **anàleg** —una magnitud diferent— resolt pas a pas

@@ -73,6 +73,6 @@ while True:
 ## 🔗 On ho aplicaràs
 
 - **Repte de la S3:** el «pedra-paper-tisora» per ràdio i el comandament a distància són aquest mateix esquema enviar/rebre amb altres missatges.
-- **Exemple resolt:** la [sentinella de temperatura](../SA5_exemple_resolt.md) combina aquesta ràdio amb el patró de llindar de la S2 — mira-te-la després del teu primer intent.
+- **Exemple resolt:** la [sentinella de temperatura](../SA5_exemple_resolt.md) és el **bessó** d'aquesta pràctica, comentat pas a pas: la mateixa ràdio combinada amb el patró de llindar de la S2 — mira-te-la després del teu primer intent, i torna aquí per fer-la teva.
 - **Robot del trimestre:** aquest codi és la base del **comandament del braç** (una micro:bit envia ordres, l'altra les executa): guarda'l, el reaprofitaràs al [dossier del braç](../../00_General/00_Projecte_T2_Brac.md).
 - **SA8:** la ràdio tornarà per enviar **telemetria** del rover i dades per al classificador de gestos.

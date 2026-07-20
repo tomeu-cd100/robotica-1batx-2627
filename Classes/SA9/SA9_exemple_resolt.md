@@ -90,6 +90,11 @@ repeteix sempre:
 // els desitjables (servo, girar, tornar) s'afegeixen en iteracions posteriors
 ```
 
+> 🔗 Programar aquest MVP és exactament el cicle **percepció → decisió → acció** que vau treballar a
+> la SA7: si l'equip s'hi encalla, la pàgina de la pràctica
+> [Evita-obstacles](../SA7/codi/03_evita_obstacles/EXPLICACIO.md) en té el patró complet (i un
+> esquelet per començar).
+
 **Per què està enfocat així (🌟):**
 - **MVP primer:** una cosa que funciona de veritat val més que cinc a mitges. Sobre l'MVP s'afegeix la
   resta **de manera incremental**.

@@ -2,6 +2,8 @@
 
 > 🧑‍🎓 **Quan toca mirar-lo?** Després del teu **primer intent** amb el *fade* de l'**Activitat 3 (S3)** — mai abans. És un problema **anàleg** per veure *com es pensa*, no la solució del panell de la S4.
 
+> 🔗 **D'on ve i on va.** Aquest exemple és el **bessó comentat** de la pràctica [El fade: graduar la intensitat amb PWM](codi/03_fade_pwm/EXPLICACIO.md): la mateixa idea (graduar la intensitat amb `for` + `analogWrite`) amb un context expressament diferent — un llum de posició amb mode alarma en lloc del *fade* — perquè vegis **com es pensa**, no per copiar-lo. Quan l'hagis entès, torna a la pàgina de la pràctica i fes-la teva.
+
 > 🗺️ **Com es llegeix per apartats:** **🔑 El repte model** primer, per situar-te · **🧭 Com ho penso** abans d'escriure el **teu** codi (és l'apartat més important: el raonament) · **💡 La solució anotada** només **després del teu intent**, per comparar · **🔬 Provo i mesuro** quan provis el teu: copia'n el **mètode**, no el resultat · **⚠️ Contraexemple** quan una cosa no rutlli — i com a repàs abans d'entregar · **📔 Diari de bord** quan escriguis la teva entrada del quadern.
 
 > **Nota docent:** mostra'l **després del primer intent** amb `03_fade_pwm.ino`, mai abans.

@@ -64,5 +64,6 @@ Fixa't que **canviant només els dos números del `delay` canvies tot el comport
 ## 🔗 On ho aplicaràs
 
 - **Ara mateix:** el repte de l'Activitat 4 (3 parpellejos ràpids + pausa llarga). Intenta'l pel teu compte; la solució comentada és a la [pàgina del repte](../blink_repte/EXPLICACIO.md).
+- **Després del teu primer intent:** l'[exemple resolt del batec](../../SA1_exemple_resolt.md) és el **bessó** d'aquesta pràctica — la mateixa idea amb un ritme i un context diferents, raonada pas a pas amb el diari de bord inclòs. Serveix per veure *com es pensa*, no per copiar-lo.
 - **Si vas sobrat:** les ampliacions [`blink_millis`](../blink_millis/EXPLICACIO.md) (parpelleig sense `delay()`) i [`sos_morse`](../sos_morse/EXPLICACIO.md) (les teves primeres funcions).
 - **Tot el curs:** l'estructura `setup()` + `loop()` és la de **tots** els programes d'Arduino que faràs; a la SA2 hi afegiràs més sortides (semàfor, PWM, RGB).
