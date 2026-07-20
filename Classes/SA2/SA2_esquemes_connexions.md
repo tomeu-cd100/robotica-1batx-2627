@@ -100,6 +100,8 @@ El camí elèctric és el mateix del semàfor, però **tres vegades dins d'un so
 
 ![Captura de Tinkercad del circuit del LED RGB: LED RGB de 4 potes a la protoboard amb les tres resistències de 220 ohms en sèrie i cables de senyal blau, verd i vermell cap als pins ~11, ~10 i ~9 de l'Arduino UNO, i cable negre del càtode comú al carril de massa que torna a GND](img/sa2-tinkercad-rgb.png)
 
+▶ **Obre la simulació a Tinkercad** (pots fer *Copy and Tinker* per modificar-la): <https://www.tinkercad.com/things/9LwYhmKU7cE-sa2-led-rgb?sharecode=t-A5r44qV1flQMonUG_rtQFte36syN3U8sCEPQt7ruo>
+
 ---
 
 ## 5. Panell de senyalització (`05_panell_senyalitzacio.ino`)
