@@ -77,6 +77,25 @@ Cal un pin amb `~` (PWM). El **PWM** encén i apaga la sortida molt de pressa: e
 
 > Si el teu LED RGB és d'**ànode comú**, el comú va a **5 V** i els valors PWM s'inverteixen (255 = apagat).
 
+**Com es munta — variant A, el mòdul del kit (Keyestudio KS0312):**
+
+El que tens al **Kit 3** és un **mòdul** amb els pins ja etiquetats: no cal protoboard. Quatre cables dupont directes:
+
+| Pin del mòdul | Cap a l'Arduino |
+|---|---|
+| R | ~9 |
+| G | ~10 |
+| B | ~11 |
+| − (o GND) | GND |
+
+> El mòdul ja porta l'electrònica de suport a la placa; si tens dubtes de si porta resistències incorporades, afegir-hi les 220 Ω en sèrie **no fa cap mal** (només una mica menys de brillantor).
+
+**Com es munta — variant B, LED RGB discret de 4 potes (el de Tinkercad):**
+
+![Muntatge del LED RGB de 4 potes a la protoboard: la pota llarga (càtode comú) va amb un pont al carril de massa, que torna al GND de l'Arduino; cada pota de color passa per la seva resistència de 220 ohms que salta el canal central i arriba amb un cable de color als pins ~9 (R), ~10 (G) i ~11 (B)](img/sa2-rgb-protoboard.svg)
+
+El camí elèctric és el mateix del semàfor, però **tres vegades dins d'un sol component**: cada canal fa pin PWM → 220 Ω → pota del seu color, i tots tres comparteixen el **càtode comú** (la **pota més llarga**), que va al carril de massa i torna a GND. Les quatre potes van a **quatre columnes diferents** de la protoboard; l'ordre habitual és **R · càtode · G · B**, amb el càtode com a segona pota des del costat pla.
+
 ---
 
 ## 5. Panell de senyalització (`05_panell_senyalitzacio.ino`)
