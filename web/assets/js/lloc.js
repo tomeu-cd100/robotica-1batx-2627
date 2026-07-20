@@ -160,9 +160,24 @@
     }
   }
 
+  /* ---------- Blocs de codi plegats: obre el bloc destí d'un enllaç #ancora ---------- */
+  function obreBlocDesti() {
+    var id = location.hash && decodeURIComponent(location.hash.slice(1));
+    if (!id) return;
+    var el = document.getElementById(id);
+    if (el && el.tagName === "DETAILS" && !el.open) {
+      el.open = true;
+      el.scrollIntoView();
+    }
+  }
+  obreBlocDesti();
+  window.addEventListener("hashchange", obreBlocDesti);
+
   /* ---------- Botons de copiar codi ---------- */
   document.querySelectorAll(".copia-btn").forEach(function (btn) {
-    btn.addEventListener("click", function () {
+    btn.addEventListener("click", function (ev) {
+      ev.preventDefault();
+      ev.stopPropagation();
       var bloc = btn.closest(".codi-bloc");
       var pre = bloc ? bloc.querySelector("pre") : null;
       if (!pre) return;

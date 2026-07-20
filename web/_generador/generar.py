@@ -1046,24 +1046,66 @@ def lexer_for(path: Path):
         return get_lexer_by_name("text")
 
 
+def descripcio_codi(path: Path) -> str:
+    """Primera línia útil del comentari de capçalera d'un fitxer de codi.
+
+    Salta la línia amb el nom del fitxer i torna la primera frase descriptiva;
+    cadena buida si el fitxer no comença amb cap comentari."""
+    try:
+        lines = path.read_text(encoding="utf-8", errors="replace").splitlines()[:12]
+    except OSError:
+        return ""
+    nom = path.name.lower()
+    dins_bloc = False
+    for ln in lines:
+        s = ln.strip()
+        if not dins_bloc:
+            if s.startswith("/*"):
+                dins_bloc = True
+                s = s[2:].strip("*/ ").strip()
+            elif s.startswith(("//", "#")):
+                s = s.lstrip("/#").strip()
+            elif not s:
+                continue
+            else:
+                break  # primera línia de codi real: fi de la capçalera
+        else:
+            if "*/" in s:
+                s = s.split("*/", 1)[0]
+                dins_bloc = False
+            s = s.strip("* ").strip()
+        if s and nom not in s.lower():
+            return s
+    return ""
+
+
 def render_code_page(group: dict, pages: list[Page], extra_nav: str = "") -> str:
     formatter = HtmlFormatter(cssclass="highlight", nowrap=False)
     parts = [f'<h1>{html.escape(group["label"])}</h1>',
-             '<p class="codi-intro">Fitxers de codi font. Fes servir el botó '
-             '<strong>Copia</strong> per dur-los a l\'IDE d\'Arduino o a l\'editor de micro:bit.</p>']
-    # índex de fitxers
+             '<p class="codi-intro">Fitxers de codi font. Desplega cada fitxer per '
+             'llegir-lo i fes servir el botó <strong>Copia</strong> per dur-lo a '
+             'l\'IDE d\'Arduino o a l\'editor de micro:bit.</p>']
+    descs = {it["anchor"]: descripcio_codi(it["path"]) for it in group["items"]}
+    # índex de fitxers amb la descripció de capçalera de cada sketch
     parts.append('<ul class="codi-llista">')
     for it in group["items"]:
-        parts.append(f'<li><a href="#{it["anchor"]}"><code>{html.escape(it["rel"])}</code></a></li>')
+        li = f'<li><a href="#{it["anchor"]}"><code>{html.escape(it["rel"])}</code></a>'
+        if descs[it["anchor"]]:
+            li += f' — <span class="codi-desc">{html.escape(descs[it["anchor"]])}</span>'
+        parts.append(li + "</li>")
     parts.append("</ul>")
     for it in group["items"]:
         code = it["path"].read_text(encoding="utf-8", errors="replace")
         highlighted = highlight(code, lexer_for(it["path"]), formatter)
+        desc = descs[it["anchor"]]
+        desc_html = (f'<span class="codi-desc">{html.escape(desc)}</span>'
+                     if desc else "")
         parts.append(
-            f'<section class="codi-bloc" id="{it["anchor"]}">'
-            f'<header class="codi-cap"><code class="codi-nom">{html.escape(it["rel"])}</code>'
-            f'<button class="copia-btn" type="button">Copia</button></header>'
-            f'<div class="codi-cos">{highlighted}</div></section>'
+            f'<details class="codi-bloc" id="{it["anchor"]}">'
+            f'<summary class="codi-cap"><code class="codi-nom">{html.escape(it["rel"])}</code>'
+            f'{desc_html}'
+            f'<button class="copia-btn" type="button">Copia</button></summary>'
+            f'<div class="codi-cos">{highlighted}</div></details>'
         )
     if extra_nav:
         parts.append(extra_nav)

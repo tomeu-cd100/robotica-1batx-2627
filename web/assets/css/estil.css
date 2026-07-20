@@ -482,11 +482,21 @@ body.sense-toc .prose, body.sense-sidebar .prose { max-width: 78ch; }
 
 /* ---------- Pàgines de codi ---------- */
 .codi-intro { color: var(--muted); }
-.codi-llista { columns: 2; gap: 1.4rem; }
-.codi-bloc { margin: 1.6rem 0; border: 1px solid var(--border); border-radius: var(--radi); overflow: hidden; box-shadow: var(--ombra); }
+.codi-llista { columns: 1; }
+.codi-llista .codi-desc { color: var(--muted); font-size: .88rem; }
+.codi-bloc { margin: 1rem 0; border: 1px solid var(--border); border-radius: var(--radi); overflow: hidden; box-shadow: var(--ombra); }
 .codi-cap {
-  display: flex; align-items: center; justify-content: space-between;
-  padding: .55rem .9rem; background: var(--surface-2); border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: space-between; gap: .8rem;
+  padding: .55rem .9rem; background: var(--surface-2);
+}
+header.codi-cap, details[open] > .codi-cap { border-bottom: 1px solid var(--border); }
+summary.codi-cap { cursor: pointer; list-style: none; }
+summary.codi-cap::-webkit-details-marker { display: none; }
+summary.codi-cap::before { content: "▸"; color: var(--muted); flex: none; }
+details[open] > summary.codi-cap::before { content: "▾"; }
+summary.codi-cap .codi-desc {
+  flex: 1; min-width: 0; color: var(--muted); font-size: .82rem;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 }
 .codi-nom { font-size: .85rem; background: none; border: 0; color: var(--accent); font-weight: 700; }
 .copia-btn {
