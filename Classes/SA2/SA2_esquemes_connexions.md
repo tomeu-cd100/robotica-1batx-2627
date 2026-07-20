@@ -57,6 +57,12 @@ Cal un pin amb `~` (PWM). El **PWM** encén i apaga la sortida molt de pressa: e
 
 > Circuit igual que un LED bàsic, però el pin **ha de tenir `~`** (3, 5, 6, 9, 10, 11) per fer `analogWrite`.
 
+**Al simulador:**
+
+![Captura de Tinkercad del circuit del fade: Arduino UNO amb un LED verd a la protoboard, resistència de 220 ohms en sèrie, cable vermell de senyal del pin ~9 i cable negre de GND al carril de massa](img/sa2-tinkercad-fade.png)
+
+▶ **Obre la simulació a Tinkercad** (pots fer *Copy and Tinker* per modificar-la): <https://www.tinkercad.com/things/c4frTqo45MQ-sa2-fade-pwm?sharecode=uEsFwkit-32KF6Z7yrBhDhUSFmkHnfpc53kKWrXdrfc>
+
 ---
 
 ## 4. LED RGB — càtode comú (`04_rgb.ino`)
