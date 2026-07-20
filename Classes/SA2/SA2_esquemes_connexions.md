@@ -96,6 +96,10 @@ El que tens al **Kit 3** és un **mòdul** amb els pins ja etiquetats: no cal pr
 
 El camí elèctric és el mateix del semàfor, però **tres vegades dins d'un sol component**: cada canal fa pin PWM → 220 Ω → pota del seu color, i tots tres comparteixen el **càtode comú** (la **pota més llarga**), que va al carril de massa i torna a GND. Les quatre potes van a **quatre columnes diferents** de la protoboard; l'ordre habitual és **R · càtode · G · B**, amb el càtode com a segona pota des del costat pla.
 
+**Al simulador:**
+
+![Captura de Tinkercad del circuit del LED RGB: LED RGB de 4 potes a la protoboard amb les tres resistències de 220 ohms en sèrie i cables de senyal blau, verd i vermell cap als pins ~11, ~10 i ~9 de l'Arduino UNO, i cable negre del càtode comú al carril de massa que torna a GND](img/sa2-tinkercad-rgb.png)
+
 ---
 
 ## 5. Panell de senyalització (`05_panell_senyalitzacio.ino`)
