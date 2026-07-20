@@ -16,17 +16,7 @@ llum. Celles i galtes van gravades, i dues **orelles** (una de rodona i una
 de gat) s'encaixen a les ranures de la tapa. Per fora sembla un joguet; per
 dins és el mateix Arduino UNO i breadboard que ja es fa servir a classe.
 
-```
-         ⊙ orella        orella ⊙       ← encaixades a la tapa
-        __|______________________|__
-       |    ~~~           ~~~      |    ← celles (gravat)
-       |    ●               ●      |    ← ● ulls (NeoPixel + difusor)
-       |  (galta)  (PIR)  (galta)  |    ← el PIR és el nas
-       |        \________/         |    ← boca somrient TALLADA
-       |__________________________ |      (so del brunzidor + micròfon
-              |  polsador  |               + TEMT6000 darrere)
-              |____________|            ← polsador al llom (carícia)
-```
+![Cara de la mascota: dues orelles encaixades a la tapa (una de rodona i una de gat), celles i galtes gravades, dos ulls NeoPixel amb difusor, el sensor PIR com a nas, una boca somrient tallada al làser (sortida de so del brunzidor i finestra del micròfon i el TEMT6000) i el polsador al llom](img/mascota-cara.svg)
 
 Què fa: **expressa emocions** amb llum i so —els ulls canvien de color i el
 brunzidor fa melodies d'estat— (treballat a **SA2**) i **reacciona a
