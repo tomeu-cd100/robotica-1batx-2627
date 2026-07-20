@@ -24,18 +24,7 @@ a tota l'aula**: el bloc `// === PINS (AJUSTAR) ===` que porten tots els
 `.ino` de SA7 es fixa **una sola vegada** amb la taula de cablatge d'aquest
 dossier, i ja no es torna a tocar en tot el trimestre.
 
-```
-              XASSÍS (vista de dalt)
-  ┌────────────────────────────────────┐
-  │ [HC-SR04] ← davant                 │
-  │  motor·L ═╣          ╠═ motor·R    │   ← suports de motor amb ENCAIXOS
-  │   [ UNO+breadboard ]  [L298N]      │   ← fixats amb brides/velcro
-  │   [ portapiles 6xAA ]              │
-  │        (micro:bit, SA8)            │
-  │            [roda boja] ← darrere   │
-  └────────────────────────────────────┘
-   sota: 2 seguidors de línia KS0050 mirant a terra
-```
+![Xassís del rover vist de dalt: HC-SR04 mirant endavant, dos motoreductors amb rodes als suports d'encaix, UNO amb breadboard, L298N i portapiles fixats amb brides o velcro, lloc per a la micro:bit al pis superior (SA8), roda boja darrere i dos seguidors de línia KS0050 sota el xassís mirant a terra](img/rover-xassis.svg)
 
 Què fa: a **SA7** és la **plataforma** dels reptes de trajectòria, evitar
 obstacles i seguidor de línia (els mateixos tres reptes que abans es feien

@@ -16,21 +16,7 @@ sempre (SA4), després es re-cableja sencer a una **micro:bit amb
 Micro:shield** (SA5-SA6). El braç no canvia; el que canvia és qui el
 governa i com.
 
-```
-                ┌───────────┐
-                │  PINÇA    │  ← 2 dits (dit_pinca.scad), servo pinça
-                └─────┬─────┘
-                      │  SEGMENT 2
-                ┌─────┴─────┐
-                │   COLZE   │  ← servo colze (articulació)
-                └─────┬─────┘
-                      │  SEGMENT 1
-                ┌─────┴─────┐
-           ╔════╡   BASE    ╞════╗   ← servo base (gir), sensor de
-           ║    └───────────┘    ║     col·lisió a l'abast de la pinça
-      TORRE 1                TORRE 2
-      (suport lateral)   (suport lateral)
-```
+![Estructura del braç: base giratòria (servo de gir) entre dues torres de suport lateral, segment 1 fins al colze (servo de l'articulació), segment 2 fins a la pinça de dos dits impresos en 3D (servo de pinça), i el sensor de col·lisió a l'abast de la pinça per a l'emergència](img/brac-estructura.svg)
 
 Què fa: a **SA4** es controla amb **potenciòmetres** com un mini comandament
 de sobretaula i pot **registrar i repetir** una seqüència de moviments; a

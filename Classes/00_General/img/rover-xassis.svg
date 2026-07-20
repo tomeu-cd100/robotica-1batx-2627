@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 450" width="660" height="450" role="img" aria-labelledby="t d">
+  <title id="t">Xassís del rover autònom, vista de dalt</title>
+  <desc id="d">Xassís de DM vist des de dalt: HC-SR04 mirant endavant, dos motoreductors amb rodes als suports d'encaix, Arduino UNO amb breadboard, pont H L298N i portapiles fixats amb brides o velcro, lloc per a la micro:bit al pis superior (SA8), roda boja darrere i dos seguidors de línia sota el xassís mirant a terra.</desc>
+  <style>
+    .fr{fill:#f6faf9;stroke:#d7e6e5;stroke-width:1.5}
+    .fusta{fill:#ecd9b8;stroke:#7c5a33;stroke-width:2.5}
+    .pad{fill:#ffffff;stroke:#0891b2;stroke-width:2}
+    .motor{fill:#facc15;stroke:#a16207;stroke-width:2}
+    .guia{fill:none;stroke:#64748b;stroke-width:1.3}
+    .lbl{font:600 13px system-ui,'Segoe UI',sans-serif;fill:#0e1b1c}
+    .lbl2{font:400 12px system-ui,'Segoe UI',sans-serif;fill:#475569}
+    .padtxt{font:700 11px 'Consolas',monospace;fill:#0c6e70}
+  </style>
+  <rect class="fr" x="1" y="1" width="658" height="448" rx="14"/>
+
+  <!-- Fletxa de sentit de marxa -->
+  <line class="guia" x1="330" y1="78" x2="330" y2="54" stroke-width="2"/>
+  <polygon points="330,42 323,56 337,56" fill="#64748b"/>
+  <text class="lbl" x="345" y="56">davant</text>
+  <text class="lbl2" x="330" y="400" text-anchor="middle">darrere</text>
+  <text class="lbl2" x="330" y="430" text-anchor="middle">UNO, L298N i portapiles van fixats amb brides o velcro</text>
+
+  <!-- Rodes i xassís -->
+  <rect x="168" y="150" width="30" height="80" rx="8" fill="#0e1b1c"/>
+  <rect x="462" y="150" width="30" height="80" rx="8" fill="#0e1b1c"/>
+  <rect class="fusta" x="205" y="95" width="250" height="285" rx="16"/>
+
+  <!-- HC-SR04 al davant -->
+  <rect class="pad" x="290" y="98" width="80" height="34" rx="4"/>
+  <circle cx="312" cy="115" r="11" fill="#e0f7fa" stroke="#0891b2" stroke-width="2"/>
+  <circle cx="348" cy="115" r="11" fill="#e0f7fa" stroke="#0891b2" stroke-width="2"/>
+
+  <!-- Seguidors de línia (sota el xassís, davant) -->
+  <rect x="245" y="118" width="26" height="20" rx="3" fill="none" stroke="#0891b2" stroke-width="2" stroke-dasharray="4 3"/>
+  <rect x="390" y="118" width="26" height="20" rx="3" fill="none" stroke="#0891b2" stroke-width="2" stroke-dasharray="4 3"/>
+
+  <!-- Motoreductors als suports d'encaix -->
+  <rect class="motor" x="207" y="168" width="42" height="44" rx="4"/>
+  <rect class="motor" x="411" y="168" width="42" height="44" rx="4"/>
+
+  <!-- UNO + breadboard, L298N, portapiles, micro:bit -->
+  <rect class="pad" x="262" y="162" width="136" height="52" rx="6"/>
+  <text class="padtxt" x="330" y="185" text-anchor="middle">UNO +</text>
+  <text class="padtxt" x="330" y="200" text-anchor="middle">BREADBOARD</text>
+
+  <rect class="pad" x="262" y="228" width="110" height="44" rx="6"/>
+  <text class="padtxt" x="317" y="254" text-anchor="middle">PORTAPILES 6xAA</text>
+
+  <rect class="pad" x="384" y="228" width="58" height="44" rx="6"/>
+  <text class="padtxt" x="413" y="254" text-anchor="middle">L298N</text>
+
+  <rect x="290" y="286" width="80" height="40" rx="6" fill="none" stroke="#0891b2" stroke-width="2" stroke-dasharray="5 4"/>
+  <text class="padtxt" x="330" y="310" text-anchor="middle">micro:bit</text>
+
+  <!-- Roda boja -->
+  <circle cx="330" cy="356" r="13" fill="#94a3b8" stroke="#475569" stroke-width="2"/>
+
+  <!-- Etiquetes -->
+  <text class="lbl" x="642" y="90" text-anchor="end">HC-SR04 · ultrasons, mira endavant</text>
+  <line class="guia" x1="412" y1="94" x2="372" y2="110"/>
+
+  <text class="lbl" x="18" y="112">2 seguidors de línia</text>
+  <text class="lbl2" x="18" y="128">(sota el xassís, a terra)</text>
+  <line class="guia" x1="158" y1="120" x2="243" y2="126"/>
+
+  <text class="lbl" x="18" y="185">motors amb ENCAIXOS</text>
+  <text class="lbl2" x="18" y="201">(reductora + roda)</text>
+  <line class="guia" x1="140" y1="193" x2="205" y2="190"/>
+
+  <text class="lbl" x="642" y="240" text-anchor="end">L298N · pont H dels motors</text>
+  <line class="guia" x1="472" y1="244" x2="444" y2="248"/>
+
+  <text class="lbl" x="18" y="255">portapiles 6×AA</text>
+  <line class="guia" x1="128" y1="251" x2="260" y2="248"/>
+
+  <text class="lbl" x="642" y="305" text-anchor="end">micro:bit (pis superior · SA8)</text>
+  <line class="guia" x1="460" y1="301" x2="372" y2="304"/>
+
+  <text class="lbl" x="642" y="360" text-anchor="end">roda boja · darrere</text>
+  <line class="guia" x1="520" y1="356" x2="345" y2="356"/>
+</svg>
