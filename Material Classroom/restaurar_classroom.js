@@ -53,12 +53,15 @@ async function main() {
 
   const mapaTemes = {};
   for (const t of backup.temes) {
-    const creat = await ambReintents(
+    await ambReintents(
       () => classroom.courses.topics.create({
         courseId: courseIdNou,
         requestBody: { name: t.nom },
-      }), `crear tema «${t.nom}»`);
-    mapaTemes[t.topicIdVell] = creat.data.topicId;
+      }), `crear tema «${t.nom}»`).then(creat => {
+        mapaTemes[t.topicIdVell] = creat.data.topicId;
+      }).catch(e => {
+        console.error(`⚠️  Tema «${t.nom}» no recreat: ${e.message}`);
+      });
   }
   console.log(`✅ Temes recreats: ${Object.keys(mapaTemes).length}`);
 
@@ -73,6 +76,7 @@ async function main() {
           workType: w.workType,
           state: 'DRAFT',
           maxPoints: w.maxPoints ?? undefined,
+          dueDate: w.dataLliurament || undefined,
           topicId: w.topicIdVell ? mapaTemes[w.topicIdVell] : undefined,
           materials: netejaMaterials(w.materials),
         },
