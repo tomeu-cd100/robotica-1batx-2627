@@ -1,9 +1,9 @@
 /*
  * Backup complet del contingut del curs de Classroom (temes, tasques,
- * materials, anuncis) a un fitxer JSON local. NOMES contingut creat pel
+ * materials, anuncis) a un fitxer JSON local. NOMÉS contingut creat pel
  * docent: no llegeix alumnat, notes ni entregues (l'API no ho permet).
  *
- * Us:  node backup_classroom.js
+ * Ús:  node backup_classroom.js
  * Genera: backups/backup_<COURSE_ID>_<AAAAMMDD-HHMM>.json
  */
 import fs from 'fs';

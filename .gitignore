@@ -71,8 +71,8 @@ Material Classroom/*
 !Material Classroom/moure_carpetes_maker_a_treball.mjs
 !Material Classroom/preparar_drive_maker_inici_curs.mjs
 !Material Classroom/backup_classroom.js
-# Carpeta de backups: es versiona l'estructura (.gitkeep) pero NO els JSON
-# generats (contingut del curs, es decideix a ma quan versionar-ne un).
+# Carpeta de backups: es versiona l'estructura (.gitkeep) però NO els JSON
+# generats (contingut del curs, es decideix a mà quan versionar-ne un).
 !Material Classroom/backups/
 Material Classroom/backups/*
 !Material Classroom/backups/.gitkeep
