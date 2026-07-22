@@ -1,0 +1,2615 @@
+{
+  "generat": "2026-07-22T18:46:48.551Z",
+  "curs": {
+    "id": "868858694512",
+    "nom": "Robòtica - 1r Batx - Curs 26/27",
+    "seccio": null,
+    "descripcio": null,
+    "alternateLink": "https://classroom.google.com/c/ODY4ODU4Njk0NTEy"
+  },
+  "temes": [
+    {
+      "topicIdVell": "870592700433",
+      "nom": "Quadern tècnic"
+    },
+    {
+      "topicIdVell": "870536508082",
+      "nom": "Proves i avaluació"
+    },
+    {
+      "topicIdVell": "870467767393",
+      "nom": "Material per al curs"
+    },
+    {
+      "topicIdVell": "798422971376",
+      "nom": "SA0 · Vocabulari essencial i bases de programació"
+    },
+    {
+      "topicIdVell": "870500207591",
+      "nom": "SA1 · Qüestionari de conceptes (robot, sistema embegut i placa UNO)"
+    },
+    {
+      "topicIdVell": "870507457924",
+      "nom": "SA2 · Sortides digitals i PWM: dona vida als actuadors"
+    },
+    {
+      "topicIdVell": "870511802408",
+      "nom": "SA3 · Entrades i sensors: el robot percep"
+    },
+    {
+      "topicIdVell": "870512711808",
+      "nom": "SA4 · Moviment: servos, motors i ponts H"
+    },
+    {
+      "topicIdVell": "870512669899",
+      "nom": "SA5 · micro:bit i MicroPython: un altre paradigma"
+    },
+    {
+      "topicIdVell": "870512731275",
+      "nom": "SA6 · Sistemes de control: llaç obert/tancat i màquines d'estats"
+    },
+    {
+      "topicIdVell": "870512438579",
+      "nom": "SA7 · Robòtica mòbil: cinemàtica i trajectòries"
+    },
+    {
+      "topicIdVell": "870512485238",
+      "nom": "SA8 · IoT i IA: el robot connectat i intel·ligent"
+    },
+    {
+      "topicIdVell": "870512720734",
+      "nom": "SA9 · Repte final integrador (opció competició)"
+    },
+    {
+      "topicIdVell": "868858694529",
+      "nom": "Arduino"
+    },
+    {
+      "topicIdVell": "868858694532",
+      "nom": "Programació"
+    }
+  ],
+  "courseWork": [
+    {
+      "titol": "SA9 · Fitxa base — Repte final integrador",
+      "descripcio": "Fitxa d'equip de la SA9 (repte, rols, disseny, planificació, iteracions i defensa). UNA resposta per equip. El sistema, el dossier tècnic i la defensa es lliuren a part (R1-R5); la prova T3 és individual.",
+      "estat": "DRAFT",
+      "workType": "ASSIGNMENT",
+      "maxPoints": 33,
+      "topicIdVell": "870512720734",
+      "materials": [
+        {
+          "link": {
+            "url": "https://docs.google.com/forms/d/e/1FAIpQLSfDw893pgG5cTQO8MeMizttGZLH7gGIx5lagGrn1NgfYVO_8g/viewform",
+            "title": "Google Forms: Sign-in",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://docs.google.com/forms/d/e/1FAIpQLSfDw893pgG5cTQO8MeMizttGZLH7gGIx5lagGrn1NgfYVO_8g/viewform"
+          }
+        },
+        {
+          "link": {
+            "url": "https://tomeu-cd100.github.io/robotica-1batx-2627/classes/sa9/sa9-fitxa-alumnat.html",
+            "title": "SA9 · Fitxa base — Repte final integrador · *el teu sistema: de la idea a la demo* · Robòtica · 1r de Batxillerat",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://tomeu-cd100.github.io/robotica-1batx-2627/classes/sa9/sa9-fitxa-alumnat.html"
+          }
+        }
+      ],
+      "dataLliurament": null
+    },
+    {
+      "titol": "SA9 · Qüestionari de repàs — Projecte final",
+      "descripcio": "Repàs autocorrectiu de la SA9 (NO qualifica; el pots repetir). Fes-lo quan tanquem la SA, i torna-hi unes setmanes després: recordar més tard és el que fa que no s'esborri. Si al mini-check vas treure vermell, comença per aquí.",
+      "estat": "DRAFT",
+      "workType": "ASSIGNMENT",
+      "maxPoints": 33,
+      "topicIdVell": "870512720734",
+      "materials": [
+        {
+          "link": {
+            "url": "https://docs.google.com/forms/d/e/1FAIpQLSegUBu4QNektFgD5HytriqAeC3pLl_MdGcA7Iff331I5HnJiw/viewform",
+            "title": "Google Forms: Sign-in",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://docs.google.com/forms/d/e/1FAIpQLSegUBu4QNektFgD5HytriqAeC3pLl_MdGcA7Iff331I5HnJiw/viewform"
+          }
+        }
+      ],
+      "dataLliurament": null
+    },
+    {
+      "titol": "SA9 · Projecte final: dossier tècnic + defensa",
+      "descripcio": "PROJECTE FINAL INTEGRADOR (equip): sistema robòtic autònom triat del banc de reptes, desenvolupat amb el mètode de projecte (idear → prototipar → provar → millorar → comunicar).\nLliurament de l'equip:\n· El sistema funcionant (demostració en directe a la defensa).\n· DOSSIER TÈCNIC complet (requisits, esquemes, codi comentat, iteracions, repartiment de rols).\n· DEFENSA ORAL (5' + preguntes individuals): cada membre ha de saber explicar qualsevol part.\nS'avalua amb TOTES les rúbriques (R1-R5); pes destacat dins «Projectes i productes». Rúbrica enllaçada a la tasca.",
+      "estat": "DRAFT",
+      "workType": "ASSIGNMENT",
+      "maxPoints": 33,
+      "topicIdVell": "870512720734",
+      "materials": [
+        {
+          "link": {
+            "url": "https://tomeu-cd100.github.io/robotica-1batx-2627/classes/sa9/sa9-fitxa-alumnat.html",
+            "title": "SA9 · Fitxa base — Repte final integrador · *el teu sistema: de la idea a la demo* · Robòtica · 1r de Batxillerat",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://tomeu-cd100.github.io/robotica-1batx-2627/classes/sa9/sa9-fitxa-alumnat.html"
+          }
+        },
+        {
+          "link": {
+            "url": "https://tomeu-cd100.github.io/robotica-1batx-2627/programacio/07-rubriques.html",
+            "title": "07 · Rúbriques d'avaluació · Robòtica · 1r de Batxillerat",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://tomeu-cd100.github.io/robotica-1batx-2627/programacio/07-rubriques.html"
+          }
+        }
+      ],
+      "dataLliurament": null
+    },
+    {
+      "titol": "Producte T3 · El rover autònom 🚗",
+      "descripcio": "Lliurament del robot del 3r trimestre: el rover que segueix línia i evita obstacles, amb telemetria per ràdio, al repte final i la competició de SA9. La rúbrica R1-R4 és al dossier.\n\nRúbrica importable (per al docent): https://docs.google.com/spreadsheets/d/1uJ5aeDkNAnlZP8rGvfLSquzpV5c63JWMd3cQH0yIwpE/edit?usp=drivesdk",
+      "estat": "DRAFT",
+      "workType": "ASSIGNMENT",
+      "maxPoints": 33,
+      "topicIdVell": "870512720734",
+      "materials": [
+        {
+          "link": {
+            "url": "https://tomeu-cd100.github.io/robotica-1batx-2627/classes/00-general/00-projecte-t3-rover.html",
+            "title": "🚗 Projecte T3 · El rover autònom · Robòtica · 1r de Batxillerat",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://tomeu-cd100.github.io/robotica-1batx-2627/classes/00-general/00-projecte-t3-rover.html"
+          }
+        },
+        {
+          "link": {
+            "url": "https://tomeu-cd100.github.io/robotica-1batx-2627/classes/00-general/00-fil-conductor-robots.html",
+            "title": "🤖 El fil conductor del curs: tres robots, tres trimestres · Robòtica · 1r de Batxillerat",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://tomeu-cd100.github.io/robotica-1batx-2627/classes/00-general/00-fil-conductor-robots.html"
+          }
+        }
+      ],
+      "dataLliurament": null
+    },
+    {
+      "titol": "Producte T2 · El braç robòtic 🦾",
+      "descripcio": "Lliurament del robot del 2n trimestre: el braç de 3 articulacions amb màquina d'estats (repòs/manual/replay/emergència) i comandament per ràdio. Es tanca a la S3 de SA6. La rúbrica R1-R4 és al dossier.\n\nRúbrica importable (per al docent): https://docs.google.com/spreadsheets/d/1BmbVFt26E5nYllWqk3y9zOtDuqlWV6H8_9N4mTdFkZA/edit?usp=drivesdk",
+      "estat": "DRAFT",
+      "workType": "ASSIGNMENT",
+      "maxPoints": 33,
+      "topicIdVell": "870512731275",
+      "materials": [
+        {
+          "link": {
+            "url": "https://tomeu-cd100.github.io/robotica-1batx-2627/classes/00-general/00-projecte-t2-brac.html",
+            "title": "🦾 Projecte T2 · El braç robòtic · Robòtica · 1r de Batxillerat",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://tomeu-cd100.github.io/robotica-1batx-2627/classes/00-general/00-projecte-t2-brac.html"
+          }
+        },
+        {
+          "link": {
+            "url": "https://tomeu-cd100.github.io/robotica-1batx-2627/classes/00-general/00-fil-conductor-robots.html",
+            "title": "🤖 El fil conductor del curs: tres robots, tres trimestres · Robòtica · 1r de Batxillerat",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://tomeu-cd100.github.io/robotica-1batx-2627/classes/00-general/00-fil-conductor-robots.html"
+          }
+        }
+      ],
+      "dataLliurament": null
+    },
+    {
+      "titol": "Producte T1 · La mascota reactiva 🐣",
+      "descripcio": "Lliurament del robot del 1r trimestre: la mascota muntada amb com a mínim 3 reaccions sensor→comportament i la fitxa de personalitat. Es tanca a la S3 de SA3. La rúbrica R1-R4 és al dossier.\n\nRúbrica importable (per al docent): https://docs.google.com/spreadsheets/d/1K6wF6GtOzl-bR-MQDGrkokMVfidBnwlXJOJ67KN1v6E/edit?usp=drivesdk",
+      "estat": "PUBLISHED",
+      "workType": "ASSIGNMENT",
+      "maxPoints": 33,
+      "topicIdVell": "870511802408",
+      "materials": [
+        {
+          "link": {
+            "url": "https://tomeu-cd100.github.io/robotica-1batx-2627/classes/00-general/00-projecte-t1-mascota.html",
+            "title": "🐣 Projecte T1 · La mascota reactiva · Robòtica · 1r de Batxillerat",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://tomeu-cd100.github.io/robotica-1batx-2627/classes/00-general/00-projecte-t1-mascota.html"
+          }
+        },
+        {
+          "link": {
+            "url": "https://tomeu-cd100.github.io/robotica-1batx-2627/classes/00-general/00-fil-conductor-robots.html",
+            "title": "🤖 El fil conductor del curs: tres robots, tres trimestres · Robòtica · 1r de Batxillerat",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://tomeu-cd100.github.io/robotica-1batx-2627/classes/00-general/00-fil-conductor-robots.html"
+          }
+        }
+      ],
+      "dataLliurament": null
+    },
+    {
+      "titol": "SA4 · Pràctica avaluable: Barrera automàtica",
+      "descripcio": "Producte avaluable de la SA4: BARRERA AUTOMÀTICA (servo + ultrasons + LED indicador).\nLa barrera s'obre sola quan el sensor detecta un vehicle/objecte a prop i es torna a tancar amb seguretat.\nLliura: foto o vídeo del muntatge funcionant, el codi (.ino) i el pseudocodi + esquema al quadern tècnic. Defensa d'1 minut.\nS'avalua amb R1 (codi), R2 (circuit) i R3 (projecte). Rúbrica enllaçada a la tasca.",
+      "estat": "PUBLISHED",
+      "workType": "ASSIGNMENT",
+      "maxPoints": 33,
+      "topicIdVell": "870512711808",
+      "materials": [
+        {
+          "link": {
+            "url": "https://tomeu-cd100.github.io/robotica-1batx-2627/classes/sa4/sa4-fitxa-alumnat.html",
+            "title": "SA4 · Fitxa base — Moviment: servos, motors i ponts H · *fes que les coses es moguin* · Robòtica · 1r de Batxillerat",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://tomeu-cd100.github.io/robotica-1batx-2627/classes/sa4/sa4-fitxa-alumnat.html"
+          }
+        },
+        {
+          "link": {
+            "url": "https://tomeu-cd100.github.io/robotica-1batx-2627/programacio/07-rubriques.html",
+            "title": "07 · Rúbriques d'avaluació · Robòtica · 1r de Batxillerat",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://tomeu-cd100.github.io/robotica-1batx-2627/programacio/07-rubriques.html"
+          }
+        }
+      ],
+      "dataLliurament": null
+    },
+    {
+      "titol": "SA5 · Qüestionari de conceptes",
+      "descripcio": "Qüestionari autocorrectiu de conceptes de la SA5. 10 preguntes d'opció múltiple (1 punt cadascuna) + una pregunta oberta. Es corregeix automàticament dins el formulari.",
+      "estat": "PUBLISHED",
+      "workType": "ASSIGNMENT",
+      "maxPoints": 33,
+      "topicIdVell": "870512669899",
+      "materials": [
+        {
+          "form": {
+            "formUrl": "https://docs.google.com/forms/d/1W5BV-K9QMsBckDcbE1RVOUodU9bfN2vHTGcfWf8mI4E/edit",
+            "responseUrl": "https://docs.google.com/spreadsheets/d/15LvyQ5Se5oa6RTKaqhDVGWt9NNDd_JsnV5a9nqSvRgQ?resourcekey=&usp=emb&urp=[urp]#gid=758964272",
+            "title": "SA5 · Qüestionari de conceptes (micro:bit i MicroPython)",
+            "thumbnailUrl": "https://lh4.googleusercontent.com/gXpOnUcGShxsNg8dcXFMGq8FU0Dr-qioE9-a-427lBseBAaHiQdk7WE3H9iZW6n0rqAqaluzGBG1gOw=w90-h90-p"
+          }
+        }
+      ],
+      "dataLliurament": null
+    },
+    {
+      "titol": "SA4 · Qüestionari de conceptes",
+      "descripcio": "Qüestionari autocorrectiu de conceptes de la SA4. 10 preguntes d'opció múltiple (1 punt cadascuna) + una pregunta oberta. Es corregeix automàticament dins el formulari.",
+      "estat": "PUBLISHED",
+      "workType": "ASSIGNMENT",
+      "maxPoints": 33,
+      "topicIdVell": "870512711808",
+      "materials": [
+        {
+          "form": {
+            "formUrl": "https://docs.google.com/forms/d/1H3MR0iJ-6haLg_-pJVEjQBqh5KymMTxje1GFKei33W8/edit",
+            "responseUrl": "https://docs.google.com/spreadsheets/d/1h-feJ91vowG5J2WVv4pumtIQySDfPRJ-JGo3Mz1Jf5c?resourcekey=&usp=emb&urp=[urp]#gid=1561399906",
+            "title": "SA4 · Qüestionari de conceptes (moviment: servos, motors i ponts H)",
+            "thumbnailUrl": "https://lh4.googleusercontent.com/yUPlkjIw8lKOdEXuqxu13dr68cDjiGigOTu33mUmLNG2vq_kAW7tcHBrqUvTCU5usfc1AopSqsNHNOY=w90-h90-p"
+          }
+        }
+      ],
+      "dataLliurament": null
+    },
+    {
+      "titol": "SA3 · Qüestionari de conceptes",
+      "descripcio": "Qüestionari autocorrectiu de conceptes de la SA3. 10 preguntes d'opció múltiple (1 punt cadascuna) + una pregunta oberta. Es corregeix automàticament dins el formulari.",
+      "estat": "PUBLISHED",
+      "workType": "ASSIGNMENT",
+      "maxPoints": 33,
+      "topicIdVell": "870511802408",
+      "materials": [
+        {
+          "form": {
+            "formUrl": "https://docs.google.com/forms/d/1wD4ANjTvcVrMmqq9276ouFi_GJbqvUhC-4macOhibOM/edit",
+            "responseUrl": "https://docs.google.com/spreadsheets/d/1F8b5Xp3-ivJXob3NKnVyv9ZDMAa52QJW27kieLVUDYI?resourcekey=&usp=emb&urp=[urp]#gid=589074130",
+            "title": "SA3 · Qüestionari de conceptes (entrades i sensors)",
+            "thumbnailUrl": "https://lh6.googleusercontent.com/gvpJeeIjQtLOcqiEypNJR-bGTBuM9SuMdm8_7f1m74dbRKtTZtDGLXhVqPschnmHTCIBbu4W2yROFUA=w90-h90-p"
+          }
+        }
+      ],
+      "dataLliurament": null
+    },
+    {
+      "titol": "SA2 · Qüestionari de conceptes",
+      "descripcio": "Qüestionari autocorrectiu de conceptes de la SA2. 10 preguntes d'opció múltiple (1 punt cadascuna) + una pregunta oberta. Es corregeix automàticament dins el formulari.",
+      "estat": "PUBLISHED",
+      "workType": "ASSIGNMENT",
+      "maxPoints": 33,
+      "topicIdVell": "870507457924",
+      "materials": [
+        {
+          "form": {
+            "formUrl": "https://docs.google.com/forms/d/1iMaL46ZPSD1AobI1Jywd_JfpC65QFjsSSf94WiHl0Ys/edit",
+            "responseUrl": "https://docs.google.com/spreadsheets/d/1U_oQ3QjOSIVEDrGoJfd7AsUjB2uhWGdiOKr7375XBLE?resourcekey=&usp=emb&urp=[urp]#gid=1567967220",
+            "title": "SA2 · Qüestionari de conceptes (programar la placa i sortides digitals/PWM)",
+            "thumbnailUrl": "https://lh4.googleusercontent.com/PCVguQe_deb_w1qbHjb63ERWZ_zIgTLwM_bsbnZ1qLDtp9ocXSpa8vL6_E6QavR5HgyPC5M80xQBqcU=w90-h90-p"
+          }
+        }
+      ],
+      "dataLliurament": null
+    },
+    {
+      "titol": "SA1 · Qüestionari de conceptes",
+      "descripcio": "Qüestionari autocorrectiu de conceptes de la SA1. 10 preguntes d'opció múltiple (1 punt cadascuna) + una pregunta oberta. Es corregeix automàticament dins el formulari.",
+      "estat": "PUBLISHED",
+      "workType": "ASSIGNMENT",
+      "maxPoints": 33,
+      "topicIdVell": "870500207591",
+      "materials": [
+        {
+          "form": {
+            "formUrl": "https://docs.google.com/forms/d/1YE3uHuJp3ZSf9V43JT32p5HK3XAvqyO3u4SMBs5zUDc/edit",
+            "responseUrl": "https://docs.google.com/spreadsheets/d/1WQSAGho7yacGI4Wc6k0yP-_L0ngsWFGFPdUFJSlRACc?resourcekey=&usp=emb&urp=[urp]#gid=120463822",
+            "title": "SA1 · Qüestionari de conceptes (Robot, sistema embegut i placa UNO)",
+            "thumbnailUrl": "https://lh4.googleusercontent.com/oTh8-0x12_zK3KodUpKbqGP9wtZ8gGE4bv0ixiIM16NktmZohyHe0AkrQhIs-nbX09o_HmMxzn5j4vY=w90-h90-p"
+          }
+        }
+      ],
+      "dataLliurament": null
+    },
+    {
+      "titol": "SA9 · Qüestionari de conceptes",
+      "descripcio": "Qüestionari autocorrectiu de conceptes de la SA9. 10 preguntes d'opció múltiple (1 punt cadascuna) + una pregunta oberta. Es corregeix automàticament dins el formulari.",
+      "estat": "PUBLISHED",
+      "workType": "ASSIGNMENT",
+      "maxPoints": 33,
+      "topicIdVell": "870512720734",
+      "materials": [
+        {
+          "form": {
+            "formUrl": "https://docs.google.com/forms/d/19iVJ8ZYRk1cwg2TXcrCAeuDl1Zv-T2BjCyEuWMye29I/edit",
+            "responseUrl": "https://docs.google.com/spreadsheets/d/1TwIVRojnN7Be2Bv06T4_HIAfREGAY4811pQ3dBUifXw?resourcekey=&usp=emb&urp=[urp]#gid=588882270",
+            "title": "SA9 · Qüestionari de conceptes (projecte de síntesi: mètode, planificació i documentació)",
+            "thumbnailUrl": "https://lh5.googleusercontent.com/iNvatMiEX6vFFvOX746g4gQ28yfbuI0kn4E7BvO1MAuZkAAyNvL3lcSIdyHh2K1lbJlerZmTSceaMF0=w90-h90-p"
+          }
+        }
+      ],
+      "dataLliurament": null
+    },
+    {
+      "titol": "SA8 · Qüestionari de conceptes",
+      "descripcio": "Qüestionari autocorrectiu de conceptes de la SA8. 10 preguntes d'opció múltiple (1 punt cadascuna) + una pregunta oberta. Es corregeix automàticament dins el formulari.",
+      "estat": "PUBLISHED",
+      "workType": "ASSIGNMENT",
+      "maxPoints": 33,
+      "topicIdVell": "870512485238",
+      "materials": [
+        {
+          "form": {
+            "formUrl": "https://docs.google.com/forms/d/1oVSTWf9JLigt-p19Q1pIteKl9OEcg6jojjcSrv5NY4s/edit",
+            "responseUrl": "https://docs.google.com/spreadsheets/d/1jNQ8QkKia95v0JzKhlhwVx5ua221dc7J3g-9XSU0e8k?resourcekey=&usp=emb&urp=[urp]#gid=939479211",
+            "title": "SA8 · Qüestionari de conceptes (IoT i IA: telemetria, aprenentatge automàtic i ètica de dades)",
+            "thumbnailUrl": "https://lh4.googleusercontent.com/M0L2I62OUPkbo3bMZSwRIKwAb-Sw3vtTYw0Uz6H8svlJk3JMSuZhxpayoZSIWm6okiWF7_fJmWgTcxc=w90-h90-p"
+          }
+        }
+      ],
+      "dataLliurament": null
+    },
+    {
+      "titol": "SA7 · Qüestionari de conceptes",
+      "descripcio": "Qüestionari autocorrectiu de conceptes de la SA7. 10 preguntes d'opció múltiple (1 punt cadascuna) + una pregunta oberta. Es corregeix automàticament dins el formulari.",
+      "estat": "PUBLISHED",
+      "workType": "ASSIGNMENT",
+      "maxPoints": 33,
+      "topicIdVell": "870512438579",
+      "materials": [
+        {
+          "form": {
+            "formUrl": "https://docs.google.com/forms/d/1RTLgHMolJZM2dtJ7dtEvQVhvJADc7j2TYK7MxPo3SPQ/edit",
+            "responseUrl": "https://docs.google.com/spreadsheets/d/1N30I8dPrByXPUbqcB8AMMHGRAoY-evXKjPTY_ASXHAA?resourcekey=&usp=emb&urp=[urp]#gid=1516539675",
+            "title": "SA7 · Qüestionari de conceptes (robòtica mòbil: moviment i comportaments autònoms)",
+            "thumbnailUrl": "https://lh3.googleusercontent.com/Kwf6jD_yaApb-rqfpJPSY4QVwMvEFA0VdYEPSH3V7h5P90nSYXGvsFamLaq4ZgDSyWx4CRJIBYbz7VA=w90-h90-p"
+          }
+        }
+      ],
+      "dataLliurament": null
+    },
+    {
+      "titol": "SA6 · Qüestionari de conceptes",
+      "descripcio": "Qüestionari autocorrectiu de conceptes de la SA6. 10 preguntes d'opció múltiple (1 punt cadascuna) + una pregunta oberta. Es corregeix automàticament dins el formulari.",
+      "estat": "PUBLISHED",
+      "workType": "ASSIGNMENT",
+      "maxPoints": 33,
+      "topicIdVell": "870512731275",
+      "materials": [
+        {
+          "form": {
+            "formUrl": "https://docs.google.com/forms/d/1PzXUiospXVGhTWu8inyKp6FxbgD3zxkpL6koTOdpv0E/edit",
+            "responseUrl": "https://docs.google.com/spreadsheets/d/1MYZZDzMZTnQRU0u7O0nB1hKG9YC0QVpS47_jbhTLiWQ?resourcekey=&usp=emb&urp=[urp]#gid=566143892",
+            "title": "SA6 · Qüestionari de conceptes (sistemes de control: llaç obert/tancat, histèresi i màquines d'estats)",
+            "thumbnailUrl": "https://lh6.googleusercontent.com/iYUTTVzILOYg_WcExClTafoHz4HqVhTDgEOFwS-aUBcl8bGM06D42NdkZQRH4XFuk5uIdo40yTU69ug=w90-h90-p"
+          }
+        }
+      ],
+      "dataLliurament": null
+    },
+    {
+      "titol": "SA3 · Qüestionari de repàs — Entrades i sensors",
+      "descripcio": "Repàs autocorrectiu de la SA3 (NO qualifica; el pots repetir). Fes-lo quan tanquem la SA, i torna-hi unes setmanes després: recordar més tard és el que fa que no s'esborri. Si al mini-check vas treure vermell, comença per aquí.",
+      "estat": "PUBLISHED",
+      "workType": "ASSIGNMENT",
+      "maxPoints": 33,
+      "topicIdVell": "870511802408",
+      "materials": [
+        {
+          "link": {
+            "url": "https://docs.google.com/forms/d/e/1FAIpQLSdp24TkWC7yrlZXWf-Pwo8-11bBVttQo64Ch5mGPMfvzKPXpA/viewform",
+            "title": "Google Forms: Sign-in",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://docs.google.com/forms/d/e/1FAIpQLSdp24TkWC7yrlZXWf-Pwo8-11bBVttQo64Ch5mGPMfvzKPXpA/viewform"
+          }
+        }
+      ],
+      "dataLliurament": null
+    },
+    {
+      "titol": "SA2 · Qüestionari de repàs — Sortides digitals i PWM",
+      "descripcio": "Repàs autocorrectiu de la SA2 (NO qualifica; el pots repetir). Fes-lo quan tanquem la SA, i torna-hi unes setmanes després: recordar més tard és el que fa que no s'esborri. Si al mini-check vas treure vermell, comença per aquí.",
+      "estat": "PUBLISHED",
+      "workType": "ASSIGNMENT",
+      "maxPoints": 33,
+      "topicIdVell": "870507457924",
+      "materials": [
+        {
+          "link": {
+            "url": "https://docs.google.com/forms/d/e/1FAIpQLSeV6wOG-YP2Wqj7DgBfbhoOviRQN7HwTsxywwc8OBm7ElVHUg/viewform",
+            "title": "Google Forms: Sign-in",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://docs.google.com/forms/d/e/1FAIpQLSeV6wOG-YP2Wqj7DgBfbhoOviRQN7HwTsxywwc8OBm7ElVHUg/viewform"
+          }
+        }
+      ],
+      "dataLliurament": null
+    },
+    {
+      "titol": "SA1 · Qüestionari de repàs — Què és un robot?",
+      "descripcio": "Repàs autocorrectiu de la SA1 (NO qualifica; el pots repetir). Fes-lo quan tanquem la SA, i torna-hi unes setmanes després: recordar més tard és el que fa que no s'esborri. Si al mini-check vas treure vermell, comença per aquí.",
+      "estat": "PUBLISHED",
+      "workType": "ASSIGNMENT",
+      "maxPoints": 33,
+      "topicIdVell": "870500207591",
+      "materials": [
+        {
+          "link": {
+            "url": "https://docs.google.com/forms/d/e/1FAIpQLSflXWYu8n4uLFfwuBgcPtFd9eCg593sVCaFG0Xn8yV3jQswzQ/viewform",
+            "title": "Google Forms: Sign-in",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://docs.google.com/forms/d/e/1FAIpQLSflXWYu8n4uLFfwuBgcPtFd9eCg593sVCaFG0Xn8yV3jQswzQ/viewform"
+          }
+        }
+      ],
+      "dataLliurament": null
+    },
+    {
+      "titol": "Prova pràctica T3 · «Robot autònom + sistema connectat»",
+      "descripcio": "Prova pràctica de trimestre (SA7-SA9). Durada: 2 h. Material: robot mòbil (Imagina 3dBot) + pista de proves; micro:bit. Es permet consultar esquemes i quadern tècnic.\nAl 3r trimestre el pes principal és el PROJECTE FINAL (SA9): aquesta prova el complementa comprovant destreses individuals.\n\nPART A — Robòtica mòbil (6 punts):\n· Nivell 1 (nucli): el robot fa un RECORREGUT DEFINIT fiable (recte + gir de 90° + recte).\n· Nivell 2 (notable): REACCIONA A UN OBSTACLE (s'atura o l'esquiva amb l'ultrasons).\n· Nivell 3 (excel·lent): SEGUEIX UNA LÍNIA o corregeix el rumb proporcionalment.\n\nPART B — Integració IoT/IA (4 punts):\n· Nivell 1 (nucli): amb micro:bit, mesura i transmet una dada (telemetria) o classifica un gest.\n· Ampliació: integra la dada/decisió en el comportament (p. ex. una ordre per ràdio atura el robot).\n\nLliurament: demostració a la pista + explicació al quadern (diagrama de la decisió del robot i descripció del sistema connectat).\n\nCorrecció (10 punts): recorregut fiable 3 (R1, R3) · reacció a obstacle 1,5 (R3) · línia/proporcional 1,5 (R3) · telemetria o gest 2 (R1) · integració dada→acció 1 (R3) · documentació 1 (R4).\nS'avalua amb R1, R3 i R4. Rúbrica enllaçada a la tasca.",
+      "estat": "DRAFT",
+      "workType": "ASSIGNMENT",
+      "maxPoints": 33,
+      "topicIdVell": "870536508082",
+      "materials": [
+        {
+          "link": {
+            "url": "https://tomeu-cd100.github.io/robotica-1batx-2627/avaluacio/prova-practica-t3.html",
+            "title": "Prova pràctica — Trimestre 3 (SA7-SA9) · Robòtica · 1r de Batxillerat",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://tomeu-cd100.github.io/robotica-1batx-2627/avaluacio/prova-practica-t3.html"
+          }
+        },
+        {
+          "link": {
+            "url": "https://tomeu-cd100.github.io/robotica-1batx-2627/programacio/07-rubriques.html",
+            "title": "07 · Rúbriques d'avaluació · Robòtica · 1r de Batxillerat",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://tomeu-cd100.github.io/robotica-1batx-2627/programacio/07-rubriques.html"
+          }
+        }
+      ],
+      "dataLliurament": null
+    },
+    {
+      "titol": "Prova pràctica T2 · «Control climàtic + estació remota»",
+      "descripcio": "Prova pràctica de trimestre (SA4-SA6). Durada: la S4 de la SA6 sencera. Individual. Material: Arduino UNO + ventilador/pont H (o LED PWM) + NTC o potenciòmetre; 2 micro:bit. Es permet consultar esquemes i quadern tècnic.\n\nPART A — Control amb Arduino (nucli, 6 punts):\n· Nivell 1 (nucli): control de temperatura TOT/RES AMB HISTÈRESI (engega per sobre d'un llindar, atura per sota d'un altre), llegint un sensor.\n· Nivell 2 (notable): afegeix indicador d'estat (LED verd/vermell).\n· Nivell 3 (excel·lent): control PROPORCIONAL (la velocitat depèn de l'error) + Serial Plotter.\n\nPART B — micro:bit (4 punts):\n· Nivell 1 (nucli): estació que mostra temperatura/llum i alerta si supera un llindar.\n· Ampliació: envia la lectura per RÀDIO a una segona placa que la rep i la mostra.\n\nLliurament: tots dos programes funcionant + quadern (diagrama de blocs del control i taula d'una lectura enviada/rebuda).\n\nCorrecció (10 punts): histèresi funcional 3 (R1, R3) · indicador d'estat 1 (R3) · proporcional + Plotter 2 (R1, R3) · lectura i alerta micro:bit 2 (R1) · ràdio 1 (R1) · documentació 1 (R4).\nS'avalua amb R1, R3 i R4. Rúbrica enllaçada a la tasca.",
+      "estat": "DRAFT",
+      "workType": "ASSIGNMENT",
+      "maxPoints": 33,
+      "topicIdVell": "870536508082",
+      "materials": [
+        {
+          "link": {
+            "url": "https://tomeu-cd100.github.io/robotica-1batx-2627/avaluacio/prova-practica-t2.html",
+            "title": "Prova pràctica — Trimestre 2 (SA4-SA6) · Robòtica · 1r de Batxillerat",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://tomeu-cd100.github.io/robotica-1batx-2627/avaluacio/prova-practica-t2.html"
+          }
+        },
+        {
+          "link": {
+            "url": "https://tomeu-cd100.github.io/robotica-1batx-2627/programacio/07-rubriques.html",
+            "title": "07 · Rúbriques d'avaluació · Robòtica · 1r de Batxillerat",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://tomeu-cd100.github.io/robotica-1batx-2627/programacio/07-rubriques.html"
+          }
+        }
+      ],
+      "dataLliurament": null
+    },
+    {
+      "titol": "SA8 · Pràctica avaluable: Sistema connectat o classificador + reflexió ètica",
+      "descripcio": "Producte avaluable de la SA8 (tria'n un):\n· SISTEMA CONNECTAT: telemetria per ràdio entre micro:bit (mesura → transmissió → visualització), o\n· CLASSIFICADOR: reconeixement de gestos (per regles o entrenant un model amb exemples).\nAcompanya'l d'una REFLEXIÓ ÈTICA breu al quadern: dades, privacitat i biaixos del teu sistema.\nLliura: el codi (.py), demostració (foto/vídeo) i la reflexió.\nS'avalua amb R1 (codi), R3 (sistema) i R4 (reflexió). Rúbrica enllaçada a la tasca.",
+      "estat": "DRAFT",
+      "workType": "ASSIGNMENT",
+      "maxPoints": 10,
+      "topicIdVell": "870512485238",
+      "materials": [
+        {
+          "link": {
+            "url": "https://tomeu-cd100.github.io/robotica-1batx-2627/classes/sa8/sa8-fitxa-alumnat.html",
+            "title": "SA8 · Fitxa base — IoT i IA · *connecta el sistema i decideix amb dades* · Robòtica · 1r de Batxillerat",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://tomeu-cd100.github.io/robotica-1batx-2627/classes/sa8/sa8-fitxa-alumnat.html"
+          }
+        },
+        {
+          "link": {
+            "url": "https://tomeu-cd100.github.io/robotica-1batx-2627/programacio/07-rubriques.html",
+            "title": "07 · Rúbriques d'avaluació · Robòtica · 1r de Batxillerat",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://tomeu-cd100.github.io/robotica-1batx-2627/programacio/07-rubriques.html"
+          }
+        }
+      ],
+      "dataLliurament": null
+    },
+    {
+      "titol": "SA7 · Pràctica avaluable: Comportament autònom del robot",
+      "descripcio": "Producte avaluable de la SA7: COMPORTAMENT AUTÒNOM del robot mòbil (evita-obstacles o seguidor de línia) + registre d'iteracions.\nEl robot ha de completar la pista de manera autònoma. Documenta cada iteració al quadern: què falla, què canvies, què millora (temps o fiabilitat).\nLliura: vídeo del robot a la pista, el codi (.ino) i el registre d'iteracions del quadern.\nS'avalua amb R1 (codi), R3 (robot) i R4 (registre). Rúbrica enllaçada a la tasca.",
+      "estat": "DRAFT",
+      "workType": "ASSIGNMENT",
+      "maxPoints": 10,
+      "topicIdVell": "870512438579",
+      "materials": [
+        {
+          "link": {
+            "url": "https://tomeu-cd100.github.io/robotica-1batx-2627/classes/sa7/sa7-fitxa-alumnat.html",
+            "title": "SA7 · Fitxa base — Robòtica mòbil · *com es mou i gira un robot* · Robòtica · 1r de Batxillerat",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://tomeu-cd100.github.io/robotica-1batx-2627/classes/sa7/sa7-fitxa-alumnat.html"
+          }
+        },
+        {
+          "link": {
+            "url": "https://tomeu-cd100.github.io/robotica-1batx-2627/programacio/07-rubriques.html",
+            "title": "07 · Rúbriques d'avaluació · Robòtica · 1r de Batxillerat",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://tomeu-cd100.github.io/robotica-1batx-2627/programacio/07-rubriques.html"
+          }
+        }
+      ],
+      "dataLliurament": null
+    },
+    {
+      "titol": "SA6 · Pràctica avaluable: Sistema de control documentat",
+      "descripcio": "Producte avaluable de la SA6: SISTEMA DE CONTROL amb llaç tancat (p. ex. termòstat amb histèresi o control d'un procés amb màquina d'estats). Es tanca a la S3.\nLliura: foto o vídeo funcionant, el codi (.ino) i, al quadern tècnic, el diagrama de blocs del control (consigna, sensor, error, actuador) i el diagrama d'estats.\nS'avalua amb R1 (codi), R3 (control) i R4 (documentació). Rúbrica enllaçada a la tasca.",
+      "estat": "DRAFT",
+      "workType": "ASSIGNMENT",
+      "maxPoints": 10,
+      "topicIdVell": "870512731275",
+      "materials": [
+        {
+          "link": {
+            "url": "https://tomeu-cd100.github.io/robotica-1batx-2627/classes/sa6/sa6-fitxa-alumnat.html",
+            "title": "SA6 · Fitxa base — Sistemes de control · *que el sistema es reguli sol* · Robòtica · 1r de Batxillerat",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://tomeu-cd100.github.io/robotica-1batx-2627/classes/sa6/sa6-fitxa-alumnat.html"
+          }
+        },
+        {
+          "link": {
+            "url": "https://tomeu-cd100.github.io/robotica-1batx-2627/programacio/07-rubriques.html",
+            "title": "07 · Rúbriques d'avaluació · Robòtica · 1r de Batxillerat",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://tomeu-cd100.github.io/robotica-1batx-2627/programacio/07-rubriques.html"
+          }
+        }
+      ],
+      "dataLliurament": null
+    },
+    {
+      "titol": "SA5 · Pràctica avaluable: App micro:bit + comparació C++ ↔ Python",
+      "descripcio": "Producte avaluable de la SA5 (MicroPython): tria un repte i fes-ne l'APP DE MICRO:BIT (comptapassos, llum de nit o joc per ràdio).\nAbans de codificar, escriu el pseudocodi al quadern; després completa la TAULA COMPARATIVA C++ ↔ Python (mateix pseudocodi, sintaxi diferent).\nLliura: el codi (.py), foto o vídeo funcionant i la taula comparativa.\nS'avalua amb R1 (codi) i R4 (comparació i documentació). Rúbrica enllaçada a la tasca.",
+      "estat": "DRAFT",
+      "workType": "ASSIGNMENT",
+      "maxPoints": 10,
+      "topicIdVell": "870512669899",
+      "materials": [
+        {
+          "link": {
+            "url": "https://tomeu-cd100.github.io/robotica-1batx-2627/classes/sa5/sa5-fitxa-alumnat.html",
+            "title": "SA5 · Fitxa base — micro:bit i MicroPython · *els mateixos conceptes, un altre llenguatge* · Robòtica · 1r de Batxillerat",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://tomeu-cd100.github.io/robotica-1batx-2627/classes/sa5/sa5-fitxa-alumnat.html"
+          }
+        },
+        {
+          "link": {
+            "url": "https://tomeu-cd100.github.io/robotica-1batx-2627/programacio/07-rubriques.html",
+            "title": "07 · Rúbriques d'avaluació · Robòtica · 1r de Batxillerat",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://tomeu-cd100.github.io/robotica-1batx-2627/programacio/07-rubriques.html"
+          }
+        }
+      ],
+      "dataLliurament": null
+    },
+    {
+      "titol": "SA8 · Qüestionari de repàs — IoT i IA",
+      "descripcio": "Repàs autocorrectiu de la SA8 (NO qualifica; el pots repetir). Fes-lo quan tanquem la SA, i torna-hi unes setmanes després: recordar més tard és el que fa que no s'esborri. Si al mini-check vas treure vermell, comença per aquí.",
+      "estat": "DRAFT",
+      "workType": "ASSIGNMENT",
+      "maxPoints": null,
+      "topicIdVell": "870512485238",
+      "materials": [
+        {
+          "link": {
+            "url": "https://docs.google.com/forms/d/e/1FAIpQLSfbe0R_tVX89YvqnmBsslisag9MF12idpEl3U8j_kKcvEZMKw/viewform",
+            "title": "Google Forms: Sign-in",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://docs.google.com/forms/d/e/1FAIpQLSfbe0R_tVX89YvqnmBsslisag9MF12idpEl3U8j_kKcvEZMKw/viewform"
+          }
+        }
+      ],
+      "dataLliurament": null
+    },
+    {
+      "titol": "SA7 · Qüestionari de repàs — Robòtica mòbil",
+      "descripcio": "Repàs autocorrectiu de la SA7 (NO qualifica; el pots repetir). Fes-lo quan tanquem la SA, i torna-hi unes setmanes després: recordar més tard és el que fa que no s'esborri. Si al mini-check vas treure vermell, comença per aquí.",
+      "estat": "DRAFT",
+      "workType": "ASSIGNMENT",
+      "maxPoints": null,
+      "topicIdVell": "870512438579",
+      "materials": [
+        {
+          "link": {
+            "url": "https://docs.google.com/forms/d/e/1FAIpQLSfY9FMcD-6nziSIhaJXpuxGTXGsii-zQfZ0lcS3Rmp72HGiuw/viewform",
+            "title": "Google Forms: Sign-in",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://docs.google.com/forms/d/e/1FAIpQLSfY9FMcD-6nziSIhaJXpuxGTXGsii-zQfZ0lcS3Rmp72HGiuw/viewform"
+          }
+        }
+      ],
+      "dataLliurament": null
+    },
+    {
+      "titol": "SA6 · Qüestionari de repàs — Sistemes de control",
+      "descripcio": "Repàs autocorrectiu de la SA6 (NO qualifica; el pots repetir). Fes-lo quan tanquem la SA, i torna-hi unes setmanes després: recordar més tard és el que fa que no s'esborri. Si al mini-check vas treure vermell, comença per aquí.",
+      "estat": "DRAFT",
+      "workType": "ASSIGNMENT",
+      "maxPoints": null,
+      "topicIdVell": "870512731275",
+      "materials": [
+        {
+          "link": {
+            "url": "https://docs.google.com/forms/d/e/1FAIpQLScQtnDeMaPgfkftLvBLEXKvDIM2u1U3S2q-5yT8bxgIfpxZrg/viewform",
+            "title": "Google Forms: Sign-in",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://docs.google.com/forms/d/e/1FAIpQLScQtnDeMaPgfkftLvBLEXKvDIM2u1U3S2q-5yT8bxgIfpxZrg/viewform"
+          }
+        }
+      ],
+      "dataLliurament": null
+    },
+    {
+      "titol": "SA5 · Qüestionari de repàs — micro:bit i MicroPython",
+      "descripcio": "Repàs autocorrectiu de la SA5 (NO qualifica; el pots repetir). Fes-lo quan tanquem la SA, i torna-hi unes setmanes després: recordar més tard és el que fa que no s'esborri. Si al mini-check vas treure vermell, comença per aquí.",
+      "estat": "DRAFT",
+      "workType": "ASSIGNMENT",
+      "maxPoints": null,
+      "topicIdVell": "870512669899",
+      "materials": [
+        {
+          "link": {
+            "url": "https://docs.google.com/forms/d/e/1FAIpQLSdHnQiZnoJaAbShV7f7XcfobSDSJW6ARsyRAkXFTruyEsKDDA/viewform",
+            "title": "Google Forms: Sign-in",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://docs.google.com/forms/d/e/1FAIpQLSdHnQiZnoJaAbShV7f7XcfobSDSJW6ARsyRAkXFTruyEsKDDA/viewform"
+          }
+        }
+      ],
+      "dataLliurament": null
+    },
+    {
+      "titol": "SA4 · Qüestionari de repàs — Servos, motors i ponts H",
+      "descripcio": "Repàs autocorrectiu de la SA4 (NO qualifica; el pots repetir). Fes-lo quan tanquem la SA, i torna-hi unes setmanes després: recordar més tard és el que fa que no s'esborri. Si al mini-check vas treure vermell, comença per aquí.",
+      "estat": "DRAFT",
+      "workType": "ASSIGNMENT",
+      "maxPoints": null,
+      "topicIdVell": "870512711808",
+      "materials": [
+        {
+          "link": {
+            "url": "https://docs.google.com/forms/d/e/1FAIpQLSenxnlx2ZMeHr07H2CFBsc2PQ026BnEGWev6fj5SdQj-CO0ug/viewform",
+            "title": "Google Forms: Sign-in",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://docs.google.com/forms/d/e/1FAIpQLSenxnlx2ZMeHr07H2CFBsc2PQ026BnEGWev6fj5SdQj-CO0ug/viewform"
+          }
+        }
+      ],
+      "dataLliurament": null
+    },
+    {
+      "titol": "SA3 · Pràctica avaluable: Sistema sensor → actuador",
+      "descripcio": "Producte avaluable de la SA3: SISTEMA SENSOR → ACTUADOR (p. ex. alarma de proximitat o llum automàtic) amb codi modular (funcions).\nLliura: foto o vídeo funcionant, el codi (.ino) i l'esquema/explicació al quadern tècnic.\nS'avalua amb R1 (codi) i R2 (circuit). Rúbrica enllaçada a la tasca.",
+      "estat": "PUBLISHED",
+      "workType": "ASSIGNMENT",
+      "maxPoints": 33,
+      "topicIdVell": "870511802408",
+      "materials": [
+        {
+          "link": {
+            "url": "https://tomeu-cd100.github.io/robotica-1batx-2627/classes/sa3/sa3-fitxa-alumnat.html",
+            "title": "SA3 · Fitxa base — Entrades i sensors · *fes que el sistema percebi el món* · Robòtica · 1r de Batxillerat",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://tomeu-cd100.github.io/robotica-1batx-2627/classes/sa3/sa3-fitxa-alumnat.html"
+          }
+        },
+        {
+          "link": {
+            "url": "https://tomeu-cd100.github.io/robotica-1batx-2627/programacio/07-rubriques.html",
+            "title": "07 · Rúbriques d'avaluació · Robòtica · 1r de Batxillerat",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://tomeu-cd100.github.io/robotica-1batx-2627/programacio/07-rubriques.html"
+          }
+        }
+      ],
+      "dataLliurament": null
+    },
+    {
+      "titol": "SA3 · Fitxa base — Entrades i sensors",
+      "descripcio": "Full de respostes de la fitxa base de la SA3 (activitats 1-4 + autoavaluació + quadern tècnic). El producte (alarma/sensor d'aparcament) es defensa a part; la prova T1 és individual dins la S4.",
+      "estat": "PUBLISHED",
+      "workType": "ASSIGNMENT",
+      "maxPoints": 33,
+      "topicIdVell": "870511802408",
+      "materials": [
+        {
+          "link": {
+            "url": "https://docs.google.com/forms/d/e/1FAIpQLSfwUq2Fu3dxRYLVB7dmmMnooi2mPCUygoZhjZFhBn38PjVGhg/viewform",
+            "title": "Google Forms: Sign-in",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://docs.google.com/forms/d/e/1FAIpQLSfwUq2Fu3dxRYLVB7dmmMnooi2mPCUygoZhjZFhBn38PjVGhg/viewform"
+          }
+        },
+        {
+          "link": {
+            "url": "https://tomeu-cd100.github.io/robotica-1batx-2627/classes/sa3/sa3-fitxa-alumnat.html",
+            "title": "SA3 · Fitxa base — Entrades i sensors · *fes que el sistema percebi el món* · Robòtica · 1r de Batxillerat",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://tomeu-cd100.github.io/robotica-1batx-2627/classes/sa3/sa3-fitxa-alumnat.html"
+          }
+        }
+      ],
+      "dataLliurament": null
+    },
+    {
+      "titol": "SA2 · Pràctica avaluable: Dispositiu de senyalització programable",
+      "descripcio": "Producte avaluable de la SA2: DISPOSITIU DE SENYALITZACIÓ PROGRAMABLE (p. ex. semàfor amb fase nocturna, o panell d'estat RGB amb so).\nMunta el circuit i programa'l amb Arduino. Lliura: foto o vídeo del muntatge funcionant, el codi (.ino) i l'esquema al quadern tècnic.\nS'avalua amb R1 (codi) i R2 (circuit). Rúbrica enllaçada a la tasca.",
+      "estat": "PUBLISHED",
+      "workType": "ASSIGNMENT",
+      "maxPoints": 33,
+      "topicIdVell": "870507457924",
+      "materials": [
+        {
+          "link": {
+            "url": "https://tomeu-cd100.github.io/robotica-1batx-2627/classes/sa2/sa2-fitxa-alumnat.html",
+            "title": "SA2 · Fitxa base — Sortides digitals i PWM · *encén, gradua i coordina llums i so* · Robòtica · 1r de Batxillerat",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://tomeu-cd100.github.io/robotica-1batx-2627/classes/sa2/sa2-fitxa-alumnat.html"
+          }
+        },
+        {
+          "link": {
+            "url": "https://tomeu-cd100.github.io/robotica-1batx-2627/programacio/07-rubriques.html",
+            "title": "07 · Rúbriques d'avaluació · Robòtica · 1r de Batxillerat",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://tomeu-cd100.github.io/robotica-1batx-2627/programacio/07-rubriques.html"
+          }
+        }
+      ],
+      "dataLliurament": null
+    },
+    {
+      "titol": "SA2 · Fitxa base — Sortides digitals i PWM",
+      "descripcio": "Full de respostes de la fitxa base de la SA2 (activitats 1-4 + autoavaluació + quadern tècnic). El producte (panell de senyalització) es defensa i es lliura a part (rúbriques R1 i R2).",
+      "estat": "PUBLISHED",
+      "workType": "ASSIGNMENT",
+      "maxPoints": 33,
+      "topicIdVell": "870507457924",
+      "materials": [
+        {
+          "link": {
+            "url": "https://docs.google.com/forms/d/e/1FAIpQLSfpDsq00KJzY7UM99EsuZRCJ0d1kj5PR47-eMElImfkRhvsUA/viewform",
+            "title": "Google Forms: Sign-in",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://docs.google.com/forms/d/e/1FAIpQLSfpDsq00KJzY7UM99EsuZRCJ0d1kj5PR47-eMElImfkRhvsUA/viewform"
+          }
+        },
+        {
+          "link": {
+            "url": "https://tomeu-cd100.github.io/robotica-1batx-2627/classes/sa2/sa2-fitxa-alumnat.html",
+            "title": "SA2 · Fitxa base — Sortides digitals i PWM · *encén, gradua i coordina llums i so* · Robòtica · 1r de Batxillerat",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://tomeu-cd100.github.io/robotica-1batx-2627/classes/sa2/sa2-fitxa-alumnat.html"
+          }
+        }
+      ],
+      "dataLliurament": null
+    },
+    {
+      "titol": "SA1 · Pràctica avaluable: Fitxa-pòster «Analitzem un robot real»",
+      "descripcio": "Producte avaluable de la SA1 (individual o en parella). Analitza un ROBOT o SISTEMA EMBEGUT real:\n1) per a què serveix; 2) model entrada → procés → sortida; 3) és un sistema embegut? per què; 4) un dilema ètic vinculat als ODS.\nFormat lliure: paper A3, Canva/Presentacions o Genially. Puja aquí el resultat.\nS'avalua amb la rúbrica R4 (documentació i comunicació). Consulta la rúbrica enllaçada; comparteix-la abans de començar.",
+      "estat": "PUBLISHED",
+      "workType": "ASSIGNMENT",
+      "maxPoints": 33,
+      "topicIdVell": "870500207591",
+      "materials": [
+        {
+          "link": {
+            "url": "https://tomeu-cd100.github.io/robotica-1batx-2627/classes/sa1/sa1-poster-robot-plantilla.html",
+            "title": "SA1 · Fitxa-pòster: \"Analitzem un robot real\" · Robòtica · 1r de Batxillerat",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://tomeu-cd100.github.io/robotica-1batx-2627/classes/sa1/sa1-poster-robot-plantilla.html"
+          }
+        },
+        {
+          "link": {
+            "url": "https://tomeu-cd100.github.io/robotica-1batx-2627/programacio/07-rubriques.html",
+            "title": "07 · Rúbriques d'avaluació · Robòtica · 1r de Batxillerat",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://tomeu-cd100.github.io/robotica-1batx-2627/programacio/07-rubriques.html"
+          }
+        }
+      ],
+      "dataLliurament": null
+    },
+    {
+      "titol": "SA1 · Prova diagnòstica — Què sé abans de començar?",
+      "descripcio": "Prova diagnòstica de coneixements previs (NO es qualifica). Serveix per saber d'on partim i formar bones parelles. La Part B s'autocorregeix dins el formulari.",
+      "estat": "PUBLISHED",
+      "workType": "ASSIGNMENT",
+      "maxPoints": 33,
+      "topicIdVell": "870500207591",
+      "materials": [
+        {
+          "link": {
+            "url": "https://docs.google.com/forms/d/e/1FAIpQLSdzVFJvt3JrJk3UhcO98lSv0vgbQHC49HKZEpCHH-ldRuroWg/viewform",
+            "title": "Google Forms: Sign-in",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://docs.google.com/forms/d/e/1FAIpQLSdzVFJvt3JrJk3UhcO98lSv0vgbQHC49HKZEpCHH-ldRuroWg/viewform"
+          }
+        }
+      ],
+      "dataLliurament": null
+    },
+    {
+      "titol": "SA1 · Fitxa base — Què és un robot?",
+      "descripcio": "Full de respostes de la fitxa base de la SA1 (activitats 1-4 + autoavaluació + quadern tècnic). El producte (fitxa-pòster) i la prova diagnòstica es lliuren a part. S'avalua amb l'escala 0-10 de la matèria.",
+      "estat": "PUBLISHED",
+      "workType": "ASSIGNMENT",
+      "maxPoints": 33,
+      "topicIdVell": "870500207591",
+      "materials": [
+        {
+          "link": {
+            "url": "https://docs.google.com/forms/d/e/1FAIpQLSeFvzZEgTX6iaRqIpj0_8OMSnKg_dsuMXECjCadMNMmDolsPw/viewform",
+            "title": "Google Forms: Sign-in",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://docs.google.com/forms/d/e/1FAIpQLSeFvzZEgTX6iaRqIpj0_8OMSnKg_dsuMXECjCadMNMmDolsPw/viewform"
+          }
+        },
+        {
+          "link": {
+            "url": "https://tomeu-cd100.github.io/robotica-1batx-2627/classes/sa1/sa1-fitxa-alumnat.html",
+            "title": "SA1 · Fitxa base — Què és un robot? · Robòtica · 1r de Batxillerat",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://tomeu-cd100.github.io/robotica-1batx-2627/classes/sa1/sa1-fitxa-alumnat.html"
+          }
+        }
+      ],
+      "dataLliurament": null
+    },
+    {
+      "titol": "SA0 · Fitxa d'autoaprenentatge — Vocabulari i primeres passes amb el codi",
+      "descripcio": "Fitxa d'AUTOAPRENENTATGE de la SA0: no es qualifica, serveix perquè arribis a la SA1 amb la base posada. Fes-la sol/a o en parella amb el vocabulari i la guia al costat (enllaços adjunts). Les activitats 2 i 3 s'autocorregeixen dins el formulari.",
+      "estat": "PUBLISHED",
+      "workType": "ASSIGNMENT",
+      "maxPoints": 33,
+      "topicIdVell": "798422971376",
+      "materials": [
+        {
+          "link": {
+            "url": "https://tomeu-cd100.github.io/robotica-1batx-2627/classes/sa0/sa0-vocabulari-essencial.html",
+            "title": "SA0 · Vocabulari essencial de la robòtica · Robòtica · 1r de Batxillerat",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://tomeu-cd100.github.io/robotica-1batx-2627/classes/sa0/sa0-vocabulari-essencial.html"
+          }
+        },
+        {
+          "link": {
+            "url": "https://tomeu-cd100.github.io/robotica-1batx-2627/classes/sa0/sa0-guia-programacio.html",
+            "title": "SA0 · Guia per aprendre a programar la placa · Robòtica · 1r de Batxillerat",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://tomeu-cd100.github.io/robotica-1batx-2627/classes/sa0/sa0-guia-programacio.html"
+          }
+        },
+        {
+          "link": {
+            "url": "https://forms.gle/whuXMX2rj8K74n3d7",
+            "title": "Google Forms: Sign-in",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://forms.gle/whuXMX2rj8K74n3d7"
+          }
+        }
+      ],
+      "dataLliurament": null
+    },
+    {
+      "titol": "Prova pràctica T1 · «Llum de seguretat intel·ligent»",
+      "descripcio": "Prova pràctica de trimestre (SA1-SA3). Durada: 2 h. Material: Arduino UNO, protoboard, LDR + 10 kΩ, LED + 220 Ω, polsador, brunzidor piezo, cables. Es permet consultar esquemes i quadern tècnic.\n\nConstrueix i programa una llum de seguretat:\n· Nivell 1 (nucli): LDR (entrada analògica) + LED que s'encén quan fa fosc (per sota d'un llindar); mostra la lectura de la LDR pel Serial Monitor.\n· Nivell 2 (notable): afegeix un polsador ON/OFF amb antirebot.\n· Nivell 3 (excel·lent): afegeix un brunzidor d'avís si la foscor és extrema (segon llindar) i estructura el codi amb funcions.\n\nLliurament: sistema funcionant + explicació breu al quadern (esquema + què fa cada part + un error que has resolt).\n\nCorrecció (10 punts): circuit ben muntat i segur 3 (R2) · el LED respon a la llum 2 (R1) · lectura pel Serial 1 (R1) · polsador ON/OFF amb antirebot 1,5 (R1) · brunzidor + funcions 1,5 (R1) · documentació al quadern 1 (R4).\nS'avalua amb R1, R2 i R4. Rúbrica enllaçada a la tasca.",
+      "estat": "DRAFT",
+      "workType": "ASSIGNMENT",
+      "maxPoints": 33,
+      "topicIdVell": "870536508082",
+      "materials": [
+        {
+          "link": {
+            "url": "https://tomeu-cd100.github.io/robotica-1batx-2627/programacio/07-rubriques.html",
+            "title": "07 · Rúbriques d'avaluació · Robòtica · 1r de Batxillerat",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://tomeu-cd100.github.io/robotica-1batx-2627/programacio/07-rubriques.html"
+          }
+        }
+      ],
+      "dataLliurament": null
+    },
+    {
+      "titol": "Plantilla Quadern Tècnic",
+      "descripcio": "Aquesta pàgina és per a tu. El quadern tècnic és el teu diari de bord de tota la matèria: hi expliques què fas, com ho penses i com resols els errors. No és una llibreta d'apunts: és la prova del teu procés.",
+      "estat": "PUBLISHED",
+      "workType": "ASSIGNMENT",
+      "maxPoints": 100,
+      "topicIdVell": "870467767393",
+      "materials": [
+        {
+          "driveFile": {
+            "driveFile": {
+              "id": "1WHC2EHPVaWJ1c72xTzhX2SUpoGoHTvoafp0bVdg3jHQ",
+              "title": "Quadern tècnic — PLANTILLA",
+              "alternateLink": "https://docs.google.com/document/d/1WHC2EHPVaWJ1c72xTzhX2SUpoGoHTvoafp0bVdg3jHQ/edit?usp=drive_web",
+              "thumbnailUrl": "https://lh3.google.com/drive-storage/AJQWtBMCcWITSdzfSfF0HfEQGsBYlQ2S2VxDE-YCIx8bWEfOC0e5UlgL3zmp5oFOz5ptEAcqgHt-2aEJvq4MipmMGeuUiaHj0H7oNfy3NopLGkhqHFP3X_uH36PcLvr3wDKP7QkznHXcRA=s200"
+            },
+            "shareMode": "STUDENT_COPY"
+          }
+        }
+      ],
+      "dataLliurament": null
+    },
+    {
+      "titol": "SA8 · Fitxa base — IoT i IA",
+      "descripcio": "Full de respostes de la fitxa base de la SA8 (activitats 1-3 + repte a full en blanc + autoavaluació + quadern tècnic). El producte (sistema connectat o classificador + reflexió ètica) s'avalua amb R1, R3 i R4.",
+      "estat": "DRAFT",
+      "workType": "ASSIGNMENT",
+      "maxPoints": 10,
+      "topicIdVell": "870512485238",
+      "materials": [
+        {
+          "link": {
+            "url": "https://docs.google.com/forms/d/e/1FAIpQLSclYm7pocNY0qdlHUi-aekZl058cJCqCXYHPcZgQ6nvU73rhA/viewform",
+            "title": "Google Forms: Sign-in",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://docs.google.com/forms/d/e/1FAIpQLSclYm7pocNY0qdlHUi-aekZl058cJCqCXYHPcZgQ6nvU73rhA/viewform"
+          }
+        },
+        {
+          "link": {
+            "url": "https://tomeu-cd100.github.io/robotica-1batx-2627/classes/sa8/sa8-fitxa-alumnat.html",
+            "title": "SA8 · Fitxa base — IoT i IA · *connecta el sistema i decideix amb dades* · Robòtica · 1r de Batxillerat",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://tomeu-cd100.github.io/robotica-1batx-2627/classes/sa8/sa8-fitxa-alumnat.html"
+          }
+        }
+      ],
+      "dataLliurament": null
+    },
+    {
+      "titol": "SA7 · Fitxa base — Robòtica mòbil",
+      "descripcio": "Full de respostes de la fitxa base de la SA7 (activitats 1-4 + autoavaluació + quadern tècnic). El producte (comportament autònom + registre d'iteracions) es demostra a la pista (R1, R3 i R4).",
+      "estat": "DRAFT",
+      "workType": "ASSIGNMENT",
+      "maxPoints": 10,
+      "topicIdVell": "870512438579",
+      "materials": [
+        {
+          "link": {
+            "url": "https://docs.google.com/forms/d/e/1FAIpQLSe7ANx96SJWTFl_4NmyPb7hqFH1rsUm_4rOHixWjPfZE4ncxw/viewform",
+            "title": "Google Forms: Sign-in",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://docs.google.com/forms/d/e/1FAIpQLSe7ANx96SJWTFl_4NmyPb7hqFH1rsUm_4rOHixWjPfZE4ncxw/viewform"
+          }
+        },
+        {
+          "link": {
+            "url": "https://tomeu-cd100.github.io/robotica-1batx-2627/classes/sa7/sa7-fitxa-alumnat.html",
+            "title": "SA7 · Fitxa base — Robòtica mòbil · *com es mou i gira un robot* · Robòtica · 1r de Batxillerat",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://tomeu-cd100.github.io/robotica-1batx-2627/classes/sa7/sa7-fitxa-alumnat.html"
+          }
+        }
+      ],
+      "dataLliurament": null
+    },
+    {
+      "titol": "SA6 · Fitxa base — Sistemes de control",
+      "descripcio": "Full de respostes de la fitxa base de la SA6 (activitats 1-4 + autoavaluació + quadern tècnic). El producte (sistema de control documentat) es defensa a part (2-3'); la prova T2 és individual dins la S4 (nucli: histèresi).",
+      "estat": "DRAFT",
+      "workType": "ASSIGNMENT",
+      "maxPoints": 10,
+      "topicIdVell": "870512731275",
+      "materials": [
+        {
+          "link": {
+            "url": "https://docs.google.com/forms/d/e/1FAIpQLScsMtI9E2dd6hXSmfZsvLEzoV25_M8cfEZu0st4GPDASOdVTg/viewform",
+            "title": "Google Forms: Sign-in",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://docs.google.com/forms/d/e/1FAIpQLScsMtI9E2dd6hXSmfZsvLEzoV25_M8cfEZu0st4GPDASOdVTg/viewform"
+          }
+        },
+        {
+          "link": {
+            "url": "https://tomeu-cd100.github.io/robotica-1batx-2627/classes/sa6/sa6-fitxa-alumnat.html",
+            "title": "SA6 · Fitxa base — Sistemes de control · *que el sistema es reguli sol* · Robòtica · 1r de Batxillerat",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://tomeu-cd100.github.io/robotica-1batx-2627/classes/sa6/sa6-fitxa-alumnat.html"
+          }
+        }
+      ],
+      "dataLliurament": null
+    },
+    {
+      "titol": "SA5 · Fitxa base — micro:bit i MicroPython",
+      "descripcio": "Full de respostes de la fitxa base de la SA5 (activitats 1-4 + autoavaluació + quadern tècnic). El producte (app micro:bit) i la taula comparativa s'avaluen amb R1 i R4.",
+      "estat": "DRAFT",
+      "workType": "ASSIGNMENT",
+      "maxPoints": 10,
+      "topicIdVell": "870512669899",
+      "materials": [
+        {
+          "link": {
+            "url": "https://docs.google.com/forms/d/e/1FAIpQLSfwCHaHoAqmBufx8PxbpDxAz9pB82lCjUQCw4RpRiKPMLVS7Q/viewform",
+            "title": "Google Forms: Sign-in",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://docs.google.com/forms/d/e/1FAIpQLSfwCHaHoAqmBufx8PxbpDxAz9pB82lCjUQCw4RpRiKPMLVS7Q/viewform"
+          }
+        },
+        {
+          "link": {
+            "url": "https://tomeu-cd100.github.io/robotica-1batx-2627/classes/sa5/sa5-fitxa-alumnat.html",
+            "title": "SA5 · Fitxa base — micro:bit i MicroPython · *els mateixos conceptes, un altre llenguatge* · Robòtica · 1r de Batxillerat",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://tomeu-cd100.github.io/robotica-1batx-2627/classes/sa5/sa5-fitxa-alumnat.html"
+          }
+        }
+      ],
+      "dataLliurament": null
+    },
+    {
+      "titol": "SA4 · Fitxa base — Moviment: servos, motors i ponts H",
+      "descripcio": "Full de respostes de la fitxa base de la SA4 (activitats 1-4 + autoavaluació + quadern tècnic). El producte (barrera automàtica) es defensa a part (R1, R2 i R3).",
+      "estat": "DRAFT",
+      "workType": "ASSIGNMENT",
+      "maxPoints": 10,
+      "topicIdVell": "870512711808",
+      "materials": [
+        {
+          "link": {
+            "url": "https://docs.google.com/forms/d/e/1FAIpQLScfRiMWxb_0phCMk9e_eB-A7Mtvlhb88xZcmzGlxLdvjFpe_g/viewform",
+            "title": "Google Forms: Sign-in",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://docs.google.com/forms/d/e/1FAIpQLScfRiMWxb_0phCMk9e_eB-A7Mtvlhb88xZcmzGlxLdvjFpe_g/viewform"
+          }
+        },
+        {
+          "link": {
+            "url": "https://tomeu-cd100.github.io/robotica-1batx-2627/classes/sa4/sa4-fitxa-alumnat.html",
+            "title": "SA4 · Fitxa base — Moviment: servos, motors i ponts H · *fes que les coses es moguin* · Robòtica · 1r de Batxillerat",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://tomeu-cd100.github.io/robotica-1batx-2627/classes/sa4/sa4-fitxa-alumnat.html"
+          }
+        }
+      ],
+      "dataLliurament": null
+    },
+    {
+      "titol": "Pràctica 9: control PWM d'un LED ",
+      "descripcio": "Cal muntar el circuit de la D7 del capítol Sortides Analògiques.\n\nLa versió 2 es realitza amb el mateix codi, però modificant el muntatge tal com s'indica a la D13, on es pot observar que hem afegit un potenciòmetre pel control PWM del LED\n \nA sota teniu les imatges del muntatge que heu de preparar.\n\nRecordeu que en aquesta activitat cal presentar un informe de pràctiques:\nObjectiu\nMaterial i eines\nFotos del circuit\nProgramació\nProcediment (descripció de les connexions i explicació del funcionament).\nEnllaços als vídeos que heu gravat \nValoració de l'activitat\n\nTambé heu de penjar els vídeos.",
+      "estat": "DRAFT",
+      "workType": "ASSIGNMENT",
+      "maxPoints": 100,
+      "topicIdVell": "868858694529",
+      "materials": [
+        {
+          "driveFile": {
+            "driveFile": {
+              "id": "16AgMdF9IpApBv6Zjx6JtUdE489IEqhrf",
+              "title": "C9_P9_control_analogic_LED_muntatge.jpg",
+              "alternateLink": "https://drive.google.com/file/d/16AgMdF9IpApBv6Zjx6JtUdE489IEqhrf/view?usp=drive_web",
+              "thumbnailUrl": "https://lh3.googleusercontent.com/drive-storage/AJQWtBMNBdInJZGDMl6OB9pfqvCRwL8z7jMlNrlkWXrXDXwQt63Z-IujtW-cbrNOtvkMGPJlm3yt_6tEL8lfGYfcYjDGWX-ZDBX7P42IJaOd73viu-O-nw=s200"
+            },
+            "shareMode": "VIEW"
+          }
+        },
+        {
+          "driveFile": {
+            "driveFile": {
+              "id": "1AuWZwuBmZtw3p6Gz_ohDPImAWqr5dJ01",
+              "title": "C9_P9_v2_control_PWM_LED_muntatge.jpg",
+              "alternateLink": "https://drive.google.com/file/d/1AuWZwuBmZtw3p6Gz_ohDPImAWqr5dJ01/view?usp=drive_web",
+              "thumbnailUrl": "https://lh3.googleusercontent.com/drive-storage/AJQWtBP2emQ0mvEcJbcVEED-Od85ZXDNs2a2djB6bJXlC5snhDH4GZohhlNO9sHw3WqH_9QU1ZzNgLxOXBVcGeLathnfZKxA1ZUttj2OjKfIBMsQkpjYKQ=s200"
+            },
+            "shareMode": "VIEW"
+          }
+        },
+        {
+          "driveFile": {
+            "driveFile": {
+              "id": "1ZoLBp4DJvgrpriHz0HzPfth6kAAiYxl6",
+              "title": "P09_v1_codi.JPG",
+              "alternateLink": "https://drive.google.com/file/d/1ZoLBp4DJvgrpriHz0HzPfth6kAAiYxl6/view?usp=drive_web",
+              "thumbnailUrl": "https://lh3.googleusercontent.com/drive-storage/AJQWtBPV5ATBf1yqmdpGRfCN_zDfcm4LU45GQdSmlQzgfG0cBSFod6gb25nigOpgttVBxHZ_eCsDB2nJwlKHvkrq12kpX2vyo-uX3CP_OBaADpUyuJx-vA=s200"
+            },
+            "shareMode": "VIEW"
+          }
+        },
+        {
+          "driveFile": {
+            "driveFile": {
+              "id": "1iXPcpBLvyod48VZZwn4J0K7qYinIZj6V",
+              "title": "P09_V2_codi.JPG",
+              "alternateLink": "https://drive.google.com/file/d/1iXPcpBLvyod48VZZwn4J0K7qYinIZj6V/view?usp=drive_web",
+              "thumbnailUrl": "https://lh3.googleusercontent.com/drive-storage/AJQWtBPUGFGAEofBMTMewB5sqcSXdObY_azIk81D0L-OZqKNvCnWdH9pFgIOdHbcrogMV-QXG6O2eDU8t2sbZTHkt8ojtCdGsrc0K5MO2tPgKTsgfy26yA=s200"
+            },
+            "shareMode": "VIEW"
+          }
+        }
+      ],
+      "dataLliurament": null
+    },
+    {
+      "titol": "Pràctica 8: control analògic d'un LED (amb un potenciòmetre i una LDR)",
+      "descripcio": "Cal muntar el circuit de la D19 del capítol Entrades Analògiques.\n\nLa versió 2 es realitza amb el mateix codi, però modificant el muntatge tal com s'indica a la D23, on es pot observar que hem substituït el potenciòmetre per una LDR.\n \nA sota teniu les imatges del muntatge que heu de preparar.\n\nRecordeu que en aquesta activitat cal presentar un informe de pràctiques:\n\nObjectiu\nMaterial i eines\nFotos del circuit\nProgramació\nProcediment (descripció de les connexions i explicació del funcionament).\nEnllaços als vídeos que heu gravat \n\nValoració de l'activitat\n\nTambé heu de penjar els vídeos.",
+      "estat": "DRAFT",
+      "workType": "ASSIGNMENT",
+      "maxPoints": 100,
+      "topicIdVell": "868858694529",
+      "materials": [
+        {
+          "driveFile": {
+            "driveFile": {
+              "id": "1ZK1ymMTy2ApjgcJBStyxMGCqxh6Yid60",
+              "title": "C8_P8_control_LED_amb_potenciometre_muntatge.jpg",
+              "alternateLink": "https://drive.google.com/file/d/1ZK1ymMTy2ApjgcJBStyxMGCqxh6Yid60/view?usp=drive_web",
+              "thumbnailUrl": "https://lh3.googleusercontent.com/drive-storage/AJQWtBMyKR1NW1qefpCdyIec2K16zPXB7lSKoeeEx7WB6xrkBvI1KZ20mHFy3DYZjofPLhXO4wi6d0HjzSDBEyCPvP7UpmLxQdDzExbxF5fuqTY9Fogr6g=s200"
+            },
+            "shareMode": "VIEW"
+          }
+        },
+        {
+          "driveFile": {
+            "driveFile": {
+              "id": "1E2sE3lTPcGegq3Yd5xVfFkbQZazeGv-l",
+              "title": "C8_P8__v2_control_LED_amb_LDR_muntatge.jpg",
+              "alternateLink": "https://drive.google.com/file/d/1E2sE3lTPcGegq3Yd5xVfFkbQZazeGv-l/view?usp=drive_web",
+              "thumbnailUrl": "https://lh3.googleusercontent.com/drive-storage/AJQWtBMg91IkZHBtQYsC9i2IPGkGlK9cr3OJNLbabaze8bPzgOwg2ZG8eJeoXKGzNI7TfcOr2sS0gU5EkU9SVYg6kxW4bNVUohd3428ui3FS03Sjj5MItw=s200"
+            },
+            "shareMode": "VIEW"
+          }
+        },
+        {
+          "driveFile": {
+            "driveFile": {
+              "id": "1g07vb6k00c5Yd_kmfSFCJO1_jY00qweD",
+              "title": "P08_v1_codi.JPG",
+              "alternateLink": "https://drive.google.com/file/d/1g07vb6k00c5Yd_kmfSFCJO1_jY00qweD/view?usp=drive_web",
+              "thumbnailUrl": "https://lh3.googleusercontent.com/drive-storage/AJQWtBOLH4hSIQgZlT3AJpRw_ASBibl3SWAsv0Ix2iO65tUCGa6YtSsDy3rP3PP_hbcGASamiOPHrxNeJIsTOsjXJ7rh2NTlMizYj-iOSS8FMuVeY9F9DQ=s200"
+            },
+            "shareMode": "VIEW"
+          }
+        },
+        {
+          "driveFile": {
+            "driveFile": {
+              "id": "1exq3BGiS4xgi54oJj1YIeB3iCC1I25Wk",
+              "title": "P08_V2_codi.JPG",
+              "alternateLink": "https://drive.google.com/file/d/1exq3BGiS4xgi54oJj1YIeB3iCC1I25Wk/view?usp=drive_web",
+              "thumbnailUrl": "https://lh3.googleusercontent.com/drive-storage/AJQWtBM6l6X1MfmYv3_ZaiH_1UxwklyCkUcmCNvgi7xzBHFLSTLGapQZyFZMmwwvsEv098GeUGERSzowmq3PG9_h_Qw9PZC1d0Ts1nkCa_YhdfC5z8Q98w=s200"
+            },
+            "shareMode": "VIEW"
+          }
+        }
+      ],
+      "dataLliurament": null
+    },
+    {
+      "titol": "Pràctica 7: lectura de l'estat d'un potenciòmetre",
+      "descripcio": "Cal muntar el circuit de la D12 del capítol Entrades Analògiques.\n\nA sota teniu les imatges del muntatge que heu de preparar.\n\nRecordeu que en aquesta activitat cal presentar un informe de pràctiques:\n\nObjectiu\nMaterial i eines\nFotos del circuit\nProgramació\nProcediment (descripció de les connexions i explicació del funcionament).\nEnllaços als vídeos que heu gravat \nValoració de l'activitat\n\nTambé heu de penjar el vídeo.",
+      "estat": "DRAFT",
+      "workType": "ASSIGNMENT",
+      "maxPoints": 100,
+      "topicIdVell": "868858694529",
+      "materials": [
+        {
+          "driveFile": {
+            "driveFile": {
+              "id": "1FXxeatEqMvyAm-ds8B63rFa9reMPrbt4",
+              "title": "C8_P7_lectura_potenciometre_codi.jpg",
+              "alternateLink": "https://drive.google.com/file/d/1FXxeatEqMvyAm-ds8B63rFa9reMPrbt4/view?usp=drive_web",
+              "thumbnailUrl": "https://lh3.googleusercontent.com/drive-storage/AJQWtBOOlZGIBR8OJA1hCTzMErIy0TAolwhBv-QX6czUVgvM_g4iO0y7wwuVXR8_fcRO2tENCOpHDNzoGhGw6CFX31GqGNhU8UaDgixKmZ6ShBvqbcBDiQ=s200"
+            },
+            "shareMode": "VIEW"
+          }
+        },
+        {
+          "driveFile": {
+            "driveFile": {
+              "id": "1Ctyg4qY3VfeUbNC8ZroG2EyyGLAfVs5D",
+              "title": "C8_P7_lectura_potenciometre_muntatge.jpg",
+              "alternateLink": "https://drive.google.com/file/d/1Ctyg4qY3VfeUbNC8ZroG2EyyGLAfVs5D/view?usp=drive_web",
+              "thumbnailUrl": "https://lh3.googleusercontent.com/drive-storage/AJQWtBMRO-OSchGDfWEMqq7x_4qls1sMsX3TT-G19XKl865e0AtGdCuB-JkpvpQastLDDChuB60vPJj7maUs1gjG-f0-5dbrefnPnNlkrfbza7UOsyD7Eg=s200"
+            },
+            "shareMode": "VIEW"
+          }
+        }
+      ],
+      "dataLliurament": null
+    },
+    {
+      "titol": "Pràctica 6: control alarma amb 2polsadors",
+      "descripcio": "Cal muntar el circuit de la D4 del capítol Entrades Digitals 2.\n\nA sota teniu les imatges del muntatge que heu de preparar.\n\nRecordeu que en aquesta activitat cal presentar un informe de pràctiques:\n\nObjectiu\nMaterial i eines\nFotos del circuit\nProgramació\nProcediment (descripció de les connexions i explicació del funcionament).\nEnllaços als vídeos que heu gravat \nValoració de l'activitat\n\nTambé heu de penjar el vídeo.",
+      "estat": "DRAFT",
+      "workType": "ASSIGNMENT",
+      "maxPoints": 100,
+      "topicIdVell": "868858694529",
+      "materials": [
+        {
+          "driveFile": {
+            "driveFile": {
+              "id": "124n9Oh9tf3Jcvlm3ja6qaTo8awLx1gBY",
+              "title": "P6_C_ED2_muntatge_D5.jpg",
+              "alternateLink": "https://drive.google.com/file/d/124n9Oh9tf3Jcvlm3ja6qaTo8awLx1gBY/view?usp=drive_web",
+              "thumbnailUrl": "https://lh3.googleusercontent.com/drive-storage/AJQWtBMgqUTzj78_xzRXwTbWAAaWAsiCvozLza7g-riri0BG8xCEBxMsyLT15pO5k_KrxJTR07zw9chniYwWktx88a6hDyfH2WHrN_DJhxO2Bppk7zsRUQ=s200"
+            },
+            "shareMode": "VIEW"
+          }
+        },
+        {
+          "driveFile": {
+            "driveFile": {
+              "id": "1-iaE3cwAuFLRAPAGaxGC44Jj8p2K-7te",
+              "title": "P6_C_ED2_material_D4.jpg",
+              "alternateLink": "https://drive.google.com/file/d/1-iaE3cwAuFLRAPAGaxGC44Jj8p2K-7te/view?usp=drive_web",
+              "thumbnailUrl": "https://lh3.googleusercontent.com/drive-storage/AJQWtBOt-ZMXJpsyvq7iidB1Se7Dmlz4b8rLTlaVvtB7BWZ7bMxOcMuWANFArrKQzRYrRtLiK_02_oYzqzWJWza95PetggVQizKPpl5qNBhUeoCGY3_4nQ=s200"
+            },
+            "shareMode": "VIEW"
+          }
+        },
+        {
+          "driveFile": {
+            "driveFile": {
+              "id": "1LlpnjOnbmckSuz9WJLioFyxmSk2A16z4",
+              "title": "P06_codi.JPG",
+              "alternateLink": "https://drive.google.com/file/d/1LlpnjOnbmckSuz9WJLioFyxmSk2A16z4/view?usp=drive_web",
+              "thumbnailUrl": "https://lh3.googleusercontent.com/drive-storage/AJQWtBOvL_Jy_xuzYETP2tA1H-aX0JdDERxKP4V_kjNVK4Kt0BVY2gVvmI9QqWWCe4rPdc4LiiSUMpXnCz0s7gMpp2grlf-DWqvxbzjPHXrjbV6iYFbGWA=s200"
+            },
+            "shareMode": "VIEW"
+          }
+        }
+      ],
+      "dataLliurament": null
+    },
+    {
+      "titol": "Pràctica 5: control  LED per polsador",
+      "descripcio": "Cal muntar el circuit de la D6 del capítol Entrades Digitals 1.\n\nA sota teniu les imatges del muntatge i de les 2 versions independents que heu de preparar.\n\nRecordeu que en aquesta activitat cal presentar un informe de pràctiques:\n\nObjectiu\nMaterial i eines\nFotos del circuit\nProgramació\nProcediment (descripció de les connexions i explicació del funcionament).\nEnllaços als vídeos que heu gravat (Per a la V1 i V2)\n\nValoració de l'activitat\n\nTambé heu de penjar els 2 vídeos, o editar-los i posar-los junts en un de sol, explicant a quina versió de programa pertanyen \n(consell: editeu i incorporeu imatges del codi que heu utilitzat).",
+      "estat": "DRAFT",
+      "workType": "ASSIGNMENT",
+      "maxPoints": 100,
+      "topicIdVell": "868858694529",
+      "materials": [
+        {
+          "driveFile": {
+            "driveFile": {
+              "id": "1-Nd3peCdxnO3aQ-il4jU9F3FOdrNzUwP",
+              "title": "P5_C_ED2_codi_V2_D21.jpg",
+              "alternateLink": "https://drive.google.com/file/d/1-Nd3peCdxnO3aQ-il4jU9F3FOdrNzUwP/view?usp=drive_web",
+              "thumbnailUrl": "https://lh3.googleusercontent.com/drive-storage/AJQWtBO-XavJO0MBdf8Xv0eJ0UofScx-2dIe-f9Tmh7G82hEAMMy1r2ytlhwGCgC11OY5Y85wYHg8tKIlLUToaqOfIhYrkvaRbLrBPyq4i8_dCwspyOjvg=s200"
+            },
+            "shareMode": "VIEW"
+          }
+        },
+        {
+          "driveFile": {
+            "driveFile": {
+              "id": "1Syx20d1OAQ1MswfZTgTES6jb8VrGRSyJ",
+              "title": "P5_C_ED2_codi_V1_D15.jpg",
+              "alternateLink": "https://drive.google.com/file/d/1Syx20d1OAQ1MswfZTgTES6jb8VrGRSyJ/view?usp=drive_web",
+              "thumbnailUrl": "https://lh3.googleusercontent.com/drive-storage/AJQWtBPyomq9Htx2FvnIkwslpK0ZqaBCVsHIWqN9HVXLd2U3ncyTqMy0etPIl73yMUcHP8RDDRPA2In2Q42_VbpjRN8eD4mo1J1_ORxaeTFdyzsmR1SHYQ=s200"
+            },
+            "shareMode": "VIEW"
+          }
+        },
+        {
+          "driveFile": {
+            "driveFile": {
+              "id": "1r-Jnbg22bDmlQvBSy8bTBflby2q7gcWP",
+              "title": "P5_C_ED2_muntatge_D6.jpg",
+              "alternateLink": "https://drive.google.com/file/d/1r-Jnbg22bDmlQvBSy8bTBflby2q7gcWP/view?usp=drive_web",
+              "thumbnailUrl": "https://lh3.googleusercontent.com/drive-storage/AJQWtBPst4-XztxWUBiGblpJbivOvc23o9yesDo3zwFURC06qAqR87k6Cbe-VKOlVqp0DhE8JHPqt8d-E6NOOPPtdrr_5Mu8gJT9eBXdp5wQecfEtrGDiQ=s200"
+            },
+            "shareMode": "VIEW"
+          }
+        },
+        {
+          "driveFile": {
+            "driveFile": {
+              "id": "1T-opHl3f_fVDTuLT6-TogbFNOYyIHtCy",
+              "title": "P5_C_ED2_material_D5.jpg",
+              "alternateLink": "https://drive.google.com/file/d/1T-opHl3f_fVDTuLT6-TogbFNOYyIHtCy/view?usp=drive_web",
+              "thumbnailUrl": "https://lh3.googleusercontent.com/drive-storage/AJQWtBNuEBAe9DeQ5m6XU0lr-8bH6a8Hn5o0cuBmJBnah_L00nFXtF-ffPCZSIclM5ACvp4euoKDB-28UQfzPwl5lBPNQGs7JjFEs80cCSOqmcFTOsZoIA=s200"
+            },
+            "shareMode": "VIEW"
+          }
+        }
+      ],
+      "dataLliurament": null
+    },
+    {
+      "titol": "Pràctica 4v2: control 3 LED simultanis",
+      "descripcio": "Cal muntar el circuit de la D3 del capítol Sortides digitals 2.\n\nPerò modificar la programació perquè els LED parpellegin simultàniament, en lloc de seqüencialment.\n\nA sota teniu la imatge del muntatge.\n\nRecordeu que en aquesta activitat cal presentar un informe de pràctiques:\n\nObjectiu\nMaterial i eines\nFotos del circuit\nProgramació\nProcediment (descripció de les connexions i explicació del funcionament).\nEnllaços als vídeos que heu gravat \n\nValoració de l'activitat\n\nTambé heu de penjar el vídeo.",
+      "estat": "DRAFT",
+      "workType": "ASSIGNMENT",
+      "maxPoints": 100,
+      "topicIdVell": "868858694529",
+      "materials": [
+        {
+          "driveFile": {
+            "driveFile": {
+              "id": "1HmHWdbRE239uPhEYdcqbIHapGEhdHFou",
+              "title": "P4_C_SD2_muntatge_D3.jpg",
+              "alternateLink": "https://drive.google.com/file/d/1HmHWdbRE239uPhEYdcqbIHapGEhdHFou/view?usp=drive_web",
+              "thumbnailUrl": "https://lh3.googleusercontent.com/drive-storage/AJQWtBPoRiQiFz_qpBF0baK-OwlVa1ViM3t5hDESXS0Nu5S2BORJnPBKmQoDkmn4v_pdRMIWVzSm75k90ZRbWJby1ejvoXKEFRJfexpJSVmilWIjp8pCAA=s200"
+            },
+            "shareMode": "VIEW"
+          }
+        },
+        {
+          "driveFile": {
+            "driveFile": {
+              "id": "1uciAHHVsVD2VbHzoBxNHC7Ya67ByLMUr",
+              "title": "P4_C_SD2_material_D2.jpg",
+              "alternateLink": "https://drive.google.com/file/d/1uciAHHVsVD2VbHzoBxNHC7Ya67ByLMUr/view?usp=drive_web",
+              "thumbnailUrl": "https://lh3.googleusercontent.com/drive-storage/AJQWtBNSC4In6D0k_hXGNsC1Loc9lClOIn_sTr19Vtz98CQilgazs4To1IY5od5CYFC07WUR_NaInn3eiRpSi3CP8_3AA5V1Jr1j8PiTvSawuVgi_J4u6Q=s200"
+            },
+            "shareMode": "VIEW"
+          }
+        },
+        {
+          "driveFile": {
+            "driveFile": {
+              "id": "1O_1P7a60tB4Mv_RG1JA6A1vSxveiRX18",
+              "title": "P04_V2_simultanis_codi.JPG",
+              "alternateLink": "https://drive.google.com/file/d/1O_1P7a60tB4Mv_RG1JA6A1vSxveiRX18/view?usp=drive_web",
+              "thumbnailUrl": "https://lh3.googleusercontent.com/drive-storage/AJQWtBNdAeu9xT2TsFh-pkvsJ9A4z1Zl9tvQEUOtCp6M8qqd6_5hcUW5Au10pipkMAAW3_KHrQio7azzWbhjfR5f3rQfcgmTu9nqcPh7Q_OQ2TRZL58Big=s200"
+            },
+            "shareMode": "VIEW"
+          }
+        }
+      ],
+      "dataLliurament": null
+    },
+    {
+      "titol": "Pràctica 4: control 3 LED amb parpelleig seqüencial",
+      "descripcio": "Cal muntar el circuit de la D3 del capítol Sortides digitals 2.\n\nA sota teniu les imatges del muntatge i de les 3 versions independents que heu de preparar.\n\nRecordeu que en aquesta activitat cal presentar un informe de pràctiques:\n\nObjectiu\nMaterial i eines\nFotos del circuit\nProgramació\nProcediment (descripció de les connexions i explicació del funcionament).\nEnllaços als vídeos que heu gravat (Per a la V1, V2, i V3)\nValoració de l'activitat\n\nTambé heu de penjar els 3 vídeos, o editar-los i posar-los junts en un de sol, explicant a quina versió de programa pertanyen \n(consell: editeu i incorporeu imatges del codi que heu utilitzat).",
+      "estat": "DRAFT",
+      "workType": "ASSIGNMENT",
+      "maxPoints": 100,
+      "topicIdVell": "868858694529",
+      "materials": [
+        {
+          "driveFile": {
+            "driveFile": {
+              "id": "14aGvFBg1KEZ4b_hiJiuKWtlJn8-oEsKc",
+              "title": "P4_C_SD2_codi_V3_D2.jpg",
+              "alternateLink": "https://drive.google.com/file/d/14aGvFBg1KEZ4b_hiJiuKWtlJn8-oEsKc/view?usp=drive_web",
+              "thumbnailUrl": "https://lh3.googleusercontent.com/drive-storage/AJQWtBNDaGY-zzzx0oFMMUvQmRBS5kDpyPZr0bIcmh8TUAUPTXlqexb9G36UNujxS1D5aspvhc_oqoyWfZ_QJ22bGEICqBhAW3UsK1P_pEemlfNTQtFf1g=s200"
+            },
+            "shareMode": "VIEW"
+          }
+        },
+        {
+          "driveFile": {
+            "driveFile": {
+              "id": "1S_r3Vp1NZFjbJRDuwuorWIHwwHHtftRM",
+              "title": "P4_C_SD2_codi_V2_D2.jpg",
+              "alternateLink": "https://drive.google.com/file/d/1S_r3Vp1NZFjbJRDuwuorWIHwwHHtftRM/view?usp=drive_web",
+              "thumbnailUrl": "https://lh3.googleusercontent.com/drive-storage/AJQWtBOnOXmCVWIGLArHX6HctUGelovXd30hcCUrlZl3QEtQNMyYKBdyB9rMVYJ5ZOOnT2yPqpWNgb5aYzAxCsE56lwZx-vMZics_AtcXPf6BnVj_93KBA=s200"
+            },
+            "shareMode": "VIEW"
+          }
+        },
+        {
+          "driveFile": {
+            "driveFile": {
+              "id": "1ROKSjcF07k006uWoKTF-xvNq-_EEPN6d",
+              "title": "P4_C_SD2_codi_V1_D2.jpg",
+              "alternateLink": "https://drive.google.com/file/d/1ROKSjcF07k006uWoKTF-xvNq-_EEPN6d/view?usp=drive_web",
+              "thumbnailUrl": "https://lh3.googleusercontent.com/drive-storage/AJQWtBMccWYYfMiZN12p5UOHvKrWE9rHfk65rlQmQQ2hAawA5OkRlt-jTharzjMmtZ9BU3AGfpFTCPEG5tXT6AiYqxrSjU36oN5XMaZawiqAy0zaieBJ3Q=s200"
+            },
+            "shareMode": "VIEW"
+          }
+        },
+        {
+          "driveFile": {
+            "driveFile": {
+              "id": "12iWMjYNCPvxO3HyGL4xyd90M1pjq24O4",
+              "title": "P4_C_SD2_muntatge_D3.jpg",
+              "alternateLink": "https://drive.google.com/file/d/12iWMjYNCPvxO3HyGL4xyd90M1pjq24O4/view?usp=drive_web",
+              "thumbnailUrl": "https://lh3.googleusercontent.com/drive-storage/AJQWtBO9CJ9MxssmM8yvpABh20BroDKee0ZMzb4sTEZjb__tvu7jw9A2k9zybt9W3IN2WtukW_iZrDTt61lJNAI1608jR6gAvIj-ihGZBkluW1ryO8zeIg=s200"
+            },
+            "shareMode": "VIEW"
+          }
+        },
+        {
+          "driveFile": {
+            "driveFile": {
+              "id": "1b5omG0FI7UCDpDI9-_KSPjSklJcuPo3I",
+              "title": "P4_C_SD2_material_D2.jpg",
+              "alternateLink": "https://drive.google.com/file/d/1b5omG0FI7UCDpDI9-_KSPjSklJcuPo3I/view?usp=drive_web",
+              "thumbnailUrl": "https://lh3.googleusercontent.com/drive-storage/AJQWtBP4Wp9FA56re0w2iiBVN7svrq5MwV2KCHP9wVR-sk80QKYHoYlBPQ3GHYWiqpFd8NffYWnt0sgPr_56fylJeyh0R4RhV68rNdLOzsHBcGTicMkmbg=s200"
+            },
+            "shareMode": "VIEW"
+          }
+        }
+      ],
+      "dataLliurament": null
+    },
+    {
+      "titol": "Pràctica 2: Programar LED pinD13 extern",
+      "descripcio": "Seguint les instruccions que trobareu entre les Diapositives D1 a D7 del capítol \"Sortides digitals 1\" \ndissenyar un programa que faci parpellejar el LED \"on  board\".\n\nFeu 2 o 3 variacions modificant la freqüència de parpelleig.\n\nLa programació és equivalent a la de la pràctica 1, el que varia és que heu afegit un LED extern connectat al pinDigital 13, i ara parpellejaran tant el LED extern com el LED \"on board\".\n\nRecordeu que en aquesta activitat cal presentar un informe de pràctiques:\nObjectiu\nMaterial i eines\nDescripció del muntatge\nProgramació\nEnllaços als vídeos que heu gravat (500 ms, 1000 ms i 2000 ms d'espera en la intermitència)\nValoració de l'activitat, aprenentatges.\n\n\nTambé heu de penjar els 3 vídeos, o editar-los i posar-los junts explicant a les transicions de quina intermitència ensenyen.",
+      "estat": "DRAFT",
+      "workType": "ASSIGNMENT",
+      "maxPoints": 100,
+      "topicIdVell": "868858694529",
+      "materials": [
+        {
+          "driveFile": {
+            "driveFile": {
+              "id": "1nKySlet7yLAXjQIb_PS7ChgzucyIrW-c",
+              "title": "P02_pin_LED_extern_muntatge.JPG",
+              "alternateLink": "https://drive.google.com/file/d/1nKySlet7yLAXjQIb_PS7ChgzucyIrW-c/view?usp=drive_web",
+              "thumbnailUrl": "https://lh3.googleusercontent.com/drive-storage/AJQWtBNselJys9A_Z1_0oO65AxKWDUfewLw76NcLzETLT1_FJDdAFdAKHXpoHQUDhm8IjLa8Krx6yRBRiCE2OwHIBGwgHcpB0qe6ZpK0U1UIJPcoAPs7IQ=s200"
+            },
+            "shareMode": "VIEW"
+          }
+        },
+        {
+          "driveFile": {
+            "driveFile": {
+              "id": "1Z18Jntq0e9puL5DMhbQf6toZbvSgwwzJ",
+              "title": "diferentestiposdediodosled.webp",
+              "alternateLink": "https://drive.google.com/file/d/1Z18Jntq0e9puL5DMhbQf6toZbvSgwwzJ/view?usp=drive_web",
+              "thumbnailUrl": "https://lh3.googleusercontent.com/drive-storage/AJQWtBP395lIMr3mrzQH8l0eU-rzxUriE_TYJNxBW3DL3RRVHZa_s8MvVCVL32jxhmwOUA8R5i1DtrKSFWzDoZgDrujRhzl_mKvlu0gC7wwg9uf23Nqlnw=s200"
+            },
+            "shareMode": "VIEW"
+          }
+        }
+      ],
+      "dataLliurament": null
+    },
+    {
+      "titol": "Pràctica 3: circuit D10 de Sortides Digitals.",
+      "descripcio": "Aquí teniu l'esquema de connexions del circuit de la D10 del capítol d'Arduino sobre Sortides digitals 1.\n\nRecordeu que en aquesta activitat cal presentar un informe de pràctiques:\nObjectiu\nMaterial i eines\nProgramació\nProcediment (descripció del muntatge i explicació de com heu actuat)\nEnllaç al vídeo que heu gravat \nValoració de l'activitat\n\nTambé heu de penjar el vídeo demostratiu del funcionament del circuit.",
+      "estat": "DRAFT",
+      "workType": "ASSIGNMENT",
+      "maxPoints": 100,
+      "topicIdVell": "868858694529",
+      "materials": [
+        {
+          "link": {
+            "url": "https://docs.google.com/presentation/d/e/2PACX-1vQ9FjiRdOdN17lsUdb-IlUQD5yCb74x233KiyZxQ2X8E390yMt1WpxMaR3ZO2Bprb2Nkdh01yW6EFki/pub?start=false&loop=false&delayms=3000",
+            "title": "Circuit D10 de Sortides digitals 1 - Google Slides",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://docs.google.com/presentation/d/e/2PACX-1vQ9FjiRdOdN17lsUdb-IlUQD5yCb74x233KiyZxQ2X8E390yMt1WpxMaR3ZO2Bprb2Nkdh01yW6EFki/pub?start%3Dfalse%26loop%3Dfalse%26delayms%3D3000"
+          }
+        },
+        {
+          "driveFile": {
+            "driveFile": {
+              "id": "1O-ag9CRE-HYHa43JMUM2VRNpwmpmqHJE",
+              "title": "P03_codi.JPG",
+              "alternateLink": "https://drive.google.com/file/d/1O-ag9CRE-HYHa43JMUM2VRNpwmpmqHJE/view?usp=drive_web",
+              "thumbnailUrl": "https://lh3.googleusercontent.com/drive-storage/AJQWtBMe_8LVUsIUpS9OUXJOJUS2EsjZVBFV199i6Oe-GWSjD2nwlftRo7-3lCI75HOD6J_I0_oA4stPJymCuDNsJaGNGrKkDwX85rq3T3ySOCcbvq1y4Q=s200"
+            },
+            "shareMode": "VIEW"
+          }
+        },
+        {
+          "driveFile": {
+            "driveFile": {
+              "id": "1lRWA2VgoOHcVAByL43poz1pVz-x-7xcV",
+              "title": "Arnuino_control_rele_brunzidor.PNG",
+              "alternateLink": "https://drive.google.com/file/d/1lRWA2VgoOHcVAByL43poz1pVz-x-7xcV/view?usp=drive_web",
+              "thumbnailUrl": "https://lh3.googleusercontent.com/drive-storage/AJQWtBN7beCXRIXYvSIEI7tauc3-tf5-DMzExjEpdZs4ar531WwqCUrXL_PNe-_DrzmdZO_EFhqop-906ExHH5kWlEOnf8VZYEV4F8BRW1je8KglYUfWgA=s200"
+            },
+            "shareMode": "VIEW"
+          }
+        },
+        {
+          "driveFile": {
+            "driveFile": {
+              "id": "1saKbK6syd91Rp5B7KA01wUpTBifPdCgI",
+              "title": "Arnuino_control_rele_LED.PNG",
+              "alternateLink": "https://drive.google.com/file/d/1saKbK6syd91Rp5B7KA01wUpTBifPdCgI/view?usp=drive_web",
+              "thumbnailUrl": "https://lh3.googleusercontent.com/drive-storage/AJQWtBN0lRi-tYKbywsW63gWVqS6wDJBZlqVPlvxN8ZCcl7F-2H6okecwScbZfH41GMK-SaELRTn7JY9GCPyJJ0N8WwG-D3gw9y8MiOG5-ZVOQiKkfSOJQ=s200"
+            },
+            "shareMode": "VIEW"
+          }
+        }
+      ],
+      "dataLliurament": null
+    },
+    {
+      "titol": "Pràctica 1: Programar LED on board",
+      "descripcio": "Seguint les instruccions que trobareu a la Diapositiva 11 (D11) del capítol \"Programar la placa\" \ndissenyar un programa que faci parpellejar el LED \"on  board\".\n\nFeu 2 o 3 variacions modificant la freqüència de parpelleig.\n\nUs deixo dos exemples de programació amb comentaris.\n\nRecordeu que en aquesta activitat cal presentar un informe de pràctiques:\nObjectiu\nMaterial i eines\nDescripció muntatge\nProgramació\nEnllaços als vídeos que heu gravat (500 ms, 1000 ms i 2000 ms d'espera en la intermitència)\nValoració de l'activitat, aprenentatges.\n\n\nTambé heu de penjar els 3 vídeos, o editar-los i posar-los junts explicant a les transicions de quina intermitència ensenyen.",
+      "estat": "DRAFT",
+      "workType": "ASSIGNMENT",
+      "maxPoints": 100,
+      "topicIdVell": "868858694529",
+      "materials": [
+        {
+          "driveFile": {
+            "driveFile": {
+              "id": "1bwd90HBAdztsUxsF-pYiH_x7bG92aWk4",
+              "title": "Practica_01_a.PNG",
+              "alternateLink": "https://drive.google.com/file/d/1bwd90HBAdztsUxsF-pYiH_x7bG92aWk4/view?usp=drive_web",
+              "thumbnailUrl": "https://lh3.googleusercontent.com/drive-storage/AJQWtBOz3fw-YGdsWq-G1wKJZBMSgFvRD-6FMSzA2MwDJJfWx-bC-YVSJQRGVoILXfVtpH7tqok9suXt48ZVRzOWpAuxe7uyqLYu5FsxCUct0mlAbj68pg=s200"
+            },
+            "shareMode": "VIEW"
+          }
+        },
+        {
+          "driveFile": {
+            "driveFile": {
+              "id": "1psJIBXoBtmWxjXJgIDFE-P_eY8LcJuKp",
+              "title": "Practica_01_b.PNG",
+              "alternateLink": "https://drive.google.com/file/d/1psJIBXoBtmWxjXJgIDFE-P_eY8LcJuKp/view?usp=drive_web",
+              "thumbnailUrl": "https://lh3.googleusercontent.com/drive-storage/AJQWtBN4NJiLl6MSkrdnEfj3drQvdPlC6a2ijj_MEqjTXEZiFVGFDv7HrCR29dCOxgCDg_twNevqhaB5PD9Tz_Bx9oa6a7KzFsgMRSm-JTjwyJ519jJypg=s200"
+            },
+            "shareMode": "VIEW"
+          }
+        }
+      ],
+      "dataLliurament": null
+    },
+    {
+      "titol": "INSTAL·LAR extensió d'ARDUINO per Chromebooks",
+      "descripcio": "Enllaç per instal·la l'App d'Arduino per poder programar la placa.\n\n\nEn cas de tenir problemes, podeu utilitzar la versió web:\n",
+      "estat": "DRAFT",
+      "workType": "ASSIGNMENT",
+      "maxPoints": 100,
+      "topicIdVell": "868858694529",
+      "materials": [
+        {
+          "driveFile": {
+            "driveFile": {
+              "id": "1BGG89Qll--_sRc_stOlPbAIGGtpq19wdl4cDFlvqG1Y",
+              "title": "Enllaços per poder treballar i programar la placa Arduino",
+              "alternateLink": "https://docs.google.com/document/d/1BGG89Qll--_sRc_stOlPbAIGGtpq19wdl4cDFlvqG1Y/edit?usp=drive_web",
+              "thumbnailUrl": "https://lh3.google.com/drive-storage/AJQWtBMdBA_zH40cpKsmhAKv3MkEZUchTuR4oEKNS4jPOfP1XPH7bUkAY_tprXIKThfxvQIJnGFv8nQX1ygFRjB4xKx9dxtWL-zGiLw4Ch8JUkqg42wh4GwqodTW4iVKMrAqB3jHi19gFg=s200"
+            },
+            "shareMode": "VIEW"
+          }
+        }
+      ],
+      "dataLliurament": null
+    },
+    {
+      "titol": "Taller: INVENTARI KIT ARDUINO",
+      "descripcio": "Avui hem començat a treballar amb el KIT d'ARDUINO d'electrònica i robòtica.\n\nLa primera activitat ha estat realitzar l'inventari del contingut de dues de les caixetes que conté el KIT (recordeu-vos d'anotar quin número de KIT us ha tocat !!!):\n\nla dels components electrònics i \nla que conté la placa entrenadora i els cables de connexió (ponts).\n\nRECORDEU que ara toca passar-la informació a net en un document del DRIVE en format de taula amb 4 columnes:\n\n Imatge\n Nom\n Descripció funcional\n Nº d'elements presents\n\nL'ordre de les columnes no és important, però hi han de ser-hi totes.\n\n\nCom treballeu per equips, en aquesta activitat el que cal és compartir l'ENLLAÇ de l'arxiu.\n\n\n.",
+      "estat": "DRAFT",
+      "workType": "ASSIGNMENT",
+      "maxPoints": 100,
+      "topicIdVell": "868858694529",
+      "materials": [
+        {
+          "driveFile": {
+            "driveFile": {
+              "id": "1Zz8w7IJbd62W2jZM58j5c7fcogUUyCh-",
+              "title": "Ex_inventari.PNG",
+              "alternateLink": "https://drive.google.com/file/d/1Zz8w7IJbd62W2jZM58j5c7fcogUUyCh-/view?usp=drive_web",
+              "thumbnailUrl": "https://lh3.googleusercontent.com/drive-storage/AJQWtBM96xXvbyFId9P_UwYJ4v_CZAyaTH0AcNfq92qxX_BaEHVtQa-jxzPbl-WmqV-vfb14WhNNVruPrmNTGB2XDWjer9fFxvV7OHalfCCPghA9YvvrGA=s200"
+            },
+            "shareMode": "VIEW"
+          }
+        }
+      ],
+      "dataLliurament": null
+    },
+    {
+      "titol": "Repte bàsic 8",
+      "descripcio": "Consulta el material següent i fes la programació del REPTE 8:\n\nhttps://docs.google.com/presentation/d/178DFs73hjjioyzAjo_EkBunTgFp76u38UhB8TuuFbG0/present\n\nA sota teniu uns arxius que podeu utilitzar per realitzar aquest repte.\nQuan ho tinguis presenta aquí l'enllaç a la pàgina web del teu projecte.\n\nRecorda que has de tenir des de la web de SCRATCH el teu projecte PUBLICAT (compartit, \"shared\", ...), si no, ningú no el podrà consultar.\n\n*****************************************************************************************************\n\nTítol del repte 8:   repte8_nom_alumn@        (ex.:    Repte8_Armando_G )",
+      "estat": "DRAFT",
+      "workType": "ASSIGNMENT",
+      "maxPoints": 100,
+      "topicIdVell": "868858694532",
+      "materials": [
+        {
+          "driveFile": {
+            "driveFile": {
+              "id": "1tE3ONMsKueOU39H0tfklUq63cT4M4Jpl",
+              "title": "flor3.png",
+              "alternateLink": "https://drive.google.com/file/d/1tE3ONMsKueOU39H0tfklUq63cT4M4Jpl/view?usp=drive_web",
+              "thumbnailUrl": "https://lh3.googleusercontent.com/drive-storage/AJQWtBMaEnD9X_ko42sxnlU8eFqvvQwYbhfKoMm1rZMTiAUPF7i2OazFo-SZUMcxTVqIEPsmCvqK0D2gBr7qmKS0Jsc6YrLqvsF5CR8TP4Rqkd8-WZxHmQ=s200"
+            },
+            "shareMode": "VIEW"
+          }
+        },
+        {
+          "driveFile": {
+            "driveFile": {
+              "id": "1bU9jD7FZ_1qytyIeZz5bfbq8UX7idkVR",
+              "title": "flor2.png",
+              "alternateLink": "https://drive.google.com/file/d/1bU9jD7FZ_1qytyIeZz5bfbq8UX7idkVR/view?usp=drive_web",
+              "thumbnailUrl": "https://lh3.googleusercontent.com/drive-storage/AJQWtBOvq3kSOwEYfyJOZQNmrpo9FK1KgMAM4QDPVjesScHiVP7CjKMy4aI0u2AedivrUVUfYRoz2_oXdHgc8zqxiCuFEym_kviB9GOHeYnWQjRb6go1dw=s200"
+            },
+            "shareMode": "VIEW"
+          }
+        },
+        {
+          "driveFile": {
+            "driveFile": {
+              "id": "1o3EiGJXKJCOlOA-W5mcdudWxPx3KkaLy",
+              "title": "flor1.png",
+              "alternateLink": "https://drive.google.com/file/d/1o3EiGJXKJCOlOA-W5mcdudWxPx3KkaLy/view?usp=drive_web",
+              "thumbnailUrl": "https://lh3.googleusercontent.com/drive-storage/AJQWtBMElhtOM-0IzRnFBYynDwJjU-EtJUJ16Ahp63GhobNWCAgkYNsRHX26782Zx5rxzprOCROz_dmvf4yAKtwksUXFaikGhS-Cgd6YGxu0BqLiicCEYA=s200"
+            },
+            "shareMode": "VIEW"
+          }
+        }
+      ],
+      "dataLliurament": null
+    },
+    {
+      "titol": "Repte bàsic 11",
+      "descripcio": "Consulta el material següent i fes la programació del REPTE 11:\n\nhttps://docs.google.com/presentation/d/178DFs73hjjioyzAjo_EkBunTgFp76u38UhB8TuuFbG0/present\n\nA sota teniu l'arxiu que us farà falta per realitzar aquest repte.\n\nQuan ho tinguis presenta aquí l'enllaç a la pàgina web del teu projecte.\n\nRecorda que has de tenir des de la web de SCRATCH el teu projecte PUBLICAT (compartit, \"shared\", ...), si no, ningú no el podrà consultar.\n\n*****************************************************************************************************\n\nTítol del repte 11:   repte11_nom_alumn@        (ex.:    Repte11_Armando_G )",
+      "estat": "DRAFT",
+      "workType": "ASSIGNMENT",
+      "maxPoints": 100,
+      "topicIdVell": "868858694532",
+      "materials": [
+        {
+          "driveFile": {
+            "driveFile": {
+              "id": "1D1d753XMzUZVPV60FtAdWdnmPDsTmqto",
+              "title": "RB_11_per programar.sb3",
+              "alternateLink": "https://drive.google.com/file/d/1D1d753XMzUZVPV60FtAdWdnmPDsTmqto/view?usp=drive_web"
+            },
+            "shareMode": "VIEW"
+          }
+        }
+      ],
+      "dataLliurament": null
+    },
+    {
+      "titol": "Actualització imatge de perfil a SCRATCH",
+      "descripcio": "Hola,\n\nPer poder reconèixer-vos quan corregeixi les vostres activitats de programació amb SCRATCH, heu d'actualitzar la vostra foto del perfil  d'usuari/a de SCRATCH.\n\nNomés us prendrà uns pocs minuts.\n\nUs deixo un minitutorial per aquells que no se'n recordin:\n\nhttps://docs.google.com/presentation/d/1sinv6dvZA4uDcEvrmrvpSI0PedifMhGPdapRWsAq0g4/present\n\n\n\nTambé una captura perquè tingueu clar com ha de ser la vostra foto de perfil.",
+      "estat": "DRAFT",
+      "workType": "ASSIGNMENT",
+      "maxPoints": 100,
+      "topicIdVell": "868858694532",
+      "materials": [
+        {
+          "driveFile": {
+            "driveFile": {
+              "id": "1dIoMxV-HCDic4qnsn3crkX_wxWMkYAMs",
+              "title": "Perfil_Scratch.PNG",
+              "alternateLink": "https://drive.google.com/file/d/1dIoMxV-HCDic4qnsn3crkX_wxWMkYAMs/view?usp=drive_web",
+              "thumbnailUrl": "https://lh3.googleusercontent.com/drive-storage/AJQWtBPJ_Rq60jbWX-2QIOa7RS6Sseukx-A-yNyoA7gWavwVHvLsuH1lnIfYxaAZYharCqDNbp-cuybP52IoLqF0DaI1b9rv-f9ZcUK5SN9XnD4XO88gfg=s200"
+            },
+            "shareMode": "VIEW"
+          }
+        }
+      ],
+      "dataLliurament": null
+    },
+    {
+      "titol": "Arduino capítols 8-9, IN/OUT analògics",
+      "descripcio": "Hola ,\n\nAra toca realitzar els capítols:\n\n8) Entrades analògiques\n9) Sortides analògiques\n\nEn versió dinàmica.\n\nEntregueu aquí les captures de la pantalla final.",
+      "estat": "DRAFT",
+      "workType": "ASSIGNMENT",
+      "maxPoints": 100,
+      "topicIdVell": "868858694529",
+      "materials": [
+        {
+          "link": {
+            "url": "https://www.tecno12-18.com/lm/mud/index.asp?tema=ard&mud=08&lengua=cat",
+            "title": "tecno12-18",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://www.tecno12-18.com/lm/mud/index.asp?tema%3Dard%26mud%3D08%26lengua%3Dcat"
+          }
+        },
+        {
+          "link": {
+            "url": "https://www.tecno12-18.com/lm/mud/index.asp?tema=ard&mud=09&lengua=cat",
+            "title": "tecno12-18",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://www.tecno12-18.com/lm/mud/index.asp?tema%3Dard%26mud%3D09%26lengua%3Dcat"
+          }
+        }
+      ],
+      "dataLliurament": null
+    },
+    {
+      "titol": "Presentació explicant estructura placa Arduino UNO",
+      "descripcio": "Un cop realitzat el capítol 2 sobre la placa Arduino UNO, i amb l'ajuda del llibre de projectes que acompanya el kit Arduino, cal preparar una presentació dinàmica explicant la funció de cadascú dels components de la placa.",
+      "estat": "DRAFT",
+      "workType": "ASSIGNMENT",
+      "maxPoints": 100,
+      "topicIdVell": "868858694529",
+      "materials": [],
+      "dataLliurament": null
+    },
+    {
+      "titol": "Arduino capítols 4-5-6-7, IN/OUT Digitals",
+      "descripcio": "Hola ,\n\nAra toca realitzar els capítols:\n\n4) Sortides digitals 1\n5)  Sortides digitals 2\n6) Entrades digitals 1\n7) Entrades digitals 2\n\nEn versió dinàmica.\n\nEntregueu aquí les captures de la pantalla final.",
+      "estat": "DRAFT",
+      "workType": "ASSIGNMENT",
+      "maxPoints": 100,
+      "topicIdVell": "868858694529",
+      "materials": [
+        {
+          "link": {
+            "url": "https://www.tecno12-18.com/lm/mud/index.asp?tema=ard&mud=04&lengua=cat",
+            "title": "tecno12-18",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://www.tecno12-18.com/lm/mud/index.asp?tema%3Dard%26mud%3D04%26lengua%3Dcat"
+          }
+        },
+        {
+          "link": {
+            "url": "https://www.tecno12-18.com/lm/mud/index.asp?tema=ard&mud=05&lengua=cat",
+            "title": "tecno12-18",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://www.tecno12-18.com/lm/mud/index.asp?tema%3Dard%26mud%3D05%26lengua%3Dcat"
+          }
+        },
+        {
+          "link": {
+            "url": "https://www.tecno12-18.com/lm/mud/index.asp?tema=ard&mud=06&lengua=cat",
+            "title": "tecno12-18",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://www.tecno12-18.com/lm/mud/index.asp?tema%3Dard%26mud%3D06%26lengua%3Dcat"
+          }
+        },
+        {
+          "link": {
+            "url": "https://www.tecno12-18.com/lm/mud/index.asp?tema=ard&mud=07&lengua=cat",
+            "title": "tecno12-18",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://www.tecno12-18.com/lm/mud/index.asp?tema%3Dard%26mud%3D07%26lengua%3Dcat"
+          }
+        }
+      ],
+      "dataLliurament": null
+    },
+    {
+      "titol": "Arduino capítol 3: Programar la placa",
+      "descripcio": "Hola ,\n\nAra toca realitzar els capítols:\n\n3) Programar la placa\n\nEn versió dinàmica.\n\nEntregueu aquí les captures de la pantalla final.",
+      "estat": "DRAFT",
+      "workType": "ASSIGNMENT",
+      "maxPoints": 100,
+      "topicIdVell": "868858694529",
+      "materials": [
+        {
+          "link": {
+            "url": "https://www.tecno12-18.com/lm/mud/index.asp?tema=ard&mud=03&lengua=cat",
+            "title": "tecno12-18",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://www.tecno12-18.com/lm/mud/index.asp?tema%3Dard%26mud%3D03%26lengua%3Dcat"
+          }
+        }
+      ],
+      "dataLliurament": null
+    },
+    {
+      "titol": "Repte Tangram",
+      "descripcio": "Consulta l'arxiu d'instruccions i fes un programa que dibuixi un TANGRAM en l'escenari.\n\n\nNom del repte:  R_tangram_nom usuari",
+      "estat": "DRAFT",
+      "workType": "ASSIGNMENT",
+      "maxPoints": 100,
+      "topicIdVell": "868858694532",
+      "materials": [
+        {
+          "link": {
+            "url": "https://docs.google.com/presentation/d/e/2PACX-1vSbkKK3nLGEMOtsV-4Cb43Df3XtC673ckV99T-M1USSRkz42dwLen_Qh_jSIkppPOB-BjZ6DHE0WDhX/pub?start=false&loop=false&delayms=3000",
+            "title": "Instruccions per dibuixar el TANGRAM amb SCRATCH_pps - Google Slides",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://docs.google.com/presentation/d/e/2PACX-1vSbkKK3nLGEMOtsV-4Cb43Df3XtC673ckV99T-M1USSRkz42dwLen_Qh_jSIkppPOB-BjZ6DHE0WDhX/pub?start%3Dfalse%26loop%3Dfalse%26delayms%3D3000"
+          }
+        }
+      ],
+      "dataLliurament": null
+    },
+    {
+      "titol": "Repte bàsic 10",
+      "descripcio": "Consulta el material següent i fes la programació del REPTE 10:\n\nhttps://docs.google.com/presentation/d/178DFs73hjjioyzAjo_EkBunTgFp76u38UhB8TuuFbG0/present\n\n\n\nQuan ho tinguis presenta aquí l'enllaç a la pàgina web del teu projecte.\n\nRecorda que has de tenir des de la web de SCRATCH el teu projecte PUBLICAT (compartit, \"shared\", ...), si no, ningú no el podrà consultar.\n\n*****************************************************************************************************\n\nTítol del repte 10:   repte10_nom_alumn@        (ex.:    Repte10_Armando_G )",
+      "estat": "DRAFT",
+      "workType": "ASSIGNMENT",
+      "maxPoints": 100,
+      "topicIdVell": "868858694532",
+      "materials": [],
+      "dataLliurament": null
+    },
+    {
+      "titol": "Repte bàsic 9",
+      "descripcio": "Consulta el material següent i fes la programació del REPTE 9:\n\nhttps://docs.google.com/presentation/d/178DFs73hjjioyzAjo_EkBunTgFp76u38UhB8TuuFbG0/present\n\n\n\nQuan ho tinguis presenta aquí l'enllaç a la pàgina web del teu projecte.\n\nRecorda que has de tenir des de la web de SCRATCH el teu projecte PUBLICAT (compartit, \"shared\", ...), si no, ningú no el podrà consultar.\n\n*****************************************************************************************************\n\nTítol del repte 9:   repte9_nom_alumn@        (ex.:    Repte9_Armando_G )",
+      "estat": "DRAFT",
+      "workType": "ASSIGNMENT",
+      "maxPoints": 100,
+      "topicIdVell": "868858694532",
+      "materials": [],
+      "dataLliurament": null
+    },
+    {
+      "titol": "Qüestionari Capítol 2: La Placa Arduino UNO",
+      "descripcio": "Un cop fet el capítol 2 La Placa Arduino UNO  en versió dinàmica, ara toca fer el seu QÜESTIONARI.\n\nEntregueu aquí el document, enunciats en negreta i respostes sense negreta.",
+      "estat": "DRAFT",
+      "workType": "ASSIGNMENT",
+      "maxPoints": 100,
+      "topicIdVell": "868858694529",
+      "materials": [],
+      "dataLliurament": null
+    },
+    {
+      "titol": "Qüestionari Capítol 1: Introducció Arduino",
+      "descripcio": "Un cop fet el capítol 1 INTRODUCCIÓ  en versió dinàmica, ara toca fer el seu QÜESTIONARI.\n\nEntregueu aquí el document, enunciats en negreta i respostes sense negreta.",
+      "estat": "DRAFT",
+      "workType": "ASSIGNMENT",
+      "maxPoints": 100,
+      "topicIdVell": "868858694529",
+      "materials": [],
+      "dataLliurament": null
+    },
+    {
+      "titol": "Arduino capítol 2: La placa Arduino UNO",
+      "descripcio": "Hola ,\n\nAra toca realitzar el capítol:\n\n2) La placa Arduino\n\nEn versió dinàmica.\n\nEntregueu aquí les captures de la pantalla final.",
+      "estat": "DRAFT",
+      "workType": "ASSIGNMENT",
+      "maxPoints": 100,
+      "topicIdVell": "868858694529",
+      "materials": [
+        {
+          "link": {
+            "url": "https://www.tecno12-18.com/lm/mud/index.asp?tema=ard&mud=02&lengua=cat",
+            "title": "tecno12-18",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://www.tecno12-18.com/lm/mud/index.asp?tema%3Dard%26mud%3D02%26lengua%3Dcat"
+          }
+        }
+      ],
+      "dataLliurament": null
+    },
+    {
+      "titol": "Arduino capítol 1: INTRODUCCIÓ",
+      "descripcio": "Hola ,\n\nAra toca realitzar el capítol:\n\n1) Introducció\n\nEn versió dinàmica.\n\nEntregueu aquí les captures de la pantalla final.",
+      "estat": "DRAFT",
+      "workType": "ASSIGNMENT",
+      "maxPoints": 100,
+      "topicIdVell": "868858694529",
+      "materials": [
+        {
+          "link": {
+            "url": "https://www.tecno12-18.com/lm/mud/index.asp?tema=ard&mud=01&lengua=cat",
+            "title": "tecno12-18",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://www.tecno12-18.com/lm/mud/index.asp?tema%3Dard%26mud%3D01%26lengua%3Dcat"
+          }
+        }
+      ],
+      "dataLliurament": null
+    },
+    {
+      "titol": "Qüestionari Capítol 3: Programar la placa",
+      "descripcio": "Un cop fet el capítol 3  Programar la placa  en versió dinàmica, ara toca fer el seu QÜESTIONARI.\n\nEntregueu aquí el document, enunciats en negreta i respostes sense negreta.",
+      "estat": "DRAFT",
+      "workType": "ASSIGNMENT",
+      "maxPoints": 100,
+      "topicIdVell": "868858694529",
+      "materials": [],
+      "dataLliurament": null
+    },
+    {
+      "titol": "Repte:  Joc d'Asteroides",
+      "descripcio": "Ara heu de programar un joc d'eliminar, destruir asteroides.\n\nRECORDA:  Quan programem, cal comprovar, verificar, testejar, el vostre programa (el joc en aquest cas) diverses vegades (mínim 3) per estar segur que funciona correctament i fa el que et demanen a les instruccions.\n\nAquí teniu els enllaços següents:\nLes instruccions de l'activitat (google Slides)\nhttps://docs.google.com/presentation/d/1hTYsr9c-0EG0Zd7GlsuifP05jqWCSAUYR7n0HFdTH0s/present\nA un exemple de cursos anteriors, que es juga amb l'ajuda del cursor (millor amb ratolí)\nNom del repte Asteroides: Joc_asteroides_nom_alumn@       \n\n     (ex.:   Joc_asteroides_Armando_G)\n\n  Entrega aquí l'enllaç al teu joc.",
+      "estat": "DRAFT",
+      "workType": "ASSIGNMENT",
+      "maxPoints": 100,
+      "topicIdVell": "868858694532",
+      "materials": [
+        {
+          "link": {
+            "url": "https://scratch.mit.edu/projects/638032004/embed/",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://scratch.mit.edu/projects/638032004/embed/"
+          }
+        }
+      ],
+      "dataLliurament": null
+    },
+    {
+      "titol": "Repte bàsic 7",
+      "descripcio": "Consulta el material següent i fes la programació del REPTE 7:\n\nhttps://docs.google.com/presentation/d/178DFs73hjjioyzAjo_EkBunTgFp76u38UhB8TuuFbG0/present\n\n\n\nQuan ho tinguis presenta aquí l'enllaç a la pàgina web del teu projecte.\n\nRecorda que has de tenir des de la web de SCRATCH el teu projecte PUBLICAT (compartit, \"shared\", ...), si no, ningú no el podrà consultar.\n\n*****************************************************************************************************\n\nTítol del repte 7:   repte7_nom_alumn@        (ex.:    Repte7_Armando_G )",
+      "estat": "DRAFT",
+      "workType": "ASSIGNMENT",
+      "maxPoints": 100,
+      "topicIdVell": "868858694532",
+      "materials": [],
+      "dataLliurament": null
+    },
+    {
+      "titol": "Repte bàsic 6",
+      "descripcio": "Consulta el material següent i fes la programació del REPTE 6:\n\nhttps://docs.google.com/presentation/d/178DFs73hjjioyzAjo_EkBunTgFp76u38UhB8TuuFbG0/present\n\n\n\nQuan ho tinguis presenta aquí l'enllaç a la pàgina web del teu projecte.\n\nRecorda que has de tenir des de la web de SCRATCH el teu projecte PUBLICAT (compartit, \"shared\", ...), si no, ningú no el podrà consultar.\n\n*****************************************************************************************************\n\nTítol del repte 6:   repte6_nom_alumn@        (ex.:    Repte6_Armando_G )",
+      "estat": "DRAFT",
+      "workType": "ASSIGNMENT",
+      "maxPoints": 100,
+      "topicIdVell": "868858694532",
+      "materials": [],
+      "dataLliurament": null
+    },
+    {
+      "titol": "Repte bàsic 5",
+      "descripcio": "Consulta el material següent i fes la programació del REPTE 5:\n\nhttps://docs.google.com/presentation/d/178DFs73hjjioyzAjo_EkBunTgFp76u38UhB8TuuFbG0/present\n\n\n\nQuan ho tinguis presenta aquí l'enllaç a la pàgina web del teu projecte.\n\nRecorda que has de tenir des de la web de SCRATCH el teu projecte PUBLICAT (compartit, \"shared\", ...), si no, ningú no el podrà consultar.\n\n*****************************************************************************************************\n\nTítol del repte 5:   repte5_nom_alumn@        (ex.:    Repte5_Armando_G )",
+      "estat": "DRAFT",
+      "workType": "ASSIGNMENT",
+      "maxPoints": 100,
+      "topicIdVell": "868858694532",
+      "materials": [],
+      "dataLliurament": null
+    },
+    {
+      "titol": "Repte: Joc d'Obstacles",
+      "descripcio": "Ara intentareu programar un joc on el protagonista hagi de superar obstacles.\n\nRECORDA:  Quan programem, cal comprovar, verificar, testejar, el vostre programa (el joc en aquest cas) diverses vegades (mínim 3) per estar segur que funciona correctament i fa el que et demanen a les instruccions.\n\nAquí teniu els enllaços següents:\nLes instruccions de l'activitat (google Slides)\nhttps://docs.google.com/presentation/d/1-EJ2_0Xay3zcoNEMT0n2ZQ8R-2oykAml58dcdRarzAw/present\nA un exemple de cursos anteriors, que es juga amb l'ajuda del cursor (millor amb ratolí), però podeu utilitzar qualsevol tecla del teclat, per exemple la de fletxa amunt.\nEl programa ha de tenir el nom següent:    Joc_obstacles_nom_alumn@         (ex.:   Joc_obstacles_Armando_G)\n\nEntrega aquí l'enllaç al teu joc.",
+      "estat": "DRAFT",
+      "workType": "ASSIGNMENT",
+      "maxPoints": 100,
+      "topicIdVell": "868858694532",
+      "materials": [
+        {
+          "link": {
+            "url": "https://scratch.mit.edu/projects/638007244/embed/",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://scratch.mit.edu/projects/638007244/embed/"
+          }
+        }
+      ],
+      "dataLliurament": null
+    },
+    {
+      "titol": "Repte bàsic 4",
+      "descripcio": "Consulta el material següent i fes la programació del REPTE 4:\n\nhttps://docs.google.com/presentation/d/178DFs73hjjioyzAjo_EkBunTgFp76u38UhB8TuuFbG0/present\n\n\n\nQuan ho tinguis presenta aquí l'enllaç a la pàgina web del teu projecte.\n\nRecorda que has de tenir des de la web de SCRATCH el teu projecte PUBLICAT (compartit, \"shared\", ...), si no, ningú no el podrà consultar.\n\n*****************************************************************************************************\n\nTítol del repte 4:   repte4_nom_alumn@        (ex.:    Repte4_Armando_G )",
+      "estat": "DRAFT",
+      "workType": "ASSIGNMENT",
+      "maxPoints": 100,
+      "topicIdVell": "868858694532",
+      "materials": [],
+      "dataLliurament": null
+    },
+    {
+      "titol": "Repte bàsic 3",
+      "descripcio": "Consulta el material següent i fes la programació del REPTE 3:\n\nhttps://docs.google.com/presentation/d/178DFs73hjjioyzAjo_EkBunTgFp76u38UhB8TuuFbG0/present\n\n\n\nQuan ho tinguis presenta aquí l'enllaç a la pàgina web del teu projecte.\n\nRecorda que has de tenir des de la web de SCRATCH el teu projecte PUBLICAT (compartit, \"shared\", ...), si no, ningú no el podrà consultar.\n\n*****************************************************************************************************\n\nTítol del repte 3:   repte3_nom_alumn@        (ex.:    Repte3_Armando_G )",
+      "estat": "DRAFT",
+      "workType": "ASSIGNMENT",
+      "maxPoints": 100,
+      "topicIdVell": "868858694532",
+      "materials": [],
+      "dataLliurament": null
+    },
+    {
+      "titol": "Repte bàsic 2",
+      "descripcio": "Consulta el material següent i fes la programació del REPTE 2:\n\nhttps://docs.google.com/presentation/d/178DFs73hjjioyzAjo_EkBunTgFp76u38UhB8TuuFbG0/present\n\n\n\nQuan ho tinguis presenta aquí l'enllaç a la pàgina web del teu projecte.\n\nRecorda que has de tenir des de la web de SCRATCH el teu projecte PUBLICAT (compartit, \"shared\", ...), si no, ningú no el podrà consultar.\n\n*****************************************************************************************************\n\nTítol del repte 2:   repte2_nom_alumn@        (ex.:    Repte2_Armando_G )",
+      "estat": "DRAFT",
+      "workType": "ASSIGNMENT",
+      "maxPoints": 100,
+      "topicIdVell": "868858694532",
+      "materials": [],
+      "dataLliurament": null
+    },
+    {
+      "titol": "Repte bàsic 1",
+      "descripcio": "Consulta el material següent i fes la programació del REPTE 1:\n\nhttps://docs.google.com/presentation/d/178DFs73hjjioyzAjo_EkBunTgFp76u38UhB8TuuFbG0/present\n\n\n\nQuan ho tinguis presenta aquí l'enllaç a la pàgina web del teu projecte.\n\nRecorda que has de tenir des de la web de SCRATCH el teu projecte PUBLICAT (compartit, \"shared\", ...), si no, ningú no el podrà consultar.\n\n*****************************************************************************************************\n\nTítol del repte 1:   repte1_nom_alumn@        (ex.:    Repte1_Armando_G )",
+      "estat": "DRAFT",
+      "workType": "ASSIGNMENT",
+      "maxPoints": 100,
+      "topicIdVell": "868858694532",
+      "materials": [],
+      "dataLliurament": null
+    },
+    {
+      "titol": "Repte bàsic 12",
+      "descripcio": "Consulta el material següent i fes la programació del REPTE 12:\n\nhttps://docs.google.com/presentation/d/178DFs73hjjioyzAjo_EkBunTgFp76u38UhB8TuuFbG0/present\n\n\n\nQuan ho tinguis presenta aquí l'enllaç a la pàgina web del teu projecte.\n\nRecorda que has de tenir des de la web de SCRATCH el teu projecte PUBLICAT (compartit, \"shared\", ...), si no, ningú no el podrà consultar.\n\n*****************************************************************************************************\n\nTítol del repte 12:   repte12_nom_alumn@        (ex.:    Repte12_Armando_G )",
+      "estat": "DRAFT",
+      "workType": "ASSIGNMENT",
+      "maxPoints": 100,
+      "topicIdVell": "868858694532",
+      "materials": [],
+      "dataLliurament": null
+    },
+    {
+      "titol": "Creació web sobre Arduino al Portafoli",
+      "descripcio": "🏠 Inici (paràgraf justificatiu del motiu de crear la web (fons de color)\n\n💡Explicació senzilla del que és Arduino\n     Breu història i/o per què és útil.\n     Imatges de la placa Arduino (consultar les diferents presentacions d'Arduino, tipus de models). Explicar per a què s'utilitza cada tipus de model. \nOptatiu (suggeriment): Vídeo curt (inserit des de YouTube?) que ho expliqui de forma visual.\nQuè cal saber sobre Arduino UNO \nla placa (descripció de cada element característic).\nla programació (que cal destacar sobre com es programa la placa).\n🔧 Una secció per cada projecte, amb aquest format:\n\nObjectiu.\nMaterials utilitzats.\nEsquema del circuit (imatge).\nCodi font (amb comentaris).\nVídeo o fotos del resultat.\nQuè s'ha après.\nAjudeu-vos dels informes de pràctiques, però no els inseriu.\n\n💡\n\n🧠(reflexions)\n\nLliçons apreses.\nDificultats trobades i com s'han resolt.\nHabilitats desenvolupades (electrònica, programació, paciència…).\n🚀Idees per a futurs projectes.\n     Temes que vol explorar (robòtica, IoT, etc.).\n     Referències o enllaços a recursos que li han agradat (vídeos, tutorials, webs).",
+      "estat": "DRAFT",
+      "workType": "ASSIGNMENT",
+      "maxPoints": 100,
+      "topicIdVell": "868858694529",
+      "materials": [],
+      "dataLliurament": null
+    },
+    {
+      "titol": "Repte Rètol bústia/porta",
+      "descripcio": "Ara que ja saps com dibuixar, has de crear una activitat com la que veuràs als enllaços inferiors.\n\nIntenta simular com dibuixaríem el rètol d'una bústia (buzón) o d'una porta.\n\nA sota tens dos exemples, un més senzill (Griselda) i un altre més elaborat (Tecno).\n\nRecorda que has d'escollir bé la posició de cada lletra.\n\nPots afegir un personatge que doni instruccions (optatiu).",
+      "estat": "DRAFT",
+      "workType": "ASSIGNMENT",
+      "maxPoints": 100,
+      "topicIdVell": "868858694532",
+      "materials": [
+        {
+          "link": {
+            "url": "https://scratch.mit.edu/projects/213977205/embed",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://scratch.mit.edu/projects/213977205/embed"
+          }
+        },
+        {
+          "link": {
+            "url": "https://scratch.mit.edu/projects/183478380/embed",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://scratch.mit.edu/projects/183478380/embed"
+          }
+        }
+      ],
+      "dataLliurament": null
+    }
+  ],
+  "courseWorkMaterials": [
+    {
+      "titol": "Mircopython Microbit",
+      "descripcio": null,
+      "estat": "PUBLISHED",
+      "topicIdVell": "870467767393",
+      "materials": [
+        {
+          "link": {
+            "url": "https://python.microbit.org/v/3",
+            "title": "micro:bit Python Editor",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://python.microbit.org/v/3"
+          }
+        }
+      ]
+    },
+    {
+      "titol": "🐣 Dossier del robot T1: la mascota reactiva",
+      "descripcio": "Peces, muntatge, cablatge i rúbrica del robot del 1r trimestre.",
+      "estat": "PUBLISHED",
+      "topicIdVell": "870507457924",
+      "materials": [
+        {
+          "link": {
+            "url": "https://tomeu-cd100.github.io/robotica-1batx-2627/classes/00-general/00-projecte-t1-mascota.html",
+            "title": "🐣 Projecte T1 · La mascota reactiva · Robòtica · 1r de Batxillerat",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://tomeu-cd100.github.io/robotica-1batx-2627/classes/00-general/00-projecte-t1-mascota.html"
+          }
+        }
+      ]
+    },
+    {
+      "titol": "🤖 El fil conductor del curs: tres robots, tres trimestres",
+      "descripcio": "El mapa dels tres robots que cada parella construeix durant el curs (mascota, braç, rover) i de com cada SA hi aporta una peça.",
+      "estat": "PUBLISHED",
+      "topicIdVell": "870467767393",
+      "materials": [
+        {
+          "link": {
+            "url": "https://tomeu-cd100.github.io/robotica-1batx-2627/classes/00-general/00-fil-conductor-robots.html",
+            "title": "🤖 El fil conductor del curs: tres robots, tres trimestres · Robòtica · 1r de Batxillerat",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://tomeu-cd100.github.io/robotica-1batx-2627/classes/00-general/00-fil-conductor-robots.html"
+          }
+        }
+      ]
+    },
+    {
+      "titol": "🚗 Dossier del robot T3: el rover autònom",
+      "descripcio": "Peces, muntatge, cablatge, sessió 0 i rúbrica del robot del 3r trimestre.",
+      "estat": "DRAFT",
+      "topicIdVell": "870512438579",
+      "materials": [
+        {
+          "link": {
+            "url": "https://tomeu-cd100.github.io/robotica-1batx-2627/classes/00-general/00-projecte-t3-rover.html",
+            "title": "🚗 Projecte T3 · El rover autònom · Robòtica · 1r de Batxillerat",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://tomeu-cd100.github.io/robotica-1batx-2627/classes/00-general/00-projecte-t3-rover.html"
+          }
+        }
+      ]
+    },
+    {
+      "titol": "🦾 Dossier del robot T2: el braç robòtic",
+      "descripcio": "Peces, muntatge, cablatge (Arduino i micro:bit) i rúbrica del robot del 2n trimestre.",
+      "estat": "DRAFT",
+      "topicIdVell": "870512711808",
+      "materials": [
+        {
+          "link": {
+            "url": "https://tomeu-cd100.github.io/robotica-1batx-2627/classes/00-general/00-projecte-t2-brac.html",
+            "title": "🦾 Projecte T2 · El braç robòtic · Robòtica · 1r de Batxillerat",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://tomeu-cd100.github.io/robotica-1batx-2627/classes/00-general/00-projecte-t2-brac.html"
+          }
+        }
+      ]
+    },
+    {
+      "titol": "📡 Repàs exprés de la ràdio micro:bit (abans de la SA8)",
+      "descripcio": "Targeta de 10 minuts per recuperar la ràdio de la SA5 abans de començar la telemetria: les 5 línies clau, el patró emissor/receptor i un autotest amb solucions.",
+      "estat": "DRAFT",
+      "topicIdVell": "870512485238",
+      "materials": [
+        {
+          "link": {
+            "url": "https://tomeu-cd100.github.io/robotica-1batx-2627/classes/00-general/00-repas-expres-radio.html",
+            "title": "Repàs exprés de la ràdio micro:bit (abans de la SA8) · Robòtica · 1r de Batxillerat",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://tomeu-cd100.github.io/robotica-1batx-2627/classes/00-general/00-repas-expres-radio.html"
+          }
+        }
+      ]
+    },
+    {
+      "titol": "SA8 · Auditoria d'un producte IoT real (S2)",
+      "descripcio": "Targetes de producte i informe d'auditoria de la sessió 2: feu d'auditors de privacitat d'un producte IoT real (diagrama, dades, riscos i recomanacions) i defenseu l'informe al peritatge creuat.",
+      "estat": "DRAFT",
+      "topicIdVell": "870512485238",
+      "materials": [
+        {
+          "link": {
+            "url": "https://tomeu-cd100.github.io/robotica-1batx-2627/classes/sa8/sa8-auditoria-iot.html",
+            "title": "SA8 · Auditoria d'un producte IoT real (S2) · Robòtica · 1r de Batxillerat",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://tomeu-cd100.github.io/robotica-1batx-2627/classes/sa8/sa8-auditoria-iot.html"
+          }
+        }
+      ]
+    },
+    {
+      "titol": "Enllaç a la Classe de Tinkercad",
+      "descripcio": null,
+      "estat": "PUBLISHED",
+      "topicIdVell": "870467767393",
+      "materials": [
+        {
+          "link": {
+            "url": "https://www.tinkercad.com/joinclass/D3HGAZUJS",
+            "title": "Join class - Tinkercad",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://www.tinkercad.com/joinclass/D3HGAZUJS"
+          }
+        }
+      ]
+    },
+    {
+      "titol": "ARDUINO UNO · Blocs de Programació Offline",
+      "descripcio": null,
+      "estat": "PUBLISHED",
+      "topicIdVell": "870467767393",
+      "materials": [
+        {
+          "driveFile": {
+            "driveFile": {
+              "id": "19VxAfX1ht4DP2OHE4nFe5BolyenpAry2",
+              "title": "Blocs_Programacio_Offline.pdf",
+              "alternateLink": "https://drive.google.com/file/d/19VxAfX1ht4DP2OHE4nFe5BolyenpAry2/view?usp=drive_web",
+              "thumbnailUrl": "https://lh3.googleusercontent.com/drive-storage/AJQWtBNXCVh2yD4nyHRQJD0i1SqZyijOUzl2YNCnY6XvxF1cKiJH53bWuysRIJSO7Pti2jG6ZdaUO72OpXDeMIf1dmTru6Q8_7MMZuL-ry4NVhCUaGTczQ=s200"
+            },
+            "shareMode": "VIEW"
+          }
+        }
+      ]
+    },
+    {
+      "titol": "ARDUINO UNO · Fitxes Visuals de Programació",
+      "descripcio": null,
+      "estat": "PUBLISHED",
+      "topicIdVell": "870467767393",
+      "materials": [
+        {
+          "driveFile": {
+            "driveFile": {
+              "id": "1penqXfM6wxBPID8kc-40GUYYeTucqAkj",
+              "title": "Fitxes_Arduino_UNO.pdf",
+              "alternateLink": "https://drive.google.com/file/d/1penqXfM6wxBPID8kc-40GUYYeTucqAkj/view?usp=drive_web",
+              "thumbnailUrl": "https://lh3.googleusercontent.com/drive-storage/AJQWtBMPq-jHMidgo7Og_F1J_ENeqHJ_h1DXG1earjRYjyILzsF7De9A2vJGT5Nw0rF5CuPu7jEQBUKG1kFzGxM91yePFsfsbO7vlhggI2xf0zSQ6ZWslg=s200"
+            },
+            "shareMode": "VIEW"
+          }
+        }
+      ]
+    },
+    {
+      "titol": "📓 Quadern tècnic — la guia i els PDF per imprimir",
+      "descripcio": "El quadern tècnic és el teu diari de treball: hi prens apunts, hi documentes els errors i t'hi autoavalues a cada sessió. Compta el 25 % de la nota i EL POTS CONSULTAR A LES PROVES.\nEl docent te'l dona imprès a l'inici de cada trimestre (un full per sessió). Aquí tens la guia (regles i com s'avalua) i els PDF per si l'has de reimprimir.",
+      "estat": "DRAFT",
+      "topicIdVell": "870592700433",
+      "materials": [
+        {
+          "link": {
+            "url": "https://tomeu-cd100.github.io/robotica-1batx-2627/classes/00-general/00-quadern-tecnic.html",
+            "title": "📓 Quadern tècnic — el teu diari de treball · Robòtica · 1r de Batxillerat",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://tomeu-cd100.github.io/robotica-1batx-2627/classes/00-general/00-quadern-tecnic.html"
+          }
+        },
+        {
+          "link": {
+            "url": "https://github.com/tomeu-cd100/robotica-1batx-2627/blob/main/Classes/00_General/pdf/Quadern_tecnic_T1.pdf",
+            "title": "robotica-1batx-2627/Classes/00_General/pdf/Quadern_tecnic_T1.pdf at main · tomeu-cd100/robotica-1batx-2627 · GitHub",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://github.com/tomeu-cd100/robotica-1batx-2627/blob/main/Classes/00_General/pdf/Quadern_tecnic_T1.pdf"
+          }
+        },
+        {
+          "link": {
+            "url": "https://github.com/tomeu-cd100/robotica-1batx-2627/blob/main/Classes/00_General/pdf/Quadern_tecnic_T2.pdf",
+            "title": "robotica-1batx-2627/Classes/00_General/pdf/Quadern_tecnic_T2.pdf at main · tomeu-cd100/robotica-1batx-2627 · GitHub",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://github.com/tomeu-cd100/robotica-1batx-2627/blob/main/Classes/00_General/pdf/Quadern_tecnic_T2.pdf"
+          }
+        },
+        {
+          "link": {
+            "url": "https://github.com/tomeu-cd100/robotica-1batx-2627/blob/main/Classes/00_General/pdf/Quadern_tecnic_T3.pdf",
+            "title": "robotica-1batx-2627/Classes/00_General/pdf/Quadern_tecnic_T3.pdf at main · tomeu-cd100/robotica-1batx-2627 · GitHub",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://github.com/tomeu-cd100/robotica-1batx-2627/blob/main/Classes/00_General/pdf/Quadern_tecnic_T3.pdf"
+          }
+        }
+      ]
+    },
+    {
+      "titol": "Plantilla Disseny Objectes",
+      "descripcio": null,
+      "estat": "PUBLISHED",
+      "topicIdVell": "870467767393",
+      "materials": [
+        {
+          "driveFile": {
+            "driveFile": {
+              "id": "1AfjOcWvmBf37zXbVjoO4H35YVjps1CQr",
+              "title": "00_Plantilla_disseny_objecte.pdf",
+              "alternateLink": "https://drive.google.com/file/d/1AfjOcWvmBf37zXbVjoO4H35YVjps1CQr/view?usp=drive_web",
+              "thumbnailUrl": "https://lh3.googleusercontent.com/drive-storage/AJQWtBPOpu3RVPHBPARVIzxJ6sP5lUuhsvUnpz3Oyl-3t0EM5iJHnesNwJb_IphImCbWXDp5ZS6w3Fr_4yDAUcpp6VJ0K_-Ubp7XnIy-PB9EAMYFEbSClg=s200"
+            },
+            "shareMode": "VIEW"
+          }
+        }
+      ]
+    },
+    {
+      "titol": "Quadern Tècnic T3",
+      "descripcio": null,
+      "estat": "DRAFT",
+      "topicIdVell": "870592700433",
+      "materials": [
+        {
+          "driveFile": {
+            "driveFile": {
+              "id": "10Sl0Qi7JU0_FZltmr4920nFZ7xd-GMVL",
+              "title": "Quadern_tecnic_T3.pdf",
+              "alternateLink": "https://drive.google.com/file/d/10Sl0Qi7JU0_FZltmr4920nFZ7xd-GMVL/view?usp=drive_web",
+              "thumbnailUrl": "https://lh3.googleusercontent.com/drive-storage/AJQWtBP5EhGUisLCAnkbkoJNjCzji1e77Y3yhRWw2PWu-Bg9OiRdabCG4MnsJLKqXl2hG7cRBIYiAgbpa1TZBbO2h2ODq62REOYpHqK32qvQdHw0RmMcSw=s200"
+            },
+            "shareMode": "VIEW"
+          }
+        }
+      ]
+    },
+    {
+      "titol": "Quadern Tècnic T2",
+      "descripcio": null,
+      "estat": "DRAFT",
+      "topicIdVell": "870592700433",
+      "materials": [
+        {
+          "driveFile": {
+            "driveFile": {
+              "id": "1IU8gxFMumz9AhzzyjvgyKAK0JQNAEcgP",
+              "title": "Quadern_tecnic_T2.pdf",
+              "alternateLink": "https://drive.google.com/file/d/1IU8gxFMumz9AhzzyjvgyKAK0JQNAEcgP/view?usp=drive_web",
+              "thumbnailUrl": "https://lh3.googleusercontent.com/drive-storage/AJQWtBPTUR_Vu9opgkRKqJfGlSix_nAWY46DS6FHqQKhW8swK2U8dYe7apDRzohfkoea1ABWzALm7RlbxYx7S1_IsGrIdCEZYYghLTzLjCUa-S6D9dAwvQ=s200"
+            },
+            "shareMode": "VIEW"
+          }
+        }
+      ]
+    },
+    {
+      "titol": "Quadern Tècnic T1",
+      "descripcio": null,
+      "estat": "PUBLISHED",
+      "topicIdVell": "870592700433",
+      "materials": [
+        {
+          "driveFile": {
+            "driveFile": {
+              "id": "1E2FuyBXjR3LG0oCoVIyCfRVrmmCdzUd7",
+              "title": "Quadern_tecnic_T1.pdf",
+              "alternateLink": "https://drive.google.com/file/d/1E2FuyBXjR3LG0oCoVIyCfRVrmmCdzUd7/view?usp=drive_web",
+              "thumbnailUrl": "https://lh3.googleusercontent.com/drive-storage/AJQWtBNV2vPyyxuh2fvkBNxj3qeiBIArE-qQHmDVjuPdHDnMO6XTozF2hzEhcpgwH1kEEndVdg9D7f5tAnmHvS5zKlJOGWKHoAo2zZTZpfch-qw-HeUFsg=s200"
+            },
+            "shareMode": "VIEW"
+          }
+        }
+      ]
+    },
+    {
+      "titol": "Enllaç a Arduino CC (lloc de pràctiques, us heu de registrar)",
+      "descripcio": null,
+      "estat": "PUBLISHED",
+      "topicIdVell": "870467767393",
+      "materials": [
+        {
+          "link": {
+            "url": "https://app.arduino.cc/sketches",
+            "title": "Arduino SSO",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://app.arduino.cc/sketches"
+          }
+        }
+      ]
+    },
+    {
+      "titol": "Woki (lloc de pràctiques, us heu de registrar)",
+      "descripcio": null,
+      "estat": "PUBLISHED",
+      "topicIdVell": "870467767393",
+      "materials": [
+        {
+          "link": {
+            "url": "http://wokwi.com",
+            "title": "Wokwi - World's most advanced ESP32 Simulator",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=http://wokwi.com"
+          }
+        }
+      ]
+    },
+    {
+      "titol": "Tinkercad (lloc de pràctiques, us heu de registrar)",
+      "descripcio": null,
+      "estat": "PUBLISHED",
+      "topicIdVell": "870467767393",
+      "materials": [
+        {
+          "link": {
+            "url": "https://www.tinkercad.com/",
+            "title": "Tinkercad",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://www.tinkercad.com/"
+          }
+        }
+      ]
+    },
+    {
+      "titol": "Enllaç al material del curs",
+      "descripcio": null,
+      "estat": "PUBLISHED",
+      "topicIdVell": "870467767393",
+      "materials": [
+        {
+          "link": {
+            "url": "https://tomeu-cd100.github.io/robotica-1batx-2627/",
+            "title": "Inici · Robòtica · 1r de Batxillerat",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://tomeu-cd100.github.io/robotica-1batx-2627/"
+          }
+        }
+      ]
+    },
+    {
+      "titol": "Proposta de projecte de maqueta domòtica amb Arduino.",
+      "descripcio": "Series capaç de realitzar aquest projecte?",
+      "estat": "DRAFT",
+      "topicIdVell": "868858694529",
+      "materials": [
+        {
+          "driveFile": {
+            "driveFile": {
+              "id": "1xvZkW_VRmVt5Jd1L656Pk8a3Gr1QC3go",
+              "title": "Projecte_arduino_domotica.mp4",
+              "alternateLink": "https://drive.google.com/file/d/1xvZkW_VRmVt5Jd1L656Pk8a3Gr1QC3go/view?usp=drive_web",
+              "thumbnailUrl": "https://lh3.googleusercontent.com/drive-storage/AJQWtBNC78K7ZxoPA4C1zBNeAycwmUVzuMM8ZqvfTOPlNXAQZY70uwZi8oXI1y1xVs23JERZAis51I2_kxw45B4QHZ9oDwvJkhZt8JGl78ANLvfRlubqZw=s200"
+            },
+            "shareMode": "VIEW"
+          }
+        }
+      ]
+    },
+    {
+      "titol": "Propostes de projectes amb Arduino",
+      "descripcio": null,
+      "estat": "DRAFT",
+      "topicIdVell": "868858694529",
+      "materials": [
+        {
+          "driveFile": {
+            "driveFile": {
+              "id": "1iNOEfcYUmzC3cFQ1-iKII_pHIAx7GKXm",
+              "title": "propostes_projectes_arduino.mp4",
+              "alternateLink": "https://drive.google.com/file/d/1iNOEfcYUmzC3cFQ1-iKII_pHIAx7GKXm/view?usp=drive_web",
+              "thumbnailUrl": "https://lh3.googleusercontent.com/drive-storage/AJQWtBOTgdlTmRkE9JdJjxiYtCb8irbFzsA-2ECDU9KaECvd4ilDXg9otfSnIrWTVEvKEGy2UPdASu2CMvD-xVrI3b1sK89FyxF6NryC3jRlOBltREyPzA=s200"
+            },
+            "shareMode": "VIEW"
+          }
+        }
+      ]
+    },
+    {
+      "titol": "Llibre de projectes d'Arduino Starter Kit",
+      "descripcio": "Aquí teniu la versió en pdf del llibre que acompanya l'Arduino Starter Kit.",
+      "estat": "DRAFT",
+      "topicIdVell": "868858694529",
+      "materials": [
+        {
+          "driveFile": {
+            "driveFile": {
+              "id": "1LbXjRtrIQutQCZnNgzwYwHU-2Ntm2RsD",
+              "title": "Libro_de_Proyectos_de_Arduino_Starter_Kit.pdf",
+              "alternateLink": "https://drive.google.com/file/d/1LbXjRtrIQutQCZnNgzwYwHU-2Ntm2RsD/view?usp=drive_web",
+              "thumbnailUrl": "https://lh3.googleusercontent.com/drive-storage/AJQWtBOCydmg8egjNsoXv2RUo32OSzk6PsJPnWQHIT2ASgBEztrVecgyVMOKsECsSnTUJcHq5hHAWve2OSTMPpoChuZGfb7zvDqjImUSih4RZhlixEM3ug=s200"
+            },
+            "shareMode": "VIEW"
+          }
+        }
+      ]
+    },
+    {
+      "titol": "Tipus de sensors",
+      "descripcio": null,
+      "estat": "DRAFT",
+      "topicIdVell": "868858694529",
+      "materials": [
+        {
+          "driveFile": {
+            "driveFile": {
+              "id": "19kPc9YJT3HsIgkAx8dY6qNCLKth6pf17",
+              "title": "Sensors_exemples.jpg",
+              "alternateLink": "https://drive.google.com/file/d/19kPc9YJT3HsIgkAx8dY6qNCLKth6pf17/view?usp=drive_web",
+              "thumbnailUrl": "https://lh3.googleusercontent.com/drive-storage/AJQWtBOedgX-ksondPBTyqQmjqipg3S2JmCJxWp9wbJFIAIfoRtG5asaoAjaP7WJVwKs1poAezk_cKpWhWcuakOpANHStWHPAuYdGAcq-gDqwV7TV2zCEw=s200"
+            },
+            "shareMode": "VIEW"
+          }
+        }
+      ]
+    },
+    {
+      "titol": "Biosensors",
+      "descripcio": "Vídeo que ens explica com estan utilitzant biosensors en Austria",
+      "estat": "DRAFT",
+      "topicIdVell": "868858694529",
+      "materials": [
+        {
+          "driveFile": {
+            "driveFile": {
+              "id": "1HlZS-7T47vvhc3619gxf3QvgkC-5RGPX",
+              "title": "biosensors_01.mp4",
+              "alternateLink": "https://drive.google.com/file/d/1HlZS-7T47vvhc3619gxf3QvgkC-5RGPX/view?usp=drive_web",
+              "thumbnailUrl": "https://lh3.googleusercontent.com/drive-storage/AJQWtBMPBU48bHuYHCFJDHr3RErdfbLsuKtXXjvjkFuovn8ZuDNJvzf863YDm1xOu6qvEDwJN73TUsTwZrOJb1UIKCTAfXD5gwIiUHcI0cAL7sHOZjTJRg=s200"
+            },
+            "shareMode": "VIEW"
+          }
+        }
+      ]
+    },
+    {
+      "titol": "Per què necessitem un optoacoblador?",
+      "descripcio": "Aquest vídeo ens explica perquè necessitem un circuit complementari quan utilitzem components de potència com els motors.",
+      "estat": "DRAFT",
+      "topicIdVell": "868858694529",
+      "materials": [
+        {
+          "driveFile": {
+            "driveFile": {
+              "id": "1vMthKCag71WxRlKFs-nqUK8Ig2dK-377",
+              "title": "control de motors_01.mp4",
+              "alternateLink": "https://drive.google.com/file/d/1vMthKCag71WxRlKFs-nqUK8Ig2dK-377/view?usp=drive_web",
+              "thumbnailUrl": "https://lh3.googleusercontent.com/drive-storage/AJQWtBOWgrQv_chibACe1kVn80tW9DxP0F_nwnxh-lEbhiYn__347OsaJvOb869lLlX6tKtLQDCWQqJvR6MK50G9vC6TckE8NCVsTRu_ECHP6UgGCugRGw=s200"
+            },
+            "shareMode": "VIEW"
+          }
+        }
+      ]
+    },
+    {
+      "titol": "Proposta de projecte: encesa i apagat automàtic de llums d'escala",
+      "descripcio": null,
+      "estat": "DRAFT",
+      "topicIdVell": "868858694529",
+      "materials": [
+        {
+          "driveFile": {
+            "driveFile": {
+              "id": "1Z8yG-T1qGLjdOxrlV94A6BftBZXk4B0N",
+              "title": "Projecte arduino_llum_escala.mp4",
+              "alternateLink": "https://drive.google.com/file/d/1Z8yG-T1qGLjdOxrlV94A6BftBZXk4B0N/view?usp=drive_web",
+              "thumbnailUrl": "https://lh3.googleusercontent.com/drive-storage/AJQWtBPxF8Tt8kwHI46MCxhpxLzWhV4ip87pAwcGVgcxhSXW4W1JFof8nHQuwwQwUs8p9VYoYEt5yRTK459GRxACErO6RDnEtP6ITk6p1iKbm8ka6qV_PQ=s200"
+            },
+            "shareMode": "VIEW"
+          }
+        }
+      ]
+    },
+    {
+      "titol": "Proposta de projecte: obertura automàtica de portes",
+      "descripcio": null,
+      "estat": "DRAFT",
+      "topicIdVell": "868858694529",
+      "materials": [
+        {
+          "driveFile": {
+            "driveFile": {
+              "id": "143nXXDRuf2uz_6in0BTWHcTY9C1jv3Ru",
+              "title": "Arduino_Proposta de projecte_obertura automàtica portes.mp4",
+              "alternateLink": "https://drive.google.com/file/d/143nXXDRuf2uz_6in0BTWHcTY9C1jv3Ru/view?usp=drive_web",
+              "thumbnailUrl": "https://lh3.googleusercontent.com/drive-storage/AJQWtBN7MTp0eaquyj51F0mhWJ_4CELoUlCA74RC1wmL0r41kZRga-F3nyl-d4MwgjSMiAe9U_5xjI6qBPP-7H-75C9ZesLvqofUbv1e_CQN_nBU8bPRBw=s200"
+            },
+            "shareMode": "VIEW"
+          }
+        },
+        {
+          "driveFile": {
+            "driveFile": {
+              "id": "1SROjI1sdOjS2dVbF3LjrZS7xqITaUoAB",
+              "title": "Arduino_Proposta de projecte_obertura automàtica portes_2.mp4",
+              "alternateLink": "https://drive.google.com/file/d/1SROjI1sdOjS2dVbF3LjrZS7xqITaUoAB/view?usp=drive_web",
+              "thumbnailUrl": "https://lh3.googleusercontent.com/drive-storage/AJQWtBPWihbiE7MJji4MohkOF-8_fhokAUXAVZWFCk62FbFPKeRO35xAdB5kzCJROQPU0F5ghJLPc79eg5z1g2wuGUR81iefB_AU6Vr3u3T13b-uNQo7UQ=s200"
+            },
+            "shareMode": "VIEW"
+          }
+        }
+      ]
+    },
+    {
+      "titol": "Arduino web editor",
+      "descripcio": null,
+      "estat": "DRAFT",
+      "topicIdVell": "868858694529",
+      "materials": [
+        {
+          "link": {
+            "url": "https://login.arduino.cc/login?state=hKFo2SB5V0dGOGtQRmdSMlVGUWcxTW1XRXl0NzdYbXZpenVIVKFupWxvZ2luo3RpZNkgVU1hQWZWYWlnN0xLbHF4OWVEbWZ3MWt5RnRsd0dndTajY2lk2SBlOXFpcEEyTjBrOVA4dnZyZTlmZEdjNnU5S2w5ZUhTUA&client=e9qipA2N0k9P8vvre9fdGc6u9Kl9eHSP&protocol=oauth2&scope=openid+profile+email&redirect_uri=https%3A%2F%2Fapp.arduino.cc&response_type=code&response_mode=query&nonce=UkRFZDlxaXFXSzl%2BaUdtLjNrdFJVWTFFYm1RcEI0ZWNMLlVvRFhycWpXWg%3D%3D&code_challenge=Ai7cRh_ABmsszC4RghZpt_wOdqnu1xXFFbrHIQYXNSM&code_challenge_method=S256&auth0Client=eyJuYW1lIjoiYXV0aDAtc3BhLWpzIiwidmVyc2lvbiI6IjIuMS4zIn0%3D#/sso/login",
+            "title": "Arduino SSO",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://login.arduino.cc/login?state%3DhKFo2SB5V0dGOGtQRmdSMlVGUWcxTW1XRXl0NzdYbXZpenVIVKFupWxvZ2luo3RpZNkgVU1hQWZWYWlnN0xLbHF4OWVEbWZ3MWt5RnRsd0dndTajY2lk2SBlOXFpcEEyTjBrOVA4dnZyZTlmZEdjNnU5S2w5ZUhTUA%26client%3De9qipA2N0k9P8vvre9fdGc6u9Kl9eHSP%26protocol%3Doauth2%26scope%3Dopenid%2Bprofile%2Bemail%26redirect_uri%3Dhttps%253A%252F%252Fapp.arduino.cc%26response_type%3Dcode%26response_mode%3Dquery%26nonce%3DUkRFZDlxaXFXSzl%252BaUdtLjNrdFJVWTFFYm1RcEI0ZWNMLlVvRFhycWpXWg%253D%253D%26code_challenge%3DAi7cRh_ABmsszC4RghZpt_wOdqnu1xXFFbrHIQYXNSM%26code_challenge_method%3DS256%26auth0Client%3DeyJuYW1lIjoiYXV0aDAtc3BhLWpzIiwidmVyc2lvbiI6IjIuMS4zIn0%253D%23/sso/login"
+          }
+        }
+      ]
+    },
+    {
+      "titol": "Informació sobre els PINs analògics d'Arduino UNO",
+      "descripcio": "Les entrades analògiques de la placa Arduino UNO són fonamentals per llegir senyals continus (a diferència de les digitals, que són binàries). Aquestes entrades permeten mesurar voltatges que varien de forma suau, com per exemple els senyals d'un sensor de temperatura, un potenciòmetre o un sensor de llum. \n\nAquí tens tot el que cal saber sobre les entrades analògiques de la Arduino UNO:\n1. Nombre de pins analògics:\nLa placa Arduino UNO disposa de 6 entrades analògiques, numerades del A0 al A5. Cada un d'aquests pins es pot utilitzar per llegir un senyal analògic (voltatge variable) que va d'0 V a 5 V.\n2. Resolució:\nEls pins analògics de l'Arduino UNO utilitzen un convertidor analògic a digital (ADC) per transformar el senyal analògic (voltatge) en un valor digital comprès entre 0 i 1023.\nEl valor de 0 correspon a 0 V (voltatge més baix).\nEl valor de 1023 correspon a 5 V (voltatge més alt). Això vol dir que l'Arduino pot distingir 1024 nivells de voltatge possibles en el rang de 0 V a 5 V (5V/1024 = 4,88 mV per unitat).\n3. Com funciona la lectura analògica?\nQuan connectes un dispositiu o sensor a una entrada analògica, el que realment està passant és que es mesura el voltatge present a aquesta entrada i es converteix en un valor digital. Aquest valor digital pot ser llegit mitjançant la funció analogRead() de l'Arduino.\n\nExemple de codi:\n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \nint valor = analogRead(A0);  // Llegeix el valor de l'entrada analògica A0\n\n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n\nAquest valor digitalitzat es pot utilitzar després en el teu codi per prendre decisions o controlar components.\n4. Precisions de lectura i limitacions:\nVoltatge de referència: Per defecte, l'Arduino utilitza un voltatge de referència de 5 V per convertir el senyal analògic. Això vol dir que els valors llegits varien entre 0 i 1023, basats en aquest voltatge de 5 V. Si tens un voltatge diferent de referència (per exemple, utilitzant un pin de referència extern), els valors llegits seran diferents.\nInterfície del ADC: El convertidor analògic a digital de l'Arduino UNO té una resolució de 10 bits, el que significa que pot fer 1024 possibles lectures (0-1023). Aquesta resolució pot ser suficient per a moltes aplicacions, però en aplicacions d'alta precisió, potser caldrà una resolució més alta.\n5. Exemples d'usos habituals:\nSensors de temperatura: Molts sensors de temperatura, com el LM35 o el DHT11, proporcionen un senyal analògic que es pot llegir mitjançant les entrades analògiques.\nPotenciómetre: Un potenciòmetre (un tipus de resistor variable) es pot connectar a una entrada analògica per llegir el seu valor de resistència, que es converteix en un valor de voltatge que l'Arduino pot llegir.\nSensors de llum: Un sensor de llum com el LDR (resistor dependent de la llum) també produeix una variació de voltatge que es pot llegir amb les entrades analògiques.\nSensors de pressió o de força: Alguns sensors que mesuren forces o pressions (com els sensors piezoelèctrics) generen senyals analògics que poden ser llegeixes per l'Arduino.\n6. Com connectar un sensor analògic?\nPer connectar un sensor analògic a l'Arduino, normalment hauràs de connectar:\nEl pin de senyal del sensor al pin analògic (per exemple, A0).\nEl pin GND del sensor al GND de l'Arduino.\nEl pin VCC del sensor a 5 V (o 3,3 V si el sensor ho requereix).\n7. Mètodes d'ús avançats:\nLectures per mitjana: Per obtenir un valor més estable (ja que les lectures poden variar per soroll elèctric o fluctuacions de voltatge), es poden llegir diversos valors i calcular una mitjana.\nExemple de codi:\n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \nint valor = 0;\nfor (int i = 0; i < 10; i++) {\n    valor += analogRead(A0);\n}\nvalor /= 10;\n\n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \nVoltatge de referència extern: Si vols canviar el voltatge de referència per millorar la precisió de les teves lectures, pots utilitzar la funció analogReference(), que permet configurar un pin extern com a font de referència.\n8. Altres funcions útils:\nanalogReadResolution(): Aquesta funció permet canviar la resolució de la lectura analògica en plaques amb un ADC més avançat. No obstant això, l'Arduino UNO té una resolució fixada de 10 bits.\nanalogWrite(): Tot i que no és estrictament una entrada analògica, aquesta funció et permet emular una sortida analògica mitjançant la modulació de llargada d'ona (PWM).\n9. Consells per una lectura precisa:\nFiltrar el soroll: Si experimentes lectures inestables, pots intentar afegir un petit condensador de desacoblament (per exemple, 0,1 µF) entre el pin de senyal i GND per filtrar fluctuacions de voltatge.\nEvitar pèrdues de tensió: Assegura't que el sensor estigui alimentat de manera correcta i que no hi hagi caigudes de tensió que puguin afectar les lectures.\nResum:\nLes entrades analògiques de l'Arduino UNO (A0 a A5) permeten mesurar senyals de voltatge continu   que varien de 0 V a 5 V. L'Arduino converteix aquestes senyals en valors digitals d'entre 0 i 1023 mitjançant un convertidor ADC de 10 bits. Aquestes entrades són ideals per llegir senyals de sensors com temperatura, llum, i força, i poden ser utilitzades per una àmplia gamma d'aplicacions electròniques.",
+      "estat": "DRAFT",
+      "topicIdVell": "868858694529",
+      "materials": []
+    },
+    {
+      "titol": "Informació sobre els PINs digitals d'ARDUINO UNO",
+      "descripcio": "Els pins digitals (0-13) de la placa Arduino UNO són fonamentals per gestionar senyals digitals. Aquí tens la informació clau sobre aquests pins:Números de Pin:\nLa placa Arduino UNO té 14 pins digitals, etiquetats del 0 al 13. Aquests pins es poden utilitzar tant per a entrada com per a sortida, depenent de les necessitats del teu projecte.Entrada/Sortida Digital:\nEntrada: Aquests pins poden llegir senyals de voltatge ALTA (1) o BAIXA (0), que representen estats binaris (per exemple, detectar la pressió d'un botó o rebre dades).\nSortida: Poden enviar senyals ALTA (5V) o BAIXA (0V), sovint utilitzats per controlar LEDs, motors o altres components.\nPWM (Modulació de Llargada d'Ondes):\nEls pins 3, 5, 6, 9, 10 i 11 (assenyalats amb el signe ∼), poden generar senyals PWM. El senyal PWM et permet simular una sortida analògica en commutant el pin ràpidament entre encès i apagat, variat el cicle de treball (la proporció de temps que el pin està encès).\nComunicació Serial:\nPin 0 (RX) i Pin 1 (TX): Són utilitzats per la comunicació serial. El pin 0 és el receptor (RX) i el pin 1 és el transmissor (TX). Aquests pins s'utilitzen per enviar i rebre dades des d'un ordinador o altres dispositius mitjançant el port serial.\nNota: Quan s'utilitza la comunicació serial mitjançant USB, aquests pins es comparteixen normalment amb el convertidor USB-a-serial a la placa, la qual cosa pot interferir amb altres tasques si s'utilitzen en un projecte.\nInterruptors:\n\nEls pins 2 i 3 es poden utilitzar com a pins d'interruptor. Els interruptors permeten que el teu programa respongui a esdeveniments externs (com la pressió d'un botó) immediatament, encara que el programa estigui realitzant altres tasques.\nNivells de Voltatge:\nLa placa Arduino UNO funciona amb nivells de lògica 5V. Un senyal ALTA correspon a 5V, i un senyal BAIXA és 0V.\nLimitacions de Corrent:\nCada pin pot proporcionar o absorbir un màxim de 40 mA de corrent, amb una recomanació màxima de 20 mA per cada pin per evitar danys. El corrent total per tots els pins no hauria d'excedir els 200 mA.LED Integrat:\nEl pin 13 té un LED integrat en la majoria de les plaques Arduino UNO. Aquest pin es pot utilitzar com qualsevol altre pin digital per controlar el LED o per comprovar si el pin funciona correctament.",
+      "estat": "DRAFT",
+      "topicIdVell": "868858694529",
+      "materials": []
+    },
+    {
+      "titol": "App de ARDUINO per chromebooks",
+      "descripcio": "Enllaços per poder treballar i programar la placa Arduino.\n\n\nEnllaç a la descàrrega de l’App per programar Arduino en el nostre ordinador.\n\nSi teniu algun problema, sempre podreu treballar amb la versió web.\nEnllaç per trerballar amb la versió web de l’IDE d’Arduino.",
+      "estat": "DRAFT",
+      "topicIdVell": "868858694529",
+      "materials": [
+        {
+          "link": {
+            "url": "https://chrome.google.com/webstore/detail/arduino-create-for-educat/elmgohdonjdampbcgefphnlchgocpaij",
+            "title": "Arduino Create for Education - Chrome Web Store",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://chrome.google.com/webstore/detail/arduino-create-for-educat/elmgohdonjdampbcgefphnlchgocpaij"
+          }
+        },
+        {
+          "link": {
+            "url": "https://login.arduino.cc/login?state=hKFo2SBxMHJhSVA4Nkd6TkthWm16VkV2ak1CVzZGbklwRmJoNaFupWxvZ2luo3RpZNkgb3NCLVN1dnFmUFlfYTM2MXpOU0ZGWVp5MEFmRl9maTajY2lk2SBlOXFpcEEyTjBrOVA4dnZyZTlmZEdjNnU5S2w5ZUhTUA&client=e9qipA2N0k9P8vvre9fdGc6u9Kl9eHSP&protocol=oauth2&scope=openid+profile+email&redirect_uri=https%3A%2F%2Fapp.arduino.cc&response_type=code&response_mode=query&nonce=aHN0UGxTMUJiRUFIT1NzZ3JNV254amhzdGo5QTBjQ2hVOU1lWFdGSFUyaQ%3D%3D&code_challenge=xhq24MqDYpbPayW3u1aaS0Lnq1BNeDd7GwVHThrT6Sg&code_challenge_method=S256&auth0Client=eyJuYW1lIjoiYXV0aDAtc3BhLWpzIiwidmVyc2lvbiI6IjIuMTcuMCJ9#/sso/login",
+            "title": "Arduino SSO",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://login.arduino.cc/login?state%3DhKFo2SBxMHJhSVA4Nkd6TkthWm16VkV2ak1CVzZGbklwRmJoNaFupWxvZ2luo3RpZNkgb3NCLVN1dnFmUFlfYTM2MXpOU0ZGWVp5MEFmRl9maTajY2lk2SBlOXFpcEEyTjBrOVA4dnZyZTlmZEdjNnU5S2w5ZUhTUA%26client%3De9qipA2N0k9P8vvre9fdGc6u9Kl9eHSP%26protocol%3Doauth2%26scope%3Dopenid%2Bprofile%2Bemail%26redirect_uri%3Dhttps%253A%252F%252Fapp.arduino.cc%26response_type%3Dcode%26response_mode%3Dquery%26nonce%3DaHN0UGxTMUJiRUFIT1NzZ3JNV254amhzdGo5QTBjQ2hVOU1lWFdGSFUyaQ%253D%253D%26code_challenge%3Dxhq24MqDYpbPayW3u1aaS0Lnq1BNeDd7GwVHThrT6Sg%26code_challenge_method%3DS256%26auth0Client%3DeyJuYW1lIjoiYXV0aDAtc3BhLWpzIiwidmVyc2lvbiI6IjIuMTcuMCJ9%23/sso/login"
+          }
+        }
+      ]
+    },
+    {
+      "titol": "Línia de temps dels llenguatges de programació",
+      "descripcio": "\nWorld of Statistics\n\n\n@stats_feed\n\n\n\n\n\nProgramming languages and their release years:\n\nFortran — 1957 \nLISP — 1958 \nCOBOL — 1959 \nALGOL — 1960 \nCPL (Combined Programming Language) — 1963 \nBASIC — 1964 \nPL/I — 1964 \nAPL — 1964 \nSimula — 1967 \nSNOBOL — 1967 \nPascal — 1970 \nC — 1972 \nSmalltalk — 1972 \nProlog — 1972 \nML (Meta Language) — 1973 \nScheme — 1975 \nSQL — 1974–1976 (standardized later) \nForth — 1970 \nAWK — 1977 \nModula-2 — 1978 \nAda — 1980 \nObjective-C — 1984 \nC++ — 1985 (development began 1983) \nErlang — 1986 \nPerl — 1987 \nHaskell — 1990 \nPython — 1991 \nVisual Basic — 1991 \nLua — 1993\nR — 1993 \nRuby — 1995 \nJava — 1995 \nJavaScript — 1995 \nDelphi (Object Pascal) — 1995 \nPHP — 1995 \nOCaml — 1996 \nGroovy — 2003 \nC# — 2000 \nVisual Basic .NET — 2001 \nScala — 2004 \nPowerShell — 2006 \nGo — 2009 \nRust — 2010 \nKotlin — 2011 \nDart — 2011 \nTypeScript — 2012 \nJulia — 2012 \nElixir — 2012 \nSwift — 2014 \nHack (HHVM) — 2014 \nCrystal — 2014 \nWebAssembly (Wasm) — 2017 \nZig — 2016 \nNim — 2008 (stabilized later) \nRed — 2011 \nV — 2019 \nCarbon — 2022 (experimental, C++ successor proposal) \nMojo — 2023 (Python-compatible, AI-focused) \nBend — 2023 (parallel functional language) \n\nThese are just a few of the many programming languages that have been developed over the years, each with its own specific purposes and applications.",
+      "estat": "DRAFT",
+      "topicIdVell": "868858694532",
+      "materials": []
+    },
+    {
+      "titol": "Com entregar les tasques d'SCRATCH",
+      "descripcio": "Per entregar les tasques d'SCRATCH consulta el minitutorial següent:\n\nhttps://docs.google.com/presentation/d/1FYUK2l4cyHtmVZm7VAUKk74blGDyO5p94KhxiXFATjE/present",
+      "estat": "DRAFT",
+      "topicIdVell": "868858694532",
+      "materials": []
+    },
+    {
+      "titol": "12 reptes bàsics",
+      "descripcio": "Aquí trobareu les instruccions per realitzar els REPTES BÀSICS:\n\n\nhttps://docs.google.com/presentation/d/178DFs73hjjioyzAjo_EkBunTgFp76u38UhB8TuuFbG0/present",
+      "estat": "DRAFT",
+      "topicIdVell": "868858694532",
+      "materials": []
+    },
+    {
+      "titol": "Projecte Arduino: mesurador nivell d'aigua",
+      "descripcio": null,
+      "estat": "DRAFT",
+      "topicIdVell": "868858694529",
+      "materials": [
+        {
+          "youtubeVideo": {
+            "id": "VobYZbzTXzc",
+            "title": "Utiliza este Sensor para medir el nivel de agua!",
+            "alternateLink": "https://www.youtube.com/watch?v=VobYZbzTXzc",
+            "thumbnailUrl": "https://i.ytimg.com/vi/VobYZbzTXzc/default.jpg"
+          }
+        }
+      ]
+    },
+    {
+      "titol": "Projecte Arduino: alarma amb sensor d'ultrasons",
+      "descripcio": null,
+      "estat": "DRAFT",
+      "topicIdVell": "868858694529",
+      "materials": [
+        {
+          "youtubeVideo": {
+            "id": "K7-EaUG4fxc",
+            "title": "ALARMA CASERA ANTIRROBO con ARDUINO y SENSOR ULTRASÓNICO | Como hacer",
+            "alternateLink": "https://www.youtube.com/watch?v=K7-EaUG4fxc",
+            "thumbnailUrl": "https://i.ytimg.com/vi/K7-EaUG4fxc/default.jpg"
+          }
+        }
+      ]
+    }
+  ],
+  "announcements": []
+}
