@@ -8,6 +8,12 @@
 //    `node estat_classroom.js` (llista les categories del curs) abans de
 //    tornar a executar adjuntar_questionaris_classroom.js.
 //  - WEB_BASE: arrel del web publicat (canvia si es fa fork del repo).
+//
+// Backup/restore del contingut del curs (temes, tasques, materials, anuncis;
+// NO alumnat ni notes, l'API no ho permet):
+//   node backup_classroom.js
+//   node restaurar_classroom.js backups/backup_<id>_<data>.json
+// El restore SEMPRE crea un curs nou, en DRAFT; mai toca el curs original.
 
 export const COURSE_ID = '868858694512';
 export const DRIVE_FOLDER_ID = '1vUzzhLBIArNcRaWdz-nMMtn1R-2l4rMn';
