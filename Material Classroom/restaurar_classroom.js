@@ -80,12 +80,13 @@ async function main() {
           topicId: w.topicIdVell ? mapaTemes[w.topicIdVell] : undefined,
           materials: netejaMaterials(w.materials),
         },
-      }), `crear tasca «${w.titol}»`).catch(e => {
+      }), `crear tasca «${w.titol}»`).then(() => {
+        okCourseWork++;
+      }).catch(e => {
         console.error(`⚠️  Tasca «${w.titol}» no recreada: ${e.message}`);
       });
-    okCourseWork++;
   }
-  console.log(`✅ courseWork processats: ${okCourseWork}/${backup.courseWork.length}`);
+  console.log(`✅ courseWork recreats: ${okCourseWork}/${backup.courseWork.length}`);
 
   let okMaterials = 0;
   for (const m of backup.courseWorkMaterials) {
@@ -99,12 +100,13 @@ async function main() {
           topicId: m.topicIdVell ? mapaTemes[m.topicIdVell] : undefined,
           materials: netejaMaterials(m.materials),
         },
-      }), `crear material «${m.titol}»`).catch(e => {
+      }), `crear material «${m.titol}»`).then(() => {
+        okMaterials++;
+      }).catch(e => {
         console.error(`⚠️  Material «${m.titol}» no recreat: ${e.message}`);
       });
-    okMaterials++;
   }
-  console.log(`✅ courseWorkMaterials processats: ${okMaterials}/${backup.courseWorkMaterials.length}`);
+  console.log(`✅ courseWorkMaterials recreats: ${okMaterials}/${backup.courseWorkMaterials.length}`);
 
   let okAnuncis = 0;
   for (const a of backup.announcements) {
@@ -116,12 +118,13 @@ async function main() {
           state: 'DRAFT',
           materials: netejaMaterials(a.materials),
         },
-      }), 'crear anunci').catch(e => {
+      }), 'crear anunci').then(() => {
+        okAnuncis++;
+      }).catch(e => {
         console.error(`⚠️  Anunci no recreat: ${e.message}`);
       });
-    okAnuncis++;
   }
-  console.log(`✅ announcements processats: ${okAnuncis}/${backup.announcements.length}`);
+  console.log(`✅ announcements recreats: ${okAnuncis}/${backup.announcements.length}`);
 
   console.log(`\n🔗 Curs restaurat: ${cursNou.data.alternateLink}`);
   console.log('   Tot en DRAFT: revisa i publica manualment el que calgui.');
