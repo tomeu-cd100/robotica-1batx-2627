@@ -26,18 +26,17 @@
 
 ## 2. Potenciòmetre + LDR (`02_potenciometre_ldr.ino`)
 
-**Potenciòmetre** (3 potes):
-| Pota | Cap a |
-|---|---|
-| Extrem 1 | 5 V |
-| Extrem 2 | GND |
-| Central (cursor) | A0 |
+| Pin | Component | Cap a | Notes |
+|---|---|---|---|
+| A0 | Potenciòmetre (pota central, cursor) | — | extrem 1 → 5 V, extrem 2 → GND |
+| A1 | Punt mig del divisor LDR | — | LDR → 5 V, resistència de 10 kΩ → GND |
+| 9~ | LED | 220 Ω → GND | PWM per regular la intensitat |
 
 **LDR** (divisor de tensió amb 10 kΩ):
 
 ![Divisor de tensió amb LDR: entre 5 V i GND, la LDR i una resistència de 10 kΩ en sèrie; el punt mig es connecta a l'entrada analògica A1. Amb més llum baixa la resistència de la LDR i canvia la tensió del punt mig](img/sa3-divisor-ldr.svg)
 
-**Sortida:** LED bàsic al pin **9~** (com el de la SA1) per regular-ne la intensitat amb PWM.
+> El LED de sortida (pin **9~**) és un LED bàsic com el de la SA1; el pin amb **~** permet PWM per regular-ne la intensitat.
 
 ![Captura de Tinkercad: Arduino UNO amb el potenciòmetre (extrems a GND i 5 V, cursor a A0), la LDR en divisor de tensió amb una resistència de 10 kΩ (punt mig a A1) i un LED amb resistència de 220 ohms al pin 9](img/sa3-tinkercad-pot-ldr.png)
 
