@@ -18,6 +18,10 @@
 
 > Amb `INPUT_PULLUP` no cal resistència externa: el pin està a **HIGH** en repòs i passa a **LOW** en prémer. El LED de feedback (pin 8) és un LED bàsic com el de la SA1.
 
+![Captura de Tinkercad: Arduino UNO amb un polsador a la protoboard connectat al pin 2 i a GND, i un LED vermell amb resistència de 220 ohms al pin 8](img/sa3-tinkercad-polsador-pin2.png)
+
+▶ **Obre la simulació a Tinkercad** (pots fer *Copy and Tinker* per modificar-la): <https://www.tinkercad.com/things/2RzxM2OPQiw-sa3-el-polsador-inputpullup-i-antirebot?sharecode=L4a37gBBrMnhaVjzk_PbVFSgNMSZDXq0M9WjclVEmUM>
+
 ---
 
 ## 2. Potenciòmetre + LDR (`02_potenciometre_ldr.ino`)
