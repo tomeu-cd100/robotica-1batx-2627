@@ -59,6 +59,10 @@
 
 ![Connexió del HC-SR04 a l'Arduino: VCC a 5 V, TRIG al pin 12, ECHO al pin 11 i GND a GND; el sensor emet ultrasons que reboten en un obstacle i el temps de rebot dona la distància](img/sa3-ultrasons.svg)
 
+![Captura de Tinkercad: Arduino UNO amb el sensor HC-SR04 punxat a la protoboard; VCC al carril de 5 V, TRIG al pin 12 (cable verd), ECHO al pin 11 (cable taronja) i GND al carril de GND](img/sa3-tinkercad-ultrasons.png)
+
+▶ **Obre la simulació a Tinkercad** (pots fer *Copy and Tinker* per modificar-la): <https://www.tinkercad.com/things/hnsx8COkdxw-sa3-ultrasons-la-primera-funcio-que-retorna-un-valor?sharecode=YKiQREwbyIK8YqMlqZbnIwt3xpULWideirSXPxwwEz0>
+
 ---
 
 ## 4. Alarma / aparcament (`04_alarma_aparcament.ino`)
