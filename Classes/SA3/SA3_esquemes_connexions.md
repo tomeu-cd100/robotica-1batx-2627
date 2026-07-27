@@ -39,6 +39,10 @@
 
 **Sortida:** LED bàsic al pin **9~** (com el de la SA1) per regular-ne la intensitat amb PWM.
 
+![Captura de Tinkercad: Arduino UNO amb el potenciòmetre (extrems a GND i 5 V, cursor a A0), la LDR en divisor de tensió amb una resistència de 10 kΩ (punt mig a A1) i un LED amb resistència de 220 ohms al pin 9](img/sa3-tinkercad-pot-ldr.png)
+
+▶ **Obre la simulació a Tinkercad** (pots fer *Copy and Tinker* per modificar-la): <https://www.tinkercad.com/things/d9yecaFfbgt-sa3-entrades-analogiques-potenciometre-i-ldr?sharecode=loEcwJ_AnwrwHLIWY_lh5QD2k86IEoL1QVJQf4ToRfA>
+
 ---
 
 ## 3. Sensor d'ultrasons HC-SR04 (`03_ultrasons_funcio.ino`)
