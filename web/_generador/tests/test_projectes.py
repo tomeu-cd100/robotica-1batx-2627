@@ -9,6 +9,9 @@ from generar import (  # noqa: E402
     PROJECTES, PROJECTE_BY_SLUG, PROJECTE_BY_SRC,
     group_label, group_sort_key, group_tri,
 )
+from generar import ROOT, classify_public, out_for_projecte  # noqa: E402
+
+GENERAL = ROOT / "Classes" / "00_General"
 
 
 def test_projectes_definits():
@@ -33,3 +36,16 @@ def test_etiqueta_i_trimestre():
     assert group_label("projecte-t3") == "🚙 Projecte T3 · El rover autònom"
     assert group_tri("projecte-t1") == 1
     assert group_tri("projecte-t3") == 3
+
+
+def test_out_for_projecte():
+    assert (out_for_projecte(GENERAL / "00_Projecte_T1_portada.md")
+            == "classes/projecte-t1/index.html")
+    assert (out_for_projecte(GENERAL / "00_Projecte_T3_Rover.md")
+            == "classes/projecte-t3/00-projecte-t3-rover.html")
+    assert out_for_projecte(GENERAL / "00_Glossari_tecnic.md") is None
+
+
+def test_projecte_public_alumnat():
+    assert classify_public("classes", GENERAL / "00_Projecte_T1_portada.md") == "alumnat"
+    assert classify_public("classes", GENERAL / "00_Projecte_T2_Brac.md") == "alumnat"

@@ -226,6 +226,8 @@ GENERAL_ALUMNAT = {
     "00_Tauler_reptes.md",
     "00_Fil_conductor_robots.md", "00_Projecte_T1_Mascota.md",
     "00_Projecte_T2_Brac.md", "00_Projecte_T3_Rover.md",
+    "00_Projecte_T1_portada.md", "00_Projecte_T2_portada.md",
+    "00_Projecte_T3_portada.md",
 }
 
 
@@ -386,6 +388,17 @@ def out_for_md(section_key: str, src: Path, src_dir: Path) -> str:
     return path
 
 
+def out_for_projecte(src: Path) -> str | None:
+    """Ruta de sortida pròpia per a les pàgines de projecte trimestral
+    (grup classes/projecte-tN/ en lloc de classes/00-general/)."""
+    pr = PROJECTE_BY_SRC.get(src.name)
+    if pr is None:
+        return None
+    if src.name == pr["portada"]:
+        return f"classes/{pr['slug']}/index.html"
+    return f"classes/{pr['slug']}/{slugify(src.name[:-3])}.html"
+
+
 def discover() -> tuple[list[Page], dict, dict, list[dict], list[dict], dict]:
     """Retorna (pàgines, md_map, code_map, code_groups, sim_groups, sim_map):
     - pàgines: llista de Page descobertes.
@@ -410,11 +423,17 @@ def discover() -> tuple[list[Page], dict, dict, list[dict], list[dict], dict]:
             if "codi" in md_path.relative_to(src_dir).parts[:-1]:
                 continue
             out_rel = out_for_md(sec["key"], md_path, src_dir)
+            pr = PROJECTE_BY_SRC.get(md_path.name) if sec["key"] == "classes" else None
+            if pr is not None:
+                out_rel = out_for_projecte(md_path)
             text = md_path.read_text(encoding="utf-8")
             title = first_h1(text) or md_path.stem
             sa = detect_sa(md_path.name) or detect_sa(str(md_path.relative_to(src_dir)))
             tri = sa_trimestre(sa) if sa else None
             kind = "index" if md_path.name.lower() == "readme.md" else "doc"
+            if pr is not None:
+                tri = pr["tri"]
+                kind = "index" if md_path.name == pr["portada"] else "doc"
             public = classify_public(sec["key"], md_path)
             pages.append(Page(md_path, sec["key"], out_rel, title, tri, kind, public))
             md_map[str(md_path.resolve())] = out_rel
