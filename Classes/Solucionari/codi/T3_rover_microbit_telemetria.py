@@ -1,8 +1,11 @@
 # Codi de referencia del Projecte T3 - Rover autonom (NOMES DOCENT)
 # Telemetria (SA8): la micro:bit del pis superior del rover emet l'estat
 # per radio, seguint el mateix patro que 01_telemetria_emissor.py de SA8.
-# El receptor es el mateix 02_telemetria_receptor.py de SA8 (a l'ordinador
-# del docent o en una segona placa).
+# NOTA IMPORTANT: el receptor 02_telemetria_receptor.py de SA8 mostra el
+# missatge complet per pantalla i serie, pero la seva alerta de llindar
+# (LLINDAR_TEMP=28 comparant T:valor) NO aplica a aquest format X/Y/XOCS.
+# Si es vol que el receptor detecti xocs, modificar-lo per llegir XOCS
+# (en lloc de T) i comparar amb un llindar adequat.
 # Nota: la pantalla OLED KS0271 del kit queda com a ampliacio pendent de
 # validar amb el maquinari real (setembre); mentrestant, display 5x5 + serie.
 

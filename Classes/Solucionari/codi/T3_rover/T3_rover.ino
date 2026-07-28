@@ -71,17 +71,34 @@ void seguirLinia() {
   }
 }
 
+// Espera vigilant para-xocs: durant qualsevol maniobra, monitoritza si es
+// detecta xoc. Si LOW, atura immediatament, posa ATURAT i retorna true.
+// Sino, retorna false al cap de ms mil·lisegons (resolucio 10 ms).
+bool esperaVigilantXoc(unsigned long ms) {
+  unsigned long inici = millis();
+  while (millis() - inici < ms) {
+    if (digitalRead(PIN_PARAXOCS) == LOW) {
+      atura();
+      mode = ATURAT;
+      Serial.println("XOC: rover aturat (reinicia per tornar a comencar)");
+      return true;
+    }
+    delay(10);
+  }
+  return false;
+}
+
 // --- Comportament 2: evitar obstacles amb l'ultraso ---
 void evitarObstacles() {
   long d = distanciaCm();
   Serial.print("distancia="); Serial.println(d);
   if (d < DIST_OBSTACLE) {
     atura();
-    delay(200);
+    if (esperaVigilantXoc(200)) return;
     enrere(VEL_GIR);
-    delay(400);
+    if (esperaVigilantXoc(400)) return;
     giraDreta(VEL_GIR);   // esquiva sempre per la dreta (senzill i predictible)
-    delay(350);
+    if (esperaVigilantXoc(350)) return;
   } else {
     endavant(VEL_CREUER);
   }
