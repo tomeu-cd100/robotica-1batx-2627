@@ -1121,6 +1121,11 @@ def page_shell(*, out_rel, section_key, title, content_html, toc="",
                      f'download>⬇ Baixa PDF</a></div>')
         print_cap = (f'<div class="print-cap"><div class="pc-site">{html.escape(SITE_TITLE)}</div>'
                      f'<div class="pc-tit">{html.escape(title)}</div></div>')
+    # Material del docent: fora dels cercadors. La porta de contrasenya és
+    # JavaScript i els robots no l'executen; sense això, l'alumnat hi podria
+    # arribar per Google sense passar mai pel commutador de vista.
+    noindex = ('<meta name="robots" content="noindex, nofollow">\n'
+               if public == "docent" else "")
     sidebar = sidebar_html(section_key, out_rel, pages)
     stepper = stepper_html(section_key, out_rel)
     has_sidebar = "amb-sidebar" if sidebar else "sense-sidebar"
@@ -1134,7 +1139,7 @@ def page_shell(*, out_rel, section_key, title, content_html, toc="",
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{html.escape(title)} · {html.escape(SITE_TITLE)}</title>
 <meta name="description" content="{html.escape(SITE_TAGLINE)}">
-<link rel="stylesheet" href="{prefix}assets/css/estil.css">
+{noindex}<link rel="stylesheet" href="{prefix}assets/css/estil.css">
 <link rel="stylesheet" href="{prefix}assets/css/pygments.css">
 <script>(function(){{try{{var d=document.documentElement,t=localStorage.getItem('tema');if(t==='fosc'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches))d.setAttribute('data-tema','fosc');var m=localStorage.getItem('mida');if(m&&m!=='100')d.setAttribute('data-mida',m);if(localStorage.getItem('font')==='llegible')d.setAttribute('data-font','llegible');var v=localStorage.getItem('vista')||'alumnat';d.setAttribute('data-vista',v);}}catch(e){{}}}})();</script>
 </head>
@@ -2163,7 +2168,11 @@ def main():
         if p.out_rel in pager_map:
             content += "\n" + pager_map[p.out_rel]
         pdf_href = None
-        if p.kind in ("doc", "special") and is_activitat(p.src):
+        # Els PDF només es generen per a material d'alumnat: un PDF no pot
+        # dur la porta de la vista docent (és JavaScript), i la seva URL és
+        # endevinable. El docent imprimeix la pàgina des del navegador.
+        if (p.kind in ("doc", "special") and is_activitat(p.src)
+                and p.public == "alumnat"):
             pdf_out = pdf_out_for(p.out_rel)
             pdf_href = rel_url(p.out_rel, pdf_out)
             pdf_manifest.append({"html": p.out_rel, "pdf": pdf_out, "title": p.title})
@@ -2174,9 +2183,13 @@ def main():
         dest = WEB / p.out_rel
         dest.parent.mkdir(parents=True, exist_ok=True)
         dest.write_text(full, encoding="utf-8")
+        # El cos de text només s'indexa per a les pàgines d'alumnat:
+        # cerca-index.js és un fitxer públic i, si hi guardéssim el text de
+        # les pàgines docents, el material del professorat seria llegible
+        # sense passar per la porta. Les docents s'hi cerquen pel títol.
         search_index.append({"t": p.title, "s": SECTION_BY_KEY.get(p.section, {}).get("title", "Inici"),
                              "u": p.out_rel, "tri": p.trimester, "p": p.public,
-                             "b": text_pla_cerca(content)})
+                             "b": text_pla_cerca(content) if p.public == "alumnat" else ""})
 
     # Pàgines de codi
     n_practiques = 0
