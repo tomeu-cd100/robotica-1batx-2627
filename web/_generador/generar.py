@@ -399,6 +399,24 @@ def out_for_projecte(src: Path) -> str | None:
     return f"classes/{pr['slug']}/{slugify(src.name[:-3])}.html"
 
 
+def write_redirects_projectes(out_dir: Path) -> None:
+    """Les URLs antigues dels dossiers (classes/00-general/…) poden estar
+    enllaçades des del Classroom: hi deixem una redirecció."""
+    for pr in PROJECTES:
+        slug_dossier = slugify(pr["dossier"][:-3]) + ".html"
+        antic = out_dir / "classes" / "00-general" / slug_dossier
+        nou = f"../{pr['slug']}/{slug_dossier}"
+        antic.parent.mkdir(parents=True, exist_ok=True)
+        antic.write_text(
+            f'<!DOCTYPE html><html lang="ca"><head><meta charset="utf-8">\n'
+            f'<meta http-equiv="refresh" content="0; url={nou}">\n'
+            f'<link rel="canonical" href="{nou}">\n'
+            f'<title>{html.escape(pr["nom"])}</title></head>\n'
+            f'<body><p>Aquesta pàgina s\'ha mogut: '
+            f'<a href="{nou}">{html.escape(pr["nom"])}</a></p></body></html>\n',
+            encoding="utf-8")
+
+
 def discover() -> tuple[list[Page], dict, dict, list[dict], list[dict], dict]:
     """Retorna (pàgines, md_map, code_map, code_groups, sim_groups, sim_map):
     - pàgines: llista de Page descobertes.
@@ -2222,6 +2240,9 @@ def main():
 
     # .nojekyll perquè GitHub Pages no processi amb Jekyll
     (WEB / ".nojekyll").write_text("", encoding="utf-8")
+
+    # Redireccions de les URLs antigues dels dossiers de projecte (Classroom)
+    write_redirects_projectes(WEB)
 
     # Manifest d'activitats per a la generació de PDF (vegeu generar_pdf.py)
     (SCRIPT_DIR / "_activitats.json").write_text(

@@ -60,3 +60,19 @@ def test_pager_pont_sa3_projecte_t1():
     assert 'pager-a next" href="../projecte-t1/index.html"' in tot
     pt1 = (web / "classes" / "projecte-t1" / "index.html").read_text(encoding="utf-8")
     assert 'class="pager' in pt1
+
+
+def test_redireccions_dossiers():
+    """Les URLs antigues dels dossiers (classes/00-general/…) han de quedar
+    redirigides a la nova ruta classes/projecte-tN/, ja que poden estar
+    enllaçades des del Classroom."""
+    base = ROOT / "web" / "classes" / "00-general"
+    for antic, nou in [
+        ("00-projecte-t1-mascota.html", "../projecte-t1/00-projecte-t1-mascota.html"),
+        ("00-projecte-t2-brac.html", "../projecte-t2/00-projecte-t2-brac.html"),
+        ("00-projecte-t3-rover.html", "../projecte-t3/00-projecte-t3-rover.html"),
+    ]:
+        f = base / antic
+        assert f.exists(), f"falta la redirecció {antic}"
+        t = f.read_text(encoding="utf-8")
+        assert nou in t and "refresh" in t.lower()
