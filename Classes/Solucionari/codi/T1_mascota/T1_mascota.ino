@@ -85,10 +85,9 @@ void llegeixSensors() {
   if (digitalRead(PIN_PIR) == HIGH) {
     if (emocio != CURIOS) {
       canviaEmocio(CURIOS);
-    } else {
-      tUltimEstimul = millis();  // refresca si ja estem curiosos
+      return;
     }
-    return;
+    tUltimEstimul = millis();  // refresca si ja estem curiosos, deixa que la caricia funcione
   }
   // Extra: caricia al polsador -> CONTENT (amb debounce de 200 ms)
   if (digitalRead(PIN_POLSADOR) == LOW && millis() - tUltimPolsador > 200) {
