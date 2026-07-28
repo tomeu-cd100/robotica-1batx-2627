@@ -141,3 +141,146 @@ void loop(){
   delay(200);
 }
 ```
+
+---
+
+## 🤖 Codi de referència del robot del trimestre: la mascota
+
+> Implementació completa d'exemple del producte final (dossier
+> [🐣 Projecte T1](../00_General/00_Projecte_T1_Mascota.md)): emocions amb
+> màquina d'estats + 3 comportaments sensor→resposta. És UNA solució
+> possible: les parelles en poden fer variants. <!-- web:only-github -->Fitxer complet: [`T1_mascota.ino`](codi/T1_mascota/T1_mascota.ino).<!-- /web:only-github -->
+
+### La màquina d'estats de les emocions
+
+Quatre emocions (`enum Emocio`) i una única funció `canviaEmocio()` que
+centralitza la transició: només actua (llums + so) quan l'emoció **canvia**,
+no a cada volta del `loop()`, i reinicia el temporitzador `tUltimEstimul`.
+
+```cpp
+// --- Maquina d'estats de les emocions ---
+enum Emocio { CONTENT, ESPANTAT, ADORMIT, CURIOS };
+Emocio emocio = CONTENT;
+unsigned long tUltimEstimul = 0;
+unsigned long tUltimPolsador = 0;   // debounce de la caricia
+```
+
+```cpp
+// --- Transicio d'estat: llums + so nomes quan canvia ---
+void canviaEmocio(Emocio nova) {
+  if (nova == emocio) return;
+  emocio = nova;
+  tUltimEstimul = millis();
+  switch (emocio) {
+    case CONTENT:
+      mostraUlls(0, 180, 40);      // verd calid
+      colorHumor(0, 255, 0);
+      melodia(523, 659, 784);      // do-mi-sol (alegre)
+      break;
+    case ESPANTAT:
+      mostraUlls(255, 0, 0);       // vermell
+      colorHumor(255, 0, 0);
+      melodia(880, 740, 622);      // descendent (ensurt)
+      break;
+    case ADORMIT:
+      mostraUlls(0, 0, 30);        // blau molt tenue
+      colorHumor(0, 0, 60);
+      melodia(262, 0, 0);          // una nota greu i prou
+      break;
+    case CURIOS:
+      mostraUlls(200, 120, 0);     // taronja
+      colorHumor(255, 160, 0);
+      melodia(659, 784, 988);      // ascendent (hola!)
+      break;
+  }
+}
+```
+
+### Els 3 comportaments sensor→resposta
+
+`llegeixSensors()` aplica les tres regles per ordre de prioritat (soroll >
+foscor > presència), amb la carícia del polsador com a extra que torna la
+mascota a l'estat `CONTENT` amb antirebot de 200 ms.
+
+```cpp
+// --- Comportaments sensor->resposta (els 3 minims del producte) ---
+void llegeixSensors() {
+  int soroll = analogRead(PIN_MICROFON);
+  int llum = analogRead(PIN_LLUM);
+
+  // Traca per calibrar els llindars: obre el Serial Monitor a 9600
+  Serial.print("soroll="); Serial.print(soroll);
+  Serial.print(" llum="); Serial.print(llum);
+  Serial.print(" temp="); Serial.println(dht.readTemperature());
+
+  // 1) Soroll fort -> ESPANTAT
+  if (soroll > LLINDAR_SOROLL) {
+    if (emocio == ESPANTAT) tUltimEstimul = millis();  // refresca el temporitzador si ja estem espantats
+    canviaEmocio(ESPANTAT);
+    return;
+  }
+  // 2) Foscor -> ADORMIT (i la llum el desperta)
+  if (llum < LLINDAR_FOSCOR) {
+    canviaEmocio(ADORMIT);
+    return;
+  } else if (emocio == ADORMIT) {
+    canviaEmocio(CURIOS);   // acaba de despertar-se
+    return;
+  }
+  // 3) Algu s'acosta (PIR) -> CURIOS (saluda)
+  if (digitalRead(PIN_PIR) == HIGH) {
+    if (emocio != CURIOS) {
+      canviaEmocio(CURIOS);
+      return;
+    }
+    tUltimEstimul = millis();  // refresca si ja estem curiosos, deixa que la caricia funcione
+  }
+  // Extra: caricia al polsador -> CONTENT (amb debounce de 200 ms)
+  if (digitalRead(PIN_POLSADOR) == LOW && millis() - tUltimPolsador > 200) {
+    tUltimPolsador = millis();
+    canviaEmocio(CONTENT);
+  }
+  // Extra (comentat al dossier): reaccionar a la temperatura del DHT11,
+  // p. ex. si temp > 28 la mascota "te calor" -> afegiu un estat nou.
+}
+```
+
+### Llums i so
+
+Tres funcions auxiliars, cridades des de `canviaEmocio()`: `mostraUlls()`
+pinta tota la tira NeoPixel d'un color, `colorHumor()` fa el mateix amb el
+LED RGB via PWM, i `melodia()` toca fins a tres notes seguides (bloqueja
+~450 ms, però només quan canvia l'emoció, no a cada volta del `loop()`).
+
+```cpp
+void mostraUlls(int r, int g, int b) {
+  for (int i = 0; i < NUM_LEDS; i++) {
+    ulls.setPixelColor(i, ulls.Color(r, g, b));
+  }
+  ulls.show();
+}
+
+void colorHumor(int r, int g, int b) {
+  analogWrite(PIN_RGB_R, r);
+  analogWrite(PIN_RGB_G, g);
+  analogWrite(PIN_RGB_B, b);
+}
+
+// Tres notes seguides (freq. en Hz; 0 = silenci). Bloqueja ~450 ms: acceptable
+// perque nomes sona quan CANVIA l'emocio, no a cada volta del loop.
+void melodia(int n1, int n2, int n3) {
+  int notes[3] = {n1, n2, n3};
+  for (int i = 0; i < 3; i++) {
+    if (notes[i] > 0) tone(PIN_BRUNZIDOR, notes[i], 120);
+    delay(150);
+  }
+  noTone(PIN_BRUNZIDOR);
+}
+```
+
+### Calibratge
+
+Cada parella ha d'ajustar tres valors amb el Monitor Sèrie obert: els
+llindars de soroll i foscor (traça `soroll=... llum=...` de
+`llegeixSensors()`), el `NUM_LEDS` real de la seva tira i el
+`TEMPS_CALMA` (ms sense estímuls per tornar a `CONTENT`).

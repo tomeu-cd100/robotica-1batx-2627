@@ -39,3 +39,6 @@ robots del curs és al [fil conductor](00_Fil_conductor_robots.md).
 El braç **és el producte final de SA6**: la rúbrica és al
 [dossier](00_Projecte_T2_Brac.md), apartat «Rúbrica del robot». La prova
 pràctica del trimestre (T2) és independent i individual.
+
+> 🔑 **Per al docent:** hi ha una implementació completa de referència al
+> [solucionari del trimestre](../Solucionari/Solucionari_T2_SA4-SA6.md).

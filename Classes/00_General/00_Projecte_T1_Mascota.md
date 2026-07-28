@@ -115,6 +115,9 @@ guia completa: [`../../Recursos/plantilles_laser/LLEGEIX-ME.md`](../../Recursos/
 | Micròfon | A0 | Entrada analògica; llindar de so a calibrar. |
 | TEMT6000 (llum) | A1 | Entrada analògica; llindar de foscor a calibrar. |
 
+> 🔑 **Per al docent:** implementació completa de referència al
+> [solucionari del trimestre](../Solucionari/Solucionari_T1_SA1-SA3.md) (secció «Codi de referència»).
+
 ## Què hi aporta cada SA
 
 | SA | Sessions | Què s'hi construeix | Repte relacionat |

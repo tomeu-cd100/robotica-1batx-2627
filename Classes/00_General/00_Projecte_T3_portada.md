@@ -41,3 +41,6 @@ La personalització del rover (nom, decoració del xassís) té idees al
 La rúbrica del rover s'avalua **dins el producte de SA9** (dimensió
 «Projectes i productes»): és al [dossier](00_Projecte_T3_Rover.md). Les
 proves pràctiques del trimestre són independents.
+
+> 🔑 **Per al docent:** hi ha una implementació completa de referència al
+> [solucionari del trimestre](../Solucionari/Solucionari_T3_SA7-SA9.md).

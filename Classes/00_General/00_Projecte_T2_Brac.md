@@ -124,6 +124,9 @@ Flux de fabricació:
 > els tres servos necessiten **alimentació externa del Micro:shield**, no
 > el 3V del connector d'edge de la micro:bit.
 
+> 🔑 **Per al docent:** implementació completa de referència al
+> [solucionari del trimestre](../Solucionari/Solucionari_T2_SA4-SA6.md) (secció «Codi de referència»).
+
 ## Què hi aporta cada SA
 
 | SA | Sessions | Què s'hi construeix | Repte relacionat |

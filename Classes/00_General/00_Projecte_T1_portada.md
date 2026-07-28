@@ -39,3 +39,6 @@ que ja has fet. El context general dels tres robots del curs és al
 La mascota **és el producte final de SA3**: la rúbrica és al
 [dossier](00_Projecte_T1_Mascota.md), apartat «Rúbrica del robot». La prova
 pràctica del trimestre (T1) és independent i individual.
+
+> 🔑 **Per al docent:** hi ha una implementació completa de referència al
+> [solucionari del trimestre](../Solucionari/Solucionari_T1_SA1-SA3.md).

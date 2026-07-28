@@ -154,6 +154,9 @@ El sketch de prova és el mateix `01_moviment_basic.ino` de SA7
 sessió és quan cada parella ajusta aquest bloc **una sola vegada** i no el
 torna a tocar en tot el trimestre.
 
+> 🔑 **Per al docent:** implementació completa de referència al
+> [solucionari del trimestre](../Solucionari/Solucionari_T3_SA7-SA9.md) (secció «Codi de referència»).
+
 ## Què hi aporta cada SA
 
 | SA | Sessions | Què s'hi construeix | Repte relacionat |
