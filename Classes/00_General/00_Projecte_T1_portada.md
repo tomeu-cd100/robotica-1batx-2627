@@ -10,7 +10,7 @@
 
 La mascota és el **robot social** del curs: una criatura de fusta que expressa
 emocions amb llum i so (après a SA2) i reacciona a l'entorn amb sensors
-(després a SA3). No és una activitat nova: és el lloc on conflueixen els reptes
+(après a SA3). No és una activitat nova: és el lloc on conflueixen els reptes
 que ja has fet. El context general dels tres robots del curs és al
 [fil conductor](00_Fil_conductor_robots.md).
 
