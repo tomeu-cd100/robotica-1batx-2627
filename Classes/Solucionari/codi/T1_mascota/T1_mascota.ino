@@ -69,6 +69,7 @@ void llegeixSensors() {
 
   // 1) Soroll fort -> ESPANTAT
   if (soroll > LLINDAR_SOROLL) {
+    if (emocio == ESPANTAT) tUltimEstimul = millis();  // refresca el temporitzador si ja estem espantats
     canviaEmocio(ESPANTAT);
     return;
   }
@@ -81,8 +82,12 @@ void llegeixSensors() {
     return;
   }
   // 3) Algu s'acosta (PIR) -> CURIOS (saluda)
-  if (digitalRead(PIN_PIR) == HIGH && emocio != CURIOS) {
-    canviaEmocio(CURIOS);
+  if (digitalRead(PIN_PIR) == HIGH) {
+    if (emocio != CURIOS) {
+      canviaEmocio(CURIOS);
+    } else {
+      tUltimEstimul = millis();  // refresca si ja estem curiosos
+    }
     return;
   }
   // Extra: caricia al polsador -> CONTENT (amb debounce de 200 ms)
