@@ -24,6 +24,8 @@ Comprova (i falla amb exit != 0 si troba res):
      mai no bloqueja el CI — els caiguts surten com a avís).
  13. Pàgines de pràctica: cada sketch d'alumnat té la seva EXPLICACIO.md
      (pàgina de pràctica a la web) i no queda cap sketch *_BASTIDA solt.
+ 14. Projectes trimestrals: cada projecte de generar.PROJECTES té la seva
+     portada a Classes/00_General i la portada enllaça el seu dossier.
 
 Abans de res (punt 0) comprova que els paquets del generador (markdown,
 pygments) estan instal·lats: sense ells els punts 6 i 8 petarien a mig camí.
@@ -454,6 +456,29 @@ def comprova_explicacions() -> None:
     print(f"13) Pàgines de pràctica: {total} sketches, {fallats} sense explicació.")
 
 
+# --- 14 · Projectes trimestrals: portada present i enllaçant el dossier -----
+def comprova_projectes_trimestrals() -> None:
+    """Cada projecte trimestral (generar.PROJECTES) ha de tenir portada a
+    Classes/00_General i la portada ha d'enllaçar el seu dossier (si no, la
+    secció del web queda sense pàgina d'entrada o sense camí cap al dossier)."""
+    sys.path.insert(0, str(ARREL / "web" / "_generador"))
+    import generar as g
+
+    base = ARREL / "Classes" / "00_General"
+    fallats = 0
+    for pr in g.PROJECTES:
+        portada = base / pr["portada"]
+        if not portada.exists():
+            errors.append(f"[projectes] falta la portada {pr['portada']}")
+            fallats += 1
+            continue
+        text = portada.read_text(encoding="utf-8")
+        if pr["dossier"] not in text:
+            errors.append(f"[projectes] {pr['portada']} no enllaça el dossier {pr['dossier']}")
+            fallats += 1
+    print(f"14) Projectes trimestrals: {len(g.PROJECTES)} portades, {fallats} incoherències.")
+
+
 # --- 11 · Enllaços externs (OPT-IN: QA_ENLLACOS_EXTERNS=1) ---------------------
 RE_URL_EXTERN = re.compile(r"https?://[^\s)\"'<>\]]+")
 DOMINIS_IGNORATS = (
@@ -539,6 +564,7 @@ def main() -> int:
     comprova_enllacos_externs()
     comprova_lliurables()
     comprova_explicacions()
+    comprova_projectes_trimestrals()
     for a in avisos:
         print(f"⚠️  {a}")
     if errors:
