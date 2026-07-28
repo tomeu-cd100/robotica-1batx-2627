@@ -152,6 +152,27 @@ TRIMESTRES = {
 GROUP_LABELS = {
     "00-general": "Material transversal del curs",
 }
+# Projectes trimestrals (fil conductor): grup propi a Classes, entre SA.
+# El rover (T3) va ABANS de SA7: es munta a la sessió 0 del 3r trimestre.
+PROJECTES = [
+    {"num": 1, "slug": "projecte-t1", "emoji": "🐣", "after_sa": 3, "tri": 1,
+     "nom": "Projecte T1 · La mascota reactiva", "curt": "Mascota",
+     "producte": "Robot social: es munta a final del 1r trimestre",
+     "portada": "00_Projecte_T1_portada.md",
+     "dossier": "00_Projecte_T1_Mascota.md"},
+    {"num": 2, "slug": "projecte-t2", "emoji": "🦾", "after_sa": 6, "tri": 2,
+     "nom": "Projecte T2 · El braç robòtic", "curt": "Braç",
+     "producte": "Robot manipulador: es munta a final del 2n trimestre",
+     "portada": "00_Projecte_T2_portada.md",
+     "dossier": "00_Projecte_T2_Brac.md"},
+    {"num": 3, "slug": "projecte-t3", "emoji": "🚙", "after_sa": 6, "tri": 3,
+     "nom": "Projecte T3 · El rover autònom", "curt": "Rover",
+     "producte": "Robot mòbil: es munta a la sessió 0 del 3r trimestre, abans de SA7",
+     "portada": "00_Projecte_T3_portada.md",
+     "dossier": "00_Projecte_T3_Rover.md"},
+]
+PROJECTE_BY_SLUG = {p["slug"]: p for p in PROJECTES}
+PROJECTE_BY_SRC = {p[k]: p for p in PROJECTES for k in ("portada", "dossier")}
 SA_TITLES = {
     0: "Vocabulari essencial i bases de programació",
     1: "Introducció a la robòtica",
@@ -624,6 +645,9 @@ def page_group(section_key: str, out_rel: str) -> str:
 def group_sort_key(gk: str):
     if gk in GROUP_LABELS:          # material transversal: sempre primer
         return (0, 0, gk)
+    pr = PROJECTE_BY_SLUG.get(gk)
+    if pr is not None:              # projecte trimestral: darrere la seva SA
+        return (1, pr["after_sa"], f"z{pr['num']}")
     sa = detect_sa(gk)
     if sa is not None:
         return (1, sa, gk)
@@ -635,6 +659,9 @@ def group_sort_key(gk: str):
 def group_label(gk: str) -> str:
     if gk in GROUP_LABELS:
         return GROUP_LABELS[gk]
+    pr = PROJECTE_BY_SLUG.get(gk)
+    if pr is not None:
+        return f"{pr['emoji']} {pr['nom']}"
     sa = detect_sa(gk)
     if sa is not None:
         return f"SA{sa} · {SA_TITLES.get(sa, '')}".strip(" ·")
@@ -642,6 +669,9 @@ def group_label(gk: str) -> str:
 
 
 def group_tri(gk: str):
+    pr = PROJECTE_BY_SLUG.get(gk)
+    if pr is not None:
+        return pr["tri"]
     sa = detect_sa(gk)
     return sa_trimestre(sa) if sa else None
 
