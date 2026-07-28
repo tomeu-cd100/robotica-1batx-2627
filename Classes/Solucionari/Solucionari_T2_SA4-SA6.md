@@ -259,7 +259,7 @@ unsigned long tAlliberat = 0;
 ### El comandament per ràdio (micro:bit)
 
 Protocol de text senzill per ràdio: `"B+"`/`"B-"` mouen la base,
-`"C+"`/`"C-"` el colze (segons la inclinació de l'accelerator) i `"P"`
+`"C+"`/`"C-"` el colze (segons la inclinació de l'acceleròmetre) i `"P"`
 commuta la pinça (botó A+B alhora). El comandament és la 2a micro:bit, la
 que es té a la mà.
 

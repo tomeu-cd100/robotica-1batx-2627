@@ -238,7 +238,7 @@ void evitarObstacles() {
 ```cpp
 // Espera vigilant para-xocs: durant qualsevol maniobra, monitoritza si es
 // detecta xoc. Si LOW, atura immediatament, posa ATURAT i retorna true.
-// Sino, retorna false al cap de ms mil·lisegons (resolucio 10 ms).
+// Sino, retorna false al cap de ms mil.lisegons (resolucio 10 ms).
 bool esperaVigilantXoc(unsigned long ms) {
   unsigned long inici = millis();
   while (millis() - inici < ms) {
