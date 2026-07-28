@@ -76,6 +76,10 @@
 > Combina el sensor d'ultrasons (apartat 3) amb un LED (pin 8) i un brunzidor piezo (pin 6) com a sortides.
 > El codi tracta la lectura **0** (sense eco) com a "molt lluny" (retorna 400) per evitar falses alarmes.
 
+![Captura de Tinkercad: Arduino UNO amb el HC-SR04 a la protoboard (TRIG al pin 12 i ECHO al pin 11, cables verds), un LED vermell amb resistència al pin 8 i un brunzidor piezo al pin 6; alimentació pels carrils de 5 V i GND](img/sa3-tinkercad-alarma-aparcament.png)
+
+▶ **Obre la simulació a Tinkercad** (pots fer *Copy and Tinker* per modificar-la): <https://www.tinkercad.com/things/bWIBhp6vaaU-sa3-producte-alarma-daparcament?sharecode=6Qc4jM_obZk1o5qQe7X2KyWSQm6Q-OwMKHttqyeN-uc>
+
 ---
 
 ## Simulació interactiva (Wokwi)
