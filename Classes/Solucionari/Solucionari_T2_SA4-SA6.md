@@ -200,7 +200,10 @@ const float Kp = 0.8;   // 0.2 = lent ; 0.8 = equilibrat ; 3.0 = oscil-la/inesta
 > [🦾 Projecte T2](../00_General/00_Projecte_T2_Brac.md)): control per
 > potenciòmetres, aturada d'emergència i, a la fase micro:bit, comandament
 > per ràdio. És UNA solució possible: les parelles en poden fer variants.
-> <!-- web:only-github -->Fitxers complets: [`T2_brac.ino`](codi/T2_brac/T2_brac.ino) (fase Arduino), [`T2_brac_microbit_comandament.py`](codi/T2_brac_microbit_comandament.py) i [`T2_brac_microbit_receptor.py`](codi/T2_brac_microbit_receptor.py) (fase micro:bit).<!-- /web:only-github -->
+> Fitxers complets: [`T2_brac.ino`](https://github.com/tomeu-cd100/robotica-1batx-2627/blob/main/Classes/Solucionari/codi/T2_brac/T2_brac.ino) (fase
+> Arduino), [`T2_brac_microbit_comandament.py`](https://github.com/tomeu-cd100/robotica-1batx-2627/blob/main/Classes/Solucionari/codi/T2_brac_microbit_comandament.py)
+> i [`T2_brac_microbit_receptor.py`](https://github.com/tomeu-cd100/robotica-1batx-2627/blob/main/Classes/Solucionari/codi/T2_brac_microbit_receptor.py) (fase
+> micro:bit).
 
 ### Control amb potenciòmetres i límits d'angle
 

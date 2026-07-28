@@ -149,7 +149,8 @@ void loop(){
 > Implementació completa d'exemple del producte final (dossier
 > [🐣 Projecte T1](../00_General/00_Projecte_T1_Mascota.md)): emocions amb
 > màquina d'estats + 3 comportaments sensor→resposta. És UNA solució
-> possible: les parelles en poden fer variants. <!-- web:only-github -->Fitxer complet: [`T1_mascota.ino`](codi/T1_mascota/T1_mascota.ino).<!-- /web:only-github -->
+> possible: les parelles en poden fer variants. Fitxer complet:
+> [`T1_mascota.ino`](https://github.com/tomeu-cd100/robotica-1batx-2627/blob/main/Classes/Solucionari/codi/T1_mascota/T1_mascota.ino).
 
 ### La màquina d'estats de les emocions
 

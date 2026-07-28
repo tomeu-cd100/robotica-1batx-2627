@@ -150,7 +150,8 @@ El projecte final és **obert**: no té solucionari tancat. L'avaluació es fa a
 > [🚗 Projecte T3](../00_General/00_Projecte_T3_Rover.md)): màquina d'estats
 > de modes, seguir línia, evitar obstacles i telemetria per ràdio. És UNA
 > solució possible: les parelles en poden fer variants.
-> <!-- web:only-github -->Fitxers complets: [`T3_rover.ino`](codi/T3_rover/T3_rover.ino) i [`T3_rover_microbit_telemetria.py`](codi/T3_rover_microbit_telemetria.py).<!-- /web:only-github -->
+> Fitxers complets: [`T3_rover.ino`](https://github.com/tomeu-cd100/robotica-1batx-2627/blob/main/Classes/Solucionari/codi/T3_rover/T3_rover.ino) i
+> [`T3_rover_microbit_telemetria.py`](https://github.com/tomeu-cd100/robotica-1batx-2627/blob/main/Classes/Solucionari/codi/T3_rover_microbit_telemetria.py).
 
 ### Modes i màquina d'estats
 
