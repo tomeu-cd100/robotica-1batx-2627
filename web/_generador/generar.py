@@ -890,17 +890,35 @@ def stepper_html(section_key: str, out_rel: str) -> str:
     if section_key != "classes":
         return ""
     cur = detect_sa(out_rel)
-    steps = []
+    cur_pr = page_group("classes", out_rel)
+    passos: list[tuple] = []           # ("sa", n) | ("pr", dict)
     for sa in range(0, 10):
-        tri = 0 if sa == 0 else sa_trimestre(sa)
-        href = rel_url(out_rel, f"classes/sa{sa}/index.html")
-        actiu = " actiu" if sa == cur else ""
-        aria = ' aria-current="page"' if sa == cur else ""
-        steps.append(f'<a class="step{actiu}" data-tri="{tri}" href="{href}"{aria} '
-                     f'title="SA{sa} · {html.escape(SA_TITLES.get(sa, ""))}">'
-                     f'<span class="step-ic">{SA_ICONES.get(sa, "")}</span>'
-                     f'<span class="step-n">SA{sa}</span></a>')
-    return ('<nav class="stepper" aria-label="Progrés del curs (les 9 SA)">'
+        passos.append(("sa", sa))
+        for pr in PROJECTES:
+            if pr["after_sa"] == sa:
+                passos.append(("pr", pr))
+    steps = []
+    for tipus, val in passos:
+        if tipus == "sa":
+            sa = val
+            tri = 0 if sa == 0 else sa_trimestre(sa)
+            href = rel_url(out_rel, f"classes/sa{sa}/index.html")
+            actiu = " actiu" if sa == cur else ""
+            aria = ' aria-current="page"' if sa == cur else ""
+            steps.append(f'<a class="step{actiu}" data-tri="{tri}" href="{href}"{aria} '
+                         f'title="SA{sa} · {html.escape(SA_TITLES.get(sa, ""))}">'
+                         f'<span class="step-ic">{SA_ICONES.get(sa, "")}</span>'
+                         f'<span class="step-n">SA{sa}</span></a>')
+        else:
+            pr = val
+            href = rel_url(out_rel, f"classes/{pr['slug']}/index.html")
+            actiu = " actiu" if cur_pr == pr["slug"] else ""
+            aria = ' aria-current="page"' if cur_pr == pr["slug"] else ""
+            steps.append(f'<a class="step{actiu}" data-tri="{pr["tri"]}" href="{href}"{aria} '
+                         f'title="{html.escape(pr["nom"])}">'
+                         f'<span class="step-ic">{pr["emoji"]}</span>'
+                         f'<span class="step-n">T{pr["num"]}</span></a>')
+    return ('<nav class="stepper" aria-label="Progrés del curs (SA i projectes)">'
             + "".join(steps) + "</nav>")
 
 
@@ -1450,6 +1468,21 @@ def section_index_extra(section_key: str, current_out: str, pages: list[Page]) -
         gps = groups[gk]
         idx = next((x for x in gps if x.kind == "index"), None)
         sa = detect_sa(gk)
+        pr = PROJECTE_BY_SLUG.get(gk)
+        if idx and pr is not None:
+            has_hubs = True
+            mats = len([x for x in gps if x is not idx])
+            meta = f"{mats} material{'s' if mats != 1 else ''}"
+            card = (f'<a class="sa-card" href="{rel_url(current_out, idx.out_rel)}" '
+                    f'data-tri="{pr["tri"]}">'
+                    f'<span class="sa-ic" aria-hidden="true">{pr["emoji"]}</span>'
+                    f'<span class="sa-body">'
+                    f'<span class="sa-num">Projecte T{pr["num"]}</span>'
+                    f'<span class="sa-nom">{html.escape(pr["curt"])}</span>'
+                    f'<span class="sa-prod">{html.escape(pr["producte"])}</span>'
+                    f'<span class="sa-meta">{html.escape(meta)}</span></span></a>')
+            tri_entries.append((pr["tri"], pr["after_sa"] + pr["num"] / 10, card))
+            continue
         if idx and sa is not None:
             has_hubs = True
             mats = len([x for x in gps if x is not idx])
@@ -1667,6 +1700,24 @@ def sa_grid_html(pages: list[Page]) -> str:
                 f'<span class="sa-prod">{html.escape(SA_PRODUCTES[sa])}</span>'
                 f'</span></a>'
             )
+        for pr in PROJECTES:
+            if pr["tri"] != t:
+                continue
+            hub = f"classes/{pr['slug']}/index.html"
+            if hub not in outs:
+                continue
+            card = (
+                f'<a class="sa-card" href="{hub}" data-tri="{t}">'
+                f'<span class="sa-ic" aria-hidden="true">{pr["emoji"]}</span>'
+                f'<span class="sa-body">'
+                f'<span class="sa-num">Projecte T{pr["num"]}</span>'
+                f'<span class="sa-nom">{html.escape(pr["curt"])}</span>'
+                f'<span class="sa-prod">{html.escape(pr["producte"])}</span>'
+                f'</span></a>')
+            if pr["after_sa"] < min(info["sas"]):   # rover: obre el trimestre
+                cards.insert(0, card)
+            else:
+                cards.append(card)
         tri_blocks.append(
             f'<div class="tri-block" data-tri="{t}">'
             f'<h3 class="tri-tit"><span class="tri-pastilla" data-tri="{t}"></span>{info["label"]}</h3>'
