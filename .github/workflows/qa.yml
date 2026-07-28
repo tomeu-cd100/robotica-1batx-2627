@@ -28,11 +28,11 @@ jobs:
       - name: Instal·la les dependències del generador
         run: pip install -r web/_generador/requirements.txt pytest
 
-      - name: Tests del generador (lògica pura)
-        run: python -m pytest web/_generador/tests -q
-
       - name: Genera el web
         run: python web/_generador/generar.py
+
+      - name: Tests del generador
+        run: python -m pytest web/_generador/tests -q
 
       - name: Genera els PDF (perquè el link-check els pugui verificar)
         run: python web/_generador/generar_pdf.py

@@ -901,7 +901,8 @@ def build_sa_fil(pages: list[Page]) -> dict[int, list[tuple[str, str]]]:
 
 
 def stepper_html(section_key: str, out_rel: str) -> str:
-    """Barra de progrés del curs (SA0 → SA9) per a les pàgines de Classes.
+    """Barra de progrés del curs (SA0 → SA9, incloent-hi els 3 projectes
+    trimestrals) per a les pàgines de Classes.
     Ressalta la SA actual i acoloreix cada pas segons el seu trimestre
     (reutilitza `data-tri`). A les pàgines sense SA (índex, transversal) no
     ressalta cap pas i serveix de navegació ràpida entre unitats."""

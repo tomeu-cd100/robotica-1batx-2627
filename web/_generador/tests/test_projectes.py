@@ -4,12 +4,13 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
+import pytest  # noqa: E402
 import generar  # noqa: E402
 from generar import (  # noqa: E402
     PROJECTES, PROJECTE_BY_SLUG, PROJECTE_BY_SRC,
     group_label, group_sort_key, group_tri,
+    ROOT, classify_public, out_for_projecte,
 )
-from generar import ROOT, classify_public, out_for_projecte  # noqa: E402
 
 GENERAL = ROOT / "Classes" / "00_General"
 
@@ -51,6 +52,7 @@ def test_projecte_public_alumnat():
     assert classify_public("classes", GENERAL / "00_Projecte_T2_Brac.md") == "alumnat"
 
 
+@pytest.mark.skipif(not (ROOT / "web" / "classes").is_dir(), reason="web no generat")
 def test_pager_pont_sa3_projecte_t1():
     """El web generat ha de tenir el pont SA3 -> Projecte T1 al paginador."""
     web = ROOT / "web"
@@ -62,6 +64,7 @@ def test_pager_pont_sa3_projecte_t1():
     assert 'class="pager' in pt1
 
 
+@pytest.mark.skipif(not (ROOT / "web" / "classes").is_dir(), reason="web no generat")
 def test_redireccions_dossiers():
     """Les URLs antigues dels dossiers (classes/00-general/…) han de quedar
     redirigides a la nova ruta classes/projecte-tN/, ja que poden estar

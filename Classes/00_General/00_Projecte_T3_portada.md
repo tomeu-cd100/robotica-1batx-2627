@@ -25,6 +25,9 @@ robots del curs és al [fil conductor](00_Fil_conductor_robots.md).
    [Reptes de SA7](../../Reptes/Reptes_SA7.md) (línia i obstacles) i
    [Reptes de SA8](../../Reptes/Reptes_SA8.md) (telemetria i IA).
 
+La personalització del rover (nom, decoració del xassís) té idees al
+[banc d'objectes de disseny](00_Banc_objectes_disseny.md).
+
 ## Referències de fabricació
 
 - **Plantilla de tall làser** del xassís: `rover.svg`, al material de
