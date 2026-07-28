@@ -52,6 +52,9 @@ jobs:
           fqbn: arduino:avr:uno
           libraries: |
             - name: Servo
+            - name: Adafruit NeoPixel
+            - name: DHT sensor library
+            - name: Adafruit Unified Sensor
           sketch-paths: |
             - Classes/SA1/codi
             - Classes/SA2/codi
@@ -65,9 +68,11 @@ jobs:
             - Reptes/Solucionari/SA4
             - Reptes/Solucionari/SA6
             - Reptes/Solucionari/SA7
+            - Classes/Solucionari/codi
+          # Solucionari robots trimestrals: T1 mascota, T2 braç, T3 rover.
           # SA8/codi/04_esp32_telemetria és per a ESP32: vegeu el job compilar-esp32.
           # SA9: el codi el crea l'alumnat (només plantilla).
-          # Solucionari SA5/SA8: MicroPython (.py), el vigila tools/qa.py (py_compile).
+          # Solucionari SA5/SA8 + robots: MicroPython (.py), el vigila tools/qa.py (py_compile).
           verbose: false
 
   compilar-esp32:
