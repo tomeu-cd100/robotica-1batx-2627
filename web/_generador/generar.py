@@ -986,7 +986,9 @@ def build_sequences(pages: list[Page]) -> dict[str, str]:
                   key=lambda p: p.out_rel)
     add_seq("Programació didàctica", prog)
 
-    # Classes: dins de cada SA, presentació → guia → fitxes → esquemes → codi
+    # Classes: dins de cada SA, presentació → guia → fitxes → esquemes → codi.
+    # Els projectes trimestrals s'intercalen amb ponts: SA3→PT1→SA4, SA6→PT2→PT3→SA7.
+    blocs: dict[str, tuple[str, list[Page]]] = {}   # clau grup -> (label, items)
     for sa in range(0, 10):
         grp = [p for p in pages if p.section == "classes" and p.kind != "practica"
                and page_group("classes", p.out_rel) == f"sa{sa}"]
@@ -994,18 +996,34 @@ def build_sequences(pages: list[Page]) -> dict[str, str]:
             continue
         idx = [p for p in grp if p.kind == "index"]
         rest = sorted([p for p in grp if p.kind != "index"], key=doc_ordre)
-        add_seq(f"SA{sa}", idx + rest)
+        blocs[f"sa{sa}"] = (f"SA{sa}", idx + rest)
+    for pr in PROJECTES:
+        grp = [p for p in pages if p.section == "classes"
+               and page_group("classes", p.out_rel) == pr["slug"]]
+        if not grp:
+            continue
+        idx = [p for p in grp if p.kind == "index"]
+        rest = sorted([p for p in grp if p.kind != "index"], key=doc_ordre)
+        blocs[pr["slug"]] = (f"{pr['emoji']} Projecte T{pr['num']}", idx + rest)
+
+    PONTS = [("sa3", "projecte-t1"), ("projecte-t1", "sa4"),
+             ("sa6", "projecte-t2"), ("projecte-t2", "projecte-t3"),
+             ("projecte-t3", "sa7")]
+    pont_next = {a: b for a, b in PONTS if a in blocs and b in blocs}
+    pont_prev = {b: a for a, b in PONTS if a in blocs and b in blocs}
 
     # Reptes: SA1 → SA8
     rep = sorted([p for p in pages if p.section == "reptes" and p.kind == "doc"
                   and p.src.name.startswith("Reptes_SA")], key=lambda p: p.out_rel)
     add_seq("Reptes per SA", rep)
 
-    def render_pager(label: str, items: list[Page], vista: str) -> dict[str, str]:
+    def render_pager(label: str, items: list[Page], vista: str,
+                      outer_prev: Page | None = None,
+                      outer_next: Page | None = None) -> dict[str, str]:
         out: dict[str, str] = {}
         for i, p in enumerate(items):
-            prev_p = items[i - 1] if i > 0 else None
-            next_p = items[i + 1] if i < len(items) - 1 else None
+            prev_p = items[i - 1] if i > 0 else outer_prev
+            next_p = items[i + 1] if i < len(items) - 1 else outer_next
             parts = [f'<nav class="pager" data-pager-vista="{vista}" aria-label="Itinerari">']
             if prev_p:
                 t = "Presentació" if prev_p.kind == "index" else ("Codi" if prev_p.kind == "code" else prev_p.title)
@@ -1038,6 +1056,33 @@ def build_sequences(pages: list[Page]) -> dict[str, str]:
             alum = render_pager(label, alum_items, "alumnat")
             for out_rel, htmlp in alum.items():
                 pager[out_rel] = pager.get(out_rel, "") + htmlp
+
+    def vista_items(items: list[Page], vista: str) -> list[Page]:
+        if vista == "docent":
+            return items
+        return [p for p in items if p.public == "alumnat"
+                and not any(k in p.out_rel.lower() for k in NOMES_CONSULTA)]
+
+    # Blocs de Classes (SA + projectes), amb ponts entre grups adjacents.
+    for gk, (label, items) in blocs.items():
+        for vista in ("docent", "alumnat"):
+            its = vista_items(items, vista)
+            op = on = None
+            if gk in pont_prev:
+                prev_its = vista_items(blocs[pont_prev[gk]][1], vista)
+                op = prev_its[-1] if prev_its else None
+            if gk in pont_next:
+                next_its = vista_items(blocs[pont_next[gk]][1], vista)
+                on = next_its[0] if next_its else None
+            if len(its) < 2 and not (op or on):
+                continue
+            full = render_pager(label, its, vista, outer_prev=op, outer_next=on)
+            if vista == "docent":
+                for out_rel, htmlp in full.items():
+                    pager[out_rel] = htmlp
+            else:
+                for out_rel, htmlp in full.items():
+                    pager[out_rel] = pager.get(out_rel, "") + htmlp
     return pager
 
 

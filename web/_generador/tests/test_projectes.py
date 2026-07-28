@@ -49,3 +49,14 @@ def test_out_for_projecte():
 def test_projecte_public_alumnat():
     assert classify_public("classes", GENERAL / "00_Projecte_T1_portada.md") == "alumnat"
     assert classify_public("classes", GENERAL / "00_Projecte_T2_Brac.md") == "alumnat"
+
+
+def test_pager_pont_sa3_projecte_t1():
+    """El web generat ha de tenir el pont SA3 -> Projecte T1 al paginador."""
+    web = ROOT / "web"
+    sa3 = sorted((web / "classes" / "sa3").glob("*.html"))
+    assert sa3, "cal haver generat el web abans dels tests de pont"
+    tot = "".join(p.read_text(encoding="utf-8") for p in sa3)
+    assert 'pager-a next" href="../projecte-t1/index.html"' in tot
+    pt1 = (web / "classes" / "projecte-t1" / "index.html").read_text(encoding="utf-8")
+    assert 'class="pager' in pt1
