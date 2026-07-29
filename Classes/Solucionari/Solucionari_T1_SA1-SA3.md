@@ -152,6 +152,27 @@ void loop(){
 > possible: les parelles en poden fer variants. Fitxer complet:
 > [`T1_mascota.ino`](https://github.com/tomeu-cd100/robotica-1batx-2627/blob/main/Classes/Solucionari/codi/T1_mascota/T1_mascota.ino).
 
+### Pins i cablatge
+
+Tots els components es connecten segons la taula de l'apartat
+[Cablatge del dossier del Projecte T1](../00_General/00_Projecte_T1_Mascota.md#cablatge)
+(amb les notes d'alimentació de la tira NeoPixel i l'orientació del PIR).
+Aquest bloc del sketch n'és el resum:
+
+```cpp
+// --- Pins (taula de cablatge del dossier) ---
+const int PIN_NEOPIXEL = 6;   // ulls (tira WS2812B)
+const int PIN_RGB_R = 9;      // LED RGB indicador d'humor
+const int PIN_RGB_G = 10;
+const int PIN_RGB_B = 11;
+const int PIN_BRUNZIDOR = 8;
+const int PIN_PIR = 2;        // nas (presencia)
+const int PIN_POLSADOR = 3;   // caricia (pull-up intern)
+const int PIN_DHT = 4;        // temperatura/humitat (extra)
+const int PIN_MICROFON = A0;  // soroll
+const int PIN_LLUM = A1;      // TEMT6000 (foscor)
+```
+
 ### La màquina d'estats de les emocions
 
 Quatre emocions (`enum Emocio`) i una única funció `canviaEmocio()` que
