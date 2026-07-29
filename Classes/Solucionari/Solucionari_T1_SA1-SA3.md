@@ -164,6 +164,9 @@ void loop(){
 > LDR a A1 per TEMT6000) — context a l'apartat «Simular la mascota a
 > Tinkercad» del
 > [dossier](../00_General/00_Projecte_T1_Mascota.md#simular-la-mascota-a-tinkercad).
+> Simulació muntada i provada (29-07-2026), NOMÉS DOCENT — l'enllaç
+> compartit inclou el codi resolt:
+> [T1 mascota a Tinkercad](https://www.tinkercad.com/things/jaw7rUZddlx-t1-mascota?sharecode=ml1v2NzJdcZke3EVCrtptrPmpzTnQ04HikVB1YT_3FU).
 
 ### Pins i cablatge
 

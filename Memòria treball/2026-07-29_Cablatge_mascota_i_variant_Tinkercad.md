@@ -40,6 +40,27 @@
 - El defecte dels `enum` a Tinkercad afectarà també el codi propi de
   l'alumnat: avís publicat al dossier.
 
+## Sessió 2 (vespre): esquelet per a l'alumnat + prova real a Tinkercad
+
+- **Esquelet amb TODOs al dossier** (secció «🧗 Si t'encalles», desplegable):
+  estructura completa (pins, `const int`, setup/loop, funcions SA2) amb DHT
+  marcat `[DHT]`; la feina avaluada (reaccions 2-3, carícia, personalitat)
+  queda com a TODO amb un exemple resolt per funció. Compilat abans de
+  publicar. El `<summary>` diu «Desplega l'esquelet» expressament perquè el
+  QA #15 no l'intenti sincronitzar amb cap .ino.
+- **El docent va muntar la mascota a Tinkercad de debò** (depuració guiada
+  per captures). Trampes reals trobades, documentades a la secció nova
+  «Trampes de simulació» del dossier:
+  A0≠pin 0 (sensors a TX/RX → lectures a l'aire + Monitor Sèrie mort →
+  melodia contínua per oscil·lació d'estats), ordre del divisor (pot i LDR
+  invertits), valor de resistència per defecte d'1 kΩ (llum max 134 < llindar
+  150), polsador en diagonal, PIR amb Signal/Power intercanviats (tooltips,
+  no colors) + PIR binari (no mesura distància).
+- **«Secret» documentat**: dormida a les fosques, el PIR no la desperta
+  (prioritat soroll > foscor > presència amb `return`); el soroll sí.
+  Publicat com a nota 🤫 al dossier: decisió pedagògica sobre l'ordre de
+  les regles.
+
 ## Pendents que continuen oberts
 
 - Els de [[project-pendents-oberts]] (maquinari real al setembre, tall i
