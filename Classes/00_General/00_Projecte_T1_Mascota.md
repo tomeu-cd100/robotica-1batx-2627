@@ -104,7 +104,13 @@ guia completa: [`../../Recursos/plantilles_laser/LLEGEIX-ME.md`](../../Recursos/
 
 ## Cablatge
 
-| Component | Pin | Notes |
+Abans de res, prepara els **carrils d'alimentació de la breadboard**: un cable
+del pin **5V** del UNO al carril vermell (+) i un del **GND** al carril blau
+(−). Tots els mòduls s'alimenten d'aquests dos carrils; cada component només
+necessita, a més, el seu cable de senyal cap al pin de la taula. Cableja
+sempre amb l'**USB desendollat**.
+
+| Component | Pin de senyal | Notes |
 |---|---|---|
 | NeoPixel (ulls), DIN | D6 | Alimentació **5V/GND** a part (no del pin 5V del UNO si la tira supera ~8-10 LED; consum ~60 mA/LED a blanc ple). |
 | LED RGB (indicador d'humor) | D9 / D10 / D11 | Pins PWM (`~`), un per canal (R/G/B). |
@@ -115,8 +121,50 @@ guia completa: [`../../Recursos/plantilles_laser/LLEGEIX-ME.md`](../../Recursos/
 | Micròfon | A0 | Entrada analògica; llindar de so a calibrar. |
 | TEMT6000 (llum) | A1 | Entrada analògica; llindar de foscor a calibrar. |
 
+**Com es connecta cada component:**
+
+- **Mòduls de 3 pins (PIR, micròfon, TEMT6000):** VCC → carril 5 V,
+  GND → carril −, i el pin de sortida (OUT/S/AO) → pin de senyal de la
+  taula. ⚠️ L'**ordre dels 3 pins canvia segons el fabricant**: mira sempre
+  la serigrafia del mòdul, no la posició del cable.
+- **Tira NeoPixel:** connecta **primer el GND**, després el 5 V i al final
+  el senyal DIN → D6. Recorda el sentit DIN → DOUT de l'avís de dalt.
+- **LED RGB:** el mateix muntatge de l'esquema 4 de
+  [SA2 · Esquemes i connexions](../SA2/SA2_esquemes_connexions.md): una
+  resistència de **220 Ω per canal** cap a D9/D10/D11 i el càtode comú al
+  carril −.
+- **Brunzidor:** pota (+) → D8, pota (−) → carril − (com al panell de SA2,
+  que el tenia al pin 6).
+- **Polsador:** una pota → D3 i la diagonal → carril −, sense resistència
+  (el programa activa el *pull-up* intern, com a l'esquema 1 de
+  [SA3 · Esquemes i connexions](../SA3/SA3_esquemes_connexions.md)).
+- **DHT11:** si és el **mòdul de 3 pins**, com els altres mòduls (senyal →
+  D4). Si és el **sensor solt de 4 potes**, cal una resistència de
+  **10 kΩ** entre VCC i DATA (el mòdul ja la porta incorporada).
+
 > 🔑 **Per al docent:** implementació completa de referència al
 > [solucionari del trimestre](../Solucionari/Solucionari_T1_SA1-SA3.md) (secció «Codi de referència»).
+
+## Simular la mascota a Tinkercad
+
+Pots provar el programa de la mascota a Tinkercad abans de cablejar-la de
+debò, però el catàleg de components no ho té tot: cal fer **tres
+substitucions** (el codi no canvia gens, només els llindars a l'hora de
+provar):
+
+| A la mascota real | A Tinkercad | Per què funciona igual |
+|---|---|---|
+| Micròfon (A0) | **Potenciòmetre** a A0 | Tinkercad no té cap sensor de so. `analogRead(A0)` llegeix igual 0–1023: girar el cargol = «fer soroll». |
+| TEMT6000 (A1) | **Fotoresistència (LDR)** a A1 | Mateix paper: sensor de llum analògic. |
+| DHT11 (D4) | **Res** (esborra'l del codi) | Tinkercad no té ni el component ni la llibreria `DHT`. Com que és l'extra opcional, es pot ometre: treu l'`#include <DHT.h>` i totes les línies amb `dht` o `PIN_DHT`. |
+
+El PIR, la tira NeoPixel, el LED RGB, el brunzidor i el polsador sí que hi
+són (i la llibreria `Adafruit_NeoPixel` ve inclosa al mode text).
+
+> ⚠️ Enganxa sempre el **programa sencer** a l'editor de text de Tinkercad,
+> no blocs solts: un fragment sense les declaracions de dalt (pins,
+> constants, `enum`) dona errors del tipus `'...' was not declared in this
+> scope`.
 
 ## Què hi aporta cada SA
 
