@@ -173,6 +173,211 @@ són (i la llibreria `Adafruit_NeoPixel` ve inclosa al mode text).
 > compilador. Solució: fes servir **`const int`** per als estats i passa'ls
 > com a `int` (`void canviaEstat(int nou)`).
 
+### Trampes de simulació (provades: hi cauràs)
+
+Aquesta llista surt de muntar la mascota a Tinkercad de debò. Si el circuit
+«fa coses rares», repassa-la en ordre:
+
+1. **A0 no és el pin «0».** Les entrades analògiques són al connector
+   **ANALOG IN** (a tocar de POWER). Els pins «TX→1» i «RX→0» del connector
+   digital són el port sèrie: si hi punxes un sensor, `analogRead` llegeix
+   valors a l'aire **i** el Monitor Sèrie deixa de funcionar.
+2. **Melodia sense parar = estats canviant sense parar.** El so només sona
+   quan l'emoció canvia: si no calla, alguna lectura analògica balla al
+   voltant d'un llindar (sensor a l'aire o mal punxat). Obre el Monitor
+   Sèrie: `soroll` i `llum` han d'estar **quiets** quan no toques res.
+3. **L'ordre del divisor importa.** Potenciòmetre: extrems a 5 V i GND,
+   **central** a A0 (si l'escala et surt al revés, intercanvia els extrems).
+   LDR: la LDR a la banda de **5 V**, la de 10 kΩ a **GND** i A1 **al punt
+   del mig** — invertit dona «més llum = valor més baix».
+4. **Comprova el valor de cada resistència** (clica-la): a Tinkercad surten
+   d'1 kΩ per defecte i el desplegable d'unitats (Ω/kΩ/MΩ) enganya. Amb la
+   del divisor equivocada, `llum` no arriba mai al llindar. I no «arreglis»
+   un divisor malament dimensionat abaixant el llindar al codi: al muntatge
+   real et tornaria a passar.
+5. **Polsador de 4 potes: cables en diagonal.** Les potes del mateix costat
+   estan unides per dins; en diagonal travesses sempre l'interruptor de
+   debò. I recorda: prémer «carícia» quan la mascota **ja està** contenta no
+   fa res visible — prova-la des d'ESPANTAT.
+6. **PIR: mira els tooltips, no els colors.** Passa el ratolí per cada pota
+   (Signal / Power / Ground) abans de cablejar: l'ordre no és el que sembla.
+   Per disparar-lo, **arrossega la boleta creuant el con** de detecció. I no
+   esperis números: el PIR és **binari** (moviment sí/no), no mesura
+   distància — això és feina de l'ultrasons de SA3.
+
+> 🤫 **Secret de la mascota (descobert simulant):** si dorm a les fosques,
+> el PIR **no** la desperta — les reaccions es comproven per **prioritat**
+> (soroll > foscor > presència) i, mentre és fosc, la regla del son «mana» i
+> es queda l'estímul. En canvi, un **soroll fort sí** que la desperta,
+> perquè va abans a la llista. No és cap error: és la gràcia de l'ordre de
+> les regles — quan programis les teves, tria conscientment quina mana.
+
+## 🧗 Si t'encalles: l'esquelet del programa
+
+Si en ajuntar els reptes de SA2 i SA3 no sabeu per on començar, partiu
+d'aquest esquelet. L'estructura ja hi és: pins, estats, `setup()`, `loop()` i
+les funcions de llum i so de SA2. La vostra feina són els `// TODO`: les
+**reaccions dels sensors** (mètode SA3: llegir → comparar amb un llindar →
+decidir) i la **personalitat de cada emoció** (colors i melodies coherents
+amb el caràcter que heu triat). El primer cas de cada funció ja està resolt
+com a exemple. Compila tal qual; la mascota només s'espantarà fins que
+completeu la resta.
+
+<details markdown="1">
+<summary>Desplega l'esquelet (còpia'l a un sketch nou)</summary>
+
+```cpp
+/*
+  Projecte T1 - La mascota reactiva (ESQUELET per comencar)
+
+  L'estructura ja esta muntada: pins, estats, setup(), loop() i les funcions
+  de llum i so (les vas fer a SA2). Tu has d'OMPLIR els // TODO:
+    - les reaccions dels sensors a llegeixSensors() (metode SA3: llegir ->
+      comparar amb un llindar -> decidir),
+    - i la personalitat de cada emocio a canviaEmocio() (colors i melodies).
+  El primer cas de cada funcio ja esta resolt com a exemple.
+
+  Compila tal qual; la mascota nomes s'espantara fins que completis la resta.
+  Cablatge: el de l'apartat Cablatge d'aquest dossier.
+  Per simular-ho a Tinkercad: treu les 3 linies marcades amb [DHT] i recorda
+  les substitucions de l'apartat de Tinkercad (potenciometre a A0, LDR a A1).
+*/
+
+#include <Adafruit_NeoPixel.h>
+#include <DHT.h>              // [DHT]
+
+// --- Pins (taula de cablatge del dossier) ---
+const int PIN_NEOPIXEL = 6;   // ulls (tira WS2812B)
+const int PIN_RGB_R = 9;      // LED RGB indicador d'humor
+const int PIN_RGB_G = 10;
+const int PIN_RGB_B = 11;
+const int PIN_BRUNZIDOR = 8;
+const int PIN_PIR = 2;        // nas (presencia)
+const int PIN_POLSADOR = 3;   // caricia (pull-up intern)
+const int PIN_DHT = 4;        // temperatura/humitat (extra)
+const int PIN_MICROFON = A0;  // soroll
+const int PIN_LLUM = A1;      // TEMT6000 (foscor)
+
+// --- Ajustos que heu de calibrar amb el Monitor serie obert ---
+const int NUM_LEDS = 8;            // LEDs de la vostra tira dels ulls
+const int LLINDAR_SOROLL = 600;    // 0-1023: per sobre = espant
+const int LLINDAR_FOSCOR = 150;    // 0-1023: per sota = son
+const unsigned long TEMPS_CALMA = 8000;  // ms sense estimuls per calmar-se
+
+Adafruit_NeoPixel ulls(NUM_LEDS, PIN_NEOPIXEL, NEO_GRB + NEO_KHZ800);
+DHT dht(PIN_DHT, DHT11);      // [DHT]
+
+// --- Estats de la mascota (const int, no enum: vegeu l'avis de Tinkercad) ---
+// TODO: canvieu els noms si el vostre personatge te altres emocions,
+//       i afegiu-ne si en voleu mes (minim 3 comportaments sensor->resposta).
+const int CONTENT = 0;
+const int ESPANTAT = 1;
+const int ADORMIT = 2;
+const int CURIOS = 3;
+int emocio = CONTENT;
+unsigned long tUltimEstimul = 0;
+unsigned long tUltimPolsador = 0;   // debounce de la caricia
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(PIN_PIR, INPUT);
+  pinMode(PIN_POLSADOR, INPUT_PULLUP);
+  pinMode(PIN_RGB_R, OUTPUT);
+  pinMode(PIN_RGB_G, OUTPUT);
+  pinMode(PIN_RGB_B, OUTPUT);
+  pinMode(PIN_BRUNZIDOR, OUTPUT);
+  ulls.begin();
+  dht.begin();                // [DHT]
+}
+
+void loop() {
+  llegeixSensors();
+
+  // Si fa estona que no passa res, torna a l'estat de calma
+  if (emocio != ADORMIT && millis() - tUltimEstimul > TEMPS_CALMA) {
+    canviaEmocio(CONTENT);
+  }
+  delay(50);
+}
+
+// --- Reaccions sensor->resposta (aqui va la vostra feina de SA3) ---
+void llegeixSensors() {
+  int soroll = analogRead(PIN_MICROFON);
+  int llum = analogRead(PIN_LLUM);
+
+  // Traca per calibrar els llindars: obre el Monitor serie a 9600
+  Serial.print("soroll="); Serial.print(soroll);
+  Serial.print(" llum="); Serial.println(llum);
+
+  // EXEMPLE RESOLT - reaccio 1: soroll fort -> ESPANTAT
+  if (soroll > LLINDAR_SOROLL) {
+    canviaEmocio(ESPANTAT);
+    return;   // un estimul per volta: la primera reaccio que salta mana
+  }
+
+  // TODO reaccio 2: si es fa fosc (llum per sota del llindar) -> ADORMIT.
+  //      I quan torni la llum? Decidiu que fa en despertar-se.
+
+  // TODO reaccio 3: si el PIR detecta algu (digitalRead HIGH) -> saludeu.
+
+  // TODO extra: caricia al polsador (LOW, es pull-up) -> calmar la mascota.
+  //      Recordeu el debounce amb millis() i tUltimPolsador (SA3).
+
+  // TODO extra [DHT]: si dht.readTemperature() passa d'un llindar, la
+  //      mascota "te calor" -> estat nou? Decidiu-ho segons el personatge.
+}
+
+// --- Transicio d'estat: llums + so nomes quan CANVIA l'emocio ---
+void canviaEmocio(int nova) {
+  if (nova == emocio) return;   // si ja hi es, no repeteix llums ni so
+  emocio = nova;
+  tUltimEstimul = millis();
+  switch (emocio) {
+    // EXEMPLE RESOLT: aixi es defineix la personalitat d'un estat
+    case CONTENT:
+      mostraUlls(0, 180, 40);      // ulls verd calid
+      colorHumor(0, 255, 0);
+      melodia(523, 659, 784);      // do-mi-sol (alegre)
+      break;
+    case ESPANTAT:
+      // TODO: quins colors i quin so fa el VOSTRE personatge espantat?
+      break;
+    case ADORMIT:
+      // TODO
+      break;
+    case CURIOS:
+      // TODO
+      break;
+  }
+}
+
+// --- Llum i so (fetes a SA2: aprofiteu-les tal qual) ---
+void mostraUlls(int r, int g, int b) {
+  for (int i = 0; i < NUM_LEDS; i++) {
+    ulls.setPixelColor(i, ulls.Color(r, g, b));
+  }
+  ulls.show();
+}
+
+void colorHumor(int r, int g, int b) {
+  analogWrite(PIN_RGB_R, r);
+  analogWrite(PIN_RGB_G, g);
+  analogWrite(PIN_RGB_B, b);
+}
+
+// Tres notes seguides (freq. en Hz; 0 = silenci)
+void melodia(int n1, int n2, int n3) {
+  int notes[3] = {n1, n2, n3};
+  for (int i = 0; i < 3; i++) {
+    if (notes[i] > 0) tone(PIN_BRUNZIDOR, notes[i], 120);
+    delay(150);
+  }
+  noTone(PIN_BRUNZIDOR);
+}
+```
+
+</details>
+
 ## Què hi aporta cada SA
 
 | SA | Sessions | Què s'hi construeix | Repte relacionat |
