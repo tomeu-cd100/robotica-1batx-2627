@@ -163,8 +163,15 @@ són (i la llibreria `Adafruit_NeoPixel` ve inclosa al mode text).
 
 > ⚠️ Enganxa sempre el **programa sencer** a l'editor de text de Tinkercad,
 > no blocs solts: un fragment sense les declaracions de dalt (pins,
-> constants, `enum`) dona errors del tipus `'...' was not declared in this
+> constants…) dona errors del tipus `'...' was not declared in this
 > scope`.
+
+> ⚠️ **Tinkercad i els `enum`:** si una funció teva rep un `enum` com a
+> paràmetre (p. ex. `void canviaEstat(Estat nou)`), Tinkercad dona l'error
+> `'Estat' was not declared in this scope` encara que el codi sigui
+> correcte (i compili bé a l'IDE d'Arduino). És un defecte del seu
+> compilador. Solució: fes servir **`const int`** per als estats i passa'ls
+> com a `int` (`void canviaEstat(int nou)`).
 
 ## Què hi aporta cada SA
 

@@ -155,9 +155,14 @@ void loop(){
 > ⚠️ **Els blocs d'aquesta pàgina són extractes explicats, no el programa
 > sencer**: si s'enganxen solts a un editor donen errors `'...' was not
 > declared in this scope`. Per compilar, fes servir sempre el fitxer complet
-> de l'enllaç de dalt. I per **simular-ho a Tinkercad** (que no té micròfon,
-> TEMT6000 ni la llibreria `DHT`): potenciòmetre a A0, LDR a A1 i fora les
-> línies del DHT11 — detall a l'apartat «Simular la mascota a Tinkercad» del
+> de l'enllaç de dalt. I per **simular-ho a Tinkercad** no serveix ni el
+> fitxer complet (Tinkercad no té la llibreria `DHT` i el seu preprocessador
+> no tolera un `enum` com a paràmetre de funció): fes servir la variant ja
+> adaptada
+> [`T1_mascota_tinkercad.ino`](https://github.com/tomeu-cd100/robotica-1batx-2627/blob/main/Classes/Solucionari/codi/T1_mascota_tinkercad/T1_mascota_tinkercad.ino)
+> (sense DHT11, estats amb `const int`, potenciòmetre a A0 per micròfon i
+> LDR a A1 per TEMT6000) — context a l'apartat «Simular la mascota a
+> Tinkercad» del
 > [dossier](../00_General/00_Projecte_T1_Mascota.md#simular-la-mascota-a-tinkercad).
 
 ### Pins i cablatge
