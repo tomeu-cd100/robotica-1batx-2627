@@ -26,6 +26,10 @@ Comprova (i falla amb exit != 0 si troba res):
      (pàgina de pràctica a la web) i no queda cap sketch *_BASTIDA solt.
  14. Projectes trimestrals: cada projecte de generar.PROJECTES té la seva
      portada a Classes/00_General i la portada enllaça el seu dossier.
+ 15. Codi incrustat als solucionaris: cada desplegable «Desplega el codi
+     complet (<code>fitxer</code>…)» ha de ser una còpia exacta del fitxer
+     de Classes/Solucionari/codi/ (si el sketch canvia, cal actualitzar
+     el bloc del .md).
 
 Abans de res (punt 0) comprova que els paquets del generador (markdown,
 pygments) estan instal·lats: sense ells els punts 6 i 8 petarien a mig camí.
@@ -479,6 +483,41 @@ def comprova_projectes_trimestrals() -> None:
     print(f"14) Projectes trimestrals: {len(g.PROJECTES)} portades, {fallats} incoherències.")
 
 
+# --- 15 · Codi incrustat als solucionaris sincronitzat amb el fitxer font ----
+RE_CODI_INCRUSTAT = re.compile(
+    r"<summary>Desplega el codi complet \(<code>([^<]+)</code>[^<]*</summary>\s*"
+    r"\n```\w*\n(.*?)\n```", re.S)
+
+
+def comprova_codi_incrustat() -> None:
+    """Els solucionaris incrusten el codi complet dels robots trimestrals en
+    un <details> perquè es pugui llegir sense sortir de la pàgina. El fitxer
+    de veritat és el de Classes/Solucionari/codi/ (el compila el CI): si els
+    dos divergeixen, la web ensenyaria un codi que no és el provat."""
+    base_codi = ARREL / "Classes" / "Solucionari" / "codi"
+    total = 0
+    fallats = 0
+    for md in sorted((ARREL / "Classes" / "Solucionari").glob("*.md")):
+        text = md.read_text(encoding="utf-8")
+        for m in RE_CODI_INCRUSTAT.finditer(text):
+            nom, bloc = m.group(1).strip(), m.group(2)
+            total += 1
+            font = base_codi / Path(nom).stem / nom
+            if not font.exists():
+                errors.append(f"[codi-incrustat] {md.relative_to(ARREL)}: el "
+                              f"desplegable diu «{nom}» però no existeix "
+                              f"{font.relative_to(ARREL)}")
+                fallats += 1
+                continue
+            if bloc.rstrip() != font.read_text(encoding="utf-8").rstrip():
+                errors.append(f"[codi-incrustat] {md.relative_to(ARREL)}: el "
+                              f"bloc del desplegable no coincideix amb "
+                              f"{font.relative_to(ARREL)} (copia-hi el fitxer "
+                              f"sencer actualitzat)")
+                fallats += 1
+    print(f"15) Codi incrustat: {total} desplegables, {fallats} desincronitzats.")
+
+
 # --- 11 · Enllaços externs (OPT-IN: QA_ENLLACOS_EXTERNS=1) ---------------------
 RE_URL_EXTERN = re.compile(r"https?://[^\s)\"'<>\]]+")
 DOMINIS_IGNORATS = (
@@ -565,6 +604,7 @@ def main() -> int:
     comprova_lliurables()
     comprova_explicacions()
     comprova_projectes_trimestrals()
+    comprova_codi_incrustat()
     for a in avisos:
         print(f"⚠️  {a}")
     if errors:
