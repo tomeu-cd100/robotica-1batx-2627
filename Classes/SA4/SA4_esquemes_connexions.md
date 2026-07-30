@@ -55,7 +55,7 @@
 
 ![Captura de Tinkercad: Arduino UNO amb el xip L293D; senyals als pins 8 (taronja), 7 (verd) i 5~ (cian), cable vermell del 5 V de la placa a VCC1, motor DC a les sortides del xip i pila de 9 V amb el positiu a VCC2 i el negatiu unit al GND de l'Arduino (massa comuna)](img/sa4-tinkercad-motor-pont-h.png)
 
-▶ **Obre la simulació a Tinkercad** (pots fer *Copy and Tinker* per modificar-la): <https://www.tinkercad.com/things/1YK0190RWyx-frantic-uusam?sharecode=cOGf37CfyJpL0QQMgr96N_um7FE44uY_b6kexNjqEOI>
+▶ **Obre la simulació a Tinkercad** (pots fer *Copy and Tinker* per modificar-la): <https://www.tinkercad.com/things/1YK0190RWyx-sa4-practica-2-motor-dc-i-pont-h?sharecode=cOGf37CfyJpL0QQMgr96N_um7FE44uY_b6kexNjqEOI>
 
 ---
 
