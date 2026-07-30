@@ -9,6 +9,7 @@
 ## 1. Servo controlat per potenciòmetre (`01_servo_potenciometre.ino`)
 
 **Servo SG90:**
+
 | Cable servo | Cap a |
 |---|---|
 | Marró/negre (GND) | GND |
