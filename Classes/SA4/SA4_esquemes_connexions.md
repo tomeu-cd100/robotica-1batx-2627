@@ -53,6 +53,10 @@
 
 > ⚠️ Tres errors típics amb el L293D: (1) oblidar el **5 V a la pota 16** — el xip té dues alimentacions, no una; (2) punxar el motor a OUT3/OUT4 (costat dret) mentre controles IN1/IN2 (costat esquerre) — motor i senyals han d'anar al **mateix costat** del xip; (3) comptar les potes amb el xip girat — l'**osca** (mitja lluna) marca on és la pota 1. A Tinkercad, passa el ratolí per sobre de cada pota per veure'n el nom.
 
+![Captura de Tinkercad: Arduino UNO amb el xip L293D; senyals als pins 8 (taronja), 7 (verd) i 5~ (cian), cable vermell del 5 V de la placa a VCC1, motor DC a les sortides del xip i pila de 9 V amb el positiu a VCC2 i el negatiu unit al GND de l'Arduino (massa comuna)](img/sa4-tinkercad-motor-pont-h.png)
+
+▶ **Obre la simulació a Tinkercad** (pots fer *Copy and Tinker* per modificar-la): <https://www.tinkercad.com/things/1YK0190RWyx-frantic-uusam?sharecode=cOGf37CfyJpL0QQMgr96N_um7FE44uY_b6kexNjqEOI>
+
 ---
 
 ## 3. Sensor regula velocitat (`03_sensor_velocitat.ino`)
