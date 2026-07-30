@@ -39,6 +39,20 @@
 
 ![Motor DC amb pont H L298N: l'Arduino controla ENA (pin 5, velocitat PWM), IN1 (pin 7) i IN2 (pin 8, direcció); el motor va a OUT1 i OUT2; les piles alimenten +12V; i el GND de l'Arduino, el de les piles i el del L298N s'uneixen en una massa comuna](img/sa4-pont-h-l298n.svg)
 
+**Variant Tinkercad (xip L293D):** Tinkercad no té el mòdul L298N; fes servir el xip **L293D** (encapsulat de 16 potes). El codi és exactament el mateix — només canvia on van a parar els cables:
+
+| L293D (pota) | Cap a |
+|---|---|
+| 1 · EN1,2 | Pin 5 ~ Arduino (velocitat PWM, fa el paper d'ENA) |
+| 2 · IN1 | Pin 7 |
+| 7 · IN2 | Pin 8 |
+| 3 · OUT1 i 6 · OUT2 | Bornes del motor |
+| 8 · VCC2 (potència del motor) | + de la pila de 9 V |
+| 16 · VCC1 (lògica) | **5 V de l'Arduino** (sense això el xip no fa res!) |
+| 4, 5, 12, 13 · GND | − de la pila **i** GND de l'Arduino (massa comuna) |
+
+> ⚠️ Tres errors típics amb el L293D: (1) oblidar el **5 V a la pota 16** — el xip té dues alimentacions, no una; (2) punxar el motor a OUT3/OUT4 (costat dret) mentre controles IN1/IN2 (costat esquerre) — motor i senyals han d'anar al **mateix costat** del xip; (3) comptar les potes amb el xip girat — l'**osca** (mitja lluna) marca on és la pota 1. A Tinkercad, passa el ratolí per sobre de cada pota per veure'n el nom.
+
 ---
 
 ## 3. Sensor regula velocitat (`03_sensor_velocitat.ino`)
