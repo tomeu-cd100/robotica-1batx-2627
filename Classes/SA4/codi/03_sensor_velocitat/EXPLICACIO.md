@@ -50,7 +50,9 @@ Dos detalls d'enginyer que val la pena copiar:
   }
 ```
 
-Abans de calcular res: si la distància és per sota del llindar (`SEGURETAT = 10` cm), **atura**. La seguretat sempre es comprova primer i té la seva pròpia branca — no es barreja amb el càlcul de velocitat.
+Pensa en com creues un carrer: **primer mires si ve un cotxe, i si ve, ni un pas més**. No et poses a calcular a quina velocitat podries creuar — t'atures i punt. El codi fa el mateix: abans de calcular cap velocitat, una sola pregunta — *és més a prop de 10 cm?* (`SEGURETAT = 10`) — i si la resposta és sí, `atura()` i no es parla més.
+
+Fixa't que la seguretat té la seva **pròpia branca** del `if`, separada del càlcul de velocitat. No es barregen mai: primer decideixes si és segur moure's, i només llavors decideixes com de ràpid. Aquest ordre — seguretat primer, càlcul després — el veuràs a tots els robots del curs.
 
 ### Bloc 3 — Reescalar distància a velocitat
 
@@ -61,12 +63,14 @@ Abans de calcular res: si la distància és per sota del llindar (`SEGURETAT = 1
     endavant(vel);
 ```
 
-El cor de la pràctica: `map()` converteix el rang de distàncies (10–50 cm) en el rang de velocitats (80–255). Com més a prop, més lent. Dues preguntes que el codi respon:
+Aquí hi ha el cor de la pràctica, i la idea és ben senzilla: **com més a prop de la paret, més a poc a poc**. El problema és que la distància i la velocitat parlen "idiomes" diferents — la distància va de 10 a 50 cm i la velocitat del motor de 80 a 255. Necessitem un **traductor**, i això és exactament `map()`: li dius "quan la distància sigui 10, vull velocitat 80; quan sigui 50, vull 255" i ell tradueix qualsevol valor del mig. A 30 cm (mig camí de les distàncies) et dona una velocitat a mig camí. És la regla de tres que fas a mates, empaquetada en una funció.
 
-- **Per què el mínim és 80 i no 0?** Perquè amb PWM molt baix el motor **brunzeix però no gira** (no venç el fregament). 80 és la velocitat mínima útil.
-- **Per què `constrain()`?** `map()` **extrapola**: amb d = 80 cm et donaria una velocitat per sobre de 255. `constrain(vel, 80, 255)` retalla el resultat perquè no surti mai del rang vàlid. La parella `map` + `constrain` la veuràs sempre juntes.
+Dues preguntes que segur que et faràs:
 
-I fixa't que `endavant(vel)` és la funció de la Pràctica 2, reciclada tal qual.
+- **Per què el mínim és 80 i no 0?** Prova-ho: amb velocitats molt baixes el motor **brunzeix però no es mou** — no té prou força per vèncer el fregament, com quan intentes arrencar amb bici en el pinyó més dur. 80 és la primera velocitat que fa girar el motor de veritat.
+- **Per què `constrain()` just després?** Perquè `map()` és un traductor massa obedient: si li arriba una distància de 80 cm (fora del rang que li vas dir), tradueix igualment i et dona una velocitat **més gran que 255** — que no existeix. `constrain(vel, 80, 255)` fa de topall: "passi el que passi, mai per sota de 80 ni per sobre de 255". Per això `map` i `constrain` van sempre de parella.
+
+I fixa't en el premi final: `endavant(vel)` és la funció que vas escriure a la Pràctica 2, reciclada tal qual. Les funcions ben fetes es tornen a fer servir sense tocar-les.
 
 ### Bloc 4 — El monitor sèrie com a finestra
 
@@ -75,7 +79,9 @@ I fixa't que `endavant(vel)` és la funció de la Pràctica 2, reciclada tal qua
   Serial.println(d);
 ```
 
-Sense el `Serial.println(d)` aniries a cegues: *frena perquè és a prop o perquè el sensor llegeix malament?* Amb el monitor sèrie obert (9600 bauds) veus la distància en temps real i pots omplir la taula distància→velocitat del quadern amb dades de veritat.
+L'Arduino no té pantalla: treballa "en silenci" i tu no saps què està veient. El `Serial.println(d)` és com fer-li dir en veu alta el que llegeix el sensor: cada mesura de distància s'envia pel cable USB i apareix al **monitor sèrie** de l'ordinador, en temps real.
+
+Per què és tan important? Imagina que el motor frena: *frena perquè hi ha un obstacle a prop, o perquè el sensor llegeix malament?* Sense el monitor sèrie no ho pots saber — vas a cegues. Amb el monitor obert (a 9600 bauds, la mateixa "velocitat de conversa" que el `Serial.begin` del `setup()`) veus els números que veu l'Arduino, i pots omplir la taula distància→velocitat del quadern amb dades de veritat, no amb suposicions.
 
 ## ⚠️ Errors que veuràs segur
 
