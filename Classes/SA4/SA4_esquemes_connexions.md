@@ -70,6 +70,10 @@ Igual que el muntatge 2 **+** sensor d'ultrasons:
 
 > La resta és com el muntatge 2 (pont H + motor + massa comuna). El sensor d'ultrasons es connecta com a la SA3.
 
+![Captura de Tinkercad: el muntatge del motor amb el xip L293D de la pràctica 2 més el sensor HC-SR04 de 4 potes; TRIG al pin 12 (cable taronja), ECHO al pin 11 (cable verd), VCC del sensor al 5 V i GND al GND pels carrils de la protoboard](img/sa4-tinkercad-sensor-velocitat.png)
+
+▶ **Obre la simulació a Tinkercad** (pots fer *Copy and Tinker* per modificar-la): <https://www.tinkercad.com/things/f9fDLDlCYFB-sa4-practica-3-del-sensor-al-moviment?sharecode=FStYfzag9z_QXOcLOy5IaBwlAf1yQ-cGMPcKX2Z_K1w>
+
 ---
 
 ## 4. Barrera automàtica (`04_barrera_automatica.ino`)

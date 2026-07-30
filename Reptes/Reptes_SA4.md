@@ -99,6 +99,18 @@
 
 ---
 
+## ⚡ Repte exprés · El traductor de distàncies *(no compta com el teu repte — és un escalfament de 10 minuts)*
+
+Obre la [simulació de la Pràctica 3 a Tinkercad](https://www.tinkercad.com/things/f9fDLDlCYFB-sa4-practica-3-del-sensor-al-moviment?sharecode=FStYfzag9z_QXOcLOy5IaBwlAf1yQ-cGMPcKX2Z_K1w) i arrossega la boleta del sensor: veuràs que **a partir de 51 cm el motor ja va a tope** i el canvi de velocitat només es nota en un tram petit del con.
+
+1. **Investiga:** troba al codi **el número que ho decideix** (pista: mira els quatre paràmetres de `map()` al Bloc 3 de l'[explicació](../Classes/SA4/codi/03_sensor_velocitat/EXPLICACIO.md)).
+2. **Modifica:** fes que el gradient de velocitat s'estengui **fins a 2 metres** — la velocitat ha de pujar suaument durant gairebé tot el recorregut de la boleta.
+3. **Comprova:** amb el monitor sèrie obert, verifica que a ~10 cm va al mínim, a ~1 m a mig gas i a 2 m a tope.
+
+*(Per què el mínim és 80 i no 0? Ho tens al Bloc 3 de l'explicació. Si canvies el 50 i no passa res… segur que has canviat el del `constrain()`? Rellegeix quin fa cada feina.)*
+
+---
+
 ## 🎨 Fes-lo teu (tria abans de començar)
 
 > El repte fixa **què** ha de fer el sistema; **el context el poses tu**. Tria i anota-ho al quadern:

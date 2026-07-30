@@ -46,6 +46,17 @@ void loop(){
 }
 ```
 
+### Repte exprés: el traductor de distàncies (estendre el rang del `map()`)
+
+El número que ho decideix és el **50** del `map()` (límit superior del rang d'entrada, en cm). Per estendre el gradient fins a 2 m:
+
+```cpp
+int vel = map((int)d, SEGURETAT, 200, 80, 255);  // abans: ..., 50, 80, 255
+vel = constrain(vel, 80, 255);                   // aquest NO es toca: retalla la sortida (80..255)
+```
+
+Error esperable de l'alumnat: canviar el 50… del `constrain()` (que no en té cap) o tocar el 255 pensant que és la distància. El `map()` tradueix el rang d'**entrada** (cm) al de **sortida** (PWM); el `constrain()` només posa topalls a la sortida.
+
 ### + Repte: dos servos coordinats
 ```cpp
 #include <Servo.h>
