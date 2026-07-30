@@ -29,12 +29,18 @@ float mesuraDistancia() {
 }
 ```
 
-A la Pràctica 2 les funcions **feien** coses (`endavant`); aquesta a més **retorna** un resultat: el `float` (número amb decimals) de la distància en cm. Per això comença amb `float` i no amb `void`, i acaba amb `return`.
+Primer, la idea física, que és la de sempre a la muntanya: **crides, esperes l'eco, i comptes quant triga a tornar**. Com més triga, més lluny és la paret. El sensor d'ultrasons fa exactament això, però amb un so tan agut que no el sentim:
+
+1. **El crit** — les tres primeres línies: posem `TRIG` a `HIGH` durant 10 microsegons. Això és l'ordre "fes el crit ara".
+2. **El cronòmetre** — `pulseIn(ECHO, HIGH, 30000)`: l'Arduino es queda escoltant el pin `ECHO` i ens diu **quants microsegons** ha trigat l'eco a tornar. Aquest temps queda desat a la variable `t`.
+3. **La conversió** — `t * 0.034 / 2.0`: el so viatja a 0,034 cm per microsegon, així que multipliquem el temps per la velocitat… i **dividim per 2**, perquè el so ha fet el viatge **d'anada i tornada** (fins a la paret i de retorn) i només volem l'anada.
+
+I ara la novetat de programació. A la Pràctica 2 les funcions **feien** coses i callaven (`endavant` movia el motor i prou — per això començaven amb `void`, "res"). Aquesta funció és diferent: li fas una pregunta — *"a quina distància és l'obstacle?"* — i **et contesta amb un número**. D'això en diem **retornar un valor**: per això comença amb `float` (número amb decimals, el tipus de resposta) i acaba amb `return` (el moment de contestar).
 
 Dos detalls d'enginyer que val la pena copiar:
 
-- `pulseIn(..., 30000)` té un **timeout**: si en 30 ms no arriba eco, plega i retorna 0 en lloc de quedar-se penjat esperant.
-- `if (t == 0) return 400;` — sense eco, la funció **menteix a favor de la seguretat del comportament**: diu "400 cm, via lliure" perquè un sensor desconnectat no deixi el motor clavat per error. Decidir què fer quan una mesura falla és disseny, no detall.
+- **I si l'eco no torna mai?** (sensor desconnectat, obstacle massa lluny…) Sense pla B, l'Arduino es quedaria esperant per sempre. El `30000` de `pulseIn` és un **timeout**: "espera com a màxim 30 ms; si no ha arribat res, plega i retorna 0".
+- `if (t == 0) return 400;` — quan no hi ha eco, la funció respon "400 cm, via lliure". Per què no 0? Perquè 0 cm voldria dir "paret enganxada al nas!" i el motor frenaria en sec per culpa d'un sensor mut. Decidir què fer quan una mesura falla és disseny, no detall.
 
 ### Bloc 2 — La decisió de seguretat
 
