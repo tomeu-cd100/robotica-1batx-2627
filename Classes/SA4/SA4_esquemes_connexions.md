@@ -20,6 +20,10 @@
 
 ![El potenciòmetre (entrada, cursor a A0) marca la posició; l'Arduino la converteix i envia el senyal pel pin 9 al servo, que gira de 0 a 180 graus](img/sa4-servo-potenciometre.svg)
 
+![Captura de Tinkercad: Arduino UNO amb el potenciòmetre a la protoboard (extrems als carrils de 5 V i GND, cursor a A0) i el microservo SG90 connectat fora de la placa: senyal taronja al pin 9~, alimentació vermella i negra als carrils de 5 V i GND](img/sa4-tinkercad-servo-potenciometre.png)
+
+▶ **Obre la simulació a Tinkercad** (pots fer *Copy and Tinker* per modificar-la): <https://www.tinkercad.com/things/dVZLRyR1UDN-sa4-servo-amb-potenciometre-posicio-amb-una-llibreria?sharecode=5KXEzbtaibn7wJtSscbtm_MyxRrX9pmtmsQFqcmA0YY>
+
 ---
 
 ## 2. Motor DC amb pont H L298N (`02_motor_pont_h.ino`)
