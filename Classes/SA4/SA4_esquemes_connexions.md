@@ -92,6 +92,21 @@ Igual que el muntatge 2 **+** sensor d'ultrasons:
 
 ---
 
+## 5. Dos LEDs amb `millis()` (`05_dos_leds_millis.ino`)
+
+| Pin | Component | Via | Cap a |
+|---|---|---|---|
+| 7 | LED A (canvia cada 250 ms) | 220 Ω | GND |
+| 8 | LED B (canvia cada 1000 ms) | 220 Ω | GND |
+
+> Muntatge lliure i senzill: dos LEDs qualssevol amb la seva resistència. Tota la gràcia d'aquesta pràctica és al codi, no al circuit.
+
+![Captura de Tinkercad: Arduino UNO amb dos LEDs a la protoboard, un vermell al pin 8 i un verd al pin 7, cadascun amb la seva resistència de 220 Ω i el càtode al carril de GND](img/sa4-tinkercad-dos-leds-millis.png)
+
+▶ **Obre la simulació a Tinkercad** (pots fer *Copy and Tinker* per modificar-la): <https://www.tinkercad.com/things/9vSTev6oC06-sa4-practica-5-dues-coses-alhora-millis-en-lloc-de-delay?sharecode=umOHAjUgT2UxPQMBssbz_4-JeBMwQZ8khRDo1uDXdqY>
+
+---
+
 ## Simulació interactiva (Wokwi)
 
 - ▶ **Simulació (Servo controlat amb potenciòmetre):** <https://wokwi.com/projects/468088128427008001>
