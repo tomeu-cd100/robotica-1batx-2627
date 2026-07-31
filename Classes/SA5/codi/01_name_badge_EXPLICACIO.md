@@ -12,6 +12,10 @@ Posa'l al costat d'un sketch d'Arduino i compara'ls: la idea és la mateixa (un 
 
 Mira el codi complet (a baix de tot, plegat) **sense executar-lo**. Què mostrarà la matriu quan no toquis res? I si mantens premut el botó A? I el B? Escriu la predicció a l'Activitat 1 de la [fitxa](../SA5_fitxa_alumnat.md) i comprova-la al [simulador](https://python.microbit.org) o a la placa.
 
+![Captura del simulador de python.microbit.org: la micro:bit virtual mostra un cor a la matriu de LED — l'estat de repòs del name badge. Els botons A i B es poden clicar amb el ratolí per provar les altres dues branques](../img/sa5-simulador-name-badge.png)
+
+Així es veu al **simulador** una de les tres branques (quina? — si has fet la predicció, ja ho saps). Els botons A i B de la placa virtual **es cliquen amb el ratolí**: pots comprovar les tres respostes sense cap maquinari.
+
 ## 🧠 El codi, per blocs
 
 ### Bloc 1 — Una sola línia per tenir-ho tot
