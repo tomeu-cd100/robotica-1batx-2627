@@ -12,6 +12,10 @@ I és el programa amb l'estructura més pura de la sessió: **llegir un sensor, 
 
 Sense executar el codi (a baix, plegat): què veuràs a la matriu amb la llum de l'aula? I si **tapes la placa amb la mà**? Hi ha algun valor de llum on el comportament sigui dubtós? Apunta les prediccions a l'Activitat 2 de la [fitxa](../SA5_fitxa_alumnat.md) i comprova-les.
 
+![Fotografia d'una micro:bit real amb el llum de nit activat: la matriu de LED mostra el quadrat encès perquè el sensor detecta poca llum](../img/sa5-foto-nightlight.jpg)
+
+Així es veu **a la placa real** quan detecta foscor: el quadrat encès (`Image.SQUARE`). I aquí la volta màgica de la pràctica: els mateixos LED que estàs veient encesos són el **sensor** que ha decidit encendre'ls — la matriu mesura i il·lumina alhora.
+
 ## 🧠 El codi, per blocs
 
 ### Bloc 1 — El llindar
