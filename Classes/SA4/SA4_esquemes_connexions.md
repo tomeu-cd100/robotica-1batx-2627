@@ -86,6 +86,10 @@ Igual que el muntatge 2 **+** sensor d'ultrasons:
 
 > Combina el servo (apartat 1) amb el sensor d'ultrasons (pin 12/11) i un LED indicador bàsic (pin 8).
 
+![Captura de Tinkercad: Arduino UNO amb el sensor HC-SR04 a la protoboard (TRIG al pin 12 amb cable verd, ECHO al pin 11 amb cable cian, VCC i GND als carrils de 5 V i GND), un LED vermell amb resistència de 220 Ω al pin 8 i el microservo SG90 fora de la placa fent de barrera: senyal taronja al pin 9~ i alimentació als carrils](img/sa4-tinkercad-barrera-automatica.png)
+
+▶ **Obre la simulació a Tinkercad** (pots fer *Copy and Tinker* per modificar-la): <https://www.tinkercad.com/things/aOBeOffY2Sn-sa4-practica-4-producte-la-barrera-automatica?sharecode=XLpngNberIAP7pyPJFsS0Xa6UEjcMGXWUWamfxGJDeU>
+
 ---
 
 ## Simulació interactiva (Wokwi)
