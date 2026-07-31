@@ -35,7 +35,32 @@
 
 ## SESSIÓ 1 (2 h) — Què és un sistema de control?
 
-> 🔄 **Reentrada a C++ (abans de la sessió):** l'alumnat porta 3 setmanes en Python (SA5) i avui torna a C++. La targeta [`00_Repas_expres_Cpp.md`](../00_General/00_Repas_expres_Cpp.md) s'ha repartit com a deures al tancament de la SA5 S3. Dedica **5' de l'activació** a un «C++ flash»: projecta 2-3 línies de Python (`if t > 28:`) i demana traduir-les en veu alta a C++ (parèntesis, claus, `;`). Qui falli l'autotest de la targeta: derivar a `SA0_guia_programacio.md` Part A abans de la S2.
+> 🔄 **Reentrada a C++ (abans de la sessió):** l'alumnat porta 3 setmanes en Python (SA5) i avui torna a C++. La targeta [`00_Repas_expres_Cpp.md`](../00_General/00_Repas_expres_Cpp.md) s'ha repartit com a deures al tancament de la SA5 S3. Dedica **5' de l'activació** al «C++ flash» de sota. Qui falli l'autotest de la targeta: derivar a `SA0_guia_programacio.md` Part A abans de la S2.
+>
+> **Guió del «C++ flash» (5', oral i col·lectiu).** Projecta el nucli del llum de nit de la SA5 ([`03_nightlight.py`](../SA5/codi/03_nightlight.py)) — l'han escrit ells fa dues setmanes — i demana traduir-lo **en veu alta** a C++ d'Arduino, línia a línia. No cal executar res: és gimnàstica de sintaxi.
+>
+> ```python
+> llum = display.read_light_level()
+> if llum < LLINDAR:
+>     display.show(Image.SQUARE)
+> else:
+>     display.clear()
+> sleep(100)
+> ```
+>
+> Preguntes en cadena (una per mà alçada): *com es declara `llum` a C++?* (tipus davant: `int`) → *d'on surt la lectura amb Arduino?* (`analogRead(A0)`) → *què li falta a l'`if` de Python perquè compili a C++?* (parèntesis, claus, i `;` a cada instrucció) → *i el `sleep(100)`?* (`delay(100)`). Resultat esperat a la pissarra:
+>
+> ```cpp
+> int llum = analogRead(A0);
+> if (llum < LLINDAR) {
+>   digitalWrite(8, HIGH);
+> } else {
+>   digitalWrite(8, LOW);
+> }
+> delay(100);
+> ```
+>
+> Remata amb la pregunta pont: *"i el `while True:` de MicroPython, on és a Arduino?"* → **és el `loop()`**: Arduino te'l dona fet. Aquest mateix patró llindar+actuador és, exactament, el termòstat que construiran a la S2 — digues-ho en veu alta: la SA6 no comença de zero, comença del llum de nit.
 
 - **Activació (10'):** *"Per què un aire condicionat no encén i apaga sense parar?"*
 - 🔭 **Referent (1', dins l'activació):** **Irmgard Flügge-Lotz**, teòrica del control discontinu (tot/res) — exactament la histèresi d'aquesta SA ([guió](../00_General/00_Referents_tecnologia.md)).
