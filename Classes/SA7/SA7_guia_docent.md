@@ -50,6 +50,31 @@ La **Imagina 3dBot** és Arduino-compatible, però **els pins dels motors depene
 ---
 
 ## SESSIÓ 1 (2 h) — Moviment i cinemàtica diferencial
+
+> 🔄 **Represa de C++ (abans de la sessió):** l'alumnat ve de les vacances de trimestre (i, amb el fil conductor, d'una sessió 0 de muntatge sense codi): l'últim programa que va escriure és de fa 3-4 setmanes. Aquí no canvia el llenguatge (SA6 i SA7 són C++): el que cal reactivar és el **patró de control de la SA6**, que aquesta SA reutilitza sobre el robot. Dedica **5' de l'activació** al «flash de trasllat» de sota. Qui no recordi la sintaxi bàsica: targeta [`00_Repas_expres_Cpp.md`](../00_General/00_Repas_expres_Cpp.md) com a deures abans de la S2.
+>
+> **Guió del «flash de trasllat» (5', oral i col·lectiu).** Projecta el nucli del termòstat de la SA6 ([`02_termostat_histeresi.ino`](../SA6/codi/02_termostat_histeresi/02_termostat_histeresi.ino)) — el seu producte de fa un mes — i demana **traduir-lo al robot** en veu alta. No es tradueix de llenguatge: es tradueix de **domini** (mateix patró, peces noves).
+>
+> ```cpp
+> int t = analogRead(SENSOR);
+> if (t > LLINDAR_ALT) {
+>   digitalWrite(SORTIDA, HIGH);   // massa calor: engega el ventilador
+> }
+> ```
+>
+> Preguntes en cadena (una per mà alçada): *al robot, què fa de sensor?* (l'ultrasons: `distancia()`, en cm) → *què fa d'actuador?* (els motors: `atura()`, `gira_dreta()`…) → *què és el llindar?* (`DIST_MIN`, p. ex. 15 cm) → *com queda l'`if`?* — atenció al canvi de signe: al termòstat el perill era **per dalt** (`>`, massa calor); al robot és **per baix** (`<`, massa a prop). Resultat esperat a la pissarra:
+>
+> ```cpp
+> float d = distancia();
+> if (d < DIST_MIN) {
+>   atura();          // obstacle a prop: reacciona
+> } else {
+>   endavant();
+> }
+> ```
+>
+> Remata amb la pregunta pont: *"on és la realimentació, aquí?"* → el sensor **decideix** el moviment: això és el **llaç tancat** de la SA6 amb rodes. Digues-ho en veu alta: l'evita-obstacles de la S3 **és el termòstat traduït al robot** — la SA7 no comença de zero, comença de la SA6.
+
 - **Activació (10'):** *"Com gira un robot que no té volant?"* → **cinemàtica diferencial** (velocitat de cada roda).
 - 🔭 **Referent (1', dins l'activació):** **Ayanna Howard**, navegació autònoma per a rovers de Mart (NASA JPL) ([guió](../00_General/00_Referents_tecnologia.md)).
 - **Modelatge (25'):** `01_moviment_basic.ino`. Ajust dels pins; funcions de moviment; per què girar = rodes a velocitats/sentits diferents.

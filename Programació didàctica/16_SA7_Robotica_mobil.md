@@ -37,7 +37,7 @@ Robòtica mòbil; xassís i rodes; **cinemàtica diferencial**; algorismes de co
 
 | Sessió | Activitats |
 |---|---|
-| **1** | Control bàsic de motors del 3dBot: funcions `endavant()`, `gira()`, `atura()`. Cinemàtica diferencial. |
+| **1** | «Flash de trasllat» de represa (5': el termòstat de SA6 traduït al domini del robot). Control bàsic de motors del 3dBot: funcions `endavant()`, `gira()`, `atura()`. Cinemàtica diferencial. |
 | **2** | **Trajectòria programada**: full de càlcul previ (perímetre de roda, velocitat, temps teòric del gir de 90° — connexió amb Matemàtiques I); recórrer un quadrat; calibratge de temps/velocitat de gir i comparació teòric↔calibrat. |
 | **3** | Comportament reactiu: **evita-obstacles** (ultrasons) o **seguidor de línia** (sensors IR). |
 | **4** | Repte de pista: completar un recorregut autònom. Proves, mesura d'errors i **iteració**. Documentació. |
