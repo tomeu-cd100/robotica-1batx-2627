@@ -23,10 +23,10 @@ Setena situació d'aprenentatge (**8 h · 4 sessions** + sessió 0 de muntatge, 
 > La teva feina és a la **[fitxa base](SA7_fitxa_alumnat.md)**. Aquesta ruta et diu què toca fer a cada sessió i què necessites en aquell moment. Les respostes de la fitxa es lliuren a la **[tasca de Classroom](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODcwNTE4MDMwMTA4/details)**.
 
 0. **Sessió 0 · Muntatge del rover** — abans de començar, la teva parella construeix el rover: peces, muntatge pas a pas, cablatge i test de fum al **[dossier del rover](../00_General/00_Projecte_T3_Rover.md)** (hi ha el pla de la sessió sencer).
-1. **Sessió 1 · Moviment i cinemàtica diferencial** — fes l'[Activitat 1 de la fitxa](SA7_fitxa_alumnat.md#1-moviment-i-cinematica-s1) (ajusta els pins del teu robot al bloc `// === PINS (AJUSTAR) ===` de cada `.ino`).
-2. **Sessió 2 · Trajectòries programades** — fes l'[Activitat 2](SA7_fitxa_alumnat.md#2-trajectories-s2).
+1. **Sessió 1 · Moviment i cinemàtica diferencial** — fes l'[Activitat 1 de la fitxa](SA7_fitxa_alumnat.md#1-moviment-i-cinematica-s1), amb els [esquemes de connexió](SA7_esquemes_connexions.md) i el [codi](codi/) (ajusta els pins del teu robot al bloc `// === PINS (AJUSTAR) ===` de cada `.ino`).
+2. **Sessió 2 · Trajectòries programades** — fes l'[Activitat 2](SA7_fitxa_alumnat.md#2-trajectories-s2), amb el [codi](codi/).
 3. **Sessió 3 · Evitar obstacles** — fes l'[Activitat 3](SA7_fitxa_alumnat.md#3-evita-obstacles-s3), amb els [esquemes de connexió](SA7_esquemes_connexions.md) i el [diagrama de flux percep → decideix → actua](SA7_diagrama_flux.md).
-4. **Sessió 4 · Seguidor de línia + repte de pista** — fes l'[Activitat 4](SA7_fitxa_alumnat.md#4-seguidor-de-linia-repte-de-pista-s4), amb el [codi](codi/) (s'avalua amb R1, R3, R4).
+4. **Sessió 4 · Seguidor de línia + repte de pista** — fes l'[Activitat 4](SA7_fitxa_alumnat.md#4-seguidor-de-linia-repte-de-pista-s4), amb el [codi](codi/) (s'avalua amb R1, R3, R4). Recorda: **un** dels reptes d'aquesta SA s'escriu ✏️ **a full en blanc** (editor buit, només pseudocodi + full-xuleta) — entrenament directe per a la SA9.
 5. **Abans d'entregar** — repassa [el meu checklist](SA7_checklist_alumnat.md).
 
 ### Si vols més

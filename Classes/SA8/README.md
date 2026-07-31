@@ -19,9 +19,9 @@ Vuitena situació d'aprenentatge (**6 h · 3 sessions**, 3r trimestre). El siste
 
 > La teva feina és a la **[fitxa base](SA8_fitxa_alumnat.md)**. Aquesta ruta et diu què toca fer a cada sessió i què necessites en aquell moment. Les respostes de la fitxa es lliuren a la **[tasca de Classroom](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODcwNTE3MTIxMDY0/details)**.
 
-1. **Sessió 1 · Telemetria** — fes l'[Activitat 1 de la fitxa](SA8_fitxa_alumnat.md#1-telemetria-s1), amb les [connexions](SA8_connexions.md) i el [diagrama de flux de la telemetria](SA8_diagrama_flux.md).
+1. **Sessió 1 · Telemetria** — fes l'[Activitat 1 de la fitxa](SA8_fitxa_alumnat.md#1-telemetria-s1), amb les [connexions](SA8_connexions.md), el [diagrama de flux de la telemetria](SA8_diagrama_flux.md) i el codi de l'[emissor](codi/01_telemetria_emissor_EXPLICACIO.md) i el [receptor](codi/02_telemetria_receptor_EXPLICACIO.md). Recorda: **una de les dues meitats** s'escriu ✏️ **a full en blanc** (editor buit, pseudocodi propi + xuleta de `radio`).
 2. **Sessió 2 · IoT: auditoria d'un producte real** — tria una targeta de [`SA8_auditoria_iot.md`](SA8_auditoria_iot.md) i omple l'informe (Activitat 2 de la [fitxa](SA8_fitxa_alumnat.md)).
-3. **Sessió 3 · Introducció a la IA** — fes l'[Activitat 3](SA8_fitxa_alumnat.md#3-introduccio-a-la-ia-s3) i la [pràctica de Teachable Machine](SA8_practica_teachable_machine.md) (s'avalua amb R1, R3, R4).
+3. **Sessió 3 · Introducció a la IA** — fes l'[Activitat 3](SA8_fitxa_alumnat.md#3-introduccio-a-la-ia-s3), amb el [classificador de gestos](codi/03_ia_gestos_EXPLICACIO.md) i la [pràctica de Teachable Machine](SA8_practica_teachable_machine.md) (s'avalua amb R1, R3, R4).
 4. **Abans d'entregar** — repassa [el meu checklist](SA8_checklist_alumnat.md).
 
 ### Si vols més
