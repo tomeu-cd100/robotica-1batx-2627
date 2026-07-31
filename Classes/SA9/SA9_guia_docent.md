@@ -56,6 +56,14 @@ Aquesta SA **tanca el mètode de projecte** introduït a la **SA1** i practicat 
 
 > 🔭 **Referent (1', a l'inici de la S1):** **Cynthia Breazeal**, fundadora de la robòtica social — el destinatari del vostre sistema és sempre una persona. Tanca la galeria del curs; si voleu, afegiu-hi el referent de proximitat (**Núria Salán**, UPC). Guió: [`../00_General/00_Referents_tecnologia.md`](../00_General/00_Referents_tecnologia.md).
 
+## 🐍 Represa de MicroPython (entre la S4 i la prova T3)
+
+> **Per què:** a la prova T3 (S5) **tothom comença per la Part B (micro:bit, MicroPython)** — també els equips que han fet tot el projecte en C++. Per a aquests, l'últim MicroPython escrit pot ser de la prova T2 (fa mesos). El README de la SA ja avisa l'alumnat; aquest bloc és la teva part.
+
+- **S4 (deures, en recollir els dossiers):** reparteix (o envia pel Classroom) les dues targetes — [`00_Repas_expres_MicroPython.md`](../00_General/00_Repas_expres_MicroPython.md) (sintaxi + els 5 patrons) i [`00_Repas_expres_Radio.md`](../00_General/00_Repas_expres_Radio.md) (la Part B és, exactament, el patró ràdio: `radio.send("STOP")` en prémer un botó). 10-15' a casa, amb simulador si no tenen placa. **Prioritat:** qui hagi fet el projecte en C++; qui l'ha fet en MicroPython en té prou amb la targeta de ràdio.
+- **S4 (5', dins el tancament, tothom assegut):** «Python flash» col·lectiu — projecta la targeta de ràdio i demana en veu alta: *quines són les tres línies que preparen la ràdio?* (`import radio` · `radio.on()` · `radio.config(group=...)`) → *què retorna `radio.receive()` si no hi ha res?* (`None` — i per això es comprova amb `if msg:`) → *i el `while True:`, hi ha de ser?* (sí: a MicroPython el bucle l'escrius tu, no hi ha `loop()`). Dos o tres ping-pongs reactiven el que la Part B demana.
+- **Qui suspèn l'autotest** de les targetes: que refaci l'activitat 3 de la fitxa de la SA5 (ràdio: dau per ràdio) al simulador abans de la prova.
+
 ## Rols de l'equip (rotatius/repartits)
 - **Coordinació/planificació** (manté el taulell i els terminis).
 - **Maquinari/electrònica** (muntatge, esquemes).

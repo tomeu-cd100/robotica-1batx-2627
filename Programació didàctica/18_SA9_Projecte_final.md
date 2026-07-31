@@ -32,7 +32,7 @@
 | **1** | **Idear** | Design thinking: repte, requisits, esbós. Repartiment de rols. Planificació (taulell àgil). |
 | **2** | **Prototipar** | Muntatge i primer codi (prototip mínim viable). |
 | **3** | **Provar i millorar** | Proves, identificació d'errors, iteracions de millora; avanç del dossier. |
-| **4** | **Comunicar** | Dossier tècnic tancat. **Defensa oral** + demostració. Coavaluació. Reflexió final i ètica. |
+| **4** | **Comunicar** | Dossier tècnic tancat. **Defensa oral** + demostració. Coavaluació. Reflexió final i ètica. «Python flash» de ràdio (5', al tancament) + targetes de repàs exprés com a deures — represa de MicroPython abans de la prova T3. |
 | **5** | **Prova pràctica T3** | **Individual, per estacions rotatives** (`Avaluació/Prova_practica_T3.md`): no és sessió de projecte. |
 
 ## Producte
