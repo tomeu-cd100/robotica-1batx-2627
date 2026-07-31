@@ -12,6 +12,10 @@ Però la lliçó important és una altra, i ja la coneixes de les SA d'Arduino: 
 
 Sense executar el codi (el tens a baix, plegat): què marcarà la matriu amb la placa **quieta sobre la taula**? Què cal fer perquè el número pugi? I què fa el botó B? Apunta-ho a l'Activitat 2 de la [fitxa](../SA5_fitxa_alumnat.md) i comprova-ho.
 
+![Fotografia d'una micro:bit real amb el comptapassos carregat: la matriu de LED mostra la xifra del comptador de passes](../img/sa5-foto-passes.jpg)
+
+Així es veu **a la placa real**: la matriu mostra la xifra del comptador. Fixa't que no hi ha ni un cable — l'acceleròmetre és dins de la placa; per fer pujar el número, només cal sacsejar-la.
+
 ## 🧠 El codi, per blocs
 
 ### Bloc 1 — Una variable i una «constant»
