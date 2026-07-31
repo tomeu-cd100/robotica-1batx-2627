@@ -90,6 +90,9 @@ while True:
   posar-ho dins del bucle no aporta res i confon.
 - **Comparo amb un text** (`missatge == "!"`): la ràdio sempre viatja com a **cadena de text**, per això
   envio `"!"` i el comparo amb `"!"`, no amb el número `1`.
+- **`show(str(graus % 10))` i no `scroll(str(graus))`**: `scroll` ensenyaria el número sencer, però
+  **bloqueja el bucle** mentre el text desfila — i la ràdio quedaria sorda uns instants. `show` amb
+  l'última xifra és menys llegible però no atura res: el mateix compromís que el `delay()` de la SA4.
 - La **indentació de 4 espais** marca què va dins de cada `if`/`else` i dins del `while`: en Python
   **no és estètica, és la sintaxi** (l'equivalent de les `{ }` de C++).
 

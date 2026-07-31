@@ -8,6 +8,8 @@
 
 > Connectaràs dispositius (telemetria/IoT) i faràs que el sistema "reconegui" patrons (IA). Pensa també en l'**ètica de les dades**.
 
+> 💻 **On programo?** Canvi de llenguatge altre cop: **micro:bit amb MicroPython**, a l'editor **<https://python.microbit.org>** (com a la SA5; té simulador). Només l'opció **ESP32** (demo del docent i repte ⭐⭐⭐) va amb l'Arduino IDE. Detalls i alternatives: [connexions i entorn](SA8_connexions.md).
+
 ## 🎯 Objectius i avaluació
 
 **En acabar aquesta SA podré:**

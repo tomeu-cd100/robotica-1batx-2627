@@ -6,7 +6,7 @@
 
 <!-- /web:only-github -->
 
-> Ara el robot es mou sol! Programaràs moviment, trajectòries i comportaments autònoms. Recorda **ajustar els pins** segons la teva placa.
+> Ara el robot es mou sol! Programaràs moviment, trajectòries i comportaments autònoms a l'**Arduino IDE** (C++, com a la SA6). Recorda **ajustar els pins** segons la teva placa.
 
 ## 🎯 Objectius i avaluació
 

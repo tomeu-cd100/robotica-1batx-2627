@@ -8,6 +8,8 @@
 
 > Faràs que el sistema **es reguli sol**. Nucli: llaç obert/tancat, histèresi i màquines d'estats. El control proporcional és **+ampliació** (opcional).
 
+> 💻 **On programo?** Tornem a l'**Arduino IDE** i al **C++** (el parèntesi Python de la SA5 s'ha acabat): `;`, `{}` i compilar+pujar, com a SA1-SA4. Res de `main.py` ni d'indentació obligatòria — però l'hàbit d'indentar bé, conserva'l.
+
 ## 🎯 Objectius i avaluació
 
 **En acabar aquesta SA podré:**
