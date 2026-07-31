@@ -12,6 +12,10 @@ De passada hi apareixen dues novetats més: els **gestos** de l'acceleròmetre (
 
 Sense executar el codi (a baix, plegat): si sacseges la placa A, què veurà la placa A i què veurà la B? Què passarà si una placa té `group=10` i l'altra `group=7`? I si a l'aula hi ha **tres** equips tots amb `group=10`? Apunta-ho a l'Activitat 3 de la [fitxa](../SA5_fitxa_alumnat.md) i comprova-ho.
 
+![Fotografia d'una micro:bit real amb el dau per ràdio carregat, mostrant el resultat de la tirada a la matriu de LED](../img/sa5-foto-radio-dau.jpg)
+
+Així es veu **a la placa real** després d'un sacseig. Però fixa-t'hi: una foto d'una sola placa només explica **mitja pràctica** — la gràcia és a la placa de la teva parella, que mostrarà `R` + el mateix número **sense cap cable entremig**. La ràdio no surt a les fotos: l'has de veure funcionar.
+
 ## 🧠 El codi, per blocs
 
 ### Bloc 1 — Importar el que cal
