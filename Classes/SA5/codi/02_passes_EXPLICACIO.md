@@ -1,6 +1,6 @@
 # Pràctica 2 · Comptapassos: sensor, llindar i antirebot
 
-**Quan es fa:** Sessió 2 (modelatge) · **Fitxer:** `02_passes.py` · **Entorn:** [connexions i entorn](../SA5_connexions.md) (no cal muntatge)
+**Quan es fa:** Sessió 2 (modelatge) · **Fitxer:** `02_passes.py` · **Entorn:** [python.microbit.org](https://python.microbit.org) · [connexions i entorn](../SA5_connexions.md) (no cal muntatge)
 
 ## 🎯 Per què fem aquesta pràctica
 

@@ -1,6 +1,6 @@
 # Pràctica 4 · Dau per ràdio: dues plaques que es parlen
 
-**Quan es fa:** Sessió 3 (modelatge) · **Fitxer:** `04_radio_dau.py` · **Entorn:** [connexions i entorn](../SA5_connexions.md) (calen **2 micro:bit**, cap cable entre elles)
+**Quan es fa:** Sessió 3 (modelatge) · **Fitxer:** `04_radio_dau.py` · **Entorn:** [python.microbit.org](https://python.microbit.org) · [connexions i entorn](../SA5_connexions.md) (calen **2 micro:bit**, cap cable entre elles)
 
 ## 🎯 Per què fem aquesta pràctica
 

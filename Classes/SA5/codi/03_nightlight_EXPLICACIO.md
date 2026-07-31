@@ -1,6 +1,6 @@
 # Pràctica 3 · Llum de nit: decidir amb un llindar
 
-**Quan es fa:** Sessió 2 (modelatge) · **Fitxer:** `03_nightlight.py` · **Entorn:** [connexions i entorn](../SA5_connexions.md) (no cal muntatge)
+**Quan es fa:** Sessió 2 (modelatge) · **Fitxer:** `03_nightlight.py` · **Entorn:** [python.microbit.org](https://python.microbit.org) · [connexions i entorn](../SA5_connexions.md) (no cal muntatge)
 
 ## 🎯 Per què fem aquesta pràctica
 

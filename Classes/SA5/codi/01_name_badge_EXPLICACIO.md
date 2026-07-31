@@ -1,6 +1,6 @@
 # Pràctica 1 · Name badge: benvingut a Python
 
-**Quan es fa:** Sessió 1 (modelatge) · **Fitxer:** `01_name_badge.py` · **Entorn:** [connexions i entorn](../SA5_connexions.md) (no cal muntatge)
+**Quan es fa:** Sessió 1 (modelatge) · **Fitxer:** `01_name_badge.py` · **Entorn:** [python.microbit.org](https://python.microbit.org) · [connexions i entorn](../SA5_connexions.md) (no cal muntatge)
 
 ## 🎯 Per què fem aquesta pràctica
 

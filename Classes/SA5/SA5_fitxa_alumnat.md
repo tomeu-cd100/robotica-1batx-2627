@@ -8,6 +8,8 @@
 
 > Canvies de llenguatge: ara **Python** sobre micro:bit. Atenció a la **indentació** (en Python és obligatòria!).
 
+> 💻 **On programo?** A l'editor en línia **<https://python.microbit.org>** (té **simulador**: pots provar-ho tot sense placa). Escrius el codi a `main.py` i el passes a la placa amb **Send to micro:bit** (cable USB). Alternatives i detalls: [connexions i entorn](SA5_connexions.md).
+
 ## 🎯 Objectius i avaluació
 
 **En acabar aquesta SA podré:**
