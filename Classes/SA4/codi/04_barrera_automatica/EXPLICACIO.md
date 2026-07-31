@@ -71,6 +71,54 @@ La seqüència es llegeix sola: LED encès, barrera amunt, espera, barrera avall
 | No detecta mai el vehicle | TRIG i ECHO intercanviats, o el llindar `DIST_DETECCIO` massa petit per al teu muntatge. |
 | Es tanca damunt del "vehicle" | No és un error del codi: és el límit del `delay()` (Bloc 4). Gestionar-ho és la versió completa. |
 
+## 🧗 Si t'encalles: la versió completa amb `millis()` (vehicle aturat sota la barrera)
+
+Si vols fer la **versió completa** de la fitxa (que la barrera no es tanqui mai damunt del vehicle) i no saps per on començar: no és maquinari nou — és substituir el `delay(TEMPS_OBERT)` del Bloc 4 pel patró de la [Pràctica 5](../05_dos_leds_millis/EXPLICACIO.md). Les tres peces de la P5 es tradueixen així:
+
+| A la P5 (dos LEDs) | A la barrera |
+|---|---|
+| `tA` (quan vaig canviar el LED) | `tObertura` (quan s'ha vist el vehicle per última vegada) |
+| `encesA` (estat del LED) | `oberta` (estat de la barrera) |
+| `if (ara - tA >= PERIODE_A)` | `if (millis() - tObertura >= TEMPS_OBERT)` |
+
+La línia clau és `tObertura = millis();` **dins** de la detecció: mentre el sensor vegi el vehicle, el cronòmetre es reinicia a cada volta — els 3 segons compten des de l'**última vegada** que s'ha vist el vehicle, no des de l'obertura. El programa no es queda mai cec: llegeix el sensor a cada volta, també amb la barrera oberta.
+
+<details markdown="1">
+<summary>Desplega el `loop()` complet (la resta del sketch no canvia)</summary>
+
+```cpp
+// Noves variables globals (abans del setup): l'estat de la barrera
+unsigned long tObertura = 0;   // quan s'ha vist el vehicle per ultim cop
+bool oberta = false;
+
+void loop() {
+  float d = mesuraDistancia();
+
+  // Vehicle detectat: obre (si cal) i reinicia el cronometre
+  if (d > 0 && d < DIST_DETECCIO) {
+    if (!oberta) {
+      digitalWrite(LED, HIGH);
+      barrera.write(ANGLE_OBERT);
+      oberta = true;
+    }
+    tObertura = millis();   // mentre hi hagi vehicle, el compte torna a zero
+  }
+
+  // Ja toca tancar? Nomes si esta oberta I fa prou temps que no es veu vehicle
+  if (oberta && millis() - tObertura >= TEMPS_OBERT) {
+    barrera.write(ANGLE_TANCAT);
+    digitalWrite(LED, LOW);
+    oberta = false;
+  }
+
+  delay(60);   // petita pausa entre mesures del sensor
+}
+```
+
+</details>
+
+Fixa't que la parella `oberta` + `tObertura` ja és una **màquina d'estats** embrionària: dos estats (tancada/oberta) i dues transicions (per sensor i per temps). A la SA6 li posarem nom.
+
 ## 🔗 On ho aplicaràs
 
 - **Ara mateix:** el teu producte de la S4 (barrera, braç o ventilador) surt del **teu pseudocodi**, amb aquest codi com a referència. A la defensa, justifica les teves constants de disseny (Bloc 1).
