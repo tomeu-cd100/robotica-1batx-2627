@@ -73,3 +73,5 @@ El mateix patró *mesura → publica → espera* de l'emissora micro:bit, en C++
 - **Sense placa:** el projecte té **simulació Wokwi** (ESP32 + potenciòmetre, xarxa `Wokwi-GUEST`): enllaç a [connexions i entorn](../../SA8_connexions.md).
 - **Repte ⭐⭐⭐ / SA9:** completar el tram que falta (publicar a un broker MQTT i veure les dades en un panell) és una ampliació de primera per al **projecte final**.
 - **Compara:** l'[emissora micro:bit](../01_telemetria_emissor.py) fa el mateix paper amb ràdio local — mateixa idea de telemetria, abast i arquitectura diferents.
+
+> ⭐ **Has acabat abans?** Tria un repte a **[Reptes de la SA8](../../../../Reptes/Reptes_SA8.md)** i, quan el docent te'l validi, pinta l'estrella al [tauler de reptes](../../../00_General/00_Tauler_reptes.md).

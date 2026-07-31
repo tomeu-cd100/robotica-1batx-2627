@@ -97,4 +97,4 @@ Tria un **robot real** i analitza'l amb [`SA1_poster_robot_plantilla.md`](SA1_po
 
 <!-- /web:only-github -->
 
-> 📌 **Vols més?** Ampliacions (`blink_millis`, `sos_morse`), reptes ⭐, rols de la parella, coavaluació, exit ticket, pensament computacional i ODS → **[SA1_fitxa_ampliada.md](SA1_fitxa_ampliada.md)**
+> 📌 **Vols més?** Ampliacions (`blink_millis`, `sos_morse`), [reptes ⭐](../../Reptes/Reptes_SA1.md), rols de la parella, coavaluació, exit ticket, pensament computacional i ODS → **[SA1_fitxa_ampliada.md](SA1_fitxa_ampliada.md)**

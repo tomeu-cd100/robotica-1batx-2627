@@ -83,3 +83,5 @@ I el `try/except`? És l'assegurança: si un dia arriba un missatge estrany (mal
 - **Repte «a full en blanc»:** una de les dues meitats de la telemetria l'escriuràs des de l'editor buit; entendre aquest desmuntatge del protocol és tenir-ne mig camí fet.
 - **Després del primer intent:** compara el teu raonament amb l'[exemple resolt](../SA8_exemple_resolt.md) (el sensor de moviment sense fils), el **bessó comentat** d'aquesta parella de pràctiques — mateix desmuntatge del protocol i mateixa regla de llindar, amb una altra magnitud.
 - **Cap al rover:** la **base** del rover del trimestre és aquest programa amb pantalla OLED: rep la telemetria del rover i la mostra.
+
+> ⭐ **Has acabat abans?** Tria un repte a **[Reptes de la SA8](../../../Reptes/Reptes_SA8.md)** i, quan el docent te'l validi, pinta l'estrella al [tauler de reptes](../../00_General/00_Tauler_reptes.md).

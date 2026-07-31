@@ -68,3 +68,5 @@ Sorpresa: el recorregut no és al `loop()`. Si hi fos, el robot faria quadrats *
 - **Repte de la S2:** triangle o forma en «L» — el mateix `for` amb un altre nombre de costats i un altre angle; **+ repte:** tornar al punt de sortida.
 - **Sessió 3:** com que el control per temps acumula error, l'[evita-obstacles](../03_evita_obstacles/03_evita_obstacles.ino) deixarà de comptar mil·lisegons i es guiarà per un **sensor** (llaç tancat, la idea de la SA6).
 - **Robot del trimestre:** qualsevol coreografia del teu **rover** és una trajectòria com aquesta, amb els temps calibrats per a les teves rodes.
+
+> ⭐ **Has acabat abans?** Tria un repte a **[Reptes de la SA7](../../../../Reptes/Reptes_SA7.md)** i, quan el docent te'l validi, pinta l'estrella al [tauler de reptes](../../../00_General/00_Tauler_reptes.md).

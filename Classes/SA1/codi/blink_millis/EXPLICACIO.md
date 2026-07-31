@@ -91,3 +91,5 @@ Aquest comentari final és el més important del sketch: com que **enlloc no hi 
 - **SA4:** dos LEDs amb ritmes diferents **alhora** — impossible amb `delay()`, natural amb `millis()`.
 - **SA6:** la màquina d'estats del termòstat combina `millis()` amb decisions: és el cor del control de sistemes.
 - **Germans d'ampliació:** si encara tens corda, [`sos_morse`](../sos_morse/EXPLICACIO.md) t'ensenya l'altra eina estrella: les funcions pròpies.
+
+> ⭐ **Has acabat abans?** Tria un repte a **[Reptes de la SA1](../../../../Reptes/Reptes_SA1.md)** i, quan el docent te'l validi, pinta l'estrella al [tauler de reptes](../../../00_General/00_Tauler_reptes.md).

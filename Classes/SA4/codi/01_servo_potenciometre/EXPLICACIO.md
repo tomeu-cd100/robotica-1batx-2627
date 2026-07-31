@@ -71,3 +71,5 @@ I el `delay(15)` final? Pensa en una porta de garatge: l'ordre d'obrir és insta
 - **Ara mateix:** el repte de la S1 és l'"escombrada" automàtica (vaivé 0↔180) — mateix servo, però l'angle el genera un `for`, no el potenciòmetre.
 - **A la S4:** la [barrera automàtica](../04_barrera_automatica/04_barrera_automatica.ino) és un servo que va d'un angle tancat a un d'obert.
 - **Al robot del trimestre:** el control de servos amb potenciòmetre són les **articulacions del braç** ([dossier](../../../00_General/00_Projecte_T2_Brac.md)). Guarda el codi.
+
+> ⭐ **Has acabat abans?** Tria un repte a **[Reptes de la SA4](../../../../Reptes/Reptes_SA4.md)** i, quan el docent te'l validi, pinta l'estrella al [tauler de reptes](../../../00_General/00_Tauler_reptes.md).

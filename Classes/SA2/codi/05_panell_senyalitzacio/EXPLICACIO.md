@@ -76,3 +76,5 @@ Amb les funcions fetes, el `loop()` es llegeix sol. I fixa't en el comentari: aq
 
 - **Avui mateix:** personalitza estats, colors i sons; omple la taula de la fitxa i prepara la **defensa d'1 minut** (què fa el panell + una millora possible).
 - **SA3:** el teu panell aprendrà a **percebre**: l'estat el decidirà un sensor, no el `delay`.
+
+> ⭐ **Has acabat abans?** Tria un repte a **[Reptes de la SA2](../../../../Reptes/Reptes_SA2.md)** i, quan el docent te'l validi, pinta l'estrella al [tauler de reptes](../../../00_General/00_Tauler_reptes.md).

@@ -97,6 +97,6 @@ Es fa a la **S4**: un panell que indica **estats** (tot correcte / avís / alarm
 
 <!-- /web:only-github -->
 
-> 📌 **Vols més?** +Reptes (semàfor de vianants, indicador de nivell), rols, coavaluació, exit ticket, pensament computacional i ODS → **[SA2_fitxa_ampliada.md](SA2_fitxa_ampliada.md)**
+> 📌 **Vols més?** +[Reptes ⭐](../../Reptes/Reptes_SA2.md) (semàfor de vianants, indicador de nivell), rols, coavaluació, exit ticket, pensament computacional i ODS → **[SA2_fitxa_ampliada.md](SA2_fitxa_ampliada.md)**
 
 > 🤖 **Cap al robot del trimestre:** les expressions que has programat en aquesta fitxa (colors, animacions i sons) són les de la teva **mascota**. Guarda el codi: el reaprofitaràs quan la caixa estigui tallada. Peces, muntatge i cablatge: **[dossier de la mascota](../00_General/00_Projecte_T1_Mascota.md)**.

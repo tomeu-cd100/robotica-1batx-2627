@@ -56,3 +56,5 @@ Sense `break`, el programa **no surt** del `switch` en acabar el `case`: continu
 
 - **Repte:** afegeix el `case 3` (fase nocturna: groc intermitent) i fes que s'hi entri i se'n surti.
 - **SA6:** màquines d'estats de debò (termòstat amb histèresi, sistema de control): la mateixa estructura, amb sensors decidint les transicions en lloc del pas del temps.
+
+> ⭐ **Has acabat abans?** Tria un repte a **[Reptes de la SA2](../../../../Reptes/Reptes_SA2.md)** i, quan el docent te'l validi, pinta l'estrella al [tauler de reptes](../../../00_General/00_Tauler_reptes.md).

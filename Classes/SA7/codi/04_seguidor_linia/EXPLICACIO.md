@@ -68,3 +68,5 @@ Dos sensors amb dos valors cadascun = **4 combinacions**, i la cadena `if / else
 - **+ Repte:** correcció **proporcional** (correcció = Kp·error): com més desviat, més gir; a prop del centre, correcció suau. És la resposta de veritat a la ziga-zaga (idea de la SA6).
 - **D'on ve:** el cicle reactiu el vas muntar a l'[evita-obstacles](../03_evita_obstacles/03_evita_obstacles.ino); aquí només canvia el sensor i la finor de l'acció.
 - **Robot del trimestre:** el seguidor de línia és un dels comportaments de demostració del teu **rover** ([dossier](../../../00_General/00_Projecte_T3_Rover.md)).
+
+> ⭐ **Has acabat abans?** Tria un repte a **[Reptes de la SA7](../../../../Reptes/Reptes_SA7.md)** i, quan el docent te'l validi, pinta l'estrella al [tauler de reptes](../../../00_General/00_Tauler_reptes.md).

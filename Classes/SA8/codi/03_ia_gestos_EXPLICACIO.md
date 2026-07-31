@@ -88,3 +88,5 @@ Un cop tens la classe, el sistema hi **reacciona** (aquí, una icona; al teu pro
 - **Ara mateix (pràctica guiada):** ajusta els llindars amb valors mesurats i, si vas fort, afegeix una **classe nova** de gest (ampliació).
 - **Tot seguit (el graó 3):** la [pràctica de Teachable Machine](../SA8_practica_teachable_machine.md) — mateixa idea de classificar, però les regles **s'aprenen d'exemples** que reculls tu. Compara-ho: què passa quan els exemples són esbiaixats?
 - **Producte de la SA:** si tries el **classificador** com a producte, aquest programa n'és el punt de partida (amb la reflexió ètica sobre les dades que fa servir).
+
+> ⭐ **Has acabat abans?** Tria un repte a **[Reptes de la SA8](../../../Reptes/Reptes_SA8.md)** i, quan el docent te'l validi, pinta l'estrella al [tauler de reptes](../../00_General/00_Tauler_reptes.md).

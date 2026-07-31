@@ -69,3 +69,5 @@ Les tres primeres línies són els colors purs. Les interessants són les altres
 - **Repte S3:** 5 colors propis (apunta les receptes R,G,B a la fitxa) i una transició suau entre dos colors.
 - **S4:** el [panell de senyalització](../05_panell_senyalitzacio/05_panell_senyalitzacio.ino) reutilitza `color()` tal qual — i hi afegeix una funció per a cada **estat**.
 - **Mascota del trimestre:** aquests colors i animacions seran les **expressions** del teu robot.
+
+> ⭐ **Has acabat abans?** Tria un repte a **[Reptes de la SA2](../../../../Reptes/Reptes_SA2.md)** i, quan el docent te'l validi, pinta l'estrella al [tauler de reptes](../../../00_General/00_Tauler_reptes.md).

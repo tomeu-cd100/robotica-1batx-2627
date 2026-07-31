@@ -158,3 +158,5 @@ void loop() {
 - **La llavor de la SA2:** compara aquest sketch amb el [semàfor amb `switch`](../../../SA2/codi/02b_semafor_switch/EXPLICACIO.md) que vas fer llavors — és la mateixa estructura, amb noms, esdeveniments i `millis()`.
 - **Producte del trimestre:** el control complet del **braç** (repòs/manual/replay/emergència) és exactament aquest patró — i l'[exemple resolt del dipòsit](../../SA6_exemple_resolt.md) et mostra com combinar-lo amb la histèresi.
 - **SA7:** els comportaments autònoms del robot (buscar, esquivar, seguir línia) es programen com a estats.
+
+> ⭐ **Has acabat abans?** Tria un repte a **[Reptes de la SA6](../../../../Reptes/Reptes_SA6.md)** i, quan el docent te'l validi, pinta l'estrella al [tauler de reptes](../../../00_General/00_Tauler_reptes.md).

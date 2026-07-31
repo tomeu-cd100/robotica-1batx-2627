@@ -80,3 +80,5 @@ Fixa't en el patró: una funció de moviment **engega** els motors i el `delay` 
 - **Ara mateix:** el repte de la S1 (seqüència de «ball») és combinar aquestes cinc funcions amb els teus temps.
 - **Tota la SA:** el [quadrat](../02_trajectoria_quadrat/02_trajectoria_quadrat.ino) (S2), l'[evita-obstacles](../03_evita_obstacles/03_evita_obstacles.ino) (S3) i el [seguidor de línia](../04_seguidor_linia/04_seguidor_linia.ino) (S4) reutilitzen aquestes mateixes funcions: només canvia **qui decideix** quan cridar-les.
 - **Robot del trimestre:** aquest sketch és la base de moviment del teu **rover** ([dossier](../../../00_General/00_Projecte_T3_Rover.md)).
+
+> ⭐ **Has acabat abans?** Tria un repte a **[Reptes de la SA7](../../../../Reptes/Reptes_SA7.md)** i, quan el docent te'l validi, pinta l'estrella al [tauler de reptes](../../../00_General/00_Tauler_reptes.md).

@@ -147,3 +147,5 @@ void loop() {
 
 - **Repte de la S2:** activar la **fase nocturna** (ja tens la variable `nocturn` preparada) i, si vas fort, un semàfor de vianants.
 - **Tot seguit:** la [variant amb `switch`](../02b_semafor_switch/02b_semafor_switch.ino) — el mateix semàfor, escrit d'una manera que escala millor.
+
+> ⭐ **Has acabat abans?** Tria un repte a **[Reptes de la SA2](../../../../Reptes/Reptes_SA2.md)** i, quan el docent te'l validi, pinta l'estrella al [tauler de reptes](../../../00_General/00_Tauler_reptes.md).

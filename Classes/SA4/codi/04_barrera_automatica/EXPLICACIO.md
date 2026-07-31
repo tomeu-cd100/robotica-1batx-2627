@@ -124,3 +124,5 @@ Fixa't que la parella `oberta` + `tObertura` ja és una **màquina d'estats** em
 - **Ara mateix:** el teu producte de la S4 (barrera, braç o ventilador) surt del **teu pseudocodi**, amb aquest codi com a referència. A la defensa, justifica les teves constants de disseny (Bloc 1).
 - **Versió completa:** el cas «vehicle aturat sota la barrera» es resol amb el patró de la [Pràctica 5 (`millis()`)](../05_dos_leds_millis/EXPLICACIO.md).
 - **SA6:** la màquina d'estats farà d'aquesta barrera un sistema que mai no es queda cec.
+
+> ⭐ **Has acabat abans?** Tria un repte a **[Reptes de la SA4](../../../../Reptes/Reptes_SA4.md)** i, quan el docent te'l validi, pinta l'estrella al [tauler de reptes](../../../00_General/00_Tauler_reptes.md).

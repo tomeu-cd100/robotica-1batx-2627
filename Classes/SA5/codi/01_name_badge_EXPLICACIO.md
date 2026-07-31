@@ -70,3 +70,5 @@ La mateixa decisió que ja feies en C++, amb tres canvis de pell: `elif` en lloc
 - **Repte de la S1:** el badge d'emocions (A: contenta, B: trista) és aquest mateix programa amb altres imatges — i l'animació pròpia, una llista d'imatges a `display.show()`.
 - **Tota la SA:** el patró `while True:` + `if` indentat és l'esquelet de **tots** els programes de la SA5: el [comptapassos](02_passes_EXPLICACIO.md), el [llum de nit](03_nightlight_EXPLICACIO.md) i el [dau per ràdio](04_radio_dau_EXPLICACIO.md).
 - **Taula comparativa:** ja pots omplir la primera fila (estructura, final d'instrucció, blocs de codi) de l'Activitat 4 de la [fitxa](../SA5_fitxa_alumnat.md).
+
+> ⭐ **Has acabat abans?** Tria un repte a **[Reptes de la SA5](../../../Reptes/Reptes_SA5.md)** i, quan el docent te'l validi, pinta l'estrella al [tauler de reptes](../../00_General/00_Tauler_reptes.md).

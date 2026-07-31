@@ -457,7 +457,21 @@ def comprova_explicacions() -> None:
                 errors.append(f"[explicacions] {rel}: falta {expl.name} "
                               f"(pàgina de pràctica sense explicació)")
                 fallats += 1
-    print(f"13) Pàgines de pràctica: {total} sketches, {fallats} sense explicació.")
+    # Pont cap als reptes: cada pàgina de pràctica ha d'enllaçar el document
+    # de reptes de la seva SA (si en té), perquè qui acaba abans tingui camí
+    # natural cap al repte ⭐ (bloc «Has acabat abans?»).
+    sense_pont = 0
+    explicacions = sorted((ARREL / "Classes").glob("SA*/codi/**/*EXPLICACIO*.md"))
+    for expl in explicacions:
+        sa = expl.relative_to(ARREL / "Classes").parts[0]
+        if not (ARREL / "Reptes" / f"Reptes_{sa}.md").exists():
+            continue
+        if f"Reptes_{sa}.md" not in expl.read_text(encoding="utf-8"):
+            errors.append(f"[explicacions] {expl.relative_to(ARREL)}: sense "
+                          f"enllaç a Reptes_{sa}.md (falta el bloc «Has acabat abans?»)")
+            sense_pont += 1
+    print(f"13) Pàgines de pràctica: {total} sketches, {fallats} sense explicació, "
+          f"{sense_pont} sense pont als reptes.")
 
 
 # --- 14 · Projectes trimestrals: portada present i enllaçant el dossier -----

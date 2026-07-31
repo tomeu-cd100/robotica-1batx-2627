@@ -85,3 +85,5 @@ El LED B té el **mateix patró** amb les **seves** variables (`tB`, `encesB`, `
 - **Ara mateix (versió completa de la S4):** la barrera que vigila el sensor **mentre** compta el temps obert — el cas «vehicle aturat sota la barrera» de la [fitxa](../../SA4_fitxa_alumnat.md) — és exactament aquest patró.
 - **SA6:** la **màquina d'estats** del sistema de control dona aquest patró per sabut: allà `millis()` ja no serà el tema, serà l'eina.
 - **SA7:** un rover llegeix sensors, controla dos motors i parpelleja indicadors **alhora** — sense `millis()`, no hi ha robot.
+
+> ⭐ **Has acabat abans?** Tria un repte a **[Reptes de la SA4](../../../../Reptes/Reptes_SA4.md)** i, quan el docent te'l validi, pinta l'estrella al [tauler de reptes](../../../00_General/00_Tauler_reptes.md).

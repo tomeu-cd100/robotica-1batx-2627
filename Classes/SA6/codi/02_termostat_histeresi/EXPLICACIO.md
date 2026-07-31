@@ -75,3 +75,5 @@ delay(100);
 - **Producte i prova T2:** el termòstat amb histèresi ben documentat és la **versió nucli** del producte i la Part A de la prova.
 - **Exemple resolt:** el [dipòsit que es reomple sol](../../SA6_exemple_resolt.md) és el **bessó** d'aquesta pràctica, comentat pas a pas: la mateixa histèresi… amb la lògica **girada** (engega quan el sensor **baixa**). Entendre-la és saber-la girar — mira-te'l després del teu primer intent.
 - **Pràctica 3:** quan el sistema tingui més de dues situacions (no només encès/apagat), el `bool` es quedarà curt: caldrà una [màquina d'estats](../03_maquina_estats/EXPLICACIO.md).
+
+> ⭐ **Has acabat abans?** Tria un repte a **[Reptes de la SA6](../../../../Reptes/Reptes_SA6.md)** i, quan el docent te'l validi, pinta l'estrella al [tauler de reptes](../../../00_General/00_Tauler_reptes.md).

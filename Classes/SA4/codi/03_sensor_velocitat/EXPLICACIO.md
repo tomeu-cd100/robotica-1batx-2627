@@ -97,3 +97,5 @@ Per què és tan important? Imagina que el motor frena: *frena perquè hi ha un 
 - **Repte de la S3:** el llindar de seguretat ja hi és — el **+ repte** és invertir el sentit segons la distància (fer servir també `enrere()`).
 - **A la S4:** la [barrera automàtica](../04_barrera_automatica/04_barrera_automatica.ino) és el mateix bucle percepció→acció, amb servo en lloc de motor.
 - **SA6 i SA7:** el control amb consigna (SA6) i el rover que esquiva obstacles (SA7) són aquest patró amb més graons.
+
+> ⭐ **Has acabat abans?** Tria un repte a **[Reptes de la SA4](../../../../Reptes/Reptes_SA4.md)** i, quan el docent te'l validi, pinta l'estrella al [tauler de reptes](../../../00_General/00_Tauler_reptes.md).

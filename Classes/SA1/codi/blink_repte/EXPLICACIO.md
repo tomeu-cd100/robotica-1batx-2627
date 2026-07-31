@@ -125,3 +125,5 @@ void loop() {
 
 - **Si vas sobrat:** les ampliacions [`blink_millis`](../blink_millis/EXPLICACIO.md) (el mateix parpelleig **sense** `delay()`) i [`sos_morse`](../sos_morse/EXPLICACIO.md) (el patró ràpid/llarg convertit en **funcions**: punt i ratlla).
 - **SA2 i tot el curs:** el `for` i les constants de temps tornen a sortir a cada sketch una mica llarg (el *fade* PWM de la SA2 és, de fet, un `for` que puja i baixa).
+
+> ⭐ **Has acabat abans?** Tria un repte a **[Reptes de la SA1](../../../../Reptes/Reptes_SA1.md)** i, quan el docent te'l validi, pinta l'estrella al [tauler de reptes](../../../00_General/00_Tauler_reptes.md).

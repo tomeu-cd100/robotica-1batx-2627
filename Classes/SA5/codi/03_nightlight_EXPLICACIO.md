@@ -103,3 +103,5 @@ while True:
 - **Repte de la S2:** detector d'inclinació o termòmetre amb avís — el mateix patró amb `accelerometer.get_x()` o `temperature()` (l'esquelet de dalt t'hi porta).
 - **Producte de la SA:** el «llum de nit» és una de les tres opcions de producte; la versió completa hi afegeix una segona funció (registre de màxims/mínims, o avís per ràdio com a la [Pràctica 4](04_radio_dau_EXPLICACIO.md)).
 - **SA6:** el problema del parpelleig al límit del llindar es resol amb **histèresi** — ho retrobaràs al control on/off del termòstat.
+
+> ⭐ **Has acabat abans?** Tria un repte a **[Reptes de la SA5](../../../Reptes/Reptes_SA5.md)** i, quan el docent te'l validi, pinta l'estrella al [tauler de reptes](../../00_General/00_Tauler_reptes.md).

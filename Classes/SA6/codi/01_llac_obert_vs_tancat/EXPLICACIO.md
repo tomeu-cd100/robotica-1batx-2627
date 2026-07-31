@@ -66,3 +66,5 @@ Aquí hi ha el **bucle de control** sencer, deu cops per segon: **mesura** (`ana
 - **Repte de la S1:** dibuixar el **diagrama de blocs** del teu sistema (consigna → error → controlador → actuador → sensor) i identificar-hi cada peça d'aquest codi.
 - **Tota la SA:** el [termòstat amb histèresi](../02_termostat_histeresi/02_termostat_histeresi.ino) arregla el "clic-clic" que acabes de veure, i la màquina d'estats i el proporcional són maneres cada cop més fines de decidir **què fer amb l'error**.
 - **SA7:** el robot que evita obstacles és exactament aquest bucle: mesurar distància → comparar → girar.
+
+> ⭐ **Has acabat abans?** Tria un repte a **[Reptes de la SA6](../../../../Reptes/Reptes_SA6.md)** i, quan el docent te'l validi, pinta l'estrella al [tauler de reptes](../../../00_General/00_Tauler_reptes.md).

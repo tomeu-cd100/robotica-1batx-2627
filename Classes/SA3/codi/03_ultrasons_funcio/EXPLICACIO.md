@@ -97,3 +97,5 @@ Tota la feina bruta és a les funcions: el `loop()` queda en tres línies que es
 - **Avui mateix (producte):** l'[alarma d'aparcament](../04_alarma_aparcament/EXPLICACIO.md) reutilitza `mesuraDistancia()` tal qual i hi afegeix la decisió per trams.
 - **+ Ampliació:** detectar si l'objecte **s'acosta o s'allunya** (compara la mesura d'ara amb l'anterior).
 - **Prova T1 (S4):** escriure i fer servir una funció que retorna un valor és exactament el múscul que s'hi avalua.
+
+> ⭐ **Has acabat abans?** Tria un repte a **[Reptes de la SA3](../../../../Reptes/Reptes_SA3.md)** i, quan el docent te'l validi, pinta l'estrella al [tauler de reptes](../../../00_General/00_Tauler_reptes.md).

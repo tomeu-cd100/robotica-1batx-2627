@@ -138,3 +138,5 @@ void loop() {
 - **Repte de la S2:** el **llum automàtic** amb la LDR; **+ repte:** llindar ajustable amb el potenciòmetre (dues lectures analògiques treballant juntes).
 - **Després del teu intent:** l'[exemple resolt de la llum de nit](../../SA3_exemple_resolt.md) és el **bessó** d'aquesta pràctica — el mateix mètode, raonat pas a pas.
 - **Producte de la S3:** l'[alarma d'aparcament](../04_alarma_aparcament/EXPLICACIO.md) fa exactament el mateix patró *llegir → comparar → actuar*, però amb distància en lloc de llum.
+
+> ⭐ **Has acabat abans?** Tria un repte a **[Reptes de la SA3](../../../../Reptes/Reptes_SA3.md)** i, quan el docent te'l validi, pinta l'estrella al [tauler de reptes](../../../00_General/00_Tauler_reptes.md).

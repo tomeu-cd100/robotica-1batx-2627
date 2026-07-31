@@ -60,3 +60,5 @@ void loop() {
 
 - **Ara mateix:** el repte de la S1 (parpelleig amb temps propis i patró Morse d'una lletra) és aquest sketch amb valors teus.
 - **Tota la SA:** el [semàfor](../02_semafor/02_semafor.ino) fa servir constants per als 3 pins i per als temps de cada fase — la mateixa idea, multiplicada.
+
+> ⭐ **Has acabat abans?** Tria un repte a **[Reptes de la SA2](../../../../Reptes/Reptes_SA2.md)** i, quan el docent te'l validi, pinta l'estrella al [tauler de reptes](../../../00_General/00_Tauler_reptes.md).

@@ -83,3 +83,5 @@ Dins del canvi vàlid, encara filtrem: només ens interessa el pas a `LOW` (la *
 
 - **Repte de la S1:** el mode *toggle* ja el tens aquí — el repte és entendre'l i estendre'l: **comptar fins a 5 i reiniciar** el comptador.
 - **Tota la SA:** el **Monitor sèrie** que has obert avui és l'eina de calibratge de la [pràctica 2](../02_potenciometre_ldr/EXPLICACIO.md) i la **E** (*Examina*) de la rutina DEPURA.
+
+> ⭐ **Has acabat abans?** Tria un repte a **[Reptes de la SA3](../../../../Reptes/Reptes_SA3.md)** i, quan el docent te'l validi, pinta l'estrella al [tauler de reptes](../../../00_General/00_Tauler_reptes.md).

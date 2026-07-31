@@ -171,3 +171,5 @@ void loop() {
 - **Inici de la S4:** el mini-check individual és escriure un `loop()` reactiu com aquest amb les funcions donades.
 - **Sessió 4:** el [seguidor de línia](../04_seguidor_linia/04_seguidor_linia.ino) és el mateix cicle percepció → decisió → acció, amb sensors IR en lloc d'ultrasons.
 - **Robot del trimestre:** aquest és el comportament autònom estrella del teu **rover** ([dossier](../../../00_General/00_Projecte_T3_Rover.md)).
+
+> ⭐ **Has acabat abans?** Tria un repte a **[Reptes de la SA7](../../../../Reptes/Reptes_SA7.md)** i, quan el docent te'l validi, pinta l'estrella al [tauler de reptes](../../../00_General/00_Tauler_reptes.md).

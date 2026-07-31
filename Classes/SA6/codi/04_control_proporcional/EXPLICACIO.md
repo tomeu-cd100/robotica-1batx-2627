@@ -71,3 +71,5 @@ Tres valors separats per espais = **tres corbes** al Serial Plotter: la consigna
 - **Prova T2:** és l'ampliació de nivell **excel·lent** de la Part A (l'enunciat ja la preveu).
 - **SA7:** el seguidor de línia suau del robot és un control proporcional: com més desviat de la línia, més gir.
 - **Més enllà:** afegint la **I** (memòria de l'error) i la **D** (tendència de l'error) tindries un **PID** — el controlador estàndard de la indústria.
+
+> ⭐ **Has acabat abans?** Tria un repte a **[Reptes de la SA6](../../../../Reptes/Reptes_SA6.md)** i, quan el docent te'l validi, pinta l'estrella al [tauler de reptes](../../../00_General/00_Tauler_reptes.md).

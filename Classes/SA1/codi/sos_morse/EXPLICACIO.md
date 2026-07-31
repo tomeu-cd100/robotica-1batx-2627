@@ -93,3 +93,5 @@ Aquí és on es cobra el premi: el `loop()` **es llegeix com el missatge mateix*
 - **SA4:** el robot mòbil tindrà funcions com `endavant()`, `enrere()` i `gira()` — mateix patró exacte: donar nom a un bloc d'ordres i cridar-lo.
 - **Tot el curs:** qualsevol codi una mica llarg es parteix en funcions; és la manera estàndard de mantenir-lo llegible (rúbrica R1).
 - **Germà d'ampliació:** [`blink_millis`](../blink_millis/EXPLICACIO.md) — l'altra eina avançada d'avui: parpellejar sense aturar mai la placa.
+
+> ⭐ **Has acabat abans?** Tria un repte a **[Reptes de la SA1](../../../../Reptes/Reptes_SA1.md)** i, quan el docent te'l validi, pinta l'estrella al [tauler de reptes](../../../00_General/00_Tauler_reptes.md).

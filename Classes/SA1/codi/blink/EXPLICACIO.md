@@ -67,3 +67,5 @@ Fixa't que **canviant només els dos números del `delay` canvies tot el comport
 - **Després del teu primer intent:** l'[exemple resolt del batec](../../SA1_exemple_resolt.md) és el **bessó** d'aquesta pràctica — la mateixa idea amb un ritme i un context diferents, raonada pas a pas amb el diari de bord inclòs. Serveix per veure *com es pensa*, no per copiar-lo.
 - **Si vas sobrat:** les ampliacions [`blink_millis`](../blink_millis/EXPLICACIO.md) (parpelleig sense `delay()`) i [`sos_morse`](../sos_morse/EXPLICACIO.md) (les teves primeres funcions).
 - **Tot el curs:** l'estructura `setup()` + `loop()` és la de **tots** els programes d'Arduino que faràs; a la SA2 hi afegiràs més sortides (semàfor, PWM, RGB).
+
+> ⭐ **Has acabat abans?** Tria un repte a **[Reptes de la SA1](../../../../Reptes/Reptes_SA1.md)** i, quan el docent te'l validi, pinta l'estrella al [tauler de reptes](../../../00_General/00_Tauler_reptes.md).

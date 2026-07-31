@@ -59,3 +59,5 @@ Mateixa estructura amb els tres elements girats: comença a 255, condició `>= 0
 - **Ara mateix:** el [LED RGB](../04_rgb/04_rgb.ino) són **tres** PWM alhora — un per color.
 - **Repte S3:** transició suau entre dos colors = dos *fades* coordinats. La funció `map()` (converteix un rang en un altre) t'hi pot ajudar.
 - **Exemple resolt:** el [llum de posició amb respiració](../../SA2_exemple_resolt.md) és el **bessó** d'aquesta pràctica — el mateix patró amb un muntatge i un context expressament diferents, comentat pas a pas amb tot el raonament. Mira'l després del teu primer intent.
+
+> ⭐ **Has acabat abans?** Tria un repte a **[Reptes de la SA2](../../../../Reptes/Reptes_SA2.md)** i, quan el docent te'l validi, pinta l'estrella al [tauler de reptes](../../../00_General/00_Tauler_reptes.md).

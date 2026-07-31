@@ -102,6 +102,6 @@ Es **tanca a la S3** (la S4 és la prova T1): un avís de **LED + so** que canvi
 
 <!-- /web:only-github -->
 
-> 📌 **Vols més?** +Reptes (llindar ajustable, instrument), rols, coavaluació, exit ticket, pensament computacional i ODS → **[SA3_fitxa_ampliada.md](SA3_fitxa_ampliada.md)**
+> 📌 **Vols més?** +[Reptes ⭐](../../Reptes/Reptes_SA3.md) (llindar ajustable, instrument), rols, coavaluació, exit ticket, pensament computacional i ODS → **[SA3_fitxa_ampliada.md](SA3_fitxa_ampliada.md)**
 
 > 🤖 **Cap al robot del trimestre:** avui tanques la teva **mascota**: el muntatge amb **com a mínim 3 reaccions sensor→comportament** és el producte d'aquesta SA (la lògica de trams del teu sensor d'aparcament és la que fa servir el PIR de la mascota). Presenta'l amb el circuit i el codi de les activitats anteriors al **[dossier de la mascota](../00_General/00_Projecte_T1_Mascota.md)**.

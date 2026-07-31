@@ -77,3 +77,5 @@ Un segon `if` **independent** (no un `elif`): a cada volta es comprova el llinda
 - **Repte de la S2:** el detector d'inclinació (`get_x()`) i el termòmetre amb avís (`temperature()`) són aquest mateix patró **sensor → llindar → resposta** amb un altre sensor. Si t'hi encalles, tens un esquelet a la [pàgina del llum de nit](03_nightlight_EXPLICACIO.md).
 - **Tancament de la S2 (sembra per a la SA8):** anota al quadern els valors reals de `x`, `y` i `get_strength()` en 3-4 postures — a la SA8 seran el punt de partida del classificador de gestos.
 - **Exemple resolt:** la [sentinella de temperatura](../SA5_exemple_resolt.md) reutilitza aquest patró de llindar i l'ajunta amb la ràdio de la [Pràctica 4](04_radio_dau_EXPLICACIO.md).
+
+> ⭐ **Has acabat abans?** Tria un repte a **[Reptes de la SA5](../../../Reptes/Reptes_SA5.md)** i, quan el docent te'l validi, pinta l'estrella al [tauler de reptes](../../00_General/00_Tauler_reptes.md).

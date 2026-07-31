@@ -96,3 +96,5 @@ A menys de 10 cm, sense mitges tintes: LED fix i `tone` **sense durada** — un 
 - **Avui (S3):** el **producte** de la SA — personalitza llindars i avís, omple la taula de trams de la [fitxa](../../SA3_fitxa_alumnat.md) i prepara la **defensa d'1'**: com funciona i una aplicació real. S'avalua amb R1 (codi) i R2 (circuit).
 - **La mascota del trimestre:** la lògica de trams d'aquesta alarma és la mateixa que fa servir el sensor de la teva mascota per triar reaccions.
 - **Prova T1 (S4):** la "llum de seguretat intel·ligent" de la prova és aquest mateix patró *sensor → decisió per llindar → actuador*, en solitari.
+
+> ⭐ **Has acabat abans?** Tria un repte a **[Reptes de la SA3](../../../../Reptes/Reptes_SA3.md)** i, quan el docent te'l validi, pinta l'estrella al [tauler de reptes](../../../00_General/00_Tauler_reptes.md).

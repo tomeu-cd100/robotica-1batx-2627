@@ -111,3 +111,5 @@ while True:
 - **Repte de la S1:** tria les **teves** magnituds i el teu ritme; i si vas fort, que la receptora doni una **alerta per llindar**.
 - **Després del primer intent:** compara el teu raonament amb l'[exemple resolt](../SA8_exemple_resolt.md) (el sensor de moviment sense fils), el **bessó comentat** d'aquesta parella de pràctiques — mateix esquema emissor/receptor, una altra magnitud.
 - **Cap al rover:** la micro:bit del **rover del trimestre** és exactament aquest programa amb altres sensors — mesura a bord i envia a la base.
+
+> ⭐ **Has acabat abans?** Tria un repte a **[Reptes de la SA8](../../../Reptes/Reptes_SA8.md)** i, quan el docent te'l validi, pinta l'estrella al [tauler de reptes](../../00_General/00_Tauler_reptes.md).

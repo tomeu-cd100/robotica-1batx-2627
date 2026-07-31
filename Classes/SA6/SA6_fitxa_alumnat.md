@@ -106,6 +106,6 @@ Es **tanca a la S3**: un sistema de control amb **diagrama d'estats** i llindars
 
 <!-- /web:only-github -->
 
-> 📌 **Vols més?** +Reptes (semàfor adaptatiu, Kp massa gran), rols, coavaluació, exit ticket, pensament computacional i ODS → **[SA6_fitxa_ampliada.md](SA6_fitxa_ampliada.md)**
+> 📌 **Vols més?** +[Reptes ⭐](../../Reptes/Reptes_SA6.md) (semàfor adaptatiu, Kp massa gran), rols, coavaluació, exit ticket, pensament computacional i ODS → **[SA6_fitxa_ampliada.md](SA6_fitxa_ampliada.md)**
 
 > 🤖 **Cap al robot del trimestre:** avui tanques el **braç**: la màquina d'estats que has programat és el patró del seu control complet (repòs/manual/replay/**emergència**). És el robot d'aquest trimestre — presenta'l al **[dossier del braç](../00_General/00_Projecte_T2_Brac.md)**.
