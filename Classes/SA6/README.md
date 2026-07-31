@@ -20,10 +20,10 @@ Sisena situació d'aprenentatge (**8 h · 4 sessions**, 2n trimestre). El sistem
 
 > La teva feina és a la **[fitxa base](SA6_fitxa_alumnat.md)**. Aquesta ruta et diu què toca fer a cada sessió i què necessites en aquell moment. Les respostes de la fitxa es lliuren a la **[tasca de Classroom](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODcwNTE2NDU2MzYx/details)**.
 
-1. **Sessió 1 · Què és un sistema de control?** — torna a obrir l'**Arduino IDE** (deixem el Python de la SA5: aquí, C++ altre cop) i fes l'[Activitat 1 de la fitxa](SA6_fitxa_alumnat.md#1-llac-obert-vs-llac-tancat-s1).
-2. **Sessió 2 · Control tot/res i histèresi** — fes l'[Activitat 2](SA6_fitxa_alumnat.md#2-termostat-amb-histeresi-s2), amb els [esquemes de connexió](SA6_esquemes_connexions.md) i el [diagrama de flux (histèresi + màquina d'estats)](SA6_diagrama_flux.md).
+1. **Sessió 1 · Què és un sistema de control?** — torna a obrir l'**Arduino IDE** (deixem el Python de la SA5: aquí, C++ altre cop) i fes l'[Activitat 1 de la fitxa](SA6_fitxa_alumnat.md#1-llac-obert-vs-llac-tancat-s1), amb els [esquemes de connexió](SA6_esquemes_connexions.md) i el [codi](codi/).
+2. **Sessió 2 · Control tot/res i histèresi** — fes l'[Activitat 2](SA6_fitxa_alumnat.md#2-termostat-amb-histeresi-s2), amb els [esquemes de connexió](SA6_esquemes_connexions.md) i el [diagrama de flux (histèresi + màquina d'estats)](SA6_diagrama_flux.md). Si vas sobrat, el [control proporcional](SA6_fitxa_alumnat.md#ampliacio-opcional--control-proporcional) és el **repte +** de les sessions 2-3.
 3. **Sessió 3 · Màquines d'estats + tancament del producte** — fes l'[Activitat 3](SA6_fitxa_alumnat.md#3-maquina-destats-s3), amb el [codi](codi/). El producte (s'avalua amb R1, R3, R4) i la defensa de 2-3' **es tanquen avui**.
-4. **Sessió 4 · Prova pràctica T2** — individual, la sessió sencera; pots consultar el teu quadern i els esquemes. El [control proporcional](SA6_fitxa_alumnat.md#ampliacio-opcional--control-proporcional) és **+ampliació opcional**.
+4. **Sessió 4 · Prova pràctica T2** — individual, la sessió sencera; pots consultar el teu quadern i els esquemes. **Abans d'aquesta sessió**, prepara la **Part B (MicroPython)** amb la targeta de [repàs exprés de MicroPython](../00_General/00_Repas_expres_MicroPython.md) (10-15'). El control proporcional **no entra a la prova** (és +ampliació opcional).
 5. **Abans d'entregar** — repassa [el meu checklist](SA6_checklist_alumnat.md).
 
 ### Si vols més
