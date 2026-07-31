@@ -23,7 +23,7 @@ const int DIST_DETECCIO = 15;   // cm
 const int TEMPS_OBERT = 3000;   // ms
 ```
 
-Aquestes quatre línies **són el disseny** de la barrera: tota la personalització que et demana la S4 (angles, distància de detecció, temps obert) viu aquí, no escampada pel `loop()`. És la lliçó de les constants de la SA2 aplicada a un producte: quan a la defensa et preguntin *"per què 15 cm?"*, la resposta és teva; que canviar-ho costi una sola línia, això és mèrit del codi.
+Pensa en el termòstat de casa: la temperatura que vols es tria girant un dial a la paret, no obrint la caldera amb un tornavís. Aquestes quatre línies són els **dials** de la barrera: tota la personalització que et demana la S4 (angles, distància de detecció, temps obert) viu aquí, no escampada pel `loop()`. És la lliçó de les constants de la SA2 aplicada a un producte: quan a la defensa et preguntin *"per què 15 cm?"*, la resposta és teva; que canviar-ho costi una sola línia, això és mèrit del codi.
 
 ### Bloc 2 — Arrencar en un estat conegut
 
@@ -36,7 +36,7 @@ void setup() {
 }
 ```
 
-L'última línia és la subtil: en engegar, la barrera es col·loca **tancada**. Sense això, el servo es quedaria on fos que l'hagués deixat l'última execució. Un sistema ben dissenyat arrenca sempre en un estat conegut i segur.
+El microones, després d'una apagada de llum, arrenca marcant 0:00 — no l'hora que li sembla: un aparell ben fet engega sempre des d'un punt conegut. L'última línia del `setup()` fa el mateix: en engegar, la barrera es col·loca **tancada**. Sense això, el servo es quedaria on fos que l'hagués deixat l'última execució — potser mig obert, potser travessat. Un sistema ben dissenyat arrenca sempre en un estat conegut i segur.
 
 ### Bloc 3 — Detectar el vehicle
 
@@ -46,7 +46,7 @@ L'última línia és la subtil: en engegar, la barrera es col·loca **tancada**.
   if (d > 0 && d < DIST_DETECCIO) {
 ```
 
-La condició té **dues parts** unides amb `&&` (i lògic): la distància ha de ser menor que el llindar **i** més gran que zero. El `d > 0` filtra les lectures nul·les (sense eco, `pulseIn` retorna 0): sense aquesta guarda, un sensor desconnectat faria obrir la barrera tota sola. Desconfiar de les mesures és un hàbit de la Pràctica 3 que aquí torna a aparèixer.
+El porter d'un concert et demana dues coses **alhora**: l'entrada **i** el DNI — amb una de sola no passes. El `&&` (i lògic) és aquest porter: la condició té dues parts i s'han de complir totes dues — la distància ha de ser menor que el llindar **i** més gran que zero. I per què demanar el "DNI" del `d > 0`? Perquè filtra les lectures nul·les (sense eco, `pulseIn` retorna 0): sense aquesta guarda, un sensor desconnectat faria obrir la barrera tota sola. Desconfiar de les mesures és un hàbit de la Pràctica 3 que aquí torna a aparèixer.
 
 ### Bloc 4 — Obrir, esperar, tancar (i el peatge del delay)
 
@@ -60,7 +60,7 @@ La condició té **dues parts** unides amb `&&` (i lògic): la distància ha de 
     digitalWrite(LED, LOW);
 ```
 
-La seqüència es llegeix sola: LED encès, barrera amunt, espera, barrera avall, LED apagat. Però hi ha un preu amagat: durant els 3 segons del `delay(TEMPS_OBERT)`, el programa està **cec** — no llegeix el sensor. Si el vehicle es queda a sota, la barrera li cau al damunt igualment. Per a la **versió nucli** això és acceptable (i el codi és molt més senzill); la **versió completa** de la fitxa (gestionar el vehicle aturat sota la barrera) demana no quedar-se cec: vigilar el temps **i** el sensor alhora, que és exactament el patró `millis()` de la [Pràctica 5](../05_dos_leds_millis/EXPLICACIO.md).
+La seqüència es llegeix sola: LED encès, barrera amunt, espera, barrera avall, LED apagat. Però hi ha un preu amagat. Quan comptes fins a deu jugant a fet i amagar, tens els ulls tapats: mentre comptes, no veus res del que passa al teu voltant. El `delay(TEMPS_OBERT)` és aquest comptar amb els ulls tapats: durant els 3 segons, el programa està **cec** — no llegeix el sensor. Si el vehicle es queda a sota, la barrera li cau al damunt igualment. Per a la **versió nucli** això és acceptable (i el codi és molt més senzill); la **versió completa** de la fitxa (gestionar el vehicle aturat sota la barrera) demana no quedar-se cec: vigilar el temps **i** el sensor alhora, que és exactament el patró `millis()` de la [Pràctica 5](../05_dos_leds_millis/EXPLICACIO.md).
 
 ## ⚠️ Errors que veuràs segur
 

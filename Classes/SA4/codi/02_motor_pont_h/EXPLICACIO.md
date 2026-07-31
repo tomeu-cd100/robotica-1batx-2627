@@ -24,7 +24,7 @@ const int IN1 = 7;   // direccio
 const int IN2 = 8;   // direccio
 ```
 
-Tres constants, tres papers: `IN1` i `IN2` decideixen el **sentit** (quina banda del pont H s'activa) i `ENA` la **velocitat** (per PWM, per això va a un pin `~`). Repartir les feines entre pins és el disseny del L298N, no una casualitat del codi.
+Pensa en un cotxe: la palanca de canvi tria si vas endavant o marxa enrere, i l'accelerador decideix com de ràpid — dos comandaments separats que no es trepitgen. El L298N reparteix la feina igual: `IN1` i `IN2` són la palanca (el **sentit**: quina banda del pont H s'activa) i `ENA` és l'accelerador (la **velocitat**, per PWM — per això va a un pin `~`). Repartir les feines entre pins és el disseny del L298N, no una casualitat del codi.
 
 ### Bloc 2 — La teva primera funció amb paràmetre
 
@@ -36,7 +36,9 @@ void endavant(int velocitat) {   // velocitat 0..255
 }
 ```
 
-Una **funció** és un tros de programa amb nom propi. Aquesta es diu `endavant` i té un **paràmetre**: `velocitat`, un valor que li passes quan la crides (`endavant(200)`). Per dins: `IN1` a `HIGH` i `IN2` a `LOW` seleccionen el sentit, i `analogWrite(ENA, velocitat)` fixa la velocitat amb PWM (0 aturat, 255 màxim). Definir-la no la fa executar: només queda **a punt** per quan algú la cridi.
+*«Fes-me un cafè amb dos sucres.»* Qui t'ho demana no t'explica com funciona la cafetera: diu el nom del gest (*fer cafè*) i el detall que canvia cada vegada (*dos sucres*). Una **funció** és exactament això: un tros de programa amb nom propi. Aquesta es diu `endavant` i té un **paràmetre**: `velocitat`, el detall que li passes quan la crides (`endavant(200)` — "endavant, a 200"). Per dins: `IN1` a `HIGH` i `IN2` a `LOW` seleccionen el sentit, i `analogWrite(ENA, velocitat)` fixa la velocitat amb PWM (0 aturat, 255 màxim).
+
+I un matís important: definir-la no la fa executar — com una recepta apuntada en un paper, tenir-la escrita no cuina res. Només queda **a punt** per quan algú la cridi.
 
 ### Bloc 3 — Invertir i aturar
 
@@ -54,7 +56,7 @@ void atura() {
 }
 ```
 
-`enrere()` és `endavant()` amb `IN1`/`IN2` **intercanviats** — tota la màgia del pont H és aquesta: canviar quin costat del pont condueix inverteix el corrent que travessa el motor, i el motor gira al revés. `atura()` posa els dos IN a `LOW` i la velocitat a 0: cap costat activat, motor parat. Fixa't que `atura()` no necessita paràmetre: aturar-se no té velocitats.
+Posar la palanca del cotxe a la R: mateix motor, mateix accelerador, sentit contrari. `enrere()` és `endavant()` amb `IN1`/`IN2` **intercanviats** — tota la màgia del pont H és aquesta: canviar quin costat del pont condueix inverteix el corrent que travessa el motor, i el motor gira al revés. `atura()` posa els dos IN a `LOW` i la velocitat a 0: cap costat activat, motor parat. Fixa't que `atura()` no necessita paràmetre: aturar-se no té velocitats.
 
 ### Bloc 4 — El loop llegit com una frase
 

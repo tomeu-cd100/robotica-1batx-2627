@@ -23,7 +23,7 @@ void loop() {
   unsigned long ara = millis();   // "cronometre" intern, no atura res
 ```
 
-`millis()` retorna quants **mil·lisegons** fa que la placa està engegada. Cridar-lo no espera res: és mirar el rellotge, no posar una alarma. El tipus `unsigned long` és nou: un enter **gran i sense signe**, necessari perquè aquest comptador creix i creix (un `int` normal es desbordaria en mig minut).
+Un cuiner amb dues paelles al foc no es queda plantat davant d'una fins que estigui llesta: va fent, i de tant en tant **mira el rellotge de la paret**. Mirar el rellotge no atura la cuina. `millis()` és aquest rellotge: retorna quants **mil·lisegons** fa que la placa està engegada, i cridar-lo no espera res — és mirar l'hora, no posar una alarma i adormir-s'hi. El tipus `unsigned long` és nou: un enter **gran i sense signe**, necessari perquè aquest comptador creix i creix (un `int` normal es desbordaria en mig minut).
 
 ### Bloc 2 — La memòria: quan vaig actuar per última vegada?
 
@@ -34,7 +34,7 @@ bool encesA = false;
 bool encesB = false;
 ```
 
-Per saber si "ja toca", cada LED necessita recordar **quan va canviar per última vegada** (`tA`, `tB`) i **en quin estat està** (`encesA`, `encesB`). Fixa't que són variables **globals** (fora del `loop()`): han de sobreviure d'una volta a la següent. Aquesta idea — l'estat del sistema guardat en variables — és el germen de la màquina d'estats de la SA6.
+Si a casa teniu una planta, potser també teniu el paperet de la nevera: *«regada dilluns»*. Sense el paperet no hi ha manera de saber si ja toca tornar-la a regar — la memòria no és opcional. Aquí igual: per saber si "ja toca", cada LED necessita recordar **quan va canviar per última vegada** (`tA`, `tB` — el seu paperet) i **en quin estat està** (`encesA`, `encesB`). Fixa't que són variables **globals** (fora del `loop()`): han de sobreviure d'una volta a la següent, com el paperet queda a la nevera entre reg i reg. Aquesta idea — l'estat del sistema guardat en variables — és el germen de la màquina d'estats de la SA6.
 
 ### Bloc 3 — El patró: «ja toca? doncs actua i apunta-t'ho»
 
@@ -47,10 +47,10 @@ Per saber si "ja toca", cada LED necessita recordar **quan va canviar per últim
   }
 ```
 
-Aquest `if` de quatre línies és el patró sencer. Llegeix-lo a poc a poc:
+Torna al cuiner: passa per davant de cada olla, mira el rellotge i es pregunta *«a tu, ja et toca?»*. Si toca, remena **i apunta l'hora**; si no, passa de llarg i continua la ronda. Aquest `if` de quatre línies és tota la ronda. Llegeix-lo a poc a poc:
 
 - `ara - tA` — quant fa de l'últim canvi? Si és més que el període (250 ms), **toca actuar**.
-- `tA = ara;` — **apunta't que acabes d'actuar**. És la línia que tothom oblida: sense ella, la condició seria certa a cada volta i el LED parpellejaria a velocitat de `loop()` (milers de cops per segon: el veuries mig encès, fix).
+- `tA = ara;` — **apunta't que acabes d'actuar** (l'hora al paperet). És la línia que tothom oblida: sense ella, la condició seria certa a cada volta i el LED parpellejaria a velocitat de `loop()` (milers de cops per segon: el veuries mig encès, fix).
 - `encesA = !encesA;` — l'operador `!` inverteix el booleà: de `true` a `false` i viceversa. Encès ↔ apagat en una línia, sense `if` extra.
 
 I si **encara no toca**? No passa res: l'`if` es salta i el `loop()` continua. No s'espera — es torna a preguntar d'aquí a un instant.

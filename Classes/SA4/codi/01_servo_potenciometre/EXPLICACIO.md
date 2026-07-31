@@ -25,7 +25,9 @@ Servo servo;
 const int POT = A0;
 ```
 
-`#include <Servo.h>` diu al compilador: *afegeix al meu programa tot el codi de la llibreria Servo*. A partir d'aquí pots crear un objecte `Servo` (aquí li hem dit `servo`, però podria dir-se `barrera` o `brac`): és la "maneta" amb què donaràs ordres al servo físic.
+Pensa en el comandament del televisor: prems «pujar volum» i no tens ni idea de quins senyals infrarojos surten volant — algú va resoldre aquesta part per tu i et va deixar els botons. Una **llibreria** és exactament això: codi que algú altre ja ha escrit i provat. `#include <Servo.h>` diu al compilador: *afegeix al meu programa tot el codi de la llibreria Servo*, i a partir d'aquí controlar el servo són "botons" llegibles (`attach`, `write`), no polsos de microsegons.
+
+I el comandament, on és? És l'**objecte**: `Servo servo;` crea la "maneta" amb què donaràs ordres al servo físic (aquí li hem dit `servo`, però podria dir-se `barrera` o `brac`).
 
 ### Bloc 2 — Dir-li on és connectat
 
@@ -35,7 +37,7 @@ void setup() {
 }
 ```
 
-`attach(9)` lliga l'objecte amb el pin físic. Fixa-t'hi: per al servo **no cal `pinMode()`** — la llibreria se n'encarrega. Si t'oblides de l'`attach()`, el programa compila perfectament… i el servo no es mou mai. És l'oblidat clàssic del dia.
+Un comandament acabat de treure de la capsa no mou cap televisor: primer l'has d'**aparellar** amb el teu aparell. `attach(9)` fa exactament això: lliga l'objecte `servo` amb el pin físic on has punxat el cable de senyal. Fixa-t'hi: per al servo **no cal `pinMode()`** — la llibreria se n'encarrega. I si t'oblides de l'`attach()`? El programa compila perfectament… i el servo no es mou mai: estàs prement botons d'un comandament sense aparellar. És l'oblidat clàssic del dia.
 
 ### Bloc 3 — La cadena entrada → càlcul → sortida
 
@@ -48,13 +50,13 @@ void loop() {
 }
 ```
 
-Tres línies, tres feines:
+Això és la dutxa de casa: tu gires la maneta (entrada), el mesclador converteix el gir en barreja d'aigua freda i calenta (càlcul), i surt l'aigua a la temperatura demanada (sortida). Aquí, tres línies, tres feines:
 
-- `analogRead(POT)` llegeix el potenciòmetre: un número de **0 a 1023** (el conversor analògic de la SA3).
-- `map(valor, 0, 1023, 0, 180)` **reescala**: el rang del potenciòmetre no coincideix amb el rang del servo, i `map()` fa la regla de tres per tu.
-- `servo.write(angle)` demana la **posició**: 0° un extrem, 90° el centre, 180° l'altre extrem. Si demanes més de 180, el servo satura a 180 i prou.
+- `analogRead(POT)` llegeix el potenciòmetre: un número de **0 a 1023** (el conversor analògic de la SA3). És la maneta.
+- `map(valor, 0, 1023, 0, 180)` **tradueix**: el potenciòmetre parla en 0..1023 i el servo en graus 0..180 — dos "idiomes" que no coincideixen. `map()` fa la regla de tres per tu. És el mesclador.
+- `servo.write(angle)` demana la **posició**: 0° un extrem, 90° el centre, 180° l'altre extrem. Si demanes més de 180, el servo satura a 180 i prou. És l'aigua que surt.
 
-El `delay(15)` final dona temps al servo a moure's cap a la posició demanada abans de rebre la següent ordre. El servo no és instantani: és mecànica, no electrònica.
+I el `delay(15)` final? Pensa en una porta de garatge: l'ordre d'obrir és instantània, però la porta triga uns segons a arribar a dalt. El servo igual: la pausa li dona temps a moure's cap a la posició demanada abans de rebre la següent ordre. No és instantani: és mecànica, no electrònica.
 
 ## ⚠️ Errors que veuràs segur
 
