@@ -17,7 +17,7 @@ La matèria adopta un **enfocament competencial** basat en **situacions d'aprene
 | **0. Arrencada i preparació** | 5-10' | Repartiment i recompte de kits, encesa d'ordinadors, obrir l'IDE/simulador, seleccionar placa/port. **No es pot ometre:** és temps real d'aula. |
 | **Activació** | 10' | Repte o pregunta inicial; recuperació del que se sap. Inclou la **graella de repàs espaiat** (5': 3 preguntes retrospectives — sessió anterior · SA anterior · trimestre —, tothom escriu, no qualifica). Banc complet per sessió: `../Classes/00_General/00_Banc_activacio_repas.md`. |
 | **Modelatge (amb PRIMM)** | 20' | El docent mostra el concepte/codi clau (live coding). **Predir abans d'executar:** projecta el codi nou **sense executar-lo** i recull prediccions (~5') *abans* d'investigar-lo. |
-| **Pràctica guiada** | 30-40' | L'alumnat replica i modifica en parelles. |
+| **Pràctica guiada** | 30-40' | Comença amb el **kata d'escriptura (10')**: individual, amb apunts, s'escriu de zero el bloc central del sketch del dia **abans d'obrir-lo** (enunciats a `Classes/SAn/SAn_katas.md`); després es compara amb el sketch donat i l'alumnat el replica i modifica en parelles. |
 | **Pràctica autònoma / repte** | 30-40' | Repte obert que aplica el concepte. El **"+ repte"** fa de marge: s'escurça si la sessió va justa. |
 | **Tancament i registre** | 10' | Posada en comú, autoavaluació i **quadern tècnic** (*logbook*). |
 | **Recollida** | 5' | Desconnexió segura, recompte i ordre del material. |
@@ -34,6 +34,8 @@ Amb PRIMM l'alumnat sempre parteix de **codi donat**; el projecte final (SA9) de
 | **SA4–SA6** | Codi donat com a **referència**, no com a plantilla. | La fase **Crea** de cada repte parteix del **pseudocodi propi**; el sketch de la sessió es consulta, no es retoca. |
 | **SA7–SA8** | Full-xuleta d'API (les crides, sense estructura). | **Un repte per SA "a full en blanc"**: editor buit, només amb la xuleta i el pseudocodi propi. |
 | **SA9** | Cap (plantilla d'esquelet opcional). | Escriu el seu propi codi (per això la SA9 **no** té PRIMM). |
+
+> ✍️ **Els katas travessen tots els trams:** des de la SA2, cada sessió de codi comença escrivint de zero el bloc central del sketch (10', individual, amb apunts). És la pràctica d'escriptura contínua que fa possible la retirada de bastida d'aquesta taula sense salts.
 
 **El pseudocodi, tal com el demanem** (paraules pròpies, sense sintaxi; una acció per línia):
 
