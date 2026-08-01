@@ -3,7 +3,7 @@
 Material llest per a l'aula, organitzat per situació d'aprenentatge (SA). Cada SA conté:
 - **Guia docent** (`SAx_guia_docent.md`): seqüència sessió a sessió, punts clau i errors freqüents.
 - **Checklists** (`SAx_checklist_docent.md` i `SAx_checklist_alumnat.md`): recordatori **d'una cara** per a cada públic — logística/moments/avaluació per al docent; què fer/lliurar + semàfor per a l'alumnat.
-- **Katas** (`SAx_katas.md`, per al **docent**; SA2-SA8): un kata d'escriptura de 10' per sketch, abans d'obrir el sketch donat.
+- **Katas** (`SAx_katas.md`; SA2-SA8): un kata d'escriptura de 10' per sketch, abans d'obrir el sketch donat.
 - **Fitxa base** (`SAx_fitxa_alumnat.md`): el **nucli** que fa tot l'alumnat — activitats nuclears, repte, producte, DEPURA, autoavaluació i quadern.
 - **Fitxa ampliada** (`SAx_fitxa_ampliada.md`): **versió d'aprofundiment** amb totes les rutines (rols, coavaluació, exit ticket, ODS, pensament computacional) i ampliacions.
 - **Esquemes** (`SAx_esquemes_connexions.md`; a SA5 i SA8, `SAx_connexions.md`): taules de connexió pin-a-pin (reproduïbles a Tinkercad/Wokwi). *(SA1–SA8.)*

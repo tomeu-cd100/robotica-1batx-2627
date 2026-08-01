@@ -77,7 +77,7 @@
 ---
 
 ## SESSIÓ 4 (2 h) — Producte: barrera automàtica
-- **Activació (10'):** presentació del repte.
+- **Mini-check individual (10', substitueix l'activació):** les 3 línies del servo a 90° + per què el motor DC va amb alimentació externa — [`00_Mini_checks_individuals.md`](../00_General/00_Mini_checks_individuals.md). Aprofita el canvi de full per presentar en 1' el repte.
 - **Pràctica (70'):** `04_barrera_automatica.ino`. Barrera amb **servo** que s'obre quan l'ultrasons detecta un vehicle a prop i es tanca passat un temps, amb LED indicador. Cada parella personalitza temps i angles.
 - **Documentació + defensa (30'):** esquema, codi comentat, mini-defensa (1-2') amb la **mini-rúbrica R4·DO** ([`07_Rubriques.md`](../../Programació%20didàctica/07_Rubriques.md)): a més de la claredat (SA2), ara s'espera **una decisió tècnica justificada** (per què aquest llindar de distància, per què aquests angles).
 - **Tancament (10'):** autoavaluació.
@@ -111,7 +111,7 @@
 
 > Frases i preguntes clau per al **Modelatge** de cada sessió (què mirar, què preguntar abans d'executar, error a anticipar).
 
-> ✍️ **Katas:** en acabar el modelatge de cada sessió, projecta el kata de la pràctica del dia ([SA4_katas.md](SA4_katas.md)): 10' d'escriptura individual **abans** de repartir/obrir el sketch.
+> ✍️ **Katas:** en acabar el modelatge de cada sessió amb pràctica de codi, projecta el kata del sketch del dia ([SA4_katas.md](SA4_katas.md)): 10' d'escriptura individual **abans** de repartir/obrir el sketch. **Un sol kata per sessió**; el dia del mini-check, el mini-check el substitueix.
 
 - **S1 · `01_servo_potenciometre` (servo):** distingeix **servo** (controla *posició*/angle 0–180°) de **motor DC** (gir continu). Demana predir on anirà `write(90)`. Avís: *si mous diversos servos, alimentació externa*. *Error a anticipar:* el servo vibra per alimentació insuficient.
 - **S2 · `02_motor_pont_h` (pont H):** dibuixa la **taula IN1/IN2** per a cada sentit i assenyala **ENA = velocitat (PWM)**. Repeteix com un mantra: *MASSA COMUNA, mai el motor des del 5V*. *Error a anticipar:* l'Arduino es reinicia pel pic de corrent del motor.
@@ -147,7 +147,7 @@ Parelles amb **rols rotatius**: Coordinador/a · Programador/a · Enginyer/a de 
 ## Avaluació formativa (instruments)
 
 - **Diana d'autoavaluació** (fitxa) · **Coavaluació** "2 estrelles i un desig" · **Exit ticket** de tancament.
-- **Mini-check individual** (10', **inici de la S4**, no qualifica): les 3 línies del servo a 90° + per què el motor DC va amb alimentació externa. Vegeu [`../00_General/00_Mini_checks_individuals.md`](../00_General/00_Mini_checks_individuals.md).
+- **Mini-check individual** (10', **inici de la S4, substitueix l'activació**, no qualifica): les 3 línies del servo a 90° + per què el motor DC va amb alimentació externa. Vegeu [`../00_General/00_Mini_checks_individuals.md`](../00_General/00_Mini_checks_individuals.md).
 
 ## Referent (coeducació)
 

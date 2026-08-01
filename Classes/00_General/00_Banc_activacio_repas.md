@@ -13,6 +13,8 @@ Amb 2 h setmanals, el que es va aprendre a l'octubre arriba esborrat al febrer s
 3. **Correcció oral ràpida** (1-2'): demana respostes a l'atzar, confirma la bona i digues per què.
 4. **No es recull ni qualifica.** Si una pregunta falla massivament, és un **senyal de diagnòstic**: anota-la i reprèn el concepte (o deriva a la secció de `SA0/` corresponent).
 
+> Els dies de mini-check (vegeu `00_Mini_checks_individuals.md`) la graella **no es fa**: el mini-check la substitueix.
+
 **Codi de les 3 preguntes:**
 
 | # | D'on ve | Interval |

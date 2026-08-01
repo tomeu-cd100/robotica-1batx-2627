@@ -26,8 +26,8 @@ i amb apunts permesos** el bloc central; després obre el sketch i **compara**
    `00_LLEGEIX-ME_Classes.md` i `00_Mini_checks_individuals.md`.
 3. **Metodologia** (§4.2 fila «Pràctica guiada» i nota a §4.2 bis): el kata com
    a pràctica d'escriptura contínua que sosté la retirada de bastida.
-4. **Generador**: sufix `_katas` a `DOCENT_NAME_HINTS` i clau `katas` a
-   `DOC_ORDRE_CLAUS` (itinerari, rere la guia docent).
+4. **Generador**: `_katas` **fora** de `DOCENT_NAME_HINTS` (vista alumnat) i
+   clau `katas` a `DOC_ORDRE_CLAUS` (itinerari, rere la guia docent).
 5. **QA check 16**: per SA2–SA8 exigeix el fitxer de katas, un kata per sketch
    (matching per id entre backticks) i el ganxo a cada EXPLICACIO — un sketch
    nou sense kata fa fallar el CI.
@@ -45,5 +45,5 @@ SA8). Cada SA va passar revisió independent + re-revisió del fix.
 ## Verificació
 
 - `tools/qa.py` net (check 16: 31 sketches, 0/0/0) i 55 tests del generador.
-- Web regenerada en local (7 pàgines noves `san-katas.html`, vista docent);
+- Web regenerada en local (7 pàgines noves `san-katas.html`, vista alumnat);
   la publicada la regenera el CI al push.

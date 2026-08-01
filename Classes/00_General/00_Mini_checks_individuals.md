@@ -2,7 +2,7 @@
 
 > **Per a qui és?** Per al **docent**. Un **micro-repte individual de 10 minuts** per SA (SA2–SA8), a fer **en solitari i sense apunts**. **No qualifica**: és un radar formatiu.
 > **Quan es passa?** A l'**inici de la sessió que indica cada fitxa** (normalment la S3 o la S4, abans del producte o de la prova): prou aviat per reaccionar, prou tard perquè hi hagi hagut pràctica.
-> **Relació amb els katas:** els katas de cada SA (`SAn_katas.md`) entrenen l'escriptura cada sessió, amb apunts; el mini-check és el radar sense apunts.
+> **Relació amb els katas:** els katas de cada SA (`SAn_katas.md`) entrenen l'escriptura cada sessió, amb apunts; el mini-check és el radar sense apunts. El dia de mini-check, aquest **substitueix el kata** de la sessió (mateix múscul: escriptura individual).
 
 ## El problema que resol
 
@@ -10,7 +10,7 @@ El curs treballa en parelles i equips, i gairebé tots els productes són col·l
 
 ## Rutina (10 minuts)
 
-1. **Quan:** a l'**inici de la sessió indicada** de cada SA (normalment la darrera; a SA3 i SA6, la penúltima, perquè la darrera **és, sencera, la prova trimestral**). **Aquell dia el mini-check substitueix la graella d'activació** (`00_Banc_activacio_repas.md`): també és recuperació.
+1. **Quan:** a l'**inici de la sessió indicada** de cada SA (normalment la darrera; a SA3 i SA6, la penúltima, perquè la darrera **és, sencera, la prova trimestral**). **Aquell dia el mini-check substitueix la graella d'activació** (`00_Banc_activacio_repas.md`) **i el kata de la sessió** (`SAn_katas.md`): tots tres són escriptura individual, i no se sumen.
 2. **Com:** individual, **sense apunts ni parella**, en paper o a l'editor amb el projector apagat. 10' clavats.
 3. **Correcció:** no es puntua. El docent fa una passada ràpida amb **semàfor**:
    - 🟢 **Ho fa sol** (errors de detall com a molt).

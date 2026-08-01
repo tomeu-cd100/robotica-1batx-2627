@@ -82,7 +82,7 @@
 ---
 
 ## SESSIÓ 4 (2 h) — Producte: panell de senyalització
-- **Activació (10'):** presentació del repte integrador.
+- **Mini-check individual (10', substitueix l'activació):** escriu de memòria un Blink complet al pin 8 (detecta l'*efecte passatger*) — [`00_Mini_checks_individuals.md`](../00_General/00_Mini_checks_individuals.md). Aprofita el canvi de full per presentar en 1' el repte integrador.
 - **Pràctica (70'):** `05_panell_senyalitzacio.ino` com a base. Integren **LED RGB (estat) + piezo (avís) + relé (càrrega)**. Cada parella personalitza estats i seqüència.
 - **Documentació + defensa (30'):** completen esquema i codi comentat; mini-defensa (1') del seu panell amb la **mini-rúbrica de defensa oral R4·DO** ([`07_Rubriques.md`](../../Programació%20didàctica/07_Rubriques.md)) — és la **primera** defensa del curs: comparteix els 3 indicadors abans (claredat · decisió justificada · respondre preguntes) i exigeix sobretot el primer.
 - **Tancament (10'):** autoavaluació amb rúbriques.
@@ -116,7 +116,7 @@
 
 > Frases i preguntes clau per al **Modelatge** de cada sessió (què mirar, què preguntar abans d'executar, error a anticipar).
 
-> ✍️ **Katas:** en acabar el modelatge de cada sessió, projecta el kata de la pràctica del dia ([SA2_katas.md](SA2_katas.md)): 10' d'escriptura individual **abans** de repartir/obrir el sketch.
+> ✍️ **Katas:** en acabar el modelatge de cada sessió amb pràctica de codi, projecta el kata del sketch del dia ([SA2_katas.md](SA2_katas.md)): 10' d'escriptura individual **abans** de repartir/obrir el sketch. **Un sol kata per sessió**; el dia del mini-check, el mini-check el substitueix.
 
 - **S1 · `01_led_basic` (constants):** mostra per què `const int LED = 8;` és millor que escriure `8` per tot arreu. Pregunta: *"si moc el LED al pin 7, quantes línies he de canviar?"* *Error a anticipar:* oblidar `pinMode(LED, OUTPUT)`.
 - **S2 · `02_semafor` (`for`/`if`/`switch`):** recorre el `loop()` en veu alta com una **recepta seqüencial**. Demana **predir l'ordre** d'encesa abans d'executar. Verbalitza: *`delay()` bloqueja — mentre espera, no passa res més*. En mostrar la variant amb `switch`, pregunta: *"quantes fases té el semàfor? i si n'hi afegim una quarta (nocturna), on aniria?"* *Error a anticipar:* esperar que els LED canviïn alhora; oblidar el `break` de cada `case`.
@@ -164,7 +164,7 @@ Parelles amb **rols rotatius** (un canvi per sessió):
 - **Diana d'autoavaluació** (fitxa) sobre 3 criteris clau.
 - **Coavaluació** "2 estrelles i un desig" entre parelles.
 - **Exit ticket** de tancament; recull-lo per ajustar la sessió següent.
-- **Mini-check individual** (10', **inici de la S4**, no qualifica): escriure de memòria un Blink complet al pin 8. Detecta qui encara no programa sol (*efecte passatger*). Enunciat, semàfor de correcció i accions: [`../00_General/00_Mini_checks_individuals.md`](../00_General/00_Mini_checks_individuals.md).
+- **Mini-check individual** (10', **inici de la S4, substitueix l'activació**, no qualifica): escriure de memòria un Blink complet al pin 8. Detecta qui encara no programa sol (*efecte passatger*). Enunciat, semàfor de correcció i accions: [`../00_General/00_Mini_checks_individuals.md`](../00_General/00_Mini_checks_individuals.md).
 
 ## Context real i ODS
 
