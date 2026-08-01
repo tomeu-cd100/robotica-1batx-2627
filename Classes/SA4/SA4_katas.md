@@ -11,7 +11,7 @@
 
 **Practica:** `analogRead` d'un potenciòmetre · `map()` d'escala 0–1023 a 0–180 · `servo.write(angle)` · pausa amb `delay`.
 **Pista (per a qui es bloqueja):** tres línies i prou: llegeix, tradueix, mou; la quarta és només l'espera.
-**En comparar amb el sketch, mireu:** ① el valor que passeu a `servo.write()` és directament el de `map()`, o l'heu guardat en una variable intermèdia amb un altre nom? ② els quatre paràmetres de `map()` respecten l'ordre (valor, mínim d'entrada, màxim d'entrada, mínim de sortida, màxim de sortida)? ③ la pausa final és de 15 ms, o n'hi heu posat una altra a ull?
+**En comparar amb el sketch, mireu:** ① el valor que passeu a `servo.write()` és directament el de `map()`, o l'heu guardat en una variable intermèdia amb un altre nom? ② els cinc paràmetres de `map()` respecten l'ordre (valor, mínim d'entrada, màxim d'entrada, mínim de sortida, màxim de sortida)? ③ la pausa final és de 15 ms, o n'hi heu posat una altra a ull?
 
 ## Kata · `02_motor_pont_h` (Sessió 2)
 
@@ -25,7 +25,7 @@
 ## Kata · `03_sensor_velocitat` (Sessió 3, modelatge)
 
 **Projecta (enunciat):**
-> Tens ja fetes `mesuraDistancia()` (com a la SA3, retorna cm o 400 si no hi ha eco) i `endavant(int vel)`/`atura()` (idèntiques a la Pràctica 2), i la constant `SEGURETAT = 10` (cm). Escriu de zero el `loop()`: mesura la distància i mostra-la pel Monitor sèrie; si és menor que `SEGURETAT`, atura el motor; si no, reescala la distància (10–50 cm) a velocitat (80–255) amb `map()` i `constrain()`, i posa el motor endavant a aquesta velocitat. Acaba amb una pausa de 50 ms.
+> Tens ja fetes `mesuraDistancia()` (com a la SA3, retorna cm o 400 si no hi ha eco) i les funcions de moviment `endavant(int vel)` i `atura()`, i la constant `SEGURETAT = 10` (cm). Escriu de zero el `loop()`: mesura la distància i mostra-la pel Monitor sèrie; si és menor que `SEGURETAT`, atura el motor; si no, reescala la distància (10–50 cm) a velocitat (80–255) amb `map()` i `constrain()`, i posa el motor endavant a aquesta velocitat. Acaba amb una pausa de 50 ms.
 
 **Practica:** prioritat de seguretat amb `if`/`else` · `map()` aparellat amb `constrain()` · reutilitzar funcions pròpies ja escrites · `Serial.println` per depurar.
 **Pista (per a qui es bloqueja):** primer decideix "és segur moure's?"; només dins la branca del "sí" cal calcular res més.
@@ -37,7 +37,7 @@
 > Tens ja `mesuraDistancia()`, les constants `ANGLE_TANCAT = 0`, `ANGLE_OBERT = 90`, `DIST_DETECCIO = 15` (cm) i `TEMPS_OBERT = 3000` (ms), i el `setup()` que deixa la barrera tancada. Escriu de zero el `loop()`: mesura la distància, i si és més gran que 0 **i** menor que `DIST_DETECCIO`, encén el LED, obre la barrera, espera `TEMPS_OBERT`, torna a tancar-la i apaga el LED. Acaba amb una pausa de 60 ms a cada volta.
 
 **Practica:** guarda amb `&&` per descartar lectures invàlides · seqüència obrir–esperar–tancar amb `delay()` dins d'un `if` · `servo.write()` amb constants d'angle · disseny amb constants (no valors "clavats" al codi).
-**Pista (per a qui es bloqueja):** la seqüència sencera (LED, obre, espera, tanca, LED) viu tota dins del `if` de detecció; fora del `if` només queda la pausa petita final.
+**Pista (per a qui es bloqueja):** primer decideix si hi ha vehicle; només si la resposta és sí, encadena les cinc accions (LED, obre, espera, tanca, LED) una darrere l'altra.
 **En comparar amb el sketch, mireu:** ① la guarda porta `d > 0 && d < DIST_DETECCIO`, o només heu comprovat un dels dos costats? ② el LED s'apaga abans o després de tancar la barrera (`barrera.write(ANGLE_TANCAT)`)? ③ la pausa de 60 ms final és dins o fora de l'`if` de detecció (és a dir, s'executa a totes les voltes o només quan hi ha vehicle)?
 
 ## Kata · `05_dos_leds_millis` (Sessió 3, repte +)
@@ -46,5 +46,5 @@
 > Tens ja declarades `LED_A` (7), `LED_B` (8), les constants `PERIODE_A = 250` i `PERIODE_B = 1000` (ms), i les variables `tA = 0`, `tB = 0`, `encesA = false`, `encesB = false`. Escriu de zero el `loop()` sense cap `delay()`: llegeix `millis()` una vegada, i per a cada LED per separat, si ha passat el seu període des de l'últim canvi, actualitza la seva marca de temps, inverteix el seu estat i escriu-lo al pin.
 
 **Practica:** temporització no bloquejant amb `millis()` · comparació `ara - tX >= PERIODE_X` · actualitzar la marca de temps · operador `!` per invertir un booleà.
-**Pista (per a qui es bloqueja):** cada LED té el seu propi `if`, totalment independent de l'altre; no hi ha cap `delay()` ni cap `else` que els lligui.
+**Pista (per a qui es bloqueja):** resol el raonament sencer per a un LED (comprova, actualitza, inverteix, escriu) i després aplica exactament el mateix raonament a l'altre, amb les seves pròpies variables.
 **En comparar amb el sketch, mireu:** ① dins de cada `if`, l'assignació `tA = ara` (o `tB = ara`) és abans o després d'invertir `encesA`? ② heu escrit un sol `if` que mira els dos LEDs alhora, o dos `if` independents, un per LED? ③ `digitalWrite(LED_A, encesA)` passa el booleà directament, o l'heu convertit a `HIGH`/`LOW` amb un `if` extra?
