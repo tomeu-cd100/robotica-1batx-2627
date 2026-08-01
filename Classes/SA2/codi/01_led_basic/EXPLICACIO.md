@@ -2,6 +2,8 @@
 
 **Quan es fa:** Sessió 1 (modelatge) · **Fitxer:** `01_led_basic.ino` · **Circuit:** [esquema de connexions](../../SA2_esquemes_connexions.md)
 
+> ✍️ **Kata primer!** No llegeixis encara el codi: el docent projecta el kata d'aquesta pràctica i tens **10 minuts** per escriure el teu bloc (apunts permesos). Després torna aquí i **compara**.
+
 ## 🎯 Per què fem aquesta pràctica
 
 A la SA1 vas fer parpellejar el LED de la placa amb `Blink`. Aquí fas el mateix… però **bé**: amb un LED extern al pin 8 i, sobretot, amb el codi escrit perquè es pugui **canviar sense por**.

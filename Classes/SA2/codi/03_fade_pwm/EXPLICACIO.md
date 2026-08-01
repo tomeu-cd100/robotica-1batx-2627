@@ -2,6 +2,8 @@
 
 **Quan es fa:** Sessió 3 (modelatge) · **Fitxer:** `03_fade_pwm.ino` · **Circuit:** [esquema de connexions](../../SA2_esquemes_connexions.md) (LED al pin 9, que és PWM) · **Suport:** [diagrama de flux](../../SA2_diagrama_flux.md)
 
+> ✍️ **Kata primer!** No llegeixis encara el codi: el docent projecta el kata d'aquesta pràctica i tens **10 minuts** per escriure el teu bloc (apunts permesos). Després torna aquí i **compara**.
+
 ## 🎯 Per què fem aquesta pràctica
 
 Fins ara els teus pins només sabien fer dues coses: `HIGH` (5 V) o `LOW` (0 V). Encès o apagat. La pregunta d'avui: *com es regula la intensitat d'un LED si només hi ha HIGH i LOW?*

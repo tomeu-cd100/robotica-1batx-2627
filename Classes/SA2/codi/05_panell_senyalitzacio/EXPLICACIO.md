@@ -2,6 +2,8 @@
 
 **Quan es fa:** Sessió 4 (producte de la SA) · **Fitxer:** `05_panell_senyalitzacio.ino` · **Circuit:** [esquema de connexions](../../SA2_esquemes_connexions.md) (RGB 9-10-11, piezo 6, relé 7)
 
+> ✍️ **Kata primer!** No llegeixis encara el codi: el docent projecta el kata d'aquesta pràctica i tens **10 minuts** per escriure el teu bloc (apunts permesos). Després torna aquí i **compara**.
+
 ## 🎯 Per què fem aquesta pràctica
 
 Aquí **no hi ha cap concepte nou** — i això és el que la fa important. El producte de la SA és una **integració**: tot el que has après per separat (sortides digitals, PWM, funcions pròpies) treballant junt en un sistema amb sentit: un panell que comunica **estats** (tot correcte / avís / alarma) amb color, so i una càrrega real commutada per relé.

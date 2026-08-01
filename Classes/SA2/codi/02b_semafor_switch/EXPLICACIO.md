@@ -2,6 +2,8 @@
 
 **Quan es fa:** Sessió 2 (després del semàfor) · **Fitxer:** `02b_semafor_switch.ino` · **Circuit:** el mateix de la [Pràctica 2](../02_semafor/02_semafor.ino) (vermell=8, groc=9, verd=10)
 
+> ✍️ **Kata primer!** No llegeixis encara el codi: el docent projecta el kata d'aquesta pràctica i tens **10 minuts** per escriure el teu bloc (apunts permesos). Després torna aquí i **compara**.
+
 ## 🎯 Per què hi ha DUES versions del semàfor
 
 No és una pràctica nova: és **el mateix semàfor, escrit d'una altra manera**. I això és exactament la lliçó — un problema pot tenir més d'una escriptura, i triar-ne una bona té conseqüències.

@@ -116,6 +116,8 @@
 
 > Frases i preguntes clau per al **Modelatge** de cada sessió (què mirar, què preguntar abans d'executar, error a anticipar).
 
+> ✍️ **Katas:** en acabar el modelatge de cada sessió, projecta el kata de la pràctica del dia ([SA2_katas.md](SA2_katas.md)): 10' d'escriptura individual **abans** de repartir/obrir el sketch.
+
 - **S1 · `01_led_basic` (constants):** mostra per què `const int LED = 8;` és millor que escriure `8` per tot arreu. Pregunta: *"si moc el LED al pin 7, quantes línies he de canviar?"* *Error a anticipar:* oblidar `pinMode(LED, OUTPUT)`.
 - **S2 · `02_semafor` (`for`/`if`/`switch`):** recorre el `loop()` en veu alta com una **recepta seqüencial**. Demana **predir l'ordre** d'encesa abans d'executar. Verbalitza: *`delay()` bloqueja — mentre espera, no passa res més*. En mostrar la variant amb `switch`, pregunta: *"quantes fases té el semàfor? i si n'hi afegim una quarta (nocturna), on aniria?"* *Error a anticipar:* esperar que els LED canviïn alhora; oblidar el `break` de cada `case`.
 - **S3 · `03_fade_pwm` / `04_rgb` (PWM, `map()`):** contrasta `digitalWrite` (0/1) amb `analogWrite` (**0–255**). Demana predir què fa el valor **128**. Mantra: *PWM només als pins `~`*. *Error a anticipar:* barrejar el rang 0–1023 (lectura) amb 0–255 (PWM).
