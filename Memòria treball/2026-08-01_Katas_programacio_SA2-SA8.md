@@ -14,9 +14,13 @@ i abans d'obrir el sketch del dia, cada alumne escriu **de zero, individualment
 i amb apunts permesos** el bloc central; després obre el sketch i **compara**
 (no es recull ni qualifica).
 
-1. **7 fitxers nous** `Classes/SAn/SAn_katas.md` (SA2–SA8, vista docent): 31
-   katas, un per sketch, amb enunciat projectable (valors reals del codi),
-   «què practica», pista i 3 punts de comparació ①②③.
+1. **7 fitxers nous** `Classes/SAn/SAn_katas.md` (SA2–SA8): 31 katas, un per
+   sketch, amb enunciat projectable (valors reals del codi), «què practica»,
+   pista i 3 punts de comparació ①②③. *(Primer vista docent; el mateix dia
+   van passar a vista alumnat amb enllaç des de cada pràctica: l'enunciat no
+   regala res — la «solució» és el sketch — i així el kata funciona encara
+   que el docent falti. Disparadors: casella a la checklist docent per
+   sessió, rutina a la fitxa d'alumnat i ganxo-enllaç a cada EXPLICACIO.)*
 2. **Ganxo «✍️ Kata primer!»** a les 31 EXPLICACIO + **línia de rutina** a les
    7 guies docents + entrada als 7 README de SA + referències creuades a
    `00_LLEGEIX-ME_Classes.md` i `00_Mini_checks_individuals.md`.
