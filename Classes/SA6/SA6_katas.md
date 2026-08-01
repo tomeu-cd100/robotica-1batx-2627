@@ -37,5 +37,5 @@
 > Tens ja declarades les constants `SENSOR` (A0), `SORTIDA` (pin 9, PWM), `CONSIGNA` (500) i `Kp` (0.8, `float`), i el `setup()` que configura `SORTIDA` com a `OUTPUT`. Escriu de zero el `loop()`: llegeix el sensor, calcula l'`error` respecte a la consigna, calcula la sortida proporcional a l'error (`Kp` per l'error), limita el resultat al rang vàlid de PWM (0-255) i aplica'l a la sortida, amb una pausa de 50 ms.
 
 **Practica:** `analogRead` · `error = lectura - consigna` · multiplicació d'un `float` per un `int` amb conversió a enter · `constrain()` per limitar un rang · `analogWrite`.
-**Pista (per a qui es bloqueja):** fes-ho en passos separats amb una variable per a cadascun: primer l'error, després la fórmula proporcional, i només al final el límit.
+**Pista (per a qui es bloqueja):** pensa en tres magnituds encadenades: com de lluny ets de la consigna, quanta resposta hi apliques, i si aquesta resposta és un valor vàlid per al PWM.
 **En comparar amb el sketch, mireu:** ① la conversió a enter `(int)` l'apliqueu al resultat de `Kp * error` abans de guardar-lo, o guardeu `Kp * error` en una variable pròpia i la convertiu més tard? ② el `constrain()` actua sobre la variable `sortida` un cop calculada, o l'heu aplicat directament dins de l'`analogWrite`? ③ els dos límits de `constrain()` són `(0, 255)` en aquest ordre, o hi heu posat primer el màxim?
