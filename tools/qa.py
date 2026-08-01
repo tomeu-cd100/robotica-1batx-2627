@@ -488,6 +488,8 @@ def comprova_katas() -> None:
     for n in range(2, 9):
         sa_dir = ARREL / "Classes" / f"SA{n}"
         codi = sa_dir / "codi"
+        if not codi.exists():
+            continue
         katas = sa_dir / f"SA{n}_katas.md"
         existeix = katas.exists()
         if not existeix:

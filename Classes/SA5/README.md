@@ -42,6 +42,7 @@ Cinquena situació d'aprenentatge (**6 h · 3 sessions** + 4a opcional d'ampliac
 | [`SA5_fitxa_ampliada.md`](SA5_fitxa_ampliada.md) | **Versió ampliada** (aprofundiment): totes les rutines (rols, coavaluació, exit ticket, ODS, PC) i ampliacions. |
 | [`SA5_checklist_docent.md`](SA5_checklist_docent.md) | **Checklist docent** (una cara): logística prèvia, punts de control per sessió, avaluació i diversitat. |
 | [`SA5_checklist_alumnat.md`](SA5_checklist_alumnat.md) | **Checklist alumnat** (una cara): què he de fer/lliurar + autoavaluació amb semàfor. |
+| [`SA5_katas.md`](SA5_katas.md) | Katas d'escriptura (10', docent projecta). |
 | [`SA5_connexions.md`](SA5_connexions.md) | Connexions de la micro:bit i perifèrics via Micro:shield. |
 | `codi/` | Programes MicroPython (vegeu la taula següent). |
 

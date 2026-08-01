@@ -22,15 +22,6 @@
 **Pista (per a qui es bloqueja):** pensa en dos moments diferents, no en un únic número: quin és el moment d'engegar, i quin el d'aturar; si no és cap dels dos, no toquis `actiu`.
 **En comparar amb el sketch, mireu:** ① heu fet servir `if` / `else if` (una sola decisió, excloent), o dos `if` independents que es podrien avaluar tots dos a la mateixa volta? ② cada condició uneix els seus dos requisits amb `&&`, o els heu separat en `if` imbricats? ③ el `digitalWrite` final l'heu escrit amb l'operador ternari (`actiu ? HIGH : LOW`), o amb un `if`/`else` explícit?
 
-## Kata · `03_maquina_estats` (Sessió 3, modelatge)
-
-**Projecta (enunciat):**
-> Tens ja declarat l'`enum Estat { ESPERA, FASE1, FASE2, FET }`, la variable `estat = ESPERA`, la funció `canviaEstat(Estat nou)` (canvia `estat` i actualitza `tEstat` amb `millis()`), la funció `bool polsat()` i els pins configurats a `setup()`. Escriu de zero un `loop()` amb un `switch(estat)` que inclogui **només** els casos `ESPERA` i `FASE1`: a `ESPERA`, `LED_VERMELL` encès i `LED_VERD` apagat, sortida a 0, i si es polsa, passa a `FASE1` (amb un petit `delay(250)` d'antirebots); a `FASE1`, `LED_VERMELL` apagat i `LED_VERD` encès, sortida PWM a 120, i si han passat més de 3000 ms des que hi vau entrar, passa a `FASE2`.
-
-**Practica:** `switch`/`case` amb un `case` per estat · `canviaEstat()` per centralitzar el canvi · transició per esdeveniment (`polsat()`) enfront de transició per temps (`millis() - tEstat`).
-**Pista (per a qui es bloqueja):** cada `case` respon dues preguntes, què fa el sistema aquí i quan en surt; un dels dos casos ho decideix amb el polsador, l'altre amb el rellotge.
-**En comparar amb el sketch, mireu:** ① cada `case` acaba amb un `break`, o els heu deixat encadenats? ② a `ESPERA`, el `delay(250)` és dins del mateix `if` que crida `canviaEstat(FASE1)`, o l'heu tret com a instrucció separada del `case`? ③ a `FASE1`, la condició de temps resta `millis() - tEstat`, o ho heu escrit a l'inrevés (`tEstat - millis()`)?
-
 ## Kata · `04_control_proporcional` (Sessions 2-3, repte +)
 
 **Projecta (enunciat):**
@@ -39,3 +30,12 @@
 **Practica:** `analogRead` · `error = lectura - consigna` · multiplicació d'un `float` per un `int` amb conversió a enter · `constrain()` per limitar un rang · `analogWrite`.
 **Pista (per a qui es bloqueja):** pensa en tres magnituds encadenades: com de lluny ets de la consigna, quanta resposta hi apliques, i si aquesta resposta és un valor vàlid per al PWM.
 **En comparar amb el sketch, mireu:** ① la conversió a enter `(int)` l'apliqueu al resultat de `Kp * error` abans de guardar-lo, o guardeu `Kp * error` en una variable pròpia i la convertiu més tard? ② el `constrain()` actua sobre la variable `sortida` un cop calculada, o l'heu aplicat directament dins de l'`analogWrite`? ③ els dos límits de `constrain()` són `(0, 255)` en aquest ordre, o hi heu posat primer el màxim?
+
+## Kata · `03_maquina_estats` (Sessió 3, modelatge)
+
+**Projecta (enunciat):**
+> Tens ja declarat l'`enum Estat { ESPERA, FASE1, FASE2, FET }`, la variable `estat = ESPERA`, la funció `canviaEstat(Estat nou)` (canvia `estat` i actualitza `tEstat` amb `millis()`), la funció `bool polsat()` i els pins configurats a `setup()`. Escriu de zero un `loop()` amb un `switch(estat)` que inclogui **només** els casos `ESPERA` i `FASE1`: a `ESPERA`, `LED_VERMELL` encès i `LED_VERD` apagat, sortida a 0, i si es polsa, passa a `FASE1` (amb un petit `delay(250)` d'antirebots); a `FASE1`, `LED_VERMELL` apagat i `LED_VERD` encès, sortida PWM a 120, i si han passat més de 3000 ms des que hi vau entrar, passa a `FASE2`.
+
+**Practica:** `switch`/`case` amb un `case` per estat · `canviaEstat()` per centralitzar el canvi · transició per esdeveniment (`polsat()`) enfront de transició per temps (`millis() - tEstat`).
+**Pista (per a qui es bloqueja):** cada `case` respon dues preguntes, què fa el sistema aquí i quan en surt; un dels dos casos ho decideix amb el polsador, l'altre amb el rellotge.
+**En comparar amb el sketch, mireu:** ① cada `case` acaba amb un `break`, o els heu deixat encadenats? ② a `ESPERA`, el `delay(250)` és dins del mateix `if` que crida `canviaEstat(FASE1)`, o l'heu tret com a instrucció separada del `case`? ③ a `FASE1`, la condició de temps resta `millis() - tEstat`, o ho heu escrit a l'inrevés (`tEstat - millis()`)?

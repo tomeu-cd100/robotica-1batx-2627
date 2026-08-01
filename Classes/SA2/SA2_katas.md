@@ -49,7 +49,7 @@
 **Pista (per a qui es bloqueja):** dins de `color()` hi ha exactament tres `analogWrite`, un per canal, fent servir `r`, `g` i `b` (no `R`, `G`, `B`).
 **En comparar amb el sketch, mireu:** ① la funció és `void` i no `int`? ② dins seu s'usen els paràmetres (minúscules) i no les constants de pin? ③ el `loop()` crida `color(...)` seguit d'un `delay(1000)` per a cada color?
 
-## Kata · `05_panell_senyalitzacio` (Sessió 4)
+## Kata · `05_panell_senyalitzacio` (Sessió 4, producte)
 
 **Projecta (enunciat):**
 > Tens ja `color(r, g, b)` declarada i les constants `PIEZO` (pin 6) i `RELE` (pin 7). Escriu de zero la funció `void estatAvis()` que representi l'estat d'avís: llum **groga fixa**, un **bip curt** (1000 Hz, 150 ms) i la càrrega del relé **desconnectada**.

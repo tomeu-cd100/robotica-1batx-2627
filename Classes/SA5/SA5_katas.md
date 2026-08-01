@@ -13,7 +13,7 @@
 **Pista (per a qui es bloqueja):** és una única decisió de tres opcions, i exactament una s'ha d'executar a cada volta: comença mirant el botó A i pensa com garantir que, si aquesta condició ja s'ha complert, les altres dues ni tan sols es comprovin.
 **En comparar amb el sketch, mireu:** ① heu fet servir `elif` per al botó B, o un segon `if` independent que es podria arribar a executar alhora amb el primer? ② la branca "cap botó premut" és un `else` final, o l'heu deixat com un tercer `if` que podria no executar-se mai? ③ les tres branques estan indentades exactament al mateix nivell (dins del `while`), o alguna ha quedat arran de marge?
 
-## Kata · `02_passes` (Sessió 2 · comptapassos)
+## Kata · `02_passes` (Sessió 2, comptapassos)
 
 **Projecta (enunciat):**
 > Tens ja declarades `passes = 0` i `LLINDAR = 1500`. Escriu de zero el `while True:` complet: llegeix la força de l'acceleròmetre amb `accelerometer.get_strength()`; si supera `LLINDAR`, incrementa `passes`, mostra'n l'última xifra a la matriu (`str(passes % 10)`) i fes una pausa de 300 ms; en un `if` a part (no lligat a l'anterior), si es prem el botó B, reinicia `passes` a 0 i fes un `scroll` de `"0"`. Acaba cada volta amb una pausa de 20 ms.
@@ -22,7 +22,7 @@
 **Pista (per a qui es bloqueja):** cada volta del bucle hi ha dues coses a vigilar: si toca comptar un pas (llegir, comparar, comptar) i si toca reiniciar el comptador amb el botó. Pensa si les dues comprovacions han de dependre l'una de l'altra o no.
 **En comparar amb el sketch, mireu:** ① el `sleep(300)` de l'antirebot és dins de l'`if` del llindar, o l'heu posat com a pausa general de tot el bucle (que també alentiria la lectura del botó)? ② la comparació amb el llindar és `forca > LLINDAR` (estricta), o l'heu escrit amb `>=` — què passaria si la força cau just al valor del llindar? ③ el `sleep(20)` final s'executa sempre, a totes les voltes, o només quan es compleix algun dels `if` anteriors?
 
-## Kata · `03_nightlight` (Sessió 2 · llum de nit)
+## Kata · `03_nightlight` (Sessió 2, llum de nit)
 
 **Projecta (enunciat):**
 > Tens ja declarada `LLINDAR = 50`. Escriu de zero el `while True:` complet: llegeix el nivell de llum amb `display.read_light_level()`; si el valor és per sota de `LLINDAR`, mostra `Image.SQUARE`; en cas contrari, neteja la matriu amb `display.clear()`. Acaba cada volta amb una pausa de 100 ms.
