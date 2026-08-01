@@ -489,7 +489,8 @@ def comprova_katas() -> None:
         sa_dir = ARREL / "Classes" / f"SA{n}"
         codi = sa_dir / "codi"
         katas = sa_dir / f"SA{n}_katas.md"
-        if not katas.exists():
+        existeix = katas.exists()
+        if not existeix:
             errors.append(f"[katas] falta Classes/SA{n}/SA{n}_katas.md")
             sense_fitxer += 1
             text = ""
@@ -505,7 +506,7 @@ def comprova_katas() -> None:
             else:
                 continue                              # fitxer auxiliar (.h, etc.)
             total += 1
-            if text and f"`{sketch_id}`" not in text:
+            if existeix and f"`{sketch_id}`" not in text:
                 errors.append(f"[katas] SA{n}_katas.md: falta el kata de "
                               f"`{sketch_id}`")
                 sense_kata += 1
