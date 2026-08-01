@@ -2,6 +2,8 @@
 
 **Quan es fa:** Sessió 3 (modelatge) · **Fitxer:** `03_evita_obstacles.ino` · **Circuit:** [esquema de connexions](../../SA7_esquemes_connexions.md) (ultrasons frontal: TRIG=12, ECHO=11)
 
+> ✍️ **Kata primer!** No llegeixis encara el codi: el docent projecta el kata d'aquesta pràctica i tens **10 minuts** per escriure el teu bloc (apunts permesos). Després torna aquí i **compara**.
+
 ## 🎯 Per què fem aquesta pràctica
 
 Fins ara el robot executava un pla cec: tants mil·lisegons endavant, tants de gir. Avui **percep l'entorn i decideix sol**: avança i, si l'ultrasons detecta un obstacle a prop, recula i gira per buscar via lliure. És el primer comportament **autònom** del rover, i és **control en llaç tancat** (SA6): el sensor mana sobre l'acció, no el rellotge.

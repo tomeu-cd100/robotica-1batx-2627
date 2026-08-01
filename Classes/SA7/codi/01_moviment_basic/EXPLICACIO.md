@@ -2,6 +2,8 @@
 
 **Quan es fa:** Sessió 1 (modelatge) · **Fitxer:** `01_moviment_basic.ino` · **Circuit:** [esquema de connexions](../../SA7_esquemes_connexions.md)
 
+> ✍️ **Kata primer!** No llegeixis encara el codi: el docent projecta el kata d'aquesta pràctica i tens **10 minuts** per escriure el teu bloc (apunts permesos). Després torna aquí i **compara**.
+
 ## 🎯 Per què fem aquesta pràctica
 
 El teu rover no té volant. Com gira, doncs? Amb **cinemàtica diferencial**: cada roda té el seu motor, i el que decideix la trajectòria és la **diferència** entre elles. Dues rodes a la mateixa velocitat = recte; velocitats o sentits diferents = gir. Tota la robòtica mòbil de la SA7 (i el rover del trimestre) penja d'aquesta idea.

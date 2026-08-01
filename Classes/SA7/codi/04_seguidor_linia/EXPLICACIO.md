@@ -2,6 +2,8 @@
 
 **Quan es fa:** Sessió 4 (modelatge i repte de pista) · **Fitxer:** `04_seguidor_linia.ino` · **Circuit:** [esquema de connexions](../../SA7_esquemes_connexions.md) (sensors IR sota el robot, mirant a terra)
 
+> ✍️ **Kata primer!** No llegeixis encara el codi: el docent projecta el kata d'aquesta pràctica i tens **10 minuts** per escriure el teu bloc (apunts permesos). Després torna aquí i **compara**.
+
 ## 🎯 Per què fem aquesta pràctica
 
 Als magatzems de logística hi ha robots (AGV) que es passen el dia seguint línies pintades a terra. Avui el teu rover fa el mateix: dos sensors **IR** sota el xassís miren el terra i distingeixen la línia negra (poc reflex) del fons clar (molt reflex). La lògica és de sentit comú: si **només un** sensor veu la línia, és que el robot s'ha desviat cap a l'altre costat → **corregeix** cap a la línia.

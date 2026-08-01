@@ -159,6 +159,8 @@ La **Imagina 3dBot** és Arduino-compatible, però **els pins dels motors depene
 
 > Frases i preguntes clau per al **Modelatge** de cada sessió (què mirar, què preguntar abans d'executar, error a anticipar).
 
+> ✍️ **Katas:** en acabar el modelatge de cada sessió, projecta el kata de la pràctica del dia ([SA7_katas.md](SA7_katas.md)): 10' d'escriptura individual **abans** de repartir/obrir el sketch.
+
 - **S1 · `01_moviment_basic` (cinemàtica diferencial):** **AVÍS previ:** ajusta els **pins del model** abans de pujar res. Explica el gir amb les mans (dues rodes): *mateixa velocitat = recte; diferent = gir*. Demana predir què fa amb una roda més ràpida. *Error a anticipar:* no va recte per motors desiguals (cal calibrar).
 - **S2 · `02_trajectoria_quadrat`:** el gir **per temps** és imprecís (depèn de bateria i superfície). Demana **mesurar l'error** del gir de 90° i calibrar. *Error a anticipar:* esperar precisió del control per temps.
 - **S3 · `03_evita_obstacles`:** és **percepció → decisió → acció** (llaç tancat, SA6). Demana predir l'estratègia quan detecta un obstacle. *Error a anticipar:* estratègia massa simple → es queda encallat.

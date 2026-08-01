@@ -2,6 +2,8 @@
 
 **Quan es fa:** Sessió 2 (modelatge) · **Fitxer:** `02_trajectoria_quadrat.ino` · **Circuit:** [esquema de connexions](../../SA7_esquemes_connexions.md)
 
+> ✍️ **Kata primer!** No llegeixis encara el codi: el docent projecta el kata d'aquesta pràctica i tens **10 minuts** per escriure el teu bloc (apunts permesos). Després torna aquí i **compara**.
+
 ## 🎯 Per què fem aquesta pràctica
 
 A la Pràctica 1 el robot es movia; ara ha de fer un **recorregut concret**: un quadrat. Una trajectòria és exactament això: una **seqüència de moviments amb els seus temps**. I aquí topes amb el problema central de la sessió: *com fa el robot per girar exactament 90°?* No té cap sensor d'angle: gira **mentre tu li diguis**, i prou. El temps de gir s'ha de **calibrar** provant, mesurant l'error i ajustant.
