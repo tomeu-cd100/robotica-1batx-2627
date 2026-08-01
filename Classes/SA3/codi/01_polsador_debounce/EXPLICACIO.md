@@ -2,7 +2,7 @@
 
 **Quan es fa:** Sessió 1 (modelatge) · **Fitxer:** `01_polsador_debounce.ino` · **Circuit:** [esquema de connexions](../../SA3_esquemes_connexions.md) (polsador=2, LED=8)
 
-> ✍️ **Kata primer!** No llegeixis encara el codi: el docent projecta el kata d'aquesta pràctica i tens **10 minuts** per escriure el teu bloc (apunts permesos). Després torna aquí i **compara**.
+> ✍️ **Kata primer!** No llegeixis encara el codi: obre el [kata d'aquesta pràctica](../../SA3_katas.md) i tens **10 minuts** per escriure el teu bloc (individual, apunts permesos). Després torna aquí i **compara**.
 
 ## 🎯 Per què fem aquesta pràctica
 

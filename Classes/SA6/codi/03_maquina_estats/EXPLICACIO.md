@@ -2,7 +2,7 @@
 
 **Quan es fa:** Sessió 3 (modelatge) · **Fitxer:** `03_maquina_estats.ino` · **Circuit:** [esquema de connexions](../../SA6_esquemes_connexions.md) (polsador a 2, LEDs a 7/8, sortida a 9~)
 
-> ✍️ **Kata primer!** No llegeixis encara el codi: el docent projecta el kata d'aquesta pràctica i tens **10 minuts** per escriure el teu bloc (apunts permesos). Després torna aquí i **compara**.
+> ✍️ **Kata primer!** No llegeixis encara el codi: obre el [kata d'aquesta pràctica](../../SA6_katas.md) i tens **10 minuts** per escriure el teu bloc (individual, apunts permesos). Després torna aquí i **compara**.
 
 ## 🎯 Per què fem aquesta pràctica
 

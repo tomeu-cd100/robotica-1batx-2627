@@ -2,7 +2,7 @@
 
 **Quan es fa:** Sessió 4 (producte) · **Fitxer:** `04_barrera_automatica.ino` · **Circuit:** [esquema de connexions](../../SA4_esquemes_connexions.md) (servo=9, HC-SR04 TRIG=12/ECHO=11, LED=8)
 
-> ✍️ **Kata primer!** No llegeixis encara el codi: el docent projecta el kata d'aquesta pràctica i tens **10 minuts** per escriure el teu bloc (apunts permesos). Després torna aquí i **compara**.
+> ✍️ **Kata primer!** No llegeixis encara el codi: obre el [kata d'aquesta pràctica](../../SA4_katas.md) i tens **10 minuts** per escriure el teu bloc (individual, apunts permesos). Després torna aquí i **compara**.
 
 ## 🎯 Per què fem aquesta pràctica
 

@@ -2,7 +2,7 @@
 
 **Quan es fa:** Sessió 3 (modelatge) · **Fitxer:** `03_ia_gestos.py` · **Muntatge:** [connexions i entorn](../SA8_connexions.md) (només sensors integrats)
 
-> ✍️ **Kata primer!** No llegeixis encara el codi: el docent projecta el kata d'aquesta pràctica i tens **10 minuts** per escriure el teu bloc (apunts permesos). Després torna aquí i **compara**.
+> ✍️ **Kata primer!** No llegeixis encara el codi: obre el [kata d'aquesta pràctica](../SA8_katas.md) i tens **10 minuts** per escriure el teu bloc (individual, apunts permesos). Després torna aquí i **compara**.
 
 ## 🎯 Per què fem aquesta pràctica
 

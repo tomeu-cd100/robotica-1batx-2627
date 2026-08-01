@@ -2,7 +2,7 @@
 
 **Quan es fa:** Sessió 2 (modelatge) · **Fitxer:** `02_motor_pont_h.ino` · **Circuit:** [esquema de connexions](../../SA4_esquemes_connexions.md) (ENA=5, IN1=7, IN2=8, alimentació externa + **massa comuna**)
 
-> ✍️ **Kata primer!** No llegeixis encara el codi: el docent projecta el kata d'aquesta pràctica i tens **10 minuts** per escriure el teu bloc (apunts permesos). Després torna aquí i **compara**.
+> ✍️ **Kata primer!** No llegeixis encara el codi: obre el [kata d'aquesta pràctica](../../SA4_katas.md) i tens **10 minuts** per escriure el teu bloc (individual, apunts permesos). Després torna aquí i **compara**.
 
 ## 🎯 Per què fem aquesta pràctica
 

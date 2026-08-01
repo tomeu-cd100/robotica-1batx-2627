@@ -2,7 +2,7 @@
 
 **Quan es fa:** Sessió 3 (després del *fade*) · **Fitxer:** `04_rgb.ino` · **Circuit:** [esquema de connexions](../../SA2_esquemes_connexions.md) (R=9, G=10, B=11, càtode comú a GND)
 
-> ✍️ **Kata primer!** No llegeixis encara el codi: el docent projecta el kata d'aquesta pràctica i tens **10 minuts** per escriure el teu bloc (apunts permesos). Després torna aquí i **compara**.
+> ✍️ **Kata primer!** No llegeixis encara el codi: obre el [kata d'aquesta pràctica](../../SA2_katas.md) i tens **10 minuts** per escriure el teu bloc (individual, apunts permesos). Després torna aquí i **compara**.
 
 ## 🎯 Per què fem aquesta pràctica
 

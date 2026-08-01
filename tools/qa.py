@@ -515,9 +515,15 @@ def comprova_katas() -> None:
                               f"`{sketch_id}`")
                 sense_kata += 1
         for expl in sorted(codi.rglob("*EXPLICACIO*.md")):
-            if GANXO not in expl.read_text(encoding="utf-8"):
+            expl_text = expl.read_text(encoding="utf-8")
+            ganxo_linia = next((l for l in expl_text.splitlines() if GANXO in l), None)
+            if ganxo_linia is None:
                 errors.append(f"[katas] {expl.relative_to(ARREL)}: sense el "
                               f"ganxo «Kata primer»")
+                sense_ganxo += 1
+            elif f"SA{n}_katas.md" not in ganxo_linia:
+                errors.append(f"[katas] {expl.relative_to(ARREL)}: el ganxo «Kata "
+                              f"primer» no enllaça SA{n}_katas.md")
                 sense_ganxo += 1
         # (d) la checklist docent ha d'enllaçar SAn_katas.md, i la fitxa
         # d'alumnat ha de citar la rutina del kata, perquè el ritual no
