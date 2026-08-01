@@ -7,16 +7,16 @@
 ## Kata · `01_telemetria_emissor` (Sessió 1, modelatge)
 
 **Projecta (enunciat):**
-> Tens ja fets, abans del bucle, `radio.on()` i `radio.config(group=10)`. Escriu de zero el `while True:` complet: mesura la temperatura amb `temperature()` i la llum amb `display.read_light_level()`, envia-les per ràdio en un sol missatge de text amb el format `"T:23;L:120"` (etiqueta `T:` per a la temperatura, `L:` per a la llum, separades per `;`), mostra `Image.ARROW_N` com a indicador d'enviament i acaba cada volta amb una pausa de 2000 ms.
+> Tens ja fets, abans del bucle, `radio.on()` i `radio.config(group=10)`. Escriu de zero el `while True:` complet: mesura la temperatura amb `temperature()` i la llum amb `display.read_light_level()`, envia totes dues per ràdio, cadascuna amb la seva etiqueta (`T:` per a la temperatura, `L:` per a la llum) separades per `;` dins d'un mateix enviament, i mostra `Image.ARROW_N` com a indicador d'enviament; el ritme ha de ser d'una mesura cada 2000 ms.
 
 **Practica:** concatenació de text amb `str()` · missatges etiquetats separats per `;` · `radio.send()` · `sleep()` com a ritme del bucle.
-**Pista (per a qui es bloqueja):** primer guarda cada mesura en una variable pròpia; només després construeix el text a enviar unint totes dues amb les seves etiquetes.
-**En comparar amb el sketch, mireu:** ① cada valor numèric passa per `str(...)` abans de concatenar-se, o l'heu enviat directament (error de tipus)? ② l'etiqueta de cada magnitud (`"T:"`, `"L:"`) és literal dins la mateixa cadena que `radio.send()`, o l'heu construït en passos separats? ③ el `sleep(2000)` és l'última línia del bucle, després de mostrar la fletxa, o l'heu posat abans d'enviar la dada?
+**Pista (per a qui es bloqueja):** primer guarda cada mesura en una variable pròpia (com fas amb dos sensors); després decideix com ajuntar-les en un únic enviament amb les etiquetes correctes.
+**En comparar amb el sketch, mireu:** ① cada valor numèric passa per `str(...)` abans de concatenar-se, o l'heu enviat directament (error de tipus)? ② l'etiqueta de cada magnitud (`"T:"`, `"L:"`) és literal dins la mateixa cadena que passeu a `radio.send()`, o l'heu construït en una variable a part abans d'enviar-la? ③ el `sleep(2000)` és l'última instrucció del bucle, després de mostrar la fletxa, o l'heu posat en un altre punt (p. ex. abans d'enviar la dada)?
 
 ## Kata · `02_telemetria_receptor` (Sessió 1, modelatge)
 
 **Projecta (enunciat):**
-> Tens ja fets, abans del bucle, `radio.on()`, `radio.config(group=10)` i la constant `LLINDAR_TEMP = 28`. Escriu de zero el `while True:` complet: rep un missatge amb `radio.receive()` i, si n'ha arribat un, mostra'l pel port sèrie i decideix una alerta visual: separa el text pel `;` i pel `:` per extreure la temperatura com a número enter, i mostra `Image.NO` si supera `LLINDAR_TEMP` o `Image.YES` si no; si el missatge no té el format esperat, controla l'error mostrant `Image.CONFUSED`. Acaba cada volta amb una pausa de 50 ms.
+> Tens ja fets, abans del bucle, `radio.on()`, `radio.config(group=10)` i la constant `LLINDAR_TEMP = 28`. Escriu de zero el `while True:` complet: rep un missatge amb `radio.receive()` i, si n'ha arribat un, mostra'l pel port sèrie; el programa ha d'incloure control d'errors per si el missatge no té el format esperat, mostrant `Image.CONFUSED` en aquest cas; quan es pugui interpretar correctament, separa'l pel `;` i pel `:` per extreure la temperatura com a número enter, i mostra `Image.NO` si supera `LLINDAR_TEMP` o `Image.YES` si no. Acaba cada volta amb una pausa de 50 ms.
 
 **Practica:** `radio.receive()` que no bloqueja (`is not None`) · `split(";")` i `split(":")` encadenats · `int(...)` per desfer l'`str()` de l'emissora · control d'errors amb `try`/`except`.
 **Pista (per a qui es bloqueja):** pensa-ho en dues fases: primer decidir si ha arribat un missatge nou, i després quins passos necessiten protecció davant d'un format inesperat.
@@ -25,7 +25,7 @@
 ## Kata · `03_ia_gestos` (Sessió 3, modelatge)
 
 **Projecta (enunciat):**
-> Escriu de zero la funció `classifica(x, y, z)`: si `accelerometer.was_gesture("shake")` és cert, retorna `"SACSEIG"`; si no, i `z < -700`, retorna `"PLA (cara amunt)"`; si no, i `z > 700`, retorna `"CAP PER AVALL"`; si no, i `y > 600`, retorna `"INCLINAT ENDAVANT"`; si cap de les anteriors no s'ha complert, retorna `"DRET"` com a cas per defecte.
+> Escriu de zero la funció `classifica(x, y, z)`: si `accelerometer.was_gesture("shake")` és cert, retorna `"SACSEIG"`; si no, i `z < -700`, retorna `"PLA (cara amunt)"`; si no, i `z > 700`, retorna `"CAP PER AVALL"`; si no, i `y > 600`, retorna `"INCLINAT ENDAVANT"`; si no, i `y < -600`, retorna `"INCLINAT ENRERE"`; si no, i `x > 600`, retorna `"INCLINAT DRETA"`; si no, i `x < -600`, retorna `"INCLINAT ESQUERRA"`; si cap de les anteriors no s'ha complert, retorna `"DRET"` com a cas per defecte.
 
 **Practica:** funció que **retorna** un text de classe en lloc d'executar accions · `if` que acaben en `return` (el `return` talla la funció allà mateix) · ordre de les regles com a decisió de disseny · cas per defecte al final.
 **Pista (per a qui es bloqueja):** cada regla és una línia sola: «si passa X, `return` la classe corresponent»; el truc és decidir en quin ordre les poses, perquè només guanya la primera que es dispara.
