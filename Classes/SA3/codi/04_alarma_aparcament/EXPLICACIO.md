@@ -2,6 +2,8 @@
 
 **Quan es fa:** Sessió 3 (producte) · **Fitxer:** `04_alarma_aparcament.ino` · **Circuit:** [esquema de connexions](../../SA3_esquemes_connexions.md) (TRIG=12, ECHO=11, LED=8, piezo=6)
 
+> ✍️ **Kata primer!** No llegeixis encara el codi: el docent projecta el kata d'aquesta pràctica i tens **10 minuts** per escriure el teu bloc (apunts permesos). Després torna aquí i **compara**.
+
 ## 🎯 Per què fem aquesta pràctica
 
 Aquest és el sketch de **referència del producte** de la SA: el cotxe que aparca i fa *bip… bip… biiip* quan s'acosta a la paret. Hi conflueix tot el que has treballat: la funció `mesuraDistancia()` de la pràctica 3, la decisió per llindar de la pràctica 2, i les sortides (LED i piezo) de la SA2. Percepció → decisió → acció: el teu primer sistema complet.

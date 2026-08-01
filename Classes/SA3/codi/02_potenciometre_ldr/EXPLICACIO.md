@@ -2,6 +2,8 @@
 
 **Quan es fa:** Sessió 2 (modelatge) · **Fitxer:** `02_potenciometre_ldr.ino` · **Circuit:** [esquema de connexions](../../SA3_esquemes_connexions.md) (potenciòmetre=A0, LDR=A1, LED=9~)
 
+> ✍️ **Kata primer!** No llegeixis encara el codi: el docent projecta el kata d'aquesta pràctica i tens **10 minuts** per escriure el teu bloc (apunts permesos). Després torna aquí i **compara**.
+
 ## 🎯 Per què fem aquesta pràctica
 
 Un polsador només sap dir **dues coses**: premut o no premut. Però el món real té matisos: quanta llum hi ha, com de girat està un botó de volum. Per això existeixen les **entrades analògiques**: `analogRead` converteix una tensió en un nombre de **0 a 1023** (conversió A/D de 10 bits).

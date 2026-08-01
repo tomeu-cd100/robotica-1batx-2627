@@ -2,6 +2,8 @@
 
 **Quan es fa:** Sessió 3 (modelatge) · **Fitxer:** `03_ultrasons_funcio.ino` · **Circuit:** [esquema de connexions](../../SA3_esquemes_connexions.md) (TRIG=12, ECHO=11)
 
+> ✍️ **Kata primer!** No llegeixis encara el codi: el docent projecta el kata d'aquesta pràctica i tens **10 minuts** per escriure el teu bloc (apunts permesos). Després torna aquí i **compara**.
+
 ## 🎯 Per què fem aquesta pràctica
 
 L'HC-SR04 mesura distàncies com un ratpenat: envia un so que no sents, espera l'**eco** i cronometra quant triga a tornar. Però el sensor és l'excusa: la lliçó gran del dia és **escriure una funció pròpia que retorna un valor**. Fins ara les funcions (`setup`, `loop`) només *feien* coses; `mesuraDistancia()` fa una feina i **et torna el resultat** amb `return`, com si preguntessis "a quina distància?" i et responguessin amb un número.

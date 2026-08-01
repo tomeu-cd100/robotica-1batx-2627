@@ -2,6 +2,8 @@
 
 **Quan es fa:** Sessió 1 (modelatge) · **Fitxer:** `01_polsador_debounce.ino` · **Circuit:** [esquema de connexions](../../SA3_esquemes_connexions.md) (polsador=2, LED=8)
 
+> ✍️ **Kata primer!** No llegeixis encara el codi: el docent projecta el kata d'aquesta pràctica i tens **10 minuts** per escriure el teu bloc (apunts permesos). Després torna aquí i **compara**.
+
 ## 🎯 Per què fem aquesta pràctica
 
 Fins ara el sistema només **feia** coses: encenia LEDs, tocava sons. Avui, per primer cop, **percep**: llegeix un polsador i reacciona. És el primer pas del patró que governarà tota la SA (i tot robot): *llegir una entrada → decidir → actuar*.
