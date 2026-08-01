@@ -42,7 +42,7 @@
 
 **Practica:** funció que **retorna** un text de classe en lloc d'executar accions · `if` que acaben en `return` (el `return` talla la funció allà mateix) · ordre de les regles com a decisió de disseny · cas per defecte al final.
 **Pista (per a qui es bloqueja):** cada regla és una línia sola: «si passa X, `return` la classe corresponent»; el truc és decidir en quin ordre les poses, perquè només guanya la primera que es dispara.
-**En comparar amb el sketch, mireu:** ① la comprovació del `shake` fa servir el seu propi `if` amb `return` immediat, o n'heu guardat el resultat en una variable booleana per decidir-ho més tard? ② cada regla posterior és un `if` independent, o les heu encadenat totes amb `elif`? ③ el cas per defecte `"DRET"` és un `return` solt al final, sense cap condició davant, o l'heu ficat dins d'un `else` addicional? (Les 3 regles que no heu escrit segueixen exactament el mateix patró que les 4 primeres — no calen comprovar aquí.)
+**En comparar amb el sketch, mireu:** ① la comprovació del `shake` fa servir el seu propi `if` amb `return` immediat, o n'heu guardat el resultat en una variable booleana per decidir-ho més tard? ② cada regla posterior és un `if` independent, o les heu encadenat totes amb `elif`? ③ el cas per defecte `"DRET"` és un `return` solt al final, sense cap condició davant, o l'heu ficat dins d'un `else` addicional? (Les 3 regles que no heu escrit segueixen exactament el mateix patró que les 4 primeres — no cal comprovar-les aquí.)
 
 ## Kata · `04_esp32_telemetria` (Sessió 2, demo opcional)
 

@@ -122,7 +122,7 @@ La **Imagina 3dBot** és Arduino-compatible, però **els pins dels motors depene
 ---
 
 ## SESSIÓ 4 (2 h) — Seguidor de línia + repte de pista
-- **Activació (10'):** *"Com segueix una línia un robot industrial (AGV)?"*
+- **Mini-check individual (10', substitueix l'activació):** [`00_Mini_checks_individuals.md`](../00_General/00_Mini_checks_individuals.md). Aprofita el canvi de full per presentar en 1' com segueix una línia un robot industrial (AGV).
 - **Modelatge (25'):** `04_seguidor_linia.ino`. Lectura dels sensors IR; lògica de correcció (si es desvia, corregir cap a la línia).
 - **Pràctica guiada (35'):** calibren i proven el seguidor a la pista.
 - **Repte de pista (40'):** completar el recorregut autònom; **mesurar temps**; iterar per millorar; **+ repte:** correcció proporcional (suau).

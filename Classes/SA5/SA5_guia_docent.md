@@ -67,7 +67,7 @@
 ---
 
 ## SESSIÓ 3 (2 h) — Ràdio i comparació de paradigmes
-- **Activació (10'):** *"Com es comuniquen dues plaques sense cables?"* → ràdio.
+- **Mini-check individual (10', substitueix l'activació):** [`00_Mini_checks_individuals.md`](../00_General/00_Mini_checks_individuals.md). Aprofita el canvi de full per presentar en 1' com es comuniquen dues plaques sense cables → ràdio.
 - **Modelatge (25'):** [`04_radio_dau.py`](codi/04_radio_dau.py). Mòdul `radio`: `radio.on()`, `radio.config(group=...)`, `send()`, `receive()`. Gestos (`was_gesture("shake")`) i `random`.
 - **Pràctica guiada (35'):** dau digital que es comparteix per ràdio entre dues plaques.
 - **Repte (40'):** "pedra-paper-tisora" per ràdio o comandament a distància; **+ repte:** xarxa de 3+ plaques.

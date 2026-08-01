@@ -83,7 +83,7 @@
 ---
 
 ## SESSIÓ 3 (2 h) — Introducció a la IA: de les regles a l'aprenentatge
-- **Activació (10'):** *"Com pot un sistema 'reconèixer' un gest o decidir per si sol?"*
+- **Mini-check individual (10', substitueix l'activació):** [`00_Mini_checks_individuals.md`](../00_General/00_Mini_checks_individuals.md). Aprofita el canvi de full per presentar en 1' com pot un sistema "reconèixer" un gest o decidir per si sol.
 - **Modelatge (25'):** [`03_ia_gestos.py`](codi/03_ia_gestos.py). Presenta-ho com una **escala de tres graons**, perquè el salt a la IA no sigui al buit sinó des de coses que ja saben fer:
   1. **Un llindar** (ja ho saben: l'alarma de la SA3, el termòstat de la SA6) — *"si x > 300, alerta"*: classifica en 2 classes amb 1 valor.
   2. **Regles combinades** (el que es fa avui): diversos valors (3 eixos de l'acceleròmetre) i diverses regles → 4 gestos (pla, dret, inclinat, sacseig). Encara les escrivim **a mà**. Recupera els **valors d'acceleròmetre anotats al quadern a la SA5 S2**: són el punt de partida per fixar els llindars sense fer-ho «a ull».
