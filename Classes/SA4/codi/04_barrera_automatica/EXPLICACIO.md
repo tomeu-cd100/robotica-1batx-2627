@@ -2,6 +2,8 @@
 
 **Quan es fa:** Sessió 4 (producte) · **Fitxer:** `04_barrera_automatica.ino` · **Circuit:** [esquema de connexions](../../SA4_esquemes_connexions.md) (servo=9, HC-SR04 TRIG=12/ECHO=11, LED=8)
 
+> ✍️ **Kata primer!** No llegeixis encara el codi: el docent projecta el kata d'aquesta pràctica i tens **10 minuts** per escriure el teu bloc (apunts permesos). Després torna aquí i **compara**.
+
 ## 🎯 Per què fem aquesta pràctica
 
 És el **producte** de la SA: la integració de tot el que has fet aquestes quatre sessions. Un **servo** (Pràctica 1) fa de barrera, un **ultrasons** (Pràctica 3) detecta el vehicle, i un LED indica l'estat. S'obre quan detecta, es tanca sola passat un temps: el mateix comportament que la barrera d'un pàrquing de veritat.

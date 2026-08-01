@@ -2,6 +2,8 @@
 
 **Quan es fa:** Sessió 3 (repte +, prepara la SA6) · **Fitxer:** `05_dos_leds_millis.ino` · **Circuit:** [esquema de connexions](../../SA4_esquemes_connexions.md) (muntatge lliure: dos LED amb resistència de 220 Ω als pins 7 i 8)
 
+> ✍️ **Kata primer!** No llegeixis encara el codi: el docent projecta el kata d'aquesta pràctica i tens **10 minuts** per escriure el teu bloc (apunts permesos). Després torna aquí i **compara**.
+
 ## 🎯 Per què fem aquesta pràctica
 
 Recorda el peatge que vas pagar al semàfor de la SA2: *`delay()` bloqueja*. Mentre l'Arduino espera, no pot fer **res** més. Allà només era un avís; avui el problema es fa real amb el repte més petit que el demostra: **dos LEDs parpellejant a ritmes diferents** (un cada 250 ms, l'altre cada 1000 ms). Prova de fer-ho amb `delay()` i veuràs que no hi ha manera: qualsevol espera d'un LED congela l'altre.

@@ -2,6 +2,8 @@
 
 **Quan es fa:** Sessió 2 (modelatge) · **Fitxer:** `02_motor_pont_h.ino` · **Circuit:** [esquema de connexions](../../SA4_esquemes_connexions.md) (ENA=5, IN1=7, IN2=8, alimentació externa + **massa comuna**)
 
+> ✍️ **Kata primer!** No llegeixis encara el codi: el docent projecta el kata d'aquesta pràctica i tens **10 minuts** per escriure el teu bloc (apunts permesos). Després torna aquí i **compara**.
+
 ## 🎯 Per què fem aquesta pràctica
 
 La pregunta d'avui: *per què no puc connectar un motor directament a un pin?* Perquè un pin d'Arduino dona **molt poc corrent** — prou per a un LED, ridícul per a un motor. La solució és un **driver**: el pont H **L298N**, un amplificador de corrent que rep les ordres (fluixetes) de l'Arduino i mou el motor amb l'energia de les **piles**. D'aquí surten les dues regles de seguretat que sentiràs com un mantra: **massa comuna** (tots els GND units) i **mai alimentar el motor des del pin 5V**.

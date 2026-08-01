@@ -2,6 +2,8 @@
 
 **Quan es fa:** Sessió 3 (modelatge) · **Fitxer:** `03_sensor_velocitat.ino` · **Circuit:** [esquema de connexions](../../SA4_esquemes_connexions.md) (pont H com a la Pràctica 2 + HC-SR04 TRIG=12, ECHO=11)
 
+> ✍️ **Kata primer!** No llegeixis encara el codi: el docent projecta el kata d'aquesta pràctica i tens **10 minuts** per escriure el teu bloc (apunts permesos). Després torna aquí i **compara**.
+
 ## 🎯 Per què fem aquesta pràctica
 
 Fins avui, sensors i actuadors anaven per separat: a la SA3 **llegies** el món, a les dues primeres sessions d'aquesta SA **movies** coses. Aquesta pràctica els connecta: *com fa un robot per frenar quan s'acosta a una paret?* La resposta és el bucle **percepció → acció**: mesura la distància, converteix-la en velocitat, aplica-la al motor. I torna a començar, moltes vegades per segon.

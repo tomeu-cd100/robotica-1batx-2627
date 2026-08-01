@@ -2,6 +2,8 @@
 
 **Quan es fa:** Sessió 1 (modelatge) · **Fitxer:** `01_servo_potenciometre.ino` · **Circuit:** [esquema de connexions](../../SA4_esquemes_connexions.md) (servo=9, potenciòmetre=A0)
 
+> ✍️ **Kata primer!** No llegeixis encara el codi: el docent projecta el kata d'aquesta pràctica i tens **10 minuts** per escriure el teu bloc (apunts permesos). Després torna aquí i **compara**.
+
 ## 🎯 Per què fem aquesta pràctica
 
 Fins ara les teves sortides eren LEDs: encendre, apagar, graduar. Avui el sistema **es mou**. I la primera distinció del dia és la important: un **servo** no és un motor que gira i gira — és un motor que va a la **posició** que li demanes (un angle de 0 a 180°) i s'hi queda. Per això serveix per a braços robòtics, barreres o timons: llocs on importa *on* és, no *com de ràpid* gira.
