@@ -2,6 +2,8 @@
 
 **Quan es fa:** Sessió 2 (modelatge) · **Fitxer:** `03_nightlight.py` · **Entorn:** [python.microbit.org](https://python.microbit.org) · [connexions i entorn](../SA5_connexions.md) (no cal muntatge)
 
+> ✍️ **Kata primer!** No llegeixis encara el codi: el docent projecta el kata d'aquesta pràctica i tens **10 minuts** per escriure el teu bloc (apunts permesos). Després torna aquí i **compara**.
+
 ## 🎯 Per què fem aquesta pràctica
 
 Un llum que s'encén tot sol quan es fa fosc: la mateixa idea que el semàfor nocturn automàtic de la SA3, però on allà calia una LDR, un divisor de tensió i mitja protoboard, aquí ho fa **la mateixa matriu de LED** — els LED de la micro:bit també saben **mesurar** la llum que els arriba. És l'exemple més net del que dona la placa: sensors integrats → prototip immediat.

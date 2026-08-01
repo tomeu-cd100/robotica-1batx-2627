@@ -2,6 +2,8 @@
 
 **Quan es fa:** Sessió 2 (modelatge) · **Fitxer:** `02_passes.py` · **Entorn:** [python.microbit.org](https://python.microbit.org) · [connexions i entorn](../SA5_connexions.md) (no cal muntatge)
 
+> ✍️ **Kata primer!** No llegeixis encara el codi: el docent projecta el kata d'aquesta pràctica i tens **10 minuts** per escriure el teu bloc (apunts permesos). Després torna aquí i **compara**.
+
 ## 🎯 Per què fem aquesta pràctica
 
 A Arduino, per llegir el món necessitaves muntar un sensor a la protoboard. La micro:bit porta els sensors **integrats**: aquí uses l'**acceleròmetre** per fer un comptapassos de canell, com el d'un *wearable* de debò, **sense connectar ni un cable**. És el gran avantatge d'aquesta placa: del zero al prototip en minuts.

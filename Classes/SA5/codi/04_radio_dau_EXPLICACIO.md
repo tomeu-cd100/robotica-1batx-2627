@@ -2,6 +2,8 @@
 
 **Quan es fa:** Sessió 3 (modelatge) · **Fitxer:** `04_radio_dau.py` · **Entorn:** [python.microbit.org](https://python.microbit.org) · [connexions i entorn](../SA5_connexions.md) (calen **2 micro:bit**, cap cable entre elles)
 
+> ✍️ **Kata primer!** No llegeixis encara el codi: el docent projecta el kata d'aquesta pràctica i tens **10 minuts** per escriure el teu bloc (apunts permesos). Després torna aquí i **compara**.
+
 ## 🎯 Per què fem aquesta pràctica
 
 Fins ara cada placa vivia sola. Aquí en poses **dues a parlar-se sense cables**: sacseges una micro:bit, «llança el dau», i el resultat apareix a la placa de la teva parella. És la primera **comunicació sense fils** del curs, i la fa possible el mòdul `radio` amb una sola idea clau: el **`group`** és el canal — dues plaques només se senten si comparteixen el **mateix número de grup**.

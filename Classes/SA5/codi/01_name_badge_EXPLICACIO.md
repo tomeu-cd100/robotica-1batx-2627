@@ -2,6 +2,8 @@
 
 **Quan es fa:** Sessió 1 (modelatge) · **Fitxer:** `01_name_badge.py` · **Entorn:** [python.microbit.org](https://python.microbit.org) · [connexions i entorn](../SA5_connexions.md) (no cal muntatge)
 
+> ✍️ **Kata primer!** No llegeixis encara el codi: el docent projecta el kata d'aquesta pràctica i tens **10 minuts** per escriure el teu bloc (apunts permesos). Després torna aquí i **compara**.
+
 ## 🎯 Per què fem aquesta pràctica
 
 Canvi de plataforma i de llenguatge: deixes l'Arduino i el C++ i passes a la **micro:bit** amb **Python**. Aquest primer programa és curt a propòsit, perquè el protagonista no és el *què* fa (una xapa identificativa amb la matriu de LED i els botons) sinó el *com* està escrit: **en Python la indentació no és estètica, és sintaxi**. No hi ha `;` al final de les línies ni claus `{}` per marcar els blocs — el que a C++ feien les claus, aquí ho fan els **espais del començament de cada línia**.
