@@ -474,6 +474,50 @@ def comprova_explicacions() -> None:
           f"{sense_pont} sense pont als reptes.")
 
 
+# --- 16 · Katas: un kata d'escriptura per sketch (SA2-SA8) -------------------
+def comprova_katas() -> None:
+    """Cada SA amb sketches donats (SA2-SA8) ha de tenir SAn_katas.md amb un
+    kata per sketch (matching per id literal), i cada pàgina de pràctica ha
+    de dur el ganxo «Kata primer» perquè l'alumnat escrigui abans de llegir.
+    Vegeu docs/superpowers/specs/2026-08-01-katas-programacio-design.md."""
+    GANXO = "✍️ **Kata primer!**"
+    sense_fitxer = 0
+    sense_kata = 0
+    sense_ganxo = 0
+    total = 0
+    for n in range(2, 9):
+        sa_dir = ARREL / "Classes" / f"SA{n}"
+        codi = sa_dir / "codi"
+        katas = sa_dir / f"SA{n}_katas.md"
+        if not katas.exists():
+            errors.append(f"[katas] falta Classes/SA{n}/SA{n}_katas.md")
+            sense_fitxer += 1
+            text = ""
+        else:
+            text = katas.read_text(encoding="utf-8")
+        for f in sorted(codi.rglob("*")):
+            if f.suffix.lower() not in {".ino", ".py"} or "__pycache__" in f.parts:
+                continue
+            if f.parent == codi:                      # fitxer solt (micro:bit)
+                sketch_id = f.stem
+            elif f.stem == f.parent.name:             # fitxer principal del sketch
+                sketch_id = f.parent.name
+            else:
+                continue                              # fitxer auxiliar (.h, etc.)
+            total += 1
+            if text and f"`{sketch_id}`" not in text:
+                errors.append(f"[katas] SA{n}_katas.md: falta el kata de "
+                              f"`{sketch_id}`")
+                sense_kata += 1
+        for expl in sorted(codi.rglob("*EXPLICACIO*.md")):
+            if GANXO not in expl.read_text(encoding="utf-8"):
+                errors.append(f"[katas] {expl.relative_to(ARREL)}: sense el "
+                              f"ganxo «Kata primer»")
+                sense_ganxo += 1
+    print(f"16) Katas: {total} sketches SA2-SA8, {sense_fitxer} SA sense fitxer, "
+          f"{sense_kata} sense kata, {sense_ganxo} explicacions sense ganxo.")
+
+
 # --- 14 · Projectes trimestrals: portada present i enllaçant el dossier -----
 def comprova_projectes_trimestrals() -> None:
     """Cada projecte trimestral (generar.PROJECTES) ha de tenir portada a
@@ -617,6 +661,7 @@ def main() -> int:
     comprova_enllacos_externs()
     comprova_lliurables()
     comprova_explicacions()
+    comprova_katas()
     comprova_projectes_trimestrals()
     comprova_codi_incrustat()
     for a in avisos:
