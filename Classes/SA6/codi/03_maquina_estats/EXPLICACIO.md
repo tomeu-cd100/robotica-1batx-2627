@@ -2,6 +2,8 @@
 
 **Quan es fa:** Sessió 3 (modelatge) · **Fitxer:** `03_maquina_estats.ino` · **Circuit:** [esquema de connexions](../../SA6_esquemes_connexions.md) (polsador a 2, LEDs a 7/8, sortida a 9~)
 
+> ✍️ **Kata primer!** No llegeixis encara el codi: el docent projecta el kata d'aquesta pràctica i tens **10 minuts** per escriure el teu bloc (apunts permesos). Després torna aquí i **compara**.
+
 ## 🎯 Per què fem aquesta pràctica
 
 Mira una **rentadora**: remull → rentat → esbandida → centrifugat. En cada moment està en **una situació concreta**, fa una cosa concreta, i **canvia** de situació quan passa alguna cosa (s'acaba el temps, s'omple el tambor). Això és una **màquina d'estats**: la manera estàndard d'organitzar qualsevol comportament que "recorda en quin punt està" — d'un semàfor a un ascensor, d'un caixer automàtic al braç robòtic del trimestre.

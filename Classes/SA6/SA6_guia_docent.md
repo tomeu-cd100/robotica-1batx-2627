@@ -159,6 +159,8 @@
 
 > Frases i preguntes clau per al **Modelatge** de cada sessió (què mirar, què preguntar abans d'executar, error a anticipar).
 
+> ✍️ **Katas:** en acabar el modelatge de cada sessió, projecta el kata de la pràctica del dia ([SA6_katas.md](SA6_katas.md)): 10' d'escriptura individual **abans** de repartir/obrir el sketch.
+
 - **S1 · `01_llac_obert_vs_tancat`:** dibuixa el **diagrama de blocs** (consigna → error → actuador → sensor/realimentació). Pregunta: *"què passa si trec el sensor?"* → llaç obert ("confia" que tot anirà bé). *Error a anticipar:* confondre realimentació amb la sortida.
 - **S2 · `02_termostat_histeresi`:** mostra l'**oscil·lació** amb un sol llindar i com **dos llindars** la maten. Demana predir el comportament a prop de la consigna. *Error a anticipar:* parpelleig per no posar histèresi.
 - **S3 · `03_maquina_estats` (`enum`/`switch`):** recorre cada **estat** (què fa) i les seves **transicions** (quan canvia). Recorda la **bastida `millis()`** (no bloquejar). *Error a anticipar:* un `case` sense transició → la màquina es "penja".

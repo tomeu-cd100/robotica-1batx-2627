@@ -2,6 +2,8 @@
 
 **Quan es fa:** Sessions 2-3, repte + (+ampliació, per a qui va sobrat) · **Fitxer:** `04_control_proporcional.ino` · **Circuit:** [esquema de connexions](../../SA6_esquemes_connexions.md) (sensor a A0, sortida a 9~ — cal PWM)
 
+> ✍️ **Kata primer!** No llegeixis encara el codi: el docent projecta el kata d'aquesta pràctica i tens **10 minuts** per escriure el teu bloc (apunts permesos). Després torna aquí i **compara**.
+
 ## 🎯 Per què fem aquesta pràctica
 
 El termòstat tot/res de la Pràctica 2 només sap fer dues coses: **tot** o **res**. És com regular la temperatura de la dutxa obrint i tancant l'aixeta **de cop**: funciona, però a batzegades. Tu no ho fas així: si l'aigua és *una mica* freda, obres *una mica* la calenta; si és *molt* freda, l'obres *molt*. Doses l'actuació **segons la mida del problema**.

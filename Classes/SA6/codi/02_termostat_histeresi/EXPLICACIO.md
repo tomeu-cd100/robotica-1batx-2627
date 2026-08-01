@@ -2,6 +2,8 @@
 
 **Quan es fa:** Sessió 2 (modelatge) · **Fitxer:** `02_termostat_histeresi.ino` · **Circuit:** [esquema de connexions](../../SA6_esquemes_connexions.md) (NTC o potenciòmetre a A0, sortida a 9~)
 
+> ✍️ **Kata primer!** No llegeixis encara el codi: el docent projecta el kata d'aquesta pràctica i tens **10 minuts** per escriure el teu bloc (apunts permesos). Després torna aquí i **compara**.
+
 ## 🎯 Per què fem aquesta pràctica
 
 A la Pràctica 1 vas veure el defecte del llaç tancat més simple: amb **un sol llindar**, quan la mesura balla just al voltant de la consigna, la sortida s'engega i s'apaga moltes vegades per segon — el "clic-clic". A casa ho patiria la **caldera**: si engegués a 21,0 °C i apagués a 21,0 °C, estaria commutant sense parar (i un relé o un compressor que fa això, es crema).

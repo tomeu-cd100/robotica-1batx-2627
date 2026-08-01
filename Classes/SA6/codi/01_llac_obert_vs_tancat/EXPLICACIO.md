@@ -2,6 +2,8 @@
 
 **Quan es fa:** Sessió 1 (modelatge) · **Fitxer:** `01_llac_obert_vs_tancat.ino` · **Circuit:** [esquema de connexions](../../SA6_esquemes_connexions.md) (sensor a A0, sortida a 9~)
 
+> ✍️ **Kata primer!** No llegeixis encara el codi: el docent projecta el kata d'aquesta pràctica i tens **10 minuts** per escriure el teu bloc (apunts permesos). Després torna aquí i **compara**.
+
 ## 🎯 Per què fem aquesta pràctica
 
 Pensa en una **torradora**: l'engegues, compta un temps fix i expulsa la torrada — **sense mirar mai** si és feta o cremada. Ara pensa en l'**aire condicionat** de casa: mesura la temperatura contínuament i actua **segons el que mesura**. La torradora és un **llaç obert**; l'aire condicionat, un **llaç tancat**. Aquesta diferència — tenir o no tenir **realimentació** (un sensor que informa del resultat) — és la idea central de tota la SA6, i la base de qualsevol sistema que es *regula sol*: termòstats, creuers de cotxe, drons… i el robot de la SA7.
