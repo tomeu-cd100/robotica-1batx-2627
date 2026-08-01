@@ -28,7 +28,7 @@
 > Reescriu el mateix semàfor (vermell=8, groc=9, verd=10; temps 4000/4000/1500 ms) amb una variable `int fase = 0;` i un `switch (fase)` de tres `case` (0=vermell, 1=verd, 2=groc): cada `case` encén el seu LED, espera, l'apaga i actualitza `fase` a la fase següent.
 
 **Practica:** variable d'estat · `switch`/`case` · `break` i la transició d'estat.
-**Pista (per a qui es bloqueja):** cada `case` té 4 línies: encén, espera, apaga, `fase = ...;` — i no t'oblidis del `break`.
+**Pista (per a qui es bloqueja):** cada `case` té 4 línies: encén, espera, apaga, `fase = ...;`.
 **En comparar amb el sketch, mireu:** ① els tres `case` acaben en `break`? ② el `case 2` torna `fase` a `0` (tanca el cicle)? ③ el valor inicial de `fase` és `0`?
 
 ## Kata · `03_fade_pwm` (Sessió 3)
@@ -52,8 +52,8 @@
 ## Kata · `05_panell_senyalitzacio` (Sessió 4)
 
 **Projecta (enunciat):**
-> Tens ja `color(r, g, b)` declarada. Escriu de zero la funció `void estatAvis()` que posi el color groc (255, 180, 0), faci sonar el piezo (pin 6) amb `tone(PIEZO, 1000, 150)` i deixi el relé (pin 7) apagat.
+> Tens ja `color(r, g, b)` declarada i les constants `PIEZO` (pin 6) i `RELE` (pin 7). Escriu de zero la funció `void estatAvis()` que representi l'estat d'avís: llum **groga fixa**, un **bip curt** (1000 Hz, 150 ms) i la càrrega del relé **desconnectada**.
 
 **Practica:** funció sense paràmetres que agrupa diverses accions · `tone()` · un estat = una funció.
-**Pista (per a qui es bloqueja):** tres línies dins la funció: `color(...)`, `tone(...)`, `digitalWrite(RELE, LOW)`.
-**En comparar amb el sketch, mireu:** ① crida `color(255, 180, 0)` i no repeteix els tres `analogWrite`? ② els paràmetres de `tone` són freqüència 1000 Hz i durada 150 ms? ③ el relé queda en `LOW` (aquest estat no activa cap càrrega)?
+**Pista (per a qui es bloqueja):** quines tres coses ha de deixar fetes la funció en sortir? Una per cada actuador (RGB, piezo, relé).
+**En comparar amb el sketch, mireu:** ① has cridat `color(...)` en lloc de repetir els tres `analogWrite`? ② quins valors exactes de R,G,B has triat per al groc, i coincideixen amb el sketch (255, 180, 0)? ③ has fet servir `tone(PIEZO, ...)` amb `digitalWrite`, o t'has deixat algun dels tres actuadors sense tocar?
