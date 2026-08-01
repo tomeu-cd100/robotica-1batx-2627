@@ -3,11 +3,13 @@
 > **Per a qui és?** Per al **docent** (que el projecta) **i per a l'alumnat**: si ningú no el projecta, obre'l tu mateix ABANS de mirar el codi de la pràctica. Un **kata d'escriptura** per a cada pràctica de la SA: després del modelatge i **abans d'obrir el sketch donat**, projecta l'enunciat i l'alumnat escriu **el bloc central de zero**, individualment i **amb apunts permesos** (paper o editor). Passats 10', obren el sketch de la pràctica i **comparen** amb el que han escrit (2'). **No es recull ni es qualifica.**
 >
 > No és el [mini-check](../00_General/00_Mini_checks_individuals.md) (allò és de memòria, sense apunts, 1 per SA) ni un [repte](../../Reptes/Reptes_SA5.md) (allò és ampliació ⭐): és entrenament d'escriptura, cada sessió de codi.
+>
+> **En aquesta SA el kata és una *variació*:** els valors de l'enunciat són diferents dels del sketch expressament — en comparar, mira l'estructura, no els números.
 
 ## Kata · `01_name_badge` (Sessió 1)
 
 **Projecta (enunciat):**
-> Tens ja fet `from microbit import *`. Escriu de zero el `while True:` complet: si es prem el botó A, desplaça pel `scroll` el text `"Hola!"`; si no es prem l'A però sí el B, mostra la imatge `Image.HAPPY`; si no es prem cap dels dos, mostra `Image.HEART`. Acaba cada volta amb una pausa de 100 ms.
+> Tens ja fet `from microbit import *`. Escriu de zero el `while True:` complet: si es prem el botó A, desplaça pel `scroll` el text `"Ei!"`; si no es prem l'A però sí el B, mostra la imatge `Image.HAPPY`; si no es prem cap dels dos, mostra `Image.HEART`. Acaba cada volta amb una pausa de 150 ms *(text i valor diferents del sketch, expressament)*.
 
 **Practica:** `while True:` amb indentació de 4 espais · `if`/`elif`/`else` sense parèntesis · `display.scroll()` vs. `display.show()` · `sleep()`.
 **Pista (per a qui es bloqueja):** és una única decisió de tres opcions, i exactament una s'ha d'executar a cada volta: comença mirant el botó A i pensa com garantir que, si aquesta condició ja s'ha complert, les altres dues ni tan sols es comprovin.
@@ -16,16 +18,16 @@
 ## Kata · `02_passes` (Sessió 2, comptapassos)
 
 **Projecta (enunciat):**
-> Tens ja declarades `passes = 0` i `LLINDAR = 1500`. Escriu de zero el `while True:` complet: llegeix la força de l'acceleròmetre amb `accelerometer.get_strength()`; si supera `LLINDAR`, incrementa `passes`, mostra'n l'última xifra a la matriu (`str(passes % 10)`) i fes una pausa de 300 ms; en un `if` a part (no lligat a l'anterior), si es prem el botó B, reinicia `passes` a 0 i fes un `scroll` de `"0"`. Acaba cada volta amb una pausa de 20 ms.
+> Tens ja declarades `passes = 0` i `LLINDAR = 1300` *(valor diferent del sketch, expressament)*. Escriu de zero el `while True:` complet: llegeix la força de l'acceleròmetre amb `accelerometer.get_strength()`; si supera `LLINDAR`, incrementa `passes`, mostra'n l'última xifra a la matriu (`str(passes % 10)`) i fes una pausa de 250 ms; en un `if` a part (no lligat a l'anterior), si es prem el botó B, reinicia `passes` a 0 i fes un `scroll` de `"0"`. Acaba cada volta amb una pausa de 30 ms *(temps també diferents del sketch, expressament)*.
 
 **Practica:** `accelerometer.get_strength()` · llindar amb antirebot via `sleep()` · `str(... % 10)` per mostrar un sol dígit · dos `if` independents dins del mateix bucle.
 **Pista (per a qui es bloqueja):** cada volta del bucle hi ha dues coses a vigilar: si toca comptar un pas (llegir, comparar, comptar) i si toca reiniciar el comptador amb el botó. Pensa si les dues comprovacions han de dependre l'una de l'altra o no.
-**En comparar amb el sketch, mireu:** ① el `sleep(300)` de l'antirebot és dins de l'`if` del llindar, o l'heu posat com a pausa general de tot el bucle (que també alentiria la lectura del botó)? ② la comparació amb el llindar és `forca > LLINDAR` (estricta), o l'heu escrit amb `>=` — què passaria si la força cau just al valor del llindar? ③ el `sleep(20)` final s'executa sempre, a totes les voltes, o només quan es compleix algun dels `if` anteriors?
+**En comparar amb el sketch, mireu:** ① el `sleep()` de l'antirebot és dins de l'`if` del llindar, o l'heu posat com a pausa general de tot el bucle (que també alentiria la lectura del botó)? ② la comparació amb el llindar és `forca > LLINDAR` (estricta), o l'heu escrit amb `>=` — què passaria si la força cau just al valor del llindar? ③ el `sleep()` final s'executa sempre, a totes les voltes, o només quan es compleix algun dels `if` anteriors?
 
 ## Kata · `03_nightlight` (Sessió 2, llum de nit)
 
 **Projecta (enunciat):**
-> Tens ja declarada `LLINDAR = 50`. Escriu de zero el `while True:` complet: llegeix el nivell de llum amb `display.read_light_level()`; si el valor és per sota de `LLINDAR`, mostra `Image.SQUARE`; en cas contrari, neteja la matriu amb `display.clear()`. Acaba cada volta amb una pausa de 100 ms.
+> Tens ja declarada `LLINDAR = 40` *(valor diferent del sketch, expressament)*. Escriu de zero el `while True:` complet: llegeix el nivell de llum amb `display.read_light_level()`; si el valor és per sota de `LLINDAR`, mostra `Image.SQUARE`; en cas contrari, neteja la matriu amb `display.clear()`. Acaba cada volta amb una pausa de 120 ms.
 
 **Practica:** `display.read_light_level()` · `if`/`else` de dues branques · `display.clear()` · `sleep()`.
 **Pista (per a qui es bloqueja):** és el patró més curt de la sessió: tres passos que es repeteixen a cada volta — llegeix el sensor, compara'l amb el llindar, respon.
@@ -34,7 +36,7 @@
 ## Kata · `04_radio_dau` (Sessió 3)
 
 **Projecta (enunciat):**
-> Tens ja fetes, abans del bucle, `radio.on()` i `radio.config(group=10)`. Escriu de zero el `while True:` complet: si `accelerometer.was_gesture("shake")` és cert, genera un número a l'atzar entre 1 i 6 amb `random.randint`, mostra'l a la matriu i envia'l per ràdio; a continuació, comprova si ha arribat algun missatge amb `radio.receive()` i, si n'ha arribat, mostra'l per `scroll` precedit de la lletra `"R"`. Acaba cada volta amb una pausa de 50 ms.
+> Tens ja fetes, abans del bucle, `radio.on()` i `radio.config(group=10)`. Escriu de zero el `while True:` complet: si `accelerometer.was_gesture("shake")` és cert, genera un número a l'atzar entre 1 i 6 amb `random.randint`, mostra'l a la matriu i envia'l per ràdio; a continuació, comprova si ha arribat algun missatge amb `radio.receive()` i, si n'ha arribat, mostra'l per `scroll` precedit de la lletra `"R"`. Acaba cada volta amb una pausa de 70 ms *(valor diferent del sketch, expressament)*.
 
 **Practica:** `was_gesture()` com a detector d'esdeveniment ja fet · `random.randint(1, 6)` · `radio.send()`/`radio.receive()` amb text · comprovació `is not None`.
 **Pista (per a qui es bloqueja):** cada volta del bucle hi ha dues tasques possibles: enviar (quan toca) i escoltar. Pensa si escoltar ha de dependre de si s'ha enviat res, o si són coses que passen per separat.

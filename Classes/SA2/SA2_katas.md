@@ -25,7 +25,7 @@
 ## Kata · `02b_semafor_switch` (Sessió 2)
 
 **Projecta (enunciat):**
-> Reescriu el mateix semàfor (vermell=8, groc=9, verd=10; temps 4000/4000/1500 ms) amb una variable `int fase = 0;` i un `switch (fase)` de tres `case` (0=vermell, 1=verd, 2=groc): cada `case` encén el seu LED, espera, l'apaga i actualitza `fase` a la fase següent.
+> Tens ja declarades les constants de pins i temps (les mateixes d'abans: vermell=8, groc=9, verd=10; temps 4000/4000/1500 ms). Reescriu el mateix semàfor amb una variable `int fase = 0;` i un `switch (fase)` de tres `case` (0=vermell, 1=verd, 2=groc): cada `case` encén el seu LED, espera, l'apaga i actualitza `fase` a la fase següent.
 
 **Practica:** variable d'estat · `switch`/`case` · `break` i la transició d'estat.
 **Pista (per a qui es bloqueja):** cada `case` té 4 línies: encén, espera, apaga, `fase = ...;`.
@@ -52,8 +52,8 @@
 ## Kata · `05_panell_senyalitzacio` (Sessió 4, producte)
 
 **Projecta (enunciat):**
-> Tens ja `color(r, g, b)` declarada i les constants `PIEZO` (pin 6) i `RELE` (pin 7). Escriu de zero la funció `void estatAvis()` que representi l'estat d'avís: llum **groga fixa**, un **bip curt** (1000 Hz, 150 ms) i la càrrega del relé **desconnectada**.
+> Tens ja `color(r, g, b)` declarada i les constants `PIEZO` (pin 6) i `RELE` (pin 7). Escriu de zero la funció `void estatAvis()` que representi l'estat d'avís: llum **groga fixa** amb `color(255, 180, 0)` *(groc càlid — més vermell que el (255,255,0) de la pràctica del RGB, es veu millor al LED)*, un **bip curt** (1000 Hz, 150 ms) i la càrrega del relé **desconnectada**.
 
 **Practica:** funció sense paràmetres que agrupa diverses accions · `tone()` · un estat = una funció.
 **Pista (per a qui es bloqueja):** quines tres coses ha de deixar fetes la funció en sortir? Una per cada actuador (RGB, piezo, relé).
-**En comparar amb el sketch, mireu:** ① has cridat `color(...)` en lloc de repetir els tres `analogWrite`? ② quins valors exactes de R,G,B has triat per al groc, i coincideixen amb el sketch (255, 180, 0)? ③ heu cobert els tres actuadors (`color(...)` per al RGB, `tone(PIEZO, ...)` per al piezo i `digitalWrite(RELE, LOW)` per al relé), o us n'heu deixat algun sense tocar?
+**En comparar amb el sketch, mireu:** ① has cridat `color(...)` en lloc de repetir els tres `analogWrite`? ② heu escrit `color(255, 180, 0)`, el groc que dona l'enunciat, o l'heu confós amb el (255,255,0) més saturat de la pràctica del RGB? ③ heu cobert els tres actuadors (`color(...)` per al RGB, `tone(PIEZO, ...)` per al piezo i `digitalWrite(RELE, LOW)` per al relé), o us n'heu deixat algun sense tocar?
