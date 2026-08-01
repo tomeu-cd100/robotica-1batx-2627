@@ -2,6 +2,8 @@
 
 **Quan es fa:** Sessió 1 (modelatge) · **Fitxer:** `02_telemetria_receptor.py` · **Muntatge:** [connexions i entorn](../SA8_connexions.md)
 
+> ✍️ **Kata primer!** No llegeixis encara el codi: el docent projecta el kata d'aquesta pràctica i tens **10 minuts** per escriure el teu bloc (apunts permesos). Després torna aquí i **compara**.
+
 ## 🎯 Per què fem aquesta pràctica
 
 L'[emissora](01_telemetria_emissor.py) llança dades a l'aire cada 2 segons; sense ningú que les escolti, es perden. Aquesta és l'altra meitat de la telemetria: la placa que **rep, interpreta i registra**. I és la meitat que converteix la gràcia en **utilitat**, perquè hi passen dues coses noves:

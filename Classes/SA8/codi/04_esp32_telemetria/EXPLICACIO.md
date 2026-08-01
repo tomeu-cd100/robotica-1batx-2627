@@ -2,6 +2,8 @@
 
 **Quan es fa:** Sessió 2 (demo opcional del docent · repte ⭐⭐⭐) · **Fitxer:** `04_esp32_telemetria.ino` · **Muntatge:** [connexions i entorn](../../SA8_connexions.md) (opció ESP32)
 
+> ✍️ **Kata primer!** No llegeixis encara el codi: el docent projecta el kata d'aquesta pràctica i tens **10 minuts** per escriure el teu bloc (apunts permesos). Després torna aquí i **compara**.
+
 ## 🎯 Per què fem aquesta pràctica
 
 La ràdio de les micro:bit uneix **dues plaques a la mateixa aula**. Els productes IoT de debò (la polsera, la càmera, l'altaveu de l'[auditoria](../../SA8_auditoria_iot.md)) fan servir **WiFi i internet**: les dades surten del dispositiu, travessen la xarxa i acaben en un servidor al núvol. Aquest sketch mostra el **primer tram** d'aquesta arquitectura — **dispositiu → xarxa** — amb un ESP32: un microcontrolador barat amb WiFi integrat que és, literalment, el que hi ha dins de molts productes IoT reals.

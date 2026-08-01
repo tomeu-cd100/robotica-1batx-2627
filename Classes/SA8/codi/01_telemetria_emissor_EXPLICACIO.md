@@ -2,6 +2,8 @@
 
 **Quan es fa:** Sessió 1 (modelatge) · **Fitxer:** `01_telemetria_emissor.py` · **Muntatge:** [connexions i entorn](../SA8_connexions.md)
 
+> ✍️ **Kata primer!** No llegeixis encara el codi: el docent projecta el kata d'aquesta pràctica i tens **10 minuts** per escriure el teu bloc (apunts permesos). Després torna aquí i **compara**.
+
 ## 🎯 Per què fem aquesta pràctica
 
 A la SA5 vas fer servir la ràdio de la micro:bit per enviar **missatges** («HOLA», un cor). Aquí la ràdio puja de nivell: envia **dades de sensors**. Mesurar en un lloc i transmetre-ho a un altre té nom — **telemetria** — i és la base de tot l'IoT: l'estació meteorològica del terrat, la polsera esportiva, el rover a Mart… i el **teu rover del trimestre**, que enviarà dades a la base.

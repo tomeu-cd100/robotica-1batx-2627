@@ -141,6 +141,8 @@
 
 > Frases i preguntes clau per al **Modelatge** de cada sessió (què mirar, què preguntar abans d'executar, error a anticipar).
 
+> ✍️ **Katas:** en acabar el modelatge de cada sessió, projecta el kata de la pràctica del dia ([SA8_katas.md](SA8_katas.md)): 10' d'escriptura individual **abans** de repartir/obrir el sketch.
+
 - **S1 · `01/02_telemetria` (emissor/receptor):** mostra el parell `radio.send()` / `radio.receive()` i com **registrar pel port sèrie** (per fer-ne després un gràfic). Recalca el **mateix `group`** a les dues plaques. *Error a anticipar:* dades barrejades per no etiquetar-les (`"T:23"`).
 - **S2 · IoT (auditoria, sense codi):** dibuixa l'arquitectura **dispositiu → xarxa → núvol → app** sobre un producte concret de les [targetes](SA8_auditoria_iot.md), etiquetant fletxes amb el protocol. Pregunta pels **riscos**: *"qui té aquestes dades? què passa si algú les intercepta?"*. *Error a anticipar:* riscos genèrics («et poden hackejar») en lloc d'ubicats al diagrama; i veure l'IoT com a "màgia" sense riscos.
 - **S3 · `03_ia_gestos` (IA):** distingeix **regles fetes a mà** vs **aprenentatge automàtic (ML)**. Insisteix: cal **mesurar valors reals** abans de fixar llindars. Tanca amb **biaix i ètica** de les dades. *Error a anticipar:* fixar llindars "a ull" sense mesurar.
