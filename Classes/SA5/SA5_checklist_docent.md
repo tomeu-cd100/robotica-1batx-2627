@@ -21,15 +21,14 @@
 - ⚠️ *Clau:* en Python la **indentació és sintaxi** (no `;` ni `{}`) · *Error:* `IndentationError` (tabs vs espais)
 
 **Sessió 2 — Sensors integrats**
-- [ ] ✍️ **Kata** `02_passes` / `03_nightlight` (tria'n un) (10', abans de repartir el sketch) → [SA5_katas.md](SA5_katas.md)
+- [ ] ✍️ **Kata** `02_passes` (10', abans de repartir el sketch) → [SA5_katas.md](SA5_katas.md)
 - [ ] `02_passes` (acceleròmetre, llindar, antirebot) + `03_nightlight` (`read_light_level()`)
 - [ ] Filtrar/posar llindar a les lectures
 - ⚠️ *Error:* comptapassos compta de més sense antirebot
 
 **Sessió 3 — Ràdio i comparació de paradigmes**
-- [ ] ✍️ **Kata** `04_radio_dau` (10', abans de repartir el sketch) → [SA5_katas.md](SA5_katas.md)
+- [ ] **Mini-check individual** a l'inici (10', no qualifica): programa MicroPython de memòria (vigilar indentació) (substitueix la graella d'activació i el kata del dia)
 - [ ] `04_radio_dau`: `radio.on()`, `radio.config(group=...)`, `send()`/`receive()`, gestos
-- [ ] **Mini-check individual** a l'inici (10', no qualifica): programa MicroPython de memòria (vigilar indentació)
 - [ ] Completar la **taula comparativa C++ ↔ Python** i reflexionar sobre els dos paradigmes
 - [ ] **Deures de represa:** repartir la targeta [`00_Repas_expres_Cpp.md`](../00_General/00_Repas_expres_Cpp.md) (la SA6 torna a C++)
 - ⚠️ *Clau:* dues plaques han de compartir el **mateix `group`** · *Error:* oblidar `radio.on()`

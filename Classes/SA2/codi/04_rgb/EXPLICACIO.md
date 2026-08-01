@@ -2,7 +2,7 @@
 
 **Quan es fa:** Sessió 3 (després del *fade*) · **Fitxer:** `04_rgb.ino` · **Circuit:** [esquema de connexions](../../SA2_esquemes_connexions.md) (R=9, G=10, B=11, càtode comú a GND)
 
-> ✍️ **Kata primer!** No llegeixis encara el codi: obre el [kata d'aquesta pràctica](../../SA2_katas.md) i tens **10 minuts** per escriure el teu bloc (individual, apunts permesos). Després torna aquí i **compara**.
+> ✍️ **Kata primer!** Si avui encara no has fet cap kata (ni el mini-check), obre el [kata d'aquesta pràctica](../../SA2_katas.md): 10 minuts per escriure el teu bloc abans de llegir aquest codi. Si ja l'has fet, endavant.
 
 ## 🎯 Per què fem aquesta pràctica
 
@@ -12,7 +12,7 @@ Però la segona meitat de la pràctica és tan important com la primera: per no 
 
 ## 🔮 Abans d'executar: prediu
 
-Repassa el `loop()`: quina seqüència de colors veuràs? I la línia `color(128, 0, 128);` — si 255 és el màxim, **quin color i quina intensitat** esperes del valor 128?
+Repassa la línia `color(128, 0, 128);` — si 255 és el màxim, **quin color i quina intensitat** esperes del valor 128? És un morat més fluix, o simplement una barreja diferent de vermell i blau?
 
 ## 🧠 El codi, per blocs
 

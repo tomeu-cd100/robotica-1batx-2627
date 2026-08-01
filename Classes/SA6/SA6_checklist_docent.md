@@ -27,8 +27,7 @@
 - ⚠️ *Error:* parpelleig per no posar histèresi
 
 **Sessió 3 — Màquines d'estats + tancament del producte**
-- [ ] ✍️ **Kata** `03_maquina_estats` (10', abans de repartir el sketch) → [SA6_katas.md](SA6_katas.md)
-- [ ] **Mini-check individual** a l'inici (10', no qualifica): dos llindars d'histèresi
+- [ ] **Mini-check individual** a l'inici (10', no qualifica): dos llindars d'histèresi (substitueix la graella d'activació i el kata del dia)
 - [ ] `03_maquina_estats`: `enum` + `switch`, transicions per temps o esdeveniment · repartir l'**esquelet «Si t'encalles»** (`// TODO`, a la [pàgina de la pràctica](codi/03_maquina_estats/EXPLICACIO.md)) a qui s'encalli
 - [ ] **Defenses 2–3' a peu de taula** durant el repte (decisió tècnica justificada) + documentació + autoavaluació
 - ⚠️ *Error:* un `case` sense transició → la màquina es "penja"

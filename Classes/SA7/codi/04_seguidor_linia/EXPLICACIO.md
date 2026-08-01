@@ -2,7 +2,7 @@
 
 **Quan es fa:** Sessió 4 (modelatge i repte de pista) · **Fitxer:** `04_seguidor_linia.ino` · **Circuit:** [esquema de connexions](../../SA7_esquemes_connexions.md) (sensors IR sota el robot, mirant a terra)
 
-> ✍️ **Kata primer!** No llegeixis encara el codi: obre el [kata d'aquesta pràctica](../../SA7_katas.md) i tens **10 minuts** per escriure el teu bloc (individual, apunts permesos). Després torna aquí i **compara**.
+> ✍️ **Kata primer!** Si avui encara no has fet cap kata (ni el mini-check), obre el [kata d'aquesta pràctica](../../SA7_katas.md): 10 minuts per escriure el teu bloc abans de llegir aquest codi. Si ja l'has fet, endavant.
 
 ## 🎯 Per què fem aquesta pràctica
 

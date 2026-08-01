@@ -33,9 +33,8 @@
 - ⚠️ *Vigilar:* què passa a la distància mínima de seguretat
 
 **Sessió 4 — Producte: barrera automàtica**
-- [ ] ✍️ **Kata** `04_barrera_automatica` (10', abans de repartir el sketch) → [SA4_katas.md](SA4_katas.md)
+- [ ] **Mini-check individual** a l'inici (10', no qualifica): 3 línies del servo a 90° + per què alimentació externa (substitueix la graella d'activació i el kata del dia)
 - [ ] `04_barrera_automatica`: servo obre amb detecció + tanca passat un temps + LED indicador
-- [ ] **Mini-check individual** a l'inici (10', no qualifica): 3 línies del servo a 90° + per què alimentació externa
 - [ ] Documentació + mini-defensa + autoavaluació
 
 ## 📊 3. Avaluació i evidències (a recollir)

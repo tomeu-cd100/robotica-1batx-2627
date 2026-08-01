@@ -27,8 +27,7 @@
 - ⚠️ *Error:* divisor mal connectat (lectures 0 o 1023)
 
 **Sessió 3 — Funcions + PRODUCTE (alarma/aparcament)**
-- [ ] ✍️ **Kata** `03_ultrasons_funcio` / `04_alarma_aparcament` (tria'n un) (10', abans de repartir el sketch) → [SA3_katas.md](SA3_katas.md)
-- [ ] **Mini-check individual** a l'inici (10', no qualifica): `if/else` sobre lectura analògica
+- [ ] **Mini-check individual** a l'inici (10', no qualifica): `if/else` sobre lectura analògica (substitueix la graella d'activació i el kata del dia)
 - [ ] `03_ultrasons_funcio`: escriure la funció `mesuraDistancia()` que **retorna** un valor · Serial Plotter
 - [ ] Repte-producte `04_alarma_aparcament` (pseudocodi primer) + **defensa d'1' a peu de taula** mentre treballen
 - ⚠️ *Error:* TRIG/ECHO intercanviats · vigilar `pulseIn` = 0 quan no hi ha eco

@@ -12,7 +12,7 @@ Aquí llegiràs dos sensors alhora — un **potenciòmetre** (que dona la tensi�
 
 ## 🔮 Abans d'executar: prediu
 
-Sense carregar el codi: quins nombres apareixeran al Monitor sèrie quan giris el potenciòmetre d'un extrem a l'altre? I la pregunta clau del dia: *com passo de 0–1023 a 0–255?* Quan tapis la LDR amb la mà, la seva lectura pujarà o baixarà? Apunta-ho i comprova-ho amb el Monitor obert.
+Sense carregar el codi: **quan tapis la LDR amb la mà, la seva lectura (0–1023) pujarà o baixarà?** I quan la destapis de nou? Apunta-ho i comprova-ho amb el Monitor obert.
 
 ## 🧠 El codi, per blocs
 

@@ -12,7 +12,7 @@ La pregunta que ho justifica tot: *si demà moc el LED al pin 7, quantes línies
 
 ## 🔮 Abans d'executar: prediu
 
-Mira el codi complet (a baix de tot, plegat) **sense carregar-lo**. Què farà el LED? Cada quant s'encendrà? Escriu la predicció a l'Activitat 1 de la [fitxa](../../SA2_fitxa_alumnat.md) i després comprova-la.
+Mira el codi complet (a baix de tot, plegat) **sense carregar-lo**. **Per què cal `pinMode(LED, OUTPUT)` dins `setup()`?** Què passaria si te l'oblidessis (l'error més freqüent d'aquesta sessió)? Escriu la predicció a l'Activitat 1 de la [fitxa](../../SA2_fitxa_alumnat.md) i després comprova-la.
 
 ## 🧠 El codi, per blocs
 

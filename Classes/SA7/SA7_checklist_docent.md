@@ -32,10 +32,9 @@
 - ⚠️ *Error:* estratègia massa simple → es queda encallat
 
 **Sessió 4 — Seguidor de línia + repte de pista**
-- [ ] ✍️ **Kata** `04_seguidor_linia` (10', abans de repartir el sketch) → [SA7_katas.md](SA7_katas.md)
+- [ ] **Mini-check individual** a l'inici (10', no qualifica): `loop()` reactiu amb funcions donades (substitueix la graella d'activació i el kata del dia)
 - [ ] `04_seguidor_linia`: calibrar llindar IR; lògica de correcció
 - [ ] **Repte de pista:** completar el recorregut, **mesurar temps** i **iterar**
-- [ ] **Mini-check individual** a l'inici (10', no qualifica): `loop()` reactiu amb funcions donades
 - [ ] Autoavaluació
 
 ## 📊 3. Avaluació i evidències (a recollir)

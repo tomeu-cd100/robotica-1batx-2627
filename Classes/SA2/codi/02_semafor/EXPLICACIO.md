@@ -12,7 +12,7 @@ També hi apareix una cosa nova: el programa té **dos comportaments** (cicle no
 
 ## 🔮 Abans d'executar: prediu
 
-Sense carregar el codi: **en quin ordre** s'encendran els LED? S'encendran mai **dos alhora**? Quant durarà cada color? Apunta-ho i comprova-ho després.
+Sense carregar el codi: fixa't en la **fase nocturna** i la variable que la controla. **De quin tipus creus que és aquesta variable (`bool`)?** Quins dos valors pot prendre, i què fa el programa amb cadascun? Apunta-ho i comprova-ho després.
 
 ## 🧠 El codi, per blocs
 

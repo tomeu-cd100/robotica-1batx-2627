@@ -12,7 +12,7 @@ I hi ha una sorpresa que cal entendre bé: amb `INPUT_PULLUP`, el pin està com 
 
 ## 🔮 Abans d'executar: prediu
 
-Mira el codi complet (a baix de tot, plegat) **sense carregar-lo**. Què mostrarà el Monitor sèrie quan premis el polsador? I la pregunta clau: *per què, sense antirebot, una sola premuda en compta diverses?* Escriu la predicció a l'Activitat 1 de la [fitxa](../../SA3_fitxa_alumnat.md) i després comprova-la.
+Mira el codi complet (a baix de tot, plegat) **sense carregar-lo**. Com que fem servir `INPUT_PULLUP`: **quin és l'estat de repòs del pin (HIGH o LOW) quan ningú toca el polsador?** I just després de prémer-lo? Escriu la predicció a l'Activitat 1 de la [fitxa](../../SA3_fitxa_alumnat.md) i després comprova-la.
 
 ## 🧠 El codi, per blocs
 

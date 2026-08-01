@@ -12,7 +12,7 @@ La resposta és un truc elegant: **PWM** (*Pulse Width Modulation*). El pin s'en
 
 ## 🔮 Abans d'executar: prediu
 
-`analogWrite(LED, 255)` és el màxim i `analogWrite(LED, 0)` apagat. **Què farà `analogWrite(LED, 128)`?** I el sketch sencer, què creus que farà veure al LED?
+`analogWrite(LED, 255)` és el màxim i `analogWrite(LED, 0)` apagat. **Què farà `analogWrite(LED, 128)`?** I un càlcul: si cada pas espera 8 ms i el fade va de 0 a 255 i després torna de 255 a 0, **quant trigarà a completar-se un cicle sencer (pujada + baixada)**?
 
 ## 🧠 El codi, per blocs
 

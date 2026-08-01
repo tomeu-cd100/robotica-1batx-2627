@@ -2,7 +2,7 @@
 
 **Quan es fa:** Sessió 3 (producte) · **Fitxer:** `04_alarma_aparcament.ino` · **Circuit:** [esquema de connexions](../../SA3_esquemes_connexions.md) (TRIG=12, ECHO=11, LED=8, piezo=6)
 
-> ✍️ **Kata primer!** No llegeixis encara el codi: obre el [kata d'aquesta pràctica](../../SA3_katas.md) i tens **10 minuts** per escriure el teu bloc (individual, apunts permesos). Després torna aquí i **compara**.
+> ✍️ **Kata primer!** Si avui encara no has fet cap kata (ni el mini-check), obre el [kata d'aquesta pràctica](../../SA3_katas.md): 10 minuts per escriure el teu bloc abans de llegir aquest codi. Si ja l'has fet, endavant.
 
 ## 🎯 Per què fem aquesta pràctica
 
@@ -12,7 +12,7 @@ Compte: és una **referència, no la solució a copiar**. El teu producte ha de 
 
 ## 🔮 Abans d'executar: prediu
 
-Sense carregar el codi: què faran el LED i el piezo amb la mà a 50 cm? I a 20 cm? I a 5 cm? En la zona intermèdia, el ritme dels bips serà **fix o canviarà** amb la distància? Apunta les tres prediccions i comprova-les.
+Sense carregar el codi: en tornar de la zona intermèdia (bips) a la zona «lluny» (tot apagat i en silenci), **per què cal cridar `noTone(PIEZO)` explícitament**, en lloc de no fer res? Què passaria si no hi fos? Apunta la predicció i comprova-la.
 
 ## 🧠 El codi, per blocs
 

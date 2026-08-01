@@ -2,7 +2,7 @@
 
 **Quan es fa:** Sessió 4 (producte de la SA) · **Fitxer:** `05_panell_senyalitzacio.ino` · **Circuit:** [esquema de connexions](../../SA2_esquemes_connexions.md) (RGB 9-10-11, piezo 6, relé 7)
 
-> ✍️ **Kata primer!** No llegeixis encara el codi: obre el [kata d'aquesta pràctica](../../SA2_katas.md) i tens **10 minuts** per escriure el teu bloc (individual, apunts permesos). Després torna aquí i **compara**.
+> ✍️ **Kata primer!** Si avui encara no has fet cap kata (ni el mini-check), obre el [kata d'aquesta pràctica](../../SA2_katas.md): 10 minuts per escriure el teu bloc abans de llegir aquest codi. Si ja l'has fet, endavant.
 
 ## 🎯 Per què fem aquesta pràctica
 

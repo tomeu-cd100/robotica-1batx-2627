@@ -2,7 +2,7 @@
 
 **Quan es fa:** Sessió 3 (modelatge) · **Fitxer:** `03_ultrasons_funcio.ino` · **Circuit:** [esquema de connexions](../../SA3_esquemes_connexions.md) (TRIG=12, ECHO=11)
 
-> ✍️ **Kata primer!** No llegeixis encara el codi: obre el [kata d'aquesta pràctica](../../SA3_katas.md) i tens **10 minuts** per escriure el teu bloc (individual, apunts permesos). Després torna aquí i **compara**.
+> ✍️ **Kata primer!** Si avui encara no has fet cap kata (ni el mini-check), obre el [kata d'aquesta pràctica](../../SA3_katas.md): 10 minuts per escriure el teu bloc abans de llegir aquest codi. Si ja l'has fet, endavant.
 
 ## 🎯 Per què fem aquesta pràctica
 
@@ -12,7 +12,7 @@ La pregunta que ho justifica: *quin avantatge té encapsular-ho en una funció?*
 
 ## 🔮 Abans d'executar: prediu
 
-Sense carregar el codi: si poses la mà a uns 20 cm del sensor, quin número apareixerà? I si no hi ha **res** davant del sensor (l'eco no torna mai), què hauria de dir — 0? infinit? Mira el codi plegat de baix i busca com resol aquest cas la funció. Comprova-ho després amb el Serial Plotter.
+Sense carregar el codi: si vas acostant la mà lentament cap al sensor, la línia del **Serial Plotter** baixarà de manera contínua, o farà algun **salt sobtat** (per exemple fins a 400) en algun moment del trajecte? Quan creus que passarà, si passa? Comprova-ho després amb el Serial Plotter.
 
 ## 🧠 El codi, per blocs
 
