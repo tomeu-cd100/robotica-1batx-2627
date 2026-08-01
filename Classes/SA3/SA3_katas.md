@@ -11,7 +11,7 @@
 
 **Practica:** `digitalRead` amb `INPUT_PULLUP` (lògica invertida) · antirebot amb `millis()` · filtrar dins d'un filtre · toggle amb `!digitalRead(...)`.
 **Pista (per a qui es bloqueja):** dues comprovacions imbricades: primer si el canvi és "vàlid" (ha canviat i ha passat prou temps), i només dins d'aquesta, si el canvi és concretament cap a prémer.
-**En comparar amb el sketch, mireu:** ① el `estatAnterior` s'actualitza sempre que el canvi és vàlid, o només quan es prem? ② el toggle del LED llegeix l'estat actual del LED (`digitalRead(LED)`) o feu servir una variable pròpia per recordar-lo? ③ on es guarda el moment del canvi (`ultimCanvi = millis()`): dins del filtre d'antirebot o dins del filtre de "és una premuda"?
+**En comparar amb el sketch, mireu:** ① l'`estatAnterior` s'actualitza sempre que el canvi és vàlid, o només quan es prem? ② el toggle del LED llegeix l'estat actual del LED (`digitalRead(LED)`) o feu servir una variable pròpia per recordar-lo? ③ on es guarda el moment del canvi (`ultimCanvi = millis()`): dins del filtre d'antirebot o dins del filtre de "és una premuda"?
 
 ## Kata · `02_potenciometre_ldr` (Sessió 2)
 
@@ -38,4 +38,4 @@
 
 **Practica:** `if` / `else if` / `else` de tres trams · `map()` amb el rang de sortida invertit (a més distància, més interval) · `tone()` amb durada vs. sense durada · `noTone()`.
 **Pista (per a qui es bloqueja):** pensa-ho com tres blocs independents, un per tram; només el del mig necessita calcular alguna cosa (l'interval) abans d'actuar.
-**En comparar amb el sketch, mireu:** ① el tram "lluny" crida `noTone(PIEZO)` explícitament, o assumiu que el piezo ja estarà callat? ② en el `map()` del tram intermedi, quin dels dos llindars (`PROP` o `LLUNY`) hi poseu com a valor mínim de l'escala d'entrada? ③ el `tone()` del tram de perill porta un tercer paràmetre (durada) com el de la zona intermèdia, o el deixeu sense per fer-lo continu?
+**En comparar amb el sketch, mireu:** ① el tram "lluny" crida `noTone(PIEZO)` explícitament, o assumiu que el piezo ja estarà callat? ② en el `map()` del tram intermedi, quin dels dos llindars (`PROP` o `LLUNY`) hi poseu com a valor mínim de l'escala d'entrada? ③ heu afegit un `delay(20)` final comú a totes les branques (fora de l'`if`/`else if`/`else`), o el delay només apareix dins la branca intermèdia?
