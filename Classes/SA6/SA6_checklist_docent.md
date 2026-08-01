@@ -17,14 +17,17 @@
 **Sessió 1 — Què és un sistema de control?**
 - [ ] **«C++ flash» (5', dins l'activació):** traduir 2-3 línies Python→C++ en veu alta (targeta [`00_Repas_expres_Cpp.md`](../00_General/00_Repas_expres_Cpp.md), repartida com a deures a la SA5 S3)
 - [ ] Referent (1') Irmgard Flügge-Lotz · conceptes: consigna, realimentació, error, actuador
+- [ ] ✍️ **Kata** `01_llac_obert_vs_tancat` (10', abans de repartir el sketch) → [SA6_katas.md](SA6_katas.md)
 - [ ] `01_llac_obert_vs_tancat` + **diagrama de blocs**
 - ⚠️ *Error:* confondre realimentació amb la sortida
 
 **Sessió 2 — Control tot/res i histèresi**
+- [ ] ✍️ **Kata** `02_termostat_histeresi` (10', abans de repartir el sketch) → [SA6_katas.md](SA6_katas.md)
 - [ ] `02_termostat_histeresi`: dos llindars (encén/apaga) per evitar el "clic-clic"
 - ⚠️ *Error:* parpelleig per no posar histèresi
 
 **Sessió 3 — Màquines d'estats + tancament del producte**
+- [ ] ✍️ **Kata** `03_maquina_estats` (10', abans de repartir el sketch) → [SA6_katas.md](SA6_katas.md)
 - [ ] **Mini-check individual** a l'inici (10', no qualifica): dos llindars d'histèresi
 - [ ] `03_maquina_estats`: `enum` + `switch`, transicions per temps o esdeveniment · repartir l'**esquelet «Si t'encalles»** (`// TODO`, a la [pàgina de la pràctica](codi/03_maquina_estats/EXPLICACIO.md)) a qui s'encalli
 - [ ] **Defenses 2–3' a peu de taula** durant el repte (decisió tècnica justificada) + documentació + autoavaluació

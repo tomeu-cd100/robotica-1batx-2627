@@ -16,20 +16,24 @@
 
 **Sessió 1 — Variables i la primera sortida**
 - [ ] Referent (1') Limor Fried · `01_led_basic` → concepte de **constant** (`const int`)
+- [ ] ✍️ **Kata** `01_led_basic` (10', abans de repartir el sketch) → [SA2_katas.md](SA2_katas.md)
 - [ ] Muntatge LED pin 8 amb **resistència 220 Ω** i polaritat (pota llarga = +)
 - [ ] **Racó de mesura (multímetre):** V al LED (~2 V) + V a la resistència (~3 V) ≈ 5 V (evidència CA2.2/R2)
 - ⚠️ *Error:* oblidar `pinMode(LED, OUTPUT)`
 
 **Sessió 2 — Estructures de control: el semàfor**
+- [ ] ✍️ **Kata** `02_semafor` / `02b_semafor_switch` (tria'n un) (10', abans de repartir el sketch) → [SA2_katas.md](SA2_katas.md)
 - [ ] `02_semafor` → `for`, `if`, ordre de fases · introduir `millis()` vs `delay()` (concepte)
 - [ ] Repte fase nocturna (groc intermitent)
 - ⚠️ *Error:* esperar que els LED canviïn alhora (`delay()` bloqueja)
 
 **Sessió 3 — PWM: intensitat i color**
+- [ ] ✍️ **Kata** `03_fade_pwm` / `04_rgb` (tria'n un) (10', abans de repartir el sketch) → [SA2_katas.md](SA2_katas.md)
 - [ ] `03_fade_pwm` (`analogWrite` 0–255, `map()`) + `04_rgb` (barreja RGB)
 - ⚠️ *Mantra:* PWM només als pins `~` (3,5,6,9,10,11) · *Error:* barrejar 0–1023 (lectura) amb 0–255 (PWM)
 
 **Sessió 4 — Producte: panell de senyalització**
+- [ ] ✍️ **Kata** `05_panell_senyalitzacio` (10', abans de repartir el sketch) → [SA2_katas.md](SA2_katas.md)
 - [ ] `05_panell_senyalitzacio`: integrar RGB (estat) + piezo (avís) + relé (càrrega)
 - [ ] **Mini-check individual** a l'inici (10', no qualifica): escriure un Blink de memòria
 - [ ] Documentació + mini-defensa d'1' + autoavaluació

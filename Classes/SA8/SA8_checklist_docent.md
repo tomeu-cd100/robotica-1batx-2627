@@ -16,6 +16,7 @@
 
 **Sessió 1 — Telemetria: el robot que informa**
 - [ ] Referent (1') Fei-Fei Li (+ menció Hedy Lamarr) · `01/02_telemetria` (`radio.send/receive`, registre pel sèrie)
+- [ ] ✍️ **Kata** `01_telemetria_emissor` / `02_telemetria_receptor` (tria'n un) (10', abans de repartir el sketch) → [SA8_katas.md](SA8_katas.md)
 - [ ] Enviar magnitud etiquetada (`"T:23"`) i registrar-la
 - ⚠️ *Clau:* mateix `group` a les dues plaques · *Error:* dades barrejades sense etiqueta
 
@@ -25,6 +26,7 @@
 - ⚠️ *Error:* veure l'IoT com a "màgia" sense riscos
 
 **Sessió 3 — Introducció a la IA: de les regles a l'aprenentatge**
+- [ ] ✍️ **Kata** `03_ia_gestos` (10', abans de repartir el sketch) → [SA8_katas.md](SA8_katas.md)
 - [ ] `03_ia_gestos` (classificació per **regles**) → salt a **ML real** amb Teachable Machine (recollir, entrenar, provar, **trencar-lo a propòsit**)
 - [ ] **Mini-check individual** a l'inici (10', no qualifica): explicar línia a línia un emissor de telemetria
 - [ ] Reflexió ètica: biaix, dades, consentiment (RGPD, ODS 11/16)

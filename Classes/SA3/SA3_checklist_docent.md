@@ -16,15 +16,18 @@
 
 **Sessió 1 — Entrades digitals i monitor sèrie**
 - [ ] Referent (1') Marie Van Brittan Brown · `01_polsador_debounce` (`INPUT_PULLUP`, *debounce*, Serial Monitor)
+- [ ] ✍️ **Kata** `01_polsador_debounce` (10', abans de repartir el sketch) → [SA3_katas.md](SA3_katas.md)
 - [ ] Muntatge polsador pin 2 · comptar premudes al monitor
 - ⚠️ *Clau:* amb `INPUT_PULLUP` → HIGH en repòs, LOW en prémer (lògica invertida)
 
 **Sessió 2 — Entrades analògiques**
+- [ ] ✍️ **Kata** `02_potenciometre_ldr` (10', abans de repartir el sketch) → [SA3_katas.md](SA3_katas.md)
 - [ ] `02_potenciometre_ldr` (`analogRead` 0–1023, `map()`, divisor de tensió LDR)
 - [ ] **Racó de mesura:** comparar V mesurada amb `lectura/1023·5V`; tapar LDR i veure baixar les dues
 - ⚠️ *Error:* divisor mal connectat (lectures 0 o 1023)
 
 **Sessió 3 — Funcions + PRODUCTE (alarma/aparcament)**
+- [ ] ✍️ **Kata** `03_ultrasons_funcio` / `04_alarma_aparcament` (tria'n un) (10', abans de repartir el sketch) → [SA3_katas.md](SA3_katas.md)
 - [ ] **Mini-check individual** a l'inici (10', no qualifica): `if/else` sobre lectura analògica
 - [ ] `03_ultrasons_funcio`: escriure la funció `mesuraDistancia()` que **retorna** un valor · Serial Plotter
 - [ ] Repte-producte `04_alarma_aparcament` (pseudocodi primer) + **defensa d'1' a peu de taula** mentre treballen

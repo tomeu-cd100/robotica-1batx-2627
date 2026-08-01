@@ -16,20 +16,24 @@
 
 **Sessió 1 — El servomotor**
 - [ ] Referent (1') Edith Clarke · `01_servo_potenciometre` (`Servo.h`, `attach()`, `write(0–180°)`)
+- [ ] ✍️ **Kata** `01_servo_potenciometre` (10', abans de repartir el sketch) → [SA4_katas.md](SA4_katas.md)
 - [ ] Control del servo amb potenciòmetre (`map` 0–1023 → 0–180)
 - ⚠️ *Clau:* si mous diversos servos → **alimentació externa** (no del pin 5V) · *Error:* servo vibra per alimentació insuficient
 
 **Sessió 2 — Motor DC i pont H**
+- [ ] ✍️ **Kata** `02_motor_pont_h` (10', abans de repartir el sketch) → [SA4_katas.md](SA4_katas.md)
 - [ ] `02_motor_pont_h`: taula IN1/IN2 (direcció) + ENA (velocitat PWM)
 - [ ] Funcions `endavant(vel)`, `enrere(vel)`, `atura()`
 - ⚠️ *Mantra:* **MASSA COMUNA**, mai el motor des del 5V · *Error:* Arduino es reinicia pel pic de corrent
 
 **Sessió 3 — Del sensor al moviment**
+- [ ] ✍️ **Kata** `03_sensor_velocitat` (10', abans de repartir el sketch) → [SA4_katas.md](SA4_katas.md)
 - [ ] `03_sensor_velocitat`: ultrasons → `map()` → velocitat (percepció→acció)
 - [ ] Aturada per llindar de seguretat
 - ⚠️ *Vigilar:* què passa a la distància mínima de seguretat
 
 **Sessió 4 — Producte: barrera automàtica**
+- [ ] ✍️ **Kata** `04_barrera_automatica` (10', abans de repartir el sketch) → [SA4_katas.md](SA4_katas.md)
 - [ ] `04_barrera_automatica`: servo obre amb detecció + tanca passat un temps + LED indicador
 - [ ] **Mini-check individual** a l'inici (10', no qualifica): 3 línies del servo a 90° + per què alimentació externa
 - [ ] Documentació + mini-defensa + autoavaluació

@@ -485,6 +485,8 @@ def comprova_katas() -> None:
     sense_kata = 0
     sense_ganxo = 0
     total = 0
+    sense_checklist = 0
+    sense_fitxa_alumnat = 0
     for n in range(2, 9):
         sa_dir = ARREL / "Classes" / f"SA{n}"
         codi = sa_dir / "codi"
@@ -517,8 +519,22 @@ def comprova_katas() -> None:
                 errors.append(f"[katas] {expl.relative_to(ARREL)}: sense el "
                               f"ganxo «Kata primer»")
                 sense_ganxo += 1
+        # (d) la checklist docent ha d'enllaçar SAn_katas.md, i la fitxa
+        # d'alumnat ha de citar la rutina del kata, perquè el ritual no
+        # depengui únicament que el docent el recordi.
+        checklist = sa_dir / f"SA{n}_checklist_docent.md"
+        if not checklist.exists() or f"SA{n}_katas.md" not in checklist.read_text(encoding="utf-8"):
+            errors.append(f"[katas] SA{n}_checklist_docent.md: sense enllaç a "
+                           f"SA{n}_katas.md")
+            sense_checklist += 1
+        fitxa_alumnat = sa_dir / f"SA{n}_fitxa_alumnat.md"
+        if not fitxa_alumnat.exists() or "kata" not in fitxa_alumnat.read_text(encoding="utf-8").lower():
+            errors.append(f"[katas] SA{n}_fitxa_alumnat.md: no esmenta el kata")
+            sense_fitxa_alumnat += 1
     print(f"16) Katas: {total} sketches SA2-SA8, {sense_fitxer} SA sense fitxer, "
-          f"{sense_kata} sense kata, {sense_ganxo} explicacions sense ganxo.")
+          f"{sense_kata} sense kata, {sense_ganxo} explicacions sense ganxo, "
+          f"{sense_checklist} checklists sense enllaç, "
+          f"{sense_fitxa_alumnat} fitxes sense esment.")
 
 
 # --- 14 · Projectes trimestrals: portada present i enllaçant el dossier -----
