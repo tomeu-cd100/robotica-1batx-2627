@@ -20,7 +20,7 @@
 
 **Practica:** `accelerometer.get_strength()` · llindar amb antirebot via `sleep()` · `str(... % 10)` per mostrar un sol dígit · dos `if` independents dins del mateix bucle.
 **Pista (per a qui es bloqueja):** cada volta del bucle hi ha dues coses a vigilar: si toca comptar un pas (llegir, comparar, comptar) i si toca reiniciar el comptador amb el botó. Pensa si les dues comprovacions han de dependre l'una de l'altra o no.
-**En comparar amb el sketch, mireu:** ① el `sleep(300)` de l'antirebot és dins de l'`if` del llindar, o l'heu posat com a pausa general de tot el bucle (que també alentiria la lectura del botó)? ② el reset del botó B és un `if` nou i separat, o l'heu encadenat amb `elif` al del llindar (de manera que mai es podrien activar els dos en el mateix cicle)? ③ el `sleep(20)` final s'executa sempre, a totes les voltes, o només quan es compleix algun dels `if` anteriors?
+**En comparar amb el sketch, mireu:** ① el `sleep(300)` de l'antirebot és dins de l'`if` del llindar, o l'heu posat com a pausa general de tot el bucle (que també alentiria la lectura del botó)? ② la comparació amb el llindar és `forca > LLINDAR` (estricta), o l'heu escrit amb `>=` — què passaria si la força cau just al valor del llindar? ③ el `sleep(20)` final s'executa sempre, a totes les voltes, o només quan es compleix algun dels `if` anteriors?
 
 ## Kata · `03_nightlight` (Sessió 2 · llum de nit)
 

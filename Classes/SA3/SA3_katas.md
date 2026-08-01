@@ -20,7 +20,7 @@
 
 **Practica:** `analogRead` de dos sensors · `map()` per canviar d'escala · `analogWrite` (PWM) · `Serial.print`/`println` combinats.
 **Pista (per a qui es bloqueja):** primer llegeix els dos sensors i guarda'ls en dues variables; després només el valor que has d'escriure al LED necessita passar per `map()` abans de sortir.
-**En comparar amb el sketch, mireu:** ① quina de les dues lectures imprimiu amb `print()` (sense salt de línia) i quina amb `println()`? ② els quatre paràmetres del `map()` són en l'ordre (valor, mínim d'entrada, màxim d'entrada, mínim de sortida, màxim de sortida), o n'heu invertit algun? ③ la variable que guarda el resultat del `map()` és un `int`, com espera `analogWrite`?
+**En comparar amb el sketch, mireu:** ① quina de les dues lectures imprimiu amb `print()` (sense salt de línia) i quina amb `println()`? ② els cinc paràmetres del `map()` són en l'ordre (valor, mínim d'entrada, màxim d'entrada, mínim de sortida, màxim de sortida), o n'heu invertit algun? ③ la variable que guarda el resultat del `map()` és un `int`, com espera `analogWrite`?
 
 ## Kata · `03_ultrasons_funcio` (Sessió 3, modelatge)
 

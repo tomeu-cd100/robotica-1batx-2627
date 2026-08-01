@@ -20,7 +20,7 @@
 
 **Practica:** funció amb paràmetre (`velocitat`) · `digitalWrite` per triar sentit · `analogWrite` (PWM) per la velocitat · funció sense paràmetre.
 **Pista (per a qui es bloqueja):** cada funció són tres línies: dos `digitalWrite` (un `HIGH`, un `LOW`) i un `analogWrite`; només canvia quins pins reben què.
-**En comparar amb el sketch, mireu:** ① a `enrere()`, heu intercanviat `IN1` i `IN2` respecte a `endavant()`, o hi heu repetit el mateix patró (que giraria sempre en el mateix sentit)? ② l'`atura()` porta paràmetre, o l'heu deixada sense cap, amb un `analogWrite(ENA, 0)` explícit? ③ a `analogWrite(ENA, velocitat)`, l'ordre és sempre (pin, valor), o en alguna de les tres funcions heu invertit `ENA` i la velocitat?
+**En comparar amb el sketch, mireu:** ① a `enrere()`, heu intercanviat `IN1` i `IN2` respecte a `endavant()`, o hi heu repetit el mateix patró (que giraria sempre en el mateix sentit)? ② dins d'`atura()`, poseu `IN1` i `IN2` a `LOW` a més de tallar el PWM, o l'atureu només amb `analogWrite(ENA, 0)` sense tocar els pins de direcció? ③ a `analogWrite(ENA, velocitat)`, l'ordre és sempre (pin, valor), o en alguna de les tres funcions heu invertit `ENA` i la velocitat?
 
 ## Kata · `03_sensor_velocitat` (Sessió 3, modelatge)
 

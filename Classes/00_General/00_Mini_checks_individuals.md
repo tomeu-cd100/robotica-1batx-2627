@@ -2,6 +2,7 @@
 
 > **Per a qui és?** Per al **docent**. Un **micro-repte individual de 10 minuts** per SA (SA2–SA8), a fer **en solitari i sense apunts**. **No qualifica**: és un radar formatiu.
 > **Quan es passa?** A l'**inici de la sessió que indica cada fitxa** (normalment la S3 o la S4, abans del producte o de la prova): prou aviat per reaccionar, prou tard perquè hi hagi hagut pràctica.
+> **Relació amb els katas:** els katas de cada SA (`SAn_katas.md`) entrenen l'escriptura cada sessió, amb apunts; el mini-check és el radar sense apunts.
 
 ## El problema que resol
 

@@ -37,7 +37,7 @@
 > Escriu de zero un `loop()` que faci «respirar» un LED al pin 9 (PWM): puja la intensitat de 0 a 255 d'1 en 1 amb `analogWrite`, esperant 8 ms a cada pas, i després la baixa de 255 a 0 igual.
 
 **Practica:** `analogWrite(pin, 0..255)` · `for` ascendent i descendent · pins amb `~`.
-**Pista (per a qui es bloqueja):** dos `for`: el primer amb `valor++` de 0 a 255, el segon amb `valor--` de 255 a 0; dins de cada un, `analogWrite` i `delay(8)`.
+**Pista (per a qui es bloqueja):** dues fases, una que apuja i una que abaixa; pensa què ha de canviar a cada volta i quant temps ha de passar entre voltes.
 **En comparar amb el sketch, mireu:** ① el pin declarat és un pin PWM (`~`)? ② el primer `for` puja i el segon baixa (condicions i pas invertits)? ③ el `delay` és el mateix (8 ms) als dos bucles?
 
 ## Kata · `04_rgb` (Sessió 3)
@@ -56,4 +56,4 @@
 
 **Practica:** funció sense paràmetres que agrupa diverses accions · `tone()` · un estat = una funció.
 **Pista (per a qui es bloqueja):** quines tres coses ha de deixar fetes la funció en sortir? Una per cada actuador (RGB, piezo, relé).
-**En comparar amb el sketch, mireu:** ① has cridat `color(...)` en lloc de repetir els tres `analogWrite`? ② quins valors exactes de R,G,B has triat per al groc, i coincideixen amb el sketch (255, 180, 0)? ③ has fet servir `tone(PIEZO, ...)` amb `digitalWrite`, o t'has deixat algun dels tres actuadors sense tocar?
+**En comparar amb el sketch, mireu:** ① has cridat `color(...)` en lloc de repetir els tres `analogWrite`? ② quins valors exactes de R,G,B has triat per al groc, i coincideixen amb el sketch (255, 180, 0)? ③ heu cobert els tres actuadors (`color(...)` per al RGB, `tone(PIEZO, ...)` per al piezo i `digitalWrite(RELE, LOW)` per al relé), o us n'heu deixat algun sense tocar?

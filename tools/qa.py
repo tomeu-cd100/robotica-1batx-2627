@@ -662,9 +662,9 @@ def main() -> int:
     comprova_enllacos_externs()
     comprova_lliurables()
     comprova_explicacions()
-    comprova_katas()
     comprova_projectes_trimestrals()
     comprova_codi_incrustat()
+    comprova_katas()
     for a in avisos:
         print(f"⚠️  {a}")
     if errors:
