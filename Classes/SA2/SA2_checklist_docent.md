@@ -23,7 +23,7 @@
 
 **Sessió 2 — Estructures de control: el semàfor**
 - [ ] ✍️ **Kata** `02_semafor` (10', abans de repartir el sketch) → [SA2_katas.md](SA2_katas.md)
-- [ ] `02_semafor` → `for`, `if`, ordre de fases · introduir `millis()` vs `delay()` (concepte)
+- [ ] `02_semafor` → `if`, constants de temps, ordre de fases (el `for` és a la S3) · introduir `millis()` vs `delay()` (concepte)
 - [ ] Repte fase nocturna (groc intermitent)
 - ⚠️ *Error:* esperar que els LED canviïn alhora (`delay()` bloqueja)
 

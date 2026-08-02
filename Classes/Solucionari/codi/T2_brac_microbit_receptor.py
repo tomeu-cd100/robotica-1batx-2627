@@ -70,6 +70,12 @@ def canvia_estat(nou):
 radio.on()
 radio.config(group=GRUP)
 
+# El KS0021 tanca a GND: cal el pull-up INTERN, com el pinMode(INPUT_PULLUP)
+# de la fase Arduino. A la micro:bit els pins NO el porten activat de sortida:
+# sense aquesta linia, P8 llegiria 0 en repos i el brac arrencaria en
+# EMERGENCIA sense poder-ne sortir mai.
+pin8.set_pull(pin8.PULL_UP)
+
 base = 90
 colze = 90
 pinca = PINCA_TANCADA
@@ -80,31 +86,38 @@ estat = REPOS
 canvia_estat(REPOS)
 
 while True:
-    # --- Transicio prioritaria: el xoc mana per damunt de tot ---
-    if pin8.read_digital() == 0 and estat != EMERGENCIA:
-        canvia_estat(EMERGENCIA)
-
+    # --- Lectura d'entrades: UNA vegada per volta, a variables ---
+    # was_pressed() esborra el registre en llegir-lo. Si es cridava dins d'un
+    # "and" que es talla abans (p. ex. sensor premut), la pulsacio quedava
+    # guardada i s'aplicava mes tard, sola: el brac es rearmava tot solet.
+    xoc = (pin8.read_digital() == 0)
+    boto_a = button_a.was_pressed()
+    boto_b = button_b.was_pressed()
     ordre = radio.receive()
+
+    # --- Transicio prioritaria: el xoc mana per damunt de tot ---
+    if xoc and estat != EMERGENCIA:
+        canvia_estat(EMERGENCIA)
 
     # --- Un bloc per estat (el "switch" de la SA6) ---
     if estat == EMERGENCIA:
-        # Nomes se'n surt rearmant a ma: alliberat el sensor i boto A
-        if pin8.read_digital() == 1 and button_a.was_pressed():
+        # Nomes se'n surt rearmant a ma: sensor alliberat I boto A premut ARA
+        if not xoc and boto_a:
             canvia_estat(REPOS)
 
     elif estat == REPOS:
         # Quiet. El boto A desperta el brac; el B reprodueix el que hi ha gravat
-        if button_a.was_pressed():
+        if boto_a:
             canvia_estat(MANUAL)
-        elif button_b.was_pressed() and len(seguencia) > 0:
+        elif boto_b and len(seguencia) > 0:
             canvia_estat(REPLAY)
 
     elif estat == MANUAL:
         # Els botons es miren a part de les ordres: si estiguessin a la
         # mateixa cadena elif, una ordre de radio els taparia.
-        if button_a.was_pressed():
+        if boto_a:
             canvia_estat(REPOS)
-        elif button_b.was_pressed() and len(seguencia) > 0:
+        elif boto_b and len(seguencia) > 0:
             canvia_estat(REPLAY)
         elif ordre == "B+":
             base = min(base + PAS, BASE_MAX)
@@ -121,23 +134,35 @@ while True:
         elif ordre == "P":
             pinca = PINCA_OBERTA if pinca == PINCA_TANCADA else PINCA_TANCADA
             aplica()
-        elif ordre == "G" and len(seguencia) < MAX_PASSOS:
-            # Grava el punt actual (el "registre" de la fase Arduino)
-            seguencia.append((base, colze, pinca))
-            display.show(str(len(seguencia) % 10))
+        elif ordre == "G":
+            if len(seguencia) < MAX_PASSOS:
+                # Grava el punt actual (el "registre" de la fase Arduino)
+                seguencia.append((base, colze, pinca))
+                display.show(str(len(seguencia) % 10))
+            else:
+                display.show(Image.CONFUSED)   # seguencia plena: no grava
             sleep(300)
             display.show(Image.DIAMOND_SMALL)
 
     elif estat == REPLAY:
-        # Reprodueix la seguencia gravada, vigilant el xoc a cada punt
+        # Reprodueix la seguencia gravada, vigilant el xoc a cada punt.
+        # El boto A avorta la reproduccio: 12 s de replay sense poder aturar-lo
+        # serien una eternitat amb el brac movent-se.
         for punt in seguencia:
             if pin8.read_digital() == 0:
                 canvia_estat(EMERGENCIA)
+                break
+            if button_a.was_pressed():
+                canvia_estat(REPOS)
                 break
             base, colze, pinca = punt
             aplica()
             sleep(PAUSA_REPLAY)
         if estat == REPLAY:      # ha acabat sense incidents
             canvia_estat(REPOS)
+        # Consumeix les pulsacions acumulades durant la reproduccio: si no,
+        # el B premut mentre es movia rellancaria el replay tot sol.
+        button_a.was_pressed()
+        button_b.was_pressed()
 
     sleep(20)

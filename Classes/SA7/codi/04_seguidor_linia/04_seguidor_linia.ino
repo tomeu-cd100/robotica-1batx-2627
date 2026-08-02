@@ -23,7 +23,7 @@ void motors(int dE, int vE, int dD, int vD) {
 void endavant()      { motors(HIGH, VEL, HIGH, VEL); }
 void corregeix_dreta(){ motors(HIGH, VEL, HIGH, 0); }   // frena roda dreta
 void corregeix_esq()  { motors(HIGH, 0,  HIGH, VEL); }  // frena roda esquerra
-void atura()         { analogWrite(ESQ_VEL, 0); analogWrite(DRET_VEL, 0); }
+void atura()         { motors(HIGH, 0, HIGH, 0); }   // tot el moviment passa per motors()
 
 void setup() {
   pinMode(ESQ_DIR, OUTPUT); pinMode(ESQ_VEL, OUTPUT);

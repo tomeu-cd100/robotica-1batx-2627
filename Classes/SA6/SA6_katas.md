@@ -26,6 +26,8 @@
 
 ## Kata · `04_control_proporcional` (Sessions 2-3, repte +)
 
+> 🔁 **Si el fas a la S3, hi ha mini-check** i el mini-check substitueix el kata a l'aula (i, aquell dia, el kata de la sessió és el de la màquina d'estats). Aquest és un kata de **+ampliació**: fes-lo a la S2 si ja tens el termòstat enllestit, o pel teu compte com a repàs — el control proporcional **no entra a la prova T2**.
+
 **Projecta (enunciat):**
 > Tens ja declarades les constants `SENSOR` (A0), `SORTIDA` (pin 9, PWM), `CONSIGNA` (450) i `Kp` (0.6, `float`) *(valors diferents del sketch, expressament)*, i el `setup()` que configura `SORTIDA` com a `OUTPUT`. Escriu de zero el `loop()`: llegeix el sensor, calcula l'`error` respecte a la consigna, calcula la sortida proporcional a l'error (`Kp` per l'error), limita el resultat al rang vàlid de PWM (0-255 — això sí, fix, és el rang del maquinari) i aplica'l a la sortida, amb una pausa de 70 ms.
 

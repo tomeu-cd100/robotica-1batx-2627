@@ -74,9 +74,9 @@ El curs treballa en parelles i equips, i gairebé tots els productes són col·l
 ## SA7 · Mini-check (inici de la Sessió 4)
 
 **Enunciat (projectar):**
-> El robot té les funcions fetes: `dist()` (cm), `endavant()`, `atura()` i `gira()`. Escriu el **`loop()` complet** del comportament *evita-obstacles*: si hi ha res a menys de 15 cm, atura't i gira; si no, endavant.
+> El robot té les funcions fetes: `distancia()` (cm), `endavant()`, `atura()` i `gira_dreta()` — les mateixes de la SA7. Escriu el **`loop()` complet** del comportament *evita-obstacles*: si hi ha res a menys de 15 cm, atura't i gira; si no, endavant.
 
-**Què mires:** `if (dist() < 15) { atura(); gira(); } else { endavant(); }` (amb pauses opcionals) · que la lectura es faci **a cada volta**.
+**Què mires:** `if (distancia() < 15) { atura(); gira_dreta(); } else { endavant(); }` (amb pauses opcionals) · que la lectura es faci **a cada volta**.
 **🟢** estructura reactiva correcta · **🟡** lògica bé però llegeix el sensor un sol cop · **🔴** no lliga sensor→decisió→acció.
 **Reforç 🔴:** repassar `03_evita_obstacles.ino` i el cicle "llegir → decidir → actuar".
 

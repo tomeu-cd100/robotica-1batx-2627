@@ -11,7 +11,7 @@
 ## ✅ Abans d'acabar aquesta SA he de…
 - [ ] Muntar un **LED amb variables** i predir-ne el comportament (`01_led_basic`, S1)
 - [ ] Fer el **racó de mesura** amb multímetre (V al LED + V a la resistència ≈ 5 V)
-- [ ] Programar el **semàfor** de 3 LED amb `for`/`if` i provar la fase nocturna (S2)
+- [ ] Programar el **semàfor** de 3 LED amb `if` i constants de temps, i provar la fase nocturna (S2)
 - [ ] Regular **intensitat i color** amb PWM (`analogWrite`, `map`) i crear colors RGB (S3)
 - [ ] Lliurar el **panell de senyalització** (estat RGB + so + relé) i defensar-lo 1' → *R1 i R2* (S4)
 - [ ] Tenir el **quadern tècnic** al dia (esquema, diferència `digitalWrite`/`analogWrite`, un error resolt)

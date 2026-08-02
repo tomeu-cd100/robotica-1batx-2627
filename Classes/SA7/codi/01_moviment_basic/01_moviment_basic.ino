@@ -6,10 +6,11 @@
   === PINS (AJUSTAR segons el manual de la teva placa) ===
   Cada motor te un pin de DIRECCIO i un de VELOCITAT (PWM).
   Si la teva placa usa dos pins de direccio per motor (IN1/IN2) -- es el cas
-  del pont H L298N del ROVER del fil conductor -- nomes cal substituir la
-  funcio motors(): tota la resta del sketch funciona igual, perque cap altra
-  funcio toca els pins. Bloc llest per copiar al dossier del rover, seccio
-  "Adaptar els sketches de SA7 al rover".
+  del pont H L298N del ROVER del fil conductor -- nomes cal substituir el bloc
+  de pins i la funcio motors(): la resta del moviment funciona igual, perque
+  cap altra funcio de moviment toca els pins directament (fixa't que atura()
+  tambe passa per motors()). Bloc llest per copiar al dossier del rover,
+  seccio "Adaptar els sketches de SA7 al rover".
   Quan: S1 - modelatge
 */
 
@@ -31,7 +32,7 @@ void endavant()      { motors(HIGH, VEL, HIGH, VEL); }
 void enrere()        { motors(LOW,  VEL, LOW,  VEL); }
 void gira_dreta()    { motors(HIGH, VEL, LOW,  VEL); }   // esq endavant, dret enrere
 void gira_esquerra() { motors(LOW,  VEL, HIGH, VEL); }
-void atura()         { analogWrite(ESQ_VEL, 0); analogWrite(DRET_VEL, 0); }
+void atura()         { motors(HIGH, 0, HIGH, 0); }   // tot el moviment passa per motors()
 
 void setup() {
   pinMode(ESQ_DIR, OUTPUT);  pinMode(ESQ_VEL, OUTPUT);

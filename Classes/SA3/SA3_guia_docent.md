@@ -68,6 +68,8 @@
 
 > El producte de la SA **es tanca en aquesta sessió** (la S4 és, sencera, la prova T1). El repte de la sessió **és** el producte.
 
+> 🤖 **Fil conductor de robots:** si el curs el segueix ([`00_Fil_conductor_robots.md`](../00_General/00_Fil_conductor_robots.md)), aquest producte **és la mascota**, no una activitat diferent: el sistema sensor→actuador que munten avui és el que va dins la carcassa tallada a la S4 de la SA2, i el criteri de tancament passa a ser **≥3 reaccions sensor→comportament** ([dossier de la mascota](../00_General/00_Projecte_T1_Mascota.md)). L'alarma d'aparcament segueix sent la **referència tècnica** de la sessió (la lògica de trams de l'ultrasons és la mateixa que després farà servir el PIR), però el que es presenta i s'avalua és la mascota. La fitxa d'alumnat ja ho diu així: si fas servir aquesta guia sense obrir-la, els demanaràs un producte diferent del que ells esperen entregar.
+
 - **Mini-check individual (10', a l'inici, substitueix la graella):** `if/else` sobre una lectura analògica ([banc](../00_General/00_Mini_checks_individuals.md)).
 - **Modelatge (25'):** `03_ultrasons_funcio.ino`. Principi de l'eco (`pulseIn`), càlcul de distància, i sobretot **escriure una funció** `mesuraDistancia()` que retorna un valor.
 - **Pràctica guiada (25'):** munten l'HC-SR04; visualitzen la distància amb **Serial Plotter**.
@@ -85,7 +87,7 @@
 
 ## SESSIÓ 4 (2 h) — PROVA PRÀCTICA T1 (individual)
 
-> 📋 **Aquesta sessió és, sencera, la prova trimestral T1** ([`Avaluació/Prova_practica_T1.md`](../../Avaluació/Prova_practica_T1.md)): individual, amb kit propi (n'hi ha un per alumne/a), quadern i esquemes consultables. **No s'hi programa cap altra activitat** — una prova individual de ~100' i una sessió de producte no caben juntes ([`08_Sequenciacio`](../../Programació%20didàctica/08_Sequenciacio_temporal_anual.md)).
+> 📋 **Aquesta sessió és, sencera, la prova trimestral T1** ([`Avaluació/Prova_practica_T1.md`](../../Avaluació/Prova_practica_T1.md)): individual, amb kit propi (n'hi ha un per alumne/a), quadern i esquemes consultables. **No s'hi programa cap altra activitat** — una prova individual (~80-85' reals) i una sessió de producte no caben juntes ([`08_Sequenciacio`](../../Programació%20didàctica/08_Sequenciacio_temporal_anual.md)).
 
 - **Instruccions (5-10'):** repartir material, recordar què es pot consultar (quadern, esquemes) i l'estructura per nivells (nucli = 5-6; ampliacions = 7-10).
 - **Prova (~80-85'):** cada alumne/a munta i programa la "llum de seguretat intel·ligent". El docent només resol incidències de material (placa/cable espatllats), no dubtes de contingut.
@@ -120,7 +122,7 @@
 
 > Frases i preguntes clau per al **Modelatge** de cada sessió (què mirar, què preguntar abans d'executar, error a anticipar).
 
-> ✍️ **Katas:** en acabar el modelatge de cada sessió amb pràctica de codi, projecta el kata del sketch del dia ([SA3_katas.md](SA3_katas.md)): 10' d'escriptura individual **abans** de repartir/obrir el sketch. **Un sol kata per sessió**; el dia del mini-check (**S3** en aquesta SA) el mini-check el substitueix, i el kata `03_ultrasons_funcio` i `04_alarma_aparcament` queda com a **repàs autònom** (marcat amb 🔁 al fitxer): recomana'l com a deures abans de tancar la SA. Per a la posada en comú, tens la solució comentada de cada kata a [SA3_katas_solucions.md](SA3_katas_solucions.md).
+> ✍️ **Katas:** en acabar el modelatge de cada sessió amb pràctica de codi, projecta el kata del sketch del dia ([SA3_katas.md](SA3_katas.md)): 10' d'escriptura individual **abans** de repartir/obrir el sketch. **Un sol kata per sessió**; el dia del mini-check (**S3** en aquesta SA) el mini-check el substitueix, i els katas `03_ultrasons_funcio` i `04_alarma_aparcament` queden com a **repàs autònom** (marcats amb 🔁 al fitxer): recomana'ls com a deures abans de tancar la SA. Per a la posada en comú, tens la solució comentada de cada kata a [SA3_katas_solucions.md](SA3_katas_solucions.md).
 
 - **S1 · `01_polsador_debounce` (`INPUT_PULLUP`):** analogia — *el pin està "agafat" a HIGH i prémer l'estira a LOW* (lògica invertida). Pregunta: *"per què, sense antirebot, una sola premuda en compta diverses?"* *Error a anticipar:* sorpresa per la lògica invertida.
 - **S2 · `02_potenciometre_ldr` (`analogRead`, `map()`):** obre el **Monitor Sèrie** i mou el potenciòmetre **en directe** perquè vegin els 0–1023. Pregunta: *"com passo de 0–1023 a 0–255?"* → `map()`. *Error a anticipar:* divisor de tensió de la LDR mal connectat (lectures 0 o 1023).

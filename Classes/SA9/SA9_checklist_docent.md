@@ -2,7 +2,8 @@
 
 **10 h (5 sessions) · Maquinari i llenguatge lliures (Arduino / micro:bit / Imagina 3dBot) · Criteris CA2.1, CA3.1, CA4.1, CA5.1, CA5.2, CA5.3 · TOTES les rúbriques R1–R5**
 
-> Eina d'acció d'una cara. Condensa la [`SA9_guia_docent.md`](SA9_guia_docent.md). Projecte de **síntesi** del curs (autonomia total, sense PRIMM). **Quan s'usa:** imprimeix-lo en **preparar la SA** (§1) i tingues-lo **a taula a cada sessió** (§2–§4).
+> Eina d'acció d'una cara. Condensa la [`SA9_guia_docent.md`](SA9_guia_docent.md). Projecte de **síntesi** del curs (autonomia total, sense PRIMM).
+ **Quan s'usa:** imprimeix-lo en **preparar la SA** (§1) i tingues-lo **a taula a cada sessió** (§2–§4).
 
 ## 🧰 1. Logística prèvia (preparar abans de començar la SA)
 - [ ] Tenir a punt les **plantilles**: `Banc_de_reptes` · `Planificacio_agile_PLANTILLA` · `Dossier_tecnic_PLANTILLA` · `Codi_base_PLANTILLA/`
@@ -12,14 +13,14 @@
 - [ ] **Preparar la prova pràctica T3** (robot + sistema connectat)
 - [ ] Compartir **TOTES les rúbriques R1–R5** amb l'alumnat *abans* de començar
 - [ ] Planificar **defenses esglaonades** si hi ha més de 6 equips (~12–15'/equip; avançar-ne 2–3 a final de la S3)
-- [ ] Preparar la **logística de la prova T3 (S5)**: estacions rotatives, ordre de torns, 2-3 pistes
+- [ ] Preparar la **logística de la prova T3 (S5)**: estacions rotatives, ordre de torns (els dos d'una parella, en torns diferents), 2-3 pistes, i les caixes/kits etiquetats per al desmuntatge final
 
 ## ⏱️ 2. Moments (fites parcials per sessió — evita el "tot l'últim dia")
 - [ ] **S1 · Idear:** referent (1') Cynthia Breazeal · presentar repte + banc · formar equips i rols · requisits, esbós, taulell àgil
 - [ ] **S2 · Prototipar:** MVP muntat + primer codi (des de `Codi_base_PLANTILLA/`) · **fita S2 fixada**
 - [ ] **S3 · Provar i millorar:** proves sistemàtiques + registre d'errors + **iteracions** + code review · (defenses avançades d'equips llestos)
 - [ ] **S4 · Comunicar (i tancar el curs):** dossier tècnic tancat · defenses orals + demostració — **munta-la com a mostra**: els tres robots del curs (mascota, braç, rover) a la taula del fons · coavaluació · **retrospectiva de curs (10')**
-- [ ] **S5 · PROVA PRÀCTICA T3:** individual (amb rover per parella no calen estacions rotatives; només torns de pista) · **darrers 15': desmuntatge i retorn de l'electrònica als kits** amb l'inventari a la mà
+- [ ] **S5 · PROVA PRÀCTICA T3:** individual, per torns (també amb rover per parella: 1 robot per cada 2 alumnes) · torns **des del minut 35**, prova tancada al **~85'** · **darrers 15': desmuntatge i retorn de l'electrònica als kits** amb l'inventari a la mà
 - [ ] **Després de la S5:** carpeta de fotos/vídeos de la mostra desada (difusió al web del centre o al Classroom) i **quaderns tècnics retornats** a l'alumnat
 - ⚠️ *Vigilar:* repte massa ambiciós (reduir abast) · rols difusos (assignar al taulell) · sense proves incrementals (provar per parts)
 

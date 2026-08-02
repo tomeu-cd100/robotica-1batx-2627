@@ -28,7 +28,14 @@ while True:
     elif y < -300:
         radio.send("C-")
 
-    if button_a.was_pressed() and button_b.was_pressed():
+    # Els dos botons es llegeixen SEMPRE, cada volta i a variables. Amb
+    # "button_a.was_pressed() and button_b.was_pressed()" el segon no
+    # s'avaluava quan el primer era fals: la pulsacio de B quedava guardada
+    # i s'aplicava mes tard, obrint la pinca sense que ningu ho demanes.
+    boto_a = button_a.was_pressed()
+    boto_b = button_b.was_pressed()
+
+    if boto_a and boto_b:
         radio.send("P")          # obre/tanca la pinca (commutador)
         display.show(Image.TARGET)
     elif accelerometer.was_gesture("shake"):

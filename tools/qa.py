@@ -105,6 +105,61 @@ def comprova_enllacos_web() -> None:
     print(f"1) Enllaços del web: {len(pagines)} pàgines, {trencats} referències trencades.")
 
 
+# --- 1b · Àncores dels .md (les que el generador degrada en silenci) --------
+def comprova_ancores_md() -> None:
+    """Enllaços `document.md#ancora` de la font que apunten a un títol que no
+    existeix al document destí.
+
+    Cal comprovar-ho **sobre els .md**, no sobre el web: el generador
+    (`saneja_ancores()`) repara o degrada aquestes àncores en publicar, de
+    manera que el check d'enllaços del web mai no en veurà cap de trencada —
+    però a GitHub, que és superfície de lectura pública, continuen sent
+    enllaços morts."""
+    def slug(titol: str) -> str:
+        """Slug a l'estil GitHub: minúscules, fora la puntuació, espais a '-'."""
+        s = titol.strip().lower()
+        s = re.sub(r"[`*_\[\]()]", "", s)
+        s = re.sub(r"[^\w\s\-·]", "", s, flags=re.U).strip()
+        return re.sub(r"[\s·]+", "-", s)
+
+    def sense_accents(s: str) -> str:
+        import unicodedata
+        return "".join(c for c in unicodedata.normalize("NFD", s)
+                       if unicodedata.category(c) != "Mn")
+
+    mds = [p for p in ARREL.rglob("*.md")
+           if not any(x in p.parts for x in (".git", "web", "node_modules"))]
+    titols: dict[Path, set[str]] = {}
+    for p in mds:
+        vistos: set[str] = set()
+        dins_codi = False
+        for linia in p.read_text(encoding="utf-8", errors="replace").splitlines():
+            if linia.lstrip().startswith("```"):
+                dins_codi = not dins_codi
+            elif not dins_codi and linia.startswith("#"):
+                s = slug(linia.lstrip("#"))
+                # Es guarden les dues variants: la de GitHub (conserva els
+                # accents) i la del generador del web (slugify els treu). Les
+                # dues són escriptures legítimes a la font.
+                vistos.add(s)
+                vistos.add(sense_accents(s))
+        titols[p.resolve()] = vistos
+
+    morts = 0
+    patro = re.compile(r"\]\(([^)\s]+\.md)#([^)\s]+)\)")
+    for p in mds:
+        for rel, frag in patro.findall(p.read_text(encoding="utf-8", errors="replace")):
+            desti = (p.parent / urllib.parse.unquote(rel)).resolve()
+            if desti not in titols:
+                continue          # destí inexistent: ja ho diu un altre check
+            if urllib.parse.unquote(frag).lower() in titols[desti]:
+                continue
+            errors.append(f"[àncora] {p.relative_to(ARREL)} → {rel}#{frag} "
+                          f"(el títol no existeix al destí)")
+            morts += 1
+    print(f"1b) Àncores dels .md: {len(mds)} documents, {morts} àncores mortes.")
+
+
 # --- 2 · Cobertura de cada SA ------------------------------------------------
 def comprova_cobertura_sa() -> None:
     fallats = 0
@@ -571,10 +626,15 @@ def comprova_katas() -> None:
             ses = sessio_minicheck[n]
             for bloc in re.split(r"^## (?=Kata)", text, flags=re.M)[1:]:
                 cap = bloc.splitlines()[0]
-                m_ses = re.search(r"Sessi(?:ó|ons)\s+([0-9])", cap)
-                if not m_ses or int(m_ses.group(1)) != ses:
+                # «Sessió 3» però també «Sessions 2-3»: cal mirar TOTS els
+                # números del rang, no només el primer.
+                m_ses = re.search(r"Sessi(?:ó|ons)\s+([0-9](?:\s*-\s*[0-9])?)", cap)
+                if not m_ses or str(ses) not in re.findall(r"[0-9]", m_ses.group(1)):
                     continue
-                if "🔁" not in bloc.split("**Projecta")[0]:
+                # La marca ha de ser a la capçalera del kata (abans del primer
+                # camp en negreta), no perduda enmig de les pistes.
+                cos = re.split(r"^\*\*", bloc, maxsplit=1, flags=re.M)[0]
+                if "🔁" not in cos:
                     kata_id = re.search(r"`([^`]+)`", cap)
                     errors.append(
                         f"[katas] SA{n}_katas.md: el kata "
@@ -756,6 +816,7 @@ def comprova_dependencies() -> None:
 def main() -> int:
     comprova_dependencies()
     comprova_enllacos_web()
+    comprova_ancores_md()
     comprova_cobertura_sa()
     comprova_hores()
     comprova_python()

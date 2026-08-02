@@ -33,7 +33,8 @@ obstacles i seguidor de línia (els mateixos tres reptes que abans es feien
 amb la Imagina 3dBot, ara amb el rover propi); a **SA8** guanya
 **telemetria per ràdio** des d'una micro:bit al pis superior cap a una
 micro:bit base amb pantalla OLED; a **SA9** el rover és la plataforma del
-**repte final i la competició** de fi de curs.
+**repte final** i el protagonista de la **mostra** de la S4 (si el centre s'apunta
+a una competició externa, és fora d'hores lectives).
 
 ## Llista de peces
 
@@ -156,10 +157,11 @@ sentit amb una parella de senyals oposats. Canviar només els números del bloc
 de pins **no funciona**: IN2 i IN4 quedarien a l'aire i el sentit de gir seria
 indefinit.
 
-La bona notícia és que tota la diferència viu en **una sola funció**. A tots
-els sketches de SA7, `motors()` és l'única que toca els pins; `endavant()`,
-`gira_dreta()` i companyia només la criden. Substitueix, doncs, la capçalera
-sencera per aquesta i **la resta del sketch funciona sense tocar res**:
+La bona notícia és que tota la diferència viu en **una sola funció**. Als
+sketches de SA7, `motors()` és l'única que toca els **pins dels motors**;
+`endavant()`, `gira_dreta()`, `atura()` i companyia només la criden.
+Substitueix, doncs, la capçalera sencera per aquesta i **la part de moviment
+funciona sense tocar res més**:
 
 ```cpp
 // === PINS DEL ROVER (L298N) — substitueix el bloc PINS de SA7 ===
@@ -192,6 +194,15 @@ void setupMotors() {   // crida-la des de setup() en lloc dels pinMode antics
 >
 > ⚠️ Si un motor gira al revés, **no toquis el codi**: intercanvia els dos
 > cables d'aquell motor al L298N (o les constants `IN1`/`IN2` d'aquell costat).
+
+**Els sensors són a part.** El bloc de dalt cobreix el moviment i prou; els
+sketches que llegeixen sensors també els tenen als seus propis pins:
+
+| Sketch | Què més cal tocar |
+|---|---|
+| `01_moviment_basic`, `02_trajectoria_quadrat` | Res: només el bloc de dalt. |
+| `03_evita_obstacles` | `TRIG`/`ECHO` — al rover són **D12/D11**, els mateixos del sketch: sol quadrar sense tocar res. |
+| `04_seguidor_linia` | ⚠️ **Sí que cal tocar-lo.** El sketch declara `S_ESQ = 2`, `S_DRET = 3` i llegeix amb `digitalRead(...) == LOW`; al rover els seguidors són **analògics a A0/A1** (`analogRead(...) > LLINDAR_LINIA`) i, pitjor, **D3 ja és `ESQ_IN2`** i **D2 és el para-xocs**: deixar els pins vells faria que llegir un sensor mogués un motor. Canvia les dues constants i les dues lectures; la cadena `if`/`else if` de decisió es queda igual. |
 
 ## Sessió 0 de muntatge (2 h)
 

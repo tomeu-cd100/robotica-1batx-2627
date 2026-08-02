@@ -34,7 +34,9 @@ void loop(){
 const int ENA=5, IN1=7, IN2=8, TRIG=12, ECHO=11;
 float dist(){ digitalWrite(TRIG,LOW);delayMicroseconds(2);
   digitalWrite(TRIG,HIGH);delayMicroseconds(10);digitalWrite(TRIG,LOW);
-  return pulseIn(ECHO,HIGH)*0.034/2.0; }
+  long t = pulseIn(ECHO,HIGH,30000);   // timeout 30 ms
+  if (t == 0) return 400;              // sense eco: fora de rang
+  return t*0.034/2.0; }
 void setup(){ pinMode(ENA,OUTPUT);pinMode(IN1,OUTPUT);pinMode(IN2,OUTPUT);
   pinMode(TRIG,OUTPUT);pinMode(ECHO,INPUT); }
 void loop(){

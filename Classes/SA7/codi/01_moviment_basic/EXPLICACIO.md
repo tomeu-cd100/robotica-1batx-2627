@@ -51,10 +51,14 @@ void endavant()      { motors(HIGH, VEL, HIGH, VEL); }
 void enrere()        { motors(LOW,  VEL, LOW,  VEL); }
 void gira_dreta()    { motors(HIGH, VEL, LOW,  VEL); }   // esq endavant, dret enrere
 void gira_esquerra() { motors(LOW,  VEL, HIGH, VEL); }
-void atura()         { analogWrite(ESQ_VEL, 0); analogWrite(DRET_VEL, 0); }
+void atura()         { motors(HIGH, 0, HIGH, 0); }   // tot el moviment passa per motors()
 ```
 
-Aquí hi ha la cinemàtica diferencial feta codi. Llegeix `gira_dreta()`: roda esquerra **endavant**, roda dreta **enrere** → el robot pivota sobre si mateix cap a la dreta. I `atura()` no toca la direcció: posa les dues velocitats a **0** i prou. Aquestes cinc funcions són el **vocabulari** amb què escriuràs totes les trajectòries i comportaments de la SA.
+Aquí hi ha la cinemàtica diferencial feta codi. Llegeix `gira_dreta()`: roda esquerra **endavant**, roda dreta **enrere** → el robot pivota sobre si mateix cap a la dreta. I `atura()` deixa la direcció on sigui i posa les dues velocitats a **0**: un motor amb velocitat 0 no gira, tant se val cap on apunti.
+
+Fixa't en una cosa que sembla un detall i no ho és: **les cinc funcions criden `motors()` i cap altra toca un pin directament**. `atura()` podria haver fet dos `analogWrite` i prou —seria igual de correcte avui—, però llavors hi hauria dos llocs del programa que sabrien a quins pins està connectat el motor. Amb aquesta versió n'hi ha **un de sol**. Ho notaràs de debò quan canviïs de robot: si un dia muntes aquest codi sobre una placa amb un altre pont H, només has de reescriure `motors()` i tot el que has construït a sobre continua funcionant.
+
+Aquestes cinc funcions són el **vocabulari** amb què escriuràs totes les trajectòries i comportaments de la SA.
 
 ### Bloc 4 — Una seqüència de prova
 

@@ -118,12 +118,14 @@ SESSIONS = {
         _s("SA9", 3, "Projecte: provar i millorar",
            "Provar el sistema · Registrar els errors · Iterar la millora i avançar el dossier",
            "proves sistemàtiques · registre d'errors · iteració · code review · DEPURA"),
-        _s("SA9", 4, "Projecte: comunicar (defensa)",
-           "Tancar el dossier tècnic · Defensar el projecte oralment amb demostració · Coavaluar i reflexionar",
-           "dossier tècnic · defensa oral · demostració · coavaluació · reflexió ètica"),
+        _s("SA9", 4, "Projecte: comunicar (defensa) i tancament del curs",
+           "Tancar el dossier tècnic · Defensar el projecte a la mostra amb demostració · Coavaluar · "
+           "Escriure la RETROSPECTIVA DE CURS (última entrada del quadern)",
+           "dossier tècnic · defensa oral · mostra · coavaluació · retrospectiva de curs"),
         _s("SA9", 5, "PROVA PRÀCTICA T3 (individual)",
-           "Demostrar tot sol el robot a la pista (per torns) · Fer la part de micro:bit a la taula",
-           "recorregut · obstacle · telemetria · estacions rotatives · quadern consultable",
+           "Demostrar tot sol el robot a la pista (per torns) · Fer la part de micro:bit a la taula · "
+           "Desmuntar i retornar el material als kits (15' finals)",
+           "recorregut · obstacle · telemetria · estacions rotatives · desmuntatge · quadern consultable",
            prova=True),
     ],
 }
@@ -137,7 +139,7 @@ PROVES = {
         "material": "Arduino UNO · ventilador/pont H (o LED PWM) · NTC o potenciòmetre · 2 micro:bit",
         "reflexio_final": False},
     3: {"titol": "Robot autònom + sistema connectat",
-        "material": "Robot mòbil (Imagina 3dBot) · pista de proves · micro:bit",
+        "material": "Robot mòbil (el rover del curs, o Imagina 3dBot) · pista de proves · micro:bit",
         "reflexio_final": True},
 }
 

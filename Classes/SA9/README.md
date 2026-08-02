@@ -15,7 +15,7 @@ Novena i última situació d'aprenentatge (**10 h · 5 sessions**, 3r trimestre)
 | S5 | **Prova pràctica T3 (individual, per estacions)** | A l'aula, sessió sencera |
 | ⭐ | [Repte final integrador](plantilles/Banc_de_reptes.md) | El docent el valida com a part del producte del projecte, a la defensa de la S4 |
 | 📓 | Full del quadern tècnic de cada sessió | En paper, en acabar la sessió |
-| 🤖 | El rover al repte final i la competició | Es tanca al dossier del rover: [dossier del rover](../00_General/00_Projecte_T3_Rover.md) |
+| 🤖 | El rover al repte final, demostrat a la **mostra** de la S4 | Es tanca al dossier del rover: [dossier del rover](../00_General/00_Projecte_T3_Rover.md) |
 
 ## Itinerari per sessions (per fases)
 
@@ -24,8 +24,8 @@ Novena i última situació d'aprenentatge (**10 h · 5 sessions**, 3r trimestre)
 1. **Sessió 1 · Idear** — trieu repte al [banc de reptes](plantilles/Banc_de_reptes.md), formeu equips i planifiqueu amb el [taulell àgil](plantilles/Planificacio_agile_PLANTILLA.md); ompliu el [disseny de la fitxa](SA9_fitxa_alumnat.md#3-disseny). Amb el repte triat i abans d'omplir el taulell, mireu l'[exemple resolt (el «robot repartidor»)](SA9_exemple_resolt.md): com es gestiona un projecte, no què s'ha de copiar.
 2. **Sessió 2 · Prototipar** — munteu el prototip mínim viable i el primer codi (podeu partir de l'[esquelet de codi modular](plantilles/Codi_base_PLANTILLA/Codi_base_PLANTILLA.ino)); seguiu la [planificació](SA9_fitxa_alumnat.md#4-planificacio).
 3. **Sessió 3 · Provar** — proves sistemàtiques i **primera iteració** ([proves i iteracions](SA9_fitxa_alumnat.md#5-proves-i-iteracions)).
-4. **Sessió 4 · Millorar, documentar i comunicar** — **segona iteració** + [dossier tècnic](plantilles/Dossier_tecnic_PLANTILLA.md) + [defensa oral](SA9_fitxa_alumnat.md#6-defensa-s4) amb demostració i coavaluació (s'avalua amb **totes** les rúbriques R1-R5).
-5. **Sessió 5 · Prova pràctica T3** — prova **individual, per estacions rotatives** (sessió sencera; el projecte ja s'ha tancat a la S4). Tothom comença per la **Part B (micro:bit, MicroPython)**: si el vostre projecte ha estat en C++, prepara-la abans amb la targeta de [repàs exprés de MicroPython](../00_General/00_Repas_expres_MicroPython.md) (10-15').
+4. **Sessió 4 · Comunicar i tancar el curs** — acabeu el que quedi de la segona iteració, tanqueu el [dossier tècnic](plantilles/Dossier_tecnic_PLANTILLA.md) i feu la [defensa oral](SA9_fitxa_alumnat.md#6-defensa-s4) amb demostració i coavaluació (s'avalua amb **totes** les rúbriques R1-R5). És una **mostra**: hi haurà els tres robots del curs a la vista. Al final, la **retrospectiva de curs** (10'): l'**última entrada del quadern tècnic**, que el tanca com el vostre portfolio de l'any. També hi ha el «Python flash» de ràdio, per preparar la Part B de la prova.
+5. **Sessió 5 · Prova pràctica T3** — prova **individual, per torns** (sessió sencera; el projecte ja s'ha tancat a la S4). Els **últims 15'** es desmunta i es retorna l'electrònica als kits, entre tots. Tothom comença per la **Part B (micro:bit, MicroPython)**: si el vostre projecte ha estat en C++, prepara-la abans amb la targeta de [repàs exprés de MicroPython](../00_General/00_Repas_expres_MicroPython.md) (10-15').
 6. **Abans d'entregar** — repassa [el nostre checklist](SA9_checklist_alumnat.md).
 
 ### Si vols més

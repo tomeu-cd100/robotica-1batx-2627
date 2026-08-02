@@ -2,7 +2,8 @@
 
 **8 h (4 sessions; la S4 és, sencera, la prova pràctica T2 — el producte es tanca a la S3) · Arduino UNO + NTC/LDR/actuador · Criteris CA1.1, CA3.1 · Rúbriques R1 (codi), R3 (control), R4 (documentació)**
 
-> Eina d'acció d'una cara. Condensa la [`SA6_guia_docent.md`](SA6_guia_docent.md). Marca `[x]` a mesura que ho tinguis fet. **Quan s'usa:** imprimeix-lo en **preparar la SA** (§1) i tingues-lo **a taula a cada sessió** (§2–§4).
+> Eina d'acció d'una cara. Condensa la [`SA6_guia_docent.md`](SA6_guia_docent.md). Marca `[x]` a mesura que ho tinguis fet.
+ **Quan s'usa:** imprimeix-lo en **preparar la SA** (§1) i tingues-lo **a taula a cada sessió** (§2–§4).
 
 ## 🧰 1. Logística prèvia (preparar abans de començar la SA)
 - [ ] Material per parella: Arduino UNO + USB, protoboard, cables
@@ -33,7 +34,7 @@
 - ⚠️ *Error:* un `case` sense transició → la màquina es "penja"
 
 **Sessió 4 — PROVA T2 (sessió sencera, individual)**
-- [ ] Instruccions (5-10') · prova Part A + Part B (~100') · recollida (10')
+- [ ] Instruccions (5-10') · prova Part A + Part B (**~80-85' reals**; el nucli, la Part A, està calibrat per a ~60') · recollida (10')
 - [ ] Material consultable: quadern propi i esquemes · només incidències de material
 - [ ] Recordar el **pla de millora personal** (es reprèn a l'inici de SA7)
 - *(+Ampliació fora de sessió: `04_control_proporcional` — error, `Kp`, tot/res vs P; oscil·lació si `Kp` massa gran, limitar amb `constrain`)*

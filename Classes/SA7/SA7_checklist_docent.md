@@ -5,9 +5,13 @@
 > Eina d'acció d'una cara. Condensa la [`SA7_guia_docent.md`](SA7_guia_docent.md). Marca `[x]` a mesura que ho tinguis fet. **Quan s'usa:** imprimeix-lo en **preparar la SA** (§1) i tingues-lo **a taula a cada sessió** (§2–§4).
 
 ## 🧰 1. Logística prèvia (preparar abans de començar la SA)
-- [ ] Imagina 3dBot muntada per equip (motors, rodes, **bateria carregada**), cable de programació
+- [ ] **Robot per equip** amb piles/bateria a punt i cable de programació:
+  - **amb fil conductor** → el **rover** de cada parella, muntat a la **sessió 0** ([dossier T3](../00_General/00_Projecte_T3_Rover.md)); la 3dBot queda de reserva
+  - **sense fil conductor** → Imagina 3dBot muntada per equip
 - [ ] Sensors de línia IR + ultrasons segons dotació
-- [ ] ⚙️ **Comprovar el manual de pins de la placa** (bloc `// === PINS (AJUSTAR) ===` de cada `.ino`) — depèn del model
+- [ ] ⚙️ **Pins i funció `motors()` fixats una sola vegada**:
+  - 3dBot → comprovar el manual de pins de la placa (bloc `// === PINS (AJUSTAR) ===` de cada `.ino`), depèn del model
+  - rover (L298N) → cal **substituir també `motors()`**, no només els pins: bloc llest a [«Adaptar els sketches de SA7 al rover»](../00_General/00_Projecte_T3_Rover.md#adaptar-els-sketches-de-sa7-al-rover). ⚠️ `04_seguidor_linia` demana, a més, canviar la lectura dels sensors (A0/A1 analògics)
 - [ ] **Circuit de proves a terra:** pista amb línia negra + recorregut amb obstacles
 - [ ] Sketches provats: `01_moviment_basic` · `02_trajectoria_quadrat` · `03_evita_obstacles` · `04_seguidor_linia`
 - [ ] Vídeos de suport IA a punt ([`SA7_recursos_video_IA.md`](SA7_recursos_video_IA.md), descàrrega offline)

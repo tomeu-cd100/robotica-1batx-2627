@@ -2,7 +2,8 @@
 
 **8 h (4 sessions; la S4 és, sencera, la prova pràctica T1 — el producte es tanca a la S3) · Arduino UNO + Keyestudio · Criteris CA1.1, CA2.1, CA2.2 · Rúbriques R1 (codi), R2 (circuit), R4 (quadern)**
 
-> Eina d'acció d'una cara. Condensa la [`SA3_guia_docent.md`](SA3_guia_docent.md). Marca `[x]` a mesura que ho tinguis fet. **Quan s'usa:** imprimeix-lo en **preparar la SA** (§1) i tingues-lo **a taula a cada sessió** (§2–§4).
+> Eina d'acció d'una cara. Condensa la [`SA3_guia_docent.md`](SA3_guia_docent.md). Marca `[x]` a mesura que ho tinguis fet.
+ **Quan s'usa:** imprimeix-lo en **preparar la SA** (§1) i tingues-lo **a taula a cada sessió** (§2–§4).
 
 ## 🧰 1. Logística prèvia (preparar abans de començar la SA)
 - [ ] Material per parella: Arduino UNO + USB, protoboard, cables
@@ -33,7 +34,7 @@
 - ⚠️ *Error:* TRIG/ECHO intercanviats · vigilar `pulseIn` = 0 quan no hi ha eco
 
 **Sessió 4 — PROVA T1 (sessió sencera, individual)**
-- [ ] Instruccions (5-10') · prova (~100') · recollida (10')
+- [ ] Instruccions (5-10') · prova (**~80-85' reals**; el nucli està calibrat per a ~60') · recollida (10')
 - [ ] Material consultable: quadern propi i esquemes · el docent només resol incidències de material
 - [ ] Recordar el **pla de millora personal** (3 línies al retorn; es reprèn a l'inici de SA4)
 
