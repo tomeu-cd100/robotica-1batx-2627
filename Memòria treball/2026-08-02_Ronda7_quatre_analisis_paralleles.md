@@ -124,6 +124,40 @@ sensor de col·lisió del braç sense pin a la taula (codi usa P8), dimensió
    mecànics de navegació (àncores, porta docent) i doble discurs d'eina
    (IDE vs Web Editor).
 
-## Estat
+## Estat: les 8 ALTA aplicades (+ katas i quadern)
 
-Pendent de decidir amb el docent l'ordre d'aplicació. Cap correcció aplicada.
+Aplicat el mateix 02-08 en quatre commits:
+
+| Commit | Què tanca |
+|---|---|
+| `c2128c0` | ALTA 1-3: timeout de la barrera (+ EXPLICACIO reescrita), `millis()` explicat on s'escriu per primer cop (+ itinerari del concepte corregit a SA2 i ganxo de 2' a SA3-S1), minutatge de les proves T1/T2 a ~80-85' amb nucli calibrat a ~60' |
+| `dc8371f` | ALTA 4-6: eina real de l'aula (Web Editor/Chromebook) a SA1 i fitxes SA6-SA8; `saneja_ancores()` al generador (67 àncores mortes) amb 5 tests; `07_Rubriques.md` a vista alumnat |
+| `1035cb1` | ALTA 7-8: secció «Adaptar els sketches de SA7 al rover» amb el bloc `motors()` per a L298N (+ avisos a la guia i al sketch, pla B corregit); braç T2 amb els 4 estats reals, taula de traducció C++→Python i pin P8 al cablatge |
+| `5e7b1a2` | Katas del dia del mini-check (marca 🔁 a les 7 SA + política a guies) i quadern tècnic a R4 a SA2-SA4; registre del mini-check, repesca, CA/rúbrica de la coavaluació de SA8 i dimensió «Proves pràctiques» |
+
+**Decisions de disseny que val la pena recordar:**
+
+- El **rover** no canvia els sketches de SA7: es documenta el bloc de
+  substitució de `motors()`, i el fet que canviar de maquinari costi *una
+  funció* passa a ser lliçó explícita d'encapsulació.
+- Les **àncores** es resolen al generador, no als `.md`: `saneja_ancores()`
+  repara les d'estil GitHub (amb accents) i degrada les que la pàgina no té.
+  Així la font es pot seguir escrivint com GitHub la vol.
+- Els **katas del dia del mini-check** no es supriminen: passen a repàs
+  autònom amb marca 🔁 (justament són els patrons més nous: màquina d'estats,
+  seguidor de línia).
+- **Tres checks nous a `tools/qa.py`**: solucions dels katas, marca 🔁 creuant
+  la sessió del mini-check, i rúbrica del quadern (17). Provats també en
+  negatiu (treure la marca fa saltar l'error).
+
+**Verificació:** `tools/qa.py` net, 61 tests del generador verds, sketches
+tocats compilats amb `arduino-cli` (`arduino:avr:uno`), web regenerada.
+
+## Pendent d'aquesta ronda (no aplicat)
+
+Les ~20 MITJANES i 12 BAIXES restants, entre les quals dues de fons que
+demanen decisió del docent: el **dèficit estructural de 2 h del T3** i el
+**tancament de curs** (sense retrospectiva, desmuntatge ni difusió dels tres
+robots). També: pla B Wokwi de SA7 no enllaçat, `Prova_practica_T3.md`
+desactualitzada del fil conductor, i la «competició» que la rúbrica del rover
+avalua sense que cap sessió l'aculli.
