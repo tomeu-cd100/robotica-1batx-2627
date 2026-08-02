@@ -2107,9 +2107,18 @@ if (!u) {
 # ---------------------------------------------------------------------------
 # Sanejament d'àncores (passada final)
 # ---------------------------------------------------------------------------
-def saneja_ancores(web_dir: Path) -> int:
-    """Degrada els enllaços «fitxer.html#ancora» quan l'àncora no existeix a la
-    pàgina destí generada.
+def saneja_ancores(web_dir: Path) -> tuple[int, int]:
+    """Repara o degrada els enllaços «fitxer.html#ancora» quan l'àncora no
+    existeix tal qual a la pàgina destí generada. Retorna (reparades, degradades).
+
+    Dos casos, i en aquest ordre:
+
+    1. **Reparable**: la font duu l'àncora a l'estil de GitHub, que conserva
+       els accents (`#sessió-0-de-muntatge`), i el nostre `slugify()` els
+       treu (`#sessio-0-de-muntatge`). L'enllaç és bo als dos llocs: només cal
+       reescriure el fragment amb l'slug del web. Així els `.md` es poden
+       escriure amb accents, que és el que funciona a GitHub.
+    2. **Morta**: l'id no existeix de cap manera.
 
     Cas real: la font enllaça una activitat de la fitxa d'alumnat
     (`SA1_fitxa_alumnat.md#1-entrada-proces-sortida`), però l'activitat viu dins
@@ -2127,13 +2136,14 @@ def saneja_ancores(web_dir: Path) -> int:
         rel = f.relative_to(web_dir).as_posix()
         ids[rel] = set(re.findall(r'\sid="([^"]+)"', text))
     patro = re.compile(r'href="([^":]+?\.html)#([^"]+)"')
-    arreglats = 0
+    reparades = 0
+    degradades = 0
     for f in htmls:
         text = f.read_text(encoding="utf-8")
         base = f.parent
 
         def repl(m):
-            nonlocal arreglats
+            nonlocal reparades, degradades
             desti, frag = m.group(1), m.group(2)
             try:
                 dest_rel = (base / urllib.parse.unquote(desti)).resolve() \
@@ -2142,13 +2152,19 @@ def saneja_ancores(web_dir: Path) -> int:
                 return m.group(0)
             if dest_rel not in ids or frag in ids[dest_rel]:
                 return m.group(0)
-            arreglats += 1
+            # 1) Reparable? (accents de l'slug de GitHub vs el nostre)
+            candidat = slugify(urllib.parse.unquote(frag))
+            if candidat in ids[dest_rel]:
+                reparades += 1
+                return f'href="{desti}#{candidat}"'
+            # 2) Morta: es degrada a la pàgina sencera
+            degradades += 1
             return f'href="{desti}"'
 
         nou = patro.sub(repl, text)
         if nou != text:
             f.write_text(nou, encoding="utf-8")
-    return arreglats
+    return reparades, degradades
 
 
 # ---------------------------------------------------------------------------
@@ -2314,8 +2330,8 @@ def main():
     (SCRIPT_DIR / "_activitats.json").write_text(
         json.dumps(pdf_manifest, ensure_ascii=False, indent=1), encoding="utf-8")
 
-    # Àncores que la font té però la pàgina generada no (blocs only-github)
-    ancores = saneja_ancores(WEB)
+    # Àncores: reparar les d'estil GitHub (amb accents) i degradar les mortes
+    anc_reparades, anc_degradades = saneja_ancores(WEB)
 
     print(f"  · {len([p for p in pages if p.kind not in ('code', 'sim', 'practica')])} pàgines de document")
     print(f"  · {len(code_groups)} pàgines de codi")
@@ -2324,7 +2340,8 @@ def main():
     print(f"  · {len(copied_imgs)} imatges copiades")
     print(f"  · {len(search_index)} entrades a l'índex de cerca")
     print(f"  · {len(pdf_manifest)} pàgines d'activitat per a PDF (executa generar_pdf.py)")
-    print(f"  · {ancores} àncores degradades (la font les té; la pàgina, no)")
+    print(f"  · {anc_reparades} àncores reparades (accents) i "
+          f"{anc_degradades} degradades (la font les té; la pàgina, no)")
     print("Fet. Obre web/index.html o publica la carpeta web/ a GitHub Pages.")
 
 

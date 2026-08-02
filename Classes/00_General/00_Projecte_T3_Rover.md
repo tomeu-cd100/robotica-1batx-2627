@@ -19,10 +19,12 @@ L'**HC-SR04** mira endavant al seu suport imprès i, a SA8, s'hi afegeix la
 per dins**: cada parella sap exactament on va cada cable perquè l'ha
 cablejat ella mateixa.
 
-L'avantatge clau de tenir un rover propi és que els **pins són idèntics per
-a tota l'aula**: el bloc `// === PINS (AJUSTAR) ===` que porten tots els
-`.ino` de SA7 es fixa **una sola vegada** amb la taula de cablatge d'aquest
-dossier, i ja no es torna a tocar en tot el trimestre.
+L'avantatge clau de tenir un rover propi és que el **maquinari és idèntic per
+a tota l'aula**: la capçalera dels `.ino` de SA7 (el bloc
+`// === PINS (AJUSTAR) ===` **i** la funció `motors()`) s'adapta **una sola
+vegada** amb la taula de cablatge d'aquest dossier, i ja no es torna a tocar
+en tot el trimestre. Vegeu [«Adaptar els sketches de SA7 al rover»](#adaptar-els-sketches-de-sa7-al-rover) —
+és un canvi de dues peces, no només de números.
 
 ![Xassís del rover vist de dalt: HC-SR04 mirant endavant, dos motoreductors amb rodes als suports d'encaix, UNO amb breadboard, L298N i portapiles fixats amb brides o velcro, lloc per a la micro:bit al pis superior (SA8), roda boja darrere i dos seguidors de línia KS0050 sota el xassís mirant a terra](img/rover-xassis.svg)
 
@@ -136,6 +138,52 @@ Flux de fabricació:
 del L298N a l'Arduino UNO (no alimentar la UNO per USB quan els motors van)
 · **GND comú** entre piles, L298N, UNO i tots els sensors.
 
+## Adaptar els sketches de SA7 al rover
+
+Els `.ino` de SA7 estan escrits per a una placa amb **un** pin de direcció per
+motor (`ESQ_DIR`, `DRET_DIR`), com la Imagina 3dBot. El L298N del rover en fa
+servir **dos** per motor (IN1/IN2 i IN3/IN4), perquè és ell qui decideix el
+sentit amb una parella de senyals oposats. Canviar només els números del bloc
+de pins **no funciona**: IN2 i IN4 quedarien a l'aire i el sentit de gir seria
+indefinit.
+
+La bona notícia és que tota la diferència viu en **una sola funció**. A tots
+els sketches de SA7, `motors()` és l'única que toca els pins; `endavant()`,
+`gira_dreta()` i companyia només la criden. Substitueix, doncs, la capçalera
+sencera per aquesta i **la resta del sketch funciona sense tocar res**:
+
+```cpp
+// === PINS DEL ROVER (L298N) — substitueix el bloc PINS de SA7 ===
+const int ESQ_ENA = 5, ESQ_IN1 = 4, ESQ_IN2 = 3;   // motor esquerre
+const int DRET_ENB = 6, DRET_IN3 = 7, DRET_IN4 = 8; // motor dret
+const int VEL = 180;
+
+// Mateixa signatura que a SA7: direccio (HIGH=endavant) + velocitat 0-255.
+// Els dos pins IN de cada motor van sempre en sentits oposats.
+void motors(int dirEsq, int velEsq, int dirDret, int velDret) {
+  digitalWrite(ESQ_IN1, dirEsq);
+  digitalWrite(ESQ_IN2, !dirEsq);      // el contrari del primer
+  analogWrite(ESQ_ENA, velEsq);
+  digitalWrite(DRET_IN3, dirDret);
+  digitalWrite(DRET_IN4, !dirDret);
+  analogWrite(DRET_ENB, velDret);
+}
+
+void setupMotors() {   // crida-la des de setup() en lloc dels pinMode antics
+  pinMode(ESQ_ENA, OUTPUT);  pinMode(ESQ_IN1, OUTPUT);  pinMode(ESQ_IN2, OUTPUT);
+  pinMode(DRET_ENB, OUTPUT); pinMode(DRET_IN3, OUTPUT); pinMode(DRET_IN4, OUTPUT);
+}
+```
+
+> 🎓 **Això és la lliçó, no un peatge:** canviar de maquinari ha costat *una
+> funció*, perquè a SA7 tot el moviment passava per `motors()`. Val la pena
+> dir-ho en veu alta a l'aula: és exactament per això que a SA2 i SA4 vam
+> insistir a encapsular en funcions. Si `digitalWrite` estigués escampat pel
+> `loop()`, ara caldria repassar el sketch sencer.
+>
+> ⚠️ Si un motor gira al revés, **no toquis el codi**: intercanvia els dos
+> cables d'aquell motor al L298N (o les constants `IN1`/`IN2` d'aquell costat).
+
 ## Sessió 0 de muntatge (2 h)
 
 Sessió prèvia a l'inici de SA7, dedicada íntegrament a construir el rover
@@ -189,8 +237,11 @@ i la competició de fi de curs, amb telemetria per ràdio funcionant.
 
 > **Pla B:** si un rover no arriba muntat a temps per a la SA7 (fabricació
 > endarrerida) o no arriba viu a SA9 (avaria), la parella passa a la Imagina
-> 3dBot o al xassís de reserva del Kit 2; els `.ino` són els mateixos
-> canviant només el bloc `// === PINS (AJUSTAR) ===`. Si el xassís
+> 3dBot o al xassís de reserva del Kit 2. En aquest cas els `.ino` de SA7
+> tornen a servir **tal com estan** (són els de la 3dBot: un pin de direcció
+> per motor), ajustant només els números del bloc
+> `// === PINS (AJUSTAR) ===` — el que canvia és la funció `motors()`, i la
+> versió original ja és la bona. Si el xassís
 > d'encaixos no anés bé amb la nostra electrònica, hi ha l'alternativa de
 > **2 pisos** (`rover.svg`, del generador propi, pendent de tall de prova).
 

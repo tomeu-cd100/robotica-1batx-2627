@@ -5,7 +5,11 @@
 
   === PINS (AJUSTAR segons el manual de la teva placa) ===
   Cada motor te un pin de DIRECCIO i un de VELOCITAT (PWM).
-  Si la teva placa usa dos pins de direccio per motor (IN1/IN2), adapta les funcions.
+  Si la teva placa usa dos pins de direccio per motor (IN1/IN2) -- es el cas
+  del pont H L298N del ROVER del fil conductor -- nomes cal substituir la
+  funcio motors(): tota la resta del sketch funciona igual, perque cap altra
+  funcio toca els pins. Bloc llest per copiar al dossier del rover, seccio
+  "Adaptar els sketches de SA7 al rover".
   Quan: S1 - modelatge
 */
 

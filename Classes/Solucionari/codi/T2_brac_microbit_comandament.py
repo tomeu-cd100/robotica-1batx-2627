@@ -1,7 +1,10 @@
 # Codi de referencia del Projecte T2 - Brac robotic (NOMES DOCENT)
 # Fase micro:bit (SA5): COMANDAMENT (2a micro:bit, la que es te a la ma).
 # Inclina per moure base i colze; boto A+B alhora obre/tanca la pinca.
-# Protocol de radio (texts): "B+" "B-" (base), "C+" "C-" (colze), "P" (pinca).
+# Sacseja per GRAVAR el punt actual a la seguencia (mode replay de la SA6).
+# Protocol de radio (texts): "B+" "B-" (base), "C+" "C-" (colze), "P" (pinca),
+# "G" (grava el punt actual). Els botons A i B de la placa del BRAC (no d'aquesta)
+# canvien d'estat: A repos/manual, B reprodueix la seguencia.
 
 from microbit import *
 import radio
@@ -28,6 +31,10 @@ while True:
     if button_a.was_pressed() and button_b.was_pressed():
         radio.send("P")          # obre/tanca la pinca (commutador)
         display.show(Image.TARGET)
+    elif accelerometer.was_gesture("shake"):
+        radio.send("G")          # grava el punt actual de la seguencia
+        display.show(Image.DIAMOND)
+        sleep(300)
     else:
         display.show(Image.ARROW_N)
 

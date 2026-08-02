@@ -46,6 +46,16 @@ La **Imagina 3dBot** és Arduino-compatible, però **els pins dels motors depene
 > no es duplica aquí. Amb el fil conductor, la SA7 es fa amb el **rover
 > propi** de cada parella; la Imagina 3dBot queda de **reserva** (pla B, vegeu
 > el dossier) per si un rover no arriba a temps.
+>
+> ⚠️ **Amb el rover, la funció `motors()` dels sketches canvia** (no només els
+> pins): els `.ino` d'aquesta SA estan escrits per a una placa amb **un** pin
+> de direcció per motor i el L298N del rover en vol **dos** (IN1/IN2, IN3/IN4).
+> El bloc de substitució, llest per copiar, és a
+> [«Adaptar els sketches de SA7 al rover»](../00_General/00_Projecte_T3_Rover.md#adaptar-els-sketches-de-sa7-al-rover):
+> es fa **un sol cop a la sessió 0** i la resta de cada sketch no es toca.
+> Aprofita-ho a l'aula: canviar de maquinari ha costat una funció **perquè
+> tot el moviment passava per `motors()`** — és la lliçó d'encapsulació de
+> SA2/SA4 cobrant-se sola.
 
 ---
 

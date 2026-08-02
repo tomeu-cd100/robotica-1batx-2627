@@ -270,8 +270,9 @@ unsigned long tAlliberat = 0;
 ### El comandament per ràdio (micro:bit)
 
 Protocol de text senzill per ràdio: `"B+"`/`"B-"` mouen la base,
-`"C+"`/`"C-"` el colze (segons la inclinació de l'acceleròmetre) i `"P"`
-commuta la pinça (botó A+B alhora). El comandament és la 2a micro:bit, la
+`"C+"`/`"C-"` el colze (segons la inclinació de l'acceleròmetre), `"P"`
+commuta la pinça (botó A+B alhora) i `"G"` **grava** el punt actual de la
+seqüència (sacsejant el comandament). El comandament és la 2a micro:bit, la
 que es té a la mà.
 
 ```python
@@ -292,6 +293,10 @@ while True:
     if button_a.was_pressed() and button_b.was_pressed():
         radio.send("P")          # obre/tanca la pinca (commutador)
         display.show(Image.TARGET)
+    elif accelerometer.was_gesture("shake"):
+        radio.send("G")          # grava el punt actual de la seguencia
+        display.show(Image.DIAMOND)
+        sleep(300)
     else:
         display.show(Image.ARROW_N)
 
@@ -314,3 +319,40 @@ def mou(pin, angle):
     pin.set_analog_period(20)
     pin.write_analog(angle_a_analog(angle))
 ```
+
+### La màquina d'estats (l'aportació de la SA6)
+
+El producte de SA6 demana **quatre estats** —repòs, manual, replay i
+emergència— i la rúbrica R3 del braç els avalua. Com que en aquest punt el
+braç ja va amb MicroPython, el patró `enum` + `switch` de
+[`03_maquina_estats.ino`](../SA6/codi/03_maquina_estats/03_maquina_estats.ino)
+es tradueix així: constants de text en lloc de l'`enum`, cadena `if`/`elif`
+en lloc del `switch` (i sense `break`: l'`elif` ja és excloent), i la mateixa
+funció `canvia_estat()` per centralitzar el canvi. La taula de traducció
+completa és al [dossier del braç](../00_General/00_Projecte_T2_Brac.md#la-màquina-destats-del-braç-en-python).
+
+Dues decisions que val la pena comentar a l'aula:
+
+```python
+while True:
+    # 1) L'emergencia es comprova ABANS del bloc d'estats: mana per damunt
+    #    de tot, com la guarda de seguretat del 03_sensor_velocitat (SA4).
+    if pin8.read_digital() == 0 and estat != EMERGENCIA:
+        canvia_estat(EMERGENCIA)
+
+    ordre = radio.receive()
+
+    if estat == EMERGENCIA:
+        # 2) Rearmament MANUAL: no en surt sol quan deixa de xocar; cal
+        #    alliberar el sensor I prémer el boto. Una emergencia que es
+        #    rearma sola no es una emergencia.
+        if pin8.read_digital() == 1 and button_a.was_pressed():
+            canvia_estat(REPOS)
+    elif estat == REPOS:
+        ...
+```
+
+El **replay** guarda els punts en una llista de tuples
+(`seguencia.append((base, colze, pinca))`) i els reprodueix amb un `for`,
+comprovant el sensor de col·lisió a **cada** punt: si xoca enmig de la
+reproducció, salta a emergència i talla el bucle amb un `break`.

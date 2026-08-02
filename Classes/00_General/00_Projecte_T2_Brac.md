@@ -117,7 +117,7 @@ Flux de fabricació:
 | Servo base (Starter) | P0 | Alimentació externa del shield. |
 | Servo colze (KS0194) | P1 | Alimentació externa del shield. |
 | Servo pinça (KS0194) | P2 | Alimentació externa del shield. |
-| Sensor de col·lisió (KS0021) | (manté digital, re-cablejat al shield) | Atura els servos en cas de xoc (emergència, SA6). |
+| Sensor de col·lisió (KS0021) | P8 | Digital (re-cablejat de la fase Arduino al shield). Atura els servos en cas de xoc (emergència, SA6). |
 | Ràdio (comandament, 2a micro:bit) | — | Mateix **grup de ràdio = número de parella** a les dues plaques. |
 
 > ⚠️ **Mai alimentar 3 servos des de l'USB.** Igual que a la fase Arduino,
@@ -137,6 +137,40 @@ Flux de fabricació:
 
 **Nota:** la histèresi de SA6 es treballa al termòstat de les sessions de
 SA6, no al braç; el braç aporta la màquina d'estats i l'emergència.
+
+### La màquina d'estats del braç, en Python
+
+Hi ha un escull que convé anticipar: a la SA6 la màquina d'estats s'ensenya
+**en C++** (`enum` + `switch`), però en aquest punt el braç ja va amb
+**MicroPython**, que no té cap de les dues coses. No és cap problema
+conceptual — el patró és idèntic i només canvien les eines. Projecta aquesta
+taula abans que s'hi posin:
+
+| A la SA6 (C++, `03_maquina_estats.ino`) | Al braç (MicroPython) |
+|---|---|
+| `enum Estat { REPOS, MANUAL, ... };` | `REPOS = "REPOS"`, `MANUAL = "MANUAL"`… (constants de text) |
+| `Estat estat = REPOS;` | `estat = REPOS` |
+| `switch (estat) { case REPOS: … }` | `if estat == REPOS: …` / `elif estat == MANUAL: …` |
+| `canviaEstat(FASE1);` | `canvia_estat(MANUAL)` (una funció, igual que en C++) |
+| `break;` al final de cada `case` | *(no cal: l'`elif` ja és excloent)* |
+
+Els **quatre estats** del braç i què els fa canviar:
+
+| Estat | Què fa el braç | En surt quan… |
+|---|---|---|
+| **Repòs** | Quiet, servos a la posició actual. | Botó A del braç → manual · botó B → replay (si hi ha seqüència gravada). |
+| **Manual** | Obeeix les ordres de ràdio del comandament; sacsejant el comandament es **grava** el punt actual. | Botó A → repòs · botó B → replay. |
+| **Replay** | Reprodueix sola la seqüència gravada, punt a punt. | En acabar torna a repòs (o salta a emergència si xoca). |
+| **Emergència** | No mou res. Mana per damunt de qualsevol altre estat. | Rearmament **manual**: sensor alliberat **i** botó A. |
+
+> 🔑 **Per al docent:** implementació completa dels quatre estats al
+> [solucionari del trimestre](../Solucionari/Solucionari_T2_SA4-SA6.md)
+> (secció «Codi de referència del robot del trimestre: el braç»,
+> `T2_brac_microbit_receptor.py`), amb el protocol de ràdio ampliat amb `"G"`
+> de gravar al comandament. Que
+> l'emergència es comprovi **abans** del bloc d'estats, i no dins de cap
+> d'ells, és la mateixa idea de prioritat que la guarda de seguretat del
+> `03_sensor_velocitat` de la SA4.
 
 **Producte final (SA6-S3):** el braç muntat amb la seva **màquina
 d'estats** (repòs/manual/replay/emergència) i el **comandament per
