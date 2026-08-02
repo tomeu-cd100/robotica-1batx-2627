@@ -53,6 +53,9 @@ La SA1 no només respon *"què és un robot?"*: també presenta **com treballare
 
 ## SESSIÓ 1 (2 h) — Què és un robot?
 
+> 🔁 **Activació de cada sessió (rutina #1 del curs):** els primers **5'** dels 10' d'activació són la **graella de repàs espaiat** — 3 preguntes projectades, tothom escriu, no qualifica. Graelles llestes per projectar al [banc d'activació](../00_General/00_Banc_activacio_repas.md). A la SA1 encara no hi ha curs per recuperar: les primeres graelles activen coneixements previs i, a partir de la SA2, ja recuperen enrere.
+
+
 | Fase | Temps | Activitat docent | Activitat alumnat |
 |---|---|---|---|
 | Activació | 15' | Llança la pregunta: *"Quins robots tens a casa sense saber-ho?"* | Pluja d'idees; llista a la pissarra. |

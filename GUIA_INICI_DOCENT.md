@@ -19,11 +19,14 @@
 | Recordatori d'una cara per SA (docent i alumnat) | `Classes/SAx/SAx_checklist_docent.md` · `SAx_checklist_alumnat.md` |
 | El que reparteixes a l'alumnat | `Classes/SAx/SAx_fitxa_alumnat.md` |
 | El **quadern tècnic** de l'alumnat (guia + **PDF imprimible per trimestre**) | `Classes/00_General/00_Quadern_tecnic.md` (PDFs a `Classes/00_General/pdf/`; tasca de Classroom a punt: `00_Quadern_tecnic_tasca_classroom.md`) |
-| El **codi** carregable | `Classes/SAx/codi/` |
+| El **codi** carregable | `Classes/SAx/codi/` (cada sketch amb la seva pàgina `EXPLICACIO.md` per a l'alumnat) |
+| **Escriure codi cada sessió** (rutina de 10') | `Classes/SAx/SAx_katas.md` — un kata per sessió de codi (SA2-SA8), abans d'obrir el sketch; **solucions comentades** a `SAx_katas_solucions.md` |
+| **Les solucions** | pràctiques i productes: `Classes/Solucionari/` · reptes: `Reptes/Solucionari/` · katas: `Classes/SAx/SAx_katas_solucions.md` |
 | Connexions del circuit | `Classes/SAx/SAx_esquemes_connexions.md` |
 | Provar **sense maquinari** | `Simulacions/Wokwi/` (enllaços públics) |
 | Reptes per triar | `Reptes/` (+ `Reptes/Solucionari/`) |
-| Avaluar | `Avaluació/` (proves per trimestre) + `Programació didàctica/07_Rubriques.md` |
+| **Comprar el material de zero** (pressupost) | `Programació didàctica/09b_Guia_compra_pressupost.md` (inventari del que ja hi ha: `09_Materials_i_espais.md`) |
+| Avaluar | `Avaluació/` (proves per trimestre) + `Programació didàctica/07_Rubriques.md` (**R1** codi · **R2** circuit · **R3** projecte/robot · **R4** documentació i defensa · **R5** actitud i cooperació) |
 | Vocabulari i bases de programació | `Classes/SA0/` |
 | Disseny d'objectes (producte) | `Classes/00_General/00_Banc_objectes_disseny.md`, `00_Plantilla_disseny_objecte.md`, `00_Mapa_SA_objectes.md`, `00_Galeria_exemples_objectes.md` |
 | Rutines d'aula (projectar) | `Classes/00_General/00_Poster_aula_metode_DEPURA_rols.md` |

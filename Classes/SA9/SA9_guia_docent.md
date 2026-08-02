@@ -42,6 +42,9 @@ Aquesta SA **tanca el mètode de projecte** introduït a la **SA1** i practicat 
 
 ## Seqüència de sessions (5 × 2 h: 4 de projecte + prova T3)
 
+> 🔁 **Activació de cada sessió (rutina #1 del curs):** els primers **5'** dels 10' d'activació són la **graella de repàs espaiat** ([banc](../00_General/00_Banc_activacio_repas.md)). ⚠️ **La S5 no en té**: és, sencera, la prova pràctica T3.
+
+
 | Sessió | Fase | Activitat docent | Activitat alumnat |
 |---|---|---|---|
 | **1** | **Idear** | Presenta el repte i el `Banc_de_reptes`. Forma equips i rols. | Trien repte, defineixen requisits, esbós, planificació (taulell àgil). |

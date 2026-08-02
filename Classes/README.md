@@ -4,6 +4,8 @@ Material llest per a l'aula de cada situació d'aprenentatge, amb el **codi** fu
 
 > Navega per les **targetes de més avall**: el [material transversal](00_General/README.md), la **SA0** (preàmbul) i les **SA1–SA9** ordenades per trimestre, cadascuna amb la seva subpàgina i tots els materials enllaçats.
 
+> 📖 **Si és el teu primer cop aquí:** llegeix **[`00_General/00_LLEGEIX-ME_Classes.md`](00_General/00_LLEGEIX-ME_Classes.md)** — explica què és cada tipus de document, els rituals d'aula (graella d'activació, kata, mini-check, quadern) i en quin ordre es fan servir. Aquesta pàgina només diu on són les coses; aquella diu **com s'usen**.
+
 ## Com s'organitza
 
 Cada subcarpeta `SAx/` conté, segons la SA:

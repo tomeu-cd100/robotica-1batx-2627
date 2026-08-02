@@ -32,6 +32,7 @@
 - **Cicle de treball** (com a tot el curs): *analitzar → dissenyar → prototipar → provar → millorar* (vegeu SA1). El **producte** n'és el recorregut complet i el **quadern tècnic** el documenta.
 - **Lectura de codi amb PRIMM:** també en Python. A cada *modelatge* l'alumnat **prediu** què farà el programa **abans** d'executar-lo (al simulador o a la placa), després l'**investiga**, el **modifica** i en **crea** un de nou. **Operativa (val per a totes les sessions amb codi):** dedica els primers ~5' del Modelatge a projectar el codi nou **sense executar-lo** i recollir prediccions; només després, executa i investiga.
 - **Pont (d'on venim / on anem):** ve de la **SA4** (Arduino/C++) → portem a la **SA6** (control, torna a Arduino). Aquí s'obre el **fil dels dos llenguatges** (C/C++ ↔ Python, criteri **CA1.2**): els mateixos conceptes en dos paradigmes. Es reprendrà a la **SA8**.
+- **Activació de cada sessió (rutina #1 del curs):** els primers **5'** dels 10' d'activació són la **graella de repàs espaiat** — 3 preguntes projectades, tothom escriu, no qualifica. Les graelles d'aquesta SA, llestes per projectar, són al [banc](../00_General/00_Banc_activacio_repas.md); la pregunta ganxo que obre cada sessió, aquí sota, ocupa la resta. *(El dia del mini-check, el mini-check les substitueix totes dues.)*
 - **Bastida de transició:** **MakeCode** (blocs) com a pont abans del codi Python per a qui ho necessiti.
 
 ---
