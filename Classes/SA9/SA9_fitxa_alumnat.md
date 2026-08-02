@@ -99,19 +99,20 @@ El **teu sistema funcional** + el **[dossier tècnic](plantilles/Dossier_tecnic_
 
 <!-- web:only-github -->
 
-## M'autoavaluo (equip · Insuficient · Suficient/Bé · Notable · Excel·lent — 0-10)
+## M'autoavaluo (Insuficient · Suficient/Bé · Notable · Excel·lent — 0-10)
 | Criteri | Insuficient | Suficient/Bé | Notable | Excel·lent |
 |---|---|---|---|---|
-| El sistema compleix els requisits mínims | ☐ | ☐ | ☐ | ☐ |
-| Hem treballat amb rols i planificació àgil | ☐ | ☐ | ☐ | ☐ |
-| Hem iterat (provar → millorar) i ho hem documentat | ☐ | ☐ | ☐ | ☐ |
+| El meu sistema compleix els requisits mínims | ☐ | ☐ | ☐ | ☐ |
+| He treballat amb planificació àgil i fites per sessió | ☐ | ☐ | ☐ | ☐ |
+| He iterat (provar → millorar) i ho he documentat | ☐ | ☐ | ☐ | ☐ |
+| He ajudat i he fet una revisió creuada útil (una millora i un dubte) | ☐ | ☐ | ☐ | ☐ |
 
 ## Entrega final (checklist)
 - [ ] Sistema funcional
 - [ ] Dossier tècnic complet (`Dossier_tecnic_PLANTILLA.md`)
 - [ ] Codi comentat a la carpeta
-- [ ] Defensa oral preparada
-- [ ] Autoavaluació i revisió creuada
+- [ ] Defensa oral individual preparada
+- [ ] Autoavaluació i revisió creuada de codi (feta a un company: una millora i un dubte)
 
 <!-- /web:only-github -->
 
