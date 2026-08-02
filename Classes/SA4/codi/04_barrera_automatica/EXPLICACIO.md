@@ -48,7 +48,9 @@ El microones, després d'una apagada de llum, arrenca marcant 0:00 — no l'hora
   if (d > 0 && d < DIST_DETECCIO) {
 ```
 
-El porter d'un concert et demana dues coses **alhora**: l'entrada **i** el DNI — amb una de sola no passes. El `&&` (i lògic) és aquest porter: la condició té dues parts i s'han de complir totes dues — la distància ha de ser menor que el llindar **i** més gran que zero. I per què demanar el "DNI" del `d > 0`? Perquè filtra les lectures nul·les (sense eco, `pulseIn` retorna 0): sense aquesta guarda, un sensor desconnectat faria obrir la barrera tota sola. Desconfiar de les mesures és un hàbit de la Pràctica 3 que aquí torna a aparèixer.
+El porter d'un concert et demana dues coses **alhora**: l'entrada **i** el DNI — amb una de sola no passes. El `&&` (i lògic) és aquest porter: la condició té dues parts i s'han de complir totes dues — la distància ha de ser menor que el llindar **i** més gran que zero.
+
+La primera línia de defensa, però, ja la portes de fa dues pràctiques: `mesuraDistancia()` és **exactament la mateixa funció de la Pràctica 3**, amb el seu `pulseIn(..., 30000)` i el seu `return 400` quan no torna cap eco. Per això, amb el sensor desconnectat, la funció no retorna 0 sinó 400 cm: com que 400 no és menor que `DIST_DETECCIO`, la barrera es queda tancada tota sola. Aquesta és la lliçó que et vam dir que no toquessis mai: una funció ben feta viatja d'un sketch a l'altre sencera. I el `d > 0` és el cinturó a sobre dels tirants: no costa res i et cobreix si algun dia enganxes una versió de la funció sense aquella guarda. Desconfiar de les mesures és un hàbit de la Pràctica 3 que aquí torna a aparèixer.
 
 ### Bloc 4 — Obrir, esperar, tancar (i el peatge del delay)
 
@@ -68,7 +70,7 @@ La seqüència es llegeix sola: LED encès, barrera amunt, espera, barrera avall
 
 | Símptoma | Causa probable |
 |---|---|
-| La barrera s'obre sola de tant en tant | Lectures fantasma de l'ultrasons (ecos rebotats), o falta la guarda `d > 0`. |
+| La barrera s'obre sola de tant en tant | Lectures fantasma de l'ultrasons (ecos rebotats), o has copiat una `mesuraDistancia()` sense el `return 400` de la Pràctica 3. |
 | El servo vibra o cau a mig camí | Alimentació insuficient: servo amb alimentació externa i **massa comuna**. |
 | No detecta mai el vehicle | TRIG i ECHO intercanviats, o el llindar `DIST_DETECCIO` massa petit per al teu muntatge. |
 | Es tanca damunt del "vehicle" | No és un error del codi: és el límit del `delay()` (Bloc 4). Gestionar-ho és la versió completa. |

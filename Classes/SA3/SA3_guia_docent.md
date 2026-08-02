@@ -37,6 +37,7 @@
 - **Activació (10'):** *"Com sap la placa que has premut un botó?"*
 - 🔭 **Referent (1', dins l'activació):** **Marie Van Brittan Brown**, inventora del primer sistema de videovigilància domèstica (1966) — l'avantpassat de l'alarma d'aquesta SA ([guió](../00_General/00_Referents_tecnologia.md)).
 - **Modelatge (25'):** `01_polsador_debounce.ino`. `INPUT_PULLUP` (per què evita el cable extra), `digitalRead`, **antirebot** (*debounce*) i **Serial Monitor**.
+  - ⚠️ **Abans del kata, 2' per `millis()`**: és el primer cop que l'alumnat l'ha d'**escriure** (a la SA2 només es va presentar). Digues-ho amb el rellotge de la paret: `millis()` no espera res, es *consulta*, i el temps transcorregut sempre es calcula **restant** (`millis() - ultimCanvi`). Sense aquests 2', el kata de la sessió demana escriure una aritmètica que ningú no ha vist.
 - **Pràctica guiada (35'):** munten el polsador al pin 2; obren el monitor sèrie i compten premudes.
 - **Repte (40'):** el polsador encén/apaga un LED a cada premuda (mode *toggle*); **+ repte:** comptar fins a 5 i reiniciar.
 - **Tancament (10'):** quadern.
@@ -86,8 +87,10 @@
 > 📋 **Aquesta sessió és, sencera, la prova trimestral T1** ([`Avaluació/Prova_practica_T1.md`](../../Avaluació/Prova_practica_T1.md)): individual, amb kit propi (n'hi ha un per alumne/a), quadern i esquemes consultables. **No s'hi programa cap altra activitat** — una prova individual de ~100' i una sessió de producte no caben juntes ([`08_Sequenciacio`](../../Programació%20didàctica/08_Sequenciacio_temporal_anual.md)).
 
 - **Instruccions (5-10'):** repartir material, recordar què es pot consultar (quadern, esquemes) i l'estructura per nivells (nucli = 5-6; ampliacions = 7-10).
-- **Prova (95-100'):** cada alumne/a munta i programa la "llum de seguretat intel·ligent". El docent només resol incidències de material (placa/cable espatllats), no dubtes de contingut.
+- **Prova (~80-85'):** cada alumne/a munta i programa la "llum de seguretat intel·ligent". El docent només resol incidències de material (placa/cable espatllats), no dubtes de contingut.
 - **Tancament (10'):** recollida ordenada; recordar el **pla de millora personal** (3 línies al quadern quan rebin el retorn — es reprèn a l'inici de la SA4).
+
+> ⏱️ **Marge:** ~95-105' efectius, no 120'. Instruccions + recollida se'n mengen 15-20', així que la prova real són **~80-85'**, i el **nucli està calibrat per a ~60'**. Si el grup arrenca tard, retalla **les instruccions** (projecta l'enunciat i deixa'ls començar), mai el temps de prova. Avisa a la meitat i a manca de 10'.
 
 **Sense graella d'activació ni mini-check** (el mini-check va ser a la S3). Qui acabi abans: ampliacions de la mateixa prova o reptes ⭐ de la SA.
 

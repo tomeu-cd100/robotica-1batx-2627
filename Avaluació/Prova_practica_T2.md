@@ -1,7 +1,7 @@
 # Prova pràctica — Trimestre 2 (SA4-SA6)
 ## "Control climàtic + estació remota"
 
-**Durada:** una sessió sencera — **la S4 de la SA6** (~95-100' efectius de prova, més instruccions i recollida) · **Individual** · **Material:** Arduino UNO + motor/ventilador amb pont H (o LED PWM com a substitut) + NTC/potenciòmetre; 2 micro:bit. Es permet consultar esquemes i quadern.
+**Durada:** una sessió sencera — **la S4 de la SA6**. Compta **~80-85' reals de prova**: la sessió de 2 h dona ~95-105' efectius i les instruccions (5-10') i la recollida (10') en surten. El **nucli (histèresi) està calibrat per a ~60'**; les ampliacions són per a qui acabi abans · **Individual** · **Material:** Arduino UNO + motor/ventilador amb pont H (o LED PWM com a substitut) + NTC/potenciòmetre; 2 micro:bit. Es permet consultar esquemes i quadern.
 
 ### Competències i criteris avaluats
 - **CE-R3** (control) → CA3.1 · **CE-R1** (programar) → CA1.1, CA1.2

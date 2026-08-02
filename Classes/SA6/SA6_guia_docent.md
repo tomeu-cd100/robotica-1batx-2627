@@ -121,8 +121,10 @@
 > 📋 **Aquesta sessió és, sencera, la prova trimestral T2** ([`Avaluació/Prova_practica_T2.md`](../../Avaluació/Prova_practica_T2.md)): individual, dues parts (control Arduino + micro:bit), quadern i esquemes consultables. **No s'hi programa cap altra activitat** ([`08_Sequenciacio`](../../Programació%20didàctica/08_Sequenciacio_temporal_anual.md)).
 
 - **Instruccions (5-10'):** material (kit + 2 micro:bit per alumne/a segons dotació), què es pot consultar, estructura per nivells (nucli = histèresi; ampliacions = indicador, proporcional, ràdio).
-- **Prova (95-100'):** Part A (control de temperatura amb histèresi) + Part B (estació remota micro:bit). El docent només resol incidències de material.
+- **Prova (~80-85'):** Part A (control de temperatura amb histèresi) + Part B (estació remota micro:bit). El docent només resol incidències de material.
 - **Tancament (10'):** recollida; recordar el **pla de millora personal** (es reprèn a l'inici de la SA7).
+
+> ⏱️ **Marge:** ~95-105' efectius, no 120'. Instruccions + recollida se'n mengen 15-20', així que la prova real són **~80-85'**, i el **nucli (Part A, histèresi) està calibrat per a ~60'**. Si el grup arrenca tard, retalla **les instruccions**, mai el temps de prova; la Part B (micro:bit) es pot valorar amb el que hi hagi fet al minut de tancar.
 
 ### +Ampliació: control proporcional (fora de sessió)
 

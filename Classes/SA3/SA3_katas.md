@@ -10,7 +10,7 @@
 > Tens ja declarades les constants `POLSADOR` (pin 2) i `LED` (pin 8), i les variables `comptador = 0`, `estatAnterior = HIGH` i `ultimCanvi = 0`, més la constant `ANTIREBOT = 40` (ms). Escriu de zero el `loop()` complet: llegeix l'estat del polsador, detecta cada canvi real filtrant els rebots (només compta si han passat més de 40 ms des de l'últim canvi vàlid), i quan el canvi sigui cap a prémer (LOW), incrementa `comptador`, mostra'l pel Monitor sèrie i alterna el LED.
 
 **Practica:** `digitalRead` amb `INPUT_PULLUP` (lògica invertida) · antirebot amb `millis()` · filtrar dins d'un filtre · toggle amb `!digitalRead(...)`.
-**Pista (per a qui es bloqueja):** dues comprovacions imbricades: primer si el canvi és "vàlid" (ha canviat i ha passat prou temps), i només dins d'aquesta, si el canvi és concretament cap a prémer.
+**Pista (per a qui es bloqueja):** dues comprovacions imbricades: primer si el canvi és "vàlid" (ha canviat i ha passat prou temps), i només dins d'aquesta, si el canvi és concretament cap a prémer. Per al temps: `millis()` es *consulta* (no espera res) i «quanta estona ha passat» sempre es calcula **restant** — `millis() - ultimCanvi`.
 **En comparar amb el sketch, mireu:** ① l'`estatAnterior` s'actualitza sempre que el canvi és vàlid, o només quan es prem? ② el toggle del LED llegeix l'estat actual del LED (`digitalRead(LED)`) o feu servir una variable pròpia per recordar-lo? ③ on es guarda el moment del canvi (`ultimCanvi = millis()`): dins del filtre d'antirebot o dins del filtre de "és una premuda"?
 
 ## Kata · `02_potenciometre_ldr` (Sessió 2)

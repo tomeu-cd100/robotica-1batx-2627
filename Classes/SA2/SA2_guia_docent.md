@@ -64,7 +64,7 @@
 
 > ⏱️ **Marge:** el temps efectiu real és ~100' (arrencada + recollida), no 120'. Si vas just, retalla primer: **el «+ repte» (semàfor de vianants)**.
 
-**Punt clau:** `delay()` bloqueja el programa; per a sistemes que han de fer diverses coses alhora s'usa `millis()`. **Itinerari del concepte:** aquí es presenta; a la **SA4** es practica (mini-pràctica `05_dos_leds_millis`); a la **SA6** s'usa de debò (màquina d'estats no bloquejant).
+**Punt clau:** `delay()` bloqueja el programa; per a sistemes que han de fer diverses coses alhora s'usa `millis()`. **Itinerari del concepte:** aquí es presenta; a la **SA3-S1** apareix per primer cop dins l'antirebot del polsador (l'explicació de la pràctica el desenvolupa: cronòmetre que es consulta, resta `millis() - marca`, `unsigned long`) — **no el donis per sabut aquell dia**; a la **SA4** es practica (mini-pràctica `05_dos_leds_millis`); a la **SA6** s'usa de debò (màquina d'estats no bloquejant).
 
 ---
 

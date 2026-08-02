@@ -30,6 +30,8 @@ const unsigned long ANTIREBOT = 40;  // ms
 
 A més de les constants de pins (SA2), hi ha tres variables que fan **memòria** entre voltes de `loop()`: quantes premudes portem (`comptador`), com estava el pin l'última vegada (`estatAnterior`, que comença a `HIGH` perquè en repòs el pin llegeix HIGH) i **quan** va ser l'últim canvi (`ultimCanvi`). `ANTIREBOT` són els 40 ms durant els quals ignorarem "rebots" del contacte metàl·lic.
 
+> 🕰️ **`millis()`, el cronòmetre de la placa** (te'l van presentar a la SA2; aquí el fas servir per primer cop). L'Arduino porta, des que s'engega, un comptador que suma **1 cada mil·lisegon** i no s'atura mai. `millis()` no és cap espera: és una *consulta*, com mirar el rellotge de la paret — et diu quants mil·lisegons fa que la placa està en marxa i el programa continua a l'instant. Amb ell no preguntes «quina hora és?», sinó **«quanta estona ha passat des d'allò?»**, i això es calcula sempre restant: `millis() - ultimCanvi`. Per això `ultimCanvi` és `unsigned long`: el número creix tant (al cap d'un minut ja va per 60000) que no cabria en un `int`.
+
 ### Bloc 2 — Configurar l'entrada (i el canal sèrie)
 
 ```cpp

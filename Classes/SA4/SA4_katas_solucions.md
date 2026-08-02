@@ -103,4 +103,4 @@ void loop() {
 }
 ```
 
-**En comentar:** ① la guarda `d > 0 && d < DIST_DETECCIO` descarta lectures invàlides (0 = sense eco en algunes variants) **i** exigeix proximitat: amb un sol costat, la barrera s'obriria sola; ② el LED s'apaga **després** de tancar la barrera: el llum indica «barrera activa», no «vehicle detectat»; ③ el `delay(80)` final és **fora** de l'`if`: marca el ritme de mostreig a totes les voltes, hi hagi vehicle o no.
+**En comentar:** ① la guarda `d > 0 && d < DIST_DETECCIO` exigeix proximitat **i** descarta lectures impossibles — recorda que `mesuraDistancia()` ja retorna 400 sense eco (la funció de la P3, portada sencera), de manera que el `d > 0` és cinturó a sobre dels tirants; ② el LED s'apaga **després** de tancar la barrera: el llum indica «barrera activa», no «vehicle detectat»; ③ el `delay(80)` final és **fora** de l'`if`: marca el ritme de mostreig a totes les voltes, hi hagi vehicle o no.
