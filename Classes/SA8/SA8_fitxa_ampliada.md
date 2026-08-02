@@ -14,7 +14,7 @@
 
 ## Activitat 1 · Telemetria (S1)
 0. **PREDIU** (abans d'executar): mirant [`01_telemetria_emissor.py`](codi/01_telemetria_emissor.py) i [`02_telemetria_receptor.py`](codi/02_telemetria_receptor.py), què creus que mostrarà la placa receptora? ____________________
-1. Carrega [`01_telemetria_emissor.py`](codi/01_telemetria_emissor.py) i [`02_telemetria_receptor.py`](codi/02_telemetria_receptor.py) en **les teves dues plaques** (mateix `group`) i **comprova** la predicció. *(Si no hi ha dues micro:bit per persona, el docent us ajuntarà un moment per fer la transmissió: tu escrius igualment els dos programes.)*
+1. Carrega [`01_telemetria_emissor.py`](codi/01_telemetria_emissor.py) i [`02_telemetria_receptor.py`](codi/02_telemetria_receptor.py) en **les teves dues plaques** (mateix `group` a totes dues, i **diferent del dels companys**: fes servir el teu número de llista) i **comprova** la predicció.
 2. Quines magnituds envies? __________________ Cada quant? __________
 3. Registra 5 lectures rebudes:
 

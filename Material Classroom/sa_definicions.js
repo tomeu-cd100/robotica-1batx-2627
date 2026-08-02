@@ -29,7 +29,6 @@ export const DEFINICIONS = {
     items: [
       t('Abans de començar',
         "En acabar aquesta SA podré: 1) analitzar un sistema automàtic amb el model entrada → procés → sortida; 2) reconèixer les parts de la placa Arduino i distingir digital d'analògic; 3) predir, llegir i modificar un programa senzill (Blink); 4) treballar amb seguretat i portar el quadern tècnic al dia.\n\nVersió nucli (ja és assoliment satisfactori): pòster amb entrada → procés → sortida ben identificades i el dilema ètic plantejat."),
-      s('Parella (nom, si treballes en parella)'),
 
       t('Activitat 1 · Entrada – Procés – Sortida',
         "Per a cada sistema, completa: què PERCEP (entrada), què DECIDEIX (procés) i què FA (sortida)."),
@@ -88,7 +87,6 @@ export const DEFINICIONS = {
     items: [
       t('Abans de començar',
         "En acabar aquesta SA podré: 1) escriure programes amb variables, if i for que controlin llums i so; 2) graduar intensitat i color amb PWM (analogWrite, 0–255, pins ~); 3) muntar circuits correctes (resistència, polaritat) i mesurar-hi tensions amb el multímetre.\n\nVersió nucli: panell amb 2 estats clarament distingibles amb color i so."),
-      s('Parella (nom, si treballes en parella)'),
 
       t('Activitat 1 · LED bàsic i variables (S1)',
         "Munta un LED al pin 8 i treballa amb 01_led_basic.ino."),
@@ -142,7 +140,6 @@ export const DEFINICIONS = {
     items: [
       t('Abans de començar',
         "En acabar aquesta SA podré: 1) llegir polsadors (amb antirebot) i sensors analògics (0–1023) i decidir amb llindars; 2) calibrar i depurar amb el Monitor sèrie i el multímetre; 3) escriure funcions pròpies que retornen un valor.\n\nVersió nucli: avís de 2 nivells segons la distància (LED + so) que funciona de manera fiable."),
-      s('Parella (nom, si treballes en parella)'),
 
       t('Activitat 1 · Polsador i monitor sèrie (S1)',
         "Munta el polsador al pin 2 (INPUT_PULLUP), carrega 01_polsador_debounce.ino i obre el Monitor sèrie."),
@@ -200,7 +197,6 @@ export const DEFINICIONS = {
     items: [
       t('Abans de començar',
         "En acabar aquesta SA podré: 1) controlar la posició d'un servo (0–180°) amb una llibreria (Servo.h); 2) moure un motor DC en els dos sentits amb pont H i alimentació segura (font externa + massa comuna); 3) fer que el moviment respongui a un sensor.\n\nVersió nucli: la barrera s'obre en detectar el vehicle i es tanca sola (angle i temps fixos)."),
-      s('Parella (nom, si treballes en parella)'),
 
       t('Activitat 1 · Servomotor (S1)',
         "Munta el servo (senyal al pin 9) i treballa amb 01_servo_potenciometre.ino."),
@@ -252,7 +248,6 @@ export const DEFINICIONS = {
     items: [
       t('Abans de començar',
         "En acabar aquesta SA podré: 1) escriure programes MicroPython ben indentats que funcionen; 2) fer servir els sensors integrats (acceleròmetre, llum) i la ràdio de la micro:bit; 3) comparar la mateixa solució en C++ (Arduino) i en Python (micro:bit).\n\nVersió nucli: app que fa servir UN sensor integrat o la ràdio i funciona + taula comparativa completa. Sense placa? Simulador: python.microbit.org"),
-      s('Parella (nom, si treballes en parella)'),
 
       t('Activitat 1 · Name badge (S1)',
         "Carrega 01_name_badge.py a la micro:bit."),
@@ -309,7 +304,6 @@ export const DEFINICIONS = {
     items: [
       t('Abans de començar',
         "En acabar aquesta SA podré: 1) distingir llaç obert i llaç tancat i explicar el meu sistema amb un diagrama de blocs; 2) fer un termòstat amb histèresi (dos llindars, sense «clic-clic»); 3) construir una màquina d'estats que no es bloqueja (millis()); 4) (+ampliació opcional) provar el control proporcional.\n\nVersió nucli: termòstat amb histèresi que funciona, documentat amb el diagrama de blocs."),
-      s('Parella (nom, si treballes en parella)'),
 
       t('Activitat 1 · Llaç obert vs llaç tancat (S1)',
         "Carrega 01_llac_obert_vs_tancat.ino i prova els dos modes. Fixa't en el diagrama de blocs del llaç tancat (a la fitxa del web)."),
@@ -471,56 +465,56 @@ export const DEFINICIONS = {
   sa9: {
     sa: 'sa9',
     titol: 'SA9 · Fitxa base — Repte final integrador',
-    descripcioForm: "Fitxa d'equip del projecte final: de la idea a la demo. Dissenyareu, construireu, programareu i defensareu un sistema robòtic autònom. UNA resposta per equip.",
-    descripcioTasca: "Fitxa d'equip de la SA9 (repte, rols, disseny, planificació, iteracions i defensa). UNA resposta per equip. El sistema, el dossier tècnic i la defensa es lliuren a part (R1-R5); la prova T3 és individual.",
+    descripcioForm: "Fitxa del teu projecte final: de la idea a la demo. Dissenyaràs, construiràs, programaràs i defensaràs un sistema robòtic autònom. UNA resposta per alumne/a.",
+    descripcioTasca: "Fitxa individual de la SA9 (repte, disseny, planificació, iteracions i defensa). UNA resposta per alumne/a. El sistema, el dossier tècnic i la defensa es lliuren a part (R1-R5); la prova T3 també és individual.",
     topicName: 'SA9 · Projecte final integrador',
     state: 'DRAFT',
     maxPoints: 10,
     materials: [fitxaWeb(9)],
     items: [
       t('Abans de començar',
-        "Mètode de projecte (el mateix de tot el curs): analitzar → dissenyar → prototipar → provar/millorar → comunicar. Aquest cop, sencer i en autonomia.\n\nVersió nucli: els requisits mínims del §1 complerts i demostrables en directe, amb el dossier a les seccions essencials. UNA resposta per equip."),
-      s('Equip (nom) i membres'),
+        "Mètode de projecte (el mateix de tot el curs): analitzar → dissenyar → prototipar → provar/millorar → comunicar. Aquest cop, sencer i en autonomia.\n\nVersió nucli: els requisits mínims del §1 complerts i demostrables en directe, amb el dossier a les seccions essencials. UNA resposta per alumne/a."),
+      s('Nom'),
 
-      t('1 · El nostre repte', "Trieu el repte al banc de reptes de la SA9."),
+      t('1 · El meu repte', "Tria el repte al banc de reptes de la SA9 (cadascú el seu)."),
       s('Repte triat'),
       p('Problema real que resol'),
       p('Requisits mínims (sí o sí): 1, 2 i 3'),
 
-      t('2 · Rols de l’equip', "Un rol per persona; podeu rotar-los entre sessions."),
-      p('Qui fa cada rol: coordinació/planificació · maquinari/electrònica · programació · documentació/comunicació'),
+      t('2 · Les meves quatre feines', "Al projecte les fas totes tu: planificació, maquinari, programació i documentació. Al taulell, cada tasca porta l'etiqueta de la feina a què pertany (PLA/MAQ/PROG/DOC)."),
+      p('Quines tasques tens de cada etiqueta? (la que se sol oblidar és DOC)'),
 
-      t('3 · Disseny', "L'esbós/esquema del sistema va al dossier tècnic; aquí descriviu-lo."),
-      p('Descripció de l’esbós/esquema del sistema'),
+      t('3 · Disseny', "L'esbós/esquema del sistema va al dossier tècnic; aquí descriu-l'hi."),
+      p('Descripció de l’esbós/esquema del meu sistema'),
       s('Sensors (entrada) / Actuadors (sortida)'),
       radio('Tipus de control', ['Llaç obert', 'Llaç tancat', 'Màquina d’estats'],
-        'El que millor descriu el vostre sistema.'),
+        'El que millor descriu el teu sistema.'),
 
-      t('4 · Planificació', "Useu la plantilla de planificació àgil (To Do / Fent / Fet)."),
+      t('4 · Planificació', "Fes servir la plantilla de planificació àgil (To Do / Fent / Fet), amb les etiquetes PLA/MAQ/PROG/DOC."),
       s('Fita S2 / Fita S3 / Fita S4'),
 
       t('5 · Proves i iteracions',
-        "Apliqueu el mètode de projecte: després de provar, milloreu i torneu a provar."),
-      p('Iteració v1: què fallava · què heu canviat · resultat'),
-      p('Iteració v2: què fallava · què heu canviat · resultat'),
+        "Aplica el mètode de projecte: després de provar, millora i torna a provar."),
+      p('Iteració v1: què fallava · què has canviat · resultat'),
+      p('Iteració v2: què fallava · què has canviat · resultat'),
 
-      t('6 · Defensa (S5)', "Defensa oral de 5' + preguntes individuals + demostració."),
-      s('Qui explica cada part?'),
+      t('6 · Defensa (S4)', "Defensa oral individual de 5' + preguntes + demostració, a la mostra de la S4."),
+      s('Ordre de la teva defensa: problema · solució · decisió tècnica · alternativa descartada'),
       radio('Demostració preparada?', ['Sí', 'Encara no'], undefined),
-      p('Reflexió ètica/sostenibilitat: impacte del vostre sistema'),
+      p('Reflexió ètica/sostenibilitat: impacte del teu sistema'),
 
       check('Entrega final (marqueu el que ja teniu)', [
         'Sistema funcional',
         'Dossier tècnic complet',
         'Codi comentat a la carpeta',
         'Defensa oral preparada',
-        'Autoavaluació i coavaluació'
+        'Autoavaluació feta i revisió creuada del codi d’un company'
       ]),
 
       autoaval([
         'El sistema compleix els requisits mínims',
-        'Hem treballat amb rols i planificació àgil',
-        'Hem iterat (provar → millorar) i ho hem documentat'
+        'He mantingut el taulell i he cobert les quatre etiquetes (PLA/MAQ/PROG/DOC)',
+        'He iterat (provar → millorar) i ho he documentat'
       ])
     ]
   }

@@ -170,7 +170,7 @@ El treball és **individual** (`Programació didàctica/04_Metodologia.md` §4.3
 - **Revisió creuada de codi** abans de tancar el producte: cadascú llegeix el codi d'un company i li retorna **una millora concreta i un dubte**.
 - **Ajuda documentada** al quadern («qui m'ha ajudat / a qui he ajudat i com»), que és el que alimenta la R5.
 
-L'**agrupament puntual** de la S1 (dues plaques compartides per provar la transmissió) no canvia el lliurable: cadascú ha escrit emissor i receptor i cadascú documenta la prova.
+A la S1 cadascú programa **les seves dues plaques** (emissora i receptora) i documenta la seva pròpia prova de transmissió: la telemetria és individual de punta a punta.
 
 ## Pensament computacional i depuració
 

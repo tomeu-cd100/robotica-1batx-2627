@@ -48,7 +48,7 @@ Si la tasca encara no t'apareix al Classroom, és que la SA encara no ha començ
 > 📡 La ràdio et sona llunyana (SA5)? Repassa-la en 10' amb la targeta **[Repàs exprés de la ràdio](../00_General/00_Repas_expres_Radio.md)** abans de començar.
 
 0. **PREDIU:** amb [`01_telemetria_emissor.py`](codi/01_telemetria_emissor.py) i [`02_telemetria_receptor.py`](codi/02_telemetria_receptor.py), què mostrarà la receptora? ______________________
-1. Carrega'ls en **les teves dues plaques** (mateix `group`) i comprova. *(Si a l'aula no hi ha dues micro:bit per persona, el docent us ajuntarà un moment per fer la prova de transmissió: tu has escrit igualment els dos programes i documentes tu la prova.)*
+1. Carrega'ls en **les teves dues plaques** (mateix `group` a totes dues, i **diferent del dels teus companys** — fes servir el teu número de llista) i comprova.
 2. Quines magnituds envies? __________ Cada quant? __________
 3. **Repte:** envia dues magnituds etiquetades (`T:..`, `L:..`).
 

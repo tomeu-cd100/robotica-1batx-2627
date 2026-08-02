@@ -11,7 +11,7 @@
 3. **Comparar** la mateixa solució en C/C++ (Arduino) i Python (micro:bit).
 
 ## Material per alumne/a
-- **micro:bit** + cable USB. ⚠️ **La ràdio (S3) necessita dues plaques**: si la dotació permet donar-ne **dues per alumne/a** (emissor i receptor), la prova és individual; si no, fes la prova de ràdio en un **agrupament puntual de dos** (o amb la demo del Pla B) — el codi d'emissor i de receptor l'escriu cadascú igualment.
+- **2 micro:bit + cables USB per alumne/a** (emissora i receptora). La ràdio de la S3 necessita totes dues, i la dotació del centre hi arriba: **la prova és individual de cap a peus** — cadascú programa les seves dues plaques i les fa parlar entre elles.
 - Micro:shield (per a perifèrics externs, opcional).
 - Entorn: **editor Python de micro:bit** (python.microbit.org) o **Thonny**. MakeCode com a pont.
 
@@ -70,7 +70,7 @@
 ## SESSIÓ 3 (2 h) — Ràdio i comparació de paradigmes
 - **Mini-check individual (10', substitueix l'activació):** [`00_Mini_checks_individuals.md`](../00_General/00_Mini_checks_individuals.md). Aprofita el canvi de full per presentar en 1' com es comuniquen dues plaques sense cables → ràdio.
 - **Modelatge (25'):** [`04_radio_dau.py`](codi/04_radio_dau.py). Mòdul `radio`: `radio.on()`, `radio.config(group=...)`, `send()`, `receive()`. Gestos (`was_gesture("shake")`) i `random`.
-- **Pràctica guiada (35'):** dau digital que es comparteix per ràdio entre dues plaques. Cadascú programa **emissor i receptor**; per a la prova d'emissió-recepció li calen **dues plaques** o un **agrupament puntual** amb un company/a (vegeu «Material»).
+- **Pràctica guiada (35'):** dau digital que es comparteix per ràdio entre dues plaques. Cadascú programa **emissor i receptor** i els prova amb **les seves dues micro:bit**. ⚠️ Recorda't de repartir **grups de ràdio diferents** (p. ex. el número de llista): amb tothom transmetent alhora, el mateix `group` faria que es rebessin els daus dels altres.
 - **Repte (40'):** "pedra-paper-tisora" per ràdio o comandament a distància; **+ repte:** xarxa de 3+ plaques.
 - **Comparació + tancament (15'):** completar la **taula comparativa C++ ↔ Python** d'un mateix programa (p. ex. comptador) i reflexionar sobre els dos paradigmes. **Deures de represa (2'):** reparteix (o envia pel Classroom) la targeta [`00_Repas_expres_Cpp.md`](../00_General/00_Repas_expres_Cpp.md) — després de 3 setmanes de Python, la SA6 torna a C++ i la sintaxi (`;`, claus, tipus) arriba rovellada. És la targeta bessona de la de MicroPython que es reparteix abans de la prova T2.
 

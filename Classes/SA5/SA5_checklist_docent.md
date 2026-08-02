@@ -2,10 +2,11 @@
 
 **6 h (3 sessions + 4a opcional d'ampliació) · micro:bit + Micro:shield · Llenguatge MicroPython · Criteris CA1.2, CA3.1 · Rúbriques R1 (codi), R4 (documentació/comparativa)**
 
-> Eina d'acció d'una cara. Condensa la [`SA5_guia_docent.md`](SA5_guia_docent.md). Marca `[x]` a mesura que ho tinguis fet. **Quan s'usa:** imprimeix-lo en **preparar la SA** (§1) i tingues-lo **a taula a cada sessió** (§2–§4).
+> Eina d'acció d'una cara. Condensa la [`SA5_guia_docent.md`](SA5_guia_docent.md). Marca `[x]` a mesura que ho tinguis fet.
+ **Quan s'usa:** imprimeix-lo en **preparar la SA** (§1) i tingues-lo **a taula a cada sessió** (§2–§4).
 
 ## 🧰 1. Logística prèvia (preparar abans de començar la SA)
-- [ ] **micro:bit + cable USB per alumne/a**; per a la ràdio (S3) calen **2 plaques per alumne/a** — si no hi arriben, prepara l'agrupament puntual de dos (o la demo del Pla B)
+- [ ] **2 micro:bit + cables USB per alumne/a** (emissora i receptora): la ràdio de la S3 les demana totes dues i la dotació del centre hi arriba
 - [ ] Micro:shield (perifèrics externs, opcional)
 - [ ] Entorn provat: **python.microbit.org** o **Thonny**; MakeCode com a pont (bastida)
 - [ ] Sketches provats: `01_name_badge` · `02_passes` · `03_nightlight` · `04_radio_dau`

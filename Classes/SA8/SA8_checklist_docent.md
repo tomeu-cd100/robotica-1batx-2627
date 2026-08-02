@@ -2,10 +2,11 @@
 
 **6 h (3 sessions) · 2× micro:bit + Micro:shield · ESP32 (WiFi) opcional · Criteris CA3.1, CA4.2 · Rúbriques R1 (codi), R3 (sistema/decisió), R4 (documentació/reflexió)**
 
-> Eina d'acció d'una cara. Condensa la [`SA8_guia_docent.md`](SA8_guia_docent.md). 🤖 És la SA on **culmina la IA**: repassa `../00_IA_a_la_materia.md`. **Quan s'usa:** imprimeix-lo en **preparar la SA** (§1) i tingues-lo **a taula a cada sessió** (§2–§4).
+> Eina d'acció d'una cara. Condensa la [`SA8_guia_docent.md`](SA8_guia_docent.md). 🤖 És la SA on **culmina la IA**: repassa `../00_IA_a_la_materia.md`.
+ **Quan s'usa:** imprimeix-lo en **preparar la SA** (§1) i tingues-lo **a taula a cada sessió** (§2–§4).
 
 ## 🧰 1. Logística prèvia (preparar abans de començar la SA)
-- [ ] **2 micro:bit (emissora + receptora) per alumne/a** + cables USB — ⚠️ **compta-les abans de la S1**: si no n'hi ha dues per persona, decideix la via (agrupament puntual només per a la prova de transmissió, o torns amb un joc de plaques; vegeu la guia docent)
+- [ ] **2 micro:bit (emissora + receptora) per alumne/a** + cables USB — ⚠️ **compta-les abans de la S1** i assigna un **`group` de ràdio diferent a cadascú** (p. ex. el número de llista): si no, les transmissions es barregen
 - [ ] (Opcional) ESP32 per a la demo WiFi/MQTT · editor Python o Thonny
 - [ ] **S3 (ML):** 1 ordinador/tauleta amb **navegador + càmera/micròfon** per alumne/a (Teachable Machine) — *Pla B: demo projectada*
 - [ ] Sketches provats: `01_telemetria_emissor` · `02_telemetria_receptor` · `03_ia_gestos` · (`04_esp32_telemetria`)
