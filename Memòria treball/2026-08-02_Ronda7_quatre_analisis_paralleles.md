@@ -153,11 +153,26 @@ Aplicat el mateix 02-08 en quatre commits:
 **Verificació:** `tools/qa.py` net, 61 tests del generador verds, sketches
 tocats compilats amb `arduino-cli` (`arduino:avr:uno`), web regenerada.
 
-## Pendent d'aquesta ronda (no aplicat)
+## Ronda tancada: també les mitjanes i les baixes
 
-Les ~20 MITJANES i 12 BAIXES restants, entre les quals dues de fons que
-demanen decisió del docent: el **dèficit estructural de 2 h del T3** i el
-**tancament de curs** (sense retrospectiva, desmuntatge ni difusió dels tres
-robots). També: pla B Wokwi de SA7 no enllaçat, `Prova_practica_T3.md`
-desactualitzada del fil conductor, i la «competició» que la rúbrica del rover
-avalua sense que cap sessió l'aculli.
+| Commit | Què tanca |
+|---|---|
+| `8af7d46` | **SA1-SA5**: novetats que no ho eren («primeres funcions», «novetat» del `return`, «`unsigned long` és nou») · errors factuals (`pulseIn` **sí** té timeout d'1 s; PWM en centenars, no milers) · reptes que demanaven `for`/arrays/`millis()` sense avisar-ho · rang barrejat al kata SA4-03 · seguidors de línia del rover (pins i lògica diferents dels del sketch) |
+| `135f9ff` | **Temps**: SA6-S3 (el «Python flash» se sumava als 120') · activacions de represa (12' en 10' a SA6/SA7/SA8) · «sessió de 4 h» de SA8 (són 2) · graelles de SA9 amb l'estructura antiga · llindar de defenses de SA9 |
+| `1d68feb` | **Docent que hereta**: katas absents dels dos documents d'aterratge · la graella d'activació («rutina #1») no pautada a cap guia — ara a les 9 · mapa amb les solucions i la guia de compra · avís de substituir els enllaços al Classroom en fer fork · `00_LLEGEIX-ME_Classes.md` enllaçat · «efecte passatger» definit |
+| `e1f9f4a` | **SA7-SA9**: pla B de Wokwi enllaçat des de la SA · prova T3 al dia del fil conductor · rúbrica del rover ancorada a la mostra i a la T3 (no a una competició inexistent) · **tancament de curs** · **dèficit del T3** |
+
+### Les dues de fons, resoltes sense inventar hores
+
+- **T3 (24 h en ~22)**: el quadre anual ho declarava sense dir-ho. Ara ho diu
+  amb números, fixa **quan** decidir (abans de Setmana Santa), converteix la
+  tercera retallada en **pla per defecte** i protegeix les sessions de SA9
+  (es retalla l'abast del projecte, no els dies).
+- **Tancament**: la **S4 passa a fer de tancament** — defenses muntades com a
+  **mostra** amb els tres robots a la vista, **retrospectiva de curs** de 10'
+  com a última entrada del quadern (que el tanca com a portfolio), difusió
+  amb fotos/vídeo (material de presentació per al curs vinent) i
+  **desmuntatge amb inventari** als 15' finals de la S5, amb l'alumnat.
+
+**Verificació final:** `tools/qa.py` net (17 checks), 61 tests del generador
+verds, sketches tocats compilats, web regenerada. Vuit commits en total.
