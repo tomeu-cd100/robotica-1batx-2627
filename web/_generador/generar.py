@@ -229,12 +229,17 @@ GENERAL_ALUMNAT = {
     "00_Projecte_T1_portada.md", "00_Projecte_T2_portada.md",
     "00_Projecte_T3_portada.md",
 }
+# Excepcions dins de seccions docents: material que l'alumnat ha de poder
+# consultar. Les rúbriques són el contracte d'avaluació — el material d'alumnat
+# li diu «tens dret a veure-les abans de començar», i deixar-les rere la porta
+# docent desmentia aquella frase a la cara de qui hi clicava.
+SECCIO_DOCENT_EXCEPCIONS = {"07_Rubriques.md"}
 
 
 def classify_public(section_key: str, src: Path) -> str:
     """Retorna 'docent' o 'alumnat' per a una pàgina font."""
     if section_key in DOCENT_SECTIONS:
-        return "docent"
+        return "alumnat" if src.name in SECCIO_DOCENT_EXCEPCIONS else "docent"
     name = src.name
     parts = src.parts
     # Qualsevol carpeta "Solucionari" (de reptes o de classes) -> docent
@@ -2100,6 +2105,53 @@ if (!u) {
 
 
 # ---------------------------------------------------------------------------
+# Sanejament d'àncores (passada final)
+# ---------------------------------------------------------------------------
+def saneja_ancores(web_dir: Path) -> int:
+    """Degrada els enllaços «fitxer.html#ancora» quan l'àncora no existeix a la
+    pàgina destí generada.
+
+    Cas real: la font enllaça una activitat de la fitxa d'alumnat
+    (`SA1_fitxa_alumnat.md#1-entrada-proces-sortida`), però l'activitat viu dins
+    d'un bloc `<!-- web:only-github -->` que el generador elimina. A GitHub
+    l'àncora és correcta; al web l'id ja no hi és i el lector cau a dalt de tot
+    d'una pàgina que no mostra el que li havien promès. Aquí l'enllaç es
+    degrada a la pàgina sencera (que sí que existeix i explica on és la feina).
+
+    Es fa al final, quan totes les pàgines ja són escrites: només així es poden
+    conèixer els ids reals de cada destí."""
+    htmls = sorted(web_dir.rglob("*.html"))
+    ids: dict[str, set[str]] = {}
+    for f in htmls:
+        text = f.read_text(encoding="utf-8")
+        rel = f.relative_to(web_dir).as_posix()
+        ids[rel] = set(re.findall(r'\sid="([^"]+)"', text))
+    patro = re.compile(r'href="([^":]+?\.html)#([^"]+)"')
+    arreglats = 0
+    for f in htmls:
+        text = f.read_text(encoding="utf-8")
+        base = f.parent
+
+        def repl(m):
+            nonlocal arreglats
+            desti, frag = m.group(1), m.group(2)
+            try:
+                dest_rel = (base / urllib.parse.unquote(desti)).resolve() \
+                    .relative_to(web_dir.resolve()).as_posix()
+            except (ValueError, OSError):
+                return m.group(0)
+            if dest_rel not in ids or frag in ids[dest_rel]:
+                return m.group(0)
+            arreglats += 1
+            return f'href="{desti}"'
+
+        nou = patro.sub(repl, text)
+        if nou != text:
+            f.write_text(nou, encoding="utf-8")
+    return arreglats
+
+
+# ---------------------------------------------------------------------------
 # Procés principal
 # ---------------------------------------------------------------------------
 def main():
@@ -2262,6 +2314,9 @@ def main():
     (SCRIPT_DIR / "_activitats.json").write_text(
         json.dumps(pdf_manifest, ensure_ascii=False, indent=1), encoding="utf-8")
 
+    # Àncores que la font té però la pàgina generada no (blocs only-github)
+    ancores = saneja_ancores(WEB)
+
     print(f"  · {len([p for p in pages if p.kind not in ('code', 'sim', 'practica')])} pàgines de document")
     print(f"  · {len(code_groups)} pàgines de codi")
     print(f"  · {n_practiques} pàgines de pràctica")
@@ -2269,6 +2324,7 @@ def main():
     print(f"  · {len(copied_imgs)} imatges copiades")
     print(f"  · {len(search_index)} entrades a l'índex de cerca")
     print(f"  · {len(pdf_manifest)} pàgines d'activitat per a PDF (executa generar_pdf.py)")
+    print(f"  · {ancores} àncores degradades (la font les té; la pàgina, no)")
     print("Fet. Obre web/index.html o publica la carpeta web/ a GitHub Pages.")
 
 

@@ -6,7 +6,7 @@
 
 ## 🧰 1. Logística prèvia (preparar abans de començar la SA)
 - [ ] Arduino UNO + cable USB a punt (demostració i, si n'hi ha, per parelles)
-- [ ] Ordinadors amb **Arduino IDE** instal·lat i accés a **Tinkercad** (compte de classe creat)
+- [ ] Ordinadors amb accés a **Tinkercad** (compte de classe creat) i a l'**Arduino Web Editor** (Chromebook: compte Arduino + connector instal·lat)
 - [ ] Projector provat amb [`SA1_esquemes_connexions.md`](SA1_esquemes_connexions.md) (versió etiquetada + muda)
 - [ ] **Imprimir:** [prova diagnòstica](SA1_prova_diagnostica.md) · [full de normes de seguretat](SA1_normes_seguretat.md) (per signar) · [plantilla fitxa-pòster](SA1_poster_robot_plantilla.md)
 - [ ] Sketches oberts i provats: `blink` · `blink_repte` · (ampliacions `blink_millis`, `sos_morse`)
@@ -25,7 +25,7 @@
 **Sessió 2 — Arquitectura i seguretat**
 - [ ] Placa UNO real a la mà; etiquetar l'esquema mut (Act. 2)
 - [ ] **Signatura del full de seguretat** (recollir-lo)
-- [ ] Tour Arduino IDE + Tinkercad (primer circuit LED)
+- [ ] Tour de l'entorn (Arduino Web Editor) + Tinkercad (primer circuit LED)
 - ⚠️ *Mantra:* pins `~` = PWM; A0–A5 = analògics · *Error:* confondre 5V amb GND
 
 **Sessió 3 — El primer programa (PRIMM)**

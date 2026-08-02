@@ -8,14 +8,16 @@
 ## Objectius de la SA
 1. Definir robot i sistema embegut; identificar entrada-procés-sortida.
 2. Reconèixer l'arquitectura d'Arduino i la diferència analògic/digital.
-3. Aplicar normes de seguretat i conèixer l'entorn (IDE + simulador).
+3. Aplicar normes de seguretat i conèixer l'entorn (editor d'Arduino + simulador).
 4. Llegir i modificar el primer programa (`Blink`).
 5. Conèixer i començar a aplicar el **mètode de projecte** (anàlisi → disseny → prototip → prova → millora) com a forma de treball de tot el curs.
 
 ## Materials per a la sessió
 - 1 Arduino UNO + cable USB (per a demostració i, si n'hi ha, per parelles).
-- Ordinadors amb **Arduino IDE** instal·lat i accés a **Tinkercad** (tinkercad.com).
-- Projector. Quadern tècnic (digital o paper) per a cada alumne/a.
+- Ordinadors amb accés a **Tinkercad** (tinkercad.com) i a l'**Arduino Web Editor** (`create.arduino.cc/editor`).
+- Projector. **Quadern tècnic en paper** per a cada alumne/a (imprès a doble cara, un full per sessió: [`00_Quadern_tecnic.md`](../00_General/00_Quadern_tecnic.md)).
+
+> 💻 **Quina eina de programació?** L'aula treballa amb **Chromebooks**: l'alumnat programa amb l'**Arduino Web Editor** des del navegador, **no** amb l'IDE d'escriptori ([`SA0_guia_web_editor_chromebook.md`](../SA0/SA0_guia_web_editor_chromebook.md); preparació a [`GUIA_INICI_DOCENT.md`](../../GUIA_INICI_DOCENT.md)). Si el teu centre té PC amb l'IDE instal·lat, tot el material funciona igual: només canvia on s'escriu el sketch. Aquesta SA fa servir sobretot **Tinkercad** (simulador), que va igual a totes dues vies.
 
 ## Documents de la SA (aquesta carpeta)
 | Document | Quan s'usa |
@@ -83,10 +85,10 @@ La SA1 no només respon *"què és un robot?"*: també presenta **com treballare
 | Activació | 10' | Mostra una placa Arduino UNO real. | Identifiquen parts visibles. |
 | Explicació | 30' | Arquitectura: microcontrolador, pins digitals/analògics, alimentació, USB. **Analògic vs digital**. (Projecta la versió etiquetada de [`SA1_esquemes_connexions.md`](SA1_esquemes_connexions.md).) | Etiqueten l'**esquema mut de la placa** (Activitat 2; versió muda del mateix document). |
 | Seguretat | 20' | Presenta i comenta les **normes de seguretat** ([`SA1_normes_seguretat.md`](SA1_normes_seguretat.md)). | Llegeixen i **signen** el full. |
-| Pràctica | 50' | Tour guiat de l'**Arduino IDE** i de **Tinkercad** (crear compte de classe, primer circuit virtual). | Creen el seu primer circuit a Tinkercad (LED + placa). |
+| Pràctica | 50' | Tour guiat de l'**entorn de programació** (l'[Arduino Web Editor](../SA0/SA0_guia_web_editor_chromebook.md) al Chromebook: compte, connector, botó de càrrega) i de **Tinkercad** (crear compte de classe, primer circuit virtual). | Creen el seu primer circuit a Tinkercad (LED + placa). |
 | Tancament | 10' | Resol dubtes de l'entorn. | Entrada al quadern: captura del circuit. |
 
-> ⏱️ **Marge:** el temps efectiu real és ~100' (arrencada + recollida), no 120'. Si vas just, retalla primer: **el tour guiat de l'Arduino IDE (dins la Pràctica; prioritza el primer circuit a Tinkercad)**.
+> ⏱️ **Marge:** el temps efectiu real és ~100' (arrencada + recollida), no 120'. Si vas just, retalla primer: **el tour guiat de l'entorn de programació (dins la Pràctica; prioritza el primer circuit a Tinkercad)** — l'entorn es torna a veure a la S3, quan de debò cal carregar el `Blink`.
 
 **Punts clau:**
 - **Digital** = dos estats (0/5 V, LOW/HIGH). **Analògic** = valors continus (0–5 V → 0–1023).
