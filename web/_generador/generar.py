@@ -2135,7 +2135,8 @@ def saneja_ancores(web_dir: Path) -> tuple[int, int]:
         text = f.read_text(encoding="utf-8")
         rel = f.relative_to(web_dir).as_posix()
         ids[rel] = set(re.findall(r'\sid="([^"]+)"', text))
-    patro = re.compile(r'href="([^":]+?\.html)#([^"]+)"')
+    # Accepta query abans del fragment: pagina.html?vista=docent#seccio
+    patro = re.compile(r'href="([^":]+?\.html)(\?[^"#]*)?#([^"]+)"')
     reparades = 0
     degradades = 0
     for f in htmls:
@@ -2144,7 +2145,7 @@ def saneja_ancores(web_dir: Path) -> tuple[int, int]:
 
         def repl(m):
             nonlocal reparades, degradades
-            desti, frag = m.group(1), m.group(2)
+            desti, query, frag = m.group(1), m.group(2) or "", m.group(3)
             try:
                 dest_rel = (base / urllib.parse.unquote(desti)).resolve() \
                     .relative_to(web_dir.resolve()).as_posix()

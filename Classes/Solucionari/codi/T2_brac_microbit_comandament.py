@@ -39,8 +39,12 @@ while True:
         radio.send("P")          # obre/tanca la pinca (commutador)
         display.show(Image.TARGET)
     elif accelerometer.was_gesture("shake"):
-        radio.send("G")          # grava el punt actual de la seguencia
-        display.show(Image.DIAMOND)
+        # Nomes s'envia l'ordre: qui confirma que el punt s'ha gravat de debo
+        # es el BRAC (mostra el numero de punt). Aqui una fletxa d'"enviat":
+        # el comandament no sap si el brac era en mode manual ni si la
+        # seguencia ja era plena.
+        radio.send("G")
+        display.show(Image.ARROW_E)
         sleep(300)
     else:
         display.show(Image.ARROW_N)

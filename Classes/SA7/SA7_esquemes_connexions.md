@@ -36,7 +36,7 @@ Muntat al davant per mesurar la distància a obstacles (mateix principi que SA3/
 - **Evita-obstacles:** recinte amb caixes/obstacles.
 - Marcar **línia de sortida/arribada** per mesurar temps de volta.
 
-## 🆘 Si avui no hi ha robot (pla B)
+## Si avui no hi ha robot (pla B) 🆘
 
 El robot **no és simulable** sencer, però la **lògica sí**. A `Simulacions/Wokwi/SA7_robot_reactiu` hi ha un *sandbox* que reprodueix el cicle **percepció → decisió → acció** amb un ultrasons i tres LED (verd = via lliure, groc = a prop, vermell = atura): no mou rodes, però permet escriure i provar **exactament la mateixa estructura d'`if`** de l'evita-obstacles abans de tocar el robot, o el mateix dia que el maquinari falla.
 

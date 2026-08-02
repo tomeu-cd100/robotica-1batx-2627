@@ -143,6 +143,11 @@ def comprova_ancores_md() -> None:
                 # dues són escriptures legítimes a la font.
                 vistos.add(s)
                 vistos.add(sense_accents(s))
+                # GitHub conserva un guió inicial quan el títol comença amb
+                # emoji («## 🆘 Pla B» → «#-pla-b»); el nostre slug l'elimina.
+                if s.startswith("-"):
+                    vistos.add(s.lstrip("-"))
+                    vistos.add(sense_accents(s).lstrip("-"))
         titols[p.resolve()] = vistos
 
     morts = 0
@@ -552,6 +557,9 @@ def comprova_katas() -> None:
     # el kata (00_Mini_checks_individuals.md és la font de veritat).
     minichecks = ARREL / "Classes" / "00_General" / "00_Mini_checks_individuals.md"
     sessio_minicheck: dict[int, int] = {}
+    if not minichecks.exists():
+        errors.append("[katas] falta Classes/00_General/00_Mini_checks_individuals.md "
+                      "(sense ell no es pot vigilar la marca 🔁 dels katas)")
     if minichecks.exists():
         for sa_n, ses_n in re.findall(
                 r"^## SA(\d) · Mini-check \(inici de la Sessió (\d)",
@@ -671,7 +679,7 @@ def comprova_rubrica_quadern() -> None:
         if not guia.exists():
             continue
         for linia in guia.read_text(encoding="utf-8").splitlines():
-            if not linia.startswith("| Quadern"):
+            if not re.match(r"\|\s*\*{0,2}Quadern", linia):
                 continue
             revisades += 1
             # La columna de rúbrica és la que cita R1-R5 (algunes guies duen
