@@ -56,11 +56,33 @@ calendari.
 `tools/qa.py` net (18 checks), 61 tests del generador verds, PDF imprimibles i
 quadern tècnic regenerats, web regenerada. Commit `2330158`.
 
+## Verificació creuada (obligada, i va trobar coses)
+
+Tres revisions independents sobre el diff sencer —adversarial, **auditoria
+competencial LOMLOE** i recorregut d'alumne de 16 anys— van coincidir en el
+diagnòstic: **el nucli estava ben migrat i tot l'anell exterior encara
+descrivia un curs per parelles**. Corregit al commit `35d152b`:
+
+| Defecte | Gravetat |
+|---|---|
+| Els mapes de SA2-SA6 **no tenien cap fila de R5/CA5.3**: el 10 % d'actitud del T2 es qualificava sense instrument declarat (i a SA7/SA8 anava mapat a R4/CA4.1) | forat d'avaluació |
+| La **línia d'ajuda del quadern**, que el marc declara evidència del CA5.3, **no existia enlloc** | la competència es quedava en declaració d'intencions |
+| `00_Avaluacio_per_alumnat` deia que la revisió creuada **no puntua**; la R5 diu que és l'evidència principal | contradicció al document de transparència |
+| `04_Metodologia` §4.6 seguia construïda sobre les parelles A/B que §4.3 elimina | referència interna morta, i era l'instrument coeducatiu |
+| `17_SA8` i `18_SA9` deien «en equip» i «coavaluació» | sincronia 1:1 del CLAUDE.md trencada |
+| Tauler de reptes, guia de defensa oral (i a la S5, no la S4), full de seguiment, reptes de ràdio, indicador docent del 06b | l'anell exterior sencer |
+| Camps «Equip (noms)» a SA7/SA8 al Classroom real | el «sincronitzat» anterior no era complet |
+
+**Lliçó per a la propera vegada:** un canvi estructural gros necessita
+verificació creuada encara que sembli acabat. Sense aquestes tres revisions, el
+curs hauria començat amb un forat d'avaluació al 2n trimestre.
+
 ## Pendent
 
-- Confirmar la **dotació de micro:bit** (calen 2 per alumne/a per a la ràdio de
-  SA5/SA8 sense agrupament puntual): els documents deixen les dues vies obertes
-  expressament.
 - El material continua servint per a grups grans: el que s'ha fixat és el
   **treball individual**, no la mida del grup. Qui el forki amb 24 alumnes
-  haurà de decidir si pot mantenir-lo.
+  haurà de decidir si pot mantenir-lo (els minutatges ja diuen com escalen,
+  `04_Metodologia.md` §4.2).
+- **Dotació de micro:bit: RESOLTA** — n'hi ha 2 per alumne/a, així que la
+  ràdio és individual de punta a punta i cal repartir un `group` diferent per
+  persona (número de llista).
