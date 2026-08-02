@@ -32,8 +32,8 @@
 | **1** | **Idear** | Design thinking: repte, requisits, esbós. Repartiment de rols. Planificació (taulell àgil). |
 | **2** | **Prototipar** | Muntatge i primer codi (prototip mínim viable). |
 | **3** | **Provar i millorar** | Proves, identificació d'errors, iteracions de millora; avanç del dossier. |
-| **4** | **Comunicar** | Dossier tècnic tancat. **Defensa oral** + demostració. Coavaluació. Reflexió final i ètica. «Python flash» de ràdio (5', al tancament) + targetes de repàs exprés com a deures — represa de MicroPython abans de la prova T3. |
-| **5** | **Prova pràctica T3** | **Individual, per estacions rotatives** (`Avaluació/Prova_practica_T3.md`): no és sessió de projecte. |
+| **4** | **Comunicar** *(i tancament del curs)* | Dossier tècnic tancat. **Defensa oral** + demostració, muntades com a **mostra** (els tres robots del curs a la vista). Coavaluació. **Retrospectiva de curs** (10'): última entrada del quadern, que el tanca com a portfolio. Fotos/vídeo per a la difusió. «Python flash» de ràdio (5', al tancament) + targetes de repàs exprés com a deures — represa de MicroPython abans de la prova T3. |
+| **5** | **Prova pràctica T3** *(i tancament material)* | **Individual** (`Avaluació/Prova_practica_T3.md`): no és sessió de projecte. Per **estacions rotatives** només si es comparteixen robots; amb rover per parella, només calen torns de pista. **Darrers 15':** desmuntatge i retorn de l'electrònica als kits, amb inventari i amb l'alumnat. |
 
 ## Producte
 Sistema robòtic autònom funcional + **dossier tècnic** (anàlisi, esquemes, codi comentat, proves, millores, conclusions) + **defensa oral**.
