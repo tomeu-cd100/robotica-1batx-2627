@@ -28,7 +28,7 @@
 | Llegir el dossier o la pantalla | El guió són **5 paraules clau** en un post-it, no un text. |
 | Explicar el codi línia a línia | Ningú no ho segueix: explica **la decisió**, no la sintaxi. |
 | Callar quan la demo falla | **DEPURA en veu alta:** "esperàvem X, passa Y, la meva hipòtesi és Z". Demostra més competència que una demo perfecta. |
-| Que sempre parli el mateix | A T2 i T3, **totes les persones de l'equip** diuen una part; les preguntes es reparteixen a l'atzar. |
+| Explicar només la part que ha sortit bé | La defensa cobreix **tot el sistema** (circuit, codi i proves), també el que ha costat: les preguntes del docent poden anar a qualsevol part. |
 | "Ha quedat molt bé" com a tot argument | La frase obligada: *"la decisió més important va ser…"* |
 
 ## El públic també treballa
@@ -37,8 +37,12 @@ Qui escolta omple la **revisió creuada amb criteris** de la fitxa ampliada (2 e
 
 ## Qui defensa què (regla coeducativa)
 
-En parelles i equips, **qui no ha programat la part explicada, la defensa**: obliga tothom a entendre tot el sistema i desmunta l'especialització «un fa, l'altre presenta» (que gairebé mai es reparteix a l'atzar). El docent modera el torn de preguntes repartint la primera paraula al llarg del trimestre. Pautes completes: `Programació didàctica/04_Metodologia.md` §4.6.
+El treball és individual ([`Programació didàctica/04_Metodologia.md` §4.3](../../Programació%20didàctica/04_Metodologia.md)): **cadascú defensa el que ha fet ell mateix, sencer**. No hi ha repartiment possible de «un fa, l'altre presenta», i per això la pregunta pot anar a qualsevol part del sistema, també a la que ha costat més. El docent modera el torn repartint la primera paraula al llarg del trimestre. Pautes completes: §4.6 del mateix document.
+
+Si en algun moment hi ha hagut un **agrupament puntual** (dues persones ajuntades per a una sessió concreta, per material o absència), la defensa continua sent individual i cadascú explica el seu codi i el seu muntatge.
 
 ## Logística de la SA9 (nota per al docent)
 
-Amb més de **6 equips**, una sola sessió de defenses (S5) no dona: 5' + preguntes + canvi de muntatge ≈ 12-15' per equip. **Esglaona-les:** 2-3 defenses al final de les sessions S3 i S4 (equips que ja tenen el prototip llest) i la resta a la S5. Avantatge afegit: els primers equips reben preguntes que els altres encara poden aprofitar per millorar.
+Amb defenses **individuals**, el compte és directe: 5' + preguntes + canvi de muntatge ≈ **10-12' per alumne/a**. Amb el grup de 5 això són **50-60'**, i la S4 no és només de defenses (hi van també la retrospectiva de curs i el tancament del dossier): hi cap, però sense marge. **A partir de ~6 defenses, esglaona-les:** avança 1-2 defenses al final de la S3 (qui ja tingui el prototip llest) i deixa la resta a la S4. Avantatge afegit: els primers reben preguntes que els altres encara poden aprofitar per millorar. El compte detallat de la sessió és a [`../SA9/SA9_guia_docent.md`](../SA9/SA9_guia_docent.md).
+
+> ⚠️ Les defenses de la SA9 són a la **S4**, no a la S5: la **S5 és, sencera, la prova pràctica T3**.

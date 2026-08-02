@@ -17,7 +17,7 @@ La matèria adopta un **enfocament competencial** basat en **situacions d'aprene
 | **0. Arrencada i preparació** | 5-10' | Repartiment i recompte de kits, encesa d'ordinadors, obrir l'IDE/simulador, seleccionar placa/port. **No es pot ometre:** és temps real d'aula. |
 | **Activació** | 10' | Repte o pregunta inicial; recuperació del que se sap. Inclou la **graella de repàs espaiat** (5': 3 preguntes retrospectives — sessió anterior · SA anterior · trimestre —, tothom escriu, no qualifica). Banc complet per sessió: `../Classes/00_General/00_Banc_activacio_repas.md`. |
 | **Modelatge (amb PRIMM)** | 20' | El docent mostra el concepte/codi clau (live coding). **Predir abans d'executar:** projecta el codi nou **sense executar-lo** i recull prediccions (~5') *abans* d'investigar-lo. |
-| **Pràctica guiada** | 30-40' | Comença amb el **kata d'escriptura (10')**: individual, amb apunts, s'escriu de zero el bloc central del sketch del dia **abans d'obrir-lo** (enunciats a `Classes/SAn/SAn_katas.md`); després es compara amb el sketch donat i l'alumnat el replica i modifica en parelles (el dia de mini-check, el mini-check el substitueix). |
+| **Pràctica guiada** | 30-40' | Comença amb el **kata d'escriptura (10')**: individual, amb apunts, s'escriu de zero el bloc central del sketch del dia **abans d'obrir-lo** (enunciats a `Classes/SAn/SAn_katas.md`); després es compara amb el sketch donat i cadascú el replica i el modifica (el dia de mini-check, el mini-check el substitueix). |
 | **Pràctica autònoma / repte** | 30-40' | Repte obert que aplica el concepte. El **"+ repte"** fa de marge: s'escurça si la sessió va justa. |
 | **Tancament i registre** | 10' | Posada en comú, autoavaluació i **quadern tècnic** (*logbook*). |
 | **Recollida** | 5' | Desconnexió segura, recompte i ordre del material. |
@@ -121,14 +121,14 @@ Element vertebrador de l'avaluació contínua. Per a cada pràctica/projecte, l'
 
 Principis (amb l'instrument que els fa operatius entre parèntesis):
 
-- **Rotació de rols** per evitar que els rols tècnics recaiguin sempre en els mateixos perfils (parelles A/B de §4.3: tothom passa per Programador i per Provador **cada setmana**, no "quan toqui").
+- **Tothom programa, tothom munta, tothom documenta.** Amb treball individual (§4.3) desapareix d'arrel el biaix que la rotació de rols intentava corregir: ningú no pot quedar-se de «secretari/ària» mentre un altre programa. El que cal vigilar ara és **qui demana ajuda i a qui li'n demanen**: si sempre són els mateixos qui expliquen i els mateixos qui escolten, el biaix reapareix per la porta del costat. La línia d'ajuda del quadern ho fa visible.
 - **Referents en enginyeria i tecnologia** lligats al contingut: un per SA, 1 minut dins l'activació de la S1 (`Classes/00_General/00_Referents_tecnologia.md`).
 - **Reptes contextualitzats en àmbits diversos** (salut, sostenibilitat, accessibilitat) per ampliar l'interès.
 
 Pautes de gestió d'aula:
 
-1. **Formació de parelles:** al T1 i T2 les fa el docent (heterogènies en experiència prèvia), vigilant que cap perfil quedi sistemàticament de «secretari/ària» del company. L'experiència prèvia amb Arduino/programació **no** es distribueix per gènere de manera neutra: si es deixen les parelles a lliure elecció, el biaix d'entrada es consolida.
-2. **A les defenses orals:** qui **no** ha programat la part explicada, la defensa (evita l'especialització «un fa, l'altre presenta»); torn de preguntes moderat pel docent donant la primera paraula de manera repartida al llarg del trimestre.
+1. **Repartiment del suport docent:** l'experiència prèvia amb Arduino/programació **no** es distribueix per gènere de manera neutra. Amb treball individual això es veu de seguida a la prova diagnòstica: reparteix-hi el teu temps a consciència en lloc de deixar que se l'emporti qui més crida. Si en algun moment ajuntes dues persones puntualment (§4.3), vigila que qui té menys experiència **escrigui**, no que miri.
+2. **A les defenses orals:** cadascú defensa el que ha fet ell mateix; torn de preguntes moderat pel docent donant la primera paraula de manera repartida al llarg del trimestre.
 3. **Observació:** el desequilibri de participació és un **indicador trimestral** del sistema (vegeu `06b_Avaluacio_programacio_i_practica_docent.md` §1) — es mesura, no s'intueix.
 4. **Llenguatge i exemples:** enunciats i contextos sense marca de gènere implícita (el «vosaltres» genèric, exemples d'usuaris diversos als productes).
 

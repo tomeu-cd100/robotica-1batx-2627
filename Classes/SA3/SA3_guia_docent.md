@@ -108,6 +108,7 @@
 | **Prova T1 (S4, individual)** | Circuit + codi + documentació en solitari | CA1.1, CA2.1, CA2.2 | R1, R2, R4 |
 | Quadern tècnic | Taula de lectures, codi de la funció, errors | CA1.1, CA2.2 | **R4** |
 | Observació + depuració sèrie | Ús del monitor/traçador, divisor de tensió | CA2.2 | R2 |
+| Ajuda entre iguals i **revisió creuada** de codi | Cooperació sense producte compartit: línia d'ajuda del quadern + una millora concreta i un dubte al company | CA5.3 | **R5** |
 
 *(CA1.1 = programar en C/C++; CA2.1 = dissenyar/muntar circuits amb seguretat; CA2.2 = mesurar/interpretar senyals. Vegeu [`Programació didàctica/06_Avaluacio_criteris_qualificacio.md`](../../Programació%20didàctica/06_Avaluacio_criteris_qualificacio.md). Comparteix R1 i R2 **abans** de començar.)*
 

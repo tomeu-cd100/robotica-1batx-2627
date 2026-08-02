@@ -39,7 +39,8 @@ Les 5 rúbriques del curs, en una línia cadascuna:
 | **Graella d'activació** (cada sessió) | Recordar el que vas aprendre fa setmanes perquè no s'esborri. Respondre-la malament **no penalitza**: avisa. |
 | **Mini-check individual** (un per SA) | 10 minuts de codi tot sol. És el teu **radar**: et diu si vas bé abans que ho digui una prova. |
 | **Qüestionari de repàs** (un per SA, al Classroom) | Autocorrectiu i **repetible**: fes-lo en tancar la SA i torna-hi setmanes després perquè no s'esborri. Si al mini-check vas treure 🔴, comença per aquí. |
-| **Diana, exit ticket, revisió creuada** | Saber on ets i donar/rebre retorn. Serveixen per millorar, no per puntuar. |
+| **Diana i exit ticket** | Saber on ets. Serveixen per millorar, no per puntuar. |
+| **Revisió creuada de codi** | ⚠️ Aquesta **sí que compta**, però no pel que reps: **pel que dones**. Llegir el codi d'un company i tornar-li una millora concreta i un dubte és una de les evidències de la **R5** (actitud i cooperació, 10 %) — juntament amb la línia d'ajuda del teu quadern. La qualitat de la revisió que fas és el que es valora, no la nota del company. |
 
 **Escriu-hi la veritat.** Aquestes eines només et poden ajudar si mostren com vas de debò.
 

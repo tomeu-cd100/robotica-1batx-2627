@@ -34,11 +34,11 @@ Que el quadern estigui **complet i al dia**, que expliquis les teves **decisions
 
 ---
 
-## ✍️ Què ha de tenir l'entrada de cada SA (els 6 apartats)
+## ✍️ Què ha de tenir l'entrada de cada SA (els 7 apartats)
 
 > Els fulls del quadern ja et donen l'estructura de cada sessió; aquesta llista és el **mapa del que has d'haver cobert quan tanquis una SA**. No cal escriure molt: cal escriure **el que has fet i pensat de debò**.
 
-**SA___ · _(títol de la SA)_**  ·  **Data:** _______  ·  **Parella:** _______________
+**SA___ · _(títol de la SA)_**  ·  **Data:** _______  ·  **Nom:** _______________
 
 **1 · Objectiu i esquema**
 - Què havia de construir/aconseguir: ______________________________
@@ -61,7 +61,12 @@ Que el quadern estigui **complet i al dia**, que expliquis les teves **decisions
 - La idea més important d'aquesta SA: ______________________
 - Connexió amb la vida real o un ODS: ______________________
 
-**6 · Ús d'IA** *(només si n'he fet servir)*
+**6 · Ajuda entre companys** *(és el que evidencia la R5: aquí es veu que has cooperat, encara que treballis sol)*
+- **Qui m'ha ajudat i en què:** ______________________
+- **A qui he ajudat i com** (explicant-l'hi, no fent-li la feina): ______________________
+- **Revisió creuada** del producte de la SA — una millora concreta i un dubte que he donat a un company: ______________________
+
+**7 · Ús d'IA** *(només si n'he fet servir)*
 - Eina i per a què: ______________________
 - Què he canviat o entès jo (sé explicar cada línia?): ______________________
 

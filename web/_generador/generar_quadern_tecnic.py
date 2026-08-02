@@ -155,6 +155,11 @@ def peu_tancament(pendent: bool = True) -> str:
         '<div class="linia"><span class="et">Què passava?</span><span class="r"></span></div>',
         '<div class="linia"><span class="et">Com l\'he trobat?</span><span class="r"></span></div>',
         '<div class="linia"><span class="et">Com l\'he resolt? Quina estratègia m\'ha servit?</span><span class="r"></span></div></div>',
+        # Evidència del CA5.3 amb treball individual: la cooperació no es veu
+        # en un producte compartit, es veu aquí (vegeu 04_Metodologia §4.3).
+        '<div class="caixa"><div class="t">🤝 Ajuda d\'avui — compta per a la R5</div>',
+        '<div class="linia"><span class="et">Qui m\'ha ajudat i en què?</span><span class="r"></span></div>',
+        '<div class="linia"><span class="et">A qui he ajudat i com (sense fer-li la feina)?</span><span class="r"></span></div></div>',
         '<table class="sem"><thead><tr><th>Autoavaluació d\'avui (pinta\'n un)</th>'
         '<th>🔴</th><th>🟡</th><th>🟢</th></tr></thead><tbody>',
         '<tr><td>He entès el que hem treballat</td>'

@@ -13,7 +13,7 @@
 - **Competències clau:** STEM, CD, CE, CPSAA, CCL, CC.
 
 ## Sentit de la SA
-És el **projecte de síntesi** del curs: l'alumnat, en equip, dissenya, construeix, programa, documenta i defensa un **sistema robòtic autònom** que resol un repte real, aplicant tot l'après. Opció de vincular-lo a una **competició** (WRO, RoboCup Junior, FTC) o al futur **Treball de Recerca**.
+És el **projecte de síntesi** del curs: **cada alumne/a** dissenya, construeix, programa, documenta i defensa un **sistema robòtic autònom** que resol un repte real, aplicant tot l'après. El treball és **individual** ([`04_Metodologia.md` §4.3](04_Metodologia.md)); si dues persones s'ajunten per a un repte més ambiciós, al dossier ha de constar **qui ha fet què** i la defensa continua sent individual. Opció de vincular-lo a una **competició** (WRO, RoboCup Junior, FTC) o al futur **Treball de Recerca**.
 
 ## Objectius d'aprenentatge
 1. Gestionar un **projecte complet** amb metodologia de disseny (anàlisi → prototip → proves → millora).
@@ -29,17 +29,17 @@
 
 | Sessió | Fase | Activitats |
 |---|---|---|
-| **1** | **Idear** | Design thinking: repte, requisits, esbós. Repartiment de rols. Planificació (taulell àgil). |
+| **1** | **Idear** | Design thinking: repte, requisits, esbós. Planificació individual (taulell àgil amb etiquetes PLA/MAQ/PROG/DOC). |
 | **2** | **Prototipar** | Muntatge i primer codi (prototip mínim viable). |
 | **3** | **Provar i millorar** | Proves, identificació d'errors, iteracions de millora; avanç del dossier. |
-| **4** | **Comunicar** *(i tancament del curs)* | Dossier tècnic tancat. **Defensa oral** + demostració, muntades com a **mostra** (els tres robots del curs a la vista). Coavaluació. **Retrospectiva de curs** (10'): última entrada del quadern, que el tanca com a portfolio. Fotos/vídeo per a la difusió. «Python flash» de ràdio (5', al tancament) + targetes de repàs exprés com a deures — represa de MicroPython abans de la prova T3. |
-| **5** | **Prova pràctica T3** *(i tancament material)* | **Individual** (`Avaluació/Prova_practica_T3.md`): no és sessió de projecte. Per **estacions rotatives** (calen torns encara que cada parella tingui rover: la prova és individual). **Darrers 15':** desmuntatge i retorn de l'electrònica als kits, amb inventari i amb l'alumnat. |
+| **4** | **Comunicar** *(i tancament del curs)* | Dossier tècnic tancat. **Defensa oral** + demostració, muntades com a **mostra** (els tres robots del curs a la vista). Autoavaluació i **revisió creuada** de codi. **Retrospectiva de curs** (10'): última entrada del quadern, que el tanca com a portfolio. Fotos/vídeo per a la difusió. «Python flash» de ràdio (5', al tancament) + targetes de repàs exprés com a deures — represa de MicroPython abans de la prova T3. |
+| **5** | **Prova pràctica T3** *(i tancament material)* | **Individual** (`Avaluació/Prova_practica_T3.md`): no és sessió de projecte. Per **estacions rotatives** (les pistes són el coll d'ampolla, no els robots). **Darrers 15':** desmuntatge i retorn de l'electrònica als kits, amb inventari i amb l'alumnat. |
 
 ## Producte
 Sistema robòtic autònom funcional + **dossier tècnic** (anàlisi, esquemes, codi comentat, proves, millores, conclusions) + **defensa oral**.
 
 ## Avaluació
-- Instruments: producte final, dossier tècnic, defensa oral, observació del procés, coavaluació i autoavaluació.
+- Instruments: producte final, dossier tècnic, defensa oral, observació del procés, **revisió creuada de codi** (evidència del CA5.3 → R5) i autoavaluació.
 - Rúbriques: **R1, R2, R3, R4, R5** (totes).
 - **Pes destacat** dins de la dimensió "Projectes i productes" del trimestre.
 - La **prova pràctica T3** (S5) és un instrument **separat**: puntua a «Proves pràctiques» (20 %) i no reavalua el projecte.

@@ -3,7 +3,7 @@
 > **Full de treball imprimible (A4).** Omple'l per dissenyar el teu objecte, des de la idea fins al producte. Es treballa amb el [`00_Banc_objectes_disseny.md`](00_Banc_objectes_disseny.md) al costat.
 > **Quan toca?** Quan hagis **triat un objecte** del banc (com a producte alternatiu, repte obert o projecte de SA9) — abans mira la [galeria d'exemples](00_Galeria_exemples_objectes.md) per veure el nivell esperat.
 
-**Nom/Equip:** ______________________  **SA:** ______  **Data:** __________
+**Nom i cognoms:** ______________________  **SA:** ______  **Data:** __________
 
 > 📄 **[Versió PDF per imprimir i omplir a mà](pdf/00_Plantilla_disseny_objecte.pdf)**
 
@@ -73,5 +73,5 @@ Explica **3 decisions de disseny** (per què aquesta forma, material, mida o col
 | **Ecodisseny**: materials responsables (ODS 12) | ☐ | ☐ | ☐ | ☐ |
 | **Comunicació**: explico les decisions de disseny | ☐ | ☐ | ☐ | ☐ |
 
-**Coavaluació (2 estrelles i un desig)** d'un altre equip:
+**Revisió creuada (2 estrelles i un desig)** — un company llegeix el teu objecte i el teu codi i t'hi anota millores concretes:
 ⭐ ____________________  ⭐ ____________________  💡 ____________________

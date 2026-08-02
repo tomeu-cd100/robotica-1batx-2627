@@ -11,7 +11,7 @@ Recursos que **no pertanyen a una sola SA** sinó a tot el curs: guia general de
 
 ## Pòsters d'aula (projectar / imprimir)
 
-- [**Pòster — Com treballem a Robòtica**](00_Poster_aula_metode_DEPURA_rols.md): mètode de projecte, rutina de depuració **DEPURA** i **rols** d'equip.
+- [**Pòster — Com treballem a Robòtica**](00_Poster_aula_metode_DEPURA_rols.md): mètode de projecte, rutina de depuració **DEPURA** i **els quatre barrets** (els papers de la feina, que porta cadascú).
 - [**Pòster — Fer servir la IA amb cap**](00_Poster_IA_us_assistents.md): semàfor d'usos d'assistents d'IA + integritat acadèmica.
 
 ## Disseny d'objectes (de l'electrònica al producte)

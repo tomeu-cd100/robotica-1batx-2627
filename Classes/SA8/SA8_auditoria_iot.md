@@ -109,6 +109,6 @@
 | Evidència | Criteri | Rúbrica |
 |---|---|---|
 | **Informe d'auditoria** (les 5 seccions) | CA4.2 (arquitectura IoT) i CA5.3 (impacte ètic/social) | **R4** |
-| **Peritatge creuat** (argumentar i rebatre amb vocabulari tècnic) | CA5.3 | R4 (revisió creuada) |
+| **Peritatge creuat** (argumentar i rebatre amb vocabulari tècnic) | CA5.2, CA5.3 | R4 (comunicació) i **R5** (cooperació) |
 
 > ♻️ **Aquest producte torna a sortir:** a la **S3 (IA)** ens preguntarem què passa quan el teu producte, a més de recollir dades, **decideix** amb elles. Guarda l'informe.

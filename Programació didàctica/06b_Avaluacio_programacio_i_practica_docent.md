@@ -26,7 +26,7 @@ Anònim, 5 minuts, escala 1-4 (1 = gens d'acord · 4 = molt d'acord). En paper o
 1. El **ritme** de les classes em permet seguir i acabar les pràctiques.
 2. Les **fitxes i el material** m'ajuden a saber què he de fer i com se m'avaluarà.
 3. El **quadern tècnic** m'ajuda a aprendre (no és només un tràmit).
-4. El **treball en parella/equip** funciona: els rols es reparteixen de manera justa.
+4. Les **revisions creuades de codi** em serveixen: el que em diuen els companys em fa millorar el meu producte, i quan demano ajuda la trobo (i no sempre a la mateixa persona).
 5. **Sé què he de fer** per millorar el meu nivell d'assoliment.
 
 **Pregunta oberta:** *Una cosa que mantindries de la matèria i una que canviaries.*

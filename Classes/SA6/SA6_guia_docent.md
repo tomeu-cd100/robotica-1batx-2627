@@ -148,6 +148,7 @@
 | **Prova T2 (S4, individual)** | Control amb histèresi + programa micro:bit en solitari | CA1.1, CA1.2, CA3.1 | R1, R3, R4 |
 | Quadern (diagrama de blocs + anàlisi) | Consigna, error, realimentació; anàlisi de la resposta | CA3.1 | R4 |
 | Observació + Serial Plotter | Histèresi; (+ampliació) ajust de `Kp`, tot/res vs proporcional | CA3.1 | R3 |
+| Ajuda entre iguals i **revisió creuada** de codi | Cooperació sense producte compartit: línia d'ajuda del quadern + una millora concreta i un dubte al company | CA5.3 | **R5** |
 
 *(CA1.1 = programar en C/C++; CA3.1 = implementar sistemes de control (llaç obert/tancat, màquines d'estats) i explicar-ne el funcionament. Vegeu [`Programació didàctica/06_Avaluacio_criteris_qualificacio.md`](../../Programació%20didàctica/06_Avaluacio_criteris_qualificacio.md). Comparteix R1, R3 i R4 **abans** de començar.)*
 

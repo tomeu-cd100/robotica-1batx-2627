@@ -95,6 +95,7 @@
 | Repte de codi (funcions de moviment) | `Servo.h`, lògica del pont H, `map()`, funcions | CA1.1 | R1 |
 | Quadern tècnic | Esquema del pont H, taula distància→velocitat, errors | CA1.1 | **R4** |
 | Observació de muntatge segur | Massa comuna, alimentació externa, no alimentar motors des de l'Arduino | CA2.1 | R2 |
+| Ajuda entre iguals i **revisió creuada** de codi | Cooperació sense producte compartit: línia d'ajuda del quadern + una millora concreta i un dubte al company | CA5.3 | **R5** |
 
 *(CA1.1 = programar en C/C++; CA2.1 = dissenyar/muntar circuits amb seguretat; CA3.1 = implementar sistemes de control. Vegeu [`Programació didàctica/06_Avaluacio_criteris_qualificacio.md`](../../Programació%20didàctica/06_Avaluacio_criteris_qualificacio.md). Comparteix R1, R2 i R3 **abans** de començar.)*
 

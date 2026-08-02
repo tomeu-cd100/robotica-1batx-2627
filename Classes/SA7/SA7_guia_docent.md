@@ -154,7 +154,8 @@ La **Imagina 3dBot** és Arduino-compatible, però **els pins dels motors depene
 | Demostració a la pista | Comportament autònom (trajectòria/línia/obstacles) | CA4.1 | R3 |
 | Codi del robot | Funcions de moviment, lògica de comportament | CA1.1, CA3.1 | R1, R3 |
 | Quadern (proves i iteracions) | Calibratge, mesura d'errors i millores documentades | CA4.1 | R4 |
-| Observació del procés | Ajuda entre iguals, ús segur del robot a la pista | CA4.1 | R4 |
+| Observació del procés | Ús segur del robot a la pista | CA4.1 | R4 |
+| Ajuda entre iguals i **revisió creuada** de codi | Cooperació sense producte compartit: línia d'ajuda del quadern + una millora concreta i un dubte al company | CA5.3 | **R5** |
 
 *(CA1.1 = programar en C/C++; CA3.1 = control (llaç tancat); CA4.1 = programar un robot mòbil amb trajectòries i comportaments autònoms. Vegeu [`Programació didàctica/06_Avaluacio_criteris_qualificacio.md`](../../Programació%20didàctica/06_Avaluacio_criteris_qualificacio.md). Comparteix R1, R3 i R4 **abans** de començar.)*
 

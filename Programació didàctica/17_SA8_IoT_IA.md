@@ -38,14 +38,14 @@
 | Sessió | Activitats |
 |---|---|
 | **1** | **Telemetria**: una micro:bit envia dades (temperatura/llum) i una altra les rep i mostra/registra. (Opció ESP32: enviar a un panell/MQTT.) |
-| **2** | Concepte d'IoT: arquitectura, aplicacions i **riscos** (privacitat/seguretat). **Auditoria per parelles d'un producte IoT real** (informe + peritatge creuat). |
+| **2** | Concepte d'IoT: arquitectura, aplicacions i **riscos** (privacitat/seguretat). **Auditoria individual d'un producte IoT real** (cadascú el seu informe) + **peritatge creuat** amb un company. |
 | **3** | **Introducció a la IA** en escala de tres graons: llindar (conegut de SA3/SA6) → regles combinades (classificador de gestos amb l'acceleròmetre, amb els valors anotats a la SA5) → ML real (Teachable Machine). Reflexió ètica. |
 
 ## Producte
 Sistema connectat que recull i comunica dades (telemetria) o classifica un gest/patró amb IA senzilla, amb una reflexió escrita sobre ètica i privacitat.
 
 ## Avaluació
-- Instruments: producte + quadern (dades + reflexió ètica) + coavaluació.
+- Instruments: producte + quadern (dades + reflexió ètica) + **peritatge creuat** de l'auditoria i **revisió creuada de codi** (evidència del CA5.3 → R5).
 - Rúbriques: **R1**, **R3**, **R4**.
 
 ## Atenció a la diversitat

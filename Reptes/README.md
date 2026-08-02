@@ -14,7 +14,7 @@ Aquesta carpeta conté, **per a cada situació d'aprenentatge (SA1–SA8)**, **t
 
 ## 🌟 El tauler de l'aula
 
-La progressió dels reptes de tots els equips es pinta al **[tauler de reptes de l'aula](../Classes/00_General/00_Tauler_reptes.md)** (constel·lació per equips, no rànquing individual): ⭐ mínim, ⭐⭐ ampliacions, ⭐⭐⭐ amb les fites validades en ordre.
+La progressió dels reptes de tothom es pinta al **[tauler de reptes de l'aula](../Classes/00_General/00_Tauler_reptes.md)** (una fila per persona; no és un rànquing, és el mapa del que ha provat cadascú): ⭐ mínim, ⭐⭐ ampliacions, ⭐⭐⭐ amb les fites validades en ordre.
 
 ## Contingut
 
@@ -55,14 +55,14 @@ Detall complet a **`Programació didàctica/08c_Projectes_vida_real.md`**.
 
 Cada repte indica les rúbriques aplicables. Es comparteixen amb l'alumnat **abans** de començar (avaluació formativa). Vegeu `Programació didàctica/07_Rubriques.md`.
 
-## Com treballar els reptes (rols, depuració i coavaluació)
+## Com treballar els reptes (barrets, depuració i revisió creuada)
 
-Els reptes es resolen amb les **mateixes rutines** que les classes (pòster projectable: `Classes/00_General/00_Poster_aula_metode_DEPURA_rols.md`):
+El repte el resols **tu sol**, amb les **mateixes rutines** que les classes (pòster projectable: [`Classes/00_General/00_Poster_aula_metode_DEPURA_rols.md`](../Classes/00_General/00_Poster_aula_metode_DEPURA_rols.md)):
 
-- **Rols rotatius:** Coordinador/a · Programador/a · Enginyer/a de maquinari · Provador/a–Documentador/a (roteu-los a cada sessió).
+- **Els quatre barrets** (els papers de la feina, que portes tots tu i vas canviant a consciència): 🧭 Coordinar · ⌨️ Programar · 🔌 Muntar · 🔎 Provar i documentar. El que més s'oblida és el de provar.
 - **Quan no funcioni → rutina DEPURA:** **D**escriu · **E**xamina · **P**rova una hipòtesi cada cop · **U**bica · **R**epara · **A**punta-ho.
-- **Coavaluació "2 estrelles i un desig":** en acabar, intercanvieu el producte amb un altre equip i anoteu 2 coses ben fetes + 1 millora.
-- **Diana d'autoavaluació:** situeu-vos (0-10) en el codi, el circuit i la documentació abans de l'entrega.
+- **Revisió creuada de codi "2 estrelles i un desig"** (llegir el codi d'un company i retornar-li millores concretes): en acabar, intercanvia el producte amb un company i anota-hi 2 coses ben fetes + 1 millora. És on s'evidencia la cooperació de la **R5**.
+- **Diana d'autoavaluació:** situa't (0-10) en el codi, el circuit i la documentació abans de l'entrega.
 
 ## Simulacions interactives (Wokwi)
 

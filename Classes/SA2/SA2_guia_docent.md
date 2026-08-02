@@ -100,6 +100,7 @@
 | Repte curt de codi | Variables, `for`/`if`, `analogWrite`, `map()` | CA1.1 | R1 |
 | Quadern tècnic | Esquema, codi comentat, errors i millores | CA1.1, CA2.2 | **R4** |
 | Observació de muntatge | Resistència limitadora, polaritat, seguretat | CA2.1 | R2 |
+| Ajuda entre iguals i **revisió creuada** de codi | Cooperació sense producte compartit: línia d'ajuda del quadern + una millora concreta i un dubte al company | CA5.3 | **R5** |
 
 *(CA1.1 = programar en C/C++; CA2.1 = dissenyar/muntar circuits amb seguretat; CA2.2 = mesurar/interpretar senyals. Vegeu [`Programació didàctica/06_Avaluacio_criteris_qualificacio.md`](../../Programació%20didàctica/06_Avaluacio_criteris_qualificacio.md). Comparteix R1 i R2 amb l'alumnat **abans** de començar.)*
 

@@ -51,7 +51,7 @@ async function auth() {
   return cl;
 }
 
-const PATRO_FORA = /^Parella \(nom/;          // pregunta que desapareix (SA1-SA8)
+const PATRO_FORA = /^(Parella \(nom|Equip \(noms\))/;   // preguntes d'agrupament que desapareixen
 // Reetiquetatge de preguntes del Form de SA9 (títol vell → títol nou).
 const SA9_RETITOLS = new Map([
   ['Equip (nom) i membres', 'Nom'],

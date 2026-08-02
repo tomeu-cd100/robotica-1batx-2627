@@ -96,6 +96,7 @@
 | Taula comparativa C++ ↔ Python | Comparar la mateixa solució en dos llenguatges | CA1.2 | R4 |
 | Repte de codi Python | Sintaxi (indentació), funcions, lectura de sensor | CA1.2 | R1 |
 | Quadern tècnic | Comparativa, errors i millores; decisió de disseny | CA1.2, CA3.1 | R4 |
+| Ajuda entre iguals i **revisió creuada** de codi | Cooperació sense producte compartit: línia d'ajuda del quadern + una millora concreta i un dubte al company | CA5.3 | **R5** |
 
 *(CA1.2 = programar en MicroPython i comparar-ho amb C/C++; CA3.1 = implementar/explicar control bàsic. Vegeu [`Programació didàctica/06_Avaluacio_criteris_qualificacio.md`](../../Programació%20didàctica/06_Avaluacio_criteris_qualificacio.md). Comparteix R1 i R4 **abans** de començar.)*
 

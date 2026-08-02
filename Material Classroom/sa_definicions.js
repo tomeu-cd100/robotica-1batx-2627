@@ -357,7 +357,6 @@ export const DEFINICIONS = {
     items: [
       t('Abans de començar',
         "En acabar aquesta SA podré: 1) programar moviments i trajectòries d'un robot (girar = rodes a velocitats diferents); 2) aconseguir un comportament autònom: evitar obstacles o seguir una línia; 3) calibrar i millorar iterant, registrant cada intent.\n\nVersió nucli: el robot completa UN comportament autònom, encara que lent, amb el registre d'almenys 2 iteracions."),
-      s('Equip (noms)'),
 
       t('Activitat 1 · Moviment i cinemàtica (S1)',
         "Ajusta el bloc de pins de 01_moviment_basic.ino i comprova."),
@@ -415,7 +414,6 @@ export const DEFINICIONS = {
     items: [
       t('Abans de començar',
         "En acabar aquesta SA podré: 1) enviar i rebre dades a distància (telemetria per ràdio); 2) explicar què és l'IoT i valorar-ne els riscos de privacitat; 3) distingir regles fetes a mà i aprenentatge automàtic, entrenar un classificador i detectar-ne el biaix.\n\nVersió nucli: telemetria d'UNA magnitud etiquetada que es rep i es mostra + reflexió ètica amb un risc i una mesura."),
-      s('Equip (noms)'),
 
       t('Activitat 1 · Telemetria (S1)',
         "Carrega 01_telemetria_emissor.py i 02_telemetria_receptor.py en dues plaques (mateix group)."),
