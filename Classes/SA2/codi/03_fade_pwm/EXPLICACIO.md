@@ -8,7 +8,7 @@
 
 Fins ara els teus pins només sabien fer dues coses: `HIGH` (5 V) o `LOW` (0 V). Encès o apagat. La pregunta d'avui: *com es regula la intensitat d'un LED si només hi ha HIGH i LOW?*
 
-La resposta és un truc elegant: **PWM** (*Pulse Width Modulation*). El pin s'encén i s'apaga **milers de vegades per segon**, i el que regules és **quanta estona de cada cicle passa encès**. L'ull no veu el parpelleig: veu una mitjana. 25 % del temps encès → LED fluix; 90 % → gairebé a tope. Amb això, un pin digital fa una feina «analògica»: intensitats, colors (Pràctica 4), velocitats de motor (SA4).
+La resposta és un truc elegant: **PWM** (*Pulse Width Modulation*). El pin s'encén i s'apaga **centenars de vegades per segon (unes 490 al pin 9)**, i el que regules és **quanta estona de cada cicle passa encès**. L'ull no veu el parpelleig: veu una mitjana. 25 % del temps encès → LED fluix; 90 % → gairebé a tope. Amb això, un pin digital fa una feina «analògica»: intensitats, colors (Pràctica 4), velocitats de motor (SA4).
 
 ## 🔮 Abans d'executar: prediu
 

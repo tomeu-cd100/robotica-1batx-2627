@@ -26,7 +26,7 @@ Així es veu al **simulador** una de les tres branques (quina? — si has fet la
 from microbit import *
 ```
 
-Aquesta línia importa **tota** la micro:bit: la matriu de LED (`display`), els botons (`button_a`, `button_b`), les imatges (`Image`), els sensors… A Arduino no calia importar res perquè l'IDE ho feia per tu; en Python els mòduls es demanen explícitament.
+Aquesta línia importa **tota** la micro:bit: la matriu de LED (`display`), els botons (`button_a`, `button_b`), les imatges (`Image`), els sensors… A Arduino no calia demanar res per a les funcions bàsiques (`digitalWrite`, `delay`…): l'editor ja les hi posava. Sí que ho vas haver de fer, però, per als servos: aquell `#include <Servo.h>` de la SA4 és exactament la mateixa idea — «vull eines que no venen de sèrie». La diferència és que en Python **tot** es demana explícitament, també el bàsic.
 
 Fixa't també en el que **no** hi ha: ni `setup()` ni `loop()`. En Python el programa comença a executar-se **des de la primera línia**, de dalt a baix.
 

@@ -31,7 +31,7 @@
 
 **Practica:** prioritat de seguretat amb `if`/`else` · `map()` aparellat amb `constrain()` · reutilitzar funcions pròpies ja escrites · `Serial.println` per depurar.
 **Pista (per a qui es bloqueja):** primer decideix "és segur moure's?"; només dins la branca del "sí" cal calcular res més.
-**En comparar amb el sketch, mireu:** ① la conversió `(int)d` abans de passar la distància al `map()`, l'heu inclosa, o hi passeu directament el `float`? ② el `constrain()` va després del `map()`, o heu confiat que `map()` ja limitava el resultat dins del rang 80–255? ③ el `Serial.println(d)` és abans de decidir si atura o mou, o només l'imprimiu dins d'una de les dues branques?
+**En comparar amb el sketch, mireu:** ① la conversió `(int)d` abans de passar la distància al `map()`, l'heu inclosa, o hi passeu directament el `float`? ② el `constrain()` va després del `map()`, o heu confiat que `map()` ja limitava el resultat dins del rang de velocitats (el vostre, 100–255; el del sketch, 80–255 — recordeu que els números són expressament diferents)? ③ el `Serial.println(d)` és abans de decidir si atura o mou, o només l'imprimiu dins d'una de les dues branques?
 
 ## Kata · `05_dos_leds_millis` (Sessió 3, repte +)
 

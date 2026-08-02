@@ -134,6 +134,15 @@ Flux de fabricació:
 | Seguidor de línia dret (KS0050) | A1 | Entrada analògica/digital segons mòdul. |
 | Sensor de col·lisió (para-xocs, KS0021) | D2 | Digital. |
 
+> ⚠️ **Els seguidors de línia canvien de pin i de lògica respecte del sketch de SA7.**
+> `04_seguidor_linia.ino` els llegeix als pins **D2/D3 amb `digitalRead`** i pren
+> `LOW` com a «veig la línia»; al rover van a **A0/A1** i el codi de referència
+> els llegeix amb `analogRead(...) > LLINDAR_LINIA` (i el **D2 és el para-xocs**,
+> no un sensor de línia). Comprovau-ho sempre a la sessió 0 amb el Monitor
+> sèrie: poseu el robot sobre la línia i sobre el fons i anoteu els dos valors
+> abans de fixar `LLINDAR_LINIA` — cada mòdul i cada terra donen números
+> diferents, i és una calibració que **s'ha de fer**, no endevinar.
+
 **Alimentació:** portapiles **6×AA** al L298N (motors) · sortida de **5 V**
 del L298N a l'Arduino UNO (no alimentar la UNO per USB quan els motors van)
 · **GND comú** entre piles, L298N, UNO i tots els sensors.

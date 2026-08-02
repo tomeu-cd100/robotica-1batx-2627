@@ -5,6 +5,8 @@
 **Tria UN dels tres reptes.** Tots controlen un **LED** amb sortides digitals (`pinMode`, `digitalWrite`, `delay`) i el model **entrada→procés→sortida**. Parteixen del mateix **requisit mínim** i creixen amb **ampliacions**. Es poden muntar a Tinkercad o amb el LED intern (pin 13).
 
 > **Continguts SA1:** robot i sistema embegut, digital vs analògic, esquelet `setup()`/`loop()`, primer codi (`Blink`). · **Vocabulari/bases:** `Classes/SA0/`.
+>
+> 🧭 **Fins on arriba el que has vist a classe.** El **requisit mínim** i l'ampliació *bàsica* es resolen només amb el que has fet a la SA1 (`digitalWrite`, `delay`, variables). Les ampliacions **(notable)** i **⭐⭐⭐** demanen a posta eines que encara no hem treballat —el bucle `for` (SA2), les funcions pròpies i `millis()` (SA2-SA4)—: no és cap error, és el tast per a qui vulgui investigar pel seu compte. Si t'hi encalles, no és que et falti res: és que encara no toca.
 
 > **Format "producte real":** cada repte simula un **encàrrec** amb **client**, **lliurable** i **ús al món real**. El requisit tècnic no canvia; el marc ajuda a donar sentit al producte. *(1r trimestre — dispositius que informen i perceben. Vegeu `Programació didàctica/08c_Projectes_vida_real.md`.)*
 

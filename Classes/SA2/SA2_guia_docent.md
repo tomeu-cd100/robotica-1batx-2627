@@ -57,7 +57,7 @@
 
 ## SESSIÓ 2 (2 h) — Estructures de control: el semàfor
 - **Activació (10'):** com es repeteix una seqüència? → bucles.
-- **Modelatge (25'):** `02_semafor.ino`. `for`, `if`, ordre de les fases. Variant amb **`switch` sobre una variable `fase`** (0-vermell, 1-verd, 2-groc): mateixa seqüència, codi més llegible — és la llavor de les **màquines d'estats** de la SA6. Introducció a `millis()` vs `delay()` (concepte, sense aprofundir).
+- **Modelatge (25'):** `02_semafor.ino`. `if`, constants de temps i ordre de les fases (el `for` encara no: arriba a la S3 amb el *fade*). Variant amb **`switch` sobre una variable `fase`** (0-vermell, 1-verd, 2-groc): mateixa seqüència, codi més llegible — és la llavor de les **màquines d'estats** de la SA6. Introducció a `millis()` vs `delay()` (concepte, sense aprofundir).
 - **Pràctica guiada (35'):** munten 3 LED (pins 8-9-10) i programen el cicle.
 - **Repte (40'):** afegir **fase nocturna** (groc intermitent) activable; **+ repte:** semàfor de vianants amb segon grup de LED.
 - **Tancament (10'):** quadern.

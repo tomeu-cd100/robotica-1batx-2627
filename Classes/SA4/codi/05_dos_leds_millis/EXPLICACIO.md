@@ -25,7 +25,7 @@ void loop() {
   unsigned long ara = millis();   // "cronometre" intern, no atura res
 ```
 
-Un cuiner amb dues paelles al foc no es queda plantat davant d'una fins que estigui llesta: va fent, i de tant en tant **mira el rellotge de la paret**. Mirar el rellotge no atura la cuina. `millis()` és aquest rellotge: retorna quants **mil·lisegons** fa que la placa està engegada, i cridar-lo no espera res — és mirar l'hora, no posar una alarma i adormir-s'hi. El tipus `unsigned long` és nou: un enter **gran i sense signe**, necessari perquè aquest comptador creix i creix (un `int` normal es desbordaria en mig minut).
+Un cuiner amb dues paelles al foc no es queda plantat davant d'una fins que estigui llesta: va fent, i de tant en tant **mira el rellotge de la paret**. Mirar el rellotge no atura la cuina. `millis()` és aquest rellotge: retorna quants **mil·lisegons** fa que la placa està engegada, i cridar-lo no espera res — és mirar l'hora, no posar una alarma i adormir-s'hi. El tipus `unsigned long` ja el vas veure passar a l'antirebot de la [SA3](../../../SA3/codi/01_polsador_debounce/EXPLICACIO.md); aquí és on de debò el necessites entendre: és un enter **gran i sense signe**, obligatori perquè aquest comptador creix i creix (un `int` normal es desbordaria en mig minut).
 
 ### Bloc 2 — La memòria: quan vaig actuar per última vegada?
 

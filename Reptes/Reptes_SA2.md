@@ -71,7 +71,7 @@
 - Codi comentat.
 
 **Ampliacions graduades.**
-1. *(bàsica)* Recorre els LED amb un **bucle `for`** i un array de pins.
+1. *(bàsica)* Recorre els LED amb un **bucle `for`** (el de la pràctica del *fade*). Si vols anar més enllà: en lloc d'un `digitalWrite` per LED, guarda els pins en un **array** — `const int LEDS[] = {8, 9, 10, 11};` — i fes que el `for` els recorri amb `LEDS[i]`. L'array no s'ha vist a classe: aquí el tastes, i és tota la sintaxi que necessites.
 2. *(notable)* Fes que el nivell **pugi i baixi** en bucle (efecte VU-mètre).
 3. *(⭐⭐⭐)* Substitueix l'últim LED per un **RGB** que passi de verd a vermell segons el nivell.
 

@@ -37,11 +37,11 @@ Primer, la idea física, que és la de sempre a la muntanya: **crides, esperes l
 2. **El cronòmetre** — `pulseIn(ECHO, HIGH, 30000)`: l'Arduino es queda escoltant el pin `ECHO` i ens diu **quants microsegons** ha trigat l'eco a tornar. Aquest temps queda desat a la variable `t`.
 3. **La conversió** — `t * 0.034 / 2.0`: el so viatja a 0,034 cm per microsegon, així que multipliquem el temps per la velocitat… i **dividim per 2**, perquè el so ha fet el viatge **d'anada i tornada** (fins a la paret i de retorn) i només volem l'anada.
 
-I ara la novetat de programació. A la Pràctica 2 les funcions **feien** coses i callaven (`endavant` movia el motor i prou — per això començaven amb `void`, "res"). Aquesta funció és diferent: li fas una pregunta — *"a quina distància és l'obstacle?"* — i **et contesta amb un número**. D'això en diem **retornar un valor**: per això comença amb `float` (número amb decimals, el tipus de resposta) i acaba amb `return` (el moment de contestar).
+I ara, el repàs que val la pena fer en veu alta. A la Pràctica 2 les funcions **feien** coses i callaven (`endavant` movia el motor i prou — per això començaven amb `void`, "res"). Aquesta és diferent: li fas una pregunta — *"a quina distància és l'obstacle?"* — i **et contesta amb un número**. És el **retornar un valor** que ja vas conèixer a la [Pràctica 3 de la SA3](../../../SA3/codi/03_ultrasons_funcio/EXPLICACIO.md), i de fet és **literalment la mateixa funció**: comença amb `float` (número amb decimals, el tipus de resposta) i acaba amb `return` (el moment de contestar). Que te la puguis endur d'una SA a l'altra sense tocar-hi res és precisament el premi d'haver-la escrit com a funció.
 
 Dos detalls d'enginyer que val la pena copiar:
 
-- **I si l'eco no torna mai?** (sensor desconnectat, obstacle massa lluny…) Sense pla B, l'Arduino es quedaria esperant per sempre. El `30000` de `pulseIn` és un **timeout**: "espera com a màxim 30 ms; si no ha arribat res, plega i retorna 0".
+- **I si l'eco no torna mai?** (sensor desconnectat, obstacle massa lluny…) `pulseIn` no es penja: de sèrie espera **fins a 1 segon** i plega. Però 1 segon és una eternitat per a un robot que s'acosta a una paret: el `loop()` quedaria congelat cada volta. El `30000` de `pulseIn` és un **timeout** més curt: "espera com a màxim 30 ms; si no ha arribat res, plega i retorna 0". Amb 30 ms el robot segueix reaccionant; amb 1 s, no.
 - `if (t == 0) return 400;` — quan no hi ha eco, la funció respon "400 cm, via lliure". Per què no 0? Perquè 0 cm voldria dir "paret enganxada al nas!" i el motor frenaria en sec per culpa d'un sensor mut. Decidir què fer quan una mesura falla és disseny, no detall.
 
 ### Bloc 2 — La decisió de seguretat

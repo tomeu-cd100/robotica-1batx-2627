@@ -83,7 +83,9 @@ Llegeix-ho en veu alta com una recepta: *encén el vermell, espera 4 segons, apa
 
 ## 🧗 Si t'encalles: l'esquelet del semàfor
 
-Si no et surt ni el primer cicle, no et quedis en blanc: parteix d'aquest esquelet. Els pins i el `setup()` ja estan fets; tu només omples els `// TODO:` de cada fase (i, si arribes al final, un groc que «respira» amb PWM — tast de la S3). Compila tal qual; no fa res visible fins que omplis les fases.
+Si no et surt ni el primer cicle, no et quedis en blanc: parteix d'aquest esquelet. Els pins i el `setup()` ja estan fets; tu només omples els `// TODO:` de **les tres fases**. Compila tal qual; no fa res visible fins que omplis les fases.
+
+> Al final de l'esquelet hi ha una **fase extra amb PWM** (el groc que «respira»): és un tast de la sessió que ve i **no forma part del semàfor**. Si has arribat aquí perquè t'encallaves, ignora-la del tot — el repte està fet amb les tres fases.
 
 <details markdown="1">
 <summary>Desplega l'esquelet (còpia'l a un sketch nou)</summary>
@@ -133,7 +135,10 @@ void loop() {
   // FASE 3: GROC
   // TODO: encen el groc, espera T_GROC i apaga'l
 
-  // FASE EXTRA (PWM, opcional): el groc "respira" abans de tornar a comencar.
+  // FASE EXTRA (PWM) -- NOMES si les tres fases de dalt ja et funcionen.
+  // Aixo encara no s'ha explicat: es la sessio que ve (03_fade_pwm). Deixa-ho
+  // per al final o esborra-ho: el semafor es dona per fet amb les 3 fases.
+  // El groc "respira" abans de tornar a comencar.
   for (int valor = 0; valor <= 255; valor += PAS_FADE) {
     // TODO: aplica la intensitat 'valor' al groc amb analogWrite(...)
     delay(ESPERA);

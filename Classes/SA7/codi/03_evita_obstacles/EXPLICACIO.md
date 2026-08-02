@@ -29,7 +29,7 @@ float distancia() {
 }
 ```
 
-El mateix sensor que a la SA3/SA4: un pols per `TRIG`, i `pulseIn` cronometra el retorn de l'eco per `ECHO`. Dos detalls que aquí són vitals perquè el robot **es mou**: el **timeout de 30 ms** (si no arriba eco, `pulseIn` no es queda esperant per sempre amb el robot en marxa) i el `return 400` (cap eco = «molt lluny», així el robot continua avançant en lloc de fer coses rares amb un 0).
+El mateix sensor que a la SA3/SA4: un pols per `TRIG`, i `pulseIn` cronometra el retorn de l'eco per `ECHO`. Dos detalls que aquí són vitals perquè el robot **es mou**: el **timeout de 30 ms** (sense ell, `pulseIn` esperaria fins a 1 segon abans de plegar — una eternitat amb el robot en marxa cap a la paret) i el `return 400` (cap eco = «molt lluny», així el robot continua avançant en lloc de fer coses rares amb un 0).
 
 ### Bloc 2 — La decisió: un llindar amb nom
 

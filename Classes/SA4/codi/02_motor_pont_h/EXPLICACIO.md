@@ -10,7 +10,7 @@ La pregunta d'avui: *per què no puc connectar un motor directament a un pin?* P
 
 El pont H, a més, sap una cosa que cap pin sol sap fer: **invertir el sentit de gir**. Amb dos senyals (`IN1`/`IN2`) tries el sentit, i amb un tercer (`ENA`, per PWM — l'`analogWrite` de la SA2) la **velocitat**.
 
-I la novetat de programació: escriuràs les teves primeres **funcions pròpies**. En lloc de repetir tres línies cada cop que vols avançar, empaquetes el gest amb un nom — `endavant(200)` — i el `loop()` es llegeix com una frase. Això és l'**abstracció**, i és el múscul que farà llegibles tots els programes grans que vénen.
+I pel costat de la programació, aquí les **funcions pròpies** deixen de ser un exercici i passen a ser l'eina de treball. Ja en vas escriure una amb paràmetres a la [SA2 (`color(r, g, b)`)](../../../SA2/codi/04_rgb/EXPLICACIO.md) i una que retornava un valor a la [SA3 (`mesuraDistancia()`)](../../../SA3/codi/03_ultrasons_funcio/EXPLICACIO.md); ara n'escriuràs **un joc sencer** que descriu tot el que el motor sap fer. En lloc de repetir tres línies cada cop que vols avançar, empaquetes el gest amb un nom — `endavant(200)` — i el `loop()` es llegeix com una frase. Això és l'**abstracció**, i és el múscul que farà llegibles tots els programes grans que vénen.
 
 ## 🔮 Abans d'executar: prediu
 

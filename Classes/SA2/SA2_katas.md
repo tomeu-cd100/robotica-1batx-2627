@@ -20,7 +20,7 @@
 
 **Practica:** constants múltiples · seqüència encén–espera–apaga repetida · `delay()` bloquejant.
 **Pista (per a qui es bloqueja):** és el mateix trio de 3 línies (`digitalWrite` HIGH, `delay`, `digitalWrite` LOW) tres vegades seguides, cada cop amb un altre pin i un altre temps.
-**En comparar amb el sketch, mireu:** ① cada `delay()` fa servir la constant `T_...` corresponent (no un número solt)? ② els tres LED s'apaguen abans d'encendre el següent? ③ l'ordre és vermell → verd → groc?
+**En comparar amb el sketch, mireu:** ① cada `delay()` fa servir la constant `T_...` corresponent (no un número solt)? ② els tres LED s'apaguen abans d'encendre el següent? ③ l'ordre és vermell → verd → groc? *(El sketch embolcalla el cicle dins d'un `if (nocturn) … else …` per al mode nocturn: això no ho havies d'escriure — el teu cicle ha de coincidir amb el que hi ha dins de l'`else`.)*
 
 ## Kata · `02b_semafor_switch` (Sessió 2)
 
