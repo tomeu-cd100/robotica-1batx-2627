@@ -78,7 +78,7 @@
 - [ ] Editor Python de micro:bit provat (flasheig d'un `display.scroll("Hola")`).
 - [ ] Kits comptats, etiquetats i amb kit de reserva.
 - [ ] Llegida la **guia docent de SA1** i preparada la **prova diagnòstica** (`Classes/SA1/SA1_prova_diagnostica.md`).
-- [ ] Rúbriques **R4/R5** a punt per compartir amb l'alumnat (es comparteixen *abans* de començar).
+- [ ] Rúbriques **R4** (documentació i defensa) i **R5** (actitud i cooperació) a punt per compartir amb l'alumnat (es comparteixen *abans* de començar). Totes cinc: [`Programació didàctica/07_Rubriques.md`](Programació%20didàctica/07_Rubriques.md).
 - [ ] Projectat el **pòster d'aula** (`Classes/00_General/00_Poster_aula_metode_DEPURA_rols.md`).
 - [ ] Repartida/enllaçada la guia **«Com s'avalua la matèria»** (`Classes/00_General/00_Avaluacio_per_alumnat.md`).
 - [ ] **Impresos els quaderns tècnics** del trimestre, un per alumne i **a doble cara** (`Classes/00_General/pdf/Quadern_tecnic_T1.pdf`).
