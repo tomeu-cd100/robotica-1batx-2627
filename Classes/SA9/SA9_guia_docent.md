@@ -50,8 +50,17 @@ Aquesta SA **tanca el mètode de projecte** introduït a la **SA1** i practicat 
 | **1** | **Idear** | Presenta el repte i el `Banc_de_reptes`. Forma equips i rols. | Trien repte, defineixen requisits, esbós, planificació (taulell àgil). |
 | **2** | **Prototipar** | Acompanya el muntatge i el primer codi. | Munten el prototip mínim viable; primer codi (esquelet). |
 | **3** | **Provar i millorar** | Fomenta proves sistemàtiques i registre d'errors; code review. Primeres defenses esglaonades si un equip ja té prototip llest. | Proven, detecten errors, **primera iteració** de millora i inici de la segona; avancen el dossier. |
-| **4** | **Comunicar** | Organitza i modera les defenses; recull els dossiers. La defensa i la **coavaluació** es fan amb la **mini-rúbrica R4·DO** ([`07_Rubriques.md`](../../Programació%20didàctica/07_Rubriques.md)) — la mateixa des de la SA2, ara al nivell alt (decisions **i alternatives descartades**, reconèixer límits). | Tanquen el **dossier tècnic**; **defensa oral** + demostració; coavaluació; reflexió final. |
-| **5** | **PROVA PRÀCTICA T3** | Munta les **estacions rotatives** (pistes + robots) i gestiona els torns. | **Prova individual** (`Avaluació/Prova_practica_T3.md`): part micro:bit a la taula, part de robot per torns a la pista. |
+| **4** | **Comunicar** *(i tancament del curs)* | Organitza i modera les defenses **com a mostra** (els tres robots del curs a la vista) i tanca amb la **retrospectiva de curs** (10'). Recull els dossiers. La defensa i la **coavaluació** es fan amb la **mini-rúbrica R4·DO** ([`07_Rubriques.md`](../../Programació%20didàctica/07_Rubriques.md)) — la mateixa des de la SA2, ara al nivell alt (decisions **i alternatives descartades**, reconèixer límits). | Tanquen el **dossier tècnic**; **defensa oral** + demostració; coavaluació; reflexió final. |
+| **5** | **PROVA PRÀCTICA T3** *(i tancament material)* | Munta les **estacions** (pistes + robots) i gestiona els torns. **Darrers 15':** desmuntatge i retorn de l'electrònica als kits, amb inventari. | **Prova individual** (`Avaluació/Prova_practica_T3.md`): part micro:bit a la taula, part de robot per torns a la pista. Després, desmunten i retornen el material. |
+
+### 🎓 Tancar el curs (no deixis que s'acabi de cop)
+
+El curs acaba amb una prova individual, i això, sol, és un mal final per a un any que ha construït tres robots. Sense afegir cap sessió, la **S4 fa de tancament** si la muntes així:
+
+- **Mostra, no examen oral.** Les defenses de la S4 es fan amb els **tres robots del curs a la vista** (mascota del T1, braç del T2, rover del T3, els que s'hagin conservat): que vegin d'on van sortir al setembre i on han arribat al juny. Si es pot, obre-la a un altre grup o a les famílies l'última mitja hora.
+- **Retrospectiva de curs (10', al tancament de la S4).** Tres preguntes al quadern, i dues o tres en veu alta: *què sé fer al juny que no sabia al setembre?* · *quin error m'ha ensenyat més?* · *què m'enduc d'aquesta matèria encara que no em dediqui a la tecnologia?* És l'última entrada del quadern tècnic i el tanca com a **portfolio** de l'any.
+- **Difusió (cost zero).** Fotos i un vídeo curt de cada robot en marxa durant la mostra → web del centre o Classroom. Serveix per al curs vinent: és el millor material de presentació que tindràs a la SA1.
+- **Desmuntatge amb sentit (S5, 15' finals).** Retornar l'electrònica als kits amb l'inventari és part de la feina d'un taller, no una tasca administrativa: es fa amb l'alumnat, no després que marxi. Els quaderns tècnics es tornen a l'alumnat — són seus.
 
 > ⚠️ La 2a iteració «formal» de l'antiga S4 queda repartida entre la S3 (fer-la) i la feina fora d'aula (documentar-la). Si un equip no hi arriba, la **versió nucli** (requisits mínims demostrables) segueix sent assoliment satisfactori — vegeu la fitxa.
 

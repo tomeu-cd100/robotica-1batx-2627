@@ -220,16 +220,19 @@ torna a tocar en tot el trimestre.
 |---|---|---|---|
 | SA7 | S1-S4 | Cinemàtica diferencial, trajectòries, evitar obstacles (ultrasons) i seguidor de línia (IR): el rover **és** la plataforma de la SA. | `Reptes_SA7.md` |
 | SA8 | S1-S4 | Micro:bit al pis superior: telemetria per ràdio (distància, estat del rover) cap a una micro:bit base amb pantalla OLED KS0271; MPU6050 opcional com a ampliació. | `Reptes_SA8.md` |
-| SA9 | — | Repte final i competició amb el mateix rover; al juny, desmuntatge i retorn de l'electrònica als kits. | [`README de la SA9`](../SA9/README.md) |
+| SA9 | S1-S4 | Repte final amb el mateix rover i **demostració a la mostra de la S4**; després de la prova T3 (S5), desmuntatge i retorn de l'electrònica als kits. | [`README de la SA9`](../SA9/README.md) |
 
-**Producte final (SA9):** el rover autònom capaç de completar el repte final
-i la competició de fi de curs, amb telemetria per ràdio funcionant.
+**Producte final (SA9):** el rover autònom capaç de completar el repte final,
+amb telemetria per ràdio funcionant, **demostrat en directe a la mostra de la
+S4** (la sessió de defenses). Si el centre s'apunta a una competició externa
+(WRO, RoboCup Junior…), és fora d'hores lectives: el curs **no** en programa
+cap dins de les 5 sessions de la SA9.
 
 ## Rúbrica del robot (avaluada dins el producte de SA9, dimensió «Projectes i productes»)
 
 | Criteri | Insuficient (0-4) | Suficient/Bé (5-6) | Notable (7-8) | Excel·lent (9-10) |
 |---|---|---|---|---|
-| **R1 · Fabricació i robustesa** | El rover no aguanta la competició (es desmunta o deixa de respondre). | Aguanta la competició amb algun retoc d'última hora. | Aguanta la competició sense retocs, cablatge endreçat. | Aguanta la competició sense retocs, cablatge endreçat i etiquetat, res solt. |
+| **R1 · Fabricació i robustesa** | El rover no aguanta la demostració de la S4 (es desmunta o deixa de respondre). | Aguanta la demostració amb algun retoc d'última hora. | Aguanta la demostració sense retocs, cablatge endreçat. | Aguanta la demostració **i la prova de pista de la T3** sense retocs, cablatge endreçat i etiquetat, res solt. |
 | **R2 · Comportaments autònoms** | No segueix línia ni evita obstacles de manera fiable. | Segueix línia **o** evita obstacles, amb errors freqüents. | Segueix línia **i** evita obstacles, amb algun error puntual. | Segueix línia i evita obstacles de manera fiable i fluida. |
 | **R3 · Telemetria** | No arriben dades per ràdio a la base. | Arriben dades bàsiques, de manera intermitent. | Arriben dades de manera fiable i es mostren a l'OLED. | Telemetria fiable, ben etiquetada i útil per seguir l'estat del rover en directe. |
 | **R4 · Documentació tècnica** | Sense esquema ni codi comentat. | Esquema o codi comentat, no els dos. | Esquema i codi comentat, sense diari de proves. | Esquema, codi comentat i diari de proves que explica el procés de calibratge. |

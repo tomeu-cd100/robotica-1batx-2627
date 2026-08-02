@@ -72,6 +72,20 @@ perquè no es descobreixi al març.
 > real és **≈ 0 h**. L'única palanca que queda lliure és la **tercera
 > retallada** (SA7 de 8 h a 6 h, últim recurs).
 >
+> 📐 **El 3r trimestre neix curt: compta-ho al setembre, no al maig.** SA7 (8) +
+> SA8 (6) + SA9 (10) = **24 h**, i s25-s35 són **11 setmanes ≈ 22 h** —dues
+> menys— **abans** de descomptar cap festiu. I el T3 és el trimestre amb més
+> pèrdues previsibles (ponts de maig-juny, sortides, exàmens finals): comptar
+> **2-3 sessions perdudes** és realista, no pessimista. Conseqüència pràctica:
+> **la tercera retallada (SA7 a 6 h) no és l'últim recurs, és el pla per
+> defecte** del T3 amb fil conductor. Decideix-ho **abans de Setmana Santa**,
+> quan encara pots redistribuir; si esperes al juny, el que es menja el
+> descobert és sempre la SA9 —el projecte final—, que és justament el que no
+> hauria de retallar-se. Ordre de sacrifici recomanat al T3:
+> ① el «+ repte» de cada sessió de SA7 · ② SA7 de 8 h a 6 h (fusionant S2 i
+> S3: trajectòria i evita-obstacles a la mateixa sessió) · ③ reduir l'abast
+> del projecte de SA9 a la **versió nucli**, mai les seves sessions.
+>
 > **Senyal d'alerta:** si en acabar el 1r trimestre no s'ha tancat la SA3 (el
 > mateix senyal que activa la retallada 2 més amunt), la mascota es reparteix
 > a l'alumnat amb les peces **pretallades pel docent**, en lloc d'esperar una

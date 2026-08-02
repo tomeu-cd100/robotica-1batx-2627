@@ -1,13 +1,15 @@
 # Prova pràctica — Trimestre 3 (SA7-SA9)
 ## "Robot autònom + sistema connectat"
 
-**Durada:** 2 h (la **S5 de la SA9**, sencera) · **Material:** robot mòbil (Imagina 3dBot) + pista de proves; micro:bit. Es permet consultar esquemes i quadern.
+**Durada:** 2 h (la **S5 de la SA9**, sencera) · **Material:** robot mòbil + pista de proves; micro:bit. Es permet consultar esquemes i quadern.
+
+> 🤖 **Quin robot?** Amb el **fil conductor** actiu, cada parella té el **seu rover** ([dossier T3](../Classes/00_General/00_Projecte_T3_Rover.md)) i la logística d'estacions rotatives de sota **ja no cal**: hi ha robots per a tothom i només fan falta prou **pistes** (2-3 n'hi ha prou per torns curts). Sense fil conductor, l'aula treballa amb 2-3 **Imagina 3dBot** compartides i llavors sí que cal el sistema de torns. Nota: el rover és de la parella, però **la prova és individual** — cadascú programa el seu torn i el company no hi intervé.
 
 > ℹ️ Al 3r trimestre **el pes principal de l'avaluació és el projecte final (SA9)** amb les rúbriques R1-R5 i el dossier tècnic. Aquesta prova pràctica és un instrument **separat i individual**: comprova destreses de robòtica i integració (SA7-SA8), puntua només a la dimensió «Proves pràctiques» (20 %) i **no reavalua el projecte** (que ja ha estat defensat a la S4).
 
-### Logística: estacions rotatives (pocs robots, tot el grup alhora)
+### Logística: estacions rotatives (només si es comparteixen robots)
 
-Amb 2-3 robots i pistes no es pot fer la Part A tothom alhora. Organització de la sessió:
+Amb 2-3 robots i pistes no es pot fer la Part A tothom alhora. Organització de la sessió *(amb rover per parella, salta't els torns de robot i deixa només els de pista)*:
 
 1. **Tota la classe comença per la Part B** (micro:bit, a la seva taula): és individual i no necessita robot. Temps recomanat: 40-45'.
 2. **Part A per torns a les estacions de pista** (10-12' per persona i estació), mentre la resta acaba la Part B i **prepara i verifica el codi de la Part A al banc o al simulador** (Wokwi) abans del seu torn.

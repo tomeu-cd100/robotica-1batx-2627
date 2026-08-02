@@ -14,6 +14,8 @@
 ## ⚙️ Abans de començar (important)
 La **Imagina 3dBot** és Arduino-compatible, però **els pins dels motors depenen del model**. A l'inici de cada `.ino` hi ha un bloc `// === PINS (AJUSTAR) ===` amb constants per als motors esquerre/dret. **Cal posar-hi els pins reals segons el manual de la placa** abans de pujar el codi. La **lògica no s'ha de tocar**.
 
+> 🆘 **Pla B si avui no hi ha robot** (avaria, bateries, fabricació endarrerida): el *sandbox* de Wokwi [`SA7_robot_reactiu`](../../Simulacions/Wokwi/README.md) reprodueix el cicle percepció → decisió → acció amb ultrasons i tres LED. No mou rodes, però l'alumnat escriu i prova **la mateixa estructura d'`if`** de l'evita-obstacles. Detall i altres vies (demo projectada, vídeo, diagrama de decisió): [esquemes de connexions, «Si avui no hi ha robot»](SA7_esquemes_connexions.md#si-avui-no-hi-ha-robot-pla-b).
+
 ## Material per parella/equip
 - Imagina 3dBot muntat (motors, rodes, bateria), cable de programació.
 - Sensors de línia IR i sensor d'ultrasons (segons dotació de la placa).
