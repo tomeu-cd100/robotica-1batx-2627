@@ -91,7 +91,7 @@ Aquesta SA **tanca el mètode de projecte** introduït a la **SA1** i practicat 
 - Tenir el **banc de reptes amb nivells** perquè cada equip triï segons ambició (atenció a la diversitat).
 - Oferir el **[`00_Banc_objectes_disseny.md`](../00_General/00_Banc_objectes_disseny.md)** com a font d'idees: el projecte final pot ser un **objecte real amb carcassa/maqueta** (disseny de producte), no només un muntatge. Inclou rúbrica de producte i pautes de fabricació (cartró/impressió 3D, ecodisseny ODS 12).
 - Fixar **fites parcials** (checklist) a cada sessió per evitar deixar-ho tot per al final.
-- **Defenses esglaonades si hi ha més de 6 equips:** 5' + preguntes + canvi de muntatge ≈ 12-15' per equip; una sola S4 no dona. Programa 2-3 defenses al final de la S3 (equips amb prototip llest) i la resta a la S4. Escala, guió i errors típics de la defensa: [`../00_General/00_Guia_defensa_oral.md`](../00_General/00_Guia_defensa_oral.md).
+- **Defenses esglaonades (compta-ho abans, gairebé sempre caldrà):** 5' + preguntes + canvi de muntatge ≈ **12-15' per equip**, i la S4 no és només de defenses (també s'hi tanca el dossier, la coavaluació i el «Python flash»). Amb **5 equips ja vas al límit** i amb 6 no hi caps. Programa **2-3 defenses al final de la S3** (els equips que tinguin prototip llest — i digues-los que hi guanyen: defensen amb menys pressió) i la resta a la S4. Escala, guió i errors típics de la defensa: [`../00_General/00_Guia_defensa_oral.md`](../00_General/00_Guia_defensa_oral.md).
 - Recordar criteris d'**ètica i sostenibilitat** (reutilització de components, impacte).
 - Si s'opta per **competició**, alinear el repte amb el reglament corresponent.
 

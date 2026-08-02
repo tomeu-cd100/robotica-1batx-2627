@@ -35,7 +35,7 @@
 
 ## SESSIÓ 1 (2 h) — Què és un sistema de control?
 
-> 🔄 **Reentrada a C++ (abans de la sessió):** l'alumnat porta 3 setmanes en Python (SA5) i avui torna a C++. La targeta [`00_Repas_expres_Cpp.md`](../00_General/00_Repas_expres_Cpp.md) s'ha repartit com a deures al tancament de la SA5 S3. Dedica **5' de l'activació** al «C++ flash» de sota. Qui falli l'autotest de la targeta: derivar a `SA0_guia_programacio.md` Part A abans de la S2.
+> 🔄 **Reentrada a C++ (abans de la sessió):** l'alumnat porta 3 setmanes en Python (SA5) i avui torna a C++. La targeta [`00_Repas_expres_Cpp.md`](../00_General/00_Repas_expres_Cpp.md) s'ha repartit com a deures al tancament de la SA5 S3. Dedica **5' de l'activació** al «C++ flash» de sota. ⏱️ **Aquell dia l'activació no hi cap sencera**: el flash **substitueix la graella de repàs** (`00_Banc_activacio_repas.md`) — 5' de flash + 4' de pregunta ganxo + 1' de referent. No els sumis. Qui falli l'autotest de la targeta: derivar a `SA0_guia_programacio.md` Part A abans de la S2.
 >
 > **Guió del «C++ flash» (5', oral i col·lectiu).** Projecta el nucli del llum de nit de la SA5 ([`03_nightlight.py`](../SA5/codi/03_nightlight.py)) — l'han escrit ells fa dues setmanes — i demana traduir-lo **en veu alta** a C++ d'Arduino, línia a línia. No cal executar res: és gimnàstica de sintaxi.
 >
@@ -92,13 +92,14 @@
 
 > El producte de la SA **es tanca en aquesta sessió** (la S4 és, sencera, la prova T2).
 
-- **Mini-check individual (10', a l'inici, substitueix la graella):** diagnosticar el "clic-clic" del termòstat i escriure els dos llindars ([banc](../00_General/00_Mini_checks_individuals.md)).
+- **Mini-check individual (10', a l'inici, substitueix la graella i el kata):** diagnosticar el "clic-clic" del termòstat i escriure els dos llindars ([banc](../00_General/00_Mini_checks_individuals.md)).
+- **«Python flash» (5', enganxat al mini-check):** els ping-pongs orals de la represa de MicroPython (secció de sota). Compta'ls: **van dins d'aquests 100'**, no a sobre.
 - **Modelatge (25'):** `03_maquina_estats.ino`. `enum` d'estats + `switch`; transicions per **temps** o per **esdeveniment** (polsador). Exemple: procés (espera → fase 1 → fase 2 → fet).
 - **Pràctica guiada (30'):** implementen la màquina d'estats i la proven.
 - **Repte (40'):** afegir un estat nou o una transició condicional; **+ repte:** semàfor adaptatiu (canvia segons polsador de vianant). **Defenses de 2-3' a peu de taula:** mentre treballen, passa per les parelles i escolta la defensa del producte (problema → solució → **una decisió tècnica justificada**: per què aquests llindars? per què aquests estats?). Valora amb els 3 indicadors de la **mini-rúbrica R4·DO** ([`07_Rubriques.md`](../../Programació%20didàctica/07_Rubriques.md)) — a aquestes altures del curs ja s'esperen tots tres.
-- **Tancament (15'):** quadern (diagrama d'estats + diagrama de blocs); autoavaluació amb rúbriques.
+- **Tancament (10'):** quadern (diagrama d'estats + diagrama de blocs); autoavaluació amb rúbriques.
 
-> ⏱️ **Marge:** el temps efectiu real és ~100', i **aquesta és la sessió més carregada del trimestre** (mini-check + concepte nou + producte + defenses). Retalla d'entrada: **el «+ repte» (semàfor adaptatiu)** i, si cal, redueix el Repte a **una sola transició nova**. El mini-check, la màquina d'estats i les defenses a peu de taula **no es toquen**.
+> ⏱️ **Marge: aquesta sessió no hi cap sencera i cal decidir-ho abans d'entrar.** Sumada tal com està (10+5+25+30+40+10) fa 120' i el temps efectiu real és ~100': **és la sessió més carregada del trimestre** (mini-check + represa de Python + concepte nou + producte + defenses). Retalla **d'entrada, no sobre la marxa**: ① el «+ repte» (semàfor adaptatiu) i ② el Repte a **una sola transició nova** (40' → 25'). Amb això queda en ~105' i és fer-ho. El mini-check, el modelatge de la màquina d'estats i les defenses a peu de taula **no es toquen**; el «Python flash» tampoc (la Part B de la prova T2 hi depèn).
 
 **Punt clau:** una **màquina d'estats** organitza comportaments complexos en estats clars i transicions; evita el codi espagueti i no bloqueja (s'usa amb `millis()`).
 

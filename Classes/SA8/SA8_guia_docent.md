@@ -41,8 +41,9 @@
 > 🤖 **Fil conductor de robots:** si el curs segueix el fil conductor
 > ([`00_Fil_conductor_robots.md`](../00_General/00_Fil_conductor_robots.md)),
 > aquesta SA s'imparteix en **4 h** en lloc de 6: la **S1 (telemetria) i la S2
-> (disseny IoT) es fusionen** en una única sessió de 4 h — la mateixa fusió
-> que ja preveu el pla de contingència d'aquesta guia. Les **2 h alliberades**
+> (disseny IoT) es fusionen** en **una única sessió de 2 h** — la mateixa fusió
+> que ja preveu el pla de contingència d'aquesta guia. (Les 4 h són el total
+> de la SA amb el fil conductor: 2 h de la sessió fusionada + 2 h de la S3.) Les **2 h alliberades**
 > es traslladen a l'inici del 3r trimestre com a **sessió 0 de muntatge del
 > rover** (SA7). La **S3 d'IA es manté sencera** (2 h), sense canvis.
 > Detall del rover: [dossier T3](../00_General/00_Projecte_T3_Rover.md).
@@ -51,7 +52,7 @@
 
 ## SESSIÓ 1 (2 h) — Telemetria: el robot que informa
 
-> 📡 **Abans de la sessió (represa espaiada):** la ràdio no es toca des de la S3 de la SA5. Reparteix (o envia pel Classroom) la targeta [`00_Repas_expres_Radio.md`](../00_General/00_Repas_expres_Radio.md) la setmana anterior, i dedica els primers 5' de l'activació a l'autotest de la targeta («les tres línies que preparen la ràdio»).
+> 📡 **Abans de la sessió (represa espaiada):** la ràdio no es toca des de la S3 de la SA5. Reparteix (o envia pel Classroom) la targeta [`00_Repas_expres_Radio.md`](../00_General/00_Repas_expres_Radio.md) la setmana anterior, i dedica els primers 5' de l'activació a l'autotest de la targeta («les tres línies que preparen la ràdio»). ⏱️ **Aquell dia l'activació no hi cap sencera**: l'autotest **substitueix la graella de repàs** (`00_Banc_activacio_repas.md`) — 5' d'autotest + 4' de pregunta ganxo + 1' de referent. No els sumis.
 
 - **Activació (10'):** *"Com sap el teu mòbil la temperatura de casa quan ets fora?"* → telemetria/IoT.
 - 🔭 **Referent (1', dins l'activació):** **Fei-Fei Li** (ImageNet: sense bones dades no hi ha bona IA) i menció d'**Hedy Lamarr** (salt de freqüència, 1942) ([guió](../00_General/00_Referents_tecnologia.md)).

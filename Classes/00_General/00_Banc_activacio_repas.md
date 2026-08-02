@@ -282,14 +282,17 @@ Amb 2 h setmanals, el que es va aprendre a l'octubre arriba esborrat al febrer s
 
 *Respostes: ① Descriu · Examina · Prova una hipòtesi cada cop · Ubica · Repara · Apunta; una sola hipòtesi cada cop (P). ② el Monitor sèrie / Serial Plotter. ③ si proves tot alhora i falla, no saps quina part és; per parts, aïlles la fallada.*
 
-### SA9 · Sessió 4 — Millorar i documentar
+### SA9 · Sessió 4 — Millorar, documentar i **comunicar** (defensa)
 > **P①** De la rúbrica R1: què diferencia un codi AS d'un codi AE? (pensa en funcions i casos límit)
 > **P②** (SA7) Recordes un cas límit que vam tractar al codi del robot? Al vostre projecte, quin cas límit heu de gestionar?
 > **P③** (SA1) El quadern tècnic ha de contenir un error i com s'ha resolt. Per què això **puja** nota en lloc de baixar-la?
 
 *Respostes: ① AE: modular (funcions), gestiona casos límit, es pot explicar la causa dels errors. ② `pulseIn` retorna 0 sense eco → es tracta com a "molt lluny"; el seu: obert. ③ perquè la depuració documentada és contingut i evidència d'aprenentatge (cultura d'error, R1/R4).*
 
-### SA9 · Sessió 5 — Comunicar
+### SA9 · Sessió 4 bis — Escalfament de la defensa *(graella opcional, 3')*
+
+> ⚠️ **La S5 de la SA9 no és de projecte**: és, sencera, la **prova pràctica T3** ([`Avaluació/Prova_practica_T3.md`](../../Avaluació/Prova_practica_T3.md)) i **no hi ha graella d'activació** — cap activitat de sessió no competeix amb la prova. Aquestes tres preguntes són l'escalfament **just abans de les defenses de la S4**, si hi ha 3' de marge.
+
 > **P①** L'esquema de la defensa: problema → solució → decisió tècnica → demostració. Quina part sol faltar quan una defensa fluixeja?
 > **P②** (SA1, fons d'armari) Descriu el vostre projecte amb el model entrada–procés–sortida en 3 frases: és el nucli de la defensa.
 > **P③** (curs) Si el projecte falla EN DIRECTE durant la demo, què dieu i què feu? (pista: DEPURA davant del públic)
