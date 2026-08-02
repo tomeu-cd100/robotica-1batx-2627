@@ -1,8 +1,10 @@
 # Dossier tècnic — [Títol del projecte]
 
-**Equip:** ______________________  **Membres i rols:** ______________________  **Data:** __________
+**Nom:** ______________________  **Data:** __________
 
 > Document tècnic del projecte final. Substitueix els claudàtors pel teu contingut. Extensió orientativa: 4-8 pàgines + annexos.
+
+> 👥 **Si has fet el repte amb un company:** afegeix aquí una línia de **qui ha fet què**, mòdul a mòdul (no val «tots dos plegats»). La defensa continua sent individual: hauràs d'explicar també la part que no has programat.
 
 ---
 
@@ -37,7 +39,7 @@
 
 ## 5. Construcció i proves
 - Procés de muntatge: [...]
-- **Iteracions** (què fallava → què hem canviat):
+- **Iteracions** (què fallava → què he canviat):
 
 | Versió | Problema | Solució | Resultat |
 |---|---|---|---|
@@ -52,8 +54,8 @@
 - Impacte social/ambiental, reutilització de components, consum: [...]
 
 ## 8. Conclusions i millores futures
-- Què hem après: [...]
-- Què milloraríem amb més temps: [...]
+- Què he après: [...]
+- Què milloraria amb més temps: [...]
 
 ## Annexos
 - Codi complet, fotos, esquemes, enllaços.

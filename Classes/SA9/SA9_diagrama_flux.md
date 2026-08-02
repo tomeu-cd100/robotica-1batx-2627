@@ -12,6 +12,6 @@
 - **Fletxa ambre** = **bucle**: torna enrere i es repeteix.
 
 ## Del diagrama a la pràctica
-- **ANALITZAR i DISSENYAR** → §1 de la `SA9_fitxa_alumnat` (requisits mínims vs. desitjables, triar l'**MVP**) i el **taulell àgil** de `Planificacio_agile_PLANTILLA` amb els rols repartits.
+- **ANALITZAR i DISSENYAR** → §1 de la `SA9_fitxa_alumnat` (requisits mínims vs. desitjables, triar l'**MVP**) i el **taulell àgil** de `Planificacio_agile_PLANTILLA` amb les targetes etiquetades (planificació · maquinari · programació · documentació).
 - **CONSTRUIR → PROVAR → MILLORAR** és el **bucle d'iteració**: munta i prova **una cosa cada cop** (mòduls provables per separat, rutina DEPURA); si no funciona, torna a construir i prova de nou (v1 → v2 → v3), tal com mostra l'`SA9_exemple_resolt`.
 - **DOCUMENTAR** no és l'últim dia: omple el `Dossier_tecnic_PLANTILLA` **des de la primera sessió**; quan l'MVP funciona i està documentat, **lliura** (targeta T9.2).

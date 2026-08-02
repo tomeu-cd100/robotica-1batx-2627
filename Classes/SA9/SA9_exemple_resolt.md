@@ -1,10 +1,10 @@
-# SA9 · Exemple resolt (model «jo ho faig») — Com un equip enfoca un projecte: el «robot repartidor»
+# SA9 · Exemple resolt (model «jo ho faig») — Com s'enfoca un projecte: el «robot repartidor»
 
-> 🧑‍🎓 **Quan toca mirar-lo?** A la **S1 (Idear)**, quan el vostre equip **ja ha triat el repte** i abans d'omplir el taulell. És un projecte **anàleg i deliberadament diferent** per veure *com es gestiona*, no què s'ha de copiar.
+> 🧑‍🎓 **Quan toca mirar-lo?** A la **S1 (Idear)**, quan **ja has triat el teu repte** i abans d'omplir el taulell. És un projecte **anàleg i deliberadament diferent** per veure *com es gestiona*, no què s'ha de copiar.
 
-> 🗺️ **Com es llegeix per apartats:** **🔑 El repte model** primer, per situar-vos · **🧭 Com ho penso** abans de planificar el **vostre** projecte (el raonament de retallar fins a l'MVP) · **💡 La solució anotada** (el *procés*, no codi) després del vostre primer taulell, per comparar · **🔬 Provo i mesuro** quan itereu: copieu-ne el **mètode** · **⚠️ Contraexemple** quan el projecte s'encalli — i com a repàs abans de la defensa · **📔 Diari de bord** quan escrigueu la vostra entrada del quadern.
+> 🗺️ **Com es llegeix per apartats:** **🔑 El repte model** primer, per situar-te · **🧭 Com ho penso** abans de planificar el **teu** projecte (el raonament de retallar fins a l'MVP) · **💡 La solució anotada** (el *procés*, no codi) després del teu primer taulell, per comparar · **🔬 Provo i mesuro** quan iteris: copia'n el **mètode** · **⚠️ Contraexemple** quan el projecte s'encalli — i com a repàs abans de la defensa · **📔 Diari de bord** quan escriguis la teva entrada del quadern.
 
-> **Nota docent:** mostra'l **a la S1 (Idear), després que cada equip hagi triat el repte** i abans
+> **Nota docent:** mostra'l **a la S1 (Idear), després que cadascú hagi triat el seu repte** i abans
 > d'omplir el taulell. No és cap solució del banc de reptes: és un projecte **anàleg i deliberadament
 > diferent** perquè l'alumnat vegi *com es gestiona un projecte* (analitzar → MVP → iterar → documentar),
 > no què s'ha de copiar. Aquí «La solució anotada» **no és codi**: és el **procés emplenat** (taulell,
@@ -17,13 +17,13 @@
 
 ## 🔑 El repte model
 
-> Un equip fictici, **els «Repartidors»**, vol un **robot que reparteix objectes petits per l'aula**:
+> Una alumna fictícia, **la «Repartidora»**, vol un **robot que reparteix objectes petits per l'aula**:
 > agafa un sobre d'un punt de sortida i el porta fins a una taula marcada, esquivant el que trobi pel
-> camí. Tenen **4 sessions de projecte** (la 5a és la prova pràctica T3). Com **enfoquen** el projecte perquè arribi a funcionar i estigui documentat?
+> camí. Té **4 sessions de projecte** (la 5a és la prova pràctica T3). Com **enfoca** el projecte perquè arribi a funcionar i estigui documentat?
 
-Fixeu-vos: aquest repte **no és cap dels del banc** (ni seguidor de línia, ni evita-obstacles, ni braç
-classificador) — combina trossos de diversos. Per això us serveix de **model del mètode**, no de solució
-per copiar. El vostre repte serà un altre; el que heu d'imitar és **com pensen i s'organitzen**.
+Fixa't: aquest repte **no és cap dels del banc** (ni seguidor de línia, ni evita-obstacles, ni braç
+classificador) — combina trossos de diversos. Per això et serveix de **model del mètode**, no de solució
+per copiar. El teu repte serà un altre; el que has d'imitar és **com pensa i s'organitza**.
 
 ---
 
@@ -35,9 +35,9 @@ per copiar. El vostre repte serà un altre; el que heu d'imitar és **com pensen
    Em pregunto: «si només tingués **una** cosa funcionant, què n'hi hauria d'haver?» → **que es mogui
    endavant i s'aturi davant d'un obstacle**. Tota la resta (agafar el sobre amb un servo, girar cap a la
    taula, tornar) són **millores** per a iteracions posteriors, no per al primer dia.
-3. **Poso fites parcials** (una per sessió) perquè no s'acumuli tot al final, i **reparteixo rols** perquè
-   tothom sàpiga de què respon.
-4. **🔮 PREDIU (fes-ho tu abans de llegir la solució):** si aquest equip volgués **tot el sistema a la
+3. **Poso fites parcials** (una per sessió) perquè no s'acumuli tot al final, i **etiqueto les targetes**
+   del taulell (planificació · maquinari · programació · documentació) perquè no me n'oblidi cap.
+4. **🔮 PREDIU (fes-ho tu abans de llegir la solució):** si volgués **tot el sistema a la
    primera** (moure + agafar + girar + tornar + esquivar) en la **sessió 2**, què creus que passaria?
    ☐ ho tindrien tot ☐ **no funcionaria res i no sabrien per què** ☐ acabarien abans. I l'MVP d'aquest
    projecte seria… ☐ el robot sencer ☐ **només moure's i aturar-se davant d'un obstacle**.
@@ -46,7 +46,7 @@ per copiar. El vostre repte serà un altre; el que heu d'imitar és **com pensen
 
 ## 💡 La solució anotada (el *procés*, no el codi)
 
-Això és el que l'equip **escriu a les plantilles**. No hi ha `.ino` a copiar: hi ha **decisions**.
+Això és el que la Repartidora **escriu a les plantilles**. No hi ha `.ino` a copiar: hi ha **decisions**.
 
 **a) Requisits (de `SA9_fitxa_alumnat` §1) — es distingeix el mínim del desitjable**
 
@@ -60,14 +60,15 @@ Això és el que l'equip **escriu a les plantilles**. No hi ha `.ino` a copiar: 
 | 📋 Per fer | 🔧 Fent | ✅ Fet |
 |---|---|---|
 | Servo per agafar el sobre (*desitjable*) | Muntar xassís + motors | Triar repte i requisits |
-| Girar cap a la taula (*desitjable*) | Codi: moure endavant + aturar amb ultrasons | Repartir rols |
+| Girar cap a la taula (*desitjable*) | Codi: moure endavant + aturar amb ultrasons | Etiquetar les targetes (PLA/MAQ/PROG/DOC) |
 | Tornar al punt de sortida (*desitjable*) | | Esbós del sistema (blocs) |
 
 > La feina de l'MVP (moure + aturar) és a **Fent**; tot el que és *desitjable* espera a **Per fer**.
-> Així ningú comença pel servo abans que el robot es mogui.
+> Així no es comença pel servo abans que el robot es mogui.
 
-**c) Rols (§2)** — Coordinació: manté el taulell i les fites · Maquinari: xassís i connexions ·
-Programació: codi i depuració · Documentació: fa fotos i omple el dossier **des del primer dia**.
+**c) Les quatre feines (§2)** — Planificació: mantenir el taulell i les fites · Maquinari: xassís i
+connexions · Programació: codi i depuració · Documentació: fotos i dossier **des del primer dia**. No es
+reparteixen entre ningú: són quatre targetes que han de ser al **seu** taulell.
 
 **d) Fites parcials i iteracions planificades (2-3 voltes al cicle *provar → millorar*)**
 
@@ -91,7 +92,7 @@ repeteix sempre:
 ```
 
 > 🔗 Programar aquest MVP és exactament el cicle **percepció → decisió → acció** que vau treballar a
-> la SA7: si l'equip s'hi encalla, la pàgina de la pràctica
+> la SA7: si t'hi encalles, la pàgina de la pràctica
 > [Evita-obstacles](../SA7/codi/03_evita_obstacles/EXPLICACIO.md) en té el patró complet (i un
 > esquelet per començar).
 
@@ -100,8 +101,8 @@ repeteix sempre:
   resta **de manera incremental**.
 - **Mòduls provables per separat:** moure, mesurar i aturar es proven un a un → quan alguna cosa falla,
   se sap **quin** tros mirar (rutina **DEPURA**, provar per parts).
-- **Documentar des del dia 1:** el rol de documentació fa fotos i anota decisions **mentre passen**, no
-  la nit abans de la defensa.
+- **Documentar des del dia 1:** hi ha una targeta **DOC** a cada sessió — fotos i decisions anotades
+  **mentre passen**, no la nit abans de la defensa.
 - **Fites per sessió:** cada dia té un objectiu tancat → res s'acumula per a l'últim dia.
 
 ---
@@ -110,34 +111,34 @@ repeteix sempre:
 
 - **Predicció ✔:** voler-ho tot a la S2 acaba en «no funciona res i no sé per què»; l'MVP correcte és
   **només moure's i aturar-se davant d'un obstacle**.
-- **Mesura del progrés (taulell):** al final de cada sessió compten quantes targetes han passat a **Fet**.
+- **Mesura del progrés (taulell):** al final de cada sessió compta quantes targetes han passat a **Fet**.
   Si a la S3 encara no hi ha res a Fet → senyal d'alarma: cal **retallar abast** (menys desitjables).
-- **Mesura tècnica de l'MVP:** amb regle, comproven a quina distància s'atura el robot i ajusten el
+- **Mesura tècnica de l'MVP:** amb regle, comprova a quina distància s'atura el robot i ajusta el
   `LLINDAR` fins que frena **abans** de tocar l'obstacle (p. ex. a 12-15 cm).
-- Si van sobrats de temps → afegeixen un desitjable (servo). Si van justos → **targeta T9.2** i lliuren
+- Si va sobrada de temps → afegeix un desitjable (servo). Si va justa → **targeta T9.2** i lliura
   l'MVP ben acabat i documentat: **també és un assoliment satisfactori**.
 
 ---
 
 ## ⚠️ Contraexemple (errors típics de gestió i com es detecten)
 
-- **Ho volen tot a la primera** (munten servo + gir + tornada + ultrasons alhora a la S2) → res funciona i
-  no saben **quin** mòdul falla. *Solució:* **MVP primer** i afegir d'un en un, provant per parts.
-- **No documenten fins al final** → arriben a la defensa sense fotos ni registre d'iteracions i el dossier
-  (R4) queda buit. *Solució:* el rol de documentació **anota i fotografia des de la S1**.
-- **Ho deixen per a l'últim dia** (sense fites parcials) → el dia de la defensa (S4) encara munten maquinari
-  i no arriben a provar. *Solució:* **una fita tancada per sessió** i mirar el taulell cada dia.
-- **Rols difusos** («ja ho farà algú») → dues persones toquen el mateix codi i la resta espera. *Solució:*
-  **assignar i registrar rols** al taulell; cada targeta té un responsable.
+- **Ho vol tot a la primera** (munta servo + gir + tornada + ultrasons alhora a la S2) → res funciona i
+  no sap **quin** mòdul falla. *Solució:* **MVP primer** i afegir d'un en un, provant per parts.
+- **No documenta fins al final** → arriba a la defensa sense fotos ni registre d'iteracions i el dossier
+  (R4) queda buit. *Solució:* una targeta **DOC** cada sessió: **anota i fotografia des de la S1**.
+- **Ho deixa per a l'últim dia** (sense fites parcials) → el dia de la defensa (S4) encara munta maquinari
+  i no arriba a provar. *Solució:* **una fita tancada per sessió** i mirar el taulell cada dia.
+- **S'encalla en silenci** (dues sessions amb el mateix error i sense demanar res) → es perd mitja SA.
+  *Solució:* DEPURA, i **demanar ajuda explicant què ja s'ha provat**; anotar al quadern qui ha ajudat.
 
 ---
 
 ## 📔 Diari de bord (entrada model, 1a persona)
 
-> **Sessió 3:** Volíem que el robot ja **agafés el sobre i girés**, però vam decidir fer **primer l'MVP**:
+> **Sessió 3:** Volia que el robot ja **agafés el sobre i girés**, però vaig decidir fer **primer l'MVP**:
 > moure's i aturar-se amb els **ultrasons**. Bona decisió: a la v1 no frenava a temps perquè el `LLINDAR`
-> era massa petit; el vam pujar a 15 cm (v2) i ja s'atura bé. Vam **provar per parts** (primer els motors
-> sols, després el sensor sol) i així vam trobar de seguida que el problema era el llindar, no el motor.
+> era massa petit; el vaig pujar a 15 cm (v2) i ja s'atura bé. Vaig **provar per parts** (primer els motors
+> sols, després el sensor sol) i així vaig trobar de seguida que el problema era el llindar, no el motor.
 > El servo per agafar el sobre queda com a **millora** per al final de la S3, si hi ha marge. **Evidència:** foto del taulell amb
 > les targetes mogudes + vídeo del robot aturant-se davant la mà.
 

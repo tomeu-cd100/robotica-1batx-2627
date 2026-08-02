@@ -3,7 +3,7 @@
 > 🧑‍🎓 **Quan toca fer-lo?** En acabar les activitats de la SA, com a **consolidació** abans de repassar el checklist d'entrega — i torna-hi com a **repàs** abans de la prova T3. Si es fa com a prova curta qualificable, el docent anunciarà el dia.
 
 > **Ús.** Comprovació breu dels conceptes de **gestió de projecte** de la SA9 (mètode,
-> planificació àgil, iteracions, documentació i treball en equip). Es pot fer servir com a
+> planificació àgil, iteracions, documentació i cooperació). Es pot fer servir com a
 > **repàs formatiu** o com a **prova curta qualificable** (10 preguntes × 1 punt =
 > **nota 0-10**). Durada orientativa: **15-20 min**, individual.
 
@@ -31,7 +31,7 @@
    - a) Allò que el sistema ha de fer sí o sí perquè es consideri que funciona.
    - b) Totes les millores opcionals que voldríem afegir.
    - c) El pressupost màxim del projecte.
-   - d) El nombre de membres de l'equip.
+   - d) El nombre de components electrònics del muntatge.
 
 3. Un **prototip mínim viable** (MVP) és…
    - a) La versió final, polida i amb totes les millores.
@@ -49,15 +49,15 @@
    - a) Provar, detectar què falla, millorar i tornar a provar.
    - b) Fer-ho tot bé a la primera i no tornar-hi mai.
    - c) Repetir el mateix codi moltes vegades dins el `loop()`.
-   - d) Copiar el projecte d'un altre equip.
+   - d) Copiar el projecte d'un altre company.
 
 6. El **dossier tècnic** serveix sobretot per…
    - a) Substituir la defensa oral.
-   - b) Apuntar-hi les notes de tots els equips.
+   - b) Apuntar-hi les notes de tota la classe.
    - c) Documentar el projecte (anàlisi, disseny, proves i resultats) de manera rigorosa.
    - d) Fer-lo servir com a manual d'un altre curs.
 
-7. El rol de **coordinació/planificació** de l'equip s'encarrega principalment de…
+7. La feina de **planificació** del projecte consisteix principalment a…
    - a) Escriure tot el codi del projecte.
    - b) Mantenir el taulell de tasques i vigilar els terminis.
    - c) Muntar tota l'electrònica.
@@ -69,7 +69,7 @@
    - c) Sempre és més barat.
    - d) Fa servir la lectura d'un sensor (realimentació) per corregir la sortida.
 
-9. Un equip diu "no funciona i no sabem per què". La millor estratègia és…
+9. Algú diu "no funciona i no sé per què". La millor estratègia és…
    - a) Canviar-ho tot alhora a veure si de casualitat s'arregla.
    - b) Esperar a l'últim dia.
    - c) Provar per parts: comprovar cada mòdul (sensor, actuador, codi) per separat.
@@ -79,13 +79,13 @@
     - a) Fixar fites parcials i lliuraments a cada sessió.
     - b) No planificar i improvisar sobre la marxa.
     - c) Triar el repte més ambiciós possible.
-    - d) Treballar sense repartir rols.
+    - d) Treballar sense taulell ni fites.
 
 ---
 
 ## Pregunta oberta (opcional)
 
-11. Explica una millora d'**ètica o sostenibilitat** que aplicaríeu al vostre sistema
+11. Explica una millora d'**ètica o sostenibilitat** que aplicaries al teu sistema
     (p. ex. reutilitzar components, reduir el consum, l'impacte social o ambiental):
 
 ___________________________________________________________________
