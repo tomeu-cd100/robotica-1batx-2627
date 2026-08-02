@@ -45,7 +45,7 @@ Conversió única per a totes les rúbriques (vegeu `Programació didàctica/07_
 | **Projectes i productes** | **45 %** | Productes de cada SA + defenses orals | R1, R2, R3 |
 | **Quadern tècnic i pràctiques** | **25 %** | *Logbook*, pràctiques guiades i reptes | R4 (quadern), R1 |
 | **Proves pràctiques** | **20 %** | Reptes individuals curts (proves T1/T2/T3) | R1, R2, R3, R4 |
-| **Actitud, cooperació i autoregulació** | **10 %** | Observació, coavaluació, autoavaluació | R5 |
+| **Actitud, cooperació i autoregulació** | **10 %** | Observació, revisió creuada, autoavaluació | R5 |
 
 > **Recomanació de l'enfocament:** dins de cada dimensió, **agrega per competència** (mitjana dels CA implicats), no per activitat solta. Així la nota reflecteix el grau d'assoliment competencial, no el nombre de tasques lliurades.
 
@@ -96,7 +96,7 @@ Anota la **nota (0-10)** de cada evidència. Les files canvien segons el trimest
 
 - **Avaluació contínua:** un CA treballat en diverses SA es pot **reavaluar**; preval l'evidència més recent i consolidada (la millora compta).
 - **Recuperació:** quan un CA queda **suspès (per sota de 5)**, l'activitat de recuperació és **millorar el producte/codi** (no un examen memorístic). Actualitza el nivell del CA, no afegeixis una nota a part.
-- **R5 (actitud/cooperació):** es valora **al llarg del trimestre** (acumulant observació de diverses sessions), no sessió a sessió — coherent amb la rotació de rols (vegeu nota a `07_Rubriques.md`).
+- **R5 (actitud/cooperació):** es valora **al llarg del trimestre** (acumulant observació de diverses sessions), no sessió a sessió. Amb treball individual, les evidències són la **revisió creuada de codi** i la línia d'ajuda del quadern (vegeu nota a `07_Rubriques.md`).
 - **Transparència:** comparteix aquest full i les rúbriques amb l'alumnat **a l'inici** del curs i de cada SA.
 
 ---

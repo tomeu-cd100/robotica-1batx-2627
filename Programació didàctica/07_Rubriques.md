@@ -56,7 +56,7 @@ Rúbriques reutilitzables amb **quatre nivells**, cadascun lligat a una **banda 
 
 ### R4·DO — Mini-rúbrica de la defensa oral (detall del criteri «Defensa oral» de la R4)
 
-Les defenses orals **es repeteixen tot el curs** (SA2 S4, SA4 S4, SA6 S3, SA9 S4) però fins ara només tenien una fila genèrica a la R4. Aquesta mini-rúbrica de **3 indicadors** la desplega, es comparteix amb l'alumnat **des de la SA2** i fa visible la progressió; també serveix per **calibrar la coavaluació** (l'alumnat que escolta valora amb els mateixos 3 indicadors).
+Les defenses orals **es repeteixen tot el curs** (SA2 S4, SA4 S4, SA6 S3, SA9 S4) però fins ara només tenien una fila genèrica a la R4. Aquesta mini-rúbrica de **3 indicadors** la desplega, es comparteix amb l'alumnat **des de la SA2** i fa visible la progressió; també serveix perquè **qui escolta valori amb els mateixos 3 indicadors** i prepari una pregunta a qui defensa.
 
 | Indicador | Insuficient (0–4) | Suficient/Bé (5–6) | Notable (7–8) | Excel·lent (9–10) |
 |---|---|---|---|---|
@@ -71,7 +71,7 @@ Les defenses orals **es repeteixen tot el curs** (SA2 S4, SA4 S4, SA6 S3, SA9 S4
 | **SA2 S4** (mini-defensa, 1') | Davant el docent | Claredat; la decisió justificada s'hi **inicia** |
 | **SA4 S4** (mini-defensa, 1-2') | Davant el docent | Claredat + una decisió justificada |
 | **SA6 S3** (defensa a peu de taula, 2-3') | Docent, durant el repte | Els 3 indicadors (la guia ja demana «una decisió tècnica justificada») |
-| **SA9 S4** (defensa final + demo) | Grup classe + coavaluació | Els 3 indicadors al nivell alt; coavaluació amb la mateixa mini-rúbrica |
+| **SA9 S4** (defensa final + demo) | Grup classe | Els 3 indicadors al nivell alt; qui escolta valora amb la mateixa mini-rúbrica i prepara una pregunta |
 
 > La nota de la defensa **continua entrant per la R4** (fila «Defensa oral»): aquesta mini-rúbrica és el **desglossament formatiu** d'aquella fila, no una rúbrica nova al còmput.
 

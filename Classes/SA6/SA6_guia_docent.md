@@ -101,6 +101,8 @@
 - **Tancament (10'):** quadern (diagrama d'estats + diagrama de blocs); autoavaluació amb rúbriques.
 
 > ⏱️ **Marge: aquesta sessió no hi cap sencera i cal decidir-ho abans d'entrar.** Sumada tal com està (10+5+25+30+40+10) fa 120' i el temps efectiu real és ~100': **és la sessió més carregada del trimestre** (mini-check + represa de Python + concepte nou + producte + defenses). Retalla **d'entrada, no sobre la marxa**: ① el «+ repte» (semàfor adaptatiu) i ② el Repte a **una sola transició nova** (40' → 25'). Amb això queda en ~105' i és fer-ho. El mini-check, el modelatge de la màquina d'estats i les defenses a peu de taula **no es toquen**; el «Python flash» tampoc (la Part B de la prova T2 hi depèn).
+>
+> 👥 **Amb grup petit la sessió hi cap sencera** i aquestes retallades passen a ser opcionals: les defenses de 2-3' costen ~15' en lloc de 30, i la pràctica guiada va sola (vegeu `04_Metodologia.md` §4.2).
 
 **Punt clau:** una **màquina d'estats** organitza comportaments complexos en estats clars i transicions; evita el codi espagueti i no bloqueja (s'usa amb `millis()`).
 

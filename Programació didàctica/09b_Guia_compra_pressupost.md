@@ -11,7 +11,7 @@ Llista de compra orientativa per **engegar la matèria des de zero**, derivada d
 ## 1. Estratègia de compra (llegeix-ho abans)
 
 - **Compatibles vs oficials:** per a una optativa, les plaques **compatibles** (UNO clon amb xip CH340) abarateixen molt el cost; necessiten el **driver CH340** (vegeu `GUIA_INICI_DOCENT.md`). Les **oficials** són més robustes i no necessiten driver: val la pena tenir-ne **1–2 de reserva** oficials.
-- **Kits "tot en un" vs solt:** un **kit d'iniciació Arduino** (placa + protoboard + cables + LED + resistències + sensors bàsics) sol sortir més a compte que comprar-ho tot solt i ja ve organitzat per parella.
+- **Kits "tot en un" vs solt:** un **kit d'iniciació Arduino** (placa + protoboard + cables + LED + resistències + sensors bàsics) sol sortir més a compte que comprar-ho tot solt i ja ve organitzat per persona.
 - **Compra per parella + material comú:** 15 estacions de treball + una caixa de material comú (resistències, cables) que es reposa.
 - **micro:bit:** millor un **set d'aula** (la ràdio necessita 2 plaques per parella com a mínim per a SA5/SA8).
 - **Robòtica mòbil:** la **Imagina 3dBot** és l'element més car. Amb el **fil conductor** no cal comprar-ne: cada alumne/a construeix el seu **rover** (xassís de tall làser + L298N, molt més barat) i la 3dBot queda només de reserva. Sense fil conductor i amb pressupost just, es poden comprar menys unitats i **fer torns** — però compte: el treball del curs és individual (doc 04 §4.3), i compartir robot vol dir esperar, no col·laborar.

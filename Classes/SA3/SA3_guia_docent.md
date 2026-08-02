@@ -43,7 +43,9 @@
 - **Repte (40'):** el polsador encén/apaga un LED a cada premuda (mode *toggle*); **+ repte:** comptar fins a 5 i reiniciar.
 - **Tancament (10'):** quadern.
 
-> ⏱️ **Marge:** el temps efectiu real és ~100' (arrencada + recollida), no 120'. Si vas just, retalla primer: **el «+ repte» (comptar fins a 5 i reiniciar)**.
+> ⏱️ **Marge: la sessió més llarga de la SA.** Amb el kata i els 2' de `millis()`, la suma és 10+25+2+12+35+40+10 = **134'** sobre ~100' efectius. Retalla d'entrada, per ordre: ① el **«+ repte»** (comptar fins a 5 · **-10'**) · ② el **Repte a 25'** (el *toggle* sol, sense variants · **-15'**) · ③ la **pràctica guiada a 25'** (compten premudes al Monitor i passen al repte · **-10'**). Amb les tres queda en ~99'. El **kata i els 2' de `millis()` no es toquen**: la sessió següent en depèn.
+>
+> 👥 **Amb grup petit n'hi ha prou amb ① i ②**: la pràctica guiada va sola quan no hi ha cua per muntar el polsador (vegeu `04_Metodologia.md` §4.2).
 
 **Punt clau:** amb `INPUT_PULLUP` el pin llegeix **HIGH en repòs** i **LOW en prémer** (lògica invertida). El *debounce* evita lectures múltiples per un sol clic.
 
@@ -76,7 +78,9 @@
 - **Repte-PRODUCTE (45'):** `04_alarma_aparcament.ino` com a referència. **Pseudocodi primer** (3-5 línies al quadern), després integren ultrasons + LED/piezo amb **avís per trams o proporcional a la distància**; cada alumne/a personalitza llindars. **Mini-defensa individual d'1' a peu de taula:** mentre treballen, passa per cada lloc de treball i fes explicar sistema + una aplicació real (amb 5 alumnes, ~5-7' en total; és la defensa de nivell T1).
 - **Tancament (15'):** documentar esquema i codi al quadern; autoavaluació amb rúbriques.
 
-> ⏱️ **Marge:** el temps efectiu real és ~100', i aquesta sessió és la més carregada del trimestre. Retalla d'entrada: **les ampliacions (mitjana de 3 mesures / detectar acostament-allunyament)** (i si cal, **la visualització amb Serial Plotter de la pràctica guiada — redueix-la a una comprovació ràpida al Monitor Sèrie**).
+> ⏱️ **Marge:** sumada tal com està (10+25+25+45+15) fa **120'** i el temps efectiu és ~100': és la sessió més carregada del trimestre. ⚠️ Retallar «les ampliacions» **no allibera cap minut** (són per a qui va sobrat, no estan dins la suma). El que sí que en dona: ① **Serial Plotter → comprovació ràpida al Monitor** (-7') i ② **tancament de 15' → 10'**, documentant al quadern mentre encara treballen (-5'). Amb això queda en ~108'.
+>
+> 👥 **Amb grup petit no cal retallar res**: el muntatge de l'HC-SR04 i les mini-defenses ocupen molt menys temps (vegeu `04_Metodologia.md` §4.2).
 
 **Punt clau:** una **funció** encapsula una tasca i en retorna un resultat. `pulseIn` mesura el temps de l'eco; distància (cm) = temps · 0,034 / 2. *(+ Ampliació per a qui va sobrat: funció que retorna la mitjana de 3 mesures; detectar si l'objecte s'acosta o s'allunya.)*
 

@@ -23,6 +23,17 @@ La matèria adopta un **enfocament competencial** basat en **situacions d'aprene
 | **Recollida** | 5' | Desconnexió segura, recompte i ordre del material. |
 
 > ⏱️ **Temps realista (important per a la planificació):** la suma de les fases nuclears és de ~110-120', però **l'arrencada i la recollida (15-20') són temps real** que sovint no es pressuposta. El temps lectiu efectiu d'una sessió de 2 h és de ~95-105'. Per no quedar endarrerit: tracta el **registre del quadern com a distribuït** (2-3' després del modelatge i del repte, no tot al final) i considera el **"+ repte" com a marge**, no com a obligatori.
+>
+> 👥 **Els minutatges d'aquest material estan calculats per a un grup mitjà** (~20-24 alumnes). **Amb un grup petit, les sessions van clarament més folgades**, i val la pena saber per què: el que encongeix **no** és el contingut sinó la **cua d'ajuda** i la logística. Concretament:
+>
+> | Fase | Amb grup petit |
+> |---|---|
+> | Arrencada i recollida | 15-20' → **8-10'** (menys material a repartir i recomptar) → el temps efectiu puja a **~110'** |
+> | Modelatge i kata | **igual**: són exposició i escriptura individual, no depenen de la ràtio |
+> | Pràctica guiada i repte | **-25/-30 %**: pots atendre tothom sense que ningú esperi torn |
+> | Mini-defenses i defenses | proporcionals al nombre d'alumnes (amb 5, ~5' en lloc de ~12') |
+>
+> Conseqüència pràctica: **amb menys de ~10 alumnes, les notes de «Marge» de les sessions més carregades deixen de ser crítiques** i les retallades que proposen passen a ser opcionals. Amb un grup gran, són obligatòries.
 
 ## 4.2 bis. De llegir codi a escriure'l: retirada progressiva de la bastida
 
@@ -46,7 +57,7 @@ REPETEIX sempre:
     SINÓ               → apaga-ho tot
 ```
 
-> Val igualment un **diagrama de flux** senzill (rombes per a decisions, rectangles per a accions). El pseudocodi/diagrama **s'ensenya abans d'obrir l'editor**: 2 minuts del docent per parella eviten 20 minuts de codi sense rumb, i és la bastida de "diagrames de flux" que promet `05_Atencio_a_la_diversitat.md`.
+> Val igualment un **diagrama de flux** senzill (rombes per a decisions, rectangles per a accions). El pseudocodi/diagrama **s'ensenya abans d'obrir l'editor**: 2 minuts del docent amb cada alumne/a eviten 20 minuts de codi sense rumb, i és la bastida de "diagrames de flux" que promet `05_Atencio_a_la_diversitat.md`.
 
 ## 4.3. Agrupaments: **el treball és individual**
 

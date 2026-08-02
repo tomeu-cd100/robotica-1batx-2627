@@ -351,7 +351,7 @@ const int PIN_DHT = 4;        // temperatura/humitat (extra)
 const int PIN_MICROFON = A0;  // soroll
 const int PIN_LLUM = A1;      // TEMT6000 (foscor)
 
-// --- Ajustos que cada parella ha de calibrar ---
+// --- Ajustos que cada alumne/a ha de calibrar ---
 const int NUM_LEDS = 8;            // LEDs de la tira dels ulls (ajusta als reals)
 const int LLINDAR_SOROLL = 600;    // 0-1023: per sobre = espant (calibra amb Serial)
 const int LLINDAR_FOSCOR = 150;    // 0-1023: per sota = son (calibra amb Serial)
