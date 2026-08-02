@@ -159,7 +159,7 @@
 
 > Frases i preguntes clau per al **Modelatge** de cada sessió (què mirar, què preguntar abans d'executar, error a anticipar).
 
-> ✍️ **Katas:** en acabar el modelatge de cada sessió amb pràctica de codi, projecta el kata del sketch del dia ([SA6_katas.md](SA6_katas.md)): 10' d'escriptura individual **abans** de repartir/obrir el sketch. **Un sol kata per sessió**; el dia del mini-check, el mini-check el substitueix.
+> ✍️ **Katas:** en acabar el modelatge de cada sessió amb pràctica de codi, projecta el kata del sketch del dia ([SA6_katas.md](SA6_katas.md)): 10' d'escriptura individual **abans** de repartir/obrir el sketch. **Un sol kata per sessió**; el dia del mini-check, el mini-check el substitueix. Per a la posada en comú, tens la solució comentada de cada kata (amb els valors de la variació) a [SA6_katas_solucions.md](SA6_katas_solucions.md).
 
 - **S1 · `01_llac_obert_vs_tancat`:** dibuixa el **diagrama de blocs** (consigna → error → actuador → sensor/realimentació). Pregunta: *"què passa si trec el sensor?"* → llaç obert ("confia" que tot anirà bé). *Error a anticipar:* confondre realimentació amb la sortida.
 - **S2 · `02_termostat_histeresi`:** mostra l'**oscil·lació** amb un sol llindar i com **dos llindars** la maten. Demana predir el comportament a prop de la consigna. *Error a anticipar:* parpelleig per no posar histèresi.

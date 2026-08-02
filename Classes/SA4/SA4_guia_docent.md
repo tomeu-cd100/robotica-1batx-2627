@@ -111,7 +111,7 @@
 
 > Frases i preguntes clau per al **Modelatge** de cada sessió (què mirar, què preguntar abans d'executar, error a anticipar).
 
-> ✍️ **Katas:** en acabar el modelatge de cada sessió amb pràctica de codi, projecta el kata del sketch del dia ([SA4_katas.md](SA4_katas.md)): 10' d'escriptura individual **abans** de repartir/obrir el sketch. **Un sol kata per sessió**; el dia del mini-check, el mini-check el substitueix.
+> ✍️ **Katas:** en acabar el modelatge de cada sessió amb pràctica de codi, projecta el kata del sketch del dia ([SA4_katas.md](SA4_katas.md)): 10' d'escriptura individual **abans** de repartir/obrir el sketch. **Un sol kata per sessió**; el dia del mini-check, el mini-check el substitueix. Per a la posada en comú, tens la solució comentada de cada kata (amb els valors de la variació) a [SA4_katas_solucions.md](SA4_katas_solucions.md).
 
 - **S1 · `01_servo_potenciometre` (servo):** distingeix **servo** (controla *posició*/angle 0–180°) de **motor DC** (gir continu). Demana predir on anirà `write(90)`. Avís: *si mous diversos servos, alimentació externa*. *Error a anticipar:* el servo vibra per alimentació insuficient.
 - **S2 · `02_motor_pont_h` (pont H):** dibuixa la **taula IN1/IN2** per a cada sentit i assenyala **ENA = velocitat (PWM)**. Repeteix com un mantra: *MASSA COMUNA, mai el motor des del 5V*. *Error a anticipar:* l'Arduino es reinicia pel pic de corrent del motor.

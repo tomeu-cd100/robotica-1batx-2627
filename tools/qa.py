@@ -479,6 +479,8 @@ def comprova_katas() -> None:
     """Cada SA amb sketches donats (SA2-SA8) ha de tenir SAn_katas.md amb un
     kata per sketch (matching per id literal), i cada pàgina de pràctica ha
     de dur el ganxo «Kata primer» perquè l'alumnat escrigui abans de llegir.
+    A més, cada SA ha de tenir SAn_katas_solucions.md (vista docent) amb la
+    solució de cada kata, enllaçat des de la guia docent.
     Vegeu docs/superpowers/specs/2026-08-01-katas-programacio-design.md."""
     GANXO = "✍️ **Kata primer!**"
     sense_fitxer = 0
@@ -487,6 +489,9 @@ def comprova_katas() -> None:
     total = 0
     sense_checklist = 0
     sense_fitxa_alumnat = 0
+    sense_fitxer_sol = 0
+    sense_solucio = 0
+    sense_enllac_guia = 0
     for n in range(2, 9):
         sa_dir = ARREL / "Classes" / f"SA{n}"
         codi = sa_dir / "codi"
@@ -500,6 +505,14 @@ def comprova_katas() -> None:
             text = ""
         else:
             text = katas.read_text(encoding="utf-8")
+        solucions = sa_dir / f"SA{n}_katas_solucions.md"
+        sol_existeix = solucions.exists()
+        if not sol_existeix:
+            errors.append(f"[katas] falta Classes/SA{n}/SA{n}_katas_solucions.md")
+            sense_fitxer_sol += 1
+            sol_text = ""
+        else:
+            sol_text = solucions.read_text(encoding="utf-8")
         for f in sorted(codi.rglob("*")):
             if f.suffix.lower() not in {".ino", ".py"} or "__pycache__" in f.parts:
                 continue
@@ -514,6 +527,10 @@ def comprova_katas() -> None:
                 errors.append(f"[katas] SA{n}_katas.md: falta el kata de "
                               f"`{sketch_id}`")
                 sense_kata += 1
+            if sol_existeix and f"`{sketch_id}`" not in sol_text:
+                errors.append(f"[katas] SA{n}_katas_solucions.md: falta la "
+                              f"solució de `{sketch_id}`")
+                sense_solucio += 1
         for expl in sorted(codi.rglob("*EXPLICACIO*.md")):
             expl_text = expl.read_text(encoding="utf-8")
             ganxo_linia = next((l for l in expl_text.splitlines() if GANXO in l), None)
@@ -537,10 +554,19 @@ def comprova_katas() -> None:
         if not fitxa_alumnat.exists() or "kata" not in fitxa_alumnat.read_text(encoding="utf-8").lower():
             errors.append(f"[katas] SA{n}_fitxa_alumnat.md: no esmenta el kata")
             sense_fitxa_alumnat += 1
+        # (e) la guia docent ha d'enllaçar les solucions dels katas, perquè el
+        # docent les tingui a mà per a la posada en comú.
+        guia = sa_dir / f"SA{n}_guia_docent.md"
+        if not guia.exists() or f"SA{n}_katas_solucions.md" not in guia.read_text(encoding="utf-8"):
+            errors.append(f"[katas] SA{n}_guia_docent.md: sense enllaç a "
+                          f"SA{n}_katas_solucions.md")
+            sense_enllac_guia += 1
     print(f"16) Katas: {total} sketches SA2-SA8, {sense_fitxer} SA sense fitxer, "
           f"{sense_kata} sense kata, {sense_ganxo} explicacions sense ganxo, "
           f"{sense_checklist} checklists sense enllaç, "
-          f"{sense_fitxa_alumnat} fitxes sense esment.")
+          f"{sense_fitxa_alumnat} fitxes sense esment; solucions: "
+          f"{sense_fitxer_sol} SA sense fitxer, {sense_solucio} katas sense "
+          f"solució, {sense_enllac_guia} guies sense enllaç.")
 
 
 # --- 14 · Projectes trimestrals: portada present i enllaçant el dossier -----

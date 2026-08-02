@@ -42,6 +42,7 @@ Sisena situació d'aprenentatge (**8 h · 4 sessions**, 2n trimestre). El sistem
 | [`SA6_checklist_docent.md`](SA6_checklist_docent.md) | **Checklist docent** (una cara): logística prèvia, punts de control per sessió, avaluació i diversitat. |
 | [`SA6_checklist_alumnat.md`](SA6_checklist_alumnat.md) | **Checklist alumnat** (una cara): què he de fer/lliurar + autoavaluació amb semàfor. |
 | [`SA6_katas.md`](SA6_katas.md) | Katas d'escriptura (10'): un per sessió de codi, abans d'obrir el sketch; si ningú no el projecta, l'alumnat l'obre sol. |
+| [`SA6_katas_solucions.md`](SA6_katas_solucions.md) | **Solucions dels katas** (docent): codi resolt amb els valors de la variació + comentaris per a la posada en comú. |
 | [`SA6_esquemes_connexions.md`](SA6_esquemes_connexions.md) | Esquemes i connexions (NTC, LDR, actuador, realimentació). |
 | `codi/` | Sketches d'Arduino (vegeu la taula següent). |
 

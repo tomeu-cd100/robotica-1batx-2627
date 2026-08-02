@@ -46,6 +46,7 @@ Setena situació d'aprenentatge (**8 h · 4 sessions** + sessió 0 de muntatge, 
 | [`SA7_checklist_docent.md`](SA7_checklist_docent.md) | **Checklist docent** (una cara): logística prèvia, punts de control per sessió, avaluació i diversitat. |
 | [`SA7_checklist_alumnat.md`](SA7_checklist_alumnat.md) | **Checklist alumnat** (una cara): què he de fer/lliurar + autoavaluació amb semàfor. |
 | [`SA7_katas.md`](SA7_katas.md) | Katas d'escriptura (10'): un per sessió de codi, abans d'obrir el sketch; si ningú no el projecta, l'alumnat l'obre sol. |
+| [`SA7_katas_solucions.md`](SA7_katas_solucions.md) | **Solucions dels katas** (docent): codi resolt + comentaris per a la posada en comú i el modelatge. |
 | [`SA7_esquemes_connexions.md`](SA7_esquemes_connexions.md) | Esquemes i connexions (motors, sensors de línia/distància). |
 | `codi/` | Sketches d'Arduino (vegeu la taula següent). |
 

@@ -104,7 +104,7 @@
 
 > Frases i preguntes clau per al **Modelatge** de cada sessió (què mirar, què preguntar abans d'executar, error a anticipar).
 
-> ✍️ **Katas:** en acabar el modelatge de cada sessió amb pràctica de codi, projecta el kata del sketch del dia ([SA5_katas.md](SA5_katas.md)): 10' d'escriptura individual **abans** de repartir/obrir el sketch. **Un sol kata per sessió**; el dia del mini-check, el mini-check el substitueix.
+> ✍️ **Katas:** en acabar el modelatge de cada sessió amb pràctica de codi, projecta el kata del sketch del dia ([SA5_katas.md](SA5_katas.md)): 10' d'escriptura individual **abans** de repartir/obrir el sketch. **Un sol kata per sessió**; el dia del mini-check, el mini-check el substitueix. Per a la posada en comú, tens la solució comentada de cada kata (amb els valors de la variació) a [SA5_katas_solucions.md](SA5_katas_solucions.md).
 
 - **S1 · `01_name_badge` (sintaxi Python):** èmfasi clau — *en Python la **indentació és sintaxi**, no estètica; no hi ha `;` ni `{}`*. Compara visualment amb un sketch d'Arduino. Usa el **simulador** per provar sense placa. *Error a anticipar:* `IndentationError` per barrejar tabs i espais.
 - **S2 · `02_passes` / `03_nightlight` (sensors integrats):** mostra `display.read_light_level()` i l'acceleròmetre; recalca que cal **filtrar/posar llindar** a les lectures, igual que a Arduino. *Error a anticipar:* el comptapassos compta de més sense antirebot.
