@@ -17,7 +17,7 @@
 
 ## Kata · `02_telemetria_receptor` (Sessió 1, abans del modelatge)
 
-> 👥 **Un kata per persona, no dos per cap.** La sessió 1 en té dos perquè la telemetria són dues plaques: **cada membre de la parella n'escriu un** (qui farà l'emissor, l'emissor; qui farà el receptor, aquest) i després es comparen les dues meitats. Segueix valent la regla d'un sol kata per sessió i persona.
+> 👥 **Un kata per persona, no dos per cap.** La sessió 1 en té dos perquè la telemetria són dues plaques, però **cadascú n'escriu només un** el dia de la sessió (el docent reparteix qui fa l'emissor i qui fa el receptor, perquè a la posada en comú hi hagi les dues meitats). L'altre queda de **repàs autònom**: com que ara cada alumne/a programa les dues plaques, val la pena fer-lo a casa abans de tancar la SA. Segueix valent la regla d'un sol kata per sessió i persona.
 
 **Projecta (enunciat):**
 > Tens ja fets, abans del bucle, `radio.on()`, `radio.config(group=10)` i la constant `LLINDAR_TEMP = 28`. Tens també ja muntat aquest esquelet per al `while True:`, amb la recepció i el control d'errors ja escrits (el `try`/`except` no s'ha vist encara: se't dona fet — si el missatge no té el format esperat, l'`except` mostra `Image.CONFUSED`):

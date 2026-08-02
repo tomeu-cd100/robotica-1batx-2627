@@ -5,7 +5,7 @@
 
 > 🤖 **Aquesta és la SA on culmina la IA.** Arriba aquí com a **pas natural** (el sistema ja percep i actua → ara **decideix amb dades**), després de les llavors sembrades a SA1/SA3/SA6/SA7. Repassa el marc de conjunt a **`../00_IA_a_la_materia.md`** (espiral, marc conceptual mínim i ús d'assistents d'IA amb integritat).
 
-> 🧭 **Com s'usa aquesta guia.** **Abans de la SA:** objectius, material i codi de suport (la logística, al checklist docent). **A cada sessió:** la secció «SESSIÓ n» corresponent, amb el «Guió de modelatge» i els «Errors freqüents» a mà. **Durant tota la SA:** diversitat (DUA), rols cooperatius i pensament computacional. **En avaluar:** «Avaluació formativa (instruments)». **Per contextualitzar:** context real i ODS.
+> 🧭 **Com s'usa aquesta guia.** **Abans de la SA:** objectius, material i codi de suport (la logística, al checklist docent). **A cada sessió:** la secció «SESSIÓ n» corresponent, amb el «Guió de modelatge» i els «Errors freqüents» a mà. **Durant tota la SA:** diversitat (DUA), cooperació entre iguals i pensament computacional. **En avaluar:** «Avaluació formativa (instruments)». **Per contextualitzar:** context real i ODS.
 
 ## Objectius de la SA
 1. Enviar i monitorar **dades de sensors** entre dispositius (telemetria).
@@ -13,13 +13,17 @@
 3. Introduir-se a la **IA**: distingir **regles fetes a mà** d'**aprenentatge automàtic (ML)** i **entrenar** un classificador amb exemples.
 4. Valorar **privacitat, seguretat, biaix i ètica** de les dades (ODS) i fer un **ús responsable** d'assistents d'IA.
 
-## Material per parella/equip
-- 2 micro:bit (emissor i receptor) + cables USB.
+## Material per alumne/a
+- **2 micro:bit (emissora i receptora) + cables USB.** ⚠️ La telemetria **necessita dues plaques**: amb treball individual, cada alumne/a n'ha de tenir **dues** per fer emissor i receptor pel seu compte. Si la dotació no hi arriba, vegeu el pla B de sota.
 - (Opcional) ESP32 per a la demostració WiFi/MQTT.
 - Editor Python de micro:bit / Thonny.
-- **Sessió 3 (ML):** 1 ordinador/tauleta amb **navegador i càmera/micròfon** per parella (Teachable Machine). *Pla B: demostració projectada del docent.*
+- **Sessió 3 (ML):** 1 ordinador/tauleta amb **navegador i càmera/micròfon** per alumne/a (Teachable Machine). *Pla B: demostració projectada del docent.*
 
-> 🆘 **Pla B sense maquinari (Wokwi no simula micro:bit):** el **simulador de python.microbit.org** cobreix sensors i pantalla (l'`03_ia_gestos.py` s'hi pot provar amb els gestos simulats), però **no la ràdio entre plaques**: si falten micro:bit a la S1, les parelles programen emissor i receptor al simulador i la transmissió real es fa com a **demo projectada del docent** amb 2 plaques. La S2 (disseny IoT) i la S3 (Teachable Machine) no necessiten placa.
+> 📻 **Si no hi ha dues micro:bit per alumne/a (S1):** compta les plaques **abans** de la sessió i tria una de les dues vies, sense barrejar-les:
+> - **Agrupament puntual** (§4.3 de la metodologia): dos alumnes s'ajunten **només per a la prova de transmissió** — un carrega el seu emissor, l'altre el seu receptor —, però **cadascú ha escrit els dos programes** i cadascú documenta la prova al seu quadern. Es tornen els papers perquè tots dos vegin les dues bandes.
+> - **Torns amb un joc de plaques compartit:** tothom programa i prova al simulador i la transmissió real es fa per torns amb el joc de plaques disponible.
+
+> 🆘 **Pla B sense maquinari (Wokwi no simula micro:bit):** el **simulador de python.microbit.org** cobreix sensors i pantalla (l'`03_ia_gestos.py` s'hi pot provar amb els gestos simulats), però **no la ràdio entre plaques**: si falten micro:bit a la S1, cada alumne/a programa emissor i receptor al simulador i la transmissió real es fa com a **demo projectada del docent** amb 2 plaques. La S2 (disseny IoT) i la S3 (Teachable Machine) no necessiten placa.
 
 ## Codi de suport (`codi/`)
 
@@ -37,7 +41,7 @@
 - **Lectura de codi amb PRIMM:** també en Python. A cada *modelatge* l'alumnat **prediu** què farà el programa **abans** d'executar-lo, després l'**investiga**, el **modifica** i en **crea** un de nou. **Operativa (val per a totes les sessions amb codi):** dedica els primers ~5' del Modelatge a projectar el codi nou **sense executar-lo** i recollir prediccions; només després, executa i investiga.
 - **Pont (d'on venim / on anem):** ve de la **SA7** (robot mòbil) → portem a la **SA9** (projecte final). Reprèn el **fil dels dos llenguatges** (Python/C++) obert a la **SA5**; les peces d'aquí (dades, connexió, decisió) es poden **integrar** al projecte final.
 - **Activació de cada sessió (rutina #1 del curs):** els primers **5'** dels 10' d'activació són la **graella de repàs espaiat** — 3 preguntes projectades, tothom escriu, no qualifica. Les graelles d'aquesta SA, llestes per projectar, són al [banc](../00_General/00_Banc_activacio_repas.md); la pregunta ganxo que obre cada sessió, aquí sota, ocupa la resta. *(El dia del mini-check, el mini-check les substitueix totes dues.)*
-- **Retirada de bastida — repte "a full en blanc" (últim graó abans de la SA9):** de la parella emissor/receptor de telemetria, **una de les dues meitats** s'escriu amb l'editor buit (pseudocodi propi + xuleta de `radio`); l'altra pot partir del codi donat. Vegeu `Programació didàctica/04_Metodologia.md` §4.2 bis.
+- **Retirada de bastida — repte "a full en blanc" (últim graó abans de la SA9):** dels dos programes de telemetria (emissor i receptor), **cada alumne/a n'escriu un** amb l'editor buit (pseudocodi propi + xuleta de `radio`); l'altra pot partir del codi donat. Vegeu `Programació didàctica/04_Metodologia.md` §4.2 bis.
 
 > 🤖 **Fil conductor de robots:** si el curs segueix el fil conductor
 > ([`00_Fil_conductor_robots.md`](../00_General/00_Fil_conductor_robots.md)),
@@ -58,7 +62,7 @@
 - **Activació (10'):** *"Com sap el teu mòbil la temperatura de casa quan ets fora?"* → telemetria/IoT.
 - 🔭 **Referent (1', dins l'activació):** **Fei-Fei Li** (ImageNet: sense bones dades no hi ha bona IA) i menció d'**Hedy Lamarr** (salt de freqüència, 1942) ([guió](../00_General/00_Referents_tecnologia.md)).
 - **Modelatge (25'):** [`01_telemetria_emissor.py`](codi/01_telemetria_emissor.py) + [`02_telemetria_receptor.py`](codi/02_telemetria_receptor.py). Enviar dades amb `radio.send()`; rebre-les i **registrar-les pel port sèrie** (per fer-ne després un gràfic/full de càlcul).
-- **Pràctica guiada (35'):** una placa mesura temperatura/llum i les envia; l'altra les mostra i registra.
+- **Pràctica guiada (35'):** cadascú prepara les **dues** plaques: una mesura temperatura/llum i les envia; l'altra les mostra i registra. *(Si les plaques no arriben per a tothom, aplica una de les dues vies del bloc «Si no hi ha dues micro:bit per alumne/a».)*
 - **Repte (40'):** enviar dues magnituds amb etiqueta (p. ex. `"T:23"`, `"L:120"`); **+ repte:** alerta quan se supera un llindar.
 - **Tancament (10'):** quadern (mostra de dades registrades).
 
@@ -74,8 +78,8 @@
 
 - **Ganxo (10'):** projecta 3 productes de les targetes (polsera esportiva, càmera domèstica, altaveu amb assistent) i pregunta: *"què saben de tu, per on viatja, i qui més ho pot veure?"* Vot a mà alçada: quin comprarien. **No responguis encara** — l'auditoria ho farà.
 - **Mini-lliçó (15'):** l'arquitectura **dispositiu → xarxa → núvol → app** dibuixada **sobre un dels 3 productes del ganxo**, no en abstracte. El vocabulari (BLE/WiFi, MQTT, broker, xifratge) entra **etiquetant el dibuix**. *(Opcional: demostració amb `04_esp32_telemetria.ino` publicant dades per WiFi.)*
-- **Auditoria per parelles (40'):** cada parella **tria una targeta** de producte i fa d'**auditors de privacitat**: omplen l'**informe d'auditoria** d'1 pàgina (diagrama de la SEVA arquitectura, 3 dades personals, 2 riscos concrets, 2 recomanacions). La secció «Ètica de dades i IA» d'aquesta guia és la font de consulta, no contingut a dictar.
-- **Peritatge creuat (20'):** cada parella presenta l'informe en **90 segons** a una altra, que fa d'**advocada del fabricant** (ha de rebatre un risc); després es giren els papers. Força l'argumentació amb el vocabulari tècnic.
+- **Auditoria individual (40'):** cada alumne/a **tria una targeta** de producte (que no repeteixi la del veí) i fa d'**auditor/a de privacitat**: omple el seu **informe d'auditoria** d'1 pàgina (diagrama de la SEVA arquitectura, 3 dades personals, 2 riscos concrets, 2 recomanacions). La secció «Ètica de dades i IA» d'aquesta guia és la font de consulta, no contingut a dictar.
+- **Peritatge creuat (20'):** cadascú presenta el seu informe en **90 segons** a un company o companya, que fa d'**advocat/ada del fabricant** (ha de rebatre un risc); després es giren els papers. Amb grup senar, fes un trio (dos advocats seguits). Força l'argumentació amb el vocabulari tècnic.
 - **Tancament (10'):** exit ticket — *"quina dada teva viatja ara mateix per una arquitectura com aquesta, i on es podria interceptar?"* — + entrada de quadern.
 
 > ⏱️ **Marge:** el temps efectiu real és ~100' (arrencada + recollida), no 120'. Si vas just, retalla primer: **la demostració opcional amb ESP32 (dins la Mini-lliçó)**; després, escurça el peritatge a una sola ronda.
@@ -109,7 +113,7 @@
 | Producte (telemetria o IA de gestos) | Integrar tecnologia emergent (IoT/IA) en un sistema | CA4.2 | R3, R1 |
 | Informe d'auditoria IoT ([`SA8_auditoria_iot.md`](SA8_auditoria_iot.md)) | Arquitectura, riscos de privacitat/seguretat, impacte ètic | CA4.2, CA5.3 | R4 |
 | Quadern (dades + reflexió ètica) | Registre de dades i valoració ètica (ODS) | CA4.2 | R4 |
-| Coavaluació | Treball d'equip i decisions de disseny responsable | CA5.3 | **R5** |
+| Peritatge creuat i revisió creuada de codi | Ajuda entre iguals i decisions de disseny responsable | CA5.3 | **R5** |
 
 *(CA4.2 = integrar tecnologies emergents (IoT/telemetria/IA) en un sistema de control; CA5.3 = valorar l'impacte ètic/social i treballar cooperativament. Vegeu [`Programació didàctica/06_Avaluacio_criteris_qualificacio.md`](../../Programació%20didàctica/06_Avaluacio_criteris_qualificacio.md). Comparteix R1, R3 i R4 **abans** de començar.)*
 
@@ -153,14 +157,20 @@
 
 | Via | Mesura |
 |---|---|
-| **Bastida** (qui s'encalla) | Donar emissor i receptor ja fets per modificar-los; l'**esquelet amb `# TODO`** de la secció «Si t'encalles» de la [pàgina de la pràctica de l'emissor](codi/01_telemetria_emissor_EXPLICACIO.md); **simulador** micro:bit i Wokwi (ESP32); equips heterogenis. |
+| **Bastida** (qui s'encalla) | Donar emissor i receptor ja fets per modificar-los; l'**esquelet amb `# TODO`** de la secció «Si t'encalles» de la [pàgina de la pràctica de l'emissor](codi/01_telemetria_emissor_EXPLICACIO.md); **simulador** micro:bit i Wokwi (ESP32); agrupament puntual amb un company per a una sessió si cal (qui escriu / qui verifica). |
 | **+ Ampliació** (qui va sobrat) | Dues magnituds etiquetades, alerta per llindar, classe nova de gest, **ML real** (Teachable Machine: exportar model; o MakeCode ML); reptes ⭐ de [`Reptes/Reptes_SA8.md`](../../Reptes/Reptes_SA8.md). |
 | **Representació múltiple** | Dades en taula i gràfic, diagrama d'arquitectura IoT, simuladors. |
-| **Implicació** | Cada equip tria el sistema IoT del seu entorn (hort, aula, casa). |
+| **Implicació** | Cada alumne/a tria el sistema IoT del seu entorn (hort, aula, casa). |
 
-## Treball cooperatiu amb rols
+## Cooperació amb treball individual
 
-Equips amb **rols rotatius**: Coordinador/a · Programador/a · Enginyer/a de maquinari (plaques, ràdio/sensors) · Provador/a–Documentador/a (registra dades + quadern). Quadre per rotar a la fitxa.
+El treball és **individual** (`Programació didàctica/04_Metodologia.md` §4.3): cada alumne/a escriu els seus dos programes de telemetria, fa la seva auditoria i entrena el seu classificador. La cooperació —i el **CA5.3**— s'evidencia aquí:
+
+- **Peritatge creuat de la S2**: defensar el propi informe i rebatre el d'un altre amb vocabulari tècnic.
+- **Revisió creuada de codi** abans de tancar el producte: cadascú llegeix el codi d'un company i li retorna **una millora concreta i un dubte**.
+- **Ajuda documentada** al quadern («qui m'ha ajudat / a qui he ajudat i com»), que és el que alimenta la R5.
+
+L'**agrupament puntual** de la S1 (dues plaques compartides per provar la transmissió) no canvia el lliurable: cadascú ha escrit emissor i receptor i cadascú documenta la prova.
 
 ## Pensament computacional i depuració
 
@@ -169,7 +179,7 @@ Equips amb **rols rotatius**: Coordinador/a · Programador/a · Enginyer/a de ma
 
 ## Avaluació formativa (instruments)
 
-- **Diana d'autoavaluació** (fitxa) · **Coavaluació** entre equips (ja al mapa d'avaluació) · **Exit ticket** de tancament.
+- **Diana d'autoavaluació** (fitxa) · **Revisió creuada** entre companys (ja al mapa d'avaluació) · **Exit ticket** de tancament.
 - **Mini-check individual** (10', **inici de la S3**, no qualifica): llegir i explicar línia a línia un emissor de telemetria (`group`, `send`). Vegeu [`../00_General/00_Mini_checks_individuals.md`](../00_General/00_Mini_checks_individuals.md).
 
 ## Context real i ODS

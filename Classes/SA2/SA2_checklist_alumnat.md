@@ -1,6 +1,6 @@
 # SA2 · El meu checklist — Sortides digitals i PWM
 
-**Nom:** ______________________  **Parella:** ______________________  **Data:** __________
+**Nom:** ______________________  **Data:** __________
 
 > 📄 **[Versió PDF per imprimir i omplir a mà](pdf/SA2_checklist_alumnat.pdf)**
 

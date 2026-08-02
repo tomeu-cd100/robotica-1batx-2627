@@ -57,7 +57,7 @@ emissor/receptor és el mateix, però el sistema no.
 from microbit import *
 import radio
 
-GROUP = 15         # emissora i receptora: MATEIX numero (canvia'l per equip)
+GROUP = 15         # emissora i receptora: MATEIX numero (cadascu, el seu)
 PERIODE = 500      # ms entre enviaments: com mes petit, mes sovint envia
 
 radio.on()                    # SEMPRE primer: engega la radio

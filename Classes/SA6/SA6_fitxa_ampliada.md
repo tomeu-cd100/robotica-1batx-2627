@@ -1,12 +1,12 @@
 # SA6 · Fitxa ampliada (aprofundiment) — Sistemes de control
 
-> 📄 **Versió ampliada**: conté totes les activitats, rutines (coavaluació, exit ticket, ODS…) i ampliacions. La fitxa que fa **tot l'alumnat** és la base: **[SA6_fitxa_alumnat.md](SA6_fitxa_alumnat.md)**.
+> 📄 **Versió ampliada**: conté totes les activitats, rutines (revisió creuada, exit ticket, ODS…) i ampliacions. La fitxa que fa **tot l'alumnat** és la base: **[SA6_fitxa_alumnat.md](SA6_fitxa_alumnat.md)**.
 
-> 🧑‍🎓 **Quan toca obrir-la?** És **opcional**: quan portis la **fitxa base al dia** i vulguis més (ampliacions, rols, pensament computacional). Algunes rutines (coavaluació, exit ticket) les activarà el **docent** a l'aula quan toqui.
+> 🧑‍🎓 **Quan toca obrir-la?** És **opcional**: quan portis la **fitxa base al dia** i vulguis més (ampliacions, revisió creuada, pensament computacional). Algunes rutines (revisió creuada, exit ticket) les activarà el **docent** a l'aula quan toqui.
 
-> 🗺️ **Quan s'usa cada apartat:** les **Activitats 1–3** segueixen les mateixes sessions que la fitxa base i la **4 (control proporcional)** és ampliació opcional (aquí amb més detall) · **Rols**: es pacten en començar la SA i es roten · **Si t'encalles** i **Pensament computacional**: durant el treball · **Vols més?**: amb el nucli al dia · **Exit ticket**: els últims 2' de cada sessió · **Diana**, **Coavaluació** i **Quadern tècnic**: en tancar la SA (abans de la prova T2 de la S4) · **Context real i ODS**: quan el docent l'activi.
+> 🗺️ **Quan s'usa cada apartat:** les **Activitats 1–3** segueixen les mateixes sessions que la fitxa base i la **4 (control proporcional)** és ampliació opcional (aquí amb més detall) · **Si t'encalles** i **Pensament computacional**: durant el treball · **Vols més?**: amb el nucli al dia · **Exit ticket**: els últims 2' de cada sessió · **Diana**, **Revisió creuada** i **Quadern tècnic**: en tancar la SA (abans de la prova T2 de la S4) · **Context real i ODS**: quan el docent l'activi.
 
-**Nom:** ______________________  **Parella:** ______________________  **Data:** __________
+**Nom:** ______________________  **Data:** __________
 
 > Faràs que el sistema **es reguli sol**. Treballaràs llaç obert/tancat, histèresi, màquines d'estats i control proporcional.
 
@@ -117,16 +117,14 @@ void loop() {
 
 ---
 
-## Treball en equip · rols de la parella
+## Treballes sol/a… però no aïllat/da
 
-Repartiu-vos els rols i **roteu-los** a cada sessió:
+El muntatge, el codi i la defensa del sistema de control són **teus**. Això no vol dir treballar en silenci:
 
-| Rol | S1 | S2 | S3 | S4 |
-|---|---|---|---|---|
-| Coordinador/a (temps, enunciat) | | | | |
-| Programador/a (codi) | | | | |
-| Enginyer/a de maquinari (sensor/actuador, seguretat) | | | | |
-| Provador/a–Documentador/a (Serial Plotter + quadern) | | | | |
+- apunta al quadern **qui t'ha ajudat i a qui has ajudat** (i com);
+- abans de tancar el producte, fes la **revisió creuada de codi** de més avall.
+
+> Si el professor t'ajunta puntualment amb algú (material que falla, un repte massa gros), repartiu-vos només dos papers: **qui escriu** i **qui verifica**, i intercanvieu-los a mitja sessió. Cadascú documenta el seu al quadern i defensa el seu producte.
 
 ---
 
@@ -159,20 +157,20 @@ Situa't (0-10):
 | Implemento histèresi i una màquina d'estats | ☐ | ☐ | ☐ | ☐ |
 | Explico el diagrama de blocs del meu control | ☐ | ☐ | ☐ | ☐ |
 
-## Coavaluació (2 estrelles i un desig — amb criteris)
+## Revisió creuada de codi
 
-Intercanvieu el sistema de control amb una altra parella. **Primer mireu-lo amb criteris de les rúbriques R1 i R3** (marqueu ✓ o ✗):
+Llegeix el sistema de control d'un company (i ell/a llegirà el teu). **Primer mira'l amb criteris de les rúbriques R1 i R3** (marca ✓ o ✗):
 
 | Criteri | ✓/✗ |
 |---|---|
-| Saben dir quina és la **consigna** i on es llegeix el **sensor** (llaç tancat) — R3 | |
+| Sap dir quina és la **consigna** i on es llegeix el **sensor** (llaç tancat) — R3 | |
 | La **histèresi** evita el "clic-clic" (els dos llindars es veuen al codi) — R1 | |
 | El **diagrama d'estats** coincideix amb el que fa el sistema de debò — R3 | |
 
-Ara escriviu el retorn — **les estrelles i el desig han de sortir de la taula**:
-- ⭐ Una cosa ben feta: ______________________
-- ⭐ Una altra cosa ben feta: ______________________
-- 💡 Una millora (desig): ______________________
+Ara escriu-li el retorn — **ha de sortir de la taula**:
+- Codi revisat de: ______________________
+- 💡 Una millora concreta: ______________________
+- ❓ Un dubte (què no has entès o li preguntaries): ______________________
 
 ## Exit ticket (abans de marxar)
 

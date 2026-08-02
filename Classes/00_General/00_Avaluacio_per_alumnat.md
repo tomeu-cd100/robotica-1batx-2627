@@ -11,7 +11,7 @@
 | **Projectes i productes** | **45 %** | El producte de cada SA (panell, alarma, barrera, sistema de control, robot…) i la seva defensa. | Fes-lo funcionar, però sobretot **entén-lo**: a la defensa t'ho preguntaran. |
 | **Quadern tècnic i pràctiques** | **25 %** | El teu [**quadern imprès**](00_Quadern_tecnic.md) (un per trimestre, un full per sessió): apunts, pseudocodi, esquemes, errors i com els has resolt, reflexions. | **Escriu-hi cada sessió** (no tot al final). Un error ben documentat hi suma. |
 | **Proves pràctiques** | **20 %** | Una prova per trimestre (T1, T2, T3), integrada a l'última sessió de SA3, SA6 i SA9. | Practica **tot sol** abans: els mini-checks t'avisen a temps de com vas. |
-| **Actitud, cooperació i autoregulació** | **10 %** | Com treballes en equip, com gestiones els errors, material i terminis. | Fes el teu rol, rota'l, i quan t'encallis aplica DEPURA abans de rendir-te. |
+| **Actitud, cooperació i autoregulació** | **10 %** | Com ajudes i et deixes ajudar, com gestiones els errors, el material i els terminis. | Fes les revisions creuades de veritat, anota al quadern qui t'ha ajudat i a qui has ajudat, i quan t'encallis aplica DEPURA abans de rendir-te. |
 
 ## 2 · Amb quina escala se't valora
 
@@ -27,7 +27,7 @@ Les 5 rúbriques del curs, en una línia cadascuna:
 | **R2 · Circuit** | Electrònica | Muntatge correcte i segur, esquema, i saps **mesurar** i diagnosticar. |
 | **R3 · Projecte/robot** | El sistema | Compleix el repte, has **iterat** (provar → millorar) i tot està integrat. |
 | **R4 · Documentació** | Quadern i defensa | Quadern complet, explicació clara i **defensa oral** amb terminologia correcta. |
-| **R5 · Actitud** | Treball i equip | Cooperes, **converteixes l'error en aprenentatge** i treballes amb autonomia. |
+| **R5 · Actitud** | Treball i ajuda entre iguals | Ajudes i demanes ajuda, **converteixes l'error en aprenentatge** i treballes amb autonomia. |
 
 > Les rúbriques completes (amb els 4 nivells detallats) són a [`Programació didàctica/07_Rubriques.md`](../../Programació%20didàctica/07_Rubriques.md). **Tens dret a veure-les abans de començar**: si no te les han ensenyat, demana-les.
 
@@ -39,7 +39,7 @@ Les 5 rúbriques del curs, en una línia cadascuna:
 | **Graella d'activació** (cada sessió) | Recordar el que vas aprendre fa setmanes perquè no s'esborri. Respondre-la malament **no penalitza**: avisa. |
 | **Mini-check individual** (un per SA) | 10 minuts de codi tot sol. És el teu **radar**: et diu si vas bé abans que ho digui una prova. |
 | **Qüestionari de repàs** (un per SA, al Classroom) | Autocorrectiu i **repetible**: fes-lo en tancar la SA i torna-hi setmanes després perquè no s'esborri. Si al mini-check vas treure 🔴, comença per aquí. |
-| **Diana, exit ticket, coavaluació** | Saber on ets i donar/rebre retorn. Serveixen per millorar, no per puntuar. |
+| **Diana, exit ticket, revisió creuada** | Saber on ets i donar/rebre retorn. Serveixen per millorar, no per puntuar. |
 
 **Escriu-hi la veritat.** Aquestes eines només et poden ajudar si mostren com vas de debò.
 
@@ -77,7 +77,7 @@ Regla d'or: **la IA t'ha d'ajudar a aprendre, no a saltar-te l'aprenentatge**.
 
 **Tens dret a:** conèixer les rúbriques i objectius **abans** de començar · saber en tot moment què qualifica i què no · rebre retorn a temps per poder millorar · recuperar millorant el producte.
 
-**Et toca a tu:** portar el quadern al dia · fer els mini-checks amb honestedat · aplicar DEPURA abans de demanar ajuda · declarar l'ús d'IA · complir el teu rol a l'equip.
+**Et toca a tu:** portar el quadern al dia · fer els mini-checks amb honestedat · aplicar DEPURA abans de demanar ajuda · declarar l'ús d'IA · fer les revisions creuades amb els companys.
 
 ---
 

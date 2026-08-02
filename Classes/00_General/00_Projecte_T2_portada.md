@@ -1,6 +1,6 @@
 # 🦾 Projecte T2 · El braç robòtic
 
-> **Per a qui és?** Per a cada parella en acabar la SA6. Aquesta pàgina és el
+> **Per a qui és?** Per a cada alumne/a en acabar la SA6. Aquesta pàgina és el
 > punt de partida del robot del 2n trimestre: el braç manipulador que recull
 > tot el que s'ha après de moviment i control.
 

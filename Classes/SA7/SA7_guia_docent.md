@@ -3,7 +3,7 @@
 **Durada:** 8 h (4 sessions) · **Maquinari:** Placa **Imagina 3dBot (Arduino)** + sensors de línia (IR) i de distància (ultrasons) · **Llenguatge:** C/C++
 **Referència:** [`Programació didàctica/16_SA7_Robotica_mobil.md`](../../Programació%20didàctica/16_SA7_Robotica_mobil.md) · **Esquemes:** [`SA7_esquemes_connexions.md`](SA7_esquemes_connexions.md)
 
-> 🧭 **Com s'usa aquesta guia.** **Abans de la SA:** objectius, material i codi de suport (la logística, al checklist docent). **A cada sessió:** la secció «SESSIÓ n» corresponent, amb el «Guió de modelatge» i els «Errors freqüents» a mà. **Durant tota la SA:** diversitat (DUA), rols cooperatius i pensament computacional. **En avaluar:** «Avaluació formativa (instruments)». **Per contextualitzar:** context real i ODS.
+> 🧭 **Com s'usa aquesta guia.** **Abans de la SA:** objectius, material i codi de suport (la logística, al checklist docent). **A cada sessió:** la secció «SESSIÓ n» corresponent, amb el «Guió de modelatge» i els «Errors freqüents» a mà. **Durant tota la SA:** diversitat (DUA), cooperació entre iguals i pensament computacional. **En avaluar:** «Avaluació formativa (instruments)». **Per contextualitzar:** context real i ODS.
 
 ## Objectius de la SA
 1. Programar el moviment d'un robot mòbil (endavant, gir, aturada) amb **control diferencial**.
@@ -16,7 +16,7 @@ La **Imagina 3dBot** és Arduino-compatible, però **els pins dels motors depene
 
 > 🆘 **Pla B si avui no hi ha robot** (avaria, bateries, fabricació endarrerida): el *sandbox* de Wokwi [`SA7_robot_reactiu`](../../Simulacions/Wokwi/README.md) reprodueix el cicle percepció → decisió → acció amb ultrasons i tres LED. No mou rodes, però l'alumnat escriu i prova **la mateixa estructura d'`if`** de l'evita-obstacles. Detall i altres vies (demo projectada, vídeo, diagrama de decisió): [esquemes de connexions, «Si avui no hi ha robot»](SA7_esquemes_connexions.md#si-avui-no-hi-ha-robot-pla-b).
 
-## Material per parella/equip
+## Material per alumne/a
 - Imagina 3dBot muntat (motors, rodes, bateria), cable de programació.
 - Sensors de línia IR i sensor d'ultrasons (segons dotació de la placa).
 - **Circuit de proves** a terra: pista amb línia negra i recorregut amb obstacles.
@@ -37,7 +37,7 @@ La **Imagina 3dBot** és Arduino-compatible, però **els pins dels motors depene
 - **Lectura de codi amb PRIMM:** a cada *modelatge* l'alumnat **prediu** què farà el robot **abans** d'executar-lo, després l'**investiga**, el **modifica** i en **crea** un de nou. **Operativa (val per a totes les sessions amb codi):** dedica els primers ~5' del Modelatge a projectar/llegir el codi nou **sense executar-lo** i recollir prediccions del comportament del robot; només després, executa i investiga.
 - **Pont (d'on venim / on anem):** ve de la **SA6** (control: llaç tancat i màquines d'estats) → portem a la **SA8** (IoT i IA). L'evita-obstacles i el seguidor de línia són **control en llaç tancat** (SA6) aplicat al moviment.
 - **Activació de cada sessió (rutina #1 del curs):** els primers **5'** dels 10' d'activació són la **graella de repàs espaiat** — 3 preguntes projectades, tothom escriu, no qualifica. Les graelles d'aquesta SA, llestes per projectar, són al [banc](../00_General/00_Banc_activacio_repas.md); la pregunta ganxo que obre cada sessió, aquí sota, ocupa la resta. *(El dia del mini-check, el mini-check les substitueix totes dues.)*
-- **Retirada de bastida — repte "a full en blanc" (nou en aquesta SA):** cada parella escriu **un** dels reptes amb l'**editor buit** — només el seu pseudocodi i el full-xuleta de crides (`motors()`, `dist()`…), sense obrir cap sketch fet. És el penúltim graó abans de la SA9 (vegeu `Programació didàctica/04_Metodologia.md` §4.2 bis). El paper del docent: **no deixar obrir el sketch de referència fins que el pseudocodi estigui ensenyat**; si s'encallen, la pista és el pseudocodi, no el codi fet.
+- **Retirada de bastida — repte "a full en blanc" (nou en aquesta SA):** cada alumne/a escriu **un** dels reptes amb l'**editor buit** — només el seu pseudocodi i el full-xuleta de crides (`motors()`, `dist()`…), sense obrir cap sketch fet. És el penúltim graó abans de la SA9 (vegeu `Programació didàctica/04_Metodologia.md` §4.2 bis). El paper del docent: **no deixar obrir el sketch de referència fins que el pseudocodi estigui ensenyat**; si s'encallen, la pista és el pseudocodi, no el codi fet.
 
 > 🤖 **Fil conductor de robots:** si el curs segueix el fil conductor
 > ([`00_Fil_conductor_robots.md`](../00_General/00_Fil_conductor_robots.md)),
@@ -47,7 +47,7 @@ La **Imagina 3dBot** és Arduino-compatible, però **els pins dels motors depene
 > xassís, cablatge, test de fum) és al
 > [dossier del rover, secció «Sessió 0 de muntatge»](../00_General/00_Projecte_T3_Rover.md#sessió-0-de-muntatge-2-h) —
 > no es duplica aquí. Amb el fil conductor, la SA7 es fa amb el **rover
-> propi** de cada parella; la Imagina 3dBot queda de **reserva** (pla B, vegeu
+> propi** de cada alumne/a; la Imagina 3dBot queda de **reserva** (pla B, vegeu
 > el dossier) per si un rover no arriba a temps.
 >
 > ⚠️ **Amb el rover, la funció `motors()` dels sketches canvia** (no només els
@@ -154,7 +154,7 @@ La **Imagina 3dBot** és Arduino-compatible, però **els pins dels motors depene
 | Demostració a la pista | Comportament autònom (trajectòria/línia/obstacles) | CA4.1 | R3 |
 | Codi del robot | Funcions de moviment, lògica de comportament | CA1.1, CA3.1 | R1, R3 |
 | Quadern (proves i iteracions) | Calibratge, mesura d'errors i millores documentades | CA4.1 | R4 |
-| Observació del procés | Treball d'equip, ús segur del robot a la pista | CA4.1 | R4 |
+| Observació del procés | Ajuda entre iguals, ús segur del robot a la pista | CA4.1 | R4 |
 
 *(CA1.1 = programar en C/C++; CA3.1 = control (llaç tancat); CA4.1 = programar un robot mòbil amb trajectòries i comportaments autònoms. Vegeu [`Programació didàctica/06_Avaluacio_criteris_qualificacio.md`](../../Programació%20didàctica/06_Avaluacio_criteris_qualificacio.md). Comparteix R1, R3 i R4 **abans** de començar.)*
 
@@ -183,14 +183,20 @@ La **Imagina 3dBot** és Arduino-compatible, però **els pins dels motors depene
 
 | Via | Mesura |
 |---|---|
-| **Bastida** (qui s'encalla) | Provar **una funció de moviment cada cop** abans de la trajectòria; donar el bloc de pins ja ajustat; l'**esquelet amb `// TODO`** de la secció «Si t'encalles» de la [pàgina de la pràctica de l'evita-obstacles](codi/03_evita_obstacles/EXPLICACIO.md); equips heterogenis amb rols clars. |
+| **Bastida** (qui s'encalla) | Provar **una funció de moviment cada cop** abans de la trajectòria; donar el bloc de pins ja ajustat; l'**esquelet amb `// TODO`** de la secció «Si t'encalles» de la [pàgina de la pràctica de l'evita-obstacles](codi/03_evita_obstacles/EXPLICACIO.md); si cal, **agrupament puntual** amb un company per a una sessió (cadascú documenta el seu al quadern). |
 | **+ Ampliació** (qui va sobrat) | Gir proporcional a la proximitat, correcció suau del seguidor, tornar al punt de sortida; reptes ⭐ de [`Reptes/Reptes_SA7.md`](../../Reptes/Reptes_SA7.md). |
 | **Representació múltiple** | Diagrama de decisió (percepció→acció), demostració física, vídeo de les iteracions. |
-| **Implicació** | Cada equip tria l'estratègia i el repte de pista; competició amistosa per temps. |
+| **Implicació** | Cada alumne/a tria l'estratègia i el repte de pista; competició amistosa per temps. |
 
-## Treball cooperatiu amb rols
+## Cooperació amb treball individual
 
-Equips amb **rols rotatius**: Coordinador/a (estratègia) · Programador/a · Enginyer/a de maquinari (pins, robot, sensors) · Pilot/a–Documentador/a (prova a la pista, cronometra, quadern). Quadre per rotar a la fitxa.
+El treball és **individual** (`Programació didàctica/04_Metodologia.md` §4.3): cada alumne/a programa i prova el seu robot. La cooperació —i el **CA5.3**— s'evidencia en tres moments concrets, no en un producte compartit:
+
+- **Revisió creuada de codi** abans de tancar el repte de pista: cadascú llegeix el codi d'un company i li retorna **una millora concreta i un dubte**.
+- **Ajuda documentada** al quadern: la línia «qui m'ha ajudat / a qui he ajudat i com» de cada sessió (és el que alimenta la R5).
+- **Depuració a dues veus** i posada en comú quan algú s'encalla a la pista.
+
+Si en alguna sessió convé **ajuntar dues persones** (un rover avariat, una absència llarga), es fa per a aquella sessió: qui **escriu** i qui **verifica**, intercanviant-se a mitja sessió, i cadascú documenta el seu al quadern.
 
 ## Pensament computacional i depuració
 
@@ -199,7 +205,7 @@ Equips amb **rols rotatius**: Coordinador/a (estratègia) · Programador/a · En
 
 ## Avaluació formativa (instruments)
 
-- **Diana d'autoavaluació** (fitxa) · **Coavaluació** entre equips (demostració) · **Exit ticket** de tancament.
+- **Diana d'autoavaluació** (fitxa) · **Revisió creuada** entre companys (demostració i codi) · **Exit ticket** de tancament.
 - El **registre d'iteracions** (temps de volta per intent) és en si mateix avaluació formativa del cicle provar→millorar.
 - **Mini-check individual** (10', **inici de la S4**, no qualifica): escriure el `loop()` reactiu de l'evita-obstacles amb les funcions donades. Vegeu [`../00_General/00_Mini_checks_individuals.md`](../00_General/00_Mini_checks_individuals.md).
 

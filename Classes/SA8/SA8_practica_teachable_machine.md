@@ -12,7 +12,7 @@
 Que l'alumnat **visqui el cicle de ML** —*recollir dades → entrenar → provar → millorar*— i en **descobreixi els límits** (biaix, sobreajust, dades dolentes), connectant-ho amb la idea que ja coneix de la SA8: *bones dades = bones decisions*.
 
 ### Requisits i Pla B
-- **Ideal:** 1 ordinador/tauleta amb **càmera o micròfon** i **navegador** per parella + internet.
+- **Ideal:** 1 ordinador/tauleta amb **càmera o micròfon** i **navegador** per alumne/a + internet.
 - **Pla B (sense dispositius per a tothom):** **demostració projectada** del docent amb participació de la classe (els alumnes aporten els exemples davant la càmera). El debat i la fitxa es fan igual.
 - **Pla B (sense internet):** ajornar a l'aula d'informàtica o a casa; mentrestant, fer el **debat d'ètica i biaix** (§ "Reflexió") amb el classificador per regles [`03_ia_gestos.py`](codi/03_ia_gestos.py).
 - **Privadesa (important):** **no desar ni publicar** cap model amb cares d'alumnes; treballar amb **objectes/gestos/sons**, no amb persones identificables, tret de consentiment explícit. Vegeu l'ètica de dades de la guia docent.

@@ -40,4 +40,4 @@ Muntat al davant per mesurar la distància a obstacles (mateix principi que SA3/
 
 El robot **no és simulable** sencer, però la **lògica sí**. A `Simulacions/Wokwi/SA7_robot_reactiu` hi ha un *sandbox* que reprodueix el cicle **percepció → decisió → acció** amb un ultrasons i tres LED (verd = via lliure, groc = a prop, vermell = atura): no mou rodes, però permet escriure i provar **exactament la mateixa estructura d'`if`** de l'evita-obstacles abans de tocar el robot, o el mateix dia que el maquinari falla.
 
-Les altres vies, per ordre: **demo projectada** amb un sol robot per a tota l'aula · **vídeo** de les iteracions d'una parella · traçar la lògica sobre el **diagrama de decisió** al quadern. Detall i estat de cada simulació: [`Simulacions/Wokwi/README.md`](../../Simulacions/Wokwi/README.md).
+Les altres vies, per ordre: **demo projectada** amb un sol robot per a tota l'aula · **vídeo** de les iteracions d'un alumne/a · traçar la lògica sobre el **diagrama de decisió** al quadern. Detall i estat de cada simulació: [`Simulacions/Wokwi/README.md`](../../Simulacions/Wokwi/README.md).

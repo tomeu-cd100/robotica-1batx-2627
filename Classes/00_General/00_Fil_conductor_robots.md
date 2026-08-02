@@ -1,6 +1,6 @@
 # 🤖 El fil conductor del curs: tres robots, tres trimestres
 
-> **Per a qui és?** Per a tothom. És el mapa dels tres robots que cada parella
+> **Per a qui és?** Per a tothom. És el mapa dels tres robots que cada alumne/a
 > construeix durant el curs i de com cada SA hi aporta una peça. El docent hi
 > té el calendari de fabricació; l'alumnat, la visió de cap a on va cada repte.
 > **Quan toca?** Mira'l a l'**inici de cada trimestre** (per saber quin robot toca
@@ -14,7 +14,7 @@ L'assignatura es diu **Robòtica**, però cap situació d'aprenentatge, per si
 sola, acaba en un robot complet: es treballa amb components solts (un LED,
 un sensor, un servo) i només la SA7 usa un robot ja muntat (la Imagina
 3dBot, de dotació). Per tancar aquest buit, cada trimestre convergeix en la
-construcció d'un **robot real per parella**, aprofitant la talladora làser
+construcció d'un **robot real per alumne/a**, aprofitant la talladora làser
 **xTool S1** i la impressora 3D **Bambu Lab P2S Combo** de l'aula.
 
 Els tres robots són els tres arquetips clàssics de la robòtica: un robot
@@ -67,7 +67,7 @@ Dossier de cada robot (peces, esquema de muntatge, cablatge i rúbrica):
 
 ## Com funciona una sessió de fabricació
 
-1. **Abans de la sessió**, la parella porta l'esborrany de la cara fet (de
+1. **Abans de la sessió**, cadascú porta l'esborrany de la cara fet (de
    casa o del tancament de la S3 anterior).
 2. **Durant la sessió**, s'ajusta l'esborrany al fitxer, el docent el valida
    i es talla per **rotacions** (grups de 2-3 parelles, 10-15 min cadascun)
@@ -76,7 +76,7 @@ Dossier de cada robot (peces, esquema de muntatge, cablatge i rúbrica):
 3. Les **impressions 3D** es llancen entre sessions: el docent gestiona la
    cua de la impressora fora de l'horari de classe.
 4. Es manté un **full de cua públic per màquina**, amb les columnes
-   *parella | fitxer | estat* (pendent / tallat / lliurat), perquè tothom
+   *alumne/a | fitxer | estat* (pendent / tallat / lliurat), perquè tothom
    sàpiga on és la seva peça.
 
 ## Material i pressupost
@@ -89,16 +89,20 @@ curs.
 
 <div class="nomes-docent" markdown="1">
 
-| Material (compra del centre) | Quantitat orientativa |
-|---|---|
-| DM 3 mm | ~12 taulers per trimestre |
-| Filament PLA | 2-3 bobines per curs |
-| Portapiles 6×AA | ×12 |
-| Cargols M3 + separadors | segons muntatge |
-| Caniques de 16 mm (roda boja) | ×15 (cost negligible) |
-| Pont H L298N | ×14 (12 parelles + reserva) |
+> Les quantitats són **per alumne/a** (el treball és individual, doc 04 §4.3):
+> multiplica-les pel teu grup i afegeix-hi una reserva. La columna de la dreta
+> mostra l'exemple d'un grup de **5**.
 
-**Total orientatiu: 130-180 €.** Detall al document
+| Material (compra del centre) | Per alumne/a | Grup de 5 (+ reserva) |
+|---|---|---|
+| DM 3 mm | ~1 tauler per robot i trimestre | ~6 taulers per trimestre |
+| Filament PLA | — | 1 bobina per curs |
+| Portapiles 6×AA | ×1 | ×6 |
+| Cargols M3 + separadors | segons muntatge | segons muntatge |
+| Caniques de 16 mm (roda boja) | ×1 | ×8 (cost negligible) |
+| Pont H L298N | ×1 | ×7 |
+
+**Total orientatiu per a un grup de 5: 60-90 €** (per a un grup de 24, 130-180 €). Detall al document
 [09c · Inventari del maquinari](../../Programació%20didàctica/09c_Inventari_kits_disponibles.md).
 
 </div>

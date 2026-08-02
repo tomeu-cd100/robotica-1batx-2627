@@ -33,7 +33,7 @@
 
 ## El públic també treballa
 
-Qui escolta omple la **coavaluació amb criteris** de la fitxa ampliada (2 estrelles i un desig ancorats a la R4). Escoltar per avaluar és la meitat de l'aprenentatge de comunicar.
+Qui escolta omple la **revisió creuada amb criteris** de la fitxa ampliada (2 estrelles i un desig ancorats a la R4). Escoltar per avaluar és la meitat de l'aprenentatge de comunicar.
 
 ## Qui defensa què (regla coeducativa)
 

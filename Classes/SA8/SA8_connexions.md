@@ -1,6 +1,6 @@
 # SA8 · Connexions i entorn
 
-> 🧑‍🎓 **Quan toca?** Obre-la a la **S1** per muntar la **telemetria** (Activitat 1: emissor + receptor). L'opció **ESP32** és ampliació avançada i opcional (repte ⭐⭐⭐): només si el vostre equip hi va.
+> 🧑‍🎓 **Quan toca?** Obre-la a la **S1** per muntar la **telemetria** (Activitat 1: emissor + receptor). L'opció **ESP32** és ampliació avançada i opcional (repte ⭐⭐⭐): només si hi vas.
 
 ## Telemetria amb micro:bit (recomanat)
 - **2 micro:bit**: una fa d'**emissor** (mesura i envia) i l'altra de **receptor** (rep i registra).

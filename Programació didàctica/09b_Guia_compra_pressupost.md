@@ -14,7 +14,7 @@ Llista de compra orientativa per **engegar la matèria des de zero**, derivada d
 - **Kits "tot en un" vs solt:** un **kit d'iniciació Arduino** (placa + protoboard + cables + LED + resistències + sensors bàsics) sol sortir més a compte que comprar-ho tot solt i ja ve organitzat per parella.
 - **Compra per parella + material comú:** 15 estacions de treball + una caixa de material comú (resistències, cables) que es reposa.
 - **micro:bit:** millor un **set d'aula** (la ràdio necessita 2 plaques per parella com a mínim per a SA5/SA8).
-- **Robòtica mòbil:** la **Imagina 3dBot** és l'element més car; es pot comprar en **menor quantitat i compartir** (treball en equip a SA7/SA9).
+- **Robòtica mòbil:** la **Imagina 3dBot** és l'element més car. Amb el **fil conductor** no cal comprar-ne: cada alumne/a construeix el seu **rover** (xassís de tall làser + L298N, molt més barat) i la 3dBot queda només de reserva. Sense fil conductor i amb pressupost just, es poden comprar menys unitats i **fer torns** — però compte: el treball del curs és individual (doc 04 §4.3), i compartir robot vol dir esperar, no col·laborar.
 
 ---
 
@@ -61,7 +61,7 @@ Llista de compra orientativa per **engegar la matèria des de zero**, derivada d
 | Placa/robot **Imagina 3dBot** (xassís + motors) | 6–8 (compartit en equips) | 60–120 € |
 | Material per a la **pista** (cinta aïllant negra, cartró, obstacles) | — | 10–20 € total |
 
-> **Estimació:** 8 robots ≈ **480–960 €**. És la inversió més gran; **compartir en equips** de 3–4 és la pràctica recomanada (i pedagògicament coherent amb el treball cooperatiu de SA7/SA9).
+> **Estimació:** 8 robots ≈ **480–960 €**. És la inversió més gran, i **el fil conductor l'evita**: el rover propi surt per una fracció (xassís tallat + L298N + motoreductors). Si tot i així es compren 3dBot, calcula'n **una per alumne/a** si vols treball individual real, o assumeix torns d'espera.
 
 ---
 

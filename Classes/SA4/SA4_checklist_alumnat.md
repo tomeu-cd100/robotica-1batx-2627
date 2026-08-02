@@ -1,6 +1,6 @@
 # SA4 · El meu checklist — Moviment: servos, motors i ponts H
 
-**Nom:** ______________________  **Parella:** ______________________  **Data:** __________
+**Nom:** ______________________  **Data:** __________
 
 > 📄 **[Versió PDF per imprimir i omplir a mà](pdf/SA4_checklist_alumnat.pdf)**
 

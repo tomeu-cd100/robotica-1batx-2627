@@ -1,12 +1,12 @@
 # SA7 · Fitxa ampliada (aprofundiment) — Robòtica mòbil
 
-> 📄 **Versió ampliada**: conté totes les activitats, rutines (coavaluació, exit ticket, ODS…) i ampliacions. La fitxa que fa **tot l'alumnat** és la base: **[SA7_fitxa_alumnat.md](SA7_fitxa_alumnat.md)**.
+> 📄 **Versió ampliada**: conté totes les activitats, rutines (revisió creuada, exit ticket, ODS…) i ampliacions. La fitxa que fa **tot l'alumnat** és la base: **[SA7_fitxa_alumnat.md](SA7_fitxa_alumnat.md)**.
 
-> 🧑‍🎓 **Quan toca obrir-la?** És **opcional**: quan portis la **fitxa base al dia** i vulguis més (ampliacions, rols, pensament computacional). Algunes rutines (coavaluació, exit ticket) les activarà el **docent** a l'aula quan toqui.
+> 🧑‍🎓 **Quan toca obrir-la?** És **opcional**: quan portis la **fitxa base al dia** i vulguis més (ampliacions, pensament computacional). Algunes rutines (revisió creuada, exit ticket) les activarà el **docent** a l'aula quan toqui.
 
-> 🗺️ **Quan s'usa cada apartat:** les **Activitats 1–4** segueixen les mateixes sessions que la fitxa base (aquí amb més detall i ampliacions) · **Rols**: es pacten en començar la SA i es roten · **Si t'encalles** i **Pensament computacional**: durant el treball · **Vols més?**: amb el nucli al dia · **Exit ticket**: els últims 2' de cada sessió · **Diana**, **Coavaluació** i **Quadern tècnic**: en tancar la SA · **Context real i ODS**: quan el docent l'activi.
+> 🗺️ **Quan s'usa cada apartat:** les **Activitats 1–4** segueixen les mateixes sessions que la fitxa base (aquí amb més detall i ampliacions) · **Si t'encalles** i **Pensament computacional**: durant el treball · **Vols més?**: amb el nucli al dia · **Exit ticket**: els últims 2' de cada sessió · **Diana**, **Revisió creuada** i **Quadern tècnic**: en tancar la SA · **Context real i ODS**: quan el docent l'activi.
 
-**Nom:** ______________________  **Equip:** ______________________  **Data:** __________
+**Nom:** ______________________  **Data:** __________
 
 > Ara el robot es mou sol! Programaràs moviment, trajectòries i comportaments autònoms. Recorda **ajustar els pins** segons la teva placa.
 
@@ -53,16 +53,14 @@
 
 ---
 
-## Treball en equip · rols
+## Ajuda entre iguals (cooperació)
 
-Repartiu-vos els rols i **roteu-los** a cada sessió:
+El robot és **teu**: tu ajustes els pins, tu escrius el codi i tu el proves. La cooperació no és repartir-se la feina, sinó **fer avançar els altres**. Apunta a cada sessió qui t'ha ajudat i a qui has ajudat (és el mateix que va al quadern):
 
-| Rol | S1 | S2 | S3 | S4 |
+| | S1 | S2 | S3 | S4 |
 |---|---|---|---|---|
-| Coordinador/a (temps, estratègia, enunciat) | | | | |
-| Programador/a (codi i lògica) | | | | |
-| Enginyer/a de maquinari (ajusta pins, robot, sensors) | | | | |
-| Pilot/a–Documentador/a (prova a la pista, cronometra, quadern) | | | | |
+| Qui m'ha ajudat i en què | | | | |
+| A qui he ajudat i com | | | | |
 
 ---
 
@@ -95,17 +93,17 @@ Situa't (0-10):
 | El robot completa un comportament autònom | ☐ | ☐ | ☐ | ☐ |
 | Registro proves i itero per millorar | ☐ | ☐ | ☐ | ☐ |
 
-## Coavaluació (2 estrelles i un desig — amb criteris)
+## Revisió creuada (2 estrelles i un desig — amb criteris)
 
-Mireu la demostració d'un altre equip. **Primer valoreu-la amb criteris de la rúbrica R3** (marqueu ✓ o ✗):
+Mira la demostració d'un company o companya. **Primer valora-la amb criteris de la rúbrica R3** (marca ✓ o ✗):
 
 | Criteri | ✓/✗ |
 |---|---|
 | El robot completa el comportament **sense ajuda de les mans** — R3 | |
-| Tenen el **registre d'iteracions** (temps i millores anotades) — R3 | |
-| Saben explicar **què canviarien al calibratge** (temps de gir, llindar) — R3 | |
+| Té el **registre d'iteracions** (temps i millores anotades) — R3 | |
+| Sap explicar **què canviaria al calibratge** (temps de gir, llindar) — R3 | |
 
-Ara escriviu el retorn — **les estrelles i el desig han de sortir de la taula**:
+Ara escriu el retorn — **les estrelles i el desig han de sortir de la taula**:
 - ⭐ Una cosa ben feta: ______________________
 - ⭐ Una altra cosa ben feta: ______________________
 - 💡 Una millora (desig): ______________________

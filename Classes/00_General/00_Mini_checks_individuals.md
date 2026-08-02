@@ -6,12 +6,12 @@
 
 ## El problema que resol
 
-El curs treballa en parelles i equips, i gairebé tots els productes són col·lectius. Això és bo per aprendre, però pot **amagar** l'alumne que "acompanya" sense programar mai tot sol (*efecte passatger*): sense aquest radar, el primer moment en què se'l veuria seria la prova trimestral — massa tard per reaccionar.
+El curs treballa de manera **individual** (`Programació didàctica/04_Metodologia.md` §4.3), però això no garanteix per si sol que cadascú escrigui el seu codi: amb el sketch donat a la vista i el company del costat avançant, és fàcil anar copiant sense entendre (*efecte passatger*). Aquest radar ho detecta a temps; sense ell, el primer moment en què es veuria seria la prova trimestral — massa tard per reaccionar.
 
 ## Rutina (10 minuts)
 
 1. **Quan:** a l'**inici de la sessió indicada** de cada SA (normalment la darrera; a SA3 i SA6, la penúltima, perquè la darrera **és, sencera, la prova trimestral**). **Aquell dia el mini-check substitueix la graella d'activació** (`00_Banc_activacio_repas.md`) **i el kata de la sessió** (`SAn_katas.md`): tots tres són escriptura individual, i no se sumen.
-2. **Com:** individual, **sense apunts ni parella**, en paper o a l'editor amb el projector apagat. 10' clavats.
+2. **Com:** **sense apunts i sense mirar la pantalla del costat**, en paper o a l'editor amb el projector apagat. 10' clavats.
 3. **Correcció:** no es puntua. El docent fa una passada ràpida amb **semàfor**:
    - 🟢 **Ho fa sol** (errors de detall com a molt).
    - 🟡 **Se'n surt amb dubtes** (estructura bé, sintaxi o conceptes coixos).

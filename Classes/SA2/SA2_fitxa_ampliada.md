@@ -1,12 +1,12 @@
 # SA2 · Fitxa ampliada (aprofundiment) — Sortides digitals i PWM
 
-> 📄 **Versió ampliada**: conté totes les activitats, rutines (coavaluació, exit ticket, ODS…) i ampliacions. La fitxa que fa **tot l'alumnat** és la base: **[SA2_fitxa_alumnat.md](SA2_fitxa_alumnat.md)**.
+> 📄 **Versió ampliada**: conté totes les activitats, rutines (revisió creuada, exit ticket, ODS…) i ampliacions. La fitxa que fa **tot l'alumnat** és la base: **[SA2_fitxa_alumnat.md](SA2_fitxa_alumnat.md)**.
 
-> 🧑‍🎓 **Quan toca obrir-la?** És **opcional**: quan portis la **fitxa base al dia** i vulguis més (ampliacions, rols, pensament computacional). Algunes rutines (coavaluació, exit ticket) les activarà el **docent** a l'aula quan toqui.
+> 🧑‍🎓 **Quan toca obrir-la?** És **opcional**: quan portis la **fitxa base al dia** i vulguis més (ampliacions, pensament computacional). Algunes rutines (revisió creuada, exit ticket) les activarà el **docent** a l'aula quan toqui.
 
-> 🗺️ **Quan s'usa cada apartat:** les **Activitats 1–4** segueixen les mateixes sessions que la fitxa base (aquí amb més detall i ampliacions) · **Rols**: es pacten en començar la SA i es roten · **Si t'encalles** i **Pensament computacional**: durant el treball · **Vols més?**: amb el nucli al dia · **Exit ticket**: els últims 2' de cada sessió · **Diana**, **Coavaluació** i **Quadern tècnic**: en tancar la SA · **Context real i ODS**: quan el docent l'activi.
+> 🗺️ **Quan s'usa cada apartat:** les **Activitats 1–4** segueixen les mateixes sessions que la fitxa base (aquí amb més detall i ampliacions) · **Si t'encalles** i **Pensament computacional**: durant el treball · **Vols més?**: amb el nucli al dia · **Exit ticket**: els últims 2' de cada sessió · **Diana**, **Revisió creuada** i **Quadern tècnic**: en tancar la SA · **Context real i ODS**: quan el docent l'activi.
 
-**Nom:** ______________________  **Parella:** ______________________  **Data:** __________
+**Nom:** ______________________  **Data:** __________
 
 > Aprendràs a controlar LED, color i so, i a regular la intensitat amb PWM. Recorda: **cada LED amb resistència de 220 Ω** i polaritat correcta.
 
@@ -56,16 +56,19 @@ Dissenya un panell que indiqui **estats** amb color + so + una càrrega (relé).
 
 ---
 
-## Treball en equip · rols de la parella
+## Treball individual i ajuda entre iguals
 
-Repartiu-vos els rols i **roteu-los** a cada sessió:
+El panell és **teu**: el munta, el programa i el documenta la mateixa persona. Ara bé, ningú
+avança sol: apunta a cada sessió **qui t'ha ajudat i a qui has ajudat** (i en què). És el que
+s'observa a la rúbrica **R5**.
 
-| Rol | S1 | S2 | S3 | S4 |
+| | S1 | S2 | S3 | S4 |
 |---|---|---|---|---|
-| Coordinador/a (temps, enunciat) | | | | |
-| Programador/a (codi) | | | | |
-| Enginyer/a de maquinari (circuit, seguretat) | | | | |
-| Provador/a–Documentador/a (prova + quadern) | | | | |
+| Qui m'ha ajudat i en què | | | | |
+| A qui he ajudat i en què | | | | |
+
+> 👥 **Si el docent t'ajunta amb algú puntualment**, repartiu-vos només **qui escriu** i **qui
+> verifica**, i intercanvieu-vos els papers a mitja sessió. El lliurable continua sent el teu.
 
 ---
 
@@ -98,20 +101,21 @@ Situa't (0-10):
 | Regulo intensitat/color amb PWM (`analogWrite`, `map`) | ☐ | ☐ | ☐ | ☐ |
 | Munto el circuit amb resistència i polaritat correctes | ☐ | ☐ | ☐ | ☐ |
 
-## Coavaluació (2 estrelles i un desig — amb criteris)
+## Revisió creuada de codi (2 estrelles i un desig — amb criteris)
 
-Intercanvieu el panell/semàfor amb una altra parella. **Primer mireu-lo amb criteris de les rúbriques R1 i R2** (marqueu ✓ o ✗):
+Llegeix el panell/semàfor **d'un company o companya** (codi i circuit). **Primer mira'l amb criteris de les rúbriques R1 i R2** (marca ✓ o ✗):
 
 | Criteri | ✓/✗ |
 |---|---|
 | El codi usa **constants/variables amb noms clars** (no números "màgics" pertot) — R1 | |
 | Cada LED té **resistència** i la **polaritat** correcta — R2 | |
-| Els **estats** del panell es distingeixen sense que us els expliquin (color + so) — R1 | |
+| Els **estats** del panell es distingeixen sense que te'ls expliquin (color + so) — R1 | |
 
-Ara escriviu el retorn — **les estrelles i el desig han de sortir de la taula**:
+Ara escriu el retorn — **les estrelles i el desig han de sortir de la taula**. El desig ha de ser **una millora concreta**, i afegeix-hi **un dubte** que t'hagi generat el seu codi:
 - ⭐ Una cosa ben feta: ______________________
 - ⭐ Una altra cosa ben feta: ______________________
-- 💡 Una millora (desig): ______________________
+- 💡 Una millora concreta (desig): ______________________
+- ❓ Un dubte que em genera el seu codi: ______________________
 
 ## Exit ticket (abans de marxar)
 

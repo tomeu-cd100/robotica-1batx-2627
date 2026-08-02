@@ -2,7 +2,7 @@
 
 <!-- web:only-github -->
 
-**Nom:** ______________________  **Parella:** ______________________  **Data:** __________
+**Nom:** ______________________  **Data:** __________
 
 <!-- /web:only-github -->
 
@@ -58,7 +58,7 @@ Si la tasca encara no t'apareix al Classroom, és que la SA encara no ha començ
 > 💡 Si t'encalles, parteix de l'**esquelet** de la secció «Si t'encalles» de la [pàgina de la pràctica del llum de nit](codi/03_nightlight_EXPLICACIO.md): el `while True:` i el `LLINDAR` ja hi són; tu omples la lectura del sensor integrat i la resposta a la matriu (mateix patró que `02_passes.py`).
 
 ### 3 · Ràdio (S3)
-1. Carrega [`04_radio_dau.py`](codi/04_radio_dau.py) en **dues** plaques. Què han de compartir? __________
+1. Carrega [`04_radio_dau.py`](codi/04_radio_dau.py) en **dues** plaques (si només en tens una, el professor t'ajuntarà un moment amb un company per provar l'emissió-recepció; el codi l'escrius tu). Què han de compartir? __________
 2. Instrucció que envia: `__________` · que rep: `__________`
 3. **Repte:** "pedra-paper-tisora" o comandament per ràdio.
 
@@ -104,6 +104,6 @@ Tria **un dels reptes** de la SA com a producte i completa la **comparació C++ 
 <!-- /web:only-github -->
 
 > 💻 **Sense placa?** Prova el codi al **simulador** [python.microbit.org](https://python.microbit.org).
-> 📌 **Vols més?** +[Reptes ⭐](../../Reptes/Reptes_SA5.md) (wearable, xarxa de 3+ plaques), rols, coavaluació, exit ticket, pensament computacional i ODS → **[SA5_fitxa_ampliada.md](SA5_fitxa_ampliada.md)**
+> 📌 **Vols més?** +[Reptes ⭐](../../Reptes/Reptes_SA5.md) (wearable, xarxa de 3+ plaques), revisió creuada de codi, exit ticket, pensament computacional i ODS → **[SA5_fitxa_ampliada.md](SA5_fitxa_ampliada.md)**
 
-> 🤖 **Cap al robot del trimestre:** la comunicació per ràdio entre les dues micro:bit de la parella serà el **comandament del braç**. Guarda el codi de l'Activitat 3: el reaprofitaràs. Muntatge i integració: **[dossier del braç](../00_General/00_Projecte_T2_Brac.md)**.
+> 🤖 **Cap al robot del trimestre:** la comunicació per ràdio entre dues micro:bit (una que envia i una que rep) serà el **comandament del braç**. Guarda el codi de l'Activitat 3: el reaprofitaràs. Muntatge i integració: **[dossier del braç](../00_General/00_Projecte_T2_Brac.md)**.

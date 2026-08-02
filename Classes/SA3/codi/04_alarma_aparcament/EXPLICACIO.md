@@ -24,7 +24,7 @@ const int LLUNY = 30;
 const int PROP  = 10;
 ```
 
-Dos llindars parteixen la distància en **tres trams**: tranquil (més de 30 cm), alerta (entre 10 i 30) i perill (menys de 10). Són el primer que la teva parella ha de **personalitzar**: quins valors tenen sentit per al vostre context? Com que són constants amb nom, canviar-los és tocar dues línies.
+Dos llindars parteixen la distància en **tres trams**: tranquil (més de 30 cm), alerta (entre 10 i 30) i perill (menys de 10). Són el primer que has de **personalitzar**: quins valors tenen sentit per al teu context? Com que són constants amb nom, canviar-los és tocar dues línies.
 
 ### Bloc 2 — La funció de la pràctica 3, reutilitzada
 

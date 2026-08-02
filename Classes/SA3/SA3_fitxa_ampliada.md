@@ -1,12 +1,12 @@
 # SA3 · Fitxa ampliada (aprofundiment) — Entrades i sensors
 
-> 📄 **Versió ampliada**: conté totes les activitats, rutines (coavaluació, exit ticket, ODS…) i ampliacions. La fitxa que fa **tot l'alumnat** és la base: **[SA3_fitxa_alumnat.md](SA3_fitxa_alumnat.md)**.
+> 📄 **Versió ampliada**: conté totes les activitats, rutines (revisió creuada, exit ticket, ODS…) i ampliacions. La fitxa que fa **tot l'alumnat** és la base: **[SA3_fitxa_alumnat.md](SA3_fitxa_alumnat.md)**.
 
-> 🧑‍🎓 **Quan toca obrir-la?** És **opcional**: quan portis la **fitxa base al dia** i vulguis més (ampliacions, rols, pensament computacional). Algunes rutines (coavaluació, exit ticket) les activarà el **docent** a l'aula quan toqui.
+> 🧑‍🎓 **Quan toca obrir-la?** És **opcional**: quan portis la **fitxa base al dia** i vulguis més (ampliacions, pensament computacional). Algunes rutines (revisió creuada, exit ticket) les activarà el **docent** a l'aula quan toqui.
 
-> 🗺️ **Quan s'usa cada apartat:** les **Activitats 1–4** segueixen les mateixes sessions que la fitxa base (aquí amb més detall i ampliacions) · **Rols**: es pacten en començar la SA i es roten · **Si t'encalles** i **Pensament computacional**: durant el treball · **Vols més?**: amb el nucli al dia · **Exit ticket**: els últims 2' de cada sessió · **Diana**, **Coavaluació** i **Quadern tècnic**: en tancar la SA (a la SA3, abans de la prova T1 de la S4) · **Context real i ODS**: quan el docent l'activi.
+> 🗺️ **Quan s'usa cada apartat:** les **Activitats 1–4** segueixen les mateixes sessions que la fitxa base (aquí amb més detall i ampliacions) · **Si t'encalles** i **Pensament computacional**: durant el treball · **Vols més?**: amb el nucli al dia · **Exit ticket**: els últims 2' de cada sessió · **Diana**, **Revisió creuada** i **Quadern tècnic**: en tancar la SA (a la SA3, abans de la prova T1 de la S4) · **Context real i ODS**: quan el docent l'activi.
 
-**Nom:** ______________________  **Parella:** ______________________  **Data:** __________
+**Nom:** ______________________  **Data:** __________
 
 > Ara el sistema **percep** l'entorn. Treballaràs entrades digitals i analògiques, el monitor sèrie i les funcions.
 
@@ -57,16 +57,19 @@ Dissenya un avís que depèn de la distància:
 
 ---
 
-## Treball en equip · rols de la parella
+## Treball individual i ajuda entre iguals
 
-Repartiu-vos els rols i **roteu-los** a cada sessió:
+L'alarma és **teva**: la munta, la programa i la documenta la mateixa persona. Però ningú
+avança sol: apunta a cada sessió **qui t'ha ajudat i a qui has ajudat** (i en què). És el que
+s'observa a la rúbrica **R5**.
 
-| Rol | S1 | S2 | S3 | S4 |
+| | S1 | S2 | S3 | S4 |
 |---|---|---|---|---|
-| Coordinador/a (temps, enunciat) | | | | |
-| Programador/a (codi) | | | | |
-| Enginyer/a de maquinari (sensor, connexions, seguretat) | | | | |
-| Provador/a–Documentador/a (monitor sèrie + quadern) | | | | |
+| Qui m'ha ajudat i en què | | | | |
+| A qui he ajudat i en què | | | | |
+
+> 👥 **Si el docent t'ajunta amb algú puntualment**, repartiu-vos només **qui escriu** i **qui
+> verifica**, i intercanvieu-vos els papers a mitja sessió. El lliurable continua sent el teu.
 
 ---
 
@@ -99,9 +102,9 @@ Situa't (0-10):
 | Faig servir el Monitor sèrie per calibrar | ☐ | ☐ | ☐ | ☐ |
 | Escric i faig servir funcions pròpies | ☐ | ☐ | ☐ | ☐ |
 
-## Coavaluació (2 estrelles i un desig — amb criteris)
+## Revisió creuada de codi (2 estrelles i un desig — amb criteris)
 
-Intercanvieu l'alarma/aparcament amb una altra parella. **Primer mireu-la amb criteris de les rúbriques R1 i R2** (marqueu ✓ o ✗):
+Llegeix l'alarma/aparcament **d'un company o companya** (codi i circuit). **Primer mira-la amb criteris de les rúbriques R1 i R2** (marca ✓ o ✗):
 
 | Criteri | ✓/✗ |
 |---|---|
@@ -109,10 +112,11 @@ Intercanvieu l'alarma/aparcament amb una altra parella. **Primer mireu-la amb cr
 | Els **llindars de distància** fan el que diu la seva taula (provat!) — R1 | |
 | El **sensor està ben alimentat i estable** (VCC/GND, cables ferms) — R2 | |
 
-Ara escriviu el retorn — **les estrelles i el desig han de sortir de la taula**:
+Ara escriu el retorn — **les estrelles i el desig han de sortir de la taula**. El desig ha de ser **una millora concreta**, i afegeix-hi **un dubte** que t'hagi generat el seu codi:
 - ⭐ Una cosa ben feta: ______________________
 - ⭐ Una altra cosa ben feta: ______________________
-- 💡 Una millora (desig): ______________________
+- 💡 Una millora concreta (desig): ______________________
+- ❓ Un dubte que em genera el seu codi: ______________________
 
 ## Exit ticket (abans de marxar)
 

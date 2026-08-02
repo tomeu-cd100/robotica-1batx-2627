@@ -1,6 +1,6 @@
 # 🐣 Projecte T1 · La mascota reactiva
 
-> **Per a qui és?** Per a cada parella en acabar la SA3. Aquesta pàgina és el
+> **Per a qui és?** Per a cada alumne/a en acabar la SA3. Aquesta pàgina és el
 > punt de partida del robot del 1r trimestre: aquí hi ha tot el que cal per
 > construir la mascota, en l'ordre en què es necessita.
 

@@ -1,6 +1,6 @@
 # 🚗 Projecte T3 · El rover autònom
 
-> **Per a qui és?** Per a cada parella durant el 3r trimestre. És el dossier
+> **Per a qui és?** Per a cada alumne/a durant el 3r trimestre. És el dossier
 > del tercer robot del curs: peces, muntatge, cablatge i rúbrica. Els reptes
 > de SA7, SA8 i SA9 hi van sumant capacitats; aquí es veu el conjunt.
 
@@ -16,7 +16,7 @@ el pont H **L298N**, l'Arduino **UNO** amb la breadboard i el **portapiles**.
 L'**HC-SR04** mira endavant al seu suport imprès i, a SA8, s'hi afegeix la
 **micro:bit**. És el mateix comportament autònom que ja feia la Imagina
 3dBot a SA7 —seguir línia, evitar obstacles—, però ara **construït i conegut
-per dins**: cada parella sap exactament on va cada cable perquè l'ha
+per dins**: cadascú sap exactament on va cada cable perquè l'ha
 cablejat ella mateixa.
 
 L'avantatge clau de tenir un rover propi és que el **maquinari és idèntic per
@@ -47,7 +47,7 @@ a una competició externa, és fora d'hores lectives).
 | Motoreductor + roda KS9008 | Kit 2 | 2 |
 | Pont H L298N | Compra de centre | 1 |
 | Sensor d'ultrasons HC-SR04 | Kit 2 | 1 |
-| Seguidor de línia KS0050 | Kit 2 (un per alumne de la parella) | 2 |
+| Seguidor de línia KS0050 | Kit 2 | 2 |
 | Sensor de col·lisió KS0021 (para-xocs) | Kit 2 | 1 |
 | Portapiles 6×AA | Material del centre | 1 |
 | Arduino UNO + breadboard petita | Kit 1 | 1 |
@@ -82,16 +82,16 @@ definitives es decideixen amb el xassís tallat a la mà (l'espai és just i
 val més adaptar-se al muntatge real que fixar forats a cegues).
 
 Flux de fabricació:
-1. Cada parella prepara el gravat o retolació del nom al **tancament del 2n
+1. Cada alumne/a prepara el gravat o retolació del nom al **tancament del 2n
    trimestre** (~20 min) o de casa, i el docent el valida **abans de la
    sessió 0**.
 2. El docent llança el tall de `xassis_rover_ARomero.svg` per **lots**
-   durant la sessió 0 del trimestre (nesting de diverses parelles per
+   durant la sessió 0 del trimestre (nesting de diversos xassissos per
    tauler).
-3. Cada parella recull el seu xassís i la roda boja i el suport de
+3. Cada alumne/a recull el seu xassís i la roda boja i el suport de
    l'HC-SR04 impresos prèviament.
 4. Muntatge sencer a la mateixa sessió (sessió 0, vegeu més avall).
-5. El full de cua públic per màquina (parella · fitxer · estat) es manté
+5. El full de cua públic per màquina (alumne/a · fitxer · estat) es manté
    igual que per als altres robots del curs.
 
 ## Muntatge
@@ -211,7 +211,7 @@ abans de programar-lo:
 
 | Temps | Què es fa |
 |---|---|
-| 0-15' | Repartiment de peces per parella i comprovació que hi és tot (llista de peces de dalt). |
+| 0-15' | Repartiment de peces i comprovació que hi és tot (llista de peces de dalt). |
 | 15-60' | Xassís: encaixos del cos, motors, roda boja i fixació de l'electrònica amb brides/velcro. |
 | 60-90' | Cablatge complet amb la taula d'aquest dossier (L298N, HC-SR04, seguidors, para-xocs, alimentació amb GND comú). |
 | 90-120' | Test de fum: puja un sketch de prova (motors endavant/enrere + lectura d'ultrasons per Serial) i comprova que respon abans de tancar la sessió. |
@@ -219,7 +219,7 @@ abans de programar-lo:
 El sketch de prova és el mateix `01_moviment_basic.ino` de SA7
 (`Classes/SA7/codi/01_moviment_basic/`), amb el bloc
 `// === PINS (AJUSTAR) ===` ja fixat amb els pins d'aquest dossier: aquesta
-sessió és quan cada parella ajusta aquest bloc **una sola vegada** i no el
+sessió és quan cadascú ajusta aquest bloc **una sola vegada** i no el
 torna a tocar en tot el trimestre.
 
 > 🔑 **Per al docent:** implementació completa de referència al
@@ -259,7 +259,7 @@ cap dins de les 5 sessions de la SA9.
 | La UNO es reinicia en moure els motors | Alimentada per USB en lloc dels 5 V del L298N. | Alimenta la UNO des del L298N, mai per USB, quan els motors funcionen. |
 
 > **Pla B:** si un rover no arriba muntat a temps per a la SA7 (fabricació
-> endarrerida) o no arriba viu a SA9 (avaria), la parella passa a la Imagina
+> endarrerida) o no arriba viu a SA9 (avaria), qui es quedi sense passa a la Imagina
 > 3dBot o al xassís de reserva del Kit 2. En aquest cas els `.ino` de SA7
 > tornen a servir **tal com estan** (són els de la 3dBot: un pin de direcció
 > per motor), ajustant només els números del bloc

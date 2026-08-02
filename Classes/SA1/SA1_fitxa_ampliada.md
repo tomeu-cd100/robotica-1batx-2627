@@ -1,12 +1,12 @@
 # SA1 · Fitxa ampliada (aprofundiment) — Què és un robot?
 
-> 📄 **Versió ampliada**: conté totes les activitats, rutines (coavaluació, exit ticket, ODS…) i ampliacions. La fitxa que fa **tot l'alumnat** és la base: **[SA1_fitxa_alumnat.md](SA1_fitxa_alumnat.md)**.
+> 📄 **Versió ampliada**: conté totes les activitats, rutines (revisió creuada, exit ticket, ODS…) i ampliacions. La fitxa que fa **tot l'alumnat** és la base: **[SA1_fitxa_alumnat.md](SA1_fitxa_alumnat.md)**.
 
-> 🧑‍🎓 **Quan toca obrir-la?** És **opcional**: quan portis la **fitxa base al dia** i vulguis més (ampliacions, rols, pensament computacional). Algunes rutines (coavaluació, exit ticket) les activarà el **docent** a l'aula quan toqui.
+> 🧑‍🎓 **Quan toca obrir-la?** És **opcional**: quan portis la **fitxa base al dia** i vulguis més (ampliacions, pensament computacional). Algunes rutines (revisió creuada, exit ticket) les activarà el **docent** a l'aula quan toqui.
 
-> 🗺️ **Quan s'usa cada apartat:** les **Activitats 1–4** segueixen les mateixes sessions que la fitxa base (aquí amb més detall i ampliacions) · **Rols**: es pacten en començar la SA i es roten · **Si t'encalles** i **Pensament computacional**: durant el treball · **Vols més?**: amb el nucli al dia · **Exit ticket**: els últims 2' de cada sessió · **Diana**, **Coavaluació** i **Quadern tècnic**: en tancar la SA · **Context real i ODS**: quan el docent l'activi.
+> 🗺️ **Quan s'usa cada apartat:** les **Activitats 1–4** segueixen les mateixes sessions que la fitxa base (aquí amb més detall i ampliacions) · **Si t'encalles** i **Pensament computacional**: durant el treball · **Vols més?**: amb el nucli al dia · **Exit ticket**: els últims 2' de cada sessió · **Diana**, **Revisió creuada** i **Quadern tècnic**: en tancar la SA · **Context real i ODS**: quan el docent l'activi.
 
-**Nom:** ______________________  **Parella:** ______________________  **Data:** __________
+**Nom:** ______________________  **Data:** __________
 
 > En aquesta unitat descobriràs què és un robot i un sistema embegut, coneixeràs la placa Arduino i faràs el teu primer programa.
 
@@ -80,16 +80,21 @@ Tria un **robot real** i analitza'l amb la plantilla [`SA1_poster_robot_plantill
 
 ---
 
-## Treball en equip · rols de la parella
+## Treball individual i ajuda entre iguals
 
-Repartiu-vos els rols i **roteu-los** a cada sessió (marqueu qui fa què):
+El treball és **individual**: munta el teu circuit, escriu el teu codi i documenta el teu
+quadern. Això no vol dir treballar aïllat: apunta a cada sessió **qui t'ha ajudat i a qui
+has ajudat** (i com), perquè és el que s'observa a la rúbrica **R5**.
 
-| Rol | Sessió 1 | Sessió 2 | Sessió 3 |
-|---|---|---|---|
-| Coordinador/a (temps, enunciat, que tothom participi) | | | |
-| Programador/a (codi / teclat) | | | |
-| Enginyer/a de maquinari (placa, connexions, seguretat) | | | |
-| Provador/a–Documentador/a (prova + quadern) | | | |
+| Sessió | Qui m'ha ajudat i en què | A qui he ajudat i en què |
+|---|---|---|
+| Sessió 1 | | |
+| Sessió 2 | | |
+| Sessió 3 | | |
+
+> 👥 **Si el docent t'ajunta amb algú puntualment** (material que falla, una absència…),
+> repartiu-vos només dos papers: **qui escriu** i **qui verifica**, i **intercanvieu-los a
+> mitja sessió**. El lliurable continua sent el teu.
 
 ---
 
@@ -122,9 +127,9 @@ Situa't (0-10):
 | Reconec les parts de la placa i distingeixo digital/analògic | ☐ | ☐ | ☐ | ☐ |
 | Llegeixo i modifico el codi `Blink` | ☐ | ☐ | ☐ | ☐ |
 
-## Coavaluació (2 estrelles i un desig — amb criteris)
+## Revisió creuada (2 estrelles i un desig — amb criteris)
 
-Intercanvieu el pòster amb una altra parella. **Primer mireu-lo amb criteris de la rúbrica R4** (marqueu ✓ o ✗):
+Intercanvia el pòster amb un company o companya. **Primer mira'l amb criteris de la rúbrica R4** (marca ✓ o ✗):
 
 | Criteri | ✓/✗ |
 |---|---|
@@ -132,7 +137,7 @@ Intercanvieu el pòster amb una altra parella. **Primer mireu-lo amb criteris de
 | El **dilema ètic** té una opinió argumentada (no només "és bo/dolent") | |
 | **S'entén sense que ells l'expliquin** (títols, esquema, llegenda) | |
 
-Ara escriviu el retorn — **les estrelles i el desig han de sortir de la taula** (no val "m'agrada el color"):
+Ara escriu el retorn — **les estrelles i el desig han de sortir de la taula** (no val "m'agrada el color"):
 - ⭐ Una cosa ben feta: ______________________
 - ⭐ Una altra cosa ben feta: ______________________
 - 💡 Una millora (desig): ______________________

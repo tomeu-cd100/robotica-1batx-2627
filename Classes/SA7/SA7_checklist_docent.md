@@ -5,9 +5,9 @@
 > Eina d'acció d'una cara. Condensa la [`SA7_guia_docent.md`](SA7_guia_docent.md). Marca `[x]` a mesura que ho tinguis fet. **Quan s'usa:** imprimeix-lo en **preparar la SA** (§1) i tingues-lo **a taula a cada sessió** (§2–§4).
 
 ## 🧰 1. Logística prèvia (preparar abans de començar la SA)
-- [ ] **Robot per equip** amb piles/bateria a punt i cable de programació:
-  - **amb fil conductor** → el **rover** de cada parella, muntat a la **sessió 0** ([dossier T3](../00_General/00_Projecte_T3_Rover.md)); la 3dBot queda de reserva
-  - **sense fil conductor** → Imagina 3dBot muntada per equip
+- [ ] **Un robot per alumne/a** amb piles/bateria a punt i cable de programació:
+  - **amb fil conductor** → el **rover** de cada alumne/a, muntat a la **sessió 0** ([dossier T3](../00_General/00_Projecte_T3_Rover.md)); la 3dBot queda de reserva
+  - **sense fil conductor** → Imagina 3dBot muntada per alumne/a
 - [ ] Sensors de línia IR + ultrasons segons dotació
 - [ ] ⚙️ **Pins i funció `motors()` fixats una sola vegada**:
   - 3dBot → comprovar el manual de pins de la placa (bloc `// === PINS (AJUSTAR) ===` de cada `.ino`), depèn del model
@@ -45,11 +45,11 @@
 - [ ] **Demostració a la pista** (comportament autònom) → **R3**, Projectes 45 %
 - [ ] **Registre d'iteracions** (temps de volta per intent, millores) → **R3, R4**
 - [ ] **Quadern tècnic** (calibratges, decisions, errors) → **R4**, Quadern tècnic i pràctiques 25 %
-- [ ] **Observació del procés** (treball d'equip, ús segur del robot) → R4
-- [ ] Coavaluació entre equips + **exit tickets** + registre **0–10**
+- [ ] **Observació del procés** (ajuda entre iguals, ús segur del robot) → R4
+- [ ] Revisió creuada entre companys + **exit tickets** + registre **0–10**
 
 ## 🪜 4. Atenció a la diversitat (previst per aquesta SA)
-- [ ] **Bastida:** provar **una funció de moviment cada cop** · donar el bloc de pins ja ajustat · esquelet «Si t'encalles» de la pàgina de l'evita-obstacles (`codi/03_evita_obstacles/EXPLICACIO.md`) · rols clars
+- [ ] **Bastida:** provar **una funció de moviment cada cop** · donar el bloc de pins ja ajustat · esquelet «Si t'encalles» de la pàgina de l'evita-obstacles (`codi/03_evita_obstacles/EXPLICACIO.md`) · agrupament puntual amb un company si cal (qui escriu / qui verifica)
 - [ ] **+ Ampliació:** gir proporcional a la proximitat · correcció suau del seguidor · tornar al punt de sortida · [reptes ⭐ SA7](../../Reptes/Reptes_SA7.md)
 - [ ] ✏️ **Retirada de bastida — repte "a full en blanc":** un repte amb l'editor buit (només pseudocodi + full-xuleta de crides). No deixar obrir el sketch de referència fins tenir el pseudocodi
 - [ ] 🤖 **Llavor IA (2–3'):** comportament **programat** (regles) vs **après** (visió per computador, milions d'exemples) → SA8

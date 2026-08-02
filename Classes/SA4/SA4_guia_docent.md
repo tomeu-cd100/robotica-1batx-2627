@@ -3,7 +3,7 @@
 **Durada:** 8 h (4 sessions; la 4a amb ampliacions opcionals) · **Maquinari:** Arduino UNO + servo SG90 + motor DC + driver/pont H (L298N) · **Llenguatge:** C/C++
 **Referència:** [`Programació didàctica/13_SA4_Moviment_servos_motors.md`](../../Programació%20didàctica/13_SA4_Moviment_servos_motors.md) · **Esquemes:** [`SA4_esquemes_connexions.md`](SA4_esquemes_connexions.md)
 
-> 🧭 **Com s'usa aquesta guia.** **Abans de la SA:** objectius, material i codi de suport (la logística, al checklist docent). **A cada sessió:** la secció «SESSIÓ n» corresponent, amb el «Guió de modelatge» i els «Errors freqüents» a mà. **Durant tota la SA:** diversitat (DUA), rols cooperatius i pensament computacional. **En avaluar:** «Avaluació formativa (instruments)». **Per contextualitzar:** context real i ODS.
+> 🧭 **Com s'usa aquesta guia.** **Abans de la SA:** objectius, material i codi de suport (la logística, al checklist docent). **A cada sessió:** la secció «SESSIÓ n» corresponent, amb el «Guió de modelatge» i els «Errors freqüents» a mà. **Durant tota la SA:** diversitat (DUA), ajuda i revisió entre iguals, i pensament computacional. **En avaluar:** «Avaluació formativa (instruments)». **Per contextualitzar:** context real i ODS.
 
 ## Objectius de la SA
 1. Controlar la **posició** d'un servo i la **velocitat/direcció** d'un motor DC.
@@ -11,7 +11,7 @@
 3. Usar llibreries (`Servo.h`) i estructurar el control en **funcions**.
 4. Relacionar entrada (sensor/potenciòmetre) amb moviment (control).
 
-## Material per parella
+## Material per alumne/a
 - Arduino UNO + USB, protoboard, cables.
 - Servo SG90, motor DC, mòdul driver **L298N** (o pont H del kit), portapiles/alimentació externa (4×AA o font), potenciòmetre, sensor d'ultrasons.
 
@@ -73,14 +73,14 @@
 
 **Punt clau:** la sortida (moviment) depèn de l'entrada (sensor) → primer pas cap al **control** (SA6) i la robòtica mòbil (SA7).
 
-> 🧩 **Bastida `millis()` (10', per a parelles que acaben aviat — recomanat, prepara la SA6):** mini-pràctica [`05_dos_leds_millis`](codi/05_dos_leds_millis/05_dos_leds_millis.ino): dos LED a ritmes diferents **sense `delay()`**. Repesca el concepte presentat a la SA2 S2 («`delay()` bloqueja») i és el patró que la **màquina d'estats de la SA6** dona per sabut. Si cap parella hi arriba, reserva els 10' d'escalfament previstos a la S3 de SA6.
+> 🧩 **Bastida `millis()` (10', per a qui acaba aviat — recomanat, prepara la SA6):** mini-pràctica [`05_dos_leds_millis`](codi/05_dos_leds_millis/05_dos_leds_millis.ino): dos LED a ritmes diferents **sense `delay()`**. Repesca el concepte presentat a la SA2 S2 («`delay()` bloqueja») i és el patró que la **màquina d'estats de la SA6** dona per sabut. Si no hi arriba ningú, reserva els 10' d'escalfament previstos a la S3 de SA6.
 
 ---
 
 ## SESSIÓ 4 (2 h) — Producte: barrera automàtica
 - **Mini-check individual (10', substitueix l'activació):** les 3 línies del servo a 90° + per què el motor DC va amb alimentació externa — [`00_Mini_checks_individuals.md`](../00_General/00_Mini_checks_individuals.md). Aprofita el canvi de full per presentar en 1' el repte.
-- **Pràctica (70'):** `04_barrera_automatica.ino`. Barrera amb **servo** que s'obre quan l'ultrasons detecta un vehicle a prop i es tanca passat un temps, amb LED indicador. Cada parella personalitza temps i angles.
-- **Documentació + defensa (30'):** esquema, codi comentat, mini-defensa (1-2') amb la **mini-rúbrica R4·DO** ([`07_Rubriques.md`](../../Programació%20didàctica/07_Rubriques.md)): a més de la claredat (SA2), ara s'espera **una decisió tècnica justificada** (per què aquest llindar de distància, per què aquests angles).
+- **Pràctica (70'):** `04_barrera_automatica.ino`. Barrera amb **servo** que s'obre quan l'ultrasons detecta un vehicle a prop i es tanca passat un temps, amb LED indicador. Cada alumne/a personalitza temps i angles.
+- **Documentació + defensa (30'):** esquema, codi comentat i **mini-defensa individual** (1-2' per alumne/a: amb 5 alumnes, ~10' en total) amb la **mini-rúbrica R4·DO** ([`07_Rubriques.md`](../../Programació%20didàctica/07_Rubriques.md)): a més de la claredat (SA2), ara s'espera **una decisió tècnica justificada** (per què aquest llindar de distància, per què aquests angles).
 - **Tancament (10'):** autoavaluació.
 
 > ⏱️ **Marge:** el temps efectiu real és ~100' (arrencada + recollida), no 120'. Si vas just, retalla primer: **la personalització de temps i angles al final de la Pràctica (70')**.
@@ -131,14 +131,16 @@
 
 | Via | Mesura |
 |---|---|
-| **Bastida** (qui s'encalla) | Moure el servo a **angles fixos** abans del control amb potenciòmetre; donar la **taula de lògica del pont H** ja resolta; l'**esquelet amb `// TODO`** de les funcions de moviment a la secció «Si t'encalles» de la [pàgina de la pràctica del motor](codi/02_motor_pont_h/EXPLICACIO.md); parella heterogènia. |
+| **Bastida** (qui s'encalla) | Moure el servo a **angles fixos** abans del control amb potenciòmetre; donar la **taula de lògica del pont H** ja resolta; l'**esquelet amb `// TODO`** de les funcions de moviment a la secció «Si t'encalles» de la [pàgina de la pràctica del motor](codi/02_motor_pont_h/EXPLICACIO.md); si cal, agrupament puntual amb un company/a que ja ho tingui resolt (qui escriu / qui verifica). |
 | **+ Ampliació** (qui va sobrat) | Dos servos coordinats, rampa d'acceleració, invertir sentit per distància; reptes ⭐ de [`Reptes/Reptes_SA4.md`](../../Reptes/Reptes_SA4.md). |
 | **Representació múltiple** | Esquema del pont H, simulació Wokwi (servo), vídeo del moviment, codi comentat. |
-| **Implicació** | Cada parella tria angles, temps i el mecanisme (barrera, braç, ventilador). |
+| **Implicació** | Cada alumne/a tria angles, temps i el mecanisme (barrera, braç, ventilador). |
 
-## Treball cooperatiu amb rols
+## Cooperació (amb treball individual)
 
-Parelles amb **rols rotatius**: Coordinador/a · Programador/a · Enginyer/a de maquinari (motor/servo, **massa comuna**, seguretat) · Provador/a–Documentador/a. Quadre per rotar a la fitxa.
+El treball és **individual**: cadascú munta el seu circuit, escriu el seu codi i lliura el seu producte ([`04_Metodologia.md` §4.3](../../Programació%20didàctica/04_Metodologia.md)). La cooperació —el **CA5.3** i la **R5**— s'evidencia en la **revisió creuada de codi** (abans de tancar el producte, cadascú llegeix el codi d'un company i li retorna **una millora concreta i un dubte**) i en l'**ajuda documentada** al quadern («qui m'ha ajudat / a qui he ajudat»).
+
+> Si en algun moment ajuntes dues persones (material que falla, una absència, un repte massa gros), reparteix només dos rols —**qui escriu** i **qui verifica**— i fes que s'intercanviïn a mitja sessió; el lliurable continua sent de cadascú.
 
 ## Pensament computacional i depuració
 
@@ -147,7 +149,7 @@ Parelles amb **rols rotatius**: Coordinador/a · Programador/a · Enginyer/a de 
 
 ## Avaluació formativa (instruments)
 
-- **Diana d'autoavaluació** (fitxa) · **Coavaluació** "2 estrelles i un desig" · **Exit ticket** de tancament.
+- **Diana d'autoavaluació** (fitxa) · **Revisió creuada de codi** (una millora concreta i un dubte sobre el codi d'un company) · **Exit ticket** de tancament.
 - **Mini-check individual** (10', **inici de la S4, substitueix l'activació**, no qualifica): les 3 línies del servo a 90° + per què el motor DC va amb alimentació externa. Vegeu [`../00_General/00_Mini_checks_individuals.md`](../00_General/00_Mini_checks_individuals.md).
 
 ## Referent (coeducació)

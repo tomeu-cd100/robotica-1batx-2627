@@ -2,7 +2,7 @@
 
 <!-- web:only-github -->
 
-**Nom:** ______________________  **Equip:** ______________________  **Data:** __________
+**Nom:** ______________________  **Data:** __________
 
 <!-- /web:only-github -->
 
@@ -48,16 +48,16 @@ Si la tasca encara no t'apareix al Classroom, és que la SA encara no ha començ
 > 📡 La ràdio et sona llunyana (SA5)? Repassa-la en 10' amb la targeta **[Repàs exprés de la ràdio](../00_General/00_Repas_expres_Radio.md)** abans de començar.
 
 0. **PREDIU:** amb [`01_telemetria_emissor.py`](codi/01_telemetria_emissor.py) i [`02_telemetria_receptor.py`](codi/02_telemetria_receptor.py), què mostrarà la receptora? ______________________
-1. Carrega'ls en dues plaques (mateix `group`) i comprova.
+1. Carrega'ls en **les teves dues plaques** (mateix `group`) i comprova. *(Si a l'aula no hi ha dues micro:bit per persona, el docent us ajuntarà un moment per fer la prova de transmissió: tu has escrit igualment els dos programes i documentes tu la prova.)*
 2. Quines magnituds envies? __________ Cada quant? __________
 3. **Repte:** envia dues magnituds etiquetades (`T:..`, `L:..`).
 
 > 💡 Si t'encalles amb l'emissora, parteix de l'**esquelet** de la secció «Si t'encalles» de la [pàgina de la pràctica de l'emissor](codi/01_telemetria_emissor_EXPLICACIO.md): la ràdio i el `group` ja estan configurats; tu omples la mesura i l'enviament etiquetat.
 
 ### 2 · Auditoria d'un producte IoT (S2)
-Amb la teva parella, feu d'**auditors de privacitat** d'un producte real: trieu una targeta de **[SA8_auditoria_iot.md](SA8_auditoria_iot.md)** i ompliu l'**informe d'auditoria** (mínim ètic obligatori):
+Fes d'**auditor/a de privacitat** d'un producte real: tria una targeta de **[SA8_auditoria_iot.md](SA8_auditoria_iot.md)** i omple el teu **informe d'auditoria** (mínim ètic obligatori):
 
-| Secció de l'informe | La vostra auditoria |
+| Secció de l'informe | La teva auditoria |
 |---|---|
 | Producte auditat | |
 | Diagrama **dispositiu → xarxa → núvol → app** (dibuixa'l al quadern) | ☐ fet |
@@ -66,7 +66,7 @@ Amb la teva parella, feu d'**auditors de privacitat** d'un producte real: trieu 
 | **Risc de privacitat** (qui sap què no hauria de saber) | |
 | Recomanació al **fabricant** + al **comprador** | |
 
-Després, **peritatge creuat**: presenteu-lo en 90 segons a una altra parella (que farà d'advocada del fabricant) i gireu els papers.
+Després, **peritatge creuat**: presenta'l en 90 segons a un company o companya (que farà d'advocat/ada del fabricant) i gireu els papers.
 
 ### 3 · Introducció a la IA (S3)
 1. Carrega [`03_ia_gestos.py`](codi/03_ia_gestos.py). Quins gestos classifica? __________
@@ -113,6 +113,6 @@ Tria: un **sistema connectat** (telemetria per ràdio) o un **classificador** (T
 <!-- /web:only-github -->
 
 > 💻 **Sense placa?** micro:bit a [python.microbit.org](https://python.microbit.org); telemetria ESP32 a `Simulacions/Wokwi/SA8_telemetria_esp32/`.
-> 📌 **Vols més?** +[Reptes ⭐](../../Reptes/Reptes_SA8.md) (estació meteo, alerta), rols, coavaluació, exit ticket, pensament computacional i ODS → **[SA8_fitxa_ampliada.md](SA8_fitxa_ampliada.md)**
+> 📌 **Vols més?** +[Reptes ⭐](../../Reptes/Reptes_SA8.md) (estació meteo, alerta), ajuda entre iguals, revisió creuada, exit ticket, pensament computacional i ODS → **[SA8_fitxa_ampliada.md](SA8_fitxa_ampliada.md)**
 
 > 🤖 **Cap al robot del trimestre:** la telemetria que has programat avui és la del teu **rover**: una micro:bit al rover envia dades per ràdio a la base amb pantalla OLED. Guarda el codi: es registra al **[dossier del rover](../00_General/00_Projecte_T3_Rover.md)**.

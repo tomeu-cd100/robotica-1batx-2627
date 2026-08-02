@@ -79,7 +79,7 @@ Les defenses orals **es repeteixen tot el curs** (SA2 S4, SA4 S4, SA6 S3, SA9 S4
 
 | Criteri | Insuficient | Suficient/Bé | Notable | Excel·lent |
 |---|---|---|---|---|
-| **Cooperació** | No col·labora. | Col·labora puntualment. | Col·labora activament. | Lidera i facilita l'equip. |
+| **Cooperació** *(amb treball individual: ajuda i revisió entre iguals)* | No ajuda ni demana ajuda; no fa la revisió creuada. | Ajuda si l'hi demanen; fa la revisió creuada de manera superficial. | Ajuda per iniciativa pròpia i fa revisions útils (una millora concreta i un dubte). | Fa que els altres avancin: detecta qui s'encalla, explica sense resoldre-ho per ells i les seves revisions milloren el codi del company. |
 | **Gestió de l'error** | Es bloqueja/abandona. | Persisteix amb ajuda. | Persisteix i prova alternatives. | Converteix l'error en aprenentatge. |
 | **Autonomia** | Depèn del docent. | Treballa amb suport. | Treballa de manera autònoma. | Autònom i autoregulat. |
 | **Responsabilitat** | No compleix terminis/material. | Compleix amb recordatoris. | Compleix. | Exemplar amb material i terminis. |
@@ -88,7 +88,7 @@ Les defenses orals **es repeteixen tot el curs** (SA2 S4, SA4 S4, SA6 S3, SA9 S4
 
 > **Ús:** cada SA indica quines rúbriques s'apliquen al seu producte. Les rúbriques es comparteixen amb l'alumnat **abans** de començar la SA per orientar l'aprenentatge (avaluació formativa).
 >
-> **Nota sobre la R5 (actitud, cooperació i autoregulació):** com que els **rols cooperatius roten** (sovint cada alumne fa cada rol una sola vegada per SA), la R5 es valora **al llarg del trimestre** (acumulant l'observació de diverses sessions i SA), no sessió a sessió. Així la rotació de rols té sentit longitudinal i la valoració és més fiable.
+> **Nota sobre la R5 (actitud, cooperació i autoregulació):** el treball del curs és **individual** ([`04_Metodologia.md` §4.3](04_Metodologia.md)), de manera que la fila de **cooperació** no avalua un producte compartit sinó **l'ajuda entre iguals i la revisió creuada de codi**, que és on es fa observable el CA5.3. Les evidències són la línia d'ajuda del quadern («qui m'ha ajudat / a qui he ajudat») i les revisions creuades abans de tancar cada producte. La R5 es valora **al llarg del trimestre** (acumulant l'observació de diverses sessions i SA), no sessió a sessió: una sola sessió no és mostra suficient per a cap de les quatre files.
 >
 > **Nota sobre l'ús d'assistents d'IA (integritat acadèmica):** **no cal una rúbrica nova**. L'ús d'IA (ChatGPT, Copilot…) s'integra a les existents: **R1 · Depuració** ("depura i **explica la causa**" → l'alumne ha de poder **explicar cada línia** que la IA li hagi suggerit), **R4 · Documentació** (quadern **honest**: ús d'IA **citat** i reflexió **pròpia**) i **R5 · Autoregulació/Responsabilitat** (aplicar **DEPURA abans** d'externalitzar; ús declarat). Principi: *declarar l'ús no baixa nota; amagar-lo o no saber-lo explicar, sí*. Protocol complet a `../Classes/00_General/00_IA_a_la_materia.md` §5.
 >

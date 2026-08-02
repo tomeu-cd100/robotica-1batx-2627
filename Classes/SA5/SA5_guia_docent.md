@@ -3,19 +3,19 @@
 **Durada:** 6 h (3 sessions; la comparativa C++↔Python es tanca dins la S3 o com a 4a sessió opcional d'ampliació) · **Maquinari:** micro:bit + Micro:shield · **Llenguatge:** MicroPython
 **Referència:** [`Programació didàctica/14_SA5_microbit_micropython.md`](../../Programació%20didàctica/14_SA5_microbit_micropython.md) · **Connexions:** [`SA5_connexions.md`](SA5_connexions.md)
 
-> 🧭 **Com s'usa aquesta guia.** **Abans de la SA:** objectius, material i codi de suport (la logística, al checklist docent). **A cada sessió:** la secció «SESSIÓ n» corresponent, amb el «Guió de modelatge» i els «Errors freqüents» a mà. **Durant tota la SA:** diversitat (DUA), rols cooperatius i pensament computacional. **En avaluar:** «Avaluació formativa (instruments)». **Per contextualitzar:** context real i ODS.
+> 🧭 **Com s'usa aquesta guia.** **Abans de la SA:** objectius, material i codi de suport (la logística, al checklist docent). **A cada sessió:** la secció «SESSIÓ n» corresponent, amb el «Guió de modelatge» i els «Errors freqüents» a mà. **Durant tota la SA:** diversitat (DUA), ajuda i revisió entre iguals, i pensament computacional. **En avaluar:** «Avaluació formativa (instruments)». **Per contextualitzar:** context real i ODS.
 
 ## Objectius de la SA
 1. Escriure programes en **MicroPython** amb la sintaxi correcta (**indentació!**).
 2. Usar els **sensors integrats** de la micro:bit i la comunicació per **ràdio**.
 3. **Comparar** la mateixa solució en C/C++ (Arduino) i Python (micro:bit).
 
-## Material per parella
-- 2 plaques **micro:bit** (per practicar la ràdio) + cables USB.
+## Material per alumne/a
+- **micro:bit** + cable USB. ⚠️ **La ràdio (S3) necessita dues plaques**: si la dotació permet donar-ne **dues per alumne/a** (emissor i receptor), la prova és individual; si no, fes la prova de ràdio en un **agrupament puntual de dos** (o amb la demo del Pla B) — el codi d'emissor i de receptor l'escriu cadascú igualment.
 - Micro:shield (per a perifèrics externs, opcional).
 - Entorn: **editor Python de micro:bit** (python.microbit.org) o **Thonny**. MakeCode com a pont.
 
-> 🆘 **Pla B sense maquinari (Wokwi no simula micro:bit):** el **simulador integrat de python.microbit.org** cobreix matriu LED, botons, acceleròmetre (gestos), llum i temperatura — S1 i S2 senceres es poden fer sense placa. El que **no** cobreix és la **ràdio entre dues plaques** (S3): si falten micro:bit, fes la ràdio com a **demo projectada del docent** amb 2 plaques i que les parelles programin l'emissor/receptor al simulador (el codi es verifica igual; només la transmissió és a la demo).
+> 🆘 **Pla B sense maquinari (Wokwi no simula micro:bit):** el **simulador integrat de python.microbit.org** cobreix matriu LED, botons, acceleròmetre (gestos), llum i temperatura — S1 i S2 senceres es poden fer sense placa. El que **no** cobreix és la **ràdio entre dues plaques** (S3): si falten micro:bit, fes la ràdio com a **demo projectada del docent** amb 2 plaques i que cadascú programi l'emissor/receptor al simulador (el codi es verifica igual; només la transmissió és a la demo).
 
 ## Codi de suport (`codi/`)
 
@@ -59,7 +59,7 @@
 - **Modelatge (25'):** [`02_passes.py`](codi/02_passes.py) (acceleròmetre, `get_strength`, llindar i antirebot) i [`03_nightlight.py`](codi/03_nightlight.py) (`display.read_light_level()`).
 - **Pràctica guiada (35'):** comptapassos i llum automàtic.
 - **Repte (40'):** detector d'inclinació (nivell) o termòmetre amb avís; **+ repte:** registrar dades i mostrar màxim/mínim.
-- **Tancament (10'):** quadern. **Sembra per a la SA8:** cada parella anota al quadern els **valors reals de l'acceleròmetre** en 3-4 postures (pla, dret, inclinat, sacseig — `x`, `y`, `get_strength()`): a la S3 de la SA8 seran el punt de partida del classificador de gestos, i estalvien fixar llindars «a ull».
+- **Tancament (10'):** quadern. **Sembra per a la SA8:** cada alumne/a anota al quadern els **valors reals de l'acceleròmetre** en 3-4 postures (pla, dret, inclinat, sacseig — `x`, `y`, `get_strength()`): a la S3 de la SA8 seran el punt de partida del classificador de gestos, i estalvien fixar llindars «a ull».
 
 > ⏱️ **Marge:** el temps efectiu real és ~100' (arrencada + recollida), no 120'. Si vas just, retalla primer: **+ repte: registrar dades i mostrar màxim/mínim**.
 
@@ -70,7 +70,7 @@
 ## SESSIÓ 3 (2 h) — Ràdio i comparació de paradigmes
 - **Mini-check individual (10', substitueix l'activació):** [`00_Mini_checks_individuals.md`](../00_General/00_Mini_checks_individuals.md). Aprofita el canvi de full per presentar en 1' com es comuniquen dues plaques sense cables → ràdio.
 - **Modelatge (25'):** [`04_radio_dau.py`](codi/04_radio_dau.py). Mòdul `radio`: `radio.on()`, `radio.config(group=...)`, `send()`, `receive()`. Gestos (`was_gesture("shake")`) i `random`.
-- **Pràctica guiada (35'):** dau digital que es comparteix per ràdio entre dues plaques.
+- **Pràctica guiada (35'):** dau digital que es comparteix per ràdio entre dues plaques. Cadascú programa **emissor i receptor**; per a la prova d'emissió-recepció li calen **dues plaques** o un **agrupament puntual** amb un company/a (vegeu «Material»).
 - **Repte (40'):** "pedra-paper-tisora" per ràdio o comandament a distància; **+ repte:** xarxa de 3+ plaques.
 - **Comparació + tancament (15'):** completar la **taula comparativa C++ ↔ Python** d'un mateix programa (p. ex. comptador) i reflexionar sobre els dos paradigmes. **Deures de represa (2'):** reparteix (o envia pel Classroom) la targeta [`00_Repas_expres_Cpp.md`](../00_General/00_Repas_expres_Cpp.md) — després de 3 setmanes de Python, la SA6 torna a C++ i la sintaxi (`;`, claus, tipus) arriba rovellada. És la targeta bessona de la de MicroPython que es reparteix abans de la prova T2.
 
@@ -118,11 +118,13 @@
 | **Bastida** (qui s'encalla) | **MakeCode (blocs)** com a pont abans del Python; **simulador** (python.microbit.org) per provar sense placa; l'**esquelet amb `# TODO`** de la secció «Si t'encalles» de la [pàgina de la pràctica del llum de nit](codi/03_nightlight_EXPLICACIO.md). |
 | **+ Ampliació** (qui va sobrat) | Xarxa de 3+ plaques per ràdio, registre de màx/mín, animacions pròpies; reptes ⭐ de [`Reptes/Reptes_SA5.md`](../../Reptes/Reptes_SA5.md). |
 | **Representació múltiple** | Blocs ↔ codi, simulador visual, taula comparativa C++/Python. |
-| **Implicació** | Cada parella tria el projecte (badge, comptapassos, nightlight o joc per ràdio). |
+| **Implicació** | Cada alumne/a tria el projecte (badge, comptapassos, nightlight o joc per ràdio). |
 
-## Treball cooperatiu amb rols
+## Cooperació (amb treball individual)
 
-Parelles amb **rols rotatius**: Coordinador/a · Programador/a (Python) · Enginyer/a de maquinari (prepara la micro:bit i prova els sensors/ràdio) · Provador/a–Documentador/a. Quadre per rotar a la fitxa.
+El treball és **individual**: cadascú programa la seva micro:bit i lliura el seu producte ([`04_Metodologia.md` §4.3](../../Programació%20didàctica/04_Metodologia.md)). La cooperació —el **CA5.3** i la **R5**— s'evidencia en la **revisió creuada de codi** (cadascú llegeix el programa d'un company i li retorna **una millora concreta i un dubte**) i en l'**ajuda documentada** al quadern.
+
+> Excepció pràctica d'aquesta SA: la **prova de ràdio** demana dues plaques. Si cal ajuntar dues persones per a aquell moment, reparteix només **qui escriu** i **qui verifica** i intercanvieu-los; cadascú manté el seu codi d'emissor i de receptor.
 
 ## Pensament computacional i depuració
 
@@ -131,7 +133,7 @@ Parelles amb **rols rotatius**: Coordinador/a · Programador/a (Python) · Engin
 
 ## Avaluació formativa (instruments)
 
-- **Diana d'autoavaluació** (fitxa) · **Coavaluació** "2 estrelles i un desig" · **Exit ticket** de tancament.
+- **Diana d'autoavaluació** (fitxa) · **Revisió creuada de codi** (una millora concreta i un dubte sobre el programa d'un company) · **Exit ticket** de tancament.
 - **Mini-check individual** (10', **inici de la S3**, no qualifica): programa MicroPython de memòria (cor intermitent) — comprova sobretot la **indentació**. Vegeu [`../00_General/00_Mini_checks_individuals.md`](../00_General/00_Mini_checks_individuals.md).
 
 ## Context real i ODS

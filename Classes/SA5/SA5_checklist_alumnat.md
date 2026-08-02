@@ -1,6 +1,6 @@
 # SA5 · El meu checklist — micro:bit i MicroPython
 
-**Nom:** ______________________  **Parella:** ______________________  **Data:** __________
+**Nom:** ______________________  **Data:** __________
 
 > 📄 **[Versió PDF per imprimir i omplir a mà](pdf/SA5_checklist_alumnat.pdf)**
 

@@ -48,12 +48,40 @@ REPETEIX sempre:
 
 > Val igualment un **diagrama de flux** senzill (rombes per a decisions, rectangles per a accions). El pseudocodi/diagrama **s'ensenya abans d'obrir l'editor**: 2 minuts del docent per parella eviten 20 minuts de codi sense rumb, i és la bastida de "diagrames de flux" que promet `05_Atencio_a_la_diversitat.md`.
 
-## 4.3. Agrupaments
+## 4.3. Agrupaments: **el treball és individual**
 
-- **Parelles de programació** (*pair programming*) heterogènies, amb rols rotatius (*driver* / *navigator*).
-- **Els 4 rols en parella:** cadascú n'acumula **dos**, amb emparellament fix — **A:** Coordinador/a + Programador/a · **B:** Enginyer/a de maquinari + Provador/a-Documentador/a — i **s'intercanvien cada sessió**. La lògica: separa "escriure el codi" de "validar-lo" (control creuat) i evita que els dos rols tècnics recaiguin sempre en la mateixa persona.
-- **Equips de projecte** de 2-3 per a SA7-SA9.
-- Moments d'**individualització** per a proves i quadern tècnic personal.
+**Cada alumne/a munta el seu circuit, escriu el seu codi, construeix el seu
+robot i lliura el seu producte.** Tots els lliurables i tots els instruments
+d'avaluació són individuals. És la conseqüència d'una ràtio petita: quan hi
+ha material per a tothom, el treball en parella deixa de ser una necessitat
+logística i passa a amagar qui no programa mai (l'*efecte passatger*).
+
+- **Agrupament puntual, decisió del docent.** Si en algun moment convé
+  ajuntar dues persones —material que falla, una absència llarga, un repte
+  massa gros per a algú—, es fa **per a aquella sessió**, sense que això
+  canviï el lliurable: cadascú documenta el seu al quadern. Quan es treballa
+  en parella, els dos rols que val la pena separar són **qui escriu** i **qui
+  verifica**, i s'intercanvien a mitja sessió.
+- **Equips per al projecte final (SA9):** també **individual per defecte**.
+  Amb grups petits, cada alumne/a defensa el seu projecte; si dos volen fer
+  un repte més ambiciós junts, ha de quedar clar **qui ha fet què** al
+  dossier i la defensa continua sent individual.
+
+> ⚖️ **I la competència de cooperar?** El **CA5.3** («…i treballar
+> cooperativament») és criteri oficial i no desapareix: el que canvia és
+> **on** s'evidencia. En lloc del producte compartit, la cooperació es
+> treballa i s'observa en:
+>
+> - la **revisió creuada de codi** (*code review*): abans de tancar un
+>   producte, cadascú llegeix el codi d'un company i li retorna una millora
+>   concreta i un dubte;
+> - **l'ajuda documentada**: al quadern hi ha una línia de «qui m'ha ajudat /
+>   a qui he ajudat i com» a cada sessió (és el que després alimenta la R5);
+> - les **posades en comú** i la depuració a dues veus quan algú s'encalla;
+> - la **mostra** de final de curs, que es prepara entre tots.
+>
+> Això és cooperació real i observable, i evita el problema clàssic del
+> producte d'equip: que la nota de grup tapi qui no hi ha treballat.
 
 ## 4.4. Eines i entorns
 
@@ -106,4 +134,4 @@ Pautes de gestió d'aula:
 
 ## 4.9. Atenció a la diversitat (resum)
 
-Es despleguen mesures universals, addicionals i intensives detallades a `05_Atencio_a_la_diversitat.md`: activitats multinivell, reptes d'ampliació, bastides (codi base, plantilles) i parelles heterogènies.
+Es despleguen mesures universals, addicionals i intensives detallades a `05_Atencio_a_la_diversitat.md`: activitats multinivell, reptes d'ampliació, bastides (codi base, plantilles) i agrupament puntual de suport quan convingui.

@@ -33,7 +33,7 @@ La matèria pretén que l'alumnat:
 ## 1.4. Característiques de l'alumnat
 
 - Alumnat de 16-17 anys amb **coneixements previs heterogenis**: alguns han programat per blocs (Scratch/mBlock) i han tocat plaques a l'ESO; d'altres tenen base mínima.
-- Es preveu una **prova diagnòstica inicial** (SA1) per ajustar el ritme i formar parelles heterogènies.
+- Es preveu una **prova diagnòstica inicial** (SA1) per ajustar el ritme i repartir el suport segons el punt de partida de cadascú.
 - La matèria és **eminentment pràctica**: cal preveure atenció a la diversitat tant per a alumnat amb dificultats com per a alumnat amb **altes capacitats** (reptes d'ampliació).
 
 ## 1.5. Contribució al perfil de sortida i als reptes del segle XXI

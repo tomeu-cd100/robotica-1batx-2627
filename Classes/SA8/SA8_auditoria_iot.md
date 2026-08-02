@@ -2,15 +2,15 @@
 
 **Durada:** 60' dins la S2 (40' auditoria + 20' peritatge) · **Maquinari:** cap — paper i bolígraf
 
-> Avui no programes: **audites**. Les empreses contracten **auditors de privacitat** perquè revisin els seus productes connectats abans (o després…) que surtin al mercat. La teva parella és avui una d'aquestes auditores: rebreu **un producte IoT real** i n'haureu de destapar què sap de l'usuari, per on viatgen les dades i què pot sortir malament.
+> Avui no programes: **audites**. Les empreses contracten **auditors de privacitat** perquè revisin els seus productes connectats abans (o després…) que surtin al mercat. Avui tu ets una d'aquestes auditores: rebràs **un producte IoT real** i n'hauràs de destapar què sap de l'usuari, per on viatgen les dades i què pot sortir malament.
 
 ## Com funciona
 
-1. **Trieu (o rebeu) una targeta de producte** d'aquesta pàgina. Cada targeta és un producte que existeix de debò al mercat, amb les especificacions simplificades.
-2. **Ompliu l'informe d'auditoria** (a sota, 1 pàgina — també és l'activitat 2 de la fitxa). Teniu 40 minuts. La secció **«Ètica de dades i IA»** que ha explicat el docent i la [fitxa base](SA8_fitxa_alumnat.md) són el vostre material de consulta.
-3. **Peritatge creuat (20'):** presenteu l'informe en **90 segons** a una altra parella. Ells fan d'**advocats del fabricant**: han de rebatre **un** dels vostres riscos («això ja ho resolem amb…»). Vosaltres defenseu l'informe amb arguments tècnics. Després **es giren els papers**.
+1. **Tria (o rep) una targeta de producte** d'aquesta pàgina — una de diferent de la del veí. Cada targeta és un producte que existeix de debò al mercat, amb les especificacions simplificades.
+2. **Omple el teu informe d'auditoria** (a sota, 1 pàgina — també és l'activitat 2 de la fitxa). Tens 40 minuts. La secció **«Ètica de dades i IA»** que ha explicat el docent i la [fitxa base](SA8_fitxa_alumnat.md) són el teu material de consulta.
+3. **Peritatge creuat (20'):** presenta el teu informe en **90 segons** a un company o companya. Ell o ella fa d'**advocat/ada del fabricant**: ha de rebatre **un** dels teus riscos («això ja ho resolem amb…»). Tu defenses l'informe amb arguments tècnics. Després **es giren els papers**.
 
-> 🗣️ **Frases d'inici per a l'advocat del fabricant:** *«Aquest risc és teòric perquè…»* · *«Les dades es xifren quan…»* · *«L'usuari ho ha acceptat en instal·lar l'app perquè…»* — i els auditors responen amb el **diagrama** a la mà.
+> 🗣️ **Frases d'inici per a l'advocat del fabricant:** *«Aquest risc és teòric perquè…»* · *«Les dades es xifren quan…»* · *«L'usuari ho ha acceptat en instal·lar l'app perquè…»* — i qui audita respon amb el **diagrama** a la mà.
 
 ## L'informe d'auditoria (1 pàgina)
 
@@ -109,6 +109,6 @@
 | Evidència | Criteri | Rúbrica |
 |---|---|---|
 | **Informe d'auditoria** (les 5 seccions) | CA4.2 (arquitectura IoT) i CA5.3 (impacte ètic/social) | **R4** |
-| **Peritatge creuat** (argumentar i rebatre amb vocabulari tècnic) | CA5.3 | R4 (coavaluació) |
+| **Peritatge creuat** (argumentar i rebatre amb vocabulari tècnic) | CA5.3 | R4 (revisió creuada) |
 
 > ♻️ **Aquest producte torna a sortir:** a la **S3 (IA)** ens preguntarem què passa quan el teu producte, a més de recollir dades, **decideix** amb elles. Guarda l'informe.

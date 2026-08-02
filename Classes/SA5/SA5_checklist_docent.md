@@ -5,7 +5,7 @@
 > Eina d'acció d'una cara. Condensa la [`SA5_guia_docent.md`](SA5_guia_docent.md). Marca `[x]` a mesura que ho tinguis fet. **Quan s'usa:** imprimeix-lo en **preparar la SA** (§1) i tingues-lo **a taula a cada sessió** (§2–§4).
 
 ## 🧰 1. Logística prèvia (preparar abans de començar la SA)
-- [ ] **2 plaques micro:bit per parella** (calen per practicar la ràdio) + cables USB
+- [ ] **micro:bit + cable USB per alumne/a**; per a la ràdio (S3) calen **2 plaques per alumne/a** — si no hi arriben, prepara l'agrupament puntual de dos (o la demo del Pla B)
 - [ ] Micro:shield (perifèrics externs, opcional)
 - [ ] Entorn provat: **python.microbit.org** o **Thonny**; MakeCode com a pont (bastida)
 - [ ] Sketches provats: `01_name_badge` · `02_passes` · `03_nightlight` · `04_radio_dau`
@@ -37,7 +37,7 @@
 - [ ] **App micro:bit** (comptapassos, nightlight o joc per ràdio) → **R1**, Projectes 45 %
 - [ ] **Taula comparativa C++ ↔ Python** completa → **R4**, Projectes 45 %
 - [ ] **Quadern tècnic** (comparativa, errors d'indentació, decisió de disseny) → **R4**, Quadern tècnic i pràctiques 25 %
-- [ ] Coavaluació + **exit tickets** + registre **0–10**
+- [ ] Revisió creuada de codi (una millora concreta i un dubte) → **R5** + **exit tickets** + registre **0–10**
 
 ## 🪜 4. Atenció a la diversitat (previst per aquesta SA)
 - [ ] **Bastida:** **MakeCode (blocs)** com a pont abans del Python · **simulador** per provar sense placa · esquelet «Si t'encalles» de la [pàgina del llum de nit](codi/03_nightlight_EXPLICACIO.md)

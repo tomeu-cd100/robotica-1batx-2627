@@ -3,7 +3,7 @@
 **Durada:** 8 h (4 sessions) · **Maquinari:** Arduino UNO + Keyestudio (polsador, potenciòmetre, LDR, NTC, ultrasons HC-SR04) · **Llenguatge:** C/C++
 **Referència:** [`Programació didàctica/12_SA3_Entrades_sensors.md`](../../Programació%20didàctica/12_SA3_Entrades_sensors.md) · **Esquemes:** [`SA3_esquemes_connexions.md`](SA3_esquemes_connexions.md)
 
-> 🧭 **Com s'usa aquesta guia.** **Abans de la SA:** objectius, material i codi de suport (la logística, al checklist docent). **A cada sessió:** la secció «SESSIÓ n» corresponent, amb el «Guió de modelatge» i els «Errors freqüents» a mà. **Durant tota la SA:** diversitat (DUA), rols cooperatius i pensament computacional. **En avaluar:** «Avaluació formativa (instruments)». **Per contextualitzar:** context real i ODS.
+> 🧭 **Com s'usa aquesta guia.** **Abans de la SA:** objectius, material i codi de suport (la logística, al checklist docent). **A cada sessió:** la secció «SESSIÓ n» corresponent, amb el «Guió de modelatge» i els «Errors freqüents» a mà. **Durant tota la SA:** diversitat (DUA), treball individual amb ajuda entre iguals i pensament computacional. **En avaluar:** «Avaluació formativa (instruments)». **Per contextualitzar:** context real i ODS.
 
 ## Objectius de la SA
 1. Llegir entrades digitals (`digitalRead`) i analògiques (`analogRead`) i interpretar-ne els valors.
@@ -11,7 +11,7 @@
 3. Usar el **monitor/traçador sèrie** per depurar i visualitzar dades.
 4. Connectar percepció (sensor) amb acció (actuador).
 
-## Material per parella
+## Material per alumne/a
 - Arduino UNO + USB, protoboard, cables.
 - Polsador, potenciòmetre, LDR + resistència 10 kΩ, NTC + 10 kΩ, sensor d'ultrasons HC-SR04, LED, brunzidor piezo.
 
@@ -60,7 +60,7 @@
 
 **Punt clau:** `analogRead` retorna 0-1023; `analogWrite` necessita 0-255 → cal **`map()`**. El divisor de tensió converteix la resistència variable (LDR/NTC) en tensió mesurable.
 
-> 🔌 **Racó de mesura (dins la pràctica guiada, ~5' per parella):** amb el **multímetre** al punt mig del divisor LDR–10 kΩ, comparar la **tensió real** amb la lectura del programa: `lectura/1023 · 5 V ≈ V mesurada` (p. ex. 512 → ~2,5 V). Tapar la LDR i veure com **totes dues** baixen alhora. Fa tangible què fa l'ADC (converteix tensió en nombre) i tanca el cicle de la **CA2.2**: mesurar amb instrument + interpretar amb software. El multímetre passa a ser eina oficial de la fase *Examina* de DEPURA per al maquinari.
+> 🔌 **Racó de mesura (dins la pràctica guiada, ~5' per alumne/a):** amb el **multímetre** al punt mig del divisor LDR–10 kΩ, comparar la **tensió real** amb la lectura del programa: `lectura/1023 · 5 V ≈ V mesurada` (p. ex. 512 → ~2,5 V). Tapar la LDR i veure com **totes dues** baixen alhora. Fa tangible què fa l'ADC (converteix tensió en nombre) i tanca el cicle de la **CA2.2**: mesurar amb instrument + interpretar amb software. El multímetre passa a ser eina oficial de la fase *Examina* de DEPURA per al maquinari.
 
 ---
 
@@ -73,7 +73,7 @@
 - **Mini-check individual (10', a l'inici, substitueix la graella):** `if/else` sobre una lectura analògica ([banc](../00_General/00_Mini_checks_individuals.md)).
 - **Modelatge (25'):** `03_ultrasons_funcio.ino`. Principi de l'eco (`pulseIn`), càlcul de distància, i sobretot **escriure una funció** `mesuraDistancia()` que retorna un valor.
 - **Pràctica guiada (25'):** munten l'HC-SR04; visualitzen la distància amb **Serial Plotter**.
-- **Repte-PRODUCTE (45'):** `04_alarma_aparcament.ino` com a referència. **Pseudocodi primer** (3-5 línies al quadern), després integren ultrasons + LED/piezo amb **avís per trams o proporcional a la distància**; cada parella personalitza llindars. **Mini-defensa d'1' a peu de taula:** mentre treballen, passa per cada parella i fes-los explicar sistema + una aplicació real (és la defensa de nivell T1).
+- **Repte-PRODUCTE (45'):** `04_alarma_aparcament.ino` com a referència. **Pseudocodi primer** (3-5 línies al quadern), després integren ultrasons + LED/piezo amb **avís per trams o proporcional a la distància**; cada alumne/a personalitza llindars. **Mini-defensa individual d'1' a peu de taula:** mentre treballen, passa per cada lloc de treball i fes explicar sistema + una aplicació real (amb 5 alumnes, ~5-7' en total; és la defensa de nivell T1).
 - **Tancament (15'):** documentar esquema i codi al quadern; autoavaluació amb rúbriques.
 
 > ⏱️ **Marge:** el temps efectiu real és ~100', i aquesta sessió és la més carregada del trimestre. Retalla d'entrada: **les ampliacions (mitjana de 3 mesures / detectar acostament-allunyament)** (i si cal, **la visualització amb Serial Plotter de la pràctica guiada — redueix-la a una comprovació ràpida al Monitor Sèrie**).
@@ -133,14 +133,14 @@
 
 | Via | Mesura |
 |---|---|
-| **Bastida** (qui s'encalla) | Començar amb el **polsador** (digital) abans de l'analògic; donar la funció `mesuraDistancia()` ja escrita per llegir-la i usar-la; l'**esquelet amb `// TODO`** del llum automàtic a la secció «Si t'encalles» de la [pàgina de la pràctica d'entrades analògiques](codi/02_potenciometre_ldr/EXPLICACIO.md); parella heterogènia. |
+| **Bastida** (qui s'encalla) | Començar amb el **polsador** (digital) abans de l'analògic; donar la funció `mesuraDistancia()` ja escrita per llegir-la i usar-la; l'**esquelet amb `// TODO`** del llum automàtic a la secció «Si t'encalles» de la [pàgina de la pràctica d'entrades analògiques](codi/02_potenciometre_ldr/EXPLICACIO.md); ajuda puntual d'un company que ja ho tingui resolt. |
 | **+ Ampliació** (qui va sobrat) | Mitjana de 3 mesures, detectar acostament/allunyament; reptes ⭐ de [`Reptes/Reptes_SA3.md`](../../Reptes/Reptes_SA3.md). |
 | **Representació múltiple** | Esquema, **Serial Plotter** (dada visual), simulació Wokwi, codi comentat. |
-| **Implicació** | Cada parella tria llindars i el tipus d'avís del seu producte. |
+| **Implicació** | Cada alumne/a tria llindars i el tipus d'avís del seu producte. |
 
-## Treball cooperatiu amb rols
+## Treball individual i cooperació entre iguals
 
-Parelles amb **rols rotatius** (un canvi per sessió): Coordinador/a · Programador/a · Enginyer/a de maquinari (sensor, connexions, seguretat) · Provador/a–Documentador/a (monitor sèrie + quadern). Quadre per rotar a la fitxa.
+El treball és **individual** ([`04_Metodologia.md` §4.3](../../Programació%20didàctica/04_Metodologia.md)): cada alumne/a munta el seu sensor, escriu el seu codi i defensa la seva alarma. La cooperació s'evidencia (CA5.3 → **R5**) en la **revisió creuada de codi** abans de tancar el producte (una millora concreta i un dubte), la **línia d'ajuda del quadern** i la **depuració a dues veus** amb el Monitor sèrie. Si cal ajuntar dues persones puntualment, separa només **qui escriu** i **qui verifica** i fes-los intercanviar a mitja sessió; el lliurable continua sent individual.
 
 ## Pensament computacional i depuració
 
@@ -149,7 +149,7 @@ Parelles amb **rols rotatius** (un canvi per sessió): Coordinador/a · Programa
 
 ## Avaluació formativa (instruments)
 
-- **Diana d'autoavaluació** (fitxa) sobre 3 criteris clau · **Coavaluació** "2 estrelles i un desig" · **Exit ticket** de tancament.
+- **Diana d'autoavaluació** (fitxa) sobre 3 criteris clau · **Revisió creuada de codi** "2 estrelles i un desig" (una millora concreta i un dubte) · **Exit ticket** de tancament.
 - **Mini-check individual** (10', **inici de la S3** — la S4 és la prova T1 —, no qualifica): `if/else` sobre una lectura analògica. Detecta qui encara no programa sol abans de la prova. Vegeu [`../00_General/00_Mini_checks_individuals.md`](../00_General/00_Mini_checks_individuals.md).
 
 ## Connexió amb la IA (llavor)

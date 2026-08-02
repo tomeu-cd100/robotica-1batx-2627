@@ -23,7 +23,7 @@ radio.on()
 radio.config(group=10)   # emissor i receptor han de compartir group
 ```
 
-Les dues línies que preparen la ràdio (les de la targeta de repàs de la SA5): primer **engegar-la** (`radio.on()`, sempre abans de res) i després **triar el canal**. El `group` és com sintonitzar una emissora: emissor i receptor només es «senten» si tenen **exactament el mateix número**. I al revés: si cada equip de l'aula tria un `group` **diferent** (el número de la taula, per exemple), ningú no interfereix ningú.
+Les dues línies que preparen la ràdio (les de la targeta de repàs de la SA5): primer **engegar-la** (`radio.on()`, sempre abans de res) i després **triar el canal**. El `group` és com sintonitzar una emissora: emissor i receptor només es «senten» si tenen **exactament el mateix número**. I al revés: si cada alumne/a de l'aula tria un `group` **diferent** (el número de la taula, per exemple), ningú no interfereix ningú.
 
 ### Bloc 2 — Mesurar: els sensors de la placa
 
@@ -62,7 +62,7 @@ La fletxa és un **indicador visual**: et diu que l'emissora és viva i enviant 
 | La receptora no rep mai res | `group` **diferent** a cada placa: el mateix número a `radio.config(group=...)` de totes dues. |
 | Error en executar `radio.send(...)` | Envies un **número**: converteix-lo a text amb `str(...)`. O falta `radio.on()` abans. |
 | Les dades arriben barrejades o inservibles | Enviades **sense etiqueta**: posa `"T:"`, `"L:"`… i un separador (`;`). |
-| Tots els equips reben dades de tothom | Tota l'aula amb el mateix `group`: cada equip el seu número. |
+| Tothom rep les dades de tothom | Tota l'aula amb el mateix `group`: cadascú el seu número. |
 
 ## 🧗 Si t'encalles: l'esquelet de l'emissor
 

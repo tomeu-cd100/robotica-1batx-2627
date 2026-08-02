@@ -36,26 +36,32 @@ I llegim/escrivim codi amb **PRIMM** (de l'anglès *Predict, Run, Investigate, M
 
 ---
 
-## 👥 Rols de l'equip (es roten cada sessió)
+## 👤 Els quatre barrets (els portes tots tu)
+
+Aquí **treballes sol**: el circuit, el codi, les proves i el quadern són teus.
+Però la feina té quatre papers diferents i val la pena **canviar de barret a
+consciència**, perquè és fàcil quedar-se enganxat en un i oblidar els altres:
 
 <div class="rols">
-  <div class="rol"><div class="ic">🧭</div><b>Coordinador/a</b><small>temps, llegeix l'enunciat, que tothom hi participi</small></div>
-  <div class="rol"><div class="ic">⌨️</div><b>Programador/a</b><small>escriu i edita el codi</small></div>
-  <div class="rol"><div class="ic">🔌</div><b>Enginyer/a de maquinari</b><small>munta el circuit, connexions i SEGURETAT</small></div>
-  <div class="rol"><div class="ic">🔎</div><b>Provador/a–documentador/a</b><small>prova, aplica DEPURA i documenta al quadern</small></div>
+  <div class="rol"><div class="ic">🧭</div><b>Coordinar</b><small>llegeix l'enunciat sencer i mira el rellotge</small></div>
+  <div class="rol"><div class="ic">⌨️</div><b>Programar</b><small>escriu i edita el codi</small></div>
+  <div class="rol"><div class="ic">🔌</div><b>Muntar</b><small>circuit, connexions i SEGURETAT</small></div>
+  <div class="rol"><div class="ic">🔎</div><b>Provar i documentar</b><small>prova, aplica DEPURA i escriu al quadern</small></div>
 </div>
-> A micro:bit (SA5/SA8) l'enginyer/a prepara la placa i els sensors/ràdio. Al robot (SA7) hi ha un/a **pilot/a** que prova a la pista.
+> A micro:bit (SA5/SA8) el barret de muntar és preparar la placa i els sensors/ràdio. Al robot (SA7) hi ha el de **pilot/a**, que el prova a la pista.
 >
-> **En parella (2 persones, 4 rols):** cadascú en porta **dos** — **A:** 🧭 Coordinador/a + ⌨️ Programador/a · **B:** 🔌 Enginyer/a + 🔎 Provador/a-Documentador/a. Així qui escriu el codi **no** és qui el valida (control creuat). A cada sessió, s'intercanvien A i B.
+> ⚠️ **El barret que més s'oblida és el de provar.** Fer que compili no és fer que funcioni: abans de dir «ja està», posa't aquest barret i intenta trencar-ho tu mateix.
+>
+> 🤝 **I els companys?** Encara que treballis sol, abans de tancar un producte fas una **revisió creuada**: llegeixes el codi d'un company i li dones **una millora concreta i un dubte**. Anota al quadern **qui t'ha ajudat i a qui has ajudat**: això és el que s'avalua a la R5, no el fet de treballar junts.
 
 ---
 
-## 🎯 Autoavaluació (diana) i coavaluació
+## 🎯 Autoavaluació (diana) i revisió creuada
 
 **Diana** — situa't en cada criteri:
 `NA` no assolit · `AS` suficient · `AN` notable · `AE` excel·lent
 
-**Coavaluació — 2 estrelles i un desig** (mira el producte d'un altre equip):
+**Revisió creuada — 2 estrelles i un desig** (llegeix el codi i el producte d'un company):
 <div class="trio">
   <div class="b"><span class="ic">⭐</span>una cosa ben feta</div>
   <div class="b"><span class="ic">⭐</span>una altra cosa ben feta</div>

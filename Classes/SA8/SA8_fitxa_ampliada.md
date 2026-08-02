@@ -1,12 +1,12 @@
 # SA8 · Fitxa ampliada (aprofundiment) — IoT i IA
 
-> 📄 **Versió ampliada**: conté totes les activitats, rutines (coavaluació, exit ticket, ODS…) i ampliacions. La fitxa que fa **tot l'alumnat** és la base: **[SA8_fitxa_alumnat.md](SA8_fitxa_alumnat.md)**.
+> 📄 **Versió ampliada**: conté totes les activitats, rutines (revisió creuada, exit ticket, ODS…) i ampliacions. La fitxa que fa **tot l'alumnat** és la base: **[SA8_fitxa_alumnat.md](SA8_fitxa_alumnat.md)**.
 
-> 🧑‍🎓 **Quan toca obrir-la?** És **opcional**: quan portis la **fitxa base al dia** i vulguis més (ampliacions, rols, pensament computacional). Algunes rutines (coavaluació, exit ticket) les activarà el **docent** a l'aula quan toqui.
+> 🧑‍🎓 **Quan toca obrir-la?** És **opcional**: quan portis la **fitxa base al dia** i vulguis més (ampliacions, pensament computacional). Algunes rutines (revisió creuada, exit ticket) les activarà el **docent** a l'aula quan toqui.
 
-> 🗺️ **Quan s'usa cada apartat:** les **Activitats 1–3** segueixen les mateixes sessions que la fitxa base (aquí amb més detall; la 2 va **després** de l'auditoria IoT) · **Rols**: es pacten en començar la SA i es roten · **Si t'encalles** i **Pensament computacional**: durant el treball · **Vols més?**: amb el nucli al dia · **Exit ticket**: els últims 2' de cada sessió · **Diana**, **Coavaluació** i **Quadern tècnic**: en tancar la SA · **Context real i ODS**: quan el docent l'activi.
+> 🗺️ **Quan s'usa cada apartat:** les **Activitats 1–3** segueixen les mateixes sessions que la fitxa base (aquí amb més detall; la 2 va **després** de l'auditoria IoT) · **Si t'encalles** i **Pensament computacional**: durant el treball · **Vols més?**: amb el nucli al dia · **Exit ticket**: els últims 2' de cada sessió · **Diana**, **Revisió creuada** i **Quadern tècnic**: en tancar la SA · **Context real i ODS**: quan el docent l'activi.
 
-**Nom:** ______________________  **Equip:** ______________________  **Data:** __________
+**Nom:** ______________________  **Data:** __________
 
 > Connectaràs dispositius (telemetria/IoT) i faràs que el sistema "reconegui" patrons (IA). Pensa també en l'**ètica de les dades**.
 
@@ -14,7 +14,7 @@
 
 ## Activitat 1 · Telemetria (S1)
 0. **PREDIU** (abans d'executar): mirant [`01_telemetria_emissor.py`](codi/01_telemetria_emissor.py) i [`02_telemetria_receptor.py`](codi/02_telemetria_receptor.py), què creus que mostrarà la placa receptora? ____________________
-1. Carrega [`01_telemetria_emissor.py`](codi/01_telemetria_emissor.py) i [`02_telemetria_receptor.py`](codi/02_telemetria_receptor.py) en dues plaques (mateix `group`) i **comprova** la predicció.
+1. Carrega [`01_telemetria_emissor.py`](codi/01_telemetria_emissor.py) i [`02_telemetria_receptor.py`](codi/02_telemetria_receptor.py) en **les teves dues plaques** (mateix `group`) i **comprova** la predicció. *(Si no hi ha dues micro:bit per persona, el docent us ajuntarà un moment per fer la transmissió: tu escrius igualment els dos programes.)*
 2. Quines magnituds envies? __________________ Cada quant? __________
 3. Registra 5 lectures rebudes:
 
@@ -61,16 +61,14 @@ A la S2 has **auditat** un producte del mercat ([SA8_auditoria_iot.md](SA8_audit
 
 ---
 
-## Treball en equip · rols
+## Ajuda entre iguals (cooperació)
 
-Repartiu-vos els rols i **roteu-los** a cada sessió:
+El sistema és **teu**: tu escrius l'emissor i el receptor, tu fas l'auditoria i tu entrenes el classificador. La cooperació no és repartir-se la feina, sinó **fer avançar els altres**. Apunta a cada sessió qui t'ha ajudat i a qui has ajudat (és el mateix que va al quadern):
 
-| Rol | S1 | S2 | S3 |
+| | S1 | S2 | S3 |
 |---|---|---|---|
-| Coordinador/a (temps, enunciat) | | | |
-| Programador/a (codi) | | | |
-| Enginyer/a de maquinari (prepara les plaques, ràdio/sensors) | | | |
-| Provador/a–Documentador/a (registra dades + quadern) | | | |
+| Qui m'ha ajudat i en què | | | |
+| A qui he ajudat i com | | | |
 
 ---
 
@@ -103,17 +101,17 @@ Situa't (0-10):
 | Explico l'arquitectura IoT i els seus riscos | ☐ | ☐ | ☐ | ☐ |
 | Distingeixo regles fetes a mà i aprenentatge automàtic | ☐ | ☐ | ☐ | ☐ |
 
-## Coavaluació (2 estrelles i un desig — amb criteris)
+## Revisió creuada (2 estrelles i un desig — amb criteris)
 
-Intercanvieu el sistema IoT/IA amb un altre equip. **Primer mireu-lo amb criteris de les rúbriques R3 i R4** (marqueu ✓ o ✗):
+Intercanvia el sistema IoT/IA amb un company o companya. **Primer mira'l amb criteris de les rúbriques R3 i R4** (marca ✓ o ✗):
 
 | Criteri | ✓/✗ |
 |---|---|
 | Les **dades arriben i es veuen** (pantalla o port sèrie) — R3 | |
-| Identifiquen un **risc de privacitat** amb una mesura concreta — R4 | |
-| Saben dir **amb qui podria fallar** el seu classificador i per què (biaix) — R4 | |
+| Identifica un **risc de privacitat** amb una mesura concreta — R4 | |
+| Sap dir **amb qui podria fallar** el seu classificador i per què (biaix) — R4 | |
 
-Ara escriviu el retorn — **les estrelles i el desig han de sortir de la taula**:
+Ara escriu el retorn — **les estrelles i el desig han de sortir de la taula**:
 - ⭐ Una cosa ben feta: ______________________
 - ⭐ Una altra cosa ben feta: ______________________
 - 💡 Una millora (desig): ______________________

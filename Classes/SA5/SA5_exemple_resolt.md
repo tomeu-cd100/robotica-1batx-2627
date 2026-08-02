@@ -127,7 +127,7 @@ while True:
 
 > **Sessió 3:** He fet una **sentinella de temperatura** que mostra els graus amb `temperature()` i,
 > quan passa el **`LLINDAR`**, avisa l'altra placa amb `radio.send("!")`. Al principi la segona placa no
-> reaccionava: tenia un **`group` diferent** (jo `5`, la parella `7`); en posar el mateix número ja es
+> reaccionava: tenia un **`group` diferent** (l'emissora `5`, la receptora `7`); en posar el mateix número ja es
 > van sentir. També em va sortir un **`IndentationError`** perquè havia barrejat un tab amb espais dins
 > del `if`. He entès que en Python la **indentació és la sintaxi** (el que a Arduino són les `{ }`) i que
 > la ràdio viatja com a **text**, per això comparo amb `"!"` i no amb `1`.

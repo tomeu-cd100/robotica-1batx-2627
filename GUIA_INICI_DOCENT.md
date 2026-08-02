@@ -149,7 +149,7 @@ No cal ser enginyer/a, però sí tenir aquesta base. Si algun punt et balla, ded
 1. Obre `Classes/SA1/SA1_guia_docent.md` (Sessió 1) i `SA1_fitxa_alumnat.md`.
 2. Pregunta d'activació: *"Quins robots tens a casa sense saber-ho?"*
 3. Presenta **entrada → procés → sortida** i el **mètode de projecte** (projecta el pòster).
-4. Passa la **prova diagnòstica** (no qualifica; serveix per fer parelles heterogènies).
+4. Passa la **prova diagnòstica** (no qualifica; et diu qui arriba amb experiència i qui de zero, per repartir el suport).
 5. Comparteix les **rúbriques** i reparteix el **quadern tècnic imprès** del trimestre (guia: `Classes/00_General/00_Quadern_tecnic.md`; tasca de Classroom a punt a `00_Quadern_tecnic_tasca_classroom.md`).
 
 > A partir d'aquí, segueix la guia docent de cada SA: està pensada perquè la puguis seguir sessió a sessió.

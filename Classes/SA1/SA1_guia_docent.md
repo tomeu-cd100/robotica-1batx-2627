@@ -3,7 +3,7 @@
 **Durada:** 6 h (3 sessions de 2 h) · **Maquinari:** Arduino UNO (demostració) + Tinkercad · **Llenguatge:** lectura de C/C++
 **Referència:** [`Programació didàctica/10_SA1_Introduccio_robotica.md`](../../Programació%20didàctica/10_SA1_Introduccio_robotica.md)
 
-> 🧭 **Com s'usa aquesta guia.** **Abans de la SA:** objectius, materials i documents de la carpeta (la logística, al checklist docent). **A cada sessió:** la secció «SESSIÓ n» corresponent, amb el «Guió de modelatge» a mà. **Durant tota la SA:** diversitat, rols cooperatius i pensament computacional. **En avaluar:** «Avaluació formativa (instruments)». **Per contextualitzar:** referent, context real i ODS.
+> 🧭 **Com s'usa aquesta guia.** **Abans de la SA:** objectius, materials i documents de la carpeta (la logística, al checklist docent). **A cada sessió:** la secció «SESSIÓ n» corresponent, amb el «Guió de modelatge» a mà. **Durant tota la SA:** diversitat, treball individual amb ajuda entre iguals i pensament computacional. **En avaluar:** «Avaluació formativa (instruments)». **Per contextualitzar:** referent, context real i ODS.
 
 ## Objectius de la SA
 1. Definir robot i sistema embegut; identificar entrada-procés-sortida.
@@ -13,7 +13,7 @@
 5. Conèixer i començar a aplicar el **mètode de projecte** (anàlisi → disseny → prototip → prova → millora) com a forma de treball de tot el curs.
 
 ## Materials per a la sessió
-- 1 Arduino UNO + cable USB (per a demostració i, si n'hi ha, per parelles).
+- 1 Arduino UNO + cable USB (per a demostració i, si n'hi ha, **per alumne/a**).
 - Ordinadors amb accés a **Tinkercad** (tinkercad.com) i a l'**Arduino Web Editor** (`create.arduino.cc/editor`).
 - Projector. **Quadern tècnic en paper** per a cada alumne/a (imprès a doble cara, un full per sessió: [`00_Quadern_tecnic.md`](../00_General/00_Quadern_tecnic.md)).
 
@@ -60,7 +60,7 @@ La SA1 no només respon *"què és un robot?"*: també presenta **com treballare
 |---|---|---|---|
 | Activació | 15' | Llança la pregunta: *"Quins robots tens a casa sense saber-ho?"* | Pluja d'idees; llista a la pissarra. |
 | Explicació | 25' | Presenta el model **entrada → procés → sortida** i el concepte de sistema embegut. | Prenen notes; classifiquen exemples. |
-| Pràctica | 40' | Reparteix l'**anàlisi de 3 sistemes** (rentadora, dron, semàfor). | En parelles, omplen la taula E-P-S de la fitxa (Activitat 1). |
+| Pràctica | 40' | Reparteix l'**anàlisi de 3 sistemes** (rentadora, dron, semàfor). | Cadascú omple la taula E-P-S de la seva fitxa (Activitat 1); es contrasta en veu alta. |
 | Diagnòstic | 30' | Passa la **prova diagnòstica** ([`SA1_prova_diagnostica.md`](SA1_prova_diagnostica.md); no qualifica). | Responen individualment. |
 | Tancament | 10' | Recull conclusions; presenta el **mètode de projecte** (pòster a l'aula) com a forma de treball del curs; obre el quadern tècnic. | Primera entrada al quadern. |
 
@@ -77,7 +77,7 @@ La SA1 no només respon *"què és un robot?"*: també presenta **com treballare
 | Dron | Giroscopi/acceleròmetre, GPS, comandament | Controlador de vol que estabilitza i navega | Motors de les hèlixs (ESC), LED, càmera |
 | Semàfor | Temporitzador, sensor de presència/espira | Lògica de seqüència de fases | LED vermell/groc/verd |
 
-**Prova diagnòstica:** vegeu [`SA1_prova_diagnostica.md`](SA1_prova_diagnostica.md) (versió imprimible amb clau de correcció + versió Google Forms autocorregible). Serveix per formar **parelles heterogènies** (alumnat amb experiència + sense).
+**Prova diagnòstica:** vegeu [`SA1_prova_diagnostica.md`](SA1_prova_diagnostica.md) (versió imprimible amb clau de correcció + versió Google Forms autocorregible). Serveix per **saber el punt de partida de cadascú** (qui té experiència prèvia i qui no) i ajustar-hi el suport i les ampliacions; el treball, però, és individual.
 
 ---
 
@@ -164,7 +164,7 @@ A la SA1 hem fet **parpellejar un LED** (una sortida digital senzilla). A la **S
 
 | Necessitat | Mesura |
 |---|---|
-| **Bastida (qui ho necessita)** | Apartats guiats de la fitxa i del pòster; la versió **etiquetada** de la placa com a referència; l'**esquelet amb `// TODO`** de la secció «Si t'encalles» de la [pàgina de la pràctica del repte](codi/blink_repte/EXPLICACIO.md); treball en **parella heterogènia** segons la diagnòstica. |
+| **Bastida (qui ho necessita)** | Apartats guiats de la fitxa i del pòster; la versió **etiquetada** de la placa com a referència; l'**esquelet amb `// TODO`** de la secció «Si t'encalles» de la [pàgina de la pràctica del repte](codi/blink_repte/EXPLICACIO.md); **acompanyament d'un company** amb experiència prèvia (segons la diagnòstica) sense que deixi de ser feina pròpia. |
 | **+ Ampliació (qui va sobrat)** | Sketches `blink_millis.ino` (sense `delay()`) i `sos_morse.ino` (funcions); investigar un robot industrial/IA i preparar defensa oral d'1 min. |
 | **Diversitat lingüística/lectora** | Glossari mínim a la pissarra (sensor, actuador, procés, embegut); diagrames i imatges (model E-P-S, placa, circuit) en lloc de text dens. |
 | **Sense maquinari per a tothom** | Tot és reproduïble a **Tinkercad**/**Wokwi**; es pot treballar amb el LED **intern** (pin 13) sense cablejar res. |
@@ -173,18 +173,15 @@ A la SA1 hem fet **parpellejar un LED** (una sortida digital senzilla). A la **S
 
 ---
 
-## Treball cooperatiu amb rols
+## Treball individual i cooperació entre iguals
 
-L'alumnat treballa en parella amb **rols rotatius** (un canvi per sessió) perquè tothom programi, munti i documenti:
+El treball és **individual** ([`04_Metodologia.md` §4.3](../../Programació%20didàctica/04_Metodologia.md)): cada alumne/a munta el seu circuit, escriu el seu codi i documenta el seu quadern. La cooperació no desapareix, però es desplaça del producte compartit a l'**ajuda entre iguals** i la **revisió creuada** (és el que evidencia el CA5.3 i alimenta la **R5**):
 
-| Rol | Funció |
-|---|---|
-| Coordinador/a | Gestiona el temps, llegeix l'enunciat, vetlla perquè tothom participi. |
-| Programador/a | Escriu i edita el codi. |
-| Enginyer/a de maquinari | Munta el circuit, comprova connexions i seguretat. |
-| Provador/a–Documentador/a | Prova, aplica la rutina DEPURA i documenta al quadern. |
+- **Línia d'ajuda al quadern/fitxa:** cada sessió, «qui m'ha ajudat / a qui he ajudat i com».
+- **Revisió creuada** abans de tancar el producte: cadascú llegeix el producte d'un company i li retorna **una millora concreta i un dubte**.
+- **Depuració a dues veus** i posades en comú quan algú s'encalla.
 
-> El quadre per rotar els rols és a la fitxa. Forma les parelles **heterogènies** segons la prova diagnòstica.
+> 👥 **Si ajuntes dues persones puntualment** (material que falla, una absència llarga), separa només **qui escriu** i **qui verifica**, i fes-los intercanviar a mitja sessió. El lliurable continua sent individual. La prova diagnòstica et diu qui té experiència prèvia i qui no, i serveix per decidir aquests aparellaments puntuals i el suport que cal.
 
 ## Pensament computacional i depuració
 
@@ -196,7 +193,7 @@ L'alumnat treballa en parella amb **rols rotatius** (un canvi per sessió) perqu
 ## Avaluació formativa (instruments)
 
 - **Diana d'autoavaluació** (fitxa): posicionament en 3 criteris clau.
-- **Coavaluació** ("2 estrelles i un desig"): cada parella valora el pòster d'una altra.
+- **Revisió creuada** ("2 estrelles i un desig"): cada alumne/a valora el pòster d'un company amb els criteris de la R4.
 - **Exit ticket** (fitxa): 3 preguntes de tancament; recull-les per ajustar la sessió següent.
 
 ## Referent (coeducació)

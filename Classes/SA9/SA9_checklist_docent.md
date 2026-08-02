@@ -19,8 +19,8 @@
 - [ ] **S1 · Idear:** referent (1') Cynthia Breazeal · presentar repte + banc · formar equips i rols · requisits, esbós, taulell àgil
 - [ ] **S2 · Prototipar:** MVP muntat + primer codi (des de `Codi_base_PLANTILLA/`) · **fita S2 fixada**
 - [ ] **S3 · Provar i millorar:** proves sistemàtiques + registre d'errors + **iteracions** + code review · (defenses avançades d'equips llestos)
-- [ ] **S4 · Comunicar (i tancar el curs):** dossier tècnic tancat · defenses orals + demostració — **munta-la com a mostra**: els tres robots del curs (mascota, braç, rover) a la taula del fons · coavaluació · **retrospectiva de curs (10')**
-- [ ] **S5 · PROVA PRÀCTICA T3:** individual, per torns (també amb rover per parella: 1 robot per cada 2 alumnes) · torns **des del minut 35**, prova tancada al **~85'** · **darrers 15': desmuntatge i retorn de l'electrònica als kits** amb l'inventari a la mà
+- [ ] **S4 · Comunicar (i tancar el curs):** dossier tècnic tancat · defenses orals + demostració — **munta-la com a mostra**: els tres robots del curs (mascota, braç, rover) a la taula del fons · revisió creuada · **retrospectiva de curs (10')**
+- [ ] **S5 · PROVA PRÀCTICA T3:** individual, per torns (les pistes són el coll d'ampolla, no els robots) · torns **des del minut 35**, prova tancada al **~85'** · **darrers 15': desmuntatge i retorn de l'electrònica als kits** amb l'inventari a la mà
 - [ ] **Després de la S5:** carpeta de fotos/vídeos de la mostra desada (difusió al web del centre o al Classroom) i **quaderns tècnics retornats** a l'alumnat
 - ⚠️ *Vigilar:* repte massa ambiciós (reduir abast) · rols difusos (assignar al taulell) · sense proves incrementals (provar per parts)
 

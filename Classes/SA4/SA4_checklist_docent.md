@@ -5,7 +5,7 @@
 > Eina d'acció d'una cara. Condensa la [`SA4_guia_docent.md`](SA4_guia_docent.md). Marca `[x]` a mesura que ho tinguis fet. **Quan s'usa:** imprimeix-lo en **preparar la SA** (§1) i tingues-lo **a taula a cada sessió** (§2–§4).
 
 ## 🧰 1. Logística prèvia (preparar abans de començar la SA)
-- [ ] Material per parella: Arduino UNO + USB, protoboard, cables
+- [ ] Material per alumne/a: Arduino UNO + USB, protoboard, cables
 - [ ] Actuadors: servo **SG90**, motor DC, driver **L298N**, potenciòmetre, ultrasons
 - [ ] **Alimentació externa** (portapiles 4×AA o font) per als motors — imprescindible
 - [ ] Sketches provats: `01_servo_potenciometre` · `02_motor_pont_h` · `03_sensor_velocitat` · `04_barrera_automatica` · `05_dos_leds_millis` (mini-pràctica opcional S3)
@@ -41,10 +41,10 @@
 - [ ] **Producte** (barrera/braç/ventilador) + defensa → **R3** (parcial) i **R1**, Projectes 45 %
 - [ ] **Quadern tècnic** (esquema pont H, taula distància→velocitat) → **R4**, Quadern tècnic i pràctiques 25 %
 - [ ] **Observació de muntatge segur** (massa comuna, alimentació externa, no motors des de l'Arduino) → R2
-- [ ] Coavaluació + **exit tickets** + registre **0–10**
+- [ ] Revisió creuada de codi (una millora concreta i un dubte) → **R5** + **exit tickets** + registre **0–10**
 
 ## 🪜 4. Atenció a la diversitat (previst per aquesta SA)
-- [ ] **Bastida:** servo a **angles fixos** abans del control amb potenciòmetre · taula de lògica del pont H ja resolta · parella heterogènia
+- [ ] **Bastida:** servo a **angles fixos** abans del control amb potenciòmetre · taula de lògica del pont H ja resolta · agrupament puntual (qui escriu / qui verifica) si cal
 - [ ] **+ Ampliació:** dos servos coordinats · rampa d'acceleració · invertir sentit per distància · [reptes ⭐ SA4](../../Reptes/Reptes_SA4.md)
 - [ ] **Representació múltiple:** esquema pont H · Wokwi · vídeo del moviment · codi comentat
 - [ ] **Rescat:** [targetes de rescat](../00_General/00_Targetes_rescat.md) 🟢🟡🔴 a qui s'encalli

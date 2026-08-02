@@ -1,6 +1,6 @@
 # SA1 · El meu checklist — Què és un robot?
 
-**Nom:** ______________________  **Parella:** ______________________  **Data:** __________
+**Nom:** ______________________  **Data:** __________
 
 > 📄 **[Versió PDF per imprimir i omplir a mà](pdf/SA1_checklist_alumnat.pdf)**
 

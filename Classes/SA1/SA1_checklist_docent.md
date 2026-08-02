@@ -5,7 +5,7 @@
 > Eina d'acció d'una cara. Condensa la [`SA1_guia_docent.md`](SA1_guia_docent.md) en punts verificables. Marca `[x]` a mesura que ho tinguis fet. **Quan s'usa:** imprimeix-lo en **preparar la SA** (§1) i tingues-lo **a taula a cada sessió** (§2–§4).
 
 ## 🧰 1. Logística prèvia (preparar abans de començar la SA)
-- [ ] Arduino UNO + cable USB a punt (demostració i, si n'hi ha, per parelles)
+- [ ] Arduino UNO + cable USB a punt (demostració i, si n'hi ha, **per alumne/a**)
 - [ ] Ordinadors amb accés a **Tinkercad** (compte de classe creat) i a l'**Arduino Web Editor** (Chromebook: compte Arduino + connector instal·lat)
 - [ ] Projector provat amb [`SA1_esquemes_connexions.md`](SA1_esquemes_connexions.md) (versió etiquetada + muda)
 - [ ] **Imprimir:** [prova diagnòstica](SA1_prova_diagnostica.md) · [full de normes de seguretat](SA1_normes_seguretat.md) (per signar) · [plantilla fitxa-pòster](SA1_poster_robot_plantilla.md)
@@ -18,7 +18,7 @@
 **Sessió 1 — Què és un robot?**
 - [ ] Activació: *"Quins robots tens a casa sense saber-ho?"* + referent (1') Margaret Hamilton
 - [ ] Model entrada→procés→sortida i anàlisi de 3 sistemes (Act. 1)
-- [ ] Passar la **prova diagnòstica** (no qualifica → forma parelles heterogènies)
+- [ ] Passar la **prova diagnòstica** (no qualifica → situa el punt de partida de cadascú)
 - [ ] Tancament: presentar mètode de projecte + obrir quadern tècnic
 - ⚠️ *Error a vigilar:* confondre entrada (sensor) amb sortida (actuador)
 
@@ -37,11 +37,11 @@
 ## 📊 3. Avaluació i evidències (a recollir)
 - [ ] **Fitxa-pòster** d'un robot real → **R4** (compta, Projectes 45 %)
 - [ ] **Quadern tècnic** 1a entrada → **R4** (Quadern tècnic i pràctiques 25 %)
-- [ ] **Observació d'aula** (cooperació, seguretat, autonomia) → **R5** (Actitud 10 %)
-- [ ] Coavaluació del pòster ("2 estrelles i un desig") + recollir **exit tickets**
+- [ ] **Observació d'aula** (ajuda entre iguals, seguretat, autonomia) → **R5** (Actitud 10 %)
+- [ ] Revisió creuada del pòster ("2 estrelles i un desig", criteris R4) + recollir **exit tickets**
 - [ ] Traspassar valoracions al registre (nota **0–10**)
 
 ## 🪜 4. Atenció a la diversitat (previst per aquesta SA)
-- [ ] **Bastida:** esquema etiquetat de referència · esquelet «Si t'encalles» (a la pàgina de la pràctica del repte) · parella heterogènia (segons diagnòstica) · treball amb LED intern (pin 13)
+- [ ] **Bastida:** esquema etiquetat de referència · esquelet «Si t'encalles» (a la pàgina de la pràctica del repte) · acompanyament d'un company amb experiència (segons diagnòstica) · treball amb LED intern (pin 13)
 - [ ] **+ Ampliació:** `blink_millis` (sense `delay()`) · `sos_morse` (funcions) · defensa oral d'1' d'un robot industrial/IA
 - [ ] **Rescat:** recordar les [targetes de rescat](../00_General/00_Targetes_rescat.md) 🟢🟡🔴 a qui s'encalli

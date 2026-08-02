@@ -1,6 +1,6 @@
 # 🐣 Projecte T1 · La mascota reactiva
 
-> **Per a qui és?** Per a cada parella durant el 1r trimestre. És el dossier del
+> **Per a qui és?** Per a cada alumne/a durant el 1r trimestre. És el dossier del
 > primer robot del curs: peces, muntatge, cablatge i rúbrica. Els reptes de SA2
 > i SA3 hi van sumant capacitats; aquí es veu el conjunt.
 
@@ -22,7 +22,7 @@ Què fa: **expressa emocions** amb llum i so —els ulls canvien de color i el
 brunzidor fa melodies d'estat— (treballat a **SA2**) i **reacciona a
 l'entorn** amb com a mínim **3 comportaments sensor→resposta** —algú
 s'hi acosta, li fan una carícia, es fa fosc, hi ha soroll o canvia la
-temperatura— (treballat a **SA3**). El producte final és seva: cada parella
+temperatura— (treballat a **SA3**). El producte final és seu: cadascú
 li tria un nom i un caràcter, i la mascota reacciona **de manera coherent**
 amb aquest caràcter.
 
@@ -53,7 +53,7 @@ Peces impreses en 3D: [`../../Recursos/peces_3d/escaire_caixa.scad`](../../Recur
 ## Fabricació i personalització
 
 La plantilla `mascota.svg` és **fixa** (línies negres de tall i forats de
-muntatge): cap equip la toca. El que cada parella personalitza és **NOMÉS la
+muntatge): ningú no la toca. El que cadascú personalitza és **NOMÉS la
 zona vermella**, sobre una **còpia pròpia** del fitxer: les celles, les
 galtes i el contorn de cara del frontal (gravat), i el dibuix interior de les
 **2 orelles** (etiquetades «ORELLES x2 - encaixen a la tapa»). Les formes per
@@ -62,7 +62,7 @@ vulgui una forma pròpia pot redibuixar el contorn negre de l'orella sempre
 que **mantingui la pestanya de 10 mm** que encaixa a la ranura de la tapa.
 
 Flux de personalització:
-1. Cada parella fa una **còpia** del fitxer `mascota.svg` amb el nom del seu
+1. Cada alumne/a fa una **còpia** del fitxer `mascota.svg` amb el nom del seu
    equip.
 2. Edita **només les línies vermelles** amb xTool Creative Space o Inkscape
    (la zona negra de tall no es toca).

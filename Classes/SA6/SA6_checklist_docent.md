@@ -6,7 +6,7 @@
  **Quan s'usa:** imprimeix-lo en **preparar la SA** (§1) i tingues-lo **a taula a cada sessió** (§2–§4).
 
 ## 🧰 1. Logística prèvia (preparar abans de començar la SA)
-- [ ] Material per parella: Arduino UNO + USB, protoboard, cables
+- [ ] Material per alumne/a: Arduino UNO + USB, protoboard, cables
 - [ ] Components: NTC + 10 kΩ, LDR + 10 kΩ, LED (o ventilador via transistor/relé), polsador
 - [ ] Sketches provats: `01_llac_obert_vs_tancat` · `02_termostat_histeresi` · `03_maquina_estats` · `04_control_proporcional`
 - [ ] **Preparar la prova pràctica T2** ([`Avaluació/Prova_practica_T2.md`](../../Avaluació/Prova_practica_T2.md)) — ocupa la S4 sencera (individual; kit + micro:bit per alumne/a)
@@ -30,7 +30,7 @@
 **Sessió 3 — Màquines d'estats + tancament del producte**
 - [ ] **Mini-check individual** a l'inici (10', no qualifica): dos llindars d'histèresi (substitueix la graella d'activació i el kata del dia)
 - [ ] `03_maquina_estats`: `enum` + `switch`, transicions per temps o esdeveniment · repartir l'**esquelet «Si t'encalles»** (`// TODO`, a la [pàgina de la pràctica](codi/03_maquina_estats/EXPLICACIO.md)) a qui s'encalli
-- [ ] **Defenses 2–3' a peu de taula** durant el repte (decisió tècnica justificada) + documentació + autoavaluació
+- [ ] **Defenses individuals de 2–3' a peu de taula** durant el repte (5 alumnes → ~15' en total; decisió tècnica justificada) + documentació + autoavaluació
 - ⚠️ *Error:* un `case` sense transició → la màquina es "penja"
 
 **Sessió 4 — PROVA T2 (sessió sencera, individual)**
@@ -44,10 +44,10 @@
 - [ ] **Prova T2** (S4 sencera) → R1, R3, R4, Proves 20 %
 - [ ] **Quadern tècnic** (diagrama de blocs + diagrama d'estats + anàlisi de la resposta) → **R4**, Quadern tècnic i pràctiques 25 %
 - [ ] **Observació + Serial Plotter** (histèresi, ajust de `Kp`) → R3
-- [ ] Coavaluació + **exit tickets** + registre **0–10**
+- [ ] Revisió creuada de codi (una millora concreta i un dubte) → **R5** + **exit tickets** + registre **0–10**
 
 ## 🪜 4. Atenció a la diversitat (previst per aquesta SA)
-- [ ] **Bastida:** diagrama de blocs parcialment fet · termòstat tot/res abans del proporcional · esquelet «Si t'encalles» de la [pàgina de la màquina d'estats](codi/03_maquina_estats/EXPLICACIO.md) · parella heterogènia
+- [ ] **Bastida:** diagrama de blocs parcialment fet · termòstat tot/res abans del proporcional · esquelet «Si t'encalles» de la [pàgina de la màquina d'estats](codi/03_maquina_estats/EXPLICACIO.md) · agrupament puntual (qui escriu / qui verifica) si cal
 - [ ] **+ Ampliació:** afegir estats · comparar tot/res vs P · ajustar `Kp` · [reptes ⭐ SA6](../../Reptes/Reptes_SA6.md)
 - [ ] **Representació múltiple:** diagrames de blocs i d'estats · **Serial Plotter** · Wokwi
 - [ ] ♿ **Accessibilitat (daltonisme):** indicador verd/vermell amb pista no cromàtica (posició, etiqueta ON/OFF, parpelleig)

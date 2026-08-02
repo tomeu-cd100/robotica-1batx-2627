@@ -99,4 +99,4 @@ while True:
 - **Context:** alfabetització tecnològica — entendre els sistemes que ens envolten.
 - **ODS 4** (educació de qualitat): la SA0 garanteix que tothom arrenca amb la mateixa base, atenent la diversitat de punts de partida.
 
-> Els **rols cooperatius** i la **coavaluació** s'introdueixen a partir de la SA1 (la SA0 és material de consulta individual o en parella, sense producte avaluable).
+> La **revisió creuada de codi** s'introdueix a partir de la SA1 (la SA0 és material de consulta individual, sense producte avaluable).

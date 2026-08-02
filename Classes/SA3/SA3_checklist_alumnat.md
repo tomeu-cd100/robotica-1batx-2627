@@ -1,6 +1,6 @@
 # SA3 · El meu checklist — Entrades i sensors
 
-**Nom:** ______________________  **Parella:** ______________________  **Data:** __________
+**Nom:** ______________________  **Data:** __________
 
 > 📄 **[Versió PDF per imprimir i omplir a mà](pdf/SA3_checklist_alumnat.pdf)**
 

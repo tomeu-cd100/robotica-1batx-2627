@@ -25,8 +25,8 @@ L'avaluació és **competencial, contínua, formativa i global**, d'acord amb el
 - **Quadern tècnic (*logbook*)**: registre de pràctiques, codi, errors i millores.
 - **Reptes de programació/electrònica** (proves pràctiques curtes).
 - **Defenses orals** i demostracions del producte.
-- **Observació sistemàtica** (rúbrica d'actitud i treball cooperatiu).
-- **Autoavaluació i coavaluació** (dianes, rúbriques compartides).
+- **Observació sistemàtica** (rúbrica d'actitud, autonomia i ajuda entre iguals).
+- **Autoavaluació i revisió creuada de codi** (dianes, rúbriques compartides).
 
 ## 6.3. Ponderació de la qualificació
 
@@ -35,7 +35,7 @@ L'avaluació és **competencial, contínua, formativa i global**, d'acord amb el
 | **Projectes i productes** | **45 %** | Productes de les SA + defenses (rúbriques). |
 | **Quadern tècnic i pràctiques** | **25 %** | *Logbook*, pràctiques guiades i reptes. |
 | **Proves pràctiques** (programació/electrònica) | **20 %** | Reptes individuals curts. |
-| **Actitud, cooperació i autoregulació** | **10 %** | Observació, coavaluació, autoavaluació. |
+| **Actitud, cooperació i autoregulació** | **10 %** | Observació, revisió creuada, autoavaluació. |
 
 > Recomanació: ponderació **per competències** dins de cada dimensió. La qualificació trimestral i final s'expressa amb un enter **del 0 al 10 (sense decimals)**, com estableix el Decret 171/2022.
 
@@ -78,7 +78,7 @@ La qualificació de la dimensió recuperada **substitueix** l'anterior (no se'n 
 - **Retorn freqüent** sobre el codi i el circuit (durant la pràctica autònoma).
 - **Rúbriques compartides** des de l'inici de cada SA.
 - **Sessions de revisió de codi** entre iguals (*code review*) per consolidar bones pràctiques.
-- **Mini-check individual per SA** (10', no qualifica): micro-repte de codi **en solitari i sense apunts** que detecta l'*efecte passatger* del treball en parella abans que el penalitzi la prova trimestral. Banc complet: `../Classes/00_General/00_Mini_checks_individuals.md`.
+- **Mini-check individual per SA** (10', no qualifica): micro-repte de codi **sense apunts** que confirma que cadascú escriu el seu codi (i detecta a temps qui va tirant de la pantalla del costat) abans que ho faci la prova trimestral. Banc complet: `../Classes/00_General/00_Mini_checks_individuals.md`.
 - **Graella d'activació amb repàs espaiat** a cada sessió (no qualifica): les errades massives hi fan de termòmetre del grup. Banc: `../Classes/00_General/00_Banc_activacio_repas.md`.
 
 ## 6.6. Transparència

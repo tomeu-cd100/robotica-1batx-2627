@@ -1,6 +1,6 @@
 # SA7 · El meu checklist — Robòtica mòbil
 
-**Nom:** ______________________  **Equip:** ______________________  **Data:** __________
+**Nom:** ______________________  **Data:** __________
 
 > 📄 **[Versió PDF per imprimir i omplir a mà](pdf/SA7_checklist_alumnat.pdf)**
 

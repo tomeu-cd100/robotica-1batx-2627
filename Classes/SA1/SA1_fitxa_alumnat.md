@@ -2,7 +2,7 @@
 
 <!-- web:only-github -->
 
-**Nom:** ______________________  **Parella:** ______________________  **Data:** __________
+**Nom:** ______________________  **Data:** __________
 
 <!-- /web:only-github -->
 
@@ -21,7 +21,7 @@
 | **Fitxa-pòster** d'un robot real (amb dilema ètic) | **R4** | Projectes (45 %) |
 | **Quadern tècnic** (primera entrada) | **R4** | Quadern tècnic i pràctiques (25 %) |
 | Treball a l'aula (seguretat, cooperació) | **R5** | Actitud (10 %) |
-| Prova diagnòstica | — | **No qualifica** (serveix per fer parelles) |
+| Prova diagnòstica | — | **No qualifica** (serveix per veure d'on parteix cadascú) |
 
 > 🪜 **Versió nucli (ja és assoliment satisfactori):** pòster amb entrada → procés → sortida ben identificades i el dilema ètic plantejat. **Versió completa:** sensors i actuadors concrets, alternatives de disseny i dilema argumentat amb pros i contres.
 
@@ -97,4 +97,4 @@ Tria un **robot real** i analitza'l amb [`SA1_poster_robot_plantilla.md`](SA1_po
 
 <!-- /web:only-github -->
 
-> 📌 **Vols més?** Ampliacions (`blink_millis`, `sos_morse`), [reptes ⭐](../../Reptes/Reptes_SA1.md), rols de la parella, coavaluació, exit ticket, pensament computacional i ODS → **[SA1_fitxa_ampliada.md](SA1_fitxa_ampliada.md)**
+> 📌 **Vols més?** Ampliacions (`blink_millis`, `sos_morse`), [reptes ⭐](../../Reptes/Reptes_SA1.md), ajuda entre iguals, revisió creuada, exit ticket, pensament computacional i ODS → **[SA1_fitxa_ampliada.md](SA1_fitxa_ampliada.md)**

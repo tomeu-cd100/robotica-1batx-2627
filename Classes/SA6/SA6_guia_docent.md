@@ -3,7 +3,7 @@
 **Durada:** 8 h (4 sessions; la 4a amb ampliacions opcionals) · **Maquinari:** Arduino UNO + NTC, LDR, LED/ventilador, polsador, (ultrasons) · **Llenguatge:** C/C++
 **Referència:** [`Programació didàctica/15_SA6_Sistemes_control.md`](../../Programació%20didàctica/15_SA6_Sistemes_control.md) · **Esquemes:** [`SA6_esquemes_connexions.md`](SA6_esquemes_connexions.md)
 
-> 🧭 **Com s'usa aquesta guia.** **Abans de la SA:** objectius, material i codi de suport (la logística, al checklist docent). **A cada sessió:** la secció «SESSIÓ n» corresponent, amb el «Guió de modelatge» i els «Errors freqüents» a mà. **Durant tota la SA:** diversitat (DUA), rols cooperatius i pensament computacional. **En avaluar:** «Avaluació formativa (instruments)». **Per contextualitzar:** context real i ODS.
+> 🧭 **Com s'usa aquesta guia.** **Abans de la SA:** objectius, material i codi de suport (la logística, al checklist docent). **A cada sessió:** la secció «SESSIÓ n» corresponent, amb el «Guió de modelatge» i els «Errors freqüents» a mà. **Durant tota la SA:** diversitat (DUA), ajuda i revisió entre iguals, i pensament computacional. **En avaluar:** «Avaluació formativa (instruments)». **Per contextualitzar:** context real i ODS.
 
 ## Objectius de la SA
 1. Distingir i implementar **control en llaç obert i en llaç tancat**.
@@ -11,7 +11,7 @@
 3. Implementar una regulació **tot/res (histèresi)** i una **proporcional** bàsica.
 4. Representar el sistema amb un **diagrama de blocs**.
 
-## Material per parella
+## Material per alumne/a
 - Arduino UNO + USB, protoboard, cables.
 - NTC + resistència 10 kΩ, LDR + 10 kΩ, LED (o petit ventilador via transistor/relé), polsador.
 
@@ -97,7 +97,7 @@
 - **«Python flash» (5', enganxat al mini-check):** els ping-pongs orals de la represa de MicroPython (secció de sota). Compta'ls: **van dins d'aquests 100'**, no a sobre.
 - **Modelatge (25'):** `03_maquina_estats.ino`. `enum` d'estats + `switch`; transicions per **temps** o per **esdeveniment** (polsador). Exemple: procés (espera → fase 1 → fase 2 → fet).
 - **Pràctica guiada (30'):** implementen la màquina d'estats i la proven.
-- **Repte (40'):** afegir un estat nou o una transició condicional; **+ repte:** semàfor adaptatiu (canvia segons polsador de vianant). **Defenses de 2-3' a peu de taula:** mentre treballen, passa per les parelles i escolta la defensa del producte (problema → solució → **una decisió tècnica justificada**: per què aquests llindars? per què aquests estats?). Valora amb els 3 indicadors de la **mini-rúbrica R4·DO** ([`07_Rubriques.md`](../../Programació%20didàctica/07_Rubriques.md)) — a aquestes altures del curs ja s'esperen tots tres.
+- **Repte (40'):** afegir un estat nou o una transició condicional; **+ repte:** semàfor adaptatiu (canvia segons polsador de vianant). **Defenses individuals de 2-3' a peu de taula (amb 5 alumnes, ~15' en total, repartits mentre la resta treballa):** passa per cada lloc i escolta la defensa del seu producte (problema → solució → **una decisió tècnica justificada**: per què aquests llindars? per què aquests estats?). Valora amb els 3 indicadors de la **mini-rúbrica R4·DO** ([`07_Rubriques.md`](../../Programació%20didàctica/07_Rubriques.md)) — a aquestes altures del curs ja s'esperen tots tres.
 - **Tancament (10'):** quadern (diagrama d'estats + diagrama de blocs); autoavaluació amb rúbriques.
 
 > ⏱️ **Marge: aquesta sessió no hi cap sencera i cal decidir-ho abans d'entrar.** Sumada tal com està (10+5+25+30+40+10) fa 120' i el temps efectiu real és ~100': **és la sessió més carregada del trimestre** (mini-check + represa de Python + concepte nou + producte + defenses). Retalla **d'entrada, no sobre la marxa**: ① el «+ repte» (semàfor adaptatiu) i ② el Repte a **una sola transició nova** (40' → 25'). Amb això queda en ~105' i és fer-ho. El mini-check, el modelatge de la màquina d'estats i les defenses a peu de taula **no es toquen**; el «Python flash» tampoc (la Part B de la prova T2 hi depèn).
@@ -133,7 +133,7 @@
 > ⚖️ **Nivell exigible:** el **nucli** d'aquesta SA és **llaç obert/tancat + histèresi + màquina d'estats**. El **control proporcional és +ampliació** (notable/excel·lent), coherent amb la graella de la prova T2. **Ja no té sessió pròpia:** és material per a qui va sobrat.
 
 - **Material:** `04_control_proporcional.ino` + simulació Wokwi + repte ⭐ SA6_C (regulador proporcional) de [`Reptes/Reptes_SA6.md`](../../Reptes/Reptes_SA6.md).
-- **Quan:** dins la S2/S3 per a parelles que acaben aviat; a casa amb Wokwi; o com a ampliació de la prova T2 (l'enunciat ja la preveu al nivell excel·lent).
+- **Quan:** dins la S2/S3 per a qui acaba aviat; a casa amb Wokwi; o com a ampliació de la prova T2 (l'enunciat ja la preveu al nivell excel·lent).
 - **Idea clau a transmetre:** el control **proporcional** dosifica l'actuació segons l'**error** → resposta més suau que el tot/res; si `Kp` és massa gran, oscil·la (limitar amb `constrain`). És la base del **PID** (cursos superiors).
 
 **Producte:** sistema de control documentat (termòstat amb histèresi o procés amb màquina d'estats) amb **diagrama de blocs** i anàlisi de la resposta.
@@ -142,7 +142,7 @@
 ### Mapa d'avaluació (traçabilitat)
 | Instrument | Què evidencia | Criteri | Rúbrica |
 |---|---|---|---|
-| Producte (termòstat / màquina d'estats, **S3**) + defensa 2-3' | Implementar un sistema de control i explicar-lo | CA3.1 | R3 |
+| Producte (termòstat / màquina d'estats, **S3**) + defensa individual de 2-3' | Implementar un sistema de control i explicar-lo | CA3.1 | R3 |
 | **Prova T2 (S4, individual)** | Control amb histèresi + programa micro:bit en solitari | CA1.1, CA1.2, CA3.1 | R1, R3, R4 |
 | Quadern (diagrama de blocs + anàlisi) | Consigna, error, realimentació; anàlisi de la resposta | CA3.1 | R4 |
 | Observació + Serial Plotter | Histèresi; (+ampliació) ajust de `Kp`, tot/res vs proporcional | CA3.1 | R3 |
@@ -174,16 +174,18 @@
 
 | Via | Mesura |
 |---|---|
-| **Bastida** (qui s'encalla) | Donar el **diagrama de blocs** parcialment fet; començar amb el termòstat tot/res abans del proporcional; l'**esquelet amb `// TODO`** de la secció «Si t'encalles» de la [pàgina de la pràctica de la màquina d'estats](codi/03_maquina_estats/EXPLICACIO.md); parella heterogènia. |
+| **Bastida** (qui s'encalla) | Donar el **diagrama de blocs** parcialment fet; començar amb el termòstat tot/res abans del proporcional; l'**esquelet amb `// TODO`** de la secció «Si t'encalles» de la [pàgina de la pràctica de la màquina d'estats](codi/03_maquina_estats/EXPLICACIO.md); si cal, agrupament puntual amb un company/a que ja ho tingui resolt (qui escriu / qui verifica). |
 | **+ Ampliació** (qui va sobrat) | Afegir estats, comparar tot/res vs P, ajustar `Kp`; reptes ⭐ de [`Reptes/Reptes_SA6.md`](../../Reptes/Reptes_SA6.md). |
 | **Representació múltiple** | Diagrama de blocs i d'estats, **Serial Plotter** (resposta visual), simulació Wokwi. |
-| **Implicació** | Cada parella tria el procés a controlar i la finestra d'histèresi. |
+| **Implicació** | Cada alumne/a tria el procés a controlar i la finestra d'histèresi. |
 
 > ♿ **Accessibilitat (daltonisme):** si uses l'indicador **verd/vermell** d'estat, acompanya'l d'una **pista no cromàtica** (posició, etiqueta ON/OFF, o parpelleig) perquè l'estat no depengui només del color.
 
-## Treball cooperatiu amb rols
+## Cooperació (amb treball individual)
 
-Parelles amb **rols rotatius**: Coordinador/a · Programador/a · Enginyer/a de maquinari (sensor/actuador, seguretat) · Provador/a–Documentador/a (Serial Plotter + quadern). Quadre per rotar a la fitxa.
+El treball és **individual**: cadascú munta el seu sistema de control, escriu el seu codi i el defensa ([`04_Metodologia.md` §4.3](../../Programació%20didàctica/04_Metodologia.md)). La cooperació —el **CA5.3** i la **R5**— s'evidencia en la **revisió creuada de codi** (cadascú llegeix el codi d'un company i li retorna **una millora concreta i un dubte**) i en l'**ajuda documentada** al quadern.
+
+> Si en algun moment ajuntes dues persones (material que falla, una absència, un repte massa gros), reparteix només **qui escriu** i **qui verifica**, i fes que s'intercanviïn a mitja sessió; el producte i la defensa continuen sent de cadascú.
 
 ## Pensament computacional i depuració
 
@@ -192,7 +194,7 @@ Parelles amb **rols rotatius**: Coordinador/a · Programador/a · Enginyer/a de 
 
 ## Avaluació formativa (instruments)
 
-- **Diana d'autoavaluació** (fitxa) · **Coavaluació** "2 estrelles i un desig" · **Exit ticket** de tancament.
+- **Diana d'autoavaluació** (fitxa) · **Revisió creuada de codi** (una millora concreta i un dubte sobre el codi d'un company) · **Exit ticket** de tancament.
 - **Mini-check individual** (10', **inici de la S3** — la S4 és la prova T2 —, no qualifica): diagnosticar el "clic-clic" del termòstat i escriure els dos llindars (histèresi). Vegeu [`../00_General/00_Mini_checks_individuals.md`](../00_General/00_Mini_checks_individuals.md).
 
 ## Connexió amb la IA (llavor)

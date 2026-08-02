@@ -1,12 +1,12 @@
 # SA5 · Fitxa ampliada (aprofundiment) — micro:bit i MicroPython
 
-> 📄 **Versió ampliada**: conté totes les activitats, rutines (coavaluació, exit ticket, ODS…) i ampliacions. La fitxa que fa **tot l'alumnat** és la base: **[SA5_fitxa_alumnat.md](SA5_fitxa_alumnat.md)**.
+> 📄 **Versió ampliada**: conté totes les activitats, rutines (revisió creuada, exit ticket, ODS…) i ampliacions. La fitxa que fa **tot l'alumnat** és la base: **[SA5_fitxa_alumnat.md](SA5_fitxa_alumnat.md)**.
 
-> 🧑‍🎓 **Quan toca obrir-la?** És **opcional**: quan portis la **fitxa base al dia** i vulguis més (ampliacions, rols, pensament computacional). Algunes rutines (coavaluació, exit ticket) les activarà el **docent** a l'aula quan toqui.
+> 🧑‍🎓 **Quan toca obrir-la?** És **opcional**: quan portis la **fitxa base al dia** i vulguis més (ampliacions, revisió creuada, pensament computacional). Algunes rutines (revisió creuada, exit ticket) les activarà el **docent** a l'aula quan toqui.
 
-> 🗺️ **Quan s'usa cada apartat:** les **Activitats 1–3** segueixen les mateixes sessions que la fitxa base i la **4 (comparació C++ ↔ Python)** es tanca dins la S3 (aquí amb més detall i ampliacions) · **Rols**: es pacten en començar la SA i es roten · **Si t'encalles** i **Pensament computacional**: durant el treball · **Vols més?**: amb el nucli al dia · **Exit ticket**: els últims 2' de cada sessió · **Diana**, **Coavaluació** i **Quadern tècnic**: en tancar la SA · **Context real i ODS**: quan el docent l'activi.
+> 🗺️ **Quan s'usa cada apartat:** les **Activitats 1–3** segueixen les mateixes sessions que la fitxa base i la **4 (comparació C++ ↔ Python)** es tanca dins la S3 (aquí amb més detall i ampliacions) · **Si t'encalles** i **Pensament computacional**: durant el treball · **Vols més?**: amb el nucli al dia · **Exit ticket**: els últims 2' de cada sessió · **Diana**, **Revisió creuada** i **Quadern tècnic**: en tancar la SA · **Context real i ODS**: quan el docent l'activi.
 
-**Nom:** ______________________  **Parella:** ______________________  **Data:** __________
+**Nom:** ______________________  **Data:** __________
 
 > Canvies de llenguatge: ara **Python** sobre micro:bit. Atenció a la **indentació** (en Python és obligatòria!).
 
@@ -24,7 +24,7 @@
 3. **Repte:** detector d'inclinació o termòmetre amb avís. **+ Repte:** guardar màx/mín.
 
 ## Activitat 3 · Ràdio (S3)
-1. Carrega [`04_radio_dau.py`](codi/04_radio_dau.py) en **dues** plaques. Què han de compartir per comunicar-se? __________
+1. Carrega [`04_radio_dau.py`](codi/04_radio_dau.py) en **dues** plaques (si només en tens una, el professor t'ajuntarà un moment amb un company per fer la prova d'emissió-recepció; el codi l'escrius tu). Què han de compartir per comunicar-se? __________
 2. Quina instrucció envia? `__________` Quina rep? `__________`
 3. **Repte:** "pedra-paper-tisora" o comandament. **+ Repte:** xarxa de 3+ plaques.
 
@@ -49,16 +49,14 @@ Completa amb un mateix programa senzill (p. ex. un comptador):
 
 ---
 
-## Treball en equip · rols de la parella
+## Treballes sol/a… però no aïllat/da
 
-Repartiu-vos els rols i **roteu-los** a cada sessió:
+El programa i el producte són **teus**: els fas i els lliures tu. Això no vol dir treballar en silenci:
 
-| Rol | S1 | S2 | S3 |
-|---|---|---|---|
-| Coordinador/a (temps, enunciat) | | | |
-| Programador/a (codi Python) | | | |
-| Enginyer/a de maquinari (prepara la micro:bit i prova els sensors) | | | |
-| Provador/a–Documentador/a (prova + quadern) | | | |
+- apunta al quadern **qui t'ha ajudat i a qui has ajudat** (i com);
+- abans de tancar el producte, fes la **revisió creuada de codi** de més avall.
+
+> Si el professor t'ajunta puntualment amb algú (la **prova de ràdio**, material que falla), repartiu-vos només dos papers: **qui escriu** i **qui verifica**, i intercanvieu-los a mitja sessió. Cadascú documenta el seu al quadern.
 
 ---
 
@@ -91,9 +89,9 @@ Situa't (0-10):
 | Faig servir sensors integrats (acceleròmetre, llum…) | ☐ | ☐ | ☐ | ☐ |
 | Comunico dues plaques per ràdio | ☐ | ☐ | ☐ | ☐ |
 
-## Coavaluació (2 estrelles i un desig — amb criteris)
+## Revisió creuada de codi
 
-Intercanvieu el projecte micro:bit amb una altra parella. **Primer mireu-lo amb criteris de les rúbriques R1 i R4** (marqueu ✓ o ✗):
+Llegeix el projecte micro:bit d'un company (i ell/a llegirà el teu). **Primer mira'l amb criteris de les rúbriques R1 i R4** (marca ✓ o ✗):
 
 | Criteri | ✓/✗ |
 |---|---|
@@ -101,10 +99,10 @@ Intercanvieu el projecte micro:bit amb una altra parella. **Primer mireu-lo amb 
 | La **taula comparativa C++↔Python** és completa i correcta — R4 | |
 | El **sensor o la ràdio** hi aporten funció real (no decoració) — R1 | |
 
-Ara escriviu el retorn — **les estrelles i el desig han de sortir de la taula**:
-- ⭐ Una cosa ben feta: ______________________
-- ⭐ Una altra cosa ben feta: ______________________
-- 💡 Una millora (desig): ______________________
+Ara escriu-li el retorn — **ha de sortir de la taula**:
+- Codi revisat de: ______________________
+- 💡 Una millora concreta: ______________________
+- ❓ Un dubte (què no has entès o li preguntaries): ______________________
 
 ## Exit ticket (abans de marxar)
 

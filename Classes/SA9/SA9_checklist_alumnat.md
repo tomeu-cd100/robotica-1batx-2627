@@ -23,7 +23,7 @@
 - [ ] **Codi comentat** a la carpeta
 - [ ] **Defensa oral** preparada (amb preguntes individuals) → *R4*
 - [ ] **Reflexió ètica/sostenibilitat** del sistema
-- [ ] **Autoavaluació i coavaluació** del procés d'equip → *R5*
+- [ ] **Autoavaluació** del meu procés i **revisió creuada** del codi d'un company → *R5*
 
 ## 🚦 Com anem? (pinta el vostre nivell)
 | Ja sabem… | 🔴 Encara no | 🟡 A mitges | 🟢 Sí |

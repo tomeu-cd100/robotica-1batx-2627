@@ -6,7 +6,7 @@
  **Quan s'usa:** imprimeix-lo en **preparar la SA** (§1) i tingues-lo **a taula a cada sessió** (§2–§4).
 
 ## 🧰 1. Logística prèvia (preparar abans de començar la SA)
-- [ ] Material per parella: Arduino UNO + USB, protoboard, cables
+- [ ] Material per alumne/a: Arduino UNO + USB, protoboard, cables
 - [ ] Sensors: polsador, potenciòmetre, LDR + 10 kΩ, NTC + 10 kΩ, **HC-SR04** (ultrasons), LED, piezo
 - [ ] **Multímetres** per al racó de mesura del divisor de tensió
 - [ ] Sketches provats: `01_polsador_debounce` · `02_potenciometre_ldr` · `03_ultrasons_funcio` · `04_alarma_aparcament`
@@ -30,7 +30,7 @@
 **Sessió 3 — Funcions + PRODUCTE (alarma/aparcament)**
 - [ ] **Mini-check individual** a l'inici (10', no qualifica): `if/else` sobre lectura analògica (substitueix la graella d'activació i el kata del dia)
 - [ ] `03_ultrasons_funcio`: escriure la funció `mesuraDistancia()` que **retorna** un valor · Serial Plotter
-- [ ] Repte-producte `04_alarma_aparcament` (pseudocodi primer) + **defensa d'1' a peu de taula** mentre treballen
+- [ ] Repte-producte `04_alarma_aparcament` (pseudocodi primer) + **defensa individual d'1' a peu de taula** (~5-7' per a tot el grup) mentre treballen
 - ⚠️ *Error:* TRIG/ECHO intercanviats · vigilar `pulseIn` = 0 quan no hi ha eco
 
 **Sessió 4 — PROVA T1 (sessió sencera, individual)**
@@ -43,10 +43,10 @@
 - [ ] **Prova T1** (S4 sencera) → R1, R2, R4, Proves 20 %
 - [ ] **Quadern tècnic** (pseudocodi, taula de lectures, codi de la funció) → **R4**, Quadern tècnic i pràctiques 25 %
 - [ ] **Observació + depuració sèrie** (monitor, divisor de tensió) → R2
-- [ ] Coavaluació + **exit tickets** + registre **0–10**
+- [ ] Revisió creuada de codi (una millora concreta i un dubte) → **R5** + **exit tickets** + registre **0–10**
 
 ## 🪜 4. Atenció a la diversitat (previst per aquesta SA)
-- [ ] **Bastida:** començar pel **polsador** (digital) abans de l'analògic · donar `mesuraDistancia()` ja escrita per llegir-la · parella heterogènia
+- [ ] **Bastida:** començar pel **polsador** (digital) abans de l'analògic · donar `mesuraDistancia()` ja escrita per llegir-la · agrupament puntual de suport si cal
 - [ ] **+ Ampliació:** mitjana de 3 mesures · detectar acostament/allunyament · [reptes ⭐ SA3](../../Reptes/Reptes_SA3.md)
 - [ ] **Representació múltiple:** esquema · **Serial Plotter** · Wokwi · codi comentat
 - [ ] 🤖 **Llavor IA (2–3'):** un llindar (`if distancia < 20`) és una **regla/classificador** → precursor de l'aprenentatge automàtic (SA8)

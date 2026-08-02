@@ -15,7 +15,7 @@ Cinquena situació d'aprenentatge (**6 h · 3 sessions** + 4a opcional d'ampliac
 | S3 | [Activitat 3 · Ràdio](SA5_fitxa_alumnat.md#3-radio-s3) i [Activitat 4 · Producte: comparació C++/Python](SA5_fitxa_alumnat.md#4-producte-comparacio-c-python) (es tanca dins la S3) | Mateixa tasca de Classroom |
 | ⭐ | [Repte triat (A, B o C)](../../Reptes/Reptes_SA5.md) | El docent el valida i pinteu l'estrella al [tauler de reptes](../00_General/00_Tauler_reptes.md) |
 | 📓 | Full del quadern tècnic de cada sessió | En paper, en acabar la sessió |
-| 🤖 | El comandament per ràdio del braç (les dues micro:bit de la parella) | Es reaprofita al robot del trimestre: [dossier del braç](../00_General/00_Projecte_T2_Brac.md) |
+| 🤖 | El comandament per ràdio del braç (dues micro:bit: emissora i receptora) | Es reaprofita al robot del trimestre: [dossier del braç](../00_General/00_Projecte_T2_Brac.md) |
 
 ## Itinerari per sessions
 
@@ -39,7 +39,7 @@ Cinquena situació d'aprenentatge (**6 h · 3 sessions** + 4a opcional d'ampliac
 |---|---|
 | [`SA5_guia_docent.md`](SA5_guia_docent.md) | Guia del professorat: objectius, sessions, mètode de projecte, mapa d'avaluació i errors freqüents. |
 | [`SA5_fitxa_alumnat.md`](SA5_fitxa_alumnat.md) | **Fitxa base** (nucli d'una cara, per a tot l'alumnat): Activitats 1-4 + quadern. |
-| [`SA5_fitxa_ampliada.md`](SA5_fitxa_ampliada.md) | **Versió ampliada** (aprofundiment): totes les rutines (rols, coavaluació, exit ticket, ODS, PC) i ampliacions. |
+| [`SA5_fitxa_ampliada.md`](SA5_fitxa_ampliada.md) | **Versió ampliada** (aprofundiment): totes les rutines (revisió creuada de codi, exit ticket, ODS, PC) i ampliacions. |
 | [`SA5_checklist_docent.md`](SA5_checklist_docent.md) | **Checklist docent** (una cara): logística prèvia, punts de control per sessió, avaluació i diversitat. |
 | [`SA5_checklist_alumnat.md`](SA5_checklist_alumnat.md) | **Checklist alumnat** (una cara): què he de fer/lliurar + autoavaluació amb semàfor. |
 | [`SA5_katas.md`](SA5_katas.md) | Katas d'escriptura (10'): un per sessió de codi, abans d'obrir el sketch; si ningú no el projecta, l'alumnat l'obre sol. |

@@ -8,7 +8,7 @@
 
 La ràdio de les micro:bit uneix **dues plaques a la mateixa aula**. Els productes IoT de debò (la polsera, la càmera, l'altaveu de l'[auditoria](../../SA8_auditoria_iot.md)) fan servir **WiFi i internet**: les dades surten del dispositiu, travessen la xarxa i acaben en un servidor al núvol. Aquest sketch mostra el **primer tram** d'aquesta arquitectura — **dispositiu → xarxa** — amb un ESP32: un microcontrolador barat amb WiFi integrat que és, literalment, el que hi ha dins de molts productes IoT reals.
 
-De pas, reprèn el **fil dels dos llenguatges** de la SA5: torna el **C++** de l'Arduino (`setup()`/`loop()`, `Serial`, `analogRead`), ara sobre una placa amb connectivitat. És material **opcional i avançat**: demo del docent a la S2, o repte ⭐⭐⭐ si el teu equip hi va.
+De pas, reprèn el **fil dels dos llenguatges** de la SA5: torna el **C++** de l'Arduino (`setup()`/`loop()`, `Serial`, `analogRead`), ara sobre una placa amb connectivitat. És material **opcional i avançat**: demo del docent a la S2, o repte ⭐⭐⭐ si hi vas.
 
 ## 🔮 Abans d'executar: prediu
 

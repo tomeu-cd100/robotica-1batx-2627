@@ -1,6 +1,6 @@
 # 🦾 Projecte T2 · El braç robòtic
 
-> **Per a qui és?** Per a cada parella durant el 2n trimestre. És el dossier
+> **Per a qui és?** Per a cada alumne/a durant el 2n trimestre. És el dossier
 > del segon robot del curs: peces, muntatge, cablatge i rúbrica. Els reptes
 > de SA4, SA5 i SA6 hi van sumant capacitats; aquí es veu el conjunt.
 
@@ -21,7 +21,7 @@ governa i com.
 Què fa: a **SA4** es controla amb **potenciòmetres** com un mini comandament
 de sobretaula i pot **registrar i repetir** una seqüència de moviments; a
 **SA5** es re-cableja al **micro:bit** i s'hi afegeix un **comandament sense
-fils** (la segona micro:bit de la parella, per ràdio); a **SA6** guanya una
+fils** (la seva segona micro:bit, per ràdio); a **SA6** guanya una
 **màquina d'estats** amb repòs, manual, replay i una **emergència** real
 —el sensor de col·lisió atura els servos si la pinça topa amb res. El
 producte final és el mateix braç, però amb un control cada cop més
@@ -51,18 +51,18 @@ Peça impresa en 3D: [`../../Recursos/peces_3d/dit_pinca.scad`](../../Recursos/p
 
 A diferència de la mascota, el `brac.svg` **no té zona de gravat
 personalitzable**: és una estructura funcional (base, dues torres, dos
-segments i el suport de la pinça) i totes les parelles la tallen igual.
-El que cada equip pot personalitzar és **després del tall**: pintar o
-etiquetar les seves peces per distingir-les de les d'altres equips durant
+segments i el suport de la pinça) i tothom la talla igual.
+El que cadascú pot personalitzar és **després del tall**: pintar o
+etiquetar les seves peces per distingir-les de les dels altres durant
 l'emmagatzematge entre sessions.
 
 Flux de fabricació:
-1. El docent llança el tall de `brac.svg` per **lots** (nesting de diverses
-   parelles per tauler) durant la sessió dedicada (S4 de SA4).
-2. Cada parella recull el seu joc de peces i les **dents de pinça**
+1. El docent llança el tall de `brac.svg` per **lots** (nesting de diversos
+   jocs de peces per tauler) durant la sessió dedicada (S4 de SA4).
+2. Cada alumne/a recull el seu joc de peces i les **dents de pinça**
    impreses prèviament.
 3. Muntatge inicial a la mateixa sessió (encaixos, sense encolar).
-4. El full de cua públic per màquina (parella · fitxer · estat) es manté
+4. El full de cua públic per màquina (alumne/a · fitxer · estat) es manté
    igual que per als altres robots del curs.
 
 ## Muntatge
@@ -118,7 +118,7 @@ Flux de fabricació:
 | Servo colze (KS0194) | P1 | Alimentació externa del shield. |
 | Servo pinça (KS0194) | P2 | Alimentació externa del shield. |
 | Sensor de col·lisió (KS0021) | P8 | Digital (re-cablejat de la fase Arduino al shield). Atura els servos en cas de xoc (emergència, SA6). |
-| Ràdio (comandament, 2a micro:bit) | — | Mateix **grup de ràdio = número de parella** a les dues plaques. |
+| Ràdio (comandament, 2a micro:bit) | — | Mateix **grup de ràdio** a les dues plaques (fes servir el teu número de llista). |
 
 > ⚠️ **Mai alimentar 3 servos des de l'USB.** Igual que a la fase Arduino,
 > els tres servos necessiten **alimentació externa del Micro:shield**, no
@@ -192,7 +192,7 @@ pràctica **T2**, amb el braç ja tancat.
 |---|---|---|
 | El servo tremola | Alimentació insuficient (des de l'USB en lloc d'externa). | Alimentació externa (piles AA) amb GND comú a totes les fases. |
 | El servo força el topall | Recorregut 0-180° mal limitat al codi. | Troba i anota els angles límit reals de cada servo abans de programar-hi res més. |
-| La ràdio no arriba | Les dues micro:bit tenen **grups diferents**. | Comprova que el `group` sigui **el número de la parella** a totes dues plaques. |
+| La ràdio no arriba | Les dues micro:bit tenen **grups diferents**. | Comprova que el `group` sigui **el mateix número** a totes dues plaques. |
 | El braç cau | Parell insuficient per al pes que aixeca. | Escurça els segments o limita la càrrega que agafa la pinça. |
 | La micro:bit es reinicia en moure servos | Servos alimentats pel USB de la micro:bit en lloc del Micro:shield. | Alimentació externa del shield, mai el connector USB. |
 

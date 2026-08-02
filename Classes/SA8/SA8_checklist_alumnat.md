@@ -1,6 +1,6 @@
 # SA8 · El meu checklist — IoT i IA
 
-**Nom:** ______________________  **Equip:** ______________________  **Data:** __________
+**Nom:** ______________________  **Data:** __________
 
 > 📄 **[Versió PDF per imprimir i omplir a mà](pdf/SA8_checklist_alumnat.pdf)**
 

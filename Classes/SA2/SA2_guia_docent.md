@@ -3,7 +3,7 @@
 **Durada:** 8 h (4 sessions; la 4a amb ampliacions opcionals) · **Maquinari:** Arduino UNO + kit Keyestudio/BQ · **Llenguatge:** C/C++
 **Referència:** [`Programació didàctica/11_SA2_Sortides_digitals_PWM.md`](../../Programació%20didàctica/11_SA2_Sortides_digitals_PWM.md) · **Esquemes:** [`SA2_esquemes_connexions.md`](SA2_esquemes_connexions.md)
 
-> 🧭 **Com s'usa aquesta guia.** **Abans de la SA:** objectius, material i codi de suport (la logística, al checklist docent). **A cada sessió:** la secció «SESSIÓ n» corresponent, amb el «Guió de modelatge» i els «Errors freqüents» a mà. **Durant tota la SA:** diversitat (DUA), rols cooperatius i pensament computacional. **En avaluar:** «Avaluació formativa (instruments)». **Per contextualitzar:** context real i ODS.
+> 🧭 **Com s'usa aquesta guia.** **Abans de la SA:** objectius, material i codi de suport (la logística, al checklist docent). **A cada sessió:** la secció «SESSIÓ n» corresponent, amb el «Guió de modelatge» i els «Errors freqüents» a mà. **Durant tota la SA:** diversitat (DUA), treball individual amb ajuda entre iguals i pensament computacional. **En avaluar:** «Avaluació formativa (instruments)». **Per contextualitzar:** context real i ODS.
 
 ## Objectius de la SA
 1. Escriure programes amb variables, constants i estructures de control (`for`, `if`).
@@ -11,7 +11,7 @@
 3. Muntar circuits de sortida segurs (resistència limitadora, polaritat).
 4. Documentar codi i esquema al quadern tècnic.
 
-## Material per parella
+## Material per alumne/a
 - Arduino UNO + USB, protoboard, cables dupont.
 - LED (vermell, groc, verd), 1 LED RGB (càtode comú), resistències 220 Ω, brunzidor piezo, mòdul relé.
 
@@ -50,9 +50,9 @@
 
 > ⚡ **D'on surt el 220 Ω? (llei d'Ohm aplicada, ~10' dins el Modelatge):** no donis el valor per rebut — calcula'l a la pissarra amb l'alumnat: el LED cau ~2 V i vol ~20 mA, així que R = (5 − 2) V / 0,02 A = **150 Ω** → agafem el **valor comercial superior (220 Ω)** per marge de seguretat. És l'única aparició explícita de la **llei d'Ohm** al curs (connexió amb Física): el Racó de mesura de sota tanca el cercle, perquè les tensions mesurades (~2 V + ~3 V) són exactament les del càlcul.
 
-> 🔌 **Racó de mesura (dins la pràctica guiada, ~5' per parella):** munta un punt amb **multímetre** i fes-hi passar les parelles rotativament amb el seu circuit encès: mesurar la **tensió entre les potes del LED** (~2 V) i **a la resistència** (~3 V), i comprovar que sumen ~5 V. És la primera vegada que *veuen* la llei de la malla en un circuit seu (connexió amb Física) i l'única evidència de **mesura física real** de la CA2.2/R2 fins ara. Amb 2-3 multímetres n'hi ha prou (el taller de tecnologia acostuma a tenir-ne); si no n'hi ha cap, fes-ho com a demo projectada amb el teu.
+> 🔌 **Racó de mesura (dins la pràctica guiada, ~5' per alumne/a):** munta un punt amb **multímetre** i fes-hi passar l'alumnat rotativament amb el seu circuit encès: mesurar la **tensió entre les potes del LED** (~2 V) i **a la resistència** (~3 V), i comprovar que sumen ~5 V. És la primera vegada que *veuen* la llei de la malla en un circuit seu (connexió amb Física) i l'única evidència de **mesura física real** de la CA2.2/R2 fins ara. Amb 2-3 multímetres n'hi ha prou (el taller de tecnologia acostuma a tenir-ne); si no n'hi ha cap, fes-ho com a demo projectada amb el teu.
 >
-> **Pla B sense multímetres (evidència CA2.2 igualment):** cada parella replica el seu circuit a **Tinkercad**, hi connecta el **multímetre simulat** i fa les dues mesures (LED i resistència) amb **captura de pantalla al quadern** + comprovació que sumen 5 V. Completa-ho amb una mesura «per programari» calibrada: llegir el mateix divisor de tensió amb `analogRead` i convertir el valor ADC a volts (`v = lectura * 5.0 / 1023`), comparant-lo amb el valor simulat. La R2 accepta aquestes dues evidències com a «mesura i interpretació de magnituds» quan no hi ha instrument físic; deixa-ho anotat al quadern («mesura simulada per manca d'instrument»).
+> **Pla B sense multímetres (evidència CA2.2 igualment):** cada alumne/a replica el seu circuit a **Tinkercad**, hi connecta el **multímetre simulat** i fa les dues mesures (LED i resistència) amb **captura de pantalla al quadern** + comprovació que sumen 5 V. Completa-ho amb una mesura «per programari» calibrada: llegir el mateix divisor de tensió amb `analogRead` i convertir el valor ADC a volts (`v = lectura * 5.0 / 1023`), comparant-lo amb el valor simulat. La R2 accepta aquestes dues evidències com a «mesura i interpretació de magnituds» quan no hi ha instrument físic; deixa-ho anotat al quadern («mesura simulada per manca d'instrument»).
 
 ---
 
@@ -84,8 +84,8 @@
 
 ## SESSIÓ 4 (2 h) — Producte: panell de senyalització
 - **Mini-check individual (10', substitueix l'activació):** escriu de memòria un Blink complet al pin 8 (detecta l'*efecte passatger*) — [`00_Mini_checks_individuals.md`](../00_General/00_Mini_checks_individuals.md). Aprofita el canvi de full per presentar en 1' el repte integrador.
-- **Pràctica (70'):** `05_panell_senyalitzacio.ino` com a base. Integren **LED RGB (estat) + piezo (avís) + relé (càrrega)**. Cada parella personalitza estats i seqüència.
-- **Documentació + defensa (30'):** completen esquema i codi comentat; mini-defensa (1') del seu panell amb la **mini-rúbrica de defensa oral R4·DO** ([`07_Rubriques.md`](../../Programació%20didàctica/07_Rubriques.md)) — és la **primera** defensa del curs: comparteix els 3 indicadors abans (claredat · decisió justificada · respondre preguntes) i exigeix sobretot el primer.
+- **Pràctica (70'):** `05_panell_senyalitzacio.ino` com a base. Integren **LED RGB (estat) + piezo (avís) + relé (càrrega)**. Cada alumne/a personalitza estats i seqüència.
+- **Documentació + defensa (30'):** completen esquema i codi comentat; **mini-defensa individual d'1'** (amb 5 alumnes, ~5-7' en total, i queda temps per a la revisió creuada de codi) del seu panell amb la **mini-rúbrica de defensa oral R4·DO** ([`07_Rubriques.md`](../../Programació%20didàctica/07_Rubriques.md)) — és la **primera** defensa del curs: comparteix els 3 indicadors abans (claredat · decisió justificada · respondre preguntes) i exigeix sobretot el primer.
 - **Tancament (10'):** autoavaluació amb rúbriques.
 
 > ⏱️ **Marge:** el temps efectiu real és ~100' (arrencada + recollida), no 120'. Si vas just, retalla primer: **la personalització extra d'estats i seqüència (dins la Pràctica; limita el panell a 2-3 estats)**.
@@ -127,7 +127,7 @@
 > 🤖 **Fil conductor de robots:** si el curs segueix el fil conductor
 > ([`00_Fil_conductor_robots.md`](../00_General/00_Fil_conductor_robots.md)),
 > aquesta S4 és la **sessió de fabricació de la mascota**: el repte de la S3 fa
-> de producte (palanca oficial del pla de contingència). La parella porta
+> de producte (palanca oficial del pla de contingència). Cada alumne/a porta
 > l'esborrany de la cara fet (de casa o del tancament de la S3); a la S4
 > s'ajusta, el docent el valida i es talla per rotacions
 > ([dossier](../00_General/00_Projecte_T1_Mascota.md)). El mini-check de la S4
@@ -137,23 +137,22 @@
 
 | Via | Mesura |
 |---|---|
-| **Bastida** (qui s'encalla) | Començar amb **1 LED** abans del semàfor de 3; l'**esquelet amb `// TODO`** de la secció «Si t'encalles» de la [pàgina de la pràctica del semàfor](codi/02_semafor/EXPLICACIO.md); parella heterogènia. |
+| **Bastida** (qui s'encalla) | Començar amb **1 LED** abans del semàfor de 3; l'**esquelet amb `// TODO`** de la secció «Si t'encalles» de la [pàgina de la pràctica del semàfor](codi/02_semafor/EXPLICACIO.md); ajuda puntual d'un company que ja ho tingui resolt. |
 | **+ Ampliació** (qui va sobrat) | Fase nocturna, semàfor de vianants, arc de Sant Martí RGB; reptes ⭐ de [`Reptes/Reptes_SA2.md`](../../Reptes/Reptes_SA2.md). |
 | **Representació múltiple** | Esquema de connexions, **simulació Wokwi** (semàfor), codi comentat. |
-| **Implicació** | Cada parella tria estats i colors del seu panell i quin repte amplia. |
+| **Implicació** | Cada alumne/a tria estats i colors del seu panell i quin repte amplia. |
 
 > ♿ **Accessibilitat (daltonisme):** el semàfor i el LED RGB es basen en el **color**. Afegeix una **pista no cromàtica**: posició fixa dels LED (a dalt/al mig/a baix), una etiqueta, o un **patró de parpelleig** diferent per estat. Així el sistema és llegible també per a l'alumnat amb daltonisme.
 
-## Treball cooperatiu amb rols
+## Treball individual i cooperació entre iguals
 
-Parelles amb **rols rotatius** (un canvi per sessió):
+El treball és **individual** ([`04_Metodologia.md` §4.3](../../Programació%20didàctica/04_Metodologia.md)): cada alumne/a munta el seu circuit, escriu el seu codi i defensa el seu panell. La cooperació s'evidencia (CA5.3 → **R5**) en:
 
-| Rol | Funció |
-|---|---|
-| Coordinador/a | Temps, enunciat, participació de tothom. |
-| Programador/a | Escriu i edita el codi. |
-| Enginyer/a de maquinari | Munta el circuit, comprova resistència/polaritat i seguretat. |
-| Provador/a–Documentador/a | Prova, aplica DEPURA, documenta al quadern. |
+- la **revisió creuada de codi** abans de tancar el panell: cadascú llegeix el codi d'un company i li retorna **una millora concreta i un dubte**;
+- la **línia d'ajuda del quadern** («qui m'ha ajudat / a qui he ajudat i com»);
+- la **depuració a dues veus** i les posades en comú.
+
+> 👥 **Aparellament puntual** (material que falla, una absència): separa només **qui escriu** i **qui verifica**, i intercanvia'ls a mitja sessió; cadascú documenta el seu quadern.
 
 ## Pensament computacional i depuració
 
@@ -163,7 +162,7 @@ Parelles amb **rols rotatius** (un canvi per sessió):
 ## Avaluació formativa (instruments)
 
 - **Diana d'autoavaluació** (fitxa) sobre 3 criteris clau.
-- **Coavaluació** "2 estrelles i un desig" entre parelles.
+- **Revisió creuada de codi** "2 estrelles i un desig": cadascú llegeix el panell d'un company i li retorna una millora concreta i un dubte.
 - **Exit ticket** de tancament; recull-lo per ajustar la sessió següent.
 - **Mini-check individual** (10', **inici de la S4, substitueix l'activació**, no qualifica): escriure de memòria un Blink complet al pin 8. Detecta qui encara no programa sol (*efecte passatger*). Enunciat, semàfor de correcció i accions: [`../00_General/00_Mini_checks_individuals.md`](../00_General/00_Mini_checks_individuals.md).
 

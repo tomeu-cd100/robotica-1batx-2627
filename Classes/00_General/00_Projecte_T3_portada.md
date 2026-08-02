@@ -1,6 +1,6 @@
 # 🚙 Projecte T3 · El rover autònom
 
-> **Per a qui és?** Per a cada parella A L'INICI del 3r trimestre. ⚠️ A
+> **Per a qui és?** Per a cada alumne/a A L'INICI del 3r trimestre. ⚠️ A
 > diferència de la mascota i el braç, el rover **es construeix ARA, abans de
 > començar SA7**: és la plataforma amb què es treballaran els reptes de SA7,
 > SA8 i SA9.

@@ -1,6 +1,6 @@
 # 🧗 Mode supervivència — per si és el teu primer any amb aquest material
 
-> **Per a qui és?** Per al **docent que entoma la matèria per primera vegada**. Aquest material té moltes rutines (graelles, referents, racó de mesura, exit tickets, coavaluació…), totes justificades — però **ningú no les pot executar totes bé la primera setmana**. Aquesta pàgina et diu què és nucli i en quin ordre incorporar la resta, perquè no intentis fer-ho tot de cop i acabis no fent res.
+> **Per a qui és?** Per al **docent que entoma la matèria per primera vegada**. Aquest material té moltes rutines (graelles, referents, racó de mesura, exit tickets, revisions creuades…), totes justificades — però **ningú no les pot executar totes bé la primera setmana**. Aquesta pàgina et diu què és nucli i en quin ordre incorporar la resta, perquè no intentis fer-ho tot de cop i acabis no fent res.
 > **Quan es llegeix?** **Abans de començar el curs** (al setembre, amb la logística), i torna-hi a **final de cada trimestre** per decidir quina rutina nova incorpores.
 
 ---
@@ -22,14 +22,14 @@ En aquest ordre (de més a menys rendiment):
 1. **Mini-check individual** (10', un cop per SA a partir de SA2): el radar de l'«efecte passatger» (qui va tirant amagat darrere del company que escriu el codi). És la peça de capa 2 més important — no te'l saltis més enllà de la SA2. [`00_Mini_checks_individuals.md`](00_Mini_checks_individuals.md)
 2. **Kata d'escriptura** (10', a cada sessió amb codi de SA2-SA8): projectes l'enunciat i escriuen el bloc central **de zero abans d'obrir el sketch**; després comparen. No costa preparació (està escrit) ni recollida (no es qualifica), i és l'única estona en què tot l'alumnat **escriu** codi en lloc de llegir-lo. Enunciats a `Classes/SAx/SAx_katas.md`, solucions comentades a `SAx_katas_solucions.md`. El dia del mini-check, el mini-check el substitueix. [Política completa](../../Programació%20didàctica/04_Metodologia.md)
 3. **Targetes de rescat** (imprimeix-les i deixa-les al racó de material; s'autogestionen). [`00_Targetes_rescat.md`](00_Targetes_rescat.md)
-4. **Rotació de rols A/B** de la parella (n'hi ha prou de recordar-ho a l'inici de sessió). Pòster: [`00_Poster_aula_metode_DEPURA_rols.md`](00_Poster_aula_metode_DEPURA_rols.md)
+4. **Revisió creuada de codi** abans de tancar cada producte (una millora concreta i un dubte al company). És el que evidencia la cooperació ara que el treball és individual, i costa 5'. Pòster: [`00_Poster_aula_metode_DEPURA_rols.md`](00_Poster_aula_metode_DEPURA_rols.md)
 5. **Racó de mesura amb multímetre** (SA2-S1 i SA3-S2: són 2 sessions concretes, no una rutina contínua).
 
 ## Capa 3 — quan el curs ja roda (2n trimestre, o mai si no hi arribes)
 
 - **Referents de la tecnologia** (1' dins l'activació de la S1 de cada SA).
 - **Exit ticket** de tancament.
-- **Coavaluació** «2 estrelles i un desig» amb criteris.
+- **Revisió creuada** «2 estrelles i un desig» amb criteris (ja és a la capa 2 com a rutina mínima; aquí, amb criteris escrits).
 - **Llavors d'IA** (2-3', a SA3/SA6/SA7).
 
 > Cap element de capa 3 no és decoratiu — però tots suposen **canvi de context** per a tu, i el coll d'ampolla del primer any ets tu, no el material. El curs 2 ja ho faràs tot.
@@ -39,7 +39,7 @@ En aquest ordre (de més a menys rendiment):
 - Les **normes de seguretat** (SA1, full signat) i la supervisió del muntatge (alimentació externa, massa comuna a SA4+).
 - Les **proves T1/T2/T3** i el seu caràcter **individual** (T1/T2).
 - Compartir les **rúbriques abans** de cada producte (és un dret de l'alumnat, i està enllaçat a cada fitxa — cost zero).
-- La **prova diagnòstica** de SA1 (és el que et permet fer parelles heterogènies).
+- La **prova diagnòstica** de SA1 (és el que et diu qui arriba amb experiència prèvia i qui de zero, per repartir-hi el suport).
 
 ---
 

@@ -67,7 +67,7 @@ Una sola línia, però és **el registre**: cada `print()` viatja per l'USB i ap
 
 El desmuntatge del protocol, pas a pas: `split(";")` parteix el missatge en trossos (`["T:23", "L:120"]`); `split(":")` separa l'etiqueta del valor; i `int(...)` torna a convertir el text `"23"` en el número `23` (el viatge invers de l'`str()` de l'emissora). Amb el número ja es pot **decidir**: la regla del llindar mostra `NO` si fa massa calor i `YES` si tot va bé.
 
-I el `try/except`? És l'assegurança: si un dia arriba un missatge estrany (mal etiquetat, d'un altre equip, tallat), el `int()` o l'índex petarien — amb el `try`, en lloc de morir, el programa mostra `CONFUSED` i **continua escoltant**. La telemetria real ha de sobreviure a dades dolentes.
+I el `try/except`? És l'assegurança: si un dia arriba un missatge estrany (mal etiquetat, d'una altra placa de l'aula, tallat), el `int()` o l'índex petarien — amb el `try`, en lloc de morir, el programa mostra `CONFUSED` i **continua escoltant**. La telemetria real ha de sobreviure a dades dolentes.
 
 ## ⚠️ Errors que veuràs segur
 
@@ -80,7 +80,7 @@ I el `try/except`? És l'assegurança: si un dia arriba un missatge estrany (mal
 
 ## 🔗 On ho aplicaràs
 
-- **Ara mateix:** amb l'[emissora](01_telemetria_emissor.py) a l'altra placa, tanca la parella i **registra una estona de dades** per a la mostra del quadern.
+- **Ara mateix:** amb l'[emissora](01_telemetria_emissor.py) a l'altra placa, tanca el parell emissor/receptor i **registra una estona de dades** per a la mostra del quadern.
 - **Repte de la S1:** l'alerta per llindar ja la tens muntada — fes-la teva (una altra magnitud, un altre avís) o gestiona també la segona dada (`L:`).
 - **Repte «a full en blanc»:** una de les dues meitats de la telemetria l'escriuràs des de l'editor buit; entendre aquest desmuntatge del protocol és tenir-ne mig camí fet.
 - **Després del primer intent:** compara el teu raonament amb l'[exemple resolt](../SA8_exemple_resolt.md) (el sensor de moviment sense fils), el **bessó comentat** d'aquesta parella de pràctiques — mateix desmuntatge del protocol i mateixa regla de llindar, amb una altra magnitud.
