@@ -92,7 +92,7 @@
 |---|---|---|---|
 | Producte (barrera/braç/ventilador) | Control de posició i velocitat sensor→actuador | CA3.1 | R3 (parcial), R1 |
 | Repte de codi (funcions de moviment) | `Servo.h`, lògica del pont H, `map()`, funcions | CA1.1 | R1 |
-| Quadern tècnic | Esquema del pont H, taula distància→velocitat, errors | CA1.1 | R1 |
+| Quadern tècnic | Esquema del pont H, taula distància→velocitat, errors | CA1.1 | **R4** |
 | Observació de muntatge segur | Massa comuna, alimentació externa, no alimentar motors des de l'Arduino | CA2.1 | R2 |
 
 *(CA1.1 = programar en C/C++; CA2.1 = dissenyar/muntar circuits amb seguretat; CA3.1 = implementar sistemes de control. Vegeu [`Programació didàctica/06_Avaluacio_criteris_qualificacio.md`](../../Programació%20didàctica/06_Avaluacio_criteris_qualificacio.md). Comparteix R1, R2 i R3 **abans** de començar.)*
@@ -111,7 +111,7 @@
 
 > Frases i preguntes clau per al **Modelatge** de cada sessió (què mirar, què preguntar abans d'executar, error a anticipar).
 
-> ✍️ **Katas:** en acabar el modelatge de cada sessió amb pràctica de codi, projecta el kata del sketch del dia ([SA4_katas.md](SA4_katas.md)): 10' d'escriptura individual **abans** de repartir/obrir el sketch. **Un sol kata per sessió**; el dia del mini-check, el mini-check el substitueix. Per a la posada en comú, tens la solució comentada de cada kata (amb els valors de la variació) a [SA4_katas_solucions.md](SA4_katas_solucions.md).
+> ✍️ **Katas:** en acabar el modelatge de cada sessió amb pràctica de codi, projecta el kata del sketch del dia ([SA4_katas.md](SA4_katas.md)): 10' d'escriptura individual **abans** de repartir/obrir el sketch. **Un sol kata per sessió**; el dia del mini-check (**S4** en aquesta SA) el mini-check el substitueix, i el kata `04_barrera_automatica` queda com a **repàs autònom** (marcat amb 🔁 al fitxer): recomana'l com a deures abans de tancar la SA. Per a la posada en comú, tens la solució comentada de cada kata (amb els valors de la variació) a [SA4_katas_solucions.md](SA4_katas_solucions.md).
 
 - **S1 · `01_servo_potenciometre` (servo):** distingeix **servo** (controla *posició*/angle 0–180°) de **motor DC** (gir continu). Demana predir on anirà `write(90)`. Avís: *si mous diversos servos, alimentació externa*. *Error a anticipar:* el servo vibra per alimentació insuficient.
 - **S2 · `02_motor_pont_h` (pont H):** dibuixa la **taula IN1/IN2** per a cada sentit i assenyala **ENA = velocitat (PWM)**. Repeteix com un mantra: *MASSA COMUNA, mai el motor des del 5V*. *Error a anticipar:* l'Arduino es reinicia pel pic de corrent del motor.

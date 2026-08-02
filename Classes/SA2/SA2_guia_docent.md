@@ -97,7 +97,7 @@
 |---|---|---|---|
 | Producte (panell/semàfor) | Sortides digitals + PWM en un sistema integrat | CA2.1, CA2.2 | R1, R2 |
 | Repte curt de codi | Variables, `for`/`if`, `analogWrite`, `map()` | CA1.1 | R1 |
-| Quadern tècnic | Esquema, codi comentat, errors i millores | CA1.1, CA2.2 | R1 |
+| Quadern tècnic | Esquema, codi comentat, errors i millores | CA1.1, CA2.2 | **R4** |
 | Observació de muntatge | Resistència limitadora, polaritat, seguretat | CA2.1 | R2 |
 
 *(CA1.1 = programar en C/C++; CA2.1 = dissenyar/muntar circuits amb seguretat; CA2.2 = mesurar/interpretar senyals. Vegeu [`Programació didàctica/06_Avaluacio_criteris_qualificacio.md`](../../Programació%20didàctica/06_Avaluacio_criteris_qualificacio.md). Comparteix R1 i R2 amb l'alumnat **abans** de començar.)*
@@ -116,7 +116,7 @@
 
 > Frases i preguntes clau per al **Modelatge** de cada sessió (què mirar, què preguntar abans d'executar, error a anticipar).
 
-> ✍️ **Katas:** en acabar el modelatge de cada sessió amb pràctica de codi, projecta el kata del sketch del dia ([SA2_katas.md](SA2_katas.md)): 10' d'escriptura individual **abans** de repartir/obrir el sketch. **Un sol kata per sessió**; el dia del mini-check, el mini-check el substitueix. Per a la posada en comú, tens la solució comentada de cada kata a [SA2_katas_solucions.md](SA2_katas_solucions.md).
+> ✍️ **Katas:** en acabar el modelatge de cada sessió amb pràctica de codi, projecta el kata del sketch del dia ([SA2_katas.md](SA2_katas.md)): 10' d'escriptura individual **abans** de repartir/obrir el sketch. **Un sol kata per sessió**; el dia del mini-check (**S4** en aquesta SA) el mini-check el substitueix, i el kata `05_panell_senyalitzacio` queda com a **repàs autònom** (marcat amb 🔁 al fitxer): recomana'l com a deures abans de tancar la SA. Per a la posada en comú, tens la solució comentada de cada kata a [SA2_katas_solucions.md](SA2_katas_solucions.md).
 
 - **S1 · `01_led_basic` (constants):** mostra per què `const int LED = 8;` és millor que escriure `8` per tot arreu. Pregunta: *"si moc el LED al pin 7, quantes línies he de canviar?"* *Error a anticipar:* oblidar `pinMode(LED, OUTPUT)`.
 - **S2 · `02_semafor` (`for`/`if`/`switch`):** recorre el `loop()` en veu alta com una **recepta seqüencial**. Demana **predir l'ordre** d'encesa abans d'executar. Verbalitza: *`delay()` bloqueja — mentre espera, no passa res més*. En mostrar la variant amb `switch`, pregunta: *"quantes fases té el semàfor? i si n'hi afegim una quarta (nocturna), on aniria?"* *Error a anticipar:* esperar que els LED canviïn alhora; oblidar el `break` de cada `case`.

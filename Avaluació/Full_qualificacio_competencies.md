@@ -44,7 +44,7 @@ Conversió única per a totes les rúbriques (vegeu `Programació didàctica/07_
 |---|---|---|---|
 | **Projectes i productes** | **45 %** | Productes de cada SA + defenses orals | R1, R2, R3 |
 | **Quadern tècnic i pràctiques** | **25 %** | *Logbook*, pràctiques guiades i reptes | R4 (quadern), R1 |
-| **Proves pràctiques** | **20 %** | Reptes individuals curts (proves T1/T2/T3) | R1, R3 |
+| **Proves pràctiques** | **20 %** | Reptes individuals curts (proves T1/T2/T3) | R1, R2, R3, R4 |
 | **Actitud, cooperació i autoregulació** | **10 %** | Observació, coavaluació, autoavaluació | R5 |
 
 > **Recomanació de l'enfocament:** dins de cada dimensió, **agrega per competència** (mitjana dels CA implicats), no per activitat solta. Així la nota reflecteix el grau d'assoliment competencial, no el nombre de tasques lliurades.

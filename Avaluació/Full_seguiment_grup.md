@@ -22,7 +22,7 @@ Codis: mini-checks 🟢🟡🔴 · diana d'autoavaluació (nivell que s'ha posat
 ## 2. Com llegir-la
 
 **Per columnes (el problema és de la pràctica o del grup):**
-- Un mini-check amb **≥ ⅓ de 🟡/🔴** → repesca col·lectiva de 10′ a la sessió següent (ja prevista al banc de mini-checks) i anota-ho a `Programació didàctica/06b_...` com a candidata a revisió.
+- Un mini-check amb **≥ ⅓ de 🟡/🔴** → **repesca col·lectiva de 10′**: ocupa la graella d'activació de la sessió següent (banc de `00_Banc_activacio_repas.md`), reprenent el punt fallat amb el grup sencer. ⚠️ **A SA3 i SA6 no hi ha sessió següent**: la que ve és, sencera, la prova trimestral — allà la repesca es fa el **mateix dia** del mini-check, amb els 10' del tancament. Anota-ho a `Programació didàctica/06b_...` com a candidata a revisió.
 - Moltes targetes **🔴 al mateix punt** → el coll d'ampolla és la pràctica o el modelatge d'aquell pas, no l'alumnat: revisa-la abans del curs vinent (full de decisions del 06b).
 - Les **dianes** sistemàticament per sobre del que després mostren les proves → treballar el calibratge de l'autoavaluació (comparar diana vs resultat en el retorn de la prova).
 

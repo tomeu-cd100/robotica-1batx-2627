@@ -2,7 +2,7 @@
 
 > **Per a qui és?** Per al **docent** (que el projecta) **i per a l'alumnat**: si ningú no el projecta, obre'l tu mateix ABANS de mirar el codi de la pràctica. Un **kata d'escriptura** per a cada pràctica de la SA: després del modelatge i **abans d'obrir el sketch donat**, projecta l'enunciat i l'alumnat escriu **el bloc central de zero**, individualment i **amb apunts permesos** (paper o editor). Passats 10', obren el sketch de la pràctica i **comparen** amb el que han escrit (2'). **No es recull ni es qualifica.**
 >
-> No és el [mini-check](../00_General/00_Mini_checks_individuals.md) (allò és de memòria, sense apunts, 1 per SA) ni un [repte](../../Reptes/Reptes_SA6.md) (allò és ampliació ⭐): és entrenament d'escriptura, cada sessió de codi.
+> No és el [mini-check](../00_General/00_Mini_checks_individuals.md) (allò és de memòria, sense apunts, 1 per SA) ni un [repte](../../Reptes/Reptes_SA6.md) (allò és ampliació ⭐): és entrenament d'escriptura, cada sessió de codi. El dia del **mini-check** de la SA, el mini-check el substitueix (ho marca el kata afectat amb 🔁).
 >
 > **En aquesta SA el kata és una *variació*:** els valors de l'enunciat són diferents dels del sketch expressament — en comparar, mira l'estructura, no els números.
 
@@ -34,6 +34,8 @@
 **En comparar amb el sketch, mireu:** ① la conversió a enter `(int)` l'apliqueu al resultat de `Kp * error` abans de guardar-lo, o guardeu `Kp * error` en una variable pròpia i la convertiu més tard? ② el `constrain()` actua sobre la variable `sortida` un cop calculada, o l'heu aplicat directament dins de l'`analogWrite`? ③ els dos límits de `constrain()` són `(0, 255)` en aquest ordre, o hi heu posat primer el màxim?
 
 ## Kata · `03_maquina_estats` (Sessió 3, modelatge)
+
+> 🔁 **Aquest dia hi ha mini-check** (inici de la S3): el mini-check **substitueix el kata** a l'aula — no es fan tots dos, són el mateix múscul (escriptura individual de 10'). Aquest kata queda com a **repàs per fer pel teu compte abans de la prova T2**: la màquina d'estats és el patró més nou de la SA i el que menys has escrit a mà.
 
 **Projecta (enunciat):**
 > Tens ja declarat l'`enum Estat { ESPERA, FASE1, FASE2, FET }`, la variable `estat = ESPERA`, la funció `canviaEstat(Estat nou)` (canvia `estat` i actualitza `tEstat` amb `millis()`), la funció `bool polsat()` i els pins configurats a `setup()`. Escriu de zero un `loop()` amb un `switch(estat)` que inclogui **només** els casos `ESPERA` i `FASE1`: a `ESPERA`, `LED_VERMELL` encès i `LED_VERD` apagat, sortida a 0, i si es polsa, passa a `FASE1` (amb un petit `delay(200)` d'antirebots); a `FASE1`, `LED_VERMELL` apagat i `LED_VERD` encès, sortida PWM a 120, i si han passat més de 2000 ms des que hi vau entrar, passa a `FASE2` *(temps diferents del sketch, expressament)*.

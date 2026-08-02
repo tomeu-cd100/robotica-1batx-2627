@@ -2,7 +2,7 @@
 
 > **Per a qui és?** Per al **docent** (que el projecta) **i per a l'alumnat**: si ningú no el projecta, obre'l tu mateix ABANS de mirar el codi de la pràctica. Un **kata d'escriptura** per a cada pràctica de la SA: després del modelatge i **abans d'obrir el sketch donat**, projecta l'enunciat i l'alumnat escriu **el bloc central de zero**, individualment i **amb apunts permesos** (paper o editor). Passats 10', obren el sketch de la pràctica i **comparen** amb el que han escrit (2'). **No es recull ni es qualifica.**
 >
-> No és el [mini-check](../00_General/00_Mini_checks_individuals.md) (allò és de memòria, sense apunts, 1 per SA) ni un [repte](../../Reptes/Reptes_SA3.md) (allò és ampliació ⭐): és entrenament d'escriptura, cada sessió de codi.
+> No és el [mini-check](../00_General/00_Mini_checks_individuals.md) (allò és de memòria, sense apunts, 1 per SA) ni un [repte](../../Reptes/Reptes_SA3.md) (allò és ampliació ⭐): és entrenament d'escriptura, cada sessió de codi. El dia del **mini-check** de la SA, el mini-check el substitueix (ho marca el kata afectat amb 🔁).
 
 ## Kata · `01_polsador_debounce` (Sessió 1)
 
@@ -24,6 +24,8 @@
 
 ## Kata · `03_ultrasons_funcio` (Sessió 3, modelatge)
 
+> 🔁 **Aquest dia hi ha mini-check** (inici de la S3, perquè la S4 és sencera la prova T1): el mini-check **substitueix el kata** a l'aula — no es fan tots dos, són el mateix múscul (escriptura individual de 10'). Aquest kata i el següent queden com a **repàs per fer pel teu compte abans de la prova T1**: la funció que mesura i retorna un valor és justament el que la prova et demanarà.
+
 **Projecta (enunciat):**
 > Tens ja declarades les constants `TRIG` (pin 12) i `ECHO` (pin 11), configurades a `setup()` com a sortida i entrada respectivament. Escriu de zero la funció `float mesuraDistancia()`: dispara el pols del sensor pel TRIG (deixa'l LOW un instant i puja'l a HIGH exactament 10 µs abans de tornar-lo a baixar), cronometra l'eco amb `pulseIn(ECHO, HIGH, 30000)` i retorna la distància en cm (velocitat del so ≈0,034 cm/µs, tenint en compte que el temps mesurat és d'anada **i** tornada), tractant especialment el cas que no torni cap eco: en lloc de dir "0 cm", la funció ha de retornar 400.
 
@@ -32,6 +34,8 @@
 **En comparar amb el sketch, mireu:** ① abans de pujar el TRIG a HIGH, el deixeu LOW un moment breu (2 µs) per garantir un flanc net, o pugeu directament? ② el `return` del cas "sense eco" és una instrucció independent que talla la funció abans de calcular `dist`, o l'heu ficat dins d'un `else`? ③ en la fórmula final, dividiu per 2 el resultat de multiplicar el temps pel factor 0,034, o ho feu en un altre ordre?
 
 ## Kata · `04_alarma_aparcament` (Sessió 3, producte)
+
+> 🔁 **Mateixa sessió del mini-check** que el kata anterior: tampoc no es fa a l'aula. Repàs pel teu compte abans de la prova T1.
 
 **Projecta (enunciat):**
 > Tens ja `mesuraDistancia()` (idèntica a la pràctica 3) i les constants `LLUNY = 30` i `PROP = 10` (cm), `LED` (pin 8) i `PIEZO` (pin 6). Tens també ja calculat, a punt per fer-lo servir dins de la zona intermèdia, l'interval dels bips: `int interval = map((int)d, PROP, LLUNY, 100, 600);` (com més a prop, més ràpid). Escriu de zero el `loop()` que decideixi per trams: mesura la distància (`float d = mesuraDistancia();`) i, si és més gran que `LLUNY`, tot apagat i en silenci; si és més gran que `PROP` (zona intermèdia), fes servir la línia de `interval` ja donada i fes bips espaiats a aquest ritme, fent parpellejar el LED al mateix ritme i un `tone(PIEZO, 1500, 60)` a cada bip; en cas contrari (a `PROP` o menys), LED fix i un `tone(PIEZO, 2500)` continu.

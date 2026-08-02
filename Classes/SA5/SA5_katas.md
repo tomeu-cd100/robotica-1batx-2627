@@ -2,7 +2,7 @@
 
 > **Per a qui és?** Per al **docent** (que el projecta) **i per a l'alumnat**: si ningú no el projecta, obre'l tu mateix ABANS de mirar el codi de la pràctica. Un **kata d'escriptura** per a cada pràctica de la SA: després del modelatge i **abans d'obrir el sketch donat**, projecta l'enunciat i l'alumnat escriu **el bloc central de zero**, individualment i **amb apunts permesos** (paper o editor). Passats 10', obren el sketch de la pràctica i **comparen** amb el que han escrit (2'). **No es recull ni es qualifica.**
 >
-> No és el [mini-check](../00_General/00_Mini_checks_individuals.md) (allò és de memòria, sense apunts, 1 per SA) ni un [repte](../../Reptes/Reptes_SA5.md) (allò és ampliació ⭐): és entrenament d'escriptura, cada sessió de codi.
+> No és el [mini-check](../00_General/00_Mini_checks_individuals.md) (allò és de memòria, sense apunts, 1 per SA) ni un [repte](../../Reptes/Reptes_SA5.md) (allò és ampliació ⭐): és entrenament d'escriptura, cada sessió de codi. El dia del **mini-check** de la SA, el mini-check el substitueix (ho marca el kata afectat amb 🔁).
 >
 > **En aquesta SA el kata és una *variació*:** els valors de l'enunciat són diferents dels del sketch expressament — en comparar, mira l'estructura, no els números.
 
@@ -34,6 +34,8 @@
 **En comparar amb el sketch, mireu:** ① la comparació és `llum < LLINDAR` (per sota és fosc), o l'heu escrit al revés? ② la lectura de `display.read_light_level()` és dins del `while True:` a cada volta, o l'heu tret fora i guardat en una variable que ja no s'actualitza mai més? ③ quan hi ha llum, heu fet `display.clear()`, o heu deixat aquesta branca sense cap instrucció que apagui el quadrat?
 
 ## Kata · `04_radio_dau` (Sessió 3)
+
+> 🔁 **Aquest dia hi ha mini-check** (inici de la S3): el mini-check **substitueix el kata** a l'aula — no es fan tots dos, són el mateix múscul (escriptura individual de 10'). Aquest kata queda com a **repàs per fer pel teu compte** abans de tancar la SA.
 
 **Projecta (enunciat):**
 > Tens ja fetes, abans del bucle, `radio.on()` i `radio.config(group=10)`. Escriu de zero el `while True:` complet: si `accelerometer.was_gesture("shake")` és cert, genera un número a l'atzar entre 1 i 6 amb `random.randint`, mostra'l a la matriu i envia'l per ràdio; a continuació, comprova si ha arribat algun missatge amb `radio.receive()` i, si n'ha arribat, mostra'l per `scroll` precedit de la lletra `"R"`. Acaba cada volta amb una pausa de 70 ms *(valor diferent del sketch, expressament)*.

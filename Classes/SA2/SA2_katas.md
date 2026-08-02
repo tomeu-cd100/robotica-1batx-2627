@@ -2,7 +2,7 @@
 
 > **Per a qui és?** Per al **docent** (que el projecta) **i per a l'alumnat**: si ningú no el projecta, obre'l tu mateix ABANS de mirar el codi de la pràctica. Un **kata d'escriptura** per a cada pràctica de la SA: després del modelatge i **abans d'obrir el sketch donat**, projecta l'enunciat i l'alumnat escriu **el bloc central de zero**, individualment i **amb apunts permesos** (paper o editor). Passats 10', obren el sketch de la pràctica i **comparen** amb el que han escrit (2'). **No es recull ni es qualifica.**
 >
-> No és el [mini-check](../00_General/00_Mini_checks_individuals.md) (allò és de memòria, sense apunts, 1 per SA) ni un [repte](../../Reptes/Reptes_SA2.md) (allò és ampliació ⭐): és entrenament d'escriptura, cada sessió de codi.
+> No és el [mini-check](../00_General/00_Mini_checks_individuals.md) (allò és de memòria, sense apunts, 1 per SA) ni un [repte](../../Reptes/Reptes_SA2.md) (allò és ampliació ⭐): és entrenament d'escriptura, cada sessió de codi. El dia del **mini-check** de la SA, el mini-check el substitueix (ho marca el kata afectat amb 🔁).
 
 ## Kata · `01_led_basic` (Sessió 1)
 
@@ -50,6 +50,8 @@
 **En comparar amb el sketch, mireu:** ① la funció és `void` i no `int`? ② dins seu s'usen els paràmetres (minúscules) i no les constants de pin? ③ el `loop()` crida `color(...)` seguit d'un `delay(1000)` per a cada color?
 
 ## Kata · `05_panell_senyalitzacio` (Sessió 4, producte)
+
+> 🔁 **Aquest dia hi ha mini-check** (inici de la S4): el mini-check **substitueix el kata** a l'aula — no es fan tots dos, són el mateix múscul (escriptura individual de 10'). Aquest kata queda com a **repàs per fer pel teu compte** abans de tancar la SA.
 
 **Projecta (enunciat):**
 > Tens ja `color(r, g, b)` declarada i les constants `PIEZO` (pin 6) i `RELE` (pin 7). Escriu de zero la funció `void estatAvis()` que representi l'estat d'avís: llum **groga fixa** amb `color(255, 180, 0)` *(groc càlid — més vermell que el (255,255,0) de la pràctica del RGB, es veu millor al LED)*, un **bip curt** (1000 Hz, 150 ms) i la càrrega del relé **desconnectada**.

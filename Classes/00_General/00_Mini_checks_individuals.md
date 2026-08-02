@@ -20,7 +20,7 @@ El curs treballa en parelles i equips, i gairebé tots els productes són col·l
    - Deriva a la secció de **`SA0/SA0_guia_programacio.md`** indicada a cada check.
    - A la sessió següent, assigna-li el rol de **Programador/a** (que escrigui ell/a, amb la parella de suport — no a l'inrevés).
    - Si es repeteix dues SA seguides, activa mesures addicionals (`Programació didàctica/05_Atencio_a_la_diversitat.md` §5.2).
-5. **Registre:** un semàfor per alumne/a al full de seguiment (`Avaluació/Full_qualificacio_competencies.md`). En acabar el trimestre, la sèrie de semàfors és evidència d'evolució (no de nota).
+5. **Registre:** un semàfor per alumne/a a les columnes «Mini-check SA__» del full de seguiment del grup (`Avaluació/Full_seguiment_grup.md`). En acabar el trimestre, la sèrie de semàfors és evidència d'evolució (no de nota).
 
 > ⚖️ **No qualifica, i s'ha de dir explícitament a l'alumnat.** L'objectiu és que escriguin sense por: el mini-check només funciona com a radar si ningú no té incentius per dissimular.
 

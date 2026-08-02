@@ -2,7 +2,7 @@
 
 > **Per a qui és?** Per al **docent** (que el projecta) **i per a l'alumnat**: si ningú no el projecta, obre'l tu mateix ABANS de mirar el codi de la pràctica. Un **kata d'escriptura** per a cada pràctica de la SA: després del modelatge i **abans d'obrir el sketch donat**, projecta l'enunciat i l'alumnat escriu **el bloc central de zero**, individualment i **amb apunts permesos** (paper o editor). Passats 10', obren el sketch de la pràctica i **comparen** amb el que han escrit (2'). **No es recull ni es qualifica.**
 >
-> No és el [mini-check](../00_General/00_Mini_checks_individuals.md) (allò és de memòria, sense apunts, 1 per SA) ni un [repte](../../Reptes/Reptes_SA4.md) (allò és ampliació ⭐): és entrenament d'escriptura, cada sessió de codi.
+> No és el [mini-check](../00_General/00_Mini_checks_individuals.md) (allò és de memòria, sense apunts, 1 per SA) ni un [repte](../../Reptes/Reptes_SA4.md) (allò és ampliació ⭐): és entrenament d'escriptura, cada sessió de codi. El dia del **mini-check** de la SA, el mini-check el substitueix (ho marca el kata afectat amb 🔁).
 >
 > **En aquesta SA el kata és una *variació*:** els valors de l'enunciat són diferents dels del sketch expressament — en comparar, mira l'estructura, no els números.
 
@@ -43,6 +43,8 @@
 **En comparar amb el sketch, mireu:** ① dins de cada `if`, l'assignació `tA = ara` (o `tB = ara`) és abans o després d'invertir `encesA`? ② heu escrit un sol `if` que mira els dos LEDs alhora, o dos `if` independents, un per LED? ③ `digitalWrite(LED_A, encesA)` passa el booleà directament, o l'heu convertit a `HIGH`/`LOW` amb un `if` extra?
 
 ## Kata · `04_barrera_automatica` (Sessió 4, producte)
+
+> 🔁 **Aquest dia hi ha mini-check** (inici de la S4): el mini-check **substitueix el kata** a l'aula — no es fan tots dos, són el mateix múscul (escriptura individual de 10'). Aquest kata queda com a **repàs per fer pel teu compte** abans de tancar la SA.
 
 **Projecta (enunciat):**
 > Tens ja `mesuraDistancia()`, les constants `ANGLE_TANCAT = 0`, `ANGLE_OBERT = 90`, `DIST_DETECCIO = 20` (cm) i `TEMPS_OBERT = 4000` (ms) *(valors diferents del sketch, expressament)*, i el `setup()` que deixa la barrera tancada. Escriu de zero el `loop()`: mesura la distància, i si és més gran que 0 **i** menor que `DIST_DETECCIO`, encén el LED, obre la barrera, espera `TEMPS_OBERT`, torna a tancar-la i apaga el LED. Acaba amb una pausa de 80 ms a cada volta.

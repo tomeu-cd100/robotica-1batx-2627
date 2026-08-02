@@ -2,7 +2,7 @@
 
 > **Per a qui és?** Per al **docent** (que el projecta) **i per a l'alumnat**: si ningú no el projecta, obre'l tu mateix ABANS de mirar el codi de la pràctica. Un **kata d'escriptura** per a cada pràctica de la SA: **abans que el docent modeli el bloc**, projecta l'enunciat i l'alumnat escriu **el bloc central de zero**, individualment i **amb la xuleta i els apunts permesos** (paper o editor) — encara no ha vist el sketch ni el modelatge d'avui. Passats 10', el docent fa el modelatge i **després** s'obre el sketch de la pràctica per **comparar**-hi (2'). **No es recull ni es qualifica.**
 >
-> No és el [mini-check](../00_General/00_Mini_checks_individuals.md) (allò és de memòria, sense apunts, 1 per SA) ni un [repte](../../Reptes/Reptes_SA8.md) (allò és ampliació ⭐): és entrenament d'escriptura, cada sessió de codi.
+> No és el [mini-check](../00_General/00_Mini_checks_individuals.md) (allò és de memòria, sense apunts, 1 per SA) ni un [repte](../../Reptes/Reptes_SA8.md) (allò és ampliació ⭐): és entrenament d'escriptura, cada sessió de codi. El dia del **mini-check** de la SA, el mini-check el substitueix (ho marca el kata afectat amb 🔁).
 >
 > **En aquesta SA el kata va *abans* del modelatge:** primer escriu amb la xuleta i els apunts; el modelatge del docent tanca després.
 
@@ -36,6 +36,8 @@
 **En comparar amb el sketch, mireu:** ① heu fet primer `missatge.split(";")` i després `[0].split(":")` sobre la primera part, o heu invertit l'ordre dels dos separadors? ② heu convertit el resultat a `int(...)` abans de comparar-lo amb `LLINDAR_TEMP`, o heu comparat directament el text (número i cadena no es comparen igual)? ③ la decisió `Image.NO`/`Image.YES` és dins del mateix bloc `try` que heu omplert, o l'heu tret fora (trencant l'esquelet donat)?
 
 ## Kata · `03_ia_gestos` (Sessió 3, abans del modelatge)
+
+> 🔁 **Aquest dia hi ha mini-check** (inici de la S3): el mini-check **substitueix el kata** a l'aula — no es fan tots dos, són el mateix múscul (escriptura individual de 10'). Aquest kata queda com a **repàs per fer pel teu compte** abans de tancar la SA.
 
 **Projecta (enunciat):**
 > Escriu de zero la capçalera de la funció `classifica(x, y, z)` i **només** les seves 4 primeres regles: si `accelerometer.was_gesture("shake")` és cert, retorna `"SACSEIG"`; si no, i `z < -700`, retorna `"PLA (cara amunt)"`; si no, i `z > 700`, retorna `"CAP PER AVALL"`; si no, i `y > 600`, retorna `"INCLINAT ENDAVANT"`; i acaba amb el cas per defecte, `"DRET"`, per a quan cap de les regles anteriors no s'ha complert. El sketch complet en té 3 regles més (inclinada enrere i als dos costats, amb `y` i `x` negatius/positius) que trobaràs en comparar.

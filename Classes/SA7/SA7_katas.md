@@ -2,7 +2,7 @@
 
 > **Per a qui és?** Per al **docent** (que el projecta) **i per a l'alumnat**: si ningú no el projecta, obre'l tu mateix ABANS de mirar el codi de la pràctica. Un **kata d'escriptura** per a cada pràctica de la SA: **abans que el docent modeli el bloc**, projecta l'enunciat i l'alumnat escriu **el bloc central de zero**, individualment i **amb la xuleta i els apunts permesos** (paper o editor) — encara no ha vist el sketch ni el modelatge d'avui. Passats 10', el docent fa el modelatge i **després** s'obre el sketch de la pràctica per **comparar**-hi (2'). **No es recull ni es qualifica.**
 >
-> No és el [mini-check](../00_General/00_Mini_checks_individuals.md) (allò és de memòria, sense apunts, 1 per SA) ni un [repte](../../Reptes/Reptes_SA7.md) (allò és ampliació ⭐): és entrenament d'escriptura, cada sessió de codi.
+> No és el [mini-check](../00_General/00_Mini_checks_individuals.md) (allò és de memòria, sense apunts, 1 per SA) ni un [repte](../../Reptes/Reptes_SA7.md) (allò és ampliació ⭐): és entrenament d'escriptura, cada sessió de codi. El dia del **mini-check** de la SA, el mini-check el substitueix (ho marca el kata afectat amb 🔁).
 >
 > **En aquesta SA el kata va *abans* del modelatge:** primer escriu amb la xuleta i els apunts; el modelatge del docent tanca després.
 
@@ -34,6 +34,8 @@
 **En comparar amb el sketch, mireu:** ① la distància es llegeix amb una sola crida a `distancia()` per volta i es reutilitza, o l'heu cridada més d'una vegada dins del mateix cicle? ② dins la maniobra d'evasió, quants `atura();` hi ha intercalats entre `enrere()` i `gira_dreta()` — un abans i un després de cada moviment, o només al principi i al final del bloc? ③ la branca «via lliure» porta algun `delay` propi, o només crida `endavant()` i deixa que el `delay(30)` final (comú a totes dues branques) marqui el ritme del cicle?
 
 ## Kata · `04_seguidor_linia` (Sessió 4, abans del modelatge, i repte de pista)
+
+> 🔁 **Aquest dia hi ha mini-check** (inici de la S4): el mini-check **substitueix el kata** a l'aula — no es fan tots dos, són el mateix múscul (escriptura individual de 10'). Aquest kata queda com a **repàs per fer pel teu compte** abans de tancar la SA: el patró de decidir amb dos sensors és el que més surt als reptes de pista.
 
 **Projecta (enunciat):**
 > Tens ja escrites les funcions `endavant()`, `corregeix_esq()` i `corregeix_dreta()` (control diferencial ja fet) i les constants `S_ESQ` (pin 2) i `S_DRET` (pin 3) — sensors IR que donen `LOW` quan veuen la línia negra i `HIGH` quan veuen el fons. Escriu de zero el `loop()` complet: segons el que llegeixin els dos sensors, decideix: si tots dos veuen la línia, `endavant()`; si només la veu l'esquerre, corregeix cap a l'esquerra; si només el dret, corregeix cap a la dreta; si cap dels dos, continua `endavant()`. Acaba amb una pausa de 10 ms.

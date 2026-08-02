@@ -492,6 +492,16 @@ def comprova_katas() -> None:
     sense_fitxer_sol = 0
     sense_solucio = 0
     sense_enllac_guia = 0
+    sense_marca_minicheck = 0
+    # Sessió del mini-check de cada SA: aquell dia el mini-check substitueix
+    # el kata (00_Mini_checks_individuals.md és la font de veritat).
+    minichecks = ARREL / "Classes" / "00_General" / "00_Mini_checks_individuals.md"
+    sessio_minicheck: dict[int, int] = {}
+    if minichecks.exists():
+        for sa_n, ses_n in re.findall(
+                r"^## SA(\d) · Mini-check \(inici de la Sessió (\d)",
+                minichecks.read_text(encoding="utf-8"), flags=re.M):
+            sessio_minicheck[int(sa_n)] = int(ses_n)
     for n in range(2, 9):
         sa_dir = ARREL / "Classes" / f"SA{n}"
         codi = sa_dir / "codi"
@@ -554,6 +564,24 @@ def comprova_katas() -> None:
         if not fitxa_alumnat.exists() or "kata" not in fitxa_alumnat.read_text(encoding="utf-8").lower():
             errors.append(f"[katas] SA{n}_fitxa_alumnat.md: no esmenta el kata")
             sense_fitxa_alumnat += 1
+        # (f) el kata que cau el dia del mini-check ha de dur la marca 🔁: el
+        # mini-check el substitueix (mateix múscul), i el fitxer de katas el
+        # llegeix també l'alumnat pel seu compte.
+        if existeix and n in sessio_minicheck:
+            ses = sessio_minicheck[n]
+            for bloc in re.split(r"^## (?=Kata)", text, flags=re.M)[1:]:
+                cap = bloc.splitlines()[0]
+                m_ses = re.search(r"Sessi(?:ó|ons)\s+([0-9])", cap)
+                if not m_ses or int(m_ses.group(1)) != ses:
+                    continue
+                if "🔁" not in bloc.split("**Projecta")[0]:
+                    kata_id = re.search(r"`([^`]+)`", cap)
+                    errors.append(
+                        f"[katas] SA{n}_katas.md: el kata "
+                        f"`{kata_id.group(1) if kata_id else cap.strip()}` cau el dia "
+                        f"del mini-check (S{ses}) i no duu la marca 🔁 de substitució")
+                    sense_marca_minicheck += 1
+
         # (e) la guia docent ha d'enllaçar les solucions dels katas, perquè el
         # docent les tingui a mà per a la posada en comú.
         guia = sa_dir / f"SA{n}_guia_docent.md"
@@ -566,7 +594,35 @@ def comprova_katas() -> None:
           f"{sense_checklist} checklists sense enllaç, "
           f"{sense_fitxa_alumnat} fitxes sense esment; solucions: "
           f"{sense_fitxer_sol} SA sense fitxer, {sense_solucio} katas sense "
-          f"solució, {sense_enllac_guia} guies sense enllaç.")
+          f"solució, {sense_enllac_guia} guies sense enllaç; "
+          f"{sense_marca_minicheck} katas del dia del mini-check sense marca 🔁.")
+
+
+# --- 17 · El quadern tècnic s'avalua sempre amb la mateixa rúbrica ---------
+def comprova_rubrica_quadern() -> None:
+    """Al mapa d'avaluació de cada guia docent, la fila del quadern tècnic ha
+    d'anar amb R4 (documentació): és el que diuen les fitxes d'alumnat, les
+    checklists i el pla de recuperació del doc 06. SA2-SA4 havien quedat amb
+    R1 (codi), i el mateix instrument no pot dependre de la SA."""
+    dolentes = 0
+    revisades = 0
+    for n in range(1, 10):
+        guia = ARREL / "Classes" / f"SA{n}" / f"SA{n}_guia_docent.md"
+        if not guia.exists():
+            continue
+        for linia in guia.read_text(encoding="utf-8").splitlines():
+            if not linia.startswith("| Quadern"):
+                continue
+            revisades += 1
+            # La columna de rúbrica és la que cita R1-R5 (algunes guies duen
+            # una columna extra d'obligatorietat al final).
+            cel = [c.strip() for c in linia.split("|") if c.strip()]
+            rubrica = next((c for c in reversed(cel) if re.search(r"\bR[1-5]\b", c)), "")
+            if "R4" not in rubrica:
+                errors.append(f"[rúbriques] SA{n}_guia_docent.md: el quadern tècnic "
+                              f"s'avalua amb «{rubrica or '(cap rúbrica)'}» i no amb R4")
+                dolentes += 1
+    print(f"17) Rúbrica del quadern: {revisades} files revisades, {dolentes} sense R4.")
 
 
 # --- 14 · Projectes trimestrals: portada present i enllaçant el dossier -----
@@ -715,6 +771,7 @@ def main() -> int:
     comprova_projectes_trimestrals()
     comprova_codi_incrustat()
     comprova_katas()
+    comprova_rubrica_quadern()
     for a in avisos:
         print(f"⚠️  {a}")
     if errors:
