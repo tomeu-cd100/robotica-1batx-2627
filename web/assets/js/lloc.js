@@ -76,7 +76,7 @@
   /* FRICCIÓ, no seguretat: tot el material és públic al repositori (CC BY-SA).
      La porta només evita que l'alumnat entri a la vista docent per curiositat.
      Per canviar la contrasenya: py tools/canvia_contrasenya_docent.py */
-  var DOCENT_HASH = "10d9c1b3";
+  var DOCENT_HASH = "91753613";
 
   function clauDocent(text) {
     var h = 5381;

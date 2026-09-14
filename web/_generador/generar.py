@@ -1162,6 +1162,7 @@ def page_shell(*, out_rel, section_key, title, content_html, toc="",
       <input type="search" id="cerca" placeholder="Cerca…" autocomplete="off" aria-label="Cerca al web">
       <div id="cerca-resultats" class="cerca-resultats" hidden></div>
     </div>
+    <a class="tema-btn" href="{prefix}calendari.html" title="Calendari del curs, sessió a sessió">📅</a>
     <div class="a11y-grup" role="group" aria-label="Ajustos de lectura">
       <button class="a11y-btn mida-menys" aria-label="Redueix la mida del text" title="Text més petit">A−</button>
       <button class="a11y-btn mida-mes" aria-label="Augmenta la mida del text" title="Text més gran">A+</button>
@@ -2115,6 +2116,395 @@ if (!u) {
 
 
 # ---------------------------------------------------------------------------
+# Calendari docent (planificació dia a dia, sessió a sessió)
+# ---------------------------------------------------------------------------
+def render_calendari_docent() -> str:
+    """Pàgina autònoma (fora del pipeline de Markdown) amb el calendari
+    dia a dia del curs: assigna cada sessió de cada SA a un dilluns/dimarts
+    real i enllaça la guia docent/fitxa/reptes/prova de cada una. Estat
+    (festius marcats, sessions fetes) persistit només amb localStorage:
+    és una eina 100% local, no passa per cap servei extern."""
+    tpl = r"""<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calendari del curs · %%TITLE%%</title>
+<meta name="description" content="Calendari dia a dia del curs: quina sessió toca cada dia, amb les tasques i els enllaços.">
+<link rel="stylesheet" href="assets/css/estil.css">
+<script>(function(){try{var d=document.documentElement,t=localStorage.getItem('tema');if(t==='fosc'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches))d.setAttribute('data-tema','fosc');var m=localStorage.getItem('mida');if(m&&m!=='100')d.setAttribute('data-mida',m);if(localStorage.getItem('font')==='llegible')d.setAttribute('data-font','llegible');var v=localStorage.getItem('vista')||'alumnat';d.setAttribute('data-vista',v);}catch(e){}})();</script>
+<style>
+.cal-wrap{max-width:880px;margin:0 auto;}
+.cal-panel{background:var(--surface);border:1px solid var(--border);border-radius:var(--radi);padding:14px 16px;margin-bottom:1.1rem;}
+.cal-panel h2{font-size:.95rem;margin:0 0 .5rem;}
+.cal-stats{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;font-size:.88rem;color:var(--muted);}
+.cal-stats b{color:var(--text);font-weight:600;}
+.cal-festius-row{display:flex;gap:.5rem;flex-wrap:wrap;align-items:center;margin-top:.6rem;}
+.cal-festius-row input[type=date]{border:1px solid var(--border);background:var(--bg);color:var(--text);border-radius:var(--radi-s);padding:.35rem .5rem;font-size:.85rem;}
+.cal-festius-row button{border:1px solid var(--border);background:var(--surface-2);color:var(--text);border-radius:var(--radi-s);padding:.4rem .7rem;font-size:.85rem;cursor:pointer;}
+.cal-festius-row button:hover{border-color:var(--accent);color:var(--accent);}
+.cal-festius-llista{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.6rem;}
+.cal-festiu-chip{display:inline-flex;align-items:center;gap:.35rem;background:var(--surface-2);border:1px solid var(--border);border-radius:20px;padding:.15rem .4rem .15rem .7rem;font-size:.8rem;}
+.cal-festiu-chip button{border:none;background:none;color:var(--muted);cursor:pointer;font-size:.9rem;line-height:1;padding:.1rem .3rem;}
+.cal-festiu-chip button:hover{color:var(--vermell);}
+.cal-trim-header{display:flex;align-items:baseline;gap:.6rem;margin:1.6rem 0 .6rem;padding-bottom:.3rem;border-bottom:2px solid var(--border-fort);}
+.cal-trim-header b{font-size:1.05rem;}
+.cal-sa-header{display:flex;align-items:baseline;gap:.5rem;margin:1.1rem 0 .5rem;flex-wrap:wrap;}
+.cal-sa-header .cal-sa-tag{font-weight:700;font-size:.95rem;}
+.cal-sa-header .cal-sa-title{color:var(--muted);font-size:.92rem;}
+.cal-sa-header a{font-size:.8rem;color:var(--accent);text-decoration:none;margin-left:auto;white-space:nowrap;}
+.cal-sa-header a:hover{text-decoration:underline;}
+.cal-sessio{background:var(--surface);border:1px solid var(--border);border-radius:var(--radi);padding:12px 14px;margin-bottom:.6rem;display:grid;grid-template-columns:auto auto 1fr;gap:.15rem 12px;align-items:start;}
+.cal-sessio.feta{opacity:.55;}
+.cal-sessio.avui{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent);}
+.cal-sessio.propera{border-color:var(--accent-2);}
+.cal-chk{grid-row:1/3;padding-top:.15rem;}
+.cal-chk input{width:18px;height:18px;accent-color:var(--accent);cursor:pointer;}
+.cal-data{grid-column:2;font-size:.8rem;color:var(--muted);min-width:5.4rem;}
+.cal-data b{color:var(--text);display:block;font-size:.95rem;}
+.cal-body{grid-column:3;}
+.cal-titols{display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;}
+.cal-titols .cal-s-label{font-weight:700;font-size:.85rem;color:var(--accent);}
+.cal-titols h3{margin:0;font-size:.98rem;font-weight:600;}
+.cal-badge{font-size:.72rem;font-weight:600;border-radius:20px;padding:.1rem .55rem;}
+.cal-badge.test{background:var(--vermell-bg);color:var(--vermell);}
+.cal-badge.prod{background:var(--verd-bg);color:var(--verd);}
+.cal-badge.avui{background:var(--accent-soft);color:var(--accent);}
+.cal-tasques{margin:.4rem 0 .5rem;padding-left:1.1rem;font-size:.87rem;color:var(--muted);}
+.cal-tasques li{margin:.12rem 0;}
+.cal-links{display:flex;flex-wrap:wrap;gap:.5rem;}
+.cal-links a{font-size:.78rem;color:var(--accent);text-decoration:none;border:1px solid var(--border);border-radius:20px;padding:.15rem .65rem;}
+.cal-links a:hover{border-color:var(--accent);}
+.cal-marge{font-size:.82rem;color:var(--muted);text-align:center;margin-top:1.6rem;padding:.8rem;border:1px dashed var(--border);border-radius:var(--radi);}
+@media(max-width:480px){
+  .cal-sessio{grid-template-columns:auto 1fr;}
+  .cal-data{grid-column:1/3;grid-row:auto;display:flex;gap:.4rem;align-items:baseline;}
+  .cal-data b{display:inline;}
+  .cal-body{grid-column:1/3;}
+  .cal-chk{grid-row:auto;}
+}
+</style>
+</head>
+<body data-section="programacio" data-public="alumnat" class="sense-sidebar sense-toc">
+<a class="skip" href="#contingut">Salta al contingut</a>
+<header class="topbar">
+  <a class="brand" href="index.html"><span class="brand-mark">◆</span> Robòtica <span class="brand-sub">1r Batx</span></a>
+  <nav class="topnav" aria-label="Seccions"><a href="index.html">Inici</a></nav>
+  <div class="topbar-eines">
+    <div class="a11y-grup" role="group" aria-label="Ajustos de lectura">
+      <button class="a11y-btn mida-menys" aria-label="Redueix la mida del text" title="Text més petit">A−</button>
+      <button class="a11y-btn mida-mes" aria-label="Augmenta la mida del text" title="Text més gran">A+</button>
+      <button class="a11y-btn font-toggle" aria-pressed="false" aria-label="Tipografia de lectura fàcil" title="Tipografia de lectura fàcil">Aa</button>
+    </div>
+    <button class="tema-btn" aria-label="Canvia el tema clar/fosc" title="Tema clar/fosc">◐</button>
+  </div>
+</header>
+<div class="layout">
+  <main id="contingut">
+    <nav class="breadcrumb" aria-label="Ubicació"><a href="index.html">Inici</a> <span class="sep">/</span> <span aria-current="page">Calendari del curs</span></nav>
+    <h1>📅 Calendari del curs</h1>
+    <div class="cal-wrap">
+      <p>Curs 2026-2027 · classes els <b>dilluns i dimarts</b> · inici <b>14/09/2026</b>. Cada sessió és de 2 h. Tot l'estat (festius, sessions fetes) es guarda al navegador d'aquest ordinador (<code>localStorage</code>): és local, no es comparteix ni s'envia enlloc.</p>
+
+      <div class="cal-panel">
+        <h2>Progrés</h2>
+        <div class="cal-stats" id="cal-stats"></div>
+      </div>
+
+      <div class="cal-panel">
+        <h2>Dies festius / sense classe</h2>
+        <p style="margin:0;color:var(--muted);font-size:.9rem;">Marca aquí un dilluns o dimarts en què no hi ha classe (festiu, sortida, vaga…): les sessions posteriors es desplacen automàticament.</p>
+        <div class="cal-festius-row">
+          <input type="date" id="cal-festiu-input" min="2026-09-14">
+          <button id="cal-festiu-afegeix">+ Marca com a festiu</button>
+        </div>
+        <div class="cal-festius-llista" id="cal-festius-llista"></div>
+      </div>
+
+      <div id="cal-calendari"></div>
+      <div class="cal-marge" id="cal-marge"></div>
+    </div>
+  </main>
+</div>
+<footer class="peu">
+  <p>%%TITLE%% · calendari docent (eina local, sense servidor).</p>
+</footer>
+<script>
+const START = new Date(2026, 8, 14); // 14/09/2026, dilluns
+const CUTOFF = new Date(2027, 6, 10); // marge ampli fins a mitjans de juliol
+
+function pad2(n){ return String(n).padStart(2, "0"); }
+function isoLocal(d){ return d.getFullYear() + "-" + pad2(d.getMonth()+1) + "-" + pad2(d.getDate()); }
+function localFromIso(s){ const [y,m,d] = s.split("-").map(Number); return new Date(y, m-1, d); }
+function fmt(d){
+  const dies = ["dg","dl","dt","dc","dj","dv","ds"];
+  return dies[d.getDay()] + " " + pad2(d.getDate()) + "/" + pad2(d.getMonth()+1);
+}
+
+function saPaths(n){
+  return {
+    hub: `classes/sa${n}/index.html`,
+    guia: `classes/sa${n}/sa${n}-guia-docent.html`,
+    fitxa: `classes/sa${n}/sa${n}-fitxa-alumnat.html`,
+    reptes: `reptes/reptes-sa${n}.html`,
+  };
+}
+const PROVA_PAGE = { "SA3": "avaluacio/prova-practica-t1.html", "SA6": "avaluacio/prova-practica-t2.html", "SA9": "avaluacio/prova-practica-t3.html" };
+
+const SA_DATA = %%SA_DATA_JSON%%;
+
+// ---- Aplanem a una llista de sessions amb id estable ----
+const ALL_SESSIONS = [];
+SA_DATA.forEach(sa=>{
+  sa.sessions.forEach((s,i)=>{
+    ALL_SESSIONS.push(Object.assign({
+      id: `SA${sa.n}-S${i+1}`, saN: sa.n, saTitle: sa.title, trim: sa.trim,
+      sLabel: `S${i+1}`,
+    }, s));
+  });
+});
+
+// ---- Generem dates candidates (dilluns i dimarts) ----
+const CANDIDATES = [];
+{ let d = new Date(START);
+  while(d <= CUTOFF){
+    const dow = d.getDay();
+    if(dow===1 || dow===2) CANDIDATES.push(isoLocal(d));
+    d.setDate(d.getDate()+1);
+  }
+}
+
+// ---- Estat persistent (nomes localStorage: eina local) ----
+const LS_KEY = "calendari-robotica-2627";
+let STATE = { holidays: [], done: {} };
+try{
+  const raw = localStorage.getItem(LS_KEY);
+  if(raw) STATE = JSON.parse(raw);
+}catch(e){}
+
+function save(){
+  try{ localStorage.setItem(LS_KEY, JSON.stringify(STATE)); }catch(e){}
+}
+
+function render(){
+  const holidaySet = new Set(STATE.holidays);
+  const classDates = CANDIDATES.filter(d=>!holidaySet.has(d));
+  const todayIso = isoLocal(new Date());
+
+  ALL_SESSIONS.forEach((s,i)=>{ s.date = classDates[i] || null; });
+  const lastUsedDate = classDates[ALL_SESSIONS.length-1];
+  const spare = classDates.length - ALL_SESSIONS.length;
+
+  const doneCount = Object.values(STATE.done).filter(Boolean).length;
+  const nextSession = ALL_SESSIONS.find(s=>!STATE.done[s.id]);
+  document.getElementById("cal-stats").innerHTML = `
+    <span><b>${doneCount}</b> / ${ALL_SESSIONS.length} sessions fetes</span>
+    <span><b>${(doneCount*2)}</b> h de ${ALL_SESSIONS.length*2} h</span>
+    <span>Properament: <b>${nextSession ? "SA" + nextSession.saN + " · " + nextSession.sLabel + " — " + nextSession.title : "curs tancat"}</b></span>
+    <span>Darrera sessió prevista: <b>${lastUsedDate ? fmt(localFromIso(lastUsedDate)) : "—"}</b></span>
+  `;
+
+  const fl = document.getElementById("cal-festius-llista");
+  fl.innerHTML = "";
+  STATE.holidays.slice().sort().forEach(dstr=>{
+    const chip = document.createElement("span");
+    chip.className = "cal-festiu-chip";
+    chip.innerHTML = `${fmt(localFromIso(dstr))} <button title="Treu">✕</button>`;
+    chip.querySelector("button").onclick = ()=>{
+      STATE.holidays = STATE.holidays.filter(x=>x!==dstr);
+      save(); render();
+    };
+    fl.appendChild(chip);
+  });
+
+  const cont = document.getElementById("cal-calendari");
+  cont.innerHTML = "";
+  let lastTrim = 0, lastSA = 0;
+  const TRIM_LABEL = {1:"1r trimestre — Fonaments", 2:"2n trimestre — Control i sensors", 3:"3r trimestre — Robòtica i integració"};
+
+  ALL_SESSIONS.forEach((s)=>{
+    if(s.trim !== lastTrim){
+      lastTrim = s.trim;
+      const h = document.createElement("div");
+      h.className = "cal-trim-header";
+      h.innerHTML = `<b>${TRIM_LABEL[s.trim]}</b>`;
+      cont.appendChild(h);
+    }
+    if(s.saN !== lastSA){
+      lastSA = s.saN;
+      const p = saPaths(s.saN);
+      const h = document.createElement("div");
+      h.className = "cal-sa-header";
+      h.innerHTML = `<span class="cal-sa-tag">SA${s.saN}</span><span class="cal-sa-title">${s.saTitle}</span><a href="${p.hub}">Obre la SA ↗</a>`;
+      cont.appendChild(h);
+    }
+
+    const p = saPaths(s.saN);
+    const row = document.createElement("div");
+    const isDone = !!STATE.done[s.id];
+    const isToday = s.date === todayIso;
+    const isNext = nextSession && nextSession.id === s.id;
+    row.className = "cal-sessio" + (isDone?" feta":"") + (isToday?" avui":"") + (isNext && !isToday?" propera":"");
+
+    const badges = [];
+    if(isToday) badges.push(`<span class="cal-badge avui">AVUI</span>`);
+    if(s.product) badges.push(`<span class="cal-badge prod">📦 Producte</span>`);
+    if(s.test) badges.push(`<span class="cal-badge test">🧪 Prova pràctica</span>`);
+
+    const links = [`<a href="${p.guia}#${s.anchor}">Guia docent ↗</a>`,
+                    `<a href="${p.fitxa}">Fitxa alumnat ↗</a>`];
+    if(s.product) links.push(`<a href="${p.reptes}">Reptes ↗</a>`);
+    if(s.test && PROVA_PAGE["SA"+s.saN]) links.push(`<a href="${PROVA_PAGE["SA"+s.saN]}">Prova pràctica ↗</a>`);
+
+    row.innerHTML = `
+      <div class="cal-chk"><input type="checkbox" ${isDone?"checked":""} aria-label="Sessió feta"></div>
+      <div class="cal-data">${s.date ? `<b>${fmt(localFromIso(s.date))}</b>` : `<b>sense data</b>`}</div>
+      <div class="cal-body">
+        <div class="cal-titols">
+          <span class="cal-s-label">SA${s.saN} · ${s.sLabel}</span>
+          <h3>${s.title}</h3>
+          ${badges.join("")}
+        </div>
+        <ul class="cal-tasques">${s.tasks.map(t=>`<li>${t}</li>`).join("")}</ul>
+        <div class="cal-links">${links.join("")}</div>
+      </div>
+    `;
+    row.querySelector("input[type=checkbox]").onchange = (e)=>{
+      STATE.done[s.id] = e.target.checked;
+      save(); render();
+    };
+    cont.appendChild(row);
+  });
+
+  document.getElementById("cal-marge").textContent = spare >= 0
+    ? `Marge disponible: ${spare} dies de classe de reserva després de la darrera sessió prevista (per a festius encara no marcats, repassos o imprevistos).`
+    : `Atenció: falten ${-spare} dies de classe dins del calendari generat (fins a ${CUTOFF.getDate()}/${CUTOFF.getMonth()+1}/${CUTOFF.getFullYear()}) per encabir totes les sessions amb els festius marcats.`;
+}
+
+document.getElementById("cal-festiu-afegeix").onclick = ()=>{
+  const v = document.getElementById("cal-festiu-input").value;
+  if(!v) return;
+  const d = localFromIso(v);
+  const dow = d.getDay();
+  if(dow !== 1 && dow !== 2){
+    alert("Només es poden marcar com a festius dilluns o dimarts (els dies de classe).");
+    return;
+  }
+  if(!STATE.holidays.includes(v)) STATE.holidays.push(v);
+  document.getElementById("cal-festiu-input").value = "";
+  save(); render();
+};
+
+render();
+</script>
+<script src="assets/js/lloc.js"></script>
+</body>
+</html>
+"""
+    return (tpl.replace("%%TITLE%%", SITE_TITLE)
+            .replace("%%SA_DATA_JSON%%", json.dumps(CALENDARI_SA_DATA, ensure_ascii=False)))
+
+
+CALENDARI_SA_DATA = [
+{"n":1, "trim":1, "title":"Què és un robot? Sistemes embeguts i mètode de projecte",
+ "sessions":[
+  {"title":"Què és un robot?", "anchor":"sessio-1-2-h-que-es-un-robot",
+   "tasks":["Pluja d'idees: robots amagats a casa","Model entrada→procés→sortida i sistema embegut","Anàlisi de 3 sistemes (E-P-S) a la fitxa","Prova diagnòstica (no qualifica)","Presenta el mètode de projecte (pòster a l'aula)"]},
+  {"title":"Arquitectura i seguretat", "anchor":"sessio-2-2-h-arquitectura-i-seguretat",
+   "tasks":["Identifiquen parts de la placa Arduino UNO","Etiqueten l'esquema mut (analògic/digital, PWM)","Normes de seguretat: lectura i signatura","Primer circuit a Tinkercad (LED + placa)"]},
+  {"title":"El primer programa", "anchor":"sessio-3-2-h-el-primer-programa", "product":True,
+   "tasks":["PRIMM amb blink.ino (predir→executar→investigar→modificar→crear)","Repte de parpelleig variable + ampliacions","Mini-debat ètica de l'automatització (ODS)","Presenta la fitxa-pòster — producte de la SA"]},
+ ]},
+{"n":2, "trim":1, "title":"Sortides digitals i PWM: dona vida als actuadors",
+ "sessions":[
+  {"title":"Variables i la primera sortida", "anchor":"sessio-1-2-h-variables-i-la-primera-sortida",
+   "tasks":["Repassa Blink i introdueix constants/variables","Munten LED al pin 8 amb resistència 220 Ω","Repte: parpelleig amb temps per variable","Racó de mesura amb multímetre (llei d'Ohm)"]},
+  {"title":"Estructures de control: el semàfor", "anchor":"sessio-2-2-h-estructures-de-control-el-semafor",
+   "tasks":["Modelatge del semàfor amb if/switch","Munten 3 LED (pins 8-9-10) i programen el cicle","Repte: afegir fase nocturna intermitent","Introdueix millis() vs delay() (concepte)"]},
+  {"title":"PWM: intensitat i color", "anchor":"sessio-3-2-h-pwm-intensitat-i-color",
+   "tasks":["Modelatge de analogWrite i map() amb fade","Efecte fade al pin 9 i barreja RGB","Repte: crear 5 colors propis i transició suau"]},
+  {"title":"Producte: panell de senyalització", "anchor":"sessio-4-2-h-producte-panell-de-senyalitzacio", "product":True,
+   "tasks":["Mini-check individual: Blink de memòria","Integren LED RGB + piezo + relé (panell personalitzat)","Documenten esquema i codi; mini-defensa d'1' (R4·DO)","Autoavaluació amb rúbriques R1/R2"]},
+ ]},
+{"n":3, "trim":1, "title":"Entrades i sensors: el robot percep",
+ "sessions":[
+  {"title":"Entrades digitals i monitor sèrie", "anchor":"sessio-1-2-h-entrades-digitals-i-monitor-serie",
+   "tasks":["Modelatge: INPUT_PULLUP, digitalRead i antirebot","Munten polsador al pin 2; compten al monitor sèrie","Repte: LED en mode toggle amb el polsador"]},
+  {"title":"Entrades analògiques", "anchor":"sessio-2-2-h-entrades-analogiques",
+   "tasks":["Modelatge: analogRead, map() i divisor de tensió","Llegeixen potenciòmetre i LDR; regulen LED per PWM","Repte: llum automàtic (LDR + llindar)","Racó de mesura: multímetre al divisor LDR"]},
+  {"title":"Funcions + PRODUCTE: alarma/aparcament", "anchor":"sessio-3-2-h-funcions-producte-alarmaaparcament", "product":True,
+   "tasks":["Mini-check individual: if/else sobre lectura analògica","Modelatge: funció mesuraDistancia() amb pulseIn","Munten HC-SR04 i visualitzen amb Serial Plotter","Repte-PRODUCTE: alarma/mascota amb avís per trams","Mini-defensa d'1' a peu de taula"]},
+  {"title":"PROVA PRÀCTICA T1 (individual)", "anchor":"sessio-4-2-h-prova-practica-t1-individual", "test":True,
+   "tasks":["Reparteix material i recorda què es pot consultar","Prova individual (~80-85'): llum de seguretat intel·ligent","Recollida i pla de millora personal al quadern"]},
+ ]},
+{"n":4, "trim":2, "title":"Moviment: servos, motors i ponts H",
+ "sessions":[
+  {"title":"El servomotor", "anchor":"sessio-1-2-h-el-servomotor",
+   "tasks":["Modelatge: Servo.h, attach() i write(angle)","Munten servo; el controlen amb potenciòmetre","Repte: escombrada automàtica suau (vaivé 0-180°)"]},
+  {"title":"Motor DC i pont H", "anchor":"sessio-2-2-h-motor-dc-i-pont-h",
+   "tasks":["Modelatge del pont H (L298N): IN1/IN2, ENA, massa comuna","Munten motor amb L298N i alimentació externa","Repte: funcions endavant()/enrere()/atura() i seqüència"]},
+  {"title":"Del sensor al moviment", "anchor":"sessio-3-2-h-del-sensor-al-moviment",
+   "tasks":["Modelatge: ultrasons → map() → velocitat del motor","Connecten ultrasons + motor (com més a prop, més lent)","Repte: aturar el motor sota un llindar de seguretat"]},
+  {"title":"Producte: barrera automàtica", "anchor":"sessio-4-2-h-producte-barrera-automatica", "product":True,
+   "tasks":["Mini-check individual: servo a 90° + alimentació externa","Munten barrera amb servo activada per ultrasons","Documenten esquema i codi; mini-defensa amb decisió justificada","Autoavaluació amb rúbriques R1/R2/R3"]},
+ ]},
+{"n":5, "trim":2, "title":"micro:bit i MicroPython: un altre paradigma",
+ "sessions":[
+  {"title":"Primers passos amb MicroPython", "anchor":"sessio-1-2-h-primers-passos-amb-micropython",
+   "tasks":["Modelatge: from microbit import *, display, indentació","Practiquen name_badge (matriu LED, botons)","Repte: badge d'emocions (botó A/B)","Inicien taula comparativa C++/Python"]},
+  {"title":"Sensors integrats", "anchor":"sessio-2-2-h-sensors-integrats",
+   "tasks":["Modelatge: acceleròmetre (comptapassos) i sensor de llum","Practiquen comptapassos i llum automàtic (nightlight)","Repte: detector d'inclinació o termòmetre amb avís"]},
+  {"title":"Ràdio i comparació de paradigmes", "anchor":"sessio-3-2-h-radio-i-comparacio-de-paradigmes", "product":True,
+   "tasks":["Mini-check individual (substitueix l'activació)","Modelatge del mòdul radio: config(group), send/receive","Dau digital per ràdio amb emissor i receptor propis","Completen taula comparativa C++↔Python"]},
+ ]},
+{"n":6, "trim":2, "title":"Sistemes de control: llaç obert/tancat i màquines d'estats",
+ "sessions":[
+  {"title":"Què és un sistema de control?", "anchor":"sessio-1-2-h-que-es-un-sistema-de-control",
+   "tasks":["'C++ flash' de 5' (represa des de Python)","Modelatge: consigna, sensor, error, actuador, diagrama de blocs","Comparen llaç obert vs llaç tancat amb el mateix muntatge"]},
+  {"title":"Control tot/res i histèresi", "anchor":"sessio-2-2-h-control-totres-i-histeresi",
+   "tasks":["Modelatge del termòstat amb histèresi (dos llindars)","Munten NTC + LED/ventilador amb histèresi","Repte: ajustar la finestra d'histèresi"]},
+  {"title":"Màquines d'estats + tancament del producte", "anchor":"sessio-3-2-h-maquines-destats-tancament-del-producte", "product":True,
+   "tasks":["Mini-check individual + 'Python flash' de 5'","Modelatge: enum/switch, transicions per temps/esdeveniment","Implementen i tanquen el producte (termòstat o màquina d'estats)","Defenses individuals de 2-3' a peu de taula (R4·DO)"]},
+  {"title":"PROVA PRÀCTICA T2 (individual)", "anchor":"sessio-4-2-h-prova-practica-t2-individual", "test":True,
+   "tasks":["Instruccions: material (Arduino + 2 micro:bit) i nivells","Prova (~80-85'): Part A control amb histèresi + Part B micro:bit","Recollida i pla de millora personal per a la SA7"]},
+ ]},
+{"n":7, "trim":3, "title":"Robòtica mòbil: cinemàtica i trajectòries",
+ "sessions":[
+  {"title":"Moviment i cinemàtica diferencial", "anchor":"sessio-1-2-h-moviment-i-cinematica-diferencial",
+   "tasks":["'Flash de trasllat' de 5' (patró de control de la SA6)","Modelatge: funcions de moviment i cinemàtica diferencial","Ajusten pins reals i proven endavant/enrere/girs","Repte: seqüència de moviments ('balla')"]},
+  {"title":"Trajectòries programades", "anchor":"sessio-2-2-h-trajectories-programades",
+   "tasks":["Full de càlcul previ: perímetre roda, velocitat, gir 90°","Modelatge: trajectòria com a seqüència + calibratge de gir","Recorren un quadrat i ajusten el temps de gir"]},
+  {"title":"Evitar obstacles (comportament reactiu)", "anchor":"sessio-3-2-h-evitar-obstacles-comportament-reactiu",
+   "tasks":["Modelatge: bucle percepció→decisió→acció amb ultrasons","Proven el robot en un recorregut amb obstacles","Repte: millorar l'estratègia (girar a l'atzar, retrocedir)"]},
+  {"title":"Seguidor de línia + repte de pista", "anchor":"sessio-4-2-h-seguidor-de-linia-repte-de-pista", "product":True,
+   "tasks":["Mini-check individual (substitueix l'activació)","Modelatge: sensors IR i lògica de correcció","Calibren i proven el seguidor a la pista","Repte de pista: completar recorregut, mesurar temps i iterar"]},
+ ]},
+{"n":8, "trim":3, "title":"IoT i IA: el robot connectat i intel·ligent",
+ "sessions":[
+  {"title":"Telemetria: el robot que informa", "anchor":"sessio-1-2-h-telemetria-el-robot-que-informa",
+   "tasks":["Autotest de la targeta de represa de ràdio (5')","Modelatge: radio.send()/receive() i registre pel port sèrie","Repte: enviar dues magnituds amb etiqueta"]},
+  {"title":"IoT: arquitectura, aplicacions i riscos", "anchor":"sessio-2-2-h-iot-arquitectura-aplicacions-i-riscos-auditoria-dun-producte-real",
+   "tasks":["Ganxo amb 3 productes IoT: què saben de tu?","Mini-lliçó: arquitectura dispositiu→xarxa→núvol→app","Auditoria individual d'una targeta de producte (informe)","Peritatge creuat: presenten i rebaten en 90 segons"]},
+  {"title":"Introducció a la IA: de les regles a l'aprenentatge", "anchor":"sessio-3-2-h-introduccio-a-la-ia-de-les-regles-a-laprenentatge", "product":True,
+   "tasks":["Mini-check individual (substitueix l'activació)","Modelatge: de llindar a regles combinades (classificador de gestos)","Pràctica amb Teachable Machine: recollir, entrenar, trencar","Reflexió ètica final: biaix, privacitat i ús responsable"]},
+ ]},
+{"n":9, "trim":3, "title":"Repte final integrador",
+ "sessions":[
+  {"title":"Idear", "anchor":"sequencia-de-sessions-5-2-h-4-de-projecte-prova-t3",
+   "tasks":["Presenta el repte i el Banc de reptes","Cadascú tria repte, requisits, esbós i planificació (taulell àgil)"]},
+  {"title":"Prototipar", "anchor":"sequencia-de-sessions-5-2-h-4-de-projecte-prova-t3",
+   "tasks":["Acompanya el muntatge i el primer codi","Munten el prototip mínim viable"]},
+  {"title":"Provar i millorar", "anchor":"sequencia-de-sessions-5-2-h-4-de-projecte-prova-t3",
+   "tasks":["Proves sistemàtiques i registre d'errors","Revisió creuada de codi","Primeres defenses esglaonades (qui ja té el prototip llest)"]},
+  {"title":"Comunicar (tancament del curs)", "anchor":"sequencia-de-sessions-5-2-h-4-de-projecte-prova-t3", "product":True,
+   "tasks":["Defenses orals + demostració amb els tres robots del curs a la vista","Retrospectiva de curs (10')","Recull dossiers tècnics"]},
+  {"title":"PROVA PRÀCTICA T3 (i tancament material)", "anchor":"sequencia-de-sessions-5-2-h-4-de-projecte-prova-t3", "test":True,
+   "tasks":["Munta les estacions (pistes + robots) i gestiona els torns","Prova individual per estacions: part micro:bit + part robot","Darrers 15': desmuntatge i retorn del material amb inventari"]},
+ ]},
+]
+
+
+# ---------------------------------------------------------------------------
 # Sanejament d'àncores (passada final)
 # ---------------------------------------------------------------------------
 def saneja_ancores(web_dir: Path) -> tuple[int, int]:
@@ -2313,6 +2703,10 @@ def main():
 
     # Visor de documents (PDF.js + visor d'Office), sense copiar fitxers
     (WEB / "visor.html").write_text(render_visor(), encoding="utf-8")
+
+    # Calendari del curs (planificació dia a dia; eina local, fora del cercador)
+    (WEB / "calendari.html").write_text(
+        render_calendari_docent(), encoding="utf-8")
 
     # Home i hubs per audiència (docent i alumnat)
     (WEB / "index.html").write_text(render_home(pages), encoding="utf-8")
