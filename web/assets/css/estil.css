@@ -657,6 +657,17 @@ a.sa-fil-pill:hover { border-color: var(--accent); color: var(--accent); text-de
   .pager-a.buit { display: none; }
 }
 
+/* Mateix paginador, repetit dalt de tot perquè «què toca ara» es vegi
+   sense fer scroll — versió compacta, sense caixes. */
+.pager-top .pager {
+  margin: 0 0 1.1rem; padding: 0; border-top: none;
+  border-bottom: 1px dashed var(--border); padding-bottom: .7rem;
+}
+.pager-top .pager-a {
+  padding: 0; border: none; background: transparent;
+}
+.pager-top:empty { display: none; }
+
 /* Barra de progrés del curs (stepper SA0 → SA9) */
 .stepper {
   display: flex; gap: .3rem; margin: 0 0 1.1rem; padding-bottom: .1rem;

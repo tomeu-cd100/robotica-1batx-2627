@@ -1111,7 +1111,7 @@ def build_sequences(pages: list[Page]) -> dict[str, str]:
 
 
 def page_shell(*, out_rel, section_key, title, content_html, toc="",
-               tri=None, pages, pdf_href=None, public="alumnat"):
+               tri=None, pages, pdf_href=None, public="alumnat", pager=""):
     prefix = depth_prefix(out_rel)
     sec = SECTION_BY_KEY.get(section_key)
     accent_attr = f' data-section="{section_key}"'
@@ -1133,6 +1133,7 @@ def page_shell(*, out_rel, section_key, title, content_html, toc="",
                if public == "docent" else "")
     sidebar = sidebar_html(section_key, out_rel, pages)
     stepper = stepper_html(section_key, out_rel)
+    pager_top = f'<div class="pager-top">{pager}</div>' if pager else ""
     has_sidebar = "amb-sidebar" if sidebar else "sense-sidebar"
     toc_block = toc or ""
     layout_class = "amb-toc" if toc_block else "sense-toc"
@@ -1180,6 +1181,7 @@ def page_shell(*, out_rel, section_key, title, content_html, toc="",
     {print_cap}
     {breadcrumb_html(out_rel, section_key, title, {p.out_rel for p in pages})}
     {stepper}
+    {pager_top}
     {pdf_block}
     {tri_badge}
     <article class="prose">
@@ -1959,6 +1961,14 @@ def render_hub_alumnat(pages: list[Page]) -> str:
   <p class="hero-lead">Aquí tens el que necessites per orientar-te: com s'avalua (sense sorpreses), on trobar ajuda quan t'encalles i com practicar a casa. Res del que hi ha aquí et penalitza per mirar-ho: els criteris són teus des del primer dia.</p>
 </section>
 
+<h2 class="seccio-sep">Què toca avui?</h2>
+<p class="seccio-intro">Normalment no cal que naveguis: Classroom t'enllaça directament a la pàgina de la sessió d'avui. Si mai t'obres el web pel teu compte i no saps on ets, mira aquests tres punts, sempre a dalt de qualsevol pàgina:</p>
+<ol class="hub-passos">
+  <li><strong>La barra de progrés (stepper)</strong> — la fila de caselles SA0…SA9 sota el títol. La casella ressaltada és on ets ara.</li>
+  <li><strong>«Pas X/Y»</strong>, just a sota — et diu quina posició ocupes dins la sessió i on és el «Següent →».</li>
+  <li><strong>El camí de molles (breadcrumb)</strong>, la línia amb «/» — mostra la secció i la pàgina exactes, per si t'has perdut entre pestanyes.</li>
+</ol>
+
 <h2 class="seccio-sep">Com s'avalua (sense sorpreses)</h2>
 <ol class="hub-passos">
   <li><a href="{u["alum"]}">Com s'avalua aquesta matèria</a> — d'on surt la nota, què compta i què no.</li>
@@ -2248,7 +2258,7 @@ def main():
         full = page_shell(out_rel=p.out_rel, section_key=p.section,
                           title=p.title, content_html=content, toc=toc,
                           tri=p.trimester, pages=pages, pdf_href=pdf_href,
-                          public=p.public)
+                          public=p.public, pager=pager_map.get(p.out_rel, ""))
         dest = WEB / p.out_rel
         dest.parent.mkdir(parents=True, exist_ok=True)
         dest.write_text(full, encoding="utf-8")
