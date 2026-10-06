@@ -4,6 +4,7 @@
 
 | Prova | Trimestre | SA | Maquinari |
 |---|---|---|---|
+| `Prova_SA1.md` (+ `Prova_SA1_solucionari.md`) | 1r | SA1 | En paper (50', teoria + `Blink`), models A/B |
 | `Prova_practica_T1.md` | 1r | SA1-SA3 | Arduino + sensors/actuadors |
 | `Prova_practica_T2.md` | 2n | SA4-SA6 | Arduino (control) + micro:bit |
 | `Prova_practica_T3.md` | 3r | SA7-SA9 | Robot mòbil + IoT/IA |

@@ -35,6 +35,7 @@ Primera situació d'aprenentatge del curs (**6 h · 3 sessions**, 1r trimestre).
 
 - **Producte:** [`SA1_poster_robot_plantilla.md`](SA1_poster_robot_plantilla.md) (anàlisi d'un robot real + dilema ètic) i primeres entrades del quadern tècnic.
 - **Rúbriques:** **R4** (documentació) i **R5** (actitud). La prova diagnòstica **no** qualifica.
+- **Prova SA1:** a l'inici de la **primera sessió de la SA2** hi ha una prova individual en paper (50', sense apunts) que **sí qualifica**: teoria (entrada-procés-sortida, placa, seguretat, mètode de projecte) i `Blink` en paper (predir, depurar i escriure codi). Prepara-la amb el [qüestionari de conceptes](SA1_questionari_conceptes.md) i la [fitxa](SA1_fitxa_alumnat.md).
 
 <!-- web:only-github -->
 ## Tots els documents

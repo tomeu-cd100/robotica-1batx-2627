@@ -111,7 +111,7 @@ La SA1 no només respon *"què és un robot?"*: també presenta **com treballare
 | **Investigar** | 20' | Lectura guiada: `setup()`, `loop()`, `pinMode`, `digitalWrite`, `delay`. | Anoten què fa cada part i per què. |
 | **Modificar** | 25' | Demana canviar el temps i el patró de parpelleig. | Modifiquen `delay` i observen l'efecte. |
 | **Crear** | 30' | Proposa el **repte de parpelleig variable** (`blink_repte.ino`). Per a qui acaba aviat, **ampliacions** (`blink_millis.ino`, `sos_morse.ino`). | Resolen; comparen solucions. |
-| **Debat + tancament** | 20' | Mini-debat **ètica de l'automatització** (ODS); presenta la **fitxa-pòster** ([`SA1_poster_robot_plantilla.md`](SA1_poster_robot_plantilla.md)). | Reflexió escrita al quadern; trien el robot del pòster. |
+| **Debat + tancament** | 20' | Mini-debat **ètica de l'automatització** (ODS); presenta la **fitxa-pòster** ([`SA1_poster_robot_plantilla.md`](SA1_poster_robot_plantilla.md)). **Anuncia la Prova SA1** (inici de la propera sessió, 50', en paper, sense apunts: què entra). | Reflexió escrita al quadern; trien el robot del pòster. |
 
 > ⏱️ **Marge:** el temps efectiu real és ~100' (arrencada + recollida), no 120'. Si vas just, retalla primer: **les ampliacions de la fase «Crear» (`blink_millis`/`sos_morse`)**.
 
@@ -133,6 +133,7 @@ La SA1 no només respon *"què és un robot?"*: també presenta **com treballare
 | Fitxa-pòster | Anàlisi d'un sistema + dilema ètic (ODS) | CA5.3 | **R4** | Sí |
 | Quadern tècnic | Documentació i reflexió del procés | CA5.1 | **R4** | Sí |
 | Observació d'aula | Cooperació, autonomia, seguretat | CA5.3 | **R5** | Sí |
+| **Prova SA1** (50', individual, en paper; [`Prova_SA1.md`](../../Avaluació/Prova_SA1.md)) — es fa a l'inici de la **S1 de la SA2** | Conceptes (E-P-S, placa, seguretat, mètode) + lectura i escriptura de `Blink` | CA5.1, CA1.1 | — (graella) | **Sí** (Proves pràctiques, 30 % de la dimensió al 1r trimestre) |
 
 *(CA5.1 = gestionar un projecte tecnològic; CA5.3 = valorar l'impacte ètic/social/ambiental i cooperar. Vegeu [`Programació didàctica/06_Avaluacio_criteris_qualificacio.md`](../../Programació%20didàctica/06_Avaluacio_criteris_qualificacio.md).)*
 

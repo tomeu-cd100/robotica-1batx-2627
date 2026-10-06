@@ -21,6 +21,7 @@
 | **Fitxa-pòster** d'un robot real (amb dilema ètic) | **R4** | Projectes (45 %) |
 | **Quadern tècnic** (primera entrada) | **R4** | Quadern tècnic i pràctiques (25 %) |
 | Treball a l'aula (seguretat, cooperació) | **R5** | Actitud (10 %) |
+| **Prova SA1** (inici de la 1a sessió de la SA2, 50', en paper) | — | Proves pràctiques (20 %, amb la prova T1) |
 | Prova diagnòstica | — | **No qualifica** (serveix per veure d'on parteix cadascú) |
 
 > 🪜 **Versió nucli (ja és assoliment satisfactori):** pòster amb entrada → procés → sortida ben identificades i el dilema ètic plantejat. **Versió completa:** sensors i actuadors concrets, alternatives de disseny i dilema argumentat amb pros i contres.

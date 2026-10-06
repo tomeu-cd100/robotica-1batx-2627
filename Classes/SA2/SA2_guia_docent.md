@@ -37,18 +37,19 @@
 ---
 
 ## SESSIÓ 1 (2 h) — Variables i la primera sortida
-- **Activació (10'):** repàs de `Blink`. Pregunta: *"I si vull canviar el pin sense buscar-lo per tot el codi?"* → **constants**.
-- 🔭 **Referent (1', dins l'activació):** **Limor Fried** («Ladyada»), Adafruit i el maquinari lliure ([guió](../00_General/00_Referents_tecnologia.md)).
-- **Modelatge (20'):** `01_led_basic.ino`. Concepte de **constant** (`const int`) i **variable**. Esquema bàsic LED + 220 Ω.
-- **Pràctica guiada (40'):** munten el LED al pin 8 i el fan parpellejar; canvien temps amb una variable.
-- **Repte (40'):** parpelleig amb temps definits per variables; **+ repte:** patró Morse d'una lletra.
-- **Tancament (10'):** esquema i codi al quadern.
+> 📝 **Els primers 50' són la [Prova SA1](../../Avaluació/Prova_SA1.md)** (individual, en paper, models A/B alternats per taules; guia de correcció a [`Prova_SA1_solucionari.md`](../../Avaluació/Prova_SA1_solucionari.md)). Reparteix els kits **després** de recollir-la. La resta de la sessió queda comprimida a ~50':
 
-> ⏱️ **Marge:** el temps efectiu real és ~100' (arrencada + recollida), no 120'. Si vas just, retalla primer: **el «+ repte» (patró Morse d'una lletra)**.
+- **Prova SA1 (50'):** teoria (E-P-S, placa, seguretat) + `Blink` en paper (predir, depurar, crear).
+- **Activació = kata (10'):** la prova acaba amb `Blink`; enllaça-ho amb la pregunta *"I si vull canviar el pin sense buscar-lo per tot el codi?"* → **constants**. 🔭 **Referent (1'):** **Limor Fried** («Ladyada»), Adafruit i el maquinari lliure ([guió](../00_General/00_Referents_tecnologia.md)).
+- **Modelatge (15'):** `01_led_basic.ino`. Concepte de **constant** (`const int`) i **variable**. Esquema bàsic LED + 220 Ω (amb el càlcul de la llei d'Ohm de sota, en versió curta).
+- **Pràctica guiada (20'):** munten el LED al pin 8 i el fan parpellejar; canvien temps amb una variable (és el nucli del repte).
+- **Tancament (5'):** esquema i codi al quadern.
+
+> ⏱️ **Marge:** amb la prova, la sessió no té marge. El **repte** (parpelleig amb temps per variables) i el **+ repte** (Morse d'una lletra) passen a **ampliació** per a qui acabi abans o a casa amb Tinkercad. Si el Racó de mesura no hi cap, fes-lo a l'inici de la S2 o usa el Pla B (Tinkercad).
 
 **Punt clau:** sempre **resistència limitadora** (220 Ω) en sèrie amb el LED; pota llarga = ànode (+).
 
-> ⚡ **D'on surt el 220 Ω? (llei d'Ohm aplicada, ~10' dins el Modelatge):** no donis el valor per rebut — calcula'l a la pissarra amb l'alumnat: el LED cau ~2 V i vol ~20 mA, així que R = (5 − 2) V / 0,02 A = **150 Ω** → agafem el **valor comercial superior (220 Ω)** per marge de seguretat. És l'única aparició explícita de la **llei d'Ohm** al curs (connexió amb Física): el Racó de mesura de sota tanca el cercle, perquè les tensions mesurades (~2 V + ~3 V) són exactament les del càlcul.
+> ⚡ **D'on surt el 220 Ω? (llei d'Ohm aplicada, ~5' dins el Modelatge):** no donis el valor per rebut — calcula'l a la pissarra amb l'alumnat: el LED cau ~2 V i vol ~20 mA, així que R = (5 − 2) V / 0,02 A = **150 Ω** → agafem el **valor comercial superior (220 Ω)** per marge de seguretat. És l'única aparició explícita de la **llei d'Ohm** al curs (connexió amb Física): el Racó de mesura de sota tanca el cercle, perquè les tensions mesurades (~2 V + ~3 V) són exactament les del càlcul.
 
 > 🔌 **Racó de mesura (dins la pràctica guiada, ~5' per alumne/a):** munta un punt amb **multímetre** i fes-hi passar l'alumnat rotativament amb el seu circuit encès: mesurar la **tensió entre les potes del LED** (~2 V) i **a la resistència** (~3 V), i comprovar que sumen ~5 V. És la primera vegada que *veuen* la llei de la malla en un circuit seu (connexió amb Física) i l'única evidència de **mesura física real** de la CA2.2/R2 fins ara. Amb 2-3 multímetres n'hi ha prou (el taller de tecnologia acostuma a tenir-ne); si no n'hi ha cap, fes-ho com a demo projectada amb el teu.
 >

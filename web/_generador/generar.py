@@ -104,7 +104,7 @@ SECTIONS = [
                "El <strong>solucionari</strong> (codi resolt) és material del docent: no es lliura a l'alumnat."]},
     {"key": "avaluacio", "title": "Avaluació", "src": "Avaluació",
      "icon": "📝", "desc": "Proves pràctiques per trimestre i full de qualificació.",
-     "pauta": ["Una <strong>prova pràctica per trimestre</strong>, integrada a l'última sessió de SA3, SA6 i SA9 (no costa hores extra).",
+     "pauta": ["Una <strong>prova pràctica per trimestre</strong>, integrada a l'última sessió de SA3, SA6 i SA9 (no costa hores extra). Al 1r trimestre, a més, la <strong>Prova SA1</strong> (50', en paper, models A/B) a l'inici de la SA2.",
                "<strong>T1 i T2 són individuals</strong> per defecte; el radar previ són els mini-checks de cada SA (a Classes → Material transversal).",
                "Després de cada prova, l'alumnat escriu el <strong>pla de millora personal</strong> (3 línies) al quadern; el <strong>full de qualificació</strong> creua criteris CA ↔ rúbriques.",
                "Per a l'alumnat: la guia <a href=\"../classes/00-general/00-avaluacio-per-alumnat.html\"><strong>«Com s'avalua aquesta matèria»</strong></a> (reparteix-la la primera setmana) i la caixa <strong>«🎯 Objectius i avaluació»</strong> de cada fitxa."]},
@@ -866,7 +866,8 @@ def pauta_html(section_key: str) -> str:
 
 
 # --- Fil transversal de cada SA (Programació ↔ Classes ↔ Codi ↔ Reptes ↔ …) ---
-SA_PROVA = {3: ("Prova T1", "avaluacio/prova-practica-t1.html"),
+SA_PROVA = {1: ("Prova SA1", "avaluacio/prova-sa1.html"),
+            3: ("Prova T1", "avaluacio/prova-practica-t1.html"),
             6: ("Prova T2", "avaluacio/prova-practica-t2.html"),
             9: ("Prova T3", "avaluacio/prova-practica-t3.html")}
 
@@ -2249,7 +2250,7 @@ function saPaths(n){
     reptes: `reptes/reptes-sa${n}.html`,
   };
 }
-const PROVA_PAGE = { "SA3": "avaluacio/prova-practica-t1.html", "SA6": "avaluacio/prova-practica-t2.html", "SA9": "avaluacio/prova-practica-t3.html" };
+const PROVA_PAGE = { "SA2": "avaluacio/prova-sa1.html", "SA3": "avaluacio/prova-practica-t1.html", "SA6": "avaluacio/prova-practica-t2.html", "SA9": "avaluacio/prova-practica-t3.html" };
 
 const SA_DATA = %%SA_DATA_JSON%%;
 
@@ -2349,12 +2350,12 @@ function render(){
     const badges = [];
     if(isToday) badges.push(`<span class="cal-badge avui">AVUI</span>`);
     if(s.product) badges.push(`<span class="cal-badge prod">📦 Producte</span>`);
-    if(s.test) badges.push(`<span class="cal-badge test">🧪 Prova pràctica</span>`);
+    if(s.test) badges.push(`<span class="cal-badge test">🧪 Prova</span>`);
 
     const links = [`<a href="${p.guia}#${s.anchor}">Guia docent ↗</a>`,
                     `<a href="${p.fitxa}">Fitxa alumnat ↗</a>`];
     if(s.product) links.push(`<a href="${p.reptes}">Reptes ↗</a>`);
-    if(s.test && PROVA_PAGE["SA"+s.saN]) links.push(`<a href="${PROVA_PAGE["SA"+s.saN]}">Prova pràctica ↗</a>`);
+    if(s.test && PROVA_PAGE["SA"+s.saN]) links.push(`<a href="${PROVA_PAGE["SA"+s.saN]}">Prova ↗</a>`);
 
     row.innerHTML = `
       <div class="cal-chk"><input type="checkbox" ${isDone?"checked":""} aria-label="Sessió feta"></div>
@@ -2417,8 +2418,8 @@ CALENDARI_SA_DATA = [
  ]},
 {"n":2, "trim":1, "title":"Sortides digitals i PWM: dona vida als actuadors",
  "sessions":[
-  {"title":"Variables i la primera sortida", "anchor":"sessio-1-2-h-variables-i-la-primera-sortida",
-   "tasks":["Repassa Blink i introdueix constants/variables","Munten LED al pin 8 amb resistència 220 Ω","Repte: parpelleig amb temps per variable","Racó de mesura amb multímetre (llei d'Ohm)"]},
+  {"title":"Prova SA1 + variables i la primera sortida", "anchor":"sessio-1-2-h-variables-i-la-primera-sortida", "test":True,
+   "tasks":["Prova SA1 (50', en paper, models A/B alternats)","Kata: de Blink a constants/variables","Munten LED al pin 8 amb resistència 220 Ω","Ampliació: parpelleig amb temps per variable","Racó de mesura amb multímetre (llei d'Ohm)"]},
   {"title":"Estructures de control: el semàfor", "anchor":"sessio-2-2-h-estructures-de-control-el-semafor",
    "tasks":["Modelatge del semàfor amb if/switch","Munten 3 LED (pins 8-9-10) i programen el cicle","Repte: afegir fase nocturna intermitent","Introdueix millis() vs delay() (concepte)"]},
   {"title":"PWM: intensitat i color", "anchor":"sessio-3-2-h-pwm-intensitat-i-color",

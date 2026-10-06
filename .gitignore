@@ -78,3 +78,6 @@ Material Classroom/*
 !Material Classroom/backups/
 Material Classroom/backups/*
 !Material Classroom/backups/.gitkeep
+
+# PDF de proves i solucionaris (material docent): es generen en local, no es publiquen
+/Avaluació/pdf/

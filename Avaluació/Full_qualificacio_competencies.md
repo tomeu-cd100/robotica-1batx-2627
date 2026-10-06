@@ -86,7 +86,7 @@ Anota la **nota (0-10)** de cada evidència. Les files canvien segons el trimest
 
 | Trimestre | SA | CA principals | Prova pràctica |
 |---|---|---|---|
-| **1r** | SA1–SA3 | CA5.1, CA1.1, CA2.1, CA2.2 | **T1** dins de SA3 (sessió 4) |
+| **1r** | SA1–SA3 | CA5.1, CA1.1, CA2.1, CA2.2 | **Prova SA1** (50', inici de SA2 S1; 30 %) + **T1** dins de SA3 (sessió 4; 70 %) |
 | **2n** | SA4–SA6 | CA1.1, CA1.2, CA3.1, CA2.1 | **T2** dins de SA6 (sessió 4) |
 | **3r** | SA7–SA9 | CA4.1, CA4.2, CA3.1, CA5.1, CA5.2, CA5.3 | **T3** dins de SA9 (defensa) |
 

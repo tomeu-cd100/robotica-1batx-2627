@@ -34,7 +34,7 @@ L'avaluació és **competencial, contínua, formativa i global**, d'acord amb el
 |---|---|---|
 | **Projectes i productes** | **45 %** | Productes de les SA + defenses (rúbriques). |
 | **Quadern tècnic i pràctiques** | **25 %** | *Logbook*, pràctiques guiades i reptes. |
-| **Proves pràctiques** (programació/electrònica) | **20 %** | Reptes individuals curts. |
+| **Proves pràctiques** (programació/electrònica) | **20 %** | Reptes individuals curts. Al 1r trimestre: **Prova SA1** (30 %, teoria + `Blink` en paper) i **T1** (70 %). |
 | **Actitud, cooperació i autoregulació** | **10 %** | Observació, revisió creuada, autoavaluació. |
 
 > Recomanació: ponderació **per competències** dins de cada dimensió. La qualificació trimestral i final s'expressa amb un enter **del 0 al 10 (sense decimals)**, com estableix el Decret 171/2022.

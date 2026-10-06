@@ -15,6 +15,7 @@
 ## ⏱️ 2. Moments (punts de control per sessió)
 
 **Sessió 1 — Variables i la primera sortida**
+- [ ] 📝 **Prova SA1** (primers 50', en paper, models A/B alternats per taules) → [Prova_SA1.md](../../Avaluació/Prova_SA1.md) · kits **després** de recollir-la · repte i + repte passen a ampliació
 - [ ] Referent (1') Limor Fried · `01_led_basic` → concepte de **constant** (`const int`)
 - [ ] ✍️ **Kata** `01_led_basic` (10', abans de repartir el sketch) → [SA2_katas.md](SA2_katas.md)
 - [ ] Muntatge LED pin 8 amb **resistència 220 Ω** i polaritat (pota llarga = +)

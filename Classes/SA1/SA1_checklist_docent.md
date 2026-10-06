@@ -32,12 +32,14 @@
 - [ ] Projectar `blink.ino` **sense pujar-lo** → alumnat prediu (Act. 4)
 - [ ] Executar → Investigar → Modificar `delay` → **Repte** `blink_repte`
 - [ ] Mini-debat ètic (ODS) + presentar la fitxa-pòster
+- [ ] **Anunciar la Prova SA1** (inici de la S1 de la SA2, 50', en paper, sense apunts) i imprimir models A/B → [Prova_SA1.md](../../Avaluació/Prova_SA1.md)
 - ⚠️ *Error:* creure que `setup()` es repeteix
 
 ## 📊 3. Avaluació i evidències (a recollir)
 - [ ] **Fitxa-pòster** d'un robot real → **R4** (compta, Projectes 45 %)
 - [ ] **Quadern tècnic** 1a entrada → **R4** (Quadern tècnic i pràctiques 25 %)
 - [ ] **Observació d'aula** (ajuda entre iguals, seguretat, autonomia) → **R5** (Actitud 10 %)
+- [ ] **Prova SA1** (inici de la S1 de la SA2) → graella del [solucionari](../../Avaluació/Prova_SA1_solucionari.md) (Proves pràctiques 20 %, amb la T1)
 - [ ] Revisió creuada del pòster ("2 estrelles i un desig", criteris R4) + recollir **exit tickets**
 - [ ] Traspassar valoracions al registre (nota **0–10**)
 

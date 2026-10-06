@@ -36,7 +36,7 @@ Concepte de robot i de sistema embegut; arquitectura del microcontrolador; senya
 Fitxa-pòster (individual o parella) que analitza un robot/sistema embegut real: entrades, sortides, processament i un dilema ètic associat. Primera entrada al quadern tècnic.
 
 ## Avaluació
-- Instruments: prova diagnòstica (no qualifica, orienta), fitxa-pòster, observació.
+- Instruments: prova diagnòstica (no qualifica, orienta), fitxa-pòster, observació i **Prova SA1** (50', individual, en paper, a l'inici de la S1 de la SA2; `Avaluació/Prova_SA1.md`): conceptes (CA5.1) + lectura i escriptura de `Blink` (CA1.1). Compta a «Proves pràctiques» (30 % de la dimensió al 1r trimestre; T1 = 70 %).
 - Rúbriques: **R4** (documentació) i **R5** (actitud).
 
 ## Atenció a la diversitat

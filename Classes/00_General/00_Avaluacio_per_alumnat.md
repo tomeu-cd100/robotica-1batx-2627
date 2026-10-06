@@ -10,7 +10,7 @@
 |---|---|---|---|
 | **Projectes i productes** | **45 %** | El producte de cada SA (panell, alarma, barrera, sistema de control, robot…) i la seva defensa. | Fes-lo funcionar, però sobretot **entén-lo**: a la defensa t'ho preguntaran. |
 | **Quadern tècnic i pràctiques** | **25 %** | El teu [**quadern imprès**](00_Quadern_tecnic.md) (un per trimestre, un full per sessió): apunts, pseudocodi, esquemes, errors i com els has resolt, reflexions. | **Escriu-hi cada sessió** (no tot al final). Un error ben documentat hi suma. |
-| **Proves pràctiques** | **20 %** | Una prova per trimestre (T1, T2, T3), integrada a l'última sessió de SA3, SA6 i SA9. | Practica **tot sol** abans: els mini-checks t'avisen a temps de com vas. |
+| **Proves pràctiques** | **20 %** | Una prova per trimestre (T1, T2, T3), integrada a l'última sessió de SA3, SA6 i SA9. Al 1r trimestre, a més, la **Prova SA1** (50', en paper, a l'inici de la SA2). | Practica **tot sol** abans: els mini-checks t'avisen a temps de com vas. |
 | **Actitud, cooperació i autoregulació** | **10 %** | Com ajudes i et deixes ajudar, com gestiones els errors, el material i els terminis. | Fes les revisions creuades de veritat, anota al quadern qui t'ha ajudat i a qui has ajudat, i quan t'encallis aplica DEPURA abans de rendir-te. |
 
 ## 2 · Amb quina escala se't valora
