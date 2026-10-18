@@ -1,113 +1,113 @@
 # Reptes SA3 · Entrades i sensors
 
-> 🧑‍🎓 **Quan toca fer-ne un?** És l'**ampliació ⭐** de la SA: comença'l quan tinguis el **nucli al dia** (les activitats de la fitxa). Tria'n **UN**, ensenya'l al docent perquè el validi i pinta l'estrella al [tauler de reptes](../Classes/00_General/00_Tauler_reptes.md).
+> 🧑‍🎓 **Quan toca fer-ne un?** Els reptes són **extra ⭐**. Comença'n un quan ja tinguis fetes les pràctiques de la sessió. Tria'n **UN**, ensenya'l al docent quan funcioni i, si te'l valida, pinta l'estrella al [tauler de reptes](../Classes/00_General/00_Tauler_reptes.md).
 
-**Tria UN dels tres reptes.** Tots **llegeixen un sensor** i **decideixen una acció** amb `if/else` (model entrada→procés→sortida complet). Mateix requisit mínim, ampliacions graduades. Simulables a Tinkercad/Wokwi.
+**Tria UN dels tres reptes.** Tots **llegeixen un sensor** i **decideixen** què fer amb un `if`. Els tres tenen un **mínim** igual de difícil i després **nivells** per anar més lluny. Els pots provar abans a Tinkercad o a Wokwi.
 
-> **Continguts SA3:** polsador i *debounce*, potenciòmetre, LDR, ultrasons, `analogRead` (0–1023), condicionals. · **Codi base:** `Classes/SA3/codi/`.
+> **El codi de partida** és a les pràctiques de la SA3 (`Classes/SA3/codi/`).
 
-> **Format "producte real":** cada repte simula un **encàrrec** amb **client**, **lliurable** i **ús al món real**. El requisit tècnic no canvia. *(1r trimestre — dispositius que informen i perceben. Vegeu `Programació didàctica/08c_Projectes_vida_real.md`.)*
-
----
-
-## 🌙 Repte A · Llum automàtica nocturna
-
-**Context.** Un llum que **s'encén sol quan es fa fosc** i s'apaga amb la llum del dia (estalvi energètic).
-
-> *Client: servei d'enllumenat públic · Lliurable: fanal automàtic amb sensor de llum · Món real: estalvi energètic i enllumenat intel·ligent.*
-
-**Què treballa.** Lectura analògica d'una LDR, llindar de decisió amb `if`.
-
-**Requisit mínim.**
-- Llegir una **LDR** i encendre un LED quan la llum baixa d'un **llindar**.
-- Codi comentat; valor de la LDR visible al **Monitor Sèrie**.
-
-**Ampliacions graduades.**
-1. *(bàsica)* Calibra el **llindar** observant valors reals al Monitor Sèrie.
-2. *(notable)* Afegeix **histèresi** (dos llindars) perquè no parpellegi al capvespre.
-3. *(⭐⭐⭐)* Regula la **brillantor** del LED amb PWM segons la foscor (com més fosc, més llum).
-
-    **Fites** (valida-les en ordre):
-    1. Coneixes el rang **real** de la LDR a l'aula (valor amb llum plena i tapada del tot), observat al Monitor Sèrie i apuntat al quadern.
-    2. Amb `map()` converteixes la lectura en una brillantor 0–255 **invertida** (més fosc → valor més alt) i el número surt sempre dins de rang pel Monitor Sèrie (mira `constrain()`).
-    3. El LED queda apagat del tot amb llum plena, brilla al màxim a les fosques i fa una transició **contínua** (sense salts) entremig.
+> **Com si fos un encàrrec de veritat:** cada repte té un **client** (qui te l'encarrega), una **cosa a entregar** i **on es fa servir** a la vida real.
 
 ---
 
-## 🅿️ Repte B · Sensor d'aparcament (antixoc)
+## 🌙 Repte A · Llum automàtica de nit
 
-**Context.** El sensor que avisa quan t'acostes massa en aparcar: més a prop, més ràpid pita/parpelleja.
+**De què va.** Un llum que **s'encén sol quan es fa fosc** i s'apaga quan es fa de dia. Així no gasta energia de més.
 
-> *Client: taller d'automoció · Lliurable: sensor d'aparcament antixoc · Món real: ajuda a la conducció i seguretat.*
+> *Client: l'ajuntament (llums del carrer) · Entregues: un fanal automàtic · A la vida real: els fanals que s'encenen sols al vespre.*
 
-**Què treballa.** Sensor d'ultrasons, mesura de distància, decisions per trams.
+**Què practiques.** Llegir el sensor de llum i decidir amb una ratlla (el llindar) i un `if`.
 
-**Requisit mínim.**
-- Mesurar la **distància** amb ultrasons i encendre un LED (o brunzidor) quan estàs **per sota d'una distància**.
-- Codi comentat; distància visible al Monitor Sèrie.
+**El mínim.**
+- Llegir el **sensor de llum** i encendre un LED quan el número baixa d'una **ratlla** (el llindar).
+- Comentaris al codi, i el número del sensor visible al **Monitor sèrie**.
 
-**Ampliacions graduades.**
-1. *(bàsica)* Encapsula la mesura en una **funció** `mesura_distancia()`.
-2. *(notable)* Fes **tres trams** (lluny/mig/a prop) amb avisos diferents.
-3. *(⭐⭐⭐)* Avís **proporcional**: el ritme del parpelleig/so augmenta com més a prop.
+**Nivells per anar més lluny.**
+1. *(bàsic)* Tria la ratlla **mirant els números de veritat** al Monitor sèrie.
+2. *(notable)* Fes servir **dues ratlles** (una per encendre i una altra per apagar) perquè el llum no parpellegi quan es fa fosc a poc a poc.
+3. *(⭐⭐⭐)* Fes que el LED faci **més llum com més fosc** sigui (amb `analogWrite`).
 
-    **Fites** (valida-les en ordre):
-    1. La distància en cm surt fiable i contínua pel Monitor Sèrie (descarta lectures 0 o fora de rang).
-    2. L'**interval entre bips** es calcula amb `map()` a partir de la distància: comprova els números pel Monitor Sèrie abans d'escoltar res.
-    3. El ritme s'accelera de manera contínua en acostar-te i, per sota d'una distància crítica, passa a **so continu** (com els sensors reals).
-
----
-
-## 🎛️ Repte C · Instrument o comptador interactiu
-
-**Context.** Un control de joc o un instrument: un **potenciòmetre** que regula alguna cosa, o un **polsador** que compta sense rebots.
-
-> *Client: estudi de videojocs / fabricant de comandaments · Lliurable: comandament o comptador interactiu · Món real: interfícies d'usuari i instrumentació.*
-
-**Què treballa.** Entrada analògica (potenciòmetre) o digital amb *debounce*; relació entrada→sortida.
-
-**Requisit mínim.**
-- *Opció 1:* un **potenciòmetre** que controla la brillantor d'un LED (o el ritme d'un parpelleig).
-- *Opció 2:* un **polsador amb debounce** que **compta** premudes i les mostra (Monitor Sèrie / LEDs).
-
-**Ampliacions graduades.**
-1. *(bàsica)* Mostra el valor/recompte de forma clara al Monitor Sèrie.
-2. *(notable)* Mapeja l'entrada (`map()`) a un rang útil (p. ex. 0–255 de PWM).
-3. *(⭐⭐⭐)* Combina **dues entrades** (potenciòmetre + polsador) per a un mini-instrument.
-
-    **Fites** (valida-les en ordre):
-    1. Cada entrada funciona **per separat** al mateix circuit: el potenciòmetre regula (PWM) i el polsador compta amb *debounce*.
-    2. Les dues conviuen al mateix `loop()` sense bloquejar-se (cap `delay()` llarg que faci perdre premudes).
-    3. La combinació té sentit d'instrument (p. ex. el polsador canvia el mode o dispara la nota que el potenciòmetre afina): fes-ne una demostració d'ús davant d'algú.
+    **Comprova-ho així** (en ordre):
+    1. Saps entre quins números es mou **el teu** sensor a classe (amb molta llum i tapat del tot) i ho tens apuntat al quadern.
+    2. Amb `map()` converteixes el número del sensor en una llum de 0 a 255, **al revés** (més fosc → més llum), i el número sempre queda entre 0 i 255 (pista: `constrain()`).
+    3. Amb llum el LED està apagat, a les fosques brilla al màxim i entremig canvia **a poc a poc**, sense salts.
 
 ---
 
-## 🎨 Fes-lo teu (tria abans de començar)
+## 🅿️ Repte B · Sensor d'aparcament
 
-> El repte fixa **què** ha de fer el sistema; **el context el poses tu**. Tria i anota-ho al quadern:
-> - **A:** decideix **on aniria la teva llum** (passadís, caseta, escala…) i mesura la foscor real d'allà per fixar el llindar.
-> - **B:** dissenya **el so d'avís**: quines freqüències i quin ritme avisen millor sense molestar.
-> - **C:** tria **quin instrument o efecte** fas: theremin, sirena, comptador de gols…
+**De què va.** El sensor que avisa quan t'acostes massa a la paret en aparcar: com més a prop, més ràpid pita o fa pampallugues.
 
-## Material necessari (segons repte)
-- Arduino UNO + USB · LDR / sensor d'ultrasons HC-SR04 / potenciòmetre / polsador · LED + resistència (o brunzidor) · resistència de 10 kΩ per a divisor/pull-up · o **Tinkercad/Wokwi**.
+> *Client: un taller de cotxes · Entregues: un sensor d'aparcament · A la vida real: els cotxes que fan «bip-bip» quan aparques.*
 
-## Per on començar (mètode de projecte + PRIMM)
-1. **Analitzar:** quina magnitud mesuro i quina decisió en depèn?
-2. **Dissenyar (Predir):** quin llindar/lògica? Predigues els valors que donarà el sensor.
-3. **Prototipar:** parteix de `Classes/SA3/codi/` (`01_polsador_debounce`, `02_potenciometre_ldr`, `03_ultrasons_funcio`, `04_alarma_aparcament`).
-4. **Provar:** llegeix valors reals al Monitor Sèrie i ajusta el llindar.
-5. **Millorar:** afegeix histèresi, funcions o `map()`.
+**Què practiques.** El sensor d'ultrasons, mesurar distàncies i decidir per zones.
 
-## Com s'avalua
-| Rúbrica | Per què |
+**El mínim.**
+- Mesurar la **distància** amb l'ultrasons i encendre un LED (o fer sonar el brunzidor) quan estàs **més a prop** d'una distància.
+- Comentaris al codi, i la distància visible al Monitor sèrie.
+
+**Nivells per anar més lluny.**
+1. *(bàsic)* Posa la mesura dins d'una **funció** que **et torni** la distància.
+2. *(notable)* Fes **tres zones** (lluny, compte, perill) amb avisos diferents.
+3. *(⭐⭐⭐)* Fes que els bips vagin **més ràpid com més a prop**.
+
+    **Comprova-ho així** (en ordre):
+    1. La distància en centímetres surt bé i sense salts estranys al Monitor sèrie (fora els 0).
+    2. La pausa entre bips la calcules amb `map()` a partir de la distància. Mira els números al Monitor abans d'escoltar res.
+    3. Els bips s'acceleren a poc a poc quan t'acostes i, molt a prop, el so és **continu** (com als cotxes de veritat).
+
+---
+
+## 🎛️ Repte C · Instrument o comptador
+
+**De què va.** Un comandament de joc o un instrument: un **potenciòmetre** que regula alguna cosa, o un **polsador** que compta sense equivocar-se.
+
+> *Client: una empresa de videojocs · Entregues: un comandament o un comptador · A la vida real: els comandaments de les consoles i els aparells de música.*
+
+**Què practiques.** El potenciòmetre o el polsador amb antirebot, i fer que el que llegeixes canviï alguna cosa.
+
+**El mínim.**
+- *Opció 1:* un **potenciòmetre** que regula la llum d'un LED (o la velocitat d'un parpelleig).
+- *Opció 2:* un **polsador amb antirebot** que **compta** les premudes i les mostra (al Monitor sèrie o amb LED).
+
+**Nivells per anar més lluny.**
+1. *(bàsic)* Mostra el número de manera clara al Monitor sèrie.
+2. *(notable)* Fes servir `map()` per passar el que llegeixes a l'escala que necessites (per exemple, de 0 a 255 per al LED).
+3. *(⭐⭐⭐)* Ajunta **les dues coses** (potenciòmetre + polsador) en un mini-instrument.
+
+    **Comprova-ho així** (en ordre):
+    1. Cada part funciona **per separat** al mateix circuit: el potenciòmetre regula la llum i el polsador compta sense errors.
+    2. Les dues funcionen alhora dins del mateix `loop()` sense que una faci perdre l'altra (cap `delay()` llarg que et faci perdre premudes).
+    3. Té sentit com a instrument (per exemple, el polsador fa sonar la nota que el potenciòmetre tria). Ensenya-ho a algú.
+
+---
+
+## 🎨 Fes-lo teu (decideix-ho abans de començar)
+
+> El repte diu **què** ha de fer el circuit. **Per a què serveix, ho tries tu.** Apunta-ho al quadern:
+> - **A:** decideix **on aniria el teu llum** (un passadís, una caseta, una escala…) i mira quanta llum hi ha allà per triar la ratlla.
+> - **B:** inventa **el so d'avís**: quin to i quin ritme avisen bé sense ser molestos.
+> - **C:** tria **quin instrument o joc** fas: un theremin, una sirena, un comptador de gols…
+
+## Què necessites
+- Arduino UNO + cable USB · sensor de llum, ultrasons, potenciòmetre o polsador · LED + resistència (o brunzidor) · una resistència de 10 kΩ per al sensor de llum · o **Tinkercad/Wokwi**.
+
+## Per on començar
+1. **Pensa:** què ha de **notar** el circuit i què ha de **fer** quan ho nota?
+2. **Endevina:** quins números creus que donarà el sensor? Quina ratlla posaràs?
+3. **Comença d'una pràctica:** parteix del codi d'una pràctica de la SA3 (el polsador, el sensor de llum, l'ultrasons o l'alarma).
+4. **Prova:** mira els números de veritat al Monitor sèrie i ajusta la ratlla.
+5. **Millora:** posa dues ratlles, fes funcions o fes servir `map()`.
+
+## Com es corregeix
+| Rúbrica | Què es mira |
 |---|---|
-| **R1** (codi) | Lògica de decisió, funcions, depuració amb Serial. |
-| **R2** (circuit) | Connexió correcta de sensors (divisor/pull-up). |
-| **R4** (documentació) | Quadern tècnic: calibratge del llindar i proves. |
+| **R1** (codi) | Que el programa decideixi bé, que tingui funcions i que facis servir el Monitor per comprovar-ho. |
+| **R2** (circuit) | Que els sensors estiguin ben connectats (amb la resistència quan cal). |
+| **R4** (quadern) | Que apuntis com has triat la ratlla i quins números has vist. |
 
-## Producte / entrega
-- Codi `.ino` comentat + esquema + quadern tècnic (com he calibrat el llindar i quins valors he mesurat).
+## Què entregues
+- El codi `.ino` amb comentaris + el dibuix dels cables + el quadern tècnic (com has triat la ratlla i quins números has mesurat).
 
 ---
 
@@ -121,10 +121,10 @@
 
 ## 🤖 Cap al robot del trimestre
 
-Aquest trimestre tot suma cap a la **mascota reactiva** ([dossier](../Classes/00_General/00_Projecte_T1_Mascota.md) · [fil conductor](../Classes/00_General/00_Fil_conductor_robots.md)):
+Aquest trimestre, tot el que fas serveix per a la **mascota** ([dossier](../Classes/00_General/00_Projecte_T1_Mascota.md) · [fil conductor](../Classes/00_General/00_Fil_conductor_robots.md)):
 
-- **Repte A (llum automàtica nocturna)** → el sensor TEMT6000 de la mascota: **dorm** (ulls apagats) quan es fa fosc i es **desperta** amb la llum del dia.
-- **Repte B (sensor d'aparcament)** → el PIR de la mascota: **saluda** (parpelleig o so) quan algú **s'hi acosta**, amb la mateixa lògica de trams que l'avís antixoc.
-- **Repte C (instrument o comptador)** → el polsador de la mascota: cada **carícia** (premuda) li canvia l'humor o li dispara una animació, com el comptador que has programat.
+- **Repte A (llum de nit)** → el sensor de llum de la mascota: **s'adorm** (ulls apagats) quan es fa fosc i **es desperta** quan torna la llum.
+- **Repte B (sensor d'aparcament)** → el PIR de la mascota: **saluda** (llums o so) quan algú **s'hi acosta**.
+- **Repte C (instrument o comptador)** → el polsador de la mascota: cada **carícia** li canvia l'humor o li fa una animació.
 
-El micròfon i el DHT11 de la caixa —despertar-se amb una picada de mans, reaccionar a la temperatura— són les altres reaccions que hi afegeixes: la mascota es talla a la S3 de SA2 (sessió de fabricació) i es munta i sensoritza durant les sessions de SA3, amb la mateixa lògica entrada→decisió del repte que hagis triat. El producte final de SA3-S3 és la mascota muntada amb **≥3 reaccions sensor→comportament** i la seva fitxa de personalitat.
+El micròfon (despertar-se amb una picada de mans) i el sensor de temperatura són altres reaccions que hi pots afegir. La mascota es talla a la Sessió 3 de la SA2 i es munta a la Sessió 3 de la SA3, amb la mateixa idea de sempre: **llegeix → compara → reacciona**. El producte final és la mascota amb **3 reaccions** i la seva fitxa de personalitat.

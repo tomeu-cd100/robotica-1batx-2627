@@ -536,8 +536,8 @@ def comprova_explicacions() -> None:
 
 # --- 16 · Katas: un kata d'escriptura per sketch (SA2-SA8) -------------------
 # SA amb els katas arxivats a docs/arxiu/ (fora de l'itinerari): el contracte
-# no s'hi aplica. SA2: 18-10-2026, l'alumnat no hi arribava (SA2 simplificada).
-KATAS_ARXIVATS = {2}
+# no s'hi aplica. SA2 i SA3: 18-10-2026, l'alumnat no hi arribava (SA simplificades).
+KATAS_ARXIVATS = {2, 3}
 
 
 def comprova_katas() -> None:

@@ -86,7 +86,7 @@ Amb 2 h setmanals, el que es va aprendre a l'octubre arriba esborrat al febrer s
 
 *Respostes: ① repòs = HIGH; premut = LOW. ② el contacte mecànic "rebota" i genera múltiples lectures en una sola premuda (un toggle canviaria diverses vegades). ③ 0–1023 (ADC 10 bits); 0–255 (PWM 8 bits). **Són rangs diferents!***
 
-### SA3 · Sessió 3 — abans de «Sensor de distància i funcions»
+### SA3 · Sessió 3 — abans d'«Ultrasons + PRODUCTE: la mascota»
 > **P①** Quina funció converteix una lectura 0–1023 en un valor 0–255? Escriu la crida sencera.
 > **P②** El "llum automàtic": el LED s'encén quan la lectura de la LDR és *més gran* o *més petita* que el llindar? Per què?
 > **P③** Per a què serveix el Monitor sèrie? Quines dues línies de codi necessites per usar-lo?

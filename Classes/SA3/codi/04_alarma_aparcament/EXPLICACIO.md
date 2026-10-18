@@ -1,22 +1,33 @@
-# Pràctica 4 · Producte: alarma d'aparcament
+# Pràctica 4 · Alarma d'aparcament (per a qui acabi abans)
 
-**Quan es fa:** Sessió 3 (producte) · **Fitxer:** `04_alarma_aparcament.ino` · **Circuit:** [esquema de connexions](../../SA3_esquemes_connexions.md) (TRIG=12, ECHO=11, LED=8, piezo=6)
+**Quan es fa:** Sessió 3, **només si has acabat la mascota**. No és el producte de la SA (el producte és la mascota). · **Fitxer:** `04_alarma_aparcament.ino` · **Circuit:** [esquema de connexions, apartat 4](../../SA3_esquemes_connexions.md) (TRIG al 12, ECHO a l'11, LED al 8, brunzidor al 6)
 
-> ✍️ **Kata primer!** Si avui encara no has fet cap kata (ni el mini-check), obre el [kata d'aquesta pràctica](../../SA3_katas.md): 10 minuts per escriure el teu bloc abans de llegir aquest codi. Si ja l'has fet, endavant.
+## 🎯 Què faràs
 
-## 🎯 Per què fem aquesta pràctica
+El **sensor d'aparcament** d'un cotxe: quan t'acostes a la paret fa *bip… bip… bip-bip-bip* i, quan ja quasi la toques, un xiulet continu. Ajunta tot el que has fet: l'ultrasons de la Pràctica 3, la decisió per llindar de la Pràctica 2 i el LED i el brunzidor de la SA2.
 
-Aquest és el sketch de **referència del producte** de la SA: el cotxe que aparca i fa *bip… bip… biiip* quan s'acosta a la paret. Hi conflueix tot el que has treballat: la funció `mesuraDistancia()` de la pràctica 3, la decisió per llindar de la pràctica 2, i les sortides (LED i piezo) de la SA2. Percepció → decisió → acció: el teu primer sistema complet.
+## 🚀 Pas a pas
 
-Compte: és una **referència, no la solució a copiar**. El teu producte ha de tenir els **teus llindars calibrats** i el **teu estil d'avís** (per trams o proporcional) — i abans d'obrir l'editor, el **pseudocodi** al quadern (3–5 línies): *"REPETEIX: llegeix distància; SI < 10 → …"*.
+1. **Munta el circuit:**
 
-## 🔮 Abans d'executar: prediu
+   | Pin de l'Arduino | Va a… |
+   |---|---|
+   | 12 i 11 | TRIG i ECHO de l'ultrasons (com a la Pràctica 3) |
+   | 8 | LED → resistència de 220 Ω → GND |
+   | 6 | brunzidor (+); la seva pota − va a GND |
 
-Sense carregar el codi: en tornar de la zona intermèdia (bips) a la zona «lluny» (tot apagat i en silenci), **per què cal cridar `noTone(PIEZO)` explícitament**, en lloc de no fer res? Què passaria si no hi fos? Apunta la predicció i comprova-la.
+2. **Carrega el codi:** prem **Copia**, enganxa'l a l'Arduino IDE (esborra el que hi hagués) i prem **→ Puja**.
 
-## 🧠 El codi, per blocs
+<!-- codi-complet -->
 
-### Bloc 1 — Els llindars: les fronteres dels trams
+3. **Prova-ho:** acosta la mà a poc a poc al sensor. Lluny no passa res; a prop, bips cada cop més ràpids; molt a prop, xiulet continu.
+4. **Fes-la teva:** canvia els números de `LLUNY` i `PROP` (per exemple 50 i 20) i torna-la a pujar. Ara avisa abans?
+
+## 🧠 Com funciona, a trossos
+
+### Tros 1 — Les dues ratlles de distància
+
+**Com a la vida real:** un semàfor de distàncies. Verd = lluny, groc = compte, vermell = perill.
 
 ```cpp
 // Llindars de distancia (cm) - personalitzables
@@ -24,9 +35,15 @@ const int LLUNY = 30;
 const int PROP  = 10;
 ```
 
-Dos llindars parteixen la distància en **tres trams**: tranquil (més de 30 cm), alerta (entre 10 i 30) i perill (menys de 10). Són el primer que has de **personalitzar**: quins valors tenen sentit per al teu context? Com que són constants amb nom, canviar-los és tocar dues línies.
+Amb dues ratlles, la distància queda partida en **tres zones**:
 
-### Bloc 2 — La funció de la pràctica 3, reutilitzada
+| Zona | Distància | Què fa l'alarma |
+|---|---|---|
+| Tranquil | més de 30 cm | res |
+| Compte | entre 10 i 30 cm | bips, cada cop més ràpids |
+| Perill | menys de 10 cm | xiulet continu |
+
+### Tros 2 — La funció de la Pràctica 3
 
 ```cpp
 float mesuraDistancia() {
@@ -41,9 +58,9 @@ float mesuraDistancia() {
 }
 ```
 
-És la mateixa funció de la [pràctica 3](../03_ultrasons_funcio/EXPLICACIO.md) — aquest és el premi d'encapsular: la portes d'un sketch a l'altre sense tocar-la. I fixa't que la línia del `temps == 0` aquí és **vital**: sense ella, quan no hi hagués cap objecte l'alarma llegiria "0 cm = enganxat!" i sonaria sola. El 0 es tradueix a 400 cm ("molt lluny") i el sistema calla.
+És **la mateixa** funció de la [Pràctica 3](../03_ultrasons_funcio/EXPLICACIO.md), copiada tal qual. Aquest és l'avantatge de les funcions: les pots portar d'un programa a l'altre. La línia del `temps == 0` és molt important: sense ella, quan no hi ha res davant l'alarma es pensaria que tens la paret enganxada i sonaria sola.
 
-### Bloc 3 — Decidir per trams: if / else if / else
+### Tros 3 — Triar la zona: `if`, `else if`, `else`
 
 ```cpp
   float d = mesuraDistancia();
@@ -56,9 +73,11 @@ float mesuraDistancia() {
   } else if (d > PROP) {
 ```
 
-L'escala de decisions es llegeix de dalt a baix i **només entra en una branca**: si `d` és més gran que `LLUNY`, tranquil·litat (LED apagat i `noTone` per callar el piezo); si no, però encara és més gran que `PROP`, zona intermèdia; i si cap de les dues, l'`else` final: perill. Aquest `if / else if / else` és la versió de tres trams de l'`if/else` de dos que vas fer amb la LDR.
+Llegit en veu alta: *«**Si** és més lluny de 30, tot tranquil (LED apagat i brunzidor callat). **Si no, però** encara és més lluny de 10, zona de compte. **I si no**, perill.»* El programa només entra en **una** de les tres zones.
 
-### Bloc 4 — La zona intermèdia: l'avís proporcional
+`noTone(PIEZO)` fa **callar** el brunzidor. Cal posar-ho a la zona tranquil·la perquè, si veníem de la zona de perill, el xiulet continuaria sonant.
+
+### Tros 4 — Bips més ràpids com més a prop
 
 ```cpp
     // Zona intermedia: bips espaiats (interval proporcional a la distancia)
@@ -70,9 +89,10 @@ L'escala de decisions es llegeix de dalt a baix i **només entra en una branca**
     delay(interval);
 ```
 
-El toc de qualitat: en lloc d'un bip fix, el **ritme depèn de la distància**. `map()` reapareix amb un paper nou: tradueix la distància (de 10 a 30 cm) a un interval de pausa (de 100 a 600 ms) — com més a prop, més curta la pausa i més ràpid el *bip-bip*. `tone(PIEZO, 1500, 60)` toca un bip de 1500 Hz que s'atura sol al cap de 60 ms.
+- `map()` és el **traductor** de la Pràctica 2: converteix la distància (de 10 a 30 cm) en una pausa (de 100 a 600 ms). Com més a prop, **més curta** la pausa i més ràpids els bips.
+- `tone(PIEZO, 1500, 60)` fa un **bip** de 1500 Hz que dura 60 mil·lisegons.
 
-### Bloc 5 — El tram de perill
+### Tros 5 — Perill: xiulet continu
 
 ```cpp
   } else {
@@ -82,21 +102,20 @@ El toc de qualitat: en lloc d'un bip fix, el **ritme depèn de la distància**. 
   }
 ```
 
-A menys de 10 cm, sense mitges tintes: LED fix i `tone` **sense durada** — un xiulet continu i més agut (2500 Hz) que no pararà fins que algú cridi `noTone(PIEZO)`. On es crida? Al tram "lluny" del Bloc 3: quan el cotxe recula, el sistema torna a la calma.
+A menys de 10 cm, LED encès i xiulet **sense parar** (un `tone` sense durada). Només callarà quan tornis a la zona tranquil·la i s'executi el `noTone`.
 
 ## ⚠️ Errors que veuràs segur
 
-| Símptoma | Causa probable |
-|---|---|
-| L'alarma es dispara sola sense cap objecte | Al teu codi hi falta el tractament del `pulseIn` = 0: sense eco, 0 es llegeix com "molt a prop". Posa el *timeout* i **tracta el 0 com a molt lluny** (retorna 400). |
-| El piezo no calla mai | Has engegat un `tone()` continu i cap branca no fa `noTone()`. Cada tram ha de deixar el piezo com toca. |
-| Els bips no canvien de ritme | Límits del `map()` invertits o llindars mal ordenats (`PROP` ha de ser més petit que `LLUNY`). Mira `Serial.println(d)` per veure en quin tram ets. |
-| Tot va "a batzegades" a la zona intermèdia | Normal: els `delay(interval)` bloquegen la mesura entre bips. Si et molesta de debò, el remei (`millis()`) arriba a la SA4/SA6. |
+| Què passa | Per què | Com ho arreglo |
+|---|---|---|
+| L'alarma sona sola sense res davant | Falta la línia del `temps == 0`. | Torna a posar `if (temps == 0) return 400;`. |
+| El brunzidor no calla mai | Falta el `noTone(PIEZO)` a la zona tranquil·la. | Mira el tros 3. |
+| Els bips no canvien de velocitat | `PROP` ha de ser **més petit** que `LLUNY`. | Revisa els dos números. |
+| A la zona de compte la mesura va a batzegades | Els `delay` de la pausa aturen el programa mentre esperen. | És normal. A la SA4 i la SA6 aprendràs a fer-ho sense aturar res. |
 
 ## 🔗 On ho aplicaràs
 
-- **Avui (S3):** el **producte** de la SA — personalitza llindars i avís, omple la taula de trams de la [fitxa](../../SA3_fitxa_alumnat.md) i prepara la **defensa d'1'**: com funciona i una aplicació real. S'avalua amb R1 (codi) i R2 (circuit).
-- **La mascota del trimestre:** la lògica de trams d'aquesta alarma és la mateixa que fa servir el sensor de la teva mascota per triar reaccions.
-- **Prova T1 (S4):** la "llum de seguretat intel·ligent" de la prova és aquest mateix patró *sensor → decisió per llindar → actuador*, en solitari.
+- **La mascota:** la idea de **zones** (lluny, compte, perill) és la mateixa que fa servir la mascota per triar com reacciona.
+- **Prova T1:** la prova també és «llegir un sensor → decidir → encendre un llum o fer un so».
 
 > ⭐ **Has acabat abans?** Tria un repte a **[Reptes de la SA3](../../../../Reptes/Reptes_SA3.md)** i, quan el docent te'l validi, pinta l'estrella al [tauler de reptes](../../../00_General/00_Tauler_reptes.md).

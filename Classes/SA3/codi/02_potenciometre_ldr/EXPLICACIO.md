@@ -1,22 +1,34 @@
 # Pràctica 2 · Entrades analògiques: potenciòmetre i LDR
 
-**Quan es fa:** Sessió 2 (modelatge) · **Fitxer:** `02_potenciometre_ldr.ino` · **Circuit:** [esquema de connexions](../../SA3_esquemes_connexions.md) (potenciòmetre=A0, LDR=A1, LED=9~)
+**Quan es fa:** Sessió 2 · **Fitxer:** `02_potenciometre_ldr.ino` · **Circuit:** [esquema de connexions, apartat 2](../../SA3_esquemes_connexions.md) (potenciòmetre a A0, sensor de llum a A1, LED al pin 9)
 
-> ✍️ **Kata primer!** No llegeixis encara el codi: obre el [kata d'aquesta pràctica](../../SA3_katas.md) i tens **10 minuts** per escriure el teu bloc (individual, apunts permesos). Després torna aquí i **compara**.
+## 🎯 Què faràs
 
-## 🎯 Per què fem aquesta pràctica
+Un botó només sap dir **dues coses**: premut o no premut. Però hi ha coses que tenen **molts** valors: quanta llum hi ha, quant has girat una rodeta… Avui llegiràs dos sensors així, i al final faràs un **llum automàtic**: un LED que s'encén sol quan es fa fosc.
 
-Un polsador només sap dir **dues coses**: premut o no premut. Però el món real té matisos: quanta llum hi ha, com de girat està un botó de volum. Per això existeixen les **entrades analògiques**: `analogRead` converteix una tensió en un nombre de **0 a 1023** (conversió A/D de 10 bits).
+## 🚀 Pas a pas
 
-Aquí llegiràs dos sensors alhora — un **potenciòmetre** (que dona la tensió directament pel cursor) i una **LDR** (que necessita un **divisor de tensió** amb una resistència de 10 kΩ per convertir la seva resistència variable en tensió) — i toparàs amb el problema d'escales del curs: `analogRead` dona 0–1023, però `analogWrite` (PWM) vol 0–255. El pont entre els dos mons és **`map()`**.
+1. **Munta el circuit:**
 
-## 🔮 Abans d'executar: prediu
+   | Pin de l'Arduino | Va a… |
+   |---|---|
+   | A0 | la pota **del mig** del potenciòmetre (les altres dues, a 5 V i a GND) |
+   | A1 | el punt on s'uneixen el sensor de llum (LDR) i la resistència de 10 kΩ |
+   | 9 ~ | LED → resistència de 220 Ω → GND |
 
-Sense carregar el codi: **quan tapis la LDR amb la mà, la seva lectura (0–1023) pujarà o baixarà?** I quan la destapis de nou? Apunta-ho i comprova-ho amb el Monitor obert.
+   El sensor de llum i la resistència de 10 kΩ van **una darrere l'altra** entre 5 V i GND. Mira el dibuix a l'esquema.
+2. **Carrega el codi:** prem **Copia**, enganxa'l a l'Arduino IDE (esborra el que hi hagués) i prem **→ Puja**.
 
-## 🧠 El codi, per blocs
+<!-- codi-complet -->
 
-### Bloc 1 — Pins analògics i el llindar
+3. **Obre el Monitor sèrie** (Eines → Monitor sèrie, 9600). Hi veuràs dos números que canvien tota l'estona: `POT` i `LDR`.
+4. **Juga-hi:** gira el potenciòmetre (el número `POT` canvia i el LED fa més o menys llum). Després tapa el sensor amb la mà (el número `LDR` baixa). Escriu a Classroom entre quins números es mouen (de ___ a ___).
+5. **Apunta al quadern** el número `LDR` amb llum i tapat. El necessitaràs al pas 6.
+6. **El llum automàtic:** a sota de tot del codi hi ha, entre `/*` i `*/`, el codi del llum automàtic. Esborra el que hi ha dins del `loop()`, enganxa-hi aquest codi i canvia el `400` del `llindar` per un número **entre** els dos que has apuntat. Puja'l i tapa el sensor: el LED s'ha d'encendre.
+
+## 🧠 Com funciona, a trossos
+
+### Tros 1 — Els pins analògics i el llindar
 
 ```cpp
 const int POT = A0;
@@ -26,18 +38,26 @@ const int LED = 9;        // pin PWM
 int llindar = 400;        // per sota d'aquest valor de LDR, considerem "fosc"
 ```
 
-Els pins `A0`–`A5` són les entrades analògiques de l'UNO. El LED va al pin 9 perquè és **PWM** (`~`): en regularem la intensitat. I fixa't en `llindar`: un valor **entremig** de l'escala 0–1023 que separa "fosc" de "clar". No és un número màgic: el **calibraràs** mirant el Monitor sèrie al teu muntatge.
+- Els pins que comencen per **A** (A0, A1… A5) són els que poden llegir **molts valors**, no només sí o no.
+- El LED va al pin 9, que té `~`: així en podem regular la llum, com a la SA2.
+- `llindar` és **la ratlla que separa fosc de clar**. **Com a la vida real:** a les atraccions hi ha una marca que diu «si fas menys d'1,20 m, no hi pots pujar». Aquí: si el número del sensor de llum és més petit que el llindar, és que fa fosc.
 
-### Bloc 2 — Llegir 0–1023
+### Tros 2 — `analogRead`: llegir un número de 0 a 1023
+
+**Com a la vida real:** un termòmetre no diu només «fred» o «calor»: et dona un número.
 
 ```cpp
   int valorPot = analogRead(POT);   // 0..1023
   int valorLdr = analogRead(LDR);   // 0..1023
 ```
 
-`analogRead` no necessita `pinMode`: les entrades analògiques ja ho són per defecte. Cada lectura és un nombre entre 0 (0 V) i 1023 (5 V). Per a la LDR, el que llegeixes és la tensió del **punt mig del divisor**: amb més llum, la LDR té menys resistència i la lectura canvia — al muntatge d'aquesta SA, **menys llum → valor més petit**.
+`analogRead` llegeix el pin i et dona un número entre **0** (0 volts) i **1023** (5 volts). En aquest muntatge, **com menys llum, més petit és el número del sensor de llum**.
 
-### Bloc 3 — Reescalar amb map() i escriure amb PWM
+> 💡 **Per què el sensor de llum necessita la resistència de 10 kΩ?** L'Arduino no pot llegir directament quanta llum hi ha: només sap llegir **volts**. La parella sensor + resistència converteix «més o menys llum» en «més o menys volts» al punt d'unió. Sense la companya, llegiries sempre 0 o 1023.
+
+### Tros 3 — `map()`: el traductor
+
+**Com a la vida real:** passar una nota sobre 20 a una nota sobre 10. Un 20 és un 10, un 10 és un 5… És la mateixa nota, en una altra escala.
 
 ```cpp
   // Opcio A: regular intensitat amb el potenciometre
@@ -45,9 +65,17 @@ Els pins `A0`–`A5` són les entrades analògiques de l'UNO. El LED va al pin 9
   analogWrite(LED, brillantor);
 ```
 
-`map(valor, 0, 1023, 0, 255)` tradueix proporcionalment de l'escala d'entrada (0–1023) a la de sortida (0–255). Sense aquesta línia, escriure `analogWrite(LED, valorPot)` amb un `valorPot` de 800 no faria el que esperes: `analogWrite` només entén 0–255. Resultat: gires el potenciòmetre i el LED puja i baixa d'intensitat en directe.
+`analogRead` dona números de **0 a 1023**, però `analogWrite` (el que regula la llum del LED) només entén de **0 a 255**. `map()` fa la traducció:
 
-### Bloc 4 — El Monitor sèrie com a eina de calibratge
+| `valorPot` (0-1023) | `brillantor` (0-255) |
+|---|---|
+| 0 | 0 |
+| 512 | 127 |
+| 1023 | 255 |
+
+Resultat: gires el potenciòmetre i el LED fa més o menys llum.
+
+### Tros 4 — El Monitor sèrie: veure els números
 
 ```cpp
   // Mostra les lectures al monitor serie (Eines > Serial Monitor)
@@ -55,11 +83,11 @@ Els pins `A0`–`A5` són les entrades analògiques de l'UNO. El LED va al pin 9
   Serial.print("  LDR: "); Serial.println(valorLdr);
 ```
 
-Aquestes línies no són decoració: són el teu **instrument de mesura**. Per triar bé el llindar de la LDR necessites saber quin valor dona amb llum (p. ex. ~650) i tapada (p. ex. ~180) — i posar el llindar **entremig**. Al racó de mesura ho contrastaràs amb el multímetre: `lectura/1023 · 5 V ≈ tensió real` al punt mig del divisor.
+Aquestes línies escriuen els dos números al Monitor. Són la teva **eina per triar el llindar**: mires quin número dona el sensor amb llum i tapat, i tries un llindar al mig. Al **Racó de mesura** ho compararàs amb el multímetre: número del Monitor ÷ 1023 × 5 ≈ els volts que mesuris.
 
-### Bloc 5 — El repte, ja plantejat: el llum automàtic
+### Tros 5 — El llum automàtic: decidir
 
-Al final del sketch hi ha, **en un comentari**, el cor del repte de la sessió: substituir el contingut del `loop()` per una **decisió per llindar**:
+**Com a la vida real:** el llum del carrer s'encén sol quan es fa fosc.
 
 ```cpp
   int valorLdr = analogRead(LDR);
@@ -70,23 +98,25 @@ Al final del sketch hi ha, **en un comentari**, el cor del repte de la sessió: 
   }
 ```
 
-És el patró *llegir → comparar → actuar* (mira'l dibuixat al [diagrama de flux](../../SA3_diagrama_flux.md)): la base del producte de la S3 i, de fet, la llavor d'un classificador (SA8). Després del teu primer intent, compara'l amb l'[exemple resolt](../../SA3_exemple_resolt.md): és el **bessó comentat** d'aquest llum automàtic, amb tot el raonament pas a pas.
+Llegit en veu alta: *«Llegeix el sensor de llum. **Si** el número és més petit que el llindar (fa fosc), encén el LED. **Si no**, apaga'l.»*
+
+Aquesta és la idea més important de la SA: **llegir → comparar → actuar**. La faràs servir a la mascota i a la prova. Si et costa, mira-la [dibuixada](../../SA3_diagrama_flux.md) o l'[exemple resolt](../../SA3_exemple_resolt.md).
 
 ## ⚠️ Errors que veuràs segur
 
-| Símptoma | Causa probable |
-|---|---|
-| La LDR marca **sempre 0 o sempre 1023** i no canvia en tapar-la | El divisor de tensió no està fet: la LDR i la resistència de 10 kΩ han d'anar **en sèrie** entre 5 V i GND, amb el **punt mig** a A1. |
-| El llum automàtic no s'encén mai (o sempre) | Llindar fora d'escala: compares amb 255 pensant en el PWM, però `analogRead` va de **0 a 1023**. Calibra'l amb el Monitor. |
-| El LED no regula, només encès/apagat | El LED no és en un pin PWM (`~`), o escrius el valor 0–1023 directament sense `map()`. |
-| El Monitor mostra símbols estranys | *Baud* del Monitor diferent del `Serial.begin(9600)`. |
+| Què passa | Per què | Com ho arreglo |
+|---|---|---|
+| El sensor de llum diu **sempre 0 o sempre 1023** | Falta la resistència de 10 kΩ, o no està ben unida al sensor. | Mira el dibuix de l'esquema, apartat 2. |
+| El llum automàtic no s'encén mai (o sempre) | El llindar no està entre els números de llum i de tapat. | Mira el Monitor i tria un número al mig. |
+| El LED només s'encén o s'apaga, sense fer més o menys llum | El LED no és en un pin amb `~`. | Posa'l al pin 9. |
+| Al Monitor surten símbols estranys | La velocitat no és 9600. | A baix a la dreta del Monitor, tria 9600. |
 
 ## 🧗 Si t'encalles: l'esquelet
 
-Si el llum automàtic no et surt, no et quedis en blanc: parteix d'aquest esquelet. La lectura, la funció i el Monitor sèrie ja hi són; tu només omples els `// TODO:` de la comparació amb el llindar i què fa cada cas. Compila tal qual; el LED no farà res fins que completis l'`if`.
+Si el llum automàtic no et surt, parteix d'aquest esquelet. La lectura i el Monitor sèrie ja hi són; tu només omples els `// TODO:` (la comparació amb el llindar i què fa el LED). Es pot pujar tal com està, però el LED no farà res fins que completis l'`if`.
 
 <details markdown="1">
-<summary>Desplega l'esquelet (còpia'l a un sketch nou)</summary>
+<summary>Desplega l'esquelet (copia'l a un programa nou)</summary>
 
 ```cpp
 /*
@@ -137,8 +167,7 @@ void loop() {
 
 ## 🔗 On ho aplicaràs
 
-- **Repte de la S2:** el **llum automàtic** amb la LDR; **+ repte:** llindar ajustable amb el potenciòmetre (dues lectures analògiques treballant juntes).
-- **Després del teu intent:** l'[exemple resolt de la llum de nit](../../SA3_exemple_resolt.md) és el **bessó** d'aquesta pràctica — el mateix mètode, raonat pas a pas.
-- **Producte de la S3:** l'[alarma d'aparcament](../04_alarma_aparcament/EXPLICACIO.md) fa exactament el mateix patró *llegir → comparar → actuar*, però amb distància en lloc de llum.
+- **La mascota (Sessió 3):** la reacció «**es fa fosc → la mascota s'adorm**» és exactament aquest llum automàtic.
+- **Prova T1 (Sessió 4):** el circuit de la prova també és «llegir un sensor → comparar → encendre un llum».
 
 > ⭐ **Has acabat abans?** Tria un repte a **[Reptes de la SA3](../../../../Reptes/Reptes_SA3.md)** i, quan el docent te'l validi, pinta l'estrella al [tauler de reptes](../../../00_General/00_Tauler_reptes.md).

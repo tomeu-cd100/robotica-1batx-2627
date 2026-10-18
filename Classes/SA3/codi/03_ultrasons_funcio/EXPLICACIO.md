@@ -1,31 +1,52 @@
 # Pràctica 3 · Ultrasons: la primera funció que retorna un valor
 
-**Quan es fa:** Sessió 3 (modelatge) · **Fitxer:** `03_ultrasons_funcio.ino` · **Circuit:** [esquema de connexions](../../SA3_esquemes_connexions.md) (TRIG=12, ECHO=11)
+**Quan es fa:** Sessió 3 (primera part, ~25') · **Fitxer:** `03_ultrasons_funcio.ino` · **Circuit:** [esquema de connexions, apartat 3](../../SA3_esquemes_connexions.md) (TRIG al 12, ECHO a l'11)
 
-> ✍️ **Kata primer!** Si avui encara no has fet cap kata (ni el mini-check), obre el [kata d'aquesta pràctica](../../SA3_katas.md): 10 minuts per escriure el teu bloc abans de llegir aquest codi. Si ja l'has fet, endavant.
+## 🎯 Què faràs
 
-## 🎯 Per què fem aquesta pràctica
+Mesuraràs **a quina distància** tens la mà, sense tocar-la, i ho veuràs en una **gràfica** a l'ordinador. I aprendràs una cosa nova: una **funció que et torna un número**.
 
-L'HC-SR04 mesura distàncies com un ratpenat: envia un so que no sents, espera l'**eco** i cronometra quant triga a tornar. Però el sensor és l'excusa: la lliçó gran del dia és **escriure una funció pròpia que retorna un valor**. Fins ara les funcions (`setup`, `loop`) només *feien* coses; `mesuraDistancia()` fa una feina i **et torna el resultat** amb `return`, com si preguntessis "a quina distància?" i et responguessin amb un número.
+## 🚀 Pas a pas
 
-La pregunta que ho justifica: *quin avantatge té encapsular-ho en una funció?* Tres: el `loop()` es llegeix com una frase (`float d = mesuraDistancia();`), pots reutilitzar la mesura tants cops com vulguis sense copiar codi, i si mai canvies de sensor només toques **un** lloc.
+1. **Munta el sensor:**
 
-## 🔮 Abans d'executar: prediu
+   | Pota del sensor | Pin de l'Arduino |
+   |---|---|
+   | VCC | 5 V |
+   | TRIG | 12 |
+   | ECHO | 11 |
+   | GND | GND |
 
-Sense carregar el codi: si vas acostant la mà lentament cap al sensor, la línia del **Serial Plotter** baixarà de manera contínua, o farà algun **salt sobtat** (per exemple fins a 400) en algun moment del trajecte? Quan creus que passarà, si passa? Comprova-ho després amb el Serial Plotter.
+2. **Carrega el codi:** prem **Copia**, enganxa'l a l'Arduino IDE (esborra el que hi hagués) i prem **→ Puja**.
 
-## 🧠 El codi, per blocs
+<!-- codi-complet -->
 
-### Bloc 1 — Dos pins, dos papers
+3. **Obre el Serial Plotter:** a l'Arduino IDE, **Eines → Serial Plotter**, i tria **9600**. (Si tens el Monitor sèrie obert, tanca'l primer: no poden estar oberts tots dos.)
+4. **Mou la mà** a poc a poc cap al sensor i després allunya-la. La línia de la gràfica puja i baixa: és la distància en centímetres.
+5. **Respon a Classroom** les dues preguntes de l'ultrasons: la fórmula de la distància (tros 3) i què **et torna** la funció `mesuraDistancia()` (tros 2).
+6. **Quan acabis, desmunta el sensor:** la mascota necessita el pin 11.
+
+## 🧠 Com funciona, a trossos
+
+### Tros 1 — El sensor és un ratpenat
+
+**Com a la vida real:** els ratpenats fan un crit tan agut que nosaltres no el sentim. El so xoca contra les coses i torna: és l'**eco**. Com més triga a tornar, més lluny és la cosa.
+
+El sensor fa el mateix amb els seus dos «ulls»: un **crida** (TRIG) i l'altre **escolta l'eco** (ECHO).
 
 ```cpp
 const int TRIG = 12;
 const int ECHO = 11;
 ```
 
-El sensor té dos pins de senyal amb papers oposats: **TRIG** és una **sortida** de l'Arduino (li ordenem "dispara el so") i **ECHO** és una **entrada** (el sensor ens hi respon quan torna l'eco). Al `setup()`, `pinMode(TRIG, OUTPUT)` i `pinMode(ECHO, INPUT)` — si els intercanvies, no funciona res.
+| Pin | Què fa | Per això al `setup()`… |
+|---|---|---|
+| TRIG (12) | L'Arduino li diu «crida!» | és una **sortida** (`OUTPUT`) |
+| ECHO (11) | El sensor avisa «he sentit l'eco» | és una **entrada** (`INPUT`) |
 
-### Bloc 2 — La funció: disparar el pols
+### Tros 2 — Una funció que **et torna** un número
+
+**Com a la vida real:** preguntes a algú «a quina distància és la paret?» i et **respon** amb un número. No t'explica com ho ha mesurat: només et dona la resposta.
 
 ```cpp
 // Funcio propia: mesura i RETORNA la distancia en cm
@@ -37,9 +58,11 @@ float mesuraDistancia() {
   digitalWrite(TRIG, LOW);
 ```
 
-Fixa't en la capçalera: `float mesuraDistancia()`. El `float` del davant declara **què retornarà** (un decimal, els cm). Dins, el protocol del sensor: un pols de 10 **microsegons** (µs, milionèsimes de segon — per això `delayMicroseconds` i no `delay`) al pin TRIG fa que el sensor emeti la ràfega d'ultrasons.
+- A la SA2 vas fer la funció `color()`, que **feia** una feina. `mesuraDistancia()` fa una feina i, a més, **et torna el resultat**.
+- La paraula `float` del davant vol dir: *aquesta funció et tornarà un número amb decimals* (els centímetres).
+- Les línies de dins fan **cridar** el sensor: encenen el TRIG durant 10 **micro**segons (milionèsimes de segon, molt menys que un mil·lisegon). Per això fa servir `delayMicroseconds` en lloc de `delay`.
 
-### Bloc 3 — pulseIn i el càlcul de la distància
+### Tros 3 — Escoltar l'eco i calcular la distància
 
 ```cpp
   long temps = pulseIn(ECHO, HIGH, 30000);  // temps de l'eco en us (timeout 30 ms)
@@ -49,15 +72,16 @@ Fixa't en la capçalera: `float mesuraDistancia()`. El `float` del davant declar
 }
 ```
 
-Tres línies, tres idees:
+| Línia | Què fa |
+|---|---|
+| `pulseIn(ECHO, HIGH, 30000)` | Cronometra quant triga a tornar l'eco. Si en 30 mil·lisegons no torna res, s'atura i dona **0**. |
+| `if (temps == 0) return 400;` | **El parany:** si no ha tornat cap eco, és que no hi ha res a prop. Diem «molt lluny» (400 cm) i no «0 cm», que voldria dir «enganxat». |
+| `temps * 0.034 / 2.0` | Calcula la distància. El so recorre 0,034 cm cada microsegon, i **dividim per 2** perquè el so fa **anada i tornada**. |
+| `return dist;` | **Et torna** la distància. Aquí és on la funció «et respon». |
 
-- `pulseIn(ECHO, HIGH, 30000)` cronometra quant dura el pols HIGH al pin ECHO — el temps de l'eco en µs. El tercer paràmetre és un ***timeout***: si en 30 ms no ha arribat cap eco, es rendeix i retorna **0**.
-- **El cas trampa:** sense eco (objecte fora de rang), `pulseIn` dona 0, i 0 µs serien **0 cm** — el sistema es pensaria que té l'objecte enganxat! Per això `if (temps == 0) return 400;`: el 0 es tradueix a "molt lluny" (400 cm). Sense aquesta línia, l'alarma de la S3 es dispararia sola.
-- **La física:** el so viatja a ~0,034 cm/µs, i el temps mesurat és l'**anada i tornada** — per això *distància = temps · 0,034 / 2*.
+Per tant: **distància (cm) = temps × 0,034 ÷ 2**.
 
-I l'última línia: `return dist;` — la funció **entrega el resultat** a qui l'ha cridada.
-
-### Bloc 4 — Una funció que crida una altra funció
+### Tros 4 — La mitjana de 3 mesures (per a qui vulgui més)
 
 ```cpp
 // REPTE resolt: mitjana de 3 mesures (filtre simple)
@@ -71,9 +95,9 @@ float distanciaMitjana() {
 }
 ```
 
-Les mesures d'ultrasons "ballen" (ecos rebotats, sorolls). Aquesta segona funció crida `mesuraDistancia()` **tres cops** i en retorna la **mitjana**: un filtre simple que suavitza la gràfica. Fixa't en el poder de l'encapsulació: `distanciaMitjana()` es construeix **sobre** `mesuraDistancia()` sense repetir ni una línia del protocol del sensor.
+De vegades el sensor s'equivoca una mica i la línia «balla». Aquesta funció mesura **3 vegades** i et torna la **mitjana**, com quan fas la mitjana de tres notes. Fixa't que **fa servir l'altra funció**: no cal tornar a escriure com es crida el sensor.
 
-### Bloc 5 — El loop, net, i el Serial Plotter
+### Tros 5 — El `loop()`: curt i clar
 
 ```cpp
 void loop() {
@@ -83,21 +107,20 @@ void loop() {
 }
 ```
 
-Tota la feina bruta és a les funcions: el `loop()` queda en tres línies que es llegeixen soles. I en lloc del Monitor, obre el **Serial Plotter** (Eines > Serial Plotter): com que enviem **un sol número per línia**, el traçarà com una gràfica en directe — mou la mà davant del sensor i veuràs la distància pujar i baixar.
+Com que tota la feina és a les funcions, el `loop()` només té tres línies: *mesura, escriu el número, espera una mica*. El Serial Plotter dibuixa aquests números com una gràfica.
 
 ## ⚠️ Errors que veuràs segur
 
-| Símptoma | Causa probable |
-|---|---|
-| Distància sempre 0 o un valor absurd | **TRIG i ECHO intercanviats**: TRIG és sortida (pin 12) i ECHO entrada (pin 11). Revisa també VCC=5V i GND. |
-| Salts sobtats a 400 sense que res es mogui | No és (sempre) un error: `pulseIn` ha retornat **0** (sense eco: objecte fora de rang o superfície que no rebota, com roba o una cantonada) i la funció ho tradueix a "molt lluny". |
-| La gràfica del Plotter surt buida o boja | Monitor i Plotter oberts alhora (només un pot usar el port), *baud* diferent de 9600, o més d'una dada per línia. |
-| Lectures que "ballen" molt | Normal amb una sola mesura: fes servir `distanciaMitjana()` (el filtre de 3 mesures). |
+| Què passa | Per què | Com ho arreglo |
+|---|---|---|
+| Sempre surt 0 o un número sense sentit | TRIG i ECHO canviats de lloc, o el sensor sense 5 V o GND. | Mira la taula del pas 1. |
+| De cop salta a 400 | No ha tornat cap eco: no hi ha res a prop, o la cosa és tova (roba) i no fa eco. | Normal. Posa la mà plana davant del sensor. |
+| La gràfica no surt | El Monitor sèrie està obert, o la velocitat no és 9600. | Tanca el Monitor i tria 9600 al Plotter. |
 
 ## 🔗 On ho aplicaràs
 
-- **Avui mateix (producte):** l'[alarma d'aparcament](../04_alarma_aparcament/EXPLICACIO.md) reutilitza `mesuraDistancia()` tal qual i hi afegeix la decisió per trams.
-- **+ Ampliació:** detectar si l'objecte **s'acosta o s'allunya** (compara la mesura d'ara amb l'anterior).
-- **Prova T1 (S4):** escriure i fer servir una funció que retorna un valor és exactament el múscul que s'hi avalua.
+- **Ara mateix:** la teva **mascota**. Desmunta el sensor i passa al pas 5 de la sessió.
+- **Si acabes abans:** l'[alarma d'aparcament](../04_alarma_aparcament/EXPLICACIO.md) fa servir aquesta mateixa funció per fer «bip-bip» com un cotxe.
+- **Prova T1:** escriure i fer servir una funció que torna un número és una de les coses que s'hi avaluen.
 
 > ⭐ **Has acabat abans?** Tria un repte a **[Reptes de la SA3](../../../../Reptes/Reptes_SA3.md)** i, quan el docent te'l validi, pinta l'estrella al [tauler de reptes](../../../00_General/00_Tauler_reptes.md).

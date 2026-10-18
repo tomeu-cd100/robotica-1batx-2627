@@ -1,51 +1,32 @@
 # SA3 · Exemple resolt (model «jo ho faig») — Llum de nit automàtica
 
-> 🧑‍🎓 **Quan toca mirar-lo?** Després del teu **primer intent** amb el potenciòmetre i la LDR de l'**Activitat 2 (S2)** — mai abans. És un problema **anàleg** per veure *com es pensa*, no la solució de l'alarma/aparcament de la S3 (però el **mètode** és el mateix).
+> 🧑‍🎓 **Quan toca mirar-lo?** **Després** d'haver provat tu el [llum automàtic](codi/02_potenciometre_ldr/EXPLICACIO.md) (Sessió 2), mai abans. No és la solució de cap pràctica: és un exemple **semblant**, fet pas a pas, perquè vegis **com es pensa** un programa que **nota** una cosa i **decideix**. La mateixa manera de pensar et servirà per a les reaccions de la mascota.
 
-> 🔗 **D'on ve i on va.** Aquest exemple és el **bessó comentat** de la pràctica [Entrades analògiques: potenciòmetre i LDR](codi/02_potenciometre_ldr/EXPLICACIO.md): el mateix mètode (llegir → calibrar amb el Monitor → decidir per llindar) amb un muntatge i un context expressament diferents — perquè vegis **com es pensa**, no per copiar-lo. Quan l'hagis entès, torna a la pàgina de la pràctica i fes-la teva.
-
-> 🗺️ **Com es llegeix per apartats:** **🔑 El repte model** primer, per situar-te · **🧭 Com ho penso** abans d'escriure el **teu** codi (és l'apartat més important: el raonament) · **💡 La solució anotada** només **després del teu intent**, per comparar · **🔬 Provo i mesuro** quan provis el teu: copia'n el **mètode**, no el resultat · **⚠️ Contraexemple** quan una cosa no rutlli — i com a repàs abans d'entregar · **📔 Diari de bord** quan escriguis la teva entrada del quadern.
-
-> **Nota docent:** mostra'l **després del primer intent** amb `02_potenciometre_ldr.ino`, mai abans.
-> No és la solució del producte (l'alarma/aparcament de la S3): és un problema **anàleg** resolt pas
-> a pas perquè l'alumnat vegi *com es pensa* un sistema que **percep i decideix**, no què s'ha de
-> copiar. Comenta en veu alta el pas «🧭 Com ho penso» (predicció abans de codi, PRIMM) i el
-> «⚠️ Contraexemple». El **mètode** (llegir → calibrar amb el monitor → decidir per llindar →
-> encapsular en una funció) és **el mateix** que necessitaran per a l'alarma d'ultrasons.
+> **Nota per al docent:** mostra'l després del primer intent amb `02_potenciometre_ldr.ino`. Comenta en veu alta «🧭 Com ho penso» i «⚠️ Errors típics». El mètode (llegir → mirar els números al Monitor → decidir per llindar → posar la lectura en una funció) és el que necessitaran per a la mascota.
 
 ---
 
 ![Divisor de tensió amb una LDR per mesurar la llum ambiental](img/sa3-divisor-ldr.svg)
 
-## 🔑 El repte model
+## 🔑 El problema
 
-> Fer una **llum de nit automàtica**: un LED que **s'encén sol quan es fa fosc** i s'apaga quan
-> torna a haver-hi llum. El sistema ha de **llegir la llum ambiental** amb una LDR, **comparar-la
-> amb un llindar** i **decidir** si encendre.
+> Fer una **llum de nit**: un LED que **s'encén sol quan es fa fosc** i s'apaga quan torna la llum.
 
-Fa servir només conceptes de la SA3: `analogRead` (0–1023), **llindar** amb `if/else`, el
-**Monitor sèrie** per calibrar i una **funció pròpia** que retorna un valor. El circuit és el
-mateix divisor de la S2: **LDR + 10 kΩ en sèrie entre 5 V i GND, punt mig → A1**; sortida
-**LED → [220 Ω] → pin 9 (`~`) → GND**.
+El circuit és el de la Sessió 2: el **sensor de llum amb la seva resistència de 10 kΩ** (el punt d'unió a **A1**) i un **LED al pin 9** amb la seva resistència de 220 Ω.
 
 ---
 
 ## 🧭 Com ho penso (abans d'escriure codi)
 
-1. **Analitzo:** el sistema té una **entrada** (quanta llum hi ha → LDR) i una **sortida**
-   (LED encès/apagat). No és HIGH/LOW com un polsador: la llum té **molts valors** → és una
-   entrada **analògica** → `analogRead`, que em dona un nombre de **0 a 1023**.
-2. **Descomponc:** primer he de **saber quin valor dona la LDR** a les fosques i amb llum
-   (ho miro al **Monitor sèrie**); després **trio un llindar** entremig; i finalment **decideixo**
-   amb un `if`. Encapsularé la lectura en una **funció** `llegeixLlum()` (com faré amb
-   `mesuraDistancia()` al producte): així el `loop()` queda net i el codi es llegeix sol.
-3. **🔮 PREDIU (fes-ho tu abans de llegir el codi):** al muntatge d'aquesta SA, quan **tapo** la
-   LDR (fosc), el valor de `analogRead` … ☐ **baixa** ☐ puja ☐ no canvia. I `analogRead` retorna
-   un nombre entre ____ i ____ (no 0–255: això és el `analogWrite`).
+1. **Què ha de notar i què ha de fer?** Ha de notar **quanta llum hi ha** i ha d'**encendre o apagar** un LED.
+2. **Com ho llegeixo?** La llum no és «sí o no» com un botó: té molts valors. Per tant faig servir `analogRead`, que em dona un número de **0 a 1023**.
+3. **Com decideixo?** Primer miro al **Monitor sèrie** quin número dona el sensor amb llum i a les fosques. Després trio una **ratlla** (el llindar) entre els dos. Finalment, un `if`: si el número és més petit que la ratlla, fa fosc.
+4. **Com ho ordeno?** Poso la lectura dins d'una **funció**, `llegeixLlum()`. Així el `loop()` es llegeix com una frase.
+5. **🔮 Endevina abans de mirar el codi:** quan **tapo** el sensor, el número… ☐ **baixa** ☐ puja ☐ no canvia. I `analogRead` dona un número entre ____ i ____.
 
 ---
 
-## 💡 La solució anotada
+## 💡 El codi, amb explicacions
 
 ```cpp
 /*
@@ -88,62 +69,38 @@ void loop() {
 }
 ```
 
-**Per què està escrit així (🌟):**
-- **Constant amb nom** (`LLINDAR`) en lloc d'un número solt: quan calibri, canvio el valor en
-  **un sol lloc** i el codi segueix explicant-se.
-- **La lectura, en una funció** (`llegeixLlum()`): el `loop()` es llegeix com una frase
-  («llegeix la llum, mostra-la, decideix»). És el mateix patró que `mesuraDistancia()` del producte.
-- Trio l'eina segons el senyal: la llum és **analògica** → `analogRead` (0–1023); la sortida és
-  encendre/apagar del tot → `digitalWrite`. No confonc els dos rangs.
-- **`Serial.println`** no és decoració: és la meva **eina de calibratge** (la E d'*Examina* de DEPURA).
+**Per què està fet així (🌟):**
+- **Un nom en lloc d'un número** (`LLINDAR`): quan ajusti la ratlla, només canvio **una** línia.
+- **La lectura, dins d'una funció** (`llegeixLlum()`): el `loop()` es llegeix com una frase: *llegeix la llum, escriu-la, decideix*.
+- **El `Serial.println` no és de decoració:** és la meva eina per **veure** els números i triar bé la ratlla.
 
 ---
 
-## 🔬 Provo i mesuro
+## 🔬 Ho provo
 
-- **Predicció ✔:** en tapar la LDR, la lectura **baixa** (al divisor d'aquesta SA, menys llum →
-  valor més petit); `analogRead` es mou entre **0 i 1023**.
-- **Racó de mesura (multímetre):** poso el multímetre al punt mig del divisor. Amb llum,
-  la tensió és, p. ex., ~3 V; en tapar la LDR baixa. Comprovo que quadra: `lectura/1023 · 5 V ≈ V`
-  (si el programa marca 600 → 600/1023 · 5 ≈ **2,9 V**). L'ADC converteix **tensió en nombre**.
-- **Calibro el llindar de veritat:** miro el Monitor amb llum (p. ex. ~650) i a les fosques
-  (p. ex. ~180) i poso `LLINDAR` **entremig** (~400). No l'endevino: el **mesuro**.
-- **Millora (ampliació):** si el LED **parpelleja** just al llindar (quan la llum queda a la vora),
-  afegeixo **histèresi**: encendre per sota de 380 i apagar per sobre de 420, amb dos llindars.
-  Així no oscil·la a la frontera.
+- **L'endevinalla:** quan tapo el sensor, el número **baixa** (en aquest muntatge, menys llum = número més petit). I `analogRead` va de **0 a 1023**.
+- **Amb el multímetre:** al punt d'unió del sensor i la resistència hi mesuro, per exemple, uns 3 V amb llum. Si el Monitor diu 600: 600 ÷ 1023 × 5 ≈ **2,9 V**. Quadra! L'Arduino converteix **volts en un número**.
+- **Trio la ratlla de veritat:** el Monitor diu uns 650 amb llum i uns 180 tapat. Poso `LLINDAR` al mig, uns **400**. No l'endevino: **el miro**.
+- **Per anar més lluny:** si el LED parpelleja quan la llum està just a la ratlla, faig servir **dues ratlles**: encendre per sota de 380 i apagar per sobre de 420. Així no dubta.
 
 ---
 
-## ⚠️ Contraexemple (errors típics i com es detecten)
+## ⚠️ Errors típics (i com els veus)
 
-- **La LDR mal connectada** (falta la resistència de 10 kΩ o el punt mig no va a A1) → el Monitor
-  marca **sempre 0 o sempre 1023** i no canvia en tapar-la. *Causa:* el divisor no està fet.
-  **Solució:** LDR i 10 kΩ **en sèrie** entre 5 V i GND, i el **punt mig** a A1.
-- **Comparo amb 255** (`if (llum < 255)`) pensant en el rang del PWM → gairebé mai s'encén.
-  *Causa:* `analogRead` va de **0 a 1023**, no de 0 a 255 (això és `analogWrite`). Ajusta el llindar a l'escala 0–1023.
-- **Oblido `Serial.begin(9600)`** (o el *baud* del Monitor no coincideix) → surten **caràcters
-  estranys** o res, i no puc calibrar. Sempre `Serial.begin(9600)` al `setup()` i el mateix 9600 al Monitor.
-- **Poso el LED al revés** (càtode al pin 9) o **sense la resistència de 220 Ω** → no s'encén, o
-  llueix massa i es força. Revisa **polaritat** (pota llarga = +) i **resistència en sèrie**.
+- **El sensor de llum sense la resistència de 10 kΩ** (o el punt d'unió no va a A1) → el Monitor diu **sempre 0 o sempre 1023**, encara que el tapis. **Solució:** sensor i resistència un darrere l'altre entre 5 V i GND, i el punt d'unió a A1.
+- **Poso la ratlla a 255** pensant en el `analogWrite` → gairebé mai s'encén. **Solució:** `analogRead` va de **0 a 1023**; tria la ratlla mirant el Monitor.
+- **M'oblido de `Serial.begin(9600)`**, o el Monitor no és a 9600 → surten símbols estranys o res. **Solució:** `Serial.begin(9600)` al `setup()` i 9600 al Monitor.
+- **Poso el LED al revés o sense la resistència de 220 Ω** → no s'encén, o fa massa llum. **Solució:** la pota llarga cap al pin 9 i sempre amb resistència.
 
 ---
 
-## 📔 Diari de bord (entrada model, 1a persona)
+## 📔 Com seria una bona entrada al quadern
 
-> **Sessió 2:** He fet una **llum de nit automàtica** amb una **LDR**. La llum és una entrada
-> **analògica**, així que he fet servir `analogRead` (0–1023) i **no** `digitalRead`. Al principi
-> el LED estava sempre encès: el meu llindar (255) estava **fora d'escala**, perquè em pensava que
-> el rang era 0–255 com el PWM. He obert el **Monitor sèrie**, he vist que amb llum marcava ~650 i
-> a les fosques ~180, i he posat el `LLINDAR` a **400** (entremig). He ficat la lectura en una
-> **funció** `llegeixLlum()` per tenir el `loop()` net. **Evidència:** captura del Monitor amb les
-> dues lectures + vídeo tapant la LDR.
+> **Sessió 2:** He fet una **llum de nit** amb el sensor de llum. Com que la llum té molts valors, he fet servir `analogRead` (de 0 a 1023) i no `digitalRead`. Al principi el LED estava sempre encès: havia posat la ratlla a **255**, perquè em pensava que anava de 0 a 255 com el `analogWrite`. He obert el **Monitor sèrie**, he vist que amb llum donava uns 650 i tapat uns 180, i he posat la ratlla a **400**. He posat la lectura dins d'una **funció** (`llegeixLlum()`) perquè el `loop()` s'entengui millor.
+> **Prova:** una captura del Monitor amb els dos números i un vídeo tapant el sensor.
 
-**Per què és una bona entrada:** usa el **vocabulari clau** (analògic, `analogRead`, 0–1023,
-llindar, funció), explica *el com* (calibrar amb el Monitor), i és **honesta amb la dificultat**
-(el llindar fora d'escala) i com es va resoldre.
+**Per què és una bona entrada:** fa servir les paraules importants (`analogRead`, 0-1023, llindar, funció), explica **com** ho ha fet (mirant el Monitor) i diu **la veritat** sobre el que li ha costat (la ratlla a 255) i com ho ha arreglat.
 
 ---
 
-*Exemple resolt de la SA3. Model de treball per a l'alumnat (alliberament gradual: es mostra
-després del primer intent). Es recolza en `codi/02_potenciometre_ldr` i, com a pont cap al
-producte, en `codi/03_ultrasons_funcio`. Llicència CC BY-SA 4.0.*
+*Exemple resolt de la SA3. Es mostra després del primer intent de l'alumnat. Es basa en `codi/02_potenciometre_ldr` i, com a pont cap a la funció de la Sessió 3, en `codi/03_ultrasons_funcio`. Llicència CC BY-SA 4.0.*

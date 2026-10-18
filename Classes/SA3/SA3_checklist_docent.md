@@ -10,6 +10,7 @@
 - [ ] Sensors: polsador, potenciòmetre, LDR + 10 kΩ, NTC + 10 kΩ, **HC-SR04** (ultrasons), LED, piezo
 - [ ] **Multímetres** per al racó de mesura del divisor de tensió
 - [ ] Sketches provats: `01_polsador_debounce` · `02_potenciometre_ldr` · `03_ultrasons_funcio` · `04_alarma_aparcament`
+- [ ] **Llibreries Adafruit NeoPixel i DHT** instal·lades a tots els ordinadors (l'esquelet de la mascota no compila sense) · caixes de la mascota tallades (S3 de la SA2)
 - [ ] **Preparar la prova pràctica T1** ([`Avaluació/Prova_practica_T1.md`](../../Avaluació/Prova_practica_T1.md)) — ocupa la S4 sencera (individual; material per a cada alumne/a)
 - [ ] Compartir rúbriques **R1 i R2** amb l'alumnat *abans* del producte
 
@@ -17,21 +18,21 @@
 
 **Sessió 1 — Entrades digitals i monitor sèrie**
 - [ ] Referent (1') Marie Van Brittan Brown · `01_polsador_debounce` (`INPUT_PULLUP`, *debounce*, Serial Monitor)
-- [ ] ✍️ **Kata** `01_polsador_debounce` (10', abans de repartir el sketch) → [SA3_katas.md](SA3_katas.md)
 - [ ] Muntatge polsador pin 2 · comptar premudes al monitor
 - ⚠️ *Clau:* amb `INPUT_PULLUP` → HIGH en repòs, LOW en prémer (lògica invertida)
 
 **Sessió 2 — Entrades analògiques**
-- [ ] ✍️ **Kata** `02_potenciometre_ldr` (10', abans de repartir el sketch) → [SA3_katas.md](SA3_katas.md)
 - [ ] `02_potenciometre_ldr` (`analogRead` 0–1023, `map()`, divisor de tensió LDR)
 - [ ] **Racó de mesura:** comparar V mesurada amb `lectura/1023·5V`; tapar LDR i veure baixar les dues
+- [ ] **Deures per a la S3:** nom i caràcter de la mascota (fitxa de personalitat)
 - ⚠️ *Error:* divisor mal connectat (lectures 0 o 1023)
 
-**Sessió 3 — Funcions + PRODUCTE (alarma/aparcament)**
-- [ ] **Mini-check individual** a l'inici (10', no qualifica): `if/else` sobre lectura analògica (substitueix la graella d'activació i el kata del dia)
-- [ ] `03_ultrasons_funcio`: escriure la funció `mesuraDistancia()` que **retorna** un valor · Serial Plotter
-- [ ] Repte-producte `04_alarma_aparcament` (pseudocodi primer) + **defensa individual d'1' a peu de taula** (~5-7' per a tot el grup) mentre treballen
-- ⚠️ *Error:* TRIG/ECHO intercanviats · vigilar `pulseIn` = 0 quan no hi ha eco
+**Sessió 3 — Ultrasons + PRODUCTE: la mascota**
+- [ ] **Mini-check individual** a l'inici (10', no qualifica): `if/else` sobre lectura analògica (substitueix la graella d'activació)
+- [ ] `03_ultrasons_funcio` en versió curta (25'): la funció `mesuraDistancia()` que **retorna** un valor · Serial Plotter
+- [ ] **Mascota** (55'): fitxa de personalitat (nom, caràcter, 3 reaccions) · sensors a la caixa · esquelet del dossier (soroll fet; omplen foscor i PIR) · **defensa d'1' a peu de taula**
+- [ ] Tancament: autoavaluació i **formulari de Classroom enviat** · `04_alarma_aparcament` només per a qui acabi abans
+- ⚠️ *Error:* TRIG/ECHO intercanviats · llibreries NeoPixel/DHT sense instal·lar · PIR sense els 30-60 s d'estabilització
 
 **Sessió 4 — PROVA T1 (sessió sencera, individual)**
 - [ ] Instruccions (5-10') · prova (**~80-85' reals**; el nucli està calibrat per a ~60') · recollida (10')
@@ -39,7 +40,7 @@
 - [ ] Recordar el **pla de millora personal** (3 línies al retorn; es reprèn a l'inici de SA4)
 
 ## 📊 3. Avaluació i evidències (a recollir)
-- [ ] **Producte** (alarma/llum automàtic, S3) + defensa → **R1** i **R2**, Projectes 45 %
+- [ ] **Producte: la mascota** (S3) + fitxa de personalitat + defensa → [rúbrica del robot](../00_General/00_Projecte_T1_Mascota.md#rubrica-del-robot-producte-sa3), Projectes 45 %
 - [ ] **Prova T1** (S4 sencera) → R1, R2, R4, Proves 20 %
 - [ ] **Quadern tècnic** (pseudocodi, taula de lectures, codi de la funció) → **R4**, Quadern tècnic i pràctiques 25 %
 - [ ] **Observació + depuració sèrie** (monitor, divisor de tensió) → R2

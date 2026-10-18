@@ -4,29 +4,28 @@
 
 > 📄 **[Versió PDF per imprimir i omplir a mà](pdf/SA3_checklist_alumnat.pdf)**
 
-> 🧑‍🎓 **Quan toca?** Tingues-lo obert **durant tota la SA** (marca a mesura que avances) i repassa'l **sencer abans d'entregar** — és l'últim pas de l'itinerari.
+> 🧑‍🎓 **Quan toca?** Tingues-lo a mà **durant tota la SA** i marca cada cosa quan la tinguis feta. Abans d'entregar, repassa'l **sencer**: és l'últim pas.
 
-> Ara el sistema **percep** el món. Marca cada cosa quan la tinguis feta. ⚠️ La S4 **és, sencera, la prova pràctica T1** (individual): el producte es tanca a la S3.
+> ⚠️ **Tota la Sessió 4 és la prova T1** (individual). La mascota s'ha d'acabar a la Sessió 3.
 
 ## ✅ Abans d'acabar aquesta SA he de…
-- [ ] Llegir un **polsador** amb antirebot i entendre la lògica invertida `INPUT_PULLUP` (S1)
-- [ ] Llegir **entrades analògiques** (0–1023) i fer servir `map()`; muntar el llum automàtic (S2)
-- [ ] Fer el **racó de mesura** (comparar V del multímetre amb la lectura del programa)
-- [ ] Escriure/usar la **funció** `mesuraDistancia()` amb l'HC-SR04 i el Serial Plotter (S3)
-- [ ] **Dissenyar abans de codificar:** escriure el **pseudocodi** del producte al quadern
-- [ ] Lliurar l'**alarma / sensor d'aparcament** i defensar-la 1' a peu de taula → *R1 i R2* (S3)
-- [ ] Fer la **prova T1** (S4, individual — amb el quadern al dia com a material permès)
-- [ ] Tenir el **quadern tècnic** al dia (digital vs analògic, per a què serveix una funció, un error resolt)
-- [ ] 🤖 Tancar la **mascota** (el robot del trimestre): presentar el muntatge, el circuit i el codi al dossier → [dossier](../00_General/00_Projecte_T1_Mascota.md)
+- [ ] Fer funcionar el **polsador** i entendre per què llegeix «al revés» (HIGH sense prémer, LOW prement) (Sessió 1)
+- [ ] Llegir el **potenciòmetre** i el **sensor de llum** al Monitor sèrie i fer el **llum automàtic** (Sessió 2)
+- [ ] Fer el **racó de mesura**: comparar els volts del multímetre amb el número del Monitor (Sessió 2)
+- [ ] Veure la distància de l'**ultrasons** al Serial Plotter i saber què **et torna** la funció `mesuraDistancia()` (Sessió 3)
+- [ ] Omplir la **fitxa de la mascota**: nom, caràcter i 3 reaccions (Sessió 3)
+- [ ] Acabar la **mascota** amb les seves reaccions i explicar-la en 1 minut (Sessió 3)
+- [ ] Enviar el **formulari de Classroom** (només a la Sessió 3)
+- [ ] Tenir el **quadern tècnic** al dia: el necessitaràs a la **prova T1** (Sessió 4)
 
 ## 🚦 Com vaig? (pinta el teu nivell)
 | Ja sé… | 🔴 Encara no | 🟡 A mitges | 🟢 Sí |
 |---|---|---|---|
-| Distingir i llegir entrades digitals i analògiques | | | |
-| Fer servir el Monitor sèrie per calibrar | | | |
-| Escriure i fer servir funcions pròpies | | | |
+| Llegir un botó i un sensor (digital i analògic) | | | |
+| Fer servir el Monitor sèrie per triar bé els números | | | |
+| Escriure i fer servir funcions meves | | | |
 
 ## 🆘 Si m'encallo
-Segueixo **DEPURA**: **D**escriu · **E**xamina (**Monitor sèrie!**) · **P**rova una hipòtesi cada cop · **U**bica · **R**epara · **A**punta. Reviso l'alimentació del sensor (VCC/GND). Encara encallat? **[Targeta de rescat](../00_General/00_Targetes_rescat.md)** (començo per la 🟢).
+Segueixo **DEPURA**: **D**igues què esperaves i què passa · **E**xamina (**mira el Monitor sèrie!**) · **P**rova un sol canvi cada vegada · **U**bica el problema · **R**epara · **A**punta-ho. Primer de tot, miro que el sensor tingui els cables de **5 V i GND** ben posats. Encara no ho trobo? **[Targeta de rescat](../00_General/00_Targetes_rescat.md)** (començo per la 🟢).
 
-> Tens dos o més 🔴? Repassa el material **abans de la prova T1**. La **versió nucli** (avís de 2 nivells fiable) ja és assoliment satisfactori.
+> Tens dos o més 🔴? Repassa les pràctiques **abans de la prova T1** i demana ajuda. **Per aprovar n'hi ha prou** amb una mascota amb 2 reaccions que funcionin bé.

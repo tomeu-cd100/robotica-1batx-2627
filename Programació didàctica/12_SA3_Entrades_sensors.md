@@ -30,15 +30,15 @@ Entrades digitals (`digitalRead`, *pull-up*, *debounce*); entrades analògiques 
 |---|---|
 | **1** | Polsador amb *pull-up* intern; `digitalRead`; **debounce**. Comptador de premudes (Serial Monitor). |
 | **2** | Entrades analògiques: potenciòmetre i **LDR**. `analogRead` (0-1023), `map()`. Llum automàtic (LDR→LED). |
-| **3** | Sensor de distància **ultrasons**: escriure una **funció** `mesuraDistancia()`. Serial Plotter. **Producte: "sistema d'alarma/aparcament"** (ultrasons + LED/piezo segons distància) amb mini-defensa. |
+| **3** | Sensor de distància **ultrasons** en versió curta: escriure una **funció** `mesuraDistancia()` que retorna un valor. Serial Plotter. **Producte: la mascota** del fil conductor (≥3 reaccions sensor→comportament + fitxa de personalitat) amb mini-defensa. L'alarma d'aparcament queda com a referència per a qui acabi abans. |
 | **4** | **Prova pràctica T1** (individual, sessió sencera — vegeu `Avaluació/Prova_practica_T1.md`). |
 
 ## Producte
-Sistema sensor→actuador (alarma de proximitat o llum automàtic) amb codi modular (funcions) i registre de mesures al quadern. **Es tanca a la S3**; la S4 és la prova T1 individual.
+**La mascota reactiva** (fil conductor, `Classes/00_General/00_Projecte_T1_Mascota.md`): la caixa de la SA2 amb ≥3 reaccions sensor→comportament (llegir → comparar amb un llindar → actuar) i la seva fitxa de personalitat. **Es tanca a la S3**; la S4 és la prova T1 individual. *(Decisió del 18-10-2026: abans el producte era l'alarma d'aparcament, que queda com a pràctica de referència.)*
 
 ## Avaluació
 - Instruments: producte (S3) + quadern + **prova pràctica T1** (S4, individual).
-- Rúbriques: **R1**, **R2** (producte); R1, R2, R4 (prova).
+- Rúbriques: rúbrica del robot del dossier de la mascota (producte); R1, R2, R4 (prova).
 
 ## Atenció a la diversitat
 - **Bastida:** simulació prèvia a Wokwi/Tinkercad; funció model proporcionada.

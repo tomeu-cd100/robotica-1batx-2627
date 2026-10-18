@@ -1,17 +1,12 @@
 # SA3 · Qüestionari de conceptes (entrades i sensors)
 
-> 🧑‍🎓 **Quan toca fer-lo?** En acabar les activitats de la SA, com a **consolidació** abans de repassar el checklist d'entrega — i torna-hi com a **repàs** abans de la prova T1 (la sessió 4 d'aquesta SA). Si es fa com a prova curta qualificable, el docent anunciarà el dia.
+> 🧑‍🎓 **Quan toca fer-lo?** Quan acabis les pràctiques de la SA3, i sobretot **abans de la prova T1** (la Sessió 4), per repassar.
 
-> **Ús.** Comprovació breu dels conceptes d'entrades digitals i analògiques, sensors i
-> funcions de la SA3. Es pot fer servir com a **repàs formatiu** o com a **prova curta
-> qualificable** (10 preguntes × 1 punt = **nota 0-10**). Durada orientativa: **15-20 min**,
-> individual.
+> **Què és?** 10 preguntes curtes sobre el que has fet a la SA3. Tries una resposta a cada una. Es triga uns 15 minuts. Si el docent el fa servir com a prova, t'avisarà del dia.
 
-> **📲 Fes-lo al Classroom.** Aquest qüestionari és una **tasca
-> autocorrectiva** al Google Classroom del curs:
+> **📲 Fes-lo al Classroom.** És una tasca que **es corregeix sola**:
 > **[obre «SA3 · Qüestionari de conceptes»](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODcwNzE4MzAzMDM1/details)**
-> (cal el compte del centre). Aquesta pàgina és la versió per repassar
-> o fer en paper; les solucions són al full del docent.
+> (amb el compte de l'escola). Aquesta pàgina és per repassar-lo o fer-lo en paper.
 
 **Nom:** ______________________  **Grup:** __________  **Data:** __________
 
@@ -54,12 +49,12 @@
 6. Per què cal l'**antirebot** (*debounce*) en un polsador?
    - a) Perquè el polsador consumeixi menys corrent.
    - b) Perquè el pin passi a analògic.
-   - c) Perquè una sola premuda no es compti diverses vegades (el contacte "rebota").
+   - c) Perquè una sola premuda no es compti diverses vegades (el metall de dins «bota», com una pilota).
    - d) No serveix per a res.
 
-7. La LDR es connecta en un **divisor de tensió** amb una resistència de 10 kΩ. Per què?
+7. El sensor de llum (LDR) es connecta **amb una resistència de 10 kΩ al costat**. Per què?
    - a) Per limitar el corrent i que no es cremi.
-   - b) Per convertir la resistència variable de la LDR en una tensió que el pin analògic pot mesurar.
+   - b) Perquè l'Arduino només sap llegir volts: la parella LDR + resistència converteix «més o menys llum» en «més o menys volts».
    - c) Per augmentar la brillantor del LED.
    - d) Perquè la LDR necessita 10 kΩ per encendre's.
 
@@ -77,7 +72,7 @@
 
 10. Què vol dir que una **funció** com `mesuraDistancia()` **retorna** un valor?
     - a) Que apaga la placa en acabar.
-    - b) Que en acabar dona un resultat que el programa pot fer servir (p. ex. la distància en cm).
+    - b) Que en acabar et dona un resultat que el programa pot fer servir (per exemple, la distància en cm).
     - c) Que es repeteix infinitament.
     - d) Que només es pot cridar una vegada.
 

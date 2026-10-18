@@ -983,11 +983,13 @@ DOC_ORDRE_CLAUS = ["fil-conductor", "projecte-t",
 # («Si vols més»): fora del pager i del sidebar en vista alumnat. El
 # qüestionari de conceptes SÍ que és al camí (pas «Consolida»: recuperació
 # abans de l'autoavaluació).
-# SA2 simplificada (18-10-2026): el camí és presentació → fitxa → esquemes →
-# codi → checklist; la resta queda a «Si vols més» de la portada.
+# SA2 i SA3 simplificades (18-10-2026): el camí és presentació → fitxa →
+# esquemes → codi → checklist; la resta queda a «Si vols més» de la portada.
 NOMES_CONSULTA = ("fitxa-ampliada", "recursos-video",
                   "sa2-diagrama-flux", "sa2-exemple-resolt",
-                  "sa2-questionari-conceptes")
+                  "sa2-questionari-conceptes",
+                  "sa3-diagrama-flux", "sa3-exemple-resolt",
+                  "sa3-questionari-conceptes")
 
 
 def doc_ordre(p: Page):
@@ -2463,8 +2465,8 @@ CALENDARI_SA_DATA = [
    "tasks":["Modelatge: INPUT_PULLUP, digitalRead i antirebot","Munten polsador al pin 2; compten al monitor sèrie","Repte: LED en mode toggle amb el polsador"]},
   {"title":"Entrades analògiques", "anchor":"sessio-2-2-h-entrades-analogiques",
    "tasks":["Modelatge: analogRead, map() i divisor de tensió","Llegeixen potenciòmetre i LDR; regulen LED per PWM","Repte: llum automàtic (LDR + llindar)","Racó de mesura: multímetre al divisor LDR"]},
-  {"title":"Funcions + PRODUCTE: alarma/aparcament", "anchor":"sessio-3-2-h-funcions-producte-alarmaaparcament", "product":True,
-   "tasks":["Mini-check individual: if/else sobre lectura analògica","Modelatge: funció mesuraDistancia() amb pulseIn","Munten HC-SR04 i visualitzen amb Serial Plotter","Repte-PRODUCTE: alarma/mascota amb avís per trams","Mini-defensa d'1' a peu de taula"]},
+  {"title":"Ultrasons + PRODUCTE: la mascota", "anchor":"sessio-3-2-h-ultrasons-producte-la-mascota", "product":True,
+   "tasks":["Mini-check individual: if/else sobre lectura analògica","Ultrasons en versió curta: mesuraDistancia() i Serial Plotter","PRODUCTE: la mascota amb ≥3 reaccions + fitxa de personalitat","Mini-defensa d'1' a peu de taula","Enviar el formulari de Classroom"]},
   {"title":"PROVA PRÀCTICA T1 (individual)", "anchor":"sessio-4-2-h-prova-practica-t1-individual", "test":True,
    "tasks":["Reparteix material i recorda què es pot consultar","Prova individual (~80-85'): llum de seguretat intel·ligent","Recollida i pla de millora personal al quadern"]},
  ]},

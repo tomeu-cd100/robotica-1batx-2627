@@ -1,18 +1,20 @@
 # SA3 · Diagrama de flux — Decisió per llindar (llegir → comparar → actuar)
 
-> **Per a qui és?** Alumnat. És el **llum automàtic amb la LDR** de l'**Activitat 2 (S2)**, però **dibuixat** — i el patró *llegir → comparar → actuar* que reutilitzaràs al producte de la S3. Mira'l **abans de programar** aquella activitat; després l'exemple resolt i el codi.
+> **Per a qui és?** Per a tu. És el **llum automàtic** de la Sessió 2 ([Pràctica 2](codi/02_potenciometre_ldr/EXPLICACIO.md)), però **dibuixat** en lloc d'escrit. És la idea més important de la SA: **llegir → comparar → actuar**. La faràs servir també a la mascota.
 
-## El flux
+## El dibuix
 
 ![Diagrama de flux de la SA3](img/sa3-flux.svg)
-## Llegenda
-- Caixa **fosca** = **inici**.
-- Caixa **teal** `[ ... ]` = una **acció** (una instrucció o bloc de codi).
-- **Rombe ambre** `< ... ? >` = una **decisió** (`if`): en surt una branca per cada cas.
-- **Fletxa ambre** = **bucle**: torna enrere i es repeteix.
 
-## Del diagrama al codi
-- `[ llum = analogRead(LDR) ]` → `int llum = llegeixLlum();` (la funció fa `analogRead`, dona 0..1023).
-- `< llum < LLINDAR ? >` → `if (llum < LLINDAR) { ... } else { ... }` — **el cor de la SA**: la decisió per llindar.
-- Branca **SÍ** → `digitalWrite(LED, HIGH);` (fosc: encén). Branca **NO** → `digitalWrite(LED, LOW);` (clar: apaga).
-- El bucle és el `loop()`: llegeix → mostra → decideix → `delay(100)` → torna a començar.
+## Com es llegeix
+- La caixa **fosca** és on **comença** el programa.
+- Les caixes **verdes** `[ ... ]` són **coses que fa** el programa (una ordre).
+- Els **rombes taronja** `< ... ? >` són **preguntes**: segons si la resposta és sí o no, segueixes una fletxa o una altra.
+- Les **fletxes taronja que tornen enrere** vol dir que el programa **ho repeteix**.
+
+## Del dibuix al codi
+- `[ llum = analogRead(LDR) ]` vol dir: *llegeix el sensor de llum* (et dona un número de 0 a 1023).
+- `< llum < LLINDAR ? >` és la **pregunta**: *el número és més petit que la ratlla (el llindar)?* Al codi és un `if`.
+- Si la resposta és **SÍ** (fa fosc): `digitalWrite(LED, HIGH);` → el LED s'encén.
+- Si és **NO** (hi ha llum): `digitalWrite(LED, LOW);` → el LED s'apaga.
+- Després espera una mica i **torna a començar**: això és el `loop()`.

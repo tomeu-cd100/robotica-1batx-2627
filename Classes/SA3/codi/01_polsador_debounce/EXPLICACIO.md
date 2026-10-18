@@ -1,22 +1,42 @@
 # Pràctica 1 · El polsador: INPUT_PULLUP i antirebot
 
-**Quan es fa:** Sessió 1 (modelatge) · **Fitxer:** `01_polsador_debounce.ino` · **Circuit:** [esquema de connexions](../../SA3_esquemes_connexions.md) (polsador=2, LED=8)
+**Quan es fa:** Sessió 1 · **Fitxer:** `01_polsador_debounce.ino` · **Circuit:** [esquema de connexions, apartat 1](../../SA3_esquemes_connexions.md) (polsador al pin 2, LED al pin 8)
 
-> ✍️ **Kata primer!** No llegeixis encara el codi: obre el [kata d'aquesta pràctica](../../SA3_katas.md) i tens **10 minuts** per escriure el teu bloc (individual, apunts permesos). Després torna aquí i **compara**.
+## 🎯 Què faràs
 
-## 🎯 Per què fem aquesta pràctica
+Fins ara l'Arduino només **feia** coses. Avui, per primer cop, **nota** una cosa: si prems un botó. Cada vegada que el prems, l'Arduino ho **compta**, t'ho escriu a l'ordinador i encén o apaga un LED.
 
-Fins ara el sistema només **feia** coses: encenia LEDs, tocava sons. Avui, per primer cop, **percep**: llegeix un polsador i reacciona. És el primer pas del patró que governarà tota la SA (i tot robot): *llegir una entrada → decidir → actuar*.
+## 🚀 Pas a pas
 
-I hi ha una sorpresa que cal entendre bé: amb `INPUT_PULLUP`, el pin està com **"agafat" a HIGH** per una resistència interna, i prémer el polsador **l'estira cap a LOW**. O sigui: en repòs llegeix HIGH i en prémer llegeix LOW — **lògica invertida**. També descobriràs que un polsador real "rebota": una sola premuda pot generar diversos senyals en mil·lisegons, i cal un **antirebot** (*debounce*) per no comptar-la diverses vegades.
+1. **Munta el circuit:**
 
-## 🔮 Abans d'executar: prediu
+   | Pin de l'Arduino | Va a… |
+   |---|---|
+   | 2 | una pota del polsador |
+   | GND | l'altra pota del polsador (la de la diagonal) |
+   | 8 | LED → resistència de 220 Ω → GND |
 
-Mira el codi complet (a baix de tot, plegat) **sense carregar-lo**. Com que fem servir `INPUT_PULLUP`: **quin és l'estat de repòs del pin (HIGH o LOW) quan ningú toca el polsador?** I just després de prémer-lo? Escriu la predicció a l'Activitat 1 de la [fitxa](../../SA3_fitxa_alumnat.md) i després comprova-la.
+   Posa el polsador **creuant el canal del mig** de la protoboard.
+2. **Llegeix el codi** de sota i **endevina:** què sortirà a l'ordinador quan premis el botó? Escriu-ho a Classroom.
+3. **Carrega'l:** prem **Copia**, enganxa'l a l'Arduino IDE (esborra el que hi hagués) i prem **→ Puja**.
 
-## 🧠 El codi, per blocs
+<!-- codi-complet -->
 
-### Bloc 1 — Constants i variables d'estat
+4. **Obre el Monitor sèrie:** a l'Arduino IDE, **Eines → Monitor sèrie**, i a baix a la dreta tria **9600**. Prem el polsador unes quantes vegades: hi ha de sortir `Premudes: 1`, `Premudes: 2`… i el LED s'ha d'encendre i apagar.
+5. **Fes un experiment:** canvia `ANTIREBOT = 40` per `ANTIREBOT = 0` i torna a pujar el codi. Prem el botó a poc a poc unes quantes vegades. És possible que **una sola premuda en compti 2 o 3**. Per què? Ho tens al tros 4. Després, torna a posar el 40.
+6. **⭐ Repte:** fes que el comptador arribi a **5** i torni a **0**. Pista: just després de `comptador++;`, afegeix:
+
+   ```cpp
+   if (comptador == 5) {
+     comptador = 0;
+   }
+   ```
+
+   Vol dir: *si el comptador ha arribat a 5, torna'l a posar a 0*. Prova-ho i explica a Classroom com ho has fet.
+
+## 🧠 Com funciona, a trossos
+
+### Tros 1 — Els noms i la memòria del programa
 
 ```cpp
 const int POLSADOR = 2;
@@ -28,11 +48,16 @@ unsigned long ultimCanvi = 0;
 const unsigned long ANTIREBOT = 40;  // ms
 ```
 
-A més de les constants de pins (SA2), hi ha tres variables que fan **memòria** entre voltes de `loop()`: quantes premudes portem (`comptador`), com estava el pin l'última vegada (`estatAnterior`, que comença a `HIGH` perquè en repòs el pin llegeix HIGH) i **quan** va ser l'últim canvi (`ultimCanvi`). `ANTIREBOT` són els 40 ms durant els quals ignorarem "rebots" del contacte metàl·lic.
+Les dues primeres línies ja les coneixes: diuen a quin pin està cada cosa. Les altres són la **memòria** del programa, coses que ha de recordar d'una volta a l'altra:
 
-> 🕰️ **`millis()`, el cronòmetre de la placa** (te'l van presentar a la SA2; aquí el fas servir per primer cop). L'Arduino porta, des que s'engega, un comptador que suma **1 cada mil·lisegon** i no s'atura mai. `millis()` no és cap espera: és una *consulta*, com mirar el rellotge de la paret — et diu quants mil·lisegons fa que la placa està en marxa i el programa continua a l'instant. Amb ell no preguntes «quina hora és?», sinó **«quanta estona ha passat des d'allò?»**, i això es calcula sempre restant: `millis() - ultimCanvi`. Per això `ultimCanvi` és `unsigned long`: el número creix tant (al cap d'un minut ja va per 60000) que no cabria en un `int`.
+| Variable | Què recorda |
+|---|---|
+| `comptador` | Quantes vegades has premut el botó. |
+| `estatAnterior` | Com estava el botó la volta anterior (premut o no). |
+| `ultimCanvi` | **Quan** va canviar per última vegada. |
+| `ANTIREBOT` | Quanta estona (40 mil·lisegons) cal esperar per fiar-se d'un canvi. |
 
-### Bloc 2 — Configurar l'entrada (i el canal sèrie)
+### Tros 2 — `setup()`: preparar el botó i la finestra
 
 ```cpp
 void setup() {
@@ -42,24 +67,43 @@ void setup() {
 }
 ```
 
-Dues novetats:
+- `INPUT_PULLUP` vol dir que el pin 2 és una **entrada**: l'Arduino hi **escolta**, en lloc d'enviar-hi corrent.
+- `Serial.begin(9600)` obre la **finestra** cap a l'ordinador (el Monitor sèrie). És com un xat: l'Arduino t'hi escriu el que passa. El 9600 és la velocitat del xat, i ha de ser la mateixa al Monitor.
 
-- `INPUT_PULLUP` activa la **resistència interna** de l'Arduino que manté el pin a HIGH. Gràcies a això el polsador es connecta amb només **dos cables** (pin 2 i GND), sense resistència externa. El peatge és la lògica invertida: **HIGH = no premut, LOW = premut**.
-- `Serial.begin(9600)` obre el **canal sèrie** cap a l'ordinador a 9600 bauds. A partir d'ara és la teva finestra per veure què passa dins la placa (Eines > Monitor sèrie, amb el mateix 9600 seleccionat).
+### Tros 3 — La sorpresa: «al revés»
 
-### Bloc 3 — Detectar la premuda amb antirebot
+**Com a la vida real:** imagina un llum que està **sempre encès** i que només s'apaga mentre prems l'interruptor. Estrany, oi? Doncs el pin 2 fa això.
+
+Amb `INPUT_PULLUP`, l'Arduino té una petita peça **a dins** que deixa el pin 2 «encès» (**HIGH**) tota l'estona. Quan prems el botó, uneixes el pin amb GND i passa a «apagat» (**LOW**).
+
+| Botó | El pin llegeix |
+|---|---|
+| Sense prémer | `HIGH` |
+| Premut | `LOW` |
+
+Per això el codi pregunta `if (estat == LOW)` per saber si has premut. **No és un error: és com funciona.** Avantatge: només calen dos cables.
+
+### Tros 4 — L'antirebot: la pilota que bota
+
+**Com a la vida real:** si deixes caure una pilota, no toca terra una vegada: **bota** unes quantes vegades abans de quedar-se quieta.
+
+Dins del botó hi ha dues peces de metall que es toquen. Quan prems, també «boten»: es toquen i se separen unes quantes vegades en molt poc temps. L'Arduino és tan ràpid que ho podria comptar com si haguessis premut **3 vegades**.
 
 ```cpp
-void loop() {
   int estat = digitalRead(POLSADOR);
 
   // Detecta el canvi HIGH -> LOW (premuda) amb antirebot
   if (estat != estatAnterior && (millis() - ultimCanvi) > ANTIREBOT) {
 ```
 
-`digitalRead` llegeix l'estat del pin (HIGH o LOW). La condició de l'`if` demana **dues coses alhora** (`&&`): que l'estat **hagi canviat** respecte de l'última volta, i que hagin passat **més de 40 ms** des de l'últim canvi. Aquesta segona part és l'antirebot: els rebots del contacte arriben en pocs mil·lisegons, i així queden ignorats.
+- `digitalRead(POLSADOR)` llegeix el botó: `HIGH` o `LOW`.
+- L'`if` demana **dues coses alhora** (el `&&` vol dir «i»):
+  1. `estat != estatAnterior` → el botó **ha canviat** respecte de l'altra volta.
+  2. `(millis() - ultimCanvi) > ANTIREBOT` → han passat **més de 40 mil·lisegons** des de l'últim canvi.
 
-### Bloc 4 — Comptar i fer el toggle
+**`millis()` és el cronòmetre de l'Arduino:** compta els mil·lisegons des que s'ha engegat i no s'atura mai. Com que no espera res, és com mirar el rellotge de la paret. Si restes `millis() - ultimCanvi`, saps **quanta estona ha passat** des de l'últim canvi. Si han passat menys de 40 ms, és un bot i l'ignorem.
+
+### Tros 5 — Comptar i encendre o apagar el LED
 
 ```cpp
     ultimCanvi = millis();
@@ -72,20 +116,27 @@ void loop() {
     estatAnterior = estat;
 ```
 
-Dins del canvi vàlid, encara filtrem: només ens interessa el pas a `LOW` (la **premuda**; el pas a HIGH és deixar anar). Llavors sumem 1 al comptador, l'escrivim pel Monitor i fem el truc del **toggle**: `!digitalRead(LED)` llegeix com està el LED i escriu el contrari — cada premuda l'encén o l'apaga. Al final, recordem l'estat per a la volta següent.
+| Línia | Què fa |
+|---|---|
+| `ultimCanvi = millis();` | Apunta l'hora d'aquest canvi. |
+| `if (estat == LOW)` | Només fa la resta si el botó **s'acaba de prémer** (no quan el deixes anar). |
+| `comptador++;` | Suma 1 al comptador. |
+| `Serial.print(...)` i `Serial.println(...)` | Escriuen al Monitor «Premudes: » i el número. |
+| `digitalWrite(LED, !digitalRead(LED));` | Mira com està el LED i el posa **al revés** (el `!` vol dir «al contrari»). |
+| `estatAnterior = estat;` | Recorda com està el botó per a la volta següent. |
 
 ## ⚠️ Errors que veuràs segur
 
-| Símptoma | Causa probable |
-|---|---|
-| "Està al revés! Marca HIGH sense tocar res" | No és un error: amb `INPUT_PULLUP` el repòs és **HIGH** i prémer és **LOW** (lògica invertida). |
-| Una premuda en compta 2 o 3 | Antirebot massa curt (o inexistent, si l'has tret): els rebots del contacte es compten com a premudes. |
-| El polsador no fa res | Polsador mal punxat a la protoboard (les potes van de dos en dos!) o cable a un pin equivocat. |
-| El Monitor mostra símbols estranys o res | El *baud* del Monitor no coincideix amb el `Serial.begin(9600)` — selecciona 9600 a baix a la dreta. |
+| Què passa | Per què | Com ho arreglo |
+|---|---|---|
+| «Està al revés! Diu HIGH sense tocar res» | No és un error: amb `INPUT_PULLUP` és així. | Mira el tros 3. |
+| Una premuda en compta 2 o 3 | L'antirebot és massa curt (o a 0). | Torna a posar `ANTIREBOT = 40`. |
+| El botó no fa res | El polsador no creua el canal del mig, o fas servir dues potes que ja estan unides. | Gira'l 90° o fes servir les potes en diagonal. |
+| Al Monitor surten símbols estranys | La velocitat del Monitor no és 9600. | A baix a la dreta del Monitor, tria 9600. |
 
 ## 🔗 On ho aplicaràs
 
-- **Repte de la S1:** el mode *toggle* ja el tens aquí — el repte és entendre'l i estendre'l: **comptar fins a 5 i reiniciar** el comptador.
-- **Tota la SA:** el **Monitor sèrie** que has obert avui és l'eina de calibratge de la [pràctica 2](../02_potenciometre_ldr/EXPLICACIO.md) i la **E** (*Examina*) de la rutina DEPURA.
+- **Sessió 2:** el **Monitor sèrie** serà la teva eina per veure els números del sensor de llum.
+- **La mascota:** el polsador serà la **carícia**: quan el prems, la mascota es calma.
 
 > ⭐ **Has acabat abans?** Tria un repte a **[Reptes de la SA3](../../../../Reptes/Reptes_SA3.md)** i, quan el docent te'l validi, pinta l'estrella al [tauler de reptes](../../../00_General/00_Tauler_reptes.md).
