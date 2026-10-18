@@ -1,16 +1,12 @@
 # SA2 · Qüestionari de conceptes (programar la placa i sortides digitals/PWM)
 
-> 🧑‍🎓 **Quan toca fer-lo?** En acabar les activitats de la SA, com a **consolidació** abans de repassar el checklist d'entrega — i torna-hi com a **repàs** abans de la prova T1 (la sessió 4 de la SA3). Si es fa com a prova curta qualificable, el docent anunciarà el dia.
+> 🧑‍🎓 **Quan toca fer-lo?** Quan acabis les pràctiques de la SA2, abans de repassar el checklist. Torna-hi abans de la **prova del 1r trimestre** (l'última sessió de la SA3), per repassar.
 
-> **Ús.** Comprovació breu dels conceptes de programació bàsica i de sortides de la SA2.
-> Es pot fer servir com a **repàs formatiu** o com a **prova curta qualificable**
-> (10 preguntes × 1 punt = **nota 0-10**). Durada orientativa: **15-20 min**, individual.
+> **Què és?** 10 preguntes curtes sobre el que has fet a la SA2. Tries una resposta a cada una. Es triga uns 15 minuts. Si el docent el fa servir com a prova, t'avisarà del dia.
 
-> **📲 Fes-lo al Classroom.** Aquest qüestionari és una **tasca
-> autocorrectiva** al Google Classroom del curs:
+> **📲 Fes-lo al Classroom.** És una tasca que **es corregeix sola**:
 > **[obre «SA2 · Qüestionari de conceptes»](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODcwNzE2NzE2MTkw/details)**
-> (cal el compte del centre). Aquesta pàgina és la versió per repassar
-> o fer en paper; les solucions són al full del docent.
+> (amb el compte de l'escola). Aquesta pàgina és per repassar-lo o fer-lo en paper.
 
 **Nom:** ______________________  **Grup:** __________  **Data:** __________
 
@@ -20,7 +16,7 @@
 
 ## Preguntes (tria una resposta)
 
-1. En un *sketch* d'Arduino, el bloc `setup()`…
+1. En un programa d'Arduino, el bloc `setup()`…
    - a) Es repeteix infinitament.
    - b) S'executa una sola vegada en engegar la placa.
    - c) No serveix per a res.
@@ -52,7 +48,7 @@
 
 6. El **PWM** (`analogWrite`) serveix per…
    - a) Llegir un sensor.
-   - b) Regular la "intensitat" d'una sortida (brillantor d'un LED, velocitat d'un motor).
+   - b) Fer que una sortida vagi «més o menys» (que un LED brilli més o menys, o que un motor vagi més o menys ràpid).
    - c) Connectar-se a internet.
    - d) Configurar el port sèrie.
 
@@ -68,15 +64,15 @@
    - c) El símbol `+`.
    - d) Cap marca especial.
 
-9. Per què es posa una **resistència** en sèrie amb un LED?
+9. Per què es posa una **resistència** al costat de cada LED?
    - a) Per fer-lo més brillant.
-   - b) Per limitar el corrent i evitar que es cremi.
+   - b) Perquè no hi passi massa corrent i el LED no es cremi.
    - c) Perquè canviï de color.
    - d) No cal mai posar-ne.
 
 10. Una **constant** (`const int LED = 13;`) es fa servir per…
     - a) Un valor que anirà **canviant** durant el programa.
-    - b) Un valor fix que no canviarà (p. ex. el número de pin).
+    - b) Un valor fix que no canviarà (per exemple, el número de pin).
     - c) Esborrar variables.
     - d) Aturar el `loop()`.
 
@@ -84,8 +80,8 @@
 
 ## Pregunta oberta (opcional)
 
-11. Escriu (o explica en paraules) un `loop()` que faci **parpellejar un LED**: encendre,
-    esperar, apagar, esperar. Indica quines instruccions faries servir:
+11. Escriu (o explica amb paraules) un `loop()` que faci **parpellejar un LED**: encendre,
+    esperar, apagar, esperar. Quines instruccions faries servir?
 
 ___________________________________________________________________
 

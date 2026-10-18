@@ -108,7 +108,7 @@ Com que cada estat té la seva funció, el `loop()` es llegeix com una frase: *t
 | El relé no fa «clic» | Falta VCC o GND del mòdul, o IN no és al pin 7. | Revisa la taula del pas 2. |
 | El brunzidor no sona | Està al revés o en un altre pin. | + al pin 6, − a GND. |
 | Colors estranys | Cables del RGB canviats de lloc. | Mira la Pràctica 4. |
-| Error en compilar després de canviar-lo | Falta un `;` o un parèntesi. | Mira la línia que marca l'IDE i la de just abans. |
+| L'IDE marca un error en vermell després de canviar-lo | Falta un `;` o un parèntesi. | Mira la línia que marca l'IDE i la de just abans. |
 
 ## 🔗 On ho aplicaràs
 

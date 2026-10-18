@@ -1,10 +1,10 @@
 # Pràctica 4 · LED RGB: barrejar colors (i la primera funció pròpia)
 
-**Quan es fa:** Sessió 2 (després del *fade*) · **Fitxer:** `04_rgb.ino` · **Circuit:** [esquema de connexions, apartat 4](../../SA2_esquemes_connexions.md) (mòdul RGB: R=9, G=10, B=11, − a GND)
+**Quan es fa:** Sessió 2 (després de la llum que respira) · **Fitxer:** `04_rgb.ino` · **Circuit:** [esquema de connexions, apartat 4](../../SA2_esquemes_connexions.md) (mòdul RGB: R=9, G=10, B=11, − a GND)
 
 ## 🎯 Què faràs
 
-Un sol llum que fa **qualsevol color**: vermell, verd, blau, groc, lila… El LED RGB són **tres LED en un** (vermell, verd i blau). Si regules cadascun de 0 a 255, com al *fade*, els barreges i en surten colors nous. I aprendràs a crear **la teva pròpia instrucció**, `color()`.
+Un sol llum que fa **qualsevol color**: vermell, verd, blau, groc, lila… El LED RGB són **tres LED en un** (vermell, verd i blau). Si regules cadascun de 0 a 255, com a la llum que respira, els barreges i en surten colors nous. I aprendràs a crear **la teva pròpia instrucció**, `color()`.
 
 ## 🚀 Pas a pas
 
@@ -23,7 +23,7 @@ Un sol llum que fa **qualsevol color**: vermell, verd, blau, groc, lila… El LE
 
 3. **Mira la seqüència de colors:** vermell, verd, blau, groc, lila i apagat. Cada color dura 1 segon.
 4. **Crea 3 colors teus:** canvia els números d'algunes línies `color(…)` (per exemple, `color(255, 100, 0)`) i torna'l a pujar. Escriu a Classroom els 3 colors que t'agradin, amb els seus tres números (R, G, B).
-5. **⭐ Si acabes abans:** fes una **transició suau** entre dos colors (pista: és un *fade* com el de la Pràctica 3, però amb dos canals alhora).
+5. **⭐ Si acabes abans:** fes que un color canviï **a poc a poc** cap a un altre (pista: és la llum que respira de la Pràctica 3, però amb dos colors alhora: un puja i l'altre baixa).
 
 ## 🧠 Com funciona, a trossos
 
@@ -35,7 +35,7 @@ const int G = 10;
 const int B = 11;
 ```
 
-R (*red*) és el vermell, G (*green*) el verd i B (*blue*) el blau. Els tres han de ser pins amb **`~`**, perquè cada color es regula amb PWM de 0 a 255, com el *fade*.
+R (*red*) és el vermell, G (*green*) el verd i B (*blue*) el blau. Els tres han de ser pins amb **`~`**, perquè cada color es regula de 0 a 255, com la llum que respira.
 
 ### Tros 2 — La teva primera funció: `color(r, g, b)`
 
@@ -87,7 +87,7 @@ color(0, 0, 0);     delay(1000);   // apagat
 | Què passa | Per què | Com ho arreglo |
 |---|---|---|
 | Un color no surt mai | Aquell cable és en un altre pin o fa mal contacte. | Comprova la taula del pas 1. |
-| Els colors surten «al revés» (el vermell surt cian…) | El teu LED és d'**ànode comú**: el comú va a 5 V i els números s'inverteixen. | Mira l'esquema, apartat 4, o pregunta al docent. |
+| Els colors surten «al revés» (el vermell surt cian…) | Tens un LED RGB d'**un altre tipus**, que funciona al revés (255 l'apaga). | Pregunta al docent. |
 | No fa res de res | El − del mòdul no és a GND. | Connecta el − a GND. |
 
 ## 🔗 On ho aplicaràs

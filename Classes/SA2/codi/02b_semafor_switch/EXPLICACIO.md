@@ -92,7 +92,7 @@ Sense `break`, el programa **no surt** en acabar el `case`: continua llegint cap
 |---|---|---|
 | Se salta un color | Un `case` canvia `fase` a un número que no és el següent. | Revisa els `fase = …;`: han de fer 0 → 1 → 2 → 0. |
 | Es queda clavat en un color | Aquell `case` no canvia `fase`, o la torna a posar al mateix número. | Cada `case` ha de tenir el seu `fase = …;`. |
-| Error en compilar a prop d'un `case` | Falten els dos punts (`case 0:`) o el `;` del final d'una línia. | Mira la línia que marca l'IDE i la de just abans. |
+| L'IDE marca un error en vermell a prop d'un `case` | Falten els dos punts (`case 0:`) o el `;` del final d'una línia. | Mira la línia que marca l'IDE i la de just abans. |
 | Dues fases seguides «de cop» | Falta un `break;`. | Afegeix `break;` al final de cada `case`. |
 
 ## ⭐ El repte, pas a pas: la fase nocturna
@@ -109,6 +109,6 @@ L'objectiu és una finestreta nova, la **número 3**, on el groc fa pampallugues
 ## 🔗 On ho aplicaràs
 
 - **Sessió 3:** el [panell de senyalització](../05_panell_senyalitzacio/EXPLICACIO.md) també té estats (tot correcte, avís, alarma).
-- **SA6:** les **màquines d'estats** (el termòstat, els sistemes de control) són aquesta mateixa idea. L'única diferència és que el número de la pantalla el canviarà un sensor, no el pas del temps.
+- **SA6:** faràs servir aquesta mateixa idea (una pantalla que diu què toca) en màquines més grans, com un termòstat. La diferència és que el número de la pantalla el canviarà un sensor, no el rellotge.
 
 > ⭐ **Has acabat abans?** Tria un repte a **[Reptes de la SA2](../../../../Reptes/Reptes_SA2.md)** i, quan el docent te'l validi, pinta l'estrella al [tauler de reptes](../../../00_General/00_Tauler_reptes.md).

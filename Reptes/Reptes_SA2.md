@@ -1,113 +1,114 @@
 # Reptes SA2 · Sortides digitals i PWM
 
-> 🧑‍🎓 **Quan toca fer-ne un?** És l'**ampliació ⭐** de la SA: comença'l quan tinguis el **nucli al dia** (les activitats de la fitxa). Tria'n **UN**, ensenya'l al docent perquè el validi i pinta l'estrella al [tauler de reptes](../Classes/00_General/00_Tauler_reptes.md).
+> 🧑‍🎓 **Quan toca fer-ne un?** Els reptes són **extra ⭐**. Comença'n un quan ja tinguis fetes les pràctiques de la sessió. Tria'n **UN**, ensenya'l al docent quan funcioni i, si te'l valida, pinta l'estrella al [tauler de reptes](../Classes/00_General/00_Tauler_reptes.md).
 
-**Tria UN dels tres reptes.** Tots coordinen **diverses sortides** i/o fan servir **PWM** (`analogWrite`, 0–255, pins `~`). Mateix requisit mínim, ampliacions graduades. Simulables a Tinkercad/Wokwi.
+**Tria UN dels tres reptes.** Tots fan servir **diversos LED** o la **llum que respira** (`analogWrite`, de 0 a 255, en pins amb `~`). Els tres tenen un **mínim** igual de difícil i després **nivells** per anar més lluny. Els pots provar abans a Tinkercad o a Wokwi.
 
-> **Continguts SA2:** múltiples sortides digitals, PWM i brillantor, LED RGB, seqüències. · **Codi base:** `Classes/SA2/codi/`.
+> **El codi de partida** és a les pràctiques de la SA2 (`Classes/SA2/codi/`).
 
-> **Format "producte real":** cada repte simula un **encàrrec** amb **client**, **lliurable** i **ús al món real**. El requisit tècnic no canvia. *(1r trimestre — dispositius que informen i perceben. Vegeu `Programació didàctica/08c_Projectes_vida_real.md`.)*
-
----
-
-## 🚦 Repte A · Semàfor d'un encreuament
-
-**Context.** Programa el cicle d'un semàfor de cotxes amb els temps realistes de cada fase.
-
-> *Client: ajuntament (mobilitat) · Lliurable: regulador de semàfor d'una cruïlla · Món real: regulació de trànsit urbà.*
-
-**Què treballa.** Coordinar 3 sortides digitals amb una seqüència temporitzada.
-
-**Requisit mínim.**
-- 3 LED (vermell, groc, verd) amb la **seqüència correcta** i temps diferents per fase.
-- Codi comentat amb els pins ben identificats.
-
-**Ampliacions graduades.**
-1. *(bàsica)* Usa **constants** per als pins i **variables** per als temps.
-2. *(notable)* Afegeix un **semàfor de vianants** coordinat (verd vianants quan vermell cotxes).
-3. *(⭐⭐⭐)* Encapsula cada fase en una **funció** i fes el cicle net al `loop()`.
-
-    **Fites** (valida-les en ordre):
-    1. Una fase (p. ex. "cotxes passen") viu dins una funció que deixa **els tres LEDs** a l'estat correcte, i el semàfor funciona igual que abans.
-    2. Totes les fases són funcions i el `loop()` només les crida en ordre: no hi queda cap `digitalWrite` solt.
-    3. Canviar la durada d'una fase vol dir tocar **un sol número** (constant o paràmetre): prova-ho i comprova que res més no es desquadra.
+> **Com si fos un encàrrec de veritat:** cada repte té un **client** (qui te l'encarrega), una **cosa a entregar** i **on es fa servir** a la vida real.
 
 ---
 
-## 💡 Repte B · Llum d'ambient regulable
+## 🚦 Repte A · Semàfor d'una cruïlla
 
-**Context.** Una llum d'ambient que **puja i baixa d'intensitat** suaument (efecte "respiració") o canvia de color.
+**De què va.** Programa un semàfor de cotxes amb uns temps semblants als d'un semàfor de veritat.
 
-> *Client: estudi de disseny d'interiors · Lliurable: làmpada d'ambient regulable · Món real: il·luminació decorativa i domòtica.*
+> *Client: l'ajuntament · Entregues: el semàfor d'una cruïlla · A la vida real: els semàfors del teu poble o ciutat.*
 
-**Què treballa.** PWM amb `analogWrite` (0–255), bucles per fer transicions suaus.
+**Què practiques.** Encendre 3 LED en un ordre concret i amb temps diferents.
 
-**Requisit mínim.**
-- Un LED en un pin `~` que fa un **efecte fade** (puja i baixa d'intensitat) amb un bucle `for`.
-- Codi comentat.
+**El mínim.**
+- 3 LED (vermell, groc, verd) que s'encenen en l'**ordre correcte**, cada color amb el seu temps.
+- Comentaris al codi que diguin quin LED va a cada pin.
 
-**Ampliacions graduades.**
-1. *(bàsica)* Ajusta la **velocitat** del fade amb una variable.
-2. *(notable)* Passa a un **LED RGB** i fes una transició entre **dos colors**.
-3. *(⭐⭐⭐)* Programa un **cicle de colors** (arc de Sant Martí) barrejant els tres canals.
+**Nivells per anar més lluny.**
+1. *(bàsic)* Posa **noms** (constants) als pins i als temps, com a la Pràctica 2.
+2. *(notable)* Afegeix un **semàfor per a vianants**: quan els cotxes tenen vermell, els vianants tenen verd.
+3. *(⭐⭐⭐)* Posa cada color en una **funció** (`cotxesPassen()`, `cotxesEsperen()`…) perquè el `loop()` quedi curt i clar.
 
-    **Fites** (valida-les en ordre):
-    1. Tens una funció `color(r, g, b)` que fixa els tres canals amb una sola crida, provada amb 3–4 colors fixos (vermell, groc, cian...).
-    2. Una transició entre **dos** colors surt suau amb un `for` (un canal puja mentre l'altre baixa, sense salts visibles).
-    3. El cicle complet passa per tota la roda de color i torna exactament al color inicial, repetint-se sense cap tall brusc.
+    **Comprova-ho així** (en ordre):
+    1. Una fase (per exemple, «els cotxes passen») és dins d'una funció que deixa **els tres LED** com toca, i el semàfor funciona igual que abans.
+    2. Totes les fases són funcions i el `loop()` només les crida una darrere l'altra. Al `loop()` no hi queda cap `digitalWrite`.
+    3. Per canviar quant dura una fase, només has de canviar **un número**. Prova-ho.
+
+---
+
+## 💡 Repte B · Llum d'ambient
+
+**De què va.** Un llum per a una habitació que **s'encén i s'apaga a poc a poc** (com si respirés) o que **canvia de color**.
+
+> *Client: una botiga de decoració · Entregues: un llum d'ambient · A la vida real: els llums de colors de les habitacions i les cases intel·ligents.*
+
+**Què practiques.** La llum que respira (`analogWrite`, de 0 a 255) i el `for` per fer canvis suaus.
+
+**El mínim.**
+- Un LED en un pin amb `~` que **respira** (puja i baixa de llum) amb un `for`, com a la Pràctica 3.
+- Comentaris al codi.
+
+**Nivells per anar més lluny.**
+1. *(bàsic)* Fes que la **velocitat** de la respiració depengui d'una variable.
+2. *(notable)* Fes-ho amb el **LED RGB**: que passi a poc a poc d'un color a un altre.
+3. *(⭐⭐⭐)* Fes que passi per **tots els colors de l'arc de Sant Martí**, un darrere l'altre.
+
+    **Comprova-ho així** (en ordre):
+    1. Tens la funció `color(r, g, b)` de la Pràctica 4 i l'has provada amb 3 o 4 colors fixos (vermell, groc, blau cel…).
+    2. El canvi entre **dos** colors es fa a poc a poc amb un `for` (un color puja mentre l'altre baixa), sense salts.
+    3. Passa per tots els colors i torna al primer, i es repeteix sense cap salt brusc.
 
 ---
 
 ## 📊 Repte C · Indicador de nivell (barra de LED)
 
-**Context.** Un indicador visual de nivell (bateria, dipòsit, volum) amb una **barra de LEDs** que s'omple per trams.
+**De què va.** Una **barra de LED** que s'omple de mica en mica, com l'indicador de bateria del mòbil o el del volum.
 
-> *Client: fabricant d'equips industrials · Lliurable: indicador de nivell de barra · Món real: panells de control de bateria, dipòsit o volum.*
+> *Client: una fàbrica de màquines · Entregues: un indicador de nivell · A la vida real: la bateria del mòbil, el nivell d'un dipòsit, el volum d'un altaveu.*
 
-**Què treballa.** Control de múltiples sortides segons un valor, organització amb bucles.
+**Què practiques.** Encendre molts LED segons un número, fent servir repeticions (`for`).
 
-**Requisit mínim.**
-- 4–5 LED que s'encenen **progressivament** segons un nivell (de moment fixat al codi o amb un comptador).
-- Codi comentat.
+**El mínim.**
+- 4 o 5 LED que s'encenen **un darrere l'altre** segons un nivell (de moment, un número que tu poses al codi).
+- Comentaris al codi.
 
-**Ampliacions graduades.**
-1. *(bàsica)* Recorre els LED amb un **bucle `for`** (el de la pràctica del *fade*). Si vols anar més enllà: en lloc d'un `digitalWrite` per LED, guarda els pins en un **array** — `const int LEDS[] = {8, 9, 10, 11};` — i fes que el `for` els recorri amb `LEDS[i]`. L'array no s'ha vist a classe: aquí el tastes, i és tota la sintaxi que necessites.
-2. *(notable)* Fes que el nivell **pugi i baixi** en bucle (efecte VU-mètre).
-3. *(⭐⭐⭐)* Substitueix l'últim LED per un **RGB** que passi de verd a vermell segons el nivell.
+**Nivells per anar més lluny.**
+1. *(bàsic)* Encén els LED amb un **`for`**, com a la Pràctica 3, en lloc d'escriure una línia per a cada LED.
+   - **Si vols anar més lluny:** guarda tots els pins en una **llista** (un *array*): `const int LEDS[] = {8, 9, 10, 11};`. Després, dins del `for`, fes servir `LEDS[i]` per anar d'un LED a l'altre. Les llistes encara no les hem fet a classe: això és tot el que necessites saber.
+2. *(notable)* Fes que el nivell **pugi i baixi** sense parar, com les barres que es mouen amb la música.
+3. *(⭐⭐⭐)* Canvia l'últim LED pel **LED RGB** i fes que passi de **verd a vermell** com més ple estigui.
 
-    **Fites** (valida-les en ordre):
-    1. El LED RGB mostra **verd fix** amb nivell baix i **vermell fix** amb nivell alt (els dos casos extrems, forçats al codi).
-    2. Amb `map()` calcules els components vermell i verd a partir del nivell, i els valors surten coherents pel Monitor Sèrie (0–255, un puja quan l'altre baixa).
-    3. Mentre la barra puja i baixa, el color canvia **gradualment** i sempre és coherent amb el nombre de LEDs encesos.
+    **Comprova-ho així** (en ordre):
+    1. El LED RGB és **verd** quan el nivell és baix i **vermell** quan és alt (prova-ho posant tu el nivell al codi).
+    2. Amb `map()` calcules quant vermell i quant verd toca a cada nivell. Mira els números al Monitor Sèrie: van de 0 a 255, i quan un puja l'altre baixa.
+    3. Mentre la barra puja i baixa, el color canvia **a poc a poc** i sempre va d'acord amb els LED que estan encesos.
 
 ---
 
-## 🎨 Fes-lo teu (tria abans de començar)
+## 🎨 Fes-lo teu (decideix-ho abans de començar)
 
-> El repte fixa **què** ha de fer el sistema; **el context el poses tu**. Tria i anota-ho al quadern:
-> - **A:** temporitza el semàfor amb **un encreuament real que coneguis** (quant dura el verd de veritat?).
-> - **B:** tria **l'ambient** de la llum: quins colors, per a quina habitació o moment.
-> - **C:** decideix **què representa la barra**: volum, nivell d'un dipòsit, intensitat de llum… i posa-li unitats.
+> El repte diu **què** ha de fer el circuit. **Per a què serveix, ho tries tu.** Apunta-ho al quadern:
+> - **A:** fixa't en un **semàfor de veritat** que coneguis. Quant dura el verd?
+> - **B:** tria **per a quina habitació** és el llum i quins colors tindrà.
+> - **C:** decideix **què mesura la barra**: el volum, l'aigua d'un dipòsit, la llum… i posa-hi unitats.
 
-## Material necessari (segons repte)
-- Arduino UNO + cable USB · LEDs (3–5) + resistències 220 Ω (o LED RGB) · cables / placa de proves · o **Tinkercad/Wokwi**.
+## Què necessites
+- Arduino UNO + cable USB · de 3 a 5 LED + resistències de 220 Ω (o el LED RGB) · cables i protoboard · o **Tinkercad/Wokwi**.
 
-## Per on començar (mètode de projecte + PRIMM)
-1. **Analitzar:** quantes sortides necessito i com es coordinen en el temps?
-2. **Dissenyar (Predir):** fes un esquema de pins i una línia de temps de les fases.
-3. **Prototipar:** parteix dels sketches de `Classes/SA2/codi/` (`02_semafor`, `03_fade_pwm`, `04_rgb`, `05_panell_senyalitzacio`).
-4. **Provar:** comprova temps i colors; depura amb el Monitor Sèrie si cal.
-5. **Millorar:** introdueix constants, funcions i una ampliació.
+## Per on començar
+1. **Pensa:** quants LED necessito, i en quin ordre s'han d'encendre?
+2. **Dibuixa:** fes un dibuix dels cables i apunta l'ordre de les llums (què passa primer, què després).
+3. **Comença d'una pràctica:** parteix del codi d'una pràctica de la SA2 (el semàfor, la llum que respira, el RGB o el panell).
+4. **Prova:** comprova els temps i els colors. Si alguna cosa no va, segueix DEPURA.
+5. **Millora:** posa noms als números, fes funcions i prova un nivell més.
 
-## Com s'avalua
-| Rúbrica | Per què |
+## Com es corregeix
+| Rúbrica | Què es mira |
 |---|---|
-| **R1** (codi) | Estructura i modularitat (funcions per fase). |
-| **R2** (circuit) | Muntatge correcte de múltiples sortides i resistències. |
-| **R4** (documentació) | Esquema de connexions i quadern tècnic. |
+| **R1** (codi) | Que el codi estigui ordenat (per exemple, una funció per a cada fase). |
+| **R2** (circuit) | Que els LED estiguin ben connectats, cadascun amb la seva resistència. |
+| **R4** (quadern) | El dibuix dels cables i el que has apuntat al quadern tècnic. |
 
-## Producte / entrega
-- Codi `.ino` comentat + **esquema de connexions** + entrada al quadern tècnic.
+## Què entregues
+- El codi `.ino` amb comentaris + el **dibuix dels cables** + l'entrada al quadern tècnic.
 
 ---
 
@@ -121,10 +122,10 @@
 
 ## 🤖 Cap al robot del trimestre
 
-Aquest trimestre tot suma cap a la **mascota reactiva** ([dossier](../Classes/00_General/00_Projecte_T1_Mascota.md) · [fil conductor](../Classes/00_General/00_Fil_conductor_robots.md)):
+Aquest trimestre, tot el que fas serveix per a la **mascota** ([dossier](../Classes/00_General/00_Projecte_T1_Mascota.md) · [fil conductor](../Classes/00_General/00_Fil_conductor_robots.md)):
 
-- **Repte A (semàfor)** → el codi de colors d'humor de la mascota (contenta/neutra/enfadada) als ulls NeoPixel.
-- **Repte B (llum d'ambient)** → la «respiració» dels ulls quan la mascota dorm.
-- **Repte C (indicador de nivell)** → el termòmetre d'emoció de la mascota: el LED RGB passa de verd a vermell segons la seva intensitat (tranquil·la ↔ molt excitada), igual que la barra puja i baixa amb el nivell.
+- **Repte A (semàfor)** → els colors d'humor de la mascota als ulls: contenta, normal o enfadada.
+- **Repte B (llum d'ambient)** → els ulls que «respiren» quan la mascota dorm.
+- **Repte C (indicador de nivell)** → el termòmetre d'emoció de la mascota: el LED passa de verd (tranquil·la) a vermell (molt nerviosa).
 
-El que programes al repte és **directament** una expressió de la teva mascota: guarda el codi, que el reutilitzaràs quan la caixa estigui tallada.
+El que programes al repte és **una expressió de la teva mascota**: guarda el codi, que el faràs servir quan la caixa estigui tallada.

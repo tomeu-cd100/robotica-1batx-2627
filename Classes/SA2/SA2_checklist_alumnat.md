@@ -4,26 +4,27 @@
 
 > 📄 **[Versió PDF per imprimir i omplir a mà](pdf/SA2_checklist_alumnat.pdf)**
 
-> 🧑‍🎓 **Quan toca?** Tingues-lo obert **durant tota la SA** (marca a mesura que avances) i repassa'l **sencer abans d'entregar** — és l'últim pas de l'itinerari.
+> 🧑‍🎓 **Quan toca?** Tingues-lo a mà **durant tota la SA** i marca cada cosa quan la tinguis feta. Abans d'entregar, repassa'l **sencer**: és l'últim pas.
 
-> Marca cada cosa quan la tinguis feta. Recorda: **cada LED amb resistència de 220 Ω** i polaritat correcta.
+> Recorda: **cada LED amb la seva resistència de 220 Ω**, i la **pota llarga cap al pin**.
 
 ## ✅ Abans d'acabar aquesta SA he de…
-- [ ] Programar el **semàfor** de 3 LED amb `if` i constants de temps, i provar la fase nocturna (S1)
-- [ ] Fer el **racó de mesura** amb multímetre (V al LED + V a la resistència ≈ 5 V) (S1)
-- [ ] Regular **intensitat i color** amb PWM (`analogWrite`, `map`) i crear colors RGB (S2)
-- [ ] Lliurar el **panell de senyalització** (estat RGB + so + relé) i defensar-lo 1' → *R1 i R2* (S3)
-- [ ] Tenir el **quadern tècnic** al dia (esquema, diferència `digitalWrite`/`analogWrite`, un error resolt)
-- [ ] 🤖 Guardar el codi del panell (colors, animacions i sons): és el de la teva **mascota** (el robot del trimestre) → [dossier](../00_General/00_Projecte_T1_Mascota.md)
+- [ ] Fer funcionar el **semàfor** de 3 LED i provar el **mode nit** (Sessió 1)
+- [ ] Fer el **racó de mesura** amb el multímetre: els volts del LED + els de la resistència ≈ 5 V (Sessió 1)
+- [ ] Fer que un LED **respiri** i crear **colors** amb el LED RGB (Sessió 2)
+- [ ] Entregar el **panell de senyalització** (color + so + relé) i explicar-lo en 1 minut → *R1 i R2* (Sessió 3)
+- [ ] Tenir el **quadern tècnic** al dia: un dibuix del circuit, la diferència entre `digitalWrite` i `analogWrite` i un error que hagi arreglat
+- [ ] Enviar el **formulari de Classroom** (només a la Sessió 3)
+- [ ] 🤖 Guardar el codi del panell: els seus colors i sons seran els de la teva **mascota** (el robot del trimestre) → [dossier](../00_General/00_Projecte_T1_Mascota.md)
 
 ## 🚦 Com vaig? (pinta el teu nivell)
 | Ja sé… | 🔴 Encara no | 🟡 A mitges | 🟢 Sí |
 |---|---|---|---|
-| Programar seqüències amb `for`/`if` i variables | | | |
-| Regular intensitat/color amb PWM (`analogWrite`, `map`) | | | |
-| Muntar el circuit amb resistència i polaritat correctes | | | |
+| Fer programes que encenen llums en ordre i trien què fer (`if`, `switch`) | | | |
+| Fer brillar més o menys un llum i barrejar colors (`analogWrite`) | | | |
+| Muntar el circuit amb resistència i la pota llarga al pin | | | |
 
 ## 🆘 Si m'encallo
-Segueixo **DEPURA**: **D**escriu · **E**xamina · **P**rova una hipòtesi cada cop · **U**bica · **R**epara · **A**punta. Reviso la **resistència** i la **polaritat** de cada LED. Encara encallat? **[Targeta de rescat](../00_General/00_Targetes_rescat.md)** (començo per la 🟢).
+Segueixo **DEPURA**: **D**igues què esperaves i què passa · **E**xamina · **P**rova un sol canvi cada vegada · **U**bica el problema · **R**epara · **A**punta-ho. Primer de tot, miro la **resistència** i que la **pota llarga** vagi al pin. Encara no ho trobo? **[Targeta de rescat](../00_General/00_Targetes_rescat.md)** (començo per la 🟢).
 
-> Tens dos o més 🔴? Repassa el material i demana ajuda. La **versió nucli** (panell amb 2 estats ben distingibles) ja és assoliment satisfactori.
+> Tens dos o més 🔴? Repassa la pràctica i demana ajuda. **Per aprovar n'hi ha prou** amb un panell de 2 estats que es distingeixin bé.

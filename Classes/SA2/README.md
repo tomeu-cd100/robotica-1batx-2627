@@ -20,7 +20,7 @@ Segona situació d'aprenentatge (**6 h · 3 sessions**, 1r trimestre). Passem d'
 
 1. 🔌 **Munta** 3 LED: vermell al pin 8, groc al 9 i verd al 10, **cadascun amb la seva resistència de 220 Ω**. La pota llarga de cada LED va cap al pin. Mira-ho a l'**[esquema, apartat 2](SA2_esquemes_connexions.md)**.
 2. 🔮 Obre la **[Pràctica 2](codi/02_semafor/EXPLICACIO.md)**. Prediu en quin ordre s'encendran les llums, carrega el codi i escriu a [✍️ Classroom](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODcwNTEzOTQ1NjAz/details) quants segons dura cada color (pregunta «Durada de cada fase»).
-3. 📏 **Racó de mesura:** quan el docent et cridi, mesura amb el multímetre la tensió d'un LED encès i la de la seva resistència. Escriu els valors a [✍️ Classroom](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODcwNTEzOTQ1NjAz/details) (pregunta «Racó de mesura»). Si avui no hi arribes, ho faràs a l'inici de la Sessió 2.
+3. 📏 **Racó de mesura:** quan el docent et cridi, mesura amb el multímetre quants volts té un LED encès i quants en té la seva resistència. Escriu els valors a [✍️ Classroom](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODcwNTEzOTQ1NjAz/details) (pregunta «Racó de mesura»). Si avui no hi arribes, ho faràs a l'inici de la Sessió 2.
 4. 🔁 Obre la **[Pràctica 2b](codi/02b_semafor_switch/EXPLICACIO.md)**: és el mateix semàfor, organitzat en «caselles» (`switch` i `case`). Carrega'l i fes l'experiment del pas 4 de la pràctica: canvia `fase = 1;` per `fase = 2;` al `case 0`. Què passa? Apunta-ho al **quadern**.
 5. ⭐ **Repte:** afegeix una **fase nocturna** (el groc fa pampallugues) com a `case 3`: la Pràctica 2b ho explica pas a pas. Explica a [✍️ Classroom](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODcwNTEzOTQ1NjAz/details) com ho has fet (pregunta «fase nocturna»).
 6. 📓 **Quadern (en paper):** l'esquema dels 3 LED i un error que hagis resolt.
@@ -33,12 +33,12 @@ Segona situació d'aprenentatge (**6 h · 3 sessions**, 1r trimestre). Passem d'
 <summary><strong>Sessió 2</strong> · PWM: la llum que respira i els colors</summary>
 
 1. 🔌 **Munta** un LED al **pin 9**, amb la seva resistència. El pin 9 té el símbol `~`: vol dir que és un pin PWM. Mira-ho a l'**[esquema, apartat 3](SA2_esquemes_connexions.md)**.
-2. 🔮 Obre la **[Pràctica 3](codi/03_fade_pwm/EXPLICACIO.md)** i carrega el *fade*. Escriu a [✍️ Classroom](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODcwNTEzOTQ1NjAz/details) entre quins valors va `analogWrite` (de ___ a ___).
+2. 🔮 Obre la **[Pràctica 3](codi/03_fade_pwm/EXPLICACIO.md)** i carrega la llum que respira. Escriu a [✍️ Classroom](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODcwNTEzOTQ1NjAz/details) entre quins valors va `analogWrite` (de ___ a ___).
 3. 🔌 **Treu el LED i connecta el mòdul RGB** del kit amb 4 cables: R → 9, G → 10, B → 11 i − → GND. Mira-ho a l'**[esquema, apartat 4](SA2_esquemes_connexions.md)**.
 4. 🎨 Obre la **[Pràctica 4](codi/04_rgb/EXPLICACIO.md)**. Crea 3 colors teus i escriu-ne els valors (R, G, B) a [✍️ Classroom](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODcwNTEzOTQ1NjAz/details).
 5. 📓 **Quadern (en paper):** la taula dels colors que has provat.
 
-**Si acabes abans:** ⭐ fes una transició suau entre dos colors i explica-la a [✍️ Classroom](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODcwNTEzOTQ1NjAz/details) (pregunta «transició suau»).
+**Si acabes abans:** ⭐ fes que un color canviï a poc a poc cap a un altre i explica-ho a [✍️ Classroom](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODcwNTEzOTQ1NjAz/details) (pregunta «transició suau»).
 
 </details>
 
@@ -58,7 +58,7 @@ Segona situació d'aprenentatge (**6 h · 3 sessions**, 1r trimestre). Passem d'
 ### Si vols més (opcional)
 
 - [Reptes de la SA2](../../Reptes/Reptes_SA2.md) ⭐ — tria el teu context.
-- [Exemple resolt](SA2_exemple_resolt.md) · [Diagrama de flux del *fade*](SA2_diagrama_flux.md) · [Qüestionari de conceptes](SA2_questionari_conceptes.md) — per repassar a casa.
+- [Exemple resolt](SA2_exemple_resolt.md) · [Dibuix del programa de la llum que respira](SA2_diagrama_flux.md) · [Qüestionari de conceptes](SA2_questionari_conceptes.md) — per repassar a casa.
 - [Fitxa base](SA2_fitxa_alumnat.md) — objectius, com s'avalua i la rutina DEPURA quan alguna cosa no funciona.
 - [Fitxa ampliada](SA2_fitxa_ampliada.md) — aprofundiment.
 

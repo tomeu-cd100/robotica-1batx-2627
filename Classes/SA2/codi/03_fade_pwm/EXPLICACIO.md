@@ -1,4 +1,4 @@
-# Pràctica 3 · El fade: graduar la intensitat amb PWM
+# Pràctica 3 · La llum que respira (PWM)
 
 **Quan es fa:** Sessió 2 · **Fitxer:** `03_fade_pwm.ino` · **Circuit:** [esquema de connexions, apartat 3](../../SA2_esquemes_connexions.md) (un LED al pin 9) · **Suport:** [diagrama de flux](../../SA2_diagrama_flux.md)
 
@@ -89,7 +89,7 @@ for (int valor = 255; valor >= 0; valor--) {
 ## 🔗 On ho aplicaràs
 
 - **Ara mateix:** el [LED RGB](../04_rgb/EXPLICACIO.md) són **tres** LED regulats així, un per a cada color.
-- **Repte de la sessió:** una transició suau entre dos colors són dos *fades* que passen alhora.
+- **Repte de la sessió:** fer que un color canviï a poc a poc cap a un altre són dues llums que respiren alhora (una puja i l'altra baixa).
 - **Exemple resolt:** el [llum de posició que respira](../../SA2_exemple_resolt.md) és el mateix patró amb un altre muntatge, comentat pas a pas. Mira'l **després** del teu primer intent.
 - **SA4:** amb el PWM regularàs la **velocitat d'un motor**.
 

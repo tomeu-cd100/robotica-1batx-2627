@@ -6,91 +6,91 @@
 
 <!-- /web:only-github -->
 
-> Controlaràs LED, color i so, i regularàs la intensitat amb PWM. Recorda: **cada LED amb resistència de 220 Ω** i polaritat correcta.
+> Faràs llums que s'encenen en ordre, llums que respiren, colors i sons. Recorda sempre: **cada LED amb la seva resistència de 220 Ω**, i la **pota llarga cap al pin**.
 
-## 🎯 Objectius i avaluació
+## 🎯 Què aprendràs i com s'avalua
 
-**En acabar aquesta SA podré:**
-1. Escriure programes amb **variables, `if`, `for` i `switch`** que controlin llums i so.
-2. **Graduar** intensitat i color amb PWM (`analogWrite`, 0–255, pins `~`).
-3. Muntar circuits correctes (resistència, polaritat) i **mesurar-hi tensions** amb el multímetre.
+**En acabar aquesta SA sabré:**
+1. Fer programes que encenen llums **en ordre** i que **trien** què fer (`if`, `switch`).
+2. Fer que un llum brilli **més o menys** i barrejar **colors** (`analogWrite`, de 0 a 255).
+3. Muntar bé els circuits (resistència i pota llarga) i **mesurar** amb el multímetre.
 
-| Què lliuro | Rúbrica | On compta |
+| Què entrego | Com es corregeix | Quant compta |
 |---|---|---|
-| **Panell de senyalització** (producte, S3) + defensa d'1' | **R1** (codi) i **R2** (circuit) | Projectes (45 %) |
-| **Quadern tècnic** (esquemes, mesures, errors) | **R4** | Quadern tècnic i pràctiques (25 %) |
-| Mini-check individual (inici S3) | semàfor | **No qualifica** (em situa) |
+| **Panell de senyalització** (Sessió 3) + explicar-lo en 1 minut | **R1** (el codi) i **R2** (el circuit) | Projectes (45 %) |
+| **Quadern tècnic** (dibuixos, mesures, errors) | **R4** | Quadern tècnic i pràctiques (25 %) |
+| Mini-check (inici de la Sessió 3) | — | **No compta per a nota**: només et diu com vas |
 
-> 🪜 **Versió nucli (ja és assoliment satisfactori):** panell amb **2 estats** clarament distingibles amb color i so. **Versió completa:** els 3 estats + relé, i codi ordenat amb una funció per estat.
+> 🪜 **Per aprovar n'hi ha prou amb:** un panell amb **2 estats** que es distingeixin bé (color i so). **Per treure més nota:** 3 estats + relé, i el codi ordenat (una funció per a cada estat).
 
-> Escala de nota 0-10, rúbriques i tot el sistema: **[Com s'avalua la matèria](../00_General/00_Avaluacio_per_alumnat.md)**.
+> Com es posa la nota (de 0 a 10) i totes les rúbriques: **[Com s'avalua la matèria](../00_General/00_Avaluacio_per_alumnat.md)**.
 
 ---
 
-## Les activitats · al Google Classroom
+## On responc · Google Classroom
 
-Aquesta fitxa es respon **en línia**, a la tasca de Google Classroom (val **10 punts**). **No cal que la responguis d'entrada**: cada activitat porta el seu **enunciat dins de la tasca**, i l'**itinerari de la portada de la SA** et diu quina toca a cada sessió. Obre-la quan comencis a treballar-hi i ves-la responent a mesura que avances:
+Les preguntes d'aquesta fitxa es responen a la **tasca de Google Classroom** (val **10 punts**). **No cal fer-ho tot de cop:** la portada de la SA et diu, sessió a sessió, què has de respondre cada dia.
 
 > 👉 **[Obre la tasca: SA2 · Fitxa base (Google Classroom)](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODcwNTEzOTQ1NjAz/details)**
 
-En aquesta pàgina hi tens el que necessites mentre treballes: els **objectius i l'avaluació** (a dalt) i la rutina **DEPURA** (a sota).
+En aquesta pàgina hi tens el que et pot fer falta mentre treballes: què aprendràs (a dalt) i què fer si alguna cosa no funciona (a sota).
 
 <!-- web:only-github -->
 
 ## El que has de fer
 
-### 1 · El semàfor (S1)
-1. Munta 3 LED (vermell-8, groc-9, verd-10), cadascun amb la seva resistència. Carrega `02_semafor.ino`.
-2. Durada de cada fase: vermell ____ s · verd ____ s · groc ____ s.
-3. **D'on surt el 220 Ω?** Calcula amb la llei d'Ohm: R = (5 − 2) V / 0,02 A = ______ Ω. Per què usem 220 Ω i no aquest valor exacte? ______________________
-4. **Racó de mesura (multímetre):** amb un LED encès, tensió al LED = ______ V · a la resistència = ______ V · suma ≈ ______ V. Què hi observes? ______________________
-5. Amb la versió **`switch`** (pràctica 2b): si al `case 0` poses `fase = 2;` en lloc de `fase = 1;`, què fa el semàfor i per què? ______________________ (al quadern)
-6. **Repte:** afegeix una **fase nocturna** (groc intermitent) com a fase nova del `switch`.
+### 1 · El semàfor (Sessió 1)
+1. Munta 3 LED (vermell al 8, groc al 9, verd al 10), cadascun amb la seva resistència. Carrega `02_semafor.ino`.
+2. Quant dura cada color? Vermell ____ s · verd ____ s · groc ____ s.
+3. **Per què 220 Ω?** El LED necessita uns 2 V i la placa en dona 5. Fes el compte: (5 − 2) ÷ 0,02 = ______ Ω. Per què posem una resistència de 220 Ω i no del número exacte? ______________________
+4. **Racó de mesura (multímetre):** amb un LED encès, el LED té ______ V · la resistència té ______ V · entre tots dos sumen ______ V. Què hi veus? ______________________
+5. Amb el semàfor de la pràctica 2b: si al `case 0` poses `fase = 2;` en lloc de `fase = 1;`, què fa el semàfor? Per què? ______________________ (al quadern)
+6. **Repte:** afegeix un **mode nit** (el groc fa pampallugues) com a `case 3`.
 
-> 💡 Si t'encalles muntant el semàfor, comença per **un sol LED** amb la [pràctica 1](codi/01_led_basic/EXPLICACIO.md) (el `Blink` de la SA1 al pin 8), o parteix de l'**esquelet** de la secció «Si t'encalles» de la [pàgina de la pràctica del semàfor](codi/02_semafor/EXPLICACIO.md): pins i `setup()` ja fets; tu omples els `// TODO` de les tres fases.
+> 💡 No et surt el semàfor? Comença per **un sol LED** amb la [pràctica 1](codi/01_led_basic/EXPLICACIO.md), o fes servir l'**esquelet** de l'apartat «Si t'encalles» de la [pràctica del semàfor](codi/02_semafor/EXPLICACIO.md): només hi has d'omplir els `// TODO` de les tres llums.
 
-### 2 · PWM: intensitat i color (S2)
-1. Efecte *fade* amb `03_fade_pwm.ino` (pin 9). Rang d'`analogWrite`: ____ a ____
-2. LED RGB amb `04_rgb.ino`. Anota 3 colors creats (R, G, B): ______________________
-3. **Repte:** transició suau entre dos colors: __________ → __________
+### 2 · La llum que respira i els colors (Sessió 2)
+1. Carrega `03_fade_pwm.ino` (LED al pin 9). `analogWrite` va de ____ a ____.
+2. Amb el LED RGB i `04_rgb.ino`, crea 3 colors i apunta'n els números (R, G, B): ______________________
+3. **Repte:** fes que un color canviï a poc a poc cap a un altre: __________ → __________
 
-### 3 · Producte: panell de senyalització (S3)
-Dissenya un panell que indiqui **estats** amb color + so + una càrrega (relé):
+### 3 · El panell de senyalització (Sessió 3)
+Dissenya un panell que avisi de 3 **estats** amb color + so + relé:
 
-| Estat | Color RGB | So (piezo) | Relé |
+| Estat | Color | So (brunzidor) | Relé (engegat o apagat) |
 |---|---|---|---|
 | Tot correcte | | | |
 | Avís | | | |
 | Alarma | | | |
 
-**Defensa (1'):** explica què fa el teu panell i una millora possible. S'avalua amb **R1** (codi) i **R2** (circuit).
+**Explica'l en 1 minut:** què fa el teu panell i una millora que li faries. Es corregeix amb **R1** (codi) i **R2** (circuit).
 
 <!-- /web:only-github -->
 
-## Producte · Panell de senyalització
-Es fa a la **S3**: un panell que indica **estats** (tot correcte / avís / alarma) amb **color (RGB) + so (piezo) + relé**. **Defensa d'1'**: què fa el teu panell i una millora possible. S'avalua amb **R1** (codi) i **R2** (circuit).
+## El producte · Panell de senyalització
+Es fa a la **Sessió 3**: un panell que avisa de **3 estats** (tot correcte / avís / alarma) amb **color (LED RGB) + so (brunzidor) + relé**. Al final l'expliques en **1 minut**: què fa i una millora possible. Es corregeix amb **R1** (codi) i **R2** (circuit).
 
-## Si t'encalles (DEPURA)
-> **D**escriu · **E**xamina (LED, error, Monitor Sèrie) · **P**rova una hipòtesi cada cop · **U**bica · **R**epara · **A**punta-ho. Revisa la **resistència** i la **polaritat** de cada LED. Encara encallat? **[Targeta de rescat](../00_General/00_Targetes_rescat.md)** (comença per la 🟢).
+## Si alguna cosa no funciona (DEPURA)
+> **D**igues què esperaves i què passa · **E**xamina (el LED, el missatge d'error) · **P**rova **un sol canvi** cada vegada · **U**bica on és el problema · **R**epara-ho · **A**punta-ho al quadern. Mira sempre primer la **resistència** i que la **pota llarga** vagi al pin. Encara no ho trobes? **[Targeta de rescat](../00_General/00_Targetes_rescat.md)** (comença per la 🟢).
 
 <!-- web:only-github -->
 
-## M'autoavaluo (Insuficient · Suficient/Bé · Notable · Excel·lent — la nota és 0-10)
-| Criteri | Insuficient | Suficient/Bé | Notable | Excel·lent |
+## Com ho he fet? (la nota és de 0 a 10)
+| Sé fer… | Encara no | Bé | Molt bé | Excel·lent |
 |---|---|---|---|---|
-| Programo seqüències amb `for`/`if`/`switch` i variables | ☐ | ☐ | ☐ | ☐ |
-| Regulo intensitat/color amb PWM (`analogWrite`, `map`) | ☐ | ☐ | ☐ | ☐ |
-| Munto el circuit amb resistència i polaritat correctes | ☐ | ☐ | ☐ | ☐ |
+| Programes que encenen llums en ordre i trien què fer (`if`, `switch`) | ☐ | ☐ | ☐ | ☐ |
+| Fer brillar més o menys un llum i barrejar colors (`analogWrite`) | ☐ | ☐ | ☐ | ☐ |
+| Muntar el circuit amb resistència i la pota llarga al pin | ☐ | ☐ | ☐ | ☐ |
 
 ## Quadern tècnic
 
-> 📓 Escriu-ho a la teva entrada del **[quadern tècnic](../00_General/00_Quadern_tecnic.md)** (guia + plantilla; compta el 25 %).
-- **Concepte nou més important:** ______________________________________
+> 📓 Escriu-ho al teu **[quadern tècnic](../00_General/00_Quadern_tecnic.md)** (compta el 25 %).
+- **La cosa nova més important que he après:** ______________________________________
 - **Diferència entre `digitalWrite` i `analogWrite`:** ___________________
-- **Un error i com l'he resolt:** _____________________________________
+- **Un error que he tingut i com l'he arreglat:** _____________________________________
 
 <!-- /web:only-github -->
 
-> 📌 **Vols més?** +[Reptes ⭐](../../Reptes/Reptes_SA2.md) (semàfor de vianants, indicador de nivell), ajuda entre iguals, revisió creuada de codi, exit ticket, pensament computacional i ODS → **[SA2_fitxa_ampliada.md](SA2_fitxa_ampliada.md)**
+> 📌 **Vols més?** [Reptes ⭐](../../Reptes/Reptes_SA2.md) (semàfor per a vianants, indicador de nivell) i més activitats a la **[fitxa ampliada](SA2_fitxa_ampliada.md)**.
 
-> 🤖 **Cap al robot del trimestre:** les expressions que has programat en aquesta fitxa (colors, animacions i sons) són les de la teva **mascota**. Guarda el codi: el reaprofitaràs quan la caixa estigui tallada. Peces, muntatge i cablatge: **[dossier de la mascota](../00_General/00_Projecte_T1_Mascota.md)**.
+> 🤖 **El robot del trimestre:** els colors, llums i sons que programes en aquesta SA seran les **expressions** de la teva **mascota**. Guarda el codi! Tot sobre la mascota: **[dossier de la mascota](../00_General/00_Projecte_T1_Mascota.md)**.

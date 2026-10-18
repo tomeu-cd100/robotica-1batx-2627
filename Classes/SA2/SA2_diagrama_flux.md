@@ -1,18 +1,20 @@
 # SA2 · Diagrama de flux — Llum que respira amb PWM (bucle *fade*)
 
-> **Per a qui és?** Alumnat. És el programa del *fade* de l'**Activitat 2 · PWM (S2)**, però **dibuixat**. Mira'l **abans de programar** aquella activitat; després l'exemple resolt i el codi. A les sessions 1 i 2 encara no et cal: segueix l'itinerari de la portada.
+> **Per a qui és?** Per a tu. És el programa de la **llum que respira** (Sessió 2, [Pràctica 3](codi/03_fade_pwm/EXPLICACIO.md)), però **dibuixat** en lloc d'escrit. Mira'l si el codi et costa d'entendre: el dibuix i el codi diuen exactament el mateix.
 
-## El flux
+## El dibuix
 
 ![Diagrama de flux de la SA2](img/sa2-flux.svg)
-## Llegenda
-- Caixa **fosca** = **inici**.
-- Caixa **teal** `[ ... ]` = una **acció** (una instrucció o bloc de codi).
-- **Rombe ambre** `< ... ? >` = una **decisió** (`if`): en surt una branca per cada cas.
-- **Fletxa ambre** = **bucle**: torna enrere i es repeteix.
 
-## Del diagrama al codi
-- Cada caixa **PUJA / BAIXA** és un bucle `for`: `for (int v = 0; v <= 255; v += PAS)` i `for (int v = 255; v >= 0; v -= PAS)`.
-- La decisió `< v <= 255 ? >` és la **condició** del `for`: mentre és SÍ, repeteix; quan és NO, surt.
-- L'acció `[ analogWrite(LED, v); delay(ESPERA); ]` gradua la **intensitat** (0–255) i espera entre passos perquè es vegi suau.
-- Un **semàfor** és el mateix esquelet però amb accions `[ digitalWrite(PIN, HIGH); delay(...) ]` en seqüència (vermell → verd → groc), sense el bucle `for`.
+## Com es llegeix
+- La caixa **fosca** és on **comença** el programa.
+- Les caixes **verdes** `[ ... ]` són **coses que fa** el programa (una ordre).
+- Els **rombes taronja** `< ... ? >` són **preguntes**: segons si la resposta és sí o no, segueixes una fletxa o una altra.
+- Les **fletxes taronja que tornen enrere** vol dir que el programa **ho repeteix**.
+
+## Del dibuix al codi
+- **PUJA** és la part que fa que la llum s'encengui a poc a poc. Al codi és el primer `for` (pujar una escala esglaó a esglaó, de 0 a 255).
+- **BAIXA** és la part que l'apaga a poc a poc. Al codi és el segon `for` (baixar l'escala, de 255 a 0).
+- La pregunta `< v <= 255 ? >` vol dir: *encara no he arribat a dalt?* Si la resposta és sí, puja un altre esglaó. Si és no, ja ha acabat de pujar.
+- L'ordre `[ analogWrite(LED, v); delay(ESPERA); ]` vol dir: *posa el llum a aquesta brillantor i espera una mica*, perquè es vegi suau.
+- El **semàfor** de la Sessió 1 seria un dibuix més senzill: tres caixes seguides (vermell, verd, groc), sense preguntes, que tornen a començar.

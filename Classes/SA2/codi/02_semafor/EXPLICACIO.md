@@ -138,10 +138,10 @@ Quan acaba el groc, el `loop()` torna a començar pel vermell. Per això el sem�
 
 ## 🧗 Si t'encalles: l'esquelet del semàfor
 
-Si no et surt ni el primer cicle, prova primer amb **un sol LED** a la [Pràctica 1](../01_led_basic/EXPLICACIO.md). Si el LED sol ja et funciona, parteix d'aquest esquelet: els pins i el `setup()` ja estan fets, i tu només omples els `// TODO:` de **les tres fases**. Compila tal com està, però no fa res visible fins que omplis les fases.
+Si no et surt ni el primer cicle, prova primer amb **un sol LED** a la [Pràctica 1](../01_led_basic/EXPLICACIO.md). Si el LED sol ja et funciona, parteix d'aquest esquelet: els pins i el `setup()` ja estan fets, i tu només omples els `// TODO:` de **les tres fases**. Es pot pujar tal com està, però no farà res fins que omplis les fases.
 
 <details markdown="1">
-<summary>Desplega l'esquelet (copia'l a un sketch nou)</summary>
+<summary>Desplega l'esquelet (copia'l a un programa nou)</summary>
 
 ```cpp
 /*
