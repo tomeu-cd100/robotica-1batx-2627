@@ -44,7 +44,7 @@ En aquesta pàgina hi tens el que necessites mentre treballes: els **objectius i
 2. Durada de cada fase: vermell ____ s · verd ____ s · groc ____ s.
 3. **D'on surt el 220 Ω?** Calcula amb la llei d'Ohm: R = (5 − 2) V / 0,02 A = ______ Ω. Per què usem 220 Ω i no aquest valor exacte? ______________________
 4. **Racó de mesura (multímetre):** amb un LED encès, tensió al LED = ______ V · a la resistència = ______ V · suma ≈ ______ V. Què hi observes? ______________________
-5. Reescriu el semàfor amb **`switch`** sobre una variable `fase` (0-1-2). Què passa si oblides un `break`? ______________________ (al quadern)
+5. Amb la versió **`switch`** (pràctica 2b): si al `case 0` poses `fase = 2;` en lloc de `fase = 1;`, què fa el semàfor i per què? ______________________ (al quadern)
 6. **Repte:** afegeix una **fase nocturna** (groc intermitent) com a fase nova del `switch`.
 
 > 💡 Si t'encalles muntant el semàfor, comença per **un sol LED** amb la [pràctica 1](codi/01_led_basic/EXPLICACIO.md) (el `Blink` de la SA1 al pin 8), o parteix de l'**esquelet** de la secció «Si t'encalles» de la [pàgina de la pràctica del semàfor](codi/02_semafor/EXPLICACIO.md): pins i `setup()` ja fets; tu omples els `// TODO` de les tres fases.

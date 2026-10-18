@@ -1,32 +1,39 @@
 # Pràctica 1 · LED bàsic: constants i variables
 
-**Quan es fa:** no és sessió pròpia: és la **bastida** de la Sessió 1 per a qui s'encalla amb el semàfor (comença per un sol LED i després en muntes tres) · **Fitxer:** `01_led_basic.ino` · **Circuit:** [esquema de connexions](../../SA2_esquemes_connexions.md)
+**Quan es fa:** no és una sessió pròpia. És l'**ajuda** de la Sessió 1 per a qui s'encalla amb el semàfor: primer un sol LED, i després en muntes tres. · **Fitxer:** `01_led_basic.ino` · **Circuit:** [esquema de connexions, apartat 1](../../SA2_esquemes_connexions.md)
 
-## 🎯 Per què fem aquesta pràctica
+## 🎯 Què faràs
 
-A la SA1 vas fer parpellejar el LED de la placa amb `Blink`. Aquí fas el mateix… però **bé**: amb un LED extern al pin 8 i, sobretot, amb el codi escrit perquè es pugui **canviar sense por**.
+Un sol LED que s'encén i s'apaga, com el `Blink` de la SA1, però amb un **LED de veritat** a la protoboard (pin 8) en lloc del de la placa. Quan funcioni, ja tindràs el primer dels tres llums del semàfor.
 
-La pregunta que ho justifica tot: *si demà moc el LED al pin 7, quantes línies he de canviar?* Amb el número `8` escampat pel codi, n'hauries de canviar unes quantes (i te'n deixaries alguna). Amb una **constant**, només una. Aquesta idea —donar **nom** als valors— la faràs servir a cada programa del curs.
+## 🚀 Pas a pas
 
-## 🔮 Abans d'executar: prediu
+1. **Munta el circuit:** pin 8 → resistència de 220 Ω → pota **llarga** del LED. La pota **curta** del LED → GND.
+2. **Carrega el codi:** prem **Copia**, enganxa'l a l'Arduino IDE (esborra el que hi hagués) i prem **→ Puja**.
 
-Mira el codi complet (a baix de tot, plegat) **sense carregar-lo**. **Per què cal `pinMode(LED, OUTPUT)` dins `setup()`?** Què passaria si te l'oblidessis (l'error més freqüent d'aquesta sessió)? Escriu la predicció a l'Activitat 1 de la [fitxa](../../SA2_fitxa_alumnat.md) i després comprova-la.
+<!-- codi-complet -->
 
-## 🧠 El codi, per blocs
+3. **Comprova** que el LED parpelleja (mig segon encès, mig segon apagat).
+4. **Canvia la velocitat:** posa `int temps = 100;` i torna'l a pujar. Després prova `2000`.
+5. **Ja funciona?** Afegeix el LED groc al pin 9 i el verd al 10, cadascun amb la seva resistència, i passa a la [pràctica del semàfor](../02_semafor/EXPLICACIO.md).
 
-### Bloc 1 — Donar nom als valors
+## 🧠 Com funciona, a trossos
+
+### Tros 1 — Posar nom als números
+
+**Com a la vida real:** al mòbil no recordes els números de telèfon, recordes **noms** («Mama»). Si un dia canvia el número, el canvies a l'agenda i ja està.
 
 ```cpp
 const int LED = 8;     // pin del LED (constant)
 int temps = 500;       // temps en ms (variable: la pots canviar)
 ```
 
-Dues maneres de guardar un número, amb intencions diferents:
+- `const int LED = 8;` → a partir d'ara, `LED` vol dir «el pin 8». Si demà mous el LED al pin 7, només canvies aquesta línia. `const` vol dir que **no canviarà** mentre el programa funciona.
+- `int temps = 500;` → una **variable**: una capsa amb un número que tu pots canviar (els mil·lisegons que dura cada encesa i cada apagada). 500 ms = mig segon.
 
-- `const int LED = 8;` — una **constant**: el pin no canviarà mentre el programa funciona. El `const` és una promesa; si intentes canviar-la, l'Arduino IDE et donarà error (i això és bo: t'avisa d'un despiste).
-- `int temps = 500;` — una **variable**: un valor que **vols** poder canviar (aquí, la velocitat del parpelleig). Prova 100, prova 2000: una sola línia.
+### Tros 2 — `setup()`: preparar el pin
 
-### Bloc 2 — Configurar la sortida
+**Com a la vida real:** abans de jugar, dius quin paper fa cadascú.
 
 ```cpp
 void setup() {
@@ -34,9 +41,11 @@ void setup() {
 }
 ```
 
-`setup()` s'executa **un sol cop** en engegar. `pinMode(LED, OUTPUT)` diu a la placa que el pin 8 serà una **sortida** (hi enviarem corrent). Si te'l deixes, `digitalWrite` no farà res visible: és l'error més típic de la sessió.
+`setup()` s'executa **un sol cop**, quan l'Arduino s'engega. `pinMode(LED, OUTPUT)` diu que el pin 8 és una **sortida**: l'Arduino hi enviarà corrent. Si t'oblides d'aquesta línia, el LED no s'encendrà (o farà una llum molt fluixa).
 
-### Bloc 3 — El cicle infinit
+### Tros 3 — `loop()`: encén, espera, apaga, espera
+
+**Com a la vida real:** un intermitent de cotxe. Encès, apagat, encès, apagat… fins que l'atures.
 
 ```cpp
 void loop() {
@@ -47,18 +56,25 @@ void loop() {
 }
 ```
 
-`loop()` es repeteix per sempre: encén (`HIGH` = 5 V), espera, apaga (`LOW` = 0 V), espera, i torna a començar. Fixa't que el temps d'espera és la **variable** `temps`: el parpelleig sencer es governa des d'una sola línia del Bloc 1.
+| Línia | Què fa |
+|---|---|
+| `digitalWrite(LED, HIGH);` | Encén el LED (li envia 5 V). |
+| `delay(temps);` | Espera `temps` mil·lisegons. |
+| `digitalWrite(LED, LOW);` | Apaga el LED (0 V). |
+| `delay(temps);` | Torna a esperar. |
+
+`loop()` es repeteix **per sempre**: quan arriba al final, torna a començar per dalt.
 
 ## ⚠️ Errors que veuràs segur
 
-| Símptoma | Causa probable |
-|---|---|
-| El LED no fa res | Falta `pinMode(LED, OUTPUT)` al `setup()`, o el LED és en un altre pin. |
-| El LED no s'encén mai | Polaritat invertida (pota llarga = ànode, cap al pin) o falta la resistència de 220 Ω. |
+| Què passa | Per què | Com ho arreglo |
+|---|---|---|
+| El LED no s'encén mai | LED al revés o sense resistència. | Pota llarga cap al pin 8, curta cap a GND. |
+| El LED no fa res, però el codi s'ha pujat bé | El cable va a un altre pin. | Ha de ser al pin 8 (o canvia `const int LED`). |
+| Fa una llum molt fluixa | Falta `pinMode(LED, OUTPUT)`. | Comprova el `setup()`. |
 
 ## 🔗 On ho aplicaràs
 
-- **Ara mateix:** quan aquest LED parpellegi, afegeix-ne dos més (groc al 9, verd al 10) i passa a la [pràctica del semàfor](../02_semafor/EXPLICACIO.md).
-- **Tota la SA:** el [semàfor](../02_semafor/02_semafor.ino) fa servir constants per als 3 pins i per als temps de cada fase — la mateixa idea, multiplicada.
+- **Ara mateix:** el [semàfor](../02_semafor/EXPLICACIO.md) és aquest mateix programa amb **tres** LED.
 
 > ⭐ **Has acabat abans?** Tria un repte a **[Reptes de la SA2](../../../../Reptes/Reptes_SA2.md)** i, quan el docent te'l validi, pinta l'estrella al [tauler de reptes](../../../00_General/00_Tauler_reptes.md).
