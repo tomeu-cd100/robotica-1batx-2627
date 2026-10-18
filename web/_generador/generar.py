@@ -1356,14 +1356,21 @@ def render_practica_page(item: dict, group: dict, pages: list[Page], md_map: dic
     _desc, quan = capcalera_codi(item["path"])
     quan_html = (f'<span class="codi-quan">{html.escape(quan)}</span>'
                  if quan else "")
-    body += (
-        '\n<h2 id="codi-complet">El codi complet</h2>'
-        f'<details class="codi-bloc" id="{item["anchor"]}">'
+    # Amb la marca <!-- codi-complet --> a l'EXPLICACIO, el fitxer sencer
+    # s'insereix allà, desplegat (pàgines «pas a pas»); si no, plegat al final.
+    marca = "<!-- codi-complet -->"
+    obert = " open" if marca in body else ""
+    bloc_codi = (
+        f'<details class="codi-bloc" id="{item["anchor"]}"{obert}>'
         f'<summary class="codi-cap"><code class="codi-nom">{html.escape(item["rel"])}</code>'
         f'{quan_html}'
         f'<button class="copia-btn" type="button">Copia</button></summary>'
         f'<div class="codi-cos">{highlighted}</div></details>'
     )
+    if marca in body:
+        body = body.replace(marca, f'<div id="codi-complet">{bloc_codi}</div>', 1)
+    else:
+        body += '\n<h2 id="codi-complet">El codi complet</h2>' + bloc_codi
     if extra_nav:
         body += "\n" + extra_nav
     full = page_shell(out_rel=item["page_out"], section_key=group["section"],
