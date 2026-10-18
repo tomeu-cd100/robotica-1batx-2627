@@ -17,24 +17,21 @@
 **Sessió 1 — Variables i la primera sortida**
 - [ ] 📝 **Prova SA1** (primers 50', en paper, models A/B alternats per taules) → [Prova_SA1.md](../../Avaluació/Prova_SA1.md) · kits **després** de recollir-la · repte i + repte passen a ampliació
 - [ ] Referent (1') Limor Fried · `01_led_basic` → concepte de **constant** (`const int`)
-- [ ] ✍️ **Kata** `01_led_basic` (10', abans de repartir el sketch) → [SA2_katas.md](SA2_katas.md)
 - [ ] Muntatge LED pin 8 amb **resistència 220 Ω** i polaritat (pota llarga = +)
 - [ ] **Racó de mesura (multímetre):** V al LED (~2 V) + V a la resistència (~3 V) ≈ 5 V (evidència CA2.2/R2)
 - ⚠️ *Error:* oblidar `pinMode(LED, OUTPUT)`
 
 **Sessió 2 — Estructures de control: el semàfor**
-- [ ] ✍️ **Kata** `02_semafor` (10', abans de repartir el sketch) → [SA2_katas.md](SA2_katas.md)
 - [ ] `02_semafor` → `if`, constants de temps, ordre de fases (el `for` és a la S3) · introduir `millis()` vs `delay()` (concepte)
 - [ ] Repte fase nocturna (groc intermitent)
 - ⚠️ *Error:* esperar que els LED canviïn alhora (`delay()` bloqueja)
 
 **Sessió 3 — PWM: intensitat i color**
-- [ ] ✍️ **Kata** `03_fade_pwm` (10', abans de repartir el sketch) → [SA2_katas.md](SA2_katas.md)
 - [ ] `03_fade_pwm` (`analogWrite` 0–255, `map()`) + `04_rgb` (barreja RGB)
 - ⚠️ *Mantra:* PWM només als pins `~` (3,5,6,9,10,11) · *Error:* barrejar 0–1023 (lectura) amb 0–255 (PWM)
 
 **Sessió 4 — Producte: panell de senyalització**
-- [ ] **Mini-check individual** a l'inici (10', no qualifica): escriure un Blink de memòria (substitueix la graella d'activació i el kata del dia)
+- [ ] **Mini-check individual** a l'inici (10', no qualifica): escriure un Blink de memòria (substitueix la graella d'activació)
 - [ ] `05_panell_senyalitzacio`: integrar RGB (estat) + piezo (avís) + relé (càrrega)
 - [ ] Documentació + mini-defensa individual d'1' (~5-7' per a tot el grup) + autoavaluació
 

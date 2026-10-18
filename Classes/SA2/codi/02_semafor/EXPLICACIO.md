@@ -2,8 +2,6 @@
 
 **Quan es fa:** Sessió 2 (modelatge) · **Fitxer:** `02_semafor.ino` · **Circuit:** [esquema de connexions](../../SA2_esquemes_connexions.md) (vermell=8, groc=9, verd=10)
 
-> ✍️ **Kata primer!** No llegeixis encara el codi: obre el [kata d'aquesta pràctica](../../SA2_katas.md) i tens **10 minuts** per escriure el teu bloc (individual, apunts permesos). Després torna aquí i **compara**.
-
 ## 🎯 Per què fem aquesta pràctica
 
 Un LED sol ja el domines. Un semàfor són **tres sortides que s'han de coordinar en una seqüència**: vermell → verd → groc, cadascun amb la seva durada. És el primer programa del curs que es llegeix com una **recepta**: pas 1, pas 2, pas 3, i torna a començar. Gairebé tots els sistemes que veuràs (i el producte de la S4) són variacions d'aquesta idea: *una seqüència d'estats que es repeteix*.

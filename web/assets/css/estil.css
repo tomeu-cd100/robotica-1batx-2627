@@ -723,6 +723,22 @@ a.sa-fil-pill:hover { border-color: var(--accent); color: var(--accent); text-de
   background: color-mix(in srgb, var(--surface) 60%, transparent);
 }
 .ruta h3 + ul li { margin: .25rem 0; }
+/* Ruta pas a pas: una sessió plegable per bloc (l'alumne obre només la d'avui) */
+.ruta details.sessio {
+  margin: 0 0 .6rem; border: 1px solid var(--border);
+  border-left: 4px solid var(--tri, var(--accent));
+  border-radius: var(--radi-s); background: var(--surface);
+}
+.ruta details.sessio > summary {
+  cursor: pointer; padding: .8rem 1rem; font-size: 1.05rem; list-style: none;
+}
+.ruta details.sessio > summary::-webkit-details-marker { display: none; }
+.ruta details.sessio > summary::before { content: "▸ "; color: var(--tri, var(--accent)); }
+.ruta details.sessio[open] > summary::before { content: "▾ "; }
+.ruta details.sessio[open] > summary { border-bottom: 1px solid var(--border); }
+.ruta details.sessio > :not(summary) { margin-left: 1rem; margin-right: 1rem; }
+.ruta details.sessio > ol { padding-left: 1.4rem; }
+.ruta details.sessio > ol > li { margin: .45rem 0; }
 
 /* Vista alumnat: fora la graella de material, el «comença aquí» de la
    portada i la barra «Tot sobre la SAx» (a Classes). El docent ho veu tot. */

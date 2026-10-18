@@ -535,6 +535,11 @@ def comprova_explicacions() -> None:
 
 
 # --- 16 · Katas: un kata d'escriptura per sketch (SA2-SA8) -------------------
+# SA amb els katas arxivats a docs/arxiu/ (fora de l'itinerari): el contracte
+# no s'hi aplica. SA2: 18-10-2026, l'alumnat no hi arribava (SA2 simplificada).
+KATAS_ARXIVATS = {2}
+
+
 def comprova_katas() -> None:
     """Cada SA amb sketches donats (SA2-SA8) ha de tenir SAn_katas.md amb un
     kata per sketch (matching per id literal), i cada pàgina de pràctica ha
@@ -569,6 +574,13 @@ def comprova_katas() -> None:
         sa_dir = ARREL / "Classes" / f"SA{n}"
         codi = sa_dir / "codi"
         if not codi.exists():
+            continue
+        if n in KATAS_ARXIVATS:
+            # Arxivats: el ganxo NO hi ha de ser (enllaçaria un fitxer mogut).
+            for expl in sorted(codi.rglob("*EXPLICACIO*.md")):
+                if GANXO in expl.read_text(encoding="utf-8"):
+                    errors.append(f"[katas] {expl.relative_to(ARREL)}: duu el ganxo "
+                                  f"«Kata primer» però els katas de SA{n} són arxivats")
             continue
         katas = sa_dir / f"SA{n}_katas.md"
         existeix = katas.exists()

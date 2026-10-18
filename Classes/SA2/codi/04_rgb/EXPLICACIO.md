@@ -2,8 +2,6 @@
 
 **Quan es fa:** Sessió 3 (després del *fade*) · **Fitxer:** `04_rgb.ino` · **Circuit:** [esquema de connexions](../../SA2_esquemes_connexions.md) (R=9, G=10, B=11, càtode comú a GND)
 
-> ✍️ **Kata primer!** Si avui encara no has fet cap kata (ni el mini-check), obre el [kata d'aquesta pràctica](../../SA2_katas.md): 10 minuts per escriure el teu bloc abans de llegir aquest codi. Si ja l'has fet, endavant.
-
 ## 🎯 Per què fem aquesta pràctica
 
 Un LED RGB són **tres LED en un** (vermell, verd i blau) que comparteixen una pota. Si controles cadascun amb PWM (0–255), pots barrejar qualsevol color: és exactament com fan color els píxels de la teva pantalla (barreja **additiva** de llum).

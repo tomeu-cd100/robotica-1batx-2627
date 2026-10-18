@@ -983,7 +983,11 @@ DOC_ORDRE_CLAUS = ["fil-conductor", "projecte-t",
 # («Si vols més»): fora del pager i del sidebar en vista alumnat. El
 # qüestionari de conceptes SÍ que és al camí (pas «Consolida»: recuperació
 # abans de l'autoavaluació).
-NOMES_CONSULTA = ("fitxa-ampliada", "recursos-video")
+# SA2 simplificada (18-10-2026): el camí és presentació → fitxa → esquemes →
+# codi → checklist; la resta queda a «Si vols més» de la portada.
+NOMES_CONSULTA = ("fitxa-ampliada", "recursos-video",
+                  "sa2-diagrama-flux", "sa2-exemple-resolt",
+                  "sa2-questionari-conceptes")
 
 
 def doc_ordre(p: Page):

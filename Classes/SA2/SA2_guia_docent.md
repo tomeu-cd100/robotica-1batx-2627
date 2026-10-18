@@ -3,6 +3,21 @@
 **Durada:** 8 h (4 sessions; la 4a amb ampliacions opcionals) · **Maquinari:** Arduino UNO + kit Keyestudio/BQ · **Llenguatge:** C/C++
 **Referència:** [`Programació didàctica/11_SA2_Sortides_digitals_PWM.md`](../../Programació%20didàctica/11_SA2_Sortides_digitals_PWM.md) · **Esquemes:** [`SA2_esquemes_connexions.md`](SA2_esquemes_connexions.md)
 
+## ⚡ Xuleta de sessió (si només llegeixes una cosa, que sigui això)
+
+> L'alumnat segueix l'**itinerari pas a pas de la [portada de la SA2](README.md)** (una sessió plegable per dia). Tu fas una **explicació curta al principi** i després **circules** per les taules. La resta de la guia és el detall per si el necessites.
+
+| | 🗣️ Explica (només això, ~10') | 👀 Mentre treballen, vigila | ✅ Abans que marxin, comprova |
+|---|---|---|---|
+| **S1** · Prova + LED | Després de la Prova SA1: **constant vs variable** amb `01_led_basic` («si moc el LED al pin 7, quantes línies canvio?»). Resistència **220 Ω** en sèrie i pota llarga = +. | LED al revés o sense resistència · oblidar `pinMode(LED, OUTPUT)` | LED parpellejant amb `temps` canviat · predicció escrita a Classroom |
+| **S2** · Semàfor | Llegeix el `loop()` en veu alta com una **recepta**: encén, espera, apaga. `delay()` **atura tot**. Després, el mateix amb `switch`: «on hi posaríeu una 4a fase?» | Un sol LED sense resistència per a tots tres · `case` sense `break` | Semàfor funcionant · durades apuntades. La fase nocturna és repte, no mínim |
+| **S3** · PWM i RGB | `digitalWrite` = 0 o 1; `analogWrite` = **0 a 255**. Pregunta: «què fa el 128?» **Només pins `~`** (3, 5, 6, 9, 10, 11). | LED en un pin sense `~` · RGB amb la pota comuna mal posada | *Fade* funcionant · 3 colors RGB apuntats |
+| **S4** · Panell | Gairebé res: **mini-check** (10') i recorda **mínim = 2 estats amb color + so**. Fes-los omplir la taula d'estats **abans** de tocar codi. | Qui programa sense haver dissenyat els estats · relé mal alimentat | Panell amb ≥2 estats · checklist fet · **defensa d'1'** (R1 + R2) |
+
+> 🎯 **Prioritat si vas just de temps:** primer que **tothom tingui el mínim funcionant**; els passos «Si acabes abans» i els ⭐ són per a qui va avançat. Els **katas** d'aquesta SA estan arxivats (18-10-2026, [`docs/arxiu/SA2_katas/`](../../docs/arxiu/SA2_katas/README.md)): no s'hi arribava.
+
+---
+
 > 🧭 **Com s'usa aquesta guia.** **Abans de la SA:** objectius, material i codi de suport (la logística, al checklist docent). **A cada sessió:** la secció «SESSIÓ n» corresponent, amb el «Guió de modelatge» i els «Errors freqüents» a mà. **Durant tota la SA:** diversitat (DUA), treball individual amb ajuda entre iguals i pensament computacional. **En avaluar:** «Avaluació formativa (instruments)». **Per contextualitzar:** context real i ODS.
 
 ## Objectius de la SA
@@ -40,7 +55,7 @@
 > 📝 **Els primers 50' són la [Prova SA1](../../Avaluació/Prova_SA1.md)** (individual, en paper, models A/B alternats per taules; guia de correcció a [`Prova_SA1_solucionari.md`](../../Avaluació/Prova_SA1_solucionari.md)). Reparteix els kits **després** de recollir-la. La resta de la sessió queda comprimida a ~50':
 
 - **Prova SA1 (50'):** teoria (E-P-S, placa, seguretat) + `Blink` en paper (predir, depurar, crear).
-- **Activació = kata (10'):** la prova acaba amb `Blink`; enllaça-ho amb la pregunta *"I si vull canviar el pin sense buscar-lo per tot el codi?"* → **constants**. 🔭 **Referent (1'):** **Limor Fried** («Ladyada»), Adafruit i el maquinari lliure ([guió](../00_General/00_Referents_tecnologia.md)).
+- **Enllaç amb la prova (5'):** la prova acaba amb `Blink`; enllaça-ho amb la pregunta *"I si vull canviar el pin sense buscar-lo per tot el codi?"* → **constants**. 🔭 **Referent (1'):** **Limor Fried** («Ladyada»), Adafruit i el maquinari lliure ([guió](../00_General/00_Referents_tecnologia.md)).
 - **Modelatge (15'):** `01_led_basic.ino`. Concepte de **constant** (`const int`) i **variable**. Esquema bàsic LED + 220 Ω (amb el càlcul de la llei d'Ohm de sota, en versió curta).
 - **Pràctica guiada (20'):** munten el LED al pin 8 i el fan parpellejar; canvien temps amb una variable (és el nucli del repte).
 - **Tancament (5'):** esquema i codi al quadern.
@@ -118,8 +133,6 @@
 ## Guió de modelatge (què verbalitzar)
 
 > Frases i preguntes clau per al **Modelatge** de cada sessió (què mirar, què preguntar abans d'executar, error a anticipar).
-
-> ✍️ **Katas:** en acabar el modelatge de cada sessió amb pràctica de codi, projecta el kata del sketch del dia ([SA2_katas.md](SA2_katas.md)): 10' d'escriptura individual **abans** de repartir/obrir el sketch. **Un sol kata per sessió**; el dia del mini-check (**S4** en aquesta SA) el mini-check el substitueix, i el kata `05_panell_senyalitzacio` queda com a **repàs autònom** (marcat amb 🔁 al fitxer): recomana'l com a deures abans de tancar la SA. Per a la posada en comú, tens la solució comentada de cada kata a [SA2_katas_solucions.md](SA2_katas_solucions.md).
 
 - **S1 · `01_led_basic` (constants):** mostra per què `const int LED = 8;` és millor que escriure `8` per tot arreu. Pregunta: *"si moc el LED al pin 7, quantes línies he de canviar?"* *Error a anticipar:* oblidar `pinMode(LED, OUTPUT)`.
 - **S2 · `02_semafor` (`if`/`switch`, seqüència):** recorre el `loop()` en veu alta com una **recepta seqüencial**. Demana **predir l'ordre** d'encesa abans d'executar. Verbalitza: *`delay()` bloqueja — mentre espera, no passa res més*. En mostrar la variant amb `switch`, pregunta: *"quantes fases té el semàfor? i si n'hi afegim una quarta (nocturna), on aniria?"* *Error a anticipar:* esperar que els LED canviïn alhora; oblidar el `break` de cada `case`.
