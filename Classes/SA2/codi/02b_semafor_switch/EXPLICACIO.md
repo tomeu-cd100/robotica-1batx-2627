@@ -1,6 +1,6 @@
 # Pràctica 2b · El mateix semàfor amb switch (llavor de la SA6)
 
-**Quan es fa:** Sessió 2 (després del semàfor) · **Fitxer:** `02b_semafor_switch.ino` · **Circuit:** el mateix de la [Pràctica 2](../02_semafor/02_semafor.ino) (vermell=8, groc=9, verd=10)
+**Quan es fa:** Sessió 1 (després del semàfor) · **Fitxer:** `02b_semafor_switch.ino` · **Circuit:** el mateix de la [Pràctica 2](../02_semafor/02_semafor.ino) (vermell=8, groc=9, verd=10)
 
 ## 🎯 Per què hi ha DUES versions del semàfor
 

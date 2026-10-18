@@ -3,7 +3,7 @@
 | | |
 |---|---|
 | **Trimestre** | 1r |
-| **Durada** | 8 h (4 sessions) |
+| **Durada** | 6 h (3 sessions) |
 | **Maquinari** | Arduino UNO + kit Keyestudio/BQ (LED, RGB, piezo, relé) |
 | **Llenguatge** | C/C++ |
 
@@ -28,17 +28,18 @@ Estructura del sketch; variables, constants i operadors; `pinMode`, `digitalWrit
 
 | Sessió | Activitats |
 |---|---|
-| **1** | **Prova SA1** (50', individual, en paper — `Avaluació/Prova_SA1.md`). `Blink` real amb LED + resistència. Variables i constants (`const int LED = 13;`). **Càlcul de la resistència limitadora amb la llei d'Ohm** (R = (5−2) V / 20 mA → 220 Ω comercial). Esquema al quadern. El repte de parpelleig variable passa a **ampliació** (la prova ocupa mitja sessió). |
-| **2** | Estructures de control: `for`, `if` i **`switch`** (semàfor com a variable de fase — llavor de les màquines d'estats de la SA6). Repte **semàfor** (3 LED) amb temporització. Antipatró `delay` vs `millis()` (introducció). |
-| **3** | **PWM** amb `analogWrite`: efecte *fade* i LED RGB (barreja de colors). Funció `map()` aplicada a nivells. |
-| **4** | Repte integrador: **"panell de senyalització"** (LED RGB + piezo + relé per a una càrrega). Documentació i mini-defensa. |
+| **1** | **LED extern** amb resistència: **càlcul amb la llei d'Ohm** (R = (5−2) V / 20 mA → 220 Ω comercial) i **mesura amb el multímetre**. Estructures de control: `if` i **`switch`** (semàfor com a variable de fase — llavor de les màquines d'estats de la SA6). Repte **semàfor** (3 LED) amb temporització i fase nocturna. Antipatró `delay` vs `millis()` (introducció). |
+| **2** | **PWM** amb `analogWrite`: efecte *fade* i LED RGB (barreja de colors). Funció `map()` aplicada a nivells. |
+| **3** | Repte integrador: **"panell de senyalització"** (LED RGB + piezo + relé per a una càrrega). Documentació i mini-defensa. |
+
+> 📝 **Per què 3 sessions (18-10-2026):** l'antiga sessió 1 (`Blink` amb constants i variables) repetia la S3 de la SA1. El que tenia de nou (LED extern, llei d'Ohm, multímetre) passa a la sessió 1, i la **Prova SA1** es fa a la **sessió de marge** entre la SA1 i la SA2 (vegeu [`08_Sequenciacio_temporal_anual.md`](08_Sequenciacio_temporal_anual.md)). El sketch `01_led_basic` queda com a bastida «comença per un sol LED».
 
 > 🤖 **Fil conductor de robots:** amb el fil conductor actiu
 > ([`Classes/00_General/00_Fil_conductor_robots.md`](../Classes/00_General/00_Fil_conductor_robots.md)),
-> la sessió 4 és també la **sessió de fabricació de la mascota** (tall làser
+> la sessió 3 és també la **sessió de fabricació de la mascota** (tall làser
 > i muntatge, [dossier](../Classes/00_General/00_Projecte_T1_Mascota.md)):
-> el repte de la sessió 3 fa de producte. La parella porta l'esborrany de la
-> cara fet (de casa o del tancament de la sessió 3); a la sessió 4 s'ajusta,
+> el repte de la sessió 2 fa de producte. Cada alumne/a porta l'esborrany de la
+> cara fet (de casa o del tancament de la sessió 2); a la sessió 3 s'ajusta,
 > el docent el valida i es talla per rotacions.
 
 ## Producte

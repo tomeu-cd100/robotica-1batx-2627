@@ -104,7 +104,7 @@ SECTIONS = [
                "El <strong>solucionari</strong> (codi resolt) és material del docent: no es lliura a l'alumnat."]},
     {"key": "avaluacio", "title": "Avaluació", "src": "Avaluació",
      "icon": "📝", "desc": "Proves pràctiques per trimestre i full de qualificació.",
-     "pauta": ["Una <strong>prova pràctica per trimestre</strong>, integrada a l'última sessió de SA3, SA6 i SA9 (no costa hores extra). Al 1r trimestre, a més, la <strong>Prova SA1</strong> (50', en paper, models A/B) a l'inici de la SA2.",
+     "pauta": ["Una <strong>prova pràctica per trimestre</strong>, integrada a l'última sessió de SA3, SA6 i SA9 (no costa hores extra). Al 1r trimestre, a més, la <strong>Prova SA1</strong> (50', en paper, models A/B) a la sessió de marge entre la SA1 i la SA2.",
                "<strong>T1 i T2 són individuals</strong> per defecte; el radar previ són els mini-checks de cada SA (a Classes → Material transversal).",
                "Després de cada prova, l'alumnat escriu el <strong>pla de millora personal</strong> (3 línies) al quadern; el <strong>full de qualificació</strong> creua criteris CA ↔ rúbriques.",
                "Per a l'alumnat: la guia <a href=\"../classes/00-general/00-avaluacio-per-alumnat.html\"><strong>«Com s'avalua aquesta matèria»</strong></a> (reparteix-la la primera setmana) i la caixa <strong>«🎯 Objectius i avaluació»</strong> de cada fitxa."]},
@@ -2254,7 +2254,7 @@ function saPaths(n){
     reptes: `reptes/reptes-sa${n}.html`,
   };
 }
-const PROVA_PAGE = { "SA2": "avaluacio/prova-sa1.html", "SA3": "avaluacio/prova-practica-t1.html", "SA6": "avaluacio/prova-practica-t2.html", "SA9": "avaluacio/prova-practica-t3.html" };
+const PROVA_PAGE = { "SA3": "avaluacio/prova-practica-t1.html", "SA6": "avaluacio/prova-practica-t2.html", "SA9": "avaluacio/prova-practica-t3.html" };
 
 const SA_DATA = %%SA_DATA_JSON%%;
 
@@ -2263,8 +2263,10 @@ const ALL_SESSIONS = [];
 SA_DATA.forEach(sa=>{
   sa.sessions.forEach((s,i)=>{
     ALL_SESSIONS.push(Object.assign({
-      id: `SA${sa.n}-S${i+1}`, saN: sa.n, saTitle: sa.title, trim: sa.trim,
-      sLabel: `S${i+1}`,
+      id: sa.marge ? `MARGE-T${sa.trim}` : `SA${sa.n}-S${i+1}`, saN: sa.n,
+      saTitle: sa.title, trim: sa.trim, marge: !!sa.marge,
+      tag: sa.marge ? "Marge" : `SA${sa.n}`, sLabel: sa.marge ? "" : `S${i+1}`,
+      hub: sa.hub, hubLabel: sa.hubLabel,
     }, s));
   });
 });
@@ -2286,6 +2288,15 @@ try{
   const raw = localStorage.getItem(LS_KEY);
   if(raw) STATE = JSON.parse(raw);
 }catch(e){}
+// v2 (18-10-2026): la SA2-S1 passa a ser la sessió de marge de la Prova SA1 i
+// la resta de la SA2 es renumera; es traslladen les marques de «feta».
+if(!STATE.v){
+  const d = STATE.done || {}, nd = Object.assign({}, d);
+  delete nd["SA2-S4"];
+  nd["MARGE-T1"] = !!d["SA2-S1"]; nd["SA2-S1"] = !!d["SA2-S2"];
+  nd["SA2-S2"] = !!d["SA2-S3"]; nd["SA2-S3"] = !!d["SA2-S4"];
+  STATE.done = nd; STATE.v = 2; save();
+}
 
 function save(){
   try{ localStorage.setItem(LS_KEY, JSON.stringify(STATE)); }catch(e){}
@@ -2305,7 +2316,7 @@ function render(){
   document.getElementById("cal-stats").innerHTML = `
     <span><b>${doneCount}</b> / ${ALL_SESSIONS.length} sessions fetes</span>
     <span><b>${(doneCount*2)}</b> h de ${ALL_SESSIONS.length*2} h</span>
-    <span>Properament: <b>${nextSession ? "SA" + nextSession.saN + " · " + nextSession.sLabel + " — " + nextSession.title : "curs tancat"}</b></span>
+    <span>Properament: <b>${nextSession ? nextSession.tag + (nextSession.sLabel ? " · " + nextSession.sLabel : "") + " — " + nextSession.title : "curs tancat"}</b></span>
     <span>Darrera sessió prevista: <b>${lastUsedDate ? fmt(localFromIso(lastUsedDate)) : "—"}</b></span>
   `;
 
@@ -2340,7 +2351,7 @@ function render(){
       const p = saPaths(s.saN);
       const h = document.createElement("div");
       h.className = "cal-sa-header";
-      h.innerHTML = `<span class="cal-sa-tag">SA${s.saN}</span><span class="cal-sa-title">${s.saTitle}</span><a href="${p.hub}">Obre la SA ↗</a>`;
+      h.innerHTML = `<span class="cal-sa-tag">${s.tag}</span><span class="cal-sa-title">${s.saTitle}</span><a href="${s.hub || p.hub}">${s.hubLabel || "Obre la SA ↗"}</a>`;
       cont.appendChild(h);
     }
 
@@ -2356,17 +2367,18 @@ function render(){
     if(s.product) badges.push(`<span class="cal-badge prod">📦 Producte</span>`);
     if(s.test) badges.push(`<span class="cal-badge test">🧪 Prova</span>`);
 
-    const links = [`<a href="${p.guia}#${s.anchor}">Guia docent ↗</a>`,
-                    `<a href="${p.fitxa}">Fitxa alumnat ↗</a>`];
+    const links = s.links ? s.links.map(([t, u])=>`<a href="${u}">${t}</a>`)
+                  : [`<a href="${p.guia}#${s.anchor}">Guia docent ↗</a>`,
+                     `<a href="${p.fitxa}">Fitxa alumnat ↗</a>`];
     if(s.product) links.push(`<a href="${p.reptes}">Reptes ↗</a>`);
-    if(s.test && PROVA_PAGE["SA"+s.saN]) links.push(`<a href="${PROVA_PAGE["SA"+s.saN]}">Prova ↗</a>`);
+    if(s.test && !s.links && PROVA_PAGE["SA"+s.saN]) links.push(`<a href="${PROVA_PAGE["SA"+s.saN]}">Prova ↗</a>`);
 
     row.innerHTML = `
       <div class="cal-chk"><input type="checkbox" ${isDone?"checked":""} aria-label="Sessió feta"></div>
       <div class="cal-data">${s.date ? `<b>${fmt(localFromIso(s.date))}</b>` : `<b>sense data</b>`}</div>
       <div class="cal-body">
         <div class="cal-titols">
-          <span class="cal-s-label">SA${s.saN} · ${s.sLabel}</span>
+          <span class="cal-s-label">${s.tag}${s.sLabel ? " · " + s.sLabel : ""}</span>
           <h3>${s.title}</h3>
           ${badges.join("")}
         </div>
@@ -2420,15 +2432,22 @@ CALENDARI_SA_DATA = [
   {"title":"El primer programa", "anchor":"sessio-3-2-h-el-primer-programa", "product":True,
    "tasks":["PRIMM amb blink.ino (predir→executar→investigar→modificar→crear)","Repte de parpelleig variable + ampliacions","Mini-debat ètica de l'automatització (ODS)","Presenta la fitxa-pòster — producte de la SA"]},
  ]},
+# Sessió de marge (fora de cap SA): Prova SA1 + posada al dia. Vegeu el doc 08.
+{"n":"M", "marge":True, "trim":1, "title":"Sessió de marge · Prova SA1 i posada al dia",
+ "hub":"avaluacio/prova-sa1.html", "hubLabel":"Obre la prova ↗",
+ "sessions":[
+  {"title":"Prova SA1 + posada al dia", "test":True,
+   "links":[["Guia docent ↗","programacio/08-sequenciacio-temporal-anual.html#sessio-de-marge-prova-sa1-i-posada-al-dia"],
+            ["Prova ↗","avaluacio/prova-sa1.html"],["Fitxa SA1 ↗","classes/sa1/sa1-fitxa-alumnat.html"]],
+   "tasks":["Prova SA1 (50', en paper, models A/B alternats)","Posada al dia de la SA1: acabar la fitxa-pòster i la tasca de Classroom","Qui ho té tot: repartiment i revisió del kit de la SA2"]},
+ ]},
 {"n":2, "trim":1, "title":"Sortides digitals i PWM: dona vida als actuadors",
  "sessions":[
-  {"title":"Prova SA1 + variables i la primera sortida", "anchor":"sessio-1-2-h-variables-i-la-primera-sortida", "test":True,
-   "tasks":["Prova SA1 (50', en paper, models A/B alternats)","Kata: de Blink a constants/variables","Munten LED al pin 8 amb resistència 220 Ω","Ampliació: parpelleig amb temps per variable","Racó de mesura amb multímetre (llei d'Ohm)"]},
-  {"title":"Estructures de control: el semàfor", "anchor":"sessio-2-2-h-estructures-de-control-el-semafor",
-   "tasks":["Modelatge del semàfor amb if/switch","Munten 3 LED (pins 8-9-10) i programen el cicle","Repte: afegir fase nocturna intermitent","Introdueix millis() vs delay() (concepte)"]},
-  {"title":"PWM: intensitat i color", "anchor":"sessio-3-2-h-pwm-intensitat-i-color",
+  {"title":"Estructures de control: el semàfor", "anchor":"sessio-1-2-h-estructures-de-control-el-semafor",
+   "tasks":["Muntatge: LED + 220 Ω (llei d'Ohm en 5') i Racó de mesura amb multímetre","Modelatge del semàfor amb if/switch","Munten 3 LED (pins 8-9-10) i programen el cicle","Repte: afegir fase nocturna intermitent"]},
+  {"title":"PWM: intensitat i color", "anchor":"sessio-2-2-h-pwm-intensitat-i-color",
    "tasks":["Modelatge de analogWrite i map() amb fade","Efecte fade al pin 9 i barreja RGB","Repte: crear 5 colors propis i transició suau"]},
-  {"title":"Producte: panell de senyalització", "anchor":"sessio-4-2-h-producte-panell-de-senyalitzacio", "product":True,
+  {"title":"Producte: panell de senyalització", "anchor":"sessio-3-2-h-producte-panell-de-senyalitzacio", "product":True,
    "tasks":["Mini-check individual: Blink de memòria","Integren LED RGB + piezo + relé (panell personalitzat)","Documenten esquema i codi; mini-defensa d'1' (R4·DO)","Autoavaluació amb rúbriques R1/R2"]},
  ]},
 {"n":3, "trim":1, "title":"Entrades i sensors: el robot percep",

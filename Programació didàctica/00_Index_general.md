@@ -59,7 +59,7 @@
 | Trim. | SA | Títol | Hores | Maquinari | Llenguatge |
 |---|---|---|---|---|---|
 | 1r | SA1 | Què és un robot? Sistemes embeguts i mètode de projecte | 6 | Arduino / simulador | — / C++ |
-| 1r | SA2 | Sortides digitals i PWM (*Pulse Width Modulation*): dona vida als actuadors | 8 | Arduino + KS0011 | C/C++ |
+| 1r | SA2 | Sortides digitals i PWM (*Pulse Width Modulation*): dona vida als actuadors | 6 | Arduino + KS0011 | C/C++ |
 | 1r | SA3 | Entrades i sensors: el robot percep | 8 | Arduino + KS0011 | C/C++ |
 | 2n | SA4 | Moviment: servos, motors i ponts H | 8 | Arduino + KS0011 | C/C++ |
 | 2n | SA5 | micro:bit i MicroPython: un altre paradigma | 6 | micro:bit + Micro:shield | Python |
@@ -70,4 +70,4 @@
 
 *ESP32 opcional segons disponibilitat.*
 
-**Total: ≈ 68 h** (+ marge ~2 h per a diagnòstic i imprevistos fins a 70 h). Les proves T1 i T2 ocupen, senceres, la S4 de SA3 i SA6 (vegeu `08_Sequenciacio_temporal_anual.md`).
+**Total: ≈ 66 h de SA** + 2 h de la sessió de marge de la Prova SA1 (entre SA1 i SA2) + marge ~2 h per a diagnòstic i imprevistos fins a 70 h. Les proves T1 i T2 ocupen, senceres, la S4 de SA3 i SA6 (vegeu `08_Sequenciacio_temporal_anual.md`).

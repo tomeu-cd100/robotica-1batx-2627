@@ -4,7 +4,7 @@
 
 > 🧑‍🎓 **Quan toca obrir-la?** És **opcional**: quan portis la **fitxa base al dia** i vulguis més (ampliacions, pensament computacional). Algunes rutines (revisió creuada, exit ticket) les activarà el **docent** a l'aula quan toqui.
 
-> 🗺️ **Quan s'usa cada apartat:** les **Activitats 1–4** segueixen les mateixes sessions que la fitxa base (aquí amb més detall i ampliacions) · **Si t'encalles** i **Pensament computacional**: durant el treball · **Vols més?**: amb el nucli al dia · **Exit ticket**: els últims 2' de cada sessió · **Diana**, **Revisió creuada** i **Quadern tècnic**: en tancar la SA · **Context real i ODS**: quan el docent l'activi.
+> 🗺️ **Quan s'usa cada apartat:** les **Activitats 1–3** segueixen les mateixes sessions que la fitxa base (aquí amb més detall i ampliacions) · **Si t'encalles** i **Pensament computacional**: durant el treball · **Vols més?**: amb el nucli al dia · **Exit ticket**: els últims 2' de cada sessió · **Diana**, **Revisió creuada** i **Quadern tècnic**: en tancar la SA · **Context real i ODS**: quan el docent l'activi.
 
 **Nom:** ______________________  **Data:** __________
 
@@ -12,19 +12,15 @@
 
 ---
 
-## Activitat 1 · LED bàsic i variables (S1)
-0. **PREDIU** (abans d'executar): mirant `01_led_basic.ino`, què creus que farà el LED? ____________________
-1. Munta un LED al pin 8 (esquema 1). Carrega `01_led_basic.ino` i **comprova** la predicció.
-2. Canvia el temps d'encès/apagat usant una **variable** `temps`. Quin valor has provat? ______
-3. **Repte:** escriu el codi Morse d'una lletra (· curt / − llarg). Lletra: ____ → enganxa el codi al quadern.
-
-## Activitat 2 · Semàfor (S2)
-1. Munta 3 LED (vermell-8, groc-9, verd-10). Carrega `02_semafor.ino`.
+## Activitat 1 · Semàfor (S1)
+1. Munta 3 LED (vermell-8, groc-9, verd-10), cadascun amb la seva resistència. Carrega `02_semafor.ino`. *(Si t'encalles, comença per un sol LED amb `01_led_basic.ino`.)*
 2. Anota la durada de cada fase: vermell ____ s · verd ____ s · groc ____ s.
-3. **Repte:** afegeix una **fase nocturna** (groc intermitent). Com l'actives? ______________
-4. **+ Repte:** afegeix un semàfor de **vianants** coordinat.
+3. **D'on surt el 220 Ω?** R = (5 − 2) V / 0,02 A = ______ Ω → per què 220 Ω? ______________
+4. **Racó de mesura:** tensió al LED = ______ V · a la resistència = ______ V · suma ≈ ______ V.
+5. **Repte:** afegeix una **fase nocturna** (groc intermitent). Com l'actives? ______________
+6. **+ Repte:** afegeix un semàfor de **vianants** coordinat.
 
-## Activitat 3 · PWM: intensitat i color (S3)
+## Activitat 2 · PWM: intensitat i color (S2)
 1. Efecte *fade* amb `03_fade_pwm.ino` (pin 9). Quin rang de valors té `analogWrite`? ____ a ____
 2. LED RGB amb `04_rgb.ino`. Completa la taula amb 3 colors que hagis creat:
 
@@ -36,7 +32,7 @@
 
 3. **Repte:** transició suau entre dos colors. Quins? __________ → __________
 
-## Activitat 4 · Producte: panell de senyalització (S4)
+## Activitat 3 · Producte: panell de senyalització (S3)
 Dissenya un panell que indiqui **estats** amb color + so + una càrrega (relé).
 
 | Estat | Color RGB | So (piezo) | Relé |
@@ -62,10 +58,10 @@ El panell és **teu**: el munta, el programa i el documenta la mateixa persona. 
 avança sol: apunta a cada sessió **qui t'ha ajudat i a qui has ajudat** (i en què). És el que
 s'observa a la rúbrica **R5**.
 
-| | S1 | S2 | S3 | S4 |
-|---|---|---|---|---|
-| Qui m'ha ajudat i en què | | | | |
-| A qui he ajudat i en què | | | | |
+| | S1 | S2 | S3 |
+|---|---|---|---|
+| Qui m'ha ajudat i en què | | | |
+| A qui he ajudat i en què | | | |
 
 > 👥 **Si el docent t'ajunta amb algú puntualment**, repartiu-vos només **qui escriu** i **qui
 > verifica**, i intercanvieu-vos els papers a mitja sessió. El lliurable continua sent el teu.

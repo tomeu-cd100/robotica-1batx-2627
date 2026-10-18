@@ -8,7 +8,7 @@ Distribució en **3 trimestres** i **9 situacions d'aprenentatge (SA)**.
 | Trim. | Setmanes aprox. | SA | Títol | Hores |
 |---|---|---|---|---|
 | **1r** | s1-s12 | SA1 | Què és un robot? Sistemes embeguts i mètode de projecte | 6 |
-| | | SA2 * | Sortides digitals i PWM (*Pulse Width Modulation*): dona vida als actuadors | 8 |
+| | | SA2 | Sortides digitals i PWM (*Pulse Width Modulation*): dona vida als actuadors | 6 |
 | | | SA3 † | Entrades i sensors: el robot percep | 8 |
 | **2n** | s13-s24 | SA4 * | Moviment: servos, motors i ponts H | 8 |
 | | | SA5 | micro:bit i MicroPython: un altre paradigma | 6 |
@@ -16,11 +16,14 @@ Distribució en **3 trimestres** i **9 situacions d'aprenentatge (SA)**.
 | **3r** | s25-s35 | SA7 | Robòtica mòbil: cinemàtica i trajectòries | 8 |
 | | | SA8 | IoT i IA: el robot connectat i intel·ligent | 6 |
 | | | SA9 † | Repte final integrador (opció competició) | 10 |
-| | | | **Subtotal SA** | **68 h** |
-| | | | **Marge (diagnòstic, avaluació, imprevistos)** | **~2 h** |
+| | | | **Subtotal SA** | **66 h** |
+| | | | **Sessió de marge: Prova SA1 i posada al dia** (entre SA1 i SA2) | **2 h** |
+| | | | **Marge (diagnòstic, imprevistos)** | **~2 h** |
 | | | | **Total** | **70 h** |
 
 > **\*** SA amb **4a sessió de producte comprimible**: les **8 h (4 sessions)** són el còmput de referència; la S4 és la sessió de producte, però si el calendari real ho exigeix el **repte de la S3 pot fer de producte** i la S4 s'allibera (vegeu el pla de contingència).
+>
+> **SA2** compta 6 h (3 sessions) des del 18-10-2026: la seva antiga S1 repetia el `Blink` de la SA1. El que tenia de nou (LED extern, llei d'Ohm, multímetre) passa a la S1 del semàfor, i la Prova SA1 té la seva pròpia **sessió de marge** (vegeu a sota).
 >
 > **†** SA la **darrera sessió de la qual és, sencera, la prova pràctica trimestral** (T1 a SA3 i T2 a SA6: la S4; T3 a SA9: la S5): el producte es tanca a la sessió anterior i la darrera sessió és la prova **individual**. Cap activitat de sessió no competeix amb la prova (vegeu «Marge i integració de l'avaluació»).
 >
@@ -30,11 +33,19 @@ Distribució en **3 trimestres** i **9 situacions d'aprenentatge (SA)**.
 
 Per garantir la **viabilitat real** del curs (2 h/setmana ≈ 70 h), s'apliquen dos criteris:
 
-1. **Flexibilitat de ritme (marge ~2 h):** les SA marcades amb **\*** (SA2, SA4) tenen la S4 de producte **comprimible** (el repte de la S3 pot fer de producte), i la SA5 queda en 3 sessions. Així hi ha marge per al **diagnòstic inicial** (SA1), festius i imprevistos sense alterar el còmput de referència.
+1. **Flexibilitat de ritme (marge ~2 h):** la SA marcada amb **\*** (SA4) té la S4 de producte **comprimible** (el repte de la S3 pot fer de producte), la SA2 i la SA5 queden en 3 sessions, i la Prova SA1 té una sessió de marge pròpia. Així hi ha marge per al **diagnòstic inicial** (SA1), festius i imprevistos sense alterar el còmput de referència.
 2. **Proves pràctiques amb sessió pròpia dins de la SA (T1 i T2):** les proves (`Avaluació/Prova_practica_T1/T2/T3`) ocupen **una sessió sencera**, comptada **dins de les 8 h** de la SA de tancament del trimestre — no s'hi barreja cap altra activitat:
    - **T1** → la **S4 de SA3 és, sencera, la prova** (individual). El producte de parella de la SA3 es tanca a la **S3** (el repte de la S3 és el producte).
    - **T2** → la **S4 de SA6 és, sencera, la prova** (individual). El producte es tanca a la **S3** i el **control proporcional passa a +ampliació** (ja ho era: el nucli avaluable és la histèresi).
    - **T3** → la **S5 de SA9 és, sencera, la prova** (individual, **per estacions rotatives**: la part de micro:bit es fa a la taula i la part de robot per torns a les pistes disponibles). El projecte es tanca a la **S4** (dossier + defensa oral; amb més de 6 equips, defenses esglaonades des de la S3, ja previstes a la guia). La prova és **independent del projecte**: avalua destreses individuals de SA7-SA8 i puntua només a la dimensió «Proves pràctiques» (20 %); el projecte puntua a «Projectes i productes» — cap evidència no compta dues vegades.
+
+### Sessió de marge: Prova SA1 i posada al dia
+
+Entre la SA1 i la SA2 hi ha una sessió de 2 h que **no pertany a cap SA**:
+
+- **Primers 50': [Prova SA1](../Avaluació/Prova_SA1.md)** (individual, en paper, sense apunts, models A/B alternats per taules; correcció a [`Prova_SA1_solucionari.md`](../Avaluació/Prova_SA1_solucionari.md)).
+- **Resta de la sessió: posada al dia de la SA1.** Qui la té pendent acaba la fitxa-pòster i la tasca de Classroom de la SA1. Qui ho té tot, recull i revisa el kit de la SA2 (LED, resistències de 220 Ω, mòdul RGB, piezo, relé) perquè la S1 del semàfor comenci muntant.
+- Si un imprevist es menja una sessió del 1r trimestre, la posada al dia és el primer que es retalla: la prova es fa igualment, i després s'enllaça directament amb la S1 de la SA2.
 
 > Vegeu la ponderació a `06_Avaluacio_criteris_qualificacio.md` (dimensió "Proves pràctiques", 20 %). **Per què així:** una prova individual de ~100' i una sessió de producte en parella amb defensa **no caben en la mateixa sessió de 2 h**; fer-ho explícit evita descobrir-ho al desembre. El cost (1 sessió per trimestre) ja està comptat dins les hores de la SA.
 
@@ -43,7 +54,7 @@ Per garantir la **viabilitat real** del curs (2 h/setmana ≈ 70 h), s'apliquen 
 El marge real (~2 h) és **més petit que les pèrdues habituals** d'un curs (festius que cauen en dia de classe, sortides, vagues, avaries): cal preveure **on es retalla** abans que passi, no improvisar-ho al març. Ordre oficial de retallada, **sense trencar la progressió**:
 
 1. **No es retallen mai** SA1–SA3 (fonaments d'E/S: tot el curs s'hi recolza) ni SA9 (síntesi i pes avaluatiu del 3r trimestre).
-2. **Primera retallada:** comprimir la **S4 de producte** de SA2 i/o SA4: el **repte de la S3 fa de producte** (s'avalua amb les mateixes rúbriques) i la S4 s'allibera — fins a 2 sessions recuperades. *Atenció:* les S4 de SA3 i SA6 **no es retallen** (són les proves T1/T2); si el calendari les desplaça, la prova es fa a la darrera sessió efectiva de la SA.
+2. **Primera retallada:** comprimir la **sessió de producte** de SA2 (S3) i/o SA4 (S4): el **repte de la sessió anterior fa de producte** (s'avalua amb les mateixes rúbriques) i la sessió de producte s'allibera — fins a 2 sessions recuperades. *Atenció:* les S4 de SA3 i SA6 **no es retallen** (són les proves T1/T2); si el calendari les desplaça, la prova es fa a la darrera sessió efectiva de la SA.
 3. **Segona retallada:** **SA8 comprimible de 6 h a 4 h** (fusionar S1+S2: telemetria + disseny IoT en una sessió; la S3 d'IA es manté — és el nucli del saber "IA aplicada al control").
 4. **Tercera retallada (últim recurs):** SA7 de 8 h a 6 h (sacrificar la S4 de seguidor de línia i quedar-se amb l'evita-obstacles com a comportament autònom).
 5. **Es mantenen sempre:** una **prova pràctica per trimestre** (amb la seva sessió, comptada dins la SA) i els **mini-checks individuals** (10', són el radar de l'avaluació).
@@ -62,7 +73,7 @@ perquè no es descobreixi al març.
 
 | Trimestre | Sessió de fabricació | Retallada del pla de contingència que s'hi gasta |
 |---|---|---|
-| 1r | S4 de SA2 | Primera retallada (S4 de SA2 comprimible: el repte de la S3 fa de producte) |
+| 1r | S3 de SA2 | Primera retallada (S3 de SA2 comprimible: el repte de la S2 fa de producte) |
 | 2n | S4 de SA4 | Primera retallada (S4 de SA4 comprimible: el repte de la S3 fa de producte) |
 | 3r | Sessió 0 del trimestre | Segona retallada (SA8 comprimible de 6 h a 4 h; les 2 h alliberades es traslladen a l'inici del T3, abans de començar SA7) |
 

@@ -1,13 +1,13 @@
 # SA2 · Exemple resolt (model «jo ho faig») — Llum de posició que respira
 
-> 🧑‍🎓 **Quan toca mirar-lo?** Després del teu **primer intent** amb el *fade* de l'**Activitat 3 (S3)** — mai abans. És un problema **anàleg** per veure *com es pensa*, no la solució del panell de la S4.
+> 🧑‍🎓 **Quan toca mirar-lo?** Després del teu **primer intent** amb el *fade* de l'**Activitat 2 (S2)** — mai abans. És un problema **anàleg** per veure *com es pensa*, no la solució del panell de la S4.
 
 > 🔗 **D'on ve i on va.** Aquest exemple és el **bessó comentat** de la pràctica [El fade: graduar la intensitat amb PWM](codi/03_fade_pwm/EXPLICACIO.md): la mateixa idea (graduar la intensitat amb `for` + `analogWrite`) amb un context expressament diferent — un llum de posició amb mode alarma en lloc del *fade* — perquè vegis **com es pensa**, no per copiar-lo. Quan l'hagis entès, torna a la pàgina de la pràctica i fes-la teva.
 
 > 🗺️ **Com es llegeix per apartats:** **🔑 El repte model** primer, per situar-te · **🧭 Com ho penso** abans d'escriure el **teu** codi (és l'apartat més important: el raonament) · **💡 La solució anotada** només **després del teu intent**, per comparar · **🔬 Provo i mesuro** quan provis el teu: copia'n el **mètode**, no el resultat · **⚠️ Contraexemple** quan una cosa no rutlli — i com a repàs abans d'entregar · **📔 Diari de bord** quan escriguis la teva entrada del quadern.
 
 > **Nota docent:** mostra'l **després del primer intent** amb `03_fade_pwm.ino`, mai abans.
-> No és la solució del panell (S4): és un problema **anàleg** resolt pas a pas perquè
+> No és la solució del panell (S3): és un problema **anàleg** resolt pas a pas perquè
 > l'alumnat vegi *com es pensa*, no què s'ha de copiar. Comenta en veu alta el pas «🧭 Com ho
 > penso» (predicció abans de codi, PRIMM) i el «⚠️ Contraexemple».
 
@@ -138,7 +138,7 @@ Imagina que el LED és una **llumeta que dorm i somia**. 🌙
 
 ## 📔 Diari de bord (entrada model, 1a persona)
 
-> **Sessió 3:** He fet una llum que respira amb **PWM** (`analogWrite`, 0–255) i que en alarma
+> **Sessió 2:** He fet una llum que respira amb **PWM** (`analogWrite`, 0–255) i que en alarma
 > parpelleja amb `digitalWrite`. Al principi el LED no graduava: l'havia posat al **pin 8, que no
 > és `~`**. En canviar-lo al pin 9 ja va anar. He entès que **`analogWrite` regula la intensitat i
 > `digitalWrite` només encén o apaga**. He separat el codi en dues funcions per tenir-lo net.

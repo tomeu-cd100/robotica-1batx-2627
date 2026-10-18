@@ -1,6 +1,6 @@
 # Pràctica 3 · El fade: graduar la intensitat amb PWM
 
-**Quan es fa:** Sessió 3 (modelatge) · **Fitxer:** `03_fade_pwm.ino` · **Circuit:** [esquema de connexions](../../SA2_esquemes_connexions.md) (LED al pin 9, que és PWM) · **Suport:** [diagrama de flux](../../SA2_diagrama_flux.md)
+**Quan es fa:** Sessió 2 (modelatge) · **Fitxer:** `03_fade_pwm.ino` · **Circuit:** [esquema de connexions](../../SA2_esquemes_connexions.md) (LED al pin 9, que és PWM) · **Suport:** [diagrama de flux](../../SA2_diagrama_flux.md)
 
 ## 🎯 Per què fem aquesta pràctica
 
@@ -57,7 +57,7 @@ Mateixa estructura amb els tres elements girats: comença a 255, condició `>= 0
 ## 🔗 On ho aplicaràs
 
 - **Ara mateix:** el [LED RGB](../04_rgb/04_rgb.ino) són **tres** PWM alhora — un per color.
-- **Repte S3:** transició suau entre dos colors = dos *fades* coordinats. La funció `map()` (converteix un rang en un altre) t'hi pot ajudar.
+- **Repte S2:** transició suau entre dos colors = dos *fades* coordinats. La funció `map()` (converteix un rang en un altre) t'hi pot ajudar.
 - **Exemple resolt:** el [llum de posició amb respiració](../../SA2_exemple_resolt.md) és el **bessó** d'aquesta pràctica — el mateix patró amb un muntatge i un context expressament diferents, comentat pas a pas amb tot el raonament. Mira'l després del teu primer intent.
 
 > ⭐ **Has acabat abans?** Tria un repte a **[Reptes de la SA2](../../../../Reptes/Reptes_SA2.md)** i, quan el docent te'l validi, pinta l'estrella al [tauler de reptes](../../../00_General/00_Tauler_reptes.md).

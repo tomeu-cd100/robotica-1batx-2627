@@ -1,6 +1,6 @@
 # Pràctica 1 · LED bàsic: constants i variables
 
-**Quan es fa:** Sessió 1 (modelatge) · **Fitxer:** `01_led_basic.ino` · **Circuit:** [esquema de connexions](../../SA2_esquemes_connexions.md)
+**Quan es fa:** no és sessió pròpia: és la **bastida** de la Sessió 1 per a qui s'encalla amb el semàfor (comença per un sol LED i després en muntes tres) · **Fitxer:** `01_led_basic.ino` · **Circuit:** [esquema de connexions](../../SA2_esquemes_connexions.md)
 
 ## 🎯 Per què fem aquesta pràctica
 
@@ -58,7 +58,7 @@ void loop() {
 
 ## 🔗 On ho aplicaràs
 
-- **Ara mateix:** el repte de la S1 (parpelleig amb temps propis i patró Morse d'una lletra) és aquest sketch amb valors teus.
+- **Ara mateix:** quan aquest LED parpellegi, afegeix-ne dos més (groc al 9, verd al 10) i passa a la [pràctica del semàfor](../02_semafor/EXPLICACIO.md).
 - **Tota la SA:** el [semàfor](../02_semafor/02_semafor.ino) fa servir constants per als 3 pins i per als temps de cada fase — la mateixa idea, multiplicada.
 
 > ⭐ **Has acabat abans?** Tria un repte a **[Reptes de la SA2](../../../../Reptes/Reptes_SA2.md)** i, quan el docent te'l validi, pinta l'estrella al [tauler de reptes](../../../00_General/00_Tauler_reptes.md).

@@ -1,6 +1,6 @@
 # Pràctica 5 · Producte: el panell de senyalització
 
-**Quan es fa:** Sessió 4 (producte de la SA) · **Fitxer:** `05_panell_senyalitzacio.ino` · **Circuit:** [esquema de connexions](../../SA2_esquemes_connexions.md) (RGB 9-10-11, piezo 6, relé 7)
+**Quan es fa:** Sessió 3 (producte de la SA) · **Fitxer:** `05_panell_senyalitzacio.ino` · **Circuit:** [esquema de connexions](../../SA2_esquemes_connexions.md) (RGB 9-10-11, piezo 6, relé 7)
 
 ## 🎯 Per què fem aquesta pràctica
 

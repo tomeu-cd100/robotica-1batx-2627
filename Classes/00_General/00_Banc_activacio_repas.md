@@ -47,28 +47,21 @@ Amb 2 h setmanals, el que es va aprendre a l'octubre arriba esborrat al febrer s
 
 ## SA2 · Sortides digitals i PWM
 
-### SA2 · Sessió 1 — abans de «Variables i la primera sortida»
-> **P①** `setup()` i `loop()`: quantes vegades s'executa cadascuna?
-> **P②** `delay(500)`: quant temps és, i en quines unitats treballa `delay()`?
+### SA2 · Sessió 1 — abans d'«Estructures de control: el semàfor»
+> **P①** `setup()` i `loop()`: quantes vegades s'executa cadascuna? I per què és millor `const int LED = 9;` que escriure `9` pertot arreu?
+> **P②** Un LED té polaritat? Com el connectes perquè no es cremi?
 > **P③** Abans de tocar cap cable del circuit, quina norma de seguretat s'aplica sempre?
 
-*Respostes: ① `setup()` un sol cop en engegar; `loop()` es repeteix per sempre. ② mig segon; mil·lisegons. ③ muntar/modificar amb la placa **desconnectada** (i mai curtcircuitar 5 V–GND).*
+*Respostes: ① `setup()` un sol cop en engegar; `loop()` es repeteix per sempre. Amb la constant, si canvies de pin només toques una línia i el codi es llegeix millor. ② sí: pota llarga (+) cap a la sortida, i sempre amb resistència (220 Ω). ③ muntar/modificar amb la placa **desconnectada** (i mai curtcircuitar 5 V–GND).*
 
-### SA2 · Sessió 2 — abans d'«Estructures de control: el semàfor»
-> **P①** Per què és millor `const int LED = 9;` que escriure `9` pertot arreu del codi?
-> **P②** Un LED té polaritat? Com el connectes perquè no es cremi?
-> **P③** Del model entrada–procés–sortida: el LED del semàfor, què és? I la lògica que decideix quan canvia de fase?
-
-*Respostes: ① si canvies de pin només toques una línia; el codi es llegeix millor (nom amb significat). ② sí: pota llarga (+) cap a la sortida, i sempre amb resistència (220 Ω). ③ el LED és **sortida** (actuador); la lògica és el **procés**.*
-
-### SA2 · Sessió 3 — abans de «PWM: intensitat i color»
+### SA2 · Sessió 2 — abans de «PWM: intensitat i color»
 > **P①** Escriu la seqüència de fases d'un semàfor (colors i què fa el codi entre fase i fase).
 > **P②** Prediu: si a `blink.ino` canvio `delay(1000)` per `delay(100)`, què veuré?
 > **P③** Quins pins de la placa admeten PWM i com els reconeixes?
 
 *Respostes: ① verd → groc → vermell, amb `digitalWrite` + `delay` entre fases. ② parpelleig 10 cops més ràpid (gairebé imperceptible). ③ els marcats amb `~` (3, 5, 6, 9, 10, 11).*
 
-### SA2 · Sessió 4 — abans del «Producte: panell de senyalització»
+### SA2 · Sessió 3 — abans del «Producte: panell de senyalització»
 > **P①** `analogWrite(9, 128)`: què fa exactament? Quin rang de valors accepta?
 > **P②** Diferència entre `digitalWrite(9, HIGH)` i `analogWrite(9, 255)`.
 > **P③** Un company diu: "el meu LED no s'encén i el codi compila". Digues **dues** causes probables de maquinari.

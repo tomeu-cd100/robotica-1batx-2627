@@ -1,6 +1,6 @@
 # Pràctica 2 · El semàfor: seqüències amb if i delay
 
-**Quan es fa:** Sessió 2 (modelatge) · **Fitxer:** `02_semafor.ino` · **Circuit:** [esquema de connexions](../../SA2_esquemes_connexions.md) (vermell=8, groc=9, verd=10)
+**Quan es fa:** Sessió 1 (modelatge) · **Fitxer:** `02_semafor.ino` · **Circuit:** [esquema de connexions](../../SA2_esquemes_connexions.md) (vermell=8, groc=9, verd=10)
 
 ## 🎯 Per què fem aquesta pràctica
 
@@ -150,7 +150,7 @@ void loop() {
 
 ## 🔗 On ho aplicaràs
 
-- **Repte de la S2:** activar la **fase nocturna** (ja tens la variable `nocturn` preparada) i, si vas fort, un semàfor de vianants.
+- **Repte de la S1:** activar la **fase nocturna** (ja tens la variable `nocturn` preparada) i, si vas fort, un semàfor de vianants.
 - **Tot seguit:** la [variant amb `switch`](../02b_semafor_switch/02b_semafor_switch.ino) — el mateix semàfor, escrit d'una manera que escala millor.
 
 > ⭐ **Has acabat abans?** Tria un repte a **[Reptes de la SA2](../../../../Reptes/Reptes_SA2.md)** i, quan el docent te'l validi, pinta l'estrella al [tauler de reptes](../../../00_General/00_Tauler_reptes.md).

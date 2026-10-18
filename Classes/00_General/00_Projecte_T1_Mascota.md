@@ -69,7 +69,7 @@ Flux de personalització:
 3. El docent **valida** el disseny (que no se surti del tauler ni trenqui
    cap forat de muntatge).
 4. El fitxer validat entra a la **cua de tall** de la sessió de fabricació
-   (S4 de SA2).
+   (S3 de SA2).
 
 <!-- web:only-github -->
 Plantilla per personalitzar: [`../../Recursos/plantilles_laser/mascota.svg`](../../Recursos/plantilles_laser/mascota.svg) ·
@@ -382,7 +382,7 @@ void melodia(int n1, int n2, int n3) {
 
 | SA | Sessions | Què s'hi construeix | Repte relacionat |
 |---|---|---|---|
-| SA2 | S1-S4 (S4 = fabricació) | Expressions de la mascota: colors i animacions dels ulls (NeoPixel), indicador d'humor (LED RGB) i melodies d'estat (brunzidor). | `Reptes_SA2.md` |
+| SA2 | S1-S3 (S3 = fabricació) | Expressions de la mascota: colors i animacions dels ulls (NeoPixel), indicador d'humor (LED RGB) i melodies d'estat (brunzidor). | `Reptes_SA2.md` |
 | SA3 | S1-S4 | Cada sensor de la caixa (PIR, polsador, TEMT6000, micròfon, DHT11) es programa amb la seva pròpia reacció sensor→comportament. | `Reptes_SA3.md` |
 
 **Producte final (SA3-S3):** la mascota muntada amb **≥3 reaccions

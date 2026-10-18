@@ -73,7 +73,7 @@
 
 **Punt clau:** la sortida (moviment) depèn de l'entrada (sensor) → primer pas cap al **control** (SA6) i la robòtica mòbil (SA7).
 
-> 🧩 **Bastida `millis()` (10', per a qui acaba aviat — recomanat, prepara la SA6):** mini-pràctica [`05_dos_leds_millis`](codi/05_dos_leds_millis/05_dos_leds_millis.ino): dos LED a ritmes diferents **sense `delay()`**. Repesca el concepte presentat a la SA2 S2 («`delay()` bloqueja») i és el patró que la **màquina d'estats de la SA6** dona per sabut. Si no hi arriba ningú, reserva els 10' d'escalfament previstos a la S3 de SA6.
+> 🧩 **Bastida `millis()` (10', per a qui acaba aviat — recomanat, prepara la SA6):** mini-pràctica [`05_dos_leds_millis`](codi/05_dos_leds_millis/05_dos_leds_millis.ino): dos LED a ritmes diferents **sense `delay()`**. Repesca el concepte presentat a la SA2 S1 («`delay()` bloqueja») i és el patró que la **màquina d'estats de la SA6** dona per sabut. Si no hi arriba ningú, reserva els 10' d'escalfament previstos a la S3 de SA6.
 
 ---
 

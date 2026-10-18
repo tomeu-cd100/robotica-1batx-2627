@@ -23,7 +23,7 @@ En aquest ordre (de més a menys rendiment):
 2. **Kata d'escriptura** (10', a cada sessió amb codi de SA3-SA8): projectes l'enunciat i escriuen el bloc central **de zero abans d'obrir el sketch**; després comparen. No costa preparació (està escrit) ni recollida (no es qualifica), i és l'única estona en què tot l'alumnat **escriu** codi en lloc de llegir-lo. Enunciats a `Classes/SAx/SAx_katas.md`, solucions comentades a `SAx_katas_solucions.md`. El dia del mini-check, el mini-check el substitueix. [Política completa](../../Programació%20didàctica/04_Metodologia.md)
 3. **Targetes de rescat** (imprimeix-les i deixa-les al racó de material; s'autogestionen). [`00_Targetes_rescat.md`](00_Targetes_rescat.md)
 4. **Revisió creuada de codi** abans de tancar cada producte (una millora concreta i un dubte al company). És el que evidencia la cooperació ara que el treball és individual, i costa 5'. Pòster: [`00_Poster_aula_metode_DEPURA_rols.md`](00_Poster_aula_metode_DEPURA_rols.md)
-5. **Racó de mesura amb multímetre** (SA2-S1 i SA3-S2: són 2 sessions concretes, no una rutina contínua).
+5. **Racó de mesura amb multímetre** (SA2-S1, dins del semàfor, i SA3-S2: són 2 sessions concretes, no una rutina contínua).
 
 ## Capa 3 — quan el curs ja roda (2n trimestre, o mai si no hi arribes)
 

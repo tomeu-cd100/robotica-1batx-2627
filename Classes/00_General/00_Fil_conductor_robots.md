@@ -46,7 +46,7 @@ Dossier de cada robot (peces, esquema de muntatge, cablatge i rúbrica):
 
 | Trimestre | Sessió de fabricació | Què s'hi fa |
 |---|---|---|
-| T1 | S4 de SA2 | Tall làser de la caixa comuna i gravat de cares/orelles personalitzades; muntatge inicial de la mascota |
+| T1 | S3 de SA2 | Tall làser de la caixa comuna i gravat de cares/orelles personalitzades; muntatge inicial de la mascota |
 | T2 | S4 de SA4 | Tall làser i muntatge del braç de 3 GDL (base, colze, pinça) |
 | T3 | Sessió 0 del trimestre (abans de SA7) | Muntatge del xassís del rover (2 pisos) |
 

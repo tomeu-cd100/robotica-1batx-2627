@@ -26,7 +26,7 @@ El curs treballa de manera **individual** (`Programació didàctica/04_Metodolog
 
 ---
 
-## SA2 · Mini-check (inici de la Sessió 4)
+## SA2 · Mini-check (inici de la Sessió 3)
 
 **Enunciat (projectar):**
 > Escriu **de memòria** un programa d'Arduino complet que faci parpellejar un LED connectat al **pin 8**: mig segon encès, mig segon apagat.

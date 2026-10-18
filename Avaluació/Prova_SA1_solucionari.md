@@ -1,6 +1,6 @@
 # Prova SA1 · Guia de correcció i solucionari (docent)
 
-**Durada:** 50 min · **Quan:** primers 50' de la **S1 de la SA2** · **Individual**, en paper, sense apunts · **Models:** A i B (mateixa estructura, dades diferents)
+**Durada:** 50 min · **Quan:** primers 50' de la **sessió de marge** entre la SA1 i la SA2 · **Individual**, en paper, sense apunts · **Models:** A i B (mateixa estructura, dades diferents)
 
 > Enunciat per imprimir: [`Prova_SA1.md`](Prova_SA1.md). **Aquest document no es lliura a l'alumnat.**
 
@@ -12,7 +12,7 @@ La SA1 es qualificava només amb el pòster, el quadern i l'observació: cap ins
 
 ## Logística
 
-- **Quan:** a l'inici de la **S1 de la SA2**, abans de repartir cap kit. No retalla la SA1 (que no es retalla mai, vegeu [`08_Sequenciacio`](../Programació%20didàctica/08_Sequenciacio_temporal_anual.md)); el temps surt de la S1 de la SA2, que es reorganitza a la seva [guia docent](../Classes/SA2/SA2_guia_docent.md).
+- **Quan:** a la **sessió de marge** entre la SA1 i la SA2, abans de repartir cap kit. No retalla cap SA: la sessió té 2 h pròpies al quadre d'hores (vegeu [`08_Sequenciacio`](../Programació%20didàctica/08_Sequenciacio_temporal_anual.md#sessio-de-marge-prova-sa1-i-posada-al-dia)); la resta de la sessió és posada al dia de la SA1.
 - **Avisa'l a la S3 de la SA1** (data i què entra): la prova només fa efecte si se sap que arriba.
 - **Impressió:** obre la pàgina de la prova a la web (vista docent) i imprimeix-la amb el navegador (Ctrl+P, A4). Cada model ocupa **5 pàgines**: **model A = pàgines 1-5**, **model B = pàgines 6-10** (el B comença sempre en pàgina nova). Imprimeix la meitat de còpies de cada rang.
 - **Models A/B:** reparteix-los **alternats per taules**, de manera que dos companys de costat mai no tinguin el mateix model.
