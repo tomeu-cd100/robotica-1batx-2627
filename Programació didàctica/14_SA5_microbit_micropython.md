@@ -33,6 +33,12 @@ Sintaxi de Python (indentació, variables, funcions); E/S de micro:bit (matriu L
 | **3** | **Ràdio**: missatgeria/comandament entre dues micro:bit. Mini-projecte: "dau digital" o "pedra-paper-tisora" per ràdio. Deures: targeta de **repàs exprés de C++** (la SA6 torna a C++ després de 3 setmanes de Python). |
 | **4 (opcional, fora del còmput)** | **Taula comparativa C++ ↔ Python** d'un mateix programa (p. ex. comptador). Reflexió sobre paradigmes. *Si no es fa la sessió, la comparativa es completa dins el tancament de la S3 (15').* |
 
+> 🤖 **Fil conductor de robots:** a la sessió 3, un **torn de taller** de 20'
+> (al lloc del «+ repte») connecta la **micro:bit pont** a l'Arduino del braç
+> (P1 → D0 i GND), i el comandament per ràdio passa a moure el braç
+> ([dossier](../Classes/00_General/00_Projecte_T2_Brac.md)). El braç no es
+> re-cableja: continua amb l'Arduino.
+
 ## Producte
 Aplicació amb micro:bit que usa sensors i/o ràdio (comptapassos, nightlight, joc per ràdio) + taula comparativa C++/Python al quadern.
 

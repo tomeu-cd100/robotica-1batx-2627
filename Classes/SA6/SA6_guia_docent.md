@@ -68,6 +68,7 @@
 - **Modelatge (25'):** conceptes: **consigna, sensor (realimentació), error, actuador**. **Llaç obert** (sense sensor, temporitzat) vs **llaç tancat** (amb sensor). **Diagrama de blocs**.
 - **Pràctica guiada (35'):** `01_llac_obert_vs_tancat.ino`; comparen el comportament dels dos modes amb el mateix muntatge.
 - **Repte (40'):** dibuixar el diagrama de blocs del seu sistema; identificar entrada/sortida/realimentació; **+ repte:** pensar 3 exemples reals de cada tipus.
+- 🔧 **Torn de taller del braç (20', al lloc del + repte):** muntar el **sensor de col·lisió** a l'abast de la pinça (D2) i dibuixar el **diagrama de blocs del braç**: el replay és llaç obert, l'emergència és llaç tancat ([dossier](../00_General/00_Projecte_T2_Brac.md)).
 - **Tancament (10'):** quadern (diagrama).
 
 > ⏱️ **Marge:** el temps efectiu real és ~100' (arrencada + recollida), no 120'. Si vas just, retalla primer: **el «+ repte» (3 exemples reals de cada tipus)**.
@@ -81,6 +82,7 @@
 - **Modelatge (25'):** `02_termostat_histeresi.ino`. Control **tot/res** amb dos llindars (**histèresi**) per evitar el parpelleig.
 - **Pràctica guiada (35'):** termòstat amb NTC + LED/ventilador i histèresi.
 - **Repte (40'):** ajustar la finestra d'histèresi i observar l'efecte; **+ repte:** afegir indicador d'estat (verd/vermell).
+- 🔧 **Torn de taller del braç (15', al lloc del + repte):** trobar i anotar al quadern els **angles límit** de cada servo, i deixar el cablatge **endreçat i etiquetat** (criteri R1 de la rúbrica del braç). Així la S3 queda només per a la màquina d'estats.
 - **Tancament (10'):** quadern (gràfic del comportament).
 
 > ⏱️ **Marge:** el temps efectiu real és ~100' (arrencada + recollida), no 120'. Si vas just, retalla primer: **el «+ repte» (indicador verd/vermell)**. Recorda repartir la **targeta de represa de MicroPython** com a deures (vegeu més avall).

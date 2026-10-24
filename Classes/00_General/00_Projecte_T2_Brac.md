@@ -57,14 +57,62 @@ El que cadascú pot personalitzar és **després del tall**: pintar o
 etiquetar les seves peces per distingir-les de les dels altres durant
 l'emmagatzematge entre sessions.
 
-Flux de fabricació:
-1. El docent llança el tall de `brac.svg` per **lots** (nesting de diversos
-   jocs de peces per tauler) durant la sessió dedicada (S4 de SA4).
-2. Cada alumne/a recull el seu joc de peces i les **dents de pinça**
-   impreses prèviament.
-3. Muntatge inicial a la mateixa sessió (encaixos, sense encolar).
-4. El full de cua públic per màquina (alumne/a · fitxer · estat) es manté
-   igual que per als altres robots del curs.
+### El braç es construeix al llarg de tot el trimestre
+
+El braç no es munta en un sol dia: **creix sessió a sessió**. Quan arribes a
+la SA4 tens una **caixa amb el teu nom** amb les peces ja tallades i els
+dits de la pinça impresos. A cada sessió hi ha un **torn de taller** de
+15-25 minuts en què hi afegeixes **la peça que la sessió t'acaba
+d'ensenyar**. Així, el servo l'aprens movent la base del teu braç, i la ràdio
+l'aprens movent-lo des del comandament.
+
+| Sessió | Què aprens | Què hi afegeixes al braç (torn de taller) |
+|---|---|---|
+| SA4 · S1 | Servo + potenciòmetre | 25': base, torres i **servo de base**. La pràctica servo-potenciòmetre la fas directament sobre la base. |
+| SA4 · S2 | Motor DC + pont H | 20': **segment 1 i servo del colze** (el motor DC no és del braç, el torn és curt). |
+| SA4 · S3 | Del sensor al moviment | 25': **suport de la pinça, dits i servo de la pinça**, amb l'alimentació externa comuna. Acabes amb el braç sencer controlat amb 3 potenciòmetres. |
+| SA4 · S4 | Producte de SA4 | Cap torn: és la sessió del producte de la SA (barrera o ventilador). Si vols, el registre/replay del braç pot ser el teu producte. |
+| SA5 · S1-S2 | MicroPython, sensors | Cap torn. La inclinació que aprens a la S2 serà el gest del comandament. |
+| SA5 · S3 | Ràdio | 20': **micro:bit pont** (P1 → D0 i GND) i **comandament per ràdio** del braç. |
+| SA6 · S1 | Llaç obert/tancat | 20': **sensor de col·lisió** com a final de carrera, i el diagrama de blocs del braç (el replay és llaç obert; l'emergència, llaç tancat). |
+| SA6 · S2 | Termòstat i histèresi | 15': **angles límit** de cada servo (anota'ls al quadern) i cablatge **endreçat i etiquetat** (criteri R1). |
+| SA6 · S3 | Màquina d'estats | **Producte:** la màquina d'estats del braç. Ja no cal muntar res. |
+| SA6 · S4 | — | Prova T2 (el braç ja és tancat). |
+
+> 📦 **Entre sessions, el braç viu a la seva caixa.** Si un dia et falta
+> una peça, fas la pràctica de la sessió a la breadboard com sempre:
+> **cap pràctica depèn del braç per funcionar**. El torn de taller es
+> recupera a la sessió següent.
+
+<div class="nomes-docent" markdown="1">
+
+> 🧑‍🏫 **Per al docent: com funcionen els torns (des del 24-10-2026).**
+> - **Tall abans de la s13, fora d'horari:** com que el braç no té zona
+>   personalitzable, es pot tallar per **lots** (diversos jocs de peces per
+>   tauler) durant les vacances de Nadal, i els dits de pinça s'imprimeixen
+>   igual que la resta de peces 3D. Prepara una caixa etiquetada per alumne/a.
+> - **D'on surten els minuts:** el torn ocupa el lloc del **«+ repte»** de la
+>   sessió, que és el primer que les guies ja diuen de retallar. A la SA4 S2 i
+>   la SA6 S2 també retalla una mica de pràctica pròpia (motor DC i
+>   termòstat). Amb un grup de 5 hi cap.
+> - **Què es guanya:** la **S4 de SA4 torna a ser la sessió de producte**, i
+>   la primera retallada del pla de contingència del T2 queda lliure com a
+>   **marge real (~2 h)**. Vegeu el doc 08.
+> - **Contingència:** si el tall no és a punt per a la s13, o el muntatge
+>   s'endarrereix més d'una sessió, torna al flux de sota (fabricació
+>   concentrada a la S4 de SA4). El repte de la S3 fa de producte i es gasta
+>   la primera retallada.
+>
+> **Flux anterior (contingència): fabricació en una sola sessió.**
+> 1. El docent llança el tall de `brac.svg` per **lots** (nesting de diversos
+>    jocs de peces per tauler) durant la sessió dedicada (S4 de SA4).
+> 2. Cada alumne/a recull el seu joc de peces i les **dents de pinça**
+>    impreses prèviament.
+> 3. Muntatge inicial a la mateixa sessió (encaixos, sense encolar).
+> 4. El full de cua públic per màquina (alumne/a · fitxer · estat) es manté
+>    igual que per als altres robots del curs.
+
+</div>
 
 <div class="nomes-docent" markdown="1">
 
@@ -147,9 +195,9 @@ la taula de dalt **es queda igual**; només hi sumes dos cables:
 
 | SA | Sessions | Què s'hi construeix | Repte relacionat |
 |---|---|---|---|
-| SA4 | S1-S4 (S4 = fabricació) | Control per potenciòmetre de cada articulació i registre/replay d'una seqüència de moviments. | `Reptes_SA4.md` |
-| SA5 | S1-S3 | Comandament per ràdio (inclinació/botons) i micro:bit pont que passa les ordres a l'Arduino del braç. | `Reptes_SA5.md` |
-| SA6 | S1-S4 | Màquina d'estats del braç (repòs/manual/replay/emergència); el sensor de col·lisió atura els servos. | `Reptes_SA6.md` |
+| SA4 | S1-S3 (torns de taller) | Muntatge articulació a articulació i control per potenciòmetre de cada una; registre/replay d'una seqüència de moviments. | `Reptes_SA4.md` |
+| SA5 | S3 (torn de taller) | Comandament per ràdio (inclinació/botons) i micro:bit pont que passa les ordres a l'Arduino del braç. | `Reptes_SA5.md` |
+| SA6 | S1-S3 (torns S1-S2) | Sensor de col·lisió, angles límit i cablatge endreçat; màquina d'estats del braç (repòs/manual/replay/emergència) com a producte a la S3. | `Reptes_SA6.md` |
 
 **Nota:** la histèresi de SA6 es treballa al termòstat de les sessions de
 SA6, no al braç; el braç aporta la màquina d'estats i l'emergència.

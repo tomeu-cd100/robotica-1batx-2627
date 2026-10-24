@@ -33,6 +33,12 @@ Sistema de control; **llaç obert vs llaç tancat**; realimentació, consigna i 
 | **3** | **Màquina d'estats**: implementació amb `switch`/enum (p. ex. seqüència d'un rentat o d'un semàfor adaptatiu). **Tancament del producte** (documentació + defensa 2-3'). |
 | **4** | **Prova pràctica T2** (individual, sessió sencera — vegeu `Avaluació/Prova_practica_T2.md`). La **regulació proporcional** és **+ampliació** (material i repte ⭐ per a qui va sobrat; no és nucli). |
 
+> 🤖 **Fil conductor de robots:** **torns de taller** al lloc del «+ repte»:
+> S1 (20') sensor de col·lisió del braç i el seu diagrama de blocs; S2 (15')
+> angles límit i cablatge endreçat. A la S3, la màquina d'estats del braç
+> (`enum` + `switch`, en el mateix C++ de la sessió) és el producte
+> ([dossier](../Classes/00_General/00_Projecte_T2_Brac.md)).
+
 ## Producte
 Sistema de control documentat (termòstat amb histèresi o procés amb màquina d'estats) amb diagrama de blocs i anàlisi de la resposta. **Es tanca a la S3**; la S4 és la prova T2 individual.
 

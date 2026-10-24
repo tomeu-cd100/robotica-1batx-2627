@@ -35,10 +35,14 @@ Actuadors de moviment: servomotor (PWM, llibreria `Servo`), motor DC, **driver/p
 
 > 🤖 **Fil conductor de robots:** amb el fil conductor actiu
 > ([`Classes/00_General/00_Fil_conductor_robots.md`](../Classes/00_General/00_Fil_conductor_robots.md)),
-> la sessió 4 és també la **sessió de fabricació del braç** (tall làser i
-> muntatge del braç de 3 GDL,
-> [dossier](../Classes/00_General/00_Projecte_T2_Brac.md)): el repte de la
-> sessió 3 fa de producte.
+> el braç es munta en **torns de taller** de 20-25' a les sessions 1-3, al
+> lloc del «+ repte»: S1 base i servo de base, S2 segment i servo del colze,
+> S3 pinça i alimentació comuna
+> ([dossier](../Classes/00_General/00_Projecte_T2_Brac.md)). La **sessió 4
+> continua sent la de producte** i és comprimible com a marge.
+> *Contingència (pla anterior):* si les peces no són tallades a l'inici del
+> trimestre, la sessió 4 passa a ser la **sessió de fabricació del braç**
+> (tall làser i muntatge) i el repte de la sessió 3 fa de producte.
 
 ## Producte
 Mecanisme motoritzat controlat per sensor (barrera, braç o ventilador) amb control de direcció/velocitat i codi modular.

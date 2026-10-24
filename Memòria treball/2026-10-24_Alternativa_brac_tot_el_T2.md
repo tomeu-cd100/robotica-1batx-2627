@@ -1,7 +1,16 @@
 # 2026-10-24 · Alternativa: construir el braç durant tot el 2n trimestre
 
-**Estat:** proposta pendent de validar pel docent. No s'ha tocat cap document
-del curs fora de la correcció de «parella» a `08_Sequenciacio_temporal_anual.md`.
+**Estat:** **APLICADA al material el 24-10-2026** (a petició del docent). El pla
+anterior (fabricació concentrada a la S4 de SA4) es conserva com a
+contingència a tots els documents on apareixia.
+
+Aplicació: dossier del braç (secció «El braç es construeix al llarg de tot el
+trimestre», amb la taula per sessions, la nota docent i el flux anterior com a
+contingència), fil conductor (calendari i nota d'hores), doc 08 (taula de
+retallades i actualització del marge), docs 13/14/15 de la programació, guies
+docents de SA4 (S1-S3 i nota de la S4), SA5 (S3) i SA6 (S1-S2), portada T2 i
+`Reptes_SA4.md`. **No tocats:** fitxes i checklists d'alumnat (tenen PDF
+versionats; el seu bloc «Cap al robot» continua sent vàlid).
 
 ## Punt de partida (pla actual, es conserva com a contingència)
 

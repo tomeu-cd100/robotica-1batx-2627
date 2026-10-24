@@ -31,7 +31,10 @@ robots del curs és al [fil conductor](00_Fil_conductor_robots.md).
 - **Plantilla de tall làser** de l'estructura: `brac.svg`, al material de
   fabricació del docent ([Recursos · plantilles làser](../../Recursos/plantilles_laser/LLEGEIX-ME.md)).
 - **Peces 3D:** [Recursos · peces 3D](../../Recursos/peces_3d/LLEGEIX-ME.md).
-- **Calendari de la sessió de fabricació:** el fixa el docent segons la
+- **Calendari de muntatge:** el braç es munta en **torns de taller** curts
+  a les sessions de SA4-SA6, una peça per sessió
+  ([taula al dossier](00_Projecte_T2_Brac.md#el-braç-es-construeix-al-llarg-de-tot-el-trimestre)).
+  El context de calendari és a la
   [seqüenciació anual](../../Programació didàctica/08_Sequenciacio_temporal_anual.md).
 
 ## Com s'avalua

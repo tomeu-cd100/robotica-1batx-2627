@@ -41,6 +41,7 @@
 - **Modelatge (25'):** `01_servo_potenciometre.ino`. Llibreria `Servo.h`, `attach()`, `write(angle)` (0-180°). Diferència servo ↔ motor DC.
 - **Pràctica guiada (35'):** munten el servo; el mouen a angles fixos; després el controlen amb el potenciòmetre (`map(0-1023 → 0-180)`).
 - **Repte (40'):** "escombrada" automàtica (vaivé 0↔180) suau; **+ repte:** dos servos coordinats.
+- 🔧 **Torn de taller del braç (25', al lloc del + repte):** base + torres + **servo de base**; el control amb potenciòmetre de la pràctica guiada es prova ja sobre la base. Reparteix les caixes amb les peces pretallades ([dossier](../00_General/00_Projecte_T2_Brac.md#el-braç-es-construeix-al-llarg-de-tot-el-trimestre)).
 - **Tancament (10'):** quadern (esquema + codi).
 
 > ⏱️ **Marge:** el temps efectiu real és ~100' (arrencada + recollida), no 120'. Si vas just, retalla primer: **+ repte: dos servos coordinats**.
@@ -54,6 +55,7 @@
 - **Modelatge (30'):** `02_motor_pont_h.ino`. Funcionament del **pont H** (L298N): `IN1`/`IN2` (direcció), `ENA` (velocitat per PWM). **Massa comuna** entre Arduino i alimentació del motor.
 - **Pràctica guiada (30'):** munten el motor amb L298N i alimentació externa; gir endavant/enrere; control de velocitat.
 - **Repte (40'):** funcions `endavant(vel)`, `enrere(vel)`, `atura()`; seqüència de moviments; **+ repte:** rampa d'acceleració.
+- 🔧 **Torn de taller del braç (20', al lloc del + repte):** **segment 1 + servo del colze**. És la sessió més justa del torn (el motor DC no és del braç): si cal, retalla 5' del Repte.
 - **Tancament (10'):** quadern.
 
 > ⏱️ **Marge:** el temps efectiu real és ~100' (arrencada + recollida), no 120'. Si vas just, retalla primer: **+ repte: rampa d'acceleració**.
@@ -67,6 +69,7 @@
 - **Modelatge (25'):** `03_sensor_velocitat.ino`. Integració: l'ultrasons mesura distància → `map()` → velocitat del motor (percepció→acció).
 - **Pràctica guiada (35'):** connecten ultrasons + motor; com més a prop, més lent.
 - **Repte (40'):** aturar el motor per sota d'un llindar de seguretat; **+ repte:** invertir el sentit segons distància.
+- 🔧 **Torn de taller del braç (25', al lloc del + repte):** **suport de la pinça + dits + servo de la pinça** i **alimentació externa comuna** dels 3 servos (piles AA, GND comú). En acabar, el braç sencer es mou amb 3 potenciòmetres: és la fase Arduino completa.
 - **Tancament (10'):** quadern (taula distància→velocitat).
 
 > ⏱️ **Marge:** el temps efectiu real és ~100' (arrencada + recollida), no 120'. Si vas just, retalla primer: **+ repte: invertir el sentit segons distància**.
@@ -120,13 +123,21 @@
 - **S3 · `03_sensor_velocitat` (percepció→acció):** mostra com `map()` converteix **distància → velocitat**. Pregunta: *"què ha de passar a la distància mínima de seguretat?"*
 - **S4 · `04_barrera_automatica` (integració):** mostra'l com a integració; pregunta com personalitzarien temps i angles.
 
-> 🤖 **Fil conductor de robots:** si el curs segueix el fil conductor
-> ([`00_Fil_conductor_robots.md`](../00_General/00_Fil_conductor_robots.md)),
-> aquesta S4 és la **sessió de fabricació del braç**: el repte de la S3 fa de
-> producte (mateixa palanca oficial del pla de contingència) i la sessió es
-> dedica al tall làser i muntatge del braç de 3 GDL (base, colze, pinça)
-> ([dossier](../00_General/00_Projecte_T2_Brac.md)). El mini-check de la S4
-> es manté a l'inici de la sessió.
+> 🤖 **Fil conductor de robots (des del 24-10-2026):** el braç **ja s'ha
+> muntat en els torns de taller de les S1-S3**
+> ([`00_Fil_conductor_robots.md`](../00_General/00_Fil_conductor_robots.md),
+> [dossier](../00_General/00_Projecte_T2_Brac.md)), així que aquesta S4 és
+> la **sessió de producte** de la SA: barrera o ventilador, o bé el
+> **registre/replay del braç** com a producte per a qui el vulgui. Si el
+> calendari va just, aquesta S4 és **comprimible** (el repte de la S3 fa de
+> producte): és el marge real del T2.
+>
+> *Contingència (pla anterior):* si les peces no eren tallades a la s13 i no
+> hi ha hagut torns de taller, aquesta S4 és la **sessió de fabricació del
+> braç**. En aquest cas, el repte de la S3 fa de producte (mateixa palanca
+> oficial del pla de contingència) i la sessió es dedica al tall làser i al
+> muntatge del braç de 3 GDL (base, colze, pinça). El mini-check de la S4 es
+> manté a l'inici de la sessió.
 
 ## Atenció a la diversitat (DUA)
 

@@ -47,17 +47,23 @@ Dossier de cada robot (peces, esquema de muntatge, cablatge i rúbrica):
 | Trimestre | Sessió de fabricació | Què s'hi fa |
 |---|---|---|
 | T1 | S3 de SA2 | Tall làser de la caixa comuna i gravat de cares/orelles personalitzades; muntatge inicial de la mascota |
-| T2 | S4 de SA4 | Tall làser i muntatge del braç de 3 GDL (base, colze, pinça) |
+| T2 | **Torns de taller** de 15-25' a les sessions de SA4-SA6 | El braç es munta articulació a articulació al llarg del trimestre, amb les peces tallades pel docent abans de la s13 ([detall al dossier](00_Projecte_T2_Brac.md#el-braç-es-construeix-al-llarg-de-tot-el-trimestre)) |
 | T3 | Sessió 0 del trimestre (abans de SA7) | Muntatge del xassís del rover (2 pisos) |
 
 <div class="nomes-docent" markdown="1">
 
-> 🧑‍🏫 **D'on surten les hores (nota per al docent):** T1 i T2 usen la
-> palanca oficial del pla de contingència (el repte de la S3 fa de producte i
-> la S4 queda alliberada); T3 comprimeix SA8 de 6 a 4 h (fusió de S1+S2) i
-> trasllada les 2 h a l'inici del trimestre. D'aquestes palanques, ja en
-> queden **dues gastades**: només resta la tercera (SA7 de 8 a 6 h) com a
-> **últim recurs** — el marge del calendari és pràcticament **zero**. Senyal
+> 🧑‍🏫 **D'on surten les hores (nota per al docent):** T1 usa la palanca
+> oficial del pla de contingència (el repte de la S2 de SA2 fa de producte i
+> la S3 queda per a la fabricació); T3 comprimeix SA8 de 6 a 4 h (fusió de
+> S1+S2) i trasllada les 2 h a l'inici del trimestre. **El T2 ja no gasta cap
+> palanca** (des del 24-10-2026): el braç es construeix en **torns de
+> taller** que ocupen el lloc del «+ repte» de cada sessió, i la S4 de SA4
+> torna a ser sessió de producte. Aquesta S4 és, doncs, un **marge real
+> d'~2 h** comprimible, i és la candidata natural per cobrir el dèficit del
+> T3 (decisió abans de Setmana Santa). La tercera palanca (SA7 de 8 a 6 h)
+> continua sent l'**últim recurs**. Si els torns de taller fallen (tall no a
+> punt a la s13), es torna a la fabricació concentrada a la S4 de SA4 i el
+> marge torna a ser pràcticament **zero**. Senyal
 > d'alerta: si el T1 no tanca SA3 al desembre, la mascota de gener es
 > reparteix amb les peces **pretallades pel docent** en lloc d'esperar una
 > sessió de tall addicional. Detall complet al document

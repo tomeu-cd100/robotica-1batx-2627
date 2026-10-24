@@ -76,7 +76,7 @@ perquè no es descobreixi al març.
 | Trimestre | Sessió de fabricació | Retallada del pla de contingència que s'hi gasta |
 |---|---|---|
 | 1r | S3 de SA2 | Primera retallada (S3 de SA2 comprimible: el repte de la S2 fa de producte) |
-| 2n | S4 de SA4 | Primera retallada (S4 de SA4 comprimible: el repte de la S3 fa de producte) |
+| 2n | **Torns de taller** de 15-25' repartits per SA4-SA6 (des del 24-10-2026) | **Cap.** El torn ocupa el lloc del «+ repte» de cada sessió; la S4 de SA4 torna a ser sessió de producte i queda com a **marge real comprimible (~2 h)**. *Contingència:* si el tall no és a punt a la s13, fabricació concentrada a la S4 de SA4 (gasta la primera retallada, com abans). |
 | 3r | Sessió 0 del trimestre | Segona retallada (SA8 comprimible de 6 h a 4 h; les 2 h alliberades es traslladen a l'inici del T3, abans de començar SA7) |
 
 > ⚠️ Amb el fil conductor en marxa, la **primera i la segona retallada** del
@@ -84,6 +84,17 @@ perquè no es descobreixi al març.
 > robots, no disponibles com a marge davant d'imprevistos: el marge efectiu
 > real és **≈ 0 h**. L'única palanca que queda lliure és la **tercera
 > retallada** (SA7 de 8 h a 6 h, últim recurs).
+>
+> 🔧 **Actualització 24-10-2026 (torns de taller al T2):** el braç ja no es
+> fabrica en una sessió; es munta articulació a articulació en **torns de
+> taller** al llarg de SA4-SA6 (detall al
+> [dossier del braç](../Classes/00_General/00_Projecte_T2_Brac.md#el-braç-es-construeix-al-llarg-de-tot-el-trimestre)).
+> Per tant, de la primera retallada **només en queda gastada la meitat del
+> T1** (S3 de SA2), i la **S4 de SA4 torna a ser un marge real d'~2 h**. És
+> la candidata natural per cobrir el dèficit del T3 (vegeu el paràgraf
+> següent): si el T2 va bé de ritme, comprimeix-la (el repte de la S3 fa de
+> producte) i guarda aquestes 2 h per al juny. El paràgraf anterior descriu
+> el **pla de contingència**, que s'aplica si els torns fallen.
 >
 > 📐 **El 3r trimestre neix curt: compta-ho al setembre, no al maig.** SA7 (8) +
 > SA8 (6) + SA9 (10) = **24 h**, i s25-s35 són **11 setmanes ≈ 22 h** —dues
