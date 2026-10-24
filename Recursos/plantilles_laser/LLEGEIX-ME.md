@@ -13,7 +13,8 @@ es poden importar directament sense reescalar.
 | Fitxer | Robot | Mida del tauler |
 | --- | --- | --- |
 | `mascota.svg` | Mascota | 465 × 215 mm |
-| `brac.svg` | Braç | 285 × 150 mm |
+| `brac.svg` | Braç (esquema propi, sense encaixos, no provat) | 285 × 150 mm |
+| `brac_MeArm_v1.1.svg` | **Braç MeArm V1.1 (en prova, 4 servos)** | 189 × 293 mm |
 | `xassis_rover_ARomero.svg` | **Rover (xassís oficial)** | 132 × 138 mm |
 | `rover.svg` | Rover (alternativa de 2 pisos, no provada) | 330 × 125 mm |
 
@@ -25,6 +26,27 @@ es poden importar directament sense reescalar.
 > les línies de tall NO es toquen. L'electrònica del curs (UNO + L298N +
 > portapiles) s'hi fixa amb brides o velcro; les posicions definitives es
 > validen amb el xassís tallat a la mà.
+
+> 🏅 **Crèdit del braç MeArm:** **MeArm V1.1**, disseny de **Ben Gray**
+> (phenoptix), publicat a [github.com/phenoptix/MeArm](https://github.com/phenoptix/MeArm)
+> (`hardware/Robot Chassis/v1/MeArmV1.1.dxf`). El maquinari té llicència
+> **CC BY-SA 3.0**; les fotos del projecte original són no comercials i **no**
+> s'inclouen aquí. `brac_MeArm_v1.1.svg` és una adaptació **només de format**
+> (de cm a mm i colors del curs) feta amb `tools/converteix_dxf_mearm.py`; la
+> geometria és l'original, no es toca.
+>
+> **Estat (24-10-2026): en prova.** Abans d'adoptar-lo cal tallar i muntar un
+> prototip amb el nostre DM i els nostres servos:
+> - les **ranures d'encaix són de 3,0 mm** justos (pensades per a metacrilat):
+>   si el DM fa 3,1-3,2 mm no hi entrarà, i si en fa 2,7-2,9 quedarà fluix;
+> - les **finestres de servo** fan **23,0 × 12,4 mm** (també n'hi ha de
+>   25,2 × 13,0): KS0194 (22,9 × 12,2) i el servo del Starter Kit
+>   (22,9 × 12,3) hi entren, però cal comprovar els forats de les pestanyes;
+> - necessita **4 servos** (base, espatlla, colze, pinça): el kit en té 3 per
+>   alumne/a.
+>
+> A xTool, activa **«tallar primer l'interior»**: el DXF original ho
+> resolia tallant els forats en una capa anterior.
 
 ## Com regenerar-les
 
@@ -38,7 +60,10 @@ py tools/genera_plantilles_laser.py
 Si cal canviar una mida, un forat o una etiqueta, modifica l'script i torna'l
 a executar; això sobreescriu aquests tres fitxers. El
 `xassis_rover_ARomero.svg` és un disseny extern (vegeu el crèdit) i queda
-**fora del generador**: no es regenera ni es modifica.
+**fora del generador**: no es regenera ni es modifica. El
+`brac_MeArm_v1.1.svg` també és extern: no s'edita a mà, es torna a convertir
+des del DXF original amb `py -3.11 tools/converteix_dxf_mearm.py <MeArmV1.1.dxf>`
+(cal el paquet `ezdxf`).
 
 ## Com importar-les a xTool Creative Space
 

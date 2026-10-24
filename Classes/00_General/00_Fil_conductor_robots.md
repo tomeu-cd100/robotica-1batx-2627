@@ -119,7 +119,9 @@ sobre les **zones vermelles** de la plantilla.
   [`../../Recursos/plantilles_laser/mascota.svg`](../../Recursos/plantilles_laser/mascota.svg),
   [`../../Recursos/plantilles_laser/brac.svg`](../../Recursos/plantilles_laser/brac.svg),
   [`../../Recursos/plantilles_laser/xassis_rover_ARomero.svg`](../../Recursos/plantilles_laser/xassis_rover_ARomero.svg)
-  (xassís del rover: disseny d'**Antonio Romero**, CC BY-NC-SA 4.0, geometria provada) ·
+  (xassís del rover: disseny d'**Antonio Romero**, CC BY-NC-SA 4.0, geometria provada),
+  [`../../Recursos/plantilles_laser/brac_MeArm_v1.1.svg`](../../Recursos/plantilles_laser/brac_MeArm_v1.1.svg)
+  (braç **MeArm V1.1** de Ben Gray, CC BY-SA 3.0; **en prova**, alternativa a `brac.svg`) ·
   [`../../Recursos/plantilles_laser/LLEGEIX-ME.md`](../../Recursos/plantilles_laser/LLEGEIX-ME.md)
 - Peces impreses en 3D (OpenSCAD) i la seva guia:
   [`../../Recursos/peces_3d/escaire_caixa.scad`](../../Recursos/peces_3d/escaire_caixa.scad),

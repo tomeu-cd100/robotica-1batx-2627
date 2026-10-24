@@ -92,10 +92,52 @@ la màquina d'estats es pot provar sense ràdio des del Monitor sèrie.
   C++; les de MicroPython queden com a «Pla B».
 - `Reptes_SA4/5/6.md` i `08c_Projectes_vida_real.md` (nota datada).
 
-**Pendent per al setembre (maquinari real):** validar el pont. La micro:bit
+**Pendent abans de Nadal (maquinari real, abans que comenci el T2):** validar el pont. La micro:bit
 treu 3,3 V i l'UNO llegeix un HIGH a partir de 3 V, així que el marge és
 just. Si falla, el **pla B** és tornar a cablejar a la micro:bit, i el
 **pla C** és el braç amb potenciòmetres per cable, sense ràdio.
+
+## Estructura del braç: el MeArm V1.1 (en prova)
+
+**Problema detectat:** `brac.svg` no surt de cap disseny extern. El va generar
+Claude el 18-07 amb `tools/genera_plantilles_laser.py`, i és un esquema de
+plaques planes **sense encaixos** (el dossier deia «encaixa la base amb les
+torres», però no hi ha ranures) que no s'ha tallat mai.
+
+**Alternativa:** el **MeArm**, de Ben Gray (phenoptix), un braç obert de 4 GDL
+per a tall làser en 3 mm. Maquinari amb llicència **CC BY-SA 3.0**, verificada
+al README del repositori `github.com/phenoptix/MeArm`; les imatges són NC i no
+es fan servir. S'ha triat la **V1.1** (la V1 és l'única que no necessita
+placa; la V2 i la V3 sí).
+
+**Fet:**
+- DXF descarregat i analitzat. És en **cm**, té 4 capes (contorns, forats
+  interiors, placa de base i gravat) i ocupa 18,5 × 28,9 cm per braç.
+- Convertit amb `tools/converteix_dxf_mearm.py` →
+  `Recursos/plantilles_laser/brac_MeArm_v1.1.svg` (189 × 293 mm, 1:1, negre =
+  tall, vermell = gravat). Comprovat visualment que coincideix amb el DXF
+  original: 30 peces, sense miralls.
+- Crèdit al `LLEGEIX-ME.md` de les plantilles, enllaç al fil conductor i
+  nota docent «en prova» al dossier del braç. `brac.svg` es conserva.
+
+**Mesures clau (del DXF):**
+
+| Element | MeArm | Els nostres | Veredicte |
+|---|---|---|---|
+| Finestra de servo | 23,0 × 12,4 mm (×2) · 25,2 × 13,0 (×3) | KS0194 22,9 × 12,2 · Starter 22,9 × 12,3 | Hi entren; cal comprovar els forats de les pestanyes |
+| Ranura d'encaix | 3,0 mm | DM «3 mm» (2,7-3,2 reals) | **Crític**: decideix el tall de prova |
+| Servos | 4 (base, espatlla, colze, pinça) | 3 per alumne/a | Cal comprar-ne (recomanat: 2 MG90S per alumne/a) |
+| Força | Kits amb MG90S (≈ 2,2 kg·cm) | KS0194 1,3 · Starter 1,0 kg·cm | Espatlla i colze justos sense MG90S |
+
+**Calendari:** novembre, comprar els MG90S → desembre, prototip (tall,
+muntatge cronometrat i prova del pont) → vacances de Nadal, tall per lots
+→ s13, inici del T2. Si el prototip no funciona, es manté `brac.svg` i el
+dossier actual.
+
+**Si s'adopta, caldrà adaptar:** el dossier (peces, muntatge, cablatge de 4
+servos i rúbrica de «3 articulacions»), `T2_brac.ino` i `T2_brac_estats.ino`
+(4t servo, p. ex. al D6, i ordres per a l'espatlla), la llista de compra
+(09c) i la fabricació del fil conductor.
 
 ## Contingència (el pla actual, sense esborrar res)
 

@@ -66,6 +66,21 @@ Flux de fabricació:
 4. El full de cua públic per màquina (alumne/a · fitxer · estat) es manté
    igual que per als altres robots del curs.
 
+<div class="nomes-docent" markdown="1">
+
+> 🧑‍🏫 **En prova (24-10-2026): el MeArm com a estructura del braç.**
+> `brac.svg` és un esquema propi **sense encaixos i mai tallat**. L'alternativa
+> en avaluació és el **MeArm V1.1** (Ben Gray, CC BY-SA 3.0), un disseny
+> obert de tall làser en 3 mm construït a molts centres:
+> `Recursos/plantilles_laser/brac_MeArm_v1.1.svg` (crèdit i mides al
+> `LLEGEIX-ME.md` de la carpeta). Té **4 graus de llibertat** (un servo més
+> que el kit) i les ranures fan 3,0 mm justos. **Abans de Nadal:** tallar i
+> muntar un prototip amb el nostre DM i els nostres servos, cronometrant-ne
+> el muntatge. Si el prototip funciona, s'adapten el dossier, el codi (4
+> servos) i la rúbrica; si no, es manté aquest dossier tal com és.
+
+</div>
+
 ## Muntatge
 
 1. Encaixa la **base** amb les **dues torres** laterals, sense encolar
@@ -186,7 +201,7 @@ pràctica **T2**, amb el braç ja tancat.
 > Es va canviar perquè la SA5 no ensenya enlloc a moure servos amb la
 > micro:bit i perquè la SA6 torna al C++, de manera que la màquina d'estats
 > s'havia de traduir a Python. Es conserva per si el **pont sèrie falla amb
-> el maquinari real** (validar-ho al setembre). Si s'activa, cal afegir a la
+> el maquinari real** (validar-ho **abans de Nadal**, abans que comenci el T2). Si s'activa, cal afegir a la
 > SA5 una mini-pràctica de servo amb `write_analog` (període de 20 ms) i
 > projectar la taula de traducció de sota abans de la SA6-S3.
 
