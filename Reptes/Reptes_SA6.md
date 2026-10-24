@@ -126,6 +126,6 @@
 
 Aquest trimestre tot suma cap al **braç robòtic** ([dossier](../Classes/00_General/00_Projecte_T2_Brac.md) · [fil conductor](../Classes/00_General/00_Fil_conductor_robots.md)):
 
-- **Repte B (semàfor adaptatiu)** → els modes del braç: la mateixa lògica de màquina d'estats (una sola variable d'estat, transicions controlades, mai dos estats incompatibles alhora) governa repòs/manual/replay/emergència al braç.
+- **Repte B (semàfor adaptatiu)** → els modes del braç: la mateixa lògica de màquina d'estats (una sola variable d'estat, transicions controlades, mai dos estats incompatibles alhora) governa repòs/manual/replay/emergència al braç. I en el mateix C++: el braç continua amb l'Arduino, així que l'`enum` + `switch` d'aquest bloc hi va tal qual.
 
 El sensor de col·lisió del braç fa d'entrada d'emergència: igual que el polsador de vianants força una transició segura al semàfor, un xoc força el braç a l'estat d'emergència i atura els servos. La histèresi d'aquest bloc es treballa amb el termòstat (repte A); el braç n'és la màquina d'estats.

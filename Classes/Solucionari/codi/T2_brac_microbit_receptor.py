@@ -1,4 +1,7 @@
 # Codi de referencia del Projecte T2 - Brac robotic (NOMES DOCENT)
+# PLA B (contingencia): el brac es re-cableja sencer a la micro:bit.
+# El pla per defecte (des del 24-10-2026) mante el brac amb l'Arduino:
+# vegeu T2_brac_estats.ino + T2_brac_microbit_pont.py.
 # Fase micro:bit (SA5-SA6): RECEPTOR (la micro:bit del brac, al Micro:shield).
 # Rep ordres per radio i mou els 3 servos (P0 base, P1 colze, P2 pinca).
 # Sensor de col.lisio a P8: aturada d'emergencia com a la fase Arduino.

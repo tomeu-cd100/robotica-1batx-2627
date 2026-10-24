@@ -48,6 +48,8 @@ Productes sense moviment mecànic (es reserva per al 2n trimestre). **Fil:** *un
 > - **Via avançada (micro:bit → Arduino):** un micro:bit **emissor** envia per **ràdio** a un segon micro:bit **receptor** connectat a l'Arduino per **sèrie/pins**; l'Arduino interpreta el missatge i mou el servo. És un repte d'ampliació d'equips ràpids; **requereix maquinari extra** (2n micro:bit + cablejat) **no previst al pressupost base**.
 >
 > Conclusió: la **continuïtat SA4↔SA5↔SA6 és pedagògica** (mateixa família de productes), no obliga a acoblar físicament les tres plataformes. L'acoblament real és **opcional i avançat**.
+>
+> 🔄 **Actualització 24-10-2026:** amb el fil conductor de robots, la **via avançada és ara el pla per defecte** del braç. El maquinari ja hi és (hi ha 2 micro:bit per alumne/a), i el braç es queda tot el trimestre amb l'Arduino: una micro:bit **pont** reenvia per cable (P1 → D0) les ordres del comandament. Així la màquina d'estats de la SA6 es programa en el mateix C++ que s'ensenya. La via 100% Arduino (potenciòmetres per cable) queda com a **contingència** si el pont falla. Detall i cablatge al [dossier del braç](../Classes/00_General/00_Projecte_T2_Brac.md).
 
 ---
 

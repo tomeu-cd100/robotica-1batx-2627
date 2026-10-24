@@ -4,28 +4,28 @@
 > del segon robot del curs: peces, muntatge, cablatge i rúbrica. Els reptes
 > de SA4, SA5 i SA6 hi van sumant capacitats; aquí es veu el conjunt.
 
-**Durada:** 2n trimestre (SA4-SA6) · **Maquinari:** UNO + breadboard, servo Starter, 2 micro servo KS0194, 3 potenciòmetres, sensor de col·lisió KS0021, micro:bit + Micro:shield, segona micro:bit, caixa/estructura DM 3 mm
+**Durada:** 2n trimestre (SA4-SA6) · **Maquinari:** UNO + breadboard, servo Starter, 2 micro servo KS0194, 3 potenciòmetres, sensor de col·lisió KS0021, 2 micro:bit (comandament i pont), caixa/estructura DM 3 mm
 
 ## El robot
 
 El braç és una estructura de DM 3 mm de **3 graus de llibertat**: una **base**
 que gira, un **colze** que aixeca l'avantbraç i una **pinça** de dos dits
-impresos en 3D que obre i tanca. El que el fa especial és que té **DOS
-cervells** al llarg del trimestre: primer el mateix **Arduino UNO** de
-sempre (SA4), després es re-cableja sencer a una **micro:bit amb
-Micro:shield** (SA5-SA6). El braç no canvia; el que canvia és qui el
-governa i com.
+impresos en 3D que obre i tanca. El seu cervell és el mateix **Arduino UNO**
+de sempre durant **tot el trimestre**: cada SA hi afegeix una capa nova
+sense desfer la de l'anterior. La SA4 li dona el cos i el moviment, la SA5
+li dona un **canal sense fils** (dues micro:bit) i la SA6 li dona el
+**control** (una màquina d'estats en C++).
 
 ![Estructura del braç: base giratòria (servo de gir) entre dues torres de suport lateral, segment 1 fins al colze (servo de l'articulació), segment 2 fins a la pinça de dos dits impresos en 3D (servo de pinça), i el sensor de col·lisió a l'abast de la pinça per a l'emergència](img/brac-estructura.svg)
 
 Què fa: a **SA4** es controla amb **potenciòmetres** com un mini comandament
 de sobretaula i pot **registrar i repetir** una seqüència de moviments; a
-**SA5** es re-cableja al **micro:bit** i s'hi afegeix un **comandament sense
-fils** (la seva segona micro:bit, per ràdio); a **SA6** guanya una
-**màquina d'estats** amb repòs, manual, replay i una **emergència** real
-—el sensor de col·lisió atura els servos si la pinça topa amb res. El
-producte final és el mateix braç, però amb un control cada cop més
-intel·ligent.
+**SA5** s'hi afegeix un **comandament sense fils**: una micro:bit a la mà
+envia ordres per ràdio a una segona micro:bit, el **pont**, que les passa a
+l'Arduino per un cable; a **SA6** guanya una **màquina d'estats** amb repòs,
+manual, replay i una **emergència** real —el sensor de col·lisió atura els
+servos si la pinça topa amb res. El producte final és el mateix braç, però
+amb un control cada cop més intel·ligent.
 
 ## Llista de peces
 
@@ -38,8 +38,9 @@ intel·ligent.
 | Potenciòmetres (control manual, SA4) | Kit 1 | 3 |
 | Sensor de col·lisió KS0021 (emergència) | Kit 2 | 1 |
 | Arduino UNO + breadboard | Kit 1 | 1 |
-| micro:bit + Micro:shield (re-cablatge SA5) | Kit d'aula | 1 |
-| Segona micro:bit (comandament per ràdio) | Kit d'aula | 1 |
+| micro:bit pont (rep la ràdio i la passa a l'Arduino, SA5) | Kit d'aula | 1 |
+| Segona micro:bit (comandament per ràdio, a la mà) | Kit d'aula | 1 |
+| Cables de pinça de cocodril a mascle (pont → Arduino) | Material del centre | 2 |
 | Cargols M3 i M2 | Material del centre | segons muntatge |
 
 <!-- web:only-github -->
@@ -81,8 +82,8 @@ Flux de fabricació:
 6. Munta el **sensor de col·lisió** a l'abast de la pinça (p. ex. al
    suport de la pinça o davant seu), de manera que detecti un xoc abans
    que forci l'estructura.
-7. Cablatge complet segons la taula corresponent (Arduino a SA4,
-   micro:bit a SA5-SA6); comprova totes les connexions **abans** d'alimentar
+7. Cablatge complet segons la taula corresponent (Arduino a SA4; a SA5
+   s'hi suma el pont); comprova totes les connexions **abans** d'alimentar
    els servos.
 8. Prova de moviment: comprova que els **tres servos** arriben als seus
    angles límit **sense forçar el topall** abans de donar el braç per
@@ -110,7 +111,86 @@ Flux de fabricació:
 > **alimentació externa** (piles AA) amb **GND comú** entre les piles i
 > l'Arduino; el pin 5V del UNO no aguanta els tres alhora.
 
-**Fase micro:bit (SA5-SA6):**
+**Fase comandament (SA5-SA6): s'hi afegeix el pont.** Tot el que hi ha a
+la taula de dalt **es queda igual**; només hi sumes dos cables:
+
+| Des de (micro:bit pont) | Cap a (Arduino UNO) | Notes |
+|---|---|---|
+| P1 | D0 (RX) | Per aquí arriben les ordres, una per línia. **Desconnecta'l per pujar el programa** (l'USB fa servir el mateix pin) i torna'l a connectar després. |
+| GND | GND | GND comú: sense ell l'Arduino no entén res. |
+| Ràdio (comandament, 2a micro:bit) | — | Mateix **grup de ràdio** al comandament i al pont (fes servir el teu número de llista). |
+
+> ⚠️ **Els cables van només de la micro:bit cap a l'Arduino.** Mai
+> connectis cap pin de l'Arduino (5 V) a la micro:bit (3,3 V): la
+> cremaries. La micro:bit pont s'alimenta pel seu USB o amb el seu
+> portapiles.
+
+> 🔑 **Per al docent:** implementació completa de referència al
+> [solucionari del trimestre](../Solucionari/Solucionari_T2_SA4-SA6.md) (secció «Codi de referència»).
+
+## Què hi aporta cada SA
+
+| SA | Sessions | Què s'hi construeix | Repte relacionat |
+|---|---|---|---|
+| SA4 | S1-S4 (S4 = fabricació) | Control per potenciòmetre de cada articulació i registre/replay d'una seqüència de moviments. | `Reptes_SA4.md` |
+| SA5 | S1-S3 | Comandament per ràdio (inclinació/botons) i micro:bit pont que passa les ordres a l'Arduino del braç. | `Reptes_SA5.md` |
+| SA6 | S1-S4 | Màquina d'estats del braç (repòs/manual/replay/emergència); el sensor de col·lisió atura els servos. | `Reptes_SA6.md` |
+
+**Nota:** la histèresi de SA6 es treballa al termòstat de les sessions de
+SA6, no al braç; el braç aporta la màquina d'estats i l'emergència.
+
+### La màquina d'estats del braç
+
+És **exactament** el patró que aprens a la SA6 amb
+`03_maquina_estats.ino`: un `enum` amb els estats, una variable `estat` i
+un `switch` amb un `case` per estat. Com que el braç continua amb
+l'Arduino, el programes en el mateix **C++** de la sessió, sense traduir
+res. L'única novetat és d'on surten les ordres: en lloc de llegir
+polsadors, el braç llegeix les **ordres de text** que li passa el pont
+(`Serial`), una per línia.
+
+Els **quatre estats** del braç i què els fa canviar:
+
+| Estat | Què fa el braç | En surt quan… |
+|---|---|---|
+| **Repòs** | Quiet, servos a la posició actual. | Botó A del pont → manual · botó B del pont → replay (si hi ha seqüència gravada). |
+| **Manual** | Obeeix les ordres de ràdio del comandament; sacsejant el comandament es **grava** el punt actual. | Botó A → repòs · botó B → replay. |
+| **Replay** | Reprodueix sola la seqüència gravada, punt a punt (amb `millis()`, sense `delay()`). | En acabar torna a repòs (o salta a emergència si xoca). |
+| **Emergència** | No mou res. Mana per damunt de qualsevol altre estat. | Rearmament **manual**: sensor alliberat **i** botó A. |
+
+> 💡 **Prova la màquina d'estats sense ràdio.** Desconnecta el cable del
+> pont, obre el **Monitor sèrie** (9600, «Nova línia») i escriu les ordres
+> a mà: `A`, `B+`, `G`, `R`… Si el braç obeeix el teclat, obeirà el
+> comandament.
+
+> 🔑 **Per al docent:** implementació completa dels quatre estats al
+> [solucionari del trimestre](../Solucionari/Solucionari_T2_SA4-SA6.md)
+> (secció «Codi de referència del robot del trimestre: el braç»,
+> `T2_brac_estats.ino` + `T2_brac_microbit_pont.py`), amb el protocol de
+> ràdio ampliat amb `"G"` de gravar al comandament. Que
+> l'emergència es comprovi **abans** del bloc d'estats, i no dins de cap
+> d'ells, és la mateixa idea de prioritat que la guarda de seguretat del
+> `03_sensor_velocitat` de la SA4.
+
+**Producte final (SA6-S3):** el braç muntat amb la seva **màquina
+d'estats** (repòs/manual/replay/emergència) i el **comandament per
+ràdio**, capaç d'agafar i moure un objecte. La S4 de SA6 és la prova
+pràctica **T2**, amb el braç ja tancat.
+
+<div class="nomes-docent" markdown="1">
+
+## Pla B (contingència): el braç governat per la micro:bit
+
+> 🧑‍🏫 **Per al docent.** Fins al 24-10-2026 aquest era el pla per defecte:
+> a la SA5 el braç es re-cablejava sencer a una micro:bit amb Micro:shield.
+> Es va canviar perquè la SA5 no ensenya enlloc a moure servos amb la
+> micro:bit i perquè la SA6 torna al C++, de manera que la màquina d'estats
+> s'havia de traduir a Python. Es conserva per si el **pont sèrie falla amb
+> el maquinari real** (validar-ho al setembre). Si s'activa, cal afegir a la
+> SA5 una mini-pràctica de servo amb `write_analog` (període de 20 ms) i
+> projectar la taula de traducció de sota abans de la SA6-S3.
+
+**Cablatge de la fase micro:bit (pla B):**
 
 | Component | Pin (Micro:shield) | Notes |
 |---|---|---|
@@ -124,27 +204,10 @@ Flux de fabricació:
 > els tres servos necessiten **alimentació externa del Micro:shield**, no
 > el 3V del connector d'edge de la micro:bit.
 
-> 🔑 **Per al docent:** implementació completa de referència al
-> [solucionari del trimestre](../Solucionari/Solucionari_T2_SA4-SA6.md) (secció «Codi de referència»).
-
-## Què hi aporta cada SA
-
-| SA | Sessions | Què s'hi construeix | Repte relacionat |
-|---|---|---|---|
-| SA4 | S1-S4 (S4 = fabricació) | Control per potenciòmetre de cada articulació i registre/replay d'una seqüència de moviments. | `Reptes_SA4.md` |
-| SA5 | S1-S4 | Re-cablatge del braç al micro:bit i comandament per ràdio amb la segona micro:bit (inclinació/botons). | `Reptes_SA5.md` |
-| SA6 | S1-S4 | Màquina d'estats del braç (repòs/manual/replay/emergència); el sensor de col·lisió atura els servos. | `Reptes_SA6.md` |
-
-**Nota:** la histèresi de SA6 es treballa al termòstat de les sessions de
-SA6, no al braç; el braç aporta la màquina d'estats i l'emergència.
-
-### La màquina d'estats del braç, en Python
-
-Hi ha un escull que convé anticipar: a la SA6 la màquina d'estats s'ensenya
-**en C++** (`enum` + `switch`), però en aquest punt el braç ja va amb
-**MicroPython**, que no té cap de les dues coses. No és cap problema
-conceptual — el patró és idèntic i només canvien les eines. Projecta aquesta
-taula abans que s'hi posin:
+**La màquina d'estats en Python (pla B).** A la SA6 la màquina d'estats
+s'ensenya **en C++** (`enum` + `switch`), però amb el pla B el braç ja va amb
+**MicroPython**, que no té cap de les dues coses. El patró és idèntic i
+només canvien les eines:
 
 | A la SA6 (C++, `03_maquina_estats.ino`) | Al braç (MicroPython) |
 |---|---|
@@ -154,28 +217,12 @@ taula abans que s'hi posin:
 | `canviaEstat(FASE1);` | `canvia_estat(MANUAL)` (una funció, igual que en C++) |
 | `break;` al final de cada `case` | *(no cal: l'`elif` ja és excloent)* |
 
-Els **quatre estats** del braç i què els fa canviar:
+Codi de referència del pla B: `T2_brac_microbit_receptor.py` al
+[solucionari del trimestre](../Solucionari/Solucionari_T2_SA4-SA6.md) (el
+comandament és el mateix en tots dos plans). Els botons d'estat són els de
+la micro:bit del braç.
 
-| Estat | Què fa el braç | En surt quan… |
-|---|---|---|
-| **Repòs** | Quiet, servos a la posició actual. | Botó A del braç → manual · botó B → replay (si hi ha seqüència gravada). |
-| **Manual** | Obeeix les ordres de ràdio del comandament; sacsejant el comandament es **grava** el punt actual. | Botó A → repòs · botó B → replay. |
-| **Replay** | Reprodueix sola la seqüència gravada, punt a punt. | En acabar torna a repòs (o salta a emergència si xoca). |
-| **Emergència** | No mou res. Mana per damunt de qualsevol altre estat. | Rearmament **manual**: sensor alliberat **i** botó A. |
-
-> 🔑 **Per al docent:** implementació completa dels quatre estats al
-> [solucionari del trimestre](../Solucionari/Solucionari_T2_SA4-SA6.md)
-> (secció «Codi de referència del robot del trimestre: el braç»,
-> `T2_brac_microbit_receptor.py`), amb el protocol de ràdio ampliat amb `"G"`
-> de gravar al comandament. Que
-> l'emergència es comprovi **abans** del bloc d'estats, i no dins de cap
-> d'ells, és la mateixa idea de prioritat que la guarda de seguretat del
-> `03_sensor_velocitat` de la SA4.
-
-**Producte final (SA6-S3):** el braç muntat amb la seva **màquina
-d'estats** (repòs/manual/replay/emergència) i el **comandament per
-ràdio**, capaç d'agafar i moure un objecte. La S4 de SA6 és la prova
-pràctica **T2**, amb el braç ja tancat.
+</div>
 
 ## Rúbrica del robot (producte SA6)
 
@@ -193,8 +240,10 @@ pràctica **T2**, amb el braç ja tancat.
 | El servo tremola | Alimentació insuficient (des de l'USB en lloc d'externa). | Alimentació externa (piles AA) amb GND comú a totes les fases. |
 | El servo força el topall | Recorregut 0-180° mal limitat al codi. | Troba i anota els angles límit reals de cada servo abans de programar-hi res més. |
 | La ràdio no arriba | Les dues micro:bit tenen **grups diferents**. | Comprova que el `group` sigui **el mateix número** a totes dues plaques. |
+| L'Arduino no es deixa programar (error en pujar) | El cable del pont és connectat al **D0**, que l'USB també fa servir. | Desconnecta el cable del D0, puja el programa i torna'l a connectar. |
+| El pont rep però el braç no obeeix | Falta el **GND comú** entre el pont i l'Arduino, o el cable va al pin que no toca. | GND del pont al GND de l'Arduino; P1 del pont al D0. Prova les ordres des del Monitor sèrie per saber de quina banda és el problema. |
 | El braç cau | Parell insuficient per al pes que aixeca. | Escurça els segments o limita la càrrega que agafa la pinça. |
-| La micro:bit es reinicia en moure servos | Servos alimentats pel USB de la micro:bit en lloc del Micro:shield. | Alimentació externa del shield, mai el connector USB. |
+| La micro:bit es reinicia en moure servos *(només pla B)* | Servos alimentats pel USB de la micro:bit en lloc del Micro:shield. | Alimentació externa del shield, mai el connector USB. |
 
 ---
 

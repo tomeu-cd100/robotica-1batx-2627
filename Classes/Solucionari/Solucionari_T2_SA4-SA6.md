@@ -211,12 +211,16 @@ const float Kp = 0.8;   // 0.2 = lent ; 0.8 = equilibrat ; 3.0 = oscil-la/inesta
 
 > Implementació completa d'exemple del producte final (dossier
 > [🦾 Projecte T2](../00_General/00_Projecte_T2_Brac.md)): control per
-> potenciòmetres, aturada d'emergència i, a la fase micro:bit, comandament
-> per ràdio. És UNA solució possible: les parelles en poden fer variants.
-> Fitxers complets: [`T2_brac.ino`](https://github.com/tomeu-cd100/robotica-1batx-2627/blob/main/Classes/Solucionari/codi/T2_brac/T2_brac.ino) (fase
-> Arduino), [`T2_brac_microbit_comandament.py`](https://github.com/tomeu-cd100/robotica-1batx-2627/blob/main/Classes/Solucionari/codi/T2_brac_microbit_comandament.py)
-> i [`T2_brac_microbit_receptor.py`](https://github.com/tomeu-cd100/robotica-1batx-2627/blob/main/Classes/Solucionari/codi/T2_brac_microbit_receptor.py) (fase
-> micro:bit).
+> potenciòmetres, aturada d'emergència i, a SA5-SA6, comandament per ràdio
+> i màquina d'estats. El braç es queda **tot el trimestre amb l'Arduino**:
+> la ràdio hi arriba a través d'una micro:bit **pont**. És UNA solució
+> possible: cadascú en pot fer variants.
+> Fitxers complets: [`T2_brac.ino`](https://github.com/tomeu-cd100/robotica-1batx-2627/blob/main/Classes/Solucionari/codi/T2_brac/T2_brac.ino) (SA4),
+> [`T2_brac_estats.ino`](https://github.com/tomeu-cd100/robotica-1batx-2627/blob/main/Classes/Solucionari/codi/T2_brac_estats/T2_brac_estats.ino) (SA5-SA6, braç),
+> [`T2_brac_microbit_comandament.py`](https://github.com/tomeu-cd100/robotica-1batx-2627/blob/main/Classes/Solucionari/codi/T2_brac_microbit_comandament.py) (a la mà)
+> i [`T2_brac_microbit_pont.py`](https://github.com/tomeu-cd100/robotica-1batx-2627/blob/main/Classes/Solucionari/codi/T2_brac_microbit_pont.py) (pont).
+> Pla B (braç re-cablejat a la micro:bit):
+> [`T2_brac_microbit_receptor.py`](https://github.com/tomeu-cd100/robotica-1batx-2627/blob/main/Classes/Solucionari/codi/T2_brac_microbit_receptor.py).
 
 ### Control amb potenciòmetres i límits d'angle
 
@@ -305,7 +309,78 @@ while True:
     sleep(100)   # ~10 ordres/s: suficient per a un control suau
 ```
 
-### El receptor: servos amb MicroPython
+### El pont: de ràdio a cable
+
+La micro:bit pont no mou res: cada ordre que rep per ràdio la reenvia a
+l'Arduino per `uart` (P1 → D0), acabada en salt de línia. Els seus botons
+són els botons d'estat del braç (`"A"` i `"R"`).
+
+```python
+uart.init(baudrate=9600, tx=pin1, rx=pin2)
+
+while True:
+    ordre = radio.receive()
+    if ordre:
+        # Cada ordre acaba en salt de linia: l'Arduino sap on acaba
+        uart.write(ordre + "\n")
+
+    if button_a.was_pressed():
+        uart.write("A\n")
+    elif button_b.was_pressed():
+        uart.write("R\n")
+```
+
+Per què **D0** i no `SoftwareSerial`: `SoftwareSerial` atura les
+interrupcions mentre rep cada lletra, i la llibreria `Servo` les necessita
+per generar els polsos. El resultat són servos que peguen sotragades cada
+cop que arriba una ordre. El preu de fer servir D0 és haver de
+**desconnectar el cable per pujar el programa**.
+
+### La màquina d'estats en C++ (l'aportació de la SA6)
+
+El producte de SA6 demana **quatre estats** —repòs, manual, replay i
+emergència— i la rúbrica R3 del braç els avalua. És el mateix `enum` +
+`switch` de
+[`03_maquina_estats.ino`](../SA6/codi/03_maquina_estats/03_maquina_estats.ino),
+sense traduir res. Tres decisions que val la pena comentar a l'aula:
+
+```cpp
+void loop() {
+  bool xoc = (digitalRead(PIN_COLLISIO) == LOW);
+  String ordre = llegeixOrdre();     // "" si encara no n'ha arribat cap
+
+  // 1) L'emergencia es comprova ABANS del switch: mana per damunt de tot,
+  //    com la guarda de seguretat del 03_sensor_velocitat (SA4).
+  if (xoc && estat != EMERGENCIA) {
+    canviaEstat(EMERGENCIA);
+  }
+
+  switch (estat) {
+    case EMERGENCIA:
+      // 2) Rearmament MANUAL: sensor alliberat I boto A.
+      if (!xoc && ordre == "A") {
+        canviaEstat(REPOS);
+      }
+      break;
+    // ...
+    case REPLAY:
+      // 3) Replay amb millis(), no amb delay(): cada volta torna a passar
+      //    pel control del xoc de dalt de tot.
+      if (millis() - tPunt >= PAUSA_REPLAY) {
+        // ... aplica el punt seguent
+      }
+      break;
+  }
+}
+```
+
+`llegeixOrdre()` acumula lletres fins al `'\n'` sense bloquejar el `loop()`
+(res de `readStringUntil()`, que s'esperaria fins a un segon). I tot plegat
+es pot provar **sense ràdio**, escrivint les ordres al Monitor sèrie.
+
+### Pla B · El receptor: servos amb MicroPython
+
+> Només si s'activa el pla B del dossier (braç re-cablejat a la micro:bit).
 
 Sense la llibreria `Servo`, MicroPython mou servos escrivint directament el
 valor analògic del PWM: `angle_a_analog()` converteix graus (0-180) a
@@ -322,16 +397,14 @@ def mou(pin, angle):
     pin.write_analog(angle_a_analog(angle))
 ```
 
-### La màquina d'estats (l'aportació de la SA6)
+### Pla B · La màquina d'estats en MicroPython
 
-El producte de SA6 demana **quatre estats** —repòs, manual, replay i
-emergència— i la rúbrica R3 del braç els avalua. Com que en aquest punt el
-braç ja va amb MicroPython, el patró `enum` + `switch` de
+Amb el pla B, el braç ja va amb MicroPython en aquest punt, i el patró `enum` + `switch` de
 [`03_maquina_estats.ino`](../SA6/codi/03_maquina_estats/03_maquina_estats.ino)
 es tradueix així: constants de text en lloc de l'`enum`, cadena `if`/`elif`
 en lloc del `switch` (i sense `break`: l'`elif` ja és excloent), i la mateixa
 funció `canvia_estat()` per centralitzar el canvi. La taula de traducció
-completa és al [dossier del braç](../00_General/00_Projecte_T2_Brac.md#la-màquina-destats-del-braç-en-python).
+completa és al [dossier del braç](../00_General/00_Projecte_T2_Brac.md#pla-b-contingència-el-braç-governat-per-la-microbit).
 
 Dues decisions que val la pena comentar a l'aula:
 

@@ -3,13 +3,15 @@
 # Inclina per moure base i colze; boto A+B alhora obre/tanca la pinca.
 # Sacseja per GRAVAR el punt actual a la seguencia (mode replay de la SA6).
 # Protocol de radio (texts): "B+" "B-" (base), "C+" "C-" (colze), "P" (pinca),
-# "G" (grava el punt actual). Els botons A i B de la placa del BRAC (no d'aquesta)
-# canvien d'estat: A repos/manual, B reprodueix la seguencia.
+# "G" (grava el punt actual). Els botons A i B de la micro:bit PONT, la que hi
+# ha al costat del brac (no d'aquesta), canvien d'estat: A repos/manual, B
+# reprodueix la seguencia. Vegeu T2_brac_microbit_pont.py i T2_brac_estats.ino.
+# (Pla B, brac governat per micro:bit: el receptor es T2_brac_microbit_receptor.py.)
 
 from microbit import *
 import radio
 
-GRUP = 10   # CANVIA'L pel numero de la vostra parella (les 2 plaques igual)
+GRUP = 10   # CANVIA'L pel teu numero de llista (les 2 plaques igual)
 
 radio.on()
 radio.config(group=GRUP)

@@ -64,7 +64,7 @@
 
 **Context.** Un **dau electrònic**, un **pedra-paper-tisora**, o **enviar missatges** entre dos micro:bits per ràdio.
 
-> *Client: empresa de joguines / equip de robòtica · Lliurable: joc o comandament sense fil · Món real: comunicació sense fil i comandaments remots.* (La ràdio és la **base** d'un possible comandament del braç de SA4 — **via avançada i opcional**, requereix pont micro:bit↔Arduino; vegeu `Programació didàctica/08c_Projectes_vida_real.md`.)
+> *Client: empresa de joguines / equip de robòtica · Lliurable: joc o comandament sense fil · Món real: comunicació sense fil i comandaments remots.* (La ràdio és la **base** del comandament del braç de SA4: una micro:bit a la mà envia les ordres i una segona micro:bit, el **pont**, les passa per cable a l'Arduino del braç; vegeu el [dossier del braç](../Classes/00_General/00_Projecte_T2_Brac.md).)
 
 **Què treballa.** `random`, esdeveniments (sacsejada/botó), `display`, i/o comunicació `radio`.
 
@@ -126,6 +126,6 @@
 
 Aquest trimestre tot suma cap al **braç robòtic** ([dossier](../Classes/00_General/00_Projecte_T2_Brac.md) · [fil conductor](../Classes/00_General/00_Fil_conductor_robots.md)):
 
-- **Repte C (joc o missatges per ràdio)** → el comandament del braç: el mateix ping-pong per ràdio entre les teves dues micro:bit és la base de com la segona micro:bit envia inclinació i botons perquè la primera mogui el braç.
+- **Repte C (joc o missatges per ràdio)** → el comandament del braç: el mateix ping-pong per ràdio entre les teves dues micro:bit és la base de com la micro:bit de la mà envia inclinació i botons, i la micro:bit pont els passa a l'Arduino perquè mogui el braç.
 
-El braç que vau muntar a SA4 es re-cableja ara al micro:bit; la ràdio que programeu aquí és **directament** el comandament sense fils del braç, que a SA6 s'integrarà a la màquina d'estats.
+El braç que vau muntar a SA4 **no es toca**: continua amb el seu Arduino. La ràdio que programeu aquí és **directament** el comandament sense fils del braç, que a SA6 s'integrarà a la màquina d'estats.

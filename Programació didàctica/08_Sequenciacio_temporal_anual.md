@@ -35,7 +35,7 @@ Per garantir la **viabilitat real** del curs (2 h/setmana ≈ 70 h), s'apliquen 
 
 1. **Flexibilitat de ritme (marge ~2 h):** la SA marcada amb **\*** (SA4) té la S4 de producte **comprimible** (el repte de la S3 pot fer de producte), la SA2 i la SA5 queden en 3 sessions, i la Prova SA1 té una sessió de marge pròpia. Així hi ha marge per al **diagnòstic inicial** (SA1), festius i imprevistos sense alterar el còmput de referència.
 2. **Proves pràctiques amb sessió pròpia dins de la SA (T1 i T2):** les proves (`Avaluació/Prova_practica_T1/T2/T3`) ocupen **una sessió sencera**, comptada **dins de les 8 h** de la SA de tancament del trimestre — no s'hi barreja cap altra activitat:
-   - **T1** → la **S4 de SA3 és, sencera, la prova** (individual). El producte de parella de la SA3 es tanca a la **S3** (el repte de la S3 és el producte).
+   - **T1** → la **S4 de SA3 és, sencera, la prova** (individual). El producte de la SA3 (la mascota) es tanca a la **S3** (el repte de la S3 és el producte).
    - **T2** → la **S4 de SA6 és, sencera, la prova** (individual). El producte es tanca a la **S3** i el **control proporcional passa a +ampliació** (ja ho era: el nucli avaluable és la histèresi).
    - **T3** → la **S5 de SA9 és, sencera, la prova** (individual, **per estacions rotatives**: la part de micro:bit es fa a la taula i la part de robot per torns a les pistes disponibles). El projecte es tanca a la **S4** (dossier + defensa oral; amb més de 6 equips, defenses esglaonades des de la S3, ja previstes a la guia). La prova és **independent del projecte**: avalua destreses individuals de SA7-SA8 i puntua només a la dimensió «Proves pràctiques» (20 %); el projecte puntua a «Projectes i productes» — cap evidència no compta dues vegades.
 
@@ -47,7 +47,7 @@ Entre la SA1 i la SA2 hi ha una sessió de 2 h que **no pertany a cap SA**:
 - **Resta de la sessió: posada al dia de la SA1.** Qui la té pendent acaba la fitxa-pòster i la tasca de Classroom de la SA1. Qui ho té tot, recull i revisa el kit de la SA2 (LED, resistències de 220 Ω, mòdul RGB, piezo, relé) perquè la S1 del semàfor comenci muntant.
 - Si un imprevist es menja una sessió del 1r trimestre, la posada al dia és el primer que es retalla: la prova es fa igualment, i després s'enllaça directament amb la S1 de la SA2.
 
-> Vegeu la ponderació a `06_Avaluacio_criteris_qualificacio.md` (dimensió "Proves pràctiques", 20 %). **Per què així:** una prova individual de ~100' i una sessió de producte en parella amb defensa **no caben en la mateixa sessió de 2 h**; fer-ho explícit evita descobrir-ho al desembre. El cost (1 sessió per trimestre) ja està comptat dins les hores de la SA.
+> Vegeu la ponderació a `06_Avaluacio_criteris_qualificacio.md` (dimensió "Proves pràctiques", 20 %). **Per què així:** una prova individual de ~100' i una sessió de producte amb defensa **no caben en la mateixa sessió de 2 h**; fer-ho explícit evita descobrir-ho al desembre. El cost (1 sessió per trimestre) ja està comptat dins les hores de la SA.
 
 ## Pla de contingència temporal («curs mínim viable»)
 
@@ -63,9 +63,11 @@ El marge real (~2 h) és **més petit que les pèrdues habituals** d'un curs (fe
 
 ## Fil conductor de robots i ús del marge
 
-El curs aplica el **fil conductor de tres robots** (un robot real per
-parella cada trimestre, construït amb la talladora làser i la impressora 3D
-de l'aula): vegeu
+El curs aplica el **fil conductor de tres robots** (un robot real cada
+trimestre, construït amb la talladora làser i la impressora 3D de l'aula;
+el codi, el producte i l'avaluació són **individuals**, però si el robot
+físic es construeix **individualment o per parella és una decisió
+oberta**): vegeu
 [`../Classes/00_General/00_Fil_conductor_robots.md`](../Classes/00_General/00_Fil_conductor_robots.md).
 Cada sessió de fabricació del fil conductor **consumeix per endavant** una de
 les retallades del pla de contingència anterior; cal deixar-ho explícit aquí

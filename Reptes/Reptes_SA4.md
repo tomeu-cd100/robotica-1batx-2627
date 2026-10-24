@@ -157,4 +157,4 @@ Aquest trimestre tot suma cap al **braç robòtic** ([dossier](../Classes/00_Gen
 
 - **Repte C (braç robòtic)** → cada articulació del braç: el control per potenciòmetre és el mode manual de la base, el colze i la pinça, i la seqüència "agafa i deixa" amb funcions pròpies és el registre/replay de moviments que SA6 convertirà en un mode de la màquina d'estats.
 
-El braç que munteu a la S4 és **el mateix braç** que programeu al repte: guarda el codi, que el reutilitzaràs quan et re-cablegis al micro:bit a SA5.
+El braç que munteu a la S4 és **el mateix braç** que programeu al repte: guarda el codi, que el reutilitzaràs: el braç es queda amb l'Arduino tot el trimestre, i a SA5 només hi afegiràs el comandament per ràdio.
