@@ -126,6 +126,7 @@ l'aprens movent-lo des del comandament.
 > muntar un prototip amb el nostre DM i els nostres servos, cronometrant-ne
 > el muntatge. Si el prototip funciona, s'adapten el dossier, el codi (4
 > servos) i la rúbrica; si no, es manté aquest dossier tal com és.
+> Guia de muntatge del prototip: [Muntatge del braç MeArm](00_Muntatge_brac_MeArm.md).
 
 </div>
 

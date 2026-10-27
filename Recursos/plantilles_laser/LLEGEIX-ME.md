@@ -47,6 +47,9 @@ es poden importar directament sense reescalar.
 >
 > A xTool, activa **«tallar primer l'interior»**: el DXF original ho
 > resolia tallant els forats en una capa anterior.
+>
+> **Guia de muntatge en català:**
+> [`00_Muntatge_brac_MeArm.md`](../../Classes/00_General/00_Muntatge_brac_MeArm.md).
 
 ## Com regenerar-les
 
