@@ -8,16 +8,17 @@
 
 **Nom:** ______________________  **Data:** __________
 
-> Faràs moure el sistema: posició amb servo i velocitat/direcció amb motor DC. Recorda la **massa comuna** i **no alimentar motors des de l'Arduino**.
+> Faràs moure el **teu braç MeArm**: cada activitat s'hi fa a sobre i, en el torn de taller, hi afegeixes un bloc. També faràs girar un motor DC amb pont H (per al rover del T3). Recorda la **massa comuna** i **no alimentar servos ni motors des de l'Arduino**.
 
 ---
 
 ## Activitat 1 · Servomotor (S1)
-0. **PREDIU** (abans d'executar): mirant `01_servo_potenciometre.ino`, què creus que farà el servo en girar el potenciòmetre? ____________________
-1. Munta el servo (senyal al pin 9). Carrega `01_servo_potenciometre.ino` i **comprova** la predicció.
+0. **PREDIU** (abans d'executar): mirant `01_servo_potenciometre.ino`, què creus que farà el servo de la base en girar el potenciòmetre? ____________________
+1. Munta el servo de la base (senyal al pin 9). Carrega `01_servo_potenciometre.ino` i **comprova** la predicció.
 2. Quin rang d'angles accepta `write()`? de ____ a ____ graus.
 3. Controla l'angle amb el potenciòmetre. Quina funció reescala 0-1023 → 0-180? `__________`
-4. **Repte:** vaivé automàtic 0↔180. **+ Repte:** dos servos coordinats.
+4. **Repte:** vaivé automàtic (escombrada). **+ Repte:** dos servos coordinats (base i pinça).
+5. **Taller:** pas 0 (els 4 servos a 90°) i blocs A-B del MeArm. Per què cal centrar els servos **abans** de posar les banyes? ______________________
 
 ## Activitat 2 · Motor DC i pont H (S2)
 1. Munta el motor amb el L298N (ENA=5, IN1=7, IN2=8) i **alimentació externa**.
@@ -30,34 +31,42 @@
 | LOW | LOW | |
 
 3. Com es regula la **velocitat**? Per quin pin? __________________________
-4. **Repte:** funcions `endavant(vel)`, `enrere(vel)`, `atura()`. **+ Repte:** rampa d'acceleració.
+4. **Repte:** funcions `endavant(vel)`, `enrere(vel)`, `atura()`.
+5. **Taller:** blocs C-D del MeArm. Pinça tancada a ____° i oberta a ____°. Quina dent has hagut de girar la banya? ______
 
-## Activitat 3 · Del sensor al moviment (S3)
-1. Connecta l'ultrasons i fes que la **velocitat depengui de la distància**.
-2. Completa:
+## Activitat 3 · Del sensor al braç (S3)
+1. Connecta l'ultrasons de l'estació de recollida (TRIG=7, ECHO=8) i carrega `03_ultrasons_brac.ino`.
+2. Completa mirant el Serial Plotter:
 
-| Distància | Velocitat (0-255) |
-|---|---|
-| > 30 cm | |
-| 15-30 cm | |
-| < 15 cm | |
+| Objecte a… | Distància mesurada (cm) | Què fa el braç |
+|---|---|---|
+| 5 cm | | |
+| 15 cm (just al llindar) | | |
+| 30 cm | | |
 
-3. **Repte:** atura el motor per sota d'un llindar de seguretat. Llindar: ____ cm.
+3. Què passa quan l'objecte és **just al llindar**? Per què? ______________________
+4. **Repte:** obertura de la pinça proporcional a la distància (`map()`) + guarda de seguretat a ____ cm. **+ Repte:** la bastida [`05_dos_servos_millis`](codi/05_dos_servos_millis/EXPLICACIO.md) (dues articulacions alhora amb `millis()`).
 
-## Activitat 4 · Producte: barrera automàtica (S4)
-Dissenya una barrera que s'obre quan arriba un vehicle i es tanca sola.
+## Activitat 4 · Producte: el braç amb potenciòmetres (S4)
+El MeArm amb quatre potenciòmetres, cada servo dins del seu rang segur.
 
-- Angle tancat: ____° · Angle obert: ____° · Temps obert: ____ s
-- Distància de detecció: ____ cm
+| Servo | Pin | Angle mínim | Angle màxim | Com l'he trobat |
+|---|---|---|---|---|
+| Base | D9 | ____° | ____° | |
+| Esquerre | D6 | ____° | ____° | |
+| Dret | D10 | ____° | ____° | |
+| Pinça | D11 | ____° | ____° | |
+
+- Zona morta: ____° · Què passa amb 0? I amb 10? ______________________
 - **Esquema** (dibuixa o enganxa): ______________________
-- **Defensa (1'):** explica el funcionament i una aplicació real.
+- **Defensa (1'):** explica el funcionament i una decisió tècnica (per què aquests angles límit).
 
 **Autoavaluació** (situa't; la nota és 0-10):
 | Criteri | Nivell |
 |---|---|
 | El codi de control és modular i comentat (R1) | ☐ NA ☐ AS ☐ AN ☐ AE |
 | El muntatge és segur (massa comuna, alimentació externa) (R2) | ☐ NA ☐ AS ☐ AN ☐ AE |
-| El sistema respon bé al sensor (control) (R3) | ☐ NA ☐ AS ☐ AN ☐ AE |
+| El braç es mou suau i dins dels angles límit (control) (R3) | ☐ NA ☐ AS ☐ AN ☐ AE |
 
 ---
 
@@ -74,22 +83,22 @@ El muntatge, el codi i el producte són **teus**: els fas i els lliures tu. Aix�
 
 ## Si t'encalles
 
-1. **Pista 1:** comprova la **massa comuna** (GND de l'Arduino unit al GND de l'alimentació del motor).
-2. **Pista 2:** verifica que el motor **no** s'alimenta des del pin 5V de l'Arduino; revisa ENA/IN1/IN2.
+1. **Pista 1:** comprova la **massa comuna** (GND de l'Arduino unit al − de les piles).
+2. **Pista 2:** verifica que els servos i el motor **no** s'alimenten des del pin 5V de l'Arduino; revisa els pins amb el [mapa del braç](../00_General/00_Projecte_T2_Brac.md#cablatge).
 3. **Pista 3:** aplica la **rutina DEPURA** i demana ajuda **explicant què ja has provat**.
 
 > **DEPURA:** **D**escriu · **E**xamina · **P**rova una hipòtesi cada cop · **U**bica · **R**epara · **A**punta-ho.
 
 ## Vols més?
 
-- **Reptes ⭐:** [`Reptes/Reptes_SA4.md`](../../Reptes/Reptes_SA4.md) (barrera, ventilador, braç dispensador).
+- **Reptes ⭐:** [`Reptes/Reptes_SA4.md`](../../Reptes/Reptes_SA4.md) (braç amb límits, braç dispensador, registre i replay).
 - **Simulació interactiva (Wokwi):** servo a [`SA4_esquemes_connexions.md`](SA4_esquemes_connexions.md) (el motor/pont H va amb maquinari real).
 
 ---
 
 ## Pensament computacional d'aquesta SA
 
-Treballes la **DESCOMPOSICIÓ del moviment** (partir una tasca en passos: obrir → esperar → tancar) i l'**ABSTRACCIÓ** amb funcions (`endavant()`, `atura()`…). Quina tasca has dividit en passos? ______________________
+Treballes la **DESCOMPOSICIÓ del moviment** (partir una tasca en passos: girar → baixar → tancar la pinça → pujar) i l'**ABSTRACCIÓ** amb funcions (`llegeixAngle()`, `mouSiCal()`, `endavant()`…): una funció, quatre articulacions. Quina tasca del braç has dividit en passos? ______________________
 
 ## Diana d'autoavaluació
 
@@ -99,17 +108,18 @@ Situa't (0-10):
 |---|---|---|---|---|
 | Controlo la posició d'un servo i la velocitat d'un motor | ☐ | ☐ | ☐ | ☐ |
 | Munto el circuit amb seguretat (massa comuna, alimentació externa) | ☐ | ☐ | ☐ | ☐ |
-| Faig que el moviment respongui a un sensor | ☐ | ☐ | ☐ | ☐ |
+| Faig que el braç respongui a un sensor | ☐ | ☐ | ☐ | ☐ |
+| He muntat i cablejat el meu MeArm | ☐ | ☐ | ☐ | ☐ |
 
 ## Revisió creuada de codi
 
-Llegeix la barrera i el codi d'un company (i ell/a llegirà el teu). **Primer mira'ls amb criteris de les rúbriques R1, R2 i R3** (marca ✓ o ✗):
+Prova el braç i llegeix el codi d'un company (i ell/a farà el mateix amb el teu). **Primer mira'ls amb criteris de les rúbriques R1, R2 i R3** (marca ✓ o ✗):
 
 | Criteri | ✓/✗ |
 |---|---|
-| La barrera **obre i tanca sola** amb els temps que ha definit — R3 | |
-| El motor/servo va amb **alimentació correcta** i **massa comuna** — R2 | |
-| Obrir i tancar estan **encapsulats en funcions** amb nom clar — R1 | |
+| Cap servo **força el topall** i el braç no tremola — R3 | |
+| Els servos van a les **piles** amb **massa comuna** — R2 | |
+| El control d'una articulació està **encapsulat en funcions** amb nom clar — R1 | |
 
 Ara escriu-li el retorn — **ha de sortir de la taula**:
 - Codi revisat de: ______________________
@@ -124,11 +134,12 @@ Ara escriu-li el retorn — **ha de sortir de la taula**:
 
 ## Context real i ODS
 
-Els actuadors mouen el món físic: barreres, ascensors, pròtesis, braços robòtics. **ODS 9** (indústria i innovació) i **ODS 10** (reduir desigualtats: robòtica assistencial i accessibilitat). Quin sistema de moviment ajudaria una persona amb mobilitat reduïda? ______________________
+Els braços robòtics mouen el món físic: cadenes de muntatge, cirurgia, pròtesis de mà, robots que ajuden a menjar persones amb mobilitat reduïda. **ODS 9** (indústria i innovació) i **ODS 10** (reduir desigualtats: robòtica assistencial i accessibilitat). Quina tasca podria fer el teu braç per ajudar una persona amb mobilitat reduïda? ______________________
 
 ---
 
 ## Quadern tècnic (SA4)
 - **Per què cal un pont H / driver?** ____________________________________
 - **Què és la massa comuna i per què és important?** ____________________
+- **Els angles límit del meu braç i com els he trobat:** _________________
 - **Error trobat i solució:** ___________________________________________

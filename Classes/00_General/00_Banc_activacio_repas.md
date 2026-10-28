@@ -104,33 +104,33 @@ Amb 2 h setmanals, el que es va aprendre a l'octubre arriba esborrat al febrer s
 
 ## SA4 · Moviment: servos, motors i ponts H
 
-### SA4 · Sessió 1 — abans d'«El servomotor»
+### SA4 · Sessió 1 — abans d'«El servomotor (la base del braç)»
 > **P①** Per què el codi de l'alarma quedava millor amb una funció `mesuraDistancia()` que amb tot el codi dins `loop()`?
 > **P②** (SA2) `analogWrite(pin, 64)` vs `analogWrite(pin, 192)`: què canvia al LED?
 > **P③** (SA1) Norma de seguretat: què **no** s'ha de connectar mai directament entre si a la placa?
 
 *Respostes: ① encapsula els detalls, es reutilitza i el `loop()` es llegeix com una història (abstracció). ② la intensitat: 64 fluix, 192 fort (PWM). ③ 5 V amb GND (curtcircuit).*
 
-### SA4 · Sessió 2 — abans de «Motor DC i pont H»
+### SA4 · Sessió 2 — abans de «Motor DC i pont H (+ pinça del braç)»
 > **P①** Quines dues línies necessites per començar a fer servir un servo? Quin rang de moviment té?
 > **P②** (SA3) Un polsador amb `INPUT_PULLUP`: quan val LOW?
 > **P③** (SA2) Prediu: `for (int i = 0; i <= 180; i++) { servo.write(i); delay(15); }` — què fa el servo?
 
 *Respostes: ① `#include <Servo.h>` i `servo.attach(pin)`; 0–180°. ② quan està premut. ③ escombrada suau de 0° a 180° (un pas cada 15 ms).*
 
-### SA4 · Sessió 3 — abans de «Del sensor al moviment»
-> **P①** Per què un motor DC **no** es pot alimentar des del pin de 5 V de la placa? Què fem servir en comptes d'això?
+### SA4 · Sessió 3 — abans de «Del sensor al braç»
+> **P①** Per què un motor DC (o quatre servos) **no** es pot alimentar des del pin de 5 V de la placa? Què fem servir en comptes d'això?
 > **P②** Què aconsegueix el pont H que no aconsegueix un transistor sol?
-> **P③** (SA3) Vols que el motor giri més ràpid com més fosc sigui. Quines dues funcions de lectura/conversió encadenaràs?
+> **P③** (SA3) Vols que la pinça s'obri més com més fosc sigui. Quines dues funcions de lectura/conversió encadenaràs?
 
-*Respostes: ① consumeix més corrent del que la placa pot donar (risc de reinici/dany); alimentació externa amb **massa comuna**. ② invertir el sentit de gir (inverteix la polaritat). ③ `analogRead` (0–1023) + `map` cap a 0–255 per a `analogWrite`.*
+*Respostes: ① consumeix més corrent del que la placa pot donar (risc de reinici/dany); alimentació externa amb **massa comuna**. ② invertir el sentit de gir (inverteix la polaritat). ③ `analogRead` (0–1023) + `map` cap al rang d'angles de la pinça per a `write()`.*
 
-### SA4 · Sessió 4 — abans del «Producte: barrera automàtica»
-> **P①** Al codi del sensor de velocitat/moviment: per què filtrem o posem llindar a les lectures abans d'actuar?
+### SA4 · Sessió 4 — abans del «Producte: el braç amb potenciòmetres»
+> **P①** A l'`03_ultrasons_brac`: per què el braç «balla» quan l'objecte és just a la distància del llindar?
 > **P②** (SA2) El semàfor feia les fases amb `delay()`. Quin problema tindria si a més hagués de llegir un polsador contínuament?
 > **P③** (SA1) `setup()` s'executa cada vegada que el `loop()` es repeteix: cert o fals? Justifica.
 
-*Respostes: ① les lectures reals tenen soroll; sense llindar/filtre el sistema actua per error. ② `delay()` **bloqueja**: mentre espera no llegeix res (motivació de `millis()`, que es veu avui amb `05_dos_leds_millis`). ③ fals: només un cop en engegar/reiniciar.*
+*Respostes: ① les lectures reals tenen soroll: just al llindar, una mesura diu «a prop» i la següent «lluny» (avui ho atenuem amb la zona morta; a la SA6 ho resoldrem amb histèresi). ② `delay()` **bloqueja**: mentre espera no llegeix res (motivació de `millis()`, la bastida `05_dos_servos_millis`). ③ fals: només un cop en engegar/reiniciar.*
 
 ---
 

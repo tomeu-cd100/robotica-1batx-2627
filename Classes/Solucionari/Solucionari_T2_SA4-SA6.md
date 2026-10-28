@@ -6,7 +6,10 @@
 
 ## SA4
 
-### Repte: vaivé automàtic del servo (sweep)
+### Repte S1: escombrada del servo de la base (sweep)
+
+Guarda-la: a la S2 és l'eina de calibratge del bloc D del MeArm.
+
 ```cpp
 #include <Servo.h>
 Servo servo;
@@ -17,59 +20,40 @@ void loop(){
 }
 ```
 
-### + Repte: rampa d'acceleració del motor (pont H)
-```cpp
-const int ENA=5, IN1=7, IN2=8;
-void setup(){ pinMode(ENA,OUTPUT); pinMode(IN1,OUTPUT); pinMode(IN2,OUTPUT);
-  digitalWrite(IN1,HIGH); digitalWrite(IN2,LOW); }      // sentit fix
-void loop(){
-  for (int v=0; v<=255; v++){ analogWrite(ENA,v); delay(20); }  // accelera
-  for (int v=255; v>=0; v--){ analogWrite(ENA,v); delay(20); }  // frena
-  delay(500);
-}
-```
-
-### + Repte: invertir el sentit segons la distància
-```cpp
-const int ENA=5, IN1=7, IN2=8, TRIG=12, ECHO=11;
-float dist(){ digitalWrite(TRIG,LOW);delayMicroseconds(2);
-  digitalWrite(TRIG,HIGH);delayMicroseconds(10);digitalWrite(TRIG,LOW);
-  long t = pulseIn(ECHO,HIGH,30000);   // timeout 30 ms
-  if (t == 0) return 400;              // sense eco: fora de rang
-  return t*0.034/2.0; }
-void setup(){ pinMode(ENA,OUTPUT);pinMode(IN1,OUTPUT);pinMode(IN2,OUTPUT);
-  pinMode(TRIG,OUTPUT);pinMode(ECHO,INPUT); }
-void loop(){
-  float d = dist();
-  if (d < 15) { digitalWrite(IN1,LOW); digitalWrite(IN2,HIGH); } // enrere si a prop
-  else        { digitalWrite(IN1,HIGH); digitalWrite(IN2,LOW); } // endavant
-  analogWrite(ENA, 180);
-  delay(50);
-}
-```
-
-### Repte exprés: el traductor de distàncies (estendre el rang del `map()`)
-
-El número que ho decideix és el **50** del `map()` (límit superior del rang d'entrada, en cm). Per estendre el gradient fins a 2 m:
-
-```cpp
-int vel = map((int)d, SEGURETAT, 200, 80, 255);  // abans: ..., 50, 80, 255
-vel = constrain(vel, 80, 255);                   // aquest NO es toca: retalla la sortida (80..255)
-```
-
-Error esperable de l'alumnat: canviar el 50… del `constrain()` (que no en té cap) o tocar el 255 pensant que és la distància. El `map()` tradueix el rang d'**entrada** (cm) al de **sortida** (PWM); el `constrain()` només posa topalls a la sortida.
-
-### + Repte: dos servos coordinats
+### + Repte S1: dos servos coordinats (base i pinça)
 ```cpp
 #include <Servo.h>
 Servo base, pinca;
-void setup(){ base.attach(9); pinca.attach(10); }
+void setup(){ base.attach(9); pinca.attach(11); }
 void loop(){
-  // moviment coordinat: la base gira i la pinca actua a cada extrem
-  base.write(0);   pinca.write(10);  delay(600);   // posicio A, pinca oberta
-  base.write(120); pinca.write(80);  delay(600);   // posicio B, pinca tancada
+  // la base gira i la pinca actua a cada extrem
+  base.write(45);  pinca.write(120); delay(600);   // estacio, pinca oberta
+  base.write(135); pinca.write(60);  delay(600);   // desti, pinca tancada
 }
 ```
+
+### Repte S3: pinça proporcional a la distància + guarda de seguretat
+```cpp
+void loop(){
+  float d = mesuraDistancia();
+  if (d < 3) {
+    // guarda: massa a prop (o lectura dolenta): no es mou res
+  } else {
+    int obertura = map(constrain((int)d, 3, 30), 3, 30, PINCA_OBERTA, PINCA_TANCADA);
+    pinca.write(obertura);               // com mes a prop, mes oberta
+    base.write(d < DIST_OBJECTE ? BASE_ESTACIO : BASE_REPOS);
+  }
+  delay(100);
+}
+```
+
+Error esperable: posar el `constrain()` **després** del `map()` amb els límits de la distància (3, 30) en lloc dels de la pinça. Aquí es retalla l'**entrada** abans de traduir-la; així l'angle mai surt del rang segur de la pinça.
+
+### Reptes A/B/C (missions del braç)
+
+Solucions completes (`minim` i `ampliat`) a `Reptes/Solucionari/SA4/`:
+`A_brac_casa` (botó de casa), `B_brac_dispensador` (agafar i deixar) i
+`C_brac_replay` (registre i replay, amb EEPROM a l'ampliat).
 
 ---
 

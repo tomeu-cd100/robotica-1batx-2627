@@ -2,159 +2,134 @@
 
 > 🧑‍🎓 **Quan toca fer-ne un?** És l'**ampliació ⭐** de la SA: comença'l quan tinguis el **nucli al dia** (les activitats de la fitxa). Tria'n **UN**, ensenya'l al docent perquè el validi i pinta l'estrella al [tauler de reptes](../Classes/00_General/00_Tauler_reptes.md).
 
-**Tria UN dels tres reptes.** Tots **controlen un actuador de moviment** (servo o motor DC) **segons una entrada**. Mateix requisit mínim, ampliacions graduades. Atenció: els motors necessiten **alimentació externa** i seguretat.
+**Tria UN dels tres reptes.** Tots són **missions del teu braç MeArm**: parteixen del producte de la S4 (el braç amb quatre potenciòmetres) i li donen una capacitat nova. Mateix requisit de seguretat per a tots: servos a les **piles** amb GND comú i **cap servo fora del seu rang segur**.
 
 > **Format "producte real":** cada repte simula un **encàrrec professional**. Hi trobaràs **qui** us el demana (client), **quin producte** heu de lliurar i **per a què** serveix al món real. El requisit tècnic és el mateix d'abans; el marc us ajuda a decidir disseny i prioritats com ho faria un equip d'enginyeria.
 
-> **Continguts SA4:** servomotor (llibreria `Servo.h`), motor DC, pont H (sentit i velocitat), `analogWrite`. · **Codi base:** `Classes/SA4/codi/`.
-
-> 🌟 **Producte estrella del trimestre:** el **Repte C (braç robòtic)** és la peça central del 2n trimestre. A SA5 hi afegireu un **comandament micro:bit** i a SA6 el dotareu de **moviment intel·ligent i precís**. Si el vostre equip vol acumular cap al projecte final (SA9), comenceu per aquí. Vegeu `Programació didàctica/08c_Projectes_vida_real.md`.
+> **Continguts SA4:** servomotor (`Servo.h`), rang segur, funcions amb paràmetres, sensor → moviment, `millis()`. · **Codi base:** `Classes/SA4/codi/` (sobretot `04_brac_potenciometres`). · **Pins:** el [mapa del braç](../Classes/00_General/00_Projecte_T2_Brac.md#cablatge) (polsadors A/B al D3/D4).
 
 ---
 
-## 🤖 Repte C · Braç robòtic ⭐ *(producte estrella)*
+## 🏠 Repte A · El braç amb botó de casa
 
-**Client.** Un **petit taller d'automatització** vol un **braç robòtic econòmic** per a tasques repetitives: dispensar una dosi, classificar peces per mida/color o desplaçar objectes lleugers d'un punt a un altre.
+**Client.** Un **laboratori escolar** fa servir braços manipulats per alumnes. Vol que, passi el que passi, un botó porti el braç a una **posició de casa** segura (recollit i amb la pinça tancada).
 
-**Producte a lliurar.** Un **braç robòtic d'un o més servos** que executa una **tasca útil** quan rep una ordre (sensor, polsador o, més endavant, comandament).
+**Producte a lliurar.** El MeArm amb potenciòmetres i un **polsador de casa**.
 
-**Per a què serveix al món real.** Robòtica industrial col·laborativa, automatització de laboratori, accessibilitat (braços assistencials), línies de muntatge.
+**Per a què serveix al món real.** Tots els robots industrials tenen una posició de repòs (*home*) on es deixen en acabar o quan algú s'hi ha d'acostar.
 
-**Què treballa.** Control precís d'un **servo** (`Servo.h`) per a una acció útil, activat per una entrada.
+**Què treballa.** Dos modes de control (manual / casa) i la lectura d'un polsador.
 
 **Requisit mínim.**
-- Un **servo** que executa un **moviment de tasca** (p. ex. 0°→120°→0°) quan es detecta una entrada.
+- Mentre es mantingui premut el polsador A (D3), el braç va a la posició de casa; si no, obeeix els potenciòmetres.
 - Codi comentat.
 
 **Ampliacions graduades.**
-1. *(bàsica)* Controla l'angle directament amb un **potenciòmetre** (mode manual).
-2. *(notable)* Dispensa **una dosi** per activació (un sol cicle, evita repeticions amb *debounce*).
-3. *(⭐⭐⭐)* Coordina **dos servos** (p. ex. base + pinça) per a una tasca completa de "agafa i deixa".
+1. *(bàsica)* La tornada a casa és **suau** (un grau cada pocs mil·lisegons, sense salts).
+2. *(notable)* El botó és un **commutador**: una premuda envia el braç a casa i s'hi queda; una altra el retorna als potenciòmetres (amb **antirebot**).
+3. *(⭐⭐⭐)* Un **LED d'estat** (D5) indica quan el braç és en mode casa.
 
     **Fites** (valida-les en ordre):
-    1. Cada servo funciona **per separat** en un sketch de prova, amb els seus angles límit trobats i anotats al quadern (no forcis mai el topall).
-    2. La seqüència completa existeix amb **funcions pròpies** (`mou_base(angle)`, `mou_pinca(angle)`) i pauses entre moviments; la pinça no es mou mentre la base gira.
-    3. El cicle "agafa i deixa" es repeteix **3 cops seguits** sense recol·locar res a mà.
-
-
-> **Cap a SA5/SA6:** el moviment manual amb potenciòmetre evolucionarà cap a **moviment suau amb control proporcional / màquina d'estats** (SA6). El **comandament per micro:bit** (SA5) és una **via avançada i opcional**: cal un pont de comunicació (vegeu la nota tècnica a `Programació didàctica/08c_Projectes_vida_real.md`). La via recomanada manté el control al mateix Arduino (potenciòmetre/joystick).
+    1. El mode viu en **una sola variable** (p. ex. `modeCasa`) i el LED es pinta a partir d'ella, no de la lectura del botó.
+    2. La tornada suau es fa amb `millis()`: mentre torna, el botó continua responent.
+    3. Prova d'estrès: 10 premudes seguides sense que el LED i el mode quedin mai incoherents.
 
 ---
 
-## 🚧 Repte A · Barrera automàtica
+## 🍬 Repte B · El braç dispensador
 
-**Client.** La gestió d'un **pàrquing o pas a nivell** necessita una **barrera automàtica** que s'obri només quan arriba un vehicle autoritzat i es tanqui sola.
+**Client.** Una **botiga de llaminadures** vol un braç d'aparador: cada vegada que un client prem el botó, el braç agafa una llaminadura de l'**estació de recollida** i la deixa a la safata del client.
 
-**Producte a lliurar.** Una **barrera motoritzada** que s'obre i es tanca segons una entrada (sensor o polsador), amb senyalització d'estat.
+**Producte a lliurar.** El MeArm executant un **cicle complet d'agafar i deixar** per cada premuda.
 
-**Per a què serveix al món real.** Control d'accessos, seguretat viària, regulació d'aparcaments.
+**Per a què serveix al món real.** *Pick and place* industrial, dispensadors de farmàcia, cadenes d'embalatge.
 
-**Què treballa.** Control d'un **servo** (angles 0°–180°) amb la llibreria `Servo.h`, activat per una entrada.
+**Què treballa.** Descomposició d'una tasca en gestos i **funcions amb paràmetres** (`posa(base, esquerre, dret, pinca)`).
 
 **Requisit mínim.**
-- Un **servo** que passa de **tancat (0°)** a **obert (90°/180°)** quan s'activa un **polsador** (o sensor), i torna.
-- Codi comentat amb la llibreria inclosa.
+- Una premuda del polsador A = **un** cicle: anar a l'estació, baixar, tancar la pinça, pujar, girar, baixar, obrir, tornar a casa.
+- Una funció `posa()` per a la posició sencera, amb el **rang segur** (`constrain()`) a dins.
 
 **Ampliacions graduades.**
-1. *(bàsica)* Fes el moviment **suau** (graus de mica en mica amb un `for`).
-2. *(notable)* Obre amb **ultrasons** (detecta el cotxe) i tanca sol passat un temps.
-3. *(⭐⭐⭐)* Afegeix un **LED/semàfor** coordinat (vermell tancada, verd oberta).
+1. *(bàsica)* Moviment **suau** entre posicions: les quatre articulacions arriben alhora.
+2. *(notable)* Només dispensa si l'**ultrasons** veu una peça a l'estació (si no, ho avisa pel Monitor sèrie).
+3. *(⭐⭐⭐)* Compta les **dosis** i s'atura en arribar a un màxim (diposit esgotat).
 
     **Fites** (valida-les en ordre):
-    1. L'estat de la barrera viu en **una sola variable** (p. ex. `oberta`) i el LED es pinta a partir d'ella, no de lectures soltes.
-    2. El semàfor només passa a verd quan el servo **ha acabat** el moviment d'obertura (no a mig camí).
-    3. Prova d'estrès: 10 obertures/tancaments seguits sense que LED i barrera quedin mai incoherents.
-
-
-> **Continuïtat de trimestre:** aquesta barrera reaprofita la senyalització de SA2 i la detecció de SA3; és la versió "amb moviment" del peatge intel·ligent del 1r trimestre.
+    1. Cada gest de la tasca és una crida a `posa()` amb un comentari que diu què fa (*agafa*, *puja*…).
+    2. El moviment suau interpola **les quatre articulacions alhora** (cap no arriba abans que les altres).
+    3. El cicle complet es repeteix **5 cops seguits** sense recol·locar res a mà, i a la sisena premuda el braç es nega a moure's.
 
 ---
 
-## 🌬️ Repte B · Ventilador o vehicle amb motor
+## 🧠 Repte C · El braç que aprèn (registre i replay)
 
-**Client.** Un fabricant de **petits electrodomèstics o vehicles** vol un prototip que controli un **motor DC**: engegar, parar, regular velocitat i invertir el sentit.
+**Client.** Un **taller de reparacions** vol ensenyar tasques noves al braç **sense programar**: el tècnic el mou a mà amb els potenciòmetres, va gravant posicions, i el braç les repeteix soles.
 
-**Producte a lliurar.** Un **dispositiu motoritzat** (ventilador regulable o vehicle) governat per una entrada, amb alimentació segura.
+**Producte a lliurar.** El MeArm amb **gravació de punts** (polsador A) i **reproducció** (polsador B).
 
-**Per a què serveix al món real.** Climatització, mobilitat elèctrica, automoció, electrodomèstics.
+**Per a què serveix al món real.** És l'*ensenyament per demostració* dels robots col·laboratius (cobots): l'operari mou el braç i el robot aprèn la trajectòria.
 
-**Què treballa.** Motor DC amb **pont H**: control de sentit i de velocitat (PWM).
+**Què treballa.** **Arrays** (una llista per servo), comptadors i recorreguts amb `for`.
 
 **Requisit mínim.**
-- Engegar i parar un **motor DC** mitjançant un **pont H**, controlat per una entrada (polsador/potenciòmetre).
-- Codi comentat; alimentació externa connectada amb seguretat.
+- El polsador A grava la posició actual (fins a 10 punts); el polsador B reprodueix tots els punts en ordre.
+- Una premuda = un punt (no se'n graven deu si mantens premut).
 
 **Ampliacions graduades.**
-1. *(bàsica)* Regula la **velocitat** amb PWM des d'un potenciòmetre.
-2. *(notable)* Afegeix **canvi de sentit** (endavant/enrere) amb el pont H.
-3. *(⭐⭐⭐)* Programa una **seqüència** (accelera, manté, frena) amb funcions.
+1. *(bàsica)* El replay va **suau** d'un punt al següent.
+2. *(notable)* El replay es fa amb `millis()` i es pot **avortar** amb el polsador A a mig camí.
+3. *(⭐⭐⭐)* La seqüència es **guarda a l'EEPROM**: el braç la recorda encara que el desendollis.
 
     **Fites** (valida-les en ordre):
-    1. `accelera()` funciona sola: rampa de PWM de 0 al valor objectiu, sense salts bruscos audibles.
-    2. Les tres fases són **funcions amb paràmetres** (velocitat objectiu, durada) sense codi duplicat.
-    3. La seqüència completa s'encadena amb transicions suaus i el `loop()` queda en 3-4 línies llegibles.
+    1. Els punts viuen en **arrays** (o un `struct`) i el Monitor sèrie diu quants n'hi ha gravats.
+    2. Durant el replay, una premuda de A l'atura **a l'instant**, no en acabar el punt.
+    3. Desendolla l'Arduino, torna'l a endollar i prem B: el braç repeteix la tasca gravada abans.
 
-
-> **Cap a SA7:** el control de motor DC amb pont H és la base de la **locomoció del robot mòbil** del 3r trimestre.
-
----
-
-## ⚡ Repte exprés · El traductor de distàncies *(no compta com el teu repte — és un escalfament de 10 minuts)*
-
-Obre la [simulació de la Pràctica 3 a Tinkercad](https://www.tinkercad.com/things/f9fDLDlCYFB-sa4-practica-3-del-sensor-al-moviment?sharecode=FStYfzag9z_QXOcLOy5IaBwlAf1yQ-cGMPcKX2Z_K1w) i arrossega la boleta del sensor: veuràs que **a partir de 51 cm el motor ja va a tope** i el canvi de velocitat només es nota en un tram petit del con.
-
-1. **Investiga:** troba al codi **el número que ho decideix** (pista: mira els quatre paràmetres de `map()` al Bloc 3 de l'[explicació](../Classes/SA4/codi/03_sensor_velocitat/EXPLICACIO.md)).
-2. **Modifica:** fes que el gradient de velocitat s'estengui **fins a 2 metres** — la velocitat ha de pujar suaument durant gairebé tot el recorregut de la boleta.
-3. **Comprova:** amb el monitor sèrie obert, verifica que a ~10 cm va al mínim, a ~1 m a mig gas i a 2 m a tope.
-
-*(Per què el mínim és 80 i no 0? Ho tens al Bloc 3 de l'explicació. Si canvies el 50 i no passa res… segur que has canviat el del `constrain()`? Rellegeix quin fa cada feina.)*
+> **Cap a SA6:** aquest replay és exactament el mode **REPLAY** de la màquina d'estats del braç. Si fas el repte C, a la SA6 ja tindràs mitja feina feta.
 
 ---
 
 ## 🎨 Fes-lo teu (tria abans de començar)
 
-> El repte fixa **què** ha de fer el sistema; **el context el poses tu**. Tria i anota-ho al quadern:
-> - **A:** decideix **què protegeix la barrera**: pàrquing, peatge, pas de granja… i quins temps d'obertura necessita.
-> - **B:** tria **què mou el motor**: ventilador, vehicle, molinet, plataforma giratòria…
-> - **C:** decideix **què dispensa el braç** (llaminadures? cargols? menjar de peixos?) i quanta dosi per cicle.
+> El repte fixa **què** ha de fer el braç; **el context el poses tu**. Tria i anota-ho al quadern:
+> - **A:** on és la posició de casa del teu braç i per què és segura.
+> - **B:** **què dispensa** el teu braç (llaminadures, cargols, fitxes de joc…) i on és la safata.
+> - **C:** **quina tasca** li ensenyaràs (apilar dues peces, servir una fitxa, saludar…).
 
-## Material necessari (segons repte)
-- Arduino UNO + USB · servo SG90 / motor DC + **pont H** (L298N o similar) · **font d'alimentació externa** per als motors · polsador/potenciòmetre/ultrasons segons repte · o **Tinkercad/Wokwi**.
-- **Repte C (braç):** preveure **2 servos** i una **estructura** (cartró, fusta o impressió 3D) per equip.
+## Material necessari
+- El teu MeArm amb l'Arduino, les piles i els 4 potenciòmetres (producte de la S4).
+- **A i C:** polsadors al D3 (i D4 per al C). **A ⭐⭐⭐:** LED amb resistència de 220 Ω al D5. **B ⭐⭐:** l'ultrasons de l'estació (D7/D8).
 
 ## Per on començar (mètode de projecte + PRIMM)
-1. **Analitzar:** quin moviment necessito i què el dispara? Qui és el client i què valora?
-2. **Dissenyar (Predir):** angles/velocitats i diagrama de connexió (compte amb l'alimentació).
-3. **Prototipar:** parteix de `Classes/SA4/codi/` (`01_servo_potenciometre`, `02_motor_pont_h`, `04_barrera_automatica`).
-4. **Provar:** prova **sense càrrega** primer; comprova sentits i angles.
-5. **Millorar:** suavitza moviments, afegeix sensor o segon actuador.
+1. **Analitzar:** quins gestos té la tasca? Escriu-los en ordre al quadern.
+2. **Dissenyar (Predir):** angles de cada gest (mesura'ls amb el Monitor sèrie del producte de la S4).
+3. **Prototipar:** parteix de `04_brac_potenciometres` i de l'[exemple resolt](../Classes/SA4/SA4_exemple_resolt.md) (la funció `posa()`).
+4. **Provar:** primer cada gest per separat, sense res a la pinça.
+5. **Millorar:** suavitza, afegeix el sensor o la memòria.
 
 ## Com s'avalua
 | Rúbrica | Per què |
 |---|---|
-| **R1** (codi) | Ús de llibreries i funcions, lògica de control. |
-| **R2** (circuit) | Connexió i **seguretat** amb motors i alimentació externa. |
-| **R3** (projecte) | Integració actuador + entrada, control fiable, **adequació al producte demanat**. |
+| **R1** (codi) | Funcions amb paràmetres, arrays, lògica de control. |
+| **R2** (circuit) | Servos a les piles amb GND comú; cablatge segons el mapa del braç. |
+| **R3** (projecte) | El braç fa la tasca de manera fiable, sense forçar cap topall, **adequada al producte demanat**. |
 
 ## Producte / entrega
-- Codi `.ino` comentat + esquema (amb alimentació) + quadern tècnic.
-- **Full de producte** (1 cara): qui és el client, què fa el producte i una millora futura.
+- Codi `.ino` comentat + taula de posicions (angles de cada gest) + quadern tècnic.
+- **Full de producte** (1 cara): qui és el client, què fa el braç i una millora futura.
 
 ---
 
 ## Orientació docent
-- **Marc "producte real":** el client i el lliurable són una **capa de sentit**, no afegeixen requisit tècnic. Ajuden a prioritzar disseny i a connectar amb SA5/SA6 i el projecte final. El **Repte C** és el recomanat si l'equip vol construir cap a SA9.
-- **Seguretat (clau):** alimentar motors amb **font externa**, mai des del pin de 5 V; **GND comú**; muntar amb la placa desconnectada. Insistir en R2 (seguretat).
-- **Errors freqüents:** oblidar `#include <Servo.h>` i `attach()`; motor que no gira per manca de pont H/alimentació; sentit invertit (intercanviar sortides del pont H).
-- **Diferenciació:** el mínim és mou-un-actuador-amb-una-entrada; les ampliacions porten a PWM, sentit, *debounce* i coordinació de dos actuadors.
-- **Gestió d'aula:** si no hi ha ponts H per a tothom, simular a Tinkercad o compartir per torns; el repte A enllaça amb `04_barrera_automatica`. Per al braç (C), una estructura comuna impresa en 3D estalvia temps de muntatge.
+- **Marc "producte real":** el client i el lliurable són una **capa de sentit**, no afegeixen requisit tècnic.
+- **Seguretat (clau):** servos a les piles, **GND comú**, i el `constrain()` dins de `posa()`: un repte que força un topall no és vàlid encara que «funcioni».
+- **Errors freqüents:** gravar deu punts amb una premuda (falta esperar que es deixi anar el botó); `posa()` sense pausa (el braç no arriba); arrays fora de rang al punt 11.
+- **Diferenciació:** A és el més assequible (dos modes), B treballa la descomposició i C els arrays. El C enllaça directament amb el mode REPLAY de la SA6.
+- **Solucionari:** `Reptes/Solucionari/SA4/` (`A_brac_casa`, `B_brac_dispensador`, `C_brac_replay`; `minim` i `ampliat`).
 
 ---
 
 ## 🤖 Cap al robot del trimestre
 
-Aquest trimestre tot suma cap al **braç robòtic** ([dossier](../Classes/00_General/00_Projecte_T2_Brac.md) · [fil conductor](../Classes/00_General/00_Fil_conductor_robots.md)):
-
-- **Repte C (braç robòtic)** → cada articulació del braç: el control per potenciòmetre és el mode manual de la base, el colze i la pinça, i la seqüència "agafa i deixa" amb funcions pròpies és el registre/replay de moviments que SA6 convertirà en un mode de la màquina d'estats.
-
-El braç que aneu muntant als torns de taller de les S1-S3 (una articulació per sessió) és **el mateix braç** que programeu al repte: guarda el codi, que el reutilitzaràs: el braç es queda amb l'Arduino tot el trimestre, i a SA5 només hi afegiràs el comandament per ràdio.
+Aquest trimestre **tot és el braç** ([dossier](../Classes/00_General/00_Projecte_T2_Brac.md) · [fil conductor](../Classes/00_General/00_Fil_conductor_robots.md)): els tres reptes són capacitats del mateix MeArm que has muntat als torns de taller. El **botó de casa** (A) i el **replay** (C) tornaran a sortir a la màquina d'estats de la SA6 com a estats **REPÒS** i **REPLAY**; el **dispensador** (B) és una bona demostració per al producte final.

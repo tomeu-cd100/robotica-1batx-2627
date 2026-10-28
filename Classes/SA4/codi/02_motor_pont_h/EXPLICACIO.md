@@ -1,10 +1,15 @@
 # Pràctica 2 · Motor DC i pont H: sentit, velocitat i funcions pròpies
 
-**Quan es fa:** Sessió 2 (modelatge) · **Fitxer:** `02_motor_pont_h.ino` · **Circuit:** [esquema de connexions](../../SA4_esquemes_connexions.md) (ENA=5, IN1=7, IN2=8, alimentació externa + **massa comuna**)
+**Quan es fa:** Sessió 2 (pràctica curta, ~40', **fora del braç**) · **Fitxer:** `02_motor_pont_h.ino` · **Circuit:** [esquema de connexions](../../SA4_esquemes_connexions.md) (ENA=5, IN1=7, IN2=8, alimentació externa + **massa comuna**)
 
 > ✍️ **Kata primer!** No llegeixis encara el codi: obre el [kata d'aquesta pràctica](../../SA4_katas.md) i tens **10 minuts** per escriure el teu bloc (individual, apunts permesos). Després torna aquí i **compara**.
 
 ## 🎯 Per què fem aquesta pràctica
+
+> 🦾 **El motor DC no és del braç.** El MeArm només porta servos, i aquesta
+> pràctica es fa a la breadboard, al costat. És curta a propòsit: el pont H
+> el faràs servir de debò al 3r trimestre, a les rodes del **rover**. La resta
+> de la sessió és per al taller del braç.
 
 La pregunta d'avui: *per què no puc connectar un motor directament a un pin?* Perquè un pin d'Arduino dona **molt poc corrent** — prou per a un LED, ridícul per a un motor. La solució és un **driver**: el pont H **L298N**, un amplificador de corrent que rep les ordres (fluixetes) de l'Arduino i mou el motor amb l'energia de les **piles**. D'aquí surten les dues regles de seguretat que sentiràs com un mantra: **massa comuna** (tots els GND units) i **mai alimentar el motor des del pin 5V**.
 
@@ -145,9 +150,8 @@ void loop() {
 
 ## 🔗 On ho aplicaràs
 
-- **Repte de la S2:** una seqüència de moviments pròpia amb les teves funcions; **+ repte:** rampa d'acceleració (un `for` que apuja la velocitat a poc a poc).
-- **A la S3:** el [sensor de velocitat](../03_sensor_velocitat/03_sensor_velocitat.ino) reutilitza `endavant()` i `atura()` tal quals — les funcions ben fetes es reciclen.
-- **Exemple resolt:** el [ventilador orientable de sobretaula](../../SA4_exemple_resolt.md) és el **bessó** d'aquesta pràctica, comentat pas a pas: els mateixos gestos amb pont H (`bufa`/`expulsa`/`atura` en lloc d'`endavant`/`enrere`/`atura`) més un servo al capdamunt — mira-te'l després del teu primer intent.
-- **Més enllà:** dos motors amb pont H són les **rodes del rover** de la robòtica mòbil (SA7).
+- **Repte de la S2:** una seqüència de moviments pròpia amb les teves funcions (curta: després toca el taller del braç).
+- **Al taller d'avui:** les funcions amb paràmetre tornen a sortir a la [pràctica del braç amb potenciòmetres](../04_brac_potenciometres/EXPLICACIO.md) (`llegeixAngle(pin, minim, maxim)`).
+- **Al 3r trimestre:** dos motors amb pont H són les **rodes del rover** de la robòtica mòbil (SA7). Guarda les teves funcions.
 
 > ⭐ **Has acabat abans?** Tria un repte a **[Reptes de la SA4](../../../../Reptes/Reptes_SA4.md)** i, quan el docent te'l validi, pinta l'estrella al [tauler de reptes](../../../00_General/00_Tauler_reptes.md).

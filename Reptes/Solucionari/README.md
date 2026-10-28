@@ -19,7 +19,7 @@ Solucionari/
 ├── SA1/  A_far_costaner/ · B_llum_bici/ · C_morse/        (.ino)
 ├── SA2/  A_semafor/ · B_llum_ambient/ · C_indicador_nivell/ (.ino)
 ├── SA3/  A_llum_nocturna/ · B_sensor_aparcament/ · C_instrument/ (.ino)
-├── SA4/  A_barrera/ · B_ventilador/ · C_brac_dispensador/  (.ino)
+├── SA4/  A_brac_casa/ · B_brac_dispensador/ · C_brac_replay/  (.ino)
 ├── SA5/  A_comptapassos*.py · B_llum_nit*.py · C_joc_radio*.py
 ├── SA6/  A_termostat/ · B_semafor_adaptatiu/ · C_proporcional/ (.ino)
 ├── SA7/  A_repartidor/ · B_explorador/ · C_seguidor_linia/ (.ino)

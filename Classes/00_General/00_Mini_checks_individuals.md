@@ -47,7 +47,7 @@ El curs treballa de manera **individual** (`Programació didàctica/04_Metodolog
 ## SA4 · Mini-check (inici de la Sessió 4)
 
 **Enunciat (projectar):**
-> **(a)** Escriu les **tres línies** mínimes perquè un servo connectat al pin 9 es posi a **90°** (pensa què va fora, què a `setup()` i què a `loop()`). **(b)** En una frase: per què el motor DC **no** es pot alimentar del pin 5 V de la placa?
+> **(a)** Escriu les **tres línies** mínimes perquè el servo de la base del braç (pin 9) es posi a **90°** (el pas 0!) (pensa què va fora, què a `setup()` i què a `loop()`). **(b)** En una frase: per què els quatre servos del braç (o el motor DC) **no** es poden alimentar del pin 5 V de la placa?
 
 **Què mires:** `#include <Servo.h>` + objecte · `attach(9)` a `setup()` · `write(90)` · (b) consum de corrent superior al que la placa pot donar → alimentació externa amb massa comuna.
 **🟢** tot · **🟡** ordre/ubicació confosos · **🔴** no recorda el patró de la llibreria.

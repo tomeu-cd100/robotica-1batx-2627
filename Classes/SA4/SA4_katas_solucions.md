@@ -40,67 +40,72 @@ void atura() {
 
 **En comentar:** ① a `enrere()` s'intercanvien `IN1`/`IN2` respecte d'`endavant()` — si es repeteix el mateix patró, el motor gira sempre igual; ② `atura()` posa els dos `IN` a `LOW` **i** talla el PWM: amb només `analogWrite(ENA, 0)` també s'atura, però deixar la direcció definida és més net i evita sorpreses en reprendre; ③ `analogWrite(ENA, velocitat)` sempre és (pin, valor) — invertit, compila i no funciona.
 
-## Solució · `03_sensor_velocitat`
+## Solució · `03_ultrasons_brac`
 
 ```cpp
 void loop() {
-  float d = mesuraDistancia();
+  float d = mesuraDistancia();   // UNA mesura per volta
   Serial.println(d);
 
-  if (d < SEGURETAT) {
-    atura();                 // massa a prop: frena
+  if (d < DIST_OBJECTE) {        // valor del kata: 12 cm
+    base.write(BASE_ESTACIO);    // 30 graus al kata
+    pinca.write(PINCA_OBERTA);
   } else {
-    // Reescala la distancia (15..50 cm) a velocitat (100..255) - valors del kata
-    int vel = map((int)d, SEGURETAT, 50, 100, 255);
-    vel = constrain(vel, 100, 255);
-    endavant(vel);
+    base.write(BASE_REPOS);
+    pinca.write(PINCA_TANCADA);
   }
-  delay(50);
+
+  delay(100);
 }
 ```
 
-**En comentar:** ① la conversió `(int)d` cal perquè `map()` treballa amb enters — passar-hi el `float` directament compila però trunca on no toca; ② el `constrain()` va **després** del `map()`: `map()` extrapola fora del rang (a 80 cm donaria una «velocitat» > 255), no limita; ③ el `Serial.println(d)` va abans de la decisió: així es veu la distància també quan el robot frena, que és justament quan cal depurar.
+**En comentar (els tres punts del kata):** ① una sola crida a `mesuraDistancia()` guardada a `d`: cada crida és una mesura nova (i tarda), i dues mesures seguides poden no coincidir; ② cada branca deixa el braç en un estat **complet** (base i pinça): si una branca s'oblida la pinça, queda en l'última posició; ③ el `Serial.println(d)` abans de decidir permet veure també els valors que **no** disparen res. Aprofita per mirar què passa amb l'objecte just al llindar: és la llavor de la histèresi de la SA6.
 
-## Solució · `05_dos_leds_millis`
+## Solució · `05_dos_servos_millis`
 
 ```cpp
 void loop() {
-  unsigned long ara = millis();   // una sola lectura per volta
+  unsigned long ara = millis();
 
-  // LED A: ha passat el seu periode? (kata: 200 ms)
-  if (ara - tA >= PERIODE_A) {
-    tA = ara;
-    encesA = !encesA;
-    digitalWrite(LED_A, encesA);
+  if (ara - tBase >= PERIODE_BASE) {      // 30 ms al kata
+    tBase = ara;
+    angleBase = angleBase + pas;
+    if (angleBase >= BASE_MAX || angleBase <= BASE_MIN) {
+      pas = -pas;
+    }
+    base.write(angleBase);
   }
 
-  // LED B: el seu periode propi (kata: 800 ms)
-  if (ara - tB >= PERIODE_B) {
-    tB = ara;
-    encesB = !encesB;
-    digitalWrite(LED_B, encesB);
+  if (ara - tPinca >= PERIODE_PINCA) {    // 700 ms al kata
+    tPinca = ara;
+    pincaOberta = !pincaOberta;
+    if (pincaOberta) {
+      pinca.write(PINCA_OBERTA);
+    } else {
+      pinca.write(PINCA_TANCADA);
+    }
   }
 }
 ```
 
-**En comentar:** ① dins de cada `if`, tant és si `tA = ara` va abans o després d'invertir `encesA` — el que no pot passar és oblidar-lo (el LED quedaria canviant a cada volta); ② són **dos `if` independents**, un per LED: aquesta independència és el que permet els dos ritmes alhora; ③ `digitalWrite(LED_A, encesA)` accepta el `bool` directament (`true`=HIGH): no cal cap `if` extra.
+**En comentar:** ① sense `tX = ara` la condició és certa sempre i l'articulació es mou a cada volta (milers de vegades per segon); ② dos `if` independents: cada articulació té el seu rellotge i el seu ritme; ③ el `||` fa que el canvi de sentit passi als **dos** extrems. Pregunta per tancar: *on s'espera aquest programa?* Enlloc: per això podrà vigilar un sensor alhora (la màquina d'estats de la SA6).
 
-## Solució · `04_barrera_automatica`
+## Solució · `04_brac_potenciometres`
 
 ```cpp
-void loop() {
-  float d = mesuraDistancia();
-
-  if (d > 0 && d < DIST_DETECCIO) {
-    // Vehicle detectat: sequencia completa
-    digitalWrite(LED, HIGH);
-    barrera.write(ANGLE_OBERT);
-    delay(TEMPS_OBERT);          // kata: 4000 ms
-    barrera.write(ANGLE_TANCAT);
-    digitalWrite(LED, LOW);
-  }
-  delay(80);   // pausa del kata, a cada volta
+int llegeixAngle(int pinPot, int minim, int maxim) {
+  return map(analogRead(pinPot), 0, 1023, minim, maxim);
 }
+
+void mouSiCal(Servo &servo, int &actual, int nou) {
+  if (abs(nou - actual) > ZONA_MORTA) {   // 3 al kata
+    actual = nou;
+    servo.write(actual);
+  }
+}
+
+// Al loop(), la linia de la pinca:
+mouSiCal(pinca, anglePinca, llegeixAngle(PIN_POT_PINCA, PINCA_MIN, PINCA_MAX));
 ```
 
-**En comentar:** ① la guarda `d > 0 && d < DIST_DETECCIO` exigeix proximitat **i** descarta lectures impossibles — recorda que `mesuraDistancia()` ja retorna 400 sense eco (la funció de la P3, portada sencera), de manera que el `d > 0` és cinturó a sobre dels tirants; ② el LED s'apaga **després** de tancar la barrera: el llum indica «barrera activa», no «vehicle detectat»; ③ el `delay(80)` final és **fora** de l'`if`: marca el ritme de mostreig a totes les voltes, hi hagi vehicle o no.
+**En comentar:** ① el `map()` va al rang segur de **cada** servo (per això són paràmetres): a 0-180 el servo forçaria el topall; ② `abs()` fa que la zona morta funcioni en els dos sentits del potenciòmetre; ③ el `&` és la diferència entre l'original i la fotocòpia: sense ell, `actual` no s'actualitza mai fora de la funció, la condició és sempre certa i la zona morta no fa res (el braç tremola igual).

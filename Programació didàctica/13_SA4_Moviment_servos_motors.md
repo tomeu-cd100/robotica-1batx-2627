@@ -4,7 +4,7 @@
 |---|---|
 | **Trimestre** | 2n |
 | **Durada** | 8 h (4 sessions) |
-| **Maquinari** | Arduino UNO + servo SG90, motor DC, driver/pont H (L298N o similar del kit) |
+| **Maquinari** | Arduino UNO + braç MeArm (4 servos), potenciòmetres, ultrasons; motor DC i driver/pont H (L298N o similar del kit) |
 | **Llenguatge** | C/C++ |
 
 ## Vincle competencial
@@ -13,39 +13,39 @@
 - **Competències clau:** STEM, CD.
 
 ## Sabers (Blocs C i E)
-Actuadors de moviment: servomotor (PWM, llibreria `Servo`), motor DC, **driver/pont H** (direcció i velocitat); alimentació externa; introducció al control de velocitat.
+Actuadors de moviment: servomotor (PWM, llibreria `Servo`, rang segur), motor DC, **driver/pont H** (direcció i velocitat); alimentació externa; integració sensor → actuador; temporització no bloquejant (`millis()`). Muntatge mecànic d'un braç robòtic seguint documentació tècnica.
 
 ## Objectius d'aprenentatge
-1. Controlar la posició d'un **servo** i la velocitat/direcció d'un **motor DC**.
+1. Controlar la posició d'un **servo** dins del seu rang segur i la velocitat/direcció d'un **motor DC**.
 2. Comprendre per què cal un **driver** i una alimentació adequada.
-3. Usar llibreries (`Servo.h`) i estructurar el control en funcions.
-4. Relacionar entrada (sensor/potenciòmetre) amb moviment (control).
+3. Usar llibreries (`Servo.h`) i estructurar el control en funcions amb paràmetres.
+4. Relacionar entrada (sensor/potenciòmetre) amb el moviment del braç (control).
+5. Muntar i cablejar el braç MeArm seguint una guia tècnica.
 
 ## Repte/pregunta inicial
-> *"Com controles la força i la direcció d'un motor sense cremar la placa?"*
+> *"Com controles l'angle exacte d'un braç robòtic sense que es trenqui ni cremi la placa?"*
 
 ## Seqüència de sessions
 
 | Sessió | Activitats |
 |---|---|
-| **1** | Servo amb llibreria `Servo`: posicionament 0-180°. Barrera/braç controlat per potenciòmetre. |
-| **2** | Motor DC + **pont H**: gir endavant/enrere; control de velocitat amb PWM. Seguretat amb alimentació externa. |
-| **3** | Integració sensor→actuador: potenciòmetre/ultrasons que regula velocitat o posició. **Bastida `millis()`** (mini-pràctica de temporització no bloquejant, prepara la màquina d'estats de la SA6). |
-| **4** | Repte: **"barrera automàtica"** o **"ventilador regulable"** (sensor + actuador + indicador). Documentació. |
+| **1** | Servo amb llibreria `Servo`: el servo de la base del braç controlat per potenciòmetre. Taller: pas 0 (servos centrats) i blocs A-B del MeArm. |
+| **2** | Motor DC + **pont H** (pràctica curta, fora del braç): gir endavant/enrere i velocitat amb PWM; alimentació externa i massa comuna. Taller: blocs C-D (pinça i calibratge). |
+| **3** | Integració sensor→actuador: l'ultrasons de l'estació de recollida fa girar la base i obrir la pinça. **Bastida `millis()`** (dues articulacions alhora, prepara la màquina d'estats de la SA6). Taller: bloc E (estructura central). |
+| **4** | Producte: **el braç amb quatre potenciòmetres** (rang segur, zona morta, funcions amb paràmetres). Cablatge definitiu, documentació i defensa. |
 
-> 🤖 **Fil conductor de robots:** amb el fil conductor actiu
-> ([`Classes/00_General/00_Fil_conductor_robots.md`](../Classes/00_General/00_Fil_conductor_robots.md)),
-> el braç es munta en **torns de taller** de 20-25' a les sessions 1-3, al
-> lloc del «+ repte»: S1 base i servo de base, S2 segment i servo del colze,
-> S3 pinça i alimentació comuna
-> ([dossier](../Classes/00_General/00_Projecte_T2_Brac.md)). La **sessió 4
-> continua sent la de producte** i és comprimible com a marge.
-> *Contingència (pla anterior):* si les peces no són tallades a l'inici del
-> trimestre, la sessió 4 passa a ser la **sessió de fabricació del braç**
-> (tall làser i muntatge) i el repte de la sessió 3 fa de producte.
+> 🤖 **Fil conductor de robots (des del 28-10-2026):** el braç MeArm és el
+> **fil conductor de totes les pràctiques** de la SA
+> ([`Classes/00_General/00_Fil_conductor_robots.md`](../Classes/00_General/00_Fil_conductor_robots.md)).
+> Es munta en **torns de taller** de 35-45' a les sessions 1-3 (el temps
+> surt d'haver escurçat el motor DC i retirat la barrera, el sensor de
+> velocitat i els LED amb `millis()`), i la **sessió 4 n'és el producte**,
+> comprimible com a marge ([dossier](../Classes/00_General/00_Projecte_T2_Brac.md)).
+> *Contingència:* si les peces no són tallades a l'inici del trimestre, les
+> pràctiques es fan amb servos solts i la sessió 4 es dedica al muntatge.
 
 ## Producte
-Mecanisme motoritzat controlat per sensor (barrera, braç o ventilador) amb control de direcció/velocitat i codi modular.
+El braç MeArm muntat i controlat amb quatre potenciòmetres, dins dels seus angles límit, amb codi modular (funcions amb paràmetres).
 
 ## Avaluació
 - Instruments: producte + quadern + observació de muntatge segur.
@@ -53,7 +53,7 @@ Mecanisme motoritzat controlat per sensor (barrera, braç o ventilador) amb cont
 
 ## Atenció a la diversitat
 - **Bastida:** esquema de connexió del pont H pas a pas; codi base de `Servo`.
-- **+ Ampliació:** dos motors coordinats; rampa d'acceleració; control per dos sensors.
+- **+ Ampliació:** pinça proporcional a la distància; reptes del braç (botó de casa, dispensador, registre i replay).
 
 ## Recursos
 Aprendiendo Arduino; Arduino Student Kit / CTC 101; Luis Llamas.

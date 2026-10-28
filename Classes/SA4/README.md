@@ -1,6 +1,6 @@
 # SA4 · Moviment: servos, motors i ponts H
 
-Quarta situació d'aprenentatge (**8 h · 4 sessions**, 2n trimestre). El sistema **es mou**: control de posició amb **servomotor**, control de velocitat i direcció d'un **motor DC** amb **driver/pont H** i alimentació externa, i integració sensor → moviment. Maquinari: Arduino UNO + servo SG90 + motor DC + L298N. Programació oficial: [`Programació didàctica/13_SA4_Moviment_servos_motors.md`](../../Programació%20didàctica/13_SA4_Moviment_servos_motors.md).
+Quarta situació d'aprenentatge (**8 h · 4 sessions**, 2n trimestre). El sistema **es mou**, i el que es mou és el **teu braç robòtic MeArm**: cada pràctica de la SA s'hi fa a sobre i, al final de cada sessió, hi afegeixes un tros en el **torn de taller**. Aprens el **servomotor** (posició), el **motor DC amb pont H** (pràctica curta, per al rover del T3), l'**ultrasons → moviment** i `millis()`. En acabar, el braç es mou amb **quatre potenciòmetres**. Maquinari: Arduino UNO + 4 servos + potenciòmetres + ultrasons + MeArm ([dossier del braç](../00_General/00_Projecte_T2_Brac.md)). Programació oficial: [`Programació didàctica/13_SA4_Moviment_servos_motors.md`](../../Programació%20didàctica/13_SA4_Moviment_servos_motors.md).
 
 ![Servo controlat amb un potenciòmetre: la posició del comandament fixa l'angle del servo](img/sa4-servo-potenciometre.svg)
 
@@ -10,20 +10,20 @@ Quarta situació d'aprenentatge (**8 h · 4 sessions**, 2n trimestre). El sistem
 |---|---|---|
 | S1 | [Activitat 1 · Servomotor](SA4_fitxa_alumnat.md#1-servomotor-s1) | [Tasca de Classroom](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODcwNTEzNjkxNjIy/details) |
 | S2 | [Activitat 2 · Motor DC i pont H](SA4_fitxa_alumnat.md#2-motor-dc-i-pont-h-s2) | Mateixa tasca de Classroom |
-| S3 | [Activitat 3 · Del sensor al moviment](SA4_fitxa_alumnat.md#3-del-sensor-al-moviment-s3) | Mateixa tasca de Classroom |
-| S4 | [Activitat 4 · Producte: barrera automàtica](SA4_fitxa_alumnat.md#4-producte-barrera-automatica-s4) | Mateixa tasca de Classroom |
+| S3 | [Activitat 3 · Del sensor al braç](SA4_fitxa_alumnat.md#3-del-sensor-al-brac-s3) | Mateixa tasca de Classroom |
+| S4 | [Activitat 4 · Producte: el braç amb potenciòmetres](SA4_fitxa_alumnat.md#4-producte-el-brac-amb-potenciometres-s4) | Mateixa tasca de Classroom |
 | ⭐ | [Repte triat (A, B o C)](../../Reptes/Reptes_SA4.md) | El docent el valida i pinteu l'estrella al [tauler de reptes](../00_General/00_Tauler_reptes.md) |
 | 📓 | Full del quadern tècnic de cada sessió | En paper, en acabar la sessió |
-| 🤖 | Les articulacions del braç (control de servos amb potenciòmetres) | Es reaprofiten al robot del trimestre: [dossier del braç](../00_General/00_Projecte_T2_Brac.md) |
+| 🤖 | El MeArm muntat (blocs A-E) i cablejat amb els seus angles límit | Torns de taller de les S1-S4: [guia de muntatge](../00_General/00_Muntatge_brac_MeArm.md) i [dossier del braç](../00_General/00_Projecte_T2_Brac.md) |
 
 ## Itinerari per sessions
 
 > La teva feina és a la **[fitxa base](SA4_fitxa_alumnat.md)**. Aquesta ruta et diu què toca fer a cada sessió i què necessites en aquell moment. Les respostes de la fitxa es lliuren a la **[tasca de Classroom](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODcwNTEzNjkxNjIy/details)**.
 
-1. **Sessió 1 · El servomotor** — fes l'[Activitat 1 de la fitxa](SA4_fitxa_alumnat.md#1-servomotor-s1).
-2. **Sessió 2 · Motor DC i pont H** — fes l'[Activitat 2](SA4_fitxa_alumnat.md#2-motor-dc-i-pont-h-s2), amb els [esquemes de connexió](SA4_esquemes_connexions.md) (compte amb la massa comuna!) i el [diagrama de flux de les funcions de moviment](SA4_diagrama_flux.md).
-3. **Sessió 3 · Del sensor al moviment** — fes l'[Activitat 3](SA4_fitxa_alumnat.md#3-del-sensor-al-moviment-s3), amb el [codi](codi/).
-4. **Sessió 4 · Producte: barrera automàtica** — fes l'[Activitat 4](SA4_fitxa_alumnat.md#4-producte-barrera-automatica-s4) (s'avalua amb R1, R2, R3 parcial).
+1. **Sessió 1 · El servomotor (la base del braç)** — fes l'[Activitat 1 de la fitxa](SA4_fitxa_alumnat.md#1-servomotor-s1). **Taller (35'):** pas 0 i blocs A-B de la [guia de muntatge](../00_General/00_Muntatge_brac_MeArm.md).
+2. **Sessió 2 · Motor DC i pont H** — fes l'[Activitat 2](SA4_fitxa_alumnat.md#2-motor-dc-i-pont-h-s2), amb els [esquemes de connexió](SA4_esquemes_connexions.md) (compte amb la massa comuna!). És una pràctica curta, fora del braç. **Taller (40'):** blocs C-D (pinça i calibratge).
+3. **Sessió 3 · Del sensor al braç** — fes l'[Activitat 3](SA4_fitxa_alumnat.md#3-del-sensor-al-brac-s3), amb el [codi](codi/). **Taller (45'):** bloc E, l'estructura central.
+4. **Sessió 4 · Producte: el braç amb potenciòmetres** — fes l'[Activitat 4](SA4_fitxa_alumnat.md#4-producte-el-brac-amb-potenciometres-s4), amb el [diagrama de flux](SA4_diagrama_flux.md) (s'avalua amb R1, R2, R3 parcial). **Taller:** cablatge definitiu.
 5. **Abans d'entregar** — repassa [el meu checklist](SA4_checklist_alumnat.md).
 
 ### Si vols més
@@ -43,18 +43,18 @@ Quarta situació d'aprenentatge (**8 h · 4 sessions**, 2n trimestre). El sistem
 | [`SA4_checklist_alumnat.md`](SA4_checklist_alumnat.md) | **Checklist alumnat** (una cara): què he de fer/lliurar + autoavaluació amb semàfor. |
 | [`SA4_katas.md`](SA4_katas.md) | Katas d'escriptura (10'): un per sessió de codi, abans d'obrir el sketch; si ningú no el projecta, l'alumnat l'obre sol. |
 | [`SA4_katas_solucions.md`](SA4_katas_solucions.md) | **Solucions dels katas** (docent): codi resolt amb els valors de la variació + comentaris per a la posada en comú. |
-| [`SA4_esquemes_connexions.md`](SA4_esquemes_connexions.md) | Esquemes i connexions (servo, L298N, massa comuna, alimentació externa). |
+| [`SA4_esquemes_connexions.md`](SA4_esquemes_connexions.md) | Esquemes i connexions (servo, L298N, ultrasons al braç, braç amb 4 potenciòmetres, massa comuna, piles). |
 | `codi/` | Sketches d'Arduino (vegeu la taula següent). |
 
 ### Codi (`codi/`)
 
 | Sketch | Què mostra |
 |---|---|
-| `01_servo_potenciometre.ino` | Llibreria `Servo.h`; posició 0-180° controlada per potenciòmetre. |
-| `02_motor_pont_h.ino` | Motor DC: direcció (`IN1`/`IN2`) i velocitat (PWM a `ENA`), amb funcions pròpies (amb esquelet «Si t'encalles» a la seva pàgina). |
-| `03_sensor_velocitat.ino` | Ultrasons regula la velocitat del motor (percepció → moviment). |
-| `04_barrera_automatica.ino` | Producte: barrera amb servo activada per sensor. |
-| `05_dos_leds_millis.ino` | **Mini-pràctica (opcional, 10')**: dos LEDs a ritmes diferents **sense `delay()`** (patró `millis()`). Prepara la **màquina d'estats de la SA6**. |
+| `01_servo_potenciometre.ino` | Llibreria `Servo.h`; el servo de la base del braç controlat per potenciòmetre (i el pas 0: centrar els servos). |
+| `02_motor_pont_h.ino` | Motor DC (fora del braç): direcció (`IN1`/`IN2`) i velocitat (PWM a `ENA`), amb funcions pròpies (amb esquelet «Si t'encalles» a la seva pàgina). |
+| `03_ultrasons_brac.ino` | L'ultrasons de l'estació de recollida fa girar la base i obrir la pinça (percepció → moviment). |
+| `04_brac_potenciometres.ino` | **Producte:** el MeArm amb 4 potenciòmetres, rang segur per servo i zona morta. |
+| `05_dos_servos_millis.ino` | **Bastida (opcional, 10')**: base i pinça a ritmes diferents **sense `delay()`** (patró `millis()`). Prepara la **màquina d'estats de la SA6**. |
 
 Cada sketch té la seva **pàgina de pràctica** a la web (per què es fa + codi explicat per blocs); a GitHub, l'explicació és a l'`EXPLICACIO.md` de la carpeta del sketch.
 
@@ -62,11 +62,11 @@ Cada sketch té la seva **pàgina de pràctica** a la web (per què es fa + codi
 
 ## Producte i avaluació
 
-- **Producte:** mecanisme motoritzat controlat per sensor (barrera, braç o ventilador regulable).
+- **Producte:** el braç MeArm muntat i controlat amb quatre potenciòmetres, dins dels seus angles límit.
 - **Criteris:** CA1.1, CA2.1, CA3.1 · **Rúbriques:** **R1** (codi), **R2** (circuit), **R3** parcial (control).
 
 ## Continuïtat
 
-Ve de la **SA3** (sensors) i porta a la **SA5** (micro:bit i MicroPython, **canvi de plataforma i llenguatge**). El control sensor → moviment d'aquí és la llavor del **control** (SA6) i de la **robòtica mòbil** (SA7).
+Ve de la **SA3** (sensors) i porta a la **SA5** (micro:bit i MicroPython, **canvi de plataforma i llenguatge**), on el braç guanya un **comandament per ràdio**. El control sensor → moviment d'aquí és la llavor del **control** del braç (SA6); el pont H, de la **robòtica mòbil** (SA7).
 
-> 🧩 **Pont cap a SA6 (recomanat):** si queda marge, fes la mini-pràctica [`05_dos_leds_millis`](codi/05_dos_leds_millis/05_dos_leds_millis.ino) (10') perquè l'alumnat **practiqui `millis()` no bloquejant abans** de la màquina d'estats de la SA6.
+> 🧩 **Pont cap a SA6 (recomanat):** si queda marge, fes la bastida [`05_dos_servos_millis`](codi/05_dos_servos_millis/EXPLICACIO.md) (10') per **practicar `millis()` no bloquejant abans** de la màquina d'estats del braç.

@@ -1,45 +1,45 @@
-# SA4 · Exemple resolt (model «jo ho faig») — Ventilador orientable de sobretaula
+# SA4 · Exemple resolt (model «jo ho faig») — El braç que saluda
 
-> 🧑‍🎓 **Quan toca mirar-lo?** Després del teu **primer intent** amb el servo de l'**Activitat 1 (S1)** i el pont H de l'**Activitat 2 (S2)** — mai abans. És un problema **anàleg** per veure *com es pensa*, no la solució de la barrera de la S4.
+> 🧑‍🎓 **Quan toca mirar-lo?** Després del teu **primer intent** amb el servo de l'**Activitat 1 (S1)** i abans del producte de la **S4** — mai abans. És un problema **anàleg** per veure *com es pensa*, no la solució del braç amb potenciòmetres.
 
-> 🔗 **D'on ve i on va.** Aquest exemple és el **bessó comentat** de la pràctica [Motor DC i pont H: sentit, velocitat i funcions pròpies](codi/02_motor_pont_h/EXPLICACIO.md) — amb el servo de la [Pràctica 1](codi/01_servo_potenciometre/EXPLICACIO.md) afegit al capdamunt: la mateixa idea (**una funció per gest** sobre el pont H) amb un muntatge i un context expressament diferents. Serveix per veure **com es pensa**, no per copiar-lo. Quan l'hagis entès, torna a la pàgina de la pràctica i fes-la teva.
+> 🔗 **D'on ve i on va.** Aquest exemple és el **bessó comentat** de la pràctica [Producte: el braç amb quatre potenciòmetres](codi/04_brac_potenciometres/EXPLICACIO.md): el mateix MeArm i les mateixes idees (**rang segur** i **funcions amb paràmetres**), però el braç no obeeix uns potenciòmetres sinó una **seqüència de gestos programada**. Serveix per veure **com es pensa**, no per copiar-lo. Quan l'hagis entès, torna a la pàgina de la pràctica i fes-la teva.
 
 > 🗺️ **Com es llegeix per apartats:** **🔑 El repte model** primer, per situar-te · **🧭 Com ho penso** abans d'escriure el **teu** codi (és l'apartat més important: el raonament) · **💡 La solució anotada** només **després del teu intent**, per comparar · **🔬 Provo i mesuro** quan provis el teu: copia'n el **mètode**, no el resultat · **⚠️ Contraexemple** quan una cosa no rutlli — i com a repàs abans d'entregar · **📔 Diari de bord** quan escriguis la teva entrada del quadern.
 
-> **Nota docent:** mostra'l **després del primer intent** amb `01_servo_potenciometre.ino` i
-> `02_motor_pont_h.ino`, mai abans. No és la solució de la barrera (S4): és un problema **anàleg**
-> resolt pas a pas perquè l'alumnat vegi *com es pensa*, no què s'ha de copiar. Comenta en veu alta
-> el pas «🧭 Com ho penso» (predicció abans de codi, PRIMM) i, sobretot, el «⚠️ Contraexemple»
-> (seguretat elèctrica: massa comuna i alimentació externa).
+> **Nota docent:** mostra'l **després del primer intent** amb `01_servo_potenciometre.ino`, mai abans.
+> No és la solució del producte (S4): és un problema **anàleg** resolt pas a pas perquè l'alumnat vegi
+> *com es pensa*, no què s'ha de copiar. Comenta en veu alta el pas «🧭 Com ho penso» (predicció abans
+> de codi, PRIMM) i, sobretot, el «⚠️ Contraexemple» (seguretat: rang segur i alimentació externa).
 
 ---
 
-![Pont H L298N per controlar el sentit i la velocitat d'un motor](img/sa4-pont-h-l298n.svg)
+![Braç MeArm: base giratòria, servos esquerre i dret als laterals, palanques fins a la pinça](../00_General/img/mearm-estructura.svg)
 
 ## 🔑 El repte model
 
-> Fer un **ventilador orientable de sobretaula**: un **servo** que **orienta el cap** (l'apunta a un
-> angle i fa una passada d'esquerra a dreta) i un **motor DC** que mou les aspes amb **pont H**,
-> canviant de **velocitat** (bufa fort / bufa suau) i de **sentit** (mode extractor) i que sap **aturar-se**.
+> Fer que el **braç MeArm saludi** quan s'engega: s'aixeca, gira cap a un costat, obre i tanca la
+> pinça tres vegades (com qui diu «hola» amb la mà) i torna a la posició de repòs. I fer-ho **sense
+> que cap servo forci mai el topall**, encara que algú escrigui un angle massa gran.
 
-Fa servir només conceptes de la SA4: llibreria `Servo.h` (`attach`, `write` 0–180°), pont H **L298N**
-(`ENA` per velocitat amb PWM, `IN1`/`IN2` per al sentit), **alimentació externa** i **massa comuna**,
-i **una funció per gest** (abstracció). El circuit és el mateix dels sketches: servo senyal → **pin 9**;
-L298N **ENA → pin 5 (`~`)**, **IN1 → pin 7**, **IN2 → pin 8**; GND Arduino + GND piles units (**massa comuna**).
+Fa servir només conceptes de la SA4: llibreria `Servo.h` (`attach`, `write`), **funcions amb
+paràmetres**, **rang segur** de cada servo i **alimentació externa** amb massa comuna. El circuit és
+el del braç: base → **pin 9**, esquerre → **pin 6**, dret → **pin 10**, pinça → **pin 11**, tots
+quatre servos a les **piles** amb el GND unit al de l'Arduino.
 
 ---
 
 ## 🧭 Com ho penso (abans d'escriure codi)
 
-1. **Analitzo:** hi ha **dos actuadors diferents**. El servo controla **posició** (angle 0–180°) →
-   això ja ho sé fer amb `Servo.h` i `write()`. El motor DC controla **velocitat i sentit** → això va
-   pel **pont H**: `IN1`/`IN2` decideixen el sentit i `ENA` (PWM) la velocitat, com a `02_motor_pont_h`.
-2. **Descomponc:** faré **una funció per gest** (`orienta()`, `bufa()`, `expulsa()`, `atura()`), com als
-   sketches reals. Així el `loop()` es llegeix com una frase i puc reutilitzar els gestos.
-3. **🔮 PREDIU (fes-ho tu abans de llegir el codi):** amb `cap.write(90)` el servo apuntarà a…
-   ☐ 0° ☐ **al centre (90°)** ☐ 180°. I si a `bufa()` poso `IN1=HIGH`, `IN2=LOW` i canvio a
-   `IN1=LOW`, `IN2=HIGH`, el motor… ☐ va més ràpid ☐ **gira al revés** ☐ s'atura. I `analogWrite(ENA, 0)`
-   equival a… ☐ velocitat mitjana ☐ **motor aturat**.
+1. **Analitzo:** una «posició del braç» són **quatre angles** (base, esquerre, dret, pinça). Si cada
+   vegada escric quatre `write()`, el programa es fa llarg i fàcil d'equivocar.
+2. **Descomponc:** faré **una funció que posa el braç sencer** en una posició, `posa(b, e, d, p)`, i
+   després **una funció per gest** (`repos()`, `saluda()`). El `loop()` quedarà curt i llegible.
+3. **Seguretat primer:** dins de `posa()`, cada angle passa per `constrain()` amb els **angles límit**
+   del servo. Així, encara que em despisti i escrigui `posa(90, 200, 90, 90)`, el servo esquerre no
+   passarà mai del seu màxim.
+4. **🔮 PREDIU (fes-ho tu abans de llegir el codi):** amb `ESQUERRE_MAX = 150`, què farà
+   `posa(90, 200, 90, 90)` amb el servo esquerre? ☐ anirà a 200° ☐ **es quedarà a 150°** ☐ no es
+   mourà. I `constrain(30, 60, 120)` val… ☐ 30 ☐ **60** ☐ 120.
 
 ---
 
@@ -47,120 +47,103 @@ L298N **ENA → pin 5 (`~`)**, **IN1 → pin 7**, **IN2 → pin 8**; GND Arduino
 
 ```cpp
 /*
-  SA4 - exemple_ventilador_orientable.ino  (EXEMPLE MODEL, no es el producte)
-  Ventilador de sobretaula: un SERVO orienta el cap (posicio, 0-180 graus)
-  i un MOTOR DC (pont H L298N) mou les aspes (velocitat i sentit).
-  Modelem UNA FUNCIO PER GEST: orienta(), bufa(), expulsa(), atura().
+  SA4 - exemple_brac_saluda.ino  (EXEMPLE MODEL, no es el producte)
+  El brac MeArm saluda en engegar-se i torna a repos.
+  Una funcio per a la POSICIO sencera (4 angles) i una funcio per GEST.
+  Cada angle passa pel seu rang segur amb constrain().
 
-  Circuit:
-    Servo:  senyal=9 ; V+=alimentacio externa 5V ; GND=MASSA COMUNA
-    L298N:  ENA=5 (~PWM, velocitat) ; IN1=7, IN2=8 (sentit)
-            OUT1/OUT2 -> motor ; +12V -> piles ; GND -> MASSA COMUNA
+  Circuit: servos base=9, esquerre=6, dret=10, pinca=11
+           (PILES + GND comu amb l'Arduino; mai l'USB per a 4 servos)
 */
 
 #include <Servo.h>
 
-Servo cap;                 // el servo que orienta el cap del ventilador
+Servo base, esquerre, dret, pinca;
 
-const int ENA = 5;         // ha de ser un pin PWM (~): regula la VELOCITAT
-const int IN1 = 7;         // decideix el SENTIT de gir del motor
-const int IN2 = 8;         // decideix el SENTIT de gir del motor
+// Angles limit (els que has anotat al taller)
+const int BASE_MIN = 0,      BASE_MAX = 180;
+const int ESQUERRE_MIN = 40, ESQUERRE_MAX = 150;
+const int DRET_MIN = 40,     DRET_MAX = 150;
+const int PINCA_MIN = 60,    PINCA_MAX = 120;
 
-const int CENTRE = 90;     // angle mirant al davant
-const int PAS = 2;         // graus per pas de la passada (com mes petit, mes suau)
-
-// --- Gestos del SERVO (posicio) ---
-void orienta(int angle) {
-  cap.write(angle);        // write() espera un angle de 0 a 180 graus
+// --- La posicio sencera del brac, sempre dins del rang segur ---
+void posa(int b, int e, int d, int p) {
+  base.write(constrain(b, BASE_MIN, BASE_MAX));
+  esquerre.write(constrain(e, ESQUERRE_MIN, ESQUERRE_MAX));
+  dret.write(constrain(d, DRET_MIN, DRET_MAX));
+  pinca.write(constrain(p, PINCA_MIN, PINCA_MAX));
+  delay(400);              // temps perque el brac hi arribi
 }
 
-// --- Gestos del MOTOR DC (velocitat i sentit) ---
-void bufa(int velocitat) {     // aspes cap endavant ; velocitat 0..255
-  digitalWrite(IN1, HIGH);
-  digitalWrite(IN2, LOW);
-  analogWrite(ENA, velocitat); // PWM: 0 aturat, 255 maxim
+// --- Gestos ---
+void repos() {
+  posa(90, 90, 90, PINCA_MIN);
 }
 
-void expulsa(int velocitat) {  // sentit CONTRARI (IN1/IN2 intercanviats)
-  digitalWrite(IN1, LOW);
-  digitalWrite(IN2, HIGH);
-  analogWrite(ENA, velocitat);
-}
-
-void atura() {                 // frena el motor del tot
-  digitalWrite(IN1, LOW);
-  digitalWrite(IN2, LOW);
-  analogWrite(ENA, 0);
+void saluda() {
+  posa(60, 130, 110, PINCA_MIN);       // s'aixeca i gira
+  for (int i = 0; i < 3; i++) {        // "hola" amb la pinca, 3 vegades
+    posa(60, 130, 110, PINCA_MAX);
+    posa(60, 130, 110, PINCA_MIN);
+  }
 }
 
 void setup() {
-  cap.attach(9);           // SENSE attach() el servo no rep senyal i no es mou
-  pinMode(ENA, OUTPUT);
-  pinMode(IN1, OUTPUT);
-  pinMode(IN2, OUTPUT);
-  orienta(CENTRE);         // arrenca mirant al davant
+  base.attach(9);
+  esquerre.attach(6);
+  dret.attach(10);
+  pinca.attach(11);
+  repos();
+  saluda();
+  repos();
 }
 
 void loop() {
-  // 1) Fa una passada d'esquerra a dreta mentre bufa fort
-  bufa(220);
-  for (int a = 30; a <= 150; a += PAS) {
-    orienta(a);
-    delay(20);             // dona temps al servo a arribar a cada angle
-  }
-  // 2) Torna al centre i baixa a velocitat suau
-  orienta(CENTRE);
-  bufa(120);
-  delay(3000);
-  // 3) Mode extractor: gira al reves un moment
-  expulsa(120);
-  delay(2000);
-  // 4) Atura del tot i descansa
-  atura();
-  delay(1000);
+  // Res: el brac saluda una sola vegada, en engegar-se
 }
 ```
 
 **Per què està escrit així (🌟):**
-- **Una funció per gest** (`orienta`, `bufa`, `expulsa`, `atura`): el `loop()` es llegeix com una frase i reutilitzo els gestos. És la mateixa **abstracció** que als sketches reals de la SA4.
-- **Constants amb nom** (`ENA`, `IN1`, `IN2`, `CENTRE`, `PAS`): si canvio un pin o l'angle central, ho toco en **un sol lloc**.
-- Trio l'eina segons el que controlo: `write(angle)` per a la **posició** del servo; `IN1`/`IN2` per al **sentit** i `analogWrite(ENA, …)` per a la **velocitat** del motor. Posició i velocitat es controlen de maneres diferents.
-- `bufa()` i `expulsa()` només es diferencien en **quin pin va a HIGH**: intercanviar `IN1`/`IN2` inverteix el sentit. Aquesta és tota la màgia del pont H.
+- **Una funció per a la posició** (`posa`) amb **quatre paràmetres**: el braç sencer és una sola idea, i el codi el tracta com una sola idea.
+- **Una funció per gest** (`repos`, `saluda`): `setup()` es llegeix com una frase. És la mateixa **abstracció** que als sketches reals de la SA4.
+- **El rang segur viu en un sol lloc** (dins de `posa()`): cap gest, ni els que escriuré demà, pot fer forçar un topall.
+- El `delay(400)` dins de `posa()` dona temps al braç a arribar. És senzill, però **bloqueja**: mentre espera, el braç no podria vigilar cap sensor.
 
 ---
 
 ## 🔬 Provo i mesuro
 
-- **Predicció ✔:** `cap.write(90)` apunta al centre; intercanviar `IN1`/`IN2` inverteix el gir; `analogWrite(ENA, 0)` atura el motor.
-- **Racó de mesura (multímetre):** amb el motor a `bufa(120)` la tensió mitjana a `ENA` és **menor** que a `bufa(220)` — el PWM encén i apaga molt de pressa i el motor «veu» una tensió mitjana més baixa, per això gira més lent.
-- Si el servo **vibra o no arriba** a l'angle → segurament l'estic alimentant des del pin 5V de l'Arduino; passo a **alimentació externa** i mantinc la **massa comuna**.
-- **Límit honest:** amb `delay()`, mentre el servo fa la passada el motor manté una velocitat fixa; si volgués **oscil·lar i canviar de velocitat alhora sense pauses**, hauria de fer servir `millis()` (com a `05_dos_leds_millis.ino`), no `delay()`.
+- **Predicció ✔:** `posa(90, 200, 90, 90)` deixa el servo esquerre a 150°; `constrain(30, 60, 120)` val 60.
+- **Mètode:** abans de provar `saluda()`, prova `repos()` sol i **mira cada articulació**: si alguna brunz o s'escalfa quieta, l'angle límit d'aquell servo és massa ample.
+- **Racó de mesura:** cronometra el salut sencer. Hauria de durar unes **3 s** (7 crides a `posa()` × 400 ms). Si dura més, el braç no hi arriba a temps i cal més pausa.
+- **Límit honest:** amb `delay()`, el braç fa el salut «a cegues». Si volgués que s'aturés en tocar alguna cosa, hauria de vigilar un sensor mentre es mou, i per això cal `millis()` (com a `05_dos_servos_millis.ino`) i, a la SA6, una **màquina d'estats**.
 
 ---
 
 ## ⚠️ Contraexemple (errors típics i com es detecten)
 
-- **Alimento el motor DC des del pin 5V de l'Arduino** → en arrencar el motor, l'Arduino **es reinicia** (pic de corrent). *Solució:* el motor sempre des d'**alimentació externa** (piles/font) via `+12V` del L298N; **mai** des del pin de l'Arduino.
-- **Oblido la massa comuna** (no uneixo el GND de l'Arduino amb el GND de les piles) → el motor **no gira o va erràtic**, encara que el codi sigui correcte. *Solució:* GND Arduino + GND piles + GND L298N **units**.
-- **Connecto `ENA` a un pin sense `~`** (p. ex. el pin 7) i faig `analogWrite(ENA, 120)` → el motor **no regula velocitat**: va a tope o parat. *Solució:* `ENA` a un pin PWM (3, 5, 6, 9, 10, 11).
-- **Escric `cap.write(200)`** → el rang de `write()` és **0–180°**; per sobre el servo **satura** a 180 i no fa res de nou. (I si oblido `cap.attach(9)` al `setup()`, el servo **no es mou** encara que cridi `orienta()`.)
+- **Alimento els quatre servos des de l'USB** → el braç **tremola** i l'Arduino **es reinicia** quan es mouen tots alhora. *Solució:* servos a les **piles**, amb el − unit al GND de l'Arduino.
+- **Oblido el `constrain()`** i escric `posa(90, 200, 90, 90)` → el servo esquerre va al seu topall físic, **brunz i s'escalfa**. *Solució:* el rang segur dins de la funció, no confiar en la memòria.
+- **Oblido `attach()` d'algun servo** → aquell servo **no es mou mai**, encara que el codi compili. *Solució:* quatre servos, quatre `attach()`.
+- **`delay()` massa curt dins de `posa()`** → el braç rep la posició següent abans d'arribar a l'anterior i el salut queda **tallat**. *Solució:* augmentar la pausa o moure menys graus per gest.
 
 ---
 
 ## 📔 Diari de bord (entrada model, 1a persona)
 
-> **Sessió 2:** He fet un ventilador amb un **servo** (`Servo.h`, `write` 0–180°) que orienta el cap i
-> un **motor DC** amb **pont H L298N**. He modelat **una funció per gest**: `orienta()`, `bufa()`,
-> `expulsa()` i `atura()`. Al principi l'Arduino **es reiniciava** en arrencar el motor: l'alimentava
-> des del pin 5V. En passar a **alimentació externa** amb **massa comuna** ja va anar. He entès que
-> `IN1`/`IN2` decideixen el **sentit** i `ENA` (PWM) la **velocitat**, i que el servo es controla per
-> **posició**, no per velocitat. **Evidència:** esquema del pont H + vídeo de la passada i del canvi de sentit.
+> **Sessió 4:** He fet que el meu MeArm **saludi** en engegar-se. He escrit una funció `posa()` amb
+> **quatre paràmetres** (un angle per servo) i dues funcions de gest, `repos()` i `saluda()`. Dins de
+> `posa()` cada angle passa per `constrain()` amb els **angles límit** que vaig anotar al taller (el
+> meu esquerre va de 40 a 150°). Al principi el braç tremolava i l'Arduino es reiniciava: tenia els
+> servos a l'USB. Amb les **piles** i el **GND comú** ja va anar. **Evidència:** taula d'angles límit
+> + vídeo del salut.
 
-**Per què és una bona entrada:** usa el **vocabulari clau** (servo, pont H, `ENA`/PWM, `IN1`/`IN2`,
-massa comuna, alimentació externa), explica *el com*, i és **honesta amb la dificultat** (el reinici) i com es va resoldre.
+**Per què és una bona entrada:** usa el **vocabulari clau** (rang segur, angles límit, `constrain()`,
+funció amb paràmetres, alimentació externa, GND comú), explica *el com*, i és **honesta amb la
+dificultat** (el reinici) i com es va resoldre.
 
 ---
 
 *Exemple resolt de la SA4. Model de treball per a l'alumnat (alliberament gradual: es mostra
-després del primer intent). Es recolza en `codi/01_servo_potenciometre`, `codi/02_motor_pont_h`
-i `codi/04_barrera_automatica`. Llicència CC BY-SA 4.0.*
+després del primer intent). Es recolza en `codi/01_servo_potenciometre` i
+`codi/04_brac_potenciometres`. Llicència CC BY-SA 4.0.*

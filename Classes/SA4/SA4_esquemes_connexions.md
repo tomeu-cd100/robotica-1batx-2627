@@ -1,6 +1,6 @@
 # SA4 · Esquemes i connexions
 
-> 🧑‍🎓 **Quan toca?** Tingues aquesta pàgina oberta **mentre muntes** cada circuit. Correspondència amb la fitxa: **§1** → Activitat 1 (S1) · **§2** → Activitat 2 (S2) · **§3** → Activitat 3 (S3) · **§4** → Activitat 4, el producte (S4).
+> 🧑‍🎓 **Quan toca?** Tingues aquesta pàgina oberta **mentre muntes** cada circuit. Correspondència amb la fitxa: **§1** → Activitat 1 (S1) · **§2** → Activitat 2 (S2) · **§3** → Activitat 3 (S3) · **§4** → Activitat 4, el producte (S4) · **§5** → bastida de la S3.
 
 > ⚠️ **Regla d'or:** **massa comuna** (uneix el GND de l'Arduino amb el GND de l'alimentació del motor) i **mai** alimentis motors/servos des del pin 5V de l'Arduino si en mous més d'un.
 
@@ -8,7 +8,7 @@
 
 ## 1. Servo controlat per potenciòmetre (`01_servo_potenciometre.ino`)
 
-**Servo SG90:**
+**Servo de la base del braç** (amb un sol servo, pot anar al 5V de l'Arduino):
 
 | Cable servo | Cap a |
 |---|---|
@@ -26,7 +26,7 @@
 
 ---
 
-## 2. Motor DC amb pont H L298N (`02_motor_pont_h.ino`)
+## 2. Motor DC amb pont H L298N (`02_motor_pont_h.ino`, fora del braç)
 
 | L298N | Cap a |
 |---|---|
@@ -59,51 +59,46 @@
 
 ---
 
-## 3. Sensor regula velocitat (`03_sensor_velocitat.ino`)
+## 3. Ultrasons → braç (`03_ultrasons_brac.ino`)
 
-Igual que el muntatge 2 **+** sensor d'ultrasons:
+Dos servos del braç (base i pinça) i l'ultrasons de l'**estació de recollida**.
+Són els pins definitius del braç: el que connectes avui ja no es mou
+([mapa de pins](../00_General/00_Projecte_T2_Brac.md#cablatge)).
 
-| HC-SR04 | Cap a |
-|---|---|
-| TRIG / ECHO | Pin 12 / Pin 11 |
-| VCC / GND | 5V / GND |
+| Component | Pin | Notes |
+|---|---|---|
+| Servo base (senyal) | 9 | + i − a les **piles**, − també al GND de l'Arduino |
+| Servo pinça (senyal) | 11 | igual |
+| HC-SR04 TRIG / ECHO | 7 / 8 | VCC=5V, GND=GND de l'Arduino |
 
-> La resta és com el muntatge 2 (pont H + motor + massa comuna). El sensor d'ultrasons es connecta com a la SA3.
+> 🔌 A la SA3 l'ultrasons anava al 12/11. Al braç, el **D11 és la pinça**:
+> l'ultrasons passa al **D7/D8**.
 
-![Captura de Tinkercad: el muntatge del motor amb el xip L293D de la pràctica 2 més el sensor HC-SR04 de 4 potes; TRIG al pin 12 (cable taronja), ECHO al pin 11 (cable verd), VCC del sensor al 5 V i GND al GND pels carrils de la protoboard](img/sa4-tinkercad-sensor-velocitat.png)
-
-▶ **Obre la simulació a Tinkercad** (pots fer *Copy and Tinker* per modificar-la): <https://www.tinkercad.com/things/f9fDLDlCYFB-sa4-practica-3-del-sensor-al-moviment?sharecode=FStYfzag9z_QXOcLOy5IaBwlAf1yQ-cGMPcKX2Z_K1w>
-
----
-
-## 4. Barrera automàtica (`04_barrera_automatica.ino`)
-
-| Pin | Component | Via | Cap a |
-|---|---|---|---|
-| 9 | Servo (senyal) | — | (V+ i GND amb alimentació adequada) |
-| 12 / 11 | HC-SR04 TRIG / ECHO | — | VCC=5V, GND=GND |
-| 8 | LED indicador | 220 Ω | GND |
-
-> Combina el servo (apartat 1) amb el sensor d'ultrasons (pin 12/11) i un LED indicador bàsic (pin 8).
-
-![Captura de Tinkercad: Arduino UNO amb el sensor HC-SR04 a la protoboard (TRIG al pin 12 amb cable verd, ECHO al pin 11 amb cable cian, VCC i GND als carrils de 5 V i GND), un LED vermell amb resistència de 220 Ω al pin 8 i el microservo SG90 fora de la placa fent de barrera: senyal taronja al pin 9~ i alimentació als carrils](img/sa4-tinkercad-barrera-automatica.png)
-
-▶ **Obre la simulació a Tinkercad** (pots fer *Copy and Tinker* per modificar-la): <https://www.tinkercad.com/things/aOBeOffY2Sn-sa4-practica-4-producte-la-barrera-automatica?sharecode=XLpngNberIAP7pyPJFsS0Xa6UEjcMGXWUWamfxGJDeU>
+![Esquema: Arduino UNO amb el servo de la base al pin 9 i el de la pinça al pin 11, alimentats per piles amb GND comú, i l'ultrasons amb TRIG al pin 7 i ECHO al pin 8](img/sa4-ultrasons-brac.svg)
 
 ---
 
-## 5. Dos LEDs amb `millis()` (`05_dos_leds_millis.ino`)
+## 4. Producte: el braç amb quatre potenciòmetres (`04_brac_potenciometres.ino`)
 
-| Pin | Component | Via | Cap a |
-|---|---|---|---|
-| 7 | LED A (canvia cada 250 ms) | 220 Ω | GND |
-| 8 | LED B (canvia cada 1000 ms) | 220 Ω | GND |
+| Component | Pin | Notes |
+|---|---|---|
+| Servo base / esquerre / dret / pinça | 9 / 6 / 10 / 11 | Tots quatre a les **piles**, amb GND comú |
+| Potenciòmetre base / dret / pinça / esquerre | A0 / A1 / A2 / A3 | Extrems a 5V i GND de l'Arduino |
 
-> Muntatge lliure i senzill: dos LEDs qualssevol amb la seva resistència. Tota la gràcia d'aquesta pràctica és al codi, no al circuit.
+> ⚠️ **Quatre servos mai des de l'USB ni des del pin 5V de l'UNO.** Les
+> piles (4 × AA) només alimenten els servos; el seu − va també al GND de
+> l'Arduino.
 
-![Captura de Tinkercad: Arduino UNO amb dos LEDs a la protoboard, un vermell al pin 8 i un verd al pin 7, cadascun amb la seva resistència de 220 Ω i el càtode al carril de GND](img/sa4-tinkercad-dos-leds-millis.png)
+![Esquema de connexions del MeArm amb Arduino: les piles alimenten els quatre servos per una línia + i una de GND, amb el GND de les piles unit al GND de l'Arduino; senyals a D6 (esquerre), D9 (base), D10 (dret) i D11 (pinça); quatre potenciòmetres alimentats pel 5V de l'Arduino amb el cursor a A0, A1, A2 i A3](../00_General/img/mearm-connexions-arduino.svg)
 
-▶ **Obre la simulació a Tinkercad** (pots fer *Copy and Tinker* per modificar-la): <https://www.tinkercad.com/things/9vSTev6oC06-sa4-practica-5-dues-coses-alhora-millis-en-lloc-de-delay?sharecode=umOHAjUgT2UxPQMBssbz_4-JeBMwQZ8khRDo1uDXdqY>
+---
+
+## 5. Dues articulacions amb `millis()` (`05_dos_servos_millis.ino`)
+
+El mateix muntatge de base i pinça de l'apartat 3, sense l'ultrasons. Tota la
+gràcia d'aquesta pràctica és al codi.
+
+![Esquema: Arduino UNO amb el servo de la base al pin 9 i el de la pinça al pin 11, alimentats per piles amb GND comú](img/sa4-dos-servos-millis.svg)
 
 ---
 

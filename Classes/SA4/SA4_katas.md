@@ -24,31 +24,31 @@
 **Pista (per a qui es bloqueja):** cada funció són tres línies: dos `digitalWrite` (un `HIGH`, un `LOW`) i un `analogWrite`; només canvia quins pins reben què.
 **En comparar amb el sketch, mireu:** ① a `enrere()`, heu intercanviat `IN1` i `IN2` respecte a `endavant()`, o hi heu repetit el mateix patró (que giraria sempre en el mateix sentit)? ② dins d'`atura()`, poseu `IN1` i `IN2` a `LOW` a més de tallar el PWM, o l'atureu només amb `analogWrite(ENA, 0)` sense tocar els pins de direcció? ③ a `analogWrite(ENA, velocitat)`, l'ordre és sempre (pin, valor), o en alguna de les tres funcions heu invertit `ENA` i la velocitat?
 
-## Kata · `03_sensor_velocitat` (Sessió 3, modelatge)
+## Kata · `03_ultrasons_brac` (Sessió 3, modelatge)
 
 **Projecta (enunciat):**
-> Tens ja fetes `mesuraDistancia()` (com a la SA3, retorna cm o 400 si no hi ha eco) i les funcions de moviment `endavant(int vel)` i `atura()`, i la constant `SEGURETAT = 15` (cm) *(valor diferent del sketch, expressament)*. Escriu de zero el `loop()`: mesura la distància i mostra-la pel Monitor sèrie; si és menor que `SEGURETAT`, atura el motor; si no, reescala la distància (15–50 cm) a velocitat (100–255) amb `map()` i `constrain()`, i posa el motor endavant a aquesta velocitat. Acaba amb una pausa de 50 ms.
+> Tens ja fetes `mesuraDistancia()` (com a la SA3, retorna cm o 400 si no hi ha eco), els objectes `base` i `pinca` connectats i les constants `DIST_OBJECTE = 12` (cm), `BASE_REPOS = 90`, `BASE_ESTACIO = 30`, `PINCA_TANCADA = 50` i `PINCA_OBERTA = 110` *(valors diferents del sketch, expressament)*. Escriu de zero el `loop()`: mesura la distància i mostra-la pel Monitor sèrie; si és menor que `DIST_OBJECTE`, gira la base cap a l'estació i obre la pinça; si no, torna la base a repòs i tanca la pinça. Acaba amb una pausa de 100 ms.
 
-**Practica:** prioritat de seguretat amb `if`/`else` · `map()` aparellat amb `constrain()` · reutilitzar funcions pròpies ja escrites · `Serial.println` per depurar.
-**Pista (per a qui es bloqueja):** primer decideix "és segur moure's?"; només dins la branca del "sí" cal calcular res més.
-**En comparar amb el sketch, mireu:** ① la conversió `(int)d` abans de passar la distància al `map()`, l'heu inclosa, o hi passeu directament el `float`? ② el `constrain()` va després del `map()`, o heu confiat que `map()` ja limitava el resultat dins del rang de velocitats (el vostre, 100–255; el del sketch, 80–255 — recordeu que els números són expressament diferents)? ③ el `Serial.println(d)` és abans de decidir si atura o mou, o només l'imprimiu dins d'una de les dues branques?
+**Practica:** cadena percepció → decisió → acció · `if`/`else` amb dues accions per branca · reutilitzar una funció pròpia ja escrita · `Serial.println` per depurar.
+**Pista (per a qui es bloqueja):** primer guarda la distància en una variable; després una sola pregunta (`d < DIST_OBJECTE`) i, a cada branca, dos `write()`.
+**En comparar amb el sketch, mireu:** ① heu cridat `mesuraDistancia()` **una sola vegada** i heu guardat el resultat en una variable, o l'heu cridat dins de l'`if` (i potser una altra vegada al `Serial.println`)? ② cada branca mou **els dos** servos, o alguna branca s'ha oblidat de la pinça (i es quedaria oberta)? ③ el `Serial.println(d)` és abans de decidir, o només l'imprimiu dins d'una de les dues branques?
 
-## Kata · `05_dos_leds_millis` (Sessió 3, repte +)
+## Kata · `05_dos_servos_millis` (Sessió 3, bastida)
 
 **Projecta (enunciat):**
-> Tens ja declarades `LED_A` (7), `LED_B` (8), les constants `PERIODE_A = 200` i `PERIODE_B = 800` (ms) *(valors diferents del sketch, expressament)*, i les variables `tA = 0`, `tB = 0`, `encesA = false`, `encesB = false`. Escriu de zero el `loop()` sense cap `delay()`: llegeix `millis()` una vegada, i per a cada LED per separat, si ha passat el seu període des de l'últim canvi, actualitza la seva marca de temps, inverteix el seu estat i escriu-lo al pin.
+> Tens ja els objectes `base` i `pinca`, les constants `BASE_MIN = 70`, `BASE_MAX = 110`, `PINCA_TANCADA`, `PINCA_OBERTA`, `PERIODE_BASE = 30` i `PERIODE_PINCA = 700` (ms) *(valors diferents del sketch, expressament)*, i les variables `angleBase = 90`, `pas = 1`, `pincaOberta = false`, `tBase = 0` i `tPinca = 0`. Escriu de zero el `loop()` sense cap `delay()`: llegeix `millis()` una vegada; si ha passat `PERIODE_BASE`, mou la base un `pas` i canvia el sentit als extrems; si ha passat `PERIODE_PINCA`, capgira la pinça.
 
-**Practica:** temporització no bloquejant amb `millis()` · comparació `ara - tX >= PERIODE_X` · actualitzar la marca de temps · operador `!` per invertir un booleà.
-**Pista (per a qui es bloqueja):** resol el raonament sencer per a un LED (comprova, actualitza, inverteix, escriu) i després aplica exactament el mateix raonament a l'altre, amb les seves pròpies variables.
-**En comparar amb el sketch, mireu:** ① dins de cada `if`, l'assignació `tA = ara` (o `tB = ara`) és abans o després d'invertir `encesA`? ② heu escrit un sol `if` que mira els dos LEDs alhora, o dos `if` independents, un per LED? ③ `digitalWrite(LED_A, encesA)` passa el booleà directament, o l'heu convertit a `HIGH`/`LOW` amb un `if` extra?
+**Practica:** temporització no bloquejant amb `millis()` · comparació `ara - tX >= PERIODE_X` · actualitzar la marca de temps · operador `!` per invertir un booleà · canvi de signe d'una variable (`pas = -pas`).
+**Pista (per a qui es bloqueja):** fes primer la pinça sencera (comprova, apunta l'hora, capgira, escriu) i després aplica el mateix patró a la base, amb les seves pròpies variables.
+**En comparar amb el sketch, mireu:** ① dins de cada `if`, heu actualitzat la marca de temps (`tBase = ara`, `tPinca = ara`)? Sense això, la condició és certa a totes les voltes. ② heu escrit dos `if` independents, un per articulació, o un sol `if` que mira les dues coses alhora? ③ el canvi de sentit de la base (`pas = -pas`) es fa quan arriba a **qualsevol** dels dos extrems, o només a un?
 
-## Kata · `04_barrera_automatica` (Sessió 4, producte)
+## Kata · `04_brac_potenciometres` (Sessió 4, producte)
 
 > 🔁 **Aquest dia hi ha mini-check** (inici de la S4): el mini-check **substitueix el kata** a l'aula — no es fan tots dos, són el mateix múscul (escriptura individual de 10'). Aquest kata queda com a **repàs per fer pel teu compte** abans de tancar la SA.
 
 **Projecta (enunciat):**
-> Tens ja `mesuraDistancia()`, les constants `ANGLE_TANCAT = 0`, `ANGLE_OBERT = 90`, `DIST_DETECCIO = 20` (cm) i `TEMPS_OBERT = 4000` (ms) *(valors diferents del sketch, expressament)*, i el `setup()` que deixa la barrera tancada. Escriu de zero el `loop()`: mesura la distància, i si és més gran que 0 **i** menor que `DIST_DETECCIO`, encén el LED, obre la barrera, espera `TEMPS_OBERT`, torna a tancar-la i apaga el LED. Acaba amb una pausa de 80 ms a cada volta.
+> Tens ja els quatre objectes `Servo`, les constants de pins i de rangs, i la constant `ZONA_MORTA = 3` *(valor diferent del sketch, expressament)*. Escriu de zero les dues funcions del braç: `int llegeixAngle(int pinPot, int minim, int maxim)`, que llegeix el potenciòmetre i retorna l'angle dins del rang; i `void mouSiCal(Servo &servo, int &actual, int nou)`, que només mou el servo (i actualitza `actual`) si el canvi supera la zona morta. Després, escriu la línia del `loop()` que mou la **pinça** fent servir totes dues funcions.
 
-**Practica:** guarda amb `&&` per descartar lectures invàlides · seqüència obrir–esperar–tancar amb `delay()` dins d'un `if` · `servo.write()` amb constants d'angle · disseny amb constants (no valors "clavats" al codi).
-**Pista (per a qui es bloqueja):** primer decideix si hi ha vehicle; només si la resposta és sí, encadena les cinc accions (LED, obre, espera, tanca, LED) una darrere l'altra.
-**En comparar amb el sketch, mireu:** ① la guarda porta `d > 0 && d < DIST_DETECCIO`, o només heu comprovat un dels dos costats? ② el LED s'apaga abans o després de tancar la barrera (`barrera.write(ANGLE_TANCAT)`)? ③ la pausa de 80 ms final és dins o fora de l'`if` de detecció (és a dir, s'executa a totes les voltes o només quan hi ha vehicle)?
+**Practica:** funcions amb paràmetres i amb valor de retorn · `map()` cap a un rang segur · `abs()` per mesurar una diferència · pas per referència (`&`).
+**Pista (per a qui es bloqueja):** `llegeixAngle()` és una sola línia (`return map(...)`). `mouSiCal()` és un `if` amb dues línies a dins.
+**En comparar amb el sketch, mireu:** ① el `map()` va a `minim, maxim` (els paràmetres) o a `0, 180`? ② heu fet servir `abs()`, o la vostra condició només funciona quan el potenciòmetre puja (i no quan baixa)? ③ a `mouSiCal()`, heu actualitzat `actual = nou` **abans** del `write()`, i amb el `&` a la capçalera? Sense el `&`, la funció canvia una còpia i la zona morta no funciona mai.
