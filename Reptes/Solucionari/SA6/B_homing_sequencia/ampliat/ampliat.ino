@@ -35,7 +35,8 @@ bool toca() {
   return digitalRead(PIN_COLLISIO) == LOW;
 }
 
-void homing() {
+// Torna true si ha trobat el zero i el braç ha quedat lliure del sensor
+bool homing() {
   int angle = 90;
   base.write(angle);
   delay(500);
@@ -44,13 +45,22 @@ void homing() {
     base.write(angle);
     delay(30);
   }
+  if (!toca()) {
+    Serial.println("No he trobat el final de carrera! Revisa el sensor.");
+    return false;
+  }
   zeroBase = angle;
   Serial.print("Zero de la base a ");
   Serial.println(zeroBase);
   base.write(zeroBase + 10);
   delay(300);
+  if (toca()) {
+    Serial.println("El sensor continua premut: allunya'l de la base.");
+    return false;
+  }
   gest = 0;
   tGest = millis();
+  return true;
 }
 
 void setup() {
@@ -64,7 +74,7 @@ void setup() {
   dret.attach(10);
   pinca.attach(11);
   base.attach(9);
-  homing();
+  if (!homing()) estat = ATURAT;
 }
 
 void loop() {
@@ -87,8 +97,7 @@ void loop() {
       if (!toca() && digitalRead(BOTO_A) == LOW) {
         Serial.println("Rearmat: nou homing");
         while (digitalRead(BOTO_A) == LOW) { }
-        homing();
-        estat = TREBALLANT;
+        if (homing()) estat = TREBALLANT;   // si falla, continua ATURAT
       }
       break;
   }

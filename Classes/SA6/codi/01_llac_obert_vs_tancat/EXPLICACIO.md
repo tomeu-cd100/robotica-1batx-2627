@@ -46,12 +46,17 @@ obert hi confia cegament. El llaç tancat no el necessita: el troba.
   if (!modeTancat) {
     base.write(ANGLE_OBJECTIU);
     Serial.println("... Toca el final de carrera? No ho se.");
+    delay(2000);
+    base.write(ANGLE_INICI);
     acabat = true;
   }
 ```
 
 Com tirar a cistella amb els ulls tancats: llances i no saps si has encertat.
-No hi ha cap `digitalRead()`: el programa **no pregunta res al món**.
+No hi ha cap `digitalRead()`: el programa **no pregunta res al món**. Passats
+2 s, la base torna a l'inici: si el sensor era abans de l'objectiu, el servo hi
+estaria empenyent i s'escalfaria. És una protecció que hi posem nosaltres,
+perquè el llaç obert, sol, no se n'adonaria mai.
 
 ### Bloc 3 — Llaç tancat: el sensor diu prou
 

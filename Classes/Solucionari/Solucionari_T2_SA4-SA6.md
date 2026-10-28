@@ -445,7 +445,7 @@ on les ordres surten dels polsadors D3/D4; aquí surten del pont. Tres
 decisions que val la pena comentar a l'aula:
 
 1. L'**emergència es comprova abans del `switch`**: mana per damunt de tot
-   (la mateixa idea que la guarda de la pinça a `03_ultrasons_brac`, SA4).
+   (la mateixa idea que la guarda de seguretat del repte de la S3 de la SA4).
 2. El **replay fa servir `millis()`**: cada volta torna a mirar el sensor, i
    un xoc enmig de la reproducció salta a emergència a l'instant.
 3. `llegeixOrdre()` acumula lletres fins al `'
@@ -479,7 +479,7 @@ decisions que val la pena comentar a l'aula:
 // de 03_maquina_estats.ino:
 //   REPOS      - quiet; ordre "A" -> MANUAL, ordre "R" -> REPLAY
 //   MANUAL     - obeeix el comandament; "G" grava el punt actual
-//   REPLAY     - reprodueix sol la seguencia gravada (amb millis, com a SA4)
+//   REPLAY     - reprodueix sol la sequencia gravada (amb millis, com a SA4)
 //   EMERGENCIA - xoc al sensor de col.lisio: no mou res; rearmament manual
 // Ordres que arriben pel cable: "B+" "B-" "D+" "D-" "E+" "E-" "P" "G" (del
 // comandament)
@@ -515,7 +515,7 @@ Estat estat = REPOS;
 
 int base = 90, esquerre = 90, dret = 90, pinca = PINCA_TANCADA;
 
-// La seguencia gravada: quatre llistes, una per servo
+// La sequencia gravada: quatre llistes, una per servo
 int seqBase[MAX_PUNTS], seqEsquerre[MAX_PUNTS], seqDret[MAX_PUNTS], seqPinca[MAX_PUNTS];
 int numPunts = 0;
 int puntReplay = 0;
@@ -524,11 +524,11 @@ unsigned long tPunt = 0;
 void setup() {
   Serial.begin(9600);
   pinMode(PIN_COLLISIO, INPUT_PULLUP);
+  aplica();                     // write() abans d'attach(): sense salts
   servoBase.attach(PIN_SERVO_BASE);
   servoEsquerre.attach(PIN_SERVO_ESQUERRE);
   servoDret.attach(PIN_SERVO_DRET);
   servoPinca.attach(PIN_SERVO_PINCA);
-  aplica();
   canviaEstat(REPOS);
 }
 
@@ -538,7 +538,7 @@ void loop() {
   String ordre = llegeixOrdre();
 
   // --- Transicio prioritaria: el xoc mana per damunt de tot ---
-  // (la mateixa idea que la guarda de 03_ultrasons_brac, SA4)
+  // (la mateixa idea que la guarda de seguretat del repte de la S3 de la SA4)
   if (xoc && estat != EMERGENCIA) {
     canviaEstat(EMERGENCIA);
   }
@@ -641,7 +641,7 @@ void gravaPunt() {
     Serial.print("Punt gravat: ");
     Serial.println(numPunts);
   } else {
-    Serial.println("Seguencia plena: no es grava");
+    Serial.println("Sequencia plena: no es grava");
   }
 }
 

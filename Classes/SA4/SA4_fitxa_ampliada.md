@@ -91,7 +91,7 @@ El muntatge, el codi i el producte són **teus**: els fas i els lliures tu. Aix�
 
 ## Vols més?
 
-- **Reptes ⭐:** [`Reptes/Reptes_SA4.md`](../../Reptes/Reptes_SA4.md) (braç amb límits, braç dispensador, registre i replay).
+- **Reptes ⭐:** [`Reptes/Reptes_SA4.md`](../../Reptes/Reptes_SA4.md) (botó de casa, braç dispensador, registre i replay).
 - **Simulació interactiva (Wokwi):** servo a [`SA4_esquemes_connexions.md`](SA4_esquemes_connexions.md) (el motor/pont H va amb maquinari real).
 
 ---

@@ -115,6 +115,7 @@
 
 ## Orientació docent
 - **Errors freqüents:** `IndentationError` (sagnat); grups de ràdio repetits entre alumnes (els braços s'obeeixen creuats); confondre `is_pressed()` amb `was_pressed()`; enviar la `P` a cada volta.
+- **A i B gairebé alhora:** el primer botó que es llegeix ja pot enviar una ordre (`E+`/`E-` al C, un canvi de selecció i el «saludet» a l'ampliat de l'A) abans que es detecti la combinació A+B. És acceptable; si molesta, cal esperar uns 100 ms abans de decidir.
 - **Diferenciació:** A treballa llistes, B proporcionalitat i calibratge, C integració. El C és el pont natural cap a la SA6.
 - **Gestió d'aula:** el **simulador** permet treballar sense maquinari; el **receptor de prova** permet validar sense el braç. Recomanar repassar `Classes/SA0/SA0_guia_programacio.md` (Part B i taula comparativa).
 - **Solucionari:** `Reptes/Solucionari/SA5/` (`A_selector_radio`, `B_inclinacio_fina`, `C_comandament_complet`; `minim` i `ampliat`).

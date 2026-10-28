@@ -50,21 +50,28 @@ de llista**: comandament i pont amb el mateix número, i diferent de la resta.
 ```python
     ordre = ""
     if button_a.is_pressed() and button_b.is_pressed():
-        ordre = "P"
-    elif x > LLINDAR:
-        ordre = "B+"
-    elif x < -LLINDAR:
-        ordre = "B-"
-    elif y < -LLINDAR:
-        ordre = "D-"
-    elif y > LLINDAR:
-        ordre = "D+"
+        if not pinca_enviada:      # mantenint A+B, la P nomes surt un cop
+            ordre = "P"
+        pinca_enviada = True
+    else:
+        pinca_enviada = False
+        if x > LLINDAR:
+            ordre = "B+"
+        elif x < -LLINDAR:
+            ordre = "B-"
+        elif y < -LLINDAR:
+            ordre = "D-"
+        elif y > LLINDAR:
+            ordre = "D+"
 ```
 
 És la cadena de fletxes de la [pràctica 2](02_inclinacio_EXPLICACIO.md),
 però en lloc de dibuixar una fletxa guarda una **ordre**: un text curt amb
 l'articulació (la lletra del [selector de la S1](01_selector_articulacio_EXPLICACIO.md))
-i el sentit. `ordre = ""` (text buit) vol dir *res a enviar*. Aquest acord de
+i el sentit. `ordre = ""` (text buit) vol dir *res a enviar*. La variable
+`pinca_enviada` recorda si ja s'ha enviat la `P` d'aquesta premuda: mentre
+mantens A i B, només surt la primera vegada, i la pinça no s'obre i es tanca
+sense parar. Aquest acord de
 quines paraules existeixen i què volen dir és el **protocol**: el mateix que
 entén l'Arduino del braç ([dossier](../../00_General/00_Projecte_T2_Brac.md#el-protocol-dordres)).
 
@@ -77,16 +84,13 @@ entén l'Arduino del braç ([dossier](../../00_General/00_Projecte_T2_Brac.md#el
     else:
         display.show(Image.DIAMOND_SMALL)
 
-    if ordre == "P":
-        sleep(500)    # una sola "P" per premuda: si no, la pinca tremolaria
     sleep(150)        # ~6 ordres per segon
 ```
 
 `radio.send()` envia el text a tot el grup. `ordre[0]` és el **primer
 caràcter** del text (els textos també es numeren des del 0, com les
 llistes). Cada ordre mou el servo 3°: amb unes 6 ordres per segon, el braç
-gira uns 18° per segon, prou suau per controlar-lo. La pausa extra després de
-`P` evita que, amb A i B premuts, la pinça s'obri i es tanqui sense parar.
+gira uns 18° per segon, prou suau per controlar-lo.
 
 ### La segona placa, pas 1: el receptor (per provar la ràdio)
 

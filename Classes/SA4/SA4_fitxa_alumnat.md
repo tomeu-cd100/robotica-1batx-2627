@@ -123,6 +123,6 @@ Es fa a la **S4**: el teu MeArm, muntat, cablejat i controlat amb **quatre poten
 
 <!-- /web:only-github -->
 
-> 📌 **Vols més?** +[Reptes ⭐](../../Reptes/Reptes_SA4.md) (braç amb límits, braç dispensador, registre i replay), revisió creuada de codi, exit ticket, pensament computacional i ODS → **[SA4_fitxa_ampliada.md](SA4_fitxa_ampliada.md)**
+> 📌 **Vols més?** +[Reptes ⭐](../../Reptes/Reptes_SA4.md) (botó de casa, braç dispensador, registre i replay), revisió creuada de codi, exit ticket, pensament computacional i ODS → **[SA4_fitxa_ampliada.md](SA4_fitxa_ampliada.md)**
 
 > 🤖 **El robot del trimestre:** tot el que fas en aquesta SA és el teu **braç MeArm**. Calendari de muntatge, mapa de pins i rúbrica: **[dossier del braç](../00_General/00_Projecte_T2_Brac.md)** · pas a pas: **[guia de muntatge](../00_General/00_Muntatge_brac_MeArm.md)**.

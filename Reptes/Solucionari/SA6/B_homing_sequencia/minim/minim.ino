@@ -41,10 +41,19 @@ void homing() {
     base.write(angle);
     delay(30);
   }
+  if (!toca()) {                        // guarda: sensor no trobat
+    Serial.println("No he trobat el final de carrera! Revisa el sensor.");
+    aturat = true;
+    return;
+  }
   Serial.print("Zero de la base a ");
   Serial.println(angle);
   base.write(angle + 10);               // se separa del sensor
   delay(300);
+  if (toca()) {                         // si encara toca, no es pot treballar
+    Serial.println("El sensor continua premut: allunya'l de la base.");
+    aturat = true;
+  }
 }
 
 void setup() {

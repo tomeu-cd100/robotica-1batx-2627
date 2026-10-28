@@ -65,6 +65,10 @@ void loop() {
     Serial.print("He enviat la base a ");
     Serial.print(ANGLE_OBJECTIU);
     Serial.println(" graus. Toca el final de carrera? No ho se.");
+    delay(2000);
+    // Si el sensor era abans de l'objectiu, el servo hi estaria empenyent:
+    // el tornem a l'inici per no forcar-lo (el llac obert no ho sabria!)
+    base.write(ANGLE_INICI);
     acabat = true;
   } else {
     // LLAC TANCAT: el sensor diu quan hem arribat

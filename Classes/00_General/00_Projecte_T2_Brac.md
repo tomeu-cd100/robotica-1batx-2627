@@ -211,7 +211,10 @@ recollida i deixar-lo en un altre lloc. La S4 de SA6 és la prova pràctica
 > - el servo dret (D10) fa de colze.
 >
 > **Pla B del pont: el braç governat per la micro:bit.** Si el pont sèrie
-> (3,3 V cap a una entrada de 5 V) no funciona amb el maquinari real, el
+> (3,3 V cap a una entrada de 5 V) no funciona amb el maquinari real —o si
+> preocupa que, amb l'USB connectat, el xip USB de l'UNO (16U2) manté el D0 a
+> 5 V a través d'1 kΩ i hi entra ~1,7 mA cap al P1 (cal provar-ho, i si cal,
+> afegir-hi una resistència d'1-2 kΩ en sèrie)—, el
 > braç es pot connectar sencer a una **micro:bit V2 amb Micro:shield**:
 > esquema i codi a la «Versió micro:bit» de la
 > [guia de muntatge](00_Muntatge_brac_MeArm.md#versió-microbit-comandament-receptor)

@@ -150,4 +150,4 @@ El treball és **individual**: cadascú programa la seva micro:bit i lliura el s
 ## Context real i ODS
 
 - **Context:** *wearables*, dispositius de salut, joguines i material educatiu programable.
-- **ODS 3** (salut i benestar: comptapassos, alertes) i **ODS 4** (educació de qualitat: la micro:bit democratitza la programació).
+- **ODS 3** (salut i benestar: braços teledirigits per a persones amb mobilitat reduïda, telecirurgia) i **ODS 4** (educació de qualitat: la micro:bit democratitza la programació).

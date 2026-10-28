@@ -47,7 +47,7 @@ def comandament():
     while True:
         if pin_logo.is_touched():                # AMPLIACIO 3
             lent = not lent
-            display.show("L" if lent else "R")
+            display.show(Image.TORTOISE if lent else Image.RABBIT)  # no confondre amb l'ordre R
             sleep(500)
 
         x = accelerometer.get_x()

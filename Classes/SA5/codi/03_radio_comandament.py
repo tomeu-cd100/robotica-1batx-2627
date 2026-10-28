@@ -16,21 +16,27 @@ LLINDAR = 300
 radio.on()
 radio.config(group=GRUP)
 
+pinca_enviada = False   # per enviar "P" una sola vegada per cada A+B
+
 while True:
     x = accelerometer.get_x()
     y = accelerometer.get_y()
 
     ordre = ""
     if button_a.is_pressed() and button_b.is_pressed():
-        ordre = "P"
-    elif x > LLINDAR:
-        ordre = "B+"
-    elif x < -LLINDAR:
-        ordre = "B-"
-    elif y < -LLINDAR:
-        ordre = "D-"
-    elif y > LLINDAR:
-        ordre = "D+"
+        if not pinca_enviada:      # mantenint A+B, la P nomes surt un cop
+            ordre = "P"
+        pinca_enviada = True
+    else:
+        pinca_enviada = False
+        if x > LLINDAR:
+            ordre = "B+"
+        elif x < -LLINDAR:
+            ordre = "B-"
+        elif y < -LLINDAR:
+            ordre = "D-"
+        elif y > LLINDAR:
+            ordre = "D+"
 
     if ordre != "":
         radio.send(ordre)
@@ -38,6 +44,4 @@ while True:
     else:
         display.show(Image.DIAMOND_SMALL)
 
-    if ordre == "P":
-        sleep(500)    # una sola "P" per premuda: si no, la pinca tremolaria
     sleep(150)        # ~6 ordres per segon

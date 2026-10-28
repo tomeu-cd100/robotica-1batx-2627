@@ -154,6 +154,8 @@ void loop() {
     desaMemoria();
     Serial.print("Punt gravat: ");
     Serial.println(numPunts);
+  } else if (premA) {
+    Serial.println("Memoria plena");
   }
   if (premB && numPunts > 0) {
     comencaReplay();

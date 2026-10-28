@@ -18,7 +18,7 @@ Programa la **pinça automàtica** de l'estació de recollida:
 3. **Ampliació (notable):** afegeix un **indicador** d'estat (LED al D5: encès = pinça tancada).
 4. **Ampliació (excel·lent):** fes que la pinça **no salti**: s'acosta a l'angle objectiu amb **control proporcional** (cada volta, una fracció `K` de l'error) i mostra l'angle i l'objectiu al **Serial Plotter**.
 
-### PART B — El comandament amb micro:bit (4 punts)
+### PART B — El comandament amb micro:bit (3 punts + 1 de documentació)
 
 > 🐍 Fa setmanes que treballes en C++: **repassa MicroPython abans de la prova** amb la targeta `Classes/00_General/00_Repas_expres_MicroPython.md` (el docent la reparteix a la S2 de la SA6).
 
