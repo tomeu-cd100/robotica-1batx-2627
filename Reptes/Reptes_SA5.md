@@ -1,131 +1,126 @@
 # Reptes SA5 · micro:bit i MicroPython
 
-> 🧑‍🎓 **Quan toca fer-ne un?** És l'**ampliació ⭐** de la SA: comença'l quan tinguis el **nucli al dia** (les activitats de la fitxa). Tria'n **UN**, ensenya'l al docent perquè el validi i pinta l'estrella al [tauler de reptes](../Classes/00_General/00_Tauler_reptes.md). A la SA5, a més, **un dels reptes és el teu producte** (Activitat 4): tria'l a la S3.
+> 🧑‍🎓 **Quan toca fer-ne un?** És l'**ampliació ⭐** de la SA: comença'l quan tinguis el **nucli al dia** (les activitats de la fitxa). Tria'n **UN**, ensenya'l al docent perquè el validi i pinta l'estrella al [tauler de reptes](../Classes/00_General/00_Tauler_reptes.md).
 
-**Tria UN dels tres reptes.** Tots es programen en **MicroPython** per a **micro:bit**, fent servir les entrades i sensors **integrats** i la pantalla de LEDs. Mateix requisit mínim, ampliacions graduades. Editor: python.microbit.org (té simulador) o Thonny.
+**Tria UN dels tres reptes.** Tots són **millores del comandament del teu braç MeArm**: es programen en **MicroPython** i parlen el mateix **protocol d'ordres** que l'Arduino del braç ja entén (`B±`, `D±`, `E±`, `P`, `G`). Mateix requisit de base: el grup de ràdio és el teu número de llista. Editor: python.microbit.org (té simulador) o Thonny.
 
-> **Continguts SA5:** MicroPython (indentació, `while True`), `display`, botons, acceleròmetre, sensor de llum, ràdio. · **Codi base:** `Classes/SA5/codi/` (`.py`).
+> **Continguts SA5:** MicroPython (indentació, `while True`, llistes), `display`, botons, acceleròmetre, ràdio. · **Codi base:** `Classes/SA5/codi/` (`.py`). · **Protocol:** [dossier del braç](../Classes/00_General/00_Projecte_T2_Brac.md#el-protocol-dordres).
 
-> **Format "producte real":** cada repte simula un **encàrrec** amb **client**, **lliurable** i **ús al món real**. El requisit tècnic no canvia. *(2n trimestre — el repte C de ràdio pot esdevenir el **comandament del braç robòtic** de SA4. Vegeu `Programació didàctica/08c_Projectes_vida_real.md`.)*
-
----
-
-## 🏃 Repte A · Comptapassos personal
-
-**Context.** Una polsera d'activitat que **compta passos** detectant el moviment, com un podòmetre.
-
-> *Client: marca d'esport i salut · Lliurable: comptapassos vestible · Món real: wearables i monitoratge d'activitat física.*
-
-**Què treballa.** Acceleròmetre, variables, condicionals, `display`.
-
-**Requisit mínim.**
-- Detectar **sacsejades/passos** amb l'acceleròmetre i **comptar-los**, mostrant el total a la pantalla (en prémer un botó).
-- Codi comentat amb indentació correcta.
-
-**Ampliacions graduades.**
-1. *(bàsica)* Reinicia el comptador amb el **botó B**.
-2. *(notable)* Fixa un **objectiu** (p. ex. 20 passos) i mostra una **icona** en assolir-lo.
-3. *(⭐⭐⭐)* Mostra una **barra de progrés** amb els LEDs cap a l'objectiu.
-
-    **Fites** (valida-les en ordre):
-    1. Els passos es compten i es mostren com a **nombre** (`display.scroll`) de manera fiable.
-    2. La conversió passos → columnes enceses (0-5) funciona provada amb **valors fixos** abans de connectar-la al comptador real.
-    3. La barra s'actualitza en temps real i **només es redibuixa quan canvia** (sense parpelleig constant).
-
+> **Format "producte real":** cada repte simula un **encàrrec** amb **client**, **lliurable** i **ús al món real**. El requisit tècnic no canvia.
 
 ---
 
-## 🌃 Repte B · Llum de nit intel·ligent
+## 🎛️ Repte A · El selector per ràdio
 
-**Context.** Una llum que **s'encén quan fa fosc** fent servir el sensor de llum del propi micro:bit.
+**Context.** Un comandament de grua professional no té un gest per a cada articulació: té un **selector** i una palanca. Tries què mous i després el mous.
 
-> *Client: empresa de domòtica · Lliurable: llum de nit autònoma · Món real: il·luminació adaptativa de la llar.*
+> *Client: un taller que fa servir el braç amb una sola mà · Lliurable: comandament amb selector · Món real: comandaments de grues, excavadores i braços de demolició.*
 
-**Què treballa.** `display.read_light_level()`, llindar amb `if`, sortida a la pantalla.
+**Què treballa.** Llistes, `was_pressed()`, construir un text (`lletra + "+"`), ràdio.
 
 **Requisit mínim.**
-- Llegir el **nivell de llum** i **encendre la pantalla** (imatge) quan baixa d'un llindar; apagar-la quan hi ha llum.
-- Codi comentat.
+- Els botons A i B trien l'articulació (B, E, D, P), com al [selector de la S1](../Classes/SA5/codi/01_selector_articulacio_EXPLICACIO.md).
+- Inclinar endavant/enrere envia `"<lletra>+"` o `"<lletra>-"` de l'articulació triada (amb la P, qualsevol inclinació envia `P` una vegada).
 
 **Ampliacions graduades.**
-1. *(bàsica)* Mostra el **nivell de llum** numèric en prémer un botó (per calibrar).
-2. *(notable)* Afegeix **histèresi** (dos llindars) per evitar parpelleigs.
-3. *(⭐⭐⭐)* Ajusta la **brillantor** de la imatge segons la foscor.
+1. *(bàsica)* La pantalla mostra la lletra triada i, quan envia, una fletxa.
+2. *(notable)* **A i B alhora bloquegen** el comandament (icona de prohibit): no s'envia res fins que es desbloqueja.
+3. *(⭐⭐⭐)* En canviar d'articulació, el comandament envia un **«saludet»** (tres `+` i tres `-`) perquè es vegi al braç quina s'ha triat.
 
     **Fites** (valida-les en ordre):
-    1. La lectura de llum es mostra en pantalla per conèixer el **rang real** de l'aula (anota mínim i màxim al quadern).
-    2. La conversió llum → brillantor (0-9) funciona amb els llindars del teu rang, no amb valors inventats.
-    3. La brillantor és **estable** (mitjana de diverses lectures): no tremola quan la llum vacil·la una mica.
-
+    1. Una sola llista `ARTICULACIONS` i un sol índex `triada`: cap `if` per lletra.
+    2. Amb el comandament bloquejat, el braç no es mou per molt que l'inclinis.
+    3. El saludet es veu al braç **sense haver de mirar la pantalla** del comandament.
 
 ---
 
-## 🎲 Repte C · Joc o missatges per ràdio
+## 🎚️ Repte B · El comandament fi
 
-**Context.** Un **dau electrònic**, un **pedra-paper-tisora**, o **enviar missatges** entre dos micro:bits per ràdio.
+**Context.** Amb el comandament de la S3, el braç es mou sempre igual de ràpid: o res, o tot. Per agafar una peça petita cal **precisió**: poc moviment quan inclines poc.
 
-> *Client: empresa de joguines / equip de robòtica · Lliurable: joc o comandament sense fil · Món real: comunicació sense fil i comandaments remots.* (La ràdio és la **base** del comandament del braç de SA4: una micro:bit a la mà envia les ordres i una segona micro:bit, el **pont**, les passa per cable a l'Arduino del braç; vegeu el [dossier del braç](../Classes/00_General/00_Projecte_T2_Brac.md).)
+> *Client: un laboratori que manipula mostres delicades · Lliurable: comandament proporcional · Món real: els joysticks analògics, els comandaments de drons, la cirurgia robòtica.*
 
-**Què treballa.** `random`, esdeveniments (sacsejada/botó), `display`, i/o comunicació `radio`.
+**Què treballa.** Zona morta, valor absolut, proporcionalitat (una regla de tres), mitjana.
 
 **Requisit mínim.**
-- *Opció joc:* en **sacsejar** o prémer, mostra un **resultat aleatori** (dau 1–6 o gest).
-- *Opció ràdio:* en prémer un botó, **envia** un missatge/icona que un altre micro:bit **rep i mostra**.
+- Inclinació esquerra/dreta → `B-`/`B+` i endavant/enrere → `D-`/`D+`, amb una **zona morta**: amb la placa gairebé plana no s'envia res.
 
 **Ampliacions graduades.**
-1. *(bàsica)* Afegeix una **animació** abans de mostrar el resultat.
-2. *(notable)* *(joc)* porta el **recompte** de tirades; *(ràdio)* respon amb un **ACK** (confirmació).
-3. *(⭐⭐⭐)* Combina-ho: un **joc multijugador per ràdio** entre dos micro:bits.
+1. *(bàsica)* **Velocitat proporcional:** com més inclines, més ordres per segon (pausa de 400 ms a 80 ms).
+2. *(notable)* **Calibratge en engegar:** la postura de repòs de la teva mà (mitjana de 20 lectures) passa a ser el zero.
+3. *(⭐⭐⭐)* La pantalla mostra la **intensitat** amb una barra d'1 a 5 LED.
 
     **Fites** (valida-les en ordre):
-    1. Ping-pong bàsic: un missatge fa anada i tornada entre les dues plaques del **mateix grup** de ràdio.
-    2. El **protocol del joc** està escrit en paper (quins missatges hi ha, qui comença) i implementat en una direcció.
-    3. Partida completa amb marcador; si l'altra placa **no respon** (timeout), el joc ho diu en lloc de quedar penjat.
+    1. Amb la mà relaxada, el braç no es mou gens (zona morta ben triada i justificada al quadern).
+    2. Inclinant a poc a poc, el braç accelera a poc a poc: es nota la diferència entre 30° i 60°.
+    3. Si engegues el comandament amb la mà torta, el calibratge fa que «torta» sigui el nou repòs.
 
+---
+
+## 🎮 Repte C · El comandament complet amb gravació
+
+**Context.** El braç de la SA6 tindrà un mode **replay**: grava punts i els repeteix sol. Per gravar-los cal un gest al comandament, i per controlar-ho tot, les quatre articulacions.
+
+> *Client: un taller de reparacions que vol ensenyar tasques al braç · Lliurable: comandament de les 4 articulacions amb gravació · Món real: l'ensenyament per demostració dels cobots.*
+
+**Què treballa.** Combinar sensors i botons, evitar repeticions (una ordre per gest), comptadors.
+
+**Requisit mínim.**
+- Les quatre articulacions: inclinació → `B±` i `D±`; mantenir A / B → `E+` / `E-`; A+B → `P` (una sola vegada per premuda).
+- Sacsejar envia `G` (gravar un punt).
+
+**Ampliacions graduades.**
+1. *(bàsica)* El comandament **compta els punts gravats** i els mostra; al 30è es nega a gravar més (com el braç).
+2. *(notable)* El **pont amb botons d'estat:** A envia `A` i B envia `R` a l'Arduino (els botons de la màquina d'estats de la SA6).
+3. *(⭐⭐⭐)* **Mode lent** amb el logo tàctil (micro:bit V2): ordres cada 300 ms en lloc de 100 ms.
+
+    **Fites** (valida-les en ordre):
+    1. Mantenint A+B, la pinça canvia **una sola vegada** (no fa clic-clic).
+    2. El comptador del comandament i el del braç (Monitor sèrie de la SA6) coincideixen.
+    3. Amb el mode lent, aconsegueixes posar la pinça damunt d'una moneda.
+
+> **Cap a SA6:** el repte C és el comandament de referència del braç: a la SA6, `G`, `A` i `R` faran funcionar la màquina d'estats.
 
 ---
 
 ## 🎨 Fes-lo teu (tria abans de començar)
 
-> El repte fixa **què** ha de fer el sistema; **el context el poses tu**. Tria i anota-ho al quadern:
-> - **A:** decideix **quina activitat teva compta**: passes, salts a la corda, cops de rem… i quin objectiu diari hi poses.
-> - **B:** calibra la llum amb **la foscor real de la teva habitació** i tria la icona que s'hi encén.
-> - **C:** inventa **les regles del teu joc** de ràdio (què s'envia, qui guanya, quants punts).
+> El repte fixa **què** ha de fer el comandament; **el context el poses tu**. Tria i anota-ho al quadern:
+> - **A:** les **imatges** del selector (dissenya una icona pròpia per a cada articulació amb `Image("...")`).
+> - **B:** la **zona morta** que va bé a la teva mà (mesura-la!) i la velocitat màxima que et deixa ser precís.
+> - **C:** quin **gest** fa cada cosa (si vols, canvia'l: el protocol no canvia, només qui l'envia).
 
-## Material necessari (segons repte)
-- micro:bit (+ piles) · per al repte C (ràdio): **dos** micro:bits · ordinador amb python.microbit.org o **Thonny** · *(no cal cablejar: tot és integrat)*.
+## Material necessari
+- Dues micro:bit (comandament i pont/receptor) + el braç amb l'Arduino i el cable del pont · ordinador amb python.microbit.org o **Thonny**. **C ⭐⭐⭐:** micro:bit **V2** (logo tàctil).
+- Sense braç a mà? El **receptor de prova** de la [pràctica 3](../Classes/SA5/codi/03_radio_comandament_EXPLICACIO.md) mostra les ordres que arriben.
 
 ## Per on començar (mètode de projecte + PRIMM)
-1. **Analitzar:** quina entrada integrada faig servir (moviment / llum / botó) i què mostro?
+1. **Analitzar:** quines ordres ha d'enviar el comandament i amb quin gest?
 2. **Dissenyar (Predir):** escriu l'estructura `while True:` i el que anirà sagnat dins.
-3. **Prototipar:** parteix de `Classes/SA5/codi/` (`02_passes.py`, `03_nightlight.py`, `04_radio_dau.py`).
-4. **Provar:** usa el **simulador** abans de carregar al dispositiu.
-5. **Millorar:** afegeix histèresi, icones, recompte o ràdio.
+3. **Prototipar:** parteix de `Classes/SA5/codi/` (`01_selector_articulacio.py`, `02_inclinacio.py`, `03_radio_comandament.py`).
+4. **Provar:** primer amb el receptor de prova; després, amb el pont i el braç.
+5. **Millorar:** ajusta llindars i pauses mirant el braç, no la pantalla.
 
 ## Com s'avalua
 | Rúbrica | Per què |
 |---|---|
 | **R1** (codi) | Indentació correcta, lògica, llegibilitat en Python. |
-| **R3** (projecte) | Integració sensor + pantalla (+ ràdio) funcional. |
-| **R4** (documentació) | Quadern tècnic: diferències Arduino↔MicroPython. |
+| **R3** (projecte) | El braç respon al comandament de manera fiable i controlable. |
+| **R4** (documentació) | Quadern tècnic: diferències Arduino↔MicroPython amb el protocol com a exemple. |
 
 ## Producte / entrega
-- Codi `.py` comentat + entrada al quadern tècnic (què canvia respecte d'Arduino).
+- Codi `.py` comentat + vídeo curt del braç movent-se amb el comandament + entrada al quadern tècnic.
 
 ---
 
 ## Orientació docent
-- **Errors freqüents:** `IndentationError` (sagnat); oblidar `from microbit import *`; al repte de ràdio, grups diferents entre emissors; confondre `is_pressed()` amb `was_pressed()`.
-- **Diferenciació:** el mínim usa una entrada integrada; les ampliacions porten a histèresi, `random`, recompte i ràdio.
-- **Gestió d'aula:** el **simulador** permet treballar sense maquinari; per al repte C, **cada alumne/a treballa amb les seves dues micro:bit** (emissora i receptora) i el `group` de ràdio és **el seu número de llista**, perquè no es rebin els missatges dels altres. Recomanar repassar `Classes/SA0/SA0_guia_programacio.md` (Part B i taula comparativa).
-- **Vincle avaluació:** R1 (codi Python) + R3 + R4; punt fort per consolidar el **transfer** de conceptes entre llenguatges.
+- **Errors freqüents:** `IndentationError` (sagnat); grups de ràdio repetits entre alumnes (els braços s'obeeixen creuats); confondre `is_pressed()` amb `was_pressed()`; enviar la `P` a cada volta.
+- **Diferenciació:** A treballa llistes, B proporcionalitat i calibratge, C integració. El C és el pont natural cap a la SA6.
+- **Gestió d'aula:** el **simulador** permet treballar sense maquinari; el **receptor de prova** permet validar sense el braç. Recomanar repassar `Classes/SA0/SA0_guia_programacio.md` (Part B i taula comparativa).
+- **Solucionari:** `Reptes/Solucionari/SA5/` (`A_selector_radio`, `B_inclinacio_fina`, `C_comandament_complet`; `minim` i `ampliat`).
 
 ---
 
 ## 🤖 Cap al robot del trimestre
 
-Aquest trimestre tot suma cap al **braç robòtic** ([dossier](../Classes/00_General/00_Projecte_T2_Brac.md) · [fil conductor](../Classes/00_General/00_Fil_conductor_robots.md)):
-
-- **Repte C (joc o missatges per ràdio)** → el comandament del braç: el mateix ping-pong per ràdio entre les teves dues micro:bit és la base de com la micro:bit de la mà envia inclinació i botons, i la micro:bit pont els passa a l'Arduino perquè mogui el braç.
-
-El braç que vau muntar a SA4 **no es toca**: continua amb el seu Arduino. La ràdio que programeu aquí és **directament** el comandament sense fils del braç, que a SA6 s'integrarà a la màquina d'estats.
+Aquest trimestre **tot és el braç** ([dossier](../Classes/00_General/00_Projecte_T2_Brac.md) · [fil conductor](../Classes/00_General/00_Fil_conductor_robots.md)). El braç que vas muntar a la SA4 **no es toca**: continua amb el seu Arduino. Els tres reptes milloren el seu comandament sense fils, i el **C** és exactament el comandament que la màquina d'estats de la SA6 necessita (gravar amb `G`, canviar d'estat amb `A` i `R`).

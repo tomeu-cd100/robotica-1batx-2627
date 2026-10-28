@@ -8,28 +8,30 @@
 
 **Nom:** ______________________  **Data:** __________
 
-> Canvies de llenguatge: ara **Python** sobre micro:bit. Atenció a la **indentació** (en Python és obligatòria!).
+> Canvies de llenguatge: ara **Python** sobre micro:bit, per construir el **comandament sense fils del teu braç MeArm**. Atenció a la **indentació** (en Python és obligatòria!).
 
 ---
 
-## Activitat 1 · Name badge (S1)
-0. **PREDIU** (abans d'executar): mirant [`01_name_badge.py`](codi/01_name_badge.py), què creus que farà la matriu de LED i els botons? ____________________
-1. Carrega [`01_name_badge.py`](codi/01_name_badge.py) i **comprova** la predicció. Quina instrucció mostra text que es desplaça? `__________`
-2. Diferència entre `display.show()` i `display.scroll()`: ________________
-3. **Repte:** badge d'emocions (A: contenta / B: trista). **+ Repte:** animació pròpia.
+## Activitat 1 · El selector del comandament (S1)
+0. **PREDIU** (abans d'executar): mirant [`01_selector_articulacio.py`](codi/01_selector_articulacio.py), quina lletra surt en engegar? I si prems A just en engegar? ____________________
+1. Carrega'l i **comprova** la predicció. Diferència entre `display.show()` i `display.scroll()`: ________________
+2. Diferència entre `was_pressed()` i `is_pressed()`: ________________
+3. **Repte:** una imatge pròpia per articulació. **+ Repte:** que recordi l'última tria en engegar.
 
-## Activitat 2 · Sensors integrats (S2)
-1. Comptapassos ([`02_passes.py`](codi/02_passes.py)): quin sensor s'usa? __________ Quin llindar has posat? ____
-2. Llum automàtic ([`03_nightlight.py`](codi/03_nightlight.py)): rang de `read_light_level()` = de ____ a ____
-3. **Repte:** detector d'inclinació o termòmetre amb avís. **+ Repte:** guardar màx/mín.
+## Activitat 2 · La inclinació com a gest (S2)
+1. Carrega [`02_inclinacio.py`](codi/02_inclinacio.py) i apunta `x` i `y` en quatre postures (plana, dreta, inclinada, sacsejant): ______________________
+2. Quin llindar has triat? ____ Per què? ______________________
+3. **Taller:** prova el braç amb [`04_brac_ordres`](codi/04_brac_ordres/EXPLICACIO.md) des del Monitor sèrie. Quina ordre has provat primer i què ha fet? ______________________
+4. **Repte:** zona morta proporcional (fletxa petita / gran). **+ Repte:** que el sacseig mostri un compte de punts «gravats».
 
-## Activitat 3 · Ràdio (S3)
-1. Carrega [`04_radio_dau.py`](codi/04_radio_dau.py) en **dues** plaques (si només en tens una, el professor t'ajuntarà un moment amb un company per fer la prova d'emissió-recepció; el codi l'escrius tu). Què han de compartir per comunicar-se? __________
+## Activitat 3 · Ràdio: el comandament del braç (S3)
+1. Carrega [`03_radio_comandament.py`](codi/03_radio_comandament.py) al comandament i el receptor de prova a l'altra placa. Què han de compartir per comunicar-se? __________
 2. Quina instrucció envia? `__________` Quina rep? `__________`
-3. **Repte:** "pedra-paper-tisora" o comandament. **+ Repte:** xarxa de 3+ plaques.
+3. Dibuixa la cadena sencera: comandament → … → servos. ______________________
+4. **Repte:** el servo esquerre amb els botons (`E+` / `E-`). **+ Repte:** el selector de la S1 dins del comandament.
 
 ## Activitat 4 · Comparació C++ ↔ Python
-Completa amb un mateix programa senzill (p. ex. un comptador):
+Completa comparant el **comandament** (Python) amb l'**Arduino que obeeix** (`04_brac_ordres`, C++):
 
 | Aspecte | Arduino (C/C++) | micro:bit (Python) |
 |---|---|---|
@@ -37,6 +39,7 @@ Completa amb un mateix programa senzill (p. ex. un comptador):
 | Final d'instrucció | `;` | |
 | Blocs de codi | `{ }` | |
 | Declaració de variable | `int x = 0;` | |
+| Comparar un text | `if (ordre == "B+")` | |
 | Mostrar un valor | `Serial.println(x)` | |
 
 **Reflexió:** quin t'ha semblat més fàcil de llegir i per què? ________________
@@ -70,14 +73,14 @@ El programa i el producte són **teus**: els fas i els lliures tu. Això no vol 
 
 ## Vols més?
 
-- **Reptes ⭐:** [`Reptes/Reptes_SA5.md`](../../Reptes/Reptes_SA5.md) (comptapassos, llum de nit, joc per ràdio).
+- **Reptes ⭐:** [`Reptes/Reptes_SA5.md`](../../Reptes/Reptes_SA5.md) (selector per ràdio, zona morta proporcional, gravació amb sacseig).
 - **Simulador:** prova el codi a **python.microbit.org** (sense maquinari).
 
 ---
 
 ## Pensament computacional d'aquesta SA
 
-Treballes la programació **per esdeveniments** (reaccionar a botons, sacsejades, ràdio) i l'**ABSTRACCIÓ** (els sensors integrats amaguen la complexitat). Quin esdeveniment dispara una acció al teu programa? ______________________
+Treballes la programació **per esdeveniments** (reaccionar a botons, sacsejades, ràdio), l'**ABSTRACCIÓ** (els sensors integrats amaguen la complexitat) i els **PROTOCOLS** (un acord de missatges entre dues màquines). Quines ordres té el protocol del teu braç i qui les entén? ______________________
 
 ## Diana d'autoavaluació
 
@@ -86,18 +89,18 @@ Situa't (0-10):
 | Criteri | Insuficient | Suficient/Bé | Notable | Excel·lent |
 |---|---|---|---|---|
 | Escric Python ben indentat que funciona | ☐ | ☐ | ☐ | ☐ |
-| Faig servir sensors integrats (acceleròmetre, llum…) | ☐ | ☐ | ☐ | ☐ |
-| Comunico dues plaques per ràdio | ☐ | ☐ | ☐ | ☐ |
+| Faig servir l'acceleròmetre amb un llindar | ☐ | ☐ | ☐ | ☐ |
+| Comunico dues plaques per ràdio i moc el braç a distància | ☐ | ☐ | ☐ | ☐ |
 
 ## Revisió creuada de codi
 
-Llegeix el projecte micro:bit d'un company (i ell/a llegirà el teu). **Primer mira'l amb criteris de les rúbriques R1 i R4** (marca ✓ o ✗):
+Prova el comandament d'un company sobre el seu braç i llegeix-ne el codi (i ell/a farà el mateix amb el teu). **Primer mira'l amb criteris de les rúbriques R1 i R4** (marca ✓ o ✗):
 
 | Criteri | ✓/✗ |
 |---|---|
 | El programa funciona i està **ben indentat** (Python llegible) — R1 | |
 | La **taula comparativa C++↔Python** és completa i correcta — R4 | |
-| El **sensor o la ràdio** hi aporten funció real (no decoració) — R1 | |
+| El comandament mou el braç **sense moviments sols** (llindar ben triat, grup propi) — R1 | |
 
 Ara escriu-li el retorn — **ha de sortir de la taula**:
 - Codi revisat de: ______________________
@@ -112,7 +115,7 @@ Ara escriu-li el retorn — **ha de sortir de la taula**:
 
 ## Context real i ODS
 
-Els microcontroladors portables són la base dels *wearables*. **ODS 3** (salut i benestar: comptapassos, alertes) i **ODS 4** (educació: la micro:bit acosta la programació a tothom). Quin *wearable* útil dissenyaries? ______________________
+Els comandaments sense fils mouen grues, robots d'artificiers i braços de cirurgia a distància. **ODS 3** (salut: telecirurgia, robots que ajuden persones amb mobilitat reduïda) i **ODS 4** (educació: la micro:bit acosta la programació a tothom). Quina tasca perillosa o difícil faries fer a un braç teledirigit? ______________________
 
 ---
 

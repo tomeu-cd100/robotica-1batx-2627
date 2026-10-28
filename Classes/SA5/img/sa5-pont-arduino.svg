@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 400" width="820" height="400" role="img" aria-labelledby="t d">
+  <title id="t">El pont: de la ràdio al braç</title>
+  <desc id="d">La micro:bit comandament, a la mà, envia ordres per ràdio a la micro:bit pont. El pont les reenvia per un cable des del seu pin P1 fins al pin D0 de l'Arduino UNO, amb un segon cable de GND a GND. L'Arduino mou els servos del braç. El cable va en un sol sentit: mai de l'Arduino cap a la micro:bit.</desc>
+  <style>
+    .fr{fill:#f6faf9;stroke:#d7e6e5;stroke-width:1.5}
+    .placa{fill:#e0f2f1;stroke:#0c6e70;stroke-width:2.5}
+    .mb{fill:#1e293b;stroke:#0f172a;stroke-width:2}
+    .servo{fill:#dbeafe;stroke:#1d4ed8;stroke-width:2}
+    .pot{fill:#fef3c7;stroke:#b45309;stroke-width:2}
+    .pila{fill:#fee2e2;stroke:#b91c1c;stroke-width:2}
+    .w{fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+    .sig{stroke:#f59e0b}.pos{stroke:#dc2626}.neg{stroke:#78350f}
+    .v5{stroke:#be123c}.gnd{stroke:#334155}.an{stroke:#0891b2}
+    .ona{fill:none;stroke:#0891b2;stroke-width:2.5;stroke-linecap:round}
+    .tit{font:700 16px system-ui,'Segoe UI',sans-serif;fill:#0e1b1c}
+    .lbl{font:600 13px system-ui,'Segoe UI',sans-serif;fill:#0e1b1c}
+    .lbl2{font:400 12px system-ui,'Segoe UI',sans-serif;fill:#475569}
+    .pin{font:700 12px 'Consolas',monospace;fill:#0c6e70}
+    .pinb{font:700 12px 'Consolas',monospace;fill:#ffffff}
+    .avis{font:600 12px system-ui,'Segoe UI',sans-serif;fill:#b91c1c}
+    .dig{stroke:#7c3aed}
+    .sens{fill:#ede9fe;stroke:#6d28d9;stroke-width:2}
+  </style>
+  <rect class="fr" x="1" y="1" width="818" height="398" rx="14"/>
+  <text class="tit" x="24" y="34">El pont: de la ràdio al braç (SA5 · S3)</text>
+  <rect class="mb" x="30" y="110" width="140" height="100" rx="12"/>
+  <text class="pinb" x="100" y="150" text-anchor="middle">micro:bit</text>
+  <text class="pinb" x="100" y="172" text-anchor="middle">COMANDAMENT</text>
+  <text class="lbl2" x="100" y="232" text-anchor="middle">a la mà · Python</text>
+  <path class="ona" d="M188,144 A16,16 0 0 1 188,176"/>
+  <path class="ona" d="M195,130 A30,30 0 0 1 195,190"/>
+  <path class="ona" d="M202,116 A44,44 0 0 1 202,204"/>
+  <text class="lbl" x="225" y="105" text-anchor="middle">ràdio</text>
+  <text class="lbl2" x="225" y="250" text-anchor="middle">mateix grup</text>
+  <rect class="mb" x="280" y="110" width="150" height="100" rx="12"/>
+  <text class="pinb" x="355" y="150" text-anchor="middle">micro:bit</text>
+  <text class="pinb" x="355" y="172" text-anchor="middle">PONT</text>
+  <text class="pinb" x="420" y="140" text-anchor="end">P1</text>
+  <text class="pinb" x="420" y="196" text-anchor="end">GND</text>
+  <text class="lbl2" x="355" y="232" text-anchor="middle">uart · 9600</text>
+  <rect class="placa" x="560" y="90" width="170" height="160" rx="10"/>
+  <text class="lbl" x="645" y="240" text-anchor="middle">ARDUINO UNO</text>
+  <text class="pin" x="570" y="140">D0 (RX)</text>
+  <text class="pin" x="570" y="196">GND</text>
+  <polyline class="w dig" points="430,136 560,136"/>
+  <polygon points="560,136 548,130 548,142" fill="#7c3aed"/>
+  <polyline class="w neg" points="430,192 560,192"/>
+  <text class="lbl2" x="495" y="128" text-anchor="middle">ordres, una per línia</text>
+  <text class="lbl2" x="495" y="210" text-anchor="middle">GND comú</text>
+  <rect class="servo" x="610" y="290" width="120" height="44" rx="8"/>
+  <text class="lbl" x="670" y="317" text-anchor="middle">SERVOS</text>
+  <polyline class="w sig" points="645,250 645,290"/>
+  <text class="lbl2" x="655" y="276">D6 · D9 · D10 · D11</text>
+  <text class="avis" x="24" y="362">⚠ El cable va NOMÉS de la micro:bit cap a l'Arduino: mai un pin de 5 V a la micro:bit (3,3 V).</text>
+  <text class="avis" x="24" y="384">⚠ Desconnecta el D0 per pujar un programa a l'Arduino.</text>
+</svg>

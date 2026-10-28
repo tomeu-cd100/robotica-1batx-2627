@@ -59,76 +59,67 @@ Solucions completes (`minim` i `ampliat`) a `Reptes/Solucionari/SA4/`:
 
 ## SA5 (MicroPython)
 
-### Repte: badge d'emocions
+### Repte S1: una imatge pròpia per articulació
 ```python
 from microbit import *
+
+ARTICULACIONS = ["B", "E", "D", "P"]
+IMATGES = [Image.ARROW_E,                     # base: gira
+           Image("00900:09990:00900:00900:00900"),   # esquerre: puja
+           Image("00900:00900:00900:09990:00900"),   # dret: avanca
+           Image("90009:09090:00000:09090:90009")]   # pinca
+triada = 0
+
 while True:
-    if button_a.is_pressed():
-        display.show(Image.HAPPY)
-    elif button_b.is_pressed():
-        display.show(Image.SAD)
-    else:
-        display.show(Image.ASLEEP)
+    if button_a.was_pressed():
+        triada = (triada - 1) % len(ARTICULACIONS)
+    elif button_b.was_pressed():
+        triada = (triada + 1) % len(ARTICULACIONS)
+    display.show(IMATGES[triada])
     sleep(100)
 ```
 
-### + Repte: termòmetre amb màxim i mínim
+Dues llistes **paral·leles** (mateix índex): és la llavor dels arrays per servo de la SA6. L'operador `%` fa el selector circular en una línia.
+
+### Repte S2: zona morta proporcional (fletxa petita / gran)
 ```python
 from microbit import *
-maxim = temperature()
-minim = temperature()
+
 while True:
-    t = temperature()
-    if t > maxim: maxim = t
-    if t < minim: minim = t
-    if button_a.is_pressed():
-        display.scroll("T" + str(t))
-    if button_b.is_pressed():
-        display.scroll("max" + str(maxim) + " min" + str(minim))
-    sleep(200)
+    x = accelerometer.get_x()
+    if x > 700:
+        display.show(Image.ARROW_E)
+    elif x > 300:
+        display.show(Image("00000:00090:00009:00090:00000"))   # fletxa petita
+    elif x < -700:
+        display.show(Image.ARROW_W)
+    elif x < -300:
+        display.show(Image("00000:09000:90000:09000:00000"))
+    else:
+        display.show(Image.DIAMOND_SMALL)
+    sleep(100)
 ```
 
-### Repte: pedra-paper-tisora per ràdio
+Error esperable: posar `x > 300` **abans** de `x > 700` (la fletxa gran no surt mai: la primera condició certa guanya).
+
+### Repte S3: el servo esquerre amb els botons
 ```python
-from microbit import *
-import radio, random
-radio.on(); radio.config(group=10)
-JUGADES = ["PEDRA", "PAPER", "TISORA"]
-while True:
-    if accelerometer.was_gesture("shake"):
-        jugada = random.choice(JUGADES)
-        display.scroll(jugada[0])      # P / A(paper) / T -> mostra inicial
-        radio.send(jugada)
-    msg = radio.receive()
-    if msg:
-        display.scroll("R:" + msg[0])
-    sleep(50)
+    # dins del while True del 03_radio_comandament, abans de decidir la inclinacio
+    if button_a.is_pressed() and not button_b.is_pressed():
+        ordre = "E+"
+    elif button_b.is_pressed() and not button_a.is_pressed():
+        ordre = "E-"
 ```
 
-### + Repte: animació pròpia (badge)
-```python
-from microbit import *
-fotogrames = [Image.HEART_SMALL, Image.HEART]   # crea els teus fotogrames
-while True:
-    for img in fotogrames:
-        display.show(img)
-        sleep(300)
-```
+Cal que A **sol** i B **sol** excloguin A+B (la `P`); si no, mantenint els dos, el braç alternaria `E+`, `E-` i `P`.
 
-### + Repte: xarxa de 3+ plaques (cada placa amb un ID)
-```python
-from microbit import *
-import radio
-radio.on(); radio.config(group=10)   # mateix group per a tota la xarxa
-ID = "P1"   # canvia'l a cada placa: P1, P2, P3...
-while True:
-    if button_a.is_pressed():
-        radio.send(ID + ":hola")     # envia identificat
-    msg = radio.receive()
-    if msg:
-        display.scroll(msg)          # mostra qui ha enviat
-    sleep(50)
-```
+### Reptes A/B/C (comandament del braç)
+
+Solucions completes (`minim` i `ampliat`) a `Reptes/Solucionari/SA5/`:
+`A_selector_radio` (selector + bloqueig + saludet), `B_inclinacio_fina`
+(zona morta, velocitat proporcional i calibratge) i `C_comandament_complet`
+(les 4 articulacions, gravació i pont amb botons d'estat: és el
+comandament de referència del braç).
 
 ---
 

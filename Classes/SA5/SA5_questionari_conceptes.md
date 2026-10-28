@@ -50,7 +50,7 @@
    - c) `setup()`
    - d) `if button_a:`
 
-6. Per fer un **comptapassos** o detectar que sacsegem la placa, quin sensor integrat s'utilitza?
+6. Per fer el **comandament per inclinació** del braç o detectar que sacsegem la placa, quin sensor integrat s'utilitza?
    - a) El sensor de llum.
    - b) La ràdio.
    - c) L'acceleròmetre (p. ex. `accelerometer.was_gesture("shake")`).

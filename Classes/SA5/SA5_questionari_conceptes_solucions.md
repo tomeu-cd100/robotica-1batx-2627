@@ -36,7 +36,7 @@
 3. Error per sagnar malament → `digitalWrite error` / `radio not found` / `SyntaxError: missing ;` / **`IndentationError`**.
 4. `show()` vs `scroll()` → Són iguals / **`show()` fix i `scroll()` desplaça** / Un per números i l'altre per lletres / `scroll()` apaga la placa.
 5. Codi que es repeteix sempre → **`while True:`** / `void loop()` / `setup()` / `if button_a:`.
-6. Sensor per comptapassos/sacsejar → Llum / Ràdio / **Acceleròmetre** / Termòmetre.
+6. Sensor per al comandament per inclinació/sacsejar → Llum / Ràdio / **Acceleròmetre** / Termòmetre.
 7. Rang de `read_light_level()` → 0-1023 / **0-255** / 0-5 / `HIGH`/`LOW`.
 8. Condició per a la ràdio → Cable USB / `Serial.begin()` / Mateix nom d'alumne / **Mateix `group`**.
 9. Enviar i rebre per ràdio → `show()`/`scroll()` / `radio.on()`/`radio.off()` / **`radio.send()`/`radio.receive()`** / `send()`/`print()`.

@@ -6,40 +6,40 @@
 >
 > **En aquesta SA el kata és una *variació*:** els valors de l'enunciat són diferents dels del sketch expressament — en comparar, mira l'estructura, no els números.
 
-## Kata · `01_name_badge` (Sessió 1)
+## Kata · `01_selector_articulacio` (Sessió 1)
 
 **Projecta (enunciat):**
-> Tens ja fet `from microbit import *`. Escriu de zero el `while True:` complet: si es prem el botó A, desplaça pel `scroll` el text `"Ei!"`; si no es prem l'A però sí el B, mostra la imatge `Image.HAPPY`; si no es prem cap dels dos, mostra `Image.HEART`. Acaba cada volta amb una pausa de 150 ms *(text i valor diferents del sketch, expressament)*.
+> Tens ja `from microbit import *` i la llista `ARTICULACIONS = ["P", "D", "E", "B"]` *(ordre diferent del programa, expressament)*. Escriu de zero la resta: una variable `triada` que comenci a 0 i un `while True:` que, si es prem B, passi a la següent articulació (i de l'última torni a la primera); si es prem A, a l'anterior (i de la primera salti a l'última); i que mostri sempre la lletra triada, amb una pausa de 100 ms.
 
-**Practica:** `while True:` amb indentació de 4 espais · `if`/`elif`/`else` sense parèntesis · `display.scroll()` vs. `display.show()` · `sleep()`.
-**Pista (per a qui es bloqueja):** és una única decisió de tres opcions, i exactament una s'ha d'executar a cada volta: comença mirant el botó A i pensa com garantir que, si aquesta condició ja s'ha complert, les altres dues ni tan sols es comprovin.
-**En comparar amb el sketch, mireu:** ① heu fet servir `elif` per al botó B, o un segon `if` independent que es podria arribar a executar alhora amb el primer? ② la branca "cap botó premut" és un `else` final, o l'heu deixat com un tercer `if` que podria no executar-se mai? ③ les tres branques estan indentades exactament al mateix nivell (dins del `while`), o alguna ha quedat arran de marge?
+**Practica:** llistes i índexs des del 0 · `len()` · `was_pressed()` · `if`/`elif` indentat dins del `while True:`.
+**Pista (per a qui es bloqueja):** fes primer només el botó B (sumar 1 i tornar a 0); quan funcioni, el botó A és el mateix al revés.
+**En comparar amb el programa, mireu:** ① heu fet servir `was_pressed()` o `is_pressed()`? (amb `is_pressed()` una premuda salta diverses lletres); ② el límit de la llista és `len(ARTICULACIONS)` o un 4 escrit a mà? (amb `len()`, si afegiu una articulació el codi no es trenca); ③ el `display.show(...)` és dins del `while True:` però **fora** dels `if` (s'ha de mostrar sempre)?
 
-## Kata · `02_passes` (Sessió 2, comptapassos)
-
-**Projecta (enunciat):**
-> Tens ja declarades `passes = 0` i `LLINDAR = 1300` *(valor diferent del sketch, expressament)*. Escriu de zero el `while True:` complet: llegeix la força de l'acceleròmetre amb `accelerometer.get_strength()`; si supera `LLINDAR`, incrementa `passes`, mostra'n l'última xifra a la matriu (`str(passes % 10)`) i fes una pausa de 250 ms; en un `if` a part (no lligat a l'anterior), si es prem el botó B, reinicia `passes` a 0 i fes un `scroll` de `"0"`. Acaba cada volta amb una pausa de 30 ms *(temps també diferents del sketch, expressament)*.
-
-**Practica:** `accelerometer.get_strength()` · llindar amb antirebot via `sleep()` · `str(... % 10)` per mostrar un sol dígit · dos `if` independents dins del mateix bucle.
-**Pista (per a qui es bloqueja):** cada volta del bucle hi ha dues coses a vigilar: si toca comptar un pas (llegir, comparar, comptar) i si toca reiniciar el comptador amb el botó. Pensa si les dues comprovacions han de dependre l'una de l'altra o no.
-**En comparar amb el sketch, mireu:** ① el `sleep()` de l'antirebot és dins de l'`if` del llindar, o l'heu posat com a pausa general de tot el bucle (que també alentiria la lectura del botó)? ② la comparació amb el llindar és `forca > LLINDAR` (estricta), o l'heu escrit amb `>=` — què passaria si la força cau just al valor del llindar? ③ el `sleep()` final s'executa sempre, a totes les voltes, o només quan es compleix algun dels `if` anteriors?
-
-## Kata · `03_nightlight` (Sessió 2, llum de nit)
+## Kata · `02_inclinacio` (Sessió 2)
 
 **Projecta (enunciat):**
-> Tens ja declarada `LLINDAR = 40` *(valor diferent del sketch, expressament)*. Escriu de zero el `while True:` complet: llegeix el nivell de llum amb `display.read_light_level()`; si el valor és per sota de `LLINDAR`, mostra `Image.SQUARE`; en cas contrari, neteja la matriu amb `display.clear()`. Acaba cada volta amb una pausa de 120 ms.
+> Tens ja `from microbit import *` i `LLINDAR = 400` *(valor diferent del programa, expressament)*. Escriu de zero el `while True:`: llegeix `x` i `y` de l'acceleròmetre i envia'ls al gràfic amb `print((x, y))`; si `x` supera el llindar mostra `Image.ARROW_E`, si és menor que `-LLINDAR` mostra `Image.ARROW_W`, i si no, `Image.DIAMOND_SMALL`. Pausa de 100 ms.
 
-**Practica:** `display.read_light_level()` · `if`/`else` de dues branques · `display.clear()` · `sleep()`.
-**Pista (per a qui es bloqueja):** és el patró més curt de la sessió: tres passos que es repeteixen a cada volta — llegeix el sensor, compara'l amb el llindar, respon.
-**En comparar amb el sketch, mireu:** ① la comparació és `llum < LLINDAR` (per sota és fosc), o l'heu escrit al revés? ② la lectura de `display.read_light_level()` és dins del `while True:` a cada volta, o l'heu tret fora i guardat en una variable que ja no s'actualitza mai més? ③ quan hi ha llum, heu fet `display.clear()`, o heu deixat aquesta branca sense cap instrucció que apagui el quadrat?
+**Practica:** lectura d'un sensor integrat · llindar positiu i negatiu · cadena `if`/`elif`/`else` · `print()` d'una tupla.
+**Pista (per a qui es bloqueja):** primer guarda `x` en una variable; després tres branques: més gran que `LLINDAR`, més petit que `-LLINDAR`, i la resta.
+**En comparar amb el programa, mireu:** ① el costat esquerre compara amb `-LLINDAR` (negatiu) o amb `LLINDAR`? ② les lectures `get_x()` són **dins** del bucle (a cada volta) o a dalt, un sol cop? ③ el `print((x, y))` porta **dobles parèntesis** (una tupla) o n'heu posat uns de sols (i aleshores el gràfic no dibuixa dues línies)?
 
-## Kata · `04_radio_dau` (Sessió 3)
+## Kata · `04_brac_ordres` (Sessió 2, taller)
+
+**Projecta (enunciat):**
+> Tens ja els quatre servos amb `attach()`, les variables `aBase`, `aEsquerre`, `aDret`, `aPinca`, les constants de límits, `PAS = 5` *(valor diferent del programa, expressament)* i la funció `escriu()`. Escriu de zero el `loop()`: si hi ha dades al Serial, llegeix una línia sencera, neteja-la amb `trim()` i, segons l'ordre (`B+`, `B-`, `P`), mou la base un `PAS` sense sortir del rang o commuta la pinça. Després crida `escriu()`.
+
+**Practica:** `Serial.available()` · `readStringUntil('\n')` · comparar `String` · `min()`/`max()` com a rang segur · commutador.
+**Pista (per a qui es bloqueja):** tot va dins d'un `if (Serial.available() > 0)`: llegeix, neteja, i després una cadena d'`if`/`else if` amb una branca per ordre.
+**En comparar amb el programa, mireu:** ① heu fet `trim()`? Sense ell, el `"\r"` del Monitor sèrie fa que `"B+"` no sigui mai igual a l'ordre; ② `B+` fa servir `min()` i `B-` `max()` (i no al revés)? ③ l'`escriu()` és dins de l'`if` d'`available()` o fora (s'escriuria a cada volta sense motiu)?
+
+## Kata · `03_radio_comandament` (Sessió 3)
 
 > 🔁 **Aquest dia hi ha mini-check** (inici de la S3): el mini-check **substitueix el kata** a l'aula — no es fan tots dos, són el mateix múscul (escriptura individual de 10'). Aquest kata queda com a **repàs per fer pel teu compte** abans de tancar la SA.
 
 **Projecta (enunciat):**
-> Tens ja fetes, abans del bucle, `radio.on()` i `radio.config(group=10)`. Escriu de zero el `while True:` complet: si `accelerometer.was_gesture("shake")` és cert, genera un número a l'atzar entre 1 i 6 amb `random.randint`, mostra'l a la matriu i envia'l per ràdio; a continuació, comprova si ha arribat algun missatge amb `radio.receive()` i, si n'ha arribat, mostra'l per `scroll` precedit de la lletra `"R"`. Acaba cada volta amb una pausa de 70 ms *(valor diferent del sketch, expressament)*.
+> Tens ja `from microbit import *`, `import radio`, `GRUP = 7` i `LLINDAR = 350` *(valors diferents del programa, expressament)*. Escriu de zero: encén la ràdio al grup `GRUP` (fora del bucle) i un `while True:` que llegeixi `x`; si supera el llindar envia `"B+"`, si és menor que `-LLINDAR` envia `"B-"`; mostra la primera lletra de l'ordre enviada o `Image.DIAMOND_SMALL` si no n'hi ha cap. Pausa de 150 ms.
 
-**Practica:** `was_gesture()` com a detector d'esdeveniment ja fet · `random.randint(1, 6)` · `radio.send()`/`radio.receive()` amb text · comprovació `is not None`.
-**Pista (per a qui es bloqueja):** cada volta del bucle hi ha dues tasques possibles: enviar (quan toca) i escoltar. Pensa si escoltar ha de dependre de si s'ha enviat res, o si són coses que passen per separat.
-**En comparar amb el sketch, mireu:** ① el `radio.send(...)` envia el número convertit amb `str()`, o l'heu enviat tal qual com a `int`? ② la comprovació de recepció és `if missatge is not None:`, o heu escrit `if missatge:` (que fallaria si algun dia arribés un text buit)? ③ el bloc de recepció s'executa a cada volta del bucle, o l'heu ficat dins de l'`if` del sacseig, de manera que només s'escolta quan es llança el dau?
+**Practica:** `radio.on()` i `radio.config(group=...)` · una variable `ordre` que comença buida · `radio.send()` · indexar un text (`ordre[0]`).
+**Pista (per a qui es bloqueja):** a cada volta, `ordre = ""`; els `if` només li posen valor; al final, *si l'ordre no és buida, envia-la*.
+**En comparar amb el programa, mireu:** ① `radio.on()` i `radio.config()` són **fora** del bucle (un sol cop)? ② heu reiniciat `ordre = ""` a **cada** volta, o es repeteix l'última ordre per sempre? ③ envieu text (`"B+"`) i no un número?

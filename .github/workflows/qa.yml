@@ -60,6 +60,7 @@ jobs:
             - Classes/SA2/codi
             - Classes/SA3/codi
             - Classes/SA4/codi
+            - Classes/SA5/codi
             - Classes/SA6/codi
             - Classes/SA7/codi
             - Reptes/Solucionari/SA1

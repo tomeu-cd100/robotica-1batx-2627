@@ -2,69 +2,88 @@
 
 > **Per a qui és?** Només per al **docent**: la solució escrita de cada [kata de la SA5](SA5_katas.md), per tenir-la al davant durant els 2' de comparació i anar-la comentant en veu alta. **No es projecta abans d'escriure**: durant els 10' l'alumnat treballa sol, i primer compara amb el sketch de la pràctica. En aquesta SA el kata és una *variació*: la solució usa **els valors del kata** (expressament diferents dels del sketch) — en comentar, insisteix que compta l'estructura, no els números.
 
-## Solució · `01_name_badge`
+## Solució · `01_selector_articulacio`
+
+```python
+triada = 0
+
+while True:
+    if button_b.was_pressed():
+        triada = triada + 1
+        if triada >= len(ARTICULACIONS):
+            triada = 0
+    elif button_a.was_pressed():
+        triada = triada - 1
+        if triada < 0:
+            triada = len(ARTICULACIONS) - 1
+    display.show(ARTICULACIONS[triada])   # kata: comenca per "P"
+    sleep(100)
+```
+
+**En comentar (els tres punts del kata):** ① `was_pressed()` compta premudes; `is_pressed()` diu si està premut **ara** i salta lletres mentre mantens el dit; ② `len()` fa el codi independent de la mida de la llista; ③ el `display.show()` va fora dels `if`: s'ha de veure la tria encara que no premis res. Amb l'ordre del kata, en engegar surt una **P**: la llista mana, no el codi.
+
+## Solució · `02_inclinacio`
 
 ```python
 while True:
-    if button_a.is_pressed():
-        display.scroll("Ei!")          # text del kata (el sketch fa "Hola!")
-    elif button_b.is_pressed():
-        display.show(Image.HAPPY)
+    x = accelerometer.get_x()
+    y = accelerometer.get_y()
+    print((x, y))
+    if x > LLINDAR:                 # kata: 400
+        display.show(Image.ARROW_E)
+    elif x < -LLINDAR:
+        display.show(Image.ARROW_W)
     else:
-        display.show(Image.HEART)
+        display.show(Image.DIAMOND_SMALL)
+    sleep(100)
+```
+
+**En comentar:** ① l'esquerra és **negativa**: `x < LLINDAR` seria cert gairebé sempre; ② les lectures, dins del bucle: si no, el programa veu sempre la primera inclinació; ③ `print((x, y))` envia una tupla i el gràfic en fa dues línies; `print(x, y)` escriu text i no es dibuixa igual. Bona pregunta final: *per què no posem el llindar a 0?*
+
+## Solució · `04_brac_ordres`
+
+```cpp
+void loop() {
+  if (Serial.available() > 0) {
+    String ordre = Serial.readStringUntil('\n');
+    ordre.trim();
+    if (ordre == "B+") {
+      aBase = min(aBase + PAS, BASE_MAX);    // kata: PAS = 5
+    } else if (ordre == "B-") {
+      aBase = max(aBase - PAS, BASE_MIN);
+    } else if (ordre == "P") {
+      if (aPinca == PINCA_TANCADA) {
+        aPinca = PINCA_OBERTA;
+      } else {
+        aPinca = PINCA_TANCADA;
+      }
+    }
+    escriu();
+  }
+}
+```
+
+**En comentar:** ① sense `trim()`, el Monitor sèrie en mode «Nova línia i retorn» envia `"B+\r"` i cap comparació és certa; ② `min()` posa un **sostre** (per pujar) i `max()` un **terra** (per baixar); ③ l'`escriu()` dins de l'`if` mou els servos només quan arriba una ordre. Fes notar que `readStringUntil()` **espera** (fins al timeout): a la SA6, la màquina d'estats llegirà les ordres sense esperar mai.
+
+## Solució · `03_radio_comandament`
+
+```python
+radio.on()
+radio.config(group=GRUP)      # kata: 7
+
+while True:
+    x = accelerometer.get_x()
+    ordre = ""
+    if x > LLINDAR:           # kata: 350
+        ordre = "B+"
+    elif x < -LLINDAR:
+        ordre = "B-"
+    if ordre != "":
+        radio.send(ordre)
+        display.show(ordre[0])
+    else:
+        display.show(Image.DIAMOND_SMALL)
     sleep(150)
 ```
 
-**En comentar (els tres punts del kata):** ① el botó B va amb `elif`: si A ja s'ha complert, B ni es mira — amb dos `if` independents es podrien executar tots dos a la mateixa volta; ② la branca «cap botó» és l'`else` final, que garanteix que sempre passa exactament una de les tres coses; ③ les tres branques pengen del mateix nivell d'indentació, dins del `while True:` — a MicroPython la indentació **és** l'estructura.
-
-## Solució · `02_passes`
-
-```python
-while True:
-    forca = accelerometer.get_strength()
-    if forca > LLINDAR:                  # kata: LLINDAR = 1300
-        passes = passes + 1
-        display.show(str(passes % 10))
-        sleep(250)                       # antirebot del kata
-    # Reinici amb el boto B: if independent, no elif
-    if button_b.is_pressed():
-        passes = 0
-        display.scroll("0")
-    sleep(30)                            # ritme general del bucle
-```
-
-**En comentar:** ① el `sleep(250)` d'antirebot és **dins** de l'`if` del llindar: només frena quan s'ha comptat un pas — com a pausa general alentiria també la lectura del botó; ② la comparació és `forca > LLINDAR`, estricta: si la força cau just al llindar, no compta (decisió de disseny, però cal saber quina s'ha pres); ③ el `sleep(30)` final s'executa **sempre**, a totes les voltes: és el ritme del bucle, no una conseqüència dels `if`.
-
-## Solució · `03_nightlight`
-
-```python
-while True:
-    llum = display.read_light_level()
-    if llum < LLINDAR:                   # kata: LLINDAR = 40 (per sota = fosc)
-        display.show(Image.SQUARE)
-    else:
-        display.clear()
-    sleep(120)
-```
-
-**En comentar:** ① la condició és `llum < LLINDAR`: fosc = valor **baix** — escrita al revés, el llum s'encendria de dia; ② la lectura és **dins** del bucle, a cada volta: treta fora, quedaria congelada al valor del primer instant; ③ la branca «hi ha llum» fa `display.clear()` explícitament — sense això, el quadrat es queda encès per sempre.
-
-## Solució · `04_radio_dau`
-
-```python
-while True:
-    # Llancar el dau en sacsejar
-    if accelerometer.was_gesture("shake"):
-        n = random.randint(1, 6)
-        display.show(str(n))
-        radio.send(str(n))       # sempre text: str() abans d'enviar
-
-    # Escoltar sempre, cada volta (independent del sacseig)
-    missatge = radio.receive()
-    if missatge is not None:
-        display.scroll("R" + missatge)
-
-    sleep(70)                    # pausa del kata
-```
-
-**En comentar:** ① `radio.send(str(n))` envia **text**: la ràdio de la micro:bit no envia `int` — l'error de tipus és el clàssic de la sessió; ② la comprovació canònica és `if missatge is not None:` — `if missatge:` sembla igual però descartaria un text buit; ③ el bloc de recepció és **fora** de l'`if` del sacseig: s'escolta a cada volta, no només quan es llança el dau (si no, només rebries mentre sacseges).
+**En comentar:** ① la ràdio s'encén **un cop**, fora del bucle; ② `ordre = ""` a cada volta és el que fa que, amb la placa plana, no s'enviï res; ③ la ràdio envia **text**: el protocol del braç és de paraules curtes, i el pont les passa tal qual a l'Arduino. Pregunta per tancar: *què passaria si el pont i el comandament tinguessin grups diferents?*

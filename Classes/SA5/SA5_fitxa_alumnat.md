@@ -6,7 +6,7 @@
 
 <!-- /web:only-github -->
 
-> Canvies de llenguatge: ara **Python** sobre micro:bit. Atenció a la **indentació** (en Python és obligatòria!).
+> Canvies de llenguatge: ara **Python** sobre micro:bit. Però el robot no canvia: construiràs el **comandament sense fils del teu braç MeArm**. Atenció a la **indentació** (en Python és obligatòria!).
 
 > 💻 **On programo?** A l'editor en línia **<https://python.microbit.org>** (té **simulador**: pots provar-ho tot sense placa). Escrius el codi a `main.py` i el passes a la placa amb **Send to micro:bit** (cable USB). Alternatives i detalls: [connexions i entorn](SA5_connexions.md).
 
@@ -14,17 +14,17 @@
 
 **En acabar aquesta SA podré:**
 1. Escriure programes **MicroPython** ben indentats que funcionen.
-2. Fer servir els **sensors integrats** (acceleròmetre, llum) i la **ràdio** de la micro:bit.
+2. Fer servir l'**acceleròmetre** i la **ràdio** de la micro:bit per controlar el braç a distància.
 3. **Comparar** la mateixa solució en C++ (Arduino) i en Python (micro:bit).
 
 | Què lliuro | Rúbrica | On compta |
 |---|---|---|
-| **App micro:bit** (comptapassos, llum de nit o joc per ràdio) | **R1** | Projectes (45 %) |
+| **Comandament per ràdio del braç** (comandament + pont) | **R1** | Projectes (45 %) |
 | **Taula comparativa C++ ↔ Python** completa | **R4** | Projectes (45 %) |
 | **Quadern tècnic** (pseudocodi, errors d'indentació resolts) | **R4** | Quadern tècnic i pràctiques (25 %) |
 | Mini-check individual (inici S3) | semàfor | **No qualifica** (em situa) |
 
-> 🪜 **Versió nucli (ja és assoliment satisfactori):** app que fa servir **un** sensor integrat o la ràdio i funciona + taula comparativa completa. **Versió completa:** app amb dues funcions o més (sensor + ràdio, registre de màxims…) i comparació comentada amb frases pròpies.
+> 🪜 **Versió nucli (ja és assoliment satisfactori):** inclinant el comandament, la base del braç gira (ràdio + pont funcionant) + taula comparativa completa. **Versió completa:** les quatre articulacions es mouen des del comandament i la comparació està comentada amb frases pròpies.
 
 > Escala de nota 0-10, rúbriques i tot el sistema: **[Com s'avalua la matèria](../00_General/00_Avaluacio_per_alumnat.md)**.
 
@@ -44,43 +44,52 @@ Si la tasca encara no t'apareix al Classroom, és que la SA encara no ha començ
 
 ## El que has de fer
 
-### 1 · Name badge (S1)
-0. **PREDIU:** mirant [`01_name_badge.py`](codi/01_name_badge.py), què farà la matriu de LED i els botons? ______________________
-1. Carrega [`01_name_badge.py`](codi/01_name_badge.py) i comprova. Instrucció que desplaça text: `__________`
-2. Diferència entre `display.show()` i `display.scroll()`: ______________________
-3. **Repte:** badge d'emocions (A: contenta / B: trista).
+### 1 · El selector del comandament (S1)
+0. **PREDIU:** mirant [`01_selector_articulacio.py`](codi/01_selector_articulacio.py), quina lletra surt en engegar? I si prems B cinc vegades? ______________________
+1. Carrega'l i comprova. Diferència entre `display.show()` i `display.scroll()`: ______________________
+2. Per què `ARTICULACIONS[0]` és `"B"` i no `"E"`? ______________________
+3. **Repte:** una imatge pròpia per a cada articulació.
 
-### 2 · Sensors integrats (S2)
-1. Comptapassos ([`02_passes.py`](codi/02_passes.py)): quin sensor s'usa? __________ Llindar: ____
-2. Llum automàtic ([`03_nightlight.py`](codi/03_nightlight.py)): rang de `read_light_level()` = ____ a ____
-3. **Repte:** detector d'inclinació o termòmetre amb avís.
+### 2 · La inclinació com a gest (S2)
+0. **PREDIU:** amb la placa plana, quant valdran `x` i `y`? ________ I de cantell? ________
+1. Carrega [`02_inclinacio.py`](codi/02_inclinacio.py) i omple la taula mirant el gràfic (**Show data**):
 
-> 💡 Si t'encalles, parteix de l'**esquelet** de la secció «Si t'encalles» de la [pàgina de la pràctica del llum de nit](codi/03_nightlight_EXPLICACIO.md): el `while True:` i el `LLINDAR` ja hi són; tu omples la lectura del sensor integrat i la resposta a la matriu (mateix patró que `02_passes.py`).
+| Postura | `x` | `y` | Què mostra |
+|---|---|---|---|
+| Plana | | | |
+| Inclinada a la dreta | | | |
+| Inclinada endavant | | | |
+
+2. Llindar triat: ____ · Per què no 0? ______________________
+3. **Taller:** carrega [`04_brac_ordres`](codi/04_brac_ordres/EXPLICACIO.md) a l'Arduino del braç i prova-ho escrivint al Monitor sèrie. Què fa `B+`? ________ I `P`? ________
 
 ### 3 · Ràdio (S3)
-1. Carrega [`04_radio_dau.py`](codi/04_radio_dau.py) en **les teves dues plaques**. Què han de compartir perquè es parlin? __________ ⚠️ I què ha de ser **diferent** del dels teus companys, perquè no et surtin els seus daus? __________
+1. Carrega [`03_radio_comandament.py`](codi/03_radio_comandament.py) al comandament i el **receptor de prova** a l'altra placa. Què han de compartir perquè es parlin? __________ ⚠️ I què ha de ser **diferent** del dels teus companys, perquè el teu braç no obeeixi el seu comandament? __________
 2. Instrucció que envia: `__________` · que rep: `__________`
-3. **Repte:** "pedra-paper-tisora" o comandament per ràdio.
+3. **Taller:** converteix el receptor en **pont** (P1 → D0, GND → GND) i mou el braç amb el comandament.
+4. **Repte:** el servo esquerre amb els botons A i B (`E+` / `E-`).
 
 ### 4 · Producte + comparació C++ ↔ Python
 
 > ✏️ **Dissenya abans de codificar:** pseudocodi del producte al quadern (3–5 línies). Fixa't que el pseudocodi és **el mateix** en C++ i en Python: el que canvia és la sintaxi — aquesta és la gràcia de la comparació.
 
-Tria un dels reptes com a producte i completa la comparació amb un programa senzill:
+El producte és el **comandament del braç**. Compara'l amb la seva altra meitat, l'Arduino que obeeix les ordres (`04_brac_ordres`):
 
 | Aspecte | Arduino (C/C++) | micro:bit (Python) |
 |---|---|---|
 | Estructura | `setup()` / `loop()` | |
 | Final d'instrucció | `;` | |
 | Blocs de codi | `{ }` | |
+| Declarar una variable | `int aBase = 90;` | |
+| Comparar un text | `if (ordre == "B+")` | |
 | Mostrar un valor | `Serial.println(x)` | |
 
 S'avalua amb **R1** (codi) i **R4** (comparació).
 
 <!-- /web:only-github -->
 
-## Producte · La teva app micro:bit
-Tria **un dels reptes** de la SA com a producte i completa la **comparació C++ ↔ Python** amb el teu programa. El pseudocodi és el mateix en els dos llenguatges: només canvia la sintaxi. S'avalua amb **R1** (codi) i **R4** (comparació).
+## Producte · El comandament del braç
+El teu **comandament per ràdio** (comandament + pont) movent el MeArm, i la **comparació C++ ↔ Python** entre el comandament i l'Arduino que obeeix les ordres. El protocol és el mateix en els dos llenguatges: només canvia la sintaxi. S'avalua amb **R1** (codi) i **R4** (comparació).
 
 ## Si t'encalles (DEPURA)
 > **D**escriu · **E**xamina (errors de Python, **indentació**) · **P**rova una hipòtesi cada cop · **U**bica · **R**epara · **A**punta-ho. Comprova que el codi és a `main.py`. Encara encallat? **[Targeta de rescat](../00_General/00_Targetes_rescat.md)** (comença per la 🟢).
@@ -91,19 +100,19 @@ Tria **un dels reptes** de la SA com a producte i completa la **comparació C++ 
 | Criteri | Insuficient | Suficient/Bé | Notable | Excel·lent |
 |---|---|---|---|---|
 | Escric Python ben indentat que funciona | ☐ | ☐ | ☐ | ☐ |
-| Faig servir sensors integrats (acceleròmetre, llum…) | ☐ | ☐ | ☐ | ☐ |
-| Comunico dues plaques per ràdio | ☐ | ☐ | ☐ | ☐ |
+| Faig servir l'acceleròmetre amb un llindar | ☐ | ☐ | ☐ | ☐ |
+| Comunico dues plaques per ràdio i moc el braç a distància | ☐ | ☐ | ☐ | ☐ |
 
 ## Quadern tècnic
 
 > 📓 Escriu-ho a la teva entrada del **[quadern tècnic](../00_General/00_Quadern_tecnic.md)** (guia + plantilla; compta el 25 %).
 - **Per què la indentació és important en Python?** ____________________
-- **Avantatge d'usar sensors integrats:** _____________________________
+- **Què és el protocol d'ordres del braç i per què cal que sigui el mateix a les dues bandes?** ____________
 - **Un error i com l'he resolt:** _____________________________________
 
 <!-- /web:only-github -->
 
 > 💻 **Sense placa?** Prova el codi al **simulador** [python.microbit.org](https://python.microbit.org).
-> 📌 **Vols més?** +[Reptes ⭐](../../Reptes/Reptes_SA5.md) (wearable, xarxa de 3+ plaques), revisió creuada de codi, exit ticket, pensament computacional i ODS → **[SA5_fitxa_ampliada.md](SA5_fitxa_ampliada.md)**
+> 📌 **Vols més?** +[Reptes ⭐](../../Reptes/Reptes_SA5.md) (selector per ràdio, zona morta proporcional, gravació amb sacseig), revisió creuada de codi, exit ticket, pensament computacional i ODS → **[SA5_fitxa_ampliada.md](SA5_fitxa_ampliada.md)**
 
-> 🤖 **Cap al robot del trimestre:** la comunicació per ràdio entre dues micro:bit (una que envia i una que rep) serà el **comandament del braç**. Guarda el codi de l'Activitat 3: el reaprofitaràs. Muntatge i integració: **[dossier del braç](../00_General/00_Projecte_T2_Brac.md)**.
+> 🤖 **El robot del trimestre:** tot el que fas en aquesta SA és el **comandament del teu braç MeArm**. A la SA6, el pont també portarà les ordres d'estat (A i R) de la màquina d'estats. Pins i protocol: **[dossier del braç](../00_General/00_Projecte_T2_Brac.md)**.

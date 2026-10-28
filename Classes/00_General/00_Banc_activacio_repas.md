@@ -145,19 +145,19 @@ Amb 2 h setmanals, el que es va aprendre a l'octubre arriba esborrat al febrer s
 
 *Respostes: ① `millis()`: no atura el programa, compares temps transcorregut; `delay()` bloqueja. ② 0–1023 i 0–255. ③ per les claus `{ }` — avui veurem que Python ho fa amb la **indentació**.*
 
-### SA5 · Sessió 2 — abans de «Sensors integrats»
+### SA5 · Sessió 2 — abans de «La inclinació com a gest»
 > **P①** En Python, què passa si una línia dins del `while True:` no està ben indentada? Com es diu l'error?
 > **P②** Escriu l'equivalent Python del `loop()` d'Arduino.
 > **P③** (SA4) Quin rang d'angles accepta un servo i amb quina crida el mous en Arduino?
 
 *Respostes: ① no forma part del bloc o peta: `IndentationError` (la indentació és sintaxi). ② `while True:` amb el cos indentat. ③ 0–180°, `servo.write(angle)`.*
 
-### SA5 · Sessió 3 — abans de «Ràdio i comparació de paradigmes»
-> **P①** El comptapassos comptava de més. Quin era el problema i com es va arreglar? (pista: també passava amb els polsadors d'Arduino)
+### SA5 · Sessió 3 — abans de «Ràdio: el comandament del braç»
+> **P①** A la pràctica de la inclinació, per què el llindar és 300 i no 0? (pista: també passava amb el potenciòmetre del braç)
 > **P②** (SA3, **escriu C++ de memòria**) Escriu l'`if` d'Arduino que encén el LED del pin 9 quan `analogRead(A1)` baixa de 300 (dues línies: lectura i condició).
 > **P③** (SA2) Digues **dues** diferències de sintaxi entre C++ i Python que ja hagis trobat.
 
-*Respostes: ① una sacsejada dispara moltes deteccions seguides; s'afegeix una pausa/llindar després de detectar (l'**antirebot** que ja vam fer amb el polsador a la SA3). ② `int llum = analogRead(A1); if (llum < 300) { digitalWrite(9, HIGH); }` (variants correctes valen; vigilar `;` i claus — a la SA6 tornem a C++!). ③ p. ex.: `;` i `{}` a C++ vs res i indentació a Python; `void setup()` vs `def`/cos directe; tipus explícits (`int`) vs sense declarar.*
+*Respostes: ① la placa mai està perfectament plana i la mà tremola: sense marge, el braç no pararia mai quiet (la mateixa idea que la **zona morta** del potenciòmetre a la SA4). ② `int llum = analogRead(A1); if (llum < 300) { digitalWrite(9, HIGH); }` (variants correctes valen; vigilar `;` i claus — a la SA6 tornem a C++!). ③ p. ex.: `;` i `{}` a C++ vs res i indentació a Python; `void setup()` vs `def`/cos directe; tipus explícits (`int`) vs sense declarar.*
 
 ---
 
