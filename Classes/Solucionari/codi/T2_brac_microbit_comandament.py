@@ -1,8 +1,8 @@
 # Codi de referencia del Projecte T2 - Brac robotic MeArm (NOMES DOCENT)
 # COMANDAMENT: la 2a micro:bit, la que es te a la ma. No mou cap servo:
 # envia ordres de text per radio.
-#   Inclina esquerra/dreta   -> "B+" / "B-"  base
-#   Inclina davant/enrere    -> "D+" / "D-"  servo dret
+#   Inclina dreta/esquerra   -> "B+" / "B-"  base
+#   Inclina enrere/endavant  -> "D+" / "D-"  servo dret
 #   Mantens el boto A        -> "E+"         servo esquerre
 #   Mantens el boto B        -> "E-"         servo esquerre
 #   A i B alhora             -> "P"          obre/tanca la pinca

@@ -315,8 +315,8 @@ cop que arriba una ordre. El preu de fer servir D0 és haver de
 # Codi de referencia del Projecte T2 - Brac robotic MeArm (NOMES DOCENT)
 # COMANDAMENT: la 2a micro:bit, la que es te a la ma. No mou cap servo:
 # envia ordres de text per radio.
-#   Inclina esquerra/dreta   -> "B+" / "B-"  base
-#   Inclina davant/enrere    -> "D+" / "D-"  servo dret
+#   Inclina dreta/esquerra   -> "B+" / "B-"  base
+#   Inclina enrere/endavant  -> "D+" / "D-"  servo dret
 #   Mantens el boto A        -> "E+"         servo esquerre
 #   Mantens el boto B        -> "E-"         servo esquerre
 #   A i B alhora             -> "P"          obre/tanca la pinca
@@ -496,7 +496,10 @@ const int PIN_SERVO_PINCA = 11;
 const int PIN_COLLISIO = 2;    // LOW = xoc (modul KS0021)
 
 // Limits d'angle REALS de cada servo: anoteu-los abans de programar res mes
-const int BASE_MIN = 0,      BASE_MAX = 180;
+// BASE_MIN uns graus PER SOBRE del final de carrera (l'angle del homing de
+// la S1): si la base hi pogues arribar, en manual tocaria el sensor, entraria
+// en EMERGENCIA i, quieta a sobre del sensor, no se'n podria rearmar mai.
+const int BASE_MIN = 15,     BASE_MAX = 180;
 const int ESQUERRE_MIN = 40, ESQUERRE_MAX = 150;
 const int DRET_MIN = 40,     DRET_MAX = 150;
 const int PINCA_TANCADA = 60, PINCA_OBERTA = 120;

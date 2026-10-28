@@ -6,6 +6,9 @@
 
 ## 🎯 Per què fem aquesta pràctica
 
+> ⚠️ **Quatre servos a les piles, MAI a l'USB ni al pin 5V de l'UNO.** El −
+> de les piles va també al GND de l'Arduino (GND comú), com a la SA4.
+
 En aquesta SA programes en Python, però el braç continua tenint l'**Arduino**
 com a cervell. Perquè el comandament per ràdio el pugui moure, l'Arduino ha
 d'aprendre a **obeir ordres de text**: `B+` gira la base 3° cap a un costat,

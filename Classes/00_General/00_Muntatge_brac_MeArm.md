@@ -385,8 +385,8 @@ void loop() {
 
 | Gest al comandament | Ordre | Què fa el braç |
 |---|---|---|
-| Inclinar esquerra / dreta | `B+` / `B-` | Gira la base. |
-| Inclinar davant / enrere | `D+` / `D-` | Mou el servo dret. |
+| Inclinar dreta / esquerra | `B+` / `B-` | Gira la base. |
+| Inclinar enrere / endavant | `D+` / `D-` | Mou el servo dret. |
 | Mantenir A / mantenir B | `E+` / `E-` | Mou el servo esquerre. |
 | A i B alhora | `P` | Obre o tanca la pinça (una vegada per pulsació). |
 | Sacsejar | `G` | Res en aquesta versió (grava un punt amb la màquina d'estats de la SA6). |
@@ -403,8 +403,8 @@ void loop() {
 # Codi de referencia del Projecte T2 - Brac robotic MeArm (NOMES DOCENT)
 # COMANDAMENT: la 2a micro:bit, la que es te a la ma. No mou cap servo:
 # envia ordres de text per radio.
-#   Inclina esquerra/dreta   -> "B+" / "B-"  base
-#   Inclina davant/enrere    -> "D+" / "D-"  servo dret
+#   Inclina dreta/esquerra   -> "B+" / "B-"  base
+#   Inclina enrere/endavant  -> "D+" / "D-"  servo dret
 #   Mantens el boto A        -> "E+"         servo esquerre
 #   Mantens el boto B        -> "E-"         servo esquerre
 #   A i B alhora             -> "P"          obre/tanca la pinca

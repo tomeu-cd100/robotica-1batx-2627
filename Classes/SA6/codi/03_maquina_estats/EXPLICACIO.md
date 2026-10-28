@@ -141,6 +141,7 @@ comprovar.
 | Una premuda fa dues coses (entra a MANUAL i grava) | Has llegit el botó amb `digitalRead()` directe en lloc de `premut()`. |
 | L'emergència no salta durant el replay | Hi ha un `delay()` llarg dins del replay, o la comprovació és dins d'un `case` i no abans del `switch`. |
 | En sortir d'emergència el braç torna a xocar de seguida | El rearmament no exigeix el sensor alliberat (`!xoc`). |
+| El braç entra sol en emergència al límit de la base i no en surt | `BASE_MIN` deixa arribar la base al final de carrera: posa'l uns graus per sobre de l'angle del homing (S1). |
 
 ## 🧗 Si t'encalles: l'esquelet
 

@@ -35,6 +35,9 @@ les ordres del comandament per ràdio i les passa a l'Arduino per un cable:
 | P1 | D0 (RX) | Les ordres, una per línia (`uart`, 9600). |
 | GND | GND | GND comú: sense ell l'Arduino no entén res. |
 
+> ⚠️ **Quatre servos a les piles, MAI a l'USB ni al pin 5V de l'UNO.** El −
+> de les piles va també al GND de l'Arduino (GND comú), com a la SA4.
+
 A l'Arduino hi ha d'haver el programa [`04_brac_ordres`](codi/04_brac_ordres/EXPLICACIO.md).
 El codi del pont és a la [pràctica 3](codi/03_radio_comandament_EXPLICACIO.md).
 

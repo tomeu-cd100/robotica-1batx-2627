@@ -37,7 +37,10 @@ const int PIN_SERVO_PINCA = 11;
 const int PIN_COLLISIO = 2;    // LOW = xoc (modul KS0021)
 
 // Limits d'angle REALS de cada servo: anoteu-los abans de programar res mes
-const int BASE_MIN = 0,      BASE_MAX = 180;
+// BASE_MIN uns graus PER SOBRE del final de carrera (l'angle del homing de
+// la S1): si la base hi pogues arribar, en manual tocaria el sensor, entraria
+// en EMERGENCIA i, quieta a sobre del sensor, no se'n podria rearmar mai.
+const int BASE_MIN = 15,     BASE_MAX = 180;
 const int ESQUERRE_MIN = 40, ESQUERRE_MAX = 150;
 const int DRET_MIN = 40,     DRET_MAX = 150;
 const int PINCA_TANCADA = 60, PINCA_OBERTA = 120;

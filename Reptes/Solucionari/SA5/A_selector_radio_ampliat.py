@@ -61,12 +61,12 @@ while True:
         radio.send("P")
         display.show("P")
         sleep(500)
-    elif lletra != "P" and y < -LLINDAR:
-        radio.send(lletra + "+")
-        display.show(Image.ARROW_N)              # AMPLIACIO 1
     elif lletra != "P" and y > LLINDAR:
+        radio.send(lletra + "+")                # y > 0 -> "+" (com el comandament)
+        display.show(Image.ARROW_S)              # AMPLIACIO 1
+    elif lletra != "P" and y < -LLINDAR:
         radio.send(lletra + "-")
-        display.show(Image.ARROW_S)
+        display.show(Image.ARROW_N)
     else:
         display.show(lletra)
     sleep(150)

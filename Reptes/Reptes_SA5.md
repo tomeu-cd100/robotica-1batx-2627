@@ -20,7 +20,7 @@
 
 **Requisit mínim.**
 - Els botons A i B trien l'articulació (B, E, D, P), com al [selector de la S1](../Classes/SA5/codi/01_selector_articulacio_EXPLICACIO.md).
-- Inclinar endavant/enrere envia `"<lletra>+"` o `"<lletra>-"` de l'articulació triada (amb la P, qualsevol inclinació envia `P` una vegada).
+- Inclinar enrere/endavant envia `"<lletra>+"` o `"<lletra>-"` de l'articulació triada (amb la P, qualsevol inclinació envia `P` una vegada).
 
 **Ampliacions graduades.**
 1. *(bàsica)* La pantalla mostra la lletra triada i, quan envia, una fletxa.

@@ -108,7 +108,9 @@ surten les fotos. Abans de donar el braç per muntat:
    tocar) i anota'ls al quadern. Al codi no s'han de superar mai.
 3. Munta el **sensor de col·lisió** a la base, on la palanca de la base el
    toca en girar del tot cap a un costat: és el **final de carrera** del
-   homing i el sensor de l'emergència.
+   homing i el sensor de l'emergència. Apunta l'angle on toca (el del homing):
+   als sketches, el `BASE_MIN` ha de quedar **uns graus per sobre**, perquè en
+   ús normal la base no el premi i el braç no es quedi bloquejat en emergència.
 4. Munta l'**ultrasons** al seu suport, mirant l'**estació de recollida**
    (el lloc de la taula on deixaràs els objectes que ha d'agafar la pinça).
 
@@ -162,7 +164,7 @@ sense ràdio.
 | Ordre | Qui l'envia | Què fa el braç |
 |---|---|---|
 | `B+` / `B-` | Comandament: inclinar a dreta/esquerra | Gira la base |
-| `D+` / `D-` | Comandament: inclinar endavant/enrere | Mou el servo dret |
+| `D+` / `D-` | Comandament: inclinar enrere/endavant | Mou el servo dret |
 | `E+` / `E-` | Comandament: mantenir A / mantenir B | Mou el servo esquerre |
 | `P` | Comandament: A i B alhora | Obre o tanca la pinça |
 | `G` | Comandament: sacsejar | Grava el punt actual (replay) |

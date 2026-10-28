@@ -2,7 +2,7 @@
 # El COMANDAMENT del brac: segons la inclinacio, envia ordres de text per
 # radio. Una altra micro:bit les rep (receptor o PONT cap a l'Arduino).
 #   inclina dreta/esquerra -> "B+" / "B-" (base)
-#   inclina endavant/enrere -> "D-" / "D+" (servo dret)
+#   inclina enrere/endavant -> "D+" / "D-" (servo dret)
 #   A i B alhora           -> "P"         (obre/tanca la pinca)
 # IMPORTANT: les dues plaques han de tenir el MATEIX grup de radio.
 # Quan: S3 - modelatge

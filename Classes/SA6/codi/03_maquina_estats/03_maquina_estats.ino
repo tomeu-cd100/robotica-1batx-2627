@@ -22,7 +22,10 @@ const int PIN_COLLISIO = 2;
 const int BOTO_A = 3;
 const int BOTO_B = 4;
 
-const int BASE_MIN = 0,      BASE_MAX = 180;
+// BASE_MIN uns graus PER SOBRE del final de carrera (l'angle del homing de
+// la S1): si la base hi pogues arribar, en manual tocaria el sensor, entraria
+// en EMERGENCIA i, quieta a sobre del sensor, no se'n podria rearmar mai.
+const int BASE_MIN = 15,     BASE_MAX = 180;
 const int ESQUERRE_MIN = 40, ESQUERRE_MAX = 150;
 const int DRET_MIN = 40,     DRET_MAX = 150;
 const int PINCA_MIN = 60,    PINCA_MAX = 120;

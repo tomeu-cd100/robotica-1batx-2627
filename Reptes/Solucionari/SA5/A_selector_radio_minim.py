@@ -1,5 +1,5 @@
 # Solucionari Repte SA5-A · Selector per radio (MINIM)
-# A/B trien l'articulacio (B, E, D, P). Inclinar endavant/enrere envia
+# A/B trien l'articulacio (B, E, D, P). Inclinar enrere/endavant envia
 # "<lletra>+" o "<lletra>-"; amb la P, qualsevol inclinacio envia "P".
 
 from microbit import *
@@ -25,9 +25,9 @@ while True:
         if y > LLINDAR or y < -LLINDAR:
             radio.send("P")
             sleep(500)          # una sola P per inclinacio
-    elif y < -LLINDAR:
-        radio.send(lletra + "+")
     elif y > LLINDAR:
+        radio.send(lletra + "+")    # mateix conveni que el comandament
+    elif y < -LLINDAR:
         radio.send(lletra + "-")
 
     display.show(lletra)

@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 400" width="820" height="400" role="img" aria-labelledby="t d">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 420" width="820" height="420" role="img" aria-labelledby="t d">
   <title id="t">El pont: de la ràdio al braç</title>
   <desc id="d">La micro:bit comandament, a la mà, envia ordres per ràdio a la micro:bit pont. El pont les reenvia per un cable des del seu pin P1 fins al pin D0 de l'Arduino UNO, amb un segon cable de GND a GND. L'Arduino mou els servos del braç. El cable va en un sol sentit: mai de l'Arduino cap a la micro:bit.</desc>
   <style>
@@ -21,7 +21,7 @@
     .dig{stroke:#7c3aed}
     .sens{fill:#ede9fe;stroke:#6d28d9;stroke-width:2}
   </style>
-  <rect class="fr" x="1" y="1" width="818" height="398" rx="14"/>
+  <rect class="fr" x="1" y="1" width="818" height="418" rx="14"/>
   <text class="tit" x="24" y="34">El pont: de la ràdio al braç (SA5 · S3)</text>
   <rect class="mb" x="30" y="110" width="140" height="100" rx="12"/>
   <text class="pinb" x="100" y="150" text-anchor="middle">micro:bit</text>
@@ -53,4 +53,5 @@
   <text class="lbl2" x="655" y="276">D6 · D9 · D10 · D11</text>
   <text class="avis" x="24" y="362">⚠ El cable va NOMÉS de la micro:bit cap a l'Arduino: mai un pin de 5 V a la micro:bit (3,3 V).</text>
   <text class="avis" x="24" y="384">⚠ Desconnecta el D0 per pujar un programa a l'Arduino.</text>
+  <text class="avis" x="24" y="406">⚠ Els 4 servos a les piles, MAI a l'USB ni al 5V de l'UNO. GND comú.</text>
 </svg>
