@@ -28,13 +28,17 @@ El robot **no és una activitat nova ni una càrrega afegida**: és el lloc on
 conflueixen els reptes que ja es feien a cada SA. Els sabers, les sessions i
 les proves T1/T2/T3 no canvien; el que canvia és que el producte final de
 cada bloc de SA es materialitza en una peça física del robot del trimestre.
+Al **2n trimestre** el braç va més enllà: és el **fil conductor de totes les
+pràctiques** de SA4-SA6 (des del 28-10-2026). Cada pràctica s'hi fa a sobre:
+el servo s'aprèn movent la base, la histèresi tancant la pinça i la ràdio
+movent-lo des del comandament.
 
 ## Els tres robots
 
 | Trimestre | Robot | Arquetip | SA que hi aporten | On es tanca (producte) |
 |---|---|---|---|---|
 | 1r | Mascota reactiva | robot social | SA2, SA3 | Producte SA3 (mascota amb ≥3 reaccions sensor→comportament + fitxa de personalitat; tancat a S3, S4 = prova T1 intacta) |
-| 2n | Braç robòtic | robot manipulador | SA4, SA5, SA6 | Producte SA6 (braç amb màquina d'estats i sensor de col·lisió com a final de carrera; tancat a S3, S4 = prova T2 intacta) |
+| 2n | Braç robòtic MeArm | robot manipulador | SA4, SA5, SA6 | Producte SA6 (MeArm de 4 servos amb màquina d'estats, comandament per ràdio i sensor de col·lisió com a final de carrera; tancat a S3, S4 = prova T2) |
 | 3r | Rover autònom | robot mòbil | SA7, SA8, SA9 | Plataforma de SA7 i base del repte SA9 |
 
 Dossier de cada robot (peces, esquema de muntatge, cablatge i rúbrica):
@@ -47,7 +51,7 @@ Dossier de cada robot (peces, esquema de muntatge, cablatge i rúbrica):
 | Trimestre | Sessió de fabricació | Què s'hi fa |
 |---|---|---|
 | T1 | S3 de SA2 | Tall làser de la caixa comuna i gravat de cares/orelles personalitzades; muntatge inicial de la mascota |
-| T2 | **Torns de taller** de 15-25' a les sessions de SA4-SA6 | El braç es munta articulació a articulació al llarg del trimestre, amb les peces tallades pel docent abans de la s13 ([detall al dossier](00_Projecte_T2_Brac.md#el-braç-es-construeix-al-llarg-de-tot-el-trimestre)) |
+| T2 | **Torns de taller** de 20-45' a les sessions de SA4-SA6 | El MeArm es munta bloc a bloc al llarg del trimestre, i totes les pràctiques del trimestre s'hi fan a sobre, amb les peces tallades pel docent abans de la s13 ([detall al dossier](00_Projecte_T2_Brac.md#el-braç-es-construeix-al-llarg-de-tot-el-trimestre)) |
 | T3 | Sessió 0 del trimestre (abans de SA7) | Muntatge del xassís del rover (2 pisos) |
 
 <div class="nomes-docent" markdown="1">
@@ -57,7 +61,8 @@ Dossier de cada robot (peces, esquema de muntatge, cablatge i rúbrica):
 > la S3 queda per a la fabricació); T3 comprimeix SA8 de 6 a 4 h (fusió de
 > S1+S2) i trasllada les 2 h a l'inici del trimestre. **El T2 ja no gasta cap
 > palanca** (des del 24-10-2026): el braç es construeix en **torns de
-> taller** que ocupen el lloc del «+ repte» de cada sessió, i la S4 de SA4
+> taller** que ocupen el temps de les pràctiques retirades o escurçades
+> (des del 28-10-2026: motor DC reduït, barrera, termòstat, llum de nit…), i la S4 de SA4
 > torna a ser sessió de producte. Aquesta S4 és, doncs, un **marge real
 > d'~2 h** comprimible, i és la candidata natural per cobrir el dèficit del
 > T3 (decisió abans de Setmana Santa). La tercera palanca (SA7 de 8 a 6 h)
@@ -123,11 +128,10 @@ sobre les **zones vermelles** de la plantilla.
 <!-- web:only-github -->
 - Plantilles de tall làser (SVG, un fitxer per robot) i la seva guia:
   [`../../Recursos/plantilles_laser/mascota.svg`](../../Recursos/plantilles_laser/mascota.svg),
-  [`../../Recursos/plantilles_laser/brac.svg`](../../Recursos/plantilles_laser/brac.svg),
   [`../../Recursos/plantilles_laser/xassis_rover_ARomero.svg`](../../Recursos/plantilles_laser/xassis_rover_ARomero.svg)
   (xassís del rover: disseny d'**Antonio Romero**, CC BY-NC-SA 4.0, geometria provada),
   [`../../Recursos/plantilles_laser/brac_MeArm_v1.1.svg`](../../Recursos/plantilles_laser/brac_MeArm_v1.1.svg)
-  (braç **MeArm V1.1** de Ben Gray, CC BY-SA 3.0; **en prova**, alternativa a `brac.svg`) ·
+  (braç **MeArm V1.1** de Ben Gray, CC BY-SA 3.0; pla B: [`brac.svg`](../../Recursos/plantilles_laser/brac.svg)) ·
   [`../../Recursos/plantilles_laser/LLEGEIX-ME.md`](../../Recursos/plantilles_laser/LLEGEIX-ME.md)
 - Peces impreses en 3D (OpenSCAD) i la seva guia:
   [`../../Recursos/peces_3d/escaire_caixa.scad`](../../Recursos/peces_3d/escaire_caixa.scad),

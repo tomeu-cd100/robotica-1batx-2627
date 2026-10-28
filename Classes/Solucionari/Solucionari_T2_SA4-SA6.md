@@ -210,113 +210,244 @@ const float Kp = 0.8;   // 0.2 = lent ; 0.8 = equilibrat ; 3.0 = oscil-la/inesta
 ## 🤖 Codi de referència del robot del trimestre: el braç
 
 > Implementació completa d'exemple del producte final (dossier
-> [🦾 Projecte T2](../00_General/00_Projecte_T2_Brac.md)): control per
-> potenciòmetres, aturada d'emergència i, a SA5-SA6, comandament per ràdio
-> i màquina d'estats. El braç es queda **tot el trimestre amb l'Arduino**:
-> la ràdio hi arriba a través d'una micro:bit **pont**. És UNA solució
-> possible: cadascú en pot fer variants.
-> Fitxers complets: [`T2_brac.ino`](https://github.com/tomeu-cd100/robotica-1batx-2627/blob/main/Classes/Solucionari/codi/T2_brac/T2_brac.ino) (SA4),
-> [`T2_brac_estats.ino`](https://github.com/tomeu-cd100/robotica-1batx-2627/blob/main/Classes/Solucionari/codi/T2_brac_estats/T2_brac_estats.ino) (SA5-SA6, braç),
-> [`T2_brac_microbit_comandament.py`](https://github.com/tomeu-cd100/robotica-1batx-2627/blob/main/Classes/Solucionari/codi/T2_brac_microbit_comandament.py) (a la mà)
-> i [`T2_brac_microbit_pont.py`](https://github.com/tomeu-cd100/robotica-1batx-2627/blob/main/Classes/Solucionari/codi/T2_brac_microbit_pont.py) (pont).
-> Pla B (braç re-cablejat a la micro:bit):
-> [`T2_brac_microbit_receptor.py`](https://github.com/tomeu-cd100/robotica-1batx-2627/blob/main/Classes/Solucionari/codi/T2_brac_microbit_receptor.py).
+> [🦾 Projecte T2](../00_General/00_Projecte_T2_Brac.md)): el **MeArm de 4
+> servos** amb l'Arduino tot el trimestre, el comandament per ràdio a través
+> d'una micro:bit **pont** i la màquina d'estats de la SA6. És UNA solució
+> possible: cadascú en pot fer variants. Pins i protocol d'ordres: al
+> [dossier](../00_General/00_Projecte_T2_Brac.md#cablatge).
+> Fitxers: [`T2_mearm_arduino.ino`](https://github.com/tomeu-cd100/robotica-1batx-2627/blob/main/Classes/Solucionari/codi/T2_mearm_arduino/T2_mearm_arduino.ino) (producte de SA4),
+> [`T2_brac_estats.ino`](https://github.com/tomeu-cd100/robotica-1batx-2627/blob/main/Classes/Solucionari/codi/T2_brac_estats/T2_brac_estats.ino) (producte de SA6),
+> [`T2_brac_microbit_comandament.py`](https://github.com/tomeu-cd100/robotica-1batx-2627/blob/main/Classes/Solucionari/codi/T2_brac_microbit_comandament.py) (a la mà),
+> [`T2_brac_microbit_pont.py`](https://github.com/tomeu-cd100/robotica-1batx-2627/blob/main/Classes/Solucionari/codi/T2_brac_microbit_pont.py) (pont) i, com a pla B,
+> [`T2_mearm_microbit_receptor.py`](https://github.com/tomeu-cd100/robotica-1batx-2627/blob/main/Classes/Solucionari/codi/T2_mearm_microbit_receptor.py) (braç governat per la micro:bit).
 
-### Control amb potenciòmetres i límits d'angle
+### SA4 · El braç amb 4 potenciòmetres
 
-Cada servo té el seu propi rang segur (`_MIN`/`_MAX`, anotats abans de
-programar res més); `mouServos()` fa el `map()` de la lectura analògica
-0-1023 a aquest rang, mai a 0-180 a cegues.
+Cada servo té el seu **rang segur** (`_MIN`/`_MAX`, anotats en muntar) i
+`map()` converteix la lectura 0-1023 a aquest rang, mai a 0-180 a cegues.
+Dues decisions per comentar a l'aula: la **zona morta** de 2° (sense ella el
+soroll del potenciòmetre fa tremolar el braç) i el `write()` **abans** de
+l'`attach()` (el braç arrenca on diu el potenciòmetre, sense saltar a 90°).
+És el mateix codi que la pràctica `04_brac_potenciometres` de la SA4.
 
-```cpp
-// Limits d'angle REALS de cada servo: anoteu-los abans de programar res mes
-// (rubrica del dossier: el servo mai ha de forcar el topall mecanic).
-const int BASE_MIN = 10,  BASE_MAX = 170;
-const int COLZE_MIN = 20, COLZE_MAX = 160;
-const int PINCA_MIN = 40, PINCA_MAX = 120;  // tancada .. oberta
-```
+<details markdown="1">
+<summary>Desplega el codi complet (<code>T2_mearm_arduino.ino</code>)</summary>
 
 ```cpp
-void mouServos() {
-  // map() de 0-1023 al rang SEGUR de cada servo (mai 0-180 a cegues)
-  base.write(map(analogRead(PIN_POT_BASE), 0, 1023, BASE_MIN, BASE_MAX));
-  colze.write(map(analogRead(PIN_POT_COLZE), 0, 1023, COLZE_MIN, COLZE_MAX));
-  pinca.write(map(analogRead(PIN_POT_PINCA), 0, 1023, PINCA_MIN, PINCA_MAX));
+// Codi de referencia del brac MeArm V1.1 - VERSIO ARDUINO
+// 4 servos controlats amb 4 potenciometres, cadascun dins del seu rang segur.
+// Cablatge: el de la guia 00_Muntatge_brac_MeArm.md (versio Arduino).
+// ATENCIO: els 4 servos amb ALIMENTACIO EXTERNA (piles) i GND comu. Mai per USB
+// ni pel pin 5V de l'UNO.
+//
+// Truc per trobar els angles limit: obre el Monitor serie (9600). Cada mig
+// segon s'hi escriuen els 4 angles. Mou un potenciometre a poc a poc fins que
+// la peca toqui, i anota l'angle una mica abans.
+
+#include <Servo.h>
+
+const int PIN_SERVO_BASE = 9;
+const int PIN_SERVO_ESQUERRE = 6;   // servo nou del MeArm
+const int PIN_SERVO_DRET = 10;      // ocupa el lloc del colze del brac de 3 servos
+const int PIN_SERVO_PINCA = 11;
+
+const int PIN_POT_BASE = A0;
+const int PIN_POT_DRET = A1;
+const int PIN_POT_PINCA = A2;
+const int PIN_POT_ESQUERRE = A3;    // 4t potenciometre (el kit en porta 3)
+
+// Limits d'angle REALS de cada servo: canvieu-los pels que heu anotat al
+// bloc D de la guia. El servo mai ha de forcar el topall mecanic.
+const int BASE_MIN = 0,      BASE_MAX = 180;
+const int ESQUERRE_MIN = 40, ESQUERRE_MAX = 150;
+const int DRET_MIN = 40,     DRET_MAX = 150;
+const int PINCA_MIN = 60,    PINCA_MAX = 120;   // tancada .. oberta
+
+// Zona morta: nomes es mou el servo si l'angle nou canvia mes d'aquests
+// graus. Aixi el soroll del potenciometre no fa tremolar el brac.
+const int ZONA_MORTA = 2;
+
+Servo base, esquerre, dret, pinca;
+
+int angleBase, angleEsquerre, angleDret, anglePinca;
+unsigned long tDarrerInforme = 0;
+
+// Llegeix un potenciometre i el converteix al rang segur del seu servo
+int llegeixAngle(int pinPot, int minim, int maxim) {
+  return map(analogRead(pinPot), 0, 1023, minim, maxim);
+}
+
+// Escriu l'angle nou nomes si s'allunya prou de l'actual
+void mouSiCal(Servo &servo, int &actual, int nou) {
+  if (abs(nou - actual) > ZONA_MORTA) {
+    actual = nou;
+    servo.write(actual);
+  }
+}
+
+void setup() {
+  Serial.begin(9600);
+
+  // Primer es calcula la posicio dels potenciometres i despres s'engega cada
+  // servo: aixi el brac no fa un salt a 90 graus en arrencar.
+  angleBase = llegeixAngle(PIN_POT_BASE, BASE_MIN, BASE_MAX);
+  angleEsquerre = llegeixAngle(PIN_POT_ESQUERRE, ESQUERRE_MIN, ESQUERRE_MAX);
+  angleDret = llegeixAngle(PIN_POT_DRET, DRET_MIN, DRET_MAX);
+  anglePinca = llegeixAngle(PIN_POT_PINCA, PINCA_MIN, PINCA_MAX);
+
+  base.write(angleBase);
+  esquerre.write(angleEsquerre);
+  dret.write(angleDret);
+  pinca.write(anglePinca);
+
+  base.attach(PIN_SERVO_BASE);
+  esquerre.attach(PIN_SERVO_ESQUERRE);
+  dret.attach(PIN_SERVO_DRET);
+  pinca.attach(PIN_SERVO_PINCA);
+}
+
+void loop() {
+  mouSiCal(base, angleBase, llegeixAngle(PIN_POT_BASE, BASE_MIN, BASE_MAX));
+  mouSiCal(esquerre, angleEsquerre, llegeixAngle(PIN_POT_ESQUERRE, ESQUERRE_MIN, ESQUERRE_MAX));
+  mouSiCal(dret, angleDret, llegeixAngle(PIN_POT_DRET, DRET_MIN, DRET_MAX));
+  mouSiCal(pinca, anglePinca, llegeixAngle(PIN_POT_PINCA, PINCA_MIN, PINCA_MAX));
+
+  // Informe al Monitor serie sense delay(): el control no s'atura mai
+  if (millis() - tDarrerInforme > 500) {
+    tDarrerInforme = millis();
+    Serial.print("base=");
+    Serial.print(angleBase);
+    Serial.print("  esquerre=");
+    Serial.print(angleEsquerre);
+    Serial.print("  dret=");
+    Serial.print(angleDret);
+    Serial.print("  pinca=");
+    Serial.println(anglePinca);
+  }
+
+  delay(20);   // ~50 actualitzacions/s: suficient i suau
 }
 ```
 
-### Aturada d'emergència (màquina d'estats)
+</details>
 
-Dos estats (`NORMAL`/`EMERGENCIA`): un xoc detectat pel sensor de col·lisió
-força `EMERGENCIA` i els servos es queden on són (no es tornen a escriure);
-el rearmament és manual i exigeix el sensor alliberat un temps seguit
-(`TEMPS_REARMAMENT`), perquè el braç no rebati contra l'obstacle.
+### SA5 · El comandament i el pont
 
-```cpp
-enum Estat { NORMAL, EMERGENCIA };
-Estat estat = NORMAL;
-unsigned long tAlliberat = 0;
-```
+El comandament envia ordres de text curtes per ràdio (`B±`, `D±`, `E±`, `P`,
+`G`). El pont no mou res: reenvia cada ordre a l'Arduino per `uart`
+(P1 → D0), acabada en salt de línia, i els seus botons són els botons d'estat
+del braç (`A` i `R`).
 
-```cpp
-    case EMERGENCIA:
-      // Rearmament MANUAL: cal que el sensor quedi alliberat TEMPS_REARMAMENT
-      // seguits; aixi el brac no rebota contra l'obstacle.
-      if (xoc) {
-        tAlliberat = 0;
-      } else if (tAlliberat == 0) {
-        tAlliberat = millis();
-      } else if (millis() - tAlliberat > TEMPS_REARMAMENT) {
-        estat = NORMAL;
-        Serial.println("REARMAT: control actiu de nou");
-      }
-      break;
-```
+Per què **D0** i no `SoftwareSerial`: `SoftwareSerial` atura les
+interrupcions mentre rep cada lletra, i la llibreria `Servo` les necessita
+per generar els polsos. El resultat són servos que peguen sotragades cada
+cop que arriba una ordre. El preu de fer servir D0 és haver de
+**desconnectar el cable per pujar el programa**.
 
-### El comandament per ràdio (micro:bit)
-
-Protocol de text senzill per ràdio: `"B+"`/`"B-"` mouen la base,
-`"C+"`/`"C-"` el colze (segons la inclinació de l'acceleròmetre), `"P"`
-commuta la pinça (botó A+B alhora) i `"G"` **grava** el punt actual de la
-seqüència (sacsejant el comandament). El comandament és la 2a micro:bit, la
-que es té a la mà.
+<details markdown="1">
+<summary>Desplega el codi complet (<code>T2_brac_microbit_comandament.py</code>)</summary>
 
 ```python
-while True:
-    x = accelerometer.get_x()   # inclinacio esquerra/dreta -> base
-    y = accelerometer.get_y()   # inclinacio davant/enrere -> colze
+# Codi de referencia del Projecte T2 - Brac robotic MeArm (NOMES DOCENT)
+# COMANDAMENT: la 2a micro:bit, la que es te a la ma. No mou cap servo:
+# envia ordres de text per radio.
+#   Inclina esquerra/dreta   -> "B+" / "B-"  base
+#   Inclina davant/enrere    -> "D+" / "D-"  servo dret
+#   Mantens el boto A        -> "E+"         servo esquerre
+#   Mantens el boto B        -> "E-"         servo esquerre
+#   A i B alhora             -> "P"          obre/tanca la pinca
+#   Sacseja                  -> "G"          grava el punt actual (replay, SA6)
+# Pla per defecte: les ordres les rep la micro:bit PONT, que les passa a
+# l'Arduino (T2_brac_microbit_pont.py + T2_brac_estats.ino). Els botons A i B
+# del PONT (no d'aquesta) canvien d'estat: A repos/manual, B reprodueix.
+# Versio micro:bit del MeArm (contingencia): les rep
+# T2_mearm_microbit_receptor.py, que ignora la "G".
 
-    if x > 300:
+from microbit import *
+import radio
+
+GRUP = 10        # CANVIA'L pel teu numero de llista (les 2 plaques igual)
+LLINDAR = 300    # inclinacio minima perque compti (evita moure's sol)
+
+radio.on()
+radio.config(group=GRUP)
+
+pinca_enviada = False   # per enviar "P" una sola vegada per cada A+B
+
+while True:
+    x = accelerometer.get_x()
+    y = accelerometer.get_y()
+
+    if x > LLINDAR:
         radio.send("B+")
-    elif x < -300:
+    elif x < -LLINDAR:
         radio.send("B-")
 
-    if y > 300:
-        radio.send("C+")
-    elif y < -300:
-        radio.send("C-")
+    if y > LLINDAR:
+        radio.send("D+")
+    elif y < -LLINDAR:
+        radio.send("D-")
 
-    if button_a.was_pressed() and button_b.was_pressed():
-        radio.send("P")          # obre/tanca la pinca (commutador)
+    # Es llegeixen els dos botons UNA vegada, a variables
+    boto_a = button_a.is_pressed()
+    boto_b = button_b.is_pressed()
+
+    if boto_a and boto_b:
+        # Si mantens A+B la pinca no ha d'obrir-se i tancar-se sense parar:
+        # nomes s'envia la primera volta
+        if not pinca_enviada:
+            radio.send("P")
+            pinca_enviada = True
         display.show(Image.TARGET)
     elif accelerometer.was_gesture("shake"):
-        radio.send("G")          # grava el punt actual de la seguencia
-        display.show(Image.DIAMOND)
+        pinca_enviada = False
+        # Nomes s'envia l'ordre: qui confirma que el punt s'ha gravat de debo
+        # es el BRAC (Monitor serie). Aqui, una fletxa d'"enviat".
+        radio.send("G")
+        display.show(Image.ARROW_E)
         sleep(300)
     else:
-        display.show(Image.ARROW_N)
+        pinca_enviada = False
+        if boto_a:
+            radio.send("E+")
+            display.show(Image.ARROW_N)
+        elif boto_b:
+            radio.send("E-")
+            display.show(Image.ARROW_S)
+        else:
+            display.show(Image.DIAMOND_SMALL)
 
     sleep(100)   # ~10 ordres/s: suficient per a un control suau
 ```
 
-### El pont: de ràdio a cable
+</details>
 
-La micro:bit pont no mou res: cada ordre que rep per ràdio la reenvia a
-l'Arduino per `uart` (P1 → D0), acabada en salt de línia. Els seus botons
-són els botons d'estat del braç (`"A"` i `"R"`).
+<details markdown="1">
+<summary>Desplega el codi complet (<code>T2_brac_microbit_pont.py</code>)</summary>
 
 ```python
+# Codi de referencia del Projecte T2 - Brac robotic (NOMES DOCENT)
+# Fase SA5-SA6: PONT (la micro:bit que viu al costat del brac).
+# No mou cap servo: rep les ordres del comandament per radio i les passa a
+# l'Arduino del brac per un cable (serie). Els seus botons son els botons
+# d'estat del brac: A envia "A" (repos/manual i rearmament), B envia "R"
+# (reprodueix la seguencia gravada).
+# Cablatge: P1 -> D0 (RX) de l'UNO, i GND comu. Res mes.
+# ATENCIO: el cable va NOMES de la micro:bit cap a l'UNO (mai al reves:
+# els 5 V de l'UNO cremarien la micro:bit).
+# ATENCIO: despres d'uart.init() la micro:bit ja no parla per l'USB (no
+# veureu prints). Per tornar-la a programar, n'hi ha prou de flashejar.
+
+from microbit import *
+import radio
+
+GRUP = 10   # el MATEIX numero que el comandament (el teu numero de llista)
+
+radio.on()
+radio.config(group=GRUP)
 uart.init(baudrate=9600, tx=pin1, rx=pin2)
+
+display.show(Image.ARROW_W)   # fletxa cap al brac: "estic passant ordres"
 
 while True:
     ordre = radio.receive()
@@ -326,108 +457,342 @@ while True:
 
     if button_a.was_pressed():
         uart.write("A\n")
+        display.show("A")
+        sleep(200)
+        display.show(Image.ARROW_W)
     elif button_b.was_pressed():
         uart.write("R\n")
+        display.show("R")
+        sleep(200)
+        display.show(Image.ARROW_W)
+
+    sleep(10)
 ```
 
-Per què **D0** i no `SoftwareSerial`: `SoftwareSerial` atura les
-interrupcions mentre rep cada lletra, i la llibreria `Servo` les necessita
-per generar els polsos. El resultat són servos que peguen sotragades cada
-cop que arriba una ordre. El preu de fer servir D0 és haver de
-**desconnectar el cable per pujar el programa**.
+</details>
 
-### La màquina d'estats en C++ (l'aportació de la SA6)
+### SA6 · La màquina d'estats del braç
 
 El producte de SA6 demana **quatre estats** —repòs, manual, replay i
 emergència— i la rúbrica R3 del braç els avalua. És el mateix `enum` +
-`switch` de
+`switch` de la pràctica
 [`03_maquina_estats.ino`](../SA6/codi/03_maquina_estats/03_maquina_estats.ino),
-sense traduir res. Tres decisions que val la pena comentar a l'aula:
+on les ordres surten dels polsadors D3/D4; aquí surten del pont. Tres
+decisions que val la pena comentar a l'aula:
+
+1. L'**emergència es comprova abans del `switch`**: mana per damunt de tot
+   (la mateixa idea que la guarda de la pinça a `03_ultrasons_brac`, SA4).
+2. El **replay fa servir `millis()`**: cada volta torna a mirar el sensor, i
+   un xoc enmig de la reproducció salta a emergència a l'instant.
+3. `llegeixOrdre()` acumula lletres fins al `'
+'` **sense bloquejar** el
+   `loop()` (res de `readStringUntil()`, que s'esperaria fins a un segon). I
+   tot es pot provar **sense ràdio**, escrivint les ordres al Monitor sèrie.
+
+<details markdown="1">
+<summary>Desplega el codi complet (<code>T2_brac_estats.ino</code>)</summary>
 
 ```cpp
-void loop() {
-  bool xoc = (digitalRead(PIN_COLLISIO) == LOW);
-  String ordre = llegeixOrdre();     // "" si encara no n'ha arribat cap
+// Codi de referencia del Projecte T2 - El brac robotic MeArm (NOMES DOCENT)
+// Fase SA5-SA6: el brac CONTINUA amb l'Arduino UNO. El comandament per radio
+// (2a micro:bit, a la ma) parla amb una micro:bit PONT que hi ha al costat del
+// brac i que passa les ordres a l'UNO per un cable serie.
+// Fitxers germans: T2_brac_microbit_comandament.py i T2_brac_microbit_pont.py.
+// Cablatge: el del dossier 00_Projecte_T2_Brac.md (fase Arduino) + el pont:
+//   P1 de la micro:bit pont -> D0 (RX) de l'UNO, i GND comu.
+// ATENCIO: per PUJAR el programa, desconnecteu el cable del D0 (l'USB fa
+// servir el mateix pin). Torneu-lo a connectar despres.
+// ATENCIO: el cable va NOMES de la micro:bit cap a l'UNO. Mai connecteu un pin
+// de l'UNO (5 V) a la micro:bit (3,3 V): la cremaria.
+// ATENCIO: els 4 servos amb ALIMENTACIO EXTERNA (piles AA) i GND comu.
+// PLA B (brac de 3 servos, brac.svg): esborreu les linies del servo esquerre.
+//
+// Per que D0 i no SoftwareSerial: SoftwareSerial atura les interrupcions
+// mentre rep cada lletra i la llibreria Servo les necessita per fer els polsos;
+// el resultat son servos que peguen sotragades cada cop que arriba una ordre.
+//
+// MAQUINA D'ESTATS (l'aportacio de la SA6), el mateix patro enum + switch
+// de 03_maquina_estats.ino:
+//   REPOS      - quiet; ordre "A" -> MANUAL, ordre "R" -> REPLAY
+//   MANUAL     - obeeix el comandament; "G" grava el punt actual
+//   REPLAY     - reprodueix sol la seguencia gravada (amb millis, com a SA4)
+//   EMERGENCIA - xoc al sensor de col.lisio: no mou res; rearmament manual
+// Ordres que arriben pel cable: "B+" "B-" "D+" "D-" "E+" "E-" "P" "G" (del
+// comandament)
+// i "A" "R" (botons A i B de la micro:bit pont).
+// Truc per provar-ho SENSE micro:bit: desconnecteu el pont, obriu el Monitor
+// serie (9600, "Nova linia") i escriviu les ordres a ma.
 
-  // 1) L'emergencia es comprova ABANS del switch: mana per damunt de tot,
-  //    com la guarda de seguretat del 03_sensor_velocitat (SA4).
+#include <Servo.h>
+
+const int PIN_SERVO_BASE = 9;
+const int PIN_SERVO_ESQUERRE = 6;
+const int PIN_SERVO_DRET = 10;
+const int PIN_SERVO_PINCA = 11;
+const int PIN_COLLISIO = 2;    // LOW = xoc (modul KS0021)
+
+// Limits d'angle REALS de cada servo: anoteu-los abans de programar res mes
+const int BASE_MIN = 0,      BASE_MAX = 180;
+const int ESQUERRE_MIN = 40, ESQUERRE_MAX = 150;
+const int DRET_MIN = 40,     DRET_MAX = 150;
+const int PINCA_TANCADA = 60, PINCA_OBERTA = 120;
+const int PAS = 3;             // graus per cada ordre rebuda
+
+const int MAX_PUNTS = 30;                  // quants punts es poden gravar
+const unsigned long PAUSA_REPLAY = 400;    // ms entre punts en reproduir
+
+Servo servoBase, servoEsquerre, servoDret, servoPinca;
+
+enum Estat { REPOS, MANUAL, REPLAY, EMERGENCIA };
+Estat estat = REPOS;
+
+int base = 90, esquerre = 90, dret = 90, pinca = PINCA_TANCADA;
+
+// La seguencia gravada: quatre llistes, una per servo
+int seqBase[MAX_PUNTS], seqEsquerre[MAX_PUNTS], seqDret[MAX_PUNTS], seqPinca[MAX_PUNTS];
+int numPunts = 0;
+int puntReplay = 0;
+unsigned long tPunt = 0;
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(PIN_COLLISIO, INPUT_PULLUP);
+  servoBase.attach(PIN_SERVO_BASE);
+  servoEsquerre.attach(PIN_SERVO_ESQUERRE);
+  servoDret.attach(PIN_SERVO_DRET);
+  servoPinca.attach(PIN_SERVO_PINCA);
+  aplica();
+  canviaEstat(REPOS);
+}
+
+void loop() {
+  // --- Lectura d'entrades: UNA vegada per volta, a variables ---
+  bool xoc = (digitalRead(PIN_COLLISIO) == LOW);
+  String ordre = llegeixOrdre();
+
+  // --- Transicio prioritaria: el xoc mana per damunt de tot ---
+  // (la mateixa idea que la guarda de 03_ultrasons_brac, SA4)
   if (xoc && estat != EMERGENCIA) {
     canviaEstat(EMERGENCIA);
   }
 
   switch (estat) {
     case EMERGENCIA:
-      // 2) Rearmament MANUAL: sensor alliberat I boto A.
+      // Rearmament MANUAL: sensor alliberat I boto A. Una emergencia que es
+      // rearma sola no es una emergencia.
       if (!xoc && ordre == "A") {
         canviaEstat(REPOS);
       }
       break;
-    // ...
+
+    case REPOS:
+      if (ordre == "A") {
+        canviaEstat(MANUAL);
+      } else if (ordre == "R" && numPunts > 0) {
+        comencaReplay();
+      }
+      break;
+
+    case MANUAL:
+      if (ordre == "A") {
+        canviaEstat(REPOS);
+      } else if (ordre == "R" && numPunts > 0) {
+        comencaReplay();
+      } else if (ordre == "B+") {
+        base = min(base + PAS, BASE_MAX);
+      } else if (ordre == "B-") {
+        base = max(base - PAS, BASE_MIN);
+      } else if (ordre == "D+") {
+        dret = min(dret + PAS, DRET_MAX);
+      } else if (ordre == "D-") {
+        dret = max(dret - PAS, DRET_MIN);
+      } else if (ordre == "E+") {
+        esquerre = min(esquerre + PAS, ESQUERRE_MAX);
+      } else if (ordre == "E-") {
+        esquerre = max(esquerre - PAS, ESQUERRE_MIN);
+      } else if (ordre == "P") {
+        pinca = (pinca == PINCA_TANCADA) ? PINCA_OBERTA : PINCA_TANCADA;
+      } else if (ordre == "G") {
+        gravaPunt();
+      }
+      aplica();
+      break;
+
     case REPLAY:
-      // 3) Replay amb millis(), no amb delay(): cada volta torna a passar
-      //    pel control del xoc de dalt de tot.
-      if (millis() - tPunt >= PAUSA_REPLAY) {
-        // ... aplica el punt seguent
+      // Sense delay(): cada volta es torna a mirar el sensor de dalt de tot,
+      // aixi un xoc enmig de la reproduccio salta a EMERGENCIA a l'instant.
+      if (ordre == "A") {
+        canviaEstat(REPOS);          // el boto A avorta la reproduccio
+      } else if (millis() - tPunt >= PAUSA_REPLAY) {
+        if (puntReplay < numPunts) {
+          base = seqBase[puntReplay];
+          esquerre = seqEsquerre[puntReplay];
+          dret = seqDret[puntReplay];
+          pinca = seqPinca[puntReplay];
+          aplica();
+          puntReplay++;
+          tPunt = millis();
+        } else {
+          canviaEstat(REPOS);        // ha acabat sense incidents
+        }
       }
       break;
   }
 }
+
+// Llegeix sense bloquejar: acumula lletres fins al salt de linia i retorna
+// l'ordre sencera; mentre no n'hi ha cap de completa, retorna "".
+String llegeixOrdre() {
+  static String linia = "";
+  while (Serial.available() > 0) {
+    char c = Serial.read();
+    if (c == '\n') {
+      String ordre = linia;
+      linia = "";
+      ordre.trim();                  // treu el '\r' si n'hi ha
+      return ordre;
+    }
+    linia += c;
+  }
+  return "";
+}
+
+void aplica() {
+  servoBase.write(base);
+  servoEsquerre.write(esquerre);
+  servoDret.write(dret);
+  servoPinca.write(pinca);
+}
+
+void gravaPunt() {
+  if (numPunts < MAX_PUNTS) {
+    seqBase[numPunts] = base;
+    seqEsquerre[numPunts] = esquerre;
+    seqDret[numPunts] = dret;
+    seqPinca[numPunts] = pinca;
+    numPunts++;
+    Serial.print("Punt gravat: ");
+    Serial.println(numPunts);
+  } else {
+    Serial.println("Seguencia plena: no es grava");
+  }
+}
+
+void comencaReplay() {
+  puntReplay = 0;
+  tPunt = millis() - PAUSA_REPLAY;   // el primer punt surt de seguida
+  canviaEstat(REPLAY);
+}
+
+// Un sol lloc per canviar d'estat: aixi el missatge mai no menteix
+void canviaEstat(Estat nou) {
+  estat = nou;
+  switch (nou) {
+    case REPOS:      Serial.println("Estat: REPOS");      break;
+    case MANUAL:     Serial.println("Estat: MANUAL");     break;
+    case REPLAY:     Serial.println("Estat: REPLAY");     break;
+    case EMERGENCIA: Serial.println("Estat: EMERGENCIA"); break;
+  }
+}
 ```
 
-`llegeixOrdre()` acumula lletres fins al `'\n'` sense bloquejar el `loop()`
-(res de `readStringUntil()`, que s'esperaria fins a un segon). I tot plegat
-es pot provar **sense ràdio**, escrivint les ordres al Monitor sèrie.
+</details>
 
-### Pla B · El receptor: servos amb MicroPython
+### Pla B · El braç governat per la micro:bit
 
-> Només si s'activa el pla B del dossier (braç re-cablejat a la micro:bit).
+> Només si el pont sèrie falla amb el maquinari real. Cal una **micro:bit
+> V2** amb Micro:shield (la V1 no mou 4 servos alhora). Esquema a la
+> [guia de muntatge](../00_General/00_Muntatge_brac_MeArm.md#connexions-i-programa).
+> Sense la llibreria `Servo`, MicroPython fabrica el pols a mà amb
+> `write_analog()`: `angle_a_analog()` converteix graus a valor analògic
+> sobre un període de 20 ms.
 
-Sense la llibreria `Servo`, MicroPython mou servos escrivint directament el
-valor analògic del PWM: `angle_a_analog()` converteix graus (0-180) a
-aquest valor, i `mou()` fixa el període de 20 ms abans d'escriure'l.
+<details markdown="1">
+<summary>Desplega el codi complet (<code>T2_mearm_microbit_receptor.py</code>)</summary>
 
 ```python
+# Codi de referencia del brac MeArm V1.1 - VERSIO MICRO:BIT
+# RECEPTOR: la micro:bit del brac, endollada al Micro:shield. Rep les ordres
+# del COMANDAMENT (T2_brac_microbit_comandament.py) i mou els 4 servos:
+#   P0 base, P1 dret, P2 pinca, P8 esquerre (el servo nou del MeArm)
+# ATENCIO: cal una micro:bit V2. La V1 no pot generar senyal de servo a 4
+# pins alhora (en te prou per a 3).
+# ATENCIO: servos amb alimentacio externa del Micro:shield, mai el 3V de la
+# placa ni l'USB.
+# En arrencar posa els 4 servos a 90 graus: serveix de "pas 0" de la guia.
+
+from microbit import *
+import radio
+
+GRUP = 10   # el MATEIX numero que el comandament
+PAS = 3     # graus que es mou el servo per cada ordre rebuda
+
+# Limits d'angle segurs de cada servo (els que heu anotat al bloc D)
+BASE_MIN, BASE_MAX = 0, 180
+ESQUERRE_MIN, ESQUERRE_MAX = 40, 150
+DRET_MIN, DRET_MAX = 40, 150
+PINCA_TANCADA, PINCA_OBERTA = 60, 120
+
+
 def angle_a_analog(angle):
     # Servo estandard: pols de 0.5 ms (0 graus) a 2.5 ms (180 graus)
     # sobre un periode de 20 ms -> valors analogics d'uns 26 a 128.
     return int(26 + (angle / 180) * 102)
 
+
 def mou(pin, angle):
     pin.set_analog_period(20)
     pin.write_analog(angle_a_analog(angle))
-```
 
-### Pla B · La màquina d'estats en MicroPython
 
-Amb el pla B, el braç ja va amb MicroPython en aquest punt, i el patró `enum` + `switch` de
-[`03_maquina_estats.ino`](../SA6/codi/03_maquina_estats/03_maquina_estats.ino)
-es tradueix així: constants de text en lloc de l'`enum`, cadena `if`/`elif`
-en lloc del `switch` (i sense `break`: l'`elif` ja és excloent), i la mateixa
-funció `canvia_estat()` per centralitzar el canvi. La taula de traducció
-completa és al [dossier del braç](../00_General/00_Projecte_T2_Brac.md#pla-b-contingència-el-braç-governat-per-la-microbit).
+def limita(valor, minim, maxim):
+    # Mai fora del rang segur: un servo que forca el topall es crema
+    return max(minim, min(valor, maxim))
 
-Dues decisions que val la pena comentar a l'aula:
 
-```python
+radio.on()
+radio.config(group=GRUP)
+
+base = 90
+esquerre = 90
+dret = 90
+pinca = 90
+mou(pin0, base)
+mou(pin8, esquerre)
+mou(pin1, dret)
+mou(pin2, pinca)
+display.show(Image.YES)
+
 while True:
-    # 1) L'emergencia es comprova ABANS del bloc d'estats: mana per damunt
-    #    de tot, com la guarda de seguretat del 03_sensor_velocitat (SA4).
-    if pin8.read_digital() == 0 and estat != EMERGENCIA:
-        canvia_estat(EMERGENCIA)
-
     ordre = radio.receive()
 
-    if estat == EMERGENCIA:
-        # 2) Rearmament MANUAL: no en surt sol quan deixa de xocar; cal
-        #    alliberar el sensor I prémer el boto. Una emergencia que es
-        #    rearma sola no es una emergencia.
-        if pin8.read_digital() == 1 and button_a.was_pressed():
-            canvia_estat(REPOS)
-    elif estat == REPOS:
-        ...
+    if ordre == "B+":
+        base = limita(base + PAS, BASE_MIN, BASE_MAX)
+        mou(pin0, base)
+    elif ordre == "B-":
+        base = limita(base - PAS, BASE_MIN, BASE_MAX)
+        mou(pin0, base)
+    elif ordre == "D+":
+        dret = limita(dret + PAS, DRET_MIN, DRET_MAX)
+        mou(pin1, dret)
+    elif ordre == "D-":
+        dret = limita(dret - PAS, DRET_MIN, DRET_MAX)
+        mou(pin1, dret)
+    elif ordre == "E+":
+        esquerre = limita(esquerre + PAS, ESQUERRE_MIN, ESQUERRE_MAX)
+        mou(pin8, esquerre)
+    elif ordre == "E-":
+        esquerre = limita(esquerre - PAS, ESQUERRE_MIN, ESQUERRE_MAX)
+        mou(pin8, esquerre)
+    elif ordre == "P":
+        # Commutador: si esta oberta, la tanca; si no, l'obre
+        if pinca == PINCA_OBERTA:
+            pinca = PINCA_TANCADA
+        else:
+            pinca = PINCA_OBERTA
+        mou(pin2, pinca)
+
+    sleep(10)
 ```
 
-El **replay** guarda els punts en una llista de tuples
-(`seguencia.append((base, colze, pinca))`) i els reprodueix amb un `for`,
-comprovant el sensor de col·lisió a **cada** punt: si xoca enmig de la
-reproducció, salta a emergència i talla el bucle amb un `break`.
+</details>

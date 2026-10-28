@@ -1,4 +1,4 @@
-// Codi de referencia del brac MeArm V1.1 (EN PROVA) - VERSIO ARDUINO
+// Codi de referencia del brac MeArm V1.1 - VERSIO ARDUINO
 // 4 servos controlats amb 4 potenciometres, cadascun dins del seu rang segur.
 // Cablatge: el de la guia 00_Muntatge_brac_MeArm.md (versio Arduino).
 // ATENCIO: els 4 servos amb ALIMENTACIO EXTERNA (piles) i GND comu. Mai per USB

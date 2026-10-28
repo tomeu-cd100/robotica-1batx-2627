@@ -1,4 +1,4 @@
-// Codi de referencia del Projecte T2 - El brac robotic (NOMES DOCENT)
+// Codi de referencia del Projecte T2 - El brac robotic MeArm (NOMES DOCENT)
 // Fase SA5-SA6: el brac CONTINUA amb l'Arduino UNO. El comandament per radio
 // (2a micro:bit, a la ma) parla amb una micro:bit PONT que hi ha al costat del
 // brac i que passa les ordres a l'UNO per un cable serie.
@@ -9,7 +9,8 @@
 // servir el mateix pin). Torneu-lo a connectar despres.
 // ATENCIO: el cable va NOMES de la micro:bit cap a l'UNO. Mai connecteu un pin
 // de l'UNO (5 V) a la micro:bit (3,3 V): la cremaria.
-// ATENCIO: els 3 servos amb ALIMENTACIO EXTERNA (piles AA) i GND comu.
+// ATENCIO: els 4 servos amb ALIMENTACIO EXTERNA (piles AA) i GND comu.
+// PLA B (brac de 3 servos, brac.svg): esborreu les linies del servo esquerre.
 //
 // Per que D0 i no SoftwareSerial: SoftwareSerial atura les interrupcions
 // mentre rep cada lletra i la llibreria Servo les necessita per fer els polsos;
@@ -21,7 +22,8 @@
 //   MANUAL     - obeeix el comandament; "G" grava el punt actual
 //   REPLAY     - reprodueix sol la seguencia gravada (amb millis, com a SA4)
 //   EMERGENCIA - xoc al sensor de col.lisio: no mou res; rearmament manual
-// Ordres que arriben pel cable: "B+" "B-" "C+" "C-" "P" "G" (del comandament)
+// Ordres que arriben pel cable: "B+" "B-" "D+" "D-" "E+" "E-" "P" "G" (del
+// comandament)
 // i "A" "R" (botons A i B de la micro:bit pont).
 // Truc per provar-ho SENSE micro:bit: desconnecteu el pont, obriu el Monitor
 // serie (9600, "Nova linia") i escriviu les ordres a ma.
@@ -29,28 +31,30 @@
 #include <Servo.h>
 
 const int PIN_SERVO_BASE = 9;
-const int PIN_SERVO_COLZE = 10;
+const int PIN_SERVO_ESQUERRE = 6;
+const int PIN_SERVO_DRET = 10;
 const int PIN_SERVO_PINCA = 11;
 const int PIN_COLLISIO = 2;    // LOW = xoc (modul KS0021)
 
 // Limits d'angle REALS de cada servo: anoteu-los abans de programar res mes
-const int BASE_MIN = 10,  BASE_MAX = 170;
-const int COLZE_MIN = 20, COLZE_MAX = 160;
-const int PINCA_TANCADA = 40, PINCA_OBERTA = 120;
+const int BASE_MIN = 0,      BASE_MAX = 180;
+const int ESQUERRE_MIN = 40, ESQUERRE_MAX = 150;
+const int DRET_MIN = 40,     DRET_MAX = 150;
+const int PINCA_TANCADA = 60, PINCA_OBERTA = 120;
 const int PAS = 3;             // graus per cada ordre rebuda
 
 const int MAX_PUNTS = 30;                  // quants punts es poden gravar
 const unsigned long PAUSA_REPLAY = 400;    // ms entre punts en reproduir
 
-Servo servoBase, servoColze, servoPinca;
+Servo servoBase, servoEsquerre, servoDret, servoPinca;
 
 enum Estat { REPOS, MANUAL, REPLAY, EMERGENCIA };
 Estat estat = REPOS;
 
-int base = 90, colze = 90, pinca = PINCA_TANCADA;
+int base = 90, esquerre = 90, dret = 90, pinca = PINCA_TANCADA;
 
-// La seguencia gravada: tres llistes, una per servo
-int seqBase[MAX_PUNTS], seqColze[MAX_PUNTS], seqPinca[MAX_PUNTS];
+// La seguencia gravada: quatre llistes, una per servo
+int seqBase[MAX_PUNTS], seqEsquerre[MAX_PUNTS], seqDret[MAX_PUNTS], seqPinca[MAX_PUNTS];
 int numPunts = 0;
 int puntReplay = 0;
 unsigned long tPunt = 0;
@@ -59,7 +63,8 @@ void setup() {
   Serial.begin(9600);
   pinMode(PIN_COLLISIO, INPUT_PULLUP);
   servoBase.attach(PIN_SERVO_BASE);
-  servoColze.attach(PIN_SERVO_COLZE);
+  servoEsquerre.attach(PIN_SERVO_ESQUERRE);
+  servoDret.attach(PIN_SERVO_DRET);
   servoPinca.attach(PIN_SERVO_PINCA);
   aplica();
   canviaEstat(REPOS);
@@ -71,7 +76,7 @@ void loop() {
   String ordre = llegeixOrdre();
 
   // --- Transicio prioritaria: el xoc mana per damunt de tot ---
-  // (la mateixa idea que la guarda de seguretat del 03_sensor_velocitat, SA4)
+  // (la mateixa idea que la guarda de 03_ultrasons_brac, SA4)
   if (xoc && estat != EMERGENCIA) {
     canviaEstat(EMERGENCIA);
   }
@@ -102,10 +107,14 @@ void loop() {
         base = min(base + PAS, BASE_MAX);
       } else if (ordre == "B-") {
         base = max(base - PAS, BASE_MIN);
-      } else if (ordre == "C+") {
-        colze = min(colze + PAS, COLZE_MAX);
-      } else if (ordre == "C-") {
-        colze = max(colze - PAS, COLZE_MIN);
+      } else if (ordre == "D+") {
+        dret = min(dret + PAS, DRET_MAX);
+      } else if (ordre == "D-") {
+        dret = max(dret - PAS, DRET_MIN);
+      } else if (ordre == "E+") {
+        esquerre = min(esquerre + PAS, ESQUERRE_MAX);
+      } else if (ordre == "E-") {
+        esquerre = max(esquerre - PAS, ESQUERRE_MIN);
       } else if (ordre == "P") {
         pinca = (pinca == PINCA_TANCADA) ? PINCA_OBERTA : PINCA_TANCADA;
       } else if (ordre == "G") {
@@ -122,7 +131,8 @@ void loop() {
       } else if (millis() - tPunt >= PAUSA_REPLAY) {
         if (puntReplay < numPunts) {
           base = seqBase[puntReplay];
-          colze = seqColze[puntReplay];
+          esquerre = seqEsquerre[puntReplay];
+          dret = seqDret[puntReplay];
           pinca = seqPinca[puntReplay];
           aplica();
           puntReplay++;
@@ -154,14 +164,16 @@ String llegeixOrdre() {
 
 void aplica() {
   servoBase.write(base);
-  servoColze.write(colze);
+  servoEsquerre.write(esquerre);
+  servoDret.write(dret);
   servoPinca.write(pinca);
 }
 
 void gravaPunt() {
   if (numPunts < MAX_PUNTS) {
     seqBase[numPunts] = base;
-    seqColze[numPunts] = colze;
+    seqEsquerre[numPunts] = esquerre;
+    seqDret[numPunts] = dret;
     seqPinca[numPunts] = pinca;
     numPunts++;
     Serial.print("Punt gravat: ");

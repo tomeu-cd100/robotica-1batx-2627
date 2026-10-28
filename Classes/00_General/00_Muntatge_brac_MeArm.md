@@ -1,12 +1,20 @@
 # 🔧 Muntatge del braç MeArm V1.1
 
-> **Per a qui és?** Per al docent que munta el **prototip** del braç MeArm
-> (en prova des del 24-10-2026) i, si s'adopta, per a cada alumne/a durant
-> els torns de taller del 2n trimestre. Segueix els **18 passos de la guia
-> oficial** en el mateix ordre, de manera que es pot tenir aquesta pàgina i
-> les fotos originals obertes alhora.
+> **Per a qui és?** Per a cada alumne/a durant els **torns de taller** del
+> 2n trimestre: el MeArm és el robot de SA4-SA6 ([dossier del braç](00_Projecte_T2_Brac.md)).
+> Segueix els **18 passos de la guia oficial** en el mateix ordre, de manera
+> que es pot tenir aquesta pàgina i les fotos originals obertes alhora.
 
-**Durada:** unes 2 h (estimació oficial; cronometra el prototip) · **Maquinari:** peces de `brac_MeArm_v1.1.svg` en DM 3 mm, 4 micro servos de 9 g (servo Starter + KS0194), cargols M3, Arduino UNO **o** micro:bit V2 + Micro:shield, alimentació externa per als servos
+<div class="nomes-docent" markdown="1">
+
+> 🧑‍🏫 **Per al docent: el prototip abans de Nadal.** Munta un MeArm amb el
+> nostre DM i els nostres servos, cronometra'l i omple el
+> [registre del prototip](#registre-del-prototip). Si falla, el pla B és
+> `brac.svg` (vegeu el [dossier](00_Projecte_T2_Brac.md)).
+
+</div>
+
+**Durada:** unes 2 h repartides en torns de taller (SA4 S1-S3) · **Maquinari:** peces de `brac_MeArm_v1.1.svg` en DM 3 mm, 4 servos (servo Starter, 2 KS0194 i 1 MG90S), cargols M3, Arduino UNO **o** micro:bit V2 + Micro:shield, alimentació externa per als servos
 
 ## Abans de començar
 
@@ -32,7 +40,7 @@ Alguns números es repeteixen perquè hi ha peces bessones (per exemple, dues
 
 | Element | Notes |
 |---|---|
-| 4 micro servos de 9 g | El kit en té 3 per alumne/a: per al prototip cal un quart servo. Guarda les **banyes** (*servo horns*) i els cargolets que porten. |
+| 4 servos | El kit en té 3 per alumne/a; el 4t és un **MG90S** comprat pel centre, que va al **servo dret** (és el que fa més força). Guarda les **banyes** (*servo horns*) i els cargolets que porten. |
 | Cargols M3 de cap Allen | Mides que cita la guia: **8, 10, 12 i 20 mm**. Les quantitats exactes, a la [taula del prototip](#registre-del-prototip). |
 | 4 femelles M3 | Per als cargols de 20 mm de la base. |
 | Clau Allen M3 i tornavís petit d'estrella | El tornavís és per als cargolets de les banyes. |
@@ -88,6 +96,16 @@ Enganxa una **etiqueta** a cada servo (base, esquerre, dret, pinça) i no els
 moguis amb la mà a partir d'ara.
 
 ## Muntatge pas a pas
+
+El muntatge es reparteix en **torns de taller** al final de les sessions de la
+SA4. Cada bloc aprofita el que la sessió t'acaba d'ensenyar:
+
+| Sessió | Blocs | Temps | Per què ara |
+|---|---|---|---|
+| SA4 · S1 | Pas 0 + A + B | ~35' | La pràctica del dia és el servo: el `write(90)` del pas 0 surt d'aquí. |
+| SA4 · S2 | C + D | ~40' | El calibratge del bloc D fa servir l'escombrada que vas programar a la S1. |
+| SA4 · S3 | E | ~45' | El bloc més llarg. El pas 15 es fa en parella: tothom ajuda i és ajudat. |
+| SA4 · S4 | Cablatge | ~20' | Servos i potenciòmetres al seu pin definitiu ([dossier](00_Projecte_T2_Brac.md#cablatge)). |
 
 ### Bloc A · Preparació (passos 1-3)
 
@@ -182,7 +200,10 @@ pas 0; ara es tracta d'encaixar la banya en la posició bona.
 
 El MeArm es pot governar de **dues maneres**. Totes dues fan servir els
 mateixos noms de servo (base, esquerre, dret, pinça) i els mateixos angles
-límit que has anotat al bloc D. Tria'n una per al prototip:
+límit que has anotat al bloc D. **La del curs és la versió Arduino**: a la
+SA5 s'hi afegeix el comandament per ràdio a través d'una micro:bit pont
+(vegeu el [dossier](00_Projecte_T2_Brac.md#cablatge)). La versió micro:bit
+és el **pla B**, per si el pont no funciona amb el maquinari real.
 
 | | Versió Arduino | Versió micro:bit |
 |---|---|---|
@@ -234,7 +255,7 @@ constants `_MIN` i `_MAX` del principi.
 <summary>Desplega el codi complet (<code>T2_mearm_arduino.ino</code>)</summary>
 
 ```cpp
-// Codi de referencia del brac MeArm V1.1 (EN PROVA) - VERSIO ARDUINO
+// Codi de referencia del brac MeArm V1.1 - VERSIO ARDUINO
 // 4 servos controlats amb 4 potenciometres, cadascun dins del seu rang segur.
 // Cablatge: el de la guia 00_Muntatge_brac_MeArm.md (versio Arduino).
 // ATENCIO: els 4 servos amb ALIMENTACIO EXTERNA (piles) i GND comu. Mai per USB
@@ -355,7 +376,8 @@ void loop() {
 
 - El **comandament** no mou res. Mira la inclinació i els botons i envia
   ordres de text curtes per ràdio: `B+`/`B-` (base), `D+`/`D-` (dret),
-  `E+`/`E-` (esquerre) i `P` (pinça).
+  `E+`/`E-` (esquerre), `P` (pinça) i `G` (grava). És el **mateix
+  comandament** que el del curs: el receptor simplement ignora la `G`.
 - El **receptor** guarda l'angle actual de cada servo. Cada ordre el mou
   **3°** (constant `PAS`) i la funció `limita()` no el deixa sortir mai del
   rang segur. En arrencar posa els quatre servos a 90°: et serveix de
@@ -367,6 +389,7 @@ void loop() {
 | Inclinar davant / enrere | `D+` / `D-` | Mou el servo dret. |
 | Mantenir A / mantenir B | `E+` / `E-` | Mou el servo esquerre. |
 | A i B alhora | `P` | Obre o tanca la pinça (una vegada per pulsació). |
+| Sacsejar | `G` | Res en aquesta versió (grava un punt amb la màquina d'estats de la SA6). |
 
 > 💡 **La micro:bit no té `Servo.write()`.** El receptor fabrica el senyal
 > a mà amb `write_analog()`: un pols cada 20 ms que dura de 0,5 ms (0°) a
@@ -374,17 +397,23 @@ void loop() {
 > per dins.
 
 <details markdown="1">
-<summary>Desplega el codi complet (<code>T2_mearm_microbit_comandament.py</code>)</summary>
+<summary>Desplega el codi complet (<code>T2_brac_microbit_comandament.py</code>)</summary>
 
 ```python
-# Codi de referencia del brac MeArm V1.1 (EN PROVA) - VERSIO MICRO:BIT
-# COMANDAMENT: la micro:bit que es te a la ma. No mou cap servo: envia
-# ordres de text per radio al RECEPTOR (T2_mearm_microbit_receptor.py).
+# Codi de referencia del Projecte T2 - Brac robotic MeArm (NOMES DOCENT)
+# COMANDAMENT: la 2a micro:bit, la que es te a la ma. No mou cap servo:
+# envia ordres de text per radio.
 #   Inclina esquerra/dreta   -> "B+" / "B-"  base
 #   Inclina davant/enrere    -> "D+" / "D-"  servo dret
 #   Mantens el boto A        -> "E+"         servo esquerre
 #   Mantens el boto B        -> "E-"         servo esquerre
 #   A i B alhora             -> "P"          obre/tanca la pinca
+#   Sacseja                  -> "G"          grava el punt actual (replay, SA6)
+# Pla per defecte: les ordres les rep la micro:bit PONT, que les passa a
+# l'Arduino (T2_brac_microbit_pont.py + T2_brac_estats.ino). Els botons A i B
+# del PONT (no d'aquesta) canvien d'estat: A repos/manual, B reprodueix.
+# Versio micro:bit del MeArm (contingencia): les rep
+# T2_mearm_microbit_receptor.py, que ignora la "G".
 
 from microbit import *
 import radio
@@ -422,6 +451,13 @@ while True:
             radio.send("P")
             pinca_enviada = True
         display.show(Image.TARGET)
+    elif accelerometer.was_gesture("shake"):
+        pinca_enviada = False
+        # Nomes s'envia l'ordre: qui confirma que el punt s'ha gravat de debo
+        # es el BRAC (Monitor serie). Aqui, una fletxa d'"enviat".
+        radio.send("G")
+        display.show(Image.ARROW_E)
+        sleep(300)
     else:
         pinca_enviada = False
         if boto_a:
@@ -442,10 +478,10 @@ while True:
 <summary>Desplega el codi complet (<code>T2_mearm_microbit_receptor.py</code>)</summary>
 
 ```python
-# Codi de referencia del brac MeArm V1.1 (EN PROVA) - VERSIO MICRO:BIT
+# Codi de referencia del brac MeArm V1.1 - VERSIO MICRO:BIT
 # RECEPTOR: la micro:bit del brac, endollada al Micro:shield. Rep les ordres
-# del COMANDAMENT (T2_mearm_microbit_comandament.py) i mou els 4 servos:
-#   P0 base · P1 dret · P2 pinca · P8 esquerre (el servo nou del MeArm)
+# del COMANDAMENT (T2_brac_microbit_comandament.py) i mou els 4 servos:
+#   P0 base, P1 dret, P2 pinca, P8 esquerre (el servo nou del MeArm)
 # ATENCIO: cal una micro:bit V2. La V1 no pot generar senyal de servo a 4
 # pins alhora (en te prou per a 3).
 # ATENCIO: servos amb alimentacio externa del Micro:shield, mai el 3V de la

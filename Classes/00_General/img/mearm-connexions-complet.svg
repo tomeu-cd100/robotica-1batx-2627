@@ -1,0 +1,181 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 680" width="1000" height="680" role="img" aria-labelledby="t d">
+  <title id="t">Esquema complet del braç MeArm al 2n trimestre</title>
+  <desc id="d">Arduino UNO amb tot el que s'hi connecta al llarg del trimestre. A la dreta: piles per als quatre servos (esquerre D6, base D9, dret D10, pinça D11) amb GND comú, i quatre potenciòmetres a A0-A3. A l'esquerra: la micro:bit pont (P1 a D0), el sensor de col·lisió a D2, els polsadors A i B a D3 i D4, i l'ultrasons amb TRIG a D7 i ECHO a D8.</desc>
+  <style>
+    .fr{fill:#f6faf9;stroke:#d7e6e5;stroke-width:1.5}
+    .placa{fill:#e0f2f1;stroke:#0c6e70;stroke-width:2.5}
+    .mb{fill:#1e293b;stroke:#0f172a;stroke-width:2}
+    .servo{fill:#dbeafe;stroke:#1d4ed8;stroke-width:2}
+    .pot{fill:#fef3c7;stroke:#b45309;stroke-width:2}
+    .pila{fill:#fee2e2;stroke:#b91c1c;stroke-width:2}
+    .w{fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+    .sig{stroke:#f59e0b}.pos{stroke:#dc2626}.neg{stroke:#78350f}
+    .v5{stroke:#be123c}.gnd{stroke:#334155}.an{stroke:#0891b2}
+    .ona{fill:none;stroke:#0891b2;stroke-width:2.5;stroke-linecap:round}
+    .tit{font:700 16px system-ui,'Segoe UI',sans-serif;fill:#0e1b1c}
+    .lbl{font:600 13px system-ui,'Segoe UI',sans-serif;fill:#0e1b1c}
+    .lbl2{font:400 12px system-ui,'Segoe UI',sans-serif;fill:#475569}
+    .pin{font:700 12px 'Consolas',monospace;fill:#0c6e70}
+    .pinb{font:700 12px 'Consolas',monospace;fill:#ffffff}
+    .avis{font:600 12px system-ui,'Segoe UI',sans-serif;fill:#b91c1c}
+    .dig{stroke:#7c3aed}
+    .sens{fill:#ede9fe;stroke:#6d28d9;stroke-width:2}
+  </style>
+  <rect class="fr" x="1" y="1" width="998" height="678" rx="14"/>
+  <text class="tit" x="24" y="34">El braç MeArm · mapa de pins de tot el trimestre</text>
+  <line class="w sig" x1="560" y1="30" x2="582" y2="30"/>
+  <text class="lbl2" x="588" y="34">senyal</text>
+  <line class="w pos" x1="655" y1="30" x2="677" y2="30"/>
+  <text class="lbl2" x="683" y="34">+ servos</text>
+  <line class="w neg" x1="750" y1="30" x2="772" y2="30"/>
+  <text class="lbl2" x="778" y="34">− / GND</text>
+  <line class="w dig" x1="845" y1="30" x2="867" y2="30"/>
+  <text class="lbl2" x="873" y="34">sensors</text>
+  <g transform="translate(200,0)">
+  <rect class="servo" x="300" y="60" width="110" height="58" rx="8"/>
+  <text class="lbl" x="355" y="85" text-anchor="middle">ESQUERRE</text>
+  <text class="lbl2" x="355" y="103" text-anchor="middle">servo · D6</text>
+  <polyline class="w neg" points="330,118 330,225"/>
+  <circle cx="330" cy="225" r="4.5" fill="#0e1b1c"/>
+  <polyline class="w pos" points="355,118 355,200"/>
+  <circle cx="355" cy="200" r="4.5" fill="#0e1b1c"/>
+  <polyline class="w sig" points="380,118 380,320 200,320"/>
+  <rect class="servo" x="420" y="60" width="110" height="58" rx="8"/>
+  <text class="lbl" x="475" y="85" text-anchor="middle">BASE</text>
+  <text class="lbl2" x="475" y="103" text-anchor="middle">servo · D9</text>
+  <polyline class="w neg" points="450,118 450,225"/>
+  <circle cx="450" cy="225" r="4.5" fill="#0e1b1c"/>
+  <polyline class="w pos" points="475,118 475,200"/>
+  <circle cx="475" cy="200" r="4.5" fill="#0e1b1c"/>
+  <polyline class="w sig" points="500,118 500,340 200,340"/>
+  <rect class="servo" x="540" y="60" width="110" height="58" rx="8"/>
+  <text class="lbl" x="595" y="85" text-anchor="middle">DRET</text>
+  <text class="lbl2" x="595" y="103" text-anchor="middle">servo · D10</text>
+  <polyline class="w neg" points="570,118 570,225"/>
+  <circle cx="570" cy="225" r="4.5" fill="#0e1b1c"/>
+  <polyline class="w pos" points="595,118 595,200"/>
+  <circle cx="595" cy="200" r="4.5" fill="#0e1b1c"/>
+  <polyline class="w sig" points="620,118 620,360 200,360"/>
+  <rect class="servo" x="660" y="60" width="110" height="58" rx="8"/>
+  <text class="lbl" x="715" y="85" text-anchor="middle">PINÇA</text>
+  <text class="lbl2" x="715" y="103" text-anchor="middle">servo · D11</text>
+  <polyline class="w neg" points="690,118 690,225"/>
+  <circle cx="690" cy="225" r="4.5" fill="#0e1b1c"/>
+  <polyline class="w pos" points="715,118 715,200"/>
+  <circle cx="715" cy="200" r="4.5" fill="#0e1b1c"/>
+  <polyline class="w sig" points="740,118 740,380 200,380"/>
+  <rect class="pila" x="40" y="172" width="150" height="74" rx="8"/>
+  <text class="lbl" x="115" y="200" text-anchor="middle">PILES 4 × AA</text>
+  <text class="lbl2" x="115" y="220" text-anchor="middle">6 V · només servos</text>
+  <text class="pin" x="180" y="196" text-anchor="end">+</text>
+  <text class="pin" x="180" y="238" text-anchor="end">−</text>
+  <polyline class="w pos" points="190,200 770,200"/>
+  <polyline class="w neg" points="190,225 770,225"/>
+  <circle cx="240" cy="225" r="4.5" fill="#0e1b1c"/>
+  <polyline class="w neg" points="240,225 240,300 200,300"/>
+  <text class="lbl" x="248" y="262">GND comú</text>
+  <text class="lbl2" x="248" y="278">(imprescindible)</text>
+  <rect class="placa" x="30" y="282" width="170" height="350" rx="10"/>
+  <text class="lbl" x="95" y="470" text-anchor="middle" transform="rotate(-90 95 470)">ARDUINO UNO</text>
+  <text class="pin" x="192" y="304" text-anchor="end">GND</text>
+  <circle cx="200" cy="300" r="3.5" fill="#0c6e70"/>
+  <text class="pin" x="192" y="324" text-anchor="end">D6 ~</text>
+  <circle cx="200" cy="320" r="3.5" fill="#0c6e70"/>
+  <text class="pin" x="192" y="344" text-anchor="end">D9 ~</text>
+  <circle cx="200" cy="340" r="3.5" fill="#0c6e70"/>
+  <text class="pin" x="192" y="364" text-anchor="end">D10 ~</text>
+  <circle cx="200" cy="360" r="3.5" fill="#0c6e70"/>
+  <text class="pin" x="192" y="384" text-anchor="end">D11 ~</text>
+  <circle cx="200" cy="380" r="3.5" fill="#0c6e70"/>
+  <text class="pin" x="192" y="434" text-anchor="end">5V</text>
+  <circle cx="200" cy="430" r="3.5" fill="#0c6e70"/>
+  <text class="pin" x="192" y="454" text-anchor="end">GND</text>
+  <circle cx="200" cy="450" r="3.5" fill="#0c6e70"/>
+  <text class="pin" x="192" y="564" text-anchor="end">A0</text>
+  <circle cx="200" cy="560" r="3.5" fill="#0c6e70"/>
+  <text class="pin" x="192" y="584" text-anchor="end">A1</text>
+  <circle cx="200" cy="580" r="3.5" fill="#0c6e70"/>
+  <text class="pin" x="192" y="604" text-anchor="end">A2</text>
+  <circle cx="200" cy="600" r="3.5" fill="#0c6e70"/>
+  <text class="pin" x="192" y="624" text-anchor="end">A3</text>
+  <circle cx="200" cy="620" r="3.5" fill="#0c6e70"/>
+  <polyline class="w v5" points="200,430 770,430"/>
+  <polyline class="w gnd" points="200,450 770,450"/>
+  <text class="lbl2" x="215" y="424">5V Arduino</text>
+  <text class="lbl2" x="215" y="466">GND Arduino</text>
+  <polyline class="w v5" points="338,490 338,430"/>
+  <circle cx="338" cy="430" r="4.5" fill="#0e1b1c"/>
+  <polyline class="w gnd" points="382,490 382,450"/>
+  <circle cx="382" cy="450" r="4.5" fill="#0e1b1c"/>
+  <rect class="pot" x="320" y="490" width="80" height="40" rx="8"/>
+  <circle cx="360" cy="510" r="11" fill="#fde68a" stroke="#b45309" stroke-width="2"/>
+  <line x1="360" y1="510" x2="367" y2="502" stroke="#b45309" stroke-width="2.5"/>
+  <polyline class="w an" points="360,530 360,560 200,560"/>
+  <text class="lbl2" x="368" y="548">base</text>
+  <polyline class="w v5" points="458,490 458,430"/>
+  <circle cx="458" cy="430" r="4.5" fill="#0e1b1c"/>
+  <polyline class="w gnd" points="502,490 502,450"/>
+  <circle cx="502" cy="450" r="4.5" fill="#0e1b1c"/>
+  <rect class="pot" x="440" y="490" width="80" height="40" rx="8"/>
+  <circle cx="480" cy="510" r="11" fill="#fde68a" stroke="#b45309" stroke-width="2"/>
+  <line x1="480" y1="510" x2="487" y2="502" stroke="#b45309" stroke-width="2.5"/>
+  <polyline class="w an" points="480,530 480,580 200,580"/>
+  <text class="lbl2" x="488" y="548">dret</text>
+  <polyline class="w v5" points="578,490 578,430"/>
+  <circle cx="578" cy="430" r="4.5" fill="#0e1b1c"/>
+  <polyline class="w gnd" points="622,490 622,450"/>
+  <circle cx="622" cy="450" r="4.5" fill="#0e1b1c"/>
+  <rect class="pot" x="560" y="490" width="80" height="40" rx="8"/>
+  <circle cx="600" cy="510" r="11" fill="#fde68a" stroke="#b45309" stroke-width="2"/>
+  <line x1="600" y1="510" x2="607" y2="502" stroke="#b45309" stroke-width="2.5"/>
+  <polyline class="w an" points="600,530 600,600 200,600"/>
+  <text class="lbl2" x="608" y="548">pinça</text>
+  <polyline class="w v5" points="698,490 698,430"/>
+  <circle cx="698" cy="430" r="4.5" fill="#0e1b1c"/>
+  <polyline class="w gnd" points="742,490 742,450"/>
+  <circle cx="742" cy="450" r="4.5" fill="#0e1b1c"/>
+  <rect class="pot" x="680" y="490" width="80" height="40" rx="8"/>
+  <circle cx="720" cy="510" r="11" fill="#fde68a" stroke="#b45309" stroke-width="2"/>
+  <line x1="720" y1="510" x2="727" y2="502" stroke="#b45309" stroke-width="2.5"/>
+  <polyline class="w an" points="720,530 720,620 200,620"/>
+  <text class="lbl2" x="728" y="548">esquerre</text>
+  </g>
+  <rect class="mb" x="24" y="276" width="130" height="50" rx="8"/>
+  <text class="pinb" x="89" y="297" text-anchor="middle">micro:bit</text>
+  <text class="pinb" x="89" y="314" text-anchor="middle">PONT (SA5)</text>
+  <polyline class="w dig" points="154,300 230,300"/>
+  <text class="lbl2" x="160" y="293">P1 → D0</text>
+  <text class="lbl2" x="24" y="342">+ GND al GND</text>
+  <text class="pin" x="238" y="304">D0</text>
+  <circle cx="230" cy="300" r="3.5" fill="#0c6e70"/>
+  <rect class="sens" x="24" y="352" width="130" height="34" rx="6"/>
+  <text class="lbl" x="89" y="374" text-anchor="middle">COL·LISIÓ</text>
+  <polyline class="w dig" points="154,369 230,369"/>
+  <text class="pin" x="238" y="373">D2</text>
+  <circle cx="230" cy="369" r="3.5" fill="#0c6e70"/>
+  <rect class="sens" x="24" y="398" width="130" height="28" rx="6"/>
+  <text class="lbl" x="89" y="417" text-anchor="middle">POLSADOR A</text>
+  <polyline class="w dig" points="154,412 230,412"/>
+  <text class="pin" x="238" y="416">D3</text>
+  <circle cx="230" cy="412" r="3.5" fill="#0c6e70"/>
+  <rect class="sens" x="24" y="432" width="130" height="28" rx="6"/>
+  <text class="lbl" x="89" y="451" text-anchor="middle">POLSADOR B</text>
+  <polyline class="w dig" points="154,446 230,446"/>
+  <text class="pin" x="238" y="450">D4</text>
+  <circle cx="230" cy="446" r="3.5" fill="#0c6e70"/>
+  <text class="lbl2" x="24" y="476">l'altra pota a GND</text>
+  <rect class="sens" x="24" y="494" width="130" height="66" rx="6"/>
+  <text class="lbl" x="89" y="516" text-anchor="middle">ULTRASONS</text>
+  <circle cx="64" cy="538" r="12" fill="#ffffff" stroke="#6d28d9" stroke-width="2"/>
+  <circle cx="114" cy="538" r="12" fill="#ffffff" stroke="#6d28d9" stroke-width="2"/>
+  <polyline class="w dig" points="154,520 230,520"/>
+  <polyline class="w dig" points="154,545 230,545"/>
+  <text class="lbl2" x="160" y="514">TRIG</text>
+  <text class="lbl2" x="160" y="562">ECHO</text>
+  <text class="lbl2" x="24" y="578">VCC 5V · GND</text>
+  <text class="pin" x="238" y="524">D7</text>
+  <circle cx="230" cy="520" r="3.5" fill="#0c6e70"/>
+  <text class="pin" x="238" y="549">D8</text>
+  <circle cx="230" cy="545" r="3.5" fill="#0c6e70"/>
+  <text class="avis" x="24" y="664">⚠ Servos només a les piles, amb GND comú. Desconnecta el D0 per pujar programes. Cables creuats sense punt: no es toquen.</text>
+</svg>

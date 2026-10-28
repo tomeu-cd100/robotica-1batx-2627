@@ -1,7 +1,7 @@
-# Codi de referencia del brac MeArm V1.1 (EN PROVA) - VERSIO MICRO:BIT
+# Codi de referencia del brac MeArm V1.1 - VERSIO MICRO:BIT
 # RECEPTOR: la micro:bit del brac, endollada al Micro:shield. Rep les ordres
-# del COMANDAMENT (T2_mearm_microbit_comandament.py) i mou els 4 servos:
-#   P0 base · P1 dret · P2 pinca · P8 esquerre (el servo nou del MeArm)
+# del COMANDAMENT (T2_brac_microbit_comandament.py) i mou els 4 servos:
+#   P0 base, P1 dret, P2 pinca, P8 esquerre (el servo nou del MeArm)
 # ATENCIO: cal una micro:bit V2. La V1 no pot generar senyal de servo a 4
 # pins alhora (en te prou per a 3).
 # ATENCIO: servos amb alimentacio externa del Micro:shield, mai el 3V de la

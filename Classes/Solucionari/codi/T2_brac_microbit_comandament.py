@@ -1,54 +1,70 @@
-# Codi de referencia del Projecte T2 - Brac robotic (NOMES DOCENT)
-# Fase micro:bit (SA5): COMANDAMENT (2a micro:bit, la que es te a la ma).
-# Inclina per moure base i colze; boto A+B alhora obre/tanca la pinca.
-# Sacseja per GRAVAR el punt actual a la seguencia (mode replay de la SA6).
-# Protocol de radio (texts): "B+" "B-" (base), "C+" "C-" (colze), "P" (pinca),
-# "G" (grava el punt actual). Els botons A i B de la micro:bit PONT, la que hi
-# ha al costat del brac (no d'aquesta), canvien d'estat: A repos/manual, B
-# reprodueix la seguencia. Vegeu T2_brac_microbit_pont.py i T2_brac_estats.ino.
-# (Pla B, brac governat per micro:bit: el receptor es T2_brac_microbit_receptor.py.)
+# Codi de referencia del Projecte T2 - Brac robotic MeArm (NOMES DOCENT)
+# COMANDAMENT: la 2a micro:bit, la que es te a la ma. No mou cap servo:
+# envia ordres de text per radio.
+#   Inclina esquerra/dreta   -> "B+" / "B-"  base
+#   Inclina davant/enrere    -> "D+" / "D-"  servo dret
+#   Mantens el boto A        -> "E+"         servo esquerre
+#   Mantens el boto B        -> "E-"         servo esquerre
+#   A i B alhora             -> "P"          obre/tanca la pinca
+#   Sacseja                  -> "G"          grava el punt actual (replay, SA6)
+# Pla per defecte: les ordres les rep la micro:bit PONT, que les passa a
+# l'Arduino (T2_brac_microbit_pont.py + T2_brac_estats.ino). Els botons A i B
+# del PONT (no d'aquesta) canvien d'estat: A repos/manual, B reprodueix.
+# Versio micro:bit del MeArm (contingencia): les rep
+# T2_mearm_microbit_receptor.py, que ignora la "G".
 
 from microbit import *
 import radio
 
-GRUP = 10   # CANVIA'L pel teu numero de llista (les 2 plaques igual)
+GRUP = 10        # CANVIA'L pel teu numero de llista (les 2 plaques igual)
+LLINDAR = 300    # inclinacio minima perque compti (evita moure's sol)
 
 radio.on()
 radio.config(group=GRUP)
 
-while True:
-    x = accelerometer.get_x()   # inclinacio esquerra/dreta -> base
-    y = accelerometer.get_y()   # inclinacio davant/enrere -> colze
+pinca_enviada = False   # per enviar "P" una sola vegada per cada A+B
 
-    if x > 300:
+while True:
+    x = accelerometer.get_x()
+    y = accelerometer.get_y()
+
+    if x > LLINDAR:
         radio.send("B+")
-    elif x < -300:
+    elif x < -LLINDAR:
         radio.send("B-")
 
-    if y > 300:
-        radio.send("C+")
-    elif y < -300:
-        radio.send("C-")
+    if y > LLINDAR:
+        radio.send("D+")
+    elif y < -LLINDAR:
+        radio.send("D-")
 
-    # Els dos botons es llegeixen SEMPRE, cada volta i a variables. Amb
-    # "button_a.was_pressed() and button_b.was_pressed()" el segon no
-    # s'avaluava quan el primer era fals: la pulsacio de B quedava guardada
-    # i s'aplicava mes tard, obrint la pinca sense que ningu ho demanes.
-    boto_a = button_a.was_pressed()
-    boto_b = button_b.was_pressed()
+    # Es llegeixen els dos botons UNA vegada, a variables
+    boto_a = button_a.is_pressed()
+    boto_b = button_b.is_pressed()
 
     if boto_a and boto_b:
-        radio.send("P")          # obre/tanca la pinca (commutador)
+        # Si mantens A+B la pinca no ha d'obrir-se i tancar-se sense parar:
+        # nomes s'envia la primera volta
+        if not pinca_enviada:
+            radio.send("P")
+            pinca_enviada = True
         display.show(Image.TARGET)
     elif accelerometer.was_gesture("shake"):
+        pinca_enviada = False
         # Nomes s'envia l'ordre: qui confirma que el punt s'ha gravat de debo
-        # es el BRAC (mostra el numero de punt). Aqui una fletxa d'"enviat":
-        # el comandament no sap si el brac era en mode manual ni si la
-        # seguencia ja era plena.
+        # es el BRAC (Monitor serie). Aqui, una fletxa d'"enviat".
         radio.send("G")
         display.show(Image.ARROW_E)
         sleep(300)
     else:
-        display.show(Image.ARROW_N)
+        pinca_enviada = False
+        if boto_a:
+            radio.send("E+")
+            display.show(Image.ARROW_N)
+        elif boto_b:
+            radio.send("E-")
+            display.show(Image.ARROW_S)
+        else:
+            display.show(Image.DIAMOND_SMALL)
 
     sleep(100)   # ~10 ordres/s: suficient per a un control suau
