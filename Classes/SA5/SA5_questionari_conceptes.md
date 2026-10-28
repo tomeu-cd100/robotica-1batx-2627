@@ -1,14 +1,14 @@
-# SA5 · Qüestionari de conceptes (micro:bit i MicroPython)
+# SA5 · Qüestionari de conceptes (MeArm: el comandament amb micro:bit)
 
 > 🧑‍🎓 **Quan toca fer-lo?** En acabar les activitats de la SA, com a **consolidació** abans de repassar el checklist d'entrega — i torna-hi com a **repàs** abans de la prova T2 (la sessió 4 de la SA6). Si es fa com a prova curta qualificable, el docent anunciarà el dia.
 
-> **Ús.** Comprovació breu dels conceptes de MicroPython, sensors integrats i ràdio de la SA5.
+> **Ús.** Comprovació breu dels conceptes de MicroPython, l'acceleròmetre, la ràdio i el pont cap al braç de la SA5.
 > Es pot fer servir com a **repàs formatiu** o com a **prova curta qualificable**
 > (10 preguntes × 1 punt = **nota 0-10**). Durada orientativa: **15-20 min**, individual.
 
 > **📲 Fes-lo al Classroom.** Aquest qüestionari és una **tasca
-> autocorrectiva** al Google Classroom del curs:
-> **[obre «SA5 · Qüestionari de conceptes»](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODcwNzE3NDgzMjE2/details)**
+> autocorrectiva** al Google Classroom del curs, al tema **MeArm**:
+> **[obre «SA5 · Qüestionari de conceptes (MeArm)»](https://classroom.google.com/c/ODY4ODU4Njk0NTEy)**
 > (cal el compte del centre). Aquesta pàgina és la versió per repassar
 > o fer en paper; les solucions són al full del docent.
 
@@ -16,77 +16,75 @@
 
 ---
 
-![Components de la placa micro:bit: matriu de LED, botons i sensors](img/sa5-microbit-features.svg)
+![Esquema del pont: la micro:bit comandament envia per ràdio a la micro:bit pont, que passa les ordres per cable al D0 de l'Arduino del braç](img/sa5-pont-arduino.svg)
 
 ## Preguntes (tria una resposta)
 
-1. En MicroPython, la línia que dona accés a la matriu de LED, els botons i els sensors de la micro:bit és…
+1. En Python, què marca quines línies són **dins** d'un `while True:` o d'un `if`?
+   - a) Les claus `{ }`.
+   - b) El punt i coma `;` al final.
+   - c) La indentació (els espais del principi de la línia).
+   - d) Una línia en blanc.
+
+2. Quina línia importa a dalt de tot la pantalla, els botons i els sensors de la micro:bit?
    - a) `from microbit import *`
    - b) `#include <microbit.h>`
-   - c) `import Arduino`
+   - c) `import Servo`
    - d) `void setup()`
 
-2. En Python, la **indentació** (els espais al principi de línia)…
-   - a) És només estètica i es pot ometre.
-   - b) Substitueix el punt i coma `;`.
-   - c) És sintaxi: marca quins blocs de codi van junts i és obligatòria.
-   - d) Només cal dins de `setup()`.
+3. Al selector, `ARTICULACIONS = ["B", "E", "D", "P"]`. Què val `ARTICULACIONS[0]`?
+   - a) `"E"`
+   - b) `"P"`
+   - c) Dona error: les llistes comencen per 1.
+   - d) `"B"`
 
-3. Si barreges tabuladors i espais o sagnes malament una línia, l'error típic de Python és…
-   - a) `digitalWrite error`
-   - b) `radio not found`
-   - c) `SyntaxError: missing ;`
-   - d) `IndentationError`
+4. Quina diferència hi ha entre `button_a.was_pressed()` i `button_a.is_pressed()`?
+   - a) Cap: són el mateix.
+   - b) `was_pressed()` diu si s'ha premut des de l'última vegada (una premuda = un pas); `is_pressed()` diu si està premut ara.
+   - c) `is_pressed()` només funciona amb el botó B.
+   - d) `was_pressed()` esborra el programa.
 
-4. Quina diferència hi ha entre `display.show("Hola")` i `display.scroll("Hola")`?
-   - a) Cap, són sinònims.
-   - b) `show()` mostra el contingut fix i `scroll()` el fa desplaçar per la matriu.
-   - c) `show()` només val per a números i `scroll()` per a lletres.
-   - d) `scroll()` apaga la placa.
+5. Al comandament, per què la inclinació compta a partir de `LLINDAR = 300` i no de 0?
+   - a) Perquè la placa mai és perfectament plana i la mà tremola: sense marge, el braç no pararia mai quiet.
+   - b) Perquè l'acceleròmetre no mesura valors menors de 300.
+   - c) Perquè 300 és el màxim de l'acceleròmetre.
+   - d) Perquè la ràdio només envia números majors de 300.
 
-5. En un programa de MicroPython per a la micro:bit, el codi que s'ha de repetir contínuament es posa dins de…
-   - a) `while True:`
-   - b) `void loop()`
-   - c) `setup()`
-   - d) `if button_a:`
+6. Perquè el comandament mogui **el teu** braç i no el d'un company, les dues micro:bit…
+   - a) Han de tenir el mateix `group`, diferent del dels companys (el teu número de llista).
+   - b) Han d'estar connectades per cable.
+   - c) Han de tenir `group` diferents entre elles.
+   - d) No cal configurar res.
 
-6. Per fer el **comandament per inclinació** del braç o detectar que sacsegem la placa, quin sensor integrat s'utilitza?
-   - a) El sensor de llum.
-   - b) La ràdio.
-   - c) L'acceleròmetre (p. ex. `accelerometer.was_gesture("shake")`).
-   - d) El termòmetre.
+7. Què retorna `radio.receive()` si no ha arribat cap missatge?
+   - a) `0`
+   - b) `""` (text buit)
+   - c) `None`
+   - d) Un error que atura el programa.
 
-7. La instrucció `display.read_light_level()` retorna un valor dins del rang…
-   - a) 0 a 1023.
-   - b) 0 a 255.
-   - c) 0 a 5.
-   - d) `HIGH` o `LOW`.
+8. Com es connecta la **micro:bit pont** a l'Arduino del braç?
+   - a) 5V de l'Arduino al 3V de la micro:bit.
+   - b) D0 de l'Arduino al P1 de la micro:bit i res més.
+   - c) Amb un cable USB entre les dues plaques.
+   - d) P1 de la micro:bit al D0 de l'Arduino, i GND a GND; mai un pin de l'Arduino cap a la micro:bit.
 
-8. Perquè dues micro:bit es comuniquin per **ràdio**, la condició imprescindible és que…
-   - a) Estiguin connectades pel cable USB.
-   - b) Facin servir `Serial.begin()`.
-   - c) Tinguin el mateix nom d'alumne.
-   - d) Comparteixin el mateix `group` (p. ex. `radio.config(group=10)` a totes dues).
+9. Per què cal **desconnectar el cable del D0** abans de pujar un programa a l'Arduino?
+   - a) Perquè el D0 crema la micro:bit en pujar.
+   - b) Perquè l'USB fa servir el mateix pin per carregar el programa.
+   - c) Perquè el programa s'esborra si el D0 hi és.
+   - d) No cal desconnectar-lo.
 
-9. En el codi de la ràdio, quines instruccions **envien** i **reben** un missatge, respectivament?
-   - a) `display.show()` i `display.scroll()`
-   - b) `radio.on()` i `radio.off()`
-   - c) `radio.send()` i `radio.receive()`
-   - d) `send()` i `print()`
-
-10. Comparant Arduino (C/C++) i micro:bit (Python), quina equivalència és **correcta**?
+10. El comandament (Python) i `04_brac_ordres` (C++) parlen el mateix **protocol** (`B+`, `D-`, `P`…). Quina equivalència és correcta?
     - a) En Python cada instrucció acaba amb `;` com en C++.
-    - b) On C++ delimita els blocs amb `{ }`, Python els delimita amb la indentació.
+    - b) On C++ delimita els blocs amb `{ }`, Python ho fa amb la indentació.
     - c) `while True:` de Python equival a `setup()` de C++.
-    - d) En Python els blocs es tanquen amb `END`.
+    - d) En Python cal declarar el tipus: `int x = 0`.
 
 ---
 
 ## Pregunta oberta (opcional)
 
-11. Explica (o escriu) un programa senzill de MicroPython que, dins d'un `while True:`, **mostri un cor**
-    a la matriu de LED i, quan es premi el botó A, **desplaci el teu nom**. Indica quines instruccions
-    faries servir:
+11. Explica el **protocol d'ordres** del braç: quines ordres envia el comandament, qui les rep i què fa l'Arduino amb cadascuna. Per què ha de ser el mateix a les dues bandes?
 
 ___________________________________________________________________
 
@@ -94,5 +92,5 @@ ___________________________________________________________________
 
 ---
 
-*Qüestionari de conceptes de la SA5. Es recolza en `../SA0/SA0_guia_programacio.md` (Part B i C) i el
-material de MicroPython, sensors i ràdio de la SA5. Llicència CC BY-SA 4.0.*
+*Qüestionari de conceptes de la SA5, orientat al braç MeArm. Es recolza en `SA5_fitxa_alumnat.md`, `SA5_guia_docent.md`, `SA5_connexions.md` i el dossier del braç.
+Llicència CC BY-SA 4.0.*

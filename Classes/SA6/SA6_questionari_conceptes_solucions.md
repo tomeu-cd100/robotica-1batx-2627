@@ -1,9 +1,12 @@
 # SA6 · Solucions del qüestionari de conceptes
 
 > **Material del docent.** Clau de correcció i versió Google Forms de
-> «SA6 · Qüestionari de conceptes (sistemes de control: llaç obert/tancat, histèresi i màquines d'estats)»
-> ([qüestionari](SA6_questionari_conceptes.md)). La tasca autocorrectiva ja és publicada:
-> [«SA6 · Qüestionari de conceptes» al Classroom](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODcwNzAwNjYxNTc5/details).
+> «SA6 · Qüestionari de conceptes (MeArm: homing, histèresi i màquina d'estats)»
+> ([qüestionari](SA6_questionari_conceptes.md)). La tasca autocorrectiva és al tema **MeArm** del Classroom:
+> [«SA6 · Qüestionari de conceptes (MeArm)»](https://classroom.google.com/c/ODY4ODU4Njk0NTEy).
+
+> 🦾 **Versió del 28-10-2026, orientada al braç.** La versió anterior (sense el braç) es
+> manté al Classroom, al tema de la SA; no s'ha esborrat.
 
 ---
 
@@ -11,39 +14,30 @@
 
 | Pregunta | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
 |---|---|---|---|---|---|---|---|---|---|---|
-| **Resposta** | a | c | d | b | a | d | b | c | a | d |
+| **Resposta** | c | a | b | d | b | a | c | d | b | a |
 
 > **Barem orientatiu:** 10 preguntes × 1 punt = 10. La pregunta 11 pot pujar nota
 > (aplicació) o quedar fora del còmput.
 
 ---
 
-## Versió Google Forms (llesta per copiar)
+## Versió Google Forms
 
-> Crea un formulari nou a **Google Forms**, activa **"Convertir en qüestionari"** i marca
-> la resposta correcta de cada pregunta. Assigna **1 punt** a les preguntes 1-10.
+> Creada automàticament per `Material Classroom/crear_mearm_classroom.js` a partir
+> del qüestionari i d'aquesta clau: mode qüestionari, **1 punt** per pregunta.
 
-**Títol:** `SA6 · Conceptes — Sistemes de control (llaç obert/tancat, histèresi, màquines d'estats)`
-**Descripció:** `Comprovació dels conceptes de sistemes de control de la SA6.`
+**Títol:** `SA6 · Qüestionari de conceptes (MeArm)`
 
-**Camps inicials**
-- Nom i cognoms — *Resposta curta* (obligatori).
-- Grup/classe — *Resposta curta*.
+**Preguntes 1-10** (opció múltiple; correcta en **negreta**)
+1. Quina diferència hi ha entre moure la base «a cegues» a 20° i fer el **homing** amb el final de carrera? → Cap: tots dos són llaç tancat. / El primer és llaç tancat i el homing, llaç obert. / **El primer és llaç obert (confia que hi ha arribat); el homing és llaç tancat (el sensor diu quan hi és).** / El homing no fa servir cap sensor.
+2. En un sistema de control, la **realimentació** és… → **Mesurar la sortida i tornar-la a l'entrada per comparar-la amb la consigna.** / Apagar el sistema quan hi ha un error. / Un tipus de sensor de temperatura. / Fer que el servo vagi més ràpid.
+3. Per què el homing porta la guarda `else if (angle <= 0)`? → Perquè el servo no admet angles negatius al `write()`. / **Perquè si el sensor falla o s'ha desconnectat, el braç no es quedi empenyent per sempre.** / Perquè així el homing va més ràpid. / Perquè el zero sempre és a 0°.
+4. La **histèresi** de la pinça automàtica consisteix a… → Fer servir un sol llindar de distància. / Tancar la pinça només amb un botó. / Mesurar la distància dues vegades. / **Fer servir dos llindars: tancar per sota d'un i obrir només per sobre d'un altre.**
+5. Si la pinça es tanca a `d < 8` i s'obre a `d >= 8`, què passa amb l'objecte just a uns 8 cm? → La pinça es queda oberta per sempre. / **La pinça fa clic-clic: es tanca i s'obre contínuament pel soroll de la mesura.** / La pinça es tanca i no s'obre mai. / L'ultrasons deixa de funcionar.
+6. Amb `TANCA_CM = 6` i `OBRE_CM = 10`, l'objecte és a 8 cm. Què fa la pinça? → **Manté l'estat que tenia (oberta o tancada).** / Sempre es tanca. / Sempre s'obre. / S'obre i es tanca cada 60 ms.
+7. A la màquina d'estats del braç, per a què serveix el `break` al final de cada `case`? → Per aturar el braç. / Per sortir del `loop()`. / **Perquè el programa no continuï executant el `case` següent.** / Per esperar 20 ms.
+8. Per què l'**emergència** es comprova **abans** del `switch` i no dins d'un `case`? → Perquè així el codi és més curt. / Perquè el `switch` no admet sensors. / Perquè només es pot comprovar un cop. / **Perquè així mana per damunt de tot: un xoc porta a EMERGÈNCIA estigui on estigui el braç.**
+9. Com se surt de l'estat EMERGÈNCIA? → Sol, passats 2 segons. / **Amb el sensor alliberat **i** prement el polsador A (rearmament manual).** / Prement el polsador B. / Desendollant les piles.
+10. Amb el moviment proporcional `angle = angle + K * (consigna - angle)`, què passa amb `K = 1`? → **El servo salta directament a la consigna, sense suavitat.** / El servo no es mou mai. / El servo va més lent que amb `K = 0.1`. / El servo oscil·la sense parar.
 
-**Preguntes 1-10** (tipus: *Opció múltiple*; **1 punt** cadascuna; correcta en **negreta**)
-1. Diferència llaç obert/tancat → **El tancat mesura la sortida i corregeix segons l'error; l'obert no** / L'obert usa sensor i el tancat no / Són el mateix / El tancat no usa sensor.
-2. La realimentació és… → Un sensor de temperatura / Apagar el sistema en error / **Mesurar la sortida i tornar-la a l'entrada per comparar-la amb la consigna** / Accelerar el programa.
-3. La consigna (setpoint) és… → El valor que mesura el sensor / L'error / La sortida de l'actuador / **El valor desitjat que volem assolir**.
-4. L'error es calcula com… → `consigna * mesura` / **`consigna - mesura`** / `mesura + actuador` / `sensor / consigna`.
-5. La histèresi consisteix a… → **Dos llindars: un per encendre i un per apagar** / Un únic llindar / No usar sensor / Pujar la temperatura sense límit.
-6. Un sol llindar (sense histèresi) → Queda apagat sempre / El sensor deixa de funcionar / És l'ideal / **S'encén i s'apaga contínuament (oscil·lació)**.
-7. Una màquina d'estats s'implementa amb… → Només `delay()` / **`enum` + `switch`** / Només `analogRead()` / `Serial.begin()`.
-8. Perquè no es bloquegi fem servir… → `delay()` a cada estat / Apagar la placa / **`millis()`** / `pinMode()`.
-9. En el control proporcional l'actuació… → **És proporcional a l'error** / És sempre tot/res / No depèn de l'error / Depèn només del temps.
-10. Si `Kp` és massa gran… → Es queda apagat / No cal sensor / Es torna llaç obert / **Tendeix a oscil·lar (limitar amb `constrain`)**.
-
-**Pregunta 11** (tipus: *Paràgraf*; sense puntuació) — descriure el diagrama de blocs d'un llaç tancat.
-
-> **Recollida:** Respostes → full de càlcul vinculat, amb la nota de l'1 al 10 autocalculada.
-
----
+**Pregunta 11** (paràgraf, sense puntuació) — Dibuixa o descriu el **diagrama d'estats** del teu braç: els quatre estats (repòs, manual, replay, emergència) i què fa passar d'un a l'altre.

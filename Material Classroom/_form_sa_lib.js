@@ -200,14 +200,18 @@ export async function crearIPenjar(def) {
     const getRes = await ambReintents(() => forms.forms.get({ formId }), 'llegir Form');
     const responderUri = getRes.data.responderUri;
 
-    // Tema de Classroom: cerca "SAn" al nom (p. ex. "SA3"), crea'l si no hi és.
+    // Tema de Classroom: el de la definició (def.topicId) si n'hi ha; si no,
+    // cerca "SAn" al nom (p. ex. "SA3") i el crea si no hi és.
     const saTag = def.sa.toUpperCase();
-    let topicId = null;
+    let topicId = def.topicId || null;
     const topicsRes = await ambReintents(
       () => classroom.courses.topics.list({ courseId: COURSE_ID }), 'llistar temes');
     const topics = topicsRes.data.topic || [];
-    const found = topics.find(tp => tp.name && tp.name.toUpperCase().startsWith(saTag));
-    if (found) {
+    const found = topicId ? null
+      : topics.find(tp => tp.name && tp.name.toUpperCase().startsWith(saTag));
+    if (topicId) {
+      console.log(`✅ Tema de la definició: ${topicId}`);
+    } else if (found) {
       topicId = found.topicId;
       console.log(`✅ Tema trobat: "${found.name}"`);
     } else {
@@ -227,6 +231,7 @@ export async function crearIPenjar(def) {
       workType: 'ASSIGNMENT',
       state: def.state,
       topicId,
+      ...(def.gradeCategory ? { gradeCategory: def.gradeCategory } : {}),
       materials: [
         { link: { url: responderUri, title: `${def.titol} (Google Form)` } },
         ...(def.materials || [])
