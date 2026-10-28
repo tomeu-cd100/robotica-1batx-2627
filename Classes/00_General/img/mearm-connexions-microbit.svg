@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" width="800" height="520" role="img" aria-labelledby="t d">
+  <title id="t">Esquema de connexions del braç MeArm · versió micro:bit</title>
+  <desc id="d">Dues micro:bit. El comandament, a la mà, envia ordres per ràdio. El receptor, una micro:bit V2 endollada al Micro:shield, mou els quatre servos: base a P0, dret a P1, pinça a P2 i esquerre a P8. Cada servo va al connector de tres pins del shield (senyal, + i GND). Els servos s'alimenten amb piles a l'entrada externa del shield.</desc>
+  <style>
+    .fr{fill:#f6faf9;stroke:#d7e6e5;stroke-width:1.5}
+    .placa{fill:#e0f2f1;stroke:#0c6e70;stroke-width:2.5}
+    .mb{fill:#1e293b;stroke:#0f172a;stroke-width:2}
+    .servo{fill:#dbeafe;stroke:#1d4ed8;stroke-width:2}
+    .pot{fill:#fef3c7;stroke:#b45309;stroke-width:2}
+    .pila{fill:#fee2e2;stroke:#b91c1c;stroke-width:2}
+    .w{fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+    .sig{stroke:#f59e0b}.pos{stroke:#dc2626}.neg{stroke:#78350f}
+    .v5{stroke:#be123c}.gnd{stroke:#334155}.an{stroke:#0891b2}
+    .ona{fill:none;stroke:#0891b2;stroke-width:2.5;stroke-linecap:round}
+    .tit{font:700 16px system-ui,'Segoe UI',sans-serif;fill:#0e1b1c}
+    .lbl{font:600 13px system-ui,'Segoe UI',sans-serif;fill:#0e1b1c}
+    .lbl2{font:400 12px system-ui,'Segoe UI',sans-serif;fill:#475569}
+    .pin{font:700 12px 'Consolas',monospace;fill:#0c6e70}
+    .pinb{font:700 12px 'Consolas',monospace;fill:#ffffff}
+    .avis{font:600 12px system-ui,'Segoe UI',sans-serif;fill:#b91c1c}
+  </style>
+  <rect class="fr" x="1" y="1" width="798" height="518" rx="14"/>
+  <text class="tit" x="24" y="34">Versió micro:bit · comandament + receptor</text>
+  <line class="w sig" x1="490" y1="30" x2="512" y2="30"/>
+  <text class="lbl2" x="518" y="34">senyal</text>
+  <line class="w pos" x1="585" y1="30" x2="607" y2="30"/>
+  <text class="lbl2" x="613" y="34">+ servos</text>
+  <line class="w neg" x1="680" y1="30" x2="702" y2="30"/>
+  <text class="lbl2" x="708" y="34">− / GND</text>
+  <rect class="mb" x="40" y="120" width="150" height="110" rx="12"/>
+  <text class="pinb" x="115" y="160" text-anchor="middle">micro:bit</text>
+  <text class="pinb" x="70" y="200" text-anchor="middle">A</text>
+  <text class="pinb" x="160" y="200" text-anchor="middle">B</text>
+  <text class="lbl" x="115" y="100" text-anchor="middle">COMANDAMENT (a la mà)</text>
+  <text class="lbl2" x="40" y="260">inclina ⇆ : base</text>
+  <text class="lbl2" x="40" y="278">inclina ⇅ : dret</text>
+  <text class="lbl2" x="40" y="296">mantens A / B : esquerre</text>
+  <text class="lbl2" x="40" y="314">A + B : obre / tanca pinça</text>
+  <path class="ona" d="M210.8,157 A18,18 0 0 1 210.8,193"/>
+  <path class="ona" d="M220.4,141 A34,34 0 0 1 220.4,209"/>
+  <path class="ona" d="M230.0,125 A50,50 0 0 1 230.0,225"/>
+  <text class="lbl" x="235" y="250" text-anchor="middle">ràdio</text>
+  <text class="lbl2" x="235" y="266" text-anchor="middle">mateix grup</text>
+  <rect class="placa" x="290" y="90" width="230" height="330" rx="12"/>
+  <text class="lbl" x="405" y="410" text-anchor="middle">MICRO:SHIELD</text>
+  <rect class="mb" x="315" y="110" width="180" height="100" rx="10"/>
+  <text class="pinb" x="405" y="150" text-anchor="middle">micro:bit V2</text>
+  <text class="pinb" x="405" y="172" text-anchor="middle">RECEPTOR</text>
+  <text class="pin" x="452" y="244" text-anchor="end">P0</text>
+  <rect x="466" y="228" width="8" height="6" fill="#0e1b1c"/>
+  <polyline class="w sig" points="474,231 620,231"/>
+  <rect x="466" y="237" width="8" height="6" fill="#0e1b1c"/>
+  <polyline class="w pos" points="474,240 620,240"/>
+  <rect x="466" y="246" width="8" height="6" fill="#0e1b1c"/>
+  <polyline class="w neg" points="474,249 620,249"/>
+  <rect class="servo" x="620" y="222" width="150" height="36" rx="8"/>
+  <text class="lbl" x="695" y="245" text-anchor="middle">BASE</text>
+  <text class="pin" x="452" y="289" text-anchor="end">P1</text>
+  <rect x="466" y="273" width="8" height="6" fill="#0e1b1c"/>
+  <polyline class="w sig" points="474,276 620,276"/>
+  <rect x="466" y="282" width="8" height="6" fill="#0e1b1c"/>
+  <polyline class="w pos" points="474,285 620,285"/>
+  <rect x="466" y="291" width="8" height="6" fill="#0e1b1c"/>
+  <polyline class="w neg" points="474,294 620,294"/>
+  <rect class="servo" x="620" y="267" width="150" height="36" rx="8"/>
+  <text class="lbl" x="695" y="290" text-anchor="middle">DRET</text>
+  <text class="pin" x="452" y="334" text-anchor="end">P2</text>
+  <rect x="466" y="318" width="8" height="6" fill="#0e1b1c"/>
+  <polyline class="w sig" points="474,321 620,321"/>
+  <rect x="466" y="327" width="8" height="6" fill="#0e1b1c"/>
+  <polyline class="w pos" points="474,330 620,330"/>
+  <rect x="466" y="336" width="8" height="6" fill="#0e1b1c"/>
+  <polyline class="w neg" points="474,339 620,339"/>
+  <rect class="servo" x="620" y="312" width="150" height="36" rx="8"/>
+  <text class="lbl" x="695" y="335" text-anchor="middle">PINÇA</text>
+  <text class="pin" x="452" y="379" text-anchor="end">P8</text>
+  <rect x="466" y="363" width="8" height="6" fill="#0e1b1c"/>
+  <polyline class="w sig" points="474,366 620,366"/>
+  <rect x="466" y="372" width="8" height="6" fill="#0e1b1c"/>
+  <polyline class="w pos" points="474,375 620,375"/>
+  <rect x="466" y="381" width="8" height="6" fill="#0e1b1c"/>
+  <polyline class="w neg" points="474,384 620,384"/>
+  <rect class="servo" x="620" y="357" width="150" height="36" rx="8"/>
+  <text class="lbl" x="695" y="380" text-anchor="middle">ESQUERRE</text>
+  <text class="lbl2" x="464" y="220">S + −</text>
+  <rect class="pila" x="300" y="448" width="170" height="52" rx="8"/>
+  <text class="lbl" x="385" y="470" text-anchor="middle">PILES (entrada externa)</text>
+  <text class="lbl2" x="385" y="488" text-anchor="middle">alimenten els 4 servos</text>
+  <polyline class="w pos" points="360,448 360,420"/>
+  <polyline class="w neg" points="410,448 410,420"/>
+  <text class="avis" x="520" y="456">⚠ Cal micro:bit V2: la V1</text>
+  <text class="avis" x="520" y="472">només mou 3 servos alhora.</text>
+  <text class="avis" x="520" y="496">⚠ Servos mai pel 3V ni per l'USB.</text>
+</svg>

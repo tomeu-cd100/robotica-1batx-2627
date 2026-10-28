@@ -6,7 +6,7 @@
 > oficial** en el mateix ordre, de manera que es pot tenir aquesta pàgina i
 > les fotos originals obertes alhora.
 
-**Durada:** unes 2 h (estimació oficial; cronometra el prototip) · **Maquinari:** peces de `brac_MeArm_v1.1.svg` en DM 3 mm, 4 micro servos de 9 g (servo Starter + KS0194), cargols M3, Arduino UNO, alimentació externa per als servos
+**Durada:** unes 2 h (estimació oficial; cronometra el prototip) · **Maquinari:** peces de `brac_MeArm_v1.1.svg` en DM 3 mm, 4 micro servos de 9 g (servo Starter + KS0194), cargols M3, Arduino UNO **o** micro:bit V2 + Micro:shield, alimentació externa per als servos
 
 ## Abans de començar
 
@@ -80,6 +80,9 @@ void loop() {
 > ⚠️ **Alimentació:** amb un sol servo connectat n'hi ha prou amb l'USB.
 > Per moure'n **més d'un alhora**, alimenta'ls amb piles i uneix el GND de
 > les piles amb el GND de l'Arduino, com al [dossier del braç](00_Projecte_T2_Brac.md#cablatge).
+
+Si fas la **versió micro:bit**, no cal aquest programa: el receptor ja posa
+els quatre servos a 90° en arrencar (vegeu [Connexions i programa](#connexions-i-programa)).
 
 Enganxa una **etiqueta** a cada servo (base, esquerre, dret, pinça) i no els
 moguis amb la mà a partir d'ara.
@@ -175,20 +178,356 @@ pas 0; ara es tracta d'encaixar la banya en la posició bona.
     gira **90° a cada banda** des del centre. Si no, treu el cargol, gira la
     banya una dent i torna-hi.
 
-## Cablatge provisional (4 servos)
+## Connexions i programa
 
-Proposta per al prototip. Respecta els pins del [dossier del braç](00_Projecte_T2_Brac.md#cablatge)
-i afegeix-hi el servo nou a **D6** (també és PWM):
+El MeArm es pot governar de **dues maneres**. Totes dues fan servir els
+mateixos noms de servo (base, esquerre, dret, pinça) i els mateixos angles
+límit que has anotat al bloc D. Tria'n una per al prototip:
 
-| Servo | Pin | Notes |
+| | Versió Arduino | Versió micro:bit |
 |---|---|---|
-| Base | D9 | Igual que al dossier. |
-| Esquerre | D6 | Servo nou del MeArm. |
-| Dret | D10 | Ocupa el lloc del colze. |
-| Pinça | D11 | Igual que al dossier. |
+| Cervell | Arduino UNO | micro:bit **V2** + Micro:shield |
+| Com es controla | 4 potenciòmetres a la taula | una 2a micro:bit a la mà, per ràdio |
+| Llenguatge | C++ (com la SA4 i la SA6) | MicroPython (com la SA5) |
+| Material extra | 1 potenciòmetre (el kit en porta 3) | 2 micro:bit, una d'elles V2 |
+
+> 🤔 **Quin servo lateral fa què?** Un fa **avançar i recular** el braç i
+> l'altre el fa **pujar i baixar**. Depèn de com l'hagis muntat: mou-los un
+> per un i escriu-ho a l'etiqueta del servo.
+
+### Versió Arduino: 4 servos + 4 potenciòmetres
+
+![Esquema de connexions del MeArm amb Arduino: les piles alimenten els quatre servos per una línia + i una de GND, amb el GND de les piles unit al GND de l'Arduino; senyals a D6 (esquerre), D9 (base), D10 (dret) i D11 (pinça); quatre potenciòmetres alimentats pel 5V de l'Arduino amb el cursor a A0, A1, A2 i A3](img/mearm-connexions-arduino.svg)
+
+| Component | Pin | Notes |
+|---|---|---|
+| Servo base | D9 | Igual que al [dossier del braç](00_Projecte_T2_Brac.md#cablatge). |
+| Servo esquerre | D6 | Servo nou del MeArm. |
+| Servo dret | D10 | Ocupa el lloc del colze. |
+| Servo pinça | D11 | Igual que al dossier. |
+| Potenciòmetre base | A0 | Extrems a 5V i GND de l'Arduino. |
+| Potenciòmetre dret | A1 | |
+| Potenciòmetre pinça | A2 | |
+| Potenciòmetre esquerre | A3 | El 4t potenciòmetre. |
+| Piles: + | + dels 4 servos | Només els servos. |
+| Piles: − | − dels 4 servos **i GND de l'Arduino** | GND comú: sense ell, els servos fan coses estranyes. |
 
 > ⚠️ **Mai alimentar 4 servos des de l'USB** ni des del pin 5V del UNO.
-> Fes servir les piles, amb el GND comú.
+> Els potenciòmetres sí que van al 5V de l'Arduino: gasten molt poc.
+
+**Com funciona el programa.** Cada volta del `loop()` llegeix els quatre
+potenciòmetres i els converteix amb `map()` **al rang segur de cada servo**,
+no a 0-180°. Així, per molt que giris el potenciòmetre, el servo mai arriba
+al topall. Dos detalls més:
+
+- **Zona morta:** el servo només es mou si l'angle canvia més de 2°. El
+  potenciòmetre sempre té una mica de soroll i, sense això, el braç tremola.
+- **Arrencada sense salt:** al `setup()` es fa el `write()` **abans** de
+  l'`attach()`. El servo s'engega directament a la posició del potenciòmetre
+  en lloc de saltar primer a 90°.
+
+Obre el **Monitor sèrie** (9600): cada mig segon hi surten els quatre angles.
+És la manera més ràpida de trobar els angles límit i copiar-los a les
+constants `_MIN` i `_MAX` del principi.
+
+<details markdown="1">
+<summary>Desplega el codi complet (<code>T2_mearm_arduino.ino</code>)</summary>
+
+```cpp
+// Codi de referencia del brac MeArm V1.1 (EN PROVA) - VERSIO ARDUINO
+// 4 servos controlats amb 4 potenciometres, cadascun dins del seu rang segur.
+// Cablatge: el de la guia 00_Muntatge_brac_MeArm.md (versio Arduino).
+// ATENCIO: els 4 servos amb ALIMENTACIO EXTERNA (piles) i GND comu. Mai per USB
+// ni pel pin 5V de l'UNO.
+//
+// Truc per trobar els angles limit: obre el Monitor serie (9600). Cada mig
+// segon s'hi escriuen els 4 angles. Mou un potenciometre a poc a poc fins que
+// la peca toqui, i anota l'angle una mica abans.
+
+#include <Servo.h>
+
+const int PIN_SERVO_BASE = 9;
+const int PIN_SERVO_ESQUERRE = 6;   // servo nou del MeArm
+const int PIN_SERVO_DRET = 10;      // ocupa el lloc del colze del brac de 3 servos
+const int PIN_SERVO_PINCA = 11;
+
+const int PIN_POT_BASE = A0;
+const int PIN_POT_DRET = A1;
+const int PIN_POT_PINCA = A2;
+const int PIN_POT_ESQUERRE = A3;    // 4t potenciometre (el kit en porta 3)
+
+// Limits d'angle REALS de cada servo: canvieu-los pels que heu anotat al
+// bloc D de la guia. El servo mai ha de forcar el topall mecanic.
+const int BASE_MIN = 0,      BASE_MAX = 180;
+const int ESQUERRE_MIN = 40, ESQUERRE_MAX = 150;
+const int DRET_MIN = 40,     DRET_MAX = 150;
+const int PINCA_MIN = 60,    PINCA_MAX = 120;   // tancada .. oberta
+
+// Zona morta: nomes es mou el servo si l'angle nou canvia mes d'aquests
+// graus. Aixi el soroll del potenciometre no fa tremolar el brac.
+const int ZONA_MORTA = 2;
+
+Servo base, esquerre, dret, pinca;
+
+int angleBase, angleEsquerre, angleDret, anglePinca;
+unsigned long tDarrerInforme = 0;
+
+// Llegeix un potenciometre i el converteix al rang segur del seu servo
+int llegeixAngle(int pinPot, int minim, int maxim) {
+  return map(analogRead(pinPot), 0, 1023, minim, maxim);
+}
+
+// Escriu l'angle nou nomes si s'allunya prou de l'actual
+void mouSiCal(Servo &servo, int &actual, int nou) {
+  if (abs(nou - actual) > ZONA_MORTA) {
+    actual = nou;
+    servo.write(actual);
+  }
+}
+
+void setup() {
+  Serial.begin(9600);
+
+  // Primer es calcula la posicio dels potenciometres i despres s'engega cada
+  // servo: aixi el brac no fa un salt a 90 graus en arrencar.
+  angleBase = llegeixAngle(PIN_POT_BASE, BASE_MIN, BASE_MAX);
+  angleEsquerre = llegeixAngle(PIN_POT_ESQUERRE, ESQUERRE_MIN, ESQUERRE_MAX);
+  angleDret = llegeixAngle(PIN_POT_DRET, DRET_MIN, DRET_MAX);
+  anglePinca = llegeixAngle(PIN_POT_PINCA, PINCA_MIN, PINCA_MAX);
+
+  base.write(angleBase);
+  esquerre.write(angleEsquerre);
+  dret.write(angleDret);
+  pinca.write(anglePinca);
+
+  base.attach(PIN_SERVO_BASE);
+  esquerre.attach(PIN_SERVO_ESQUERRE);
+  dret.attach(PIN_SERVO_DRET);
+  pinca.attach(PIN_SERVO_PINCA);
+}
+
+void loop() {
+  mouSiCal(base, angleBase, llegeixAngle(PIN_POT_BASE, BASE_MIN, BASE_MAX));
+  mouSiCal(esquerre, angleEsquerre, llegeixAngle(PIN_POT_ESQUERRE, ESQUERRE_MIN, ESQUERRE_MAX));
+  mouSiCal(dret, angleDret, llegeixAngle(PIN_POT_DRET, DRET_MIN, DRET_MAX));
+  mouSiCal(pinca, anglePinca, llegeixAngle(PIN_POT_PINCA, PINCA_MIN, PINCA_MAX));
+
+  // Informe al Monitor serie sense delay(): el control no s'atura mai
+  if (millis() - tDarrerInforme > 500) {
+    tDarrerInforme = millis();
+    Serial.print("base=");
+    Serial.print(angleBase);
+    Serial.print("  esquerre=");
+    Serial.print(angleEsquerre);
+    Serial.print("  dret=");
+    Serial.print(angleDret);
+    Serial.print("  pinca=");
+    Serial.println(anglePinca);
+  }
+
+  delay(20);   // ~50 actualitzacions/s: suficient i suau
+}
+```
+
+</details>
+
+### Versió micro:bit: comandament + receptor
+
+![Esquema de connexions del MeArm amb micro:bit: la micro:bit comandament envia ordres per ràdio a una micro:bit V2 endollada al Micro:shield; base a P0, dret a P1, pinça a P2 i esquerre a P8, cada servo al seu connector de tres pins del shield; piles a l'entrada externa del shield](img/mearm-connexions-microbit.svg)
+
+| Component | Pin (Micro:shield) | Notes |
+|---|---|---|
+| Servo base | P0 | Connector de 3 pins del shield (S, +, −). |
+| Servo dret | P1 | |
+| Servo pinça | P2 | |
+| Servo esquerre | P8 | Servo nou del MeArm. |
+| Piles | Entrada externa del shield | Alimenten els 4 servos. |
+| Ràdio | — | Mateix **grup** a les dues plaques (el teu número de llista). |
+
+> ⚠️ **Cal una micro:bit V2 per al receptor.** La V1 només pot generar el
+> senyal de servo a **3 pins alhora**, i el MeArm en necessita 4. El
+> comandament pot ser una V1.
+
+> ⚠️ **Servos mai pel 3V de la micro:bit ni per l'USB:** sempre per
+> l'alimentació externa del shield.
+
+**Com es reparteix la feina.** Hi ha **dos programes**, un per placa:
+
+- El **comandament** no mou res. Mira la inclinació i els botons i envia
+  ordres de text curtes per ràdio: `B+`/`B-` (base), `D+`/`D-` (dret),
+  `E+`/`E-` (esquerre) i `P` (pinça).
+- El **receptor** guarda l'angle actual de cada servo. Cada ordre el mou
+  **3°** (constant `PAS`) i la funció `limita()` no el deixa sortir mai del
+  rang segur. En arrencar posa els quatre servos a 90°: et serveix de
+  **pas 0** per centrar-los.
+
+| Gest al comandament | Ordre | Què fa el braç |
+|---|---|---|
+| Inclinar esquerra / dreta | `B+` / `B-` | Gira la base. |
+| Inclinar davant / enrere | `D+` / `D-` | Mou el servo dret. |
+| Mantenir A / mantenir B | `E+` / `E-` | Mou el servo esquerre. |
+| A i B alhora | `P` | Obre o tanca la pinça (una vegada per pulsació). |
+
+> 💡 **La micro:bit no té `Servo.write()`.** El receptor fabrica el senyal
+> a mà amb `write_analog()`: un pols cada 20 ms que dura de 0,5 ms (0°) a
+> 2,5 ms (180°). És exactament el que fa la llibreria `Servo` de l'Arduino
+> per dins.
+
+<details markdown="1">
+<summary>Desplega el codi complet (<code>T2_mearm_microbit_comandament.py</code>)</summary>
+
+```python
+# Codi de referencia del brac MeArm V1.1 (EN PROVA) - VERSIO MICRO:BIT
+# COMANDAMENT: la micro:bit que es te a la ma. No mou cap servo: envia
+# ordres de text per radio al RECEPTOR (T2_mearm_microbit_receptor.py).
+#   Inclina esquerra/dreta   -> "B+" / "B-"  base
+#   Inclina davant/enrere    -> "D+" / "D-"  servo dret
+#   Mantens el boto A        -> "E+"         servo esquerre
+#   Mantens el boto B        -> "E-"         servo esquerre
+#   A i B alhora             -> "P"          obre/tanca la pinca
+
+from microbit import *
+import radio
+
+GRUP = 10        # CANVIA'L pel teu numero de llista (les 2 plaques igual)
+LLINDAR = 300    # inclinacio minima perque compti (evita moure's sol)
+
+radio.on()
+radio.config(group=GRUP)
+
+pinca_enviada = False   # per enviar "P" una sola vegada per cada A+B
+
+while True:
+    x = accelerometer.get_x()
+    y = accelerometer.get_y()
+
+    if x > LLINDAR:
+        radio.send("B+")
+    elif x < -LLINDAR:
+        radio.send("B-")
+
+    if y > LLINDAR:
+        radio.send("D+")
+    elif y < -LLINDAR:
+        radio.send("D-")
+
+    # Es llegeixen els dos botons UNA vegada, a variables
+    boto_a = button_a.is_pressed()
+    boto_b = button_b.is_pressed()
+
+    if boto_a and boto_b:
+        # Si mantens A+B la pinca no ha d'obrir-se i tancar-se sense parar:
+        # nomes s'envia la primera volta
+        if not pinca_enviada:
+            radio.send("P")
+            pinca_enviada = True
+        display.show(Image.TARGET)
+    else:
+        pinca_enviada = False
+        if boto_a:
+            radio.send("E+")
+            display.show(Image.ARROW_N)
+        elif boto_b:
+            radio.send("E-")
+            display.show(Image.ARROW_S)
+        else:
+            display.show(Image.DIAMOND_SMALL)
+
+    sleep(100)   # ~10 ordres/s: suficient per a un control suau
+```
+
+</details>
+
+<details markdown="1">
+<summary>Desplega el codi complet (<code>T2_mearm_microbit_receptor.py</code>)</summary>
+
+```python
+# Codi de referencia del brac MeArm V1.1 (EN PROVA) - VERSIO MICRO:BIT
+# RECEPTOR: la micro:bit del brac, endollada al Micro:shield. Rep les ordres
+# del COMANDAMENT (T2_mearm_microbit_comandament.py) i mou els 4 servos:
+#   P0 base · P1 dret · P2 pinca · P8 esquerre (el servo nou del MeArm)
+# ATENCIO: cal una micro:bit V2. La V1 no pot generar senyal de servo a 4
+# pins alhora (en te prou per a 3).
+# ATENCIO: servos amb alimentacio externa del Micro:shield, mai el 3V de la
+# placa ni l'USB.
+# En arrencar posa els 4 servos a 90 graus: serveix de "pas 0" de la guia.
+
+from microbit import *
+import radio
+
+GRUP = 10   # el MATEIX numero que el comandament
+PAS = 3     # graus que es mou el servo per cada ordre rebuda
+
+# Limits d'angle segurs de cada servo (els que heu anotat al bloc D)
+BASE_MIN, BASE_MAX = 0, 180
+ESQUERRE_MIN, ESQUERRE_MAX = 40, 150
+DRET_MIN, DRET_MAX = 40, 150
+PINCA_TANCADA, PINCA_OBERTA = 60, 120
+
+
+def angle_a_analog(angle):
+    # Servo estandard: pols de 0.5 ms (0 graus) a 2.5 ms (180 graus)
+    # sobre un periode de 20 ms -> valors analogics d'uns 26 a 128.
+    return int(26 + (angle / 180) * 102)
+
+
+def mou(pin, angle):
+    pin.set_analog_period(20)
+    pin.write_analog(angle_a_analog(angle))
+
+
+def limita(valor, minim, maxim):
+    # Mai fora del rang segur: un servo que forca el topall es crema
+    return max(minim, min(valor, maxim))
+
+
+radio.on()
+radio.config(group=GRUP)
+
+base = 90
+esquerre = 90
+dret = 90
+pinca = 90
+mou(pin0, base)
+mou(pin8, esquerre)
+mou(pin1, dret)
+mou(pin2, pinca)
+display.show(Image.YES)
+
+while True:
+    ordre = radio.receive()
+
+    if ordre == "B+":
+        base = limita(base + PAS, BASE_MIN, BASE_MAX)
+        mou(pin0, base)
+    elif ordre == "B-":
+        base = limita(base - PAS, BASE_MIN, BASE_MAX)
+        mou(pin0, base)
+    elif ordre == "D+":
+        dret = limita(dret + PAS, DRET_MIN, DRET_MAX)
+        mou(pin1, dret)
+    elif ordre == "D-":
+        dret = limita(dret - PAS, DRET_MIN, DRET_MAX)
+        mou(pin1, dret)
+    elif ordre == "E+":
+        esquerre = limita(esquerre + PAS, ESQUERRE_MIN, ESQUERRE_MAX)
+        mou(pin8, esquerre)
+    elif ordre == "E-":
+        esquerre = limita(esquerre - PAS, ESQUERRE_MIN, ESQUERRE_MAX)
+        mou(pin8, esquerre)
+    elif ordre == "P":
+        # Commutador: si esta oberta, la tanca; si no, l'obre
+        if pinca == PINCA_OBERTA:
+            pinca = PINCA_TANCADA
+        else:
+            pinca = PINCA_OBERTA
+        mou(pin2, pinca)
+
+    sleep(10)
+```
+
+</details>
+
 
 ## Problemes freqüents
 
@@ -208,6 +547,7 @@ dona les quantitats reals per al pressupost de cargols.
 
 | Dada | Valor |
 |---|---|
+| Versió provada (Arduino / micro:bit) | |
 | Gruix real del DM (mm) | |
 | Ajust de les ranures (just / fluix / no entra) | |
 | Temps total de muntatge | |

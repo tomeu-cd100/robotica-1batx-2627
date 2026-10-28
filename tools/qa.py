@@ -742,12 +742,18 @@ def comprova_codi_incrustat() -> None:
     base_codi = ARREL / "Classes" / "Solucionari" / "codi"
     total = 0
     fallats = 0
-    for md in sorted((ARREL / "Classes" / "Solucionari").glob("*.md")):
+    # La guia del MeArm també incrusta el codi de referència del braç
+    mds = sorted((ARREL / "Classes" / "Solucionari").glob("*.md")) + \
+        [ARREL / "Classes" / "00_General" / "00_Muntatge_brac_MeArm.md"]
+    for md in mds:
         text = md.read_text(encoding="utf-8")
         for m in RE_CODI_INCRUSTAT.finditer(text):
             nom, bloc = m.group(1).strip(), m.group(2)
             total += 1
+            # Els .ino viuen a la seva carpeta; els .py, solts a codi/
             font = base_codi / Path(nom).stem / nom
+            if not font.exists():
+                font = base_codi / nom
             if not font.exists():
                 errors.append(f"[codi-incrustat] {md.relative_to(ARREL)}: el "
                               f"desplegable diu «{nom}» però no existeix "
