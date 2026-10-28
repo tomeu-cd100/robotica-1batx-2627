@@ -7,7 +7,7 @@
 
 ## 🧰 1. Logística prèvia (preparar abans de començar la SA)
 - [ ] Material per alumne/a: Arduino UNO + USB, protoboard, cables
-- [ ] **Caixa del MeArm per alumne/a** amb les peces tallades, els cargols i els 4 servos (el 4t, MG90S) → [dossier](../00_General/00_Projecte_T2_Brac.md)
+- [ ] **Caixa del MeArm per alumne/a** amb les peces tallades, els cargols i els 4 servos (Starter a la base, 2 MG90S als laterals, KS0194 a la pinça) → [dossier](../00_General/00_Projecte_T2_Brac.md)
 - [ ] Actuadors: motor DC, driver **L298N**, 4 potenciòmetres, ultrasons + suport (`suport_hcsr04.scad`)
 - [ ] **Alimentació externa** (portapiles 4×AA) per als servos i el motor — imprescindible
 - [ ] Sketches provats: `01_servo_potenciometre` · `02_motor_pont_h` · `03_ultrasons_brac` · `04_brac_potenciometres` · `05_dos_servos_millis` (bastida opcional S3)

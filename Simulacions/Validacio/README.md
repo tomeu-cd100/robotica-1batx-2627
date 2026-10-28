@@ -17,7 +17,7 @@ setx WOKWI_CLI_TOKEN "el-teu-token"
 
 # 2. Tot el joc de proves (o un repte concret)
 py Simulacions/Validacio/executar_validacio.py
-py Simulacions/Validacio/executar_validacio.py SA6_A
+py Simulacions/Validacio/executar_validacio.py SA3_A
 py Simulacions/Validacio/executar_validacio.py --compila   # recompila abans
 ```
 
@@ -73,3 +73,5 @@ Cada carpeta `SAn_X/` és un projecte Wokwi:
   visual, no automatitzada (17-07: tot correcte).
 - SA7 (3dBot propietari): no simulable — maquinari real.
 - Ràdio física, WiFi real (Google Form, 302) i sensors físics: maquinari real.
+
+> 🦾 **28-10-2026:** els reptes de SA4 i SA6 són ara missions del braç MeArm. Les validacions antigues (barrera, ventilador, braç dispensador, termòstat, semàfor, proporcional) s'han retirat; la simulació dels reptes nous està pendent.

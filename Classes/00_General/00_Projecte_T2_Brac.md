@@ -5,7 +5,7 @@
 > cada pràctica del trimestre es fa sobre aquest braç. Aquí hi ha les peces,
 > el calendari de muntatge, el cablatge complet i la rúbrica.
 
-**Durada:** 2n trimestre (SA4-SA6) · **Maquinari:** MeArm V1.1 en DM 3 mm, 4 servos (servo Starter, 2 KS0194 i 1 MG90S), Arduino UNO + breadboard, 4 potenciòmetres, ultrasons HC-SR04, sensor de col·lisió KS0021, 2 polsadors, 2 micro:bit (comandament i pont), portapiles 4 × AA
+**Durada:** 2n trimestre (SA4-SA6) · **Maquinari:** MeArm V1.1 en DM 3 mm, 4 servos (servo Starter a la base, 2 MG90S als laterals i 1 KS0194 a la pinça), Arduino UNO + breadboard, 4 potenciòmetres, ultrasons HC-SR04, sensor de col·lisió KS0021, 2 polsadors, 2 micro:bit (comandament i pont), portapiles 4 × AA
 
 ## El robot
 
@@ -35,8 +35,8 @@ trimestre**. Cada SA hi afegeix una capa sense desfer la de l'anterior:
 |---|---|---|
 | Peces del MeArm V1.1 en DM 3 mm | Plantilla `brac_MeArm_v1.1.svg`, tall làser | 1 joc (30 peces) |
 | Servo Starter (base) | Kit 1 | 1 |
-| Micro servo KS0194 (esquerre i pinça) | Kit 2 | 2 |
-| Micro servo MG90S (dret, el que fa més força) | Compra del centre | 1 |
+| Micro servo MG90S (esquerre i dret: aguanten el pes del braç) | Compra del centre ([llista de compra](../../Recursos/Compra_brac_T2.xlsx)) | 2 |
+| Micro servo KS0194 (pinça) | Kit 2 | 1 (l'altre queda de recanvi) |
 | Potenciòmetres (control manual, SA4) | Kit 1 (3) + compra (1) | 4 |
 | Ultrasons HC-SR04 + suport imprès | Kit 1 + `suport_hcsr04.scad` | 1 |
 | Sensor de col·lisió KS0021 (final de carrera i emergència) | Kit 2 | 1 |
@@ -113,7 +113,7 @@ surten les fotos. Abans de donar el braç per muntat:
    (el lloc de la taula on deixaràs els objectes que ha d'agafar la pinça).
 
 > ⚠️ **Parell insuficient:** si el braç es doblega o cau amb la pinça
-> carregada, el servo dret ha de ser el MG90S. També pots limitar la càrrega
+> carregada, comprova que els laterals són els MG90S. També pots limitar la càrrega
 > que aixeca. No és un problema de codi.
 
 ## Cablatge
@@ -240,7 +240,7 @@ recollida i deixar-lo en un altre lloc. La S4 de SA6 és la prova pràctica
 | La ràdio no arriba | Les dues micro:bit tenen **grups diferents**. | El mateix `group` a totes dues (el teu número de llista). |
 | L'Arduino no es deixa programar | El cable del pont és al **D0**. | Desconnecta el D0, puja el programa i torna'l a connectar. |
 | El pont rep però el braç no obeeix | Falta el **GND comú** entre el pont i l'Arduino. | GND del pont al GND de l'Arduino. Prova les ordres des del Monitor sèrie per saber de quina banda és el problema. |
-| El braç cau amb càrrega | Parell insuficient. | MG90S al servo dret, o menys càrrega. |
+| El braç cau amb càrrega | Parell insuficient. | MG90S als dos laterals, o menys càrrega. |
 
 ---
 

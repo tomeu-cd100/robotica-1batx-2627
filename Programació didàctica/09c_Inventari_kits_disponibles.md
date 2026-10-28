@@ -124,9 +124,9 @@ Aporta **comunicació, actuadors i sensors avançats** per a control, IoT i IA.
 | **SA1** Introducció | UNO + LED + breadboard | Kit 1 | ✅ |
 | **SA2** Sortides/PWM | LED/RGB, PWM, brunzidor, relé, NeoPixel | Kit 1 + 2 + 3 | ✅ |
 | **SA3** Sensors | polsador, potenciòmetre, LDR/TEMT6000, NTC/LM35, DHT11, ultrasò, so, PIR | Kit 1 + 2 + 3 | ✅ (ric) |
-| **SA4** Moviment | servos, motor DC, **pont H L298N** | Kit 1 + 2 + *compra* | 🟡 falta L298N |
-| **SA5** micro:bit | micro:bit + Micro:shield | micro:bit | ✅ |
-| **SA6** Control | sensor temp + relé/actuador | Kit 1 + 2 + 3 | ✅ |
+| **SA4** Moviment | braç MeArm (servos, 4 potenciòmetres, ultrasons), motor DC, **pont H L298N** | Kit 1 + 2 + *compra* | 🟡 falten L298N i 2 MG90S/alumne |
+| **SA5** micro:bit | 2 micro:bit (comandament + pont del braç) | micro:bit | 🟡 cal la 2a micro:bit per alumne |
+| **SA6** Control | el braç + sensor de col·lisió KS0021 + ultrasons + 2 polsadors | Kit 1 + 2 | ✅ |
 | **SA7** Robòtica mòbil | Rover del fil conductor (L298N + seguidor + ultrasò) + Imagina 3dBot com a reserva/pla B | Fil conductor (Kit 1 + 2 + compra) + Imagina 3dBot de reserva | ✅ |
 | **SA8** IoT/IA | micro:bit ràdio + MPU6050 + sensors + OLED | micro:bit + Kit 2 + 3 | ✅ |
 | **SA9** Projecte final | tot el material | Tots | ✅ |
@@ -140,6 +140,27 @@ Aporta **comunicació, actuadors i sensors avançats** per a control, IoT i IA.
 | **Driver pont H L298N** (o L293D / motor shield) | SA4: ensenyar el **pont H** amb un motor discret a la breadboard (la Imagina 3dBot ja porta driver integrat); el rover del fil conductor de T3 en reutilitza un per parella | **1r: revisar si n'hi ha al departament** (és habitual tenir-ne de cursos anteriors). Si no → **comprar.** | **×14** (12 parelles + 2 de reserva) | ~2–3 €/u |
 
 > 💡 No és bloquejant: el L298N **no s'usa fins a la SA4**, així que es pot començar el curs sense tenir-lo resolt. És el component **més barat** de tota la programació. La quantitat (×14) ja té en compte que el mateix L298N de SA4 es reutilitza al rover de SA7-SA9 (fil conductor T3): no calen unitats addicionals.
+
+---
+
+## Compres del braç MeArm (T2, des del 28-10-2026)
+
+El braç MeArm és el fil conductor de **totes** les pràctiques de SA4-SA6
+([dossier](../Classes/00_General/00_Projecte_T2_Brac.md)). El detall, amb preus
+i quantitats per a 5 alumnes, és a
+[`Recursos/Compra_brac_T2.xlsx`](../Recursos/Compra_brac_T2.xlsx): el full
+**«Pla A (3 servos)»** és la base comuna i el full **«Pla B MeArm (extra)»**,
+que ara és el pla per defecte, hi suma:
+
+| Element | Per a què | Quant. (5 alumnes) |
+|---|---|---|
+| **Servo MG90S** | Laterals esquerre i dret del MeArm (aguanten el pes) | ×12 (2 per alumne + 2 de recanvi) |
+| **Potenciòmetre 10 kΩ** | 4t eix del control manual (SA4) | ×5 |
+| **Assortiment de cargols M3** (8-20 mm) + femelles | Muntatge del MeArm | ×1 |
+| **2a micro:bit V2** | El pont del braç (SA5-SA6) | ×5 |
+
+> 🧑‍🏫 Si el prototip del MeArm falla abans de Nadal, el pla B és `brac.svg`
+> (3 servos) i aquestes compres es redueixen al full «Pla A».
 
 ---
 

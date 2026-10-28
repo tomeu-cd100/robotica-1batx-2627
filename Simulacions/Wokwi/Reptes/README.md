@@ -18,16 +18,11 @@ i, si cal, `libraries.txt`. Patró de nom: `SA<n>_<lletra>_<nom>_<versió>`.
 | SA3 | A llum nocturna | ✅ | ✅ | LDR (mòdul) + LED |
 | SA3 | B sensor aparcament | ✅ | ✅ | HC-SR04 + LED (+ brunzidor a l'ampliat) |
 | SA3 | C instrument | ✅ | ✅ | potenciòmetre + LED (+ polsador a l'ampliat) |
-| SA4 | A barrera | ✅ | ✅ | servo + polsador / + HC-SR04 + 2 LED |
-| SA4 | B ventilador | ❌ | ❌ | **motor DC + pont H: no és component estàndard de Wokwi** |
-| SA4 | C braç dispensador | ✅ | ✅ | 1 servo / 2 servos + potenciòmetre |
-| SA6 | A termòstat | ✅ | ✅ | pot (temperatura) + LED (+ 2n pot + polsador) |
-| SA6 | B semàfor adaptatiu | ✅ | ✅ | 3 LED / 6 LED + 2 polsadors |
-| SA6 | C proporcional | ✅ | ❌ | mínim: LDR + LED. **Ampliat usa motor → exclòs** |
+| SA4, SA6 | (braç) | — | — | reptes del braç MeArm des del 28-10-2026: simulació pendent (els projectes antics de barrera, ventilador, termòstat i semàfor s'han retirat) |
 | SA5, SA8 | (micro:bit) | ❌ | ❌ | Wokwi no executa MicroPython al micro:bit |
 | SA7 | (robot 3dBot) | ❌ | ❌ | placa propietària, no simulable |
 
-**Total: 27 projectes** (mínim + ampliat dels reptes simulables).
+**Total: 18 projectes** (mínim + ampliat dels reptes simulables).
 
 ## Enllaços interactius (Wokwi públic)
 > Tots 27 simulats i desats com a públics el 2026-06-28.
@@ -52,15 +47,6 @@ i, si cal, `libraries.txt`. Patró de nom: `SA<n>_<lletra>_<nom>_<versió>`.
 | SA3_B_aparcament_ampliat | <https://wokwi.com/projects/468092730863606785> |
 | SA3_C_instrument_minim | <https://wokwi.com/projects/468092793918686209> |
 | SA3_C_instrument_ampliat | <https://wokwi.com/projects/468092893797661697> |
-| SA4_A_barrera_minim | <https://wokwi.com/projects/468093084646898689> |
-| SA4_A_barrera_ampliat | <https://wokwi.com/projects/468093216249486337> |
-| SA4_C_brac_minim | <https://wokwi.com/projects/468093343168096257> |
-| SA4_C_brac_ampliat | <https://wokwi.com/projects/468104666395047937> |
-| SA6_A_termostat_minim | <https://wokwi.com/projects/468104777049185281> |
-| SA6_A_termostat_ampliat | <https://wokwi.com/projects/468104859147450369> |
-| SA6_B_semafor_minim | <https://wokwi.com/projects/468104931211891713> |
-| SA6_B_semafor_ampliat | <https://wokwi.com/projects/468105016729562113> |
-| SA6_C_proporcional_minim | <https://wokwi.com/projects/468105083457798145> |
 
 ## Com publicar
 1. Obre `https://wokwi.com/projects/new/arduino-uno`.

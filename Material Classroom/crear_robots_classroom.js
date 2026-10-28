@@ -47,7 +47,7 @@ const RUBRIQUES = {
   ]},
   T2: { nom: 'Producte T2 · El braç robòtic', criteris: [
     ['R1 · Fabricació i muntatge', ['Estructura inestable o cablejat insegur.', 'Braç funcional però amb algun cable fluix o desordenat.', 'Braç ferm i cablejat endreçat, sense etiquetar.', 'Braç ferm, cablejat endreçat i etiquetat, res solt ni curtcircuitat.']],
-    ['R2 · Moviment', ['Alguna articulació no es mou o força el topall.', 'Les 3 articulacions es mouen, amb algun tremolor.', 'Les 3 articulacions es mouen de manera suau i fiable.', 'Moviment suau, precís i sense tremolor a les 3 articulacions.']],
+    ['R2 · Moviment', ['Alguna articulació no es mou o força el topall.', 'Les 4 articulacions es mouen, amb algun tremolor.', 'Les 4 articulacions es mouen de manera suau i fiable.', 'Moviment suau, precís i sense tremolor a les 4 articulacions.']],
     ['R3 · Modes i màquina d\'estats', ['Sense estats definits o el braç queda penjat en algun mode.', 'Alguns modes funcionen, sense diagrama d\'estats.', 'Tots els modes (repòs/manual/replay/emergència) funcionen, amb diagrama d\'estats inclòs.', 'Tots els modes funcionen de manera fiable, amb diagrama d\'estats clar i emergència provada.']],
     ['R4 · Comandament per ràdio i demostració', ['Sense comandament o no arriba a agafar cap objecte.', 'Comandament bàsic; agafa l\'objecte amb ajuda.', 'Comandament fiable; agafa i mou un objecte amb èxit.', 'Comandament fiable i demostració fluida: agafa i mou l\'objecte a la primera.']],
   ]},
@@ -73,7 +73,7 @@ const TASQUES = [
   },
   {
     titol: 'Producte T2 · El braç robòtic 🦾',
-    descripcio: 'Lliurament del robot del 2n trimestre: el braç de 3 articulacions '
+    descripcio: 'Lliurament del robot del 2n trimestre: el braç MeArm de 4 articulacions '
       + 'amb màquina d\'estats (repòs/manual/replay/emergència) i comandament per '
       + 'ràdio. Es tanca a la S3 de SA6. La rúbrica R1-R4 és al dossier.',
     topicId: TEMES.sa6, categoria: GRADE_CATEGORIES.T2.id,

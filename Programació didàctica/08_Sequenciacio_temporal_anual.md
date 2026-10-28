@@ -76,7 +76,7 @@ perquè no es descobreixi al març.
 | Trimestre | Sessió de fabricació | Retallada del pla de contingència que s'hi gasta |
 |---|---|---|
 | 1r | S3 de SA2 | Primera retallada (S3 de SA2 comprimible: el repte de la S2 fa de producte) |
-| 2n | **Torns de taller** de 15-25' repartits per SA4-SA6 (des del 24-10-2026) | **Cap.** El torn ocupa el lloc del «+ repte» de cada sessió; la S4 de SA4 torna a ser sessió de producte i queda com a **marge real comprimible (~2 h)**. *Contingència:* si el tall no és a punt a la s13, fabricació concentrada a la S4 de SA4 (gasta la primera retallada, com abans). |
+| 2n | **El braç MeArm com a fil conductor** de totes les pràctiques de SA4-SA6, amb **torns de taller** de 20-45' (des del 28-10-2026) | **Cap.** El temps surt d'escurçar el motor DC i de retirar les pràctiques alienes al braç (barrera, termòstat, llum de nit, dau…); la S4 de SA4 torna a ser sessió de producte i queda com a **marge real comprimible (~2 h)**. *Contingència:* si el tall no és a punt a la s13, fabricació concentrada a la S4 de SA4 (gasta la primera retallada, com abans). |
 | 3r | Sessió 0 del trimestre | Segona retallada (SA8 comprimible de 6 h a 4 h; les 2 h alliberades es traslladen a l'inici del T3, abans de començar SA7) |
 
 > ⚠️ Amb el fil conductor en marxa, la **primera i la segona retallada** del
@@ -95,6 +95,15 @@ perquè no es descobreixi al març.
 > següent): si el T2 va bé de ritme, comprimeix-la (el repte de la S3 fa de
 > producte) i guarda aquestes 2 h per al juny. El paràgraf anterior descriu
 > el **pla de contingència**, que s'aplica si els torns fallen.
+>
+> 🦾 **Actualització 28-10-2026 (el braç, fil conductor del T2):** totes les
+> pràctiques, reptes i la prova T2 de SA4-SA6 es fan **sobre el braç MeArm**
+> (4 servos). Les hores no canvien (SA4 8 h, SA5 6 h, SA6 8 h): el motor DC
+> queda com a pràctica curta i les pràctiques que no eren del braç s'han
+> reconvertit o retirat, i aquest temps passa als torns de taller (20-45').
+> La S4 de SA4 continua sent el marge comprimible (~2 h). Detall al
+> [dossier del braç](../Classes/00_General/00_Projecte_T2_Brac.md#el-braç-es-construeix-al-llarg-de-tot-el-trimestre)
+> i al disseny `docs/superpowers/specs/2026-10-28-brac-MeArm-fil-conductor-T2-design.md`.
 >
 > 📐 **El 3r trimestre neix curt: compta-ho al setembre, no al maig.** SA7 (8) +
 > SA8 (6) + SA9 (10) = **24 h**, i s25-s35 són **11 setmanes ≈ 22 h** —dues

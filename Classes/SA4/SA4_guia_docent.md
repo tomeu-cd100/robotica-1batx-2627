@@ -20,7 +20,7 @@
 
 ## Material per alumne/a
 - Arduino UNO + USB, protoboard, cables.
-- **Caixa del MeArm** (peces tallades, cargols M3, 4 servos: Starter, 2 KS0194 i 1 MG90S) → [guia de muntatge](../00_General/00_Muntatge_brac_MeArm.md).
+- **Caixa del MeArm** (peces tallades, cargols M3, 4 servos: Starter a la base, 2 MG90S als laterals i 1 KS0194 a la pinça) → [guia de muntatge](../00_General/00_Muntatge_brac_MeArm.md).
 - 4 potenciòmetres, ultrasons HC-SR04 amb el seu suport, portapiles 4×AA.
 - Motor DC i mòdul driver **L298N** (o pont H del kit), per a la pràctica de la S2.
 

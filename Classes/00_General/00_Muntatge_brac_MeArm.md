@@ -14,7 +14,7 @@
 
 </div>
 
-**Durada:** unes 2 h repartides en torns de taller (SA4 S1-S3) · **Maquinari:** peces de `brac_MeArm_v1.1.svg` en DM 3 mm, 4 servos (servo Starter, 2 KS0194 i 1 MG90S), cargols M3, Arduino UNO **o** micro:bit V2 + Micro:shield, alimentació externa per als servos
+**Durada:** unes 2 h repartides en torns de taller (SA4 S1-S3) · **Maquinari:** peces de `brac_MeArm_v1.1.svg` en DM 3 mm, 4 servos (servo Starter a la base, 2 MG90S als laterals i 1 KS0194 a la pinça), cargols M3, Arduino UNO **o** micro:bit V2 + Micro:shield, alimentació externa per als servos
 
 ## Abans de començar
 
@@ -40,7 +40,7 @@ Alguns números es repeteixen perquè hi ha peces bessones (per exemple, dues
 
 | Element | Notes |
 |---|---|
-| 4 servos | El kit en té 3 per alumne/a; el 4t és un **MG90S** comprat pel centre, que va al **servo dret** (és el que fa més força). Guarda les **banyes** (*servo horns*) i els cargolets que porten. |
+| 4 servos | **Base:** el servo Starter del Kit 1. **Esquerre i dret:** dos **MG90S** comprats pel centre (engranatges metàl·lics: aguanten el pes del braç). **Pinça:** un KS0194 del Kit 2. Guarda les **banyes** (*servo horns*) i els cargolets que porten. |
 | Cargols M3 de cap Allen | Mides que cita la guia: **8, 10, 12 i 20 mm**. Les quantitats exactes, a la [taula del prototip](#registre-del-prototip). |
 | 4 femelles M3 | Per als cargols de 20 mm de la base. |
 | Clau Allen M3 i tornavís petit d'estrella | El tornavís és per als cargolets de les banyes. |

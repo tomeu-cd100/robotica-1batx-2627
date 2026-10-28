@@ -45,12 +45,6 @@ SKETCHS = {
     "SA3_A": "Reptes/Solucionari/SA3/A_llum_nocturna/ampliat",
     "SA3_B": "Reptes/Solucionari/SA3/B_sensor_aparcament/ampliat",
     "SA3_C": "Reptes/Solucionari/SA3/C_instrument/ampliat",
-    "SA4_A": "Reptes/Solucionari/SA4/A_barrera/ampliat",
-    "SA4_B": "Reptes/Solucionari/SA4/B_ventilador/ampliat",
-    "SA4_C": "Reptes/Solucionari/SA4/C_brac_dispensador/ampliat",
-    "SA6_A": "Reptes/Solucionari/SA6/A_termostat/ampliat",
-    "SA6_B": "Reptes/Solucionari/SA6/B_semafor_adaptatiu/ampliat",
-    "SA6_C": "Reptes/Solucionari/SA6/C_proporcional/ampliat",
     "SA8_A": "Reptes/Solucionari/SA8/A_estacio_meteo_esp32",
     "SA8_A_wokwi": "Simulacions/Validacio/SA8_A_wokwi/src",
 }

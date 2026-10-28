@@ -37,11 +37,11 @@ Productes sense moviment mecànic (es reserva per al 2n trimestre). **Fil:** *un
 
 | SA | Producte real de la SA | Reptes que s'hi reaprofiten | Qui ho usa / problema real |
 |----|------------------------|------------------------------|-----------------------------|
-| **SA4** | **Mecanisme motoritzat** (braç dispensador, barrera o vehicle amb motor) | Braç dispensador · Barrera automàtica · Ventilador/vehicle | Robòtica industrial, automatització, accessibilitat |
-| **SA5** | **Comandament micro:bit** (per gestos o ràdio) + producte propi micro:bit | Joc/ràdio · Comptapassos · Llum de nit | Wearables, controls sense fil, esport connectat |
-| **SA6** | **Control intel·ligent del moviment** (màquina d'estats + proporcional) | Regulador proporcional · Semàfor adaptatiu · Termòstat | Robòtica de precisió, climatització, automòbil |
+| **SA4** | **El braç MeArm amb potenciòmetres** (muntat, cablejat, amb angles límit) | Botó de casa · Braç dispensador · Registre i replay | Robòtica industrial, *pick and place*, accessibilitat |
+| **SA5** | **Comandament micro:bit del braç** (inclinació + ràdio + pont) | Selector per ràdio · Comandament fi · Comandament complet amb gravació | Grues, telemanipulació, cirurgia a distància |
+| **SA6** | **Control intel·ligent del braç** (homing, histèresi, màquina d'estats + proporcional) | Pinça amb LED d'estat · Homing i seqüència segura · Proporcional a 4 articulacions | Robòtica de precisió, seguretat industrial, cobots |
 
-> **Integració del trimestre:** el **braç de SA4** es mou de forma **suau i precisa gràcies al control de SA6** i, opcionalment, es **teledirigeix amb el micro:bit de SA5**. Equips que no vulguin braç poden fer una **barrera/climatitzador** amb la mateixa cadena tècnica.
+> **Integració del trimestre (des del 28-10-2026):** el braç MeArm és el **fil conductor de totes les pràctiques** de SA4-SA6: es munta a la SA4, es teledirigeix amb la micro:bit a la SA5 i es controla sol (homing, pinça automàtica, màquina d'estats) a la SA6. La barrera, el ventilador, el termòstat i les apps micro:bit soltes s'han retirat.
 
 > ⚙️ **Nota tècnica — comandament del braç (important).** El micro:bit **no pot moure directament un servo connectat a l'Arduino**: cal un **pont de comunicació**. Dues vies:
 > - **Via recomanada (100% Arduino):** el braç es controla amb un **potenciòmetre o joystick connectat al mateix Arduino** (SA3 + SA4). Senzill, sense pont, i suficient per a l'objectiu d'aprenentatge. El micro:bit (SA5) es treballa com a **producte propi independent** (comptapassos, joc/ràdio) sense haver-lo d'acoblar al braç.
