@@ -9,8 +9,8 @@ Sisena situació d'aprenentatge (**8 h · 4 sessions**, 2n trimestre). El sistem
 | Quan | Lliurable | On es lliura |
 |---|---|---|
 | S1 | [Activitat 1 · Llaç obert vs llaç tancat](SA6_fitxa_alumnat.md#1-llac-obert-vs-llac-tancat-s1) | [Tasca de Classroom](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODcwNTE2NDU2MzYx/details) |
-| S2 | [Activitat 2 · Termòstat amb histèresi](SA6_fitxa_alumnat.md#2-termostat-amb-histeresi-s2) | Mateixa tasca de Classroom |
-| S3 | [Activitat 3 · Màquina d'estats](SA6_fitxa_alumnat.md#3-maquina-destats-s3) | Mateixa tasca de Classroom |
+| S2 | [Activitat 2 · Pinça automàtica amb histèresi](SA6_fitxa_alumnat.md#2-pinca-automatica-amb-histeresi-s2) | Mateixa tasca de Classroom |
+| S3 | [Activitat 3 · La màquina d'estats del braç](SA6_fitxa_alumnat.md#3-la-maquina-destats-del-brac-s3) | Mateixa tasca de Classroom |
 | S4 | **Prova pràctica T2 (individual)** | A l'aula, sessió sencera |
 | ⭐ | [Repte triat (A, B o C)](../../Reptes/Reptes_SA6.md) | El docent el valida i pinteu l'estrella al [tauler de reptes](../00_General/00_Tauler_reptes.md) |
 | 📓 | Full del quadern tècnic de cada sessió | En paper, en acabar la sessió |
@@ -20,9 +20,9 @@ Sisena situació d'aprenentatge (**8 h · 4 sessions**, 2n trimestre). El sistem
 
 > La teva feina és a la **[fitxa base](SA6_fitxa_alumnat.md)**. Aquesta ruta et diu què toca fer a cada sessió i què necessites en aquell moment. Les respostes de la fitxa es lliuren a la **[tasca de Classroom](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODcwNTE2NDU2MzYx/details)**.
 
-1. **Sessió 1 · Què és un sistema de control?** — torna a obrir l'**editor d'Arduino** ([Web Editor al Chromebook](../SA0/SA0_guia_web_editor_chromebook.md)) (deixem el Python de la SA5: aquí, C++ altre cop) i fes l'[Activitat 1 de la fitxa](SA6_fitxa_alumnat.md#1-llac-obert-vs-llac-tancat-s1), amb els [esquemes de connexió](SA6_esquemes_connexions.md) i el [codi](codi/).
-2. **Sessió 2 · Control tot/res i histèresi** — fes l'[Activitat 2](SA6_fitxa_alumnat.md#2-termostat-amb-histeresi-s2), amb els [esquemes de connexió](SA6_esquemes_connexions.md) i el [diagrama de flux (histèresi + màquina d'estats)](SA6_diagrama_flux.md). Si vas sobrat, el [control proporcional](SA6_fitxa_alumnat.md#ampliacio-opcional-control-proporcional) és el **repte +** de les sessions 2-3.
-3. **Sessió 3 · Màquines d'estats + tancament del producte** — fes l'[Activitat 3](SA6_fitxa_alumnat.md#3-maquina-destats-s3), amb el [codi](codi/). El producte (s'avalua amb R1, R3, R4) i la defensa de 2-3' **es tanquen avui**.
+1. **Sessió 1 · Llaç obert, llaç tancat i homing** — torna a obrir l'**editor d'Arduino** ([Web Editor al Chromebook](../SA0/SA0_guia_web_editor_chromebook.md)) (deixem el Python de la SA5: aquí, C++ altre cop) i fes l'[Activitat 1 de la fitxa](SA6_fitxa_alumnat.md#1-llac-obert-vs-llac-tancat-s1), amb els [esquemes de connexió](SA6_esquemes_connexions.md) i el [codi](codi/).
+2. **Sessió 2 · Histèresi: la pinça automàtica** — fes l'[Activitat 2](SA6_fitxa_alumnat.md#2-pinca-automatica-amb-histeresi-s2), amb els [esquemes de connexió](SA6_esquemes_connexions.md) i el [diagrama de flux de la pinça](SA6_diagrama_flux.md). Si vas sobrat, el [control proporcional](SA6_fitxa_alumnat.md#ampliacio-opcional-control-proporcional) és el **repte +** de les sessions 2-3.
+3. **Sessió 3 · Màquina d'estats del braç + tancament del producte** — fes l'[Activitat 3](SA6_fitxa_alumnat.md#3-la-maquina-destats-del-brac-s3), amb el [codi](codi/). El producte (s'avalua amb R1, R3, R4) i la defensa de 2-3' **es tanquen avui**.
 4. **Sessió 4 · Prova pràctica T2** — individual, la sessió sencera; pots consultar el teu quadern i els esquemes. **Abans d'aquesta sessió**, prepara la **Part B (MicroPython)** amb la targeta de [repàs exprés de MicroPython](../00_General/00_Repas_expres_MicroPython.md) (10-15'). El control proporcional **no entra a la prova** (és +ampliació opcional).
 5. **Abans d'entregar** — repassa [el meu checklist](SA6_checklist_alumnat.md).
 
@@ -43,17 +43,17 @@ Sisena situació d'aprenentatge (**8 h · 4 sessions**, 2n trimestre). El sistem
 | [`SA6_checklist_alumnat.md`](SA6_checklist_alumnat.md) | **Checklist alumnat** (una cara): què he de fer/lliurar + autoavaluació amb semàfor. |
 | [`SA6_katas.md`](SA6_katas.md) | Katas d'escriptura (10'): un per sessió de codi, abans d'obrir el sketch; si ningú no el projecta, l'alumnat l'obre sol. |
 | [`SA6_katas_solucions.md`](SA6_katas_solucions.md) | **Solucions dels katas** (docent): codi resolt amb els valors de la variació + comentaris per a la posada en comú. |
-| [`SA6_esquemes_connexions.md`](SA6_esquemes_connexions.md) | Esquemes i connexions (NTC, LDR, actuador, realimentació). |
+| [`SA6_esquemes_connexions.md`](SA6_esquemes_connexions.md) | Esquemes i connexions del braç (col·lisió, ultrasons, polsadors, mapa de pins). |
 | `codi/` | Sketches d'Arduino (vegeu la taula següent). |
 
 ### Codi (`codi/`)
 
 | Sketch | Què mostra |
 |---|---|
-| `01_llac_obert_vs_tancat.ino` | Comparació dels dos tipus de control amb el mateix muntatge. |
-| `02_termostat_histeresi.ino` | Control tot/res amb dos llindars (histèresi). |
-| `03_maquina_estats.ino` | Màquina d'estats finits amb `enum`/`switch` (amb esquelet «Si t'encalles» a la seva pàgina). |
-| `04_control_proporcional.ino` | Regulació proporcional bàsica (base del PID). |
+| `01_llac_obert_vs_tancat.ino` | La base del braç en llaç obert vs **homing** amb el final de carrera (llaç tancat). |
+| `02_pinca_histeresi.ino` | La **pinça automàtica**: control tot/res amb dos llindars (histèresi). |
+| `03_maquina_estats.ino` | La **màquina d'estats del braç** amb `enum`/`switch` i `millis()` (amb esquelet «Si t'encalles» a la seva pàgina). |
+| `04_control_proporcional.ino` | Moviment proporcional de la base: frena sol en arribar (base del PID). |
 
 Cada sketch té la seva **pàgina de pràctica** a la web (per què es fa + codi explicat per blocs); a GitHub, l'explicació és a l'`EXPLICACIO.md` de la carpeta del sketch.
 
@@ -61,10 +61,10 @@ Cada sketch té la seva **pàgina de pràctica** a la web (per què es fa + codi
 
 ## Producte i avaluació
 
-- **Producte:** sistema de control documentat (termòstat amb histèresi o procés amb màquina d'estats) amb **diagrama de blocs** i anàlisi de la resposta. **Es tanca a la S3.**
+- **Producte:** el **braç MeArm amb la seva màquina d'estats** (repòs, manual, replay, emergència) i el comandament per ràdio, amb **diagrama d'estats** i **diagrama de blocs**. **Es tanca a la S3.**
 - **Prova T2:** la S4 sencera, individual (`Avaluació/Prova_practica_T2.md`).
 - **Criteris:** CA3.1, CA1.1 · **Rúbriques:** **R1** (codi), **R3** (control), **R4** (documentació).
 
 ## Continuïtat
 
-Ve de la **SA5** (paradigmes de programació) i porta a la **SA7** (robòtica mòbil). El **llaç tancat** i les **màquines d'estats** d'aquí són la base dels **comportaments autònoms** del robot (evitar obstacles, seguir línia).
+Ve de la **SA5** (el comandament del braç) i porta a la **SA7** (robòtica mòbil). El **llaç tancat** i les **màquines d'estats** d'aquí són la base dels **comportaments autònoms** del robot (evitar obstacles, seguir línia).

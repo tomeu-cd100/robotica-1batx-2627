@@ -87,7 +87,7 @@
 | On va l'electrònica | calaix inferior **sec**, separat de la zona humida |
 | Fixació | placa cargolada a la base; cables passats per un forat segellat |
 
-- **Codi base:** `Classes/SA6/codi/02_termostat_histeresi.ino`.
+- **Codi base:** el patró de dos llindars de `Classes/SA6/codi/02_pinca_histeresi.ino` (la pinça del braç), canviant la distància per la temperatura i la pinça pel ventilador.
 - **Simulació de referència:** `Simulacions/Wokwi/SA6_termostat_histeresi/` (públic) — gira el potenciòmetre i observa que la sortida **no vibra** a la zona morta.
 
 ## 5 · Provar i millorar

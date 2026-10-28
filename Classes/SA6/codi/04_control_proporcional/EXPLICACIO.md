@@ -1,77 +1,77 @@
-# Pràctica 4 · Control proporcional: dosificar segons l'error
+# Pràctica 4 · Control proporcional: el braç que frena sol (ampliació)
 
-**Quan es fa:** Sessions 2-3, repte + (+ampliació, per a qui va sobrat) · **Fitxer:** `04_control_proporcional.ino` · **Circuit:** [esquema de connexions](../../SA6_esquemes_connexions.md) (sensor a A0, sortida a 9~ — cal PWM)
+**Quan es fa:** Sessió 3 (ampliació, per a qui va sobrat) · **Fitxer:** `04_control_proporcional.ino` · **Circuit:** [esquema de connexions](../../SA6_esquemes_connexions.md) (servo base=9 amb piles; potenciòmetre de la base=A0)
 
 > ✍️ **Kata primer!** Si avui encara no has fet cap kata (ni el mini-check), obre el [kata d'aquesta pràctica](../../SA6_katas.md): 10 minuts per escriure el teu bloc abans de llegir aquest codi. Si ja l'has fet, endavant.
 
 ## 🎯 Per què fem aquesta pràctica
 
-El termòstat tot/res de la Pràctica 2 només sap fer dues coses: **tot** o **res**. És com regular la temperatura de la dutxa obrint i tancant l'aixeta **de cop**: funciona, però a batzegades. Tu no ho fas així: si l'aigua és *una mica* freda, obres *una mica* la calenta; si és *molt* freda, l'obres *molt*. Doses l'actuació **segons la mida del problema**.
+Quan gires de cop el potenciòmetre de la base, el servo **salta**: va a tota
+velocitat i frena en sec. Si la pinça porta alguna cosa, surt volant. Els
+braços de debò no es mouen així: arrenquen ràpid quan són lluny de la
+destinació i **frenen a poc a poc** quan s'hi acosten.
 
-Això és el **control proporcional**: la sortida és proporcional a l'**error** (la diferència entre el que mesures i el que vols). Error gran → resposta forta; error petit → resposta suau; error zero → res. El resultat és una regulació **més fina i sense batzegades** que el tot/res — i és la porta d'entrada al **PID**, el controlador que governa des de drons fins a plantes industrials (el veuràs a cursos superiors). Aquí en programes la P, amb una sola constant: `Kp`.
-
-> ⚖️ Recorda: aquesta pràctica és **+ampliació** (notable/excel·lent). El nucli de la SA — i de la prova T2 — són la histèresi i la màquina d'estats.
+La idea és el **control proporcional**: a cada volta, el braç s'acosta a la
+consigna un **tros proporcional a l'error** (el que li falta). Si li falten
+100°, fa un pas gran; si li falten 2°, un pas petit. El resultat és un
+moviment suau, sense que el programa sàpiga res de «frenar».
 
 ## 🔮 Abans d'executar: prediu
 
-Amb `CONSIGNA = 500` i `Kp = 0.8`: si la lectura és exactament **500**, quina sortida PWM tindrem? I si és **400** (per sota)? I ara la interessant: què creus que passarà si puges `Kp` a 20? Apunta-ho a l'activitat d'ampliació de la [fitxa](../../SA6_fitxa_alumnat.md) i comprova-ho al Serial Plotter.
+Amb `K = 0.1`, si la base és a 90° i la consigna salta a 180°, quants graus es
+mourà a la primera volta? I a la segona? Arribarà mai **exactament** a 180°?
 
 ## 🧠 El codi, per blocs
 
-### Bloc 1 — La consigna i la constant `Kp`
+### Bloc 1 — La consigna i l'error
 
 ```cpp
-const int CONSIGNA = 500;     // valor objectiu (0-1023)
-const float Kp = 0.8;         // constant proporcional (ajusta-la!)
+  int consigna = map(analogRead(A0), 0, 1023, 0, 180);   // on volem anar
+  float error = consigna - angle;                          // quant falta
 ```
 
-`Kp` és el **caràcter** del controlador, i és un `float` (pot tenir decimals). Petita → controlador mandrós que reacciona fluix i tarda a arribar; gran → controlador nerviós que reacciona fort… i pot passar-se de frenada i **oscil·lar**. Ajustar `Kp` és l'ofici de l'enginyer/a de control — i el repte d'aquesta pràctica.
+La **consigna** és on vols anar (el potenciòmetre). L'**angle** és on és el
+braç ara. L'**error** és la diferència: positiu si ha de pujar, negatiu si ha
+de baixar, zero si ja hi és. Són les tres paraules del diagrama de blocs de la
+S1.
 
-### Bloc 2 — L'error: el cor del control
+### Bloc 2 — Un tros proporcional
 
 ```cpp
-int t = analogRead(SENSOR);
-int error = t - CONSIGNA;          // si fa mes calor del desitjat, error > 0
+  angle = angle + K * error;          // un tros proporcional a l'error
+  base.write((int)(angle + 0.5));     // arrodonit al grau mes proper
 ```
 
-Una resta i prou, però és **el** concepte de la SA: l'error diu *quant* i *cap a on* ens hem desviat del que volíem. Tot el llaç tancat treballa per fer aquest número **zero**. Fixa't que pot sortir negatiu (lectura per sota de la consigna): vol dir "no cal actuar".
+Imagina que camines cap a una porta i a cada pas recorres **una desena part**
+del que et falta: els primers passos són llargs i els últims, petitíssims. Això
+fa `K = 0.1`. Amb `K = 1` recorres tot el que falta d'una vegada: és el salt de
+sempre. Amb `K = 0.02`, el braç es mou com en càmera lenta. `angle` és `float`
+(amb decimals) perquè els passos petits no es perdin en arrodonir.
 
-### Bloc 3 — La sortida proporcional (i el seu límit)
+### Bloc 3 — Veure-ho al Serial Plotter
 
 ```cpp
-int sortida = (int)(Kp * error);   // actuacio proporcional a l'error
-sortida = constrain(sortida, 0, 255);  // limita a un rang valid de PWM
-
-analogWrite(SORTIDA, sortida);
+  Serial.print(consigna);
+  Serial.print(" ");
+  Serial.println(angle);
 ```
 
-`Kp * error` és tota la fórmula del control P. Però el PWM només admet **0 a 255**, i la multiplicació pot sortir-se'n per dalt (error gran) o per sota (error negatiu): `constrain` la retalla al rang vàlid. Sense aquesta línia, `analogWrite` rebria valors sense sentit. L'`analogWrite` final és el mateix PWM que vas aprendre amb el fade de la SA2 — ara amb el valor calculat pel controlador, no per un `for`.
-
-### Bloc 4 — Tres línies per al Serial Plotter
-
-```cpp
-Serial.print(CONSIGNA); Serial.print(" ");
-Serial.print(t);        Serial.print(" ");
-Serial.println(sortida);
-delay(50);
-```
-
-Tres valors separats per espais = **tres corbes** al Serial Plotter: la consigna (plana), la lectura i la sortida. És aquí on es *veu* el control: com més s'allunya la lectura de la consigna, més puja la sortida — i com la resposta és suau comparada amb el clic-clic del tot/res.
+Dues línies: la consigna (esglaons quan gires el potenciòmetre) i l'angle (una
+corba que s'hi acosta suaument). La forma de la corba és la firma del control
+proporcional: ràpida al principi, lenta al final.
 
 ## ⚠️ Errors que veuràs segur
 
 | Símptoma | Causa probable |
 |---|---|
-| La sortida oscil·la amunt i avall sense parar | `Kp` massa gran: el controlador es passa de frenada a cada correcció. Baixa-la. |
-| La sortida és sempre 0 | La lectura no supera mai la consigna (error negatiu): escalfa el sensor o baixa `CONSIGNA`. |
-| La sortida només fa tot o res | El pin de sortida no és PWM: cal un pin amb `~` (aquí el 9). |
-| Mai no arriba ben bé a la consigna | Normal en un control només-P: amb error zero la sortida és zero. És el defecte que corregeix la **I** del PID. |
+| El braç salta igual que abans | `K` val 1 o més. |
+| El braç no es mou gens | `angle` és `int` i els passos petits s'arrodoneixen a 0: ha de ser `float`. |
+| El braç es queda a 1-2° de la consigna | Normal amb control P pur: el pas es fa tan petit que l'arrodoniment el menja. És l'«error estacionari». |
 
 ## 🔗 On ho aplicaràs
 
-- **Repte ⭐ SA6_C:** el regulador proporcional de [`Reptes_SA6.md`](../../../../Reptes/Reptes_SA6.md), amb la comparació tot/res vs proporcional al Serial Plotter.
-- **Prova T2:** és l'ampliació de nivell **excel·lent** de la Part A (l'enunciat ja la preveu).
-- **SA7:** el seguidor de línia suau del robot és un control proporcional: com més desviat de la línia, més gir.
-- **Més enllà:** afegint la **I** (memòria de l'error) i la **D** (tendència de l'error) tindries un **PID** — el controlador estàndard de la indústria.
+- **Repte C de la SA6:** el moviment proporcional a les **quatre** articulacions alhora.
+- **Prova T2 (excel·lent):** l'apropament proporcional de la pinça.
+- **SA7:** al rover, corregir la direcció **segons quant** s'ha desviat (i no a cops) és la mateixa idea aplicada a les rodes.
 
 > ⭐ **Has acabat abans?** Tria un repte a **[Reptes de la SA6](../../../../Reptes/Reptes_SA6.md)** i, quan el docent te'l validi, pinta l'estrella al [tauler de reptes](../../../00_General/00_Tauler_reptes.md).

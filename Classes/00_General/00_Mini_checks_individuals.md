@@ -65,11 +65,11 @@ El curs treballa de manera **individual** (`Programació didàctica/04_Metodolog
 ## SA6 · Mini-check (inici de la Sessió 3 — la S4 és, sencera, la prova T2)
 
 **Enunciat (projectar):**
-> Un termòstat encén la calefacció quan `temp < 25` i l'apaga quan `temp >= 25`. A la pràctica, el relé fa **clic-clic sense parar** al voltant de 25 °C. **(a)** Per què passa? **(b)** Reescriu les condicions perquè no passi (pista: dos llindars).
+> La pinça del braç es tanca quan `d < 8` i s'obre quan `d >= 8` (cm). A la pràctica, amb l'objecte a uns 8 cm, la pinça fa **clic-clic sense parar**. **(a)** Per què passa? **(b)** Reescriu les condicions perquè no passi (pista: dos llindars i l'estat de la pinça).
 
-**Què mires:** (a) la lectura balla al voltant de la consigna → commutació contínua · (b) histèresi: `if (temp < 24) encén;` / `if (temp > 26) apaga;` (valors raonables).
+**Què mires:** (a) la lectura balla al voltant de la frontera → commutació contínua · (b) histèresi: `if (!tancada && d < 6) tanca;` / `if (tancada && d > 10) obre;` (valors raonables).
 **🟢** explica i escriu els dos llindars · **🟡** intueix el problema però només mou el llindar · **🔴** no veu el problema.
-**Reforç 🔴:** repassar `02_termostat_histeresi.ino` amb la bastida de la fitxa SA6.
+**Reforç 🔴:** repassar `02_pinca_histeresi.ino` i la gràfica de la histèresi de la fitxa SA6.
 
 ## SA7 · Mini-check (inici de la Sessió 4)
 

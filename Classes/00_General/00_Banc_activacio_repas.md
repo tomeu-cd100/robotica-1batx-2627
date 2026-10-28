@@ -163,33 +163,33 @@ Amb 2 h setmanals, el que es va aprendre a l'octubre arriba esborrat al febrer s
 
 ## SA6 · Sistemes de control
 
-### SA6 · Sessió 1 — abans de «Què és un sistema de control?»
+### SA6 · Sessió 1 — abans de «Llaç obert, llaç tancat i homing»
 > **P①** Perquè dues micro:bit es comuniquin per ràdio, quina condició de configuració han de complir?
 > **P②** (SA5) Una diferència entre C++ i Python que posaries a la taula comparativa (i per què importa).
-> **P③** (SA3) El termòstat de casa: entrada, procés i sortida. Què el fa diferent d'un llum amb temporitzador?
+> **P③** (SA4) El braç amb l'ultrasons de la SA4: entrada, procés i sortida. Què el fa diferent del braç saludant amb una seqüència fixa?
 
-*Respostes: ① mateix `group` (i `radio.on()`). ② resposta oberta (indentació vs claus, tipat…). ③ entrada = sensor de temperatura; procés = comparar amb consigna; sortida = caldera. El termòstat **mesura el resultat** de la seva acció (pista del llaç tancat d'avui); el temporitzador no.*
+*Respostes: ① mateix `group` (i `radio.on()`). ② resposta oberta (indentació vs claus, tipat…). ③ entrada = ultrasons; procés = comparar la distància amb el llindar; sortida = servos. El braç amb ultrasons **mira el món** abans d'actuar (pista del llaç tancat d'avui); la seqüència fixa no.*
 
-### SA6 · Sessió 2 — abans de «Control tot/res i histèresi»
+### SA6 · Sessió 2 — abans de «Histèresi: la pinça automàtica»
 > **P①** Llaç obert vs llaç tancat: la diferència en una frase, i un exemple de cadascun.
 > **P②** (SA4) Per què `delay()` és mala idea en un sistema de control que ha de vigilar un sensor contínuament?
-> **P③** (SA3) Amb el LM35/TMP36 llegint per A0: com veuries en directe si la lectura és estable o sorollosa?
+> **P③** (SA4) Amb l'ultrasons de l'estació de recollida: com veuries en directe si la distància és estable o sorollosa?
 
-*Respostes: ① obert: actua sense mesurar el resultat (torradora); tancat: el sensor realimenta la decisió (termòstat). ② mentre el programa dorm, no mira el sensor (per això `millis()`). ③ Monitor sèrie / Serial Plotter.*
+*Respostes: ① obert: actua sense mesurar el resultat (la base enviada a 20° i prou); tancat: el sensor realimenta la decisió (el homing). ② mentre el programa dorm, no mira el sensor (per això `millis()`). ③ Monitor sèrie / Serial Plotter.*
 
-### SA6 · Sessió 3 — abans de «Màquines d'estats»
-> **P①** El termòstat d'ahir tenia **dos** llindars en lloc d'un. Com es diu això i quin problema evita?
+### SA6 · Sessió 3 — abans de «Màquina d'estats del braç»
+> **P①** La pinça d'ahir tenia **dos** llindars en lloc d'un. Com es diu això i quin problema evita?
 > **P②** (SA4) `millis()`: explica amb les teves paraules com fas una espera sense aturar el programa.
 > **P③** (SA2) El semàfor de la SA2, quants "estats" tenia? Què feia passar d'un a l'altre?
 
-*Respostes: ① histèresi; evita que l'actuador commuti sense parar quan la lectura balla al voltant de la consigna. ② guardes `millis()` en una variable i compares si ha passat prou temps (`if (millis() - inici >= interval)`). ③ 3 (verd/groc/vermell); el pas del temps — avui ho formalitzem com a **màquina d'estats**.*
+*Respostes: ① histèresi; evita que la pinça faci clic-clic quan la distància balla al voltant de la frontera. ② guardes `millis()` en una variable i compares si ha passat prou temps (`if (millis() - inici >= interval)`). ③ 3 (verd/groc/vermell); el pas del temps — avui ho formalitzem com a **màquina d'estats**.*
 
 ### SA6 · Sessió 4 — dia de la **prova T2** *(graella opcional: només com a escalfament de 3' abans de repartir la prova; el producte es va tancar a la S3 i el proporcional és +ampliació)*
-> **P①** Una màquina d'estats té dues coses: **estats** i **transicions**. Al semàfor adaptatiu, digues 2 estats i 1 transició.
-> **P②** (SA5) Prediu aquest MicroPython: `if temperature() > 25:` seguit de `display.show(Image.NO)` indentat — què fa i cada quan?
+> **P①** Una màquina d'estats té dues coses: **estats** i **transicions**. Al teu braç, digues 2 estats i 1 transició.
+> **P②** (SA5) Prediu aquest MicroPython: `if accelerometer.get_x() > 300:` seguit de `display.show(Image.ARROW_E)` indentat — què fa i cada quan?
 > **P③** (SA3) El divisor de tensió LDR + 10 kΩ: per què no podem connectar la LDR sola directament a A0?
 
-*Respostes: ① p. ex. estats VERD/VERMELL (o ESPERA/PAS); transició = temps esgotat o polsador de vianant. ② mostra la creu quan passa de 25 °C, a cada volta del `while True`. ③ l'ADC mesura **tensió**, no resistència: cal el divisor perquè el canvi de resistència es converteixi en canvi de tensió.*
+*Respostes: ① p. ex. estats REPÒS/MANUAL (o REPLAY/EMERGÈNCIA); transició = polsador A, o el sensor de col·lisió. ② mostra la fletxa cap a la dreta quan inclines la placa més de 300, a cada volta del `while True`. ③ l'ADC mesura **tensió**, no resistència: cal el divisor perquè el canvi de resistència es converteixi en canvi de tensió.*
 
 ---
 
@@ -197,7 +197,7 @@ Amb 2 h setmanals, el que es va aprendre a l'octubre arriba esborrat al febrer s
 
 ### SA7 · Sessió 1 — abans de «Moviment i cinemàtica diferencial»
 > **P①** En un sistema de control: què és l'**error**? Escriu-ne la fórmula amb consigna i mesura. *(Només si vas fer l'ampliació del proporcional: com l'usa per calcular la correcció?)*
-> **P②** (SA6) Histèresi en una frase i un exemple fora del termòstat.
+> **P②** (SA6) Histèresi en una frase i un exemple fora de la pinça del braç.
 > **P③** (SA4) Per moure un motor DC en els dos sentits necessites un component clau i una norma d'alimentació: quins?
 
 *Respostes: ① error = consigna − mesura (què vull − què tinc); (+ampliació) correcció = Kp·error, i si l'error és 0 no corregeix. ② dos llindars per no commutar contínuament (p. ex. llums automàtics que no parpellegin al capvespre). ③ pont H; alimentació externa amb massa comuna.*

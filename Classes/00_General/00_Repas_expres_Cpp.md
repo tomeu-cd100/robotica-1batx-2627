@@ -32,7 +32,7 @@ void setup() {
 int lectura = analogRead(A0);
 Serial.println(lectura);        // per veure-ho al Monitor/Plotter
 
-// 3. Llindar + accio (el nightlight de SA3... i el termostat de SA6!)
+// 3. Llindar + accio (l'ultrasons del brac de SA4... i la pinca de SA6!)
 if (lectura > 600) {
   digitalWrite(8, HIGH);
 } else {

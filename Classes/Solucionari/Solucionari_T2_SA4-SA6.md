@@ -125,60 +125,49 @@ comandament de referència del braç).
 
 ## SA6
 
-### + Repte: termòstat amb indicador verd/vermell
-```cpp
-const int SENSOR=A0, SORTIDA=9, LED_V=7, LED_R=8;
-const int ALT=600, BAIX=500;
-bool actiu=false;
-void setup(){ pinMode(SORTIDA,OUTPUT); pinMode(LED_V,OUTPUT); pinMode(LED_R,OUTPUT); }
-void loop(){
-  int t = analogRead(SENSOR);
-  if (!actiu && t>ALT) actiu=true;
-  else if (actiu && t<BAIX) actiu=false;
-  digitalWrite(SORTIDA, actiu?HIGH:LOW);
-  digitalWrite(LED_R, actiu?HIGH:LOW);   // vermell = refrigerant
-  digitalWrite(LED_V, actiu?LOW:HIGH);   // verd = en repos
-}
+### Repte S1: el diagrama de blocs del braç
+
+```
+ consigna ──▶ [Arduino] ──▶ [servo base] ──▶ posició de la base
+ (anar al zero)    ▲                               │
+                   └──── [final de carrera] ◀──────┘   homing = llaç TANCAT
+
+ punts gravats ──▶ [Arduino] ──▶ [4 servos] ──▶ posició del braç
+                                                        replay = llaç OBERT
+                                                        (ningú no comprova que hi arriba)
 ```
 
-### + Repte: semàfor adaptatiu (polsador de vianant) amb màquina d'estats
+Error esperable: posar el sensor de col·lisió com a «sortida». La sortida és la posició; el sensor la **mesura** i la torna enrere.
+
+### + Repte S2: LED d'estat de la pinça
 ```cpp
-const int VERMELL=8, GROC=9, VERD=10, BOTO=2;
-enum Estat { COTXES_VERD, GROC_TRANS, COTXES_VERMELL };
-Estat estat = COTXES_VERD;
-unsigned long t0 = 0;
-bool peticio = false;
-
-void setup(){
-  pinMode(VERMELL,OUTPUT); pinMode(GROC,OUTPUT); pinMode(VERD,OUTPUT);
-  pinMode(BOTO, INPUT_PULLUP); t0 = millis();
-}
-void loop(){
-  if (digitalRead(BOTO)==LOW) peticio = true;   // vianant demana pas
-
-  switch(estat){
-    case COTXES_VERD:
-      digitalWrite(VERD,HIGH); digitalWrite(GROC,LOW); digitalWrite(VERMELL,LOW);
-      if (peticio && millis()-t0 > 3000){ estat=GROC_TRANS; t0=millis(); }
-      break;
-    case GROC_TRANS:
-      digitalWrite(VERD,LOW); digitalWrite(GROC,HIGH);
-      if (millis()-t0 > 1500){ estat=COTXES_VERMELL; t0=millis(); }
-      break;
-    case COTXES_VERMELL:
-      digitalWrite(GROC,LOW); digitalWrite(VERMELL,HIGH);
-      if (millis()-t0 > 5000){ estat=COTXES_VERD; t0=millis(); peticio=false; }
-      break;
-  }
-}
+// al setup(): pinMode(5, OUTPUT);
+// al final del loop(), despres de decidir:
+digitalWrite(5, pincaTancada);   // el LED surt de l'ESTAT, no de la distancia
 ```
 
-### + Repte: què passa si Kp és massa gran? (control proporcional)
-> **Resposta:** si **Kp** és massa gran, el sistema **sobrecorregeix**: oscil·la al voltant de la consigna i pot tornar-se **inestable** (no s'estabilitza mai). Si és massa petit, respon molt lentament i no arriba a la consigna. Cal buscar un valor **intermedi**. Es veu molt bé al **Serial Plotter** comparant la lectura amb la consigna.
+Si el LED es calcula amb `d < TANCA_CM`, a la finestra d'histèresi el LED i la pinça diuen coses diferents.
+
+### Repte S3: afegir l'estat CASA a la màquina d'estats
 ```cpp
-// Sobre SA6/codi/04_control_proporcional.ino, prova diferents valors:
-const float Kp = 0.8;   // 0.2 = lent ; 0.8 = equilibrat ; 3.0 = oscil-la/inestable
+enum Estat { REPOS, MANUAL, REPLAY, EMERGENCIA, CASA };
+
+// a REPOS: if (b && numPunts == 0) canviaEstat(CASA);
+case CASA:
+  escriu(90, 90, 90, PINCA_MIN);      // posicio de repos segura
+  canviaEstat(REPOS);
+  break;
 ```
+
+Cal afegir el `case` també a `canviaEstat()` (el missatge) i al **diagrama d'estats**: si no hi és al dibuix, no ha d'existir al codi.
+
+### Reptes A/B/C (control del braç)
+
+Solucions completes (`minim` i `ampliat`) a `Reptes/Solucionari/SA6/`:
+`A_pinca_histeresi` (LED, finestra regulable, filtre i comptador),
+`B_homing_sequencia` (homing, seqüència relativa al zero amb `millis()` i
+rearmament) i `C_proporcional_4` (les 4 articulacions arriben alhora amb
+velocitat màxima).
 
 ---
 

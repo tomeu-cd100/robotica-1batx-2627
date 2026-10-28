@@ -48,9 +48,9 @@ Informàtica britànica que als anys 80, a Acorn, va dissenyar el **BBC BASIC** 
 
 ## SA6 · Irmgard Flügge-Lotz — la teoria del tot/res
 
-**Ganxo:** *«El termòstat que fareu encén i apaga amb dos llindars. Sembla senzill… fins que has de demostrar que no es tornarà boig. Qui en va fer la teoria?»*
+**Ganxo:** *«La pinça que fareu es tanca i s'obre amb dos llindars. Sembla senzill… fins que has de demostrar que no es tornarà boig. Qui en va fer la teoria?»*
 
-Enginyera aeronàutica alemanya, pionera de la **teoria del control automàtic discontinu** (els controladors *on/off*, exactament el vostre termòstat amb histèresi), aplicada als sistemes de guiatge d'aeronaus. Va ser la **primera catedràtica d'enginyeria de Stanford** (1961).
+Enginyera aeronàutica alemanya, pionera de la **teoria del control automàtic discontinu** (els controladors *on/off*, exactament la vostra pinça amb histèresi), aplicada als sistemes de guiatge d'aeronaus. Va ser la **primera catedràtica d'enginyeria de Stanford** (1961).
 
 **Fil amb la SA:** la vostra histèresi de dos llindars és un controlador discontinu de llibre — el llibre, en bona part, el va escriure ella.
 

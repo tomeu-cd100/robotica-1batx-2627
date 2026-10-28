@@ -21,7 +21,7 @@ Solucionari/
 ├── SA3/  A_llum_nocturna/ · B_sensor_aparcament/ · C_instrument/ (.ino)
 ├── SA4/  A_brac_casa/ · B_brac_dispensador/ · C_brac_replay/  (.ino)
 ├── SA5/  A_selector_radio*.py · B_inclinacio_fina*.py · C_comandament_complet*.py
-├── SA6/  A_termostat/ · B_semafor_adaptatiu/ · C_proporcional/ (.ino)
+├── SA6/  A_pinca_histeresi/ · B_homing_sequencia/ · C_proporcional_4/ (.ino)
 ├── SA7/  A_repartidor/ · B_explorador/ · C_seguidor_linia/ (.ino)
 └── SA8/  A_estacio_meteo*.py · B_alerta*.py · C_gestos*.py
       └── A_estacio_meteo_esp32/ (.ino d'ESP32: l'ampliació ⭐⭐⭐ del repte A

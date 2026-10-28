@@ -1,154 +1,226 @@
-# Pràctica 3 · Màquina d'estats: enum, switch i millis()
+# Pràctica 3 · La màquina d'estats del braç: enum, switch i millis()
 
-**Quan es fa:** Sessió 3 (modelatge) · **Fitxer:** `03_maquina_estats.ino` · **Circuit:** [esquema de connexions](../../SA6_esquemes_connexions.md) (polsador a 2, LEDs a 7/8, sortida a 9~)
+**Quan es fa:** Sessió 3 (modelatge i base del producte) · **Fitxer:** `03_maquina_estats.ino` · **Circuit:** [esquema de connexions](../../SA6_esquemes_connexions.md) (els 4 servos i els 4 potenciòmetres de la SA4; col·lisió=D2; polsadors A=D3 i B=D4)
 
 > ✍️ **Kata primer!** Si avui encara no has fet cap kata (ni el mini-check), obre el [kata d'aquesta pràctica](../../SA6_katas.md): 10 minuts per escriure el teu bloc abans de llegir aquest codi. Si ja l'has fet, endavant.
 
 ## 🎯 Per què fem aquesta pràctica
 
-Mira una **rentadora**: remull → rentat → esbandida → centrifugat. En cada moment està en **una situació concreta**, fa una cosa concreta, i **canvia** de situació quan passa alguna cosa (s'acaba el temps, s'omple el tambor). Això és una **màquina d'estats**: la manera estàndard d'organitzar qualsevol comportament que "recorda en quin punt està" — d'un semàfor a un ascensor, d'un caixer automàtic al braç robòtic del trimestre.
+El teu braç ja sap fer moltes coses: moure's amb potenciòmetres, gravar
+punts, reproduir-los, aturar-se si xoca. El problema és posar-les **juntes**
+sense que es trepitgin. Què ha de fer si xoca enmig d'un replay? I si algú
+toca un potenciòmetre mentre reprodueix? Amb `if` escampats, el programa es
+torna un embolic.
 
-De fet, tu ja en vas plantar la llavor a la SA2: el [semàfor amb `switch`](../../../SA2/codi/02b_semafor_switch/EXPLICACIO.md) tenia una variable `fase` i un `case` per fase. Avui la llavor germina amb tres millores: els estats tenen **nom** (`enum`) en lloc de números, les transicions poden ser per **temps o per esdeveniment** (polsador), i — la més important — el programa **no es bloqueja mai**: en lloc de `delay()`, cronometra amb `millis()` i així **continua llegint el polsador mentre espera**. El semàfor de la SA2 quedava sord durant cada `delay`; aquest sistema, no.
+La solució és pensar el braç com un aparell amb **modes**, igual que una
+rentadora (rentar, esbandir, centrifugar): en cada moment és en **un sol
+estat**, cada estat sap què ha de fer i quan s'ha de passar a un altre.
+Això és una **màquina d'estats**. Els quatre del teu braç:
+
+| Estat | Què fa | En surt quan… |
+|---|---|---|
+| **REPÒS** | Quiet. | A → MANUAL · B → REPLAY (si hi ha punts) |
+| **MANUAL** | Els potenciòmetres el mouen; B grava el punt. | A → REPÒS |
+| **REPLAY** | Reprodueix els punts gravats, un cada 700 ms. | En acabar o amb A → REPÒS |
+| **EMERGÈNCIA** | No mou res. | Sensor alliberat **i** A → REPÒS |
 
 ## 🔮 Abans d'executar: prediu
 
-Mirant el codi (a baix, plegat): quins **estats** hi ha i en quin **ordre** es recorren? Què cal fer perquè arrenqui? Quant dura cada fase? I la difícil: si mentre `FASE1` treballa premeu el polsador, **passa res**? Apunta-ho a l'Activitat 3 de la [fitxa](../../SA6_fitxa_alumnat.md) i comprova-ho.
+Engegues, prems A, mous el braç i prems B tres vegades en tres posicions.
+Prems A i després B. Què fa el braç? I si mentre reprodueix toques el sensor
+de col·lisió amb el dit? I si després deixes anar el sensor però **no** prems
+A? Dibuixa el **diagrama d'estats** (cercles i fletxes) a l'Activitat 3 de la
+[fitxa](../../SA6_fitxa_alumnat.md) abans de provar-ho.
 
 ## 🧠 El codi, per blocs
 
 ### Bloc 1 — Estats amb nom: `enum`
 
 ```cpp
-enum Estat { ESPERA, FASE1, FASE2, FET };
-Estat estat = ESPERA;
+enum Estat { REPOS, MANUAL, REPLAY, EMERGENCIA };
+Estat estat = REPOS;
 ```
 
-Un `enum` crea un **tipus nou** que només pot valer un d'aquests quatre noms. Compara-ho amb el `int fase = 0; // 0=vermell...` de la SA2: allà el significat vivia en un comentari; aquí `estat = FASE2` **es llegeix sol**, i el compilador t'avisa si escrius un estat que no existeix. La variable `estat` és única: el sistema és **sempre en un estat i només un**.
+Un `enum` és una llista de noms per a uns pocs valors possibles. Podries fer
+servir números (0 = repòs, 1 = manual…), però d'aquí a una setmana no
+recordaries què era el 2. Amb noms, el codi s'explica sol, i el compilador et
+renya si escrius un estat que no existeix.
 
-### Bloc 2 — Totes les transicions passen per una porta
+### Bloc 2 — Una sola porta per canviar d'estat
 
 ```cpp
-unsigned long tEstat = 0;   // marca de temps d'entrada a l'estat
-
 void canviaEstat(Estat nou) {
   estat = nou;
-  tEstat = millis();
+  switch (nou) {
+    case REPOS:      Serial.println("Estat: REPOS");      break;
+    // ...
+  }
 }
 ```
 
-Cada canvi d'estat ha de fer **dues** coses: canviar `estat` i apuntar **quan** hi hem entrat (`tEstat`), perquè les transicions per temps puguin comptar. Posar-ho en una funció (`canviaEstat`) garanteix que mai no te'n deixaràs la meitat — cada oblit seria una màquina "penjada".
+Tots els canvis d'estat passen per aquesta funció. Si un dia vols encendre un
+LED per estat, ho canvies **aquí** i ja funciona a tot arreu. I el Monitor
+sèrie sempre diu la veritat sobre l'estat del braç.
 
-### Bloc 3 — Un `switch`, un `case` per estat
-
-```cpp
-switch (estat) {
-
-  case ESPERA:
-    digitalWrite(LED_VERMELL, HIGH);
-    digitalWrite(LED_VERD, LOW);
-    analogWrite(SORTIDA, 0);
-    if (polsat()) { canviaEstat(FASE1); delay(250); }  // arrenca en premer
-    break;
-  ...
-}
-```
-
-Cada `case` respon **dues preguntes**: *què fa* el sistema en aquest estat (les sortides) i *quan i cap a on en surt* (la transició). Aquí la transició és per **esdeveniment**: el polsador. El `delay(250)` petit és un antirebots casolà perquè una sola premuda no compti dues vegades. Fixa't que el `switch` és la **transcripció literal** del diagrama d'estats que has dibuixat: cada casella un `case`, cada fletxa un `canviaEstat()`.
-
-### Bloc 4 — Transició per temps SENSE `delay()`
+### Bloc 3 — Les entrades, una vegada per volta
 
 ```cpp
-case FASE1:
-  digitalWrite(LED_VERMELL, LOW);
-  digitalWrite(LED_VERD, HIGH);
-  analogWrite(SORTIDA, 120);
-  if (millis() - tEstat > 3000) canviaEstat(FASE2);  // 3 s
-  break;
+  bool xoc = (digitalRead(PIN_COLLISIO) == LOW);
+  bool a = premut(BOTO_A, anteriorA);
+  bool b = premut(BOTO_B, anteriorB);
 ```
 
-Aquí hi ha el patró que vas practicar a la SA4 (`05_dos_leds_millis`): en lloc d'un `delay(3000)` que deixaria el programa **sord** tres segons, cada volta de `loop()` es pregunta *"quant fa que soc en aquest estat?"* (`millis() - tEstat`) i, si ja passa de 3000 ms, salta. Entre pregunta i pregunta, el `loop()` gira lliure — i podria llegir sensors, polsadors, el que calgui. **Per això les màquines d'estats de debò no porten `delay` llargs.**
+Es llegeix tot **a dalt de tot** i es guarda en variables. `premut()` torna
+cert només **en el moment** de prémer (el flanc), com el `was_pressed()` de la
+micro:bit: així una premuda és una sola acció. El `&` de `anteriorA` és el de
+la SA4: la funció ha de poder actualitzar l'original.
+
+### Bloc 4 — L'emergència, abans de tot
+
+```cpp
+  if (xoc && estat != EMERGENCIA) {
+    canviaEstat(EMERGENCIA);
+  }
+```
+
+Aquesta línia va **abans** del `switch`, no dins de cap estat. Així, estigui
+on estigui el braç (repòs, manual o a mig replay), un xoc el porta a
+emergència a l'instant. És una **prioritat**: la seguretat mana per damunt de
+qualsevol altra cosa.
+
+### Bloc 5 — Un `switch`, un `case` per estat
+
+```cpp
+  switch (estat) {
+    case MANUAL:
+      segueixPots();
+      if (a) {
+        canviaEstat(REPOS);
+      } else if (b) {
+        gravaPunt();
+      }
+      break;
+    // ...
+  }
+```
+
+Cada `case` és un estat: **què fa** (`segueixPots()`) i **quan en surt**
+(`if (a)`). El `break` és imprescindible: sense ell, el programa continuaria
+executant el `case` següent.
+
+### Bloc 6 — El replay sense `delay()`
+
+```cpp
+    case REPLAY:
+      if (a) {
+        canviaEstat(REPOS);
+      } else if (millis() - tPunt >= PAUSA_PUNT) {
+        tPunt = millis();
+        if (puntReplay < numPunts) {
+          escriu(seqBase[puntReplay], seqEsq[puntReplay],
+                 seqDret[puntReplay], seqPinca[puntReplay]);
+          puntReplay++;
+        } else {
+          canviaEstat(REPOS);
+        }
+      }
+      break;
+```
+
+És el patró de la bastida [`05_dos_servos_millis`](../../../SA4/codi/05_dos_servos_millis/EXPLICACIO.md)
+de la SA4. Si el replay fes `delay(700)` entre punts, durant aquells 700 ms el
+braç seria **sord i cec**: no veuria el xoc ni el botó A. Amb `millis()`, el
+`loop()` dona voltes sense parar i, a cada volta, l'emergència es torna a
+comprovar.
 
 ## ⚠️ Errors que veuràs segur
 
 | Símptoma | Causa probable |
 |---|---|
-| La màquina es queda "penjada" en un estat | Aquell `case` no té transició, o la seva condició no es pot complir mai (targeta de rescat T6.2: `Serial.println(estat);`). |
-| No arrenca en prémer | Polsador mal cablejat: amb `INPUT_PULLUP`, va del pin 2 a **GND** i premut = `LOW`. |
-| Salta dos estats amb una sola premuda | Falta l'antirebots (`delay(250)` després de la transició) o el mantens premut. |
-| Dos estats es comporten "barrejats" | Falta un `break` al final d'un `case` (el *fall-through* que vas veure a la SA2). |
+| Un `case` fa també la feina del següent | Falta el `break`. |
+| Una premuda fa dues coses (entra a MANUAL i grava) | Has llegit el botó amb `digitalRead()` directe en lloc de `premut()`. |
+| L'emergència no salta durant el replay | Hi ha un `delay()` llarg dins del replay, o la comprovació és dins d'un `case` i no abans del `switch`. |
+| En sortir d'emergència el braç torna a xocar de seguida | El rearmament no exigeix el sensor alliberat (`!xoc`). |
 
 ## 🧗 Si t'encalles: l'esquelet
 
-Si el patró se't fa bola, no comencis de zero: parteix d'aquest esquelet. L'estructura difícil ja està muntada (`enum`, `switch`, `canviaEstat()` i el cronòmetre `tempsEnEstat()` amb `millis()`); tu només omples els `// TODO:` de cada estat — què fa i quan en surt. Compila tal qual; no fa res visible fins que omplis els estats. Vols la **recepta del patró** (les 3 regles) abans de començar? → [fitxa ampliada, «La recepta»](../../SA6_fitxa_ampliada.md).
+Si el patró se't fa bola, no comencis de zero: parteix d'aquest esquelet. L'estructura difícil ja està muntada (`enum`, `switch`, `canviaEstat()`, les entrades i la prioritat de l'emergència); tu només omples els `// TODO:` de cada estat — què fa i quan en surt. Compila tal qual. Vols la **recepta del patró** (les 3 regles) abans de començar? → [fitxa ampliada, «La recepta»](../../SA6_fitxa_ampliada.md).
 
 <details markdown="1">
 <summary>Desplega l'esquelet (còpia'l a un sketch nou)</summary>
 
 ```cpp
 /*
-  SA6 - maquina d'estats bastida (esquelet per comencar)
+  SA6 - maquina d'estats del brac, bastida (esquelet per comencar)
 
-  El patro dificil ja esta muntat: enum d'estats, switch, i temporitzacio
-  NO bloquejant amb millis() (com a 05_dos_leds_millis.ino de la SA4).
+  El patro dificil ja esta muntat: enum d'estats, switch, canviaEstat(),
+  lectura de les entrades i la PRIORITAT de l'emergencia.
   Tu nomes has d'OMPLIR els // TODO: que fa cada estat i quan canvia.
+  Per simplificar, aquest esquelet nomes mou la BASE (potenciometre A0).
 
-  Munta: polsador al pin 2 (INPUT_PULLUP), LEDs als pins 7 i 8, sortida al 9.
+  Circuit: servo base=9 (piles + GND comu); col.lisio D2 (LOW = xoc);
+           polsador A D3, polsador B D4.
 */
 
-const int POLSADOR = 2;
-const int LED_VERD = 7;
-const int LED_VERMELL = 8;
-const int SORTIDA = 9;
+#include <Servo.h>
 
-// Pots afegir o treure estats segons el teu proces.
-enum Estat { ESPERA, FASE1, FASE2, FET };
-Estat estat = ESPERA;
+const int PIN_COLLISIO = 2;
+const int BOTO_A = 3;
+const int BOTO_B = 4;
 
-unsigned long tEstat = 0;   // moment d'entrada a l'estat actual
+Servo base;
+
+enum Estat { REPOS, MANUAL, EMERGENCIA };
+Estat estat = REPOS;
+
+int anteriorA = HIGH, anteriorB = HIGH;
+
+bool premut(int pin, int &anterior) {
+  int ara = digitalRead(pin);
+  bool flanc = (ara == LOW && anterior == HIGH);
+  anterior = ara;
+  return flanc;
+}
 
 void canviaEstat(Estat nou) {
   estat = nou;
-  tEstat = millis();        // reinicia el "cronometre" de l'estat
-}
-
-bool polsat() {
-  return digitalRead(POLSADOR) == LOW;
-}
-
-// Quants ms portem dins de l'estat actual (patro no bloquejant).
-unsigned long tempsEnEstat() {
-  return millis() - tEstat;
+  Serial.print("Estat: ");
+  Serial.println(nou);       // 0 = REPOS, 1 = MANUAL, 2 = EMERGENCIA
 }
 
 void setup() {
-  pinMode(POLSADOR, INPUT_PULLUP);
-  pinMode(LED_VERD, OUTPUT);
-  pinMode(LED_VERMELL, OUTPUT);
-  pinMode(SORTIDA, OUTPUT);
   Serial.begin(9600);
+  pinMode(PIN_COLLISIO, INPUT_PULLUP);
+  pinMode(BOTO_A, INPUT_PULLUP);
+  pinMode(BOTO_B, INPUT_PULLUP);
+  base.attach(9);
+  base.write(90);
 }
 
 void loop() {
+  bool xoc = (digitalRead(PIN_COLLISIO) == LOW);
+  bool a = premut(BOTO_A, anteriorA);
+  bool b = premut(BOTO_B, anteriorB);
+
+  if (xoc && estat != EMERGENCIA) {
+    canviaEstat(EMERGENCIA);   // la seguretat mana per damunt de tot
+  }
+
   switch (estat) {
-
-    case ESPERA:
-      // TODO: que ha de fer el sistema mentre espera? (LEDs, sortida)
-      // TODO: quan ha de passar a FASE1? (p. ex. if (polsat()) canviaEstat(FASE1);)
+    case REPOS:
+      // TODO: quan s'ha de passar a MANUAL? (pista: el polsador A)
       break;
 
-    case FASE1:
-      // TODO: comportament de FASE1
-      // TODO: transicio per TEMPS -> if (tempsEnEstat() > 3000) canviaEstat(FASE2);
+    case MANUAL:
+      // TODO: que fa el brac en manual? (pista: map() del potenciometre A0)
+      // TODO: quan torna a REPOS?
       break;
 
-    case FASE2:
-      // TODO: comportament de FASE2 i transicio cap a FET
-      break;
-
-    case FET:
-      // TODO: indica que ha acabat; torna a ESPERA si es torna a polsar
+    case EMERGENCIA:
+      // TODO: no es mou res. Quan se'n surt? (dues condicions alhora!)
       break;
   }
+  delay(20);
 }
 ```
 
@@ -156,9 +228,8 @@ void loop() {
 
 ## 🔗 On ho aplicaràs
 
-- **Repte de la S3:** afegir un estat nou o una transició condicional; **+ repte:** semàfor adaptatiu amb polsador de vianant.
-- **La llavor de la SA2:** compara aquest sketch amb el [semàfor amb `switch`](../../../SA2/codi/02b_semafor_switch/EXPLICACIO.md) que vas fer llavors — és la mateixa estructura, amb noms, esdeveniments i `millis()`.
-- **Producte del trimestre:** el control complet del **braç** (repòs/manual/replay/emergència) és exactament aquest patró — i l'[exemple resolt del dipòsit](../../SA6_exemple_resolt.md) et mostra com combinar-lo amb la histèresi.
-- **SA7:** els comportaments autònoms del robot (buscar, esquivar, seguir línia) es programen com a estats.
+- **Producte de la SA6:** la màquina d'estats del braç amb el **comandament per ràdio**: les ordres `A`, `R` i `G` arriben pel pont en lloc dels polsadors ([dossier](../../../00_General/00_Projecte_T2_Brac.md#la-màquina-destats-del-braç)).
+- **La llavor de la SA2:** compara aquest sketch amb el [semàfor amb `switch`](../../../SA2/codi/02b_semafor_switch/EXPLICACIO.md) — és la mateixa estructura, amb noms, esdeveniments i `millis()`.
+- **SA7:** els comportaments autònoms del rover (buscar, esquivar, seguir línia) es programen com a estats.
 
 > ⭐ **Has acabat abans?** Tria un repte a **[Reptes de la SA6](../../../../Reptes/Reptes_SA6.md)** i, quan el docent te'l validi, pinta l'estrella al [tauler de reptes](../../../00_General/00_Tauler_reptes.md).

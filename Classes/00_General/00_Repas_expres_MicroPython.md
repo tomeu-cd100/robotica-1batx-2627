@@ -33,20 +33,22 @@ display.show(Image.YES)      # o Image.NO per a l'alerta
 if button_a.is_pressed():
     display.show("A")
 
-# 3. Sensors integrats: temperatura i llum
-t = temperature()            # graus (aprox.)
-llum = display.read_light_level()   # 0-255
+# 3. Sensors integrats: l'accelerometre (el comandament del brac)
+x = accelerometer.get_x()    # inclinacio esquerra/dreta (-2000..2000)
+t = temperature()            # graus (aprox.), per si de cas
 
-# 4. Llindar + alerta (com el termostat, pero en Python!)
-if t > 28:
-    display.show(Image.NO)   # alerta
+# 4. Llindar + resposta (com la pinca de SA6, pero en Python!)
+if x > 300:
+    display.show(Image.ARROW_E)
+elif x < -300:
+    display.show(Image.ARROW_W)
 else:
-    display.show(Image.YES)
+    display.show(Image.DIAMOND_SMALL)
 
 # 5. Radio: enviar i rebre
 radio.on()
 radio.config(group=10)       # mateix grup a les dues plaques!
-radio.send(str(t))           # sempre s'envia TEXT (str)
+radio.send("B+")             # sempre s'envia TEXT (str)
 m = radio.receive()          # None si no hi ha res
 if m:
     display.scroll(m)
@@ -54,7 +56,7 @@ if m:
 
 ## 3 · Autotest (2') — sense mirar amunt
 
-1. Escriu el `while True:` que mostra la temperatura i, si passa de 28, treu `Image.NO`.
+1. Escriu el `while True:` que mostra una fletxa a la dreta si la placa s'inclina a la dreta (`x > 300`) i un rombe petit si és plana.
 2. Per què cal `radio.config(group=10)` a **totes dues** plaques?
 3. Què retorna `radio.receive()` quan no ha arribat res, i com ho comproves?
 
@@ -64,12 +66,12 @@ if m:
 ```python
 from microbit import *
 while True:
-    t = temperature()
-    if t > 28:
-        display.show(Image.NO)
+    x = accelerometer.get_x()
+    if x > 300:
+        display.show(Image.ARROW_E)
     else:
-        display.scroll(str(t))
-    sleep(1000)
+        display.show(Image.DIAMOND_SMALL)
+    sleep(100)
 ```
 2. Perquè només es "senten" les plaques del **mateix grup**; si no coincideix, l'emissor envia i el receptor no rep res.
 3. Retorna `None`; es comprova amb `if m:` abans de fer servir el missatge.

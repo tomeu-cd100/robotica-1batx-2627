@@ -8,12 +8,12 @@
 
 **Nom:** ______________________  **Data:** __________
 
-> Faràs que el sistema **es reguli sol**. Treballaràs llaç obert/tancat, histèresi, màquines d'estats i control proporcional.
+> Faràs que el **teu braç MeArm es controli sol**. Treballaràs llaç obert/tancat (homing), histèresi (la pinça automàtica), la màquina d'estats del braç i el moviment proporcional.
 
 ---
 
 ## Activitat 1 · Llaç obert vs llaç tancat (S1)
-0. **PREDIU** (abans d'executar): mirant `01_llac_obert_vs_tancat.ino`, en quin dels dos modes creus que el sistema corregirà sol les pertorbacions? ____________________
+0. **PREDIU** (abans d'executar): mirant `01_llac_obert_vs_tancat.ino`, en quin dels dos modes la base trobarà el final de carrera encara que l'hagis muntat en un altre lloc? ____________________
 1. Carrega `01_llac_obert_vs_tancat.ino`, prova els dos modes i **comprova** la predicció.
 2. Completa el **diagrama de blocs** del llaç tancat:
 
@@ -22,7 +22,7 @@
                   ↑________________ [ SENSOR ] ___________________|
 ```
 3. Diferència principal entre llaç obert i tancat: ________________________
-4. **Repte:** 3 exemples reals de cada tipus.
+4. **Repte:** 3 exemples reals de cada tipus (almenys un de cada, d'un robot).
 
 | Llaç obert | Llaç tancat |
 |---|---|
@@ -30,19 +30,19 @@
 | | |
 | | |
 
-## Activitat 2 · Termòstat amb histèresi (S2)
-1. Carrega `02_termostat_histeresi.ino`. Quins són els dos llindars?  Encén a ____  · Apaga a ____
+## Activitat 2 · Pinça automàtica amb histèresi (S2)
+1. Carrega `02_pinca_histeresi.ino`. Quins són els dos llindars?  Es tanca a ____ cm · S'obre a ____ cm
 2. Què passaria **sense** histèresi (un sol llindar)? ____________________
 3. **Repte:** modifica la finestra d'histèresi i descriu l'efecte: ______________
 
-## Activitat 3 · Màquina d'estats (S3)
-1. Carrega `03_maquina_estats.ino`. Enumera els estats: ____________________
+## Activitat 3 · La màquina d'estats del braç (S3)
+1. Carrega `03_maquina_estats.ino`. Enumera els estats del braç: ____________________
 2. Dibuixa el **diagrama d'estats** (estats i transicions):
 
 ```
 
 ```
-3. **Repte:** afegeix un estat nou o una transició condicional. Quin? ____________
+3. **Repte:** afegeix un estat nou al braç (p. ex. CASA, que el porta a la posició de repòs a poc a poc). Quin? ____________
 
 ### 📐 La recepta: d'`if-else` infinits a màquina d'estats
 
@@ -104,9 +104,9 @@ void loop() {
 
 ## Activitat 4 · Control proporcional (S4)
 1. Carrega `04_control_proporcional.ino`. Què és l'**error**? ____________________
-2. Com afecta la constant `Kp` a la resposta? ___________________________
-3. **Repte:** compara tot/res vs proporcional al Serial Plotter. Quin és més estable? ______
-4. **+ Repte:** què passa si `Kp` és massa gran? _________________________
+2. Com afecta la constant `K` al moviment de la base? ___________________________
+3. **Repte:** compara el salt (`K = 1`) amb el moviment proporcional al Serial Plotter. Quin deixaria caure menys l'objecte? ______
+4. **+ Repte:** aplica-ho a les **quatre** articulacions alhora. Arriben totes alhora? _________________________
 
 **Autoavaluació** (situa't; la nota és 0-10):
 | Criteri | Nivell |
@@ -138,8 +138,8 @@ El muntatge, el codi i la defensa del sistema de control són **teus**. Això no
 
 ## Vols més?
 
-- **Reptes ⭐:** [`Reptes/Reptes_SA6.md`](../../Reptes/Reptes_SA6.md) (termòstat, semàfor adaptatiu, proporcional).
-- **Simulació interactiva (Wokwi):** termòstat a [`SA6_esquemes_connexions.md`](SA6_esquemes_connexions.md).
+- **Reptes ⭐:** [`Reptes/Reptes_SA6.md`](../../Reptes/Reptes_SA6.md) (pinça amb LED d'estat, homing + seqüència segura, proporcional a les 4 articulacions).
+- **Simulació interactiva (Wokwi):** la histèresi sense el braç, a [`SA6_esquemes_connexions.md`](SA6_esquemes_connexions.md).
 
 ---
 

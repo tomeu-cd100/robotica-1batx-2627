@@ -9,39 +9,38 @@
 ## Kata · `01_llac_obert_vs_tancat` (Sessió 1)
 
 **Projecta (enunciat):**
-> Tens ja declarades les constants `SENSOR` (A0), `SORTIDA` (pin 9) i `CONSIGNA` (450) *(valor diferent del sketch, expressament)*, i el `setup()` que configura `SORTIDA` com a `OUTPUT` i engega el Serial. Escriu de zero el bloc del **llaç tancat**: llegeix el sensor, mostra la lectura pel Monitor sèrie, encén la sortida si supera la consigna i apaga-la en cas contrari, i acaba amb una pausa de 120 ms.
+> Tens ja l'objecte `base`, les constants `PIN_COLLISIO` (2) i `PAS_HOMING` (40 ms) *(valor diferent del sketch, expressament)*, i les variables `angle = 90` i `acabat = false`. Escriu de zero el bloc del **homing** (llaç tancat) que va dins del `loop()`: si encara no ha acabat, mira el sensor; si toca (`LOW`), escriu per Serial l'angle on ha tocat i marca `acabat`; si no toca i l'angle ja és 0, avisa que no l'ha trobat i marca `acabat`; si no, baixa un grau, escriu-lo al servo i espera `PAS_HOMING`.
 
-**Practica:** `analogRead` · `Serial.println` · comparació amb una consigna · `digitalWrite` condicional.
-**Pista (per a qui es bloqueja):** pensa-ho en tres passos seguits: mesura, ensenya el valor, i decideix la sortida comparant-la amb la consigna.
-**En comparar amb el sketch, mireu:** ① la comparació és `lectura > CONSIGNA` (estricta), o hi heu posat `>=`? ② heu fet servir un únic `if`/`else`, o dos `if` independents (un que encén, un que apaga)? ③ el `delay()` final és una única línia, fora de la decisió, o l'heu duplicat dins de cada branca?
+**Practica:** llaç tancat (llegir el sensor a cada pas) · `if`/`else if`/`else` amb una guarda · `digitalRead` amb `INPUT_PULLUP` (`LOW` = toca).
+**Pista (per a qui es bloqueja):** tres preguntes en ordre: *ja toca?* → *ja no puc baixar més?* → *si no, un pas més*.
+**En comparar amb el sketch, mireu:** ① la comprovació del sensor va **abans** de moure el servo, o mou i després pregunta? ② heu inclòs la **guarda** de l'angle 0 (sense ella, si el sensor falla, el braç empeny per sempre)? ③ el sensor es compara amb `LOW` (tocat) o amb `HIGH`?
 
-## Kata · `02_termostat_histeresi` (Sessió 2)
+## Kata · `02_pinca_histeresi` (Sessió 2)
 
 **Projecta (enunciat):**
-> Tens ja declarades les constants `LLINDAR_ALT` (650) i `LLINDAR_BAIX` (550) *(valors diferents del sketch, expressament)*, la variable `bool actiu = false`, i el `setup()` que configura `SORTIDA` com a `OUTPUT`. Escriu de zero el `loop()`: llegeix el sensor a una variable `t`; decideix si cal engegar (quan estava aturat i `t` supera `LLINDAR_ALT`) o aturar (quan estava en marxa i `t` baixa de `LLINDAR_BAIX`) actualitzant `actiu`; aplica `actiu` a la sortida; i mostra per Serial la lectura i l'estat, amb una pausa de 130 ms.
+> Tens ja `mesuraDistancia()`, l'objecte `pinca`, les constants `TANCA_CM = 5` i `OBRE_CM = 12` *(valors diferents del sketch, expressament)*, `PINCA_TANCADA`, `PINCA_OBERTA` i la variable `bool pincaTancada = false`. Escriu de zero el `loop()`: mesura la distància; si la pinça és oberta i la distància baixa de `TANCA_CM`, tanca-la i actualitza l'estat; si és tancada i la distància supera `OBRE_CM`, obre-la i actualitza l'estat. Pausa de 60 ms.
 
-**Practica:** `analogRead` · condició amb dos requisits combinats · memòria d'estat amb un `bool` · traduir un booleà a `HIGH`/`LOW`.
-**Pista (per a qui es bloqueja):** pensa en dos moments diferents, no en un únic número: quin és el moment d'engegar, i quin el d'aturar; si no és cap dels dos, no toquis `actiu`.
-**En comparar amb el sketch, mireu:** ① heu fet servir `if` / `else if` (una sola decisió, excloent), o dos `if` independents que es podrien avaluar tots dos a la mateixa volta? ② cada condició uneix els seus dos requisits amb `&&`, o els heu separat en `if` imbricats? ③ el `digitalWrite` final l'heu escrit amb l'operador ternari (`actiu ? HIGH : LOW`), o amb un `if`/`else` explícit?
+**Practica:** condició amb dos requisits combinats (`&&`) · memòria d'estat amb un `bool` · `if` / `else if` sense `else` final.
+**Pista (per a qui es bloqueja):** pensa en dos moments diferents, no en un únic número: quin és el moment de tancar i quin el d'obrir; si no és cap dels dos, no toquis res.
+**En comparar amb el sketch, mireu:** ① cada condició mira **la distància i l'estat** (`!pincaTancada && d < TANCA_CM`), o només la distància (i torna el clic-clic)? ② heu fet servir `if` / `else if` excloent, o dos `if` independents que es podrien complir tots dos a la mateixa volta? ③ heu posat un `else` final que obre o tanca? (no ha d'existir: entre llindars, no es fa res)
 
 ## Kata · `04_control_proporcional` (Sessions 2-3, repte +)
 
-> 🔁 **Si el fas a la S3, hi ha mini-check** i el mini-check substitueix el kata a l'aula (i, aquell dia, el kata de la sessió és el de la màquina d'estats). Aquest és un kata de **+ampliació**: fes-lo a la S2 si ja tens el termòstat enllestit, o pel teu compte com a repàs — el control proporcional **no entra a la prova T2**.
+> 🔁 **Si el fas a la S3, hi ha mini-check** i el mini-check substitueix el kata a l'aula (i, aquell dia, el kata de la sessió és el de la màquina d'estats). Aquest és un kata de **+ampliació**: fes-lo a la S2 si ja tens la pinça enllestida, o pel teu compte com a repàs.
 
 **Projecta (enunciat):**
-> Tens ja declarades les constants `SENSOR` (A0), `SORTIDA` (pin 9, PWM), `CONSIGNA` (450) i `Kp` (0.6, `float`) *(valors diferents del sketch, expressament)*, i el `setup()` que configura `SORTIDA` com a `OUTPUT`. Escriu de zero el `loop()`: llegeix el sensor, calcula l'`error` respecte a la consigna, calcula la sortida proporcional a l'error (`Kp` per l'error), limita el resultat al rang vàlid de PWM (0-255 — això sí, fix, és el rang del maquinari) i aplica'l a la sortida, amb una pausa de 70 ms.
+> Tens ja l'objecte `base` connectat, `const float K = 0.05` i `float angle = 90` *(valor diferent del sketch, expressament)*. Escriu de zero el `loop()`: llegeix la consigna del potenciòmetre A0 convertida a graus (0-180), calcula l'`error`, acosta `angle` a la consigna una fracció `K` de l'error, escriu-lo al servo arrodonit i mostra consigna i angle al Serial Plotter. Pausa de 20 ms.
 
-**Practica:** `analogRead` · `error = lectura - consigna` · multiplicació d'un `float` per un `int` amb conversió a enter · `constrain()` per limitar un rang · `analogWrite`.
-**Pista (per a qui es bloqueja):** pensa en tres magnituds encadenades: com de lluny ets de la consigna, quanta resposta hi apliques, i si aquesta resposta és un valor vàlid per al PWM.
-**En comparar amb el sketch, mireu:** ① la conversió a enter `(int)` l'apliqueu al resultat de `Kp * error` abans de guardar-lo, o guardeu `Kp * error` en una variable pròpia i la convertiu més tard? ② el `constrain()` actua sobre la variable `sortida` un cop calculada, o l'heu aplicat directament dins de l'`analogWrite`? ③ els dos límits de `constrain()` són `(0, 255)` en aquest ordre, o hi heu posat primer el màxim?
+**Practica:** `map()` · `error = consigna - angle` · acumular en un `float` · arrodonir en convertir a `int`.
+**Pista (per a qui es bloqueja):** tres magnituds encadenades: on vull anar, quant em falta, i quin tros d'això faig ara.
+**En comparar amb el sketch, mireu:** ① `angle` és `float`? (amb `int`, els passos petits s'arrodoneixen a 0 i el braç s'encalla) ② l'error és `consigna - angle` (i no al revés, que l'allunyaria)? ③ el valor que s'escriu al servo s'arrodoneix (`+ 0.5`) o es trunca?
 
 ## Kata · `03_maquina_estats` (Sessió 3, modelatge)
 
 > 🔁 **Aquest dia hi ha mini-check** (inici de la S3): el mini-check **substitueix el kata** a l'aula — no es fan tots dos, són el mateix múscul (escriptura individual de 10'). Aquest kata queda com a **repàs per fer pel teu compte abans de la prova T2**: la màquina d'estats és el patró més nou de la SA i el que menys has escrit a mà.
 
 **Projecta (enunciat):**
-> Tens ja declarat l'`enum Estat { ESPERA, FASE1, FASE2, FET }`, la variable `estat = ESPERA`, la funció `canviaEstat(Estat nou)` (canvia `estat` i actualitza `tEstat` amb `millis()`), la funció `bool polsat()` i els pins configurats a `setup()`. Escriu de zero un `loop()` amb un `switch(estat)` que inclogui **només** els casos `ESPERA` i `FASE1`: a `ESPERA`, `LED_VERMELL` encès i `LED_VERD` apagat, sortida a 0, i si es polsa, passa a `FASE1` (amb un petit `delay(200)` d'antirebots); a `FASE1`, `LED_VERMELL` apagat i `LED_VERD` encès, sortida PWM a 120, i si han passat més de 2000 ms des que hi vau entrar, passa a `FASE2` *(temps diferents del sketch, expressament)*.
+> Tens ja l'`enum Estat { REPOS, MANUAL, EMERGENCIA }`, la variable `estat = REPOS`, la funció `canviaEstat(Estat nou)`, la funció `segueixPots()` i, al principi del `loop()`, les variables `xoc`, `a` i `b` ja llegides. Escriu de zero la resta del `loop()`: la **prioritat de l'emergència** (si hi ha xoc i no hi som, cap a EMERGENCIA) i un `switch(estat)` amb tres `case`: a REPOS, si `a` → MANUAL; a MANUAL, `segueixPots()` i si `a` → REPOS; a EMERGENCIA, si **no** hi ha xoc **i** `a` → REPOS.
 
-**Practica:** `switch`/`case` amb un `case` per estat · `canviaEstat()` per centralitzar el canvi · transició per esdeveniment (`polsat()`) enfront de transició per temps (`millis() - tEstat`).
-**Pista (per a qui es bloqueja):** cada `case` respon dues preguntes, què fa el sistema aquí i quan en surt; un dels dos casos ho decideix amb el polsador, l'altre amb el rellotge.
-**En comparar amb el sketch, mireu:** ① cada `case` acaba amb un `break`, o els heu deixat encadenats? ② a `ESPERA`, el `delay()` d'antirebots és dins del mateix `if` que crida `canviaEstat(FASE1)`, o l'heu tret com a instrucció separada del `case`? ③ a `FASE1`, la condició de temps resta `millis() - tEstat`, o ho heu escrit a l'inrevés (`tEstat - millis()`)?
+**Practica:** `switch`/`case` amb un `case` per estat · `canviaEstat()` per centralitzar el canvi · prioritat d'una condició de seguretat · condició composta amb `&&` i `!`.
+**Pista (per a qui es bloqueja):** cada `case` respon dues preguntes: què fa el braç aquí i quan en surt. L'emergència no és un `case` més: va abans del `switch`.

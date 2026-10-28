@@ -139,11 +139,11 @@
 - 🟡 Al teu **diagrama d'estats**, cada estat necessita almenys una fletxa de sortida amb una condició observable. Compara el diagrama amb el `case` corresponent: falta la transició o no es compleix mai.
 - 🔴 Afegeix `Serial.println(estat);` al començament del `loop()` i mira el Monitor sèrie: veuràs exactament a quin estat es queda i podràs mirar només aquell `case`. (Si el patró se't fa bola: l'esquelet «Si t'encalles» de la [pàgina de la pràctica de la màquina d'estats](../SA6/codi/03_maquina_estats/EXPLICACIO.md).)
 
-**T6.3 · «La lectura de temperatura balla»**
+**T6.3 · «La distància de l'ultrasons balla»**
 
-- 🟢 El sensor «menteix» o «tremola»? Què esperaries veure al Serial Plotter en cada cas?
-- 🟡 Si tremola (soroll), fes la **mitjana** de diverses lectures i treballa amb la mitjana.
-- 🔴 `float suma = 0; for (int i = 0; i < 10; i++) { suma += analogRead(A0); delay(5); } float mitjana = suma / 10;`
+- 🟢 El sensor «menteix» (veu la taula o la pinça) o «tremola» (soroll)? Què esperaries veure al Serial Plotter en cada cas?
+- 🟡 Si menteix, apunta l'ultrasons més amunt o canvia'l d'angle. Si tremola, fes la **mitjana** de diverses lectures i treballa amb la mitjana.
+- 🔴 `float suma = 0; for (int i = 0; i < 5; i++) { suma += mesuraDistancia(); delay(10); } float mitjana = suma / 5;`
 
 ---
 

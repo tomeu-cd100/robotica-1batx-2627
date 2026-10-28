@@ -1,55 +1,50 @@
-# SA6 · Exemple resolt (model «jo ho faig») — Dipòsit d'aigua que es reomple sol
+# SA6 · Exemple resolt (model «jo ho faig») — La pinça vigilant
 
-> 🧑‍🎓 **Quan toca mirar-lo?** Després del teu **primer intent** amb la histèresi de l'**Activitat 2 (S2)** i la màquina d'estats de l'**Activitat 3 (S3)** — mai abans. És un problema **anàleg** per veure *com es pensa* un llaç tancat, no la solució del teu producte.
+> 🧑‍🎓 **Quan toca mirar-lo?** Després del teu **primer intent** amb la histèresi de l'**Activitat 2 (S2)** i la màquina d'estats de l'**Activitat 3 (S3)** — mai abans. És un problema **anàleg** per veure *com es pensa* un llaç tancat amb estats, no la solució del teu producte.
 
-> 🔗 **D'on ve i on va.** Aquest exemple és el **bessó comentat** de la pràctica [Termòstat amb histèresi: dos llindars contra el clic-clic](codi/02_termostat_histeresi/EXPLICACIO.md) — i hi suma la [màquina d'estats de la Pràctica 3](codi/03_maquina_estats/EXPLICACIO.md): la mateixa histèresi amb la lògica **girada** (la bomba engega quan el sensor **baixa**) i un context expressament diferent. Serveix per veure **com es pensa**, no per copiar-lo. Quan l'hagis entès, torna a la pàgina de la pràctica i fes-la teva.
+> 🔗 **D'on ve i on va.** Aquest exemple és el **bessó comentat** de la pràctica [Histèresi: la pinça automàtica](codi/02_pinca_histeresi/EXPLICACIO.md) — i hi suma la [màquina d'estats de la Pràctica 3](codi/03_maquina_estats/EXPLICACIO.md): la mateixa pinça, però organitzada en **estats** i amb una **alarma** per temps. Serveix per veure **com es pensa**, no per copiar-lo. Quan l'hagis entès, torna a la pàgina de la pràctica i fes-la teva.
 
 > 🗺️ **Com es llegeix per apartats:** **🔑 El repte model** primer, per situar-te · **🧭 Com ho penso** abans d'escriure el **teu** codi (és l'apartat més important: el raonament) · **💡 La solució anotada** només **després del teu intent**, per comparar · **🔬 Provo i mesuro** quan provis el teu: copia'n el **mètode**, no el resultat · **⚠️ Contraexemple** quan una cosa no rutlli — i com a repàs abans d'entregar · **📔 Diari de bord** quan escriguis la teva entrada del quadern.
 
-> **Nota docent:** mostra'l **després del primer intent** amb `02_termostat_histeresi.ino`
-> i `03_maquina_estats.ino`, mai abans. No és la solució del producte (S3, la prova T2): és un
-> problema **anàleg** resolt pas a pas perquè l'alumnat vegi *com es pensa* un llaç tancat, no
-> què s'ha de copiar. Comenta en veu alta el pas «🧭 Com ho penso» (predicció abans de codi,
-> PRIMM) i el «⚠️ Contraexemple».
+> **Nota docent:** mostra'l **després del primer intent** amb `02_pinca_histeresi.ino`
+> i `03_maquina_estats.ino`, mai abans. No és la solució del producte (S3) ni de la prova T2:
+> és un problema **anàleg** resolt pas a pas perquè l'alumnat vegi *com es pensa* un llaç tancat
+> amb estats. Comenta en veu alta el pas «🧭 Com ho penso» (predicció abans de codi, PRIMM) i el
+> «⚠️ Contraexemple».
 
 ---
 
-![Histèresi: dos llindars amb una zona morta per evitar el parpelleig](img/sa6-histeresi.svg)
+![Gràfica de la histèresi de la pinça: es tanca per sota de 6 cm i només s'obre per sobre de 10 cm](img/sa6-histeresi-pinca.svg)
 
 ## 🔑 El repte model
 
-> Controlar el **nivell d'un dipòsit d'aigua**: una **bomba** l'omple quan el nivell baixa
-> massa i **s'atura** quan ja és prou ple. La bomba **no ha de fer «clic-clic»** quan el nivell
-> queda a prop del punt objectiu (**histèresi**, dos llindars). A més, si la bomba porta massa
-> estona en marxa sense que pugi el nivell (potser la font és buida), el sistema entra en
-> **ALARMA** i espera que algú el rearmi.
+> A l'estació de recollida, la **pinça agafa sola** les peces que s'hi acosten (histèresi: tanca a
+> menys de 6 cm, obre a més de 10 cm). Però si una peça es queda **agafada massa estona** (més de
+> 10 s) perquè ningú la recull, la pinça entra en **ALARMA**: un LED parpelleja i la pinça no fa
+> res més fins que algú prem el **polsador de rearmament**, que l'obre.
 
-Fa servir només conceptes de la SA6: **llaç tancat** (sensor → decisió → actuador),
+Fa servir només conceptes de la SA6: **llaç tancat** (ultrasons → decisió → pinça),
 **histèresi** amb dos llindars, **màquina d'estats** (`enum`/`switch`) i **`millis()`** sense
-bloquejar. El muntatge és el mateix esquema de la SA6: **sensor a A0**, **sortida a 9~**
-(bomba via transistor/relé), **LED verd/vermell a 7/8** i **polsador a 2** (`INPUT_PULLUP`).
-
-> ⚠️ Fixa't que la lògica és **al revés** que la del termòstat: aquí la bomba **s'engega quan
-> el sensor baixa** (dipòsit buit), no quan puja. Entendre la histèresi és saber-la girar.
+bloquejar. El muntatge és el del braç: **pinça al D11**, **ultrasons al D7/D8**, un **LED al D5**
+(amb 220 Ω) i el **polsador A al D3**.
 
 ---
 
 ## 🧭 Com ho penso (abans d'escriure codi)
 
-1. **Analitzo:** és un **llaç tancat**. Mesuro el nivell (A0), el comparo amb el que vull i
-   decideixo si la bomba va o no. La realimentació és el sensor de nivell.
-2. **Descomponc:** el comportament té **tres situacions clares** → **REPÒS** (ple, bomba
-   aturada), **OMPLINT** (bomba en marxa) i **ALARMA** (fallada). Això demana una **màquina
-   d'estats** (`enum`/`switch`), com al `03_maquina_estats.ino`.
-3. **Evito el «clic-clic»:** si engego i apago al **mateix** valor, prop d'aquest valor la
-   bomba vibrarà. Per això faig servir **dos llindars**: engego per sota de `NIVELL_BAIX` i
-   només aturo per sobre de `NIVELL_ALT`. Entre els dos hi ha la **zona morta** (histèresi).
-4. **No bloquejo:** per vigilar el temps de la bomba **no puc fer `delay(10000)`** (durant el
-   `delay` no llegiria el sensor ni el polsador). Uso **`millis()`**, com a la bastida.
-5. **🔮 PREDIU (fes-ho tu abans de llegir el codi):** amb `NIVELL_BAIX = 400` i
-   `NIVELL_ALT = 600`, si el sensor marca **500** i la bomba estava **aturada**… s'engega?
-   ☐ sí ☐ **no** (encara no ha baixat de 400). I si estava **en marxa** a 500? ☐ **segueix**
-   ☐ s'atura. *(Pista: dins la zona morta, cada estat manté el que feia.)*
+1. **Analitzo:** és un **llaç tancat**. Mesuro la distància, la comparo amb els llindars i
+   decideixo què fa la pinça. La realimentació és l'ultrasons.
+2. **Descomponc:** el comportament té **tres situacions clares** → **ESPERA** (pinça oberta),
+   **AGAFAT** (pinça tancada amb una peça) i **ALARMA** (peça oblidada). Això demana una
+   **màquina d'estats**, com al `03_maquina_estats.ino`.
+3. **Evito el «clic-clic»:** la pinça es tanca per sota de `TANCA_CM` i només s'obre per sobre
+   d'`OBRE_CM`. Aquí la memòria de la histèresi **és l'estat**: ESPERA o AGAFAT.
+4. **No bloquejo:** per comptar els 10 s **no puc fer `delay(10000)`** (no veuria el polsador ni
+   l'ultrasons). Uso **`millis()`** i apunto quan he entrat a l'estat.
+5. **🔮 PREDIU (fes-ho tu abans de llegir el codi):** si la peça és a **8 cm** i la pinça era
+   **oberta**, es tanca? ☐ sí ☐ **no** (encara no ha baixat de 6). I si era **tancada**?
+   ☐ **continua tancada** ☐ s'obre. I si et descuides la peça 15 s a la pinça? ☐ res
+   ☐ **ALARMA**.
 
 ---
 
@@ -57,155 +52,136 @@ bloquejar. El muntatge és el mateix esquema de la SA6: **sensor a A0**, **sorti
 
 ```cpp
 /*
-  SA6 - exemple_diposit_nivell.ino  (EXEMPLE MODEL, no es el producte)
-  Control de nivell d'un diposit: la bomba l'omple amb HISTERESI (dos llindars)
-  i una MAQUINA D'ESTATS (enum/switch) amb millis() per no bloquejar.
-  Circuit (esquema SA6):
-    - Sensor de nivell (o potenciometre) a A0   (0-1023: mes valor = mes ple)
-    - Bomba a pin 9~  (SEMPRE via transistor o rele, mai directe)
-    - LED verd (ple) a 7 ; LED vermell (omplint/alarma) a 8
-    - Polsador de rearmament a pin 2 (INPUT_PULLUP)
+  SA6 - exemple_pinca_vigilant.ino  (EXEMPLE MODEL, no es el producte)
+  La pinca agafa amb HISTERESI i una MAQUINA D'ESTATS (enum/switch) amb
+  millis() vigila que cap peca s'hi quedi oblidada.
+  Circuit: servo pinca=11 (piles + GND comu); ultrasons TRIG=7, ECHO=8;
+           LED d'alarma (220 ohm) al D5; polsador A entre D3 i GND.
 */
 
-const int SENSOR   = A0;   // nivell d'aigua
-const int BOMBA    = 9;    // sortida cap al transistor/rele
-const int LED_VERD = 7;    // diposit prou ple
-const int LED_VERM = 8;    // bomba en marxa o alarma
-const int POLSADOR = 2;    // rearma l'alarma
+#include <Servo.h>
 
-// Dos llindars = HISTERESI (zona morta entre 400 i 600)
-const int NIVELL_BAIX = 400;   // per sota: cal omplir -> engega bomba
-const int NIVELL_ALT  = 600;   // per sobre: ja es prou ple -> atura bomba
+const int TRIG = 7, ECHO = 8;
+const int LED_ALARMA = 5;
+const int BOTO_A = 3;
 
-// Seguretat: si la bomba porta massa estona omplint sense arribar dalt, alarma
-const unsigned long TEMPS_MAX = 10000;  // 10 s en marxa continua
+const int TANCA_CM = 6;                 // HISTERESI: dos llindars
+const int OBRE_CM = 10;
+const unsigned long TEMPS_MAX = 10000;  // 10 s agafant sense que la recullin
 
-enum Estat { REPOS, OMPLINT, ALARMA };
-Estat estat = REPOS;
+const int PINCA_TANCADA = 60, PINCA_OBERTA = 120;
 
-unsigned long tEstat = 0;   // marca de temps d'entrada a l'estat
+Servo pinca;
+
+enum Estat { ESPERA, AGAFAT, ALARMA };
+Estat estat = ESPERA;
+unsigned long tEstat = 0;               // quan hem entrat a l'estat actual
 
 void canviaEstat(Estat nou) {
   estat = nou;
-  tEstat = millis();        // reinicia el cronometre de l'estat
+  tEstat = millis();                    // reinicia el cronometre de l'estat
 }
 
-bool polsat() {
-  return digitalRead(POLSADOR) == LOW;  // amb INPUT_PULLUP, premut = LOW
+float mesuraDistancia() {
+  digitalWrite(TRIG, LOW);
+  delayMicroseconds(2);
+  digitalWrite(TRIG, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(TRIG, LOW);
+  long temps = pulseIn(ECHO, HIGH, 30000);
+  if (temps == 0) return 400;
+  return temps * 0.034 / 2.0;
 }
 
 void setup() {
-  pinMode(BOMBA, OUTPUT);
-  pinMode(LED_VERD, OUTPUT);
-  pinMode(LED_VERM, OUTPUT);
-  pinMode(POLSADOR, INPUT_PULLUP);
+  pinMode(TRIG, OUTPUT);
+  pinMode(ECHO, INPUT);
+  pinMode(LED_ALARMA, OUTPUT);
+  pinMode(BOTO_A, INPUT_PULLUP);
+  pinca.write(PINCA_OBERTA);
+  pinca.attach(11);
   Serial.begin(9600);
 }
 
 void loop() {
-  int nivell = analogRead(SENSOR);   // realimentacio: sempre llegim el sensor
+  float d = mesuraDistancia();          // realimentacio: sempre
 
   switch (estat) {
 
-    case REPOS:                          // diposit prou ple, bomba aturada
-      digitalWrite(BOMBA, LOW);
-      digitalWrite(LED_VERD, HIGH);
-      digitalWrite(LED_VERM, LOW);
-      // HISTERESI: nomes engego quan baixa del llindar BAIX
-      if (nivell < NIVELL_BAIX) canviaEstat(OMPLINT);
+    case ESPERA:                        // pinca oberta, esperant una peca
+      pinca.write(PINCA_OBERTA);
+      digitalWrite(LED_ALARMA, LOW);
+      if (d < TANCA_CM) canviaEstat(AGAFAT);       // llindar BAIX
       break;
 
-    case OMPLINT:                        // bomba en marxa, omplint
-      digitalWrite(BOMBA, HIGH);
-      digitalWrite(LED_VERD, LOW);
-      digitalWrite(LED_VERM, HIGH);
-      // HISTERESI: nomes aturo quan puja del llindar ALT (no del mateix valor)
-      if (nivell > NIVELL_ALT) {
-        canviaEstat(REPOS);
+    case AGAFAT:                        // pinca tancada amb la peca
+      pinca.write(PINCA_TANCADA);
+      if (d > OBRE_CM) {
+        canviaEstat(ESPERA);            // l'han recollida (llindar ALT)
       } else if (millis() - tEstat > TEMPS_MAX) {
-        canviaEstat(ALARMA);             // massa estona sense omplir -> fallada
+        canviaEstat(ALARMA);            // massa estona: peca oblidada
       }
       break;
 
-    case ALARMA:                         // seguretat: bomba fora, avis
-      digitalWrite(BOMBA, LOW);
-      digitalWrite(LED_VERD, LOW);
-      // parpelleig del vermell sense delay (millis)
-      digitalWrite(LED_VERM, (millis() / 300) % 2);
-      if (polsat()) { canviaEstat(REPOS); delay(200); }  // rearma
+    case ALARMA:                        // no es mou res; LED parpellejant
+      digitalWrite(LED_ALARMA, (millis() / 300) % 2);
+      if (digitalRead(BOTO_A) == LOW) {
+        canviaEstat(ESPERA);            // rearmament manual: obre la pinca
+        delay(200);
+      }
       break;
   }
 
-  // Per al Serial Plotter: nivell i els dos llindars (per veure la zona morta)
-  Serial.print(nivell);        Serial.print(" ");
-  Serial.print(NIVELL_BAIX);   Serial.print(" ");
-  Serial.println(NIVELL_ALT);
+  // Serial Plotter: distancia i els dos llindars
+  Serial.print(d);        Serial.print(" ");
+  Serial.print(TANCA_CM); Serial.print(" ");
+  Serial.println(OBRE_CM);
   delay(50);
 }
 ```
 
 **Per què està escrit així (🌟):**
-- **Dos llindars amb nom** (`NIVELL_BAIX`, `NIVELL_ALT`) en lloc d'un sol número: la
-  **histèresi** viu en aquesta distància i la puc ajustar en **un sol lloc**.
-- **`enum`/`switch`**: cada situació és un **estat** amb el seu comportament i les seves
-  **transicions**. El `loop()` es llegeix com el **diagrama d'estats** que he dibuixat.
-- **`millis()`, mai `delay()` llarg**: així el `loop()` segueix **llegint el sensor i el
-  polsador** mentre cronometra la bomba. La bomba i el parpelleig no bloquegen res.
-- **Un `canviaEstat()`** que reinicia `tEstat`: no repeteixo `estat = ...; tEstat = millis();`
-  a cada transició (menys errors).
+- **Dos llindars amb nom** (`TANCA_CM`, `OBRE_CM`): la **histèresi** viu en aquesta distància i la puc ajustar en **un sol lloc**.
+- **L'estat fa de memòria:** a ESPERA només es mira el llindar baix; a AGAFAT, només l'alt. No cal cap variable booleana a part.
+- **`millis()`, mai `delay()` llarg**: el `loop()` segueix llegint l'ultrasons i el polsador mentre cronometra. El parpelleig del LED tampoc bloqueja.
+- **Un `canviaEstat()`** que reinicia `tEstat`: no repeteixo `estat = ...; tEstat = millis();` a cada transició.
 
 ---
 
 ## 🔬 Provo i mesuro
 
-- **Predicció ✔:** amb el sensor a **500** dins la zona morta (400–600), l'estat **manté** el
-  que feia: si estava en REPÒS, **no** engega; si estava OMPLINT, **segueix**. La histèresi és
-  precisament aquesta memòria.
-- **Serial Plotter:** veig **tres línies** (nivell + els dos llindars). El nivell puja mentre
-  la bomba omple i baixa quan es consumeix, però **rebota entre les dues línies** sense vibrar.
-  Si només hi hagués una línia, veuria el nivell «serrat» al voltant d'ella (clic-clic).
-- **Amplada de la histèresi:** si acosto els llindars (450 i 550) la bomba arrenca més sovint;
-  si els allunyo (300 i 700) arrenca menys però el nivell oscil·la més. **Trio segons el cas.**
-- **Prova de l'alarma:** deixo el sensor per sota de `NIVELL_BAIX` (dipòsit que no puja) i, als
-  **10 s**, el LED vermell **parpelleja**: ha saltat a ALARMA. En prémer el polsador, **rearma**.
+- **Predicció ✔:** a 8 cm, l'estat **manté** el que feia: si era ESPERA, no es tanca; si era AGAFAT, segueix tancada. La histèresi és aquesta memòria.
+- **Serial Plotter:** **tres línies** (distància + els dos llindars). Quan la mà ronda entre les dues línies, la pinça no canvia.
+- **Amplada de la histèresi:** si acosto els llindars (7 i 8 cm), la pinça torna a fer clic-clic amb el soroll de l'ultrasons; si els allunyo (4 i 15 cm), costa més que agafi i que deixi anar. **Trio segons la peça.**
+- **Prova de l'alarma:** deixo la mà a 3 cm i, als **10 s**, el LED **parpelleja**: ALARMA. En prémer el polsador, la pinça s'obre i torna a ESPERA.
 
 ---
 
 ## ⚠️ Contraexemple (errors típics i com es detecten)
 
-- **Un sol llindar** (`if (nivell < 500) bomba ON; else OFF`) → prop de 500 la bomba fa
-  **«clic-clic»** (s'engega i s'apaga moltes vegades per segon). *Causa:* sense zona morta.
-  **Solució:** **dos llindars** (histèresi), com aquí.
-- **Llindars girats** (`NIVELL_BAIX = 600`, `NIVELL_ALT = 400`) → la condició d'aturar es
-  compleix abans que la d'engegar i la lògica queda **impossible** (o no s'atura mai). *Regla:*
-  `NIVELL_BAIX` **sempre menor** que `NIVELL_ALT`.
-- **Vigilar el temps amb `delay(10000)`** en lloc de `millis()` → durant aquests 10 s el
-  programa **no llegeix el sensor ni el polsador**: sembla «penjat» i no pots rearmar. **Solució:**
-  `millis() - tEstat > TEMPS_MAX` (patró no bloquejant de la SA4).
-- **Connectar la bomba directament al pin 9** → el pin no dona prou corrent i **es fa malbé**
-  (o la placa es reinicia). **Solució:** sempre **transistor o relé** entre el pin i el motor.
-- **+Ampliació (control proporcional):** si passes de tot/res a proporcional i poses una **`Kp`
-  massa gran**, la sortida **oscil·la** amunt i avall sense estabilitzar-se. **Solució:** baixar
-  `Kp` i limitar amb `constrain(..., 0, 255)` (vegeu `04_control_proporcional.ino`).
+- **Un sol llindar** (`if (d < 8) tanca; else obre`) → prop de 8 cm la pinça fa **«clic-clic»**. **Solució:** dos llindars, com aquí.
+- **Llindars girats** (`TANCA_CM = 10`, `OBRE_CM = 6`) → la pinça es tanca i s'obre a la vegada a la zona del mig: la lògica queda **impossible**. *Regla:* `TANCA_CM` **sempre menor** que `OBRE_CM`.
+- **Vigilar el temps amb `delay(10000)`** → durant 10 s el programa **no llegeix res**: sembla penjat i no pots rearmar. **Solució:** `millis() - tEstat > TEMPS_MAX`.
+- **Oblidar `tEstat = millis()` en canviar d'estat** → l'alarma salta **de seguida**, perquè compta des de l'engegada. **Solució:** tots els canvis passen per `canviaEstat()`.
+- **Servo de la pinça a l'USB** → en tancar-se amb força, l'Arduino es reinicia. **Solució:** piles amb GND comú.
 
 ---
 
 ## 📔 Diari de bord (entrada model, 1a persona)
 
-> **Sessió 2–3:** He fet un control de nivell d'un dipòsit en **llaç tancat**: la bomba omple
-> quan el sensor baixa de **400** i s'atura quan puja de **600**. Al principi la bomba feia
-> **«clic-clic»** perquè engegava i apagava al **mateix** valor; ho he arreglat amb **dos
-> llindars** (histèresi) i al **Serial Plotter** he vist que el nivell ja no vibra. Després hi
-> he afegit una **màquina d'estats** (REPÒS / OMPLINT / ALARMA) amb **`millis()`** per detectar
-> si la bomba porta massa estona en marxa, sense **bloquejar** la lectura del polsador.
-> **Evidència:** captura del Serial Plotter (nivell entre els dos llindars) + diagrama d'estats.
+> **Sessió 2–3:** He fet una **pinça vigilant** en **llaç tancat**: es tanca quan una peça és a
+> menys de **6 cm** i només s'obre quan s'allunya més de **10 cm**. Al principi feia **«clic-clic»**
+> perquè tenia un sol llindar; amb **dos** (histèresi) i el **Serial Plotter** he vist que ja no
+> vibra. Després hi he afegit una **màquina d'estats** (ESPERA / AGAFAT / ALARMA) amb **`millis()`**
+> per avisar si una peça s'hi queda oblidada, sense **bloquejar** la lectura del polsador.
+> **Evidència:** captura del Serial Plotter + diagrama d'estats.
 
-**Per què és una bona entrada:** usa el **vocabulari clau** (llaç tancat, histèresi, dos
-llindars, màquina d'estats, `millis()`), explica *el com*, i és **honesta amb la dificultat**
-(el clic-clic) i com es va resoldre.
+**Per què és una bona entrada:** usa el **vocabulari clau** (llaç tancat, histèresi, dos llindars,
+màquina d'estats, `millis()`), explica *el com*, i és **honesta amb la dificultat** (el clic-clic) i
+com es va resoldre.
 
 ---
 
 *Exemple resolt de la SA6. Model de treball per a l'alumnat (alliberament gradual: es mostra
-després del primer intent). Es recolza en `codi/02_termostat_histeresi`, `codi/03_maquina_estats`
-i, per a l'ampliació, `codi/04_control_proporcional`. Llicència CC BY-SA 4.0.*
+després del primer intent). Es recolza en `codi/02_pinca_histeresi` i `codi/03_maquina_estats`.
+Llicència CC BY-SA 4.0.*

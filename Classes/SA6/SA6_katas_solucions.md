@@ -5,81 +5,80 @@
 ## Solució · `01_llac_obert_vs_tancat`
 
 ```cpp
-void loop() {
-  int lectura = analogRead(SENSOR);
-  Serial.println(lectura);
-  if (lectura > CONSIGNA) {      // kata: CONSIGNA = 450
-    digitalWrite(SORTIDA, HIGH);
-  } else {
-    digitalWrite(SORTIDA, LOW);
+  if (!acabat) {
+    if (digitalRead(PIN_COLLISIO) == LOW) {
+      Serial.print("Final de carrera a ");
+      Serial.println(angle);
+      acabat = true;
+    } else if (angle <= 0) {
+      Serial.println("No he trobat el final de carrera!");
+      acabat = true;
+    } else {
+      angle = angle - 1;
+      base.write(angle);
+      delay(PAS_HOMING);      // kata: 40 ms
+    }
   }
-  delay(120);                    // pausa del kata
-}
 ```
 
-**En comentar (els tres punts del kata):** ① la comparació del sketch és `>` estricta; amb `>=` el comportament només canvia en el valor exacte de la consigna — el que importa és adonar-se que cal triar-ne una; ② un únic `if`/`else` garanteix que la sortida sempre queda definida — amb dos `if` independents («un que encén, un que apaga») hi ha voltes en què no es toca res; ③ el `delay()` és **una** línia final, fora de la decisió: duplicat dins de cada branca funciona, però és senyal que la decisió i el ritme s'han barrejat.
+**En comentar (els tres punts del kata):** ① primer es pregunta i després es mou: si mou i després pregunta, fa un pas de més contra el sensor; ② la guarda de l'angle 0 és la diferència entre un robot segur i un que es crema si un cable se solta; ③ amb `INPUT_PULLUP`, el sensor **tocat** llegeix `LOW`. Pregunta per tancar: *on és la realimentació?* (el `digitalRead` dins del bucle).
 
-## Solució · `02_termostat_histeresi`
+## Solució · `02_pinca_histeresi`
 
 ```cpp
 void loop() {
-  int t = analogRead(SENSOR);
-
-  if (!actiu && t > LLINDAR_ALT) {         // kata: 650
-    actiu = true;               // estava aturat i fa "calor": engega
-  } else if (actiu && t < LLINDAR_BAIX) {  // kata: 550
-    actiu = false;              // estava en marxa i s'ha "refredat": atura
+  float d = mesuraDistancia();
+  if (!pincaTancada && d < TANCA_CM) {        // kata: 5 cm
+    pincaTancada = true;
+    pinca.write(PINCA_TANCADA);
+  } else if (pincaTancada && d > OBRE_CM) {   // kata: 12 cm
+    pincaTancada = false;
+    pinca.write(PINCA_OBERTA);
   }
-
-  digitalWrite(SORTIDA, actiu ? HIGH : LOW);
-
-  Serial.print(t);
-  Serial.print("  actiu=");
-  Serial.println(actiu);
-  delay(130);                   // pausa del kata
+  delay(60);
 }
 ```
 
-**En comentar:** ① `if`/`else if` fa la decisió **excloent**: en una mateixa volta o s'engega, o s'atura, o res — dos `if` independents podrien disparar-se tots dos amb llindars mal posats; ② cada condició uneix els dos requisits amb `&&` (estat + lectura): imbricar `if` dins d'`if` fa el mateix però amaga la simetria engega/atura; ③ el ternari `actiu ? HIGH : LOW` tradueix el `bool` en una línia — un `if`/`else` explícit és igual de correcte, només més llarg.
+**En comentar:** ① sense l'estat a la condició, la pinça es tornaria a escriure tancada a cada volta i, sobretot, la decisió d'obrir dependria només d'un número: tornaria el clic-clic; ② `else if` fa les dues decisions excloents a cada volta; ③ l'absència d'`else` final **és** la histèresi. Amb els valors del kata (5 i 12 cm), la finestra és més ampla: pregunta què es guanya i què es perd.
 
 ## Solució · `04_control_proporcional`
 
 ```cpp
 void loop() {
-  int t = analogRead(SENSOR);
-  int error = t - CONSIGNA;          // kata: CONSIGNA = 450
-
-  int sortida = (int)(Kp * error);   // kata: Kp = 0.6 (float * int -> cast)
-  sortida = constrain(sortida, 0, 255);  // rang PWM: aquest si que es fix
-
-  analogWrite(SORTIDA, sortida);
-  delay(70);                         // pausa del kata
+  int consigna = map(analogRead(A0), 0, 1023, 0, 180);
+  float error = consigna - angle;
+  angle = angle + K * error;              // kata: K = 0.05
+  base.write((int)(angle + 0.5));
+  Serial.print(consigna);
+  Serial.print(" ");
+  Serial.println(angle);
+  delay(20);
 }
 ```
 
-**En comentar:** ① el `(int)` s'aplica al **resultat** de `Kp * error` (el producte es fa en `float` i després es converteix): posar el cast sobre `Kp` o sobre `error` abans de multiplicar mata els decimals massa d'hora; ② el `constrain()` actua sobre la variable un cop calculada — dins de l'`analogWrite` directament també val, però la variable limitada es pot imprimir i depurar; ③ els límits són `(0, 255)` en aquest ordre (mínim, màxim): invertits, `constrain` retorna coses estranyes sense avisar. *(El sketch de la pràctica, a més, treu consigna/lectura/sortida pel Serial Plotter: no formava part del kata.)*
+**En comentar:** ① amb `int angle`, quan l'error és petit, `K * error` val menys d'1 i es perd: el braç s'atura abans d'arribar; ② l'ordre de l'error decideix el sentit; ③ arrodonir (`+ 0.5`) en lloc de truncar evita que el braç quedi sempre un grau per sota. Al Serial Plotter, compara `K = 0.05` amb el `0.1` del sketch: la corba és el doble de lenta.
 
 ## Solució · `03_maquina_estats`
 
 ```cpp
-void loop() {
-  switch (estat) {
+  if (xoc && estat != EMERGENCIA) {
+    canviaEstat(EMERGENCIA);              // la seguretat mana
+  }
 
-    case ESPERA:
-      digitalWrite(LED_VERMELL, HIGH);
-      digitalWrite(LED_VERD, LOW);
-      analogWrite(SORTIDA, 0);
-      if (polsat()) { canviaEstat(FASE1); delay(200); }  // antirebots del kata
+  switch (estat) {
+    case REPOS:
+      if (a) canviaEstat(MANUAL);
       break;
 
-    case FASE1:
-      digitalWrite(LED_VERMELL, LOW);
-      digitalWrite(LED_VERD, HIGH);
-      analogWrite(SORTIDA, 120);
-      if (millis() - tEstat > 2000) canviaEstat(FASE2);  // kata: 2000 ms
+    case MANUAL:
+      segueixPots();
+      if (a) canviaEstat(REPOS);
+      break;
+
+    case EMERGENCIA:
+      if (!xoc && a) canviaEstat(REPOS);  // dues condicions alhora
       break;
   }
-}
 ```
 
-**En comentar:** ① cada `case` acaba amb `break` — sense el primer `break`, en prémer es passaria per `ESPERA` **i** `FASE1` a la mateixa volta; ② el `delay(200)` d'antirebots va dins del mateix `if` que crida `canviaEstat(FASE1)`: només frena en el moment de la transició, no a cada volta; ③ la condició de temps és `millis() - tEstat > 2000`, en aquest ordre — a l'inrevés, amb variables `unsigned`, el resultat és un número gegant i la transició es dispara sempre. Remarca el contrast dels dos `case`: transició per **esdeveniment** (polsador) contra transició per **temps** (rellotge).
+**En comentar:** l'emergència **fora** del `switch` actua estigui on estigui el braç; cada `case` diu què fa i quan en surt; sense `break`, REPOS cauria dins de MANUAL. El rearmament demana **dues** condicions: una emergència que es rearma sola (només amb `!xoc`) no és una emergència.
