@@ -18,14 +18,15 @@ i, si cal, `libraries.txt`. Patró de nom: `SA<n>_<lletra>_<nom>_<versió>`.
 | SA3 | A llum nocturna | ✅ | ✅ | LDR (mòdul) + LED |
 | SA3 | B sensor aparcament | ✅ | ✅ | HC-SR04 + LED (+ brunzidor a l'ampliat) |
 | SA3 | C instrument | ✅ | ✅ | potenciòmetre + LED (+ polsador a l'ampliat) |
-| SA4, SA6 | A/B/C del braç MeArm | ✅ | ✅ | 4 servos + potenciòmetres / polsadors / HC-SR04 / LED (el sensor de col·lisió es simula amb un polsador). Projectes locals creats el 29-10-2026; **pendents de publicar** a Wokwi |
+| SA4, SA6 | A/B/C del braç MeArm | ✅ | ✅ | 4 servos + potenciòmetres / polsadors / HC-SR04 / LED (el sensor de col·lisió es simula amb un polsador). Publicats el 29-10-2026 |
 | SA5, SA8 | (micro:bit) | ❌ | ❌ | Wokwi no executa MicroPython al micro:bit |
 | SA7 | (robot 3dBot) | ❌ | ❌ | placa propietària, no simulable |
 
-**Total: 30 projectes** (12 del braç pendents de publicar) (mínim + ampliat dels reptes simulables).
+**Total: 30 projectes** (mínim + ampliat dels reptes simulables).
 
 ## Enllaços interactius (Wokwi públic)
-> Tots 27 simulats i desats com a públics el 2026-06-28.
+> Els de SA1–SA3, simulats i desats com a públics el 2026-06-28. Els 12 del braç (SA4 i SA6),
+> desats com a públics el 2026-10-29 (codi compilat en local; la simulació a Wokwi encara no s'ha provat).
 
 | Projecte | Enllaç |
 |---|---|
@@ -47,6 +48,18 @@ i, si cal, `libraries.txt`. Patró de nom: `SA<n>_<lletra>_<nom>_<versió>`.
 | SA3_B_aparcament_ampliat | <https://wokwi.com/projects/468092730863606785> |
 | SA3_C_instrument_minim | <https://wokwi.com/projects/468092793918686209> |
 | SA3_C_instrument_ampliat | <https://wokwi.com/projects/468092893797661697> |
+| SA4_A_brac_casa_minim | <https://wokwi.com/projects/479211253754770433> |
+| SA4_A_brac_casa_ampliat | <https://wokwi.com/projects/479211329089741825> |
+| SA4_B_brac_dispensador_minim | <https://wokwi.com/projects/479211388685574145> |
+| SA4_B_brac_dispensador_ampliat | <https://wokwi.com/projects/479211438499241985> |
+| SA4_C_brac_replay_minim | <https://wokwi.com/projects/479211484420592641> |
+| SA4_C_brac_replay_ampliat | <https://wokwi.com/projects/479211537236338689> |
+| SA6_A_pinca_histeresi_minim | <https://wokwi.com/projects/479211568994577409> |
+| SA6_A_pinca_histeresi_ampliat | <https://wokwi.com/projects/479211622007454721> |
+| SA6_B_homing_sequencia_minim | <https://wokwi.com/projects/479211660648540161> |
+| SA6_B_homing_sequencia_ampliat | <https://wokwi.com/projects/479211702436408321> |
+| SA6_C_proporcional_4_minim | <https://wokwi.com/projects/479211738436131841> |
+| SA6_C_proporcional_4_ampliat | <https://wokwi.com/projects/479211778753898497> |
 
 ## Com publicar
 1. Obre `https://wokwi.com/projects/new/arduino-uno`.
