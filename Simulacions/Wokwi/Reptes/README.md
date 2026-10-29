@@ -26,7 +26,8 @@ i, si cal, `libraries.txt`. Patró de nom: `SA<n>_<lletra>_<nom>_<versió>`.
 
 ## Enllaços interactius (Wokwi públic)
 > Els de SA1–SA3, simulats i desats com a públics el 2026-06-28. Els 12 del braç (SA4 i SA6),
-> desats com a públics el 2026-10-29 (codi compilat en local; la simulació a Wokwi encara no s'ha provat).
+> desats com a públics el 2026-10-29; tots 12 compilen i s'executen a Wokwi (amb `libraries.txt` → Servo).
+> La interacció (potenciòmetres, polsadors, distància de l'ultrasons) no s'ha provat a mà.
 
 | Projecte | Enllaç |
 |---|---|

@@ -32,6 +32,9 @@ const RESULTATS = path.join(__dirname, 'resultats_mearm_classroom.json');
 const APPLY = process.env.APPLY === '1';
 
 const TEMA = 'MeArm';
+// ⚠️ Comprovat el 29-10-2026: Classroom IGNORA gradeCategory en crear tasques en DRAFT i
+// l'API no la deixa canviar (patch: "Non-supported update mask"). Cal posar T2 a mà.
+// Els Forms també queden com a enllaç (no materials.form): no s'hi poden importar notes.
 const T2 = { id: GRADE_CATEGORIES.T2.id, name: GRADE_CATEGORIES.T2.name };
 const URL = (p) => `${WEB_BASE}/00-general/${p}`;
 
