@@ -18,11 +18,11 @@ i, si cal, `libraries.txt`. Patró de nom: `SA<n>_<lletra>_<nom>_<versió>`.
 | SA3 | A llum nocturna | ✅ | ✅ | LDR (mòdul) + LED |
 | SA3 | B sensor aparcament | ✅ | ✅ | HC-SR04 + LED (+ brunzidor a l'ampliat) |
 | SA3 | C instrument | ✅ | ✅ | potenciòmetre + LED (+ polsador a l'ampliat) |
-| SA4, SA6 | (braç) | — | — | reptes del braç MeArm des del 28-10-2026: simulació pendent (els projectes antics de barrera, ventilador, termòstat i semàfor s'han retirat) |
+| SA4, SA6 | A/B/C del braç MeArm | ✅ | ✅ | 4 servos + potenciòmetres / polsadors / HC-SR04 / LED (el sensor de col·lisió es simula amb un polsador). Projectes locals creats el 29-10-2026; **pendents de publicar** a Wokwi |
 | SA5, SA8 | (micro:bit) | ❌ | ❌ | Wokwi no executa MicroPython al micro:bit |
 | SA7 | (robot 3dBot) | ❌ | ❌ | placa propietària, no simulable |
 
-**Total: 18 projectes** (mínim + ampliat dels reptes simulables).
+**Total: 30 projectes** (12 del braç pendents de publicar) (mínim + ampliat dels reptes simulables).
 
 ## Enllaços interactius (Wokwi públic)
 > Tots 27 simulats i desats com a públics el 2026-06-28.

@@ -1,0 +1,137 @@
+{
+  "version": 1,
+  "author": "Robotica 1 Batx",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-arduino-uno",
+      "id": "uno",
+      "top": 0,
+      "left": 0,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-servo",
+      "id": "base",
+      "top": -260,
+      "left": 340,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-servo",
+      "id": "esquerre",
+      "top": -170,
+      "left": 340,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-servo",
+      "id": "dret",
+      "top": -80,
+      "left": 340,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-servo",
+      "id": "pinca",
+      "top": 10,
+      "left": 340,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "collisio",
+      "top": -140,
+      "left": -160,
+      "attrs": {
+        "color": "red"
+      }
+    }
+  ],
+  "connections": [
+    [
+      "base:PWM",
+      "uno:9",
+      "orange",
+      []
+    ],
+    [
+      "base:V+",
+      "uno:5V",
+      "red",
+      []
+    ],
+    [
+      "base:GND",
+      "uno:GND.1",
+      "black",
+      []
+    ],
+    [
+      "esquerre:PWM",
+      "uno:6",
+      "orange",
+      []
+    ],
+    [
+      "esquerre:V+",
+      "uno:5V",
+      "red",
+      []
+    ],
+    [
+      "esquerre:GND",
+      "uno:GND.2",
+      "black",
+      []
+    ],
+    [
+      "dret:PWM",
+      "uno:10",
+      "orange",
+      []
+    ],
+    [
+      "dret:V+",
+      "uno:5V",
+      "red",
+      []
+    ],
+    [
+      "dret:GND",
+      "uno:GND.3",
+      "black",
+      []
+    ],
+    [
+      "pinca:PWM",
+      "uno:11",
+      "orange",
+      []
+    ],
+    [
+      "pinca:V+",
+      "uno:5V",
+      "red",
+      []
+    ],
+    [
+      "pinca:GND",
+      "uno:GND.1",
+      "black",
+      []
+    ],
+    [
+      "uno:2",
+      "collisio:1.l",
+      "purple",
+      []
+    ],
+    [
+      "collisio:2.l",
+      "uno:GND.1",
+      "black",
+      []
+    ]
+  ]
+}

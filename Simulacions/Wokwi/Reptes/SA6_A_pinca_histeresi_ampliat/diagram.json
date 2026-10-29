@@ -1,0 +1,135 @@
+{
+  "version": 1,
+  "author": "Robotica 1 Batx",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-arduino-uno",
+      "id": "uno",
+      "top": 0,
+      "left": 0,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-servo",
+      "id": "pinca",
+      "top": -260,
+      "left": 340,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-potentiometer",
+      "id": "pot_finestra",
+      "top": 230,
+      "left": 20,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "sonar",
+      "top": -230,
+      "left": 40,
+      "attrs": {
+        "distance": "20"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led",
+      "top": -150,
+      "left": 230,
+      "attrs": {
+        "color": "red"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": -60,
+      "left": 220,
+      "attrs": {
+        "value": "220"
+      }
+    }
+  ],
+  "connections": [
+    [
+      "pinca:PWM",
+      "uno:11",
+      "orange",
+      []
+    ],
+    [
+      "pinca:V+",
+      "uno:5V",
+      "red",
+      []
+    ],
+    [
+      "pinca:GND",
+      "uno:GND.1",
+      "black",
+      []
+    ],
+    [
+      "pot_finestra:VCC",
+      "uno:5V",
+      "red",
+      []
+    ],
+    [
+      "pot_finestra:GND",
+      "uno:GND.1",
+      "black",
+      []
+    ],
+    [
+      "pot_finestra:SIG",
+      "uno:A0",
+      "blue",
+      []
+    ],
+    [
+      "sonar:VCC",
+      "uno:5V",
+      "red",
+      []
+    ],
+    [
+      "sonar:GND",
+      "uno:GND.2",
+      "black",
+      []
+    ],
+    [
+      "sonar:TRIG",
+      "uno:7",
+      "green",
+      []
+    ],
+    [
+      "sonar:ECHO",
+      "uno:8",
+      "cyan",
+      []
+    ],
+    [
+      "uno:5",
+      "r1:1",
+      "orange",
+      []
+    ],
+    [
+      "r1:2",
+      "led:A",
+      "orange",
+      []
+    ],
+    [
+      "led:C",
+      "uno:GND.3",
+      "black",
+      []
+    ]
+  ]
+}
