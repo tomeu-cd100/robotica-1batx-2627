@@ -2,7 +2,7 @@
 
 Estat a 30-10-2026. Llista de feina per continuar des de qualsevol ordinador
 (`git pull` i obrir aquest fitxer). Ordenat per prioritat. **Tot el que queda
-(seccions 1-5) és feina del docent**: Claude ja ha fet la part automatitzable.
+(seccions 1-4) és feina del docent**: Claude ja ha fet la part automatitzable.
 
 ## Ja fet (no cal tornar-hi)
 
@@ -13,25 +13,28 @@ Estat a 30-10-2026. Llista de feina per continuar des de qualsevol ordinador
 - Descripció del Producte T2 sense l'enllaç de la rúbrica (tret per l'API el 30-10-2026).
 - Verificat per l'API (30-10-2026): les 7 tasques són a la categoria **T2**; fitxes i
   qüestionaris a /10 i Producte a /33. Cal tornar-ho a mirar només si s'edita a mà.
+- Producte T2 es puntua sobre **33** (decidit el 30-10-2026): la rúbrica (16) és orientativa
+  i la nota es posa a mà.
 - 12 projectes Wokwi dels reptes del braç publicats, amb `libraries.txt` (Servo):
-  tots compilen i s'executen. Enllaços a `Simulacions/Wokwi/Reptes/README.md`.
+  tots compilen i s'executen; interacció provada a mà pel docent (30-10-2026).
+  Enllaços a `Simulacions/Wokwi/Reptes/README.md`.
 
 ## 1. Abans de publicar res al Classroom (docent, a mà)
 
-1. **Producte T2: punts de la tasca (33) vs rúbrica (16).** Decidir: o es deixa la tasca a
-   /33 i es posa la nota a mà, o es canvia la tasca a /16 perquè la rúbrica la calculi sola.
-2. **Qüestionaris i fitxes: el Form està adjuntat com a enllaç, no com a formulari.**
+1. **Qüestionaris i fitxes: el Form està adjuntat com a enllaç, no com a formulari.**
    Surt com «Google Forms: Sign-in» i Classroom **no** en pot importar les notes.
    Per a cada una de les 6 tasques (fitxes base i qüestionaris SA4-SA6):
    editar → treure l'adjunt «Google Forms: Sign-in» (X) → *Afegeix* → *Google Drive* →
    cercar el Form pel títol de la tasca (és a la carpeta del curs) → *Desa l'esborrany*.
-   L'API de Classroom no permet fer-ho per script. Formularis dels qüestionaris (per editar-los):
+   L'API de Classroom no permet fer-ho per script (provat el 30-10-2026: `form` →
+   «Unsupported material type: FORM»; `driveFile` amb l'id del Form → «@AttachmentNotVisible»,
+   tot i que el Form és visible a Drive; i `patch` no pot canviar adjunts). Formularis dels qüestionaris (per editar-los):
    - SA4: https://docs.google.com/forms/d/14s0ef-qqsXAQkhYp1Lbd54w5kDyBxQeWMVt-SzKKNic/edit
    - SA5: https://docs.google.com/forms/d/1yzca9PwJeEtMu9Wq9CqYzbN7n63mJ_HLdbclJk2SLgE/edit
    - SA6: https://docs.google.com/forms/d/1L88Nh-SFG0f2Eq6dso6gWA9RkOWS2ylzZiEB6bAuL54/edit
    A les fitxes base, treure **només** l'adjunt «Google Forms: Sign-in»: l'altre enllaç
    (la fitxa de la web) s'hi ha de quedar.
-3. Després d'editar, **comprovar els punts** (fitxes i qüestionaris han de ser /10):
+2. Després d'editar, **comprovar els punts** (fitxes i qüestionaris han de ser /10):
    l'editor del Classroom pot arrossegar els punts de la darrera tasca editada.
 
 ## 2. Publicar (docent, quan toqui cada SA)
@@ -42,15 +45,7 @@ Estat a 30-10-2026. Llista de feina per continuar des de qualsevol ordinador
   la pàgina del curs. Demanar-ho a Claude: «posa els enllaços de les tasques MeArm als
   qüestionaris» (necessita el Classroom configurat en aquell ordinador, vegeu l'annex).
 
-## 3. Wokwi (opcional)
-
-- Provar a mà la interacció d'algun projecte: girar potenciòmetres, prémer polsadors,
-  canviar la distància de l'ultrasons (clic sobre el sensor). Compilació i arrencada ja
-  verificades.
-- A `SA6_B_homing_*` el sensor de col·lisió és un polsador vermell: cal prémer-lo durant
-  el *homing* o el programa diu «No he trobat el final de carrera».
-
-## 4. Maquinari real (taller)
+## 3. Maquinari real (taller)
 
 - Muntar un **prototip del MeArm** i verificar els rangs segurs dels servos
   (base 0-180, esquerre/dret 40-150, pinça 60-120) i ajustar les constants si cal.
@@ -59,7 +54,7 @@ Estat a 30-10-2026. Llista de feina per continuar des de qualsevol ordinador
 - **Signe de la inclinació:** inclinar la micro:bit enrere ha de donar `D+`.
 - **Sensor de col·lisió KS0021 com a final de carrera** de la base (D2, LOW = toca).
 
-## 5. Compres
+## 4. Compres
 
 - Material del braç per a tots els equips (MeArm, 2 MG90S + servo base + KS0194 pinça,
   portapiles 4×AA, sensors). Revisar llista i pressupost al dossier del projecte T2.
