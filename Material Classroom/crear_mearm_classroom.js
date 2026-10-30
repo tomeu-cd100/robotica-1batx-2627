@@ -269,7 +269,8 @@ async function main() {
       courseId: COURSE_ID,
       requestBody: {
         title: PRODUCTE.titol,
-        description: PRODUCTE.descripcio + '\n\nRúbrica importable (per al docent): ' + results.rubrica,
+        // L'enllaç de la rúbrica NO va a la descripció: l'alumnat el veuria (és a resultats_mearm_classroom.json).
+        description: PRODUCTE.descripcio,
         state: 'DRAFT', workType: 'ASSIGNMENT', maxPoints: 33, topicId, gradeCategory: T2,
         materials: MATERIALS.map(m => ({ link: { url: m.url } })),
       } }), PRODUCTE.titol);

@@ -1,7 +1,8 @@
 # Pendents del T2 (braç MeArm)
 
-Estat a 29-10-2026. Llista de feina per continuar des de qualsevol ordinador
-(`git pull` i obrir aquest fitxer). Ordenat per prioritat.
+Estat a 30-10-2026. Llista de feina per continuar des de qualsevol ordinador
+(`git pull` i obrir aquest fitxer). Ordenat per prioritat. **Tot el que queda
+(seccions 1-5) és feina del docent**: Claude ja ha fet la part automatitzable.
 
 ## Ja fet (no cal tornar-hi)
 
@@ -9,23 +10,28 @@ Estat a 29-10-2026. Llista de feina per continuar des de qualsevol ordinador
   fitxes base SA4/SA5/SA6 (/10), qüestionaris de conceptes SA4/SA5/SA6 (/10) i
   **Producte T2 · El braç robòtic MeArm 🦾** (/33). Totes les tasques a la categoria **T2**.
 - Rúbrica del Producte T2 importada a la tasca (4 criteris · 16 punts).
+- Descripció del Producte T2 sense l'enllaç de la rúbrica (tret per l'API el 30-10-2026).
+- Verificat per l'API (30-10-2026): les 7 tasques són a la categoria **T2**; fitxes i
+  qüestionaris a /10 i Producte a /33. Cal tornar-ho a mirar només si s'edita a mà.
 - 12 projectes Wokwi dels reptes del braç publicats, amb `libraries.txt` (Servo):
   tots compilen i s'executen. Enllaços a `Simulacions/Wokwi/Reptes/README.md`.
 
 ## 1. Abans de publicar res al Classroom (docent, a mà)
 
-1. **Producte T2: treure l'enllaç de la rúbrica de la descripció.** La descripció diu
-   «Rúbrica importable (per al docent): https://docs.google.com/…». Si es publica, l'alumnat
-   ho veurà. Editar la tasca → esborrar aquestes dues línies → *Desa l'esborrany*.
-2. **Producte T2: punts de la tasca (33) vs rúbrica (16).** Decidir: o es deixa la tasca a
+1. **Producte T2: punts de la tasca (33) vs rúbrica (16).** Decidir: o es deixa la tasca a
    /33 i es posa la nota a mà, o es canvia la tasca a /16 perquè la rúbrica la calculi sola.
-3. **Qüestionaris i fitxes: el Form està adjuntat com a enllaç, no com a formulari.**
+2. **Qüestionaris i fitxes: el Form està adjuntat com a enllaç, no com a formulari.**
    Surt com «Google Forms: Sign-in» i Classroom **no** en pot importar les notes.
    Per a cada una de les 6 tasques (fitxes base i qüestionaris SA4-SA6):
    editar → treure l'adjunt «Google Forms: Sign-in» (X) → *Afegeix* → *Google Drive* →
    cercar el Form pel títol de la tasca (és a la carpeta del curs) → *Desa l'esborrany*.
-   L'API de Classroom no permet fer-ho per script.
-4. Després d'editar, **comprovar els punts** (fitxes i qüestionaris han de ser /10):
+   L'API de Classroom no permet fer-ho per script. Formularis dels qüestionaris (per editar-los):
+   - SA4: https://docs.google.com/forms/d/14s0ef-qqsXAQkhYp1Lbd54w5kDyBxQeWMVt-SzKKNic/edit
+   - SA5: https://docs.google.com/forms/d/1yzca9PwJeEtMu9Wq9CqYzbN7n63mJ_HLdbclJk2SLgE/edit
+   - SA6: https://docs.google.com/forms/d/1L88Nh-SFG0f2Eq6dso6gWA9RkOWS2ylzZiEB6bAuL54/edit
+   A les fitxes base, treure **només** l'adjunt «Google Forms: Sign-in»: l'altre enllaç
+   (la fitxa de la web) s'hi ha de quedar.
+3. Després d'editar, **comprovar els punts** (fitxes i qüestionaris han de ser /10):
    l'editor del Classroom pot arrossegar els punts de la darrera tasca editada.
 
 ## 2. Publicar (docent, quan toqui cada SA)
