@@ -12,7 +12,12 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { crearIPenjar } from './_form_sa_lib.js';
+import { google } from 'googleapis';
+import { crearIPenjar, getAuthClient, trobaTascaPerTitol, COURSE_ID } from './_form_sa_lib.js';
+
+// Les tasques DRAFT no tenen alternateLink: l'URL web és /c/<base64 curs>/a/<base64 tasca>/details.
+const b64 = (s) => Buffer.from(String(s)).toString('base64').replace(/=+$/, '');
+const urlTasca = (id) => `https://classroom.google.com/c/${b64(COURSE_ID)}/a/${b64(id)}/details`;
 import { PRACTIQUES } from './practiques_definicions.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -41,9 +46,12 @@ if (!APLICA) {
 }
 
 const resultats = fs.existsSync(RESULTATS) ? JSON.parse(fs.readFileSync(RESULTATS, 'utf8')) : {};
+const classroom = google.classroom({ version: 'v1', auth: await getAuthClient() });
 for (const k of claus) {
   const r = await crearIPenjar({ ...PRACTIQUES[k], state: estat });
-  resultats[k] = { taskUrl: r.taskUrl, formUrl: r.formUrl ?? resultats[k]?.formUrl ?? null, state: r.state };
+  const tasca = await trobaTascaPerTitol(classroom, PRACTIQUES[k].titol);
+  const taskUrl = r.taskUrl || (tasca && urlTasca(tasca.id)) || null;
+  resultats[k] = { taskUrl, formUrl: r.formUrl ?? resultats[k]?.formUrl ?? null, state: tasca?.state ?? r.state };
   fs.writeFileSync(RESULTATS, JSON.stringify(resultats, null, 2) + '\n');
 }
 console.log(`\nDesat a ${path.basename(RESULTATS)}.`);
