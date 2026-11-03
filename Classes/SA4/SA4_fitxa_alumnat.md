@@ -32,9 +32,9 @@
 
 ## Les activitats · al Google Classroom
 
-Aquesta fitxa es respon **en línia**, a la tasca de Google Classroom (val **10 punts**). **No cal que la responguis d'entrada**: cada activitat porta el seu **enunciat dins de la tasca**, i l'**itinerari de la portada de la SA** et diu quina toca a cada sessió. Obre-la quan comencis a treballar-hi i ves-la responent a mesura que avances:
+Les preguntes es responen a Classroom, **un formulari per pràctica**: l'enllaç és a l'últim pas de cada pràctica («📤 Respon i envia»), i la [portada de la SA](README.md) té la ruta completa.
 
-> 👉 **[Obre la tasca: SA4 · Fitxa base (Google Classroom)](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODcwNTEzNjkxNjIy/details)**
+> 👉 Comença per la **[Pràctica 1 · El servo amb potenciòmetre](codi/01_servo_potenciometre/EXPLICACIO.md)**.
 
 Si la tasca encara no t'apareix al Classroom, és que la SA encara no ha començat. En aquesta pàgina hi tens els **objectius i l'avaluació** (a dalt) i la rutina **DEPURA** (a sota).
 
@@ -81,7 +81,7 @@ Si la tasca encara no t'apareix al Classroom, és que la SA encara no ha començ
 
 ### 4 · Producte: el braç amb potenciòmetres (S4)
 
-> ✏️ **Dissenya abans de codificar:** pseudocodi del control d'una articulació al quadern (3–5 línies) **abans** d'obrir l'editor. El codi de les sessions és **referència de consulta**, no plantilla per retocar: escriu el teu a partir del pseudocodi i el [diagrama de flux](SA4_diagrama_flux.md).
+> ✏️ **Dissenya abans de codificar:** pseudocodi del control d'una articulació (3–5 línies, al formulari de la Pràctica 4) **abans** d'obrir l'editor. El codi de les sessions és **referència de consulta**, no plantilla per retocar: escriu el teu a partir del pseudocodi i el [diagrama de flux](SA4_diagrama_flux.md).
 
 El MeArm amb quatre potenciòmetres, cada servo dins del seu rang segur.
 
@@ -115,7 +115,7 @@ Es fa a la **S4**: el teu MeArm, muntat, cablejat i controlat amb **quatre poten
 
 ## Quadern tècnic
 
-> 📓 Escriu-ho a la teva entrada del **[quadern tècnic](../00_General/00_Quadern_tecnic.md)** (guia + plantilla; compta el 25 %).
+> 📓 Aquestes preguntes són dins dels **formularis de pràctica**, i el full imprès del **[quadern tècnic](../00_General/00_Quadern_tecnic.md)** de cada sessió continua (compta el 25 %).
 - **Per què cal un pont H / driver?** _________________________________
 - **Què és la massa comuna i per què és important?** ___________________
 - **Els angles límit del meu braç i com els he trobat:** _______________

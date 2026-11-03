@@ -1,84 +1,67 @@
 # Pràctica 2 · Motor DC i pont H: sentit, velocitat i funcions pròpies
 
-**Quan es fa:** Sessió 2 (pràctica curta, ~40', **fora del braç**) · **Fitxer:** `02_motor_pont_h.ino` · **Circuit:** [esquema de connexions](../../SA4_esquemes_connexions.md) (ENA=5, IN1=7, IN2=8, alimentació externa + **massa comuna**)
+<div class="cap-practica" markdown="1">
 
-> ✍️ **Kata primer!** No llegeixis encara el codi: obre el [kata d'aquesta pràctica](../../SA4_katas.md) i tens **10 minuts** per escriure el teu bloc (individual, apunts permesos). Després torna aquí i **compara**.
+🎯 **Avui aconseguiràs:** que un motor DC giri **endavant i enrere** i a diferents velocitats, amb un pont H. És una pràctica curta, fora del braç.
 
-## 🎯 Per què fem aquesta pràctica
+⏱️ 40' de pràctica + el torn de taller (blocs C-D)
 
-> 🦾 **El motor DC no és del braç.** El MeArm només porta servos, i aquesta
-> pràctica es fa a la breadboard, al costat. És curta a propòsit: el pont H
-> el faràs servir de debò al 3r trimestre, a les rodes del **rover**. La resta
-> de la sessió és per al taller del braç.
+📦 1 motor DC, el driver L298N, el portapiles (alimentació externa) i cables
 
-La pregunta d'avui: *per què no puc connectar un motor directament a un pin?* Perquè un pin d'Arduino dona **molt poc corrent** — prou per a un LED, ridícul per a un motor. La solució és un **driver**: el pont H **L298N**, un amplificador de corrent que rep les ordres (fluixetes) de l'Arduino i mou el motor amb l'energia de les **piles**. D'aquí surten les dues regles de seguretat que sentiràs com un mantra: **massa comuna** (tots els GND units) i **mai alimentar el motor des del pin 5V**.
+</div>
 
-El pont H, a més, sap una cosa que cap pin sol sap fer: **invertir el sentit de gir**. Amb dos senyals (`IN1`/`IN2`) tries el sentit, i amb un tercer (`ENA`, per PWM — l'`analogWrite` de la SA2) la **velocitat**.
+## 🚀 Pas a pas
 
-I pel costat de la programació, aquí les **funcions pròpies** deixen de ser un exercici i passen a ser l'eina de treball. Ja en vas escriure una amb paràmetres a la [SA2 (`color(r, g, b)`)](../../../SA2/codi/04_rgb/EXPLICACIO.md) i, al [tamagotchi de la SA3](../../../SA3/codi/05_mascota/EXPLICACIO.md), funcions com `cara()` o `so()` que organitzen el programa per feines; ara n'escriuràs **un joc sencer** que descriu tot el que el motor sap fer. En lloc de repetir tres línies cada cop que vols avançar, empaquetes el gest amb un nom — `endavant(200)` — i el `loop()` es llegeix com una frase. Això és l'**abstracció**, i és el múscul que farà llegibles tots els programes grans que vénen.
+### Pas 1 · Kata primer
 
-## 🔮 Abans d'executar: prediu
+✍️ **Kata primer!** No llegeixis encara el codi: obre el [kata d'aquesta pràctica](../../SA4_katas.md) i tens **10 minuts** per escriure el teu bloc (individual, apunts permesos). Després torna aquí i **compara**.
 
-Mira només el `loop()` (al final del codi): **descriu la coreografia** que farà el motor (què, quant de temps, en quin ordre). I una de trampa: què creus que passaria si `IN1` i `IN2` fossin tots dos `HIGH`? Apunta-ho a l'Activitat 2 de la [fitxa](../../SA4_fitxa_alumnat.md).
+✅ **Comprova:** has escrit el teu bloc **abans** de mirar el codi d'aquesta pràctica.
 
-## 🧠 El codi, per blocs
+### Pas 2 · Munta el motor amb el pont H
 
-### Bloc 1 — Els tres fils de control
+Connecta el L298N: **ENA al 5**, **IN1 al 7** i **IN2 al 8**. El motor va a les sortides del L298N, i el driver s'alimenta amb el **portapiles**, no amb l'Arduino.
 
-```cpp
-const int ENA = 5;   // PWM: velocitat
-const int IN1 = 7;   // direccio
-const int IN2 = 8;   // direccio
-```
+![Muntatge del motor DC amb el pont H L298N](../../img/sa4-tinkercad-motor-pont-h.png)
 
-Pensa en un cotxe: la palanca de canvi tria si vas endavant o marxa enrere, i l'accelerador decideix com de ràpid — dos comandaments separats que no es trepitgen. El L298N reparteix la feina igual: `IN1` i `IN2` són la palanca (el **sentit**: quina banda del pont H s'activa) i `ENA` és l'accelerador (la **velocitat**, per PWM — per això va a un pin `~`). Repartir les feines entre pins és el disseny del L298N, no una casualitat del codi.
+✅ **Comprova:** el GND del portapiles i el GND de l'Arduino estan **units** (massa comuna). Sense això, el motor no fa cas.
 
-### Bloc 2 — La teva primera funció amb paràmetre
+### Pas 3 · Carrega el codi
 
-```cpp
-void endavant(int velocitat) {   // velocitat 0..255
-  digitalWrite(IN1, HIGH);
-  digitalWrite(IN2, LOW);
-  analogWrite(ENA, velocitat);
-}
-```
+Prem **Copia**, enganxa'l a l'Arduino IDE (esborra el que hi hagués) i prem **→ Puja**.
 
-*«Fes-me un cafè amb dos sucres.»* Qui t'ho demana no t'explica com funciona la cafetera: diu el nom del gest (*fer cafè*) i el detall que canvia cada vegada (*dos sucres*). Una **funció** és exactament això: un tros de programa amb nom propi. Aquesta es diu `endavant` i té un **paràmetre**: `velocitat`, el detall que li passes quan la crides (`endavant(200)` — "endavant, a 200"). Per dins: `IN1` a `HIGH` i `IN2` a `LOW` seleccionen el sentit, i `analogWrite(ENA, velocitat)` fixa la velocitat amb PWM (0 aturat, 255 màxim).
+<!-- codi-complet -->
 
-I un matís important: definir-la no la fa executar — com una recepta apuntada en un paper, tenir-la escrita no cuina res. Només queda **a punt** per quan algú la cridi.
+✅ **Comprova:** el motor fa la coreografia del `loop()`: endavant, atura, enrere…
 
-### Bloc 3 — Invertir i aturar
+### Pas 4 · Entén el pont H
 
-```cpp
-void enrere(int velocitat) {
-  digitalWrite(IN1, LOW);
-  digitalWrite(IN2, HIGH);
-  analogWrite(ENA, velocitat);
-}
+Canvia els `HIGH` i `LOW` d'`IN1` i `IN2` i mira què fa el motor (mai tots dos `HIGH`: el bloc 3 de «🧠 Vols saber per què funciona?» t'explica per què).
 
-void atura() {
-  digitalWrite(IN1, LOW);
-  digitalWrite(IN2, LOW);
-  analogWrite(ENA, 0);
-}
-```
+✍️ **Apunta-ho:** què fa el motor amb IN1=HIGH·IN2=LOW, amb IN1=LOW·IN2=HIGH i amb IN1=LOW·IN2=LOW?
 
-Posar la palanca del cotxe a la R: mateix motor, mateix accelerador, sentit contrari. `enrere()` és `endavant()` amb `IN1`/`IN2` **intercanviats** — tota la màgia del pont H és aquesta: canviar quin costat del pont condueix inverteix el corrent que travessa el motor, i el motor gira al revés. `atura()` posa els dos IN a `LOW` i la velocitat a 0: cap costat activat, motor parat. Fixa't que `atura()` no necessita paràmetre: aturar-se no té velocitats.
+✍️ **Apunta-ho:** com es regula la velocitat? Per quin pin?
 
-### Bloc 4 — El loop llegit com una frase
+✍️ **Apunta-ho:** per què cal un pont H (driver) per moure un motor? (Mira «Per què fem aquesta pràctica».)
 
-```cpp
-void loop() {
-  endavant(200);  delay(2000);
-  atura();        delay(1000);
-  enrere(150);    delay(2000);
-  atura();        delay(1000);
-}
-```
+### Pas 5 · Torn de taller: la pinça (blocs C-D)
 
-Aquest és el premi de l'abstracció: el `loop()` ja no parla de pins, parla de **gestos**. *Endavant ràpid 2 segons, atura, enrere més lent 2 segons, atura.* Compara-ho amb com quedaria amb els `digitalWrite` escampats: el mateix comportament, però il·legible.
+Munta la pinça del MeArm (blocs C-D de la [guia de muntatge](../../../00_General/00_Muntatge_brac_MeArm.md)) i calibra-la amb l'**escombrada** de la Pràctica 1: busca l'angle on la pinça és tancada i on és oberta del tot.
 
-## ⚠️ Errors que veuràs segur
+✍️ **Apunta-ho:** angle de la pinça tancada (°) i oberta (°).
+
+✅ **Comprova:** la pinça s'obre i es tanca sense forçar el servo.
+
+### Pas 6 · Respon i envia
+
+📤 [Obre la tasca «SA4 · Pràctica 2» a Classroom i envia el formulari](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODI2ODM5NDk3NzA0/details)
+
+Hi trobaràs les mateixes preguntes ✍️ que has anat apuntant. Envia'l ara. A la sessió següent: **[Pràctica 3 · Del sensor al braç](../03_ultrasons_brac/EXPLICACIO.md)**.
+
+⭐ **Si acabes abans:** escriu les funcions `endavant(vel)`, `enrere(vel)` i `atura()` (tens l'esquelet a «🧗 Si t'encalles») i explica-ho a la pregunta opcional del formulari. Més reptes a **[Reptes de la SA4](../../../../Reptes/Reptes_SA4.md)**; quan el docent te'l validi, pinta l'estrella al [tauler de reptes](../../../00_General/00_Tauler_reptes.md).
+
+<details markdown="1">
+<summary>🧗 Si t'encalles</summary>
 
 | Símptoma | Causa probable |
 |---|---|
@@ -87,7 +70,7 @@ Aquest és el premi de l'abstracció: el `loop()` ja no parla de pins, parla de 
 | Gira sempre en el mateix sentit | `IN1`/`IN2` mal connectats o mal escrits: per canviar de sentit cal que s'**intercanviïn** (un HIGH, l'altre LOW). |
 | La velocitat no canvia (tot o res) | `ENA` no és en un pin PWM (`~`), o el pontet (jumper) d'ENA del mòdul encara hi és posat. |
 
-## 🧗 Si t'encalles: l'esquelet de les funcions de moviment
+### L'esquelet
 
 Si el repte de les funcions (`endavant`, `enrere`, `atura`) se't fa una muntanya, no et quedis en blanc: parteix d'aquest esquelet. Els pins, el `setup()` i un `loop()` que **ja crida les funcions en ordre** estan fets; tu només omples els `// TODO:` de dins de cada funció. Compila tal qual; el motor no es mourà fins que omplis les funcions.
 
@@ -148,10 +131,83 @@ void loop() {
 
 </details>
 
-## 🔗 On ho aplicaràs
+</details>
+
+<details markdown="1">
+<summary>🧠 Vols saber per què funciona?</summary>
+
+### Per què fem aquesta pràctica
+
+> 🦾 **El motor DC no és del braç.** El MeArm només porta servos, i aquesta
+> pràctica es fa a la breadboard, al costat. És curta a propòsit: el pont H
+> el faràs servir de debò al 3r trimestre, a les rodes del **rover**. La resta
+> de la sessió és per al taller del braç.
+
+La pregunta d'avui: *per què no puc connectar un motor directament a un pin?* Perquè un pin d'Arduino dona **molt poc corrent** — prou per a un LED, ridícul per a un motor. La solució és un **driver**: el pont H **L298N**, un amplificador de corrent que rep les ordres (fluixetes) de l'Arduino i mou el motor amb l'energia de les **piles**. D'aquí surten les dues regles de seguretat que sentiràs com un mantra: **massa comuna** (tots els GND units) i **mai alimentar el motor des del pin 5V**.
+
+El pont H, a més, sap una cosa que cap pin sol sap fer: **invertir el sentit de gir**. Amb dos senyals (`IN1`/`IN2`) tries el sentit, i amb un tercer (`ENA`, per PWM — l'`analogWrite` de la SA2) la **velocitat**.
+
+I pel costat de la programació, aquí les **funcions pròpies** deixen de ser un exercici i passen a ser l'eina de treball. Ja en vas escriure una amb paràmetres a la [SA2 (`color(r, g, b)`)](../../../SA2/codi/04_rgb/EXPLICACIO.md) i, al [tamagotchi de la SA3](../../../SA3/codi/05_mascota/EXPLICACIO.md), funcions com `cara()` o `so()` que organitzen el programa per feines; ara n'escriuràs **un joc sencer** que descriu tot el que el motor sap fer. En lloc de repetir tres línies cada cop que vols avançar, empaquetes el gest amb un nom — `endavant(200)` — i el `loop()` es llegeix com una frase. Això és l'**abstracció**, i és el múscul que farà llegibles tots els programes grans que vénen.
+
+### Bloc 1 — Els tres fils de control
+
+```cpp
+const int ENA = 5;   // PWM: velocitat
+const int IN1 = 7;   // direccio
+const int IN2 = 8;   // direccio
+```
+
+Pensa en un cotxe: la palanca de canvi tria si vas endavant o marxa enrere, i l'accelerador decideix com de ràpid — dos comandaments separats que no es trepitgen. El L298N reparteix la feina igual: `IN1` i `IN2` són la palanca (el **sentit**: quina banda del pont H s'activa) i `ENA` és l'accelerador (la **velocitat**, per PWM — per això va a un pin `~`). Repartir les feines entre pins és el disseny del L298N, no una casualitat del codi.
+
+### Bloc 2 — La teva primera funció amb paràmetre
+
+```cpp
+void endavant(int velocitat) {   // velocitat 0..255
+  digitalWrite(IN1, HIGH);
+  digitalWrite(IN2, LOW);
+  analogWrite(ENA, velocitat);
+}
+```
+
+*«Fes-me un cafè amb dos sucres.»* Qui t'ho demana no t'explica com funciona la cafetera: diu el nom del gest (*fer cafè*) i el detall que canvia cada vegada (*dos sucres*). Una **funció** és exactament això: un tros de programa amb nom propi. Aquesta es diu `endavant` i té un **paràmetre**: `velocitat`, el detall que li passes quan la crides (`endavant(200)` — "endavant, a 200"). Per dins: `IN1` a `HIGH` i `IN2` a `LOW` seleccionen el sentit, i `analogWrite(ENA, velocitat)` fixa la velocitat amb PWM (0 aturat, 255 màxim).
+
+I un matís important: definir-la no la fa executar — com una recepta apuntada en un paper, tenir-la escrita no cuina res. Només queda **a punt** per quan algú la cridi.
+
+### Bloc 3 — Invertir i aturar
+
+```cpp
+void enrere(int velocitat) {
+  digitalWrite(IN1, LOW);
+  digitalWrite(IN2, HIGH);
+  analogWrite(ENA, velocitat);
+}
+
+void atura() {
+  digitalWrite(IN1, LOW);
+  digitalWrite(IN2, LOW);
+  analogWrite(ENA, 0);
+}
+```
+
+Posar la palanca del cotxe a la R: mateix motor, mateix accelerador, sentit contrari. `enrere()` és `endavant()` amb `IN1`/`IN2` **intercanviats** — tota la màgia del pont H és aquesta: canviar quin costat del pont condueix inverteix el corrent que travessa el motor, i el motor gira al revés. `atura()` posa els dos IN a `LOW` i la velocitat a 0: cap costat activat, motor parat. Fixa't que `atura()` no necessita paràmetre: aturar-se no té velocitats.
+
+### Bloc 4 — El loop llegit com una frase
+
+```cpp
+void loop() {
+  endavant(200);  delay(2000);
+  atura();        delay(1000);
+  enrere(150);    delay(2000);
+  atura();        delay(1000);
+}
+```
+
+Aquest és el premi de l'abstracció: el `loop()` ja no parla de pins, parla de **gestos**. *Endavant ràpid 2 segons, atura, enrere més lent 2 segons, atura.* Compara-ho amb com quedaria amb els `digitalWrite` escampats: el mateix comportament, però il·legible.
+
+### On ho aplicaràs
 
 - **Repte de la S2:** una seqüència de moviments pròpia amb les teves funcions (curta: després toca el taller del braç).
 - **Al taller d'avui:** les funcions amb paràmetre tornen a sortir a la [pràctica del braç amb potenciòmetres](../04_brac_potenciometres/EXPLICACIO.md) (`llegeixAngle(pin, minim, maxim)`).
 - **Al 3r trimestre:** dos motors amb pont H són les **rodes del rover** de la robòtica mòbil (SA7). Guarda les teves funcions.
 
-> ⭐ **Has acabat abans?** Tria un repte a **[Reptes de la SA4](../../../../Reptes/Reptes_SA4.md)** i, quan el docent te'l validi, pinta l'estrella al [tauler de reptes](../../../00_General/00_Tauler_reptes.md).
+</details>

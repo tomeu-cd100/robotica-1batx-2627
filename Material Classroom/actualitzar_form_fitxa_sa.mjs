@@ -26,7 +26,7 @@ const FORCA = flags.includes('--forca');
 const titolItem = (it) => it.title ?? '(sense títol)';
 
 // SA amb Form ja transformat per a passos autònoms: no s'han de recrear.
-export const SA_MIGRADES = new Set(['sa2', 'sa3']);
+export const SA_MIGRADES = new Set(['sa2', 'sa3', 'sa4']);
 
 async function main() {
   const def = DEFINICIONS[saKey];

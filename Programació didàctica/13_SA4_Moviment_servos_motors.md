@@ -48,7 +48,7 @@ Actuadors de moviment: servomotor (PWM, llibreria `Servo`, rang segur), motor DC
 El braç MeArm muntat i controlat amb quatre potenciòmetres, dins dels seus angles límit, amb codi modular (funcions amb paràmetres).
 
 ## Avaluació
-- Instruments: producte + quadern + observació de muntatge segur.
+- Instruments: producte + quadern tècnic + observació de muntatge segur. El quadern tècnic són els **formularis de pràctica** de Classroom (Pràctiques 1-4, 33 punts cadascun), cadascun amb una pregunta de reflexió, més el **full imprès** de cada sessió (es manté al T2 i al T3). Tancament amb una **Entrega final** sense nota (autoavaluació + checklist).
 - Rúbriques: **R1**, **R2**, **R3** (parcial: control).
 
 ## Atenció a la diversitat

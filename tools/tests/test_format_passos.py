@@ -125,3 +125,12 @@ def test_portada_sense_fites():
 def test_portada_amb_no_premis_envia():
     text = PORTADA_BONA + "\n4. **No premis «Envia» fins a la Sessió 3.**\n"
     assert any("Envia" in e for e in errors_format_portada(text))
+
+
+def test_quadern_paper_nomes_fora_de_sa2_sa3():
+    from qa import te_quadern_paper
+    assert not te_quadern_paper(2)
+    assert not te_quadern_paper(3)
+    assert te_quadern_paper(1)
+    assert te_quadern_paper(4)
+    assert te_quadern_paper(9)

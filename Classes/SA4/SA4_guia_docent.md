@@ -5,6 +5,8 @@
 
 > 🧭 **Com s'usa aquesta guia.** **Abans de la SA:** objectius, material i codi de suport (la logística, al checklist docent). **A cada sessió:** la secció «SESSIÓ n» corresponent, amb el «Guió de modelatge» i els «Errors freqüents» a mà. **Durant tota la SA:** diversitat (DUA), ajuda i revisió entre iguals, i pensament computacional. **En avaluar:** «Avaluació formativa (instruments)». **Per contextualitzar:** context real i ODS.
 
+> 🚩 **Format de passos (3-11-2026):** l'alumnat segueix la **ruta de pràctiques de la [portada](README.md)** al seu ritme: cada pràctica comença amb el kata (10'), té els passos i el torn de taller a dins i acaba enviant el seu formulari. Tu fas una **arrencada de 5-10'** amb la pràctica de la fita del dia (el guió de modelatge de cada sessió) i després circules. El **quadern imprès** es manté: el full de cada sessió s'omple en acabar.
+
 > 🦾 **Fil conductor (des del 28-10-2026):** totes les pràctiques de la SA es
 > fan **sobre el braç MeArm** de cada alumne/a, que es munta en torns de
 > taller al final de cada sessió. El motor DC queda com a pràctica curta,
@@ -51,7 +53,7 @@
 - **Pràctica guiada (25'):** mouen el servo a angles fixos; després el controlen amb el potenciòmetre (`map(0-1023 → 0-180)`).
 - **Repte (20'):** "escombrada" automàtica (vaivé) suau. **Que la guardin**: és l'eina de calibratge del bloc D a la S2.
 - 🔧 **Torn de taller del braç (35'):** **pas 0** (amb el mateix sketch i `write(90)`, els 4 servos centrats i etiquetats) + **blocs A-B** de la [guia de muntatge](../00_General/00_Muntatge_brac_MeArm.md) (banyes, base i laterals).
-- **Tancament (10'):** quadern (esquema + codi).
+- **Tancament (10'):** formulari de la Pràctica 1 i full del quadern imprès (esquema + codi).
 
 > ⏱️ **Marge:** el temps efectiu real és ~100' (arrencada + recollida), no 120'. Si vas just, retalla primer: **el repte** (l'escombrada es pot donar feta per al calibratge de la S2). El pas 0 no es retalla: sense ell no es pot muntar.
 
@@ -64,7 +66,7 @@
 - **Modelatge (15'):** `02_motor_pont_h.ino`. Funcionament del **pont H** (L298N): `IN1`/`IN2` (direcció), `ENA` (velocitat per PWM). **Massa comuna** entre Arduino i alimentació del motor. Avisa d'entrada: *el motor no és del braç, és per al rover del T3*.
 - **Pràctica guiada + repte (25'):** munten el motor amb L298N i alimentació externa; omplen les funcions `endavant(vel)`, `enrere(vel)`, `atura()` (esquelet «Si t'encalles» a mà per a qui el necessiti) i fan una seqüència curta.
 - 🔧 **Torn de taller del braç (40'):** **blocs C-D**: pinça (passos 7-8) i **calibratge** dels servos de pinça, esquerre i dret amb l'escombrada de la S1 (passos 9-11). Que anotin al quadern els angles límit que ja vegin.
-- **Tancament (10'):** quadern.
+- **Tancament (10'):** formulari de la Pràctica 2 i full del quadern imprès.
 
 > ⏱️ **Marge:** el temps efectiu real és ~100' (arrencada + recollida), no 120'. Si vas just, retalla primer: **la seqüència pròpia del motor** (n'hi ha prou que les tres funcions funcionin). El calibratge no es retalla: el bloc E el necessita fet.
 
@@ -78,7 +80,7 @@
 - **Pràctica guiada (20'):** connecten l'ultrasons i els servos de base i pinça amb piles; omplen la taula distància → què fa el braç amb el Serial Plotter obert.
 - **Repte (15'):** obertura de la pinça proporcional a la distància amb `map()` + guarda de seguretat.
 - 🔧 **Torn de taller del braç (45'):** **bloc E** (passos 12-18), l'estructura central. El **pas 15 es fa en parella** (una persona aguanta i l'altra cargola): organitza-ho perquè tothom ajudi i sigui ajudat (evidència per a R5).
-- **Tancament (10'):** quadern (taula distància→braç).
+- **Tancament (10'):** formulari de la Pràctica 3 i full del quadern imprès (taula distància→braç).
 
 > ⏱️ **Marge:** el temps efectiu real és ~100' (arrencada + recollida), no 120'. Si vas just, retalla primer: **el repte** (la pràctica guiada ja demostra percepció→acció). Si el bloc E no s'acaba, es completa al principi del torn de la S4.
 
@@ -93,7 +95,7 @@
 - 🔧 **Cablatge definitiu (20'):** 4 servos a les piles amb GND comú i 4 potenciòmetres a A0-A3 ([mapa de pins](../00_General/00_Projecte_T2_Brac.md#cablatge)). Qui no hagi acabat el bloc E, l'acaba ara.
 - **Pràctica (50'):** `04_brac_potenciometres.ino`. Amb el Monitor sèrie obert, troben els **angles límit** de cada servo, els posen a les constants `_MIN`/`_MAX` i ajusten la zona morta. Prova final: **agafar un objecte de l'estació de recollida i deixar-lo en un altre lloc**.
 - **Documentació + defensa (20'):** esquema, codi comentat i **mini-defensa individual** (1-2' per alumne/a: amb 5 alumnes, ~10' en total) amb la **mini-rúbrica R4·DO** ([`07_Rubriques.md`](../../Programació%20didàctica/07_Rubriques.md)): a més de la claredat (SA2), ara s'espera **una decisió tècnica justificada** (per què aquests angles límit, per què aquesta zona morta).
-- **Tancament (10'):** autoavaluació.
+- **Tancament (10'):** formulari de la Pràctica 4, **Entrega final** (autoavaluació + checklist) i full del quadern imprès.
 
 > ⏱️ **Marge:** el temps efectiu real és ~100' (arrencada + recollida), no 120'. Si vas just, retalla primer: **la prova d'agafar un objecte** (passa a la SA5-S2). Si el T2 va just, aquesta S4 és **comprimible**: el repte de la S3 fa de producte i el cablatge passa al torn de la SA5-S2.
 
@@ -105,7 +107,7 @@
 |---|---|---|---|
 | Producte (el braç amb potenciòmetres) | Control de posició dins del rang segur, sensor→actuador (S3) | CA3.1 | R3 (parcial), R1 |
 | Repte de codi (funcions amb paràmetres) | `Servo.h`, lògica del pont H, `map()`, funcions | CA1.1 | R1 |
-| Quadern tècnic | Esquema del pont H, taula distància→braç, angles límit, errors | CA1.1 | **R4** |
+| Quadern tècnic (25 %) = **formularis de pràctica** (P1-P4, 33 punts cadascun a Classroom) + **full imprès** de cada sessió | Respostes ✍️ (pont H, taula distància→braç, angles límit) + preguntes de reflexió + errors | CA1.1 | **R4** |
 | Observació de muntatge segur | Massa comuna, servos a les piles, no alimentar motors des de l'Arduino; muntatge del MeArm seguint la guia | CA2.1 | R2 |
 | Ajuda entre iguals i **revisió creuada** de codi | Cooperació sense producte compartit: línia d'ajuda del quadern + una millora concreta i un dubte al company | CA5.3 | **R5** |
 

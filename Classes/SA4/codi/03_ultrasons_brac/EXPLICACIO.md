@@ -1,10 +1,83 @@
 # Pràctica 3 · Del sensor al moviment: l'ultrasons mou el braç
 
-**Quan es fa:** Sessió 3 (modelatge) · **Fitxer:** `03_ultrasons_brac.ino` · **Circuit:** [esquema de connexions](../../SA4_esquemes_connexions.md) (servo base=9, servo pinça=11 amb piles; ultrasons TRIG=7, ECHO=8)
+<div class="cap-practica" markdown="1">
 
-> ✍️ **Kata primer!** No llegeixis encara el codi: obre el [kata d'aquesta pràctica](../../SA4_katas.md) i tens **10 minuts** per escriure el teu bloc (individual, apunts permesos). Després torna aquí i **compara**.
+🎯 **Avui aconseguiràs:** que el braç **decideixi sol**: quan poses un objecte a l'estació de recollida, la base s'hi gira i la pinça s'obre.
 
-## 🎯 Per què fem aquesta pràctica
+⏱️ La sessió (pràctica + torn de taller del bloc E)
+
+📦 L'ultrasons HC-SR04, els servos de la base i la pinça, el portapiles i cables
+
+</div>
+
+## 🚀 Pas a pas
+
+### Pas 1 · Kata primer
+
+✍️ **Kata primer!** No llegeixis encara el codi: obre el [kata d'aquesta pràctica](../../SA4_katas.md) i tens **10 minuts** per escriure el teu bloc (individual, apunts permesos). Després torna aquí i **compara**.
+
+✅ **Comprova:** has escrit el teu bloc **abans** de mirar el codi d'aquesta pràctica.
+
+### Pas 2 · Endevina abans de provar
+
+Desplega el codi complet del pas 4 i mira només el `loop()`.
+
+✍️ **Apunta-ho:** PREDIU: què farà el braç amb la mà a 10 cm? I a 30 cm?
+
+### Pas 3 · Munta el circuit
+
+Servo de la base al **9** i de la pinça a l'**11**, alimentats amb el **portapiles**. Ultrasons: **TRIG al 7** i **ECHO al 8** (el D11 ara és la pinça), VCC a 5V i GND a GND.
+
+![Muntatge: ultrasons a D7/D8 i servos de la base i la pinça](../../img/sa4-ultrasons-brac.svg)
+
+✅ **Comprova:** el GND del portapiles i el de l'Arduino estan units (massa comuna).
+
+### Pas 4 · Carrega el codi
+
+Prem **Copia**, enganxa'l a l'Arduino IDE (esborra el que hi hagués) i prem **→ Puja**.
+
+<!-- codi-complet -->
+
+✅ **Comprova:** quan poses la mà a prop de l'ultrasons, la base gira i la pinça s'obre; quan la treus, el braç torna a repòs.
+
+### Pas 5 · Mesura i mira què fa
+
+Obre el **Serial Plotter** (Eines → Serial Plotter, 9600) i posa un objecte a 5 cm, a 15 cm (just al llindar) i a 30 cm.
+
+✍️ **Apunta-ho:** distància mesurada i què fa el braç amb l'objecte a 5 cm, a 15 cm i a 30 cm.
+
+✍️ **Apunta-ho:** què és la massa comuna i per què és important?
+
+### Pas 6 · Torn de taller: l'estructura central (bloc E)
+
+Segueix el bloc E de la [guia de muntatge](../../../00_General/00_Muntatge_brac_MeArm.md). El pas 15 es fa **en parella**.
+
+✅ **Comprova:** el bloc E està muntat i els servos encara són al seu angle.
+
+### Pas 7 · Respon i envia
+
+📤 [Obre la tasca «SA4 · Pràctica 3» a Classroom i envia el formulari](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODk3NDMwMDI1NTA5/details)
+
+Hi trobaràs les mateixes preguntes ✍️ que has anat apuntant. Envia'l ara. A la sessió següent: **[Pràctica 4 · El braç amb potenciòmetres](../04_brac_potenciometres/EXPLICACIO.md)**.
+
+⭐ **Si acabes abans:** fes que la pinça s'obri **proporcionalment** a la distància amb `map()`, amb una guarda de seguretat, i explica-ho a la pregunta opcional del formulari. O prova la [bastida de `millis()`](../05_dos_servos_millis/EXPLICACIO.md): dues articulacions alhora. Més reptes a **[Reptes de la SA4](../../../../Reptes/Reptes_SA4.md)**; quan el docent te'l validi, pinta l'estrella al [tauler de reptes](../../../00_General/00_Tauler_reptes.md).
+
+<details markdown="1">
+<summary>🧗 Si t'encalles</summary>
+
+| Símptoma | Causa probable |
+|---|---|
+| La distància sempre val 400 | TRIG i ECHO intercanviats, o l'ultrasons sense 5V. |
+| La distància sempre val 0 o salta a l'atzar | L'ECHO no és al D8, o el GND de l'ultrasons no és comú amb l'Arduino. |
+| El braç tremola quan es mou | Servos alimentats des de l'USB: han d'anar a les **piles**, amb GND comú. |
+| El braç «balla» amb l'objecte a prop del llindar | Soroll de la mesura just al llindar: ho arreglaràs amb histèresi a la SA6. Mentrestant, allunya o acosta l'objecte. |
+
+</details>
+
+<details markdown="1">
+<summary>🧠 Vols saber per què funciona?</summary>
+
+### Per què fem aquesta pràctica
 
 Fins ara el braç feia el que li manaves amb la mà (el potenciòmetre). Avui fa
 el primer pas cap a un robot de debò: **decideix ell sol** a partir del que
@@ -18,15 +91,6 @@ industrials: un sensor detecta la peça a la cinta i el braç la va a buscar.
 Avui coneixes un sensor nou, l'**ultrasons** (HC-SR04), i la teva primera
 funció que **et torna un número**: `mesuraDistancia()`. Amb ella el braç sap a
 quina distància és l'objecte.
-
-## 🔮 Abans d'executar: prediu
-
-Mira només el `loop()`: què farà el braç si poses la mà a **10 cm** de
-l'ultrasons? I a **30 cm**? I si la poses i la treus molt de pressa, a
-quina velocitat creus que reaccionarà el braç? Apunta-ho a l'Activitat 3 de
-la [fitxa](../../SA4_fitxa_alumnat.md).
-
-## 🧠 El codi, per blocs
 
 ### Bloc 1 — Les constants de disseny
 
@@ -112,19 +176,10 @@ moment exacte en què el braç decideix girar-se.
 > Aquest problema té nom i solució, i el resoldràs a la SA6 amb la
 > **histèresi** de la pinça automàtica.
 
-## ⚠️ Errors que veuràs segur
-
-| Símptoma | Causa probable |
-|---|---|
-| La distància sempre val 400 | TRIG i ECHO intercanviats, o l'ultrasons sense 5V. |
-| La distància sempre val 0 o salta a l'atzar | L'ECHO no és al D8, o el GND de l'ultrasons no és comú amb l'Arduino. |
-| El braç tremola quan es mou | Servos alimentats des de l'USB: han d'anar a les **piles**, amb GND comú. |
-| El braç «balla» amb l'objecte a prop del llindar | Soroll de la mesura just al llindar: ho arreglaràs amb histèresi a la SA6. Mentrestant, allunya o acosta l'objecte. |
-
-## 🔗 On ho aplicaràs
+### On ho aplicaràs
 
 - **Repte de la S3:** que l'obertura de la pinça sigui **proporcional** a la distància amb `map()` (com més a prop, més oberta) i una **guarda de seguretat**: si l'objecte és a menys de 3 cm, el braç no es mou.
 - **A la SA6:** la [pinça automàtica amb histèresi](../../../SA6/codi/02_pinca_histeresi/EXPLICACIO.md) és aquest mateix muntatge amb dos llindars en lloc d'un.
 - **Al braç:** l'ultrasons es queda muntat a l'estació de recollida tot el trimestre ([dossier](../../../00_General/00_Projecte_T2_Brac.md)).
 
-> ⭐ **Has acabat abans?** Prova la [bastida de `millis()`](../05_dos_servos_millis/EXPLICACIO.md) o tria un repte a **[Reptes de la SA4](../../../../Reptes/Reptes_SA4.md)** i, quan el docent te'l validi, pinta l'estrella al [tauler de reptes](../../../00_General/00_Tauler_reptes.md).
+</details>

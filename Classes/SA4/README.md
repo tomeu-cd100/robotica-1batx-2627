@@ -4,32 +4,59 @@ Quarta situació d'aprenentatge (**8 h · 4 sessions**, 2n trimestre). El sistem
 
 ![Servo controlat amb un potenciòmetre: la posició del comandament fixa l'angle del servo](img/sa4-servo-potenciometre.svg)
 
+En acabar aquesta SA podràs: 1) controlar la **posició** d'un servo dins del seu rang segur i la **velocitat i el sentit** d'un motor DC; 2) muntar circuits de potència amb **alimentació externa i massa comuna**; 3) fer que el braç respongui a un sensor i als potenciòmetres, amb funcions pròpies.
+
+> 💻 **Com carregar el codi d'una pràctica:** dins de la pràctica, al pas «Carrega el codi», prem **Copia**, enganxa'l a l'Arduino IDE (esborra el que hi havia) i prem **→ Puja**.
+
+## 🧭 La teva ruta
+
+Fes les pràctiques **en ordre i al teu ritme**. Cada pràctica comença amb el **kata** (10') i acaba enviant el seu formulari de Classroom. Les 🚩 et diuen on hauries de ser al final de cada sessió.
+
+- ① [Pràctica 1 · El servo amb potenciòmetre](codi/01_servo_potenciometre/EXPLICACIO.md) — el servo de la base segueix el potenciòmetre. **Taller:** pas 0 i blocs A-B del MeArm.
+
+🚩 **Final de la Sessió 1:** formulari de la ① enviat, els quatre servos a 90° i etiquetats, i el full del 📓 quadern de la sessió omplert.
+
+- ② [Pràctica 2 · Motor DC i pont H](codi/02_motor_pont_h/EXPLICACIO.md) — endavant, enrere i velocitat (pràctica curta, fora del braç). **Taller:** blocs C-D (la pinça).
+
+🚩 **Final de la Sessió 2:** formulari de la ② enviat, la pinça muntada i calibrada, i el full del 📓 quadern omplert.
+
+- ③ [Pràctica 3 · Del sensor al braç](codi/03_ultrasons_brac/EXPLICACIO.md) — l'ultrasons fa girar la base i obrir la pinça. **Taller:** bloc E (l'estructura central).
+
+🚩 **Final de la Sessió 3:** formulari de la ③ enviat, el bloc E muntat i el full del 📓 quadern omplert.
+
+- ④ [Pràctica 4 · El braç amb potenciòmetres](codi/04_brac_potenciometres/EXPLICACIO.md) — el producte: el MeArm amb quatre potenciòmetres, cada servo dins del seu rang segur. **Taller:** cablatge definitiu.
+
+🚩 **Final de la Sessió 4:** formulari de la ④ enviat, **Entrega final** feta i el full del 📓 quadern omplert.
+
+## 🏁 Entrega final
+
+**Quan hagis acabat la ④:**
+
+1. 🎤 **Defensa d'1 minut** davant del docent: com funciona el braç i una decisió tècnica (per què aquests angles límit). S'avalua amb **R1**, **R2** i **R3**.
+2. 📤 Respon i envia l'[Entrega final de la SA4](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODI2ODM5NDkyMjE2/details): autoavaluació i checklist final.
+
+> ✅ **Versió nucli** (per aprovar n'hi ha prou amb): el braç es mou amb els potenciòmetres dins dels angles límit, amb la massa comuna i l'alimentació externa ben fetes.
+
 ## 📦 Què has d'entregar
 
-| Quan | Lliurable | On es lliura |
+| Quan | Què | On |
 |---|---|---|
-| S1 | [Activitat 1 · Servomotor](SA4_fitxa_alumnat.md#1-servomotor-s1) | [Tasca de Classroom](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODcwNTEzNjkxNjIy/details) |
-| S2 | [Activitat 2 · Motor DC i pont H](SA4_fitxa_alumnat.md#2-motor-dc-i-pont-h-s2) | Mateixa tasca de Classroom |
-| S3 | [Activitat 3 · Del sensor al braç](SA4_fitxa_alumnat.md#3-del-sensor-al-brac-s3) | Mateixa tasca de Classroom |
-| S4 | [Activitat 4 · Producte: el braç amb potenciòmetres](SA4_fitxa_alumnat.md#4-producte-el-brac-amb-potenciometres-s4) | Mateixa tasca de Classroom |
+| S1 | Formulari de la Pràctica 1 | Una tasca de Classroom per pràctica (enllaç a l'últim pas de cada pràctica) |
+| S2 | Formulari de la Pràctica 2 | La tasca de Classroom de la pràctica |
+| S3 | Formulari de la Pràctica 3 | La tasca de Classroom de la pràctica |
+| S4 | Formulari de la Pràctica 4 + **el braç** i defensa d'1' + **Entrega final** | A l'aula i a Classroom. S'avalua amb **R1**, **R2** i **R3** |
 | ⭐ | [Repte triat (A, B o C)](../../Reptes/Reptes_SA4.md) | El docent el valida i pinteu l'estrella al [tauler de reptes](../00_General/00_Tauler_reptes.md) |
 | 📓 | Full del quadern tècnic de cada sessió | En paper, en acabar la sessió |
 | 🤖 | El MeArm muntat (blocs A-E) i cablejat amb els seus angles límit | Torns de taller de les S1-S4: [guia de muntatge](../00_General/00_Muntatge_brac_MeArm.md) i [dossier del braç](../00_General/00_Projecte_T2_Brac.md) |
 
-## Itinerari per sessions
+## 📚 Per repassar a casa
 
-> La teva feina és a la **[fitxa base](SA4_fitxa_alumnat.md)**. Aquesta ruta et diu què toca fer a cada sessió i què necessites en aquell moment. Les respostes de la fitxa es lliuren a la **[tasca de Classroom](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODcwNTEzNjkxNjIy/details)**.
-
-1. **Sessió 1 · El servomotor (la base del braç)** — fes l'[Activitat 1 de la fitxa](SA4_fitxa_alumnat.md#1-servomotor-s1). **Taller (35'):** pas 0 i blocs A-B de la [guia de muntatge](../00_General/00_Muntatge_brac_MeArm.md).
-2. **Sessió 2 · Motor DC i pont H** — fes l'[Activitat 2](SA4_fitxa_alumnat.md#2-motor-dc-i-pont-h-s2), amb els [esquemes de connexió](SA4_esquemes_connexions.md) (compte amb la massa comuna!). És una pràctica curta, fora del braç. **Taller (40'):** blocs C-D (pinça i calibratge).
-3. **Sessió 3 · Del sensor al braç** — fes l'[Activitat 3](SA4_fitxa_alumnat.md#3-del-sensor-al-brac-s3), amb el [codi](codi/). **Taller (45'):** bloc E, l'estructura central.
-4. **Sessió 4 · Producte: el braç amb potenciòmetres** — fes l'[Activitat 4](SA4_fitxa_alumnat.md#4-producte-el-brac-amb-potenciometres-s4), amb el [diagrama de flux](SA4_diagrama_flux.md) (s'avalua amb R1, R2, R3 parcial). **Taller:** cablatge definitiu.
-5. **Abans d'entregar** — repassa [el meu checklist](SA4_checklist_alumnat.md).
-
-### Si vols més
-
-- [Fitxa ampliada](SA4_fitxa_ampliada.md) — aprofundiment i ampliacions.
+- [Dues articulacions alhora amb `millis()`](codi/05_dos_servos_millis/EXPLICACIO.md) ⭐ — la bastida per a qui acabi abans (prepara la SA6).
 - [Reptes de la SA4](../../Reptes/Reptes_SA4.md) — tria el teu context.
+- [Exemple resolt](SA4_exemple_resolt.md) · [Diagrama de flux](SA4_diagrama_flux.md) · [Qüestionari de conceptes](SA4_questionari_conceptes.md)
+- [Fitxa base](SA4_fitxa_alumnat.md) — objectius, com s'avalua i què fer si alguna cosa no funciona.
+- [Fitxa ampliada](SA4_fitxa_ampliada.md) — aprofundiment i ampliacions.
+- [Esquemes de connexions](SA4_esquemes_connexions.md) — tots els circuits de la SA en un sol lloc.
 
 <!-- web:only-github -->
 ## Contingut

@@ -1,10 +1,91 @@
 # Pràctica 4 · Producte: el braç amb quatre potenciòmetres
 
-**Quan es fa:** Sessió 4 (producte) · **Fitxer:** `04_brac_potenciometres.ino` · **Circuit:** [esquema de connexions](../../SA4_esquemes_connexions.md) (servos 9/6/10/11 amb piles i GND comú; potenciòmetres A0-A3)
+<div class="cap-practica" markdown="1">
 
-> ✍️ **Kata primer!** Si avui encara no has fet cap kata (ni el mini-check), obre el [kata d'aquesta pràctica](../../SA4_katas.md): 10 minuts per escriure el teu bloc abans de llegir aquest codi. Si ja l'has fet, endavant.
+🎯 **Avui aconseguiràs:** moure el teu **MeArm** amb quatre potenciòmetres, cada servo dins del seu rang segur. És el producte de la SA4.
 
-## 🎯 Per què fem aquesta pràctica
+⏱️ Tota la sessió
+
+📦 El MeArm muntat, 4 potenciòmetres, el portapiles i cables
+
+</div>
+
+## 🚀 Pas a pas
+
+### Pas 1 · Kata primer
+
+✍️ **Kata primer!** Si avui encara no has fet cap kata (ni el mini-check), obre el [kata d'aquesta pràctica](../../SA4_katas.md): 10 minuts per escriure el teu bloc abans de llegir aquest codi. Si ja l'has fet, endavant.
+
+✅ **Comprova:** has escrit el teu bloc **abans** de mirar el codi d'aquesta pràctica.
+
+### Pas 2 · Dissenya abans de programar
+
+Abans d'obrir l'editor, escriu el **pseudocodi** del control d'una articulació (3-5 línies): què llegeixes, com ho converteixes i què fas amb el servo. T'ajuda el [diagrama de flux](../../SA4_diagrama_flux.md).
+
+![Diagrama de flux del control d'una articulació](../../img/sa4-flux.svg)
+
+✍️ **Apunta-ho:** el teu pseudocodi del control d'una articulació (3-5 línies).
+
+### Pas 3 · Munta el cablatge definitiu
+
+Servos: **base al 9**, **esquerre al 6**, **dret al 10** i **pinça a l'11**, tots alimentats amb el **portapiles** i amb el GND unit al de l'Arduino. Potenciòmetres: la pota del mig a **A0, A1, A2 i A3**.
+
+✅ **Comprova:** massa comuna feta i cap servo connectat al 5V de l'Arduino.
+
+### Pas 4 · Carrega el codi
+
+Prem **Copia**, enganxa'l a l'Arduino IDE (esborra el que hi hagués) i prem **→ Puja**.
+
+<!-- codi-complet -->
+
+✅ **Comprova:** cada potenciòmetre mou el seu servo, i el braç no fa salts en arrencar.
+
+### Pas 5 · Troba els angles límit
+
+Mou cada articulació a poc a poc fins on arriba sense forçar i apunta els angles. Posa'ls a les constants del principi del codi (`BASE_MIN`, `BASE_MAX`…).
+
+✍️ **Apunta-ho:** angles límit (mínim i màxim) de la base, l'esquerre, el dret i la pinça.
+
+✍️ **Apunta-ho:** els angles límit del teu braç i com els has trobat.
+
+### Pas 6 · Tria la zona morta
+
+Prova `ZONA_MORTA = 0` i després un valor més gran. Què passa amb el servo quan no toques el potenciòmetre?
+
+✍️ **Apunta-ho:** zona morta triada (°) i per què.
+
+### Pas 7 · Prepara la defensa d'1 minut
+
+Pensa què diràs: com funciona i **una decisió tècnica** (per què aquests angles límit). S'avalua amb R1, R2 i R3.
+
+✅ **Comprova:** ho saps explicar en 1 minut sense llegir.
+
+✍️ **Apunta-ho:** un error que has trobat i com l'has resolt.
+
+### Pas 8 · Respon i envia
+
+📤 [Obre la tasca «SA4 · Pràctica 4» a Classroom i envia el formulari](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODk3NDI5ODc5MTk4/details)
+
+Hi trobaràs les mateixes preguntes ✍️ que has anat apuntant. Envia'l ara. Després, fes l'**[🏁 Entrega final de la SA4](../../README.md#entrega-final)**: la defensa d'1 minut i l'autoavaluació.
+
+⭐ **Si acabes abans:** afegeix un botó que guardi una **posició** del braç i la repeteixi. Més reptes a **[Reptes de la SA4](../../../../Reptes/Reptes_SA4.md)**; quan el docent te'l validi, pinta l'estrella al [tauler de reptes](../../../00_General/00_Tauler_reptes.md).
+
+<details markdown="1">
+<summary>🧗 Si t'encalles</summary>
+
+| Símptoma | Causa probable |
+|---|---|
+| Un servo brunz i s'escalfa quiet | Força contra el topall: el teu `_MIN` o `_MAX` és massa ample. Torna a mesurar. |
+| El braç tremola encara que no toquis res | Servos a l'USB (han d'anar a les piles amb GND comú) o `ZONA_MORTA` massa petita. |
+| Un potenciòmetre mou el servo que no toca | Cursor connectat a l'entrada analògica equivocada. Comprova A0-A3 amb el Monitor sèrie. |
+| El servo va al revés del potenciòmetre | Normal: depèn de com és muntat. Intercanvia `_MIN` i `_MAX` en el `llegeixAngle()` d'aquell servo. |
+
+</details>
+
+<details markdown="1">
+<summary>🧠 Vols saber per què funciona?</summary>
+
+### Per què fem aquesta pràctica
 
 El MeArm ja és muntat. Avui li dones el primer control complet: **quatre
 potenciòmetres, quatre articulacions**, com el comandament de sobretaula
@@ -19,15 +100,6 @@ idees noves que separen un braç que funciona d'un braç que es crema:
 3. **Funcions amb paràmetres:** quatre servos amb el mateix codi copiat quatre
    vegades és la recepta per equivocar-se. Una funció fa la feina i la
    crides quatre cops.
-
-## 🔮 Abans d'executar: prediu
-
-On anirà el servo de la pinça si gires el seu potenciòmetre **al mínim**? I
-**al màxim**? (Pista: mira les constants `PINCA_MIN` i `PINCA_MAX`.) Què
-creus que passaria amb `ZONA_MORTA = 0`? Apunta-ho a l'Activitat 4 de la
-[fitxa](../../SA4_fitxa_alumnat.md).
-
-## 🧠 El codi, per blocs
 
 ### Bloc 1 — Pins i rangs segurs
 
@@ -109,19 +181,10 @@ al **Monitor sèrie** fa servir `millis()` en lloc de `delay(500)`: si
 s'esperés mig segon, el braç també reaccionaria cada mig segon. És el mateix
 truc de la [bastida de la S3](../05_dos_servos_millis/EXPLICACIO.md).
 
-## ⚠️ Errors que veuràs segur
-
-| Símptoma | Causa probable |
-|---|---|
-| Un servo brunz i s'escalfa quiet | Força contra el topall: el teu `_MIN` o `_MAX` és massa ample. Torna a mesurar. |
-| El braç tremola encara que no toquis res | Servos a l'USB (han d'anar a les piles amb GND comú) o `ZONA_MORTA` massa petita. |
-| Un potenciòmetre mou el servo que no toca | Cursor connectat a l'entrada analògica equivocada. Comprova A0-A3 amb el Monitor sèrie. |
-| El servo va al revés del potenciòmetre | Normal: depèn de com és muntat. Intercanvia `_MIN` i `_MAX` en el `llegeixAngle()` d'aquell servo. |
-
-## 🔗 On ho aplicaràs
+### On ho aplicaràs
 
 - **Reptes de la SA4:** el [repte B](../../../../Reptes/Reptes_SA4.md) converteix aquest braç en un dispensador automàtic, i el C li dona memòria (gravar i reproduir).
 - **A la SA5:** els potenciòmetres es queden, però hi arriba un **comandament per ràdio** que fa la mateixa feina sense fils.
 - **A la SA6:** la màquina d'estats del braç fa servir aquest control com a mode **manual**.
 
-> ⭐ **Has acabat abans?** Tria un repte a **[Reptes de la SA4](../../../../Reptes/Reptes_SA4.md)** i, quan el docent te'l validi, pinta l'estrella al [tauler de reptes](../../../00_General/00_Tauler_reptes.md).
+</details>

@@ -476,8 +476,9 @@ def comprova_lliurables() -> None:
                 errors.append(f"[lliurables] {sa}: la fila S{prova_sa[sa]} "
                               f"ha de contenir «Prova pràctica»")
                 fallats += 1
-        # Format de passos: el quadern són els formularis, sense fila 📓.
-        quadern_paper = n not in SA_NOU_FORMAT
+        # SA2-SA3: el quadern són els formularis, sense fila 📓. Des de la SA4 el
+        # quadern imprès del T2/T3 es manté (decisió del docent, 3-11-2026).
+        quadern_paper = te_quadern_paper(n)
         for icona, cal in (("⭐", True), ("📓", quadern_paper), ("🤖", n >= 2)):
             te = bool(re.search(rf"^\|\s*{icona}\s*\|", bloc, re.M))
             if cal and not te:
@@ -847,6 +848,16 @@ def comprova_dependencies() -> None:
 # --- 18 · Format «passos autònoms» (spec 2026-11-03-passos-autonoms) ---
 # Només s'apliquen a les pràctiques i SA ja migrades al format nou; la resta
 # conserva el format antic fins que la toqui el seu pla.
+# SA sense quadern imprès (el quadern són els formularis de pràctica). A les
+# SA4-SA9 es manté el quadern imprès del T2/T3: la fila 📓 hi és obligatòria.
+SA_SENSE_QUADERN_PAPER: set[int] = {2, 3}
+
+
+def te_quadern_paper(n: int) -> bool:
+    """La SA n porta full de quadern en paper (fila 📓 a «Què has d'entregar»)?"""
+    return n not in SA_SENSE_QUADERN_PAPER
+
+
 PRACTIQUES_NOU_FORMAT: set[str] = {
     "Classes/SA2/codi/03_fade_pwm/EXPLICACIO.md",
     "Classes/SA2/codi/04_rgb/EXPLICACIO.md",
@@ -855,8 +866,12 @@ PRACTIQUES_NOU_FORMAT: set[str] = {
     "Classes/SA3/codi/02_potenciometre_ldr/EXPLICACIO.md",
     "Classes/SA3/codi/03_pantalla_oled/EXPLICACIO.md",
     "Classes/SA3/codi/05_mascota/EXPLICACIO.md",
+    "Classes/SA4/codi/01_servo_potenciometre/EXPLICACIO.md",
+    "Classes/SA4/codi/02_motor_pont_h/EXPLICACIO.md",
+    "Classes/SA4/codi/03_ultrasons_brac/EXPLICACIO.md",
+    "Classes/SA4/codi/04_brac_potenciometres/EXPLICACIO.md",
 }
-SA_NOU_FORMAT: set[int] = {2, 3}
+SA_NOU_FORMAT: set[int] = {2, 3, 4}
 
 _PAS_MD_RE = re.compile(r"^### (Pas \d+.*)$", re.M)
 _FI_SECCIO_MD_RE = re.compile(r"^(## |### |<details)", re.M)
