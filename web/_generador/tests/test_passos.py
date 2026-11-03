@@ -37,7 +37,8 @@ def test_codi_complet_dins_del_pas():
 
 
 def test_classes_comprova_apunta_envia():
-    body = ('<p>✅ Comprova: respira.</p>'
+    body = ('<h3 id="pas-1">Pas 1 · Munta</h3>'
+            '<p>✅ Comprova: respira.</p>'
             '<p>✍️ Apunta-ho: què canvia?</p>'
             '<p>📤 <a href="https://classroom.google.com/x">Formulari</a></p>')
     out = marca_passos(body)
@@ -48,6 +49,13 @@ def test_classes_comprova_apunta_envia():
 
 def test_sense_passos_no_canvia():
     body = '<h2 id="pas-a-pas">Pas a pas</h2><ol><li>Munta</li></ol><h3 id="tros-1">Tros 1</h3>'
+    assert marca_passos(body) == body
+
+
+def test_pagina_antiga_amb_kata_no_rep_classes():
+    # Les pràctiques de SA4-SA8 (format antic) tenen «> ✍️ **Kata primer!**»:
+    # no és cap pregunta de formulari i no ha de canviar d'aspecte.
+    body = '<blockquote>\n<p>✍️ <strong>Kata primer!</strong> escriu-ho</p>\n</blockquote>'
     assert marca_passos(body) == body
 
 

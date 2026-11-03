@@ -29,9 +29,7 @@
 
 ## On responc · Google Classroom
 
-Les preguntes d'aquesta fitxa es responen a la **tasca de Google Classroom** (val **10 punts**). **No cal fer-ho tot de cop:** la portada de la SA et diu, sessió a sessió, què has de respondre cada dia.
-
-> 👉 **[Obre la tasca: SA2 · Fitxa base (Google Classroom)](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODcwNTEzOTQ1NjAz/details)**
+Les preguntes es responen a Classroom, **un formulari per pràctica**: l'enllaç és a l'últim pas de cada pràctica («📤 Respon i envia»), i la [portada de la SA](README.md) té la ruta completa. Les preguntes de la Sessió 1 van a la tasca **[SA2 · Sessió 1 — El semàfor](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODcwNTEzOTQ1NjAz/details)**; les de les Pràctiques 3, 4 i 5, a la tasca de cada pràctica.
 
 En aquesta pàgina hi tens el que et pot fer falta mentre treballes: què aprendràs (a dalt) i què fer si alguna cosa no funciona (a sota).
 
@@ -44,7 +42,7 @@ En aquesta pàgina hi tens el que et pot fer falta mentre treballes: què aprend
 2. Quant dura cada color? Vermell ____ s · verd ____ s · groc ____ s.
 3. **Per què 220 Ω?** El LED necessita uns 2 V i la placa en dona 5. Fes el compte: (5 − 2) ÷ 0,02 = ______ Ω. Per què posem una resistència de 220 Ω i no del número exacte? ______________________
 4. **Racó de mesura (multímetre):** amb un LED encès, el LED té ______ V · la resistència té ______ V · entre tots dos sumen ______ V. Què hi veus? ______________________
-5. Amb el semàfor de la pràctica 2b: si al `case 0` poses `fase = 2;` en lloc de `fase = 1;`, què fa el semàfor? Per què? ______________________ (al formulari de la Sessió 1)
+5. Amb el semàfor de la pràctica 2b: si al `case 0` poses `fase = 2;` en lloc de `fase = 1;`, què fa el semàfor? Per què? ______________________ (pensa-ho: no cal entregar-ho)
 6. **Repte:** afegeix un **mode nit** (el groc fa pampallugues) com a `case 3`.
 
 > 💡 No et surt el semàfor? Comença per **un sol LED** amb la [pràctica 1](codi/01_led_basic/EXPLICACIO.md), o fes servir l'**esquelet** de l'apartat «Si t'encalles» de la [pràctica del semàfor](codi/02_semafor/EXPLICACIO.md): només hi has d'omplir els `// TODO` de les tres llums.

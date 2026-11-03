@@ -1,10 +1,13 @@
 // Actualitza EN PLACE el Form de la fitxa base d'una SA perquè torni a coincidir amb
-// la seva definició a sa_definicions.js (p. ex. SA2 després de treure l'antiga S1,
-// 2026-11-03). No crea cap Form nou: conserva l'enllaç, la tasca i la carpeta.
+// la seva definició a sa_definicions.js. No crea cap Form nou: conserva l'enllaç,
+// la tasca i la carpeta. ⚠️ Esborra i recrea TOTS els elements (IDs nous): els
+// esborranys desats de l'alumnat es perden. Per això les SA ja migrades al format
+// de passos (SA_MIGRADES) queden bloquejades: es toquen amb el seu script propi
+// (SA2: transicio_sa2_s1.mjs) o, si de debò cal, amb --forca.
 //
 // Ús (des de Material Classroom/):
-//   node actualitzar_form_fitxa_sa.mjs sa2            -> només mostra què canviaria
-//   node actualitzar_form_fitxa_sa.mjs sa2 --aplica   -> substitueix les preguntes
+//   node actualitzar_form_fitxa_sa.mjs sa3            -> només mostra què canviaria
+//   node actualitzar_form_fitxa_sa.mjs sa3 --aplica   -> substitueix les preguntes
 //   ... sa3 --form=https://docs.google.com/forms/d/<id>/edit  -> si la tasca només duu
 //       l'enllaç de resposta (Forms creats amb l'antic projecte OAuth)
 //
@@ -22,9 +25,15 @@ const FORCA = flags.includes('--forca');
 
 const titolItem = (it) => it.title ?? '(sense títol)';
 
+// SA amb Form ja transformat per a passos autònoms: no s'han de recrear.
+export const SA_MIGRADES = new Set(['sa2']);
+
 async function main() {
   const def = DEFINICIONS[saKey];
   if (!def) throw new Error(`Cap definició «${saKey}» a sa_definicions.js (${Object.keys(DEFINICIONS).join(', ')}).`);
+  if (SA_MIGRADES.has(saKey) && !FORCA) {
+    throw new Error(`${saKey} ja està migrada al format de passos: aquest script en recrearia TOTS els elements i l'alumnat perdria els esborranys. Fes servir el seu script propi o afegeix --forca.`);
+  }
 
   const auth = await getAuthClient();
   const drive = google.drive({ version: 'v3', auth });

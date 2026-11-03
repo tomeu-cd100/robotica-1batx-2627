@@ -14,7 +14,7 @@ El **mateix semàfor** que acabes de fer, però escrit d'una altra manera. Fa ex
 
 <!-- codi-complet -->
 
-4. **Fes un experiment:** al `case 0` (el del vermell), canvia `fase = 1;` per `fase = 2;` i torna a pujar-lo. Què li passa al semàfor? Apunta-ho al **quadern** i explica per què (la resposta és al tros 3 de sota). Després, torna-ho a deixar com estava.
+4. **Fes un experiment:** al `case 0` (el del vermell), canvia `fase = 1;` per `fase = 2;` i torna a pujar-lo. Què li passa al semàfor? Pensa per què (la resposta és al tros 3 de sota). Després, torna-ho a deixar com estava.
 5. **⭐ Repte:** afegeix una **fase nocturna** (el groc fa pampallugues). Tens les instruccions al final de la pàgina, a l'apartat «⭐ El repte, pas a pas».
 
 ## 🧠 Com funciona, a trossos

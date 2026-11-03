@@ -361,7 +361,11 @@ def marca_passos(body: str) -> str:
     `pas-…`) passa a ser una targeta `<section class="pas">` fins al proper
     h2/h3, i els paràgrafs que comencen per ✅/✍️/📤 reben la classe
     comprova/apunta/envia. S'ha d'aplicar abans de substituir la marca
-    `<!-- codi-complet -->`, perquè el codi quedi dins del seu pas."""
+    `<!-- codi-complet -->`, perquè el codi quedi dins del seu pas.
+    Les pàgines de format antic (sense cap `### Pas`) no es toquen: el seu
+    «✍️ Kata primer» no és cap pregunta de formulari."""
+    if not _PAS_RE.search(body):
+        return body
     for emoji, classe in _PARA_MARCA:
         body = body.replace(f"<p>{emoji}", f'<p class="{classe}">{emoji}')
     out, pos = [], 0
