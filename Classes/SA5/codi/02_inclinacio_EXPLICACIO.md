@@ -1,10 +1,73 @@
 # Pràctica 2 · La inclinació com a gest del comandament
 
-**Quan es fa:** Sessió 2 (modelatge) · **Fitxer:** `02_inclinacio.py` · **Entorn:** [python.microbit.org](https://python.microbit.org) · [connexions i entorn](../SA5_connexions.md) (no cal muntatge: l'acceleròmetre és dins la placa)
+<div class="cap-practica" markdown="1">
 
-> ✍️ **Kata primer!** No llegeixis encara el codi: obre el [kata d'aquesta pràctica](../SA5_katas.md) i tens **10 minuts** per escriure el teu bloc (individual, apunts permesos). Després torna aquí i **compara**.
+🎯 **Avui aconseguiràs:** que la micro:bit **noti cap on la inclines** amb l'acceleròmetre, i convertir-ho en un gest del comandament.
 
-## 🎯 Per què fem aquesta pràctica
+⏱️ La primera part de la sessió (després, el taller de la Pràctica 3)
+
+📦 Una micro:bit amb el cable USB
+
+</div>
+
+## 🚀 Pas a pas
+
+### Pas 1 · Kata primer
+
+✍️ **Kata primer!** No llegeixis encara el codi: obre el [kata d'aquesta pràctica](../SA5_katas.md) i tens **10 minuts** per escriure el teu bloc (individual, apunts permesos). Després torna aquí i **compara**.
+
+✅ **Comprova:** has escrit el teu bloc **abans** de mirar el codi d'aquesta pràctica.
+
+### Pas 2 · Endevina abans de provar
+
+✍️ **Apunta-ho:** PREDIU: quant valdran `x` i `y` amb la placa plana sobre la taula? I de cantell?
+
+### Pas 3 · Carrega el codi
+
+A l'editor **[python.microbit.org](https://python.microbit.org)**, esborra el que hi hagi, prem **Copia** aquí, enganxa-ho i prova-ho al **simulador**. Després connecta la micro:bit per USB i prem **Envia a la micro:bit**.
+
+<!-- codi-complet -->
+
+✅ **Comprova:** quan inclines la placa (al simulador, amb el control de l'acceleròmetre), la pantalla mostra cap on la inclines.
+
+### Pas 4 · Mira els números
+
+Obre el gràfic (**Show data** a l'editor) i posa la placa plana, inclinada a la dreta i inclinada endavant.
+
+✍️ **Apunta-ho:** valors de `x` i `y` amb la placa plana, inclinada a la dreta i inclinada endavant.
+
+### Pas 5 · Tria el llindar
+
+Al codi, el gest només compta si la inclinació passa d'un **llindar**. Prova un valor petit i un de gran.
+
+✍️ **Apunta-ho:** llindar triat i per què no és 0.
+
+✍️ **Apunta-ho:** quin és el concepte nou més important d'aquesta pràctica?
+
+### Pas 6 · Respon i envia
+
+📤 [Obre la tasca «SA5 · Pràctica 2» a Classroom i envia el formulari](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODk3NDM1ODkyMjYy/details)
+
+Hi trobaràs les mateixes preguntes ✍️ que has anat apuntant. Envia'l ara. Després, al taller: **[Pràctica 3 · El braç obeeix ordres](04_brac_ordres/EXPLICACIO.md)**.
+
+⭐ **Si acabes abans:** fes que, com més inclines la placa, més ràpid es mogui el gest (una zona morta proporcional) i explica-ho al formulari. Més reptes a **[Reptes de la SA5](../../../Reptes/Reptes_SA5.md)**; quan el docent te'l validi, pinta l'estrella al [tauler de reptes](../../00_General/00_Tauler_reptes.md).
+
+<details markdown="1">
+<summary>🧗 Si t'encalles</summary>
+
+| Símptoma | Causa probable |
+|---|---|
+| Les fletxes van al revés | Tens la placa girada (el logotip cap a tu). Gira-la o intercanvia les fletxes. |
+| Amb la placa plana surt una fletxa | El llindar és massa baix per a la teva taula o la teva mà. Mira el gràfic i puja'l. |
+| El gràfic no surt | Falta el `print()`, o no has obert **Show data**. |
+| La G no surt mai | Sacseja més fort, o el `sleep()` és massa llarg i el gest se t'escapa. |
+
+</details>
+
+<details markdown="1">
+<summary>🧠 Vols saber per què funciona?</summary>
+
+### Per què fem aquesta pràctica
 
 Un comandament amb botons està bé, però un comandament que **endevina el que
 vols inclinant-lo** és molt més natural: inclines a la dreta i el braç gira a
@@ -16,15 +79,6 @@ Avui converteixes aquests números en **gestos**: inclinar a dreta o esquerra,
 endavant o enrere, i sacsejar. És el mateix problema de la SA3 i de la SA4
 (un sensor dona un número i tu decideixes a partir de quin valor «compta»),
 amb un sensor nou: tot es resol amb un **llindar**.
-
-## 🔮 Abans d'executar: prediu
-
-Amb la placa **plana sobre la taula**, quant creus que valdran `x` i `y`? I si
-la poses **dreta** (de cantell)? Quin número creus que tindrà `x` si la
-inclines a la dreta 45°? Apunta-ho a l'Activitat 2 de la
-[fitxa](../SA5_fitxa_alumnat.md) i comprova-ho amb el gràfic.
-
-## 🧠 El codi, per blocs
 
 ### Bloc 1 — Llegir l'acceleròmetre i veure'l
 
@@ -75,19 +129,10 @@ perfectament plana i la mà tremola: sense marge, el braç no pararia mai quiet.
 `was_gesture("shake")` és un gest que la micro:bit ja reconeix sola. Com el
 `was_pressed()` de la S1, respon *«ha passat des de l'última vegada?»*.
 
-## ⚠️ Errors que veuràs segur
-
-| Símptoma | Causa probable |
-|---|---|
-| Les fletxes van al revés | Tens la placa girada (el logotip cap a tu). Gira-la o intercanvia les fletxes. |
-| Amb la placa plana surt una fletxa | El llindar és massa baix per a la teva taula o la teva mà. Mira el gràfic i puja'l. |
-| El gràfic no surt | Falta el `print()`, o no has obert **Show data**. |
-| La G no surt mai | Sacseja més fort, o el `sleep()` és massa llarg i el gest se t'escapa. |
-
-## 🔗 On ho aplicaràs
+### On ho aplicaràs
 
 - **Al taller d'avui:** connectes el **cable del pont** a l'Arduino del braç i el proves amb ordres escrites a mà al Monitor sèrie: [`04_brac_ordres`](04_brac_ordres/EXPLICACIO.md).
 - **A la S3:** cada fletxa d'avui es convertirà en una **ordre de ràdio** (`B+`, `B-`, `D+`, `D-`) al [comandament](03_radio_comandament_EXPLICACIO.md).
 - **A la SA6:** el sacseig (`G`) **gravarà un punt** de la seqüència del braç (mode replay).
 
-> ⭐ **Has acabat abans?** Tria un repte a **[Reptes de la SA5](../../../Reptes/Reptes_SA5.md)** i, quan el docent te'l validi, pinta l'estrella al [tauler de reptes](../../00_General/00_Tauler_reptes.md).
+</details>

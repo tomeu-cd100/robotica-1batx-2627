@@ -1,10 +1,75 @@
 # Pràctica 1 · El selector d'articulació: benvingut a Python
 
-**Quan es fa:** Sessió 1 (modelatge) · **Fitxer:** `01_selector_articulacio.py` · **Entorn:** [python.microbit.org](https://python.microbit.org) · [connexions i entorn](../SA5_connexions.md) (no cal muntatge)
+<div class="cap-practica" markdown="1">
 
-> ✍️ **Kata primer!** No llegeixis encara el codi: obre el [kata d'aquesta pràctica](../SA5_katas.md) i tens **10 minuts** per escriure el teu bloc (individual, apunts permesos). Després torna aquí i **compara**.
+🎯 **Avui aconseguiràs:** el teu **primer programa en MicroPython**: la micro:bit tria quina articulació del braç mouràs, amb els botons A i B.
 
-## 🎯 Per què fem aquesta pràctica
+⏱️ La sessió
+
+📦 Una micro:bit amb el cable USB (o només el simulador de python.microbit.org)
+
+</div>
+
+## 🚀 Pas a pas
+
+### Pas 1 · Kata primer
+
+✍️ **Kata primer!** No llegeixis encara el codi: obre el [kata d'aquesta pràctica](../SA5_katas.md) i tens **10 minuts** per escriure el teu bloc (individual, apunts permesos). Després torna aquí i **compara**.
+
+✅ **Comprova:** has escrit el teu bloc **abans** de mirar el codi d'aquesta pràctica.
+
+### Pas 2 · Endevina abans de provar
+
+Desplega el codi complet del pas 3 i llegeix-lo sense executar-lo.
+
+✍️ **Apunta-ho:** PREDIU: quina lletra surt en engegar? I si prems B cinc vegades?
+
+### Pas 3 · Carrega el codi
+
+A l'editor **[python.microbit.org](https://python.microbit.org)**, esborra el que hi hagi, prem **Copia** aquí, enganxa-ho i prova-ho al **simulador**. Després connecta la micro:bit per USB i prem **Envia a la micro:bit**.
+
+<!-- codi-complet -->
+
+✅ **Comprova:** surt una lletra i, quan prems els botons (al simulador, amb el ratolí), canvia d'articulació. Has encertat la predicció?
+
+### Pas 4 · Mira com es mostra
+
+Canvia un `display.show(...)` per `display.scroll(...)` i torna-ho a provar.
+
+✍️ **Apunta-ho:** diferència entre `display.show()` i `display.scroll()`.
+
+✍️ **Apunta-ho:** per què `ARTICULACIONS[0]` és `"B"` i no `"E"`?
+
+### Pas 5 · Explica-ho amb les teves paraules
+
+Esborra els espais d'una línia de dins del `while True:` i prova d'executar-lo. Després torna-ho a deixar com estava.
+
+✍️ **Apunta-ho:** per què la indentació és important en Python?
+
+### Pas 6 · Respon i envia
+
+📤 [Obre la tasca «SA5 · Pràctica 1» a Classroom i envia el formulari](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODk3NDM2MjgzOTA1/details)
+
+Hi trobaràs les mateixes preguntes ✍️ que has anat apuntant. Envia'l ara. A la sessió següent: **[Pràctica 2 · La inclinació com a gest](02_inclinacio_EXPLICACIO.md)**.
+
+⭐ **Si acabes abans:** fes una **imatge pròpia** per a cada articulació (en lloc de la lletra) i explica-ho a la pregunta opcional del formulari. Més reptes a **[Reptes de la SA5](../../../Reptes/Reptes_SA5.md)**; quan el docent te'l validi, pinta l'estrella al [tauler de reptes](../../00_General/00_Tauler_reptes.md).
+
+<details markdown="1">
+<summary>🧗 Si t'encalles</summary>
+
+| Símptoma | Causa probable |
+|---|---|
+| `IndentationError` en carregar | Has barrejat tabs i espais, o una línia del bloc no està al mateix nivell que les altres. Usa **4 espais** coherents. |
+| `IndexError: list index out of range` | `triada` ha sortit de la llista (val 4 o -1): falta l'`if` que la fa tornar per l'altre extrem. |
+| Cada premuda salta dues o tres lletres | Has fet servir `is_pressed()` en lloc de `was_pressed()`. |
+| `NameError: name ... is not defined` | Falta `from microbit import *` a dalt, o has escrit malament un nom (`ARTICULACIO`). |
+
+</details>
+
+<details markdown="1">
+<summary>🧠 Vols saber per què funciona?</summary>
+
+### Per què fem aquesta pràctica
 
 Canvi de plataforma i de llenguatge: deixes l'Arduino i el C++ i passes a la
 **micro:bit** amb **Python**. Però el robot no canvia: en aquesta SA
@@ -18,16 +83,6 @@ el *com* està escrit: **en Python la indentació no és estètica, és sintaxi*
 No hi ha `;` al final de les línies ni claus `{}`: el que a C++ feien les
 claus, aquí ho fan els **espais del començament de cada línia**. I estrenes una
 eina nova que el C++ de la SA4 feia servir poc: la **llista**.
-
-## 🔮 Abans d'executar: prediu
-
-Mira el codi complet (a baix de tot, plegat) **sense executar-lo**. Quina
-lletra surt en engegar? Què passa si prems **B** cinc vegades seguides? I si
-prems **A** just en engegar? Escriu la predicció a l'Activitat 1 de la
-[fitxa](../SA5_fitxa_alumnat.md) i comprova-la al
-[simulador](https://python.microbit.org) (els botons es cliquen amb el ratolí).
-
-## 🧠 El codi, per blocs
 
 ### Bloc 1 — Una sola línia per tenir-ho tot
 
@@ -100,19 +155,10 @@ rellotge.
 `display.show()` mostra una lletra o una imatge **fixa**, sense desplaçar-la.
 `sleep(100)` és el `delay(100)` d'Arduino, en mil·lisegons.
 
-## ⚠️ Errors que veuràs segur
-
-| Símptoma | Causa probable |
-|---|---|
-| `IndentationError` en carregar | Has barrejat tabs i espais, o una línia del bloc no està al mateix nivell que les altres. Usa **4 espais** coherents. |
-| `IndexError: list index out of range` | `triada` ha sortit de la llista (val 4 o -1): falta l'`if` que la fa tornar per l'altre extrem. |
-| Cada premuda salta dues o tres lletres | Has fet servir `is_pressed()` en lloc de `was_pressed()`. |
-| `NameError: name ... is not defined` | Falta `from microbit import *` a dalt, o has escrit malament un nom (`ARTICULACIO`). |
-
-## 🔗 On ho aplicaràs
+### On ho aplicaràs
 
 - **Repte de la S1:** que en triar una articulació es vegi una **imatge** pròpia (una fletxa per a la base, una «pinça» feta a mà amb `Image("...")` per a la pinça…).
 - **Al braç:** a la S3, el comandament per ràdio enviarà ordres que comencen amb aquestes mateixes lletres (`B+`, `D-`, `P`…). El [repte A](../../../Reptes/Reptes_SA5.md) combina el selector amb la ràdio.
 - **Taula comparativa:** ja pots omplir la primera fila (estructura, final d'instrucció, blocs de codi, tipus de les variables) de l'Activitat 4 de la [fitxa](../SA5_fitxa_alumnat.md).
 
-> ⭐ **Has acabat abans?** Tria un repte a **[Reptes de la SA5](../../../Reptes/Reptes_SA5.md)** i, quan el docent te'l validi, pinta l'estrella al [tauler de reptes](../../00_General/00_Tauler_reptes.md).
+</details>

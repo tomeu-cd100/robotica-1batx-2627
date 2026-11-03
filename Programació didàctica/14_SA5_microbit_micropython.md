@@ -45,7 +45,7 @@ Sintaxi de Python (indentació, variables, llistes, funcions); E/S de micro:bit 
 El **comandament per ràdio del braç** (comandament + pont, el braç obeint-lo) + taula comparativa C++/Python al quadern.
 
 ## Avaluació
-- Instruments: producte + quadern (inclou comparativa) + repte de codi Python.
+- Instruments: producte + quadern tècnic (inclou la comparativa) + repte de codi Python. El quadern tècnic són els **formularis de pràctica** de Classroom (Pràctiques 1-4, 33 punts cadascun; la comparativa C++ ↔ Python va a la Pràctica 4), cadascun amb una pregunta de reflexió, més el **full imprès** de cada sessió. Tancament amb una **Entrega final** sense nota (autoavaluació + checklist).
 - Rúbriques: **R1**, **R4** (comparativa/documentació).
 
 ## Atenció a la diversitat

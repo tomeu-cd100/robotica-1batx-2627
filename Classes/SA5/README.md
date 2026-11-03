@@ -6,31 +6,56 @@ Cinquena situació d'aprenentatge (**6 h · 3 sessions** + 4a opcional d'ampliac
 
 > *Fotografia: micro:bit, per [SimonWaldherr](https://commons.wikimedia.org/wiki/File:Bbc_micro_bit.jpg) — llicència [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).*
 
+En acabar aquesta SA podràs: 1) escriure programes en **MicroPython** ben indentats per a la micro:bit; 2) fer servir l'**acceleròmetre** amb un llindar; 3) comunicar dues plaques per **ràdio** i moure el teu braç a distància; 4) comparar el mateix programa en **C++ i Python**.
+
+> 💻 **Com carregar el codi d'una pràctica:** dins de la pràctica, al pas «Carrega el codi», prem **Copia** i enganxa'l a l'editor **[python.microbit.org](https://python.microbit.org)** (micro:bit) o a l'Arduino IDE (la Pràctica 3, del braç).
+
+## 🧭 La teva ruta
+
+Fes les pràctiques **en ordre i al teu ritme**. Cada pràctica comença amb el **kata** (10') i acaba enviant el seu formulari de Classroom. Les 🚩 et diuen on hauries de ser al final de cada sessió.
+
+- ① [Pràctica 1 · El selector d'articulació](codi/01_selector_articulacio_EXPLICACIO.md) — el teu primer MicroPython: la micro:bit tria quina articulació mouràs.
+
+🚩 **Final de la Sessió 1:** formulari de la ① enviat i el full del 📓 quadern de la sessió omplert.
+
+- ② [Pràctica 2 · La inclinació com a gest](codi/02_inclinacio_EXPLICACIO.md) — l'acceleròmetre converteix la inclinació en un gest.
+- ③ [Pràctica 3 · El braç obeeix ordres](codi/04_brac_ordres/EXPLICACIO.md) — **taller:** l'Arduino del MeArm obeeix ordres escrites al Monitor sèrie.
+
+🚩 **Final de la Sessió 2:** formularis de la ② i la ③ enviats, el braç obeint ordres i el full del 📓 quadern omplert.
+
+- ④ [Pràctica 4 · Ràdio: el comandament del braç](codi/03_radio_comandament_EXPLICACIO.md) — el producte: el comandament, el pont cap al braç i la comparació C++ ↔ Python.
+
+🚩 **Final de la Sessió 3:** formulari de la ④ enviat, **Entrega final** feta i el full del 📓 quadern omplert.
+
+> 🧩 **Sessió 4 (opcional, d'ampliació):** reptes ⭐ de la SA5 o millores del comandament.
+
+## 🏁 Entrega final
+
+**Quan hagis acabat la ④:**
+
+1. 🎤 **Defensa d'1 minut** davant del docent: el braç movent-se amb el comandament i una diferència entre C++ i Python. S'avalua amb **R1** (codi) i **R4** (comparació).
+2. 📤 Respon i envia l'[Entrega final de la SA5](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODk3NDM3MjAxNDEy/details): autoavaluació i checklist final.
+
+> ✅ **Versió nucli** (per aprovar n'hi ha prou amb): el comandament mou almenys una articulació del braç per ràdio, i la taula comparativa C++ ↔ Python és completa.
+
 ## 📦 Què has d'entregar
 
-| Quan | Lliurable | On es lliura |
+| Quan | Què | On |
 |---|---|---|
-| S1 | [Activitat 1 · El selector del comandament](SA5_fitxa_alumnat.md#1-el-selector-del-comandament-s1) | [Tasca de Classroom](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODcwNTE3NDYxNTQy/details) |
-| S2 | [Activitat 2 · La inclinació com a gest](SA5_fitxa_alumnat.md#2-la-inclinacio-com-a-gest-s2) | Mateixa tasca de Classroom |
-| S3 | [Activitat 3 · Ràdio](SA5_fitxa_alumnat.md#3-radio-s3) i [Activitat 4 · Producte: comparació C++/Python](SA5_fitxa_alumnat.md#4-producte-comparacio-c-python) (es tanca dins la S3) | Mateixa tasca de Classroom |
+| S1 | Formulari de la Pràctica 1 | Una tasca de Classroom per pràctica (enllaç a l'últim pas de cada pràctica) |
+| S2 | Formularis de les Pràctiques 2 i 3 | Les tasques de Classroom de les pràctiques |
+| S3 | Formulari de la Pràctica 4 + **el comandament** i defensa d'1' + **Entrega final** | A l'aula i a Classroom. S'avalua amb **R1** i **R4** |
 | ⭐ | [Repte triat (A, B o C)](../../Reptes/Reptes_SA5.md) | El docent el valida i pinteu l'estrella al [tauler de reptes](../00_General/00_Tauler_reptes.md) |
 | 📓 | Full del quadern tècnic de cada sessió | En paper, en acabar la sessió |
 | 🤖 | El braç obeint ordres (S2) i movent-se amb el comandament per ràdio a través del pont (S3) | Torns de taller de les S2-S3: [dossier del braç](../00_General/00_Projecte_T2_Brac.md) |
 
-## Itinerari per sessions
+## 📚 Per repassar a casa
 
-> La teva feina és a la **[fitxa base](SA5_fitxa_alumnat.md)**. Aquesta ruta et diu què toca fer a cada sessió i què necessites en aquell moment. Les respostes de la fitxa es lliuren a la **[tasca de Classroom](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODcwNTE3NDYxNTQy/details)**.
-
-1. **Sessió 1 · Primers passos amb MicroPython** — obre l'editor **[python.microbit.org](https://python.microbit.org)** (en línia, amb simulador; tot el detall a [connexions i entorn](SA5_connexions.md)) i fes l'[Activitat 1 de la fitxa](SA5_fitxa_alumnat.md#1-el-selector-del-comandament-s1).
-2. **Sessió 2 · La inclinació com a gest** — fes l'[Activitat 2](SA5_fitxa_alumnat.md#2-la-inclinacio-com-a-gest-s2). **Taller (20'):** el braç obeeix ordres del Monitor sèrie i hi connectes el cable del pont.
-3. **Sessió 3 · Ràdio: el comandament del braç** — fes l'[Activitat 3](SA5_fitxa_alumnat.md#3-radio-s3), amb el [diagrama de flux del comandament](SA5_diagrama_flux.md) i el [codi](codi/). **Taller (20'):** el pont i el braç movent-se amb el comandament.
-4. **Producte · comparació C++/Python** — fes l'[Activitat 4](SA5_fitxa_alumnat.md#4-producte-comparacio-c-python) (s'avalua amb R1 codi + R4 documentació).
-5. **Abans d'entregar** — repassa [el meu checklist](SA5_checklist_alumnat.md).
-
-### Si vols més
-
-- [Fitxa ampliada](SA5_fitxa_ampliada.md) — aprofundiment i ampliacions.
 - [Reptes de la SA5](../../Reptes/Reptes_SA5.md) — tria el teu context.
+- [Exemple resolt](SA5_exemple_resolt.md) · [Diagrama de flux del comandament](SA5_diagrama_flux.md) · [Qüestionari de conceptes](SA5_questionari_conceptes.md)
+- [Fitxa base](SA5_fitxa_alumnat.md) — objectius, com s'avalua i què fer si alguna cosa no funciona.
+- [Fitxa ampliada](SA5_fitxa_ampliada.md) — aprofundiment i ampliacions.
+- [Connexions i entorn](SA5_connexions.md) — l'editor, el simulador i el cable del pont.
 
 <!-- web:only-github -->
 ## Contingut

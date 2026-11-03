@@ -19,6 +19,11 @@ const T2 = { id: GRADE_CATEGORIES.T2.id, name: GRADE_CATEGORIES.T2.name };
 const pagina = (sa, fitxer, titol) => ({
   link: { url: `${WEB_BASE}/${sa}/codi/${fitxer}.html`, title: titol }
 });
+const SA5 = {
+  sa: 'sa5',
+  topicName: 'SA5 · micro:bit i MicroPython',
+  gradeCategory: T2,
+};
 const SA4 = {
   sa: 'sa4',
   topicName: 'SA4 · Moviment: servos, motors i ponts H',
@@ -298,6 +303,105 @@ export const PRACTIQUES = {
         'L’ultrasons fa moure el braç',
         'El braç es mou amb els 4 potenciòmetres dins dels angles límit i l’he defensat',
         'He muntat el MeArm (blocs A-E) als torns de taller',
+        'He enviat els formularis de les Pràctiques 1, 2, 3 i 4',
+        'Tinc el full del quadern de cada sessió omplert'
+      ])
+    ]
+  },
+  // =========================================================================
+  // SA5 (2026-11-03): ① selector · ② inclinació · ③ el braç obeeix ordres
+  // (04_brac_ordres, taller S2) · ④ ràdio: el comandament (03_radio, producte
+  // + comparació C++/Python) + Entrega final. En DRAFT (2n trimestre).
+  'sa5-p1': {
+    ...SA5,
+    titol: 'SA5 · Pràctica 1 · El selector d’articulació',
+    descripcioForm: "Respostes de la Pràctica 1 (primer programa MicroPython). Les preguntes són les mateixes que els ✍️ de la pàgina de la pràctica.",
+    descripcioTasca: "Fes la Pràctica 1 seguint els passos de la pàgina (enllaç a sota) i envia aquest formulari en acabar-la. Compta per al quadern tècnic (25 %).",
+    maxPoints: 33,  // com la resta de tasques de la SA a Classroom
+    materials: [pagina('sa5', '01-selector-articulacio', 'Pràctica 1 · El selector d’articulació (passos)')],
+    items: [
+      p('PREDIU: quina lletra surt en engegar? I si prems B cinc vegades?'),
+      p('Diferència entre display.show() i display.scroll()'),
+      p('Per què ARTICULACIONS[0] és "B" i no "E"?'),
+      pOpt('⭐ Repte: una imatge pròpia per a cada articulació. Com ho has fet?'),
+      p('Per què la indentació és important en Python?', 'Pregunta del quadern tècnic.')
+    ]
+  },
+
+  'sa5-p2': {
+    ...SA5,
+    titol: 'SA5 · Pràctica 2 · La inclinació com a gest',
+    descripcioForm: "Respostes de la Pràctica 2 (l'acceleròmetre). Les preguntes són les mateixes que els ✍️ de la pàgina de la pràctica.",
+    descripcioTasca: "Fes la Pràctica 2 seguint els passos de la pàgina (enllaç a sota) i envia aquest formulari en acabar-la. Compta per al quadern tècnic (25 %).",
+    maxPoints: 33,  // com la resta de tasques de la SA a Classroom
+    materials: [pagina('sa5', '02-inclinacio', 'Pràctica 2 · La inclinació com a gest (passos)')],
+    items: [
+      p('PREDIU: quant valdran x i y amb la placa plana? I de cantell?'),
+      p('Valors de x i y amb la placa plana / inclinada a la dreta / inclinada endavant'),
+      p('Llindar triat i per què no és 0'),
+      p('El concepte nou més important d’aquesta pràctica', 'Pregunta del quadern tècnic.')
+    ]
+  },
+
+  'sa5-p3': {
+    ...SA5,
+    titol: 'SA5 · Pràctica 3 · El braç obeeix ordres',
+    descripcioForm: "Respostes de la Pràctica 3 (l'Arduino del braç obeeix ordres de text). Les preguntes són les mateixes que els ✍️ de la pàgina de la pràctica.",
+    descripcioTasca: "Fes la Pràctica 3 (taller de la Sessió 2) seguint els passos de la pàgina (enllaç a sota) i envia aquest formulari en acabar-la. Compta per al quadern tècnic (25 %).",
+    maxPoints: 33,  // com la resta de tasques de la SA a Classroom
+    materials: [pagina('sa5', '04-brac-ordres', 'Pràctica 3 · El braç obeeix ordres (passos)')],
+    items: [
+      p('PREDIU: si escrius B+ deu vegades, quants graus es mou la base? I amb b+ (minúscula)? I amb X?'),
+      p('Què fa el braç amb l’ordre B+? I amb P?'),
+      p('Què és el protocol d’ordres del braç i per què cal que sigui el mateix a les dues bandes?', 'Pregunta del quadern tècnic.')
+    ]
+  },
+
+  'sa5-p4': {
+    ...SA5,
+    titol: 'SA5 · Pràctica 4 · Ràdio: el comandament del braç',
+    descripcioForm: "Respostes de la Pràctica 4 (el producte de la SA5): el comandament per ràdio i la comparació C++ ↔ Python. Les preguntes són les mateixes que els ✍️ de la pàgina de la pràctica.",
+    descripcioTasca: "Fes la Pràctica 4 (el producte) seguint els passos de la pàgina (enllaç a sota) i envia aquest formulari en acabar-la. S'avalua amb R1 (codi) i R4 (comparació). Després, fes l'Entrega final.",
+    maxPoints: 33,  // com la resta de tasques de la SA a Classroom
+    materials: [pagina('sa5', '03-radio-comandament', 'Pràctica 4 · Ràdio: el comandament del braç (passos)')],
+    items: [
+      p('El teu pseudocodi del comandament (3-5 línies)'),
+      p('PREDIU: si la teva placa té GRUP = 10 i la del company GRUP = 12, què passa quan inclines la teva?'),
+      p('Què han de compartir les dues plaques perquè es «sentin»? I què ha de ser diferent del dels companys?'),
+      s('Instrucció que envia / instrucció que rep'),
+      pOpt('⭐ Repte: el servo esquerre amb els botons (E+ / E-). Com ho has fet?'),
+      t('Comparació C++ ↔ Python', 'La mateixa taula de la pàgina: com és cada aspecte en Python (el comandament) si en Arduino (04_brac_ordres) és…'),
+      s('Estructura: en Arduino és setup()/loop(); en Python?'),
+      s('Final d’instrucció: en Arduino és « ; »; en Python?'),
+      s('Blocs de codi: en Arduino són { }; en Python?'),
+      s('Declarar una variable: en Arduino és int aBase = 90; en Python?'),
+      s('Comparar un text: en Arduino és if (ordre == "B+"); en Python?'),
+      s('Mostrar un valor: en Arduino és Serial.println(x); en Python?'),
+      p('Un error que has trobat i com l’has resolt', 'Pregunta del quadern tècnic.')
+    ]
+  },
+
+  'sa5-final': {
+    ...SA5,
+    titol: 'SA5 · Entrega final',
+    descripcioForm: "Tancament de la SA5: autoavaluació i checklist. Fes-la quan hagis acabat la Pràctica 4 (el comandament).",
+    descripcioTasca: "Fes-la quan hagis acabat la Pràctica 4 i la defensa del comandament. No té nota pròpia: és la teva autoavaluació i el repàs final.",
+    materials: [{ link: { url: `${WEB_BASE}/sa5/index.html#entrega-final`, title: 'SA5 · Entrega final (portada de la SA)' } }],
+    items: [
+      t('Versió nucli',
+        'Per aprovar n’hi ha prou amb el comandament movent almenys una articulació del braç per ràdio, i la taula comparativa C++ ↔ Python completa.'),
+      autoaval([
+        'Escric Python ben indentat que funciona',
+        'Faig servir l’acceleròmetre amb un llindar',
+        'Comunico dues plaques per ràdio i moc el braç a distància'
+      ]),
+      check('Checklist final: marca el que tens fet', [
+        'El selector d’articulació funciona (el meu primer MicroPython)',
+        'La inclinació es converteix en un gest amb un llindar',
+        'El braç obeeix ordres escrites al Monitor sèrie',
+        'Dues plaques es parlen per ràdio amb el meu grup',
+        'El braç es mou amb el comandament a través del pont',
+        'He completat la taula comparativa C++ ↔ Python',
         'He enviat els formularis de les Pràctiques 1, 2, 3 i 4',
         'Tinc el full del quadern de cada sessió omplert'
       ])

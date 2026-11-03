@@ -34,11 +34,11 @@
 
 ## Les activitats · al Google Classroom
 
-Aquesta fitxa es respon **en línia**, a la tasca de Google Classroom (val **10 punts**). **No cal que la responguis d'entrada**: cada activitat porta el seu **enunciat dins de la tasca**, i l'**itinerari de la portada de la SA** et diu quina toca a cada sessió. Obre-la quan comencis a treballar-hi i ves-la responent a mesura que avances:
+Les preguntes es responen a Classroom, **un formulari per pràctica**: l'enllaç és a l'últim pas de cada pràctica («📤 Respon i envia»), i la [portada de la SA](README.md) té la ruta completa.
 
-> 👉 **[Obre la tasca: SA5 · Fitxa base (Google Classroom)](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODcwNTE3NDYxNTQy/details)**
+> 👉 Comença per la **[Pràctica 1 · El selector d'articulació](codi/01_selector_articulacio_EXPLICACIO.md)**.
 
-Si la tasca encara no t'apareix al Classroom, és que la SA encara no ha començat. En aquesta pàgina hi tens els **objectius i l'avaluació** (a dalt) i la rutina **DEPURA** (a sota).
+Si les tasques encara no t'apareixen al Classroom, és que la SA encara no ha començat. En aquesta pàgina hi tens els **objectius i l'avaluació** (a dalt) i la rutina **DEPURA** (a sota).
 
 <!-- web:only-github -->
 
@@ -71,7 +71,7 @@ Si la tasca encara no t'apareix al Classroom, és que la SA encara no ha començ
 
 ### 4 · Producte + comparació C++ ↔ Python
 
-> ✏️ **Dissenya abans de codificar:** pseudocodi del producte al quadern (3–5 línies). Fixa't que el pseudocodi és **el mateix** en C++ i en Python: el que canvia és la sintaxi — aquesta és la gràcia de la comparació.
+> ✏️ **Dissenya abans de codificar:** pseudocodi del producte (3–5 línies, al formulari de la Pràctica 4). Fixa't que el pseudocodi és **el mateix** en C++ i en Python: el que canvia és la sintaxi — aquesta és la gràcia de la comparació.
 
 El producte és el **comandament del braç**. Compara'l amb la seva altra meitat, l'Arduino que obeeix les ordres (`04_brac_ordres`):
 
@@ -105,7 +105,7 @@ El teu **comandament per ràdio** (comandament + pont) movent el MeArm, i la **c
 
 ## Quadern tècnic
 
-> 📓 Escriu-ho a la teva entrada del **[quadern tècnic](../00_General/00_Quadern_tecnic.md)** (guia + plantilla; compta el 25 %).
+> 📓 Aquestes preguntes són dins dels **formularis de pràctica**, i el full imprès del **[quadern tècnic](../00_General/00_Quadern_tecnic.md)** de cada sessió continua (compta el 25 %).
 - **Per què la indentació és important en Python?** ____________________
 - **Què és el protocol d'ordres del braç i per què cal que sigui el mateix a les dues bandes?** ____________
 - **Un error i com l'he resolt:** _____________________________________

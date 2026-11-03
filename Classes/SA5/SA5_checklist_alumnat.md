@@ -14,8 +14,9 @@
 - [ ] 🤖 Provar el braç amb **ordres escrites al Monitor sèrie** (`04_brac_ordres`) i connectar el cable del **pont** (S2)
 - [ ] Comunicar **dues plaques per ràdio** amb el mateix `group` (S3)
 - [ ] 🤖 Moure el **braç amb el comandament** a través del pont (S3) → [dossier](../00_General/00_Projecte_T2_Brac.md)
-- [ ] **Dissenyar abans de codificar:** pseudocodi del comandament al quadern
+- [ ] **Dissenyar abans de codificar:** pseudocodi del comandament (al formulari de la Pràctica 4)
 - [ ] Completar la **taula comparativa C++ ↔ Python** (comandament vs `04_brac_ordres`) → *R4*
+- [ ] Haver enviat els **formularis de Classroom** de les Pràctiques 1, 2, 3 i 4 (cadascun en acabar la seva pràctica) i l'**Entrega final**
 - [ ] Tenir el **quadern tècnic** al dia (per què la indentació importa, el protocol d'ordres, un error resolt)
 
 ## 🚦 Com vaig? (pinta el teu nivell)

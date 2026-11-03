@@ -5,6 +5,8 @@
 
 > 🧭 **Com s'usa aquesta guia.** **Abans de la SA:** objectius, material i codi de suport (la logística, al checklist docent). **A cada sessió:** la secció «SESSIÓ n» corresponent, amb el «Guió de modelatge» i els «Errors freqüents» a mà. **Durant tota la SA:** diversitat (DUA), ajuda i revisió entre iguals, i pensament computacional. **En avaluar:** «Avaluació formativa (instruments)». **Per contextualitzar:** context real i ODS.
 
+> 🚩 **Format de passos (3-11-2026):** l'alumnat segueix la **ruta de pràctiques de la [portada](README.md)** al seu ritme: ① selector, ② inclinació, ③ el braç obeeix ordres (`04_brac_ordres`, el taller de la S2) i ④ ràdio + pont + comparació (el producte, S3). Cada pràctica comença amb el kata i acaba enviant el seu formulari. Tu fas una **arrencada de 5-10'** amb la pràctica de la fita del dia. El **quadern imprès** es manté (un full per sessió).
+
 > 🦾 **Fil conductor (des del 28-10-2026):** en aquesta SA es construeix el
 > **comandament sense fils del braç MeArm**. Cada pràctica n'és una peça:
 > selector (S1), gest d'inclinació (S2) i ràdio (S3). Una micro:bit **pont**
@@ -53,7 +55,7 @@
 - **Modelatge (25'):** editor Python de micro:bit. `from microbit import *`, `display.scroll()`, `display.show()`, botons (`was_pressed()`), **llistes**. **Indentació** com a estructura (vs claus `{}` de C++).
 - **Pràctica guiada (35'):** [`01_selector_articulacio.py`](codi/01_selector_articulacio.py); el selector B → E → D → P amb els botons, circular.
 - **Repte (40'):** una imatge pròpia per a cada articulació (`Image("...")`); **+ repte:** que el selector recordi l'última tria mostrant-la en engegar.
-- **Tancament (10'):** quadern; primera fila de la **taula comparativa** C++/Python.
+- **Tancament (10'):** formulari de la Pràctica 1 i full del quadern imprès (la **taula comparativa** C++/Python es fa a la Pràctica 4).
 
 > ⏱️ **Marge:** el temps efectiu real és ~100' (arrencada + recollida), no 120'. Si vas just, retalla primer: **+ repte**.
 
@@ -67,7 +69,7 @@
 - **Pràctica guiada (25'):** les fletxes segons la inclinació; ajusten el llindar mirant el gràfic.
 - **Repte (15'):** una **zona morta** proporcional: fletxa petita a poca inclinació, gran a molta.
 - 🔧 **Torn de taller del braç (20'):** carreguen [`04_brac_ordres`](codi/04_brac_ordres/EXPLICACIO.md) a l'Arduino del braç i el proven **escrivint ordres al Monitor sèrie** (`B+`, `P`…). Connecten el **cable del pont** (P1 → D0, GND → GND) amb el braç apagat. Qui no hagi acabat el cablatge de la SA4-S4, l'acaba ara.
-- **Tancament (10'):** quadern. **Sembra per a la SA8:** cada alumne/a anota al quadern els **valors reals de l'acceleròmetre** en 3-4 postures (pla, dret, inclinat, sacseig — `x`, `y`): a la S3 de la SA8 seran el punt de partida del classificador de gestos, i estalvien fixar llindars «a ull».
+- **Tancament (10'):** formularis de les Pràctiques 2 i 3 i full del quadern imprès. **Sembra per a la SA8:** cada alumne/a anota al quadern els **valors reals de l'acceleròmetre** en 3-4 postures (pla, dret, inclinat, sacseig — `x`, `y`): a la S3 de la SA8 seran el punt de partida del classificador de gestos, i estalvien fixar llindars «a ull».
 
 > ⏱️ **Marge:** el temps efectiu real és ~100' (arrencada + recollida), no 120'. Si vas just, retalla primer: **el repte**. El taller no es retalla: la S3 necessita el braç obeint ordres.
 
@@ -105,7 +107,7 @@
 | Producte (comandament del braç) | Programa en MicroPython amb acceleròmetre i ràdio que mou el braç | CA1.2 | R1 |
 | Taula comparativa C++ ↔ Python | Comparar la mateixa solució en dos llenguatges | CA1.2 | R4 |
 | Repte de codi Python | Sintaxi (indentació), funcions, lectura de sensor | CA1.2 | R1 |
-| Quadern tècnic | Comparativa, errors i millores; decisió de disseny | CA1.2, CA3.1 | R4 |
+| Quadern tècnic (25 %) = **formularis de pràctica** (P1-P4, 33 punts cadascun a Classroom) + **full imprès** de cada sessió | Respostes ✍️ (comparativa a la P4), reflexions (indentació, protocol d'ordres), errors i decisió de disseny | CA1.2, CA3.1 | R4 |
 | Ajuda entre iguals i **revisió creuada** de codi | Cooperació sense producte compartit: línia d'ajuda del quadern + una millora concreta i un dubte al company | CA5.3 | **R5** |
 
 *(CA1.2 = programar en MicroPython i comparar-ho amb C/C++; CA3.1 = implementar/explicar control bàsic. Vegeu [`Programació didàctica/06_Avaluacio_criteris_qualificacio.md`](../../Programació%20didàctica/06_Avaluacio_criteris_qualificacio.md). Comparteix R1 i R4 **abans** de començar.)*
