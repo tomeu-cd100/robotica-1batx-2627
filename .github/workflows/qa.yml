@@ -34,6 +34,9 @@ jobs:
       - name: Tests del generador
         run: python -m pytest web/_generador/tests -q
 
+      - name: Tests del QA
+        run: python -m pytest tools/tests -q
+
       - name: Genera els PDF (perquè el link-check els pugui verificar)
         run: python web/_generador/generar_pdf.py
 

@@ -26,6 +26,9 @@ Comprova (i falla amb exit != 0 si troba res):
      (pàgina de pràctica a la web) i no queda cap sketch *_BASTIDA solt.
  14. Projectes trimestrals: cada projecte de generar.PROJECTES té la seva
      portada a Classes/00_General i la portada enllaça el seu dossier.
+ 18. Format «passos autònoms»: les pràctiques de PRACTIQUES_NOU_FORMAT i les
+     portades de SA_NOU_FORMAT segueixen docs/plantilles/ (capçalera, passos,
+     últim pas «Respon i envia» amb Classroom, teoria plegada, fites 🚩, entrega final).
  15. Codi incrustat als solucionaris: cada desplegable «Desplega el codi
      complet (<code>fitxer</code>…)» ha de ser una còpia exacta del fitxer
      de Classes/Solucionari/codi/ (si el sketch canvia, cal actualitzar
@@ -473,13 +476,15 @@ def comprova_lliurables() -> None:
                 errors.append(f"[lliurables] {sa}: la fila S{prova_sa[sa]} "
                               f"ha de contenir «Prova pràctica»")
                 fallats += 1
-        for icona, cal in (("⭐", True), ("📓", True), ("🤖", n >= 2)):
+        # Format de passos: el quadern són els formularis, sense fila 📓.
+        quadern_paper = n not in SA_NOU_FORMAT
+        for icona, cal in (("⭐", True), ("📓", quadern_paper), ("🤖", n >= 2)):
             te = bool(re.search(rf"^\|\s*{icona}\s*\|", bloc, re.M))
             if cal and not te:
                 errors.append(f"[lliurables] {sa}: falta la fila {icona}")
                 fallats += 1
             elif not cal and te:
-                errors.append(f"[lliurables] {sa}: la fila {icona} no hi va (SA1 sense robot)")
+                errors.append(f"[lliurables] {sa}: la fila {icona} no hi va (🤖 no a SA1; 📓 no a les SA en format de passos)")
                 fallats += 1
     print(f"12) Lliurables per SA: 9 README, {fallats} incoherències.")
 
@@ -839,6 +844,71 @@ def comprova_dependencies() -> None:
     print("0) Dependències del generador (markdown, pygments): instal·lades.")
 
 
+# --- 18 · Format «passos autònoms» (spec 2026-11-03-passos-autonoms) ---
+# Només s'apliquen a les pràctiques i SA ja migrades al format nou; la resta
+# conserva el format antic fins que la toqui el seu pla.
+PRACTIQUES_NOU_FORMAT: set[str] = set()
+SA_NOU_FORMAT: set[int] = set()
+
+_PAS_MD_RE = re.compile(r"^### (Pas \d+.*)$", re.M)
+_FI_SECCIO_MD_RE = re.compile(r"^(## |### |<details)", re.M)
+
+
+def errors_format_practica(text: str) -> list[str]:
+    """Errors de format d'una EXPLICACIO.md en passos autònoms (buida = bé)."""
+    errs: list[str] = []
+    cap = re.search(r'<div class="cap-practica"[^>]*>(.*?)</div>', text, re.S)
+    if not cap:
+        errs.append('falta la capçalera <div class="cap-practica">')
+    else:
+        for emoji in ("🎯", "⏱️", "📦"):
+            if emoji not in cap.group(1):
+                errs.append(f"a la capçalera hi falta la línia {emoji}")
+    passos = list(_PAS_MD_RE.finditer(text))
+    if len(passos) < 2:
+        errs.append("calen almenys 2 passos «### Pas N · …»")
+    if passos:
+        ultim = passos[-1]
+        fi = _FI_SECCIO_MD_RE.search(text, ultim.end())
+        seccio = text[ultim.end():fi.start() if fi else len(text)]
+        if "Respon i envia" not in ultim.group(1):
+            errs.append("l'últim pas ha de ser «Respon i envia»")
+        if "classroom.google.com" not in seccio:
+            errs.append("l'últim pas no enllaça cap tasca de Classroom")
+    if re.search(r"^## .*🧠", text, re.M):
+        errs.append("la teoria (🧠) ha d'anar plegada dins d'un <details>, no com a «## »")
+    if not re.search(r"^✍️", text, re.M):
+        errs.append("cap paràgraf ✍️ (què han d'apuntar al formulari)")
+    return errs
+
+
+def errors_format_portada(text: str) -> list[str]:
+    """Errors de format del README d'una SA en ruta de pràctiques."""
+    errs: list[str] = []
+    if "🏁 Entrega final" not in text:
+        errs.append("falta el bloc «🏁 Entrega final»")
+    if "🚩" not in text:
+        errs.append("falten les fites 🚩 de final de sessió")
+    if "No premis «Envia»" in text:
+        errs.append("encara diu «No premis «Envia»» (format antic de formulari únic)")
+    return errs
+
+
+def comprova_format_passos() -> None:
+    fallats = 0
+    for rel in sorted(PRACTIQUES_NOU_FORMAT):
+        for e in errors_format_practica((ARREL / rel).read_text(encoding="utf-8")):
+            errors.append(f"[passos] {rel}: {e}")
+            fallats += 1
+    for n in sorted(SA_NOU_FORMAT):
+        rel = f"Classes/SA{n}/README.md"
+        for e in errors_format_portada((ARREL / rel).read_text(encoding="utf-8")):
+            errors.append(f"[passos] {rel}: {e}")
+            fallats += 1
+    print(f"18) Format de passos: {len(PRACTIQUES_NOU_FORMAT)} pràctiques i "
+          f"{len(SA_NOU_FORMAT)} portades en format nou, {fallats} problemes.")
+
+
 def main() -> int:
     comprova_dependencies()
     comprova_enllacos_web()
@@ -859,6 +929,7 @@ def main() -> int:
     comprova_codi_incrustat()
     comprova_katas()
     comprova_rubrica_quadern()
+    comprova_format_passos()
     for a in avisos:
         print(f"⚠️  {a}")
     if errors:
