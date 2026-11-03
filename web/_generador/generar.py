@@ -349,6 +349,32 @@ def marca_targetes(body: str) -> str:
     return _TARGETA_RE.sub(_card, body)
 
 
+_PAS_RE = re.compile(r'<h3 id="pas-[^"]*"[^>]*>')
+_FI_PAS_RE = re.compile(r'<h[23][\s>]')
+_PARA_MARCA = (("✅", "comprova"), ("✍️", "apunta"), ("📤", "envia"))
+
+
+def marca_passos(body: str) -> str:
+    """Pràctiques en format «passos autònoms»: cada `### Pas N · …` (id
+    `pas-…`) passa a ser una targeta `<section class="pas">` fins al proper
+    h2/h3, i els paràgrafs que comencen per ✅/✍️/📤 reben la classe
+    comprova/apunta/envia. S'ha d'aplicar abans de substituir la marca
+    `<!-- codi-complet -->`, perquè el codi quedi dins del seu pas."""
+    for emoji, classe in _PARA_MARCA:
+        body = body.replace(f"<p>{emoji}", f'<p class="{classe}">{emoji}')
+    out, pos = [], 0
+    for m in _PAS_RE.finditer(body):
+        if m.start() < pos:      # ja inclòs en una secció anterior (no hauria de passar)
+            continue
+        nxt = _FI_PAS_RE.search(body, m.end())
+        end = nxt.start() if nxt else len(body)
+        out.append(body[pos:m.start()])
+        out.append('<section class="pas">' + body[m.start():end] + "</section>")
+        pos = end
+    out.append(body[pos:])
+    return "".join(out)
+
+
 def strip_github_only(text: str) -> str:
     """Treu del text Markdown els blocs marcats amb
     `<!-- web:only-github -->` … `<!-- /web:only-github -->`.
@@ -1349,7 +1375,7 @@ def render_practica_page(item: dict, group: dict, pages: list[Page], md_map: dic
     formatter = HtmlFormatter(cssclass="highlight", nowrap=False)
     text = strip_github_only(item["expl"].read_text(encoding="utf-8"))
     md = make_md()
-    body = wrap_tables(md.convert(text))
+    body = marca_passos(wrap_tables(md.convert(text)))
     body = rewrite_links(body, item["expl"], item["page_out"], md_map, code_map,
                          sim_map, copied_imgs, md_title_map)
     toc = toc_html(md)

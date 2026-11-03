@@ -977,3 +977,30 @@ table.vocab td:first-child { white-space: nowrap; }
 .porta-docent-botons { display: flex; gap: .6rem; margin-top: .6rem; }
 .porta-docent-err { color: #b3261e; font-weight: 600; }
 [data-tema="fosc"] .porta-docent-err { color: #ff8a80; }
+
+/* ---------- Pràctiques en passos autònoms (marca_passos al generador) ---------- */
+.cap-practica {
+  background: var(--accent-soft); border-left: 4px solid var(--accent);
+  border-radius: var(--radi-s); padding: .6rem .9rem; margin: 1rem 0 1.25rem;
+}
+.cap-practica p { margin: .2rem 0; }
+section.pas {
+  border: 1px solid var(--border-fort); border-radius: var(--radi);
+  padding: .4rem 1rem .8rem; margin: 1rem 0; background: var(--bg);
+  box-shadow: var(--ombra);
+}
+section.pas > h3 { margin-top: .5rem; color: var(--accent); }
+section.pas img { max-width: 100%; height: auto; display: block; margin: .5rem auto; }
+section.pas pre, section.pas .codi-bloc { max-width: 100%; overflow-x: auto; }
+p.comprova {
+  background: var(--verd-bg); border-radius: var(--radi-s); padding: .4rem .7rem;
+}
+p.apunta {
+  background: var(--groc-bg); border: 1px dashed var(--accent-2);
+  border-radius: var(--radi-s); padding: .4rem .7rem;
+}
+p.envia a {
+  display: inline-block; background: var(--accent); color: #fff; font-weight: 700;
+  padding: .55rem 1rem; border-radius: var(--radi-s); text-decoration: none;
+}
+p.envia a:hover { filter: brightness(1.1); }
