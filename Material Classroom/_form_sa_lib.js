@@ -89,7 +89,7 @@ export async function ambReintents(fn, etiqueta = 'crida API', intents = 4) {
   }
 }
 
-function itemToRequest(it, index) {
+export function itemToRequest(it, index) {
   let item;
   if (it.kind === 'text') {
     item = { title: it.titol, description: it.text, textItem: {} };

@@ -27,5 +27,5 @@ Cada pas ✍️ enllaça la tasca i correspon a una pregunta real del formulari;
 
 ## Pendent / a decidir
 
-- ⚠️ **Formulari de Classroom en línia** encara amb l'antiga «Activitat 1» (PREDIU, temps, Morse: obligatòries). Cal ajustar-lo abans de la S3, o l'alumnat no podrà enviar.
+- ✅ ~~**Formulari de Classroom en línia** encara amb l'antiga «Activitat 1» (PREDIU, temps, Morse: obligatòries).~~ Resolt el 2026-11-03 amb `Material Classroom/actualitzar_form_fitxa_sa.mjs sa2 --aplica` (22 → 18 elements, mateix Form i tasca, 0 lliuraments afectats). La descripció de la tasca («activitats 1-4») s'ha de canviar a mà: la va crear l'antic projecte OAuth i l'API no la deixa editar.
 - Si funciona a l'aula, replicar el model a la SA3 i següents (i decidir si s'arxiven també els katas de la resta).
