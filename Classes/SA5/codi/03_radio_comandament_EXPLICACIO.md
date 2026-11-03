@@ -227,6 +227,6 @@ gira uns 18° per segon, prou suau per controlar-lo.
 
 - **Repte de la S3:** afegir el servo **esquerre** amb els botons A i B (`E+` / `E-`).
 - **A la SA6:** el pont també enviarà ordres d'**estat** (`A` i `R`, amb els seus botons) i el braç tindrà una **màquina d'estats** que les obeeix.
-- **Taula comparativa:** tens el mateix protocol escrit en **dos llenguatges** (el comandament en Python, el receptor de l'Arduino en C++): és la millor fila per a la comparació C++ ↔ Python de l'Activitat 4.
+- **Taula comparativa:** tens el mateix protocol escrit en **dos llenguatges** (el comandament en Python, el receptor de l'Arduino en C++): és la millor fila per a la comparació C++ ↔ Python del pas 7.
 
 </details>
