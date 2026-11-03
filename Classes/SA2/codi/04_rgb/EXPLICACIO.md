@@ -125,6 +125,6 @@ color(0, 0, 0);     delay(1000);   // apagat
 ### On ho aplicaràs
 
 - **Sessió 3:** el [panell de senyalització](../05_panell_senyalitzacio/EXPLICACIO.md) fa servir aquesta mateixa funció `color()`, sense canviar-hi res.
-- **Mascota del trimestre:** aquests colors seran les **expressions** del teu robot.
+- **El tamagotchi del trimestre:** aquests colors seran l'**humor** del teu tamagotchi (contenta, trista, malalta).
 
 </details>

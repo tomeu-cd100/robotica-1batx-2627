@@ -1,260 +1,153 @@
-# 🐣 Projecte T1 · La mascota reactiva
+# 🐣 Projecte T1 · El teu tamagotchi
 
 > **Per a qui és?** Per a cada alumne/a durant el 1r trimestre. És el dossier del
-> primer robot del curs: peces, muntatge, cablatge i rúbrica. Els reptes de SA2
-> i SA3 hi van sumant capacitats; aquí es veu el conjunt.
+> primer robot del curs: peces, carcassa, muntatge, cablatge i rúbrica. La SA2
+> hi aporta la carcassa, la llum i el so; la SA3, els botons, els sensors, la
+> pantalla i el programa.
 
-**Durada:** 1r trimestre (SA2-SA3) · **Maquinari:** UNO + breadboard, NeoPixel, LED RGB, brunzidor, PIR, micròfon, TEMT6000, polsador, DHT11, caixa DM 3 mm
+**Durada:** 1r trimestre (SA2-SA3) · **Maquinari:** UNO + mitja protoboard, pantalla OLED SSD1306 0,96" I²C, 3 polsadors, LED RGB, brunzidor, sensor de llum, micròfon, PIR (DHT11 opcional), carcassa en forma d'ou (DM 3 mm o impresa en 3D)
 
 ## El robot
 
-La mascota és una capsa de fusta DM amb cara de criatura: dos **ulls** fets
-amb NeoPixel i difusor imprès en 3D, un **nas** que en realitat és el sensor
-PIR mirant cap enfora, i una **boca somrient tallada al làser** que fa de
-sortida de so del brunzidor i de finestra per al micròfon i el sensor de
-llum. Celles i galtes van gravades, i dues **orelles** (una de rodona i una
-de gat) s'encaixen a les ranures de la tapa. Per fora sembla un joguet; per
-dins és el mateix Arduino UNO i breadboard que ja es fa servir a classe.
+El tamagotchi és una **mascota virtual de sobretaula**: un ou que a dins porta
+el mateix Arduino UNO i la protoboard de classe. Al davant té una **pantalla**
+on es veu la cara de la mascota i tres barres (gana, son i felicitat), **tres
+botons** per cuidar-la (MENJAR, JUGAR, DORMIR) i els **sensors** que li fan
+notar l'entorn: es fa fosc i té son, hi ha soroll i s'espanta, s'hi acosta algú
+i es posa contenta. El LED RGB i el brunzidor expressen l'humor.
 
-![Cara de la mascota: dues orelles encaixades a la tapa (una de rodona i una de gat), celles i galtes gravades, dos ulls NeoPixel amb difusor, el sensor PIR com a nas, una boca somrient tallada al làser (sortida de so del brunzidor i finestra del micròfon i el TEMT6000) i el polsador al llom](img/mascota-cara.svg)
-
-Què fa: **expressa emocions** amb llum i so —els ulls canvien de color i el
-brunzidor fa melodies d'estat— (treballat a **SA2**) i **reacciona a
-l'entorn** amb com a mínim **3 comportaments sensor→resposta** —algú
-s'hi acosta, li fan una carícia, es fa fosc, hi ha soroll o canvia la
-temperatura— (treballat a **SA3**). El producte final és seu: cadascú
-li tria un nom i un caràcter, i la mascota reacciona **de manera coherent**
-amb aquest caràcter.
+Les necessitats **baixen soles amb el temps** i més de pressa segons el que
+noten els sensors. Si no la cuides es posa **trista** i després **malalta**,
+però **mai no es mor**: sempre es recupera si l'atens. Cadascú li tria un
+**nom** i un **caràcter**, i el tamagotchi reacciona d'acord amb aquest
+caràcter. És un disseny propi del curs: no fa servir cap programa, gràfic ni
+personatge del joguet comercial.
 
 ## Llista de peces
 
-| Peça | Origen | Quantitat |
+| Peça | D'on surt | Quantitat |
 |---|---|---|
-| Plaques de DM 3 mm (caixa) | Plantilla `mascota.svg`, tall làser | 6 |
-| Escaires d'angle | `escaire_caixa.scad`, impressió 3D | 8 |
-| Difusors d'ull | `difusor_ull.scad`, impressió 3D | 2 |
-| Arduino UNO + breadboard | Kit 1 | 1 |
-| Tira NeoPixel WS2812B (ulls) | Kit 2 | 1 |
-| LED RGB KS0312 (indicador d'humor) | Kit 3 | 1 |
-| Brunzidor | Kit 1/3 | 1 |
-| Sensor PIR KS0052 | Kit 2 | 1 |
-| Micròfon KS0035 | Kit 3 | 1 |
-| Sensor de llum TEMT6000 KS0098 | Kit 2 | 1 |
-| Polsador | Kit 1 | 1 |
-| Sensor de temperatura i humitat DHT11 | Kit 3 | 1 |
-| Cargols M3 x16 | Material del centre | ~16 |
+| Arduino UNO + cable USB | Kit de classe | 1 |
+| Mitja protoboard + cables | Kit de classe | 1 |
+| Pantalla OLED SSD1306 0,96" I²C (128×64) | **Compra nova** | 1 |
+| Polsadors de 12 mm (o de 6 mm amb caputxó) | 1 del kit + **2 de compra nova** | 3 |
+| LED RGB + 3 resistències de 220 Ω | Kit de classe (SA2) | 1 |
+| Brunzidor piezo | Kit de classe (SA2) | 1 |
+| Sensor de llum (LDR + 10 kΩ, o TEMT6000) | Kit de classe (SA3) | 1 |
+| Micròfon (mòdul analògic) | Kit de classe | 1 |
+| Sensor de moviment PIR | Kit de classe | 1 |
+| DHT11 (temperatura, opcional) | Kit de classe | 1 |
+| Carcassa en forma d'ou | Làser **o** 3D (vegeu sota) | 1 |
+| Cargols M3 (i 4 separadors de 72 mm per a la versió làser) | Taller | 4 |
 
-<!-- web:only-github -->
-Plantilla de tall làser: [`../../Recursos/plantilles_laser/mascota.svg`](../../Recursos/plantilles_laser/mascota.svg).
-Peces impreses en 3D: [`../../Recursos/peces_3d/escaire_caixa.scad`](../../Recursos/peces_3d/escaire_caixa.scad),
-[`../../Recursos/peces_3d/difusor_ull.scad`](../../Recursos/peces_3d/difusor_ull.scad).
-<!-- /web:only-github -->
+## Fabricació de la carcassa (SA2 · Sessió 3)
 
-## Fabricació i personalització
+Les dues versions surten del **mateix fitxer paramètric**,
+[`Recursos/peces_3d/tamagotchi_ou.scad`](https://github.com/tomeu-cd100/robotica-1batx-2627/blob/main/Recursos/peces_3d/tamagotchi_ou.scad),
+i tenen els mateixos forats: finestra de la pantalla, tres botons, sensor de
+llum, micròfon, PIR (el «nas») i LED RGB. Es fabriquen per torns mentre la
+resta fa el panell de la SA2, **una per alumne/a**.
 
-La plantilla `mascota.svg` és **fixa** (línies negres de tall i forats de
-muntatge): ningú no la toca. El que cadascú personalitza és **NOMÉS la
-zona vermella**, sobre una **còpia pròpia** del fitxer: les celles, les
-galtes i el contorn de cara del frontal (gravat), i el dibuix interior de les
-**2 orelles** (etiquetades «ORELLES x2 - encaixen a la tapa»). Les formes per
-defecte (orella rodona i orella de gat) ja són retallables tal qual; qui
-vulgui una forma pròpia pot redibuixar el contorn negre de l'orella sempre
-que **mantingui la pestanya de 10 mm** que encaixa a la ranura de la tapa.
+- **Tallada al làser** ([`tamagotchi_ou_laser.svg`](../../Recursos/plantilles_laser/tamagotchi_ou_laser.svg)):
+  dues plaques d'ou de DM de 3 mm (davant i darrere) unides amb **4 separadors
+  M3 de 72 mm**. Els costats queden oberts i es veu l'electrònica per dins.
+  Es pot gravar el frontal per personalitzar-lo.
+- **Impresa en 3D** (`MODE="closca"` i `MODE="tapa"`): una closca d'ou que
+  s'imprimeix de cara avall i una tapa del darrere amb 4 cargols M3. La closca
+  triga unes **6-8 h**: imprimeix-les amb antelació.
 
-Flux de personalització:
-1. Cada alumne/a fa una **còpia** del fitxer `mascota.svg` amb el nom del seu
-   equip.
-2. Edita **només les línies vermelles** amb xTool Creative Space o Inkscape
-   (la zona negra de tall no es toca).
-3. El docent **valida** el disseny (que no se surti del tauler ni trenqui
-   cap forat de muntatge).
-4. El fitxer validat entra a la **cua de tall** de la sessió de fabricació
-   (S3 de SA2).
+> 📏 **Abans de fabricar, el docent mesura el mòdul OLED** que s'ha comprat i
+> ajusta els paràmetres `OLED_*` del fitxer (no tots els mòduls de 0,96" són
+> iguals). Vegeu [`Recursos/peces_3d/LLEGEIX-ME.md`](../../Recursos/peces_3d/LLEGEIX-ME.md).
 
-<!-- web:only-github -->
-Plantilla per personalitzar: [`../../Recursos/plantilles_laser/mascota.svg`](../../Recursos/plantilles_laser/mascota.svg) ·
-guia completa: [`../../Recursos/plantilles_laser/LLEGEIX-ME.md`](../../Recursos/plantilles_laser/LLEGEIX-ME.md).
-<!-- /web:only-github -->
+**Personalització (esbós a la SA2 S2):** cada alumne/a dissenya el gravat del
+frontal (cara del voltant de la pantalla, el nom, orelles…) o tria el color
+de filament, d'acord amb el caràcter que donarà al seu tamagotchi.
 
 ## Muntatge
 
-1. Munta la **base** i els **quatre laterals** de la caixa amb 6 dels 8
-   escaires impresos, sense encolar encara (els 2 restants es reserven per a
-   la tapa, al pas 7).
-2. Fixa la **breadboard amb l'Arduino UNO** a la base, deixant els ports USB
-   i d'alimentació accessibles per una obertura lateral.
-3. Encaixa els **difusors d'ull** al frontal i passa-hi els cables de la
-   tira NeoPixel per darrere.
-4. Munta el **PIR** mirant cap enfora pel forat frontal i el **polsador**
-   al llom (accessible des de fora).
-5. Munta el **brunzidor**, el **micròfon** i el **TEMT6000** darrere la
-   **boca somrient** (el forat tallat fa de sortida de so i d'entrada de llum).
-6. Cablatge complet segons la taula de baix; comprova totes les connexions
-   **abans** de tancar la caixa.
-7. Encaixa les **2 orelles** a les ranures de la tapa i tanca la **tapa
-   superior** amb els 2 escaires restants, deixant-la desmuntable (sense
-   encolar) per si cal repassar el cablatge.
-8. Prova d'encesa: comprova que els ulls s'encenen amb el color correcte
-   abans de donar la mascota per acabada.
-
-> ⚠️ **Polaritat:** la tira NeoPixel té un sentit de senyal (DIN → DOUT):
-> si es connecta al revés, els LED no s'encenen. El PIR també té un
-> connector orientat (VCC/OUT/GND): revisa la serigrafia del mòdul abans de
-> cablejar-lo, no per posició del cable.
+1. Fixa la **pantalla** al frontal amb 4 cargols M2 (o cola calenta pels
+   costats del PCB, mai sobre la pantalla).
+2. Encaixa els **tres botons** als forats de sota la pantalla: MENJAR, JUGAR i
+   DORMIR, d'esquerra a dreta.
+3. Col·loca el **sensor de llum**, el **micròfon** i el **PIR** als seus forats,
+   i el **LED RGB** al forat petit del costat.
+4. A dins, posa el **UNO** i la **mitja protoboard** drets, un sobre l'altre,
+   amb el connector USB cap al forat del lateral (3D) o cap al costat obert (làser).
+5. Fes el cablatge (taula de sota) i tanca amb la tapa o la placa del darrere.
 
 ## Cablatge
 
-Abans de res, prepara els **carrils d'alimentació de la breadboard**: un cable
+Abans de res, prepara els **carrils d'alimentació de la protoboard**: un cable
 del pin **5V** del UNO al carril vermell (+) i un del **GND** al carril blau
-(−). Tots els mòduls s'alimenten d'aquests dos carrils; cada component només
-necessita, a més, el seu cable de senyal cap al pin de la taula. Cableja
-sempre amb l'**USB desendollat**.
+(−). Cableja sempre amb l'**USB desendollat**.
 
-| Component | Pin de senyal | Notes |
+| Component | Pin | Notes |
 |---|---|---|
-| NeoPixel (ulls), DIN | D6 | Alimentació **5V/GND** a part (no del pin 5V del UNO si la tira supera ~8-10 LED; consum ~60 mA/LED a blanc ple). |
-| LED RGB (indicador d'humor) | D9 / D10 / D11 | Pins PWM (`~`), un per canal (R/G/B). |
-| Brunzidor | D8 | Sortida digital o PWM per a to. |
-| Sensor PIR | D2 | Digital; necessita 30-60 s d'estabilització en engegar. |
-| Polsador | D3 | Digital, amb *pull-up* (intern o resistència externa) i *debounce* per programari. |
-| DHT11 (temperatura/humitat) | D4 | Bus digital 1-Wire; requereix la llibreria `DHT`. |
-| Micròfon | A0 | Entrada analògica; llindar de so a calibrar. |
-| TEMT6000 (llum) | A1 | Entrada analògica; llindar de foscor a calibrar. |
+| Pantalla OLED | SDA → A4 · SCL → A5 | VCC a 5 V, GND a GND. L'ordre dels pins canvia segons el model. |
+| Botó MENJAR | D3 | Una pota al pin i la diagonal a GND (`INPUT_PULLUP`, com a SA3 P1). |
+| Botó JUGAR | D5 | Igual. |
+| Botó DORMIR | D7 | Igual. |
+| LED RGB | D9 / D10 / D11 | Pins PWM, cada canal amb 220 Ω (com a la SA2). |
+| Brunzidor | D8 | Pota + al pin, pota − a GND. |
+| Sensor de llum | A1 | El divisor de la SA3 P2, o el TEMT6000. |
+| Micròfon | A0 | Llindar a calibrar amb el Monitor sèrie. |
+| PIR | D2 | 30-60 s d'estabilització en engegar. |
+| DHT11 (opcional) | D4 | Cal la llibreria `DHT`. |
+| NeoPixel (ampliació) | D6 | Només si hi cap a la memòria. |
 
-**Com es connecta cada component:**
+## El programa
 
-- **Mòduls de 3 pins (PIR, micròfon, TEMT6000):** VCC → carril 5 V,
-  GND → carril −, i el pin de sortida (OUT/S/AO) → pin de senyal de la
-  taula. ⚠️ L'**ordre dels 3 pins canvia segons el fabricant**: mira sempre
-  la serigrafia del mòdul, no la posició del cable.
-- **Tira NeoPixel:** connecta **primer el GND**, després el 5 V i al final
-  el senyal DIN → D6. Recorda el sentit DIN → DOUT de l'avís de dalt.
-- **LED RGB:** el mateix muntatge de l'esquema 4 de
-  [SA2 · Esquemes i connexions](../SA2/SA2_esquemes_connexions.md): una
-  resistència de **220 Ω per canal** cap a D9/D10/D11 i el càtode comú al
-  carril −.
-- **Brunzidor:** pota (+) → D8, pota (−) → carril − (com al panell de SA2,
-  que el tenia al pin 6).
-- **Polsador:** una pota → D3 i la diagonal → carril −, sense resistència
-  (el programa activa el *pull-up* intern, com a l'esquema 1 de
-  [SA3 · Esquemes i connexions](../SA3/SA3_esquemes_connexions.md)).
-- **DHT11:** si és el **mòdul de 3 pins**, com els altres mòduls (senyal →
-  D4). Si és el **sensor solt de 4 potes**, cal una resistència de
-  **10 kΩ** entre VCC i DATA (el mòdul ja la porta incorporada).
+El programa es fa a la **[Pràctica 4 de la SA3 · El teu tamagotchi](../SA3/codi/05_mascota/EXPLICACIO.md)**,
+amb l'esquelet `05_mascota.ino`: la pantalla i la baixada de les necessitats ja
+hi són, i el botó MENJAR és l'exemple resolt. L'alumne/a hi programa els
+botons JUGAR i DORMIR, els sensors (llegir → comparar → decidir) i els estats.
+Cal la llibreria **U8g2**. La pantalla es fa servir abans a la
+[Pràctica 3 · La pantalla OLED](../SA3/codi/03_pantalla_oled/EXPLICACIO.md).
 
-> 🔑 **Per al docent:** implementació completa de referència al
-> [solucionari del trimestre](../Solucionari/Solucionari_T1_SA1-SA3.md) (secció «Codi de referència»).
+## Simular el tamagotchi a Wokwi
 
-## Simular la mascota a Tinkercad
-
-Pots provar el programa de la mascota a Tinkercad abans de cablejar-la de
-debò, però el catàleg de components no ho té tot: cal fer **tres
-substitucions** (el codi no canvia gens, només els llindars a l'hora de
-provar):
-
-| A la mascota real | A Tinkercad | Per què funciona igual |
-|---|---|---|
-| Micròfon (A0) | **Potenciòmetre** a A0 | Tinkercad no té cap sensor de so. `analogRead(A0)` llegeix igual 0–1023: girar el cargol = «fer soroll». |
-| TEMT6000 (A1) | **Fotoresistència (LDR)** a A1 | Mateix paper: sensor de llum analògic. |
-| DHT11 (D4) | **Res** (esborra'l del codi) | Tinkercad no té ni el component ni la llibreria `DHT`. Com que és l'extra opcional, es pot ometre: treu l'`#include <DHT.h>` i totes les línies amb `dht` o `PIN_DHT`. |
-
-El PIR, la tira NeoPixel, el LED RGB, el brunzidor i el polsador sí que hi
-són (i la llibreria `Adafruit_NeoPixel` ve inclosa al mode text).
-
-> ⚠️ Enganxa sempre el **programa sencer** a l'editor de text de Tinkercad,
-> no blocs solts: un fragment sense les declaracions de dalt (pins,
-> constants…) dona errors del tipus `'...' was not declared in this
-> scope`.
-
-> ⚠️ **Tinkercad i els `enum`:** si una funció teva rep un `enum` com a
-> paràmetre (p. ex. `void canviaEstat(Estat nou)`), Tinkercad dona l'error
-> `'Estat' was not declared in this scope` encara que el codi sigui
-> correcte (i compili bé a l'IDE d'Arduino). És un defecte del seu
-> compilador. Solució: fes servir **`const int`** per als estats i passa'ls
-> com a `int` (`void canviaEstat(int nou)`).
-
-### Trampes de simulació (provades: hi cauràs)
-
-Aquesta llista surt de muntar la mascota a Tinkercad de debò. Si el circuit
-«fa coses rares», repassa-la en ordre:
-
-1. **A0 no és el pin «0».** Les entrades analògiques són al connector
-   **ANALOG IN** (a tocar de POWER). Els pins «TX→1» i «RX→0» del connector
-   digital són el port sèrie: si hi punxes un sensor, `analogRead` llegeix
-   valors a l'aire **i** el Monitor Sèrie deixa de funcionar.
-2. **Melodia sense parar = estats canviant sense parar.** El so només sona
-   quan l'emoció canvia: si no calla, alguna lectura analògica balla al
-   voltant d'un llindar (sensor a l'aire o mal punxat). Obre el Monitor
-   Sèrie: `soroll` i `llum` han d'estar **quiets** quan no toques res.
-3. **L'ordre del divisor importa.** Potenciòmetre: extrems a 5 V i GND,
-   **central** a A0 (si l'escala et surt al revés, intercanvia els extrems).
-   LDR: la LDR a la banda de **5 V**, la de 10 kΩ a **GND** i A1 **al punt
-   del mig** — invertit dona «més llum = valor més baix».
-4. **Comprova el valor de cada resistència** (clica-la): a Tinkercad surten
-   d'1 kΩ per defecte i el desplegable d'unitats (Ω/kΩ/MΩ) enganya. Amb la
-   del divisor equivocada, `llum` no arriba mai al llindar. I no «arreglis»
-   un divisor malament dimensionat abaixant el llindar al codi: al muntatge
-   real et tornaria a passar.
-5. **Polsador de 4 potes: cables en diagonal.** Les potes del mateix costat
-   estan unides per dins; en diagonal travesses sempre l'interruptor de
-   debò. I recorda: prémer «carícia» quan la mascota **ja està** contenta no
-   fa res visible — prova-la des d'ESPANTAT.
-6. **PIR: mira els tooltips, no els colors.** Passa el ratolí per cada pota
-   (Signal / Power / Ground) abans de cablejar: l'ordre no és el que sembla.
-   Per disparar-lo, **arrossega la boleta creuant el con** de detecció. I no
-   esperis números: el PIR és **binari** (moviment sí/no), no mesura
-   distància — això és feina de l'ultrasons de SA3.
-
-> 🤫 **Secret de la mascota (descobert simulant):** si dorm a les fosques,
-> el PIR **no** la desperta — les reaccions es comproven per **prioritat**
-> (soroll > foscor > presència) i, mentre és fosc, la regla del son «mana» i
-> es queda l'estímul. En canvi, un **soroll fort sí** que la desperta,
-> perquè va abans a la llista. No és cap error: és la gràcia de l'ordre de
-> les regles — quan programis les teves, tria conscientment quina mana.
-
-## 🧗 Si t'encalles: l'esquelet del programa
-
-Si en ajuntar els reptes de SA2 i SA3 no sabeu per on començar, partiu de
-l'**esquelet**: pins, estats, `setup()`, `loop()` i les funcions de llum i so
-de SA2 ja hi són, i la reacció del soroll ja està resolta com a exemple. La
-vostra feina són els `// TODO`: les **reaccions dels sensors** (llegir →
-comparar amb un llindar → decidir) i la **personalitat de cada emoció**.
-
-👉 L'esquelet, amb els passos per completar-lo, és a la
-**[Pràctica 4 de la SA3 · La teva mascota reactiva](../SA3/codi/05_mascota/EXPLICACIO.md)**
-Compila tal qual; fins que completeu els `// TODO`, només l'emoció de
-l'exemple (content) fa llum i so.
+[Wokwi](https://wokwi.com/) té l'Arduino UNO, la pantalla **SSD1306**, els
+polsadors, el LED RGB, el brunzidor, el PIR i un fotoresistor, i accepta la
+llibreria U8g2. Per provar el programa sense placa: crea un projecte nou
+d'Arduino UNO, afegeix-hi els components amb el botó **+**, connecta'ls amb
+els pins de la taula de cablatge i enganxa-hi el codi. El micròfon no hi és:
+substitueix-lo per un **potenciòmetre** a A0 per simular el soroll.
 
 ## Què hi aporta cada SA
 
 | SA | Sessions | Què s'hi construeix | Repte relacionat |
 |---|---|---|---|
-| SA2 | S1-S3 (S3 = fabricació) | Expressions de la mascota: colors i animacions dels ulls (NeoPixel), indicador d'humor (LED RGB) i melodies d'estat (brunzidor). | `Reptes_SA2.md` |
-| SA3 | S1-S4 | Cada sensor de la caixa (PIR, polsador, TEMT6000, micròfon, DHT11) es programa amb la seva pròpia reacció sensor→comportament. | `Reptes_SA3.md` |
+| SA2 | S1-S3 (S3 = fabricació de la carcassa) | La llum i el so de l'humor (LED RGB i brunzidor), els estats amb `const int` i la carcassa en forma d'ou. | `Reptes_SA2.md` |
+| SA3 | S1-S3 (S4 = prova T1) | Els botons amb antirebot (P1), els sensors analògics i els llindars (P2), la pantalla (P3) i el tamagotchi complet (P4). | `Reptes_SA3.md` |
 
-**Producte final (SA3-S3):** la mascota muntada amb **≥3 reaccions
-sensor→comportament** coherents entre si, més la seva **fitxa de
-personalitat** (nom, caràcter, com reacciona i per què reacciona així). La
-S4 de SA3 és la prova pràctica **T1**, amb la mascota ja tancada.
+**Producte final (SA3-S3):** el tamagotchi dins de la seva carcassa, amb
+necessitats que baixen amb el temps i amb els sensors, botons per cuidar-lo i
+estats contenta, trista i malalta, més la seva **fitxa de personalitat** (nom,
+caràcter, què fa cada botó i com l'afecten els sensors). **Versió nucli:** 2
+necessitats, 2 botons, 1 sensor, contenta i trista. La S4 de SA3 és la prova
+pràctica **T1**.
 
 ## Rúbrica del robot (producte SA3)
 
 | Criteri | Insuficient (0-4) | Suficient/Bé (5-6) | Notable (7-8) | Excel·lent (9-10) |
 |---|---|---|---|---|
-| **R1 · Fabricació i muntatge** | Caixa inestable o cablejat insegur. | Caixa funcional però amb algun cable fluix o desordenat. | Caixa ferma i cablejat endreçat, sense etiquetar. | Caixa ferma, cablejat endreçat i etiquetat, res solt ni curtcircuitat. |
-| **R2 · Funcionament** | Sortides o sensors clau no funcionen. | La majoria de sortides i sensors funcionen. | Totes les sortides i sensors funcionen, amb algun ajust. | Totes les sortides i sensors funcionen a la primera i de manera fiable. |
-| **R3 · Comportaments** | Menys de 2 reaccions, o sense relació amb cap personalitat. | 2 reaccions sensor→resposta, o coherència parcial. | ≥3 reaccions sensor→resposta, coherents amb la personalitat. | ≥3 reaccions sensor→resposta, totes coherents amb la personalitat i ben calibrades. |
-| **R4 · Fitxa de personalitat i demostració** | Sense fitxa o sense poder explicar el funcionament. | Fitxa bàsica o defensa amb ajuda. | Fitxa completa i defensa oral clara. | Fitxa completa i defensa oral que explica i justifica cada reacció. |
+| **R1 · Carcassa i muntatge** | Carcassa inacabada o cablatge insegur. | Carcassa funcional però amb algun cable fluix o desordenat. | Carcassa ferma, components ben fixats i cablatge endreçat. | Carcassa ferma i personalitzada, cablatge endreçat i etiquetat, res solt ni curtcircuitat. |
+| **R2 · Funcionament** | La pantalla, els botons o els sensors clau no funcionen. | Pantalla i 2 botons funcionen; algun sensor falla. | Pantalla, botons i sensors funcionen, amb algun ajust. | Tot funciona a la primera i de manera fiable (botons sense rebots, llindars ben calibrats). |
+| **R3 · Necessitats i estats** | Les necessitats no canvien o no hi ha estats. | Versió nucli: 2 necessitats, contenta i trista. | 3 necessitats i els estats trista i malalta, que es recupera quan el cuides. | Tot l'anterior, coherent amb el caràcter, amb `millis()` i sense `delay()` llargs. |
+| **R4 · Fitxa de personalitat i demostració** | Sense fitxa o sense poder explicar el funcionament. | Fitxa bàsica o defensa amb ajuda. | Fitxa completa i defensa oral clara. | Fitxa completa i defensa oral que explica i justifica cada botó, sensor i estat. |
 
 ## Problemes freqüents
 
 | Símptoma | Causa probable | Solució |
 |---|---|---|
-| El NeoPixel no s'encén | El DIN està al revés, o falta un GND comú entre la tira i l'Arduino. | Comprova el sentit DIN→DOUT de la serigrafia i uneix tots els GND. |
-| El PIR dispara sempre (fals positiu) | Encara en el temps d'estabilització (30-60 s) o sensibilitat massa alta. | Espera l'estabilització i ajusta els potenciòmetres de sensibilitat/temps del mòdul. |
-| El micròfon no detecta res | Llindar analògic mal calibrat per al soroll de l'aula. | Llegeix valors reals al Monitor Sèrie i recalibra el llindar. |
-| El DHT11 llegeix `NaN` | Pin equivocat o llibreria `DHT` no instal·lada/mal configurada. | Comprova el pin (D4) i que el tipus de sensor a la llibreria sigui `DHT11`. |
-| La caixa no tanca bé | Escaires mal orientats o forats de muntatge desalineats. | Torna a muntar els escaires seguint l'ordre del pas de muntatge; no forcis les peces. |
+| La pantalla no s'encén | SDA i SCL intercanviats, o VCC i GND al revés. | Llegeix les lletres del mòdul: SDA a A4 i SCL a A5. |
+| No compila: `U8g2lib.h` | Falta la llibreria. | **Eines → Gestiona les biblioteques** → «U8g2». |
+| Un botó suma moltes vegades | Es compta mentre està premut. | Compara amb l'estat anterior (`ara == LOW && anterior == HIGH`). |
+| Una necessitat cau a 0 de cop | Es resta a cada volta del `loop()`. | Resta-la només amb `millis()`, dins de `baixaAmbElTemps()`. |
+| El PIR dispara sempre | Encara en el temps d'estabilització (30-60 s) o sensibilitat massa alta. | Espera i ajusta els potenciòmetres del mòdul. |
+| El micròfon no detecta res | Llindar mal calibrat per al soroll de l'aula. | Mira els valors reals al Monitor sèrie i recalibra. |
+| La pantalla no encaixa a la finestra | El mòdul comprat té unes altres mides. | Ajusta els paràmetres `OLED_*` del `.scad` i torna a fabricar el frontal. |
 
 ---
 

@@ -22,7 +22,7 @@ const int PINCA_OBERTA = 120;
 Servo base;
 Servo pinca;
 
-// La mateixa funcio de la SA3: mesura i RETORNA la distancia en cm
+// Funcio propia: mesura i RETORNA la distancia en cm
 float mesuraDistancia() {
   digitalWrite(TRIG, LOW);
   delayMicroseconds(2);

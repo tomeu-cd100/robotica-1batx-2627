@@ -45,7 +45,7 @@ Fes les pràctiques **en ordre i al teu ritme**. Cada pràctica acaba enviant el
 | S2 | Formularis de les Pràctiques 3 i 4 | Una tasca de Classroom per pràctica (enllaç a l'últim pas de cada pràctica) |
 | S3 | Formulari de la Pràctica 5 + **panell** i defensa d'1' + **Entrega final** | A l'aula i a Classroom. S'avalua amb **R1** (codi) i **R2** (circuit) |
 | ⭐ | Un repte (opcional) | El docent el valida al [tauler de reptes](../00_General/00_Tauler_reptes.md) |
-| 🤖 | Els colors, llums i sons que programis: són les «expressions» de la teva **mascota** | Guarda el codi: el reaprofitaràs al [robot del trimestre](../00_General/00_Projecte_T1_Mascota.md) |
+| 🤖 | Els colors, llums i sons que programis: són les «expressions» del teu **tamagotchi** | Guarda el codi: el reaprofitaràs al [robot del trimestre](../00_General/00_Projecte_T1_Mascota.md) |
 
 > 📓 El **quadern tècnic** (25 %) són les preguntes de reflexió de cada formulari de pràctica: no cal cap full a part.
 

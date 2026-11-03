@@ -74,7 +74,7 @@
 
 ## SESSIÓ 3 (2 h) — Del sensor al braç
 - **Activació (10'):** *"Com sap un braç d'una fàbrica que ha arribat una peça a la cinta?"*
-- **Modelatge (20'):** `03_ultrasons_brac.ino`. Integració: l'ultrasons de l'estació de recollida mesura la distància → si hi ha objecte, la base s'hi gira i la pinça s'obre (percepció→acció). La funció `mesuraDistancia()` és la de la SA3; **canvien els pins** (D7/D8, perquè el D11 és la pinça).
+- **Modelatge (20'):** `03_ultrasons_brac.ino`. Integració: l'ultrasons de l'estació de recollida mesura la distància → si hi ha objecte, la base s'hi gira i la pinça s'obre (percepció→acció). Primer cop de l'HC-SR04 i d'una **funció que retorna un valor** (`mesuraDistancia()`, abans era de la SA3): dedica-hi 5' amb l'analogia del ratpenat; **pins** (D7/D8, perquè el D11 és la pinça).
 - **Pràctica guiada (20'):** connecten l'ultrasons i els servos de base i pinça amb piles; omplen la taula distància → què fa el braç amb el Serial Plotter obert.
 - **Repte (15'):** obertura de la pinça proporcional a la distància amb `map()` + guarda de seguretat.
 - 🔧 **Torn de taller del braç (45'):** **bloc E** (passos 12-18), l'estructura central. El **pas 15 es fa en parella** (una persona aguanta i l'altra cargola): organitza-ho perquè tothom ajudi i sigui ajudat (evidència per a R5).
@@ -129,7 +129,7 @@
 
 - **S1 · `01_servo_potenciometre` (servo):** distingeix **servo** (controla *posició*/angle 0–180°) de **motor DC** (gir continu). Demana predir on anirà `write(90)`: és exactament el **pas 0** del muntatge. Avís: *si mous diversos servos, alimentació externa*. *Error a anticipar:* el servo vibra per alimentació insuficient.
 - **S2 · `02_motor_pont_h` (pont H):** dibuixa la **taula IN1/IN2** per a cada sentit i assenyala **ENA = velocitat (PWM)**. Repeteix com un mantra: *MASSA COMUNA, mai el motor des del 5V*. *Error a anticipar:* l'Arduino es reinicia pel pic de corrent del motor.
-- **S3 · `03_ultrasons_brac` (percepció→acció):** mostra que `mesuraDistancia()` és la funció de la SA3 i pregunta *per què canvien els pins* (el D11 és la pinça). Pregunta: *"què farà el braç amb l'objecte just a 15 cm?"* (el «ball»: llavor de la histèresi).
+- **S3 · `03_ultrasons_brac` (percepció→acció):** és el **primer cop** que veuen l'HC-SR04 i una **funció que retorna un valor** (des del 3-11-2026 ja no es fan a la SA3): explica el ratpenat (crida i escolta l'eco) i que `mesuraDistancia()` **et torna** un número amb `return`; pregunta *per què l'ultrasons va al D7/D8* (el D11 és la pinça). Pregunta: *"què farà el braç amb l'objecte just a 15 cm?"* (el «ball»: llavor de la histèresi).
 - **S4 · `04_brac_potenciometres` (integració):** pregunta *què passa si el `map()` va a 0-180 en lloc del rang segur* (el servo força el topall). Explica el `&` de `mouSiCal()` amb la imatge de l'original vs la fotocòpia.
 
 > 🤖 **Fil conductor de robots (des del 28-10-2026):** el MeArm **es munta

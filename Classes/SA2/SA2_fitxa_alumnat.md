@@ -91,4 +91,4 @@ Es fa a la **Sessió 3**: un panell que avisa de **3 estats** (tot correcte / av
 
 > 📌 **Vols més?** [Reptes ⭐](../../Reptes/Reptes_SA2.md) (semàfor per a vianants, indicador de nivell) i més activitats a la **[fitxa ampliada](SA2_fitxa_ampliada.md)**.
 
-> 🤖 **El robot del trimestre:** els colors, llums i sons que programes en aquesta SA seran les **expressions** de la teva **mascota**. Guarda el codi! Tot sobre la mascota: **[dossier de la mascota](../00_General/00_Projecte_T1_Mascota.md)**.
+> 🤖 **El robot del trimestre:** els colors, llums i sons que programes en aquesta SA seran les **expressions** del teu **tamagotchi**. Guarda el codi! Tot sobre la mascota: **[dossier de la mascota](../00_General/00_Projecte_T1_Mascota.md)**.

@@ -71,8 +71,8 @@ Són els pins definitius del braç: el que connectes avui ja no es mou
 | Servo pinça (senyal) | 11 | igual |
 | HC-SR04 TRIG / ECHO | 7 / 8 | VCC=5V, GND=GND de l'Arduino |
 
-> 🔌 A la SA3 l'ultrasons anava al 12/11. Al braç, el **D11 és la pinça**:
-> l'ultrasons passa al **D7/D8**.
+> 🔌 Al braç, el **D11 és la pinça**: per això l'ultrasons va al **D7/D8**
+> (TRIG al 7, ECHO al 8).
 
 ![Esquema: Arduino UNO amb el servo de la base al pin 9 i el de la pinça al pin 11, alimentats per piles amb GND comú, i l'ultrasons amb TRIG al pin 7 i ECHO al pin 8](img/sa4-ultrasons-brac.svg)
 

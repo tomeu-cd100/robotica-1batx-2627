@@ -166,6 +166,6 @@ Com que cada estat té la seva funció, el `loop()` es llegeix com una frase: *t
 
 - **Avui mateix:** la **defensa d'1 minut** i l'**Entrega final** de la SA2.
 - **SA3:** el panell aprendrà a **percebre**: l'estat el decidirà un sensor, no el `delay`.
-- **Mascota del trimestre:** aquests colors i sons seran les **reaccions** del teu robot.
+- **El tamagotchi del trimestre:** els estats amb color i so són els mateixos que tindrà el teu tamagotchi.
 
 </details>

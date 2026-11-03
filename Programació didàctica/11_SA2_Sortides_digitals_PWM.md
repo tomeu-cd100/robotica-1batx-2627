@@ -36,11 +36,11 @@ Estructura del sketch; variables, constants i operadors; `pinMode`, `digitalWrit
 
 > 🤖 **Fil conductor de robots:** amb el fil conductor actiu
 > ([`Classes/00_General/00_Fil_conductor_robots.md`](../Classes/00_General/00_Fil_conductor_robots.md)),
-> la sessió 3 és també la **sessió de fabricació de la mascota** (tall làser
-> i muntatge, [dossier](../Classes/00_General/00_Projecte_T1_Mascota.md)):
-> el repte de la sessió 2 fa de producte. Cada alumne/a porta l'esborrany de la
-> cara fet (de casa o del tancament de la sessió 2); a la sessió 3 s'ajusta,
-> el docent el valida i es talla per rotacions.
+> la sessió 3 és també la **sessió de fabricació de la carcassa del tamagotchi**
+> (una per alumne/a, en forma d'ou, al làser o en 3D, per torns;
+> [dossier](../Classes/00_General/00_Projecte_T1_Mascota.md)). Cada alumne/a porta
+> l'esborrany del gravat del frontal fet a la sessió 2; a la sessió 3 s'ajusta,
+> el docent el valida i es fabrica.
 
 ## Producte
 Un dispositiu de senyalització programable (p. ex. semàfor amb fase nocturna intermitent o llum d'estat RGB) amb codi comentat i esquema.

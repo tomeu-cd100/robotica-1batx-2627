@@ -68,7 +68,7 @@
    - c) La distància de l'ultrasons.
    - d) El sentit de gir del motor.
 
-9. A la SA3 l'ultrasons anava als pins 12/11. Per què al braç passa al **D7/D8**?
+9. Per què, al braç, l'ultrasons va al **D7/D8** i no al 12/11?
    - a) Perquè el D11 és ara el servo de la pinça.
    - b) Perquè el 12 i l'11 no funcionen amb servos.
    - c) Perquè el D7 i el D8 són més ràpids.

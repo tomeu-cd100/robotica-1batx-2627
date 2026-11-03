@@ -22,7 +22,7 @@ const int PINCA_OBERTA = 120;
 Servo pinca;
 bool pincaTancada = false;   // l'ESTAT: la memoria del sistema
 
-// La funcio de la SA3 (i de 03_ultrasons_brac de la SA4)
+// La funcio de 03_ultrasons_brac de la SA4
 float mesuraDistancia() {
   digitalWrite(TRIG, LOW);
   delayMicroseconds(2);

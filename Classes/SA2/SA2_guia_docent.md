@@ -129,10 +129,12 @@
 
 > 🤖 **Fil conductor de robots:** si el curs segueix el fil conductor
 > ([`00_Fil_conductor_robots.md`](../00_General/00_Fil_conductor_robots.md)),
-> aquesta S3 és la **sessió de fabricació de la mascota**: el repte de la S2 fa
-> de producte (palanca oficial del pla de contingència). Cada alumne/a porta
-> l'esborrany de la cara fet (de casa o del tancament de la S2); a la S3
-> s'ajusta, el docent el valida i es talla per rotacions
+> aquesta S3 és la **sessió de fabricació de la carcassa del tamagotchi** (una per
+> alumne/a, en forma d'ou): mentre la resta fa el panell, es fabriquen **per torns** al
+> làser (2 plaques de DM + 4 separadors M3) o a la impressora 3D (la closca triga 6-8 h:
+> millor imprimir-les abans). Cada alumne/a porta l'esborrany del gravat del frontal
+> fet a la S2; a la S3 s'ajusta, el docent el valida i es fabrica. **Abans**, mesura el
+> mòdul OLED comprat i ajusta `Recursos/peces_3d/tamagotchi_ou.scad`
 > ([dossier](../00_General/00_Projecte_T1_Mascota.md)). El mini-check de la S3
 > es manté a l'inici de la sessió.
 

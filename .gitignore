@@ -76,6 +76,7 @@ Material Classroom/*
 !Material Classroom/practiques_definicions.js
 !Material Classroom/crear_forms_practiques.mjs
 !Material Classroom/transicio_sa2_s1.mjs
+!Material Classroom/actualitzar_form_practica.mjs
 !Material Classroom/backup_classroom.js
 !Material Classroom/restaurar_classroom.js
 # Carpeta de backups: es versiona l'estructura (.gitkeep) però NO els JSON

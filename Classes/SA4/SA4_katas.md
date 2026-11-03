@@ -27,7 +27,7 @@
 ## Kata · `03_ultrasons_brac` (Sessió 3, modelatge)
 
 **Projecta (enunciat):**
-> Tens ja fetes `mesuraDistancia()` (com a la SA3, retorna cm o 400 si no hi ha eco), els objectes `base` i `pinca` connectats i les constants `DIST_OBJECTE = 12` (cm), `BASE_REPOS = 90`, `BASE_ESTACIO = 30`, `PINCA_TANCADA = 50` i `PINCA_OBERTA = 110` *(valors diferents del sketch, expressament)*. Escriu de zero el `loop()`: mesura la distància i mostra-la pel Monitor sèrie; si és menor que `DIST_OBJECTE`, gira la base cap a l'estació i obre la pinça; si no, torna la base a repòs i tanca la pinça. Acaba amb una pausa de 100 ms.
+> Tens ja fetes `mesuraDistancia()` (la de `03_ultrasons_brac`: retorna cm o 400 si no hi ha eco), els objectes `base` i `pinca` connectats i les constants `DIST_OBJECTE = 12` (cm), `BASE_REPOS = 90`, `BASE_ESTACIO = 30`, `PINCA_TANCADA = 50` i `PINCA_OBERTA = 110` *(valors diferents del sketch, expressament)*. Escriu de zero el `loop()`: mesura la distància i mostra-la pel Monitor sèrie; si és menor que `DIST_OBJECTE`, gira la base cap a l'estació i obre la pinça; si no, torna la base a repòs i tanca la pinça. Acaba amb una pausa de 100 ms.
 
 **Practica:** cadena percepció → decisió → acció · `if`/`else` amb dues accions per branca · reutilitzar una funció pròpia ja escrita · `Serial.println` per depurar.
 **Pista (per a qui es bloqueja):** primer guarda la distància en una variable; després una sola pregunta (`d < DIST_OBJECTE`) i, a cada branca, dos `write()`.

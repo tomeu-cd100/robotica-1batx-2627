@@ -147,30 +147,34 @@ export const PRACTIQUES = {
 
   'sa3-p3': {
     ...SA3,
-    titol: 'SA3 · Pràctica 3 · Ultrasons',
-    descripcioForm: "Respostes de la Pràctica 3 (sensor d'ultrasons i funció que retorna un valor). Les preguntes són les mateixes que els ✍️ de la pàgina de la pràctica.",
+    titol: 'SA3 · Pràctica 3 · La pantalla OLED',
+    descripcioForm: "Respostes de la Pràctica 3 (la pantalla OLED). Les preguntes són les mateixes que els ✍️ de la pàgina de la pràctica.",
     descripcioTasca: "Fes la Pràctica 3 seguint els passos de la pàgina (enllaç a sota) i envia aquest formulari en acabar-la. Compta per al quadern tècnic (25 %).",
     maxPoints: 33,  // com la resta de tasques de la SA a Classroom
-    materials: [pagina('sa3', '03-ultrasons-funcio', 'Pràctica 3 · Ultrasons (passos)')],
+    materials: [pagina('sa3', '03-pantalla-oled', 'Pràctica 3 · La pantalla OLED (passos)')],
     items: [
-      s('distància (cm) = temps × ____ ÷ 2'),
-      p('Què et torna la funció mesuraDistancia()?'),
-      p('Per a què serveix una funció?', 'Pregunta del quadern tècnic.')
+      p('Què fan la barra i la cara quan tapes el sensor de llum? Per què?'),
+      p('Has canviat el text: quina línia has tocat i què volen dir els números de drawStr(x, y, text)?'),
+      p('El concepte nou més important d’aquesta pràctica', 'Pregunta del quadern tècnic.')
     ]
   },
 
+  // Tasca creada com a «La mascota reactiva» (2026-11-03) i reconvertida al
+  // tamagotchi el mateix dia: el títol vell és a TITOL_VELL per localitzar-la.
   'sa3-p4': {
     ...SA3,
-    titol: 'SA3 · Pràctica 4 · La mascota reactiva',
-    descripcioForm: "Respostes de la Pràctica 4 (el producte de la SA3): la fitxa de la teva mascota. Les preguntes són les mateixes que els ✍️ de la pàgina de la pràctica.",
-    descripcioTasca: "Fes la Pràctica 4 (la mascota) seguint els passos de la pàgina (enllaç a sota) i envia aquest formulari en acabar-la. La mascota es defensa a l'aula amb la rúbrica del robot. Després, fes l'Entrega final.",
+    titol: 'SA3 · Pràctica 4 · El teu tamagotchi',
+    titolVell: 'SA3 · Pràctica 4 · La mascota reactiva',
+    descripcioForm: "Respostes de la Pràctica 4 (el producte de la SA3): el teu tamagotchi. Les preguntes són les mateixes que els ✍️ de la pàgina de la pràctica.",
+    descripcioTasca: "Fes la Pràctica 4 (el tamagotchi) seguint els passos de la pàgina (enllaç a sota) i envia aquest formulari en acabar-la. El tamagotchi es defensa a l'aula amb la rúbrica del robot. Després, fes l'Entrega final.",
     maxPoints: 33,  // com la resta de tasques de la SA a Classroom
-    materials: [pagina('sa3', '05-mascota', 'Pràctica 4 · La mascota reactiva (passos)')],
+    materials: [pagina('sa3', '05-mascota', 'Pràctica 4 · El teu tamagotchi (passos)')],
     items: [
-      p('Nom i caràcter de la teva mascota'),
-      p('Reacció 1: quin sensor → què fa la mascota → per què encaixa amb el seu caràcter'),
-      p('Reacció 2: quin sensor → què fa la mascota → per què encaixa amb el seu caràcter'),
-      pOpt('Reacció 3: quin sensor → què fa la mascota → per què encaixa amb el seu caràcter'),
+      p('Nom i caràcter del teu tamagotchi'),
+      p('Què fa cada botó (MENJAR, JUGAR, DORMIR)? Quines necessitats canvia?'),
+      p('Quins sensors l’afecten i com (llum, soroll, PIR…)?'),
+      p('Quan es posa TRISTA i quan MALALTA? Escriu les condicions que has programat'),
+      p('Per a què serveix una funció? Posa’n un exemple del teu tamagotchi', 'Pregunta del quadern tècnic.'),
       p('Un error que has trobat i com l’has resolt', 'Pregunta del quadern tècnic.')
     ]
   },
@@ -178,13 +182,13 @@ export const PRACTIQUES = {
   'sa3-final': {
     ...SA3,
     titol: 'SA3 · Entrega final',
-    descripcioForm: "Tancament de la SA3: autoavaluació i checklist. Fes-la quan hagis acabat la Pràctica 4 (la mascota).",
-    descripcioTasca: "Fes-la quan hagis acabat la Pràctica 4 i la defensa d'1 minut de la mascota. No té nota pròpia: és la teva autoavaluació i el repàs abans de la prova T1.",
+    descripcioForm: "Tancament de la SA3: autoavaluació i checklist. Fes-la quan hagis acabat la Pràctica 4 (el tamagotchi).",
+    descripcioTasca: "Fes-la quan hagis acabat la Pràctica 4 i la defensa d'1 minut del tamagotchi. No té nota pròpia: és la teva autoavaluació i el repàs abans de la prova T1.",
     // Sense maxPoints: tasca sense qualificació.
     materials: [{ link: { url: `${WEB_BASE}/sa3/index.html#entrega-final`, title: 'SA3 · Entrega final (portada de la SA)' } }],
     items: [
       t('Versió nucli',
-        'Per aprovar n’hi ha prou amb una mascota amb 2 reaccions que funcionin bé.'),
+        'Per aprovar n’hi ha prou amb un tamagotchi amb 2 necessitats (gana i felicitat), 2 botons i 1 sensor, que es posa trist quan no el cuides.'),
       autoaval([
         'Distingeixo i llegeixo entrades digitals i analògiques',
         'Faig servir el Monitor sèrie per calibrar',
@@ -194,8 +198,8 @@ export const PRACTIQUES = {
         'El polsador funciona i entenc per què llegeix «al revés» (HIGH sense prémer)',
         'He llegit el potenciòmetre i el sensor de llum i he fet el llum automàtic',
         'He fet el racó de mesura (volts del multímetre vs número del Monitor)',
-        'He vist la distància de l’ultrasons al Serial Plotter',
-        'La mascota té les seves reaccions i l’he defensada en 1 minut',
+        'He vist la cara i la barra a la pantalla OLED',
+        'El meu tamagotchi té les seves necessitats i estats i l’he defensat en 1 minut',
         'He enviat els formularis de les Pràctiques 1, 2, 3 i 4',
         'Tinc el full resum en paper per a la prova T1'
       ])

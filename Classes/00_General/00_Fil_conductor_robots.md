@@ -18,7 +18,7 @@ construcció d'un **robot real per alumne/a**, aprofitant la talladora làser
 **xTool S1** i la impressora 3D **Bambu Lab P2S Combo** de l'aula.
 
 Els tres robots són els tres arquetips clàssics de la robòtica: un robot
-**social** que percep l'entorn i hi reacciona (la mascota), un robot
+**social** que percep l'entorn i hi reacciona (el tamagotchi), un robot
 **manipulador** que actua sobre el món (el braç) i un robot **mòbil** que es
 desplaça pel món (el rover). Cadascun tanca un trimestre i és independent
 dels altres: no hi ha una evolució d'un robot cap al següent, sinó tres
@@ -37,12 +37,12 @@ movent-lo des del comandament.
 
 | Trimestre | Robot | Arquetip | SA que hi aporten | On es tanca (producte) |
 |---|---|---|---|---|
-| 1r | Mascota reactiva | robot social | SA2, SA3 | Producte SA3 (mascota amb ≥3 reaccions sensor→comportament + fitxa de personalitat; tancat a S3, S4 = prova T1 intacta) |
+| 1r | Tamagotchi de sobretaula | robot social | SA2, SA3 | Producte SA3 (tamagotchi amb necessitats, 3 botons, sensors i estats que no moren mai, dins d'una carcassa en forma d'ou + fitxa de personalitat; tancat a S3, S4 = prova T1 intacta) |
 | 2n | Braç robòtic MeArm | robot manipulador | SA4, SA5, SA6 | Producte SA6 (MeArm de 4 servos amb màquina d'estats, comandament per ràdio i sensor de col·lisió com a final de carrera; tancat a S3, S4 = prova T2) |
 | 3r | Rover autònom | robot mòbil | SA7, SA8, SA9 | Plataforma de SA7 i base del repte SA9 |
 
 Dossier de cada robot (peces, esquema de muntatge, cablatge i rúbrica):
-[🐣 la mascota](00_Projecte_T1_Mascota.md) ·
+[🐣 el tamagotchi](00_Projecte_T1_Mascota.md) ·
 [🦾 el braç](00_Projecte_T2_Brac.md) ·
 [🚗 el rover](00_Projecte_T3_Rover.md)
 
@@ -50,7 +50,7 @@ Dossier de cada robot (peces, esquema de muntatge, cablatge i rúbrica):
 
 | Trimestre | Sessió de fabricació | Què s'hi fa |
 |---|---|---|
-| T1 | S3 de SA2 | Tall làser de la caixa comuna i gravat de cares/orelles personalitzades; muntatge inicial de la mascota |
+| T1 | S3 de SA2 | Carcassa en forma d'ou, una per alumne/a: tallada al làser (2 plaques de DM + separadors) o impresa en 3D (closca + tapa), amb el frontal personalitzat |
 | T2 | **Torns de taller** de 20-45' a les sessions de SA4-SA6 | El MeArm es munta bloc a bloc al llarg del trimestre, i totes les pràctiques del trimestre s'hi fan a sobre, amb les peces tallades pel docent abans de la s13 ([detall al dossier](00_Projecte_T2_Brac.md#el-braç-es-construeix-al-llarg-de-tot-el-trimestre)) |
 | T3 | Sessió 0 del trimestre (abans de SA7) | Muntatge del xassís del rover (2 pisos) |
 
@@ -69,8 +69,8 @@ Dossier de cada robot (peces, esquema de muntatge, cablatge i rúbrica):
 > continua sent l'**últim recurs**. Si els torns de taller fallen (tall no a
 > punt a la s13), es torna a la fabricació concentrada a la S4 de SA4 i el
 > marge torna a ser pràcticament **zero**. Senyal
-> d'alerta: si el T1 no tanca SA3 al desembre, la mascota de gener es
-> reparteix amb les peces **pretallades pel docent** en lloc d'esperar una
+> d'alerta: si el T1 no tanca SA3 al desembre, el tamagotchi de gener es
+> reparteix amb les carcasses **fetes pel docent** en lloc d'esperar una
 > sessió de tall addicional. Detall complet al document
 > [08 · Seqüenciació temporal anual](../../Programació%20didàctica/08_Sequenciacio_temporal_anual.md).
 
@@ -127,15 +127,14 @@ sobre les **zones vermelles** de la plantilla.
 
 <!-- web:only-github -->
 - Plantilles de tall làser (SVG, un fitxer per robot) i la seva guia:
-  [`../../Recursos/plantilles_laser/mascota.svg`](../../Recursos/plantilles_laser/mascota.svg),
+  [`../../Recursos/plantilles_laser/tamagotchi_ou_laser.svg`](../../Recursos/plantilles_laser/tamagotchi_ou_laser.svg),
   [`../../Recursos/plantilles_laser/xassis_rover_ARomero.svg`](../../Recursos/plantilles_laser/xassis_rover_ARomero.svg)
   (xassís del rover: disseny d'**Antonio Romero**, CC BY-NC-SA 4.0, geometria provada),
   [`../../Recursos/plantilles_laser/brac_MeArm_v1.1.svg`](../../Recursos/plantilles_laser/brac_MeArm_v1.1.svg)
   (braç **MeArm V1.1** de Ben Gray, CC BY-SA 3.0; pla B: [`brac.svg`](../../Recursos/plantilles_laser/brac.svg)) ·
   [`../../Recursos/plantilles_laser/LLEGEIX-ME.md`](../../Recursos/plantilles_laser/LLEGEIX-ME.md)
 - Peces impreses en 3D (OpenSCAD) i la seva guia:
-  [`../../Recursos/peces_3d/escaire_caixa.scad`](../../Recursos/peces_3d/escaire_caixa.scad),
-  [`../../Recursos/peces_3d/difusor_ull.scad`](../../Recursos/peces_3d/difusor_ull.scad),
+  [`../../Recursos/peces_3d/tamagotchi_ou.scad`](../../Recursos/peces_3d/tamagotchi_ou.scad),
   [`../../Recursos/peces_3d/suport_hcsr04.scad`](../../Recursos/peces_3d/suport_hcsr04.scad),
   [`../../Recursos/peces_3d/roda_boja.scad`](../../Recursos/peces_3d/roda_boja.scad),
   [`../../Recursos/peces_3d/dit_pinca.scad`](../../Recursos/peces_3d/dit_pinca.scad) ·

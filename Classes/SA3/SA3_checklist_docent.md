@@ -7,10 +7,10 @@
 
 ## 🧰 1. Logística prèvia (preparar abans de començar la SA)
 - [ ] Material per alumne/a: Arduino UNO + USB, protoboard, cables
-- [ ] Sensors: polsador, potenciòmetre, LDR + 10 kΩ, NTC + 10 kΩ, **HC-SR04** (ultrasons), LED, piezo
+- [ ] Sensors: polsador, potenciòmetre, LDR + 10 kΩ, NTC + 10 kΩ, LED, piezo · **tamagotchi:** OLED SSD1306 0,96" I²C + 3 polsadors per alumne/a
 - [ ] **Multímetres** per al racó de mesura del divisor de tensió
-- [ ] Sketches provats: `01_polsador_debounce` · `02_potenciometre_ldr` · `03_ultrasons_funcio` · `04_alarma_aparcament`
-- [ ] **Llibreries Adafruit NeoPixel i DHT** instal·lades a tots els ordinadors (l'esquelet de la mascota no compila sense) · caixes de la mascota tallades (S3 de la SA2)
+- [ ] Sketches provats: `01_polsador_debounce` · `02_potenciometre_ldr` · `03_pantalla_oled` · `05_mascota` (esquelet del tamagotchi)
+- [ ] **Llibreria U8g2** instal·lada a tots els ordinadors (ni la ③ ni el tamagotchi compilen sense) · **carcasses** del tamagotchi fetes (làser o 3D, S3 de la SA2)
 - [ ] **Preparar la prova pràctica T1** ([`Avaluació/Prova_practica_T1.md`](../../Avaluació/Prova_practica_T1.md)) — ocupa la S4 sencera (individual; material per a cada alumne/a)
 - [ ] Compartir rúbriques **R1 i R2** amb l'alumnat *abans* del producte
 
@@ -24,15 +24,15 @@
 **Sessió 2 — Entrades analògiques**
 - [ ] `02_potenciometre_ldr` (`analogRead` 0–1023, `map()`, divisor de tensió LDR)
 - [ ] **Racó de mesura:** comparar V mesurada amb `lectura/1023·5V`; tapar LDR i veure baixar les dues
-- [ ] **Deures per a la S3:** nom i caràcter de la mascota (fitxa de personalitat)
+- [ ] **Deures per a la S3:** nom i caràcter del tamagotchi (fitxa de personalitat)
 - ⚠️ *Error:* divisor mal connectat (lectures 0 o 1023)
 
-**Sessió 3 — Ultrasons + PRODUCTE: la mascota**
+**Sessió 3 — Pantalla OLED + PRODUCTE: el tamagotchi**
 - [ ] **Mini-check individual** a l'inici (10', no qualifica): `if/else` sobre lectura analògica (substitueix la graella d'activació)
-- [ ] `03_ultrasons_funcio` en versió curta (25'): la funció `mesuraDistancia()` que **retorna** un valor · Serial Plotter
-- [ ] **Mascota** (55'): fitxa de personalitat (nom, caràcter, 3 reaccions) · sensors a la caixa · esquelet del dossier (soroll fet; omplen foscor i PIR) · **defensa d'1' a peu de taula**
-- [ ] Tancament: autoavaluació i **formulari de Classroom enviat** · `04_alarma_aparcament` només per a qui acabi abans
-- ⚠️ *Error:* TRIG/ECHO intercanviats · llibreries NeoPixel/DHT sense instal·lar · PIR sense els 30-60 s d'estabilització
+- [ ] `03_pantalla_oled` (25'): text, barra i cara · dibuix per pàgines (`firstPage`/`nextPage`)
+- [ ] **Tamagotchi** (55'): fitxa de personalitat (nom, caràcter, botons i sensors) · muntatge a la carcassa · esquelet `05_mascota` (MENJAR fet; omplen JUGAR, DORMIR, llum, soroll i estats) · **defensa d'1' a peu de taula**
+- [ ] Tancament: **full resum** per a la prova · formularis de la ③ i la ④ · **Entrega final** enviada
+- ⚠️ *Error:* SDA/SCL intercanviats · U8g2 sense instal·lar · necessitats restades a cada volta del `loop()` · PIR sense els 30-60 s d'estabilització
 
 **Sessió 4 — PROVA T1 (sessió sencera, individual)**
 - [ ] Instruccions (5-10') · prova (**~80-85' reals**; el nucli està calibrat per a ~60') · recollida (10')
@@ -47,7 +47,7 @@
 - [ ] Revisió creuada de codi (una millora concreta i un dubte) → **R5** + **exit tickets** + registre **0–10**
 
 ## 🪜 4. Atenció a la diversitat (previst per aquesta SA)
-- [ ] **Bastida:** començar pel **polsador** (digital) abans de l'analògic · donar `mesuraDistancia()` ja escrita per llegir-la · agrupament puntual de suport si cal
+- [ ] **Bastida:** començar pel **polsador** (digital) abans de l'analògic · al tamagotchi, començar per la versió nucli · agrupament puntual de suport si cal
 - [ ] **+ Ampliació:** mitjana de 3 mesures · detectar acostament/allunyament · [reptes ⭐ SA3](../../Reptes/Reptes_SA3.md)
 - [ ] **Representació múltiple:** esquema · **Serial Plotter** · Wokwi · codi comentat
 - [ ] 🤖 **Llavor IA (2–3'):** un llindar (`if distancia < 20`) és una **regla/classificador** → precursor de l'aprenentatge automàtic (SA8)

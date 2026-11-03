@@ -37,7 +37,7 @@
 6. Què aconsegueix la **zona morta** del producte de la SA4 (`abs(nou - actual) > ZONA_MORTA`)? → **Que el braç no tremoli pel soroll del potenciòmetre.** / Que el braç vagi el doble de ràpid. / Que el servo no necessiti alimentació. / Que el potenciòmetre llegeixi de 0 a 180.
 7. Per què el motor DC necessita un **pont H** (L298N) i no es connecta directament a un pin? → Perquè el pin cremaria l'USB. / **Un pin dona poc corrent; el driver l'amplifica amb una alimentació externa i permet invertir el sentit.** / Perquè el motor només entén senyals analògics. / No cal: es pot connectar directament.
 8. Al pont H, què decideixen els senyals `IN1` i `IN2`? → La velocitat del motor. / L'alimentació de l'Arduino. / La distància de l'ultrasons. / **El sentit de gir del motor.**
-9. A la SA3 l'ultrasons anava als pins 12/11. Per què al braç passa al **D7/D8**? → **Perquè el D11 és ara el servo de la pinça.** / Perquè el 12 i l'11 no funcionen amb servos. / Perquè el D7 i el D8 són més ràpids. / Perquè l'ultrasons necessita pins PWM.
+9. Per què, al braç, l'ultrasons va al **D7/D8** i no al 12/11? → **Perquè el D11 és ara el servo de la pinça.** / Perquè el 12 i l'11 no funcionen amb servos. / Perquè el D7 i el D8 són més ràpids. / Perquè l'ultrasons necessita pins PWM.
 10. Per què `05_dos_servos_millis` fa servir `millis()` en lloc de `delay()`? → Perquè `delay()` no existeix a l'Arduino UNO. / Perquè `millis()` mou els servos més lluny. / **Perquè `delay()` atura tot el programa i les dues articulacions no es podrien moure alhora.** / Perquè `millis()` estalvia piles.
 
 **Pregunta 11** (paràgraf, sense puntuació) — Explica què fa la funció `mouSiCal(Servo &servo, int &actual, int nou)` del producte de la SA4 i per què porta el símbol `&` als paràmetres.

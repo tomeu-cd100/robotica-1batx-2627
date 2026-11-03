@@ -121,10 +121,10 @@
 
 ## 🤖 Cap al robot del trimestre
 
-Aquest trimestre, tot el que fas serveix per a la **mascota** ([dossier](../Classes/00_General/00_Projecte_T1_Mascota.md) · [fil conductor](../Classes/00_General/00_Fil_conductor_robots.md)):
+Aquest trimestre, tot el que fas serveix per al **tamagotchi** ([dossier](../Classes/00_General/00_Projecte_T1_Mascota.md)):
 
-- **Repte A (llum de nit)** → el sensor de llum de la mascota: **s'adorm** (ulls apagats) quan es fa fosc i **es desperta** quan torna la llum.
-- **Repte B (sensor d'aparcament)** → el PIR de la mascota: **saluda** (llums o so) quan algú **s'hi acosta**.
-- **Repte C (instrument o comptador)** → el polsador de la mascota: cada **carícia** li canvia l'humor o li fa una animació.
+- **Repte A (llum de nit)** → el sensor de llum del tamagotchi: quan es fa fosc **té son** i, si el deixes, s'adorm.
+- **Repte B (sensor d'aparcament)** → és un repte **avançat**: l'ultrasons no és al tamagotchi i el treballaràs a fons a la SA4 (el braç). Si el fas ara, hi arribaràs amb avantatge.
+- **Repte C (instrument o comptador)** → els botons del tamagotchi: MENJAR, JUGAR i DORMIR són aquest mateix polsador amb antirebot.
 
-El micròfon (despertar-se amb una picada de mans) i el sensor de temperatura són altres reaccions que hi pots afegir. La mascota es talla a la Sessió 3 de la SA2 i es munta a la Sessió 3 de la SA3, amb la mateixa idea de sempre: **llegeix → compara → reacciona**. El producte final és la mascota amb **3 reaccions** i la seva fitxa de personalitat.
+El micròfon (s'espanta amb el soroll), el PIR (es posa content si t'hi acostes) i el sensor de temperatura són altres maneres que tens d'afectar les seves necessitats.

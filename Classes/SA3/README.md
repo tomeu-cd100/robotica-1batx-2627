@@ -1,10 +1,6 @@
 # SA3 · Entrades i sensors: el robot percep
 
-Tercera situació d'aprenentatge (**8 h · 4 sessions**, 1r trimestre). Fins ara el teu Arduino només **feia** coses (encendre llums, fer sons). Ara aprendrà a **notar** què passa al seu voltant: si prems un botó, quanta llum hi ha, a quina distància tens la mà… I al final, la teva **mascota** reaccionarà a tot això. Programació oficial: [`Programació didàctica/12_SA3_Entrades_sensors.md`](../../Programació%20didàctica/12_SA3_Entrades_sensors.md).
-
-![Fotografia del sensor d'ultrasons HC-SR04](img/hc-sr04-foto.jpg)
-
-> *Fotografia: HC-SR04, per [SparkFun Electronics](https://commons.wikimedia.org/wiki/File:SparkFun_HC-SR04_Ultrasonic-Sensor_13959-01a.jpg) — llicència [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/).*
+Tercera situació d'aprenentatge (**8 h · 4 sessions**, 1r trimestre). Fins ara el teu Arduino només **feia** coses (encendre llums, fer sons). Ara aprendrà a **notar** què passa al seu voltant: si prems un botó, quanta llum hi ha, si hi ha soroll… I al final, cuidaràs el teu **tamagotchi**: una mascota virtual que nota tot això. Programació oficial: [`Programació didàctica/12_SA3_Entrades_sensors.md`](../../Programació%20didàctica/12_SA3_Entrades_sensors.md).
 
 En acabar aquesta SA podràs: 1) llegir polsadors (amb antirebot) i sensors analògics (de 0 a 1023) i decidir amb llindars; 2) calibrar i depurar amb el Monitor sèrie i el multímetre; 3) escriure funcions pròpies que retornen un valor.
 
@@ -22,10 +18,10 @@ Fes les pràctiques **en ordre i al teu ritme**. Cada pràctica acaba enviant el
 
 - ② [Pràctica 2 · Potenciòmetre i sensor de llum](codi/02_potenciometre_ldr/EXPLICACIO.md) — sensors amb molts valors, el **Racó de mesura** i un llum automàtic.
 
-🚩 **Final de la Sessió 2:** hauries d'haver enviat el formulari de la ②. Per a la sessió següent, pensa un **nom** i un **caràcter** per a la teva mascota.
+🚩 **Final de la Sessió 2:** hauries d'haver enviat el formulari de la ②. Per a la sessió següent, pensa un **nom** i un **caràcter** per al teu tamagotchi.
 
-- ③ [Pràctica 3 · Ultrasons](codi/03_ultrasons_funcio/EXPLICACIO.md) — la distància de la mà en una gràfica i la primera funció que retorna un valor. Comença la Sessió 3 amb el **mini-check** en paper (10', no compta per a nota).
-- ④ [Pràctica 4 · La teva mascota reactiva](codi/05_mascota/EXPLICACIO.md) — el producte: 3 reaccions d'acord amb el caràcter de la mascota, i el **full resum** per a la prova.
+- ③ [Pràctica 3 · La pantalla OLED](codi/03_pantalla_oled/EXPLICACIO.md) — text, una barra i una cara que canvia amb la llum. Comença la Sessió 3 amb el **mini-check** en paper (10', no compta per a nota).
+- ④ [Pràctica 4 · El teu tamagotchi](codi/05_mascota/EXPLICACIO.md) — el producte: necessitats que baixen, botons per cuidar-lo i sensors que l'afecten; i el **full resum** per a la prova.
 
 🚩 **Final de la Sessió 3:** formularis de la ③ i de la ④ enviats, **Entrega final** feta i el full resum guardat.
 
@@ -33,10 +29,10 @@ Fes les pràctiques **en ordre i al teu ritme**. Cada pràctica acaba enviant el
 
 **Quan hagis acabat la ④:**
 
-1. 🎤 **Defensa d'1 minut** davant del docent: presenta la teva mascota i què fa cada reacció (es corregeix amb la [rúbrica del robot](../00_General/00_Projecte_T1_Mascota.md)).
+1. 🎤 **Defensa d'1 minut** davant del docent: presenta el teu tamagotchi: què fa cada botó i com l'afecten els sensors (es corregeix amb la [rúbrica del robot](../00_General/00_Projecte_T1_Mascota.md)).
 2. 📤 Respon i envia l'[Entrega final de la SA3](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODk3NDAxOTcyNzcy/details): autoavaluació i checklist final.
 
-> ✅ **Versió nucli** (per aprovar n'hi ha prou amb): una mascota amb **2 reaccions** que funcionin bé.
+> ✅ **Versió nucli** (per aprovar n'hi ha prou amb): un tamagotchi amb **2 necessitats** (gana i felicitat), **2 botons** i **1 sensor**, que es posa trist quan no el cuides.
 
 ## 📝 Sessió 4 · Prova pràctica T1
 
@@ -50,17 +46,16 @@ Per preparar-la: repassa les pràctiques ①, ② i ③ i fes el [qüestionari d
 |---|---|---|
 | S1 | Formulari de la Pràctica 1 | Una tasca de Classroom per pràctica (enllaç a l'últim pas de cada pràctica) |
 | S2 | Formulari de la Pràctica 2 | La tasca de Classroom de la pràctica |
-| S3 | Formularis de les Pràctiques 3 i 4 + **la mascota** i defensa d'1' + **Entrega final** | A l'aula i a Classroom. Es corregeix amb la [rúbrica del robot](../00_General/00_Projecte_T1_Mascota.md) |
+| S3 | Formularis de les Pràctiques 3 i 4 + **el tamagotchi** i defensa d'1' + **Entrega final** | A l'aula i a Classroom. Es corregeix amb la [rúbrica del robot](../00_General/00_Projecte_T1_Mascota.md) |
 | S4 | **Prova pràctica T1** (individual), amb el teu full resum | A l'aula, tota la sessió |
 | ⭐ | Un repte (opcional) | El docent el valida al [tauler de reptes](../00_General/00_Tauler_reptes.md) |
-| 🤖 | La **mascota**: és el producte d'aquesta SA i el robot del trimestre | [Dossier de la mascota](../00_General/00_Projecte_T1_Mascota.md) |
+| 🤖 | El **tamagotchi**: és el producte d'aquesta SA i el robot del trimestre | [Dossier del tamagotchi](../00_General/00_Projecte_T1_Mascota.md) |
 
 > 📓 El **quadern tècnic** (25 %) són les preguntes de reflexió de cada formulari de pràctica: no cal cap full a part.
 
 ## 📚 Per repassar a casa
 
 - [Reptes de la SA3](../../Reptes/Reptes_SA3.md) ⭐ — tria el teu context.
-- [Alarma d'aparcament](codi/04_alarma_aparcament/EXPLICACIO.md) — una pràctica extra per a qui acabi abans.
 - [Exemple resolt](SA3_exemple_resolt.md) · [Dibuix del programa del llum automàtic](SA3_diagrama_flux.md) · [Qüestionari de conceptes](SA3_questionari_conceptes.md)
 - [Fitxa base](SA3_fitxa_alumnat.md) — què aprendràs, com s'avalua i què fer si alguna cosa no funciona.
 - [Fitxa ampliada](SA3_fitxa_ampliada.md) — més activitats.
@@ -76,7 +71,7 @@ Per preparar-la: repassa les pràctiques ①, ② i ③ i fes el [qüestionari d
 | [`SA3_fitxa_ampliada.md`](SA3_fitxa_ampliada.md) | **Versió ampliada** (aprofundiment): totes les rutines (ajuda entre iguals, revisió creuada, exit ticket, ODS, PC) i ampliacions. |
 | [`SA3_checklist_docent.md`](SA3_checklist_docent.md) | **Checklist docent** (una cara): logística prèvia, punts de control per sessió, avaluació i diversitat. |
 | [`SA3_checklist_alumnat.md`](SA3_checklist_alumnat.md) | **Checklist alumnat** (una cara): què he de fer/lliurar + autoavaluació amb semàfor. |
-| [`SA3_esquemes_connexions.md`](SA3_esquemes_connexions.md) | Esquemes i connexions (polsador, divisor de tensió, ultrasons…). |
+| [`SA3_esquemes_connexions.md`](SA3_esquemes_connexions.md) | Esquemes i connexions (polsador, divisor de tensió, pantalla OLED, tamagotchi). |
 | `codi/` | Sketches d'Arduino (vegeu la taula següent). |
 
 > 🗄️ Els **katas** d'aquesta SA estan arxivats (18-10-2026) a [`docs/arxiu/SA3_katas/`](../../docs/arxiu/SA3_katas/README.md).
@@ -87,9 +82,8 @@ Per preparar-la: repassa les pràctiques ①, ② i ③ i fes el [qüestionari d
 |---|---|
 | `01_polsador_debounce.ino` | Entrada digital amb `INPUT_PULLUP` i antirebot; comptador per sèrie. |
 | `02_potenciometre_ldr.ino` | Entrades analògiques (`analogRead`), `map()` i llum automàtic. |
-| `03_ultrasons_funcio.ino` | Funció `mesuraDistancia()` i Serial Plotter. |
-| `04_alarma_aparcament.ino` | **Referència** (no és el producte): sensor → actuador per trams de distància. |
-| `05_mascota.ino` | **Producte:** l'esquelet de la mascota reactiva (Pràctica 4), amb els `// TODO` de les reaccions. |
+| `03_pantalla_oled.ino` | Pantalla OLED amb U8g2 (mode pàgina): text, barra i cara segons la llum. |
+| `05_mascota.ino` | **Producte:** l'esquelet del tamagotchi (Pràctica 4), amb els `// TODO` dels botons, els sensors i els estats. |
 
 Cada sketch té la seva **pàgina de pràctica** a la web (per què es fa + codi explicat per blocs); a GitHub, l'explicació és a l'`EXPLICACIO.md` de la carpeta del sketch.
 
@@ -97,9 +91,9 @@ Cada sketch té la seva **pàgina de pràctica** a la web (per què es fa + codi
 
 ## Producte i avaluació
 
-- **Producte:** **la mascota** del trimestre amb ≥3 reaccions sensor→comportament i la seva fitxa de personalitat. **Es tanca a la S3.** L'alarma d'aparcament queda com a pràctica de referència.
+- **Producte:** **el tamagotchi** del trimestre: necessitats (gana, son, felicitat) que baixen amb el temps i amb els sensors, 3 botons per cuidar-lo i estats contenta, trista i malalta (mai no es mor), dins de la carcassa en forma d'ou fabricada a la SA2. **Es tanca a la S3.**
 - **Prova T1:** la S4 sencera, individual (`Avaluació/Prova_practica_T1.md`).
-- **Criteris:** CA1.1, CA2.1, CA2.2 · **Rúbriques:** la del robot (dossier de la mascota) per al producte; R1, R2 i R4 per a la prova.
+- **Criteris:** CA1.1, CA2.1, CA2.2 · **Rúbriques:** la del robot (dossier del tamagotchi) per al producte; R1, R2 i R4 per a la prova.
 
 ## Continuïtat
 

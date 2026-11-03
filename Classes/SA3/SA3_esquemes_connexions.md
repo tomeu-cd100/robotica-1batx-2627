@@ -1,6 +1,6 @@
 # SA3 · Esquemes i connexions
 
-> 🧑‍🎓 **Quan toca?** Tingues aquesta pàgina oberta **mentre muntes**. L'**apartat 1** és el polsador (Sessió 1) · l'**apartat 2**, el potenciòmetre i el sensor de llum (Sessió 2) · el **3**, l'ultrasons, i el **5**, la mascota (Sessió 3) · el **4**, l'alarma d'aparcament (per a qui acabi abans).
+> 🧑‍🎓 **Quan toca?** Tingues aquesta pàgina oberta **mentre muntes**. L'**apartat 1** és el polsador (Sessió 1) · l'**apartat 2**, el potenciòmetre i el sensor de llum (Sessió 2) · el **3**, la pantalla OLED, i el **4**, el tamagotchi (Sessió 3).
 
 > 📏 **Recorda:** munta i desmunta **sempre amb el cable USB desendollat**. Cada LED porta la seva resistència de 220 Ω, i la pota llarga va cap al pin. Tots aquests circuits els pots provar abans a **Tinkercad** o a **Wokwi**.
 
@@ -47,66 +47,36 @@
 
 ---
 
-## 3. Sensor d'ultrasons (`03_ultrasons_funcio.ino`)
+## 3. Pantalla OLED (`03_pantalla_oled.ino`)
 
-![Fotografia del sensor d'ultrasons HC-SR04](img/hc-sr04-foto.jpg)
+Deixa muntat el sensor de llum de l'apartat 2 (punt d'unió a **A1**) i afegeix-hi la pantalla OLED de 0,96" (I²C):
 
-> *Fotografia: HC-SR04, per [SparkFun Electronics](https://commons.wikimedia.org/wiki/File:SparkFun_HC-SR04_Ultrasonic-Sensor_13959-01a.jpg) — llicència [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/).*
-
-El sensor té 4 potes amb el nom escrit al davant:
-
-| Pota del sensor | Pin de l'Arduino | Què fa |
-|---|---|---|
-| VCC | 5 V | l'alimenta |
-| TRIG | 12 | l'Arduino li diu «crida!» |
-| ECHO | 11 | el sensor avisa «he sentit l'eco» |
-| GND | GND | tanca el circuit |
-
-![Connexió del HC-SR04 a l'Arduino: VCC a 5 V, TRIG al pin 12, ECHO al pin 11 i GND a GND; el sensor emet ultrasons que reboten en un obstacle i el temps de rebot dona la distància](img/sa3-ultrasons.svg)
-
-> ⚠️ Si canvies TRIG i ECHO de lloc, el sensor no mesura res. Mira bé les lletres.
-
-![Captura de Tinkercad: Arduino UNO amb el sensor HC-SR04 punxat a la protoboard; VCC al carril de 5 V, TRIG al pin 12 (cable verd), ECHO al pin 11 (cable taronja) i GND al carril de GND](img/sa3-tinkercad-ultrasons.png)
-
-▶ **Obre la simulació a Tinkercad** (amb *Copy and Tinker* la pots modificar): <https://www.tinkercad.com/things/hnsx8COkdxw-sa3-ultrasons-la-primera-funcio-que-retorna-un-valor?sharecode=YKiQREwbyIK8YqMlqZbnIwt3xpULWideirSXPxwwEz0>
-
----
-
-## 4. Alarma d'aparcament (`04_alarma_aparcament.ino`) — per a qui acabi abans
-
-| Pin de l'Arduino | Va a… |
+| Pin de la pantalla | Pin de l'Arduino |
 |---|---|
-| 12 i 11 | TRIG i ECHO de l'ultrasons (com a l'apartat 3) |
-| 8 | LED → resistència de 220 Ω → GND |
-| 6 | brunzidor (+); la seva pota − va a GND |
+| VCC | 5 V |
+| GND | GND |
+| SCL | A5 |
+| SDA | A4 |
 
-> És l'ultrasons de l'apartat 3 més un LED i un brunzidor. Com més a prop és l'objecte, més ràpid fa «bip».
+> ⚠️ L'ordre dels 4 pins **canvia segons el model**: llegeix les lletres de la pantalla. Cal la llibreria **U8g2** (Eines → Gestiona les biblioteques).
 
-![Captura de Tinkercad: Arduino UNO amb el HC-SR04 a la protoboard (TRIG al pin 12 i ECHO al pin 11, cables verds), un LED vermell amb resistència al pin 8 i un brunzidor piezo al pin 6; alimentació pels carrils de 5 V i GND](img/sa3-tinkercad-alarma-aparcament.png)
-
-▶ **Obre la simulació a Tinkercad** (amb *Copy and Tinker* la pots modificar): <https://www.tinkercad.com/things/bWIBhp6vaaU-sa3-producte-alarma-daparcament?sharecode=6Qc4jM_obZk1o5qQe7X2KyWSQm6Q-OwMKHttqyeN-uc>
-
-**Prova-la sense placa (Wokwi):** <https://wokwi.com/projects/468087916595757057>. Obre l'enllaç, prem **▶**, clica el sensor i mou la distància: el LED i el brunzidor van més de pressa com més a prop. Fitxers del projecte: [`Simulacions/Wokwi/SA3_alarma_aparcament/`](../../Simulacions/Wokwi/SA3_alarma_aparcament/).
-
----
-
-## 5. La mascota (Sessió 3)
-
-> ⚠️ **Abans de començar, desmunta l'ultrasons.** La mascota fa servir el **pin 11** per al blau del LED RGB, i l'ultrasons el feia servir per a l'ECHO.
+## 4. El tamagotchi (Sessió 3)
 
 Primer, prepara les dues files llargues de la protoboard: un cable del **5V** de l'Arduino a la fila **vermella (+)** i un del **GND** a la fila **blava (−)**. Tots els components agafen el corrent d'aquí; cadascun només necessita, a més, el seu cable cap al pin de la taula.
 
 | Component | Pin de l'Arduino | Fixa-t'hi |
 |---|---|---|
-| Ulls (tira NeoPixel), DIN | 6 | Connecta primer GND, després 5 V i al final DIN. |
-| LED RGB (humor) | 9 · 10 · 11 | Com a la SA2. |
+| Pantalla OLED | SDA → A4 · SCL → A5 | Com a l'apartat 3. |
+| Botó MENJAR | 3 | Una pota al pin i la diagonal a GND (com a l'apartat 1). |
+| Botó JUGAR | 5 | Igual. |
+| Botó DORMIR | 7 | Igual. |
+| LED RGB (humor) | 9 · 10 · 11 | Com a la SA2, cada color amb la seva resistència de 220 Ω. |
 | Brunzidor | 8 | Pota + al 8, pota − a la fila blava. |
-| Sensor de moviment (PIR, el nas) | 2 | Quan l'endolles, tarda **30-60 segons** a funcionar bé. |
-| Polsador (la carícia) | 3 | Com a l'apartat 1, però al pin 3. |
-| Sensor de temperatura (DHT11) | 4 | Opcional. |
+| Sensor de llum | A1 | El de l'apartat 2 (o el mòdul TEMT6000). |
 | Micròfon | A0 | Mesura el soroll. |
-| Sensor de llum (TEMT6000) | A1 | Mesura la llum. |
+| Sensor de moviment (PIR) | 2 | Versió completa. Tarda **30-60 segons** a funcionar bé. |
+| Sensor de temperatura (DHT11) | 4 | Ampliació. |
 
 > ⚠️ Als mòduls de 3 potes (PIR, micròfon, sensor de llum), **l'ordre de les potes canvia segons el fabricant**: llegeix les lletres del mòdul (VCC, GND, OUT o S), no et fiïs de la posició.
 
-Tots els detalls, les fotos i el muntatge a la caixa són al **[dossier de la mascota](../00_General/00_Projecte_T1_Mascota.md)**.
+Tots els detalls de la carcassa en forma d'ou i el muntatge són al **[dossier del tamagotchi](../00_General/00_Projecte_T1_Mascota.md)**.

@@ -35,7 +35,7 @@ Per garantir la **viabilitat real** del curs (2 h/setmana ≈ 70 h), s'apliquen 
 
 1. **Flexibilitat de ritme (marge ~2 h):** la SA marcada amb **\*** (SA4) té la S4 de producte **comprimible** (el repte de la S3 pot fer de producte), la SA2 i la SA5 queden en 3 sessions, i la Prova SA1 té una sessió de marge pròpia. Així hi ha marge per al **diagnòstic inicial** (SA1), festius i imprevistos sense alterar el còmput de referència.
 2. **Proves pràctiques amb sessió pròpia dins de la SA (T1 i T2):** les proves (`Avaluació/Prova_practica_T1/T2/T3`) ocupen **una sessió sencera**, comptada **dins de les 8 h** de la SA de tancament del trimestre — no s'hi barreja cap altra activitat:
-   - **T1** → la **S4 de SA3 és, sencera, la prova** (individual). El producte de la SA3 (la mascota) es tanca a la **S3** (el repte de la S3 és el producte).
+   - **T1** → la **S4 de SA3 és, sencera, la prova** (individual). El producte de la SA3 (el tamagotchi) es tanca a la **S3** (el repte de la S3 és el producte).
    - **T2** → la **S4 de SA6 és, sencera, la prova** (individual). El producte es tanca a la **S3** i el **control proporcional passa a +ampliació** (ja ho era: el nucli avaluable és la histèresi).
    - **T3** → la **S5 de SA9 és, sencera, la prova** (individual, **per estacions rotatives**: la part de micro:bit es fa a la taula i la part de robot per torns a les pistes disponibles). El projecte es tanca a la **S4** (dossier + defensa oral; amb més de 6 equips, defenses esglaonades des de la S3, ja previstes a la guia). La prova és **independent del projecte**: avalua destreses individuals de SA7-SA8 i puntua només a la dimensió «Proves pràctiques» (20 %); el projecte puntua a «Projectes i productes» — cap evidència no compta dues vegades.
 
@@ -120,9 +120,9 @@ perquè no es descobreixi al març.
 > del projecte de SA9 a la **versió nucli**, mai les seves sessions.
 >
 > **Senyal d'alerta:** si en acabar el 1r trimestre no s'ha tancat la SA3 (el
-> mateix senyal que activa la retallada 2 més amunt), la mascota es reparteix
-> a l'alumnat amb les peces **pretallades pel docent**, en lloc d'esperar una
-> sessió de tall làser addicional.
+> mateix senyal que activa la retallada 2 més amunt), el tamagotchi es
+> reparteix a l'alumnat amb les carcasses **fetes pel docent**, en lloc d'esperar una
+> sessió de fabricació addicional.
 
 ## Fil conductor i progressió
 

@@ -15,8 +15,9 @@ torna a repòs.
 
 És la cadena **percepció → decisió → acció** que fan servir tots els robots
 industrials: un sensor detecta la peça a la cinta i el braç la va a buscar.
-L'ultrasons ja el coneixes de la SA3, i la funció `mesuraDistancia()` és la
-mateixa que vas escriure allà: avui la reaprofites per moure el teu braç.
+Avui coneixes un sensor nou, l'**ultrasons** (HC-SR04), i la teva primera
+funció que **et torna un número**: `mesuraDistancia()`. Amb ella el braç sap a
+quina distància és l'objecte.
 
 ## 🔮 Abans d'executar: prediu
 
@@ -45,11 +46,22 @@ Aquí, igual: cada número que decideix com es comporta el braç té **nom propi
 a dalt de tot. Si l'estació és més a la dreta, canvies `BASE_ESTACIO` i prou;
 no has de buscar el `45` enmig del codi.
 
-Fixa't en els pins: a la SA3 l'ultrasons anava als pins 12 i 11, però ara el
-**D11 és el servo de la pinça**. Al braç, l'ultrasons passa al **D7/D8**
+Fixa't en els pins: el **D11 és el servo de la pinça**, i per això l'ultrasons
+va al **D7/D8**
 (mapa de pins al [dossier](../../../00_General/00_Projecte_T2_Brac.md#cablatge)).
 
-### Bloc 2 — Mesurar (la funció de la SA3)
+### Bloc 2 — Mesurar: el sensor és un ratpenat, i la funció et torna un número
+
+**Com a la vida real:** els ratpenats fan un crit tan agut que nosaltres no el
+sentim. El so xoca contra les coses i torna: és l'**eco**. Com més triga a
+tornar, més lluny és la cosa. El sensor fa el mateix amb els seus dos «ulls»:
+un **crida** (TRIG, una sortida) i l'altre **escolta l'eco** (ECHO, una entrada).
+
+**Una funció que et torna un número:** preguntes a algú «a quina distància és
+la paret?» i et **respon** amb un número, sense explicar-te com ho ha mesurat.
+A la SA2 vas fer `color()`, que **feia** una feina; `mesuraDistancia()` fa la
+feina i, a més, **et torna el resultat** amb `return`. La paraula `float` del
+davant vol dir que tornarà un número amb decimals (els centímetres).
 
 ```cpp
 float mesuraDistancia() {

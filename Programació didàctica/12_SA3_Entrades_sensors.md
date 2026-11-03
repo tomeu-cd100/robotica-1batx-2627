@@ -30,15 +30,15 @@ Entrades digitals (`digitalRead`, *pull-up*, *debounce*); entrades analògiques 
 |---|---|
 | **1** | Polsador amb *pull-up* intern; `digitalRead`; **debounce**. Comptador de premudes (Serial Monitor). |
 | **2** | Entrades analògiques: potenciòmetre i **LDR**. `analogRead` (0-1023), `map()`. Llum automàtic (LDR→LED). |
-| **3** | Sensor de distància **ultrasons** en versió curta: escriure una **funció** `mesuraDistancia()` que retorna un valor. Serial Plotter. **Producte: la mascota** del fil conductor (≥3 reaccions sensor→comportament + fitxa de personalitat) amb mini-defensa. L'alarma d'aparcament queda com a referència per a qui acabi abans. |
+| **3** | **Pantalla OLED** (U8g2 en mode pàgina): text, barres i una cara. **Producte: el tamagotchi** del fil conductor (necessitats que baixen amb `millis()` i amb els sensors, 3 botons amb antirebot, estats contenta/trista/malalta que no moren mai + fitxa de personalitat) amb mini-defensa. |
 | **4** | **Prova pràctica T1** (individual, sessió sencera — vegeu `Avaluació/Prova_practica_T1.md`). |
 
 ## Producte
-**La mascota reactiva** (fil conductor, `Classes/00_General/00_Projecte_T1_Mascota.md`): la caixa de la SA2 amb ≥3 reaccions sensor→comportament (llegir → comparar amb un llindar → actuar) i la seva fitxa de personalitat. **Es tanca a la S3**; la S4 és la prova T1 individual. *(Decisió del 18-10-2026: abans el producte era l'alarma d'aparcament, que queda com a pràctica de referència.)*
+**El tamagotchi** (fil conductor, `Classes/00_General/00_Projecte_T1_Mascota.md`): la carcassa en forma d'ou de la SA2 amb pantalla OLED, 3 botons i sensors; una mascota virtual amb necessitats (gana, son, felicitat) que es cuida, i la seva fitxa de personalitat. Cada sensor fa **llegir → comparar amb un llindar → decidir**. **Es tanca a la S3**; la S4 és la prova T1 individual. *(Decisions: 18-10-2026, la mascota reactiva substitueix l'alarma d'aparcament; 3-11-2026, el tamagotchi substitueix la mascota reactiva i els **ultrasons passen a la SA4**.)*
 
 ## Avaluació
 - Instruments: producte (S3) + quadern tècnic + **prova pràctica T1** (S4, individual). El quadern tècnic són els **formularis de pràctica** de Classroom (Pràctiques 1-4, 33 punts cadascun), cadascun amb una pregunta de reflexió; no hi ha quadern en paper. A la prova T1 es pot consultar un **full resum en paper** que l'alumnat omple al final de la Pràctica 4. Tancament amb una **Entrega final** sense nota (autoavaluació + checklist).
-- Rúbriques: rúbrica del robot del dossier de la mascota (producte); R1, R2, R4 (prova).
+- Rúbriques: rúbrica del robot del dossier del tamagotchi (producte); R1, R2, R4 (prova).
 
 ## Atenció a la diversitat
 - **Bastida:** simulació prèvia a Wokwi/Tinkercad; funció model proporcionada.

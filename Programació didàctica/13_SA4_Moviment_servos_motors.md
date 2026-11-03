@@ -31,7 +31,7 @@ Actuadors de moviment: servomotor (PWM, llibreria `Servo`, rang segur), motor DC
 |---|---|
 | **1** | Servo amb llibreria `Servo`: el servo de la base del braç controlat per potenciòmetre. Taller: pas 0 (servos centrats) i blocs A-B del MeArm. |
 | **2** | Motor DC + **pont H** (pràctica curta, fora del braç): gir endavant/enrere i velocitat amb PWM; alimentació externa i massa comuna. Taller: blocs C-D (pinça i calibratge). |
-| **3** | Integració sensor→actuador: l'ultrasons de l'estació de recollida fa girar la base i obrir la pinça. **Bastida `millis()`** (dues articulacions alhora, prepara la màquina d'estats de la SA6). Taller: bloc E (estructura central). |
+| **3** | Integració sensor→actuador: l'ultrasons de l'estació de recollida fa girar la base i obrir la pinça. **Primer cop** de l'HC-SR04 i d'una **funció que retorna un valor** (`mesuraDistancia()`), que fins al 3-11-2026 es feien a la SA3. **Bastida `millis()`** (dues articulacions alhora, prepara la màquina d'estats de la SA6). Taller: bloc E (estructura central). |
 | **4** | Producte: **el braç amb quatre potenciòmetres** (rang segur, zona morta, funcions amb paràmetres). Cablatge definitiu, documentació i defensa. |
 
 > 🤖 **Fil conductor de robots (des del 28-10-2026):** el braç MeArm és el

@@ -122,10 +122,10 @@
 
 ## 🤖 Cap al robot del trimestre
 
-Aquest trimestre, tot el que fas serveix per a la **mascota** ([dossier](../Classes/00_General/00_Projecte_T1_Mascota.md) · [fil conductor](../Classes/00_General/00_Fil_conductor_robots.md)):
+Aquest trimestre, tot el que fas serveix per al **tamagotchi** ([dossier](../Classes/00_General/00_Projecte_T1_Mascota.md) · [fil conductor](../Classes/00_General/00_Fil_conductor_robots.md)):
 
-- **Repte A (semàfor)** → els colors d'humor de la mascota als ulls: contenta, normal o enfadada.
-- **Repte B (llum d'ambient)** → els ulls que «respiren» quan la mascota dorm.
-- **Repte C (indicador de nivell)** → el termòmetre d'emoció de la mascota: el LED passa de verd (tranquil·la) a vermell (molt nerviosa).
+- **Repte A (semàfor)** → els estats del tamagotchi: contenta, trista o malalta, cadascun amb el seu color al LED RGB.
+- **Repte B (llum d'ambient)** → la llum que «respira» suau quan el tamagotchi dorm.
+- **Repte C (indicador de nivell)** → les barres de les necessitats: el LED passa de verd (ben cuidat) a vermell (necessita atenció).
 
-El que programes al repte és **una expressió de la teva mascota**: guarda el codi, que el faràs servir quan la caixa estigui tallada.
+El que programes al repte és **una expressió del teu tamagotchi**: guarda el codi, que el faràs servir a la SA3, quan el muntis a la carcassa.
