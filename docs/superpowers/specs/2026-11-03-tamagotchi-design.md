@@ -105,3 +105,12 @@ Les del projecte (`CLAUDE.md`): català, `qa.py` net, el CI compila els `.ino` d
 - Com es reparteix la feina entre l'esquelet donat i els `// TODO` de l'alumne, respectant l'anti-objectiu.
 - Les mides concretes de la carcassa i l'assignació de pins, comprovades amb un muntatge de prova.
 - Si la persistència a l'EEPROM és el nucli o una ampliació.
+
+## Decisions preses durant la construcció (2026-11-03)
+
+- **Versió làser = «sandvitx»:** dues plaques d'ou de DM (davant i darrere) amb 4 separadors M3 de 72 mm, en lloc de capes apilades (que haurien demanat ~25 plaques per alumne). Els costats queden oberts i es veu l'electrònica.
+- **Dormir no apaga la pantalla:** mostra els ulls tancats i una «z». Així l'alumne veu que dorm i que el programa funciona.
+- **Pins definitius:** OLED A4/A5 · micròfon A0 · llum A1 · PIR 2 · MENJAR 3 · DHT11 4 · JUGAR 5 · NeoPixel 6 (ampliació) · DORMIR 7 · brunzidor 8 · RGB 9/10/11.
+- **Memòria:** l'esquelet deixa 1.158 B de RAM lliure i la solució completa, 1.149 B (U8g2 en mode pàgina, sense NeoPixel).
+- La carpeta `Classes/SA3/codi/05_mascota/` conserva el nom perquè el material de la tasca de Classroom `sa3-p4` hi enllaça (l'API no permet canviar els materials).
+
