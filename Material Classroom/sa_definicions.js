@@ -75,11 +75,14 @@ export const DEFINICIONS = {
   },
 
   // =========================================================================
+  // Des del 2026-11-03 (format de passos autònoms) aquest Form només és la
+  // Sessió 1: transicio_sa2_s1.mjs n'ha tret la resta. Les Pràctiques 3-5 i
+  // l'Entrega final viuen a practiques_definicions.js.
   sa2: {
     sa: 'sa2',
-    titol: 'SA2 · Fitxa base — Sortides digitals i PWM',
-    descripcioForm: "Full de respostes de la fitxa base de la SA2: encén, gradua i coordina llums i so. Recorda: cada LED amb resistència de 220 Ω i polaritat correcta.",
-    descripcioTasca: "Full de respostes de la fitxa base de la SA2 (activitats 1-3 + autoavaluació + quadern tècnic). El producte (panell de senyalització) es defensa i es lliura a part (rúbriques R1 i R2).",
+    titol: 'SA2 · Sessió 1 — El semàfor',
+    descripcioForm: "Respostes de la Sessió 1 (semàfor, Racó de mesura i fase nocturna). Envia-ho a l'inici de la Sessió 2, tal com ho tinguis.",
+    descripcioTasca: "Respostes de la Sessió 1 (semàfor, Racó de mesura i fase nocturna). Envia-ho a l'inici de la Sessió 2, tal com ho tinguis.",
     topicName: 'SA2 · Sortides digitals i PWM',
     state: 'PUBLISHED',
     maxPoints: 10,
@@ -93,31 +96,8 @@ export const DEFINICIONS = {
       s('Durada de cada fase: vermell / verd / groc (en segons)'),
       p('Racó de mesura (multímetre): tensió al LED, a la resistència i la suma. Què hi observes?',
         'Format: «LED = ... V · resistència = ... V · suma ≈ ... V · observo que ...»'),
-      pOpt('Repte: com has fet la fase nocturna (groc intermitent)?'),
-
-      t('Activitat 2 · PWM: intensitat i color (S2)',
-        "Efecte fade amb 03_fade_pwm.ino (pin 9) i LED RGB amb 04_rgb.ino."),
-      s('Rang de valors d’analogWrite: de ____ a ____'),
-      p('Anota 3 colors creats amb el LED RGB (valors R, G, B de cadascun)'),
-      pOpt('Repte: transició suau entre dos colors. Quins colors i com ho has fet?'),
-
-      t('Activitat 3 · Producte: panell de senyalització (S3)',
-        "Dissenya un panell que indiqui estats amb color + so + una càrrega (relé). Defensa d'1 minut: què fa el teu panell i una millora possible (s'avalua amb R1 codi i R2 circuit)."),
-      p('Estat «Tot correcte»: color RGB / so (piezo) / relé'),
-      p('Estat «Avís»: color RGB / so (piezo) / relé'),
-      p('Estat «Alarma»: color RGB / so (piezo) / relé'),
-
-      autoaval([
-        'Programo seqüències amb if/switch i constants',
-        'Regulo intensitat/color amb PWM (analogWrite, map)',
-        'Munto el circuit amb resistència i polaritat correctes'
-      ]),
-
-      t('Quadern tècnic',
-        "Aquestes respostes formen la teva entrada del quadern tècnic (compta el 25 %)."),
-      p('Concepte nou més important'),
-      p('Diferència entre digitalWrite i analogWrite'),
-      p('Un error i com l’he resolt')
+      pOpt('Repte: com has fet la fase nocturna (groc intermitent)?')
+      // Activitats 2-3, autoavaluació i quadern: a practiques_definicions.js.
     ]
   },
 
