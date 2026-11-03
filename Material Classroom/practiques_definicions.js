@@ -18,6 +18,11 @@ const T1 = { id: GRADE_CATEGORIES.T1.id, name: GRADE_CATEGORIES.T1.name };
 const pagina = (sa, fitxer, titol) => ({
   link: { url: `${WEB_BASE}/${sa}/codi/${fitxer}.html`, title: titol }
 });
+const SA3 = {
+  sa: 'sa3',
+  topicName: 'SA3 · Entrades i sensors',
+  gradeCategory: T1,
+};
 const SA2 = {
   sa: 'sa2',
   topicName: 'SA2 · Sortides digitals i PWM',
@@ -100,6 +105,99 @@ export const PRACTIQUES = {
         'He defensat el panell de senyalització en 1 minut',
         'He enviat els formularis de la Sessió 1 i de les Pràctiques 3, 4 i 5',
         'He guardat el codi del panell per a la mascota'
+      ])
+    ]
+  },
+  // =========================================================================
+  // SA3 (2026-11-03): ① polsador · ② potenciòmetre i llum · ③ ultrasons ·
+  // ④ mascota (producte) + Entrega final. Prova T1 (S4) a part, amb full resum.
+  'sa3-p1': {
+    ...SA3,
+    titol: 'SA3 · Pràctica 1 · El polsador',
+    descripcioForm: "Respostes de la Pràctica 1 (polsador i Monitor sèrie). Les preguntes són les mateixes que els ✍️ de la pàgina de la pràctica.",
+    descripcioTasca: "Fes la Pràctica 1 seguint els passos de la pàgina (enllaç a sota) i envia aquest formulari en acabar-la. Compta per al quadern tècnic (25 %).",
+    maxPoints: 33,  // com la resta de tasques de la SA a Classroom
+    materials: [pagina('sa3', '01-polsador-debounce', 'Pràctica 1 · El polsador (passos)')],
+    items: [
+      p('PREDIU: què sortirà al Monitor sèrie quan premis el polsador?'),
+      s('Quan no prems, el pin llegeix ____ i quan prems, ____ (HIGH/LOW)'),
+      p('Per què cal l’antirebot?'),
+      pOpt('⭐ Repte: el comptador arriba a 5 i torna a 0. Com ho has fet?'),
+      p('El concepte nou més important d’aquesta pràctica', 'Pregunta del quadern tècnic.')
+    ]
+  },
+
+  'sa3-p2': {
+    ...SA3,
+    titol: 'SA3 · Pràctica 2 · Potenciòmetre i sensor de llum',
+    descripcioForm: "Respostes de la Pràctica 2 (entrades analògiques i llum automàtic). Les preguntes són les mateixes que els ✍️ de la pàgina de la pràctica.",
+    descripcioTasca: "Fes la Pràctica 2 seguint els passos de la pàgina (enllaç a sota) i envia aquest formulari en acabar-la. Compta per al quadern tècnic (25 %).",
+    maxPoints: 33,  // com la resta de tasques de la SA a Classroom
+    materials: [pagina('sa3', '02-potenciometre-ldr', 'Pràctica 2 · Potenciòmetre i sensor de llum (passos)')],
+    items: [
+      s('Els números que llegeixes van de ____ a ____'),
+      s('Número del sensor de llum (LDR) amb llum: ____ · tapat: ____'),
+      p('Quina instrucció passa de 0-1023 a 0-255?'),
+      p('Racó de mesura (multímetre): volts al punt d’unió del sensor de llum, número del Monitor i comprovació',
+        'Format: «volts = ... V · Monitor = ... · Monitor ÷ 1023 × 5 = ... V · coincideixen? ...»'),
+      p('Llum automàtic: el LED s’encén quan el número del sensor de llum és ____ que ____'),
+      p('Diferència entre entrada digital i analògica', 'Pregunta del quadern tècnic.')
+    ]
+  },
+
+  'sa3-p3': {
+    ...SA3,
+    titol: 'SA3 · Pràctica 3 · Ultrasons',
+    descripcioForm: "Respostes de la Pràctica 3 (sensor d'ultrasons i funció que retorna un valor). Les preguntes són les mateixes que els ✍️ de la pàgina de la pràctica.",
+    descripcioTasca: "Fes la Pràctica 3 seguint els passos de la pàgina (enllaç a sota) i envia aquest formulari en acabar-la. Compta per al quadern tècnic (25 %).",
+    maxPoints: 33,  // com la resta de tasques de la SA a Classroom
+    materials: [pagina('sa3', '03-ultrasons-funcio', 'Pràctica 3 · Ultrasons (passos)')],
+    items: [
+      s('distància (cm) = temps × ____ ÷ 2'),
+      p('Què et torna la funció mesuraDistancia()?'),
+      p('Per a què serveix una funció?', 'Pregunta del quadern tècnic.')
+    ]
+  },
+
+  'sa3-p4': {
+    ...SA3,
+    titol: 'SA3 · Pràctica 4 · La mascota reactiva',
+    descripcioForm: "Respostes de la Pràctica 4 (el producte de la SA3): la fitxa de la teva mascota. Les preguntes són les mateixes que els ✍️ de la pàgina de la pràctica.",
+    descripcioTasca: "Fes la Pràctica 4 (la mascota) seguint els passos de la pàgina (enllaç a sota) i envia aquest formulari en acabar-la. La mascota es defensa a l'aula amb la rúbrica del robot. Després, fes l'Entrega final.",
+    maxPoints: 33,  // com la resta de tasques de la SA a Classroom
+    materials: [pagina('sa3', '05-mascota', 'Pràctica 4 · La mascota reactiva (passos)')],
+    items: [
+      p('Nom i caràcter de la teva mascota'),
+      p('Reacció 1: quin sensor → què fa la mascota → per què encaixa amb el seu caràcter'),
+      p('Reacció 2: quin sensor → què fa la mascota → per què encaixa amb el seu caràcter'),
+      pOpt('Reacció 3: quin sensor → què fa la mascota → per què encaixa amb el seu caràcter'),
+      p('Un error que has trobat i com l’has resolt', 'Pregunta del quadern tècnic.')
+    ]
+  },
+
+  'sa3-final': {
+    ...SA3,
+    titol: 'SA3 · Entrega final',
+    descripcioForm: "Tancament de la SA3: autoavaluació i checklist. Fes-la quan hagis acabat la Pràctica 4 (la mascota).",
+    descripcioTasca: "Fes-la quan hagis acabat la Pràctica 4 i la defensa d'1 minut de la mascota. No té nota pròpia: és la teva autoavaluació i el repàs abans de la prova T1.",
+    // Sense maxPoints: tasca sense qualificació.
+    materials: [{ link: { url: `${WEB_BASE}/sa3/index.html#entrega-final`, title: 'SA3 · Entrega final (portada de la SA)' } }],
+    items: [
+      t('Versió nucli',
+        'Per aprovar n’hi ha prou amb una mascota amb 2 reaccions que funcionin bé.'),
+      autoaval([
+        'Distingeixo i llegeixo entrades digitals i analògiques',
+        'Faig servir el Monitor sèrie per calibrar',
+        'Escric i faig servir funcions pròpies'
+      ]),
+      check('Checklist final: marca el que tens fet', [
+        'El polsador funciona i entenc per què llegeix «al revés» (HIGH sense prémer)',
+        'He llegit el potenciòmetre i el sensor de llum i he fet el llum automàtic',
+        'He fet el racó de mesura (volts del multímetre vs número del Monitor)',
+        'He vist la distància de l’ultrasons al Serial Plotter',
+        'La mascota té les seves reaccions i l’he defensada en 1 minut',
+        'He enviat els formularis de les Pràctiques 1, 2, 3 i 4',
+        'Tinc el full resum en paper per a la prova T1'
       ])
     ]
   },
