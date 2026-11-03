@@ -73,7 +73,7 @@ Si la tasca encara no et surt a Classroom, és que la SA encara no ha començat.
 **Explica-la en 1 minut** (a la taula, mentre treballes): presenta la mascota i què fa cada reacció.
 
 ### 4 · Prova pràctica T1 (Sessió 4, individual)
-**Tota la Sessió 4** és la prova T1: individual, amb el teu kit. **Pots consultar el teu full resum en paper** (el fas al pas 7 de la Pràctica 4) **i els esquemes.** Si fas el mínim ben fet, tens un 5-6; si fas les ampliacions, fins a 10. Per això val la pena fer bé el full resum.
+**Tota la Sessió 4** és la prova T1: individual, amb el teu kit. **Pots consultar el teu full resum en paper** (el fas a la Pràctica 4, al pas «Omple el full resum») **i els esquemes.** Si fas el mínim ben fet, tens un 5-6; si fas les ampliacions, fins a 10. Per això val la pena fer bé el full resum.
 
 <!-- /web:only-github -->
 

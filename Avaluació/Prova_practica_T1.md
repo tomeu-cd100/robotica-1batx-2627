@@ -1,7 +1,7 @@
 # Prova pràctica — Trimestre 1 (SA1-SA3)
 ## "Llum de seguretat intel·ligent"
 
-**Durada:** una sessió sencera — **la S4 de la SA3**. Compta **~80-85' reals de prova**: la sessió de 2 h dona ~95-105' efectius i les instruccions (5-10') i la recollida (10') en surten. El **nucli està calibrat per a ~60'**; les ampliacions són per a qui acabi abans · **Individual** · **Material:** Arduino UNO, protoboard, LDR + 10 kΩ, LED + 220 Ω, polsador, brunzidor piezo, cables. Es permet consultar esquemes i quadern tècnic.
+**Durada:** una sessió sencera — **la S4 de la SA3**. Compta **~80-85' reals de prova**: la sessió de 2 h dona ~95-105' efectius i les instruccions (5-10') i la recollida (10') en surten. El **nucli està calibrat per a ~60'**; les ampliacions són per a qui acabi abans · **Individual** · **Material:** Arduino UNO, protoboard, LDR + 10 kΩ, LED + 220 Ω, polsador, brunzidor piezo, cables. Es permet consultar els esquemes i el **full resum en paper** que cadascú va omplir a la Pràctica 4 de la SA3.
 
 ### Competències i criteris avaluats
 - **CE-R1** (programar) → CA1.1 · **CE-R2** (circuits) → CA2.1, CA2.2
@@ -25,7 +25,7 @@ Has de construir i programar un sistema d'il·luminació de seguretat.
 5. Afegeix un **brunzidor** que faci un avís quan la foscor és extrema (segon llindar), i estructura el codi amb **funcions**.
 
 ### Lliurament
-- Sistema funcionant + **explicació breu al full de la prova** (esquema + què fa cada part + un error que has resolt). Pots consultar el teu **full resum** (Pràctica 4 de la SA3, pas 7) i els esquemes.
+- Sistema funcionant + **explicació breu al full de la prova** (esquema + què fa cada part + un error que has resolt). Pots consultar el teu **full resum** (Pràctica 4 de la SA3, pas «Omple el full resum») i els esquemes.
 
 ### Pla de millora personal (després de la prova — 3 línies, no puntua)
 > Quan rebis el retorn, escriu al dors del teu full resum: **(1)** què m'ha fallat o m'ha costat més · **(2)** què practicaré concretament (quina secció de `SA0`, quin sketch refaré) · **(3)** com comprovaré que ja ho tinc.

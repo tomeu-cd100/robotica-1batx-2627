@@ -1,4 +1,4 @@
-# Pràctica 4 · Alarma d'aparcament (per a qui acabi abans)
+# Pràctica extra · Alarma d'aparcament (per a qui acabi abans)
 
 **Quan es fa:** Sessió 3, **només si has acabat la mascota**. No és el producte de la SA (el producte és la mascota). · **Fitxer:** `04_alarma_aparcament.ino` · **Circuit:** [esquema de connexions, apartat 4](../../SA3_esquemes_connexions.md) (TRIG al 12, ECHO a l'11, LED al 8, brunzidor al 6)
 

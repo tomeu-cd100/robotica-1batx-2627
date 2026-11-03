@@ -57,7 +57,7 @@ La mascota necessita el **pin 11** per al blau del LED RGB.
 
 Hi trobaràs les mateixes preguntes ✍️ que has anat apuntant. Envia'l ara i passa a la **[Pràctica 4 · La teva mascota reactiva](../05_mascota/EXPLICACIO.md)**.
 
-⭐ **Si acabes abans:** Tria un repte a **[Reptes de la SA3](../../../../Reptes/Reptes_SA3.md)** i, quan el docent te'l validi, pinta l'estrella al [tauler de reptes](../../../00_General/00_Tauler_reptes.md).
+⭐ **Si acabes abans:** tria un repte a **[Reptes de la SA3](../../../../Reptes/Reptes_SA3.md)** i, quan el docent te'l validi, pinta l'estrella al [tauler de reptes](../../../00_General/00_Tauler_reptes.md).
 
 <details markdown="1">
 <summary>🧗 Si t'encalles</summary>
@@ -156,7 +156,7 @@ Com que tota la feina és a les funcions, el `loop()` només té tres línies: *
 
 ### On ho aplicaràs
 
-- **Ara mateix:** la teva **mascota**. Desmunta el sensor i passa al pas 5 de la sessió.
+- **Ara mateix:** la teva **mascota**. desmunta el sensor (pas 5) i passa a la [Pràctica 4](../05_mascota/EXPLICACIO.md).
 - **Si acabes abans:** l'[alarma d'aparcament](../04_alarma_aparcament/EXPLICACIO.md) fa servir aquesta mateixa funció per fer «bip-bip» com un cotxe.
 - **Prova T1:** escriure i fer servir una funció que torna un número és una de les coses que s'hi avaluen.
 

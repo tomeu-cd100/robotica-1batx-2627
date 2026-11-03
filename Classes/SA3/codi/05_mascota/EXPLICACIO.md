@@ -6,7 +6,7 @@
 
 ⏱️ La resta de la Sessió 3
 
-📦 La caixa de la mascota, el LED RGB, el brunzidor, el PIR, el micròfon, el sensor de llum (TEMT6000) i cables
+📦 La caixa de la mascota, la tira NeoPixel (els ulls), el LED RGB, el brunzidor, el PIR, el micròfon, el sensor de llum (TEMT6000) i cables
 
 </div>
 
@@ -32,6 +32,8 @@ Desmunta l'ultrasons, si encara hi és: la mascota fa servir el **pin 11** per a
 | Micròfon | A0 | Mesura el soroll. |
 | Sensor de llum (TEMT6000) | A1 | Mesura la llum. |
 | Ulls (tira NeoPixel), DIN | 6 | Connecta primer GND, després 5 V i al final DIN. |
+| Polsador (la carícia) | 3 | Només per a l'extra. Com a la Pràctica 1, però al pin 3. |
+| Sensor de temperatura (DHT11) | 4 | Només per a l'extra. |
 
 ✅ **Comprova:** als mòduls de 3 potes (PIR, micròfon, sensor de llum) has llegit les lletres del mòdul (VCC, GND, OUT o S). L'ordre de les potes canvia segons el fabricant.
 
@@ -41,27 +43,51 @@ Prem **Copia**, enganxa'l a l'Arduino IDE (esborra el que hi hagués) i prem **�
 
 <!-- codi-complet -->
 
-✅ **Comprova:** al Monitor sèrie surten tota l'estona `soroll=…` i `llum=…`, i si piques de mans la mascota s'espanta. Aquesta reacció ja està feta: és l'exemple.
+✅ **Comprova:** al Monitor sèrie surten tota l'estona `soroll=…` i `llum=…`. Si no fas res durant 8 segons, la mascota es posa **contenta**: ulls verds i do-mi-sol. Aquesta emoció ja està feta: és l'exemple.
 
-### Pas 4 · Fes la reacció de la foscor
+### Pas 4 · Dona personalitat a cada emoció
 
-Busca al codi `// TODO reaccio 2`. Copia la idea de la reacció del soroll: **llegeix → compara amb el llindar → reacciona**. Si `llum` és **més petit** que `LLINDAR_FOSCOR`, la mascota passa a `ADORMIT`.
+Busca la funció `canviaEmocio()`. El `case CONTENT` ja té els seus colors i la seva melodia; els `case ESPANTAT`, `ADORMIT` i `CURIOS` estan buits, i per això encara no fan res. Omple cadascun copiant les tres línies del `CONTENT` i canviant-ne els números perquè encaixin amb el caràcter de la teva mascota:
 
-✅ **Comprova:** quan tapes el sensor de llum amb la mà, la mascota s'adorm.
+```cpp
+case ESPANTAT:
+  mostraUlls(255, 0, 0);       // ulls: vermell, verd, blau (0-255)
+  colorHumor(255, 0, 0);       // LED RGB: el mateix, o un altre color
+  melodia(880, 880, 880);      // tres notes en Hz (0 = silenci)
+  break;
+```
 
-### Pas 5 · Fes la reacció del PIR
+✅ **Comprova:** si piques de mans fort, la mascota s'espanta amb **els teus** colors i el teu so. La reacció al soroll ja era feta: ara la veus.
 
-Busca `// TODO reaccio 3`. Si `digitalRead(PIN_PIR)` és `HIGH`, algú s'acosta: fes que la mascota saludi, amb l'emoció que hagis triat.
+### Pas 5 · Fes la reacció de la foscor
 
-✅ **Comprova:** quan passes la mà per davant del PIR, la mascota reacciona (recorda que tarda 30-60 segons a funcionar en endollar-la).
+Busca `// TODO reaccio 2`. Copia la idea de la reacció del soroll: **llegeix → compara amb el llindar → reacciona**, i afegeix-hi què passa quan torna la llum (si no, la mascota no es desperta mai):
 
-### Pas 6 · Calibra els llindars
+```cpp
+if (llum < LLINDAR_FOSCOR) {
+  canviaEmocio(ADORMIT);
+  return;
+}
+if (emocio == ADORMIT) {   // torna la llum: es desperta
+  canviaEmocio(CONTENT);
+}
+```
+
+✅ **Comprova:** quan tapes el sensor de llum amb la mà, la mascota s'adorm, i quan el destapes, es desperta.
+
+### Pas 6 · Fes la reacció del PIR
+
+Busca `// TODO reaccio 3`. Si `digitalRead(PIN_PIR)` és `HIGH`, algú s'acosta: crida `canviaEmocio(CURIOS);` i acaba amb `return;`, com a les altres reaccions.
+
+✅ **Comprova:** quan passes la mà per davant del PIR, la mascota fa la seva emoció de curiositat (recorda que el PIR tarda 30-60 segons a funcionar en endollar-lo).
+
+### Pas 7 · Calibra els llindars
 
 Mira els números del Monitor sèrie amb soroll i sense, i amb llum i tapat. Canvia `LLINDAR_SOROLL` i `LLINDAR_FOSCOR` per un número **entre** els dos que hi veus.
 
 ✅ **Comprova:** la mascota reacciona quan toca, i no reacciona sola quan no passa res.
 
-### Pas 7 · Omple el full resum per a la prova
+### Pas 8 · Omple el full resum per a la prova
 
 A la Sessió 4 fas la **prova pràctica T1**, i hi pots portar **un full resum en paper** fet per tu. Escriu-hi a mà:
 
@@ -72,11 +98,11 @@ A la Sessió 4 fas la **prova pràctica T1**, i hi pots portar **un full resum e
 
 ✅ **Comprova:** tens el full amb el teu nom i el guardes per a la Sessió 4.
 
-### Pas 8 · Un error, apuntat
+### Pas 9 · Un error, apuntat
 
 ✍️ **Apunta-ho:** un error que has trobat i com l'has resolt.
 
-### Pas 9 · Respon i envia
+### Pas 10 · Respon i envia
 
 📤 [Obre la tasca «SA3 · Pràctica 4» a Classroom i envia el formulari](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODk3NDAzNTU3MTY2/details)
 

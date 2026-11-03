@@ -8,7 +8,8 @@
     - i la personalitat de cada emocio a canviaEmocio() (colors i melodies).
   El primer cas de cada funcio ja esta resolt com a exemple.
 
-  Compila tal qual; la mascota nomes s'espantara fins que completis la resta.
+  Compila tal qual; fins que completis els // TODO, nomes l'emocio CONTENT
+  (l'exemple) fa llum i so.
   Quan: S3 - producte (Practica 4 de la SA3)
   Cablatge: el de l'apartat Cablatge del dossier de la mascota.
   Per simular-ho a Tinkercad: treu les 3 linies marcades amb [DHT] i recorda

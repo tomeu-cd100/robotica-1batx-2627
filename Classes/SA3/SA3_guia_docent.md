@@ -16,7 +16,7 @@
 | **S3** · Mascota | Mini-check (10'). Després, en 5': el sensor d'ultrasons és un **ratpenat** (envia un so i escolta l'eco) i `mesuraDistancia()` **et torna** un número. | TRIG/ECHO intercanviats · mascotes sense la fitxa de personalitat · qui es perd amb l'esquelet (que comenci pel soroll, que ja està fet) | Mascota amb **≥3 reaccions** · fitxa de personalitat · defensa d'1' a peu de taula · formularis de la ③ i la ④ i **Entrega final** enviats · **full resum** per a la prova fet |
 | **S4** · Prova T1 | Res: només les instruccions de la prova. | Incidències de material (no dubtes de contingut) | Proves recollides |
 
-> 🎯 **Prioritat si vas just de temps:** a la S3, la mascota passa per davant de tot. Si l'ultrasons s'allarga, talla'l quan vegin la gràfica al Serial Plotter. L'**alarma d'aparcament** (Pràctica 4) és només per a qui acabi abans. Els **katas** d'aquesta SA estan arxivats (18-10-2026, [`docs/arxiu/SA3_katas/`](../../docs/arxiu/SA3_katas/README.md)).
+> 🎯 **Prioritat si vas just de temps:** a la S3, la mascota passa per davant de tot. Si l'ultrasons s'allarga, talla'l quan vegin la gràfica al Serial Plotter. L'**alarma d'aparcament** (pràctica extra) és només per a qui acabi abans; la Pràctica 4 avaluable és la mascota. Els **katas** d'aquesta SA estan arxivats (18-10-2026, [`docs/arxiu/SA3_katas/`](../../docs/arxiu/SA3_katas/README.md)).
 
 ---
 
@@ -93,7 +93,7 @@
   1. **Fitxa de personalitat (10'):** nom, caràcter i una taula de **3 reaccions** (sensor → què fa → per què encaixa amb el caràcter). Si ho porten pensat de casa (deures de la S2), van més ràpid.
   2. **Muntatge i codi (45'):** sensors a la caixa ([cablatge del dossier](../00_General/00_Projecte_T1_Mascota.md#cablatge)) i l'**esquelet**, que ara és la [Pràctica 4](codi/05_mascota/EXPLICACIO.md) (`05_mascota.ino`): la reacció del soroll ja està feta; omplen la **foscor** i el **PIR** (i, qui vagi bé, el polsador o el DHT11).
   3. **Mini-defensa individual d'1' a peu de taula**, mentre treballen: presenta la mascota, què fa cada reacció i per què.
-- **Tancament (10'):** **full resum** en paper per a la prova (pas 7 de la Pràctica 4), formularis de la ③ i la ④, **Entrega final** (autoavaluació + checklist) i desar el codi.
+- **Tancament (10'):** **full resum** en paper per a la prova (pas «Omple el full resum» de la Pràctica 4), formularis de la ③ i la ④, **Entrega final** (autoavaluació + checklist) i desar el codi.
 
 > ⏱️ **Marge:** 10+25+55+10 = **100'**, just el temps efectiu. Si vas just: ① l'ultrasons es redueix a veure la gràfica (sense el filtre de la mitjana) · ② el DHT11 i el polsador queden fora (amb soroll + foscor + PIR ja són 3 reaccions). **No retallis la fitxa de personalitat**: és la meitat de la R4 del robot.
 >
@@ -108,7 +108,7 @@
 
 ## SESSIÓ 4 (2 h) — PROVA PRÀCTICA T1 (individual)
 
-> 📋 **Aquesta sessió és, sencera, la prova trimestral T1** ([`Avaluació/Prova_practica_T1.md`](../../Avaluació/Prova_practica_T1.md)): individual, amb kit propi (n'hi ha un per alumne/a), **full resum en paper** (el que van omplir al pas 7 de la Pràctica 4) i esquemes consultables. **No s'hi programa cap altra activitat** — una prova individual (~80-85' reals) i una sessió de producte no caben juntes ([`08_Sequenciacio`](../../Programació%20didàctica/08_Sequenciacio_temporal_anual.md)).
+> 📋 **Aquesta sessió és, sencera, la prova trimestral T1** ([`Avaluació/Prova_practica_T1.md`](../../Avaluació/Prova_practica_T1.md)): individual, amb kit propi (n'hi ha un per alumne/a), **full resum en paper** (el que van omplir al pas «Omple el full resum» de la Pràctica 4) i esquemes consultables. **No s'hi programa cap altra activitat** — una prova individual (~80-85' reals) i una sessió de producte no caben juntes ([`08_Sequenciacio`](../../Programació%20didàctica/08_Sequenciacio_temporal_anual.md)).
 
 - **Instruccions (5-10'):** repartir material, recordar què es pot consultar (el seu full resum, esquemes) i l'estructura per nivells (nucli = 5-6; ampliacions = 7-10).
 - **Prova (~80-85'):** cada alumne/a munta i programa la "llum de seguretat intel·ligent". El docent només resol incidències de material (placa/cable espatllats), no dubtes de contingut.

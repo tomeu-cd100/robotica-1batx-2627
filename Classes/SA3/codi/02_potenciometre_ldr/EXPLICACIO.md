@@ -70,14 +70,14 @@ A sota de tot del codi hi ha, entre `/*` i `*/`, el codi del llum automàtic. Es
 
 Hi trobaràs les mateixes preguntes ✍️ que has anat apuntant. Envia'l ara. Per a la sessió següent, pensa un **nom** i un **caràcter** per a la teva mascota (és tímida? valenta? dormilega?). Després continua a la **[Pràctica 3 · Ultrasons](../03_ultrasons_funcio/EXPLICACIO.md)**.
 
-⭐ **Si acabes abans:** Tria un repte a **[Reptes de la SA3](../../../../Reptes/Reptes_SA3.md)** i, quan el docent te'l validi, pinta l'estrella al [tauler de reptes](../../../00_General/00_Tauler_reptes.md).
+⭐ **Si acabes abans:** tria un repte a **[Reptes de la SA3](../../../../Reptes/Reptes_SA3.md)** i, quan el docent te'l validi, pinta l'estrella al [tauler de reptes](../../../00_General/00_Tauler_reptes.md).
 
 <details markdown="1">
 <summary>🧗 Si t'encalles</summary>
 
 | Què passa | Per què | Com ho arreglo |
 |---|---|---|
-| El sensor de llum diu **sempre 0 o sempre 1023** | Falta la resistència de 10 kΩ, o no està ben unida al sensor. | Mira el dibuix de l'esquema, apartat 2. |
+| El sensor de llum diu **sempre 0 o sempre 1023** | Falta la resistència de 10 kΩ, o no està ben unida al sensor. | Mira el dibuix de l'[esquema, apartat 2](../../SA3_esquemes_connexions.md). |
 | El llum automàtic no s'encén mai (o sempre) | El llindar no està entre els números de llum i de tapat. | Mira el Monitor i tria un número al mig. |
 | El LED només s'encén o s'apaga, sense fer més o menys llum | El LED no és en un pin amb `~`. | Posa'l al pin 9. |
 | Al Monitor surten símbols estranys | La velocitat no és 9600. | A baix a la dreta del Monitor, tria 9600. |

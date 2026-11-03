@@ -222,8 +222,8 @@ comparar amb un llindar → decidir) i la **personalitat de cada emoció**.
 
 👉 L'esquelet, amb els passos per completar-lo, és a la
 **[Pràctica 4 de la SA3 · La teva mascota reactiva](../SA3/codi/05_mascota/EXPLICACIO.md)**
-(codi a `Classes/SA3/codi/05_mascota/05_mascota.ino`). Compila tal qual; la
-mascota només s'espantarà fins que completeu la resta.
+Compila tal qual; fins que completeu els `// TODO`, només l'emoció de
+l'exemple (content) fa llum i so.
 
 ## Què hi aporta cada SA
 

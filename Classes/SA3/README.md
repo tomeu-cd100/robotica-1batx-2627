@@ -40,7 +40,7 @@ Fes les pràctiques **en ordre i al teu ritme**. Cada pràctica acaba enviant el
 
 ## 📝 Sessió 4 · Prova pràctica T1
 
-**Prova individual** de tota la sessió: muntaràs i programaràs tu sol un circuit amb un sensor i un llum. Pots consultar el **full resum en paper** que vas omplir a la Pràctica 4 (pas 7) i els **esquemes de connexions**.
+**Prova individual** de tota la sessió: muntaràs i programaràs tu sol un circuit amb un sensor i un llum. Pots consultar el **full resum en paper** que vas omplir a la Pràctica 4 (pas «Omple el full resum») i els **esquemes de connexions**.
 
 Per preparar-la: repassa les pràctiques ①, ② i ③ i fes el [qüestionari de conceptes](SA3_questionari_conceptes.md).
 

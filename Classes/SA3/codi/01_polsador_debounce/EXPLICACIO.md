@@ -60,7 +60,7 @@ Canvia `ANTIREBOT = 40` per `ANTIREBOT = 0` i torna a pujar el codi. Prem el bot
 
 Hi trobaràs les mateixes preguntes ✍️ que has anat apuntant. Envia'l ara. A la sessió següent: **[Pràctica 2 · Potenciòmetre i sensor de llum](../02_potenciometre_ldr/EXPLICACIO.md)**.
 
-⭐ **Si acabes abans:** fes que el comptador arribi a **5** i torni a **0** (pista: just després de `comptador++;`, afegeix `if (comptador == 5) { comptador = 0; }`) i explica-ho a la pregunta opcional del formulari. Tria un repte a **[Reptes de la SA3](../../../../Reptes/Reptes_SA3.md)** i, quan el docent te'l validi, pinta l'estrella al [tauler de reptes](../../../00_General/00_Tauler_reptes.md).
+⭐ **Si acabes abans:** fes que el comptador arribi a **5** i torni a **0** (pista: canvia la línia `comptador++;` per `if (comptador == 5) { comptador = 0; } else { comptador++; }`: així compta 1, 2, 3, 4, 5 i torna a 0) i explica-ho a la pregunta opcional del formulari. O tria un repte a **[Reptes de la SA3](../../../../Reptes/Reptes_SA3.md)** i, quan el docent te'l validi, pinta l'estrella al [tauler de reptes](../../../00_General/00_Tauler_reptes.md).
 
 <details markdown="1">
 <summary>🧗 Si t'encalles</summary>
