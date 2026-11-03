@@ -68,7 +68,7 @@ A sota de tot del codi hi ha, entre `/*` i `*/`, el codi del llum automàtic. Es
 
 📤 [Obre la tasca «SA3 · Pràctica 2» a Classroom i envia el formulari](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODk3NDAxNjA1NTU2/details)
 
-Hi trobaràs les mateixes preguntes ✍️ que has anat apuntant. Envia'l ara. Per a la sessió següent, pensa un **nom** i un **caràcter** per a la teva mascota (és tímida? valenta? dormilega?). Després continua a la **[Pràctica 3 · Ultrasons](../03_ultrasons_funcio/EXPLICACIO.md)**.
+Hi trobaràs les mateixes preguntes ✍️ que has anat apuntant. Envia'l ara. Per a la sessió següent, pensa un **nom** i un **caràcter** per al teu tamagotchi (és dormilec? juganer? poruc?). Després continua a la **[Pràctica 3 · La pantalla OLED](../03_pantalla_oled/EXPLICACIO.md)**.
 
 ⭐ **Si acabes abans:** tria un repte a **[Reptes de la SA3](../../../../Reptes/Reptes_SA3.md)** i, quan el docent te'l validi, pinta l'estrella al [tauler de reptes](../../../00_General/00_Tauler_reptes.md).
 
@@ -213,11 +213,11 @@ Aquestes línies escriuen els dos números al Monitor. Són la teva **eina per t
 
 Llegit en veu alta: *«Llegeix el sensor de llum. **Si** el número és més petit que el llindar (fa fosc), encén el LED. **Si no**, apaga'l.»*
 
-Aquesta és la idea més important de la SA: **llegir → comparar → actuar**. La faràs servir a la mascota i a la prova. Si et costa, mira-la [dibuixada](../../SA3_diagrama_flux.md) o l'[exemple resolt](../../SA3_exemple_resolt.md).
+Aquesta és la idea més important de la SA: **llegir → comparar → actuar**. La faràs servir al tamagotchi i a la prova. Si et costa, mira-la [dibuixada](../../SA3_diagrama_flux.md) o l'[exemple resolt](../../SA3_exemple_resolt.md).
 
 ### On ho aplicaràs
 
-- **La mascota (Sessió 3):** la reacció «**es fa fosc → la mascota s'adorm**» és exactament aquest llum automàtic.
+- **El tamagotchi (Sessió 3):** «**es fa fosc → té son**» és exactament aquest llum automàtic.
 - **Prova T1 (Sessió 4):** el circuit de la prova també és «llegir un sensor → comparar → encendre un llum».
 
 </details>

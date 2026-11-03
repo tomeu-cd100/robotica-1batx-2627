@@ -169,6 +169,6 @@ Dins del botó hi ha dues peces de metall que es toquen. Quan prems, també «bo
 ### On ho aplicaràs
 
 - **Sessió 2:** el **Monitor sèrie** serà la teva eina per veure els números del sensor de llum.
-- **La mascota:** el polsador serà la **carícia**: quan el prems, la mascota es calma.
+- **El tamagotchi:** els tres botons (MENJAR, JUGAR, DORMIR) són aquest mateix polsador, amb el mateix antirebot.
 
 </details>

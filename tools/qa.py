@@ -853,7 +853,7 @@ PRACTIQUES_NOU_FORMAT: set[str] = {
     "Classes/SA2/codi/05_panell_senyalitzacio/EXPLICACIO.md",
     "Classes/SA3/codi/01_polsador_debounce/EXPLICACIO.md",
     "Classes/SA3/codi/02_potenciometre_ldr/EXPLICACIO.md",
-    "Classes/SA3/codi/03_ultrasons_funcio/EXPLICACIO.md",
+    "Classes/SA3/codi/03_pantalla_oled/EXPLICACIO.md",
     "Classes/SA3/codi/05_mascota/EXPLICACIO.md",
 }
 SA_NOU_FORMAT: set[int] = {2, 3}

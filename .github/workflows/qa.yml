@@ -57,6 +57,7 @@ jobs:
             - name: Servo
             - name: Adafruit NeoPixel
             - name: DHT sensor library
+            - name: U8g2
             - name: Adafruit Unified Sensor
           sketch-paths: |
             - Classes/SA1/codi
