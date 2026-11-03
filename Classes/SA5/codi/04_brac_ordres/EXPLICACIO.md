@@ -38,7 +38,7 @@ Prem **Copia**, enganxa'l a l'Arduino IDE (esborra el que hi hagués) i prem **�
 
 ### Pas 5 · Dona-li ordres
 
-Obre el **Monitor sèrie** (9600, amb «Salt de línia» a baix a la dreta) i escriu ordres: `B+`, `B-`, `P`…
+Obre el **Monitor sèrie** (9600, amb «Nova línia» a baix a la dreta) i escriu ordres: `B+`, `B-`, `P`…
 
 ✅ **Comprova:** cada ordre mou l'articulació que toca, i les ordres que no existeixen no fan res.
 

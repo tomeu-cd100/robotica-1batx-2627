@@ -1,6 +1,6 @@
 # SA5 · Exemple resolt (model «jo ho faig») — El comandament de botons i el panell del braç
 
-> 🧑‍🎓 **Quan toca mirar-lo?** Després del teu **primer intent** amb la ràdio de l'**Activitat 3 (S3)** — mai abans. És un problema **anàleg** per veure *com es pensa*, no la solució del teu comandament per inclinació.
+> 🧑‍🎓 **Quan toca mirar-lo?** Després del teu **primer intent** amb la ràdio de la **Pràctica 4 (S3)** — mai abans. És un problema **anàleg** per veure *com es pensa*, no la solució del teu comandament per inclinació.
 
 > 🔗 **D'on ve i on va.** Aquest exemple és el **bessó comentat** de la pràctica [Ràdio: el comandament del braç](codi/03_radio_comandament_EXPLICACIO.md): el mateix **protocol d'ordres** (`B+`, `B-`, `P`) i la mateixa ràdio, però el comandament funciona amb **botons** en lloc d'inclinació, i l'altra placa fa de **panell** que mostra què arriba. Serveix per veure **com es pensa**, no per copiar-lo. Quan l'hagis entès, torna a la pàgina de la pràctica i fes-la teva.
 

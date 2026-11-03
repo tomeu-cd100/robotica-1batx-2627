@@ -1,6 +1,6 @@
 # SA5 · Diagrama de flux — el comandament del braç (micro:bit + MicroPython)
 
-> **Per a qui és?** Alumnat. És el **comandament per ràdio** de l'**Activitat 3 (S3)**, però **dibuixat** (només la base, per fer-lo curt). Mira'l **abans de programar** aquella activitat; després el codi. A la S2 ja et serveix: la decisió del rombe és la mateixa de les fletxes de `02_inclinacio`.
+> **Per a qui és?** Alumnat. És el **comandament per ràdio** de la **Pràctica 4 (S3)**, però **dibuixat** (només la base, per fer-lo curt). Mira'l **abans de programar** aquella activitat; després el codi. A la S2 ja et serveix: la decisió del rombe és la mateixa de les fletxes de `02_inclinacio`.
 
 ## El flux
 

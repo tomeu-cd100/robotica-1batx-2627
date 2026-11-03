@@ -159,6 +159,6 @@ rellotge.
 
 - **Repte de la S1:** que en triar una articulació es vegi una **imatge** pròpia (una fletxa per a la base, una «pinça» feta a mà amb `Image("...")` per a la pinça…).
 - **Al braç:** a la S3, el comandament per ràdio enviarà ordres que comencen amb aquestes mateixes lletres (`B+`, `D-`, `P`…). El [repte A](../../../Reptes/Reptes_SA5.md) combina el selector amb la ràdio.
-- **Taula comparativa:** ja pots omplir la primera fila (estructura, final d'instrucció, blocs de codi, tipus de les variables) de l'Activitat 4 de la [fitxa](../SA5_fitxa_alumnat.md).
+- **Taula comparativa:** ja pots omplir la primera fila (estructura, final d'instrucció, blocs de codi, tipus de les variables) de la taula comparativa C++ ↔ Python, que completaràs a la [Pràctica 4](03_radio_comandament_EXPLICACIO.md).
 
 </details>

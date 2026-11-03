@@ -339,6 +339,7 @@ export const PRACTIQUES = {
       p('PREDIU: quant valdran x i y amb la placa plana? I de cantell?'),
       p('Valors de x i y amb la placa plana / inclinada a la dreta / inclinada endavant'),
       p('Llindar triat i per què no és 0'),
+      pOpt('⭐ Repte: zona morta proporcional (com més inclines, més ràpid). Com ho has fet?'),
       p('El concepte nou més important d’aquesta pràctica', 'Pregunta del quadern tècnic.')
     ]
   },

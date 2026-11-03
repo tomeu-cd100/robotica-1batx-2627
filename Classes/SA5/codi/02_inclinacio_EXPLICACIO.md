@@ -131,7 +131,7 @@ perfectament plana i la mà tremola: sense marge, el braç no pararia mai quiet.
 
 ### On ho aplicaràs
 
-- **Al taller d'avui:** connectes el **cable del pont** a l'Arduino del braç i el proves amb ordres escrites a mà al Monitor sèrie: [`04_brac_ordres`](04_brac_ordres/EXPLICACIO.md).
+- **Al taller d'avui:** l'Arduino del braç obeeix ordres escrites a mà al Monitor sèrie: [Pràctica 3](04_brac_ordres/EXPLICACIO.md). El cable del pont es connecta a la Pràctica 4.
 - **A la S3:** cada fletxa d'avui es convertirà en una **ordre de ràdio** (`B+`, `B-`, `D+`, `D-`) al [comandament](03_radio_comandament_EXPLICACIO.md).
 - **A la SA6:** el sacseig (`G`) **gravarà un punt** de la seqüència del braç (mode replay).
 

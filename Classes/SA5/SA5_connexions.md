@@ -1,6 +1,6 @@
 # SA5 · Connexions i entorn
 
-> 🧑‍🎓 **Quan toca?** Obre-la a la **S1** per preparar l'**entorn** i torna-hi quan una activitat usi maquinari: acceleròmetre → Activitat 2 (S2) · cable del pont al braç → taller de la S2 · ràdio i pont → Activitat 3 (S3).
+> 🧑‍🎓 **Quan toca?** Obre-la a la **S1** per preparar l'**entorn** i torna-hi quan una activitat usi maquinari: acceleròmetre → Pràctica 2 (S2) · ràdio, pont i cable cap al braç → Pràctica 4 (S3).
 
 > La micro:bit porta molts sensors **integrats**, així que les activitats de la micro:bit **no necessiten muntatge**. L'únic cable de la SA és el del **pont**: dos fils de la micro:bit a l'Arduino del braç.
 
@@ -39,7 +39,7 @@ les ordres del comandament per ràdio i les passa a l'Arduino per un cable:
 > de les piles va també al GND de l'Arduino (GND comú), com a la SA4.
 
 A l'Arduino hi ha d'haver el programa [`04_brac_ordres`](codi/04_brac_ordres/EXPLICACIO.md).
-El codi del pont és a la [pràctica 3](codi/03_radio_comandament_EXPLICACIO.md).
+El codi del pont és a la [Pràctica 4](codi/03_radio_comandament_EXPLICACIO.md).
 
 ![Esquema del pont: la micro:bit comandament envia ordres per ràdio a la micro:bit pont; el pont les reenvia pel seu pin P1 al pin D0 de l'Arduino, amb GND comú; l'Arduino mou els servos del braç](img/sa5-pont-arduino.svg)
 
@@ -60,7 +60,7 @@ Els pins **0, 1, 2** són d'E/S de propòsit general (cocodril o shield):
 
 > Els pins **P0, P1, P2** i l'alimentació **3V**/**GND** són al connector de vora (vegeu la placa etiquetada de dalt); s'hi accedeix amb pinces de cocodril o el Micro:shield.
 
-## Per a la ràdio (SA5 · Activitat 3, S3)
+## Per a la ràdio (SA5 · Pràctica 4, S3)
 Calen **2 micro:bit** amb el **mateix `group`** (p. ex. `radio.config(group=10)`). Cada placa pot enviar i rebre.
 
 ![Dues micro:bit amb el mateix grup de ràdio (group=10) s'envien i reben missatges entre elles](img/sa5-radio.svg)
