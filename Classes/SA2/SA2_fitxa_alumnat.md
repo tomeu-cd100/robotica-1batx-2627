@@ -44,7 +44,7 @@ En aquesta pàgina hi tens el que et pot fer falta mentre treballes: què aprend
 2. Quant dura cada color? Vermell ____ s · verd ____ s · groc ____ s.
 3. **Per què 220 Ω?** El LED necessita uns 2 V i la placa en dona 5. Fes el compte: (5 − 2) ÷ 0,02 = ______ Ω. Per què posem una resistència de 220 Ω i no del número exacte? ______________________
 4. **Racó de mesura (multímetre):** amb un LED encès, el LED té ______ V · la resistència té ______ V · entre tots dos sumen ______ V. Què hi veus? ______________________
-5. Amb el semàfor de la pràctica 2b: si al `case 0` poses `fase = 2;` en lloc de `fase = 1;`, què fa el semàfor? Per què? ______________________ (al quadern)
+5. Amb el semàfor de la pràctica 2b: si al `case 0` poses `fase = 2;` en lloc de `fase = 1;`, què fa el semàfor? Per què? ______________________ (al formulari de la Sessió 1)
 6. **Repte:** afegeix un **mode nit** (el groc fa pampallugues) com a `case 3`.
 
 > 💡 No et surt el semàfor? Comença per **un sol LED** amb la [pràctica 1](codi/01_led_basic/EXPLICACIO.md), o fes servir l'**esquelet** de l'apartat «Si t'encalles» de la [pràctica del semàfor](codi/02_semafor/EXPLICACIO.md): només hi has d'omplir els `// TODO` de les tres llums.
@@ -71,7 +71,7 @@ Dissenya un panell que avisi de 3 **estats** amb color + so + relé:
 Es fa a la **Sessió 3**: un panell que avisa de **3 estats** (tot correcte / avís / alarma) amb **color (LED RGB) + so (brunzidor) + relé**. Al final l'expliques en **1 minut**: què fa i una millora possible. Es corregeix amb **R1** (codi) i **R2** (circuit).
 
 ## Si alguna cosa no funciona (DEPURA)
-> **D**igues què esperaves i què passa · **E**xamina (el LED, el missatge d'error) · **P**rova **un sol canvi** cada vegada · **U**bica on és el problema · **R**epara-ho · **A**punta-ho al quadern. Mira sempre primer la **resistència** i que la **pota llarga** vagi al pin. Encara no ho trobes? **[Targeta de rescat](../00_General/00_Targetes_rescat.md)** (comença per la 🟢).
+> **D**igues què esperaves i què passa · **E**xamina (el LED, el missatge d'error) · **P**rova **un sol canvi** cada vegada · **U**bica on és el problema · **R**epara-ho · **A**punta-ho. Mira sempre primer la **resistència** i que la **pota llarga** vagi al pin. Encara no ho trobes? **[Targeta de rescat](../00_General/00_Targetes_rescat.md)** (comença per la 🟢).
 
 <!-- web:only-github -->
 
@@ -84,7 +84,7 @@ Es fa a la **Sessió 3**: un panell que avisa de **3 estats** (tot correcte / av
 
 ## Quadern tècnic
 
-> 📓 Escriu-ho al teu **[quadern tècnic](../00_General/00_Quadern_tecnic.md)** (compta el 25 %).
+> 📓 Des de la Pràctica 3, aquestes preguntes són l'**última pregunta de cada formulari de pràctica** (el quadern tècnic compta el 25 %): no cal escriure-les a part.
 - **La cosa nova més important que he après:** ______________________________________
 - **Diferència entre `digitalWrite` i `analogWrite`:** ___________________
 - **Un error que he tingut i com l'he arreglat:** _____________________________________

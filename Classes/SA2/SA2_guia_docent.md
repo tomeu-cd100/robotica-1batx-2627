@@ -5,13 +5,15 @@
 
 ## ⚡ Xuleta de sessió (si només llegeixes una cosa, que sigui això)
 
-> L'alumnat segueix l'**itinerari pas a pas de la [portada de la SA2](README.md)** (una sessió plegable per dia). Tu fas una **explicació curta al principi** i després **circules** per les taules. La resta de la guia és el detall per si el necessites.
+> L'alumnat segueix la **ruta de pràctiques de la [portada de la SA2](README.md)** al seu ritme: cada pràctica és una pàgina de passos que acaba enviant el seu formulari, i les 🚩 marquen on hauria de ser cadascú al final de cada sessió. Tu fas una **arrencada de 5-10'** i després **circules** per les taules. La resta de la guia és el detall per si el necessites.
 
-| | 🗣️ Explica (només això, ~10') | 👀 Mentre treballen, vigila | ✅ Abans que marxin, comprova |
+| | 🗣️ Arrencada (5-10': només això) | 👀 Mentre treballen, vigila | ✅ Abans que marxin, comprova |
 |---|---|---|---|
 | **S1** · Semàfor | **D'on surt el 220 Ω** (llei d'Ohm a la pissarra, 5'). Després, llegeix el `loop()` del semàfor en veu alta com una **recepta**: encén, espera, apaga. `delay()` **atura tot**. Al final, el mateix amb `switch`: «on hi posaríeu una 4a fase?» | Un sol LED sense resistència per a tots tres · `case` sense `break` · qui no fa passar el seu circuit pel **Racó de mesura** | Semàfor funcionant · durades i mesures apuntades. La fase nocturna és repte, no mínim |
 | **S2** · PWM i RGB | `digitalWrite` = 0 o 1; `analogWrite` = **0 a 255**. Pregunta: «què fa el 128?» **Només pins `~`** (3, 5, 6, 9, 10, 11). | LED en un pin sense `~` · el mòdul RGB amb el − fora de GND | *Fade* funcionant · 3 colors RGB apuntats |
 | **S3** · Panell | Gairebé res: **mini-check** (10') i recorda **mínim = 2 estats amb color + so**. Fes-los omplir la taula d'estats **abans** de tocar codi. | Qui programa sense haver dissenyat els estats · relé mal alimentat | Panell amb ≥2 estats · checklist fet · **defensa d'1'** (R1 + R2) · formulari **enviat** |
+
+> 🚩 **L'arrencada explica la pràctica de la fita del dia** (S2: la ④ RGB, perquè la ③ és curta; S3: la ⑤), no la SA sencera. Acaba-la amb la pregunta de la columna. Qui va endarrerit la té igualment a la pàgina: el «🧠 Vols saber per què funciona?» de cada pràctica és el mateix contingut.
 
 > 📝 **La Prova SA1 ja no és aquí:** es fa a la [sessió de marge](../../Programació%20didàctica/08_Sequenciacio_temporal_anual.md#sessio-de-marge-prova-sa1-i-posada-al-dia) entre la SA1 i la SA2. L'antiga S1 (`Blink` amb constants i variables) repetia la SA1 i s'ha tret: el sketch `01_led_basic` queda com a bastida «comença per un sol LED» per a qui s'encalla amb el semàfor.
 
@@ -77,7 +79,7 @@
 - **Modelatge (25'):** `03_fade_pwm.ino` (`analogWrite` 0-255) i funció `map()`. Després `04_rgb.ino` (barreja RGB).
 - **Pràctica guiada (35'):** efecte *fade* al pin 9; després colors amb el LED RGB (pins 9-10-11).
 - **Repte (40'):** crear 5 colors propis i una transició suau entre dos colors; **+ repte:** arc de Sant Martí cíclic.
-- **Tancament (10'):** quadern (taula de colors RGB provats).
+- **Tancament (10'):** envien els formularis de les Pràctiques 3 i 4 (🚩 de la S2).
 
 > ⏱️ **Marge:** el temps efectiu real és ~100' (arrencada + recollida), no 120'. Si vas just, retalla primer: **el «+ repte» (arc de Sant Martí cíclic)**.
 
@@ -89,7 +91,7 @@
 - **Mini-check individual (10', substitueix l'activació):** escriu de memòria un Blink complet al pin 8 (detecta l'*efecte passatger*) — [`00_Mini_checks_individuals.md`](../00_General/00_Mini_checks_individuals.md). Aprofita el canvi de full per presentar en 1' el repte integrador.
 - **Pràctica (70'):** `05_panell_senyalitzacio.ino` com a base. Integren **LED RGB (estat) + piezo (avís) + relé (càrrega)**. Cada alumne/a personalitza estats i seqüència.
 - **Documentació + defensa (30'):** completen esquema i codi comentat; **mini-defensa individual d'1'** (amb 5 alumnes, ~5-7' en total, i queda temps per a la revisió creuada de codi) del seu panell amb la **mini-rúbrica de defensa oral R4·DO** ([`07_Rubriques.md`](../../Programació%20didàctica/07_Rubriques.md)) — és la **primera** defensa del curs: comparteix els 3 indicadors abans (claredat · decisió justificada · respondre preguntes) i exigeix sobretot el primer.
-- **Tancament (10'):** autoavaluació amb rúbriques.
+- **Tancament (10'):** formulari de la Pràctica 5 i **Entrega final** (autoavaluació + checklist).
 
 > ⏱️ **Marge:** el temps efectiu real és ~100' (arrencada + recollida), no 120'. Si vas just, retalla primer: **la personalització extra d'estats i seqüència (dins la Pràctica; limita el panell a 2-3 estats)**.
 
@@ -101,7 +103,7 @@
 |---|---|---|---|
 | Producte (panell/semàfor) | Sortides digitals + PWM en un sistema integrat | CA2.1, CA2.2 | R1, R2 |
 | Repte curt de codi | Variables, `for`/`if`, `analogWrite`, `map()` | CA1.1 | R1 |
-| Quadern tècnic | Esquema, codi comentat, errors i millores | CA1.1, CA2.2 | **R4** |
+| Quadern tècnic (25 %) = **mitjana dels formularis de pràctica** (S1, P3, P4, P5), cadascun sobre 10 | Respostes ✍️ de cada pràctica + pregunta de reflexió (concepte, `digitalWrite`/`analogWrite`, error resolt) | CA1.1, CA2.2 | **R4** |
 | Observació de muntatge | Resistència limitadora, polaritat, seguretat | CA2.1 | R2 |
 | Ajuda entre iguals i **revisió creuada** de codi | Cooperació sense producte compartit: línia d'ajuda del quadern + una millora concreta i un dubte al company | CA5.3 | **R5** |
 

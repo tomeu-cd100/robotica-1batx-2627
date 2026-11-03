@@ -98,7 +98,7 @@ PORTADA_BONA = """# SA9
 
 🚩 Final de la Sessió 1: hauries d'haver enviat el formulari de la ①.
 
-## 🏁 Entrega final {#entrega-final}
+## 🏁 Entrega final
 
 Quan hagis acabat la ①.
 """

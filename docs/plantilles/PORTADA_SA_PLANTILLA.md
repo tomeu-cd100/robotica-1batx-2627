@@ -31,7 +31,7 @@ Fes les pràctiques **en ordre i al teu ritme**. Cada pràctica acaba enviant el
 
 🚩 **Final de la Sessió 2:** hauries d'haver enviat el formulari de la ③.
 
-## 🏁 Entrega final {#entrega-final}
+## 🏁 Entrega final
 
 **Quan hagis acabat la ③:**
 

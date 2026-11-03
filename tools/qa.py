@@ -847,8 +847,12 @@ def comprova_dependencies() -> None:
 # --- 18 · Format «passos autònoms» (spec 2026-11-03-passos-autonoms) ---
 # Només s'apliquen a les pràctiques i SA ja migrades al format nou; la resta
 # conserva el format antic fins que la toqui el seu pla.
-PRACTIQUES_NOU_FORMAT: set[str] = set()
-SA_NOU_FORMAT: set[int] = set()
+PRACTIQUES_NOU_FORMAT: set[str] = {
+    "Classes/SA2/codi/03_fade_pwm/EXPLICACIO.md",
+    "Classes/SA2/codi/04_rgb/EXPLICACIO.md",
+    "Classes/SA2/codi/05_panell_senyalitzacio/EXPLICACIO.md",
+}
+SA_NOU_FORMAT: set[int] = {2}
 
 _PAS_MD_RE = re.compile(r"^### (Pas \d+.*)$", re.M)
 _FI_SECCIO_MD_RE = re.compile(r"^(## |### |<details)", re.M)
