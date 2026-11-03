@@ -1,31 +1,71 @@
 # Pràctica 4 · LED RGB: barrejar colors (i la primera funció pròpia)
 
-**Quan es fa:** Sessió 2 (després de la llum que respira) · **Fitxer:** `04_rgb.ino` · **Circuit:** [esquema de connexions, apartat 4](../../SA2_esquemes_connexions.md) (mòdul RGB: R=9, G=10, B=11, − a GND)
+<div class="cap-practica" markdown="1">
 
-## 🎯 Què faràs
+🎯 **Avui aconseguiràs:** que un sol llum faci **qualsevol color** i crear la teva primera instrucció, `color()`.
 
-Un sol llum que fa **qualsevol color**: vermell, verd, blau, groc, lila… El LED RGB són **tres LED en un** (vermell, verd i blau). Si regules cadascun de 0 a 255, com a la llum que respira, els barreges i en surten colors nous. I aprendràs a crear **la teva pròpia instrucció**, `color()`.
+⏱️ 30 min
+
+📦 Mòdul RGB del kit i 4 cables
+
+</div>
 
 ## 🚀 Pas a pas
 
-1. **Treu el LED del pin 9 i connecta el mòdul RGB** del kit amb 4 cables:
+### Pas 1 · Munta el mòdul RGB
 
-   | Pin del mòdul | Pin de l'Arduino |
-   |---|---|
-   | R | 9 |
-   | G | 10 |
-   | B | 11 |
-   | − (o GND) | GND |
+Treu el LED del pin 9 i connecta el mòdul RGB amb 4 cables:
 
-2. **Carrega el codi:** prem **Copia**, enganxa'l a l'Arduino IDE (esborra el que hi hagués) i prem **→ Puja**.
+| Pin del mòdul | Pin de l'Arduino |
+|---|---|
+| R | 9 |
+| G | 10 |
+| B | 11 |
+| − (o GND) | GND |
+
+![Muntatge del mòdul RGB als pins 9, 10 i 11](../../img/sa2-tinkercad-rgb.png)
+
+✅ **Comprova:** el − del mòdul va a **GND**. Si no, no s'encendrà res.
+
+### Pas 2 · Carrega el codi
+
+Prem **Copia**, enganxa'l a l'Arduino IDE (esborra el que hi hagués) i prem **→ Puja**.
 
 <!-- codi-complet -->
 
-3. **Mira la seqüència de colors:** vermell, verd, blau, groc, lila i apagat. Cada color dura 1 segon.
-4. **Crea 3 colors teus:** canvia els números d'algunes línies `color(…)` (per exemple, `color(255, 100, 0)`) i torna'l a pujar. Escriu a Classroom els 3 colors que t'agradin, amb els seus tres números (R, G, B).
-5. **⭐ Si acabes abans:** fes que un color canviï **a poc a poc** cap a un altre (pista: és la llum que respira de la Pràctica 3, però amb dos colors alhora: un puja i l'altre baixa).
+✅ **Comprova:** surten vermell, verd, blau, groc, lila i apagat, 1 segon cadascun.
 
-## 🧠 Com funciona, a trossos
+### Pas 3 · Crea 3 colors teus
+
+Canvia els números d'algunes línies `color(…)`, per exemple `color(255, 100, 0)`, i torna'l a pujar. El primer número és el vermell, el segon el verd i el tercer el blau, cadascun de 0 a 255.
+
+✍️ **Apunta-ho:** els teus 3 colors, amb els valors R, G, B de cadascun.
+
+### Pas 4 · Explica-ho amb les teves paraules
+
+✍️ **Apunta-ho:** quin és el concepte nou més important d'aquesta sessió?
+
+### Pas 5 · Respon i envia
+
+📤 [Obre la tasca «SA2 · Pràctica 4» a Classroom i envia el formulari](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODk3Mzc3OTQ0NjEx/details)
+
+Hi trobaràs les mateixes preguntes ✍️ que has anat apuntant. Envia'l ara. A la sessió següent: **[Pràctica 5 · Panell de senyalització](../05_panell_senyalitzacio/EXPLICACIO.md)**.
+
+⭐ **Si acabes abans:** fes que un color canviï **a poc a poc** cap a un altre (pista: és la llum que respira de la Pràctica 3, però amb dos colors alhora: un puja i l'altre baixa). Si ho fas, explica-ho a la pregunta opcional del formulari. Més reptes a **[Reptes de la SA2](../../../../Reptes/Reptes_SA2.md)**; quan el docent te'l validi, pinta l'estrella al [tauler de reptes](../../../00_General/00_Tauler_reptes.md).
+
+<details markdown="1">
+<summary>🧗 Si t'encalles</summary>
+
+| Què passa | Per què | Com ho arreglo |
+|---|---|---|
+| Un color no surt mai | Aquell cable és en un altre pin o fa mal contacte. | Comprova la taula del pas 1. |
+| Els colors surten «al revés» (el vermell surt cian…) | Tens un LED RGB d'**un altre tipus**, que funciona al revés (255 l'apaga). | Pregunta al docent. |
+| No fa res de res | El − del mòdul no és a GND. | Connecta el − a GND. |
+
+</details>
+
+<details markdown="1">
+<summary>🧠 Vols saber per què funciona?</summary>
 
 ### Tros 1 — Tres pins, un per a cada color
 
@@ -82,17 +122,9 @@ color(0, 0, 0);     delay(1000);   // apagat
 | Blanc | 255 | 255 | 255 | Els tres al màxim (prova-ho!). |
 | Apagat | 0 | 0 | 0 | Cap. |
 
-## ⚠️ Errors que veuràs segur
-
-| Què passa | Per què | Com ho arreglo |
-|---|---|---|
-| Un color no surt mai | Aquell cable és en un altre pin o fa mal contacte. | Comprova la taula del pas 1. |
-| Els colors surten «al revés» (el vermell surt cian…) | Tens un LED RGB d'**un altre tipus**, que funciona al revés (255 l'apaga). | Pregunta al docent. |
-| No fa res de res | El − del mòdul no és a GND. | Connecta el − a GND. |
-
-## 🔗 On ho aplicaràs
+### On ho aplicaràs
 
 - **Sessió 3:** el [panell de senyalització](../05_panell_senyalitzacio/EXPLICACIO.md) fa servir aquesta mateixa funció `color()`, sense canviar-hi res.
 - **Mascota del trimestre:** aquests colors seran les **expressions** del teu robot.
 
-> ⭐ **Has acabat abans?** Tria un repte a **[Reptes de la SA2](../../../../Reptes/Reptes_SA2.md)** i, quan el docent te'l validi, pinta l'estrella al [tauler de reptes](../../../00_General/00_Tauler_reptes.md).
+</details>

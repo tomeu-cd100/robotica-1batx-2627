@@ -49,3 +49,16 @@ def test_classes_comprova_apunta_envia():
 def test_sense_passos_no_canvia():
     body = '<h2 id="pas-a-pas">Pas a pas</h2><ol><li>Munta</li></ol><h3 id="tros-1">Tros 1</h3>'
     assert marca_passos(body) == body
+
+
+def test_ultim_pas_es_tanca_abans_dels_plegats():
+    # Els «Tros» (h3) viuen dins del <details> de teoria: la targeta de
+    # l'últim pas s'ha de tancar abans del primer <details>, no a mig plegat.
+    body = ('<h3 id="pas-7-respon-i-envia">Pas 7 · Respon i envia</h3><p>📤 x</p>'
+            '<p>⭐ repte</p>'
+            '<details><summary>🧗 Si t\'encalles</summary><p>a</p></details>'
+            '<details><summary>🧠</summary><h3 id="tros-1">Tros 1</h3><p>b</p></details>')
+    out = marca_passos(body)
+    seccio = out[out.index('<section class="pas">'):out.index("</section>")]
+    assert "<details" not in seccio
+    assert "⭐ repte" in seccio

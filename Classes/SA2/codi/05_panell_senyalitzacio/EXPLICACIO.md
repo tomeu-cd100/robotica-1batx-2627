@@ -1,10 +1,16 @@
 # Pràctica 5 · Producte: el panell de senyalització
 
-**Quan es fa:** Sessió 3 (el producte de la SA) · **Fitxer:** `05_panell_senyalitzacio.ino` · **Circuit:** [esquema de connexions, apartat 5](../../SA2_esquemes_connexions.md) (RGB 9-10-11, brunzidor 6, relé 7)
+<div class="cap-practica" markdown="1">
 
-## 🎯 Què faràs
+🎯 **Avui aconseguiràs:** un **panell d'avisos** amb els teus estats (color + so + relé) i defensar-lo en 1 minut. És el producte de la SA2.
 
-Un **panell d'avisos**, com el de les màquines de veritat. Té tres estats:
+⏱️ Tota la sessió
+
+📦 Mòdul RGB, brunzidor (piezo), mòdul relé i cables
+
+</div>
+
+Un panell com el de les màquines de veritat. Aquest és l'exemple d'una caldera:
 
 | Estat | Exemple: una caldera | El panell fa… |
 |---|---|---|
@@ -16,26 +22,81 @@ El codi ja funciona. **La teva feina és fer-lo teu:** decidir els teus estats, 
 
 ## 🚀 Pas a pas
 
-1. **Dissenya abans de programar:** decideix com serà cada estat (color, so i si el relé s'engega o no) i escriu-ho a Classroom (la taula de l'Activitat 3 de la [fitxa](../../SA2_fitxa_alumnat.md)).
-2. **Munta el circuit:**
+### Pas 1 · Mini-check en paper
 
-   | Component | Connexió |
-   |---|---|
-   | Mòdul RGB | R → 9 · G → 10 · B → 11 · − → GND (com a la Sessió 2) |
-   | Brunzidor (piezo) | + → pin 6 · − → GND |
-   | Mòdul relé | IN → pin 7 · VCC → 5 V · GND → GND |
+El docent et dona un full: escriu **de memòria** un programa que faci parpellejar un LED. Tens 10 minuts i **no compta per a nota**.
 
-3. **Carrega el codi:** prem **Copia**, enganxa'l a l'Arduino IDE (esborra el que hi hagués) i prem **→ Puja**.
+✅ **Comprova:** has entregat el full al docent.
+
+### Pas 2 · Dissenya abans de programar
+
+Decideix com serà cada estat: quin color, quin so i si el relé s'engega o no.
+
+✍️ **Apunta-ho:** estat «Tot correcte»: color RGB / so (piezo) / relé.
+
+✍️ **Apunta-ho:** estat «Avís»: color RGB / so (piezo) / relé.
+
+✍️ **Apunta-ho:** estat «Alarma»: color RGB / so (piezo) / relé.
+
+### Pas 3 · Munta el circuit
+
+| Component | Connexió |
+|---|---|
+| Mòdul RGB | R → 9 · G → 10 · B → 11 · − → GND (com a la Pràctica 4) |
+| Brunzidor (piezo) | + → pin 6 · − → GND |
+| Mòdul relé | IN → pin 7 · VCC → 5 V · GND → GND |
+
+![Muntatge del panell: RGB, brunzidor i relé](../../img/sa2-tinkercad-panell.png)
+
+### Pas 4 · Carrega el codi
+
+Prem **Copia**, enganxa'l a l'Arduino IDE (esborra el que hi hagués) i prem **→ Puja**.
 
 <!-- codi-complet -->
 
-4. **Mira i escolta:** ha de fer els tres estats, 2 segons cadascun, sense parar. Quan arriba a l'alarma, el relé fa «clic».
-5. **Fes-lo teu:** canvia els colors i els sons de cada estat perquè siguin els del teu disseny. Al tros 3 de sota tens què has de tocar.
-   - **Mínim:** 2 estats que es distingeixin bé (amb color **i** so).
-   - **Complet:** 3 estats + relé, cadascun en la seva funció.
-6. **Prepara la defensa d'1 minut:** què fa el teu panell i una millora que li faries.
+✅ **Comprova:** fa els tres estats, 2 segons cadascun, sense parar. Quan arriba a l'alarma, el relé fa «clic».
 
-## 🧠 Com funciona, a trossos
+### Pas 5 · Fes-lo teu
+
+Canvia els colors i els sons de cada estat perquè siguin els del teu disseny del pas 2. A «🧠 Vols saber per què funciona?», tros 3, tens què has de tocar.
+
+- **Mínim:** 2 estats que es distingeixin bé (amb color **i** so).
+- **Complet:** 3 estats + relé, cadascun en la seva funció.
+
+✅ **Comprova:** el panell fa els estats que vas dissenyar.
+
+### Pas 6 · Prepara la defensa d'1 minut
+
+Pensa què diràs: què fa el teu panell i una millora que li faries.
+
+✅ **Comprova:** ho saps explicar en 1 minut sense llegir.
+
+### Pas 7 · Un error, apuntat
+
+✍️ **Apunta-ho:** un error que has trobat i com l'has resolt.
+
+### Pas 8 · Respon i envia
+
+📤 [Obre la tasca «SA2 · Pràctica 5» a Classroom i envia el formulari](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODk3Mzc4MDYxMjU5/details)
+
+Hi trobaràs les mateixes preguntes ✍️ que has anat apuntant. Envia'l ara i, després, fes l'**[🏁 Entrega final de la SA2](../../README.md#entrega-final)**: la defensa i l'autoavaluació.
+
+⭐ **Si acabes abans:** afegeix un quart estat (per exemple `estatManteniment()`, en blau). Més reptes a **[Reptes de la SA2](../../../../Reptes/Reptes_SA2.md)**; quan el docent te'l validi, pinta l'estrella al [tauler de reptes](../../../00_General/00_Tauler_reptes.md).
+
+<details markdown="1">
+<summary>🧗 Si t'encalles</summary>
+
+| Què passa | Per què | Com ho arreglo |
+|---|---|---|
+| El relé no fa «clic» | Falta VCC o GND del mòdul, o IN no és al pin 7. | Revisa la taula del pas 3. |
+| El brunzidor no sona | Està al revés o en un altre pin. | + al pin 6, − a GND. |
+| Colors estranys | Cables del RGB canviats de lloc. | Mira la Pràctica 4. |
+| L'IDE marca un error en vermell després de canviar-lo | Falta un `;` o un parèntesi. | Mira la línia que marca l'IDE i la de just abans. |
+
+</details>
+
+<details markdown="1">
+<summary>🧠 Vols saber per què funciona?</summary>
 
 Aquí no hi ha res nou de programació: hi ha **tot el que ja saps, junt**. El més important és com s'organitza.
 
@@ -101,19 +162,10 @@ Com que cada estat té la seva funció, el `loop()` es llegeix com una frase: *t
 
 **Vols un quart estat?** Escriu una funció nova (per exemple `estatManteniment()`, en blau) copiant-ne una altra, i afegeix-la al `loop()` amb el seu `delay`.
 
-## ⚠️ Errors que veuràs segur
+### On ho aplicaràs
 
-| Què passa | Per què | Com ho arreglo |
-|---|---|---|
-| El relé no fa «clic» | Falta VCC o GND del mòdul, o IN no és al pin 7. | Revisa la taula del pas 2. |
-| El brunzidor no sona | Està al revés o en un altre pin. | + al pin 6, − a GND. |
-| Colors estranys | Cables del RGB canviats de lloc. | Mira la Pràctica 4. |
-| L'IDE marca un error en vermell després de canviar-lo | Falta un `;` o un parèntesi. | Mira la línia que marca l'IDE i la de just abans. |
-
-## 🔗 On ho aplicaràs
-
-- **Avui mateix:** la **defensa d'1 minut** i l'entrega del formulari de Classroom.
+- **Avui mateix:** la **defensa d'1 minut** i l'**Entrega final** de la SA2.
 - **SA3:** el panell aprendrà a **percebre**: l'estat el decidirà un sensor, no el `delay`.
 - **Mascota del trimestre:** aquests colors i sons seran les **reaccions** del teu robot.
 
-> ⭐ **Has acabat abans?** Tria un repte a **[Reptes de la SA2](../../../../Reptes/Reptes_SA2.md)** i, quan el docent te'l validi, pinta l'estrella al [tauler de reptes](../../../00_General/00_Tauler_reptes.md).
+</details>

@@ -350,7 +350,9 @@ def marca_targetes(body: str) -> str:
 
 
 _PAS_RE = re.compile(r'<h3 id="pas-[^"]*"[^>]*>')
-_FI_PAS_RE = re.compile(r'<h[23][\s>]')
+# Una targeta acaba al proper h2/h3 o al primer <details> (els plegats
+# «Si t'encalles» / «Vols saber per què» van després dels passos i contenen h3).
+_FI_PAS_RE = re.compile(r'<h[23][\s>]|<details[\s>]')
 _PARA_MARCA = (("✅", "comprova"), ("✍️", "apunta"), ("📤", "envia"))
 
 

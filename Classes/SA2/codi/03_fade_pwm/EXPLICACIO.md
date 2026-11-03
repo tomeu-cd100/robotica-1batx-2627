@@ -1,23 +1,78 @@
 # Pràctica 3 · La llum que respira (PWM)
 
-**Quan es fa:** Sessió 2 · **Fitxer:** `03_fade_pwm.ino` · **Circuit:** [esquema de connexions, apartat 3](../../SA2_esquemes_connexions.md) (un LED al pin 9) · **Suport:** [diagrama de flux](../../SA2_diagrama_flux.md)
+<div class="cap-practica" markdown="1">
 
-## 🎯 Què faràs
+🎯 **Avui aconseguiràs:** que un LED s'encengui i s'apagui **a poc a poc**, com si respirés.
 
-Un LED que **respira**: s'encén a poc a poc fins a brillar del tot i després s'apaga a poc a poc, sense parar. Fins ara un LED només podia estar encès o apagat; avui aprendràs a dir-li **quant** ha de brillar.
+⏱️ 25 min
+
+📦 1 LED, 1 resistència de 220 Ω i 2 cables
+
+</div>
 
 ## 🚀 Pas a pas
 
-1. **Munta el circuit:** un LED al **pin 9** amb la seva resistència de 220 Ω (pota llarga cap al pin, curta cap a GND). El pin 9 té el símbol **`~`** al costat del número: això vol dir que pot fer PWM.
-2. **Carrega el codi:** prem **Copia**, enganxa'l a l'Arduino IDE (esborra el que hi hagués) i prem **→ Puja**.
+### Pas 1 · Munta el circuit
+
+Posa un LED al **pin 9** amb la seva resistència de 220 Ω: la pota llarga cap al pin i la curta cap a GND.
+
+![Muntatge: un LED al pin 9 amb la resistència](../../img/sa2-tinkercad-fade.png)
+
+✅ **Comprova:** al costat del número 9 de la placa hi ha el símbol **`~`**. Només els pins amb `~` poden fer que el LED brilli a mitges.
+
+### Pas 2 · Carrega el codi
+
+Prem **Copia**, enganxa'l a l'Arduino IDE (esborra el que hi hagués) i prem **→ Puja**.
 
 <!-- codi-complet -->
 
-3. **Mira el LED:** s'encén i s'apaga a poc a poc? Escriu a Classroom entre quins valors va `analogWrite` (de ___ a ___). La resposta és al tros 2.
-4. **Canvia el ritme:** a les dues línies `delay(8);` posa `delay(2);` i torna'l a pujar. Després prova `delay(20);`. Què canvia?
-5. **Prova un pin sense `~`:** mou el cable del LED al pin 8 i canvia `const int LED = 9;` per `8`. Què passa? Després torna-ho al 9.
+✅ **Comprova:** el LED s'encén a poc a poc fins al màxim, s'apaga a poc a poc i torna a començar.
 
-## 🧠 Com funciona, a trossos
+### Pas 3 · Busca el número que fa brillar
+
+Mira el codi: a la línia `analogWrite(LED, valor);`, el número `valor` diu **quant** brilla el LED. Busca a les línies `for` on comença i on acaba.
+
+✍️ **Apunta-ho:** rang de valors d'`analogWrite`: de ____ a ____.
+
+### Pas 4 · Canvia el ritme
+
+A les dues línies `delay(8);` posa `delay(2);` i torna'l a pujar. Després prova `delay(20);`.
+
+✍️ **Apunta-ho:** què canvia quan poses `delay(2)`? I `delay(20)`?
+
+### Pas 5 · Prova un pin sense `~`
+
+Mou el cable del LED al **pin 8** i canvia `const int LED = 9;` per `const int LED = 8;`. Puja'l i mira què fa. Després torna-ho tot al 9.
+
+✍️ **Apunta-ho:** què passa amb el LED al pin 8, que no té `~`? Per què?
+
+### Pas 6 · Explica-ho amb les teves paraules
+
+✍️ **Apunta-ho:** quina diferència hi ha entre `digitalWrite` i `analogWrite`?
+
+### Pas 7 · Respon i envia
+
+📤 [Obre la tasca «SA2 · Pràctica 3» a Classroom i envia el formulari](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODk3Mzc3NjQwOTIw/details)
+
+Hi trobaràs les mateixes preguntes ✍️ que has anat apuntant. Envia'l ara i passa a la **[Pràctica 4 · Colors RGB](../04_rgb/EXPLICACIO.md)**.
+
+⭐ **Si acabes abans:** tria un repte a **[Reptes de la SA2](../../../../Reptes/Reptes_SA2.md)** i, quan el docent te'l validi, pinta l'estrella al [tauler de reptes](../../../00_General/00_Tauler_reptes.md).
+
+<details markdown="1">
+<summary>🧗 Si t'encalles</summary>
+
+| Què passa | Per què | Com ho arreglo |
+|---|---|---|
+| El LED només fa encès/apagat, sense gradació | El pin no té `~` (no és PWM). | Torna'l al pin 9. |
+| No fa res | Valors fora de 0–255, o el LED al revés. | Comprova els números i la pota llarga. |
+| Respira massa de pressa o massa a poc a poc | És el `delay`. | Puja'l (més lent) o baixa'l (més ràpid). |
+
+Encara no funciona? Mira el [dibuix del programa](../../SA2_diagrama_flux.md) o l'[esquema de connexions, apartat 3](../../SA2_esquemes_connexions.md).
+
+</details>
+
+<details markdown="1">
+<summary>🧠 Vols saber per què funciona?</summary>
 
 ### Tros 1 — El truc del PWM: encendre i apagar molt de pressa
 
@@ -78,19 +133,10 @@ for (int valor = 255; valor >= 0; valor--) {
 
 És el mateix, però girat: comença a dalt (255), continua mentre sigui 0 o més, i a cada volta **resta** 1 (`valor--`). Com que tot és dins del `loop()`, després de baixar torna a pujar: el LED respira per sempre.
 
-## ⚠️ Errors que veuràs segur
-
-| Què passa | Per què | Com ho arreglo |
-|---|---|---|
-| El LED només fa encès/apagat, sense gradació | El pin no té `~` (no és PWM). | Torna'l al pin 9. |
-| No fa res | Valors fora de 0–255, o el LED al revés. | Comprova els números i la pota llarga. |
-| Respira massa de pressa o massa a poc a poc | És el `delay`. | Puja'l (més lent) o baixa'l (més ràpid). |
-
-## 🔗 On ho aplicaràs
+### On ho aplicaràs
 
 - **Ara mateix:** el [LED RGB](../04_rgb/EXPLICACIO.md) són **tres** LED regulats així, un per a cada color.
-- **Repte de la sessió:** fer que un color canviï a poc a poc cap a un altre són dues llums que respiren alhora (una puja i l'altra baixa).
-- **Exemple resolt:** el [llum de posició que respira](../../SA2_exemple_resolt.md) és el mateix patró amb un altre muntatge, comentat pas a pas. Mira'l **després** del teu primer intent.
+- **Exemple resolt:** el [llum de posició que respira](../../SA2_exemple_resolt.md) és el mateix patró amb un altre muntatge, comentat pas a pas.
 - **SA4:** amb el PWM regularàs la **velocitat d'un motor**.
 
-> ⭐ **Has acabat abans?** Tria un repte a **[Reptes de la SA2](../../../../Reptes/Reptes_SA2.md)** i, quan el docent te'l validi, pinta l'estrella al [tauler de reptes](../../../00_General/00_Tauler_reptes.md).
+</details>
