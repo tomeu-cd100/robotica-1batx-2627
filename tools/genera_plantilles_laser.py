@@ -5,7 +5,7 @@ Conveni de capes per a xTool Creative Space:
   - vermell (#ff0000) = gravat (zones de personalització i etiquetes)
 
 Ús:  py tools/genera_plantilles_laser.py
-Sortida:  Recursos/plantilles_laser/{mascota,brac,rover}.svg
+Sortida:  Recursos/plantilles_laser/{brac,rover}.svg  (mascota.svg, arxivada a docs/arxiu/mascota_T1/)
 Material de referència: DM de 3 mm. Forats M3 = diàmetre 3,2 mm.
 """
 from pathlib import Path
@@ -187,7 +187,8 @@ def rover():
 
 
 if __name__ == "__main__":
-    mascota()
+    # mascota() arxivada el 3-11-2026: el robot del T1 és el tamagotchi, que es
+    # genera amb Recursos/peces_3d/tamagotchi_ou.scad (MODE="laser").
     brac()
     rover()
     print("Plantilles generades a Recursos/plantilles_laser/.")

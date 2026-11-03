@@ -12,7 +12,7 @@ es poden importar directament sense reescalar.
 
 | Fitxer | Robot | Mida del tauler |
 | --- | --- | --- |
-| `mascota.svg` | Mascota | 465 × 215 mm |
+| `tamagotchi_ou_laser.svg` | **Tamagotchi del T1** (placa del davant + placa del darrere) | 254 × 148 mm |
 | `brac_MeArm_v1.1.svg` | **Braç MeArm V1.1 (el braç del T2, 4 servos)** | 189 × 293 mm |
 | `brac.svg` | Braç (pla B: esquema propi, sense encaixos, no provat) | 285 × 150 mm |
 | `xassis_rover_ARomero.svg` | **Rover (xassís oficial)** | 132 × 138 mm |
@@ -54,7 +54,12 @@ es poden importar directament sense reescalar.
 
 ## Com regenerar-les
 
-`mascota.svg`, `brac.svg` i `rover.svg` **no s'editen a mà**: es generen a
+`tamagotchi_ou_laser.svg` es genera amb OpenSCAD des de
+`Recursos/peces_3d/tamagotchi_ou.scad` (`openscad -o tamagotchi_ou_laser.svg -D 'MODE="laser"' tamagotchi_ou.scad`):
+mesura el teu mòdul OLED i ajusta'n els paràmetres abans de tallar. OpenSCAD exporta les peces plenes de gris: després d'exportar, deixa-les només amb línia negra de tall (`sed -i 's/stroke="black" fill="lightgray" stroke-width="0.5"/stroke="#000000" fill="none" stroke-width="0.1"/' tamagotchi_ou_laser.svg`, o «Sense farciment» a xTool). La plantilla de la mascota antiga
+(`mascota.svg`) és a `docs/arxiu/mascota_T1/`.
+
+`brac.svg` i `rover.svg` **no s'editen a mà**: es generen a
 partir de l'script `tools/genera_plantilles_laser.py`:
 
 ```
@@ -62,7 +67,7 @@ py tools/genera_plantilles_laser.py
 ```
 
 Si cal canviar una mida, un forat o una etiqueta, modifica l'script i torna'l
-a executar; això sobreescriu aquests tres fitxers. El
+a executar; això sobreescriu aquests dos fitxers. El
 `xassis_rover_ARomero.svg` és un disseny extern (vegeu el crèdit) i queda
 **fora del generador**: no es regenera ni es modifica. El
 `brac_MeArm_v1.1.svg` també és extern: no s'edita a mà, es torna a convertir
