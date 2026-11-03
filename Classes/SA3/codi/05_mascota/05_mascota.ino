@@ -59,6 +59,7 @@ unsigned long tUltimaBaixada = 0;
 unsigned long tUltimBoto = 0;
 unsigned long tUltimEspant = 0;
 bool esFosc = false;          // el decideix llegeixSensors(), l'aplica baixaAmbElTemps()
+bool aprop = false;           // EXTRA PIR: igual que esFosc
 int anteriorMenjar = HIGH;    // per detectar quan es PREM (no mentre esta premut)
 
 void setup() {
@@ -122,13 +123,15 @@ void llegeixSensors() {
   //      Pista: es el mateix "llegeix -> compara -> decideix" de la Practica 2.
   //      (Qui fa servir esFosc es baixaAmbElTemps(): de nit, te mes son.)
 
-  // TODO soroll: si soroll > LLINDAR_SOROLL i fa mes de 2000 ms de l'ultim
-  //      espant (millis() - tUltimEspant > 2000), la mascota s'espanta:
-  //      felicitat - 10, un so d'espant (per exemple so(880, 440)) i
-  //      tUltimEspant = millis(). Si dormia, el soroll la desperta (estat = CONTENTA).
+  // TODO soroll: si NO dorm (estat != DORMINT), soroll > LLINDAR_SOROLL i fa
+  //      mes de 2000 ms de l'ultim espant (millis() - tUltimEspant > 2000),
+  //      la mascota s'espanta: felicitat - 10, un so d'espant (per exemple
+  //      so(880, 440)) i tUltimEspant = millis().
+  //      (Quan dorm, dorm profundament: el soroll no la desperta.)
 
-  // EXTRA PIR (versio completa): si digitalRead(PIN_PIR) == HIGH, hi ha algu
-  //      a prop: la felicitat puja una mica.
+  // EXTRA PIR (versio completa): fes com amb esFosc: aprop = true si
+  //      digitalRead(PIN_PIR) == HIGH, i false si no. Qui puja la felicitat
+  //      es baixaAmbElTemps(), cada 5 s (no a cada volta del loop!).
 }
 
 // ===================== EL TEMPS =====================
@@ -145,6 +148,7 @@ void baixaAmbElTemps() {
   } else {
     son = son - 1;
   }
+  if (aprop) felicitat = felicitat + 2;   // EXTRA PIR: li agrada la companyia
   gana = constrain(gana, 0, 100);
   son = constrain(son, 0, 100);
   felicitat = constrain(felicitat, 0, 100);

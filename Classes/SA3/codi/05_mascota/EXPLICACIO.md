@@ -2,7 +2,7 @@
 
 <div class="cap-practica" markdown="1">
 
-🎯 **Avui aconseguiràs:** un **tamagotchi** que té gana, son i ganes de jugar, que **notes** amb els sensors i que **cuides** amb tres botons. Si no el cuides es posa trist i malalt, però **mai no es mor**. És el producte de la SA3.
+🎯 **Avui aconseguiràs:** un **tamagotchi** que té gana, son i ganes de jugar, que **nota** el que passa al seu voltant amb els sensors i que **cuides** amb tres botons. Si no el cuides es posa trist i malalt, però **mai no es mor**. És el producte de la SA3.
 
 ⏱️ La resta de la Sessió 3
 
@@ -32,11 +32,11 @@ Fes un cable del **5V** a la fila vermella (+) i un del **GND** a la fila blava 
 | Botó DORMIR | 7 | Igual. |
 | LED RGB (humor) | 9 · 10 · 11 | Com a la SA2, cada color amb la seva resistència de 220 Ω. |
 | Brunzidor | 8 | Pota + al 8, pota − a la fila blava. |
-| Sensor de llum | A1 | El de la Pràctica 2 (o el mòdul TEMT6000). |
+| Sensor de llum | A1 | El de la Pràctica 2, amb la seva resistència de 10 kΩ (o el mòdul TEMT6000). |
 | Micròfon | A0 | Mesura el soroll. |
 | Sensor de moviment (PIR) | 2 | Versió completa. Tarda **30-60 segons** a funcionar en endollar-lo. |
 
-✅ **Comprova:** els tres botons queden al forat de sota la pantalla, i els mòduls de 3 potes (micròfon, PIR, sensor de llum) tenen les lletres (VCC, GND, OUT o S) on toca.
+✅ **Comprova:** els tres botons queden als forats de sota la pantalla, i els mòduls de 3 potes (micròfon, PIR, sensor de llum) tenen les lletres (VCC, GND, OUT o S) on toca.
 
 ### Pas 3 · Carrega l'esquelet
 
@@ -60,7 +60,7 @@ Busca `// TODO llum`. Fes **llegeix → compara → decideix**, com a la Pràcti
 
 ### Pas 6 · El soroll l'espanta
 
-Busca `// TODO soroll`. Si el micròfon llegeix més que `LLINDAR_SOROLL`, la felicitat baixa i fa un so d'espant. El comentari del codi t'explica com evitar que s'espanti cada volta del `loop()`: amb `millis()` i `tUltimEspant`, com l'antirebot.
+Busca `// TODO soroll`. Si està desperta i el micròfon llegeix més que `LLINDAR_SOROLL`, la felicitat baixa i fa un so d'espant. Quan dorm, dorm profundament: el soroll no la desperta. El comentari del codi t'explica com evitar que s'espanti cada volta del `loop()`: amb `millis()` i `tUltimEspant`, com l'antirebot.
 
 ✅ **Comprova:** si piques de mans fort, sona l'espant i la barra de la felicitat baixa una mica (només una vegada per picada).
 
@@ -70,7 +70,7 @@ Busca `// TODO soroll`. Si el micròfon llegeix més que `LLINDAR_SOROLL`, la fe
 
 Busca `// TODO` dins de `calculaEstat()`. Compta quantes necessitats estan per sota de `LLINDAR_TRISTA`: si n'hi ha **una**, està `TRISTA`; si n'hi ha **dues o més**, està `MALALTA`; si no, `CONTENTA`.
 
-✅ **Comprova:** si no la cuides, el LED es posa blau i la boca trista, i més tard vermell amb una creu. Si llavors la fas menjar, jugar i dormir, **torna a estar contenta**.
+✅ **Comprova:** si no la cuides, el LED es posa blau i la boca trista, i més tard vermell amb una creu. Si llavors la fas menjar i dormir (malalta no vol jugar), **torna a estar contenta**.
 
 ✍️ **Apunta-ho:** quan es posa TRISTA i quan MALALTA? Escriu les condicions que has programat.
 
@@ -104,7 +104,7 @@ A la Sessió 4 fas la **prova pràctica T1**, i hi pots portar **un full resum e
 
 Hi trobaràs les mateixes preguntes ✍️ que has anat apuntant. Envia'l ara i, després, fes l'**[🏁 Entrega final de la SA3](../../README.md#entrega-final)**: la defensa d'1 minut i l'autoavaluació.
 
-**Versió nucli (per aprovar):** 2 necessitats (gana i felicitat), 2 botons (MENJAR i JUGAR), 1 sensor i els estats contenta i trista. **Versió completa:** les 3 necessitats, els 3 botons, almenys 2 sensors i l'estat malalta.
+**Versió nucli (per aprovar):** les **3 necessitats** amb els **3 botons** (MENJAR, JUGAR, DORMIR), **1 sensor** (la llum) i els estats contenta i trista. **Versió completa:** a més, el soroll (2 sensors o més) i l'estat malalta.
 
 ⭐ **Si acabes abans:** fes que el **PIR** el posi content quan algú s'hi acosta, que el **DHT11** el faci estar incòmode si fa calor, o que **guardi** les necessitats a l'EEPROM perquè l'endemà continuï igual (tens els `// EXTRA` al codi). Més reptes a **[Reptes de la SA3](../../../../Reptes/Reptes_SA3.md)**; quan el docent te'l validi, pinta l'estrella al [tauler de reptes](../../../00_General/00_Tauler_reptes.md).
 

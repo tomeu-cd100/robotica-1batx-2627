@@ -28,4 +28,4 @@
 ## 🆘 Si m'encallo
 Segueixo **DEPURA**: **D**igues què esperaves i què passa · **E**xamina (**mira el Monitor sèrie!**) · **P**rova un sol canvi cada vegada · **U**bica el problema · **R**epara · **A**punta-ho. Primer de tot, miro que el sensor tingui els cables de **5 V i GND** ben posats. Encara no ho trobo? **[Targeta de rescat](../00_General/00_Targetes_rescat.md)** (començo per la 🟢).
 
-> Tens dos o més 🔴? Repassa les pràctiques **abans de la prova T1** i demana ajuda. **Per aprovar n'hi ha prou** amb un tamagotchi amb 2 necessitats, 2 botons i 1 sensor, que es posa trist quan no el cuides.
+> Tens dos o més 🔴? Repassa les pràctiques **abans de la prova T1** i demana ajuda. **Per aprovar n'hi ha prou** amb un tamagotchi amb les 3 necessitats i els 3 botons, 1 sensor (la llum) i els estats contenta i trista.

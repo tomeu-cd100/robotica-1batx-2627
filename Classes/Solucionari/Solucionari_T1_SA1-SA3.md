@@ -162,8 +162,8 @@ void loop(){
 |---|---|---|
 | Botons JUGAR i DORMIR | Còpia del patró de MENJAR: `ara == LOW && anterior == HIGH`, i `anterior = ara` al final. JUGAR no fa res si està `MALALTA`. DORMIR alterna `DORMINT` ↔ `CONTENTA`. | Comptar mentre està premut (sense `anterior`). |
 | Llum | `esFosc = (llum < LLINDAR_FOSC);` (la resta de son la fa `baixaAmbElTemps()`). | Restar la son a cada volta del `loop()`. |
-| Soroll | `if (soroll > LLINDAR_SOROLL && millis() - tUltimEspant > 2000)`: felicitat − 10, `so(880, 440)`, `tUltimEspant = millis()` i, si dormia, es desperta. | Sense temps d'espera: la felicitat cau a 0 en un segon. |
-| PIR (completa) | Si `HIGH`, felicitat + 1 (amb `constrain`). | Oblidar els 30-60 s d'estabilització. |
+| Soroll | `if (estat != DORMINT && soroll > LLINDAR_SOROLL && millis() - tUltimEspant > 2000)`: felicitat − 10, `so(880, 440)`, `tUltimEspant = millis()`. Quan dorm, el soroll no la desperta (si no, en una aula sorollosa no podria recuperar mai la son). | Sense temps d'espera: la felicitat cau a 0 en un segon. |
+| PIR (completa) | `aprop = (digitalRead(PIN_PIR) == HIGH);` i `baixaAmbElTemps()` suma felicitat + 2 cada 5 s. | Sumar a cada volta del `loop()`: la felicitat arriba a 100 a l'instant. |
 | `calculaEstat()` | Comptador de necessitats per sota de `LLINDAR_TRISTA`: ≥ 2 → `MALALTA`, 1 → `TRISTA`, 0 → `CONTENTA`. | Fer un estat «mort» o que no surti de `MALALTA`. |
 
 **Memòria:** compilat per a UNO, deixa **~1.150 bytes** de RAM lliure (U8g2 en mode pàgina). Si algú hi afegeix els NeoPixel o l'EEPROM, cal tornar a mirar-ho.
@@ -178,7 +178,7 @@ void loop(){
   Codi de referencia del Projecte T1 - El tamagotchi (NOMES DOCENT)
   Es l'esquelet de la Practica 4 de la SA3 (Classes/SA3/codi/05_mascota) amb
   tots els // TODO resolts: botons JUGAR i DORMIR, llum (esFosc), soroll amb
-  temps d'espera, PIR i calculaEstat(). Les // EXTRA (DHT11, EEPROM) no hi son.
+  temps d'espera (quan dorm no s'espanta), PIR amb la variable aprop i calculaEstat(). Les // EXTRA (DHT11, EEPROM) no hi son.
   Cablatge: el del dossier 00_Projecte_T1_Mascota.md (apartat Cablatge).
   Llibreria: U8g2.
 */
@@ -221,6 +221,7 @@ unsigned long tUltimaBaixada = 0;
 unsigned long tUltimBoto = 0;
 unsigned long tUltimEspant = 0;
 bool esFosc = false;          // el decideix llegeixSensors(), l'aplica baixaAmbElTemps()
+bool aprop = false;           // EXTRA PIR: igual que esFosc
 int anteriorMenjar = HIGH;
 int anteriorJugar = HIGH;
 int anteriorDormir = HIGH;    // per detectar quan es PREM (no mentre esta premut)
@@ -262,7 +263,7 @@ void llegeixBotons() {
   anteriorMenjar = araMenjar;
 
   int araJugar = digitalRead(BOTO_JUGAR);
-  if (araJugar == LOW && anteriorJugar == HIGH && estat != MALALTA) {
+  if (araJugar == LOW && anteriorJugar == HIGH && estat != MALALTA && estat != DORMINT) {
     felicitat = felicitat + 20; son = son - 5; so(659, 784); tUltimBoto = millis();
   }
   anteriorJugar = araJugar;
@@ -288,11 +289,10 @@ void llegeixSensors() {
   Serial.print(F(" soroll=")); Serial.println(soroll);
 
   esFosc = (llum < LLINDAR_FOSC);
-  if (soroll > LLINDAR_SOROLL && millis() - tUltimEspant > 2000) {
+  if (estat != DORMINT && soroll > LLINDAR_SOROLL && millis() - tUltimEspant > 2000) {
     felicitat = constrain(felicitat - 10, 0, 100); so(880, 440); tUltimEspant = millis();
-    if (estat == DORMINT) estat = CONTENTA;
   }
-  if (digitalRead(PIN_PIR) == HIGH) felicitat = constrain(felicitat + 1, 0, 100);
+  aprop = (digitalRead(PIN_PIR) == HIGH);
 }
 
 // ===================== EL TEMPS =====================
@@ -309,6 +309,7 @@ void baixaAmbElTemps() {
   } else {
     son = son - 1;
   }
+  if (aprop) felicitat = felicitat + 2;   // EXTRA PIR: li agrada la companyia
   gana = constrain(gana, 0, 100);
   son = constrain(son, 0, 100);
   felicitat = constrain(felicitat, 0, 100);

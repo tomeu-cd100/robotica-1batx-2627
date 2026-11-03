@@ -32,7 +32,7 @@ Fes les pràctiques **en ordre i al teu ritme**. Cada pràctica acaba enviant el
 1. 🎤 **Defensa d'1 minut** davant del docent: presenta el teu tamagotchi: què fa cada botó i com l'afecten els sensors (es corregeix amb la [rúbrica del robot](../00_General/00_Projecte_T1_Mascota.md)).
 2. 📤 Respon i envia l'[Entrega final de la SA3](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODk3NDAxOTcyNzcy/details): autoavaluació i checklist final.
 
-> ✅ **Versió nucli** (per aprovar n'hi ha prou amb): un tamagotchi amb **2 necessitats** (gana i felicitat), **2 botons** i **1 sensor**, que es posa trist quan no el cuides.
+> ✅ **Versió nucli** (per aprovar n'hi ha prou amb): un tamagotchi amb les **3 necessitats** amb els **3 botons** (MENJAR, JUGAR, DORMIR), **1 sensor** (la llum) i els estats contenta i trista.
 
 ## 📝 Sessió 4 · Prova pràctica T1
 

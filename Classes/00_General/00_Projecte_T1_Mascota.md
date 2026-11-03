@@ -38,7 +38,7 @@ personatge del joguet comercial.
 | Sensor de moviment PIR | Kit de classe | 1 |
 | DHT11 (temperatura, opcional) | Kit de classe | 1 |
 | Carcassa en forma d'ou | Làser **o** 3D (vegeu sota) | 1 |
-| Cargols M3 (i 4 separadors de 72 mm per a la versió làser) | Taller | 4 |
+| Cargols M3 (i 3 separadors de 72 mm per a la versió làser) | Taller | 3 |
 
 ## Fabricació de la carcassa (SA2 · Sessió 3)
 
@@ -49,11 +49,12 @@ llum, micròfon, PIR (el «nas») i LED RGB. Es fabriquen per torns mentre la
 resta fa el panell de la SA2, **una per alumne/a**.
 
 - **Tallada al làser** ([`tamagotchi_ou_laser.svg`](../../Recursos/plantilles_laser/tamagotchi_ou_laser.svg)):
-  dues plaques d'ou de DM de 3 mm (davant i darrere) unides amb **4 separadors
+  dues plaques d'ou de DM de 3 mm (davant i darrere) unides amb **3 separadors
   M3 de 72 mm**. Els costats queden oberts i es veu l'electrònica per dins.
   Es pot gravar el frontal per personalitzar-lo.
 - **Impresa en 3D** (`MODE="closca"` i `MODE="tapa"`): una closca d'ou que
-  s'imprimeix de cara avall i una tapa del darrere amb 4 cargols M3. La closca
+  s'imprimeix de cara avall i una tapa del darrere amb 3 cargols M3. Té una
+  ranura al lateral dret per a l'USB i el jack. La closca
   triga unes **6-8 h**: imprimeix-les amb antelació.
 
 > 📏 **Abans de fabricar, el docent mesura el mòdul OLED** que s'ha comprat i
@@ -72,8 +73,10 @@ de filament, d'acord amb el caràcter que donarà al seu tamagotchi.
    DORMIR, d'esquerra a dreta.
 3. Col·loca el **sensor de llum**, el **micròfon** i el **PIR** als seus forats,
    i el **LED RGB** al forat petit del costat.
-4. A dins, posa el **UNO** i la **mitja protoboard** drets, un sobre l'altre,
-   amb el connector USB cap al forat del lateral (3D) o cap al costat obert (làser).
+4. A dins, posa el **UNO** dret a **baix**, amb l'USB i el jack cap a la **dreta**
+   (la ranura del lateral a la versió 3D, el costat obert a la de làser), i la
+   **mitja protoboard** dreta a **dalt**, darrere la pantalla. Tots dos amb els
+   components cap al davant, enganxats a la tapa amb cinta de doble cara o brides.
 5. Fes el cablatge (taula de sota) i tanca amb la tapa o la placa del darrere.
 
 ## Cablatge
@@ -124,8 +127,8 @@ substitueix-lo per un **potenciòmetre** a A0 per simular el soroll.
 **Producte final (SA3-S3):** el tamagotchi dins de la seva carcassa, amb
 necessitats que baixen amb el temps i amb els sensors, botons per cuidar-lo i
 estats contenta, trista i malalta, més la seva **fitxa de personalitat** (nom,
-caràcter, què fa cada botó i com l'afecten els sensors). **Versió nucli:** 2
-necessitats, 2 botons, 1 sensor, contenta i trista. La S4 de SA3 és la prova
+caràcter, què fa cada botó i com l'afecten els sensors). **Versió nucli:** les 3
+necessitats amb els 3 botons, 1 sensor (la llum), contenta i trista. La S4 de SA3 és la prova
 pràctica **T1**.
 
 ## Rúbrica del robot (producte SA3)
@@ -133,8 +136,8 @@ pràctica **T1**.
 | Criteri | Insuficient (0-4) | Suficient/Bé (5-6) | Notable (7-8) | Excel·lent (9-10) |
 |---|---|---|---|---|
 | **R1 · Carcassa i muntatge** | Carcassa inacabada o cablatge insegur. | Carcassa funcional però amb algun cable fluix o desordenat. | Carcassa ferma, components ben fixats i cablatge endreçat. | Carcassa ferma i personalitzada, cablatge endreçat i etiquetat, res solt ni curtcircuitat. |
-| **R2 · Funcionament** | La pantalla, els botons o els sensors clau no funcionen. | Pantalla i 2 botons funcionen; algun sensor falla. | Pantalla, botons i sensors funcionen, amb algun ajust. | Tot funciona a la primera i de manera fiable (botons sense rebots, llindars ben calibrats). |
-| **R3 · Necessitats i estats** | Les necessitats no canvien o no hi ha estats. | Versió nucli: 2 necessitats, contenta i trista. | 3 necessitats i els estats trista i malalta, que es recupera quan el cuides. | Tot l'anterior, coherent amb el caràcter, amb `millis()` i sense `delay()` llargs. |
+| **R2 · Funcionament** | La pantalla, els botons o els sensors clau no funcionen. | Pantalla i els 3 botons funcionen; algun sensor falla. | Pantalla, botons i sensors funcionen, amb algun ajust. | Tot funciona a la primera i de manera fiable (botons sense rebots, llindars ben calibrats). |
+| **R3 · Necessitats i estats** | Les necessitats no canvien o no hi ha estats. | Versió nucli: 3 necessitats amb els 3 botons, contenta i trista. | 3 necessitats i els estats trista i malalta, que es recupera quan el cuides. | Tot l'anterior, coherent amb el caràcter, amb `millis()` i sense `delay()` llargs. |
 | **R4 · Fitxa de personalitat i demostració** | Sense fitxa o sense poder explicar el funcionament. | Fitxa bàsica o defensa amb ajuda. | Fitxa completa i defensa oral clara. | Fitxa completa i defensa oral que explica i justifica cada botó, sensor i estat. |
 
 ## Problemes freqüents

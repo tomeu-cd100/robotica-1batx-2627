@@ -42,8 +42,8 @@ La mascota reactiva del T1 (caixa de DM amb ulls NeoPixel i reaccions a sensors)
 
 ## Decisions de Claude després de la revisió (2026-11-03)
 
-- **Versió nucli:** 2 necessitats (gana i felicitat), 2 botons (menjar i jugar), 1 sensor i els estats contenta i trista.
-- **Versió completa:** 3 necessitats, 3 botons, almenys 2 sensors i l'estat malalta.
+- **Versió nucli:** les 3 necessitats amb els 3 botons, 1 sensor (la llum) i els estats contenta i trista. *(Revisió final: la son baixa sola, i sense DORMIR el nucli quedaria trist per sempre.)*
+- **Versió completa:** a més, el soroll (2 sensors o més) i l'estat malalta. Quan dorm, el soroll no la desperta (si no, en una aula sorollosa no es podria recuperar).
 - **Ampliacions:** DHT11, persistència a l'EEPROM i NeoPixel.
 - **SA3 S3:** la ③ OLED és curta (~25', el temps dels ultrasons) i deixa a punt les funcions de dibuix (cara, barres, text). L'esquelet del tamagotchi (④) porta fets la pantalla i la baixada de les necessitats amb `millis()`. Els `// TODO` de l'alumne són els botons (amb antirebot), els sensors (llegir → comparar → decidir) i les condicions dels estats.
 - **Sensors:** el nucli fa servir la **llum** i el **micròfon**, el **PIR** és de la versió completa i el **DHT11** és una ampliació. La carcassa té forats per a tots quatre.
@@ -108,7 +108,7 @@ Les del projecte (`CLAUDE.md`): català, `qa.py` net, el CI compila els `.ino` d
 
 ## Decisions preses durant la construcció (2026-11-03)
 
-- **Versió làser = «sandvitx»:** dues plaques d'ou de DM (davant i darrere) amb 4 separadors M3 de 72 mm, en lloc de capes apilades (que haurien demanat ~25 plaques per alumne). Els costats queden oberts i es veu l'electrònica.
+- **Versió làser = «sandvitx»:** dues plaques d'ou de DM (davant i darrere) amb 3 separadors M3 de 72 mm, en lloc de capes apilades (que haurien demanat ~25 plaques per alumne). Els costats queden oberts i es veu l'electrònica.
 - **Dormir no apaga la pantalla:** mostra els ulls tancats i una «z». Així l'alumne veu que dorm i que el programa funciona.
 - **Pins definitius:** OLED A4/A5 · micròfon A0 · llum A1 · PIR 2 · MENJAR 3 · DHT11 4 · JUGAR 5 · NeoPixel 6 (ampliació) · DORMIR 7 · brunzidor 8 · RGB 9/10/11.
 - **Memòria:** l'esquelet deixa 1.158 B de RAM lliure i la solució completa, 1.149 B (U8g2 en mode pàgina, sense NeoPixel).

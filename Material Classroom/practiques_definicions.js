@@ -160,7 +160,7 @@ export const PRACTIQUES = {
   },
 
   // Tasca creada com a «La mascota reactiva» (2026-11-03) i reconvertida al
-  // tamagotchi el mateix dia: el títol vell és a TITOL_VELL per localitzar-la.
+  // tamagotchi el mateix dia: el títol vell és a `titolVell` per localitzar-la.
   'sa3-p4': {
     ...SA3,
     titol: 'SA3 · Pràctica 4 · El teu tamagotchi',
@@ -188,7 +188,7 @@ export const PRACTIQUES = {
     materials: [{ link: { url: `${WEB_BASE}/sa3/index.html#entrega-final`, title: 'SA3 · Entrega final (portada de la SA)' } }],
     items: [
       t('Versió nucli',
-        'Per aprovar n’hi ha prou amb un tamagotchi amb 2 necessitats (gana i felicitat), 2 botons i 1 sensor, que es posa trist quan no el cuides.'),
+        'Per aprovar n’hi ha prou amb un tamagotchi amb les 3 necessitats i els 3 botons (MENJAR, JUGAR, DORMIR), 1 sensor (la llum) i els estats contenta i trista.'),
       autoaval([
         'Distingeixo i llegeixo entrades digitals i analògiques',
         'Faig servir el Monitor sèrie per calibrar',

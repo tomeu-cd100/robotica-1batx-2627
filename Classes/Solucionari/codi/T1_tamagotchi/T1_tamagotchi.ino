@@ -2,7 +2,7 @@
   Codi de referencia del Projecte T1 - El tamagotchi (NOMES DOCENT)
   Es l'esquelet de la Practica 4 de la SA3 (Classes/SA3/codi/05_mascota) amb
   tots els // TODO resolts: botons JUGAR i DORMIR, llum (esFosc), soroll amb
-  temps d'espera, PIR i calculaEstat(). Les // EXTRA (DHT11, EEPROM) no hi son.
+  temps d'espera (quan dorm no s'espanta), PIR amb la variable aprop i calculaEstat(). Les // EXTRA (DHT11, EEPROM) no hi son.
   Cablatge: el del dossier 00_Projecte_T1_Mascota.md (apartat Cablatge).
   Llibreria: U8g2.
 */
@@ -45,6 +45,7 @@ unsigned long tUltimaBaixada = 0;
 unsigned long tUltimBoto = 0;
 unsigned long tUltimEspant = 0;
 bool esFosc = false;          // el decideix llegeixSensors(), l'aplica baixaAmbElTemps()
+bool aprop = false;           // EXTRA PIR: igual que esFosc
 int anteriorMenjar = HIGH;
 int anteriorJugar = HIGH;
 int anteriorDormir = HIGH;    // per detectar quan es PREM (no mentre esta premut)
@@ -86,7 +87,7 @@ void llegeixBotons() {
   anteriorMenjar = araMenjar;
 
   int araJugar = digitalRead(BOTO_JUGAR);
-  if (araJugar == LOW && anteriorJugar == HIGH && estat != MALALTA) {
+  if (araJugar == LOW && anteriorJugar == HIGH && estat != MALALTA && estat != DORMINT) {
     felicitat = felicitat + 20; son = son - 5; so(659, 784); tUltimBoto = millis();
   }
   anteriorJugar = araJugar;
@@ -112,11 +113,10 @@ void llegeixSensors() {
   Serial.print(F(" soroll=")); Serial.println(soroll);
 
   esFosc = (llum < LLINDAR_FOSC);
-  if (soroll > LLINDAR_SOROLL && millis() - tUltimEspant > 2000) {
+  if (estat != DORMINT && soroll > LLINDAR_SOROLL && millis() - tUltimEspant > 2000) {
     felicitat = constrain(felicitat - 10, 0, 100); so(880, 440); tUltimEspant = millis();
-    if (estat == DORMINT) estat = CONTENTA;
   }
-  if (digitalRead(PIN_PIR) == HIGH) felicitat = constrain(felicitat + 1, 0, 100);
+  aprop = (digitalRead(PIN_PIR) == HIGH);
 }
 
 // ===================== EL TEMPS =====================
@@ -133,6 +133,7 @@ void baixaAmbElTemps() {
   } else {
     son = son - 1;
   }
+  if (aprop) felicitat = felicitat + 2;   // EXTRA PIR: li agrada la companyia
   gana = constrain(gana, 0, 100);
   son = constrain(son, 0, 100);
   felicitat = constrain(felicitat, 0, 100);

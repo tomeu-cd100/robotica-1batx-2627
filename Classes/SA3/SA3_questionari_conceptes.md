@@ -64,11 +64,11 @@
    - c) `pinMode()`
    - d) `map()`
 
-9. En un sensor d'ultrasons HC-SR04, si intercanvies els pins **TRIG** i **ECHO**…
-   - a) El sensor mesura amb més precisió.
-   - b) El LED s'encén sol.
-   - c) La distància surt sempre 0 o un valor molt gran (no funciona bé).
-   - d) No passa res, són intercanviables.
+9. Al tamagotchi, per què les necessitats es fan baixar amb `millis()` i no amb un `delay(5000)`?
+   - a) Perquè `millis()` gasta menys bateria.
+   - b) Perquè amb el `delay` l'Arduino estaria 5 segons sense veure els botons ni els sensors.
+   - c) Perquè `delay()` no funciona amb la pantalla OLED.
+   - d) No hi ha cap diferència.
 
 10. Què vol dir que una **funció** com `mesuraDistancia()` **retorna** un valor?
     - a) Que apaga la placa en acabar.

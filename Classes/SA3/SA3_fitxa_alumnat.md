@@ -22,7 +22,7 @@
 | **Quadern tècnic** (dibuixos, números dels sensors, errors) | **R4** | Quadern tècnic i pràctiques (25 %) |
 | Mini-check (inici de la Sessió 3) | — | **No compta per a nota**: t'avisa de com vas abans de la prova |
 
-> 🪜 **Per aprovar n'hi ha prou amb:** un tamagotchi amb **2 necessitats** (gana i felicitat), **2 botons** i **1 sensor**, que es posa trist quan no el cuides. **Per treure més nota:** les 3 necessitats i els 3 botons, almenys 2 sensors i l'estat malalta, tot coherent amb el seu caràcter i ben calibrat.
+> 🪜 **Per aprovar n'hi ha prou amb:** un tamagotchi amb les **3 necessitats** amb els **3 botons** (MENJAR, JUGAR, DORMIR), **1 sensor** (la llum) i els estats contenta i trista. **Per treure més nota:** a més, el soroll (2 sensors o més) i l'estat malalta, tot coherent amb el seu caràcter i ben calibrat.
 
 > Com es posa la nota (de 0 a 10) i totes les rúbriques: **[Com s'avalua la matèria](../00_General/00_Avaluacio_per_alumnat.md)**.
 

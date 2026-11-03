@@ -131,7 +131,7 @@
 > ([`00_Fil_conductor_robots.md`](../00_General/00_Fil_conductor_robots.md)),
 > aquesta S3 és la **sessió de fabricació de la carcassa del tamagotchi** (una per
 > alumne/a, en forma d'ou): mentre la resta fa el panell, es fabriquen **per torns** al
-> làser (2 plaques de DM + 4 separadors M3) o a la impressora 3D (la closca triga 6-8 h:
+> làser (2 plaques de DM + 3 separadors M3) o a la impressora 3D (la closca triga 6-8 h:
 > millor imprimir-les abans). Cada alumne/a porta l'esborrany del gravat del frontal
 > fet a la S2; a la S3 s'ajusta, el docent el valida i es fabrica. **Abans**, mesura el
 > mòdul OLED comprat i ajusta `Recursos/peces_3d/tamagotchi_ou.scad`

@@ -96,7 +96,7 @@
   3. **Mini-defensa individual d'1' a peu de taula**, mentre treballen: presenta el tamagotchi, què fa cada botó i com l'afecten els sensors.
 - **Tancament (10'):** **full resum** en paper per a la prova (pas «Omple el full resum» de la Pràctica 4), formularis de la ③ i la ④, **Entrega final** (autoavaluació + checklist) i desar el codi.
 
-> ⏱️ **Marge:** 10+25+55+10 = **100'**, just el temps efectiu. Si vas just: ① a la ③ n'hi ha prou amb veure la cara i la barra · ② la **versió nucli** (2 necessitats, MENJAR i JUGAR, 1 sensor, contenta/trista) és el mínim; DORMIR, el micròfon i l'estat malalta són la versió completa. **No retallis la fitxa de personalitat**: és la meitat de la R4 del robot.
+> ⏱️ **Marge:** 10+25+55+10 = **100'**, just el temps efectiu. Si vas just: ① a la ③ n'hi ha prou amb veure la cara i la barra · ② la **versió nucli** (3 necessitats amb els 3 botons, la llum, contenta/trista) és el mínim; el micròfon i l'estat malalta són la versió completa. DORMIR ha de ser al nucli: la son baixa sola i, sense DORMIR, quedaria trista per sempre. **No retallis la fitxa de personalitat**: és la meitat de la R4 del robot.
 >
 > 🔧 **Logística:** la llibreria **U8g2** ha d'estar instal·lada als ordinadors **abans** de la sessió (si no, ni la ③ ni el tamagotchi compilen). Les carcasses (làser o 3D, una per alumne) han d'estar fetes de la SA2 S3; qui no la tingui, munta a la protoboard i hi passa el muntatge després.
 

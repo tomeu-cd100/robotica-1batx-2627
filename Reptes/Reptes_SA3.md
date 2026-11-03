@@ -123,7 +123,7 @@
 
 Aquest trimestre, tot el que fas serveix per al **tamagotchi** ([dossier](../Classes/00_General/00_Projecte_T1_Mascota.md)):
 
-- **Repte A (llum de nit)** → el sensor de llum del tamagotchi: quan es fa fosc **té son** i, si el deixes, s'adorm.
+- **Repte A (llum de nit)** → el sensor de llum del tamagotchi: quan es fa fosc **té son**: la barra de la son baixa més de pressa.
 - **Repte B (sensor d'aparcament)** → és un repte **avançat**: l'ultrasons no és al tamagotchi i el treballaràs a fons a la SA4 (el braç). Si el fas ara, hi arribaràs amb avantatge.
 - **Repte C (instrument o comptador)** → els botons del tamagotchi: MENJAR, JUGAR i DORMIR són aquest mateix polsador amb antirebot.
 

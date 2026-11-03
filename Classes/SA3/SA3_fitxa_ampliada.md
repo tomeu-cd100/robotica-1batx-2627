@@ -6,7 +6,7 @@
 
 **Nom:** ______________________  **Data:** __________
 
-> Ara el teu Arduino aprèn a **notar** què passa: un botó, la llum, la distància. I al final, la teva **mascota** reaccionarà a tot això.
+> Ara el teu Arduino aprèn a **notar** què passa: un botó, la llum, el soroll. I al final, el teu **tamagotchi** reaccionarà a tot això.
 
 ---
 
@@ -29,37 +29,40 @@
 | Mitja llum | |
 | Tapat (fosc) | |
 
-## Activitat 3 · L'ultrasons i la teva mascota (Sessió 3)
-1. Munta l'ultrasons (TRIG al 12, ECHO a l'11). Carrega `03_ultrasons_funcio.ino` i obre el **Serial Plotter**.
-2. distància (cm) = temps × ______ ÷ 2.
-3. Què **et torna** la funció `mesuraDistancia()`? __________________________
-4. **+ Repte:** per què la **mitjana de 3 mesures** fa que la gràfica «balli» menys? ____________
+## Activitat 3 · La pantalla OLED i el teu tamagotchi (Sessió 3)
+1. Munta la pantalla OLED (SDA a A4, SCL a A5) i carrega `03_pantalla_oled.ino`. Què volen dir els números de `drawStr(x, y, text)`? __________________________
+2. Per què **tot** el dibuix va dins del `do { … } while (pantalla.nextPage());`? __________________________
+3. **+ Repte:** dibuixa una segona barra amb el potenciòmetre (A0). Quina línia has afegit? ____________
 
-**La fitxa de la teva mascota:**
+**La fitxa del teu tamagotchi:**
 
 - **Nom:** ______________________ · **Caràcter:** ______________________
 
-| Reacció | Quin sensor? | Què fa la mascota? | Per què encaixa amb el seu caràcter? |
-|---|---|---|---|
-| 1 | | | |
-| 2 | | | |
-| 3 | | | |
-| 4 (extra) | | | |
+| Botó o sensor | Què li fa? (quina necessitat puja o baixa) | Per què encaixa amb el seu caràcter? |
+|---|---|---|
+| MENJAR | | |
+| JUGAR | | |
+| DORMIR | | |
+| Llum | | |
+| Soroll | | |
+| PIR (extra) | | |
 
+- **Quan està trist? I malalt?** (les condicions que has programat): ______________________
 - **Dibuix del circuit** (dibuixa'l o enganxa una foto): ______________________
-- **Explica-la en 1 minut:** presenta la mascota i què fa cada reacció.
+- **Explica'l en 1 minut:** presenta el tamagotchi, què fa cada botó i com l'afecten els sensors.
 
 **Com ho he fet?** (la nota és de 0 a 10):
 | | Nivell |
 |---|---|
-| Les reaccions funcionen i encaixen amb el caràcter de la mascota | ☐ Encara no ☐ Bé ☐ Molt bé ☐ Excel·lent |
-| Els sensors estan ben connectats i no fallen | ☐ Encara no ☐ Bé ☐ Molt bé ☐ Excel·lent |
+| Les necessitats, els botons i els estats funcionen i encaixen amb el caràcter | ☐ Encara no ☐ Bé ☐ Molt bé ☐ Excel·lent |
+| Els sensors estan ben connectats i calibrats | ☐ Encara no ☐ Bé ☐ Molt bé ☐ Excel·lent |
 
 ---
 
+
 ## Treball individual i ajuda entre companys
 
-La mascota és **teva**: la muntes, la programes i l'expliques tu. Però ningú aprèn sol: apunta cada sessió **qui t'ha ajudat i a qui has ajudat** (i en què). Això es valora a la rúbrica **R5**.
+El tamagotchi és **teu**: el muntes, el programes i l'expliques tu. Però ningú aprèn sol: apunta cada sessió **qui t'ha ajudat i a qui has ajudat** (i en què). Això es valora a la rúbrica **R5**.
 
 | | Sessió 1 | Sessió 2 | Sessió 3 |
 |---|---|---|---|
@@ -95,7 +98,7 @@ On has fet servir una funció per no haver de repetir feina? ___________________
 
 ## Revisió del codi d'un company (2 estrelles i un desig)
 
-Mira la mascota **d'un company o companya** (el codi i el circuit). **Primer, comprova aquestes tres coses** (marca ✓ o ✗):
+Mira el tamagotchi **d'un company o companya** (el codi i el circuit). **Primer, comprova aquestes tres coses** (marca ✓ o ✗):
 
 | Comprova si… | ✓/✗ |
 |---|---|

@@ -39,7 +39,7 @@
 6. Per què l'antirebot → menys corrent / passa a analògic / **una premuda no compti diverses vegades** / no serveix.
 7. Per què divisor de tensió amb la LDR → limitar corrent / **convertir resistència variable en tensió mesurable** / més brillantor / la LDR ho necessita.
 8. Passar 0-1023 a 0-255 → `delay` / `Serial.begin` / `pinMode` / **`map`**.
-9. TRIG i ECHO intercanviats a l'HC-SR04 → més precisió / LED s'encén sol / **distància sempre 0 o molt gran** / són intercanviables.
+9. `millis()` en lloc de `delay(5000)` al tamagotchi → menys bateria / **amb el `delay` estaria 5 s sense veure botons ni sensors** / `delay` no va amb l'OLED / cap diferència.
 10. Que una funció "retorna" un valor → apaga la placa / **dona un resultat que el programa pot fer servir** / es repeteix sempre / només es crida un cop.
 
 **Pregunta 11** (tipus: *Paràgraf*; sense puntuació) — descriure un llum automàtic amb LDR i llindar.

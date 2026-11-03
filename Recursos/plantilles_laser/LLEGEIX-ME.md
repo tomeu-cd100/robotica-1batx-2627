@@ -12,7 +12,7 @@ es poden importar directament sense reescalar.
 
 | Fitxer | Robot | Mida del tauler |
 | --- | --- | --- |
-| `tamagotchi_ou_laser.svg` | **Tamagotchi del T1** (placa del davant + placa del darrere) | 254 × 148 mm |
+| `tamagotchi_ou_laser.svg` | **Tamagotchi del T1** (placa del davant + placa del darrere) | 266 × 156 mm |
 | `brac_MeArm_v1.1.svg` | **Braç MeArm V1.1 (el braç del T2, 4 servos)** | 189 × 293 mm |
 | `brac.svg` | Braç (pla B: esquema propi, sense encaixos, no provat) | 285 × 150 mm |
 | `xassis_rover_ARomero.svg` | **Rover (xassís oficial)** | 132 × 138 mm |

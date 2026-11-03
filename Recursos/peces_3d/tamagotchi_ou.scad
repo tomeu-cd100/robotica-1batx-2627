@@ -5,9 +5,16 @@
 //
 // MODE = "3d"     -> closca d'ou (imprimir de cara avall) + tapa del darrere
 // MODE = "closca" -> nomes la closca      MODE = "tapa" -> nomes la tapa
+// MODE = "comprova" -> closca amb el UNO i la protoboard en transparent
+//                    (per veure que hi caben abans d'imprimir-ne 20)
 // MODE = "laser"  -> 2D per tallar en DM de 3 mm: placa del davant (amb
-//                    forats) i placa del darrere, unides amb 4 separadors M3
+//                    forats) i placa del darrere, unides amb 3 separadors M3
 //                    de llargada = FONS (versio "sandvitx", oberta pels costats)
+//
+// COL.LOCACIO (vista de davant): el UNO dret a BAIX, amb els connectors USB i
+// jack cap a la DRETA (surten per la ranura del lateral), i la mitja protoboard
+// dreta a DALT, darrere la pantalla. Tots dos amb els components cap al davant.
+// Es fixen a la tapa del darrere amb cinta de doble cara o brides.
 //
 // Exportar:
 //   openscad -o tamagotchi_ou_closca.stl -D 'MODE="closca"' tamagotchi_ou.scad
@@ -21,9 +28,9 @@
 MODE = "3d";
 
 // --- Forma de l'ou (vista de davant) ---
-AMPLE      = 124;   // amplada maxima
-ALT_BAIX   = 88;    // de la linia mes ampla cap avall
-ALT_DALT   = 72;    // de la linia mes ampla cap amunt (mes estret = forma d'ou)
+AMPLE      = 130;   // amplada maxima
+ALT_BAIX   = 92;    // de la linia mes ampla cap avall
+ALT_DALT   = 76;    // de la linia mes ampla cap amunt (mes estret = forma d'ou)
 TALL_BASE  = 12;    // es talla la part de baix perque s'aguanti dret
 FONS       = 72;    // profunditat interior (UNO + protoboard + cables)
 PARET      = 2.4;   // gruix de paret (3D)
@@ -44,20 +51,27 @@ BOTONS_Y   = -22;
 BOTONS_SEP = 28;
 
 // --- Sensors i LED ---
-LLUM_POS  = [-30, 54];  D_LLUM  = 6;     // sensor de llum (TEMT6000 o LDR)
-MICRO_POS = [ 30, 54];  D_MICRO = 10;    // microfon
+LLUM_POS  = [-26, 58];  D_LLUM  = 6;     // sensor de llum (TEMT6000 o LDR)
+MICRO_POS = [ 26, 58];  D_MICRO = 10;    // microfon
 PIR_POS   = [  0, -54]; D_PIR   = 23.5;  // cupula del PIR (el "nas")
 LED_POS   = [ 44,  4];  D_LED   = 5.3;   // LED RGB de 5 mm
 
 // --- Cargols de la tapa / separadors (M3) ---
-CARGOLS = [[-49, 30], [49, 30], [-45, -48], [45, -48]];  // fora de la protoboard (82 mm) i del UNO (68,6 mm)
+// 3 cargols: dos a dalt (per sobre de la protoboard) i un a baix a l'esquerra.
+// A baix a la dreta no n'hi ha: hi passen els cables USB i del jack.
+CARGOLS = [[-40, 50], [40, 50], [-48, -45]];
 D_CARGOL = 3.3;
 
-// --- Sortida USB i alimentacio (lateral dret, closca 3D) ---
-USB_ALT   = 16;  USB_AMPLE = 14;   // USB-B del UNO
-JACK_ALT  = 13;  JACK_AMPLE = 11;  // jack de 5-9 V
-USB_Z     = 18;  // distancia de la tapa del darrere al centre del connector
-USB_Y     = -30; // altura del connector
+// --- Placa i protoboard (per a MODE="comprova" i per a la ranura) ---
+UNO      = [68.6, 53.4, 15];   // ample, alt, gruix amb components
+UNO_Y    = -72;                // vora de baix del UNO
+PROTO    = [82, 55, 10];
+PROTO_Y  = -17;                // vora de baix de la protoboard
+
+// --- Ranura del lateral dret (closca 3D): USB i jack del UNO ---
+// Cobreix tota l'altura del UNO i va fins a la tapa: serveix per a qualsevol
+// orientacio dels connectors i deixa treure el cable sense desmuntar res.
+RANURA_FONS = 34;              // profunditat de la ranura des de la tapa
 
 $fn = 96;
 
@@ -116,11 +130,9 @@ module closca() {
         translate([0, 0, -1]) linear_extrude(PARET + 2) forats_frontal();
         // forats per a cargols autoroscants M3 a les torretes
         for (p = CARGOLS) translate([p[0], p[1], PARET + 2]) cylinder(d = 2.6, h = FONS);
-        // USB i jack pel lateral dret
-        translate([AMPLE / 2 - 12, USB_Y, FONS + PARET - USB_Z])
-            cube([30, USB_AMPLE, USB_ALT], center = true);
-        translate([AMPLE / 2 - 12, USB_Y + 26, FONS + PARET - USB_Z])
-            cube([30, JACK_AMPLE, JACK_ALT], center = true);
+        // ranura del lateral dret per a l'USB i el jack, oberta cap a la tapa
+        translate([AMPLE / 2 - 25, UNO_Y - 2, FONS + PARET - RANURA_FONS])
+            cube([40, UNO[1] + 4, RANURA_FONS + 1]);
     }
 }
 
@@ -130,13 +142,15 @@ module tapa() {
 
 // --- Versio laser (2D) ----------------------------------------------
 module placa_davant() { difference() { ou2d(); forats_frontal(); forats_cargols(); } }
-module placa_darrere() {
-    difference() {
-        ou2d();
-        forats_cargols();
-        // pas del cable USB i ventilacio
-        translate([AMPLE / 2 - 30, USB_Y]) square([18, 16], center = true);
-    }
+module placa_darrere() { difference() { ou2d(); forats_cargols(); } }
+
+// --- Comprovacio d'encaix ---------------------------------------------
+module fantasmes() {
+    // els components miren endavant (z = 0 es el frontal); la placa, a tocar de la tapa
+    color("teal", 0.5)
+        translate([-UNO[0] / 2, UNO_Y, FONS + PARET - UNO[2]]) cube(UNO);
+    color("white", 0.5)
+        translate([-PROTO[0] / 2, PROTO_Y, FONS + PARET - PROTO[2]]) cube(PROTO);
 }
 
 if (MODE == "3d") {
@@ -146,6 +160,9 @@ if (MODE == "3d") {
     closca();
 } else if (MODE == "tapa") {
     tapa();
+} else if (MODE == "comprova") {
+    closca();
+    %fantasmes();
 } else if (MODE == "laser") {
     placa_davant();
     translate([AMPLE + 6, 0]) placa_darrere();

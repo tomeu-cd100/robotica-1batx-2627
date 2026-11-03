@@ -36,11 +36,15 @@ mitja protoboard drets, l'OLED de 0,96", 3 polsadors, el sensor de llum, el
 micròfon, el PIR i el LED RGB. Un sol fitxer paramètric fa les dues versions:
 
 - **Impresa en 3D:** `MODE="closca"` (la closca, de cara avall) i `MODE="tapa"`
-  (la tapa del darrere, 4 cargols M3 autoroscants). Temps orientatiu: closca
+  (la tapa del darrere, 3 cargols M3 autoroscants). Temps orientatiu: closca
   **6-8 h** i tapa **~1 h** (PLA, capa 0,2 mm, 2 perímetres, farciment 15 %).
 - **Tallada al làser:** `MODE="laser"` genera
   `Recursos/plantilles_laser/tamagotchi_ou_laser.svg` (placa del davant i del
-  darrere en DM de 3 mm, unides amb **4 separadors M3** de 72 mm).
+  darrere en DM de 3 mm, unides amb **3 separadors M3** de 72 mm).
+- **Comprova abans de fabricar:** `MODE="comprova"` mostra la closca amb el UNO i la
+  protoboard en transparent. El UNO va dret a **baix**, amb l'USB i el jack cap a la
+  **dreta** (surten per la ranura del lateral), i la protoboard dreta a **dalt**, darrere
+  la pantalla. Fes **un muntatge de prova** amb una closca abans d'imprimir-ne per a tot el grup.
 
 **Abans de fabricar, mesura el mòdul OLED que tens** i ajusta `OLED_FINESTRA_X/Y`,
 `OLED_FORATS_X/Y` i `OLED_DESP_FINESTRA` (no tots els mòduls de 0,96" són iguals).
