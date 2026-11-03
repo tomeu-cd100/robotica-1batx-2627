@@ -25,10 +25,10 @@ Has de construir i programar un sistema d'il·luminació de seguretat.
 5. Afegeix un **brunzidor** que faci un avís quan la foscor és extrema (segon llindar), i estructura el codi amb **funcions**.
 
 ### Lliurament
-- Sistema funcionant + **explicació breu al quadern** (esquema + què fa cada part + un error que has resolt).
+- Sistema funcionant + **explicació breu al full de la prova** (esquema + què fa cada part + un error que has resolt). Pots consultar el teu **full resum** (Pràctica 4 de la SA3, pas 7) i els esquemes.
 
 ### Pla de millora personal (després de la prova — 3 línies, no puntua)
-> Quan rebis el retorn, escriu al quadern: **(1)** què m'ha fallat o m'ha costat més · **(2)** què practicaré concretament (quina secció de `SA0`, quin sketch refaré) · **(3)** com comprovaré que ja ho tinc.
+> Quan rebis el retorn, escriu al dors del teu full resum: **(1)** què m'ha fallat o m'ha costat més · **(2)** què practicaré concretament (quina secció de `SA0`, quin sketch refaré) · **(3)** com comprovaré que ja ho tinc.
 > El docent **recupera aquestes 3 línies a l'inici de la SA4**: la primera graella d'activació del trimestre es dedica a comprovar el punt (3) de cadascú. El retorn només serveix si algú hi torna.
 
 ---
@@ -42,7 +42,7 @@ Has de construir i programar un sistema d'il·luminació de seguretat.
 | Lectura pel Serial correcta | 1 | R1 |
 | Polsador ON/OFF amb antirebot (ampliació) | 1,5 | R1 |
 | Brunzidor + codi amb funcions (ampliació) | 1,5 | R1 |
-| Documentació al quadern (esquema + error) | 1 | R4 |
+| Documentació al full de la prova (esquema + error) | 1 | R4 |
 
 > Orientació: nucli ben fet ≈ 5-6; amb una ampliació ≈ 7-8; amb les dues i bona documentació ≈ 9-10.
 

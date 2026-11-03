@@ -37,7 +37,7 @@ Entrades digitals (`digitalRead`, *pull-up*, *debounce*); entrades analògiques 
 **La mascota reactiva** (fil conductor, `Classes/00_General/00_Projecte_T1_Mascota.md`): la caixa de la SA2 amb ≥3 reaccions sensor→comportament (llegir → comparar amb un llindar → actuar) i la seva fitxa de personalitat. **Es tanca a la S3**; la S4 és la prova T1 individual. *(Decisió del 18-10-2026: abans el producte era l'alarma d'aparcament, que queda com a pràctica de referència.)*
 
 ## Avaluació
-- Instruments: producte (S3) + quadern + **prova pràctica T1** (S4, individual).
+- Instruments: producte (S3) + quadern tècnic + **prova pràctica T1** (S4, individual). El quadern tècnic són els **formularis de pràctica** de Classroom (Pràctiques 1-4, 33 punts cadascun), cadascun amb una pregunta de reflexió; no hi ha quadern en paper. A la prova T1 es pot consultar un **full resum en paper** que l'alumnat omple al final de la Pràctica 4. Tancament amb una **Entrega final** sense nota (autoavaluació + checklist).
 - Rúbriques: rúbrica del robot del dossier de la mascota (producte); R1, R2, R4 (prova).
 
 ## Atenció a la diversitat

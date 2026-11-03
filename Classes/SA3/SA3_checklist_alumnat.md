@@ -15,8 +15,8 @@
 - [ ] Veure la distància de l'**ultrasons** al Serial Plotter i saber què **et torna** la funció `mesuraDistancia()` (Sessió 3)
 - [ ] Omplir la **fitxa de la mascota**: nom, caràcter i 3 reaccions (Sessió 3)
 - [ ] Acabar la **mascota** amb les seves reaccions i explicar-la en 1 minut (Sessió 3)
-- [ ] Enviar el **formulari de Classroom** (només a la Sessió 3)
-- [ ] Tenir el **quadern tècnic** al dia: el necessitaràs a la **prova T1** (Sessió 4)
+- [ ] Haver enviat els **formularis de Classroom** de les Pràctiques 1, 2, 3 i 4 (cadascun en acabar la seva pràctica) i l'**Entrega final**
+- [ ] Tenir el **full resum en paper** fet: el podràs consultar a la **prova T1** (Sessió 4)
 
 ## 🚦 Com vaig? (pinta el teu nivell)
 | Ja sé… | 🔴 Encara no | 🟡 A mitges | 🟢 Sí |

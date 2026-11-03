@@ -5,13 +5,15 @@
 
 ## ⚡ Xuleta de sessió (si només llegeixes una cosa, que sigui això)
 
-> L'alumnat segueix l'**itinerari pas a pas de la [portada de la SA3](README.md)** (una sessió plegable per dia). Tu fas una **explicació curta al principi** i després **circules** per les taules. La resta de la guia és el detall per si el necessites.
+> L'alumnat segueix la **ruta de pràctiques de la [portada de la SA3](README.md)** al seu ritme: cada pràctica és una pàgina de passos que acaba enviant el seu formulari, i les 🚩 marquen on hauria de ser cadascú al final de cada sessió. Tu fas una **arrencada de 5-10'** i després **circules** per les taules. La resta de la guia és el detall per si el necessites.
 
-| | 🗣️ Explica (només això, ~10') | 👀 Mentre treballen, vigila | ✅ Abans que marxin, comprova |
+> 🚩 **L'arrencada explica la pràctica de la fita del dia** (S1: la ①; S2: la ②; S3: la ④ mascota, després del mini-check i de 5' d'ultrasons), no la SA sencera. Qui va endarrerit té el mateix contingut al «🧠 Vols saber per què funciona?» de cada pràctica.
+
+| | 🗣️ Arrencada (5-10': només això) | 👀 Mentre treballen, vigila | ✅ Abans que marxin, comprova |
 |---|---|---|---|
-| **S1** · Polsador | Amb `INPUT_PULLUP` el pin està «agafat» a HIGH i prémer l'estira a LOW: **al revés del que esperen**. Obre el **Monitor sèrie** (9600) en directe. | Polsador mal punxat (potes de dos en dos) · Monitor amb un *baud* diferent de 9600 | Comptador funcionant al Monitor · HIGH/LOW apuntats a Classroom |
-| **S2** · Analògiques | `analogRead` dona **0 a 1023**; `analogWrite` vol **0 a 255** → `map()`. Mou el potenciòmetre en directe amb el Monitor obert. | LDR sense la resistència de 10 kΩ (llegeix sempre 0 o 1023) · llindar comparat amb 255 | Llum automàtic funcionant · Racó de mesura fet. **Deures:** nom i caràcter de la mascota |
-| **S3** · Mascota | Mini-check (10'). Després, en 5': el sensor d'ultrasons és un **ratpenat** (envia un so i escolta l'eco) i `mesuraDistancia()` **et torna** un número. | TRIG/ECHO intercanviats · mascotes sense la fitxa de personalitat · qui es perd amb l'esquelet (que comenci pel soroll, que ja està fet) | Mascota amb **≥3 reaccions** · fitxa de personalitat · defensa d'1' a peu de taula · **formulari enviat** |
+| **S1** · Polsador | Amb `INPUT_PULLUP` el pin està «agafat» a HIGH i prémer l'estira a LOW: **al revés del que esperen**. Obre el **Monitor sèrie** (9600) en directe. | Polsador mal punxat (potes de dos en dos) · Monitor amb un *baud* diferent de 9600 | Comptador funcionant al Monitor · formulari de la ① enviat |
+| **S2** · Analògiques | `analogRead` dona **0 a 1023**; `analogWrite` vol **0 a 255** → `map()`. Mou el potenciòmetre en directe amb el Monitor obert. | LDR sense la resistència de 10 kΩ (llegeix sempre 0 o 1023) · llindar comparat amb 255 | Llum automàtic funcionant · Racó de mesura fet · formulari de la ② enviat. **Deures:** nom i caràcter de la mascota |
+| **S3** · Mascota | Mini-check (10'). Després, en 5': el sensor d'ultrasons és un **ratpenat** (envia un so i escolta l'eco) i `mesuraDistancia()` **et torna** un número. | TRIG/ECHO intercanviats · mascotes sense la fitxa de personalitat · qui es perd amb l'esquelet (que comenci pel soroll, que ja està fet) | Mascota amb **≥3 reaccions** · fitxa de personalitat · defensa d'1' a peu de taula · formularis de la ③ i la ④ i **Entrega final** enviats · **full resum** per a la prova fet |
 | **S4** · Prova T1 | Res: només les instruccions de la prova. | Incidències de material (no dubtes de contingut) | Proves recollides |
 
 > 🎯 **Prioritat si vas just de temps:** a la S3, la mascota passa per davant de tot. Si l'ultrasons s'allarga, talla'l quan vegin la gràfica al Serial Plotter. L'**alarma d'aparcament** (Pràctica 4) és només per a qui acabi abans. Els **katas** d'aquesta SA estan arxivats (18-10-2026, [`docs/arxiu/SA3_katas/`](../../docs/arxiu/SA3_katas/README.md)).
@@ -56,7 +58,7 @@
   - **`millis()` en 2':** és el primer cop que el fan servir de debò (a la SA2 només es va presentar). Digues-ho amb el rellotge de la paret: `millis()` no espera res, es *consulta*, i el temps que ha passat sempre es calcula **restant** (`millis() - ultimCanvi`).
 - **Pràctica guiada (35'):** munten el polsador al pin 2; obren el monitor sèrie i compten premudes. El LED del pin 8 ja canvia a cada premuda (*toggle*).
 - **Repte (30'):** comptar fins a 5 i tornar a 0; **+ repte:** que el LED només s'encengui a la 5a premuda.
-- **Tancament (10'):** quadern.
+- **Tancament (10'):** envien el formulari de la Pràctica 1 (🚩 de la S1).
 
 > ⏱️ **Marge:** 10+25+2+35+30+10 = **112'** sobre ~100' efectius. Si vas just, retalla primer: ① el **«+ repte»** · ② el **repte a 20'**. Amb els katas arxivats, la sessió ja no va tan justa com abans.
 >
@@ -71,7 +73,7 @@
 - **Modelatge (25'):** `02_potenciometre_ldr.ino`. `analogRead` (conversió A/D 10 bits), **`map()`** per reescalar, divisor de tensió per a la LDR.
 - **Pràctica guiada (35'):** llegeixen potenciòmetre (A0) i LDR (A1) al monitor; regulen la intensitat d'un LED amb el potenciòmetre (PWM).
 - **Repte (40'):** **llum automàtic** (LDR → LED s'encén si fa fosc) amb llindar; **+ repte:** llindar ajustable amb el potenciòmetre.
-- **Tancament (10'):** quadern (taula de lectures).
+- **Tancament (10'):** envien el formulari de la Pràctica 2 (la taula de lectures hi és); recorda els deures de la mascota.
 
 > ⏱️ **Marge:** el temps efectiu real és ~100' (arrencada + recollida), no 120'. Si vas just, retalla primer: **el «+ repte» (llindar ajustable amb el potenciòmetre)**.
 
@@ -89,9 +91,9 @@
 - **Ultrasons, versió curta (25'):** `03_ultrasons_funcio.ino`. Principi de l'eco (`pulseIn`) i, sobretot, **una funció que retorna un valor** (`mesuraDistancia()`). Munten l'HC-SR04 i miren la distància al **Serial Plotter**. Talla quan tothom vegi la gràfica.
 - **PRODUCTE: la mascota (55'):**
   1. **Fitxa de personalitat (10'):** nom, caràcter i una taula de **3 reaccions** (sensor → què fa → per què encaixa amb el caràcter). Si ho porten pensat de casa (deures de la S2), van més ràpid.
-  2. **Muntatge i codi (45'):** sensors a la caixa ([cablatge del dossier](../00_General/00_Projecte_T1_Mascota.md#cablatge)) i l'**esquelet** del dossier: la reacció del soroll ja està feta; omplen la **foscor** i el **PIR** (i, qui vagi bé, el polsador o el DHT11).
+  2. **Muntatge i codi (45'):** sensors a la caixa ([cablatge del dossier](../00_General/00_Projecte_T1_Mascota.md#cablatge)) i l'**esquelet**, que ara és la [Pràctica 4](codi/05_mascota/EXPLICACIO.md) (`05_mascota.ino`): la reacció del soroll ja està feta; omplen la **foscor** i el **PIR** (i, qui vagi bé, el polsador o el DHT11).
   3. **Mini-defensa individual d'1' a peu de taula**, mentre treballen: presenta la mascota, què fa cada reacció i per què.
-- **Tancament (10'):** autoavaluació, **enviar el formulari** de Classroom i desar el codi.
+- **Tancament (10'):** **full resum** en paper per a la prova (pas 7 de la Pràctica 4), formularis de la ③ i la ④, **Entrega final** (autoavaluació + checklist) i desar el codi.
 
 > ⏱️ **Marge:** 10+25+55+10 = **100'**, just el temps efectiu. Si vas just: ① l'ultrasons es redueix a veure la gràfica (sense el filtre de la mitjana) · ② el DHT11 i el polsador queden fora (amb soroll + foscor + PIR ja són 3 reaccions). **No retallis la fitxa de personalitat**: és la meitat de la R4 del robot.
 >
@@ -106,11 +108,11 @@
 
 ## SESSIÓ 4 (2 h) — PROVA PRÀCTICA T1 (individual)
 
-> 📋 **Aquesta sessió és, sencera, la prova trimestral T1** ([`Avaluació/Prova_practica_T1.md`](../../Avaluació/Prova_practica_T1.md)): individual, amb kit propi (n'hi ha un per alumne/a), quadern i esquemes consultables. **No s'hi programa cap altra activitat** — una prova individual (~80-85' reals) i una sessió de producte no caben juntes ([`08_Sequenciacio`](../../Programació%20didàctica/08_Sequenciacio_temporal_anual.md)).
+> 📋 **Aquesta sessió és, sencera, la prova trimestral T1** ([`Avaluació/Prova_practica_T1.md`](../../Avaluació/Prova_practica_T1.md)): individual, amb kit propi (n'hi ha un per alumne/a), **full resum en paper** (el que van omplir al pas 7 de la Pràctica 4) i esquemes consultables. **No s'hi programa cap altra activitat** — una prova individual (~80-85' reals) i una sessió de producte no caben juntes ([`08_Sequenciacio`](../../Programació%20didàctica/08_Sequenciacio_temporal_anual.md)).
 
-- **Instruccions (5-10'):** repartir material, recordar què es pot consultar (quadern, esquemes) i l'estructura per nivells (nucli = 5-6; ampliacions = 7-10).
+- **Instruccions (5-10'):** repartir material, recordar què es pot consultar (el seu full resum, esquemes) i l'estructura per nivells (nucli = 5-6; ampliacions = 7-10).
 - **Prova (~80-85'):** cada alumne/a munta i programa la "llum de seguretat intel·ligent". El docent només resol incidències de material (placa/cable espatllats), no dubtes de contingut.
-- **Tancament (10'):** recollida ordenada; recordar el **pla de millora personal** (3 línies al quadern quan rebin el retorn — es reprèn a l'inici de la SA4).
+- **Tancament (10'):** recollida ordenada; recordar el **pla de millora personal** (3 línies al dors del full resum quan rebin el retorn — es reprèn a l'inici de la SA4).
 
 > ⏱️ **Marge:** ~95-105' efectius, no 120'. Instruccions + recollida se'n mengen 15-20', així que la prova real són **~80-85'**, i el **nucli està calibrat per a ~60'**. Si el grup arrenca tard, retalla **les instruccions** (projecta l'enunciat i deixa'ls començar), mai el temps de prova. Avisa a la meitat i a manca de 10'.
 
@@ -121,7 +123,7 @@
 |---|---|---|---|
 | Producte: **la mascota** (**S3**) | ≥3 reaccions sensor→comportament + fitxa de personalitat | CA2.1, CA2.2 | Rúbrica del robot (dossier) |
 | **Prova T1 (S4, individual)** | Circuit + codi + documentació en solitari | CA1.1, CA2.1, CA2.2 | R1, R2, R4 |
-| Quadern tècnic | Taula de lectures, codi de la funció, errors | CA1.1, CA2.2 | **R4** |
+| Quadern tècnic (25 %) = **mitjana dels formularis de pràctica** (P1, P2, P3, P4), cadascun sobre 33 punts a Classroom | Respostes ✍️ de cada pràctica (taula de lectures, funció, mascota) + pregunta de reflexió | CA1.1, CA2.2 | **R4** |
 | Observació + depuració sèrie | Ús del monitor/traçador, divisor de tensió | CA2.2 | R2 |
 | Ajuda entre iguals i **revisió creuada** de codi | Cooperació sense producte compartit: línia d'ajuda del quadern + una millora concreta i un dubte al company | CA5.3 | **R5** |
 

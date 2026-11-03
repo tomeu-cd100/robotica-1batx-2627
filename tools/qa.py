@@ -851,8 +851,12 @@ PRACTIQUES_NOU_FORMAT: set[str] = {
     "Classes/SA2/codi/03_fade_pwm/EXPLICACIO.md",
     "Classes/SA2/codi/04_rgb/EXPLICACIO.md",
     "Classes/SA2/codi/05_panell_senyalitzacio/EXPLICACIO.md",
+    "Classes/SA3/codi/01_polsador_debounce/EXPLICACIO.md",
+    "Classes/SA3/codi/02_potenciometre_ldr/EXPLICACIO.md",
+    "Classes/SA3/codi/03_ultrasons_funcio/EXPLICACIO.md",
+    "Classes/SA3/codi/05_mascota/EXPLICACIO.md",
 }
-SA_NOU_FORMAT: set[int] = {2}
+SA_NOU_FORMAT: set[int] = {2, 3}
 
 _PAS_MD_RE = re.compile(r"^### (Pas \d+.*)$", re.M)
 _FI_SECCIO_MD_RE = re.compile(r"^(## |### |<details)", re.M)

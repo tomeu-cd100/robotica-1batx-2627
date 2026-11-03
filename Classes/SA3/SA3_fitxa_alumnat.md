@@ -30,9 +30,9 @@
 
 ## On responc · Google Classroom
 
-Les preguntes d'aquesta fitxa es responen a la **tasca de Google Classroom** (val **10 punts**). **No cal fer-ho tot de cop:** la portada de la SA et diu, sessió a sessió, què has de respondre cada dia.
+Les preguntes es responen a Classroom, **un formulari per pràctica**: l'enllaç és a l'últim pas de cada pràctica («📤 Respon i envia»), i la [portada de la SA](README.md) té la ruta completa.
 
-> 👉 **[Obre la tasca: SA3 · Fitxa base (Google Classroom)](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODcwNTE4MDEwMzM3/details)**
+> 👉 Comença per la **[Pràctica 1 · El polsador](codi/01_polsador_debounce/EXPLICACIO.md)**: la seva tasca és [SA3 · Pràctica 1](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODk3NDAzMTY0MTI4/details).
 
 Si la tasca encara no et surt a Classroom, és que la SA encara no ha començat. En aquesta pàgina hi tens què aprendràs (a dalt) i què fer si alguna cosa no funciona (a sota).
 
@@ -73,7 +73,7 @@ Si la tasca encara no et surt a Classroom, és que la SA encara no ha començat.
 **Explica-la en 1 minut** (a la taula, mentre treballes): presenta la mascota i què fa cada reacció.
 
 ### 4 · Prova pràctica T1 (Sessió 4, individual)
-**Tota la Sessió 4** és la prova T1: individual, amb el teu kit. **Pots consultar el teu quadern i els esquemes.** Si fas el mínim ben fet, tens un 5-6; si fas les ampliacions, fins a 10. Per això tenir el quadern al dia et serveix tant.
+**Tota la Sessió 4** és la prova T1: individual, amb el teu kit. **Pots consultar el teu full resum en paper** (el fas al pas 7 de la Pràctica 4) **i els esquemes.** Si fas el mínim ben fet, tens un 5-6; si fas les ampliacions, fins a 10. Per això val la pena fer bé el full resum.
 
 <!-- /web:only-github -->
 
@@ -81,7 +81,7 @@ Si la tasca encara no et surt a Classroom, és que la SA encara no ha començat.
 Es **tanca a la Sessió 3** (la Sessió 4 és la prova T1): la mascota amb **3 reaccions** (algú s'acosta, es fa fosc, hi ha soroll…) que encaixen amb el seu caràcter, i la seva fitxa. L'expliques en **1 minut** a peu de taula. Es corregeix amb la [rúbrica del robot](../00_General/00_Projecte_T1_Mascota.md).
 
 ## Si alguna cosa no funciona (DEPURA)
-> **D**igues què esperaves i què passa · **E**xamina (**mira el Monitor sèrie!**) · **P**rova **un sol canvi** cada vegada · **U**bica on és el problema · **R**epara-ho · **A**punta-ho al quadern. Mira primer que el sensor tingui els cables de **5 V i GND** ben posats. Encara no ho trobes? **[Targeta de rescat](../00_General/00_Targetes_rescat.md)** (comença per la 🟢).
+> **D**igues què esperaves i què passa · **E**xamina (**mira el Monitor sèrie!**) · **P**rova **un sol canvi** cada vegada · **U**bica on és el problema · **R**epara-ho · **A**punta-ho. Mira primer que el sensor tingui els cables de **5 V i GND** ben posats. Encara no ho trobes? **[Targeta de rescat](../00_General/00_Targetes_rescat.md)** (comença per la 🟢).
 
 <!-- web:only-github -->
 
@@ -94,7 +94,7 @@ Es **tanca a la Sessió 3** (la Sessió 4 és la prova T1): la mascota amb **3 r
 
 ## Quadern tècnic
 
-> 📓 Escriu-ho al teu **[quadern tècnic](../00_General/00_Quadern_tecnic.md)** (compta el 25 %).
+> 📓 Aquestes preguntes són l'**última pregunta de cada formulari de pràctica** (el quadern tècnic compta el 25 %): no cal escriure-les a part.
 - **Diferència entre una entrada digital (el botó) i una analògica (el sensor de llum):** ______________________
 - **Per a què serveix una funció?** ___________________________________
 - **Un error que he tingut i com l'he arreglat:** _____________________________________
