@@ -5,6 +5,8 @@
 // Ús (des de Material Classroom/):
 //   node actualitzar_form_fitxa_sa.mjs sa2            -> només mostra què canviaria
 //   node actualitzar_form_fitxa_sa.mjs sa2 --aplica   -> substitueix les preguntes
+//   ... sa3 --form=https://docs.google.com/forms/d/<id>/edit  -> si la tasca només duu
+//       l'enllaç de resposta (Forms creats amb l'antic projecte OAuth)
 //
 // Les preguntes es substitueixen totes en un sol batchUpdate (atòmic). Les respostes
 // ja enviades a preguntes esborrades es perden del Form: per això, si hi ha lliuraments
@@ -35,8 +37,12 @@ async function main() {
   const tasca = trobada && (await ambReintents(() => classroom.courses.courseWork.get({
     courseId: COURSE_ID, id: trobada.id
   }), 'llegir tasca')).data;
-  let formId = (tasca?.materials || [])
+  // --form=<URL d'edició o id>: per a tasques que només porten l'enllaç de resposta
+  // (/forms/d/e/...), que no és l'id d'edició i l'API no sap resoldre.
+  const formArg = flags.find(f => f.startsWith('--form='))?.slice(7);
+  let formId = formArg?.match(/\/forms\/d\/([\w-]+)/)?.[1] || formArg || (tasca?.materials || [])
     .map(m => m.form?.formUrl?.match(/\/forms\/d\/([\w-]+)/)?.[1]).find(Boolean);
+  if (formId === 'e') throw new Error("Això és l'enllaç de resposta (/forms/d/e/...). Cal el d'edició: obre el Form i copia l'URL acabada en /edit.");
   if (!formId) {
     const search = await ambReintents(() => drive.files.list({
       q: `name = '${def.titol.replace(/'/g, "\\'")}' and mimeType = 'application/vnd.google-apps.form' and trashed = false`,
