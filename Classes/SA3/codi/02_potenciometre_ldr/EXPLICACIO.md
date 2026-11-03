@@ -1,32 +1,145 @@
 # Pràctica 2 · Entrades analògiques: potenciòmetre i LDR
 
-**Quan es fa:** Sessió 2 · **Fitxer:** `02_potenciometre_ldr.ino` · **Circuit:** [esquema de connexions, apartat 2](../../SA3_esquemes_connexions.md) (potenciòmetre a A0, sensor de llum a A1, LED al pin 9)
+<div class="cap-practica" markdown="1">
 
-## 🎯 Què faràs
+🎯 **Avui aconseguiràs:** llegir dos sensors que donen **molts valors** i fer un **llum automàtic** que s'encén sol quan es fa fosc.
 
-Un botó només sap dir **dues coses**: premut o no premut. Però hi ha coses que tenen **molts** valors: quanta llum hi ha, quant has girat una rodeta… Avui llegiràs dos sensors així, i al final faràs un **llum automàtic**: un LED que s'encén sol quan es fa fosc.
+⏱️ Tota la sessió
+
+📦 1 potenciòmetre, 1 sensor de llum (LDR), 1 resistència de 10 kΩ, 1 LED, 1 resistència de 220 Ω i cables
+
+</div>
 
 ## 🚀 Pas a pas
 
-1. **Munta el circuit:**
+### Pas 1 · Munta el circuit
 
-   | Pin de l'Arduino | Va a… |
-   |---|---|
-   | A0 | la pota **del mig** del potenciòmetre (les altres dues, a 5 V i a GND) |
-   | A1 | el punt on s'uneixen el sensor de llum (LDR) i la resistència de 10 kΩ |
-   | 9 ~ | LED → resistència de 220 Ω → GND |
+| Pin de l'Arduino | Va a… |
+|---|---|
+| A0 | la pota **del mig** del potenciòmetre (les altres dues, a 5 V i a GND) |
+| A1 | el punt on s'uneixen el sensor de llum (LDR) i la resistència de 10 kΩ |
+| 9 ~ | LED → resistència de 220 Ω → GND |
 
-   El sensor de llum i la resistència de 10 kΩ van **una darrere l'altra** entre 5 V i GND. Mira el dibuix a l'esquema.
-2. **Carrega el codi:** prem **Copia**, enganxa'l a l'Arduino IDE (esborra el que hi hagués) i prem **→ Puja**.
+El sensor de llum i la resistència de 10 kΩ van **una darrere l'altra** entre 5 V i GND.
+
+![Muntatge: potenciòmetre a A0, sensor de llum a A1 i LED al pin 9](../../img/sa3-tinkercad-pot-ldr.png)
+
+### Pas 2 · Carrega el codi
+
+Prem **Copia**, enganxa'l a l'Arduino IDE (esborra el que hi hagués) i prem **→ Puja**.
 
 <!-- codi-complet -->
 
-3. **Obre el Monitor sèrie** (Eines → Monitor sèrie, 9600). Hi veuràs dos números que canvien tota l'estona: `POT` i `LDR`.
-4. **Juga-hi:** gira el potenciòmetre (el número `POT` canvia i el LED fa més o menys llum). Després tapa el sensor amb la mà (el número `LDR` baixa). Escriu a Classroom entre quins números es mouen (de ___ a ___).
-5. **Apunta al quadern** el número `LDR` amb llum i tapat. El necessitaràs al pas 6.
-6. **El llum automàtic:** a sota de tot del codi hi ha, entre `/*` i `*/`, el codi del llum automàtic. Esborra el que hi ha dins del `loop()`, enganxa-hi aquest codi i canvia el `400` del `llindar` per un número **entre** els dos que has apuntat. Puja'l i tapa el sensor: el LED s'ha d'encendre.
+✅ **Comprova:** al Monitor sèrie (Eines → Monitor sèrie, 9600) hi ha dos números que canvien tota l'estona: `POT` i `LDR`.
 
-## 🧠 Com funciona, a trossos
+### Pas 3 · Juga-hi
+
+Gira el potenciòmetre (el número `POT` canvia i el LED fa més o menys llum). Després tapa el sensor amb la mà (el número `LDR` baixa).
+
+✍️ **Apunta-ho:** els números que llegeixes van de ____ a ____.
+
+✍️ **Apunta-ho:** número del sensor de llum (LDR) amb llum: ____ · tapat: ____. Els necessitaràs al pas 6.
+
+### Pas 4 · Busca la instrucció que fa el canvi
+
+El sensor dona números de 0 a 1023, però `analogWrite` només n'accepta de 0 a 255.
+
+✍️ **Apunta-ho:** quina instrucció passa de 0-1023 a 0-255? (La resposta és al tros 3.)
+
+### Pas 5 · Mesura amb el multímetre
+
+Quan el docent et cridi, mesura els **volts** del punt d'unió del sensor de llum i compara'ls amb el número `LDR` del Monitor.
+
+✍️ **Apunta-ho:** Racó de mesura: volts = ... V · Monitor = ... · Monitor ÷ 1023 × 5 = ... V · coincideixen?
+
+### Pas 6 · Fes el llum automàtic
+
+A sota de tot del codi hi ha, entre `/*` i `*/`, el codi del llum automàtic. Esborra el que hi ha dins del `loop()`, enganxa-hi aquest codi i canvia el `400` del `llindar` per un número **entre** els dos que has apuntat al pas 3. Puja'l.
+
+✅ **Comprova:** quan tapes el sensor, el LED s'encén.
+
+✍️ **Apunta-ho:** el LED s'encén quan el número del sensor de llum és ____ que ____.
+
+### Pas 7 · Explica-ho amb les teves paraules
+
+✍️ **Apunta-ho:** quina diferència hi ha entre una entrada digital i una d'analògica?
+
+### Pas 8 · Respon i envia
+
+📤 [Obre la tasca «SA3 · Pràctica 2» a Classroom i envia el formulari](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODk3NDAxNjA1NTU2/details)
+
+Hi trobaràs les mateixes preguntes ✍️ que has anat apuntant. Envia'l ara. Per a la sessió següent, pensa un **nom** i un **caràcter** per a la teva mascota (és tímida? valenta? dormilega?). Després continua a la **[Pràctica 3 · Ultrasons](../03_ultrasons_funcio/EXPLICACIO.md)**.
+
+⭐ **Si acabes abans:** Tria un repte a **[Reptes de la SA3](../../../../Reptes/Reptes_SA3.md)** i, quan el docent te'l validi, pinta l'estrella al [tauler de reptes](../../../00_General/00_Tauler_reptes.md).
+
+<details markdown="1">
+<summary>🧗 Si t'encalles</summary>
+
+| Què passa | Per què | Com ho arreglo |
+|---|---|---|
+| El sensor de llum diu **sempre 0 o sempre 1023** | Falta la resistència de 10 kΩ, o no està ben unida al sensor. | Mira el dibuix de l'esquema, apartat 2. |
+| El llum automàtic no s'encén mai (o sempre) | El llindar no està entre els números de llum i de tapat. | Mira el Monitor i tria un número al mig. |
+| El LED només s'encén o s'apaga, sense fer més o menys llum | El LED no és en un pin amb `~`. | Posa'l al pin 9. |
+| Al Monitor surten símbols estranys | La velocitat no és 9600. | A baix a la dreta del Monitor, tria 9600. |
+
+### L'esquelet del llum automàtic
+
+Si el llum automàtic no et surt, parteix d'aquest esquelet. La lectura i el Monitor sèrie ja hi són; tu només omples els `// TODO:` (la comparació amb el llindar i què fa el LED). Es pot pujar tal com està, però el LED no farà res fins que completis l'`if`.
+
+<details markdown="1">
+<summary>Desplega l'esquelet (copia'l a un programa nou)</summary>
+
+```cpp
+/*
+  SA3 - sensor amb llindar (esquelet per comencar)
+
+  El patro ja esta muntat: setup() amb Serial.begin per calibrar, la funcio de
+  lectura del sensor donada, i un loop() que llegeix i mostra el valor al Monitor.
+  Tu nomes has d'OMPLIR els // TODO: la comparacio amb el llindar i que fa cada cas.
+
+  Metode SA3: llegir analogic (0..1023) -> comparar amb un llindar -> decidir.
+  Munta: sensor analogic (LDR/pot en divisor) -> A1 ; LED -> [220 ohm] -> pin 9 (~) -> GND.
+*/
+
+const int SENSOR = A1;      // entrada analogica (punt mig del divisor)
+const int LED = 9;          // sortida (pin ~ per si despres vols graduar-lo)
+const int LLINDAR = 400;    // ajusta'l mirant el Monitor serie al teu muntatge
+                            // (analogRead va de 0 a 1023, NO de 0 a 255)
+
+// Funcio propia DONADA: llegeix i RETORNA el valor del sensor (0..1023).
+int llegeixSensor() {
+  return analogRead(SENSOR);
+}
+
+void setup() {
+  pinMode(LED, OUTPUT);
+  Serial.begin(9600);       // obre Eines > Serial Monitor per calibrar el llindar
+}
+
+void loop() {
+  int valor = llegeixSensor();   // 0 = minim ... 1023 = maxim
+
+  // Mostra la lectura per poder triar be el llindar (eina de calibratge)
+  Serial.print("Sensor: ");
+  Serial.println(valor);
+
+  // Decisio per llindar: completa la comparacio i l'accio de cada cas.
+  if (/* TODO: compara "valor" amb LLINDAR, p. ex. valor < LLINDAR */ false) {
+    // TODO: que fa el sistema quan es supera el llindar? (p. ex. digitalWrite(LED, HIGH);)
+  } else {
+    // TODO: que fa en cas contrari? (p. ex. digitalWrite(LED, LOW);)
+  }
+
+  delay(100);
+}
+```
+
+</details>
+
+</details>
+
+<details markdown="1">
+<summary>🧠 Vols saber per què funciona?</summary>
 
 ### Tros 1 — Els pins analògics i el llindar
 
@@ -102,72 +215,9 @@ Llegit en veu alta: *«Llegeix el sensor de llum. **Si** el número és més pet
 
 Aquesta és la idea més important de la SA: **llegir → comparar → actuar**. La faràs servir a la mascota i a la prova. Si et costa, mira-la [dibuixada](../../SA3_diagrama_flux.md) o l'[exemple resolt](../../SA3_exemple_resolt.md).
 
-## ⚠️ Errors que veuràs segur
-
-| Què passa | Per què | Com ho arreglo |
-|---|---|---|
-| El sensor de llum diu **sempre 0 o sempre 1023** | Falta la resistència de 10 kΩ, o no està ben unida al sensor. | Mira el dibuix de l'esquema, apartat 2. |
-| El llum automàtic no s'encén mai (o sempre) | El llindar no està entre els números de llum i de tapat. | Mira el Monitor i tria un número al mig. |
-| El LED només s'encén o s'apaga, sense fer més o menys llum | El LED no és en un pin amb `~`. | Posa'l al pin 9. |
-| Al Monitor surten símbols estranys | La velocitat no és 9600. | A baix a la dreta del Monitor, tria 9600. |
-
-## 🧗 Si t'encalles: l'esquelet
-
-Si el llum automàtic no et surt, parteix d'aquest esquelet. La lectura i el Monitor sèrie ja hi són; tu només omples els `// TODO:` (la comparació amb el llindar i què fa el LED). Es pot pujar tal com està, però el LED no farà res fins que completis l'`if`.
-
-<details markdown="1">
-<summary>Desplega l'esquelet (copia'l a un programa nou)</summary>
-
-```cpp
-/*
-  SA3 - sensor amb llindar (esquelet per comencar)
-
-  El patro ja esta muntat: setup() amb Serial.begin per calibrar, la funcio de
-  lectura del sensor donada, i un loop() que llegeix i mostra el valor al Monitor.
-  Tu nomes has d'OMPLIR els // TODO: la comparacio amb el llindar i que fa cada cas.
-
-  Metode SA3: llegir analogic (0..1023) -> comparar amb un llindar -> decidir.
-  Munta: sensor analogic (LDR/pot en divisor) -> A1 ; LED -> [220 ohm] -> pin 9 (~) -> GND.
-*/
-
-const int SENSOR = A1;      // entrada analogica (punt mig del divisor)
-const int LED = 9;          // sortida (pin ~ per si despres vols graduar-lo)
-const int LLINDAR = 400;    // ajusta'l mirant el Monitor serie al teu muntatge
-                            // (analogRead va de 0 a 1023, NO de 0 a 255)
-
-// Funcio propia DONADA: llegeix i RETORNA el valor del sensor (0..1023).
-int llegeixSensor() {
-  return analogRead(SENSOR);
-}
-
-void setup() {
-  pinMode(LED, OUTPUT);
-  Serial.begin(9600);       // obre Eines > Serial Monitor per calibrar el llindar
-}
-
-void loop() {
-  int valor = llegeixSensor();   // 0 = minim ... 1023 = maxim
-
-  // Mostra la lectura per poder triar be el llindar (eina de calibratge)
-  Serial.print("Sensor: ");
-  Serial.println(valor);
-
-  // Decisio per llindar: completa la comparacio i l'accio de cada cas.
-  if (/* TODO: compara "valor" amb LLINDAR, p. ex. valor < LLINDAR */ false) {
-    // TODO: que fa el sistema quan es supera el llindar? (p. ex. digitalWrite(LED, HIGH);)
-  } else {
-    // TODO: que fa en cas contrari? (p. ex. digitalWrite(LED, LOW);)
-  }
-
-  delay(100);
-}
-```
-
-</details>
-
-## 🔗 On ho aplicaràs
+### On ho aplicaràs
 
 - **La mascota (Sessió 3):** la reacció «**es fa fosc → la mascota s'adorm**» és exactament aquest llum automàtic.
 - **Prova T1 (Sessió 4):** el circuit de la prova també és «llegir un sensor → comparar → encendre un llum».
 
-> ⭐ **Has acabat abans?** Tria un repte a **[Reptes de la SA3](../../../../Reptes/Reptes_SA3.md)** i, quan el docent te'l validi, pinta l'estrella al [tauler de reptes](../../../00_General/00_Tauler_reptes.md).
+</details>

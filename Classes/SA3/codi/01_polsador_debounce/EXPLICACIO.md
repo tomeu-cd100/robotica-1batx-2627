@@ -1,40 +1,81 @@
 # Pràctica 1 · El polsador: INPUT_PULLUP i antirebot
 
-**Quan es fa:** Sessió 1 · **Fitxer:** `01_polsador_debounce.ino` · **Circuit:** [esquema de connexions, apartat 1](../../SA3_esquemes_connexions.md) (polsador al pin 2, LED al pin 8)
+<div class="cap-practica" markdown="1">
 
-## 🎯 Què faràs
+🎯 **Avui aconseguiràs:** que l'Arduino **noti** quan prems un botó, el compti i t'ho escrigui a l'ordinador.
 
-Fins ara l'Arduino només **feia** coses. Avui, per primer cop, **nota** una cosa: si prems un botó. Cada vegada que el prems, l'Arduino ho **compta**, t'ho escriu a l'ordinador i encén o apaga un LED.
+⏱️ 50 min
+
+📦 1 polsador, 1 LED, 1 resistència de 220 Ω i cables
+
+</div>
 
 ## 🚀 Pas a pas
 
-1. **Munta el circuit:**
+### Pas 1 · Munta el circuit
 
-   | Pin de l'Arduino | Va a… |
-   |---|---|
-   | 2 | una pota del polsador |
-   | GND | l'altra pota del polsador (la de la diagonal) |
-   | 8 | LED → resistència de 220 Ω → GND |
+| Pin de l'Arduino | Va a… |
+|---|---|
+| 2 | una pota del polsador |
+| GND | l'altra pota del polsador (la de la diagonal) |
+| 8 | LED → resistència de 220 Ω → GND |
 
-   Posa el polsador **creuant el canal del mig** de la protoboard.
-2. **Llegeix el codi** de sota i **endevina:** què sortirà a l'ordinador quan premis el botó? Escriu-ho a Classroom.
-3. **Carrega'l:** prem **Copia**, enganxa'l a l'Arduino IDE (esborra el que hi hagués) i prem **→ Puja**.
+![Muntatge: polsador al pin 2 i LED al pin 8](../../img/sa3-tinkercad-polsador-pin2.png)
+
+✅ **Comprova:** el polsador **creua el canal del mig** de la protoboard.
+
+### Pas 2 · Endevina abans de provar
+
+Desplega el codi complet del pas 3 i llegeix-lo. Què sortirà a l'ordinador quan premis el botó?
+
+✍️ **Apunta-ho:** PREDIU: què sortirà al Monitor sèrie quan premis el polsador?
+
+### Pas 3 · Carrega el codi
+
+Prem **Copia**, enganxa'l a l'Arduino IDE (esborra el que hi hagués) i prem **→ Puja**.
 
 <!-- codi-complet -->
 
-4. **Obre el Monitor sèrie:** a l'Arduino IDE, **Eines → Monitor sèrie**, i a baix a la dreta tria **9600**. Prem el polsador unes quantes vegades: hi ha de sortir `Premudes: 1`, `Premudes: 2`… i el LED s'ha d'encendre i apagar.
-5. **Fes un experiment:** canvia `ANTIREBOT = 40` per `ANTIREBOT = 0` i torna a pujar el codi. Prem el botó a poc a poc unes quantes vegades. És possible que **una sola premuda en compti 2 o 3**. Per què? Ho tens al tros 4. Després, torna a posar el 40.
-6. **⭐ Repte:** fes que el comptador arribi a **5** i torni a **0**. Pista: just després de `comptador++;`, afegeix:
+### Pas 4 · Obre el Monitor sèrie
 
-   ```cpp
-   if (comptador == 5) {
-     comptador = 0;
-   }
-   ```
+A l'Arduino IDE, **Eines → Monitor sèrie**, i a baix a la dreta tria **9600**. Prem el polsador unes quantes vegades.
 
-   Vol dir: *si el comptador ha arribat a 5, torna'l a posar a 0*. Prova-ho i explica a Classroom com ho has fet.
+✅ **Comprova:** surt `Premudes: 1`, `Premudes: 2`… i el LED s'encén i s'apaga.
 
-## 🧠 Com funciona, a trossos
+✍️ **Apunta-ho:** quan no prems, el pin llegeix ____ i quan prems, ____ (HIGH o LOW). La resposta et sorprendrà: el tros 3 de «🧠 Vols saber per què funciona?» t'explica per què.
+
+### Pas 5 · Fes un experiment
+
+Canvia `ANTIREBOT = 40` per `ANTIREBOT = 0` i torna a pujar el codi. Prem el botó a poc a poc unes quantes vegades: és possible que **una sola premuda en compti 2 o 3**. Després, torna a posar el 40.
+
+✍️ **Apunta-ho:** per què cal l'antirebot? (La resposta és al tros 4.)
+
+### Pas 6 · Explica-ho amb les teves paraules
+
+✍️ **Apunta-ho:** quin és el concepte nou més important d'aquesta pràctica?
+
+### Pas 7 · Respon i envia
+
+📤 [Obre la tasca «SA3 · Pràctica 1» a Classroom i envia el formulari](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODk3NDAzMTY0MTI4/details)
+
+Hi trobaràs les mateixes preguntes ✍️ que has anat apuntant. Envia'l ara. A la sessió següent: **[Pràctica 2 · Potenciòmetre i sensor de llum](../02_potenciometre_ldr/EXPLICACIO.md)**.
+
+⭐ **Si acabes abans:** fes que el comptador arribi a **5** i torni a **0** (pista: just després de `comptador++;`, afegeix `if (comptador == 5) { comptador = 0; }`) i explica-ho a la pregunta opcional del formulari. Tria un repte a **[Reptes de la SA3](../../../../Reptes/Reptes_SA3.md)** i, quan el docent te'l validi, pinta l'estrella al [tauler de reptes](../../../00_General/00_Tauler_reptes.md).
+
+<details markdown="1">
+<summary>🧗 Si t'encalles</summary>
+
+| Què passa | Per què | Com ho arreglo |
+|---|---|---|
+| «Està al revés! Diu HIGH sense tocar res» | No és un error: amb `INPUT_PULLUP` és així. | Mira el tros 3. |
+| Una premuda en compta 2 o 3 | L'antirebot és massa curt (o a 0). | Torna a posar `ANTIREBOT = 40`. |
+| El botó no fa res | El polsador no creua el canal del mig, o fas servir dues potes que ja estan unides. | Gira'l 90° o fes servir les potes en diagonal. |
+| Al Monitor surten símbols estranys | La velocitat del Monitor no és 9600. | A baix a la dreta del Monitor, tria 9600. |
+
+</details>
+
+<details markdown="1">
+<summary>🧠 Vols saber per què funciona?</summary>
 
 ### Tros 1 — Els noms i la memòria del programa
 
@@ -125,18 +166,9 @@ Dins del botó hi ha dues peces de metall que es toquen. Quan prems, també «bo
 | `digitalWrite(LED, !digitalRead(LED));` | Mira com està el LED i el posa **al revés** (el `!` vol dir «al contrari»). |
 | `estatAnterior = estat;` | Recorda com està el botó per a la volta següent. |
 
-## ⚠️ Errors que veuràs segur
-
-| Què passa | Per què | Com ho arreglo |
-|---|---|---|
-| «Està al revés! Diu HIGH sense tocar res» | No és un error: amb `INPUT_PULLUP` és així. | Mira el tros 3. |
-| Una premuda en compta 2 o 3 | L'antirebot és massa curt (o a 0). | Torna a posar `ANTIREBOT = 40`. |
-| El botó no fa res | El polsador no creua el canal del mig, o fas servir dues potes que ja estan unides. | Gira'l 90° o fes servir les potes en diagonal. |
-| Al Monitor surten símbols estranys | La velocitat del Monitor no és 9600. | A baix a la dreta del Monitor, tria 9600. |
-
-## 🔗 On ho aplicaràs
+### On ho aplicaràs
 
 - **Sessió 2:** el **Monitor sèrie** serà la teva eina per veure els números del sensor de llum.
 - **La mascota:** el polsador serà la **carícia**: quan el prems, la mascota es calma.
 
-> ⭐ **Has acabat abans?** Tria un repte a **[Reptes de la SA3](../../../../Reptes/Reptes_SA3.md)** i, quan el docent te'l validi, pinta l'estrella al [tauler de reptes](../../../00_General/00_Tauler_reptes.md).
+</details>

@@ -1,32 +1,77 @@
 # Pràctica 3 · Ultrasons: la primera funció que retorna un valor
 
-**Quan es fa:** Sessió 3 (primera part, ~25') · **Fitxer:** `03_ultrasons_funcio.ino` · **Circuit:** [esquema de connexions, apartat 3](../../SA3_esquemes_connexions.md) (TRIG al 12, ECHO a l'11)
+<div class="cap-practica" markdown="1">
 
-## 🎯 Què faràs
+🎯 **Avui aconseguiràs:** mesurar **a quina distància** tens la mà, sense tocar-la, i veure-ho en una gràfica.
 
-Mesuraràs **a quina distància** tens la mà, sense tocar-la, i ho veuràs en una **gràfica** a l'ordinador. I aprendràs una cosa nova: una **funció que et torna un número**.
+⏱️ 25 min
+
+📦 1 sensor d'ultrasons (HC-SR04) i 4 cables
+
+</div>
 
 ## 🚀 Pas a pas
 
-1. **Munta el sensor:**
+### Pas 1 · Munta el sensor
 
-   | Pota del sensor | Pin de l'Arduino |
-   |---|---|
-   | VCC | 5 V |
-   | TRIG | 12 |
-   | ECHO | 11 |
-   | GND | GND |
+| Pota del sensor | Pin de l'Arduino |
+|---|---|
+| VCC | 5 V |
+| TRIG | 12 |
+| ECHO | 11 |
+| GND | GND |
 
-2. **Carrega el codi:** prem **Copia**, enganxa'l a l'Arduino IDE (esborra el que hi hagués) i prem **→ Puja**.
+![Muntatge: sensor d'ultrasons amb TRIG al 12 i ECHO a l'11](../../img/sa3-tinkercad-ultrasons.png)
+
+### Pas 2 · Carrega el codi
+
+Prem **Copia**, enganxa'l a l'Arduino IDE (esborra el que hi hagués) i prem **→ Puja**.
 
 <!-- codi-complet -->
 
-3. **Obre el Serial Plotter:** a l'Arduino IDE, **Eines → Serial Plotter**, i tria **9600**. (Si tens el Monitor sèrie obert, tanca'l primer: no poden estar oberts tots dos.)
-4. **Mou la mà** a poc a poc cap al sensor i després allunya-la. La línia de la gràfica puja i baixa: és la distància en centímetres.
-5. **Respon a Classroom** les dues preguntes de l'ultrasons: la fórmula de la distància (tros 3) i què **et torna** la funció `mesuraDistancia()` (tros 2).
-6. **Quan acabis, desmunta el sensor:** la mascota necessita el pin 11.
+### Pas 3 · Obre el Serial Plotter
 
-## 🧠 Com funciona, a trossos
+A l'Arduino IDE, **Eines → Serial Plotter**, i tria **9600**. Si tens el Monitor sèrie obert, tanca'l primer: no poden estar oberts tots dos.
+
+### Pas 4 · Mou la mà
+
+Acosta la mà a poc a poc al sensor i després allunya-la.
+
+✅ **Comprova:** la línia de la gràfica puja i baixa: és la distància en centímetres.
+
+✍️ **Apunta-ho:** distància (cm) = temps × ____ ÷ 2 (la fórmula és al tros 3).
+
+✍️ **Apunta-ho:** què et torna la funció `mesuraDistancia()`? (Tros 2.)
+
+✍️ **Apunta-ho:** per a què serveix una funció?
+
+### Pas 5 · Desmunta el sensor
+
+La mascota necessita el **pin 11** per al blau del LED RGB.
+
+✅ **Comprova:** ja no hi ha cap cable al pin 11 ni al 12.
+
+### Pas 6 · Respon i envia
+
+📤 [Obre la tasca «SA3 · Pràctica 3» a Classroom i envia el formulari](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODk3NDAyOTg4OTk0/details)
+
+Hi trobaràs les mateixes preguntes ✍️ que has anat apuntant. Envia'l ara i passa a la **[Pràctica 4 · La teva mascota reactiva](../05_mascota/EXPLICACIO.md)**.
+
+⭐ **Si acabes abans:** Tria un repte a **[Reptes de la SA3](../../../../Reptes/Reptes_SA3.md)** i, quan el docent te'l validi, pinta l'estrella al [tauler de reptes](../../../00_General/00_Tauler_reptes.md).
+
+<details markdown="1">
+<summary>🧗 Si t'encalles</summary>
+
+| Què passa | Per què | Com ho arreglo |
+|---|---|---|
+| Sempre surt 0 o un número sense sentit | TRIG i ECHO canviats de lloc, o el sensor sense 5 V o GND. | Mira la taula del pas 1. |
+| De cop salta a 400 | No ha tornat cap eco: no hi ha res a prop, o la cosa és tova (roba) i no fa eco. | Normal. Posa la mà plana davant del sensor. |
+| La gràfica no surt | El Monitor sèrie està obert, o la velocitat no és 9600. | Tanca el Monitor i tria 9600 al Plotter. |
+
+</details>
+
+<details markdown="1">
+<summary>🧠 Vols saber per què funciona?</summary>
 
 ### Tros 1 — El sensor és un ratpenat
 
@@ -109,18 +154,10 @@ void loop() {
 
 Com que tota la feina és a les funcions, el `loop()` només té tres línies: *mesura, escriu el número, espera una mica*. El Serial Plotter dibuixa aquests números com una gràfica.
 
-## ⚠️ Errors que veuràs segur
-
-| Què passa | Per què | Com ho arreglo |
-|---|---|---|
-| Sempre surt 0 o un número sense sentit | TRIG i ECHO canviats de lloc, o el sensor sense 5 V o GND. | Mira la taula del pas 1. |
-| De cop salta a 400 | No ha tornat cap eco: no hi ha res a prop, o la cosa és tova (roba) i no fa eco. | Normal. Posa la mà plana davant del sensor. |
-| La gràfica no surt | El Monitor sèrie està obert, o la velocitat no és 9600. | Tanca el Monitor i tria 9600 al Plotter. |
-
-## 🔗 On ho aplicaràs
+### On ho aplicaràs
 
 - **Ara mateix:** la teva **mascota**. Desmunta el sensor i passa al pas 5 de la sessió.
 - **Si acabes abans:** l'[alarma d'aparcament](../04_alarma_aparcament/EXPLICACIO.md) fa servir aquesta mateixa funció per fer «bip-bip» com un cotxe.
 - **Prova T1:** escriure i fer servir una funció que torna un número és una de les coses que s'hi avaluen.
 
-> ⭐ **Has acabat abans?** Tria un repte a **[Reptes de la SA3](../../../../Reptes/Reptes_SA3.md)** i, quan el docent te'l validi, pinta l'estrella al [tauler de reptes](../../../00_General/00_Tauler_reptes.md).
+</details>
