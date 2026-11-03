@@ -36,7 +36,7 @@ Les preguntes es responen a Classroom, **un formulari per pràctica**: l'enllaç
 
 > 👉 Comença per la **[Pràctica 1 · El servo amb potenciòmetre](codi/01_servo_potenciometre/EXPLICACIO.md)**.
 
-Si la tasca encara no t'apareix al Classroom, és que la SA encara no ha començat. En aquesta pàgina hi tens els **objectius i l'avaluació** (a dalt) i la rutina **DEPURA** (a sota).
+Si les tasques encara no t'apareixen al Classroom, és que la SA encara no ha començat. En aquesta pàgina hi tens els **objectius i l'avaluació** (a dalt) i la rutina **DEPURA** (a sota).
 
 <!-- web:only-github -->
 
@@ -98,7 +98,7 @@ El MeArm amb quatre potenciòmetres, cada servo dins del seu rang segur.
 <!-- /web:only-github -->
 
 ## Producte · El braç amb potenciòmetres
-Es fa a la **S4**: el teu MeArm, muntat, cablejat i controlat amb **quatre potenciòmetres**, sense que cap servo forci el topall. Escriu primer el **pseudocodi** al quadern (3–5 línies). **Defensa d'1'**: funcionament + per què has triat aquests angles límit. S'avalua amb **R1**, **R2** i **R3**.
+Es fa a la **S4**: el teu MeArm, muntat, cablejat i controlat amb **quatre potenciòmetres**, sense que cap servo forci el topall. Escriu primer el **pseudocodi** (3–5 línies) al formulari de la Pràctica 4. **Defensa d'1'**: funcionament + per què has triat aquests angles límit. S'avalua amb **R1**, **R2** i **R3**.
 
 ## Si t'encalles (DEPURA)
 > **D**escriu · **E**xamina · **P**rova una hipòtesi cada cop · **U**bica · **R**epara · **A**punta-ho. Comprova la **massa comuna** i que els servos i el motor **no** s'alimenten del 5V de l'Arduino. Encara encallat? **[Targeta de rescat](../00_General/00_Targetes_rescat.md)** (comença per la 🟢).

@@ -240,8 +240,8 @@ export const PRACTIQUES = {
     items: [
       p('Lògica del pont H: què fa el motor amb IN1=HIGH·IN2=LOW / IN1=LOW·IN2=HIGH / IN1=LOW·IN2=LOW?'),
       p('Com es regula la velocitat? Per quin pin?'),
-      pOpt('⭐ Repte: funcions endavant(vel), enrere(vel) i atura(). Enganxa-les o explica-les'),
-      s('Taller: angle de la pinça tancada (°) / oberta (°)'),
+      pOpt('⭐ Repte: la teva seqüència de moviments pròpia amb endavant(vel), enrere(vel) i atura(). Explica-la'),
+      p('Taller (bloc D): angles límit (mínim i màxim) de la pinça (tancada i oberta), l’esquerre i el dret'),
       p('Per què cal un pont H (driver) per moure un motor?', 'Pregunta del quadern tècnic.')
     ]
   },
@@ -272,7 +272,7 @@ export const PRACTIQUES = {
       p('El teu pseudocodi del control d’una articulació (3-5 línies)'),
       p('Angles límit (mínim i màxim) de la base, l’esquerre, el dret i la pinça'),
       p('Zona morta triada (°) i per què'),
-      p('Els angles límit del meu braç i com els he trobat', 'Pregunta del quadern tècnic.'),
+      p('Com has trobat aquests angles límit i com saps que el servo no força el topall?', 'Pregunta del quadern tècnic.'),
       p('Un error que has trobat i com l’has resolt', 'Pregunta del quadern tècnic.')
     ]
   },

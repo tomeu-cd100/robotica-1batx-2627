@@ -64,7 +64,7 @@
 ## SESSIÓ 2 (2 h) — Motor DC i pont H (+ pinça del braç)
 - **Activació (10'):** *"Per què no puc connectar un motor directament a un pin?"* → corrent i protecció.
 - **Modelatge (15'):** `02_motor_pont_h.ino`. Funcionament del **pont H** (L298N): `IN1`/`IN2` (direcció), `ENA` (velocitat per PWM). **Massa comuna** entre Arduino i alimentació del motor. Avisa d'entrada: *el motor no és del braç, és per al rover del T3*.
-- **Pràctica guiada + repte (25'):** munten el motor amb L298N i alimentació externa; omplen les funcions `endavant(vel)`, `enrere(vel)`, `atura()` (esquelet «Si t'encalles» a mà per a qui el necessiti) i fan una seqüència curta.
+- **Pràctica guiada + repte (25'):** munten el motor amb L298N i alimentació externa; llegeixen les funcions `endavant(vel)`, `enrere(vel)`, `atura()` del codi i, com a repte, en fan una seqüència pròpia (esquelet «Si t'encalles» a mà per a qui el necessiti) i fan una seqüència curta.
 - 🔧 **Torn de taller del braç (40'):** **blocs C-D**: pinça (passos 7-8) i **calibratge** dels servos de pinça, esquerre i dret amb l'escombrada de la S1 (passos 9-11). Que anotin al quadern els angles límit que ja vegin.
 - **Tancament (10'):** formulari de la Pràctica 2 i full del quadern imprès.
 

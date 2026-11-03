@@ -442,7 +442,7 @@ def comprova_python_reptes() -> None:
 def comprova_lliurables() -> None:
     """El README de cada SA té el bloc «📦 Què has d'entregar» sincronitzat
     amb les sessions reals de quadern_sessions.py (files S-n, fila de prova,
-    files ⭐/📓 sempre i 🤖 a SA2-SA9)."""
+    files ⭐ sempre, 📓 fora de SA2-SA3 i 🤖 a SA2-SA9)."""
     sys.path.insert(0, str(ARREL / "web" / "_generador"))
     import quadern_sessions as q
 
@@ -485,7 +485,7 @@ def comprova_lliurables() -> None:
                 errors.append(f"[lliurables] {sa}: falta la fila {icona}")
                 fallats += 1
             elif not cal and te:
-                errors.append(f"[lliurables] {sa}: la fila {icona} no hi va (🤖 no a SA1; 📓 no a les SA en format de passos)")
+                errors.append(f"[lliurables] {sa}: la fila {icona} no hi va (🤖 no a SA1; 📓 no a SA2-SA3)")
                 fallats += 1
     print(f"12) Lliurables per SA: 9 README, {fallats} incoherències.")
 

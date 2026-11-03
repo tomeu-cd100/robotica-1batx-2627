@@ -28,7 +28,7 @@ Abans d'obrir l'editor, escriu el **pseudocodi** del control d'una articulació 
 
 ### Pas 3 · Munta el cablatge definitiu
 
-Servos: **base al 9**, **esquerre al 6**, **dret al 10** i **pinça a l'11**, tots alimentats amb el **portapiles** i amb el GND unit al de l'Arduino. Potenciòmetres: la pota del mig a **A0, A1, A2 i A3**.
+Servos: **base al 9**, **esquerre al 6**, **dret al 10** i **pinça a l'11**, tots alimentats amb el **portapiles** i amb el GND unit al de l'Arduino. Potenciòmetres (la pota del mig): **base → A0**, **dret → A1**, **pinça → A2** i **esquerre → A3**. Fixa't que l'esquerre va a l'A3.
 
 ✅ **Comprova:** massa comuna feta i cap servo connectat al 5V de l'Arduino.
 
@@ -42,11 +42,11 @@ Prem **Copia**, enganxa'l a l'Arduino IDE (esborra el que hi hagués) i prem **�
 
 ### Pas 5 · Troba els angles límit
 
-Mou cada articulació a poc a poc fins on arriba sense forçar i apunta els angles. Posa'ls a les constants del principi del codi (`BASE_MIN`, `BASE_MAX`…).
+Obre el **Monitor sèrie** (9600): hi surten els angles de cada servo. Posa a les constants del principi del codi (`BASE_MIN`, `BASE_MAX`…) els angles límit que vas trobar al calibratge del bloc D, torna'l a pujar i comprova, articulació per articulació, que arriba als extrems sense forçar el topall.
 
 ✍️ **Apunta-ho:** angles límit (mínim i màxim) de la base, l'esquerre, el dret i la pinça.
 
-✍️ **Apunta-ho:** els angles límit del teu braç i com els has trobat.
+✍️ **Apunta-ho:** com has trobat aquests angles límit i com saps que el servo no força el topall?
 
 ### Pas 6 · Tria la zona morta
 

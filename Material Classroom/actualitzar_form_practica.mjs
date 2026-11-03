@@ -44,10 +44,14 @@ async function main() {
   const form = (await ambReintents(() => forms.forms.get({ formId: formFitxer.id }), 'llegir Form')).data;
   const actuals = form.items || [];
 
-  const subs = await ambReintents(() => classroom.courses.courseWork.studentSubmissions.list({
-    courseId: COURSE_ID, courseWorkId: tasca.id, pageSize: 100
-  }), 'llistar lliuraments');
-  const lliurats = (subs.data.studentSubmissions || []).filter(s => ['TURNED_IN', 'RETURNED'].includes(s.state)).length;
+  // Les tasques DRAFT no tenen lliuraments (Classroom respon «Precondition check failed»).
+  let lliurats = 0;
+  if (tasca.state !== 'DRAFT') {
+    const subs = await ambReintents(() => classroom.courses.courseWork.studentSubmissions.list({
+      courseId: COURSE_ID, courseWorkId: tasca.id, pageSize: 100
+    }), 'llistar lliuraments');
+    lliurats = (subs.data.studentSubmissions || []).filter(s => ['TURNED_IN', 'RETURNED'].includes(s.state)).length;
+  }
 
   console.log(`\n=== ${clau} ===`);
   console.log(`Tasca: «${tasca.title}» → «${def.titol}» · lliuraments enviats: ${lliurats}`);

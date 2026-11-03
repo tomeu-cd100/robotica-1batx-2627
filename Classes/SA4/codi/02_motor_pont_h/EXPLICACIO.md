@@ -36,7 +36,7 @@ Prem **Copia**, enganxa'l a l'Arduino IDE (esborra el que hi hagués) i prem **�
 
 ### Pas 4 · Entén el pont H
 
-Canvia els `HIGH` i `LOW` d'`IN1` i `IN2` i mira què fa el motor (mai tots dos `HIGH`: el bloc 3 de «🧠 Vols saber per què funciona?» t'explica per què).
+Canvia els `HIGH` i `LOW` d'`IN1` i `IN2` i mira què fa el motor (mai tots dos `HIGH`: el motor frena de cop i el driver pateix).
 
 ✍️ **Apunta-ho:** què fa el motor amb IN1=HIGH·IN2=LOW, amb IN1=LOW·IN2=HIGH i amb IN1=LOW·IN2=LOW?
 
@@ -44,13 +44,31 @@ Canvia els `HIGH` i `LOW` d'`IN1` i `IN2` i mira què fa el motor (mai tots dos 
 
 ✍️ **Apunta-ho:** per què cal un pont H (driver) per moure un motor? (Mira «Per què fem aquesta pràctica».)
 
-### Pas 5 · Torn de taller: la pinça (blocs C-D)
+### Pas 5 · Torn de taller: la pinça i el calibratge (blocs C-D)
 
-Munta la pinça del MeArm (blocs C-D de la [guia de muntatge](../../../00_General/00_Muntatge_brac_MeArm.md)) i calibra-la amb l'**escombrada** de la Pràctica 1: busca l'angle on la pinça és tancada i on és oberta del tot.
+Munta la pinça (bloc C) i fes el **calibratge** del bloc D de la [guia de muntatge](../../../00_General/00_Muntatge_brac_MeArm.md): passos 9 (pinça), 10 (esquerre) i 11 (dret). Per trobar els angles, fes servir aquest programa d'**escombrada**: mou el servo del pin 11 de 0° a 180° a poc a poc i escriu l'angle al **Monitor sèrie** (9600). Per a l'esquerre canvia l'`11` pel `6`, i per al dret, pel `10`.
 
-✍️ **Apunta-ho:** angle de la pinça tancada (°) i oberta (°).
+```cpp
+#include <Servo.h>
+Servo servo;
 
-✅ **Comprova:** la pinça s'obre i es tanca sense forçar el servo.
+void setup() {
+  servo.attach(11);          // pinca (esquerre = 6, dret = 10)
+  Serial.begin(9600);
+}
+
+void loop() {
+  for (int angle = 0; angle <= 180; angle = angle + 10) {
+    servo.write(angle);
+    Serial.println(angle);   // mira on la peca toca o esta a punt de tocar
+    delay(800);
+  }
+}
+```
+
+✍️ **Apunta-ho:** angles límit (mínim i màxim) de la pinça (tancada i oberta), l'esquerre i el dret.
+
+✅ **Comprova:** blocs C i D fets: la pinça s'obre i es tanca, i cap servo força el topall a cap dels seus angles límit.
 
 ### Pas 6 · Respon i envia
 
@@ -58,7 +76,7 @@ Munta la pinça del MeArm (blocs C-D de la [guia de muntatge](../../../00_Genera
 
 Hi trobaràs les mateixes preguntes ✍️ que has anat apuntant. Envia'l ara. A la sessió següent: **[Pràctica 3 · Del sensor al braç](../03_ultrasons_brac/EXPLICACIO.md)**.
 
-⭐ **Si acabes abans:** escriu les funcions `endavant(vel)`, `enrere(vel)` i `atura()` (tens l'esquelet a «🧗 Si t'encalles») i explica-ho a la pregunta opcional del formulari. Més reptes a **[Reptes de la SA4](../../../../Reptes/Reptes_SA4.md)**; quan el docent te'l validi, pinta l'estrella al [tauler de reptes](../../../00_General/00_Tauler_reptes.md).
+⭐ **Si acabes abans:** fes una **seqüència de moviments pròpia** amb les funcions `endavant(vel)`, `enrere(vel)` i `atura()` (per exemple, una maniobra d'aparcament) i explica-la a la pregunta opcional del formulari. Més reptes a **[Reptes de la SA4](../../../../Reptes/Reptes_SA4.md)**; quan el docent te'l validi, pinta l'estrella al [tauler de reptes](../../../00_General/00_Tauler_reptes.md).
 
 <details markdown="1">
 <summary>🧗 Si t'encalles</summary>
