@@ -103,7 +103,7 @@
 |---|---|---|---|
 | Producte (panell/semàfor) | Sortides digitals + PWM en un sistema integrat | CA2.1, CA2.2 | R1, R2 |
 | Repte curt de codi | Variables, `for`/`if`, `analogWrite`, `map()` | CA1.1 | R1 |
-| Quadern tècnic (25 %) = **mitjana dels formularis de pràctica** (S1, P3, P4, P5), cadascun sobre 10 | Respostes ✍️ de cada pràctica + pregunta de reflexió (concepte, `digitalWrite`/`analogWrite`, error resolt) | CA1.1, CA2.2 | **R4** |
+| Quadern tècnic (25 %) = **mitjana dels formularis de pràctica** (S1, P3, P4, P5), cadascun sobre 33 punts a Classroom | Respostes ✍️ de cada pràctica + pregunta de reflexió (concepte, `digitalWrite`/`analogWrite`, error resolt) | CA1.1, CA2.2 | **R4** |
 | Observació de muntatge | Resistència limitadora, polaritat, seguretat | CA2.1 | R2 |
 | Ajuda entre iguals i **revisió creuada** de codi | Cooperació sense producte compartit: línia d'ajuda del quadern + una millora concreta i un dubte al company | CA5.3 | **R5** |
 

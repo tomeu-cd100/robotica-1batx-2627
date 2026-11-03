@@ -32,7 +32,7 @@ export const PRACTIQUES = {
     titol: 'SA2 · Pràctica 3 · La llum que respira',
     descripcioForm: "Respostes de la Pràctica 3 (PWM). Les preguntes són les mateixes que els ✍️ de la pàgina de la pràctica.",
     descripcioTasca: "Fes la Pràctica 3 seguint els passos de la pàgina (enllaç a sota) i envia aquest formulari en acabar-la. Compta per al quadern tècnic (25 %).",
-    maxPoints: 10,
+    maxPoints: 33,  // com la resta de tasques de la SA a Classroom
     materials: [pagina('sa2', '03-fade-pwm', 'Pràctica 3 · La llum que respira (passos)')],
     items: [
       s('Rang de valors d’analogWrite: de ____ a ____'),
@@ -49,7 +49,7 @@ export const PRACTIQUES = {
     titol: 'SA2 · Pràctica 4 · Colors RGB',
     descripcioForm: "Respostes de la Pràctica 4 (LED RGB). Les preguntes són les mateixes que els ✍️ de la pàgina de la pràctica.",
     descripcioTasca: "Fes la Pràctica 4 seguint els passos de la pàgina (enllaç a sota) i envia aquest formulari en acabar-la. Compta per al quadern tècnic (25 %).",
-    maxPoints: 10,
+    maxPoints: 33,  // com la resta de tasques de la SA a Classroom
     materials: [pagina('sa2', '04-rgb', 'Pràctica 4 · Colors RGB (passos)')],
     items: [
       p('Els teus 3 colors: valors R, G, B de cadascun',
@@ -66,7 +66,7 @@ export const PRACTIQUES = {
     titol: 'SA2 · Pràctica 5 · Panell de senyalització',
     descripcioForm: "Respostes de la Pràctica 5 (el producte de la SA2). Les preguntes són les mateixes que els ✍️ de la pàgina de la pràctica.",
     descripcioTasca: "Fes la Pràctica 5 (el producte) seguint els passos de la pàgina (enllaç a sota) i envia aquest formulari en acabar-la. El panell es defensa a l'aula (R1 codi + R2 circuit). Després, fes l'Entrega final.",
-    maxPoints: 10,
+    maxPoints: 33,  // com la resta de tasques de la SA a Classroom
     materials: [pagina('sa2', '05-panell-senyalitzacio', 'Pràctica 5 · Panell de senyalització (passos)')],
     items: [
       p('Estat «Tot correcte»: color RGB / so (piezo) / relé'),

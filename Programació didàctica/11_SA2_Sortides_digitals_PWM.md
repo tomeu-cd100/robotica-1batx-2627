@@ -46,7 +46,7 @@ Estructura del sketch; variables, constants i operadors; `pinMode`, `digitalWrit
 Un dispositiu de senyalització programable (p. ex. semàfor amb fase nocturna intermitent o llum d'estat RGB) amb codi comentat i esquema.
 
 ## Avaluació
-- Instruments: producte + quadern tècnic + repte curt de codi. El quadern tècnic són els **formularis de pràctica** de Classroom (Sessió 1, Pràctiques 3, 4 i 5; mitjana sobre 10), cadascun amb una pregunta de reflexió; no hi ha full de quadern a part. Tancament amb una **Entrega final** sense nota (autoavaluació + checklist).
+- Instruments: producte + quadern tècnic + repte curt de codi. El quadern tècnic són els **formularis de pràctica** de Classroom (Sessió 1, Pràctiques 3, 4 i 5; 33 punts cadascun a Classroom), cadascun amb una pregunta de reflexió; no hi ha full de quadern a part. Tancament amb una **Entrega final** sense nota (autoavaluació + checklist).
 - Rúbriques: **R1** (codi), **R2** (circuit).
 
 ## Atenció a la diversitat
