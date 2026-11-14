@@ -19,26 +19,23 @@
 
 **Sessió 1 — El servomotor**
 - [ ] Referent (1') Edith Clarke · `01_servo_potenciometre` (`Servo.h`, `attach()`, `write(0–180°)`)
-- [ ] ✍️ **Kata** `01_servo_potenciometre` (10', abans de repartir el sketch) → [SA4_katas.md](SA4_katas.md)
 - [ ] Control del servo de la base amb potenciòmetre (`map` 0–1023 → 0–180)
 - [ ] 🔧 **Taller (35'):** pas 0 (4 servos a 90°, etiquetats) + blocs A-B del MeArm
 - ⚠️ *Clau:* si mous diversos servos → **alimentació externa** (no del pin 5V) · *Error:* servo vibra per alimentació insuficient
 
 **Sessió 2 — Motor DC i pont H**
-- [ ] ✍️ **Kata** `02_motor_pont_h` (10', abans de repartir el sketch) → [SA4_katas.md](SA4_katas.md)
 - [ ] `02_motor_pont_h`: taula IN1/IN2 (direcció) + ENA (velocitat PWM)
 - [ ] Funcions `endavant(vel)`, `enrere(vel)`, `atura()` (pràctica curta, ~40', fora del braç)
 - [ ] 🔧 **Taller (40'):** blocs C-D del MeArm (pinça + calibratge amb l'escombrada de la S1)
 - ⚠️ *Mantra:* **MASSA COMUNA**, mai el motor des del 5V · *Error:* Arduino es reinicia pel pic de corrent
 
 **Sessió 3 — Del sensor al braç**
-- [ ] ✍️ **Kata** `03_ultrasons_brac` (10', abans de repartir el sketch) → [SA4_katas.md](SA4_katas.md)
 - [ ] `03_ultrasons_brac`: ultrasons (D7/D8) → la base gira i la pinça s'obre (percepció→acció)
 - [ ] 🔧 **Taller (45'):** bloc E del MeArm (pas 15 en parella)
 - ⚠️ *Vigilar:* el «ball» del braç amb l'objecte just al llindar: és la llavor de la histèresi de la SA6
 
 **Sessió 4 — Producte: el braç amb potenciòmetres**
-- [ ] **Mini-check individual** a l'inici (10', no qualifica): 3 línies del servo a 90° + per què alimentació externa (substitueix la graella d'activació i el kata del dia)
+- [ ] **Mini-check individual** a l'inici (10', no qualifica): 3 línies del servo a 90° + per què alimentació externa (substitueix la graella d'activació)
 - [ ] `04_brac_potenciometres`: 4 servos amb rang segur i zona morta; angles límit anotats
 - [ ] 🔧 Cablatge definitiu (4 servos a les piles, 4 potenciòmetres) i prova d'agafar un objecte
 - [ ] Documentació + mini-defensa + autoavaluació

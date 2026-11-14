@@ -18,18 +18,16 @@
 
 **Sessió 1 — Primers passos amb MicroPython**
 - [ ] Referent (1') Sophie Wilson · `01_selector_articulacio` (`from microbit import *`, `display`, botons, llistes)
-- [ ] ✍️ **Kata** `01_selector_articulacio` (10', abans de repartir el programa) → [SA5_katas.md](SA5_katas.md)
 - [ ] Iniciar la **taula comparativa C++/Python** (1a fila)
 - ⚠️ *Clau:* en Python la **indentació és sintaxi** (no `;` ni `{}`) · *Error:* `IndentationError` (tabs vs espais)
 
 **Sessió 2 — La inclinació com a gest**
-- [ ] ✍️ **Kata** `02_inclinacio` (10', abans de repartir el programa) → [SA5_katas.md](SA5_katas.md)
 - [ ] `02_inclinacio` (`get_x`, `get_y`, llindar, `was_gesture`, gràfic amb **Show data**)
 - [ ] 🔧 **Taller (20'):** `04_brac_ordres` a l'Arduino, prova amb el **Monitor sèrie**, cable del pont (P1 → D0, GND)
 - ⚠️ *Error:* fletxes al revés (placa girada) · llindar massa baix (fletxes amb la placa plana)
 
 **Sessió 3 — Ràdio: el comandament del braç**
-- [ ] **Mini-check individual** a l'inici (10', no qualifica): programa MicroPython de memòria (vigilar indentació) (substitueix la graella d'activació i el kata del dia)
+- [ ] **Mini-check individual** a l'inici (10', no qualifica): programa MicroPython de memòria (vigilar indentació) (substitueix la graella d'activació)
 - [ ] `03_radio_comandament` + receptor de prova: `radio.on()`, `radio.config(group=...)`, `send()`/`receive()`, protocol d'ordres
 - [ ] 🔧 **Taller (20'):** el receptor passa a ser el **pont** i el comandament mou el braç
 - [ ] Completar la **taula comparativa C++ ↔ Python** i reflexionar sobre els dos paradigmes

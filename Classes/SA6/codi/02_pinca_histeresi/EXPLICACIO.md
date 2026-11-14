@@ -14,13 +14,7 @@
 
 ## 🚀 Pas a pas
 
-### Pas 1 · Kata primer
-
-✍️ **Kata primer!** No llegeixis encara el codi: obre el [kata d'aquesta pràctica](../../SA6_katas.md) i tens **10 minuts** per escriure el teu bloc (individual, apunts permesos). Després torna aquí i **compara**.
-
-✅ **Comprova:** has escrit el teu bloc **abans** de mirar el codi d'aquesta pràctica.
-
-### Pas 2 · Munta el circuit
+### Pas 1 · Munta el circuit
 
 Servo de la pinça al **pin 11** (piles i GND comú). Ultrasons: **TRIG al 7**, **ECHO al 8**, VCC a 5V i GND a GND.
 
@@ -28,13 +22,13 @@ Servo de la pinça al **pin 11** (piles i GND comú). Ultrasons: **TRIG al 7**, 
 
 ✅ **Comprova:** l'ultrasons mira endavant, cap a on arribarà l'objecte, i no veu la taula ni la mateixa pinça.
 
-### Pas 3 · Endevina abans de provar
+### Pas 2 · Endevina abans de provar
 
 La pinça es tanca quan l'objecte és a **menys de 6 cm**, però només s'obre quan s'allunya **més de 10 cm**.
 
 ✍️ **Apunta-ho:** PREDIU: acostes la mà de 20 cm a 3 cm i després l'allunyes. A quina distància es tanca la pinça? A quina s'obre? I si deixes la mà quieta a 8 cm?
 
-### Pas 4 · Carrega el codi
+### Pas 3 · Carrega el codi
 
 Prem **Copia**, enganxa'l a l'Arduino IDE (esborra el que hi hagués) i prem **→ Puja**.
 
@@ -42,7 +36,7 @@ Prem **Copia**, enganxa'l a l'Arduino IDE (esborra el que hi hagués) i prem **�
 
 ✅ **Comprova:** quan acostes la mà, la pinça es tanca; quan l'allunyes prou, s'obre.
 
-### Pas 5 · Mira-ho al Serial Plotter
+### Pas 4 · Mira-ho al Serial Plotter
 
 Obre el **Serial Plotter** (9600). Hi veuràs quatre línies: la distància, els dos llindars i l'estat de la pinça (0 oberta, 15 tancada). Mou la mà a poc a poc endavant i enrere.
 
@@ -52,7 +46,7 @@ Obre el **Serial Plotter** (9600). Hi veuràs quatre línies: la distància, els
 
 ✍️ **Apunta-ho:** llindars del codi: es tanca a ____ cm · s'obre a ____ cm.
 
-### Pas 6 · Treu la histèresi
+### Pas 5 · Treu la histèresi
 
 Canvia `OBRE_CM` perquè valgui el mateix que `TANCA_CM` (6) i puja-ho. Posa la mà just a 6 cm i escolta la pinça. Després torna-ho a deixar a 10.
 
@@ -62,7 +56,7 @@ Canvia `OBRE_CM` perquè valgui el mateix que `TANCA_CM` (6) i puja-ho. Posa la 
 
 ✍️ **Apunta-ho:** per què serveix la histèresi?
 
-### Pas 7 · Torn de taller: angles límit i cablatge
+### Pas 6 · Torn de taller: angles límit i cablatge
 
 Mou cada servo amb el sketch de la SA4 (`04_brac_potenciometres`) i troba fins on pot anar **sense forçar**. Deixa el cablatge **endreçat i etiquetat**: és un criteri de la rúbrica del braç.
 
@@ -70,7 +64,7 @@ Mou cada servo amb el sketch de la SA4 (`04_brac_potenciometres`) i troba fins o
 
 ✍️ **Apunta-ho:** taller: angles límit definitius de cada servo (base · esquerre · dret · pinça).
 
-### Pas 8 · Respon i envia
+### Pas 7 · Respon i envia
 
 📤 [Obre la tasca «SA6 · Pràctica 2» a Classroom i envia el formulari](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODk5NDU1ODk4MjQ5/details)
 

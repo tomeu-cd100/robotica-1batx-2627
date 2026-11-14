@@ -14,19 +14,13 @@
 
 ## 🚀 Pas a pas
 
-### Pas 1 · Kata primer
+### Pas 1 · Endevina abans de provar
 
-✍️ **Kata primer!** No llegeixis encara el codi: obre el [kata d'aquesta pràctica](../../SA4_katas.md) i tens **10 minuts** per escriure el teu bloc (individual, apunts permesos). Després torna aquí i **compara**.
-
-✅ **Comprova:** has escrit el teu bloc **abans** de mirar el codi d'aquesta pràctica.
-
-### Pas 2 · Endevina abans de provar
-
-Desplega el codi complet del pas 4 i mira'l sense carregar-lo: què farà el servo quan **giris el potenciòmetre a poc a poc**? On apuntarà amb el potenciòmetre al mínim (0) i al màxim (1023)?
+Desplega el codi complet del pas 3 i mira'l sense carregar-lo: què farà el servo quan **giris el potenciòmetre a poc a poc**? On apuntarà amb el potenciòmetre al mínim (0) i al màxim (1023)?
 
 ✍️ **Apunta-ho:** PREDIU: què farà el servo de la base en girar el potenciòmetre?
 
-### Pas 3 · Munta el circuit
+### Pas 2 · Munta el circuit
 
 Servo de la base: senyal (taronja o groc) al **pin 9**, vermell a **5V** i marró a **GND**. Potenciòmetre: la pota del mig a **A0** i les altres dues a 5V i GND.
 
@@ -34,7 +28,7 @@ Servo de la base: senyal (taronja o groc) al **pin 9**, vermell a **5V** i marr�
 
 ✅ **Comprova:** el cable de senyal del servo és al 9 i la pota del mig del potenciòmetre, a A0.
 
-### Pas 4 · Carrega el codi
+### Pas 3 · Carrega el codi
 
 Prem **Copia**, enganxa'l a l'Arduino IDE (esborra el que hi hagués) i prem **→ Puja**.
 
@@ -42,7 +36,7 @@ Prem **Copia**, enganxa'l a l'Arduino IDE (esborra el que hi hagués) i prem **�
 
 ✅ **Comprova:** quan gires el potenciòmetre, el servo gira amb ell. Has encertat la predicció?
 
-### Pas 5 · Busca els números
+### Pas 4 · Busca els números
 
 Al codi, mira la línia del `map(...)` i la del `servo.write(...)`.
 
@@ -52,7 +46,7 @@ Al codi, mira la línia del `map(...)` i la del `servo.write(...)`.
 
 ✍️ **Apunta-ho:** quin és el concepte nou més important d'aquesta pràctica?
 
-### Pas 6 · Torn de taller: el pas 0 del MeArm
+### Pas 5 · Torn de taller: el pas 0 del MeArm
 
 Abans de muntar res, els **quatre servos** del braç han de quedar al centre
 del recorregut (90°): si una banya es posa amb el servo en una altra posició,
@@ -68,7 +62,7 @@ Després, segueix els blocs A i B de la [guia de muntatge](../../../00_General/0
 
 ✅ **Comprova:** els quatre servos són a 90°, etiquetats (base, esquerre, dret, pinça), i has fet els blocs A i B.
 
-### Pas 7 · Respon i envia
+### Pas 6 · Respon i envia
 
 📤 [Obre la tasca «SA4 · Pràctica 1» a Classroom i envia el formulari](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODk3NDMwNTg3MDY3/details)
 

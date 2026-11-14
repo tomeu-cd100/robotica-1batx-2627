@@ -10,7 +10,7 @@ En acabar aquesta SA podràs: 1) controlar la **posició** d'un servo dins del s
 
 ## 🧭 La teva ruta
 
-Fes les pràctiques **en ordre i al teu ritme**. Cada pràctica comença amb el **kata** (10') i acaba enviant el seu formulari de Classroom. Les 🚩 et diuen on hauries de ser al final de cada sessió.
+Fes les pràctiques **en ordre i al teu ritme**. Cada pràctica acaba enviant el seu formulari de Classroom. Les 🚩 et diuen on hauries de ser al final de cada sessió.
 
 - ① [Pràctica 1 · El servo amb potenciòmetre](codi/01_servo_potenciometre/EXPLICACIO.md) — el servo de la base segueix el potenciòmetre. **Taller:** pas 0 i blocs A-B del MeArm.
 
@@ -68,8 +68,6 @@ Fes les pràctiques **en ordre i al teu ritme**. Cada pràctica comença amb el 
 | [`SA4_fitxa_ampliada.md`](SA4_fitxa_ampliada.md) | **Versió ampliada** (aprofundiment): totes les rutines (revisió creuada de codi, exit ticket, ODS, PC) i ampliacions. |
 | [`SA4_checklist_docent.md`](SA4_checklist_docent.md) | **Checklist docent** (una cara): logística prèvia, punts de control per sessió, avaluació i diversitat. |
 | [`SA4_checklist_alumnat.md`](SA4_checklist_alumnat.md) | **Checklist alumnat** (una cara): què he de fer/lliurar + autoavaluació amb semàfor. |
-| [`SA4_katas.md`](SA4_katas.md) | Katas d'escriptura (10'): un per sessió de codi, abans d'obrir el sketch; si ningú no el projecta, l'alumnat l'obre sol. |
-| [`SA4_katas_solucions.md`](SA4_katas_solucions.md) | **Solucions dels katas** (docent): codi resolt amb els valors de la variació + comentaris per a la posada en comú. |
 | [`SA4_esquemes_connexions.md`](SA4_esquemes_connexions.md) | Esquemes i connexions (servo, L298N, ultrasons al braç, braç amb 4 potenciòmetres, massa comuna, piles). |
 | `codi/` | Sketches d'Arduino (vegeu la taula següent). |
 

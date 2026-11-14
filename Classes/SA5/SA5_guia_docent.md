@@ -5,7 +5,7 @@
 
 > 🧭 **Com s'usa aquesta guia.** **Abans de la SA:** objectius, material i codi de suport (la logística, al checklist docent). **A cada sessió:** la secció «SESSIÓ n» corresponent, amb el «Guió de modelatge» i els «Errors freqüents» a mà. **Durant tota la SA:** diversitat (DUA), ajuda i revisió entre iguals, i pensament computacional. **En avaluar:** «Avaluació formativa (instruments)». **Per contextualitzar:** context real i ODS.
 
-> 🚩 **Format de passos (3-11-2026):** l'alumnat segueix la **ruta de pràctiques de la [portada](README.md)** al seu ritme: ① selector, ② inclinació, ③ el braç obeeix ordres (`04_brac_ordres`, el taller de la S2) i ④ ràdio + pont + comparació (el producte, S3). Cada pràctica comença amb el kata i acaba enviant el seu formulari. Tu fas una **arrencada de 5-10'** amb la pràctica de la fita del dia. El **quadern imprès** es manté (un full per sessió).
+> 🚩 **Format de passos (3-11-2026):** l'alumnat segueix la **ruta de pràctiques de la [portada](README.md)** al seu ritme: ① selector, ② inclinació, ③ el braç obeeix ordres (`04_brac_ordres`, el taller de la S2) i ④ ràdio + pont + comparació (el producte, S3). Cada pràctica acaba enviant el seu formulari. Tu fas una **arrencada de 5-10'** amb la pràctica de la fita del dia. El **quadern imprès** es manté (un full per sessió).
 
 > 🦾 **Fil conductor (des del 28-10-2026):** en aquesta SA es construeix el
 > **comandament sense fils del braç MeArm**. Cada pràctica n'és una peça:
@@ -118,7 +118,7 @@
 
 > Frases i preguntes clau per al **Modelatge** de cada sessió (què mirar, què preguntar abans d'executar, error a anticipar).
 
-> ✍️ **Katas:** en acabar el modelatge de cada sessió amb pràctica de codi, projecta el kata del sketch del dia ([SA5_katas.md](SA5_katas.md)): 10' d'escriptura individual **abans** de repartir/obrir el sketch. **Un sol kata per sessió**; el dia del mini-check (**S3** en aquesta SA) el mini-check el substitueix, i el kata `03_radio_comandament` queda com a **repàs autònom** (marcat amb 🔁 al fitxer): recomana'l com a deures abans de tancar la SA. Per a la posada en comú, tens la solució comentada de cada kata (amb els valors de la variació) a [SA5_katas_solucions.md](SA5_katas_solucions.md).
+> ✍️ **Katas (arxivats el 14-11-2026):** ja no formen part de la ruta de l'alumnat. Els enunciats i les solucions són a `docs/arxiu/SA5_katas/`, com a **material d'ampliació per a alumnat avançat**: un kata de 10' per sketch, per escriure el bloc central abans d'obrir el codi.
 
 - **S1 · `01_selector_articulacio` (sintaxi Python):** èmfasi clau — *en Python la **indentació és sintaxi**, no estètica; no hi ha `;` ni `{}`*. Compara visualment amb un sketch d'Arduino. Presenta la **llista** com a calaixos numerats des del 0. Usa el **simulador** per provar sense placa. *Error a anticipar:* `IndentationError` per barrejar tabs i espais; `IndexError` si el selector no és circular.
 - **S2 · `02_inclinacio` (acceleròmetre):** fes que prediguin `x` i `y` amb la placa plana i de cantell; mostra el gràfic (**Show data**). Recalca que cal **llindar** a les lectures, igual que a Arduino. Al taller, `04_brac_ordres`: *si el braç obeeix el teclat, obeirà el comandament*. *Error a anticipar:* fletxes al revés (placa girada).

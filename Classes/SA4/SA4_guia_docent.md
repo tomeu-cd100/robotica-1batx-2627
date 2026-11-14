@@ -5,7 +5,7 @@
 
 > 🧭 **Com s'usa aquesta guia.** **Abans de la SA:** objectius, material i codi de suport (la logística, al checklist docent). **A cada sessió:** la secció «SESSIÓ n» corresponent, amb el «Guió de modelatge» i els «Errors freqüents» a mà. **Durant tota la SA:** diversitat (DUA), ajuda i revisió entre iguals, i pensament computacional. **En avaluar:** «Avaluació formativa (instruments)». **Per contextualitzar:** context real i ODS.
 
-> 🚩 **Format de passos (3-11-2026):** l'alumnat segueix la **ruta de pràctiques de la [portada](README.md)** al seu ritme: cada pràctica comença amb el kata (10'), té els passos i el torn de taller a dins i acaba enviant el seu formulari. Tu fas una **arrencada de 5-10'** amb la pràctica de la fita del dia (el guió de modelatge de cada sessió) i després circules. El **quadern imprès** es manté: el full de cada sessió s'omple en acabar.
+> 🚩 **Format de passos (3-11-2026):** l'alumnat segueix la **ruta de pràctiques de la [portada](README.md)** al seu ritme: cada pràctica té els passos i el torn de taller a dins i acaba enviant el seu formulari. Tu fas una **arrencada de 5-10'** amb la pràctica de la fita del dia (el guió de modelatge de cada sessió) i després circules. El **quadern imprès** es manté: el full de cada sessió s'omple en acabar.
 
 > 🦾 **Fil conductor (des del 28-10-2026):** totes les pràctiques de la SA es
 > fan **sobre el braç MeArm** de cada alumne/a, que es munta en torns de
@@ -127,7 +127,7 @@
 
 > Frases i preguntes clau per al **Modelatge** de cada sessió (què mirar, què preguntar abans d'executar, error a anticipar).
 
-> ✍️ **Katas:** en acabar el modelatge de cada sessió amb pràctica de codi, projecta el kata del sketch del dia ([SA4_katas.md](SA4_katas.md)): 10' d'escriptura individual **abans** de repartir/obrir el sketch. **Un sol kata per sessió**; el dia del mini-check (**S4** en aquesta SA) el mini-check el substitueix, i el kata `04_brac_potenciometres` queda com a **repàs autònom** (marcat amb 🔁 al fitxer): recomana'l com a deures abans de tancar la SA. Per a la posada en comú, tens la solució comentada de cada kata (amb els valors de la variació) a [SA4_katas_solucions.md](SA4_katas_solucions.md).
+> ✍️ **Katas (arxivats el 14-11-2026):** ja no formen part de la ruta de l'alumnat. Els enunciats i les solucions són a `docs/arxiu/SA4_katas/`, com a **material d'ampliació per a alumnat avançat**: un kata de 10' per sketch, per escriure el bloc central abans d'obrir el codi.
 
 - **S1 · `01_servo_potenciometre` (servo):** distingeix **servo** (controla *posició*/angle 0–180°) de **motor DC** (gir continu). Demana predir on anirà `write(90)`: és exactament el **pas 0** del muntatge. Avís: *si mous diversos servos, alimentació externa*. *Error a anticipar:* el servo vibra per alimentació insuficient.
 - **S2 · `02_motor_pont_h` (pont H):** dibuixa la **taula IN1/IN2** per a cada sentit i assenyala **ENA = velocitat (PWM)**. Repeteix com un mantra: *MASSA COMUNA, mai el motor des del 5V*. *Error a anticipar:* l'Arduino es reinicia pel pic de corrent del motor.

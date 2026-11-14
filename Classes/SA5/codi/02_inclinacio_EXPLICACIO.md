@@ -14,17 +14,11 @@
 
 ## 🚀 Pas a pas
 
-### Pas 1 · Kata primer
-
-✍️ **Kata primer!** No llegeixis encara el codi: obre el [kata d'aquesta pràctica](../SA5_katas.md) i tens **10 minuts** per escriure el teu bloc (individual, apunts permesos). Després torna aquí i **compara**.
-
-✅ **Comprova:** has escrit el teu bloc **abans** de mirar el codi d'aquesta pràctica.
-
-### Pas 2 · Endevina abans de provar
+### Pas 1 · Endevina abans de provar
 
 ✍️ **Apunta-ho:** PREDIU: quant valdran `x` i `y` amb la placa plana sobre la taula? I de cantell?
 
-### Pas 3 · Carrega el codi
+### Pas 2 · Carrega el codi
 
 A l'editor **[python.microbit.org](https://python.microbit.org)**, esborra el que hi hagi, prem **Copia** aquí, enganxa-ho i prova-ho al **simulador**. Després connecta la micro:bit per USB i prem **Envia a la micro:bit**.
 
@@ -32,13 +26,13 @@ A l'editor **[python.microbit.org](https://python.microbit.org)**, esborra el qu
 
 ✅ **Comprova:** quan inclines la placa (al simulador, amb el control de l'acceleròmetre), la pantalla mostra cap on la inclines.
 
-### Pas 4 · Mira els números
+### Pas 3 · Mira els números
 
 Obre el gràfic (**Show data** a l'editor) i posa la placa plana, inclinada a la dreta i inclinada endavant.
 
 ✍️ **Apunta-ho:** valors de `x` i `y` amb la placa plana, inclinada a la dreta i inclinada endavant.
 
-### Pas 5 · Tria el llindar
+### Pas 4 · Tria el llindar
 
 Al codi, el gest només compta si la inclinació passa d'un **llindar**. Prova un valor petit i un de gran.
 
@@ -46,7 +40,7 @@ Al codi, el gest només compta si la inclinació passa d'un **llindar**. Prova u
 
 ✍️ **Apunta-ho:** quin és el concepte nou més important d'aquesta pràctica?
 
-### Pas 6 · Respon i envia
+### Pas 5 · Respon i envia
 
 📤 [Obre la tasca «SA5 · Pràctica 2» a Classroom i envia el formulari](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODk3NDM1ODkyMjYy/details)
 

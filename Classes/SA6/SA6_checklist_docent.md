@@ -18,19 +18,17 @@
 **Sessió 1 — Llaç obert, llaç tancat i homing**
 - [ ] **«C++ flash» (5', dins l'activació):** traduir 2-3 línies Python→C++ en veu alta (targeta [`00_Repas_expres_Cpp.md`](../00_General/00_Repas_expres_Cpp.md), repartida com a deures a la SA5 S3)
 - [ ] Referent (1') Irmgard Flügge-Lotz · conceptes: consigna, realimentació, error, actuador
-- [ ] ✍️ **Kata** `01_llac_obert_vs_tancat` (10', abans de repartir el sketch) → [SA6_katas.md](SA6_katas.md)
 - [ ] 🔧 **Taller (20'):** sensor de col·lisió a la base (D2)
 - [ ] `01_llac_obert_vs_tancat` (obert vs homing) + **diagrama de blocs** del braç
 - ⚠️ *Error:* confondre realimentació amb la sortida
 
 **Sessió 2 — Histèresi: la pinça automàtica**
-- [ ] ✍️ **Kata** `02_pinca_histeresi` (10', abans de repartir el sketch) → [SA6_katas.md](SA6_katas.md)
 - [ ] `02_pinca_histeresi`: dos llindars (tanca/obre) + estat per evitar el "clic-clic"
 - [ ] 🔧 **Taller (20'):** angles límit definitius + cablatge endreçat i etiquetat (R1 del braç)
 - ⚠️ *Error:* condicions sense l'estat → torna el clic-clic
 
 **Sessió 3 — Màquina d'estats del braç + tancament del producte**
-- [ ] **Mini-check individual** a l'inici (10', no qualifica): dos llindars d'histèresi (substitueix la graella d'activació i el kata del dia)
+- [ ] **Mini-check individual** a l'inici (10', no qualifica): dos llindars d'histèresi (substitueix la graella d'activació)
 - [ ] `03_maquina_estats`: `enum` + `switch` del braç (repòs, manual, replay, emergència), l'emergència abans del `switch` · producte amb el comandament per ràdio (`A`, `R`, `G` pel pont) · repartir l'**esquelet «Si t'encalles»** (`// TODO`, a la [pàgina de la pràctica](codi/03_maquina_estats/EXPLICACIO.md)) a qui s'encalli
 - [ ] **Defenses individuals de 2–3' a peu de taula** durant el repte (5 alumnes → ~15' en total; decisió tècnica justificada) + documentació + autoavaluació
 - ⚠️ *Error:* un `case` sense transició → la màquina es "penja"

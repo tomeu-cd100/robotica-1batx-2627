@@ -14,13 +14,7 @@
 
 ## 🚀 Pas a pas
 
-### Pas 1 · Kata primer
-
-✍️ **Kata primer!** Avui la sessió comença amb el **mini-check**, que fa de kata. Si no l'has fet, obre el [kata d'aquesta pràctica](../../SA6_katas.md): 10 minuts per escriure el teu bloc abans de llegir aquest codi.
-
-✅ **Comprova:** has fet el mini-check (o el kata) **abans** de mirar el codi d'aquesta pràctica.
-
-### Pas 2 · Dissenya el diagrama d'estats
+### Pas 1 · Dissenya el diagrama d'estats
 
 Abans de cap línia de codi, dibuixa al full del quadern els **quatre estats** (cercles) i les fletxes entre ells. Aquest és el comportament que vols:
 
@@ -33,7 +27,7 @@ Abans de cap línia de codi, dibuixa al full del quadern els **quatre estats** (
 
 ✍️ **Apunta-ho:** el teu diagrama d'estats: escriu una línia per fletxa (ESTAT → ESTAT quan …).
 
-### Pas 3 · Munta el circuit
+### Pas 2 · Munta el circuit
 
 El braç sencer de la SA4 i el sensor de col·lisió de la Pràctica 1, més dos polsadors: **A al D3** i **B al D4** (cada un a GND).
 
@@ -41,13 +35,13 @@ El braç sencer de la SA4 i el sensor de col·lisió de la Pràctica 1, més dos
 
 ✅ **Comprova:** servos a 9, 6, 10 i 11 (piles i GND comú), potenciòmetres a A0-A3, col·lisió al D2.
 
-### Pas 4 · Endevina abans de provar
+### Pas 3 · Endevina abans de provar
 
-Desplega el codi complet del pas 5 i busca el bloc de l'emergència i el `case REPLAY`.
+Desplega el codi complet del pas 4 i busca el bloc de l'emergència i el `case REPLAY`.
 
 ✍️ **Apunta-ho:** PREDIU: si toques el sensor de col·lisió a mig replay, què fa el braç? I si després el deixes anar però no prems A?
 
-### Pas 5 · Carrega el codi
+### Pas 4 · Carrega el codi
 
 Prem **Copia**, enganxa'l a l'Arduino IDE (esborra el que hi hagués) i prem **→ Puja**. Obre el **Monitor sèrie** (9600).
 
@@ -55,7 +49,7 @@ Prem **Copia**, enganxa'l a l'Arduino IDE (esborra el que hi hagués) i prem **�
 
 ✅ **Comprova:** el Monitor diu `Estat: REPOS` i el braç no es mou encara que giris els potenciòmetres.
 
-### Pas 6 · Prova els quatre estats
+### Pas 5 · Prova els quatre estats
 
 Prem **A** (manual), mou el braç i prem **B** en tres posicions. Prem **A** (repòs) i després **B** (replay). Mentre reprodueix, toca el sensor amb el dit.
 
@@ -63,7 +57,7 @@ Prem **A** (manual), mou el braç i prem **B** en tres posicions. Prem **A** (re
 
 ✍️ **Apunta-ho:** per què la comprovació de l'emergència va abans del `switch` i no dins d'un `case`?
 
-### Pas 7 · Producte: el comandament mana
+### Pas 6 · Producte: el comandament mana
 
 Ara les ordres arriben pel **pont de la SA5** (micro:bit → D0) en lloc dels polsadors. Fes tres canvis al teu sketch:
 
@@ -75,7 +69,7 @@ Ara les ordres arriben pel **pont de la SA5** (micro:bit → D0) en lloc dels po
 
 ✍️ **Apunta-ho:** producte: quina ordre del comandament fa cada canvi d'estat? (A, R, G)
 
-### Pas 8 · Prova final del braç
+### Pas 7 · Prova final del braç
 
 Amb el comandament, agafa un objecte de l'estació de recollida i deixa'l en un altre lloc. Grava-ho i reprodueix-ho.
 
@@ -83,7 +77,7 @@ Amb el comandament, agafa un objecte de l'estació de recollida i deixa'l en un 
 
 ✍️ **Apunta-ho:** un error que has trobat i com l'has resolt.
 
-### Pas 9 · Respon i envia
+### Pas 8 · Respon i envia
 
 📤 [Obre la tasca «SA6 · Pràctica 3» a Classroom i envia el formulari](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODk5NDU1NTU4ODE4/details)
 

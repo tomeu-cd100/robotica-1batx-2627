@@ -14,31 +14,25 @@
 
 ## 🚀 Pas a pas
 
-### Pas 1 · Kata primer
+### Pas 1 · Endevina abans de provar
 
-✍️ **Kata primer!** Si avui encara no has fet cap kata (ni el mini-check), obre el [kata d'aquesta pràctica](../../SA5_katas.md): 10 minuts per escriure el teu bloc abans de llegir aquest codi. Si ja l'has fet, endavant.
-
-✅ **Comprova:** has escrit el teu bloc **abans** de mirar el codi d'aquesta pràctica.
-
-### Pas 2 · Endevina abans de provar
-
-Desplega el codi complet del pas 4 i mira com llegeix les ordres.
+Desplega el codi complet del pas 3 i mira com llegeix les ordres.
 
 ✍️ **Apunta-ho:** PREDIU: si escrius `B+` deu vegades, quants graus es mou la base? I amb `b+` (minúscula)? I amb `X`?
 
-### Pas 3 · Prepara el braç
+### Pas 2 · Prepara el braç
 
 El braç es connecta com a la SA4 ([mapa de pins del dossier](../../../00_General/00_Projecte_T2_Brac.md#cablatge)): els quatre servos amb el portapiles i la massa comuna.
 
 ✅ **Comprova:** el **D0** és lliure. Hi anirà el cable del pont a la Pràctica 4, i ha d'estar desconnectat mentre puges programes.
 
-### Pas 4 · Carrega el codi
+### Pas 3 · Carrega el codi
 
 Prem **Copia**, enganxa'l a l'Arduino IDE (esborra el que hi hagués) i prem **→ Puja**.
 
 <!-- codi-complet -->
 
-### Pas 5 · Dona-li ordres
+### Pas 4 · Dona-li ordres
 
 Obre el **Monitor sèrie** (9600, amb «Nova línia» a baix a la dreta) i escriu ordres: `B+`, `B-`, `P`…
 
@@ -48,7 +42,7 @@ Obre el **Monitor sèrie** (9600, amb «Nova línia» a baix a la dreta) i escri
 
 ✍️ **Apunta-ho:** què és el protocol d'ordres del braç i per què cal que sigui el mateix a les dues bandes (la micro:bit que envia i l'Arduino que obeeix)?
 
-### Pas 6 · Respon i envia
+### Pas 5 · Respon i envia
 
 📤 [Obre la tasca «SA5 · Pràctica 3» a Classroom i envia el formulari](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODk3NDI2NTU5MDQ4/details)
 

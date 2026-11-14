@@ -14,13 +14,7 @@
 
 ## 🚀 Pas a pas
 
-### Pas 1 · Kata primer
-
-✍️ **Kata primer!** Si avui encara no has fet cap kata (ni el mini-check), obre el [kata d'aquesta pràctica](../../SA4_katas.md): 10 minuts per escriure el teu bloc abans de llegir aquest codi. Si ja l'has fet, endavant.
-
-✅ **Comprova:** has escrit el teu bloc **abans** de mirar el codi d'aquesta pràctica.
-
-### Pas 2 · Dissenya abans de programar
+### Pas 1 · Dissenya abans de programar
 
 Abans d'obrir l'editor, escriu el **pseudocodi** del control d'una articulació (3-5 línies): què llegeixes, com ho converteixes i què fas amb el servo. T'ajuda el [diagrama de flux](../../SA4_diagrama_flux.md).
 
@@ -28,13 +22,13 @@ Abans d'obrir l'editor, escriu el **pseudocodi** del control d'una articulació 
 
 ✍️ **Apunta-ho:** el teu pseudocodi del control d'una articulació (3-5 línies).
 
-### Pas 3 · Munta el cablatge definitiu
+### Pas 2 · Munta el cablatge definitiu
 
 Servos: **base al 9**, **esquerre al 6**, **dret al 10** i **pinça a l'11**, tots alimentats amb el **portapiles** i amb el GND unit al de l'Arduino. Potenciòmetres (la pota del mig): **base → A0**, **dret → A1**, **pinça → A2** i **esquerre → A3**. Fixa't que l'esquerre va a l'A3.
 
 ✅ **Comprova:** massa comuna feta i cap servo connectat al 5V de l'Arduino.
 
-### Pas 4 · Carrega el codi
+### Pas 3 · Carrega el codi
 
 Prem **Copia**, enganxa'l a l'Arduino IDE (esborra el que hi hagués) i prem **→ Puja**.
 
@@ -42,7 +36,7 @@ Prem **Copia**, enganxa'l a l'Arduino IDE (esborra el que hi hagués) i prem **�
 
 ✅ **Comprova:** cada potenciòmetre mou el seu servo, i el braç no fa salts en arrencar.
 
-### Pas 5 · Troba els angles límit
+### Pas 4 · Troba els angles límit
 
 Obre el **Monitor sèrie** (9600): hi surten els angles de cada servo. Posa a les constants del principi del codi (`BASE_MIN`, `BASE_MAX`…) els angles límit que vas trobar al calibratge del bloc D, torna'l a pujar i comprova, articulació per articulació, que arriba als extrems sense forçar el topall.
 
@@ -50,13 +44,13 @@ Obre el **Monitor sèrie** (9600): hi surten els angles de cada servo. Posa a le
 
 ✍️ **Apunta-ho:** com has trobat aquests angles límit i com saps que el servo no força el topall?
 
-### Pas 6 · Tria la zona morta
+### Pas 5 · Tria la zona morta
 
 Prova `ZONA_MORTA = 0` i després un valor més gran. Què passa amb el servo quan no toques el potenciòmetre?
 
 ✍️ **Apunta-ho:** zona morta triada (°) i per què.
 
-### Pas 7 · Prepara la defensa d'1 minut
+### Pas 6 · Prepara la defensa d'1 minut
 
 Pensa què diràs: com funciona i **una decisió tècnica** (per què aquests angles límit). S'avalua amb R1, R2 i R3.
 
@@ -64,7 +58,7 @@ Pensa què diràs: com funciona i **una decisió tècnica** (per què aquests an
 
 ✍️ **Apunta-ho:** un error que has trobat i com l'has resolt.
 
-### Pas 8 · Respon i envia
+### Pas 7 · Respon i envia
 
 📤 [Obre la tasca «SA4 · Pràctica 4» a Classroom i envia el formulari](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODk3NDI5ODc5MTk4/details)
 

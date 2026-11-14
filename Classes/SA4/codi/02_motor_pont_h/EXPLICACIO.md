@@ -14,13 +14,7 @@
 
 ## 🚀 Pas a pas
 
-### Pas 1 · Kata primer
-
-✍️ **Kata primer!** No llegeixis encara el codi: obre el [kata d'aquesta pràctica](../../SA4_katas.md) i tens **10 minuts** per escriure el teu bloc (individual, apunts permesos). Després torna aquí i **compara**.
-
-✅ **Comprova:** has escrit el teu bloc **abans** de mirar el codi d'aquesta pràctica.
-
-### Pas 2 · Munta el motor amb el pont H
+### Pas 1 · Munta el motor amb el pont H
 
 Connecta el L298N: **ENA al 5**, **IN1 al 7** i **IN2 al 8**. El motor va a les sortides del L298N, i el driver s'alimenta amb el **portapiles**, no amb l'Arduino.
 
@@ -28,7 +22,7 @@ Connecta el L298N: **ENA al 5**, **IN1 al 7** i **IN2 al 8**. El motor va a les 
 
 ✅ **Comprova:** el GND del portapiles i el GND de l'Arduino estan **units** (massa comuna). Sense això, el motor no fa cas.
 
-### Pas 3 · Carrega el codi
+### Pas 2 · Carrega el codi
 
 Prem **Copia**, enganxa'l a l'Arduino IDE (esborra el que hi hagués) i prem **→ Puja**.
 
@@ -36,7 +30,7 @@ Prem **Copia**, enganxa'l a l'Arduino IDE (esborra el que hi hagués) i prem **�
 
 ✅ **Comprova:** el motor fa la coreografia del `loop()`: endavant, atura, enrere…
 
-### Pas 4 · Entén el pont H
+### Pas 3 · Entén el pont H
 
 Canvia els `HIGH` i `LOW` d'`IN1` i `IN2` i mira què fa el motor (mai tots dos `HIGH`: el motor frena de cop i el driver pateix).
 
@@ -46,7 +40,7 @@ Canvia els `HIGH` i `LOW` d'`IN1` i `IN2` i mira què fa el motor (mai tots dos 
 
 ✍️ **Apunta-ho:** per què cal un pont H (driver) per moure un motor? (Mira «Per què fem aquesta pràctica».)
 
-### Pas 5 · Torn de taller: la pinça i el calibratge (blocs C-D)
+### Pas 4 · Torn de taller: la pinça i el calibratge (blocs C-D)
 
 Munta la pinça (bloc C) i fes el **calibratge** del bloc D de la [guia de muntatge](../../../00_General/00_Muntatge_brac_MeArm.md): passos 9 (pinça), 10 (esquerre) i 11 (dret). Per trobar els angles, fes servir aquest programa d'**escombrada**: mou el servo del pin 11 de 0° a 180° a poc a poc i escriu l'angle al **Monitor sèrie** (9600). Per a l'esquerre canvia l'`11` pel `6`, i per al dret, pel `10`.
 
@@ -72,7 +66,7 @@ void loop() {
 
 ✅ **Comprova:** blocs C i D fets: la pinça s'obre i es tanca, i cap servo força el topall a cap dels seus angles límit.
 
-### Pas 6 · Respon i envia
+### Pas 5 · Respon i envia
 
 📤 [Obre la tasca «SA4 · Pràctica 2» a Classroom i envia el formulari](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODI2ODM5NDk3NzA0/details)
 

@@ -14,23 +14,17 @@
 
 ## 🚀 Pas a pas
 
-### Pas 1 · Kata primer
-
-✍️ **Kata primer!** Si avui encara no has fet cap kata (ni el mini-check), obre el [kata d'aquesta pràctica](../SA5_katas.md): 10 minuts per escriure el teu bloc abans de llegir aquest codi. Si ja l'has fet, endavant.
-
-✅ **Comprova:** has escrit el teu bloc **abans** de mirar el codi d'aquesta pràctica.
-
-### Pas 2 · Dissenya abans de programar
+### Pas 1 · Dissenya abans de programar
 
 Escriu el **pseudocodi** del comandament (3-5 línies): què llegeix, com decideix l'ordre i què envia. El [diagrama de flux](../SA5_diagrama_flux.md) t'hi ajuda.
 
 ✍️ **Apunta-ho:** el teu pseudocodi del comandament (3-5 línies).
 
-### Pas 3 · Endevina abans de provar
+### Pas 2 · Endevina abans de provar
 
 ✍️ **Apunta-ho:** PREDIU: si la teva placa té `GRUP = 10` i la del company `GRUP = 12`, què passa quan inclines la teva?
 
-### Pas 4 · Carrega el comandament
+### Pas 3 · Carrega el comandament
 
 Canvia `GRUP = 10` pel teu **número de llista**: així el teu braç no obeirà el comandament d'un company. Després carrega'l a la **primera** micro:bit.
 
@@ -38,7 +32,7 @@ A l'editor **[python.microbit.org](https://python.microbit.org)**, esborra el qu
 
 <!-- codi-complet -->
 
-### Pas 5 · Prova la ràdio amb el receptor
+### Pas 4 · Prova la ràdio amb el receptor
 
 Al receptor i, després, al pont, canvia el `group=10` pel **mateix número de llista** que has posat al comandament.
 
@@ -69,7 +63,7 @@ Inclina el comandament: la lletra ha d'aparèixer a les dues plaques alhora.
 
 ✍️ **Apunta-ho:** instrucció que envia / instrucció que rep.
 
-### Pas 6 · Torn de taller: el pont cap al braç
+### Pas 5 · Torn de taller: el pont cap al braç
 
 Quan el receptor funcioni, converteix-lo en **pont**. Ara la placa no mostra
 l'ordre: la reenvia per un cable a l'Arduino, que té carregat el
@@ -104,7 +98,7 @@ Connexions: **P1 → D0** i **GND → GND** ([esquema](../SA5_connexions.md#el-p
 
 ✅ **Comprova:** quan inclines el comandament, el braç es mou.
 
-### Pas 7 · Compara C++ i Python
+### Pas 6 · Compara C++ i Python
 
 El comandament (Python) i l'Arduino que obeeix les ordres (C++, Pràctica 3) fan servir el **mateix protocol**: només canvia la sintaxi. Completa la taula:
 
@@ -121,7 +115,7 @@ El comandament (Python) i l'Arduino que obeeix les ordres (C++, Pràctica 3) fan
 
 ✍️ **Apunta-ho:** un error que has trobat i com l'has resolt.
 
-### Pas 8 · Respon i envia
+### Pas 7 · Respon i envia
 
 📤 [Obre la tasca «SA5 · Pràctica 4» a Classroom i envia el formulari](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODk3NDM1MDM2Nzc3/details)
 
@@ -229,6 +223,6 @@ gira uns 18° per segon, prou suau per controlar-lo.
 
 - **Repte de la S3:** afegir el servo **esquerre** amb els botons A i B (`E+` / `E-`).
 - **A la SA6:** el pont també enviarà ordres d'**estat** (`A` i `R`, amb els seus botons) i el braç tindrà una **màquina d'estats** que les obeeix.
-- **Taula comparativa:** tens el mateix protocol escrit en **dos llenguatges** (el comandament en Python, el receptor de l'Arduino en C++): és la millor fila per a la comparació C++ ↔ Python del pas 7.
+- **Taula comparativa:** tens el mateix protocol escrit en **dos llenguatges** (el comandament en Python, el receptor de l'Arduino en C++): és la millor fila per a la comparació C++ ↔ Python del pas 6.
 
 </details>

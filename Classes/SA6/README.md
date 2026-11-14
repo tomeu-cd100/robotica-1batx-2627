@@ -10,7 +10,7 @@ En acabar aquesta SA podràs: 1) distingir **llaç obert** i **llaç tancat** i 
 
 ## 🧭 La teva ruta
 
-Fes les pràctiques **en ordre i al teu ritme**. Cada pràctica comença amb el **kata** (10') i acaba enviant el seu formulari de Classroom. Les 🚩 et diuen on hauries de ser al final de cada sessió.
+Fes les pràctiques **en ordre i al teu ritme**. Cada pràctica acaba enviant el seu formulari de Classroom. Les 🚩 et diuen on hauries de ser al final de cada sessió.
 
 - ① [Pràctica 1 · El homing del braç](codi/01_llac_obert_vs_tancat/EXPLICACIO.md) — llaç obert vs llaç tancat: la base troba sola el seu zero. **Taller:** el sensor de col·lisió a la base.
 
@@ -67,8 +67,6 @@ Fes les pràctiques **en ordre i al teu ritme**. Cada pràctica comença amb el 
 | [`SA6_fitxa_ampliada.md`](SA6_fitxa_ampliada.md) | **Versió ampliada** (aprofundiment): totes les rutines (revisió creuada de codi, exit ticket, ODS, PC) i ampliacions. |
 | [`SA6_checklist_docent.md`](SA6_checklist_docent.md) | **Checklist docent** (una cara): logística prèvia, punts de control per sessió, avaluació i diversitat. |
 | [`SA6_checklist_alumnat.md`](SA6_checklist_alumnat.md) | **Checklist alumnat** (una cara): què he de fer/lliurar + autoavaluació amb semàfor. |
-| [`SA6_katas.md`](SA6_katas.md) | Katas d'escriptura (10'): un per sessió de codi, abans d'obrir el sketch; si ningú no el projecta, l'alumnat l'obre sol. |
-| [`SA6_katas_solucions.md`](SA6_katas_solucions.md) | **Solucions dels katas** (docent): codi resolt amb els valors de la variació + comentaris per a la posada en comú. |
 | [`SA6_esquemes_connexions.md`](SA6_esquemes_connexions.md) | Esquemes i connexions del braç (col·lisió, ultrasons, polsadors, mapa de pins). |
 | `codi/` | Sketches d'Arduino (vegeu la taula següent). |
 

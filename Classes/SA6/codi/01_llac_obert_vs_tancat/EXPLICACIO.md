@@ -14,19 +14,13 @@
 
 ## 🚀 Pas a pas
 
-### Pas 1 · Kata primer
-
-✍️ **Kata primer!** No llegeixis encara el codi: obre el [kata d'aquesta pràctica](../../SA6_katas.md) i tens **10 minuts** per escriure el teu bloc (individual, apunts permesos). Després torna aquí i **compara**.
-
-✅ **Comprova:** has escrit el teu bloc **abans** de mirar el codi d'aquesta pràctica.
-
-### Pas 2 · Torn de taller: munta el final de carrera
+### Pas 1 · Torn de taller: munta el final de carrera
 
 Fixa el **sensor de col·lisió** a la base, on la palanca de la base el toca en girar del tot cap a un costat. Serà el final de carrera d'avui i l'**emergència** de la Pràctica 3.
 
 ✅ **Comprova:** gira la base a mà (amb el braç desconnectat) i el sensor fa *clic* abans que la base arribi al topall.
 
-### Pas 3 · Munta el circuit
+### Pas 2 · Munta el circuit
 
 Servo de la base al **pin 9** (alimentat amb les piles i GND comú), sensor de col·lisió al **D2** i polsador A entre el **D3** i GND.
 
@@ -34,13 +28,13 @@ Servo de la base al **pin 9** (alimentat amb les piles i GND comú), sensor de c
 
 ✅ **Comprova:** el servo va a les **piles**, no al 5V de l'Arduino, i el − de les piles toca el GND de l'Arduino.
 
-### Pas 4 · Endevina abans de provar
+### Pas 3 · Endevina abans de provar
 
-Desplega el codi complet del pas 5 i mira'l sense carregar-lo. En mode **obert**, la base va directament a 20°. En mode **tancat**, baixa grau a grau fins que el sensor toca.
+Desplega el codi complet del pas 4 i mira'l sense carregar-lo. En mode **obert**, la base va directament a 20°. En mode **tancat**, baixa grau a grau fins que el sensor toca.
 
 ✍️ **Apunta-ho:** PREDIU: si has muntat el final de carrera a 30°, en quin mode la base l'acabarà tocant? I si fos a 15°?
 
-### Pas 5 · Carrega el codi
+### Pas 4 · Carrega el codi
 
 Prem **Copia**, enganxa'l a l'Arduino IDE (esborra el que hi hagués) i prem **→ Puja**. Obre el **Monitor sèrie** (9600).
 
@@ -48,13 +42,13 @@ Prem **Copia**, enganxa'l a l'Arduino IDE (esborra el que hi hagués) i prem **�
 
 ✅ **Comprova:** el Monitor diu «Mode TANCAT (homing)» i la base baixa a poc a poc fins que el sensor toca.
 
-### Pas 6 · Troba el zero real
+### Pas 5 · Troba el zero real
 
 Deixa que el homing acabi i llegeix el missatge del Monitor sèrie.
 
 ✍️ **Apunta-ho:** a quants graus ha tocat el final de carrera en mode tancat (el zero real de la teva base)?
 
-### Pas 7 · Compara els dos modes
+### Pas 6 · Compara els dos modes
 
 Prem el polsador A: passa a mode **obert**. Torna'l a prémer per tornar al tancat. Després mou el sensor uns graus i repeteix-ho en els dos modes.
 
@@ -62,7 +56,7 @@ Prem el polsador A: passa a mode **obert**. Torna'l a prémer per tornar al tanc
 
 ✍️ **Apunta-ho:** diferència principal entre llaç obert i llaç tancat.
 
-### Pas 8 · Dibuixa el diagrama de blocs
+### Pas 7 · Dibuixa el diagrama de blocs
 
 Mira el diagrama del llaç tancat i fes el del **teu braç** al full del quadern.
 
@@ -72,7 +66,7 @@ Mira el diagrama del llaç tancat i fes el del **teu braç** al full del quadern
 
 ✍️ **Apunta-ho:** què és la realimentació en un sistema de control?
 
-### Pas 9 · Respon i envia
+### Pas 8 · Respon i envia
 
 📤 [Obre la tasca «SA6 · Pràctica 1» a Classroom i envia el formulari](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODk5NDU2MDAyODQy/details)
 

@@ -2,8 +2,6 @@
 
 **Quan es fa:** Sessió 3 (bastida per a qui acaba aviat, prepara la SA6) · **Fitxer:** `05_dos_servos_millis.ino` · **Circuit:** [esquema de connexions](../../SA4_esquemes_connexions.md) (servo base=9, servo pinça=11, amb piles i GND comú)
 
-> ✍️ **Kata primer!** Si avui encara no has fet cap kata (ni el mini-check), obre el [kata d'aquesta pràctica](../../SA4_katas.md): 10 minuts per escriure el teu bloc abans de llegir aquest codi. Si ja l'has fet, endavant.
-
 ## 🎯 Per què fem aquesta pràctica
 
 Recorda el peatge del semàfor de la SA2: *`delay()` bloqueja*. Mentre

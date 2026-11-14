@@ -14,19 +14,13 @@
 
 ## 🚀 Pas a pas
 
-### Pas 1 · Kata primer
+### Pas 1 · Endevina abans de provar
 
-✍️ **Kata primer!** No llegeixis encara el codi: obre el [kata d'aquesta pràctica](../../SA4_katas.md) i tens **10 minuts** per escriure el teu bloc (individual, apunts permesos). Després torna aquí i **compara**.
-
-✅ **Comprova:** has escrit el teu bloc **abans** de mirar el codi d'aquesta pràctica.
-
-### Pas 2 · Endevina abans de provar
-
-Desplega el codi complet del pas 4 i mira només el `loop()`.
+Desplega el codi complet del pas 3 i mira només el `loop()`.
 
 ✍️ **Apunta-ho:** PREDIU: què farà el braç amb la mà a 10 cm? I a 30 cm?
 
-### Pas 3 · Munta el circuit
+### Pas 2 · Munta el circuit
 
 Servo de la base al **9** i de la pinça a l'**11**, alimentats amb el **portapiles**. Ultrasons: **TRIG al 7** i **ECHO al 8** (el D11 ara és la pinça), VCC a 5V i GND a GND.
 
@@ -34,7 +28,7 @@ Servo de la base al **9** i de la pinça a l'**11**, alimentats amb el **portapi
 
 ✅ **Comprova:** el GND del portapiles i el de l'Arduino estan units (massa comuna).
 
-### Pas 4 · Carrega el codi
+### Pas 3 · Carrega el codi
 
 Prem **Copia**, enganxa'l a l'Arduino IDE (esborra el que hi hagués) i prem **→ Puja**.
 
@@ -42,7 +36,7 @@ Prem **Copia**, enganxa'l a l'Arduino IDE (esborra el que hi hagués) i prem **�
 
 ✅ **Comprova:** quan poses la mà a prop de l'ultrasons, la base gira i la pinça s'obre; quan la treus, el braç torna a repòs.
 
-### Pas 5 · Mesura i mira què fa
+### Pas 4 · Mesura i mira què fa
 
 Obre el **Serial Plotter** (Eines → Serial Plotter, 9600) i posa un objecte a 5 cm, a 15 cm (just al llindar) i a 30 cm.
 
@@ -50,13 +44,13 @@ Obre el **Serial Plotter** (Eines → Serial Plotter, 9600) i posa un objecte a 
 
 ✍️ **Apunta-ho:** què és la massa comuna i per què és important?
 
-### Pas 6 · Torn de taller: l'estructura central (bloc E)
+### Pas 5 · Torn de taller: l'estructura central (bloc E)
 
 Segueix el bloc E de la [guia de muntatge](../../../00_General/00_Muntatge_brac_MeArm.md). El pas 15 es fa **en parella**.
 
 ✅ **Comprova:** el bloc E està muntat i els servos encara són al seu angle.
 
-### Pas 7 · Respon i envia
+### Pas 6 · Respon i envia
 
 📤 [Obre la tasca «SA4 · Pràctica 3» a Classroom i envia el formulari](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODk3NDMwMDI1NTA5/details)
 

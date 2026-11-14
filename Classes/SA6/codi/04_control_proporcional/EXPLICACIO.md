@@ -2,8 +2,6 @@
 
 **Quan es fa:** Sessió 3 (ampliació, per a qui va sobrat) · **Fitxer:** `04_control_proporcional.ino` · **Circuit:** [esquema de connexions](../../SA6_esquemes_connexions.md) (servo base=9 amb piles; potenciòmetre de la base=A0)
 
-> ✍️ **Kata primer!** Si avui encara no has fet cap kata (ni el mini-check), obre el [kata d'aquesta pràctica](../../SA6_katas.md): 10 minuts per escriure el teu bloc abans de llegir aquest codi. Si ja l'has fet, endavant.
-
 ## 🎯 Per què fem aquesta pràctica
 
 Quan gires de cop el potenciòmetre de la base, el servo **salta**: va a tota

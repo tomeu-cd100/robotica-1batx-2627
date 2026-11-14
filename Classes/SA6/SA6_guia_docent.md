@@ -5,7 +5,7 @@
 
 > 🧭 **Com s'usa aquesta guia.** **Abans de la SA:** objectius, material i codi de suport (la logística, al checklist docent). **A cada sessió:** la secció «SESSIÓ n» corresponent, amb el «Guió de modelatge» i els «Errors freqüents» a mà. **Durant tota la SA:** diversitat (DUA), ajuda i revisió entre iguals, i pensament computacional. **En avaluar:** «Avaluació formativa (instruments)». **Per contextualitzar:** context real i ODS.
 
-> 🚩 **Format de passos (14-11-2026):** l'alumnat segueix la **ruta de pràctiques de la [portada](README.md)** al seu ritme: ① homing (S1, amb el sensor de col·lisió al taller), ② pinça automàtica (S2, amb els angles límit al taller) i ③ màquina d'estats + comandament (el producte, S3). La S4 és la prova T2. Cada pràctica comença amb el kata (a la S3, el mini-check) i acaba enviant el seu formulari. Tu fas una **arrencada de 5-10'** amb la pràctica de la fita del dia (el guió de modelatge de cada sessió) i després circules. El `04_control_proporcional` queda com a ⭐ ampliació, fora de la ruta. El **quadern imprès** es manté: el full de cada sessió s'omple en acabar.
+> 🚩 **Format de passos (14-11-2026):** l'alumnat segueix la **ruta de pràctiques de la [portada](README.md)** al seu ritme: ① homing (S1, amb el sensor de col·lisió al taller), ② pinça automàtica (S2, amb els angles límit al taller) i ③ màquina d'estats + comandament (el producte, S3). La S4 és la prova T2. Cada pràctica acaba enviant el seu formulari. Tu fas una **arrencada de 5-10'** amb la pràctica de la fita del dia (el guió de modelatge de cada sessió) i després circules. El `04_control_proporcional` queda com a ⭐ ampliació, fora de la ruta. El **quadern imprès** es manté: el full de cada sessió s'omple en acabar.
 
 > 🦾 **Fil conductor (des del 28-10-2026):** tots els sistemes de control de
 > la SA són **del braç MeArm**: el llaç tancat és el **homing** amb el final de
@@ -104,7 +104,7 @@
 
 > El producte de la SA **es tanca en aquesta sessió** (la S4 és, sencera, la prova T2).
 
-- **Mini-check individual (10', a l'inici, substitueix la graella i el kata):** diagnosticar el "clic-clic" de la pinça i escriure els dos llindars ([banc](../00_General/00_Mini_checks_individuals.md)).
+- **Mini-check individual (10', a l'inici, substitueix la graella):** diagnosticar el "clic-clic" de la pinça i escriure els dos llindars ([banc](../00_General/00_Mini_checks_individuals.md)).
 - **«Python flash» (5', enganxat al mini-check):** els ping-pongs orals de la represa de MicroPython (secció de sota). Compta'ls: **van dins d'aquests 100'**, no a sobre.
 - **Modelatge (25'):** `03_maquina_estats.ino`. `enum` d'estats + `switch`; transicions per **esdeveniment** (polsadors, col·lisió) i per **temps** (`millis()` al replay); l'**emergència abans del `switch`**. Dibuixa el diagrama d'estats del braç.
 - **Pràctica guiada (30'):** carreguen la màquina d'estats al braç i la proven: gravar tres punts, reproduir-los, provocar l'emergència amb el dit.
@@ -178,7 +178,7 @@
 
 > Frases i preguntes clau per al **Modelatge** de cada sessió (què mirar, què preguntar abans d'executar, error a anticipar).
 
-> ✍️ **Katas:** en acabar el modelatge de cada sessió amb pràctica de codi, projecta el kata del sketch del dia ([SA6_katas.md](SA6_katas.md)): 10' d'escriptura individual **abans** de repartir/obrir el sketch. **Un sol kata per sessió**; el dia del mini-check (**S3** en aquesta SA) el mini-check el substitueix, i el kata `03_maquina_estats` queda com a **repàs autònom** (marcat amb 🔁 al fitxer): recomana'l com a deures abans de tancar la SA. Per a la posada en comú, tens la solució comentada de cada kata (amb els valors de la variació) a [SA6_katas_solucions.md](SA6_katas_solucions.md).
+> ✍️ **Katas (arxivats el 14-11-2026):** ja no formen part de la ruta de l'alumnat. Els enunciats i les solucions són a `docs/arxiu/SA6_katas/`, com a **material d'ampliació per a alumnat avançat**: un kata de 10' per sketch, per escriure el bloc central abans d'obrir el codi.
 
 - **S1 · `01_llac_obert_vs_tancat`:** dibuixa el **diagrama de blocs** del braç (consigna → controlador → servo → base, i el final de carrera tancant el llaç). Pregunta: *"què passa si el sensor no és on creiem?"* → el llaç obert no se n'assabenta; el homing el troba. *Error a anticipar:* confondre realimentació amb la sortida.
 - **S2 · `02_pinca_histeresi`:** mostra el **clic-clic** amb un sol llindar i com **dos llindars** el maten. Demana predir a quina distància es tanca i a quina s'obre (no és la mateixa!). *Error a anticipar:* condicions sense l'estat (`pincaTancada`) i la pinça torna a fer clic-clic.

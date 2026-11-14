@@ -14,19 +14,13 @@
 
 ## 🚀 Pas a pas
 
-### Pas 1 · Kata primer
+### Pas 1 · Endevina abans de provar
 
-✍️ **Kata primer!** No llegeixis encara el codi: obre el [kata d'aquesta pràctica](../SA5_katas.md) i tens **10 minuts** per escriure el teu bloc (individual, apunts permesos). Després torna aquí i **compara**.
-
-✅ **Comprova:** has escrit el teu bloc **abans** de mirar el codi d'aquesta pràctica.
-
-### Pas 2 · Endevina abans de provar
-
-Desplega el codi complet del pas 3 i llegeix-lo sense executar-lo.
+Desplega el codi complet del pas 2 i llegeix-lo sense executar-lo.
 
 ✍️ **Apunta-ho:** PREDIU: quina lletra surt en engegar? I si prems B cinc vegades?
 
-### Pas 3 · Carrega el codi
+### Pas 2 · Carrega el codi
 
 A l'editor **[python.microbit.org](https://python.microbit.org)**, esborra el que hi hagi, prem **Copia** aquí, enganxa-ho i prova-ho al **simulador**. Després connecta la micro:bit per USB i prem **Envia a la micro:bit**.
 
@@ -34,7 +28,7 @@ A l'editor **[python.microbit.org](https://python.microbit.org)**, esborra el qu
 
 ✅ **Comprova:** surt una lletra i, quan prems els botons (al simulador, amb el ratolí), canvia d'articulació. Has encertat la predicció?
 
-### Pas 4 · Mira com es mostra
+### Pas 3 · Mira com es mostra
 
 Canvia un `display.show(...)` per `display.scroll(...)` i torna-ho a provar.
 
@@ -42,13 +36,13 @@ Canvia un `display.show(...)` per `display.scroll(...)` i torna-ho a provar.
 
 ✍️ **Apunta-ho:** per què `ARTICULACIONS[0]` és `"B"` i no `"E"`?
 
-### Pas 5 · Explica-ho amb les teves paraules
+### Pas 4 · Explica-ho amb les teves paraules
 
 Esborra els espais d'una línia de dins del `while True:` i prova d'executar-lo. Després torna-ho a deixar com estava.
 
 ✍️ **Apunta-ho:** per què la indentació és important en Python?
 
-### Pas 6 · Respon i envia
+### Pas 5 · Respon i envia
 
 📤 [Obre la tasca «SA5 · Pràctica 1» a Classroom i envia el formulari](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODk3NDM2MjgzOTA1/details)
 
