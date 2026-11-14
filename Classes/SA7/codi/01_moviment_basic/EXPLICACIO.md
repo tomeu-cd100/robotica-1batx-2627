@@ -44,13 +44,12 @@ Prem **Copia** i enganxa'l a l'Arduino IDE (esborra el que hi hagués). **No el 
 
 ### Pas 4 · Adapta'l al teu rover
 
-El L298N del rover fa servir **dos pins de direcció per motor**. Al codi, esborra el bloc `// === PINS (AJUSTAR) ===` i la funció `motors()`, i enganxa-hi aquest bloc. Després, al `setup()`, canvia els `pinMode` dels motors per una sola línia: `setupMotors();`.
+El L298N del rover fa servir **dos pins de direcció per motor**. Al codi, esborra les **quatre línies de pins dels motors** (`ESQ_DIR`, `ESQ_VEL`, `DRET_DIR`, `DRET_VEL`) i la funció `motors()`, i enganxa-hi aquest bloc al seu lloc. **Deixa la línia de `VEL`**: el programa ja la té. Després, al `setup()`, canvia els quatre `pinMode` dels motors per una sola línia: `setupMotors();`.
 
 ```cpp
 // === PINS DEL ROVER (L298N) ===
 const int ESQ_ENA = 5, ESQ_IN1 = 4, ESQ_IN2 = 3;   // motor esquerre
 const int DRET_ENB = 6, DRET_IN3 = 7, DRET_IN4 = 8; // motor dret
-const int VEL = 180;
 
 void motors(int dirEsq, int velEsq, int dirDret, int velDret) {
   digitalWrite(ESQ_IN1, dirEsq);
@@ -105,7 +104,8 @@ Hi trobaràs les mateixes preguntes ✍️ que has anat apuntant. Envia'l ara. A
 | El robot no es mou gens | Pins que no són els del rover, o bateria descarregada (l'USB sol no alimenta els motors). |
 | No va recte: es desvia sempre cap a un costat | Motors desiguals (cap robot real és perfecte). Compensa: abaixa una mica la `VEL` de la roda ràpida dins `endavant()`. |
 | Un moviment surt al revés | Cables d'un motor invertits al L298N: intercanvia'ls (no toquis el codi). |
-| Error en compilar: `ESQ_DIR` no declarat | Has esborrat el bloc de pins però no els `pinMode` antics del `setup()`: canvia'ls per `setupMotors();`. |
+| Error en compilar: `ESQ_DIR` no declarat | Has esborrat els pins però no els `pinMode` antics del `setup()`: canvia'ls per `setupMotors();`. |
+| Error en compilar: `redefinition of 'const int VEL'` | Has enganxat una `VEL` de més: deixa'n només una. |
 
 </details>
 

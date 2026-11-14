@@ -32,7 +32,7 @@ Desplega el codi complet del pas 3 i mira on és el `for` dels quatre costats: a
 
 ### Pas 3 · Carrega el codi
 
-Prem **Copia** i enganxa'l a l'Arduino IDE. Canvia el bloc de pins i `motors()` pel **bloc del rover** de la [Pràctica 1](../01_moviment_basic/EXPLICACIO.md) (pas 4) i prem **→ Puja**.
+Prem **Copia** i enganxa'l a l'Arduino IDE. Adapta'l al rover com a la [Pràctica 1](../01_moviment_basic/EXPLICACIO.md) (pas 4): la línia de pins dels motors i `motors()` pel **bloc del rover**, i els `pinMode` dels motors del `setup()` per `setupMotors();`. i prem **→ Puja**.
 
 <!-- codi-complet -->
 

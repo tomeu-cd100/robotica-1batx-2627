@@ -2,7 +2,7 @@
 
 Setena situació d'aprenentatge (**8 h · 4 sessions** + sessió 0 de muntatge, 3r trimestre). El robot **es mou sol**: control diferencial de motors, **trajectòries** programades (quadrat, recorregut) i **comportaments autònoms** (evita-obstacles amb ultrasons, seguidor de línia amb IR), amb proves i **iteració**. Maquinari: **el teu rover**, el robot que muntes a la **sessió 0** ([dossier del rover](../00_General/00_Projecte_T3_Rover.md)); la placa Imagina 3dBot queda de **reserva** (pla B). Programació oficial: [`Programació didàctica/16_SA7_Robotica_mobil.md`](../../Programació%20didàctica/16_SA7_Robotica_mobil.md).
 
-> ⚙️ **Important:** cada `.ino` té un bloc `// === PINS (AJUSTAR) ===`. Amb el **rover propi**, els pins són els de la [taula de cablatge del dossier](../00_General/00_Projecte_T3_Rover.md) — es fixen **una sola vegada** i valen per a tota l'aula. Si treballes amb la 3dBot de reserva, els pins dels motors **depenen del model**: posa-hi els reals abans de pujar. La lògica no s'ha de tocar.
+> ⚙️ **Important:** els `.ino` de la SA7 estan escrits per a la placa 3dBot (un pin de direcció per motor). El **L298N del rover** en fa servir dos: no n'hi ha prou de canviar els números. A la [Pràctica 1](codi/01_moviment_basic/EXPLICACIO.md) (pas 4) hi tens el **bloc del rover** que substitueix els pins i la funció `motors()`; a les altres pràctiques es fa igual. Si treballes amb la 3dBot de reserva, posa-hi els pins reals del seu manual. La lògica no s'ha de tocar.
 
 ![Cinemàtica diferencial: variant la velocitat de cada roda el robot va recte o gira](img/sa7-cinematica-diferencial.svg)
 

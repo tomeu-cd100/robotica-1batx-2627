@@ -80,7 +80,7 @@ DIBUIX = f"""
 <g {TRAÇ}><rect x="536" y="146" width="66" height="44" rx="3"/><path d="M526 196 h86 l-8 -6 h-70z"/></g>
 <path d="M556 176 l10 -14 l10 10 l10 -16" stroke="#ffd166" stroke-width="1.6" fill="none"/>
 <line x1="800" y1="40" x2="800" y2="390" stroke="#e8f1ff" stroke-width="1" stroke-dasharray="2 6" opacity=".5"/>
-<text x="812" y="44" fill="#e8f1ff" font-size="10" opacity=".75">PROJECTE FINAL</text>
+<text x="812" y="396" fill="#e8f1ff" font-size="10" opacity=".75">PROJECTE FINAL</text>
 <g {TRAÇ}><circle cx="912" cy="104" r="12"/><path d="M906 118h12M908 124h8"/></g>
 <g {TRAÇ}><path d="M896 200 l18 -18 a7 7 0 1 1 6 6 l-18 18z"/></g>
 <g {TRAÇ}><rect x="900" y="266" width="24" height="30" rx="2"/><path d="M906 282 l5 5 l9 -11"/></g>

@@ -16,9 +16,9 @@
 
 ### Pas 1 · Comprova l'ultrasons
 
-L'ultrasons va al davant del rover: **TRIG al D12** i **ECHO al D11**, VCC a 5V i GND a GND. El rover avança, **percep**, **decideix** i **actua**, una vegada i una altra:
+L'ultrasons va al davant del rover: **TRIG al D12** i **ECHO al D11**, VCC a 5V i GND a GND. El rover avança, **percep**, **decideix** i **actua**, una vegada i una altra. Aquest diagrama en fa una versió amb **dos llindars** (com l'esquelet de «Si t'encalles»); el codi d'avui en fa servir **un de sol**, `DIST_MIN`: per sota recula i gira, per sobre avança.
 
-![Diagrama de flux del robot reactiu: mesura la distància, compara-la amb el llindar i, segons el resultat, avança o fa la maniobra d'evasió, i torna a començar](../../img/sa7-flux.svg)
+![Diagrama de flux del robot reactiu amb dos llindars: llegeix la distància amb l'ultrasons i decideix; per sota d'A_PROP va enrere, per sobre d'A_LLUNY va endavant i entremig s'atura; i torna a començar](../../img/sa7-flux.svg)
 
 ✅ **Comprova:** l'ultrasons mira endavant, recte, i no toca cap cable ni la roda.
 
@@ -30,7 +30,7 @@ Desplega el codi complet del pas 3 i busca `DIST_MIN` i la branca de l'`if`.
 
 ### Pas 3 · Carrega el codi
 
-Prem **Copia** i enganxa'l a l'Arduino IDE. Canvia el bloc de pins i `motors()` pel **bloc del rover** de la [Pràctica 1](../01_moviment_basic/EXPLICACIO.md) (pas 4). `TRIG` i `ECHO` ja són 12 i 11. Prem **→ Puja**.
+Prem **Copia** i enganxa'l a l'Arduino IDE. Adapta'l al rover com a la [Pràctica 1](../01_moviment_basic/EXPLICACIO.md) (pas 4): la línia de pins dels motors i `motors()` pel **bloc del rover**, i els `pinMode` dels motors del `setup()` per `setupMotors();`. La línia de `TRIG` i `ECHO` no la toquis: ja són 12 i 11. Prem **→ Puja**.
 
 <!-- codi-complet -->
 

@@ -46,7 +46,7 @@ Mou la placa a poc a poc i mira al monitor sèrie **els valors reals** de cada p
 
 Hi trobaràs les mateixes preguntes ✍️ que has anat apuntant. Envia'l ara i continua amb la **[Pràctica 5 · Teachable Machine](../SA8_practica_teachable_machine.md)**: el mateix problema, però les regles les aprèn la màquina.
 
-⭐ **Si acabes abans:** afegeix una **classe nova** de gest (per exemple, «inclinat cap enrere»). Més reptes a **[Reptes de la SA8](../../../Reptes/Reptes_SA8.md)**; quan el docent te'l validi, pinta l'estrella al [tauler de reptes](../../00_General/00_Tauler_reptes.md).
+⭐ **Si acabes abans:** afegeix una **classe nova** de gest (per exemple, «CAIGUDA», amb `accelerometer.was_gesture("freefall")`). Més reptes a **[Reptes de la SA8](../../../Reptes/Reptes_SA8.md)**; quan el docent te'l validi, pinta l'estrella al [tauler de reptes](../../00_General/00_Tauler_reptes.md).
 
 <details markdown="1">
 <summary>🧗 Si t'encalles</summary>

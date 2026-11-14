@@ -44,7 +44,7 @@ Desplega el codi complet del pas 4 i mira la cadena `if / else if` del `loop()`.
 
 El codi està escrit per a sensors digitals als pins 2 i 3, i al rover el **D2 és el para-xocs** i el **D3 és un motor**. Fes aquests canvis:
 
-1. Canvia el bloc de pins i `motors()` pel **bloc del rover** de la [Pràctica 1](../01_moviment_basic/EXPLICACIO.md) (pas 4).
+1. Adapta'l al rover com a la [Pràctica 1](../01_moviment_basic/EXPLICACIO.md) (pas 4): la línia de pins dels motors i `motors()` pel **bloc del rover**, i els `pinMode` dels motors del `setup()` per `setupMotors();`.
 2. Canvia els sensors i la manera de llegir-los, amb el teu llindar:
 
 ```cpp
