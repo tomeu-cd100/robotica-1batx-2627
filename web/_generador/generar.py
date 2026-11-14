@@ -281,39 +281,45 @@ from generador.utils import (  # noqa: E402
     BODY_CERCA_MAX, apply_outside_code, detect_sa, first_h1, pdf_out_for,
     rel_url, slugify, strip_accents, text_pla_cerca,
 )
-from generador import atles_t2  # noqa: E402
+from generador import atles_t2, atles_t3  # noqa: E402
+from generador.atles import pregunta as pregunta_guia  # noqa: E402
+
+# --- Atles dels trimestres: el robot com a mapa (generador/atles*.py) --------
+ATLES = {2: atles_t2.T2, 3: atles_t3.T3}
+PORTADES_PROJECTE = {"classes/projecte-t2/index.html": 2, "classes/projecte-t3/index.html": 3}
 
 
-# --- Atles del T2: el braç com a mapa del trimestre (generador/atles_t2.py) ---
-def _preguntes_t2() -> dict[int, str | None]:
-    return {c["n"]: atles_t2.pregunta((ROOT / c["src"]).read_text(encoding="utf-8"))
-            for c in atles_t2.CAPITOLS}
+def _preguntes(tri: int) -> dict[int, str | None]:
+    return {c["n"]: pregunta_guia((ROOT / c["src"]).read_text(encoding="utf-8"))
+            for c in ATLES[tri].capitols}
 
 
-def atles_t2_portada(out_rel: str, body: str) -> str:
+def atles_portada(out_rel: str, body: str) -> str:
     """La llista de peces (les pràctiques del trimestre amb la seva pregunta)
-    just després del títol de la portada del projecte T2. El plànol és al
-    panell de l'esquerra de totes les pàgines del T2 (atles_t2.panell_html)."""
-    if out_rel != "classes/projecte-t2/index.html":
+    just després del títol de la portada del projecte del trimestre. El plànol
+    és al panell de l'esquerra de totes les pàgines (Atles.panell_html)."""
+    tri = PORTADES_PROJECTE.get(out_rel)
+    if tri is None:
         return body
-    extra = atles_t2.llista_peces_html(out_rel, _preguntes_t2())
+    extra = ATLES[tri].llista_peces_html(out_rel, _preguntes(tri))
     i = body.find("</h1>")
     if i == -1:
         return extra + body
     return body[:i + 5] + extra + body[i + 5:]
 
 
-_PREGUNTES_T2: dict[int, str | None] = {}
+_PREGUNTES: dict[int, dict[int, str | None]] = {}
 
 
-def atles_t2_panell(out_rel: str, pages: list, toc: str) -> str:
-    """El panell de plànol (navegació) de les pàgines del T2."""
-    if not _PREGUNTES_T2:
-        _PREGUNTES_T2.update(_preguntes_t2())
-    return atles_t2.panell_html(
+def atles_panell(out_rel: str, pages: list, toc: str, tri: int) -> str:
+    """El panell de plànol (navegació) de les pàgines d'un trimestre amb atles."""
+    if tri not in _PREGUNTES:
+        _PREGUNTES[tri] = _preguntes(tri)
+    a = ATLES[tri]
+    return a.panell_html(
         out_rel, [(p.out_rel, p.title, p.public) for p in pages], toc=toc,
-        titol_sa={n: f"SA{n} · {SA_TITLES.get(n, '')}" for n in (4, 5, 6)},
-        preguntes=_PREGUNTES_T2)
+        titol_sa={n: f"SA{n} · {SA_TITLES.get(n, '')}" for n in a.sas},
+        preguntes=_PREGUNTES[tri])
 
 
 def depth_prefix(out_rel: str) -> str:
@@ -1207,14 +1213,15 @@ def page_shell(*, out_rel, section_key, title, content_html, toc="",
     stepper = stepper_html(section_key, out_rel)
     pager_top = f'<div class="pager-top">{pager}</div>' if pager else ""
     has_sidebar = "amb-sidebar" if sidebar else "sense-sidebar"
-    # T2: estil de plànol tècnic i escenari de pràctica (assets/css/t2.css, js/t2.js)
-    t2_class = " t2 amb-escenari" if tri == 2 else ""
-    t2_css = f'<link rel="stylesheet" href="{prefix}assets/css/t2.css">' if tri == 2 else ""
-    t2_js = f'<script src="{prefix}assets/js/t2.js"></script>' if tri == 2 else ""
+    # Trimestres amb atles: estil de plànol i panell (assets/css/atles.css, js/atles.js)
+    amb_atles = tri in ATLES
+    t2_class = f" atles t{tri} amb-escenari" if amb_atles else ""
+    t2_css = f'<link rel="stylesheet" href="{prefix}assets/css/atles.css">' if amb_atles else ""
+    t2_js = f'<script src="{prefix}assets/js/atles.js"></script>' if amb_atles else ""
     toc_block = toc or ""
     layout_class = "amb-toc" if toc_block else "sense-toc"
-    t2_panell = atles_t2_panell(out_rel, pages, toc_block) if tri == 2 else ""
-    if tri == 2:   # l'índex de la pàgina va dins del panell
+    t2_panell = atles_panell(out_rel, pages, toc_block, tri) if amb_atles else ""
+    if amb_atles:   # l'índex de la pàgina va dins del panell
         toc_block, layout_class = "", "sense-toc"
 
     return f"""<!DOCTYPE html>
@@ -2719,6 +2726,8 @@ def main():
             body = marca_ruta(body)
         if p.src.name == "00_Targetes_rescat.md":
             body = marca_targetes(body)
+        if 'class="cap-practica"' in body:   # pràctica sense programa (auditoria, SA9…)
+            body = marca_passos(body)
         toc = toc_html(md)
         extra = ""
         pre = ""
@@ -2735,7 +2744,7 @@ def main():
                 # contacte) i SA2 (programació de valent).
                 if p.section == "classes" and detect_sa(p.out_rel) in (1, 2):
                     extra += "\n" + impresos_card_html(p.out_rel)
-        body = atles_t2_portada(p.out_rel, body)
+        body = atles_portada(p.out_rel, body)
         content = (pre + "\n" if pre else "") + body + ("\n" + extra if extra else "")
         # Fil transversal de la SA + paginador d'itinerari (navegació pautada)
         sa = detect_sa(p.out_rel)

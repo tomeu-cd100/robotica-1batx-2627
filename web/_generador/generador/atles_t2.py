@@ -1,20 +1,7 @@
-"""Atles del T2: el braç MeArm com a mapa del trimestre.
-
-Inspirat en l'estructura de «La Revolució Industrial» de Felip Sarroca (un
-dibuix com a índex, una pregunta per capítol), en versió plànol tècnic: cada
-pràctica de SA4-SA6 és una peça del plànol, marcada amb un globus numerat i
-una línia de referència, com als dibuixos de conjunt. Les targetes són la
-llista de peces.
-
-La pregunta guia de cada pràctica viu al seu markdown, a la capçalera:
-    ❓ **La pregunta:** Com sap un motor on s'ha d'aturar?
-"""
+"""Atles del T2: el braç MeArm com a mapa del trimestre (dades de generador/atles.py)."""
 from __future__ import annotations
 
-import html
-import re
-
-from .utils import rel_url
+from .atles import TRAÇ as _TRAÇ, Atles, pregunta  # noqa: F401
 
 # n · sa · sessió · nom (targeta) · curt (plànol) · font · sortida web
 # globus (bx, by) i punt de la peça on apunta (tx, ty), en unitats del viewBox
@@ -56,31 +43,10 @@ CAPITOLS: list[dict] = [
 
 NOM_SA = {4: "Moviment", 5: "El comandament", 6: "El control"}
 
-_PREGUNTA_RE = re.compile(r"^❓\s*\*\*La pregunta:\*\*\s*(.+?)\s*$", re.M)
-
-
-def pregunta(md_text: str) -> str | None:
-    """La pregunta guia d'una pràctica (línia ❓ de la capçalera), o None."""
-    m = _PREGUNTA_RE.search(md_text)
-    return m.group(1) if m else None
-
-
-def capitol_de(out_rel: str) -> dict | None:
-    """El capítol que correspon a una pàgina generada, si n'és un."""
-    return next((c for c in CAPITOLS if c["out"] == out_rel), None)
-
-
-# --- El plànol --------------------------------------------------------------
-
-_TRAÇ = 'stroke="#e8f1ff" stroke-width="2.4" fill="none" stroke-linejoin="round"'
-
-
-def _dibuix() -> str:
-    """El banc amb el braç, l'Arduino, la micro:bit i la resta de peces."""
-    ratlles = "".join(f"M{x} 340l14 14" for x in range(0, 960, 40))
-    return f"""
+_RATLLES = "".join(f"M{x} 340l14 14" for x in range(0, 960, 40))
+DIBUIX = f"""
 <line x1="0" y1="340" x2="960" y2="340" stroke="#e8f1ff" stroke-width="2"/>
-<path d="{ratlles}" stroke="#e8f1ff" stroke-width="1" opacity=".45"/>
+<path d="{_RATLLES}" stroke="#e8f1ff" stroke-width="1" opacity=".45"/>
 <g {_TRAÇ}><rect x="60" y="272" width="160" height="68" rx="4"/><rect x="150" y="296" width="40" height="28"/><rect x="70" y="280" width="56" height="8"/></g>
 <text x="72" y="332" fill="#e8f1ff" font-size="11">ARDUINO UNO</text>
 <g {_TRAÇ}><circle cx="90" cy="378" r="13"/><circle cx="130" cy="378" r="13"/><circle cx="170" cy="378" r="13"/><circle cx="210" cy="378" r="13"/></g>
@@ -102,175 +68,17 @@ def _dibuix() -> str:
 <path d="M740 238 q-20 -20 -44 0 M750 228 q-32 -34 -64 0" stroke="#e8f1ff" stroke-width="2" fill="none" stroke-dasharray="2 6"/>
 """
 
+T2 = Atles(
+    tri=2, sas=(4, 5, 6), capitols=CAPITOLS, nom_sa=NOM_SA, dibuix=DIBUIX,
+    titol_planol="EL BRAÇ ROBÒTIC MEARM · PLÀNOL DEL 2N TRIMESTRE",
+    robot="El braç robòtic MeArm", pestanya="El braç", projecte_emoji="🦾",
+    projecte="classes/projecte-t2/index.html",
+    projecte_docs=[("classes/projecte-t2/00-projecte-t2-brac.html", "Dossier del braç")],
+)
 
-def _globus(c: dict, href: str, classe: str, actiu: bool) -> str:
-    bx, by = c["b"]
-    tx, ty = c["t"]
-    nom = html.escape(c["nom"])
-    aqui = ""
-    if actiu:
-        aqui = (f'<g class="ets-aqui"><circle cx="{bx}" cy="{by}" r="24" fill="none" '
-                f'stroke="#ffd166" stroke-width="2" stroke-dasharray="4 4"/>'
-                f'<text x="{bx}" y="{by - 32}" text-anchor="middle" fill="#ffd166" '
-                f'font-size="12" font-weight="700">ETS AQUÍ</text></g>')
-    return (f'<a href="{href}" class="{classe}" data-n="{c["n"]}" '
-            f'aria-label="{c["n"]}. {nom} (SA{c["sa"]} · {c["ses"]})">'
-            f'<title>{c["n"]}. {nom} · SA{c["sa"]} {c["ses"]}</title>'
-            f'<line x1="{bx}" y1="{by}" x2="{tx}" y2="{ty}" class="referencia"/>'
-            f'<circle cx="{tx}" cy="{ty}" r="3" class="punta"/>'
-            f'<circle cx="{bx}" cy="{by}" r="15" class="bombolla"/>'
-            f'<text x="{bx}" y="{by + 5}" text-anchor="middle" class="num">{c["n"]}</text>'
-            f'<text x="{bx + 20}" y="{by + 4}" class="curt">{html.escape(c["curt"])}</text>'
-            f'{aqui}</a>')
-
-
-def mapa_html(out_rel: str, *, actiu: int | None = None, sa: int | None = None) -> str:
-    """El plànol del braç amb un globus per pràctica, enllaçat des d'`out_rel`.
-
-    `actiu` marca «Ets aquí» en un capítol; `sa` ressalta els globus d'una SA
-    i esmorteeix la resta."""
-    globus = []
-    for c in CAPITOLS:
-        if sa is None:
-            classe = "globus"
-        else:
-            classe = "globus sa-actual" if c["sa"] == sa else "globus altra-sa"
-        globus.append(_globus(c, rel_url(out_rel, c["out"]), classe, c["n"] == actiu))
-    titol = "EL BRAÇ ROBÒTIC MEARM · PLÀNOL DEL 2N TRIMESTRE"
-    peu = "Cada globus és una pràctica. Toca'l per anar-hi."
-    if sa:
-        peu = f"Ressaltades, les pràctiques de la SA{sa}. Toca un globus per anar-hi."
-    return (f'<figure class="planol-t2"><svg viewBox="0 0 960 400" role="img" '
-            f'aria-label="Plànol del braç MeArm: cada globus numerat és una pràctica del trimestre" '
-            f'font-family="JetBrains Mono, Cascadia Code, Consolas, monospace" font-size="13">'
-            f'<text x="16" y="30" fill="#e8f1ff" font-size="16" font-weight="700">{titol}</text>'
-            f'{_dibuix()}{"".join(globus)}</svg>'
-            f'<figcaption>{html.escape(peu)}</figcaption></figure>')
-
-
-def llista_peces_html(out_rel: str, preguntes: dict[int, str | None]) -> str:
-    """Les targetes de capítol, agrupades per SA (la llista de peces del plànol)."""
-    blocs = []
-    for sa in (4, 5, 6):
-        peces = []
-        for c in (c for c in CAPITOLS if c["sa"] == sa):
-            q = preguntes.get(c["n"]) or ""
-            peces.append(
-                f'<a class="peca" href="{rel_url(out_rel, c["out"])}">'
-                f'<span class="peca-cap"><span class="peca-n">{c["n"]}</span>'
-                f'<span class="peca-ses">SA{sa} · {c["ses"]}</span></span>'
-                f'<b>{html.escape(c["nom"])}</b>'
-                f'<span class="peca-q">{html.escape(q)}</span></a>')
-        blocs.append(f'<div class="llista-sa"><h3>SA{sa} · {NOM_SA[sa]}</h3>'
-                     f'<div class="peces">{"".join(peces)}</div></div>')
-    return f'<nav class="llista-peces" aria-label="Llista de peces: les pràctiques del trimestre">{"".join(blocs)}</nav>'
-
-
-# --- El panell del plànol: la navegació de totes les pàginas del T2 -----------
-
-# Pàgines de teoria de cada SA, en ordre de lectura (sufix del fitxer → etiqueta)
-TEORIA = [("fitxa-alumnat", "Fitxa base"), ("esquemes-connexions", "Esquemes i connexions"),
-          ("-connexions", "Connexions i entorn"), ("exemple-resolt", "Exemple resolt"),
-          ("diagrama-flux", "Diagrama de flux"), ("questionari-conceptes", "Qüestionari de conceptes"),
-          ("fitxa-ampliada", "Fitxa ampliada")]
-DOCENT = [("guia-docent", "Guia docent"), ("checklist-docent", "Checklist docent"),
-          ("questionari-conceptes-solucions", "Solucions del qüestionari")]
-PROJECTE = "classes/projecte-t2/index.html"
-
-
-def sa_de(out_rel: str) -> int | None:
-    """La SA del T2 d'una pàgina (4, 5, 6) o None (projecte o fora de SA)."""
-    m = re.search(r"(?:^|/)(?:classes/)?sa([456])(?:/|\b)", out_rel) or re.search(r"sa-?([456])\b", out_rel)
-    return int(m.group(1)) if m else None
-
-
-def _li(out_rel: str, desti: str, etiqueta: str, *, docent: bool = False) -> str:
-    actiu = desti.split("#")[0] == out_rel and "#" not in desti
-    cls = ' class="nomes-docent"' if docent else ""
-    aria = ' aria-current="page"' if actiu else ""
-    return f'<li{cls}><a href="{rel_url(out_rel, desti)}"{aria}>{html.escape(etiqueta)}</a></li>'
-
-
-def _bloc(titol: str, items: list[str], *, docent: bool = False) -> str:
-    if not items:
-        return ""
-    cls = "t2-bloc nomes-docent" if docent else "t2-bloc"
-    return (f'<details class="{cls}"><summary>{titol}</summary>'
-            f'<ul>{"".join(items)}</ul></details>')
-
-
-def panell_html(out_rel: str, pagines: list[tuple[str, str, str]], *, toc: str = "",
-                titol_sa: dict[int, str] | None = None,
-                preguntes: dict[int, str | None] | None = None) -> str:
-    """El panell de l'esquerra de totes les pàgines del T2: el plànol amb la SA
-    ressaltada («Ets aquí» a les pràctiques) i l'índex de la SA en tres blocs
-    (ruta, teoria, lliurament), més l'índex de la pàgina i el material docent.
-
-    `pagines`: (out_rel, títol, públic) de totes les pàgines del web."""
-    titol_sa = titol_sa or {}
-    preguntes = preguntes or {}
-    cap = capitol_de(out_rel)
-    sa = cap["sa"] if cap else sa_de(out_rel)
-    noms = {o: (t, pub) for o, t, pub in pagines}
-
-    pestanyes = []
-    for n in (4, 5, 6):
-        desti = f"classes/sa{n}/index.html"
-        aria = ' aria-current="true"' if sa == n else ""
-        pestanyes.append(f'<a href="{rel_url(out_rel, desti)}"{aria}>SA{n}</a>')
-    aria = ' aria-current="true"' if sa is None else ""
-    pestanyes.append(f'<a href="{rel_url(out_rel, PROJECTE)}"{aria}>El braç</a>')
-
-    blocs = []
-    if sa:
-        base = f"classes/sa{sa}"
-        ruta = [_li(out_rel, f"{base}/index.html", "Presentació i ruta")]
-        ruta += [_li(out_rel, c["out"], f'{c["n"]} · {c["nom"]}') for c in CAPITOLS if c["sa"] == sa]
-        teoria = []
-        for suf, etiq in TEORIA:
-            o = next((o for o in noms if o.startswith(base + "/") and o.endswith(f"{suf}.html")
-                      and noms[o][1] == "alumnat"), None)
-            if o:
-                teoria.append(_li(out_rel, o, etiq))
-        if f"{base}/codi.html" in noms:
-            teoria.append(_li(out_rel, f"{base}/codi.html", "Tot el codi"))
-        lliura = [_li(out_rel, f"{base}/index.html#entrega-final", "🏁 Entrega final"),
-                  _li(out_rel, f"{base}/index.html#que-has-dentregar", "Què has d'entregar")]
-        chk = f"{base}/sa{sa}-checklist-alumnat.html"
-        if chk in noms:
-            lliura.append(_li(out_rel, chk, "El meu checklist"))
-        doc = []
-        for suf, etiq in DOCENT:
-            o = next((o for o in noms if o.startswith(base + "/") and o.endswith(f"{suf}.html")), None)
-            if o:
-                doc.append(_li(out_rel, o, etiq, docent=True))
-        blocs = [_bloc("🧭 Ruta", ruta), _bloc("📚 Teoria", teoria),
-                 _bloc("🏁 Lliurament", lliura), _bloc("👩‍🏫 Docent", doc, docent=True)]
-    else:
-        braç = [_li(out_rel, PROJECTE, "Presentació i llista de peces")]
-        dossier = "classes/projecte-t2/00-projecte-t2-brac.html"
-        if dossier in noms:
-            braç.append(_li(out_rel, dossier, "Dossier del braç"))
-        blocs = [_bloc("🦾 El braç", braç)]
-    if toc:
-        toc_net = re.sub(r'</?nav[^>]*>|<p class="toc-titol">.*?</p>', "", toc)
-        blocs.append(f'<details class="t2-bloc t2-toc"><summary>📄 En aquesta pàgina</summary>{toc_net}</details>')
-
-    if cap:
-        cap_pas = f'Pràctica {cap["n"]} · SA{cap["sa"]} {cap["ses"]}'
-        cap_q = preguntes.get(cap["n"]) or cap["nom"]
-    elif sa:
-        cap_pas, cap_q = f"SA{sa} · 2n trimestre", titol_sa.get(sa, f"SA{sa}")
-    else:
-        cap_pas, cap_q = "2n trimestre", "El braç robòtic MeArm"
-    titol_pag = noms.get(out_rel, ("", ""))[0]
-    return (f'<aside class="escenari" aria-label="Plànol del trimestre i índex de la SA"'
-            f'{" data-practica" if cap else ""}>'
-            f'<div class="esc-cap"><span class="esc-pas">{html.escape(cap_pas)}</span>'
-            f'<span class="esc-q">{html.escape(cap_q)}</span></div>'
-            f'<div class="esc-vista">{mapa_html(out_rel, actiu=cap["n"] if cap else None, sa=sa)}</div>'
-            f'<nav class="t2-index" aria-label="Índex de la SA">'
-            f'<div class="t2-pestanyes">{"".join(pestanyes)}</div>{"".join(b for b in blocs if b)}</nav>'
-            f'<div class="caixeti"><span>Plànol</span><span class="esc-tit">{html.escape(titol_pag.split(":")[0])}</span>'
-            f'<span>Full</span><span class="esc-full">{"SA" + str(sa) if sa else "T2"}</span></div>'
-            f'</aside>')
+# Noms de mòdul (els fan servir el generador i els tests)
+capitol_de = T2.capitol_de
+sa_de = T2.sa_de
+mapa_html = T2.mapa_html
+llista_peces_html = T2.llista_peces_html
+panell_html = T2.panell_html

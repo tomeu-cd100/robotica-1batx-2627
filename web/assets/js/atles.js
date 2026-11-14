@@ -1,4 +1,4 @@
-/* T2 · Panell de plànol de totes les pàgines del 2n trimestre.
+/* Atles · Panell de plànol de les pàgines del T2 i el T3.
    El panell (aside.escenari) ja ve generat: plànol del braç + índex de la SA.
    Aquest script:
    - a les pàgines de teoria, en pantalla ampla, obre els blocs de l'índex;
@@ -6,19 +6,19 @@
      del pas que llegeixes. Un pas sense dibuix hereta el de l'anterior; si
      encara no n'hi ha cap, s'hi veu el plànol amb «Ets aquí».
    Al mòbil el panell queda a dalt, amb l'índex plegat.
-   Fitxer mantingut a mà; el carrega page_shell() només a les pàgines del T2. */
+   Fitxer mantingut a mà; el carrega page_shell() a les pàgines dels trimestres amb atles. */
 (function () {
   "use strict";
   var esc = document.querySelector("aside.escenari");
   if (!esc || !window.matchMedia) return;
   var ample = window.matchMedia("(min-width: 1100px)");
   var esPractica = esc.hasAttribute("data-practica");
-  var blocs = Array.prototype.slice.call(esc.querySelectorAll(".t2-bloc"));
+  var blocs = Array.prototype.slice.call(esc.querySelectorAll(".atles-bloc"));
 
   // Teoria: índex obert en pantalla ampla (a les pràctiques, plegat: el lloc és pel dibuix)
   function obreIndex() {
     blocs.forEach(function (d) {
-      d.open = ample.matches && !esPractica && !d.classList.contains("t2-toc");
+      d.open = ample.matches && !esPractica && !d.classList.contains("atles-toc");
     });
   }
 

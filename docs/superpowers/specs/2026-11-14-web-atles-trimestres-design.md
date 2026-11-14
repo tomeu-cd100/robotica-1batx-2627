@@ -1,4 +1,4 @@
-# Disseny · La web del T2 com a atles del braç
+# Disseny · La web del T2 i el T3 com a atles del robot del trimestre
 
 **Data:** 2026-11-14 · **Estat:** aprovat pel docent («m'agrada, fes-ho per a tot el T2»)
 
@@ -57,3 +57,12 @@ El docent va veure que la portada de la SA4 barrejava el format nou amb l'antic 
 A les pràctiques, `t2.js` substitueix el plànol pel dibuix o el codi del pas actiu, i l'índex hi queda plegat.
 
 **Tasques «Foto»:** `Material Classroom/crear_tasques_foto.mjs` crea per a cada pràctica una tasca «Foto · SAn · Pràctica N · …» (sense formulari ni nota, en DRAFT) per penjar una foto de la pràctica funcionant. El pas «Respon i envia» de cada pràctica hi enllaça (📷).
+
+## Ampliació (2026-11-14, vespre): el T3, el rover
+
+El docent demana «el mateix» per al T3. Decisions seves (preguntades): els **katas de SA7-SA8 s'arxiven** com els del T2 (ara tots, SA2-SA8, són a `docs/arxiu/`), i a la **SA9 cada fase del projecte és una pràctica**.
+
+- **SA7-SA9 en passos autònoms:** SA7 ① moviment (amb el pas «Adapta'l al teu rover», el bloc `motors()` del L298N dins del pas) ② quadrat ③ evita-obstacles ④ seguidor de línia (producte); SA8 ① emissor ② receptor ③ auditoria IoT ④ gestos ⑤ Teachable Machine (producte), ⭐ ESP32; SA9 ① Idear ② Prototipar ③ Provar ④ Comunicar (producte), S5 prova T3.
+- **Pràctiques sense programa** (`SA8_auditoria_iot.md`, `SA8_practica_teachable_machine.md`, `SA9_practica_*.md`): el generador hi aplica `marca_passos` quan la pàgina comença amb la capçalera `cap-practica`.
+- **Atles genèric:** `generador/atles.py` (classe `Atles`) amb les dades de cada trimestre a `atles_t2.py` (braç) i `atles_t3.py` (pista vista de dalt amb el rover, la base de telemetria, el núvol IoT, l'ordinador de la IA i les quatre fases de la SA9). `page_shell()` hi posa `body.atles tN` i carrega `assets/css/atles.css` i `assets/js/atles.js` (abans `t2.*`).
+- **Classroom:** 16 formularis nous (13 pràctiques + 3 Entregues finals) i 13 tasques «Foto», tot en DRAFT.

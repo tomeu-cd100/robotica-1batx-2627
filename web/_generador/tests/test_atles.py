@@ -102,3 +102,36 @@ def test_sa_de():
 def test_capitol_per_pagina():
     assert atles_t2.capitol_de("classes/sa5/codi/04-brac-ordres.html")["n"] == 7
     assert atles_t2.capitol_de("classes/sa4/index.html") is None
+
+
+# --- T3: el rover -----------------------------------------------------------
+from generador import atles_t3  # noqa: E402
+
+
+def test_t3_tretze_capitols_de_sa7_a_sa9():
+    caps = atles_t3.CAPITOLS
+    assert [c["n"] for c in caps] == list(range(1, 14))
+    assert {c["sa"] for c in caps} == {7, 8, 9}
+
+
+def test_t3_cada_capitol_te_font_i_pregunta():
+    for c in atles_t3.CAPITOLS:
+        src = ROOT / c["src"]
+        assert src.exists(), c["src"]
+        q = pregunta(src.read_text(encoding="utf-8"))
+        assert q and q.endswith("?"), f"{c['src']}: falta la línia ❓ amb la pregunta"
+
+
+def test_t3_panell_d_una_practica_sense_programa():
+    pag = [("classes/sa9/sa9-practica-1-idear.html", "Pràctica 1 · Idear", "alumnat"),
+           ("classes/sa9/sa9-fitxa-alumnat.html", "SA9 · Fitxa base", "alumnat")]
+    h = atles_t3.T3.panell_html("classes/sa9/sa9-practica-1-idear.html", pag)
+    assert "data-practica" in h and h.count("ets-aqui") == 1
+    assert "El rover" in h and ">SA7<" in h and ">SA9<" in h
+    assert 'class="globus sa-actual"' in h
+
+
+def test_t3_sa_de():
+    assert atles_t3.T3.sa_de("classes/sa8/sa8-auditoria-iot.html") == 8
+    assert atles_t3.T3.sa_de("reptes/reptes-sa7.html") == 7
+    assert atles_t3.T3.sa_de("classes/sa5/index.html") is None
