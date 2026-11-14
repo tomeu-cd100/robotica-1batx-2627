@@ -2,6 +2,9 @@
 
 <div class="cap-practica" markdown="1">
 
+
+❓ **La pregunta:** Com fas una mascota que necessita que la cuidis?
+
 🎯 **Avui aconseguiràs:** un **tamagotchi** que té gana, son i ganes de jugar, que **nota** el que passa al seu voltant amb els sensors i que **cuides** amb tres botons. Si no el cuides es posa trist i malalt, però **mai no es mor**. És el producte de la SA3.
 
 ⏱️ La resta de la Sessió 3

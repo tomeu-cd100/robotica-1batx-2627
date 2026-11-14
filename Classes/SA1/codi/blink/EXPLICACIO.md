@@ -1,5 +1,7 @@
 # Blink: el primer programa
 
+❓ **La pregunta:** Com fa pampallugues un LED sense que ningú el toqui?
+
 **Quan es fa:** Sessió 3 (modelatge) · **Fitxer:** `blink.ino` · **Circuit:** [esquema de connexions](../../SA1_esquemes_connexions.md) (LED intern del pin 13: no cal cablejar res)
 
 ## 🎯 Per què fem aquesta pràctica

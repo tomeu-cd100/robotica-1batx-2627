@@ -2,6 +2,9 @@
 
 <div class="cap-practica" markdown="1">
 
+
+❓ **La pregunta:** Com fas qualsevol color amb només tres llums?
+
 🎯 **Avui aconseguiràs:** que un sol llum faci **qualsevol color** i crear la teva primera instrucció, `color()`.
 
 ⏱️ 30 min

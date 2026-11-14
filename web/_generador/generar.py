@@ -281,12 +281,13 @@ from generador.utils import (  # noqa: E402
     BODY_CERCA_MAX, apply_outside_code, detect_sa, first_h1, pdf_out_for,
     rel_url, slugify, strip_accents, text_pla_cerca,
 )
-from generador import atles_t2, atles_t3  # noqa: E402
+from generador import atles_t1, atles_t2, atles_t3  # noqa: E402
 from generador.atles import pregunta as pregunta_guia  # noqa: E402
 
 # --- Atles dels trimestres: el robot com a mapa (generador/atles*.py) --------
-ATLES = {2: atles_t2.T2, 3: atles_t3.T3}
-PORTADES_PROJECTE = {"classes/projecte-t2/index.html": 2, "classes/projecte-t3/index.html": 3}
+ATLES = {1: atles_t1.T1, 2: atles_t2.T2, 3: atles_t3.T3}
+PORTADES_PROJECTE = {"classes/projecte-t1/index.html": 1, "classes/projecte-t2/index.html": 2,
+                     "classes/projecte-t3/index.html": 3}
 
 
 def _preguntes(tri: int) -> dict[int, str | None]:

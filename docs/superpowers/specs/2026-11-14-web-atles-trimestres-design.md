@@ -66,3 +66,9 @@ El docent demana «el mateix» per al T3. Decisions seves (preguntades): els **k
 - **Pràctiques sense programa** (`SA8_auditoria_iot.md`, `SA8_practica_teachable_machine.md`, `SA9_practica_*.md`): el generador hi aplica `marca_passos` quan la pàgina comença amb la capçalera `cap-practica`.
 - **Atles genèric:** `generador/atles.py` (classe `Atles`) amb les dades de cada trimestre a `atles_t2.py` (braç) i `atles_t3.py` (pista vista de dalt amb el rover, la base de telemetria, el núvol IoT, l'ordinador de la IA i les quatre fases de la SA9). `page_shell()` hi posa `body.atles tN` i carrega `assets/css/atles.css` i `assets/js/atles.js` (abans `t2.*`).
 - **Classroom:** 16 formularis nous (13 pràctiques + 3 Entregues finals) i 13 tasques «Foto», tot en DRAFT.
+
+## Ampliació (2026-11-14): el T1, el tamagotchi
+
+`atles_t1.py`: el banc del 1r trimestre vist de cara (l'Arduino del Blink, el semàfor, el LED que respira) i l'ou del tamagotchi amb la pantalla, els tres botons, el LED RGB, el sensor de llum i el brunzidor. 10 capítols: el Blink (SA1), les 5 pràctiques de la ruta de la SA2 i les 4 de la SA3. Cap SA nova en passos: només la pregunta guia ❓ a cada pràctica (a les de format antic, sota el títol).
+
+Els capítols poden fixar l'etiqueta amb la clau `pr` ("2b", o "" si la pàgina no porta número), perquè el panell digui el mateix que el títol de la pàgina (a la SA2 la ruta comença per la Pràctica 2).

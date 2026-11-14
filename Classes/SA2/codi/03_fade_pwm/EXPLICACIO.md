@@ -2,6 +2,9 @@
 
 <div class="cap-practica" markdown="1">
 
+
+❓ **La pregunta:** Com s'encén un LED a mitges?
+
 🎯 **Avui aconseguiràs:** que un LED s'encengui i s'apagui **a poc a poc**, com si respirés.
 
 ⏱️ 25 min

@@ -2,6 +2,9 @@
 
 <div class="cap-practica" markdown="1">
 
+
+❓ **La pregunta:** Com dibuixa l'Arduino una cara en una pantalla?
+
 🎯 **Avui aconseguiràs:** que una pantalla petita mostri un text, una **barra** que creix amb la llum i una **cara** que es posa trista quan és fosc. És la pantalla del teu tamagotchi.
 
 ⏱️ 25 min

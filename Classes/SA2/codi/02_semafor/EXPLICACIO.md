@@ -1,5 +1,7 @@
 # Pràctica 2 · El semàfor: seqüències amb if i delay
 
+❓ **La pregunta:** Com sap un semàfor quan ha de canviar de color?
+
 **Quan es fa:** Sessió 1 · **Fitxer:** `02_semafor.ino` · **Circuit:** [esquema de connexions, apartat 2](../../SA2_esquemes_connexions.md) (vermell=8, groc=9, verd=10)
 
 ## 🎯 Què faràs

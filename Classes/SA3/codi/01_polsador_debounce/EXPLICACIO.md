@@ -2,6 +2,9 @@
 
 <div class="cap-practica" markdown="1">
 
+
+❓ **La pregunta:** Com sap l'Arduino que has premut un botó?
+
 🎯 **Avui aconseguiràs:** que l'Arduino **noti** quan prems un botó, el compti i t'ho escrigui a l'ordinador.
 
 ⏱️ 50 min

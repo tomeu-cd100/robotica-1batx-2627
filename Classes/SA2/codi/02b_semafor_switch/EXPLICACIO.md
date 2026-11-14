@@ -1,5 +1,7 @@
 # Pràctica 2b · El mateix semàfor amb switch (llavor de la SA6)
 
+❓ **La pregunta:** Com ordenes un programa que té diverses fases?
+
 **Quan es fa:** Sessió 1 (després del semàfor) · **Fitxer:** `02b_semafor_switch.ino` · **Circuit:** el mateix de la [Pràctica 2](../02_semafor/EXPLICACIO.md) (vermell=8, groc=9, verd=10): no cal tocar cap cable.
 
 ## 🎯 Què faràs

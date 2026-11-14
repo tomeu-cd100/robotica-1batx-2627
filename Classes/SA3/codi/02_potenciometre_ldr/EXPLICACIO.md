@@ -2,6 +2,9 @@
 
 <div class="cap-practica" markdown="1">
 
+
+❓ **La pregunta:** Com mesura l'Arduino quanta llum hi ha?
+
 🎯 **Avui aconseguiràs:** llegir dos sensors que donen **molts valors** i fer un **llum automàtic** que s'encén sol quan es fa fosc.
 
 ⏱️ Tota la sessió

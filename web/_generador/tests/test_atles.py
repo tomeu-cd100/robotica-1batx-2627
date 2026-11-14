@@ -135,3 +135,27 @@ def test_t3_sa_de():
     assert atles_t3.T3.sa_de("classes/sa8/sa8-auditoria-iot.html") == 8
     assert atles_t3.T3.sa_de("reptes/reptes-sa7.html") == 7
     assert atles_t3.T3.sa_de("classes/sa5/index.html") is None
+
+
+# --- T1: el tamagotchi ------------------------------------------------------
+from generador import atles_t1  # noqa: E402
+
+
+def test_t1_deu_capitols_amb_font_i_pregunta():
+    caps = atles_t1.CAPITOLS
+    assert [c["n"] for c in caps] == list(range(1, 11))
+    assert {c["sa"] for c in caps} == {1, 2, 3}
+    for c in caps:
+        src = ROOT / c["src"]
+        assert src.exists(), c["src"]
+        q = pregunta(src.read_text(encoding="utf-8"))
+        assert q and q.endswith("?"), f"{c['src']}: falta la línia ❓ amb la pregunta"
+
+
+def test_t1_etiquetes_com_els_titols():
+    T1 = atles_t1.T1
+    assert T1.etiqueta(T1.capitol_de("classes/sa2/codi/02b-semafor-switch.html")) == "Pràctica 2b"
+    assert T1.etiqueta(T1.capitol_de("classes/sa3/codi/05-mascota.html")) == "Pràctica 4"
+    assert T1.etiqueta(T1.capitol_de("classes/sa1/codi/blink.html")) == ""
+    h = T1.panell_html("classes/sa2/codi/04-rgb.html", [])
+    assert "SA2 · Pràctica 4 · S2" in h and "Pràctica 2b · El semàfor amb switch" in h

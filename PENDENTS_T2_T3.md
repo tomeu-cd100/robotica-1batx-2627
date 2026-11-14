@@ -70,10 +70,11 @@ feina del docent**: Claude ja ha fet la part automatitzable.
   portapiles 4×AA, sensors). Revisar llista i pressupost al dossier del projecte T2.
 - Material del rover: llista de peces al dossier del projecte T3.
 
-## Idees (opcional)
+## Fet després (14-11-2026)
 
-- **Plànol del T1** amb el tamagotchi, perquè tot el curs tingui el format «atles»:
-  caldria un `web/_generador/generador/atles_t1.py` amb el dibuix i els capítols.
+- **Plànol del T1** amb el tamagotchi: tot el curs (T1, T2 i T3) té ara el format
+  «atles». El T1 no s'ha passat a tasques Foto: si es vol, `crear_tasques_foto.mjs`
+  només necessita les definicions de les pràctiques del T1 a `practiques_definicions.js`.
 
 ## Annex: configurar el Classroom en un altre ordinador
 

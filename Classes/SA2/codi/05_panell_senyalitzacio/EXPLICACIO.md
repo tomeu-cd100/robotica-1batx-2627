@@ -2,6 +2,9 @@
 
 <div class="cap-practica" markdown="1">
 
+
+❓ **La pregunta:** Com explica una màquina el seu estat amb llum i so?
+
 🎯 **Avui aconseguiràs:** un **panell d'avisos** amb els teus estats (color + so + relé) i defensar-lo en 1 minut. És el producte de la SA2.
 
 ⏱️ Tota la sessió
