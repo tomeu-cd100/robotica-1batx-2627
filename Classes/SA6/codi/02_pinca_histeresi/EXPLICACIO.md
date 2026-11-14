@@ -68,6 +68,8 @@ Mou cada servo amb el sketch de la SA4 (`04_brac_potenciometres`) i troba fins o
 
 📤 [Obre la tasca «SA6 · Pràctica 2» a Classroom i envia el formulari](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODk5NDU1ODk4MjQ5/details)
 
+📷 [Penja la foto de la teva pràctica funcionant a la tasca «Foto · SA6 · Pràctica 2»](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODk5NDU2ODA4NjE0/details)
+
 Hi trobaràs les mateixes preguntes ✍️ que has anat apuntant. Envia'l ara. A la sessió següent: **[Pràctica 3 · La màquina d'estats del braç](../03_maquina_estats/EXPLICACIO.md)**.
 
 ⭐ **Si acabes abans:** afegeix un LED que s'encengui quan la pinça és tancada (és el Repte A; al formulari hi ha una pregunta opcional per explicar-lo). Més reptes a **[Reptes de la SA6](../../../../Reptes/Reptes_SA6.md)**, i el [control proporcional](../04_control_proporcional/EXPLICACIO.md) com a ampliació; quan el docent te'l validi, pinta l'estrella al [tauler de reptes](../../../00_General/00_Tauler_reptes.md).

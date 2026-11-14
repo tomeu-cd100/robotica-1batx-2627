@@ -66,6 +66,8 @@ Després, segueix els blocs A i B de la [guia de muntatge](../../../00_General/0
 
 📤 [Obre la tasca «SA4 · Pràctica 1» a Classroom i envia el formulari](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODk3NDMwNTg3MDY3/details)
 
+📷 [Penja la foto de la teva pràctica funcionant a la tasca «Foto · SA4 · Pràctica 1»](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODk5NDU3MjE1NzU0/details)
+
 Hi trobaràs les mateixes preguntes ✍️ que has anat apuntant. Envia'l ara. A la sessió següent: **[Pràctica 2 · Motor DC i pont H](../02_motor_pont_h/EXPLICACIO.md)**.
 
 ⭐ **Si acabes abans:** fes que el servo faci una **escombrada** automàtica (de 0° a 180° i tornar) i explica-ho a la pregunta opcional del formulari. Guarda-la: la faràs servir per calibrar la pinça. Més reptes a **[Reptes de la SA4](../../../../Reptes/Reptes_SA4.md)**; quan el docent te'l validi, pinta l'estrella al [tauler de reptes](../../../00_General/00_Tauler_reptes.md).

@@ -46,6 +46,8 @@ Esborra els espais d'una línia de dins del `while True:` i prova d'executar-lo.
 
 📤 [Obre la tasca «SA5 · Pràctica 1» a Classroom i envia el formulari](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODk3NDM2MjgzOTA1/details)
 
+📷 [Penja la foto de la teva pràctica funcionant a la tasca «Foto · SA5 · Pràctica 1»](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODk5NDU0MDM4ODc3/details)
+
 Hi trobaràs les mateixes preguntes ✍️ que has anat apuntant. Envia'l ara. A la sessió següent: **[Pràctica 2 · La inclinació com a gest](02_inclinacio_EXPLICACIO.md)**.
 
 ⭐ **Si acabes abans:** fes una **imatge pròpia** per a cada articulació (en lloc de la lletra) i explica-ho a la pregunta opcional del formulari. Més reptes a **[Reptes de la SA5](../../../Reptes/Reptes_SA5.md)**; quan el docent te'l validi, pinta l'estrella al [tauler de reptes](../../00_General/00_Tauler_reptes.md).

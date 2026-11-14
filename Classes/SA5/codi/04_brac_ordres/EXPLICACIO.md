@@ -46,6 +46,8 @@ Obre el **Monitor sèrie** (9600, amb «Nova línia» a baix a la dreta) i escri
 
 📤 [Obre la tasca «SA5 · Pràctica 3» a Classroom i envia el formulari](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODk3NDI2NTU5MDQ4/details)
 
+📷 [Penja la foto de la teva pràctica funcionant a la tasca «Foto · SA5 · Pràctica 3»](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODk5NDU2NDg5MjY1/details)
+
 Hi trobaràs les mateixes preguntes ✍️ que has anat apuntant. Envia'l ara. A la sessió següent: **[Pràctica 4 · Ràdio: el comandament del braç](../03_radio_comandament_EXPLICACIO.md)**.
 
 ⭐ **Si acabes abans:** afegeix una ordre nova al protocol (per exemple, una posició de repòs) i prova-la des del Monitor sèrie. Més reptes a **[Reptes de la SA5](../../../../Reptes/Reptes_SA5.md)**; quan el docent te'l validi, pinta l'estrella al [tauler de reptes](../../../00_General/00_Tauler_reptes.md).

@@ -119,6 +119,8 @@ El comandament (Python) i l'Arduino que obeeix les ordres (C++, Pràctica 3) fan
 
 📤 [Obre la tasca «SA5 · Pràctica 4» a Classroom i envia el formulari](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODk3NDM1MDM2Nzc3/details)
 
+📷 [Penja la foto de la teva pràctica funcionant a la tasca «Foto · SA5 · Pràctica 4»](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODk5NDU3MjAwNDc2/details)
+
 Hi trobaràs les mateixes preguntes ✍️ que has anat apuntant. Envia'l ara. Després, fes l'**[🏁 Entrega final de la SA5](../README.md#entrega-final)**: la defensa i l'autoavaluació.
 
 ⭐ **Si acabes abans:** mou també el servo **esquerre** amb els botons A i B (`E+` / `E-`) i explica-ho a la pregunta opcional del formulari. Més reptes a **[Reptes de la SA5](../../../Reptes/Reptes_SA5.md)**; quan el docent te'l validi, pinta l'estrella al [tauler de reptes](../../00_General/00_Tauler_reptes.md).

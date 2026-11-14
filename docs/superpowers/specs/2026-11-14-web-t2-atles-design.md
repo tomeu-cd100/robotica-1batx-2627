@@ -45,3 +45,15 @@ Descartades: la vista explotada (C) i el commutador Nucli / + Ampliació (D). Ta
 
 - Les pràctiques en format antic (`05_dos_servos_millis`, `04_control_proporcional`) no tenen passos ni escenari. Només hi arriba l'estil.
 - Si un dia es vol per al T1 o el T3, cal un altre dibuix i un altre `atles_tN.py`.
+
+## Ampliació (2026-11-14, tarda): tot el T2 amb el format nou
+
+El docent va veure que la portada de la SA4 barrejava el format nou amb l'antic (barra lateral, índex a la dreta). Ara **totes** les pàgines del T2 (portades, teoria, pràctiques, lliurament, reptes i programació de SA4-SA6) tenen el **panell de plànol** a l'esquerra, generat al servidor per `atles_t2.panell_html()`:
+
+- el plànol del braç (SA ressaltada; «Ets aquí» a les pràctiques) i pestanyes SA4 · SA5 · SA6 · El braç;
+- l'índex de la SA en blocs: 🧭 Ruta, 📚 Teoria, 🏁 Lliurament, 👩‍🏫 Docent (només vista docent) i 📄 En aquesta pàgina;
+- en pantalla ampla, la barra lateral i l'índex de la dreta s'amaguen; al mòbil, el panell queda a dalt amb l'índex plegat (el menú ☰ continua).
+
+A les pràctiques, `t2.js` substitueix el plànol pel dibuix o el codi del pas actiu, i l'índex hi queda plegat.
+
+**Tasques «Foto»:** `Material Classroom/crear_tasques_foto.mjs` crea per a cada pràctica una tasca «Foto · SAn · Pràctica N · …» (sense formulari ni nota, en DRAFT) per penjar una foto de la pràctica funcionant. El pas «Respon i envia» de cada pràctica hi enllaça (📷).

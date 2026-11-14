@@ -81,6 +81,8 @@ Amb el comandament, agafa un objecte de l'estació de recollida i deixa'l en un 
 
 📤 [Obre la tasca «SA6 · Pràctica 3» a Classroom i envia el formulari](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODk5NDU1NTU4ODE4/details)
 
+📷 [Penja la foto de la teva pràctica funcionant a la tasca «Foto · SA6 · Pràctica 3»](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODk5NDU1NTkyNDMx/details)
+
 Hi trobaràs les mateixes preguntes ✍️ que has anat apuntant. Envia'l ara i passa a l'**[Entrega final](../../README.md#entrega-final)**: defensa de 2-3' i autoavaluació.
 
 ⭐ **Si acabes abans:** el [control proporcional](../04_control_proporcional/EXPLICACIO.md) perquè el braç freni sol en arribar. Més reptes a **[Reptes de la SA6](../../../../Reptes/Reptes_SA6.md)**; quan el docent te'l validi, pinta l'estrella al [tauler de reptes](../../../00_General/00_Tauler_reptes.md).

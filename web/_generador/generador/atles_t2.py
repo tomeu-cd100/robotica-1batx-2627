@@ -164,3 +164,113 @@ def llista_peces_html(out_rel: str, preguntes: dict[int, str | None]) -> str:
         blocs.append(f'<div class="llista-sa"><h3>SA{sa} · {NOM_SA[sa]}</h3>'
                      f'<div class="peces">{"".join(peces)}</div></div>')
     return f'<nav class="llista-peces" aria-label="Llista de peces: les pràctiques del trimestre">{"".join(blocs)}</nav>'
+
+
+# --- El panell del plànol: la navegació de totes les pàginas del T2 -----------
+
+# Pàgines de teoria de cada SA, en ordre de lectura (sufix del fitxer → etiqueta)
+TEORIA = [("fitxa-alumnat", "Fitxa base"), ("esquemes-connexions", "Esquemes i connexions"),
+          ("-connexions", "Connexions i entorn"), ("exemple-resolt", "Exemple resolt"),
+          ("diagrama-flux", "Diagrama de flux"), ("questionari-conceptes", "Qüestionari de conceptes"),
+          ("fitxa-ampliada", "Fitxa ampliada")]
+DOCENT = [("guia-docent", "Guia docent"), ("checklist-docent", "Checklist docent"),
+          ("questionari-conceptes-solucions", "Solucions del qüestionari")]
+PROJECTE = "classes/projecte-t2/index.html"
+
+
+def sa_de(out_rel: str) -> int | None:
+    """La SA del T2 d'una pàgina (4, 5, 6) o None (projecte o fora de SA)."""
+    m = re.search(r"(?:^|/)(?:classes/)?sa([456])(?:/|\b)", out_rel) or re.search(r"sa-?([456])\b", out_rel)
+    return int(m.group(1)) if m else None
+
+
+def _li(out_rel: str, desti: str, etiqueta: str, *, docent: bool = False) -> str:
+    actiu = desti.split("#")[0] == out_rel and "#" not in desti
+    cls = ' class="nomes-docent"' if docent else ""
+    aria = ' aria-current="page"' if actiu else ""
+    return f'<li{cls}><a href="{rel_url(out_rel, desti)}"{aria}>{html.escape(etiqueta)}</a></li>'
+
+
+def _bloc(titol: str, items: list[str], *, docent: bool = False) -> str:
+    if not items:
+        return ""
+    cls = "t2-bloc nomes-docent" if docent else "t2-bloc"
+    return (f'<details class="{cls}"><summary>{titol}</summary>'
+            f'<ul>{"".join(items)}</ul></details>')
+
+
+def panell_html(out_rel: str, pagines: list[tuple[str, str, str]], *, toc: str = "",
+                titol_sa: dict[int, str] | None = None,
+                preguntes: dict[int, str | None] | None = None) -> str:
+    """El panell de l'esquerra de totes les pàgines del T2: el plànol amb la SA
+    ressaltada («Ets aquí» a les pràctiques) i l'índex de la SA en tres blocs
+    (ruta, teoria, lliurament), més l'índex de la pàgina i el material docent.
+
+    `pagines`: (out_rel, títol, públic) de totes les pàgines del web."""
+    titol_sa = titol_sa or {}
+    preguntes = preguntes or {}
+    cap = capitol_de(out_rel)
+    sa = cap["sa"] if cap else sa_de(out_rel)
+    noms = {o: (t, pub) for o, t, pub in pagines}
+
+    pestanyes = []
+    for n in (4, 5, 6):
+        desti = f"classes/sa{n}/index.html"
+        aria = ' aria-current="true"' if sa == n else ""
+        pestanyes.append(f'<a href="{rel_url(out_rel, desti)}"{aria}>SA{n}</a>')
+    aria = ' aria-current="true"' if sa is None else ""
+    pestanyes.append(f'<a href="{rel_url(out_rel, PROJECTE)}"{aria}>El braç</a>')
+
+    blocs = []
+    if sa:
+        base = f"classes/sa{sa}"
+        ruta = [_li(out_rel, f"{base}/index.html", "Presentació i ruta")]
+        ruta += [_li(out_rel, c["out"], f'{c["n"]} · {c["nom"]}') for c in CAPITOLS if c["sa"] == sa]
+        teoria = []
+        for suf, etiq in TEORIA:
+            o = next((o for o in noms if o.startswith(base + "/") and o.endswith(f"{suf}.html")
+                      and noms[o][1] == "alumnat"), None)
+            if o:
+                teoria.append(_li(out_rel, o, etiq))
+        if f"{base}/codi.html" in noms:
+            teoria.append(_li(out_rel, f"{base}/codi.html", "Tot el codi"))
+        lliura = [_li(out_rel, f"{base}/index.html#entrega-final", "🏁 Entrega final"),
+                  _li(out_rel, f"{base}/index.html#que-has-dentregar", "Què has d'entregar")]
+        chk = f"{base}/sa{sa}-checklist-alumnat.html"
+        if chk in noms:
+            lliura.append(_li(out_rel, chk, "El meu checklist"))
+        doc = []
+        for suf, etiq in DOCENT:
+            o = next((o for o in noms if o.startswith(base + "/") and o.endswith(f"{suf}.html")), None)
+            if o:
+                doc.append(_li(out_rel, o, etiq, docent=True))
+        blocs = [_bloc("🧭 Ruta", ruta), _bloc("📚 Teoria", teoria),
+                 _bloc("🏁 Lliurament", lliura), _bloc("👩‍🏫 Docent", doc, docent=True)]
+    else:
+        braç = [_li(out_rel, PROJECTE, "Presentació i llista de peces")]
+        dossier = "classes/projecte-t2/00-projecte-t2-brac.html"
+        if dossier in noms:
+            braç.append(_li(out_rel, dossier, "Dossier del braç"))
+        blocs = [_bloc("🦾 El braç", braç)]
+    if toc:
+        toc_net = re.sub(r'</?nav[^>]*>|<p class="toc-titol">.*?</p>', "", toc)
+        blocs.append(f'<details class="t2-bloc t2-toc"><summary>📄 En aquesta pàgina</summary>{toc_net}</details>')
+
+    if cap:
+        cap_pas = f'Pràctica {cap["n"]} · SA{cap["sa"]} {cap["ses"]}'
+        cap_q = preguntes.get(cap["n"]) or cap["nom"]
+    elif sa:
+        cap_pas, cap_q = f"SA{sa} · 2n trimestre", titol_sa.get(sa, f"SA{sa}")
+    else:
+        cap_pas, cap_q = "2n trimestre", "El braç robòtic MeArm"
+    titol_pag = noms.get(out_rel, ("", ""))[0]
+    return (f'<aside class="escenari" aria-label="Plànol del trimestre i índex de la SA"'
+            f'{" data-practica" if cap else ""}>'
+            f'<div class="esc-cap"><span class="esc-pas">{html.escape(cap_pas)}</span>'
+            f'<span class="esc-q">{html.escape(cap_q)}</span></div>'
+            f'<div class="esc-vista">{mapa_html(out_rel, actiu=cap["n"] if cap else None, sa=sa)}</div>'
+            f'<nav class="t2-index" aria-label="Índex de la SA">'
+            f'<div class="t2-pestanyes">{"".join(pestanyes)}</div>{"".join(b for b in blocs if b)}</nav>'
+            f'<div class="caixeti"><span>Plànol</span><span class="esc-tit">{html.escape(titol_pag.split(":")[0])}</span>'
+            f'<span>Full</span><span class="esc-full">{"SA" + str(sa) if sa else "T2"}</span></div>'
+            f'</aside>')

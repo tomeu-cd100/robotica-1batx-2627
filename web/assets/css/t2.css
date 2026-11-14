@@ -74,49 +74,78 @@ html[data-tema="fosc"] .peca { border-top-color: #7fb2ff; }
 .peca b { font-size: 1rem; }
 .peca-q { font-size: .88rem; color: var(--muted); line-height: 1.35; }
 
-/* ---------- Escenari de pràctica (només pantalles amples) ---------- */
-.escenari { display: none; }
+/* ---------- El panell de plànol (totes les pàgines del T2) ----------
+   Ordinador (≥ 1100 px): columna esquerra fixa (plànol + índex de la SA) i
+   contingut a la dreta; la barra lateral i l'índex de la dreta s'amaguen.
+   Mòbil: el panell queda a dalt del contingut, amb l'índex plegat. */
+.escenari {
+  display: grid; gap: 12px; padding: 16px; margin: 0 0 1.2rem;
+  color: var(--pl-traç); background-color: var(--pl-tinta);
+  background-image:
+    linear-gradient(var(--pl-graella) 1px, transparent 1px),
+    linear-gradient(90deg, var(--pl-graella) 1px, transparent 1px);
+  background-size: 20px 20px; border-radius: 6px;
+  box-shadow: inset 0 0 0 6px var(--pl-tinta), inset 0 0 0 7px rgba(255, 255, 255, .35);
+}
 @media (min-width: 1100px) {
-  body.amb-escenari .layout,
-  body.amb-escenari.sense-toc .layout,
-  body.amb-escenari.amb-toc .layout { grid-template-columns: minmax(0, 1fr); max-width: 1500px; margin: 0 auto; }
-  body.amb-escenari .sidebar, body.amb-escenari .toc { display: none; }
-  body.amb-escenari main#contingut {
-    display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  body.t2.amb-escenari .layout,
+  body.t2.amb-escenari.sense-toc .layout { grid-template-columns: minmax(0, 1fr); max-width: 1500px; margin: 0 auto; }
+  body.t2.amb-escenari .sidebar, body.t2.amb-escenari .toc { display: none; }
+  body.t2.amb-escenari main#contingut {
+    display: grid; grid-template-columns: minmax(340px, .9fr) minmax(0, 1.1fr);
     column-gap: 28px; align-items: start;
   }
-  body.amb-escenari main#contingut > *:not(.escenari):not(article) { grid-column: 1 / -1; }
-  body.amb-escenari article.prose { grid-column: 2; max-width: none !important; min-width: 0; }
-  body.amb-escenari .escenari {
-    display: grid; grid-column: 1; align-self: start; position: sticky; top: 16px;
-    grid-template-rows: auto minmax(0, 1fr) auto; gap: 12px;
-    min-height: 60vh; max-height: calc(100vh - 32px); padding: 18px;
-    color: var(--pl-traç); background-color: var(--pl-tinta);
-    background-image:
-      linear-gradient(var(--pl-graella) 1px, transparent 1px),
-      linear-gradient(90deg, var(--pl-graella) 1px, transparent 1px);
-    background-size: 20px 20px; border-radius: 6px;
-    box-shadow: inset 0 0 0 6px var(--pl-tinta), inset 0 0 0 7px rgba(255, 255, 255, .35);
+  body.t2.amb-passos main#contingut { grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); }
+  body.t2.amb-escenari main#contingut > *:not(.escenari):not(article) { grid-column: 1 / -1; }
+  body.t2.amb-escenari article.prose { grid-column: 2; max-width: none !important; min-width: 0; }
+  body.t2.amb-escenari .escenari {
+    grid-column: 1; align-self: start; position: sticky; top: 16px; margin: 0;
+    max-height: calc(100vh - 32px); overflow-y: auto; overscroll-behavior: contain;
   }
-  /* Les imatges dels passos es veuen a l'escenari, no al panell */
-  body.amb-escenari section.pas img.a-escenari { display: none; }
-  body.amb-escenari section.pas.actiu { border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent); }
+  body.t2.amb-passos .escenari { min-height: 60vh; }
+  /* Les imatges dels passos es veuen al plànol, no al panell de text */
+  body.t2.amb-passos section.pas img.a-escenari { display: none; }
+  body.t2.amb-passos section.pas.actiu { border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent); }
 }
-.esc-cap { display: grid; gap: .35rem; font-family: var(--ff-mono); }
+.esc-cap { display: grid; gap: .3rem; font-family: var(--ff-mono); }
 .esc-pas { font-size: .78rem; text-transform: uppercase; letter-spacing: .08em; color: var(--pl-cota); }
 .esc-q { font-size: 1.05rem; font-weight: 700; line-height: 1.3; }
-.esc-vista { min-height: 0; min-width: 0; overflow-y: auto; overflow-x: hidden; display: grid; place-items: center; color: var(--text); }
+.esc-vista { min-width: 0; overflow-x: hidden; display: grid; place-items: center; color: var(--text); }
 .esc-vista > img { max-width: 100%; max-height: 62vh; background: #fff; border-radius: 3px; padding: 8px; }
 .esc-vista > #codi-complet { width: 100%; min-width: 0; max-width: 100%; align-self: start; }
 .esc-vista .codi-bloc { max-width: 100%; margin: 0; }
 .esc-vista .codi-cos { overflow-x: auto; }
 .esc-vista .highlight { max-height: 56vh; overflow: auto; }
 .esc-vista .planol-t2 { margin: 0; padding: 0; box-shadow: none; background: none; width: 100%; }
-.esc-vista .planol-t2 figcaption { display: none; }
+.esc-vista .planol-t2 svg { min-width: 0; }
+.esc-vista .planol-t2 figcaption { color: var(--pl-traç); }
 .codi-a-escenari {
   margin: .6rem 0; padding: .6rem .8rem; border: 1.5px dashed var(--border-fort); border-radius: var(--radi-s);
   color: var(--muted); font-family: var(--ff-mono); font-size: .85rem;
 }
+
+/* Índex de la SA, dins del panell */
+.t2-index { display: grid; gap: .5rem; font-size: .9rem; }
+.t2-pestanyes { display: flex; flex-wrap: wrap; gap: 6px; }
+.t2-pestanyes a {
+  font-family: var(--ff-mono); font-size: .78rem; font-weight: 700; text-decoration: none;
+  color: var(--pl-traç); border: 1px solid rgba(255, 255, 255, .45); border-radius: 3px; padding: 3px 9px;
+}
+.t2-pestanyes a[aria-current] { background: var(--pl-cota); color: var(--pl-tinta-fosca); border-color: var(--pl-cota); }
+.t2-bloc { border-top: 1px solid rgba(255, 255, 255, .22); padding-top: .35rem; }
+.t2-bloc summary {
+  cursor: pointer; font-family: var(--ff-mono); font-size: .78rem; text-transform: uppercase;
+  letter-spacing: .07em; color: var(--pl-cota); padding: .2rem 0;
+}
+.t2-bloc ul { list-style: none; margin: .25rem 0 .2rem; padding: 0; display: grid; gap: 1px; }
+.t2-bloc li a {
+  display: block; padding: .28rem .5rem; border-radius: 3px; color: var(--pl-traç); text-decoration: none; line-height: 1.3;
+}
+.t2-bloc li a:hover, .t2-bloc li a:focus-visible { background: rgba(255, 255, 255, .1); }
+.t2-bloc li a[aria-current="page"] { background: rgba(255, 209, 102, .18); box-shadow: inset 3px 0 0 var(--pl-cota); }
+.t2-toc .toc-l2 a { padding-left: 1.3rem; font-size: .85rem; opacity: .9; }
+.escenari a:focus-visible { outline: 2px solid var(--pl-cota); outline-offset: 1px; }
+
 .caixeti {
   justify-self: end; display: grid; grid-template-columns: auto auto;
   border: 1px solid rgba(255, 255, 255, .55); font-family: var(--ff-mono); font-size: .72rem;
@@ -127,5 +156,5 @@ html[data-tema="fosc"] .peca { border-top-color: #7fb2ff; }
 @media print {
   body.t2 { background: none; }
   .escenari { display: none !important; }
-  body.amb-escenari section.pas img.a-escenari { display: block !important; }
+  body.t2 section.pas img.a-escenari { display: block !important; }
 }

@@ -70,6 +70,8 @@ Mira el diagrama del llaç tancat i fes el del **teu braç** al full del quadern
 
 📤 [Obre la tasca «SA6 · Pràctica 1» a Classroom i envia el formulari](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODk5NDU2MDAyODQy/details)
 
+📷 [Penja la foto de la teva pràctica funcionant a la tasca «Foto · SA6 · Pràctica 1»](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODk5NDU1NTU1ODA2/details)
+
 Hi trobaràs les mateixes preguntes ✍️ que has anat apuntant. Envia'l ara. A la sessió següent: **[Pràctica 2 · La pinça automàtica](../02_pinca_histeresi/EXPLICACIO.md)**.
 
 ⭐ **Si acabes abans:** fes que, després del homing, la base vagi sola a 90° i hi esperi. Més reptes a **[Reptes de la SA6](../../../../Reptes/Reptes_SA6.md)** (el B és el homing amb una seqüència segura); quan el docent te'l validi, pinta l'estrella al [tauler de reptes](../../../00_General/00_Tauler_reptes.md).

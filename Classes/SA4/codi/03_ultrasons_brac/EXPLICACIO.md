@@ -54,6 +54,8 @@ Segueix el bloc E de la [guia de muntatge](../../../00_General/00_Muntatge_brac_
 
 📤 [Obre la tasca «SA4 · Pràctica 3» a Classroom i envia el formulari](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODk3NDMwMDI1NTA5/details)
 
+📷 [Penja la foto de la teva pràctica funcionant a la tasca «Foto · SA4 · Pràctica 3»](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODk5NDUzMDk3Mjkz/details)
+
 Hi trobaràs les mateixes preguntes ✍️ que has anat apuntant. Envia'l ara. A la sessió següent: **[Pràctica 4 · El braç amb potenciòmetres](../04_brac_potenciometres/EXPLICACIO.md)**.
 
 ⭐ **Si acabes abans:** fes que la pinça s'obri **proporcionalment** a la distància amb `map()`, amb una guarda de seguretat, i explica-ho a la pregunta opcional del formulari. O prova la [bastida de `millis()`](../05_dos_servos_millis/EXPLICACIO.md): dues articulacions alhora. Més reptes a **[Reptes de la SA4](../../../../Reptes/Reptes_SA4.md)**; quan el docent te'l validi, pinta l'estrella al [tauler de reptes](../../../00_General/00_Tauler_reptes.md).

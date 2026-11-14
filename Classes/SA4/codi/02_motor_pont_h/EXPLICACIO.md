@@ -70,6 +70,8 @@ void loop() {
 
 📤 [Obre la tasca «SA4 · Pràctica 2» a Classroom i envia el formulari](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODI2ODM5NDk3NzA0/details)
 
+📷 [Penja la foto de la teva pràctica funcionant a la tasca «Foto · SA4 · Pràctica 2»](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODk5NDU2MTc2ODc5/details)
+
 Hi trobaràs les mateixes preguntes ✍️ que has anat apuntant. Envia'l ara. A la sessió següent: **[Pràctica 3 · Del sensor al braç](../03_ultrasons_brac/EXPLICACIO.md)**.
 
 ⭐ **Si acabes abans:** fes una **seqüència de moviments pròpia** amb les funcions `endavant(vel)`, `enrere(vel)` i `atura()` (per exemple, una maniobra d'aparcament) i explica-la a la pregunta opcional del formulari. Més reptes a **[Reptes de la SA4](../../../../Reptes/Reptes_SA4.md)**; quan el docent te'l validi, pinta l'estrella al [tauler de reptes](../../../00_General/00_Tauler_reptes.md).

@@ -291,29 +291,29 @@ def _preguntes_t2() -> dict[int, str | None]:
 
 
 def atles_t2_portada(out_rel: str, body: str) -> str:
-    """Plànol del braç just després del títol: a la portada del projecte T2,
-    amb la llista de peces; a la portada de SA4-SA6, amb la SA ressaltada."""
-    if out_rel == "classes/projecte-t2/index.html":
-        extra = (atles_t2.mapa_html(out_rel)
-                 + atles_t2.llista_peces_html(out_rel, _preguntes_t2()))
-    else:
-        sa = next((n for n in (4, 5, 6) if out_rel == f"classes/sa{n}/index.html"), None)
-        if sa is None:
-            return body
-        extra = atles_t2.mapa_html(out_rel, sa=sa)
+    """La llista de peces (les pràctiques del trimestre amb la seva pregunta)
+    just després del títol de la portada del projecte T2. El plànol és al
+    panell de l'esquerra de totes les pàgines del T2 (atles_t2.panell_html)."""
+    if out_rel != "classes/projecte-t2/index.html":
+        return body
+    extra = atles_t2.llista_peces_html(out_rel, _preguntes_t2())
     i = body.find("</h1>")
     if i == -1:
         return extra + body
     return body[:i + 5] + extra + body[i + 5:]
 
 
-def atles_t2_practica(out_rel: str) -> str:
-    """A les pràctiques del T2, el plànol amb «Ets aquí», guardat en un
-    <template>: t2.js el mostra a l'escenari quan el pas no té dibuix."""
-    c = atles_t2.capitol_de(out_rel)
-    if not c:
-        return ""
-    return f'<template id="t2-mapa">{atles_t2.mapa_html(out_rel, actiu=c["n"])}</template>'
+_PREGUNTES_T2: dict[int, str | None] = {}
+
+
+def atles_t2_panell(out_rel: str, pages: list, toc: str) -> str:
+    """El panell de plànol (navegació) de les pàgines del T2."""
+    if not _PREGUNTES_T2:
+        _PREGUNTES_T2.update(_preguntes_t2())
+    return atles_t2.panell_html(
+        out_rel, [(p.out_rel, p.title, p.public) for p in pages], toc=toc,
+        titol_sa={n: f"SA{n} · {SA_TITLES.get(n, '')}" for n in (4, 5, 6)},
+        preguntes=_PREGUNTES_T2)
 
 
 def depth_prefix(out_rel: str) -> str:
@@ -1208,11 +1208,14 @@ def page_shell(*, out_rel, section_key, title, content_html, toc="",
     pager_top = f'<div class="pager-top">{pager}</div>' if pager else ""
     has_sidebar = "amb-sidebar" if sidebar else "sense-sidebar"
     # T2: estil de plànol tècnic i escenari de pràctica (assets/css/t2.css, js/t2.js)
-    t2_class = " t2" if tri == 2 else ""
+    t2_class = " t2 amb-escenari" if tri == 2 else ""
     t2_css = f'<link rel="stylesheet" href="{prefix}assets/css/t2.css">' if tri == 2 else ""
     t2_js = f'<script src="{prefix}assets/js/t2.js"></script>' if tri == 2 else ""
     toc_block = toc or ""
     layout_class = "amb-toc" if toc_block else "sense-toc"
+    t2_panell = atles_t2_panell(out_rel, pages, toc_block) if tri == 2 else ""
+    if tri == 2:   # l'índex de la pàgina va dins del panell
+        toc_block, layout_class = "", "sense-toc"
 
     return f"""<!DOCTYPE html>
 <html lang="ca">
@@ -1261,6 +1264,7 @@ def page_shell(*, out_rel, section_key, title, content_html, toc="",
     {pager_top}
     {pdf_block}
     {tri_badge}
+    {t2_panell}
     <article class="prose">
 {content_html}
     </article>
@@ -1444,7 +1448,6 @@ def render_practica_page(item: dict, group: dict, pages: list[Page], md_map: dic
         body += '\n<h2 id="codi-complet">El codi complet</h2>' + bloc_codi
     if extra_nav:
         body += "\n" + extra_nav
-    body += atles_t2_practica(item["page_out"])
     full = page_shell(out_rel=item["page_out"], section_key=group["section"],
                       title=item["title"], content_html=body, toc=toc,
                       tri=group["tri"], pages=pages, public="alumnat")

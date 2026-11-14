@@ -60,6 +60,45 @@ def test_llista_de_peces_agrupada_per_sa():
     assert 'href="../sa6/codi/03-maquina-estats.html"' in h
 
 
+PAGINES = [
+    ("classes/sa4/index.html", "SA4 · Moviment", "alumnat"),
+    ("classes/sa4/sa4-fitxa-alumnat.html", "SA4 · Fitxa base", "alumnat"),
+    ("classes/sa4/sa4-esquemes-connexions.html", "SA4 · Esquemes", "alumnat"),
+    ("classes/sa4/sa4-checklist-alumnat.html", "SA4 · El meu checklist", "alumnat"),
+    ("classes/sa4/sa4-guia-docent.html", "SA4 · Guia docent", "docent"),
+    ("classes/sa4/codi/01-servo-potenciometre.html", "Pràctica 1 · Servo: amb llibreria", "alumnat"),
+    ("classes/projecte-t2/index.html", "Projecte T2", "alumnat"),
+]
+
+
+def test_panell_d_una_pagina_de_teoria():
+    h = atles_t2.panell_html("classes/sa4/sa4-fitxa-alumnat.html", PAGINES)
+    assert 'aria-current="page"' in h and "Fitxa base" in h
+    assert "🧭 Ruta" in h and "📚 Teoria" in h and "🏁 Lliurament" in h
+    assert 'href="index.html#entrega-final"' in h
+    assert 'class="nomes-docent"' in h and "Guia docent" in h
+    assert 'class="globus sa-actual"' in h and "ets-aqui" not in h
+    assert "data-practica" not in h
+
+
+def test_panell_d_una_practica_te_ets_aqui_i_pregunta():
+    h = atles_t2.panell_html("classes/sa4/codi/01-servo-potenciometre.html", PAGINES,
+                             preguntes={1: "Com sap un motor on s'ha d'aturar?"})
+    assert "data-practica" in h and h.count("ets-aqui") == 1
+    assert "Com sap un motor on s&#x27;ha d&#x27;aturar?" in h
+
+
+def test_panell_del_projecte_sense_sa():
+    h = atles_t2.panell_html("classes/projecte-t2/index.html", PAGINES)
+    assert "🦾 El braç" in h and "sa-actual" not in h
+
+
+def test_sa_de():
+    assert atles_t2.sa_de("classes/sa5/sa5-fitxa-alumnat.html") == 5
+    assert atles_t2.sa_de("reptes/reptes-sa6.html") == 6
+    assert atles_t2.sa_de("classes/projecte-t2/index.html") is None
+
+
 def test_capitol_per_pagina():
     assert atles_t2.capitol_de("classes/sa5/codi/04-brac-ordres.html")["n"] == 7
     assert atles_t2.capitol_de("classes/sa4/index.html") is None

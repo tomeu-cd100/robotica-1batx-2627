@@ -1,43 +1,40 @@
-/* T2 · Escenari de pràctica (pàgines de pràctica del 2n trimestre).
-   En pantalles amples, el que hi ha dins del pas que llegeixes (l'esquema o el
-   codi) es mostra a l'esquerra, al plànol. Un pas sense dibuix hereta el de
-   l'anterior; si encara no n'hi ha cap, s'hi veu el plànol del braç amb
-   «Ets aquí». Al mòbil no canvia res: la pàgina és d'una columna.
+/* T2 · Panell de plànol de totes les pàgines del 2n trimestre.
+   El panell (aside.escenari) ja ve generat: plànol del braç + índex de la SA.
+   Aquest script:
+   - a les pàgines de teoria, en pantalla ampla, obre els blocs de l'índex;
+   - a les pràctiques, en pantalla ampla, mostra al plànol el dibuix o el codi
+     del pas que llegeixes. Un pas sense dibuix hereta el de l'anterior; si
+     encara no n'hi ha cap, s'hi veu el plànol amb «Ets aquí».
+   Al mòbil el panell queda a dalt, amb l'índex plegat.
    Fitxer mantingut a mà; el carrega page_shell() només a les pàgines del T2. */
 (function () {
   "use strict";
-  var passos = Array.prototype.slice.call(document.querySelectorAll("article.prose section.pas"));
-  if (!passos.length || !window.matchMedia) return;
+  var esc = document.querySelector("aside.escenari");
+  if (!esc || !window.matchMedia) return;
   var ample = window.matchMedia("(min-width: 1100px)");
-  var main = document.querySelector("main#contingut");
-  var article = document.querySelector("article.prose");
-  if (!main || !article) return;
+  var esPractica = esc.hasAttribute("data-practica");
+  var blocs = Array.prototype.slice.call(esc.querySelectorAll(".t2-bloc"));
 
-  // Pregunta guia (línia ❓ de la capçalera) i títol curt de la pràctica
-  var pregunta = "";
-  var cap = article.querySelector(".cap-practica");
-  if (cap) {
-    Array.prototype.forEach.call(cap.querySelectorAll("p"), function (p) {
-      var t = p.textContent.trim();
-      if (t.indexOf("❓") === 0) pregunta = t.replace(/^❓\s*La pregunta:\s*/, "");
+  // Teoria: índex obert en pantalla ampla (a les pràctiques, plegat: el lloc és pel dibuix)
+  function obreIndex() {
+    blocs.forEach(function (d) {
+      d.open = ample.matches && !esPractica && !d.classList.contains("t2-toc");
     });
   }
-  var h1 = article.querySelector("h1");
-  var titol = h1 ? h1.textContent.split(":")[0].trim() : "";
-  var plantilla = document.getElementById("t2-mapa");
 
-  // L'escenari
-  var esc = document.createElement("aside");
-  esc.className = "escenari";
-  esc.setAttribute("aria-label", "Escenari: l'esquema o el codi del pas que llegeixes");
-  esc.innerHTML =
-    '<div class="esc-cap"><span class="esc-pas"></span><span class="esc-q"></span></div>' +
-    '<div class="esc-vista"></div>' +
-    '<div class="caixeti"><span>Plànol</span><span class="esc-tit"></span><span>Full</span><span class="esc-full"></span></div>';
-  main.insertBefore(esc, article);
-  esc.querySelector(".esc-q").textContent = pregunta;
-  esc.querySelector(".esc-tit").textContent = titol;
+  var passos = Array.prototype.slice.call(document.querySelectorAll("article.prose section.pas"));
+  if (!esPractica || !passos.length) {
+    obreIndex();
+    if (ample.addEventListener) ample.addEventListener("change", obreIndex);
+    return;
+  }
+
   var vista = esc.querySelector(".esc-vista");
+  var planol = vista.firstElementChild;          // el plànol amb «Ets aquí»
+  var etPas = esc.querySelector(".esc-pas");
+  var etPasInicial = etPas.textContent;
+  var etFull = esc.querySelector(".esc-full");
+  var etFullInicial = etFull.textContent;
 
   // El dibuix de cada pas: la primera imatge o el codi complet. Sense, hereta.
   var darrer = null;
@@ -64,15 +61,15 @@
     actual = i;
     passos.forEach(function (p, j) { p.classList.toggle("actiu", i === j); });
     var h = passos[i].querySelector("h3");
-    esc.querySelector(".esc-pas").textContent = h ? h.textContent.trim() : "";
-    esc.querySelector(".esc-full").textContent = (i + 1) + " / " + passos.length;
+    etPas.textContent = h ? h.textContent.trim() : etPasInicial;
+    etFull.textContent = (i + 1) + " / " + passos.length;
     tornaCodi();
-    vista.innerHTML = "";
+    while (vista.firstChild) vista.removeChild(vista.firstChild);
     var m = media[i];
     if (m && m.id === "codi-complet") {
       marca = document.createElement("p");
       marca.className = "codi-a-escenari";
-      marca.textContent = "← El codi és a l'escenari, a l'esquerra.";
+      marca.textContent = "← El codi és al plànol, a l'esquerra.";
       m.parentNode.insertBefore(marca, m);
       vista.appendChild(m);
       codiMogut = m;
@@ -82,8 +79,8 @@
       var img = m.cloneNode(true);
       img.classList.remove("a-escenari");
       vista.appendChild(img);
-    } else if (plantilla) {
-      vista.appendChild(plantilla.content.cloneNode(true));
+    } else if (planol) {
+      vista.appendChild(planol);
     }
   }
 
@@ -94,8 +91,9 @@
   }, { rootMargin: "-30% 0px -65% 0px" });
 
   function activa() {
+    obreIndex();
     if (ample.matches) {
-      document.body.classList.add("amb-escenari");
+      document.body.classList.add("amb-passos");
       passos.forEach(function (p) { io.observe(p); });
       var desti = location.hash && document.getElementById(decodeURIComponent(location.hash.slice(1)));
       var iDesti = -1;
@@ -104,9 +102,13 @@
       mostra(iDesti >= 0 ? iDesti : 0);
       if (iDesti >= 0) desti.scrollIntoView({ block: "start" });
     } else {
-      document.body.classList.remove("amb-escenari");
+      document.body.classList.remove("amb-passos");
       passos.forEach(function (p) { io.unobserve(p); p.classList.remove("actiu"); });
       tornaCodi();
+      while (vista.firstChild) vista.removeChild(vista.firstChild);
+      if (planol) vista.appendChild(planol);
+      etPas.textContent = etPasInicial;
+      etFull.textContent = etFullInicial;
       actual = -1;
     }
   }

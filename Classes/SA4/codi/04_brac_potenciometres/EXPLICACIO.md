@@ -62,6 +62,8 @@ Pensa què diràs: com funciona i **una decisió tècnica** (per què aquests an
 
 📤 [Obre la tasca «SA4 · Pràctica 4» a Classroom i envia el formulari](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODk3NDI5ODc5MTk4/details)
 
+📷 [Penja la foto de la teva pràctica funcionant a la tasca «Foto · SA4 · Pràctica 4»](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODk5NDQ5NzAxNjI5/details)
+
 Hi trobaràs les mateixes preguntes ✍️ que has anat apuntant. Envia'l ara. Després, fes l'**[🏁 Entrega final de la SA4](../../README.md#entrega-final)**: la defensa d'1 minut i l'autoavaluació.
 
 ⭐ **Si acabes abans:** afegeix un botó que guardi una **posició** del braç i la repeteixi. Més reptes a **[Reptes de la SA4](../../../../Reptes/Reptes_SA4.md)**; quan el docent te'l validi, pinta l'estrella al [tauler de reptes](../../../00_General/00_Tauler_reptes.md).
