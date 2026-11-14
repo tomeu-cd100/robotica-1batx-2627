@@ -20,7 +20,11 @@
 | A1 | el punt on s'uneixen el sensor de llum (LDR) i la resistència de 10 kΩ |
 | 9 ~ | LED → resistència de 220 Ω → GND |
 
-El sensor de llum i la resistència de 10 kΩ van **una darrere l'altra** entre 5 V i GND.
+El sensor de llum i la resistència de 10 kΩ van **una darrere l'altra** entre 5 V i GND, i **l'ordre importa**:
+
+**5 V → sensor de llum (LDR) → punt d'unió (cable a A1) → resistència de 10 kΩ → GND**
+
+> ⚠️ Si poses la resistència a dalt i el sensor a baix, tot funciona **al revés** (en tapar-lo, el número puja). Si en lloc de la LDR solta fas servir un **mòdul de llum de 3 potes**, connecta **S → A1**, **+ (o VCC) → 5 V** i **− (o GND) → GND**: el mòdul ja porta la resistència a dins, però també pot anar al revés. Al pas 3 ho comprovaràs.
 
 ![Muntatge: potenciòmetre a A0, sensor de llum a A1 i LED al pin 9](../../img/sa3-tinkercad-pot-ldr.png)
 
@@ -34,7 +38,9 @@ Prem **Copia**, enganxa'l a l'Arduino IDE (esborra el que hi hagués) i prem **�
 
 ### Pas 3 · Juga-hi
 
-Gira el potenciòmetre (el número `POT` canvia i el LED fa més o menys llum). Després tapa el sensor amb la mà (el número `LDR` baixa).
+Gira el potenciòmetre (el número `POT` canvia i el LED fa més o menys llum). Després tapa bé el sensor amb el dit (el número `LDR` hauria de **baixar**).
+
+✅ **Comprova:** en tapar el sensor, el número `LDR` **baixa** almenys 100 o 200. Si **puja**, o gairebé no canvia, mira «🧗 Si t'encalles» abans de continuar.
 
 ✍️ **Apunta-ho:** els números que llegeixes van de ____ a ____.
 
@@ -55,6 +61,8 @@ Quan el docent et cridi, mesura els **volts** del punt d'unió del sensor de llu
 ### Pas 6 · Fes el llum automàtic
 
 A sota de tot del codi hi ha, entre `/*` i `*/`, el codi del llum automàtic. Esborra el que hi ha dins del `loop()`, enganxa-hi aquest codi i canvia el `400` del `llindar` per un número **entre** els dos que has apuntat al pas 3. Puja'l.
+
+> ⚠️ **No et saltis el llindar.** A Tinkercad el `400` funciona perquè la llum del simulador va de zero al màxim. A l'aula, amb la llum dels fluorescents i el dit, els teus números poden ser, per exemple, 850 amb llum i 550 tapat: amb `400` el LED **no s'encendria mai**. El llindar s'ha de triar amb **els teus** números.
 
 ✅ **Comprova:** quan tapes el sensor, el LED s'encén.
 
@@ -78,7 +86,9 @@ Hi trobaràs les mateixes preguntes ✍️ que has anat apuntant. Envia'l ara. P
 | Què passa | Per què | Com ho arreglo |
 |---|---|---|
 | El sensor de llum diu **sempre 0 o sempre 1023** | Falta la resistència de 10 kΩ, o no està ben unida al sensor. | Mira el dibuix de l'[esquema, apartat 2](../../SA3_esquemes_connexions.md). |
-| El llum automàtic no s'encén mai (o sempre) | El llindar no està entre els números de llum i de tapat. | Mira el Monitor i tria un número al mig. |
+| El llum automàtic no s'encén mai (o sempre) | El llindar no està entre els números de llum i de tapat (el `400` és el de Tinkercad, no el teu). | Mira el Monitor i tria un número al mig. |
+| En tapar el sensor, el número **puja** (i el LED s'encén amb llum) | La LDR i la resistència de 10 kΩ estan al revés, o el teu mòdul de llum funciona al revés. | Gira-les (5 V → LDR → A1 → 10 kΩ → GND) o, al codi, canvia el `<` de l'`if` per `>`. |
+| En tapar el sensor, el número **gairebé no canvia** | El dit no tapa del tot, o la resistència no és de 10 kΩ (marró-negre-taronja). | Tapa'l amb el dit o amb una capseta; comprova els colors de la resistència. |
 | El LED només s'encén o s'apaga, sense fer més o menys llum | El LED no és en un pin amb `~`. | Posa'l al pin 9. |
 | Al Monitor surten símbols estranys | La velocitat no és 9600. | A baix a la dreta del Monitor, tria 9600. |
 
@@ -204,14 +214,16 @@ Aquestes línies escriuen els dos números al Monitor. Són la teva **eina per t
 
 ```cpp
   int valorLdr = analogRead(LDR);
+  Serial.print("LDR: "); Serial.println(valorLdr);   // per comprovar el llindar
   if (valorLdr < llindar) {
     analogWrite(LED, 255);   // fa fosc -> llum encesa
   } else {
     analogWrite(LED, 0);     // hi ha llum -> apagada
   }
+  delay(100);
 ```
 
-Llegit en veu alta: *«Llegeix el sensor de llum. **Si** el número és més petit que el llindar (fa fosc), encén el LED. **Si no**, apaga'l.»*
+Llegit en veu alta: *«Llegeix el sensor de llum **i escriu el número al Monitor**. **Si** el número és més petit que el llindar (fa fosc), encén el LED. **Si no**, apaga'l.»* La línia del Monitor és la que et salva quan no funciona: mires el número i veus de seguida si el llindar és bo.
 
 Aquesta és la idea més important de la SA: **llegir → comparar → actuar**. La faràs servir al tamagotchi i a la prova. Si et costa, mira-la [dibuixada](../../SA3_diagrama_flux.md) o l'[exemple resolt](../../SA3_exemple_resolt.md).
 

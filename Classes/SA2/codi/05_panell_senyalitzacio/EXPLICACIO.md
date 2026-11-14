@@ -6,7 +6,7 @@
 
 ⏱️ Tota la sessió
 
-📦 Mòdul RGB, brunzidor (piezo), mòdul relé i cables
+📦 Mòdul RGB, brunzidor (piezo), mòdul relé, 1 LED, 1 resistència de 220 Ω, cables i un tornavís petit
 
 </div>
 
@@ -44,9 +44,41 @@ Decideix com serà cada estat: quin color, quin so i si el relé s'engega o no.
 |---|---|
 | Mòdul RGB | R → 9 · G → 10 · B → 11 · − → GND (com a la Pràctica 4) |
 | Brunzidor (piezo) | + → pin 6 · − → GND |
-| Mòdul relé | IN → pin 7 · VCC → 5 V · GND → GND |
+| Mòdul relé | (mira el pas 3b) |
 
 ![Muntatge del panell: RGB, brunzidor i relé](../../img/sa2-tinkercad-panell.png)
+
+> 💡 A Tinkercad surt un relé «sol» (la peça negra). A l'aula fas servir el **mòdul relé**, que ja porta a dins tot el que el relé necessita. Munta'l com diu el pas 3b.
+
+### Pas 3b · Munta el mòdul relé
+
+El relé és un **interruptor que mou l'Arduino**. Per això té **dues bandes**, i cadascuna es connecta a una cosa diferent:
+
+![Connexions del mòdul relé: a l'esquerra el control (pin 7, 5 V i GND de l'Arduino); a la dreta l'interruptor (COM a 5 V, NO a una resistència de 220 Ω i un LED cap a GND, NC lliure)](../../img/sa2-modul-rele.svg)
+
+**1. Banda de control (les 3 potes de pins):** és per on l'Arduino li diu «engega't».
+
+| Pota del mòdul (llegeix les lletres) | Va a… |
+|---|---|
+| **S** o **IN** | pin **7** |
+| **+** o **VCC** | **5 V** (fila vermella +) |
+| **−** o **GND** | **GND** (fila blava −) |
+
+**2. Banda de càrrega (els 3 forats amb cargol):** és l'interruptor. El que hi connectis s'engegarà quan el relé faci «clic».
+
+| Born de cargol | Què vol dir | Va a… |
+|---|---|---|
+| **COM** | comú: el que entra a l'interruptor | **5 V** (fila vermella +) |
+| **NO** | *normalment obert*: només connecta amb COM quan el relé s'activa | resistència de **220 Ω** → **LED** (pota llarga) → la pota curta a **GND** |
+| **NC** | *normalment tancat*: connecta amb COM quan el relé està en repòs | res (queda lliure) |
+
+Per posar un cable a un born: afluixa el cargol amb el tornavís, fica-hi la punta pelada del cable i torna a collar. Estira suaument per comprovar que no surt.
+
+Aquest LED fa de «ventilador» de la caldera: és la **càrrega** que el relé engega en l'estat d'alarma.
+
+> ⚠️ **Seguretat:** al relé només s'hi connecten coses petites de **5 V** (un LED, un motor petit). **Mai** l'endoll de casa (230 V), encara que el relé digui «250 VAC».
+
+✅ **Comprova:** amb el codi carregat (pas 4), quan arriba l'alarma el relé fa «clic», s'encén el llumet del mòdul i s'encén el LED de la càrrega.
 
 ### Pas 4 · Carrega el codi
 
@@ -88,7 +120,9 @@ Hi trobaràs les mateixes preguntes ✍️ que has anat apuntant. Envia'l ara i,
 
 | Què passa | Per què | Com ho arreglo |
 |---|---|---|
-| El relé no fa «clic» | Falta VCC o GND del mòdul, o IN no és al pin 7. | Revisa la taula del pas 3. |
+| El relé no fa «clic» | Falta + (VCC) o − (GND) del mòdul, o S (IN) no és al pin 7. | Revisa la banda de control del pas 3b. |
+| El relé fa «clic» però el LED de la càrrega no s'encén | Falta el 5 V a COM, el LED és al revés o el cable del born no està collat. | COM → 5 V, NO → 220 Ω → LED → GND. Estira els cables dels borns. |
+| El LED de la càrrega fa **el contrari** (encès en «Tot correcte», apagat en «Alarma») | Has fet servir NC en lloc de NO, o el teu mòdul s'activa amb `LOW`. | Passa el cable de NC a NO. Si ja és a NO, al codi canvia els `HIGH` del relé per `LOW` i a l'inrevés. |
 | El brunzidor no sona | Està al revés o en un altre pin. | + al pin 6, − a GND. |
 | Colors estranys | Cables del RGB canviats de lloc. | Mira la Pràctica 4. |
 | L'IDE marca un error en vermell després de canviar-lo | Falta un `;` o un parèntesi. | Mira la línia que marca l'IDE i la de just abans. |
@@ -144,7 +178,7 @@ Cada estat és una **funció amb nom** (`estatCorrecte()`, `estatAvis()`, `estat
 | `color(255, 180, 0);` | Posa el llum groc. | Els tres números: el color. |
 | `tone(PIEZO, 1000, 150);` | Fa un bip de 1000 Hz durant 150 ms. | 1000 → més agut o més greu (prova 500 o 2000). 150 → més curt o més llarg. |
 | `noTone(PIEZO);` | Fa callar el brunzidor (és a `estatCorrecte`). | — |
-| `digitalWrite(RELE, LOW);` | Relé apagat (`HIGH` l'engega). | `HIGH` o `LOW`. |
+| `digitalWrite(RELE, LOW);` | Relé apagat (`HIGH` l'engega: fa «clic» i uneix COM amb NO). | `HIGH` o `LOW`. |
 
 ### Tros 4 — El `loop()`: passar pels estats
 

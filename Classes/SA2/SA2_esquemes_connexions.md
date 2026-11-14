@@ -114,9 +114,18 @@ El LED ha d'anar a un pin amb el símbol **`~`** al costat del número. Aquests 
 |---|---|
 | Mòdul RGB | R → 9 · G → 10 · B → 11 · − → GND (com a l'apartat 4) |
 | Brunzidor (el que fa so) | + → pin 6 · − → GND |
-| Mòdul relé (l'interruptor que fa «clic») | IN → pin 7 · VCC → 5 V · GND → GND |
+| Mòdul relé: control (l'interruptor que fa «clic») | S (IN) → pin 7 · + (VCC) → 5 V · − (GND) → GND |
+| Mòdul relé: càrrega (els borns de cargol) | COM → 5 V · NO → 220 Ω → LED → GND · NC lliure |
+
+![Connexions del mòdul relé: a l'esquerra el control (pin 7, 5 V i GND de l'Arduino); a la dreta l'interruptor (COM a 5 V, NO a una resistència de 220 Ω i un LED cap a GND, NC lliure)](img/sa2-modul-rele.svg)
+
+El relé té **dues bandes**: les 3 potes de **control** (per on l'Arduino li diu «engega't») i els 3 borns de **càrrega** (l'interruptor). **COM** és el comú; **NO** (*normalment obert*) només s'uneix amb COM quan el relé s'activa; **NC** (*normalment tancat*) està unit amb COM en repòs. Amb `digitalWrite(RELE, HIGH)` el relé fa «clic» i el LED de NO s'encén.
+
+> ⚠️ Alguns mòduls s'activen amb `LOW` en lloc de `HIGH`. Si el LED fa just el contrari del que esperes (i és a NO, no a NC), intercanvia `HIGH` i `LOW` al codi del relé.
 
 > ⚠️ **Seguretat:** al relé només s'hi connecten coses petites de **5 V** (un LED, un motor petit). **Mai** l'endoll de casa (230 V).
+
+> 💡 A la captura de Tinkercad hi surt un relé «sol»; a l'aula fas servir el **mòdul**, que ja porta el transistor i el díode que el relé necessita.
 
 **Al simulador:**
 

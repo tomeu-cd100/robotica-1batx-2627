@@ -35,7 +35,9 @@
 | A1 | el punt on s'uneixen la LDR i la resistència de 10 kΩ | llegir quanta llum hi ha |
 | 9 ~ | LED → resistència de 220 Ω → GND | el llum que es regula |
 
-**El sensor de llum (LDR) necessita una companya:** una resistència de **10 kΩ** (marró-negre-taronja). Les dues van **una darrere l'altra** entre 5 V i GND, i el **punt on s'uneixen** va a A1.
+**El sensor de llum (LDR) necessita una companya:** una resistència de **10 kΩ** (marró-negre-taronja). Les dues van **una darrere l'altra** entre 5 V i GND, i el **punt on s'uneixen** va a A1. **L'ordre importa:** `5 V → LDR → A1 → 10 kΩ → GND` (com al dibuix). Si el gires, la lògica s'inverteix: en tapar la LDR el número **puja** en lloc de baixar.
+
+> ⚠️ **Mòdul de llum de 3 potes** (en lloc de la LDR solta): S → A1, + (VCC) → 5 V, − (GND) → GND. Ja porta la resistència a dins, però segons el fabricant pot anar al revés. Comprova-ho al Monitor tapant-lo.
 
 ![Divisor de tensió amb LDR: entre 5 V i GND, la LDR i una resistència de 10 kΩ en sèrie; el punt mig es connecta a l'entrada analògica A1. Amb més llum baixa la resistència de la LDR i canvia la tensió del punt mig](img/sa3-divisor-ldr.svg)
 
