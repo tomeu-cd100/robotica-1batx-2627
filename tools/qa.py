@@ -544,7 +544,7 @@ def comprova_explicacions() -> None:
 # SA amb els katas arxivats a docs/arxiu/ (fora de l'itinerari): el contracte
 # no s'hi aplica. SA2 i SA3: 18-10-2026, l'alumnat no hi arribava (SA simplificades).
 # SA4-SA6: 14-11-2026, el docent els treu del T2 i els guarda per a alumnat avançat.
-KATAS_ARXIVATS = {2, 3, 4, 5, 6}
+KATAS_ARXIVATS = {2, 3, 4, 5, 6, 7, 8}   # SA7-SA8: 14-11-2026, com el T2
 
 
 def comprova_katas() -> None:
@@ -878,8 +878,21 @@ PRACTIQUES_NOU_FORMAT: set[str] = {
     "Classes/SA6/codi/01_llac_obert_vs_tancat/EXPLICACIO.md",
     "Classes/SA6/codi/02_pinca_histeresi/EXPLICACIO.md",
     "Classes/SA6/codi/03_maquina_estats/EXPLICACIO.md",
+    "Classes/SA7/codi/01_moviment_basic/EXPLICACIO.md",
+    "Classes/SA7/codi/02_trajectoria_quadrat/EXPLICACIO.md",
+    "Classes/SA7/codi/03_evita_obstacles/EXPLICACIO.md",
+    "Classes/SA7/codi/04_seguidor_linia/EXPLICACIO.md",
+    "Classes/SA8/codi/01_telemetria_emissor_EXPLICACIO.md",
+    "Classes/SA8/codi/02_telemetria_receptor_EXPLICACIO.md",
+    "Classes/SA8/SA8_auditoria_iot.md",
+    "Classes/SA8/codi/03_ia_gestos_EXPLICACIO.md",
+    "Classes/SA8/SA8_practica_teachable_machine.md",
+    "Classes/SA9/SA9_practica_1_idear.md",
+    "Classes/SA9/SA9_practica_2_prototipar.md",
+    "Classes/SA9/SA9_practica_3_provar.md",
+    "Classes/SA9/SA9_practica_4_comunicar.md",
 }
-SA_NOU_FORMAT: set[int] = {2, 3, 4, 5, 6}
+SA_NOU_FORMAT: set[int] = {2, 3, 4, 5, 6, 7, 8, 9}
 
 _PAS_MD_RE = re.compile(r"^### (Pas \d+.*)$", re.M)
 _FI_SECCIO_MD_RE = re.compile(r"^(## |### |<details)", re.M)

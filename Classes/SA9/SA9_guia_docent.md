@@ -5,6 +5,8 @@
 
 > 🧭 **Com s'usa aquesta guia.** **Abans de la SA:** sentit, objectius i materials/plantilles. **A cada sessió:** la seqüència (5 × 2 h) i les orientacions per al docent. **En avaluar:** «Avaluació». **Durant tot el projecte:** pensament computacional i els errors freqüents de gestió.
 
+> 🚩 **Format de passos (14-11-2026):** l'alumnat segueix la **ruta de pràctiques de la [portada](README.md)** al seu ritme: ① Idear (S1), ② Prototipar (S2), ③ Provar (S3) i ④ Comunicar (el producte, S4). La S5 és la prova T3. Cada pràctica acaba enviant el seu formulari i la foto de la pràctica (tasques «Foto» de Classroom). Tu fas una **arrencada de 5-10'** amb la pràctica de la fita del dia (el guió de modelatge de cada sessió) i després circules. El **quadern imprès** es manté: el full de cada sessió s'omple en acabar.
+
 ## Sentit de la SA
 Projecte de **síntesi** del curs: **cada alumne/a** dissenya, construeix, programa, documenta i defensa un **sistema robòtic autònom** que resol un repte real. Integra tot l'après (SA1-SA8). Opció de vincular-lo a una **competició** (WRO, RoboCup Junior, FTC) o al futur **Treball de Recerca**.
 

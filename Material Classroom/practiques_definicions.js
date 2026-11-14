@@ -19,6 +19,17 @@ const T2 = { id: GRADE_CATEGORIES.T2.id, name: GRADE_CATEGORIES.T2.name };
 const pagina = (sa, fitxer, titol) => ({
   link: { url: `${WEB_BASE}/${sa}/codi/${fitxer}.html`, title: titol }
 });
+const T3 = { id: GRADE_CATEGORIES.T3.id, name: GRADE_CATEGORIES.T3.name };
+// Pràctiques que no són d'un programa (pàgina de la SA, no de codi/)
+const paginaDoc = (sa, fitxer, titol) => ({
+  link: { url: `${WEB_BASE}/${sa}/${fitxer}.html`, title: titol }
+});
+const SA7 = { sa: 'sa7', topicName: 'SA7 · Robòtica mòbil', gradeCategory: T3 };
+const SA8 = { sa: 'sa8', topicName: 'SA8 · IoT i IA', gradeCategory: T3 };
+const SA9 = { sa: 'sa9', topicName: 'SA9 · Projecte final', gradeCategory: T3 };
+const descForm = (n, que) => `Respostes de la Pràctica ${n} (${que}). Les preguntes són les mateixes que els ✍️ de la pàgina de la pràctica.`;
+const descTasca = (n) => `Fes la Pràctica ${n} seguint els passos de la pàgina (enllaç a sota) i envia aquest formulari en acabar-la. Compta per al quadern tècnic (25 %).`;
+const QT = 'Pregunta del quadern tècnic.';
 const SA6 = {
   sa: 'sa6',
   topicName: 'SA6 · Sistemes de control',
@@ -488,6 +499,236 @@ export const PRACTIQUES = {
         'He enviat els formularis de les Pràctiques 1, 2 i 3',
         'Tinc el full del quadern de cada sessió omplert',
         'He repassat la targeta de MicroPython per a la prova T2'
+      ])
+    ]
+  },
+
+  // =========================================================================
+  'sa7-p1': {
+    ...SA7, titol: 'SA7 · Pràctica 1 · Moviment bàsic', maxPoints: 33,
+    descripcioForm: descForm(1, 'funcions per moure el rover'), descripcioTasca: descTasca(1),
+    materials: [pagina('sa7', '01-moviment-basic', 'Pràctica 1 · Moviment bàsic (passos)')],
+    items: [
+      p('PREDIU: què farà el rover amb gira_dreta()? Què fa cada roda?'),
+      s('Pins dels motors del teu rover: esquerre (ENA, IN1, IN2) i dret (ENB, IN3, IN4)'),
+      p('Per girar a la dreta, què ha de fer la roda esquerra respecte de la dreta?'),
+      p('La teva seqüència de ball: quines funcions i quins temps?'),
+      p('Per què tot el moviment passa per una sola funció, motors()?', QT)
+    ]
+  },
+  'sa7-p2': {
+    ...SA7, titol: 'SA7 · Pràctica 2 · Trajectòria en quadrat', maxPoints: 33,
+    descripcioForm: descForm(2, 'calibrar el gir de 90°'), descripcioTasca: descTasca(2),
+    materials: [pagina('sa7', '02-trajectoria-quadrat', 'Pràctica 2 · Trajectòria en quadrat (passos)')],
+    items: [
+      p('El temps teòric de gir de 90° i els teus càlculs (D, velocitat i L)'),
+      p('PREDIU: el rover farà el quadrat una vegada o sense parar? I si T_GIR_90 és massa gran, el quadrat sortirà obert o creuat?'),
+      p('El gir de 90° calibrat (ms) i la diferència amb el teòric. A què creus que es deu?'),
+      p('Quant s’allunya del punt inicial després d’una volta? Per què?'),
+      pOpt('⭐ Repte: triangle o «L». Com ho has fet?'),
+      p('Per què el control per temps és senzill però poc fiable?', QT)
+    ]
+  },
+  'sa7-p3': {
+    ...SA7, titol: 'SA7 · Pràctica 3 · Evita-obstacles', maxPoints: 33,
+    descripcioForm: descForm(3, 'percepció, decisió, acció'), descripcioTasca: descTasca(3),
+    materials: [pagina('sa7', '03-evita-obstacles', 'Pràctica 3 · Evita-obstacles (passos)')],
+    items: [
+      p('PREDIU: a quina distància deixarà d’avançar? Què farà quan detecti l’obstacle, i en quin ordre?'),
+      p('A quina distància gira el teu rover? Quin DIST_MIN has triat i per què?'),
+      p('Quina millora has fet a la maniobra i per què?'),
+      p('Què és el cicle percepció → decisió → acció? Explica’l amb el teu rover.', QT)
+    ]
+  },
+  'sa7-p4': {
+    ...SA7, titol: 'SA7 · Pràctica 4 · Seguidor de línia', maxPoints: 33,
+    descripcioForm: descForm(4, 'el producte: seguidor de línia i repte de pista'),
+    descripcioTasca: "Fes la Pràctica 4 (el producte) seguint els passos de la pàgina (enllaç a sota) i envia aquest formulari en acabar-la. S'avalua amb R1, R3 i R4. Després, fes l'Entrega final.",
+    materials: [pagina('sa7', '04-seguidor-linia', 'Pràctica 4 · Seguidor de línia (passos)')],
+    items: [
+      s('El valor «línia» i el valor «fons» de cada sensor, i el llindar que tries'),
+      p('PREDIU: què farà el rover si només el sensor esquerre veu la línia? I si cap dels dos no la veu?'),
+      s('Temps de volta: intent 1, intent 2 i intent 3'),
+      p('Quines millores has fet entre intents i quina ha funcionat millor?'),
+      p('Un error que has trobat i com l’has resolt', QT)
+    ]
+  },
+  'sa7-final': {
+    ...SA7, titol: 'SA7 · Entrega final',
+    descripcioForm: "Tancament de la SA7: autoavaluació i checklist. Fes-la quan hagis acabat la Pràctica 4 (el seguidor de línia).",
+    descripcioTasca: "Fes-la quan hagis acabat la Pràctica 4 i la demostració a la pista. No té nota pròpia: és la teva autoavaluació i el repàs final.",
+    materials: [{ link: { url: `${WEB_BASE}/sa7/index.html#entrega-final`, title: 'SA7 · Entrega final (portada de la SA)' } }],
+    items: [
+      t('Versió nucli', 'Per aprovar n’hi ha prou amb el rover movent-se amb funcions pròpies, evitant obstacles i fent almenys una volta a la pista seguint la línia, amb el registre d’iteracions.'),
+      autoaval([
+        'Programo el moviment del rover amb funcions (cinemàtica diferencial)',
+        'Calibro una trajectòria i entenc els límits del control per temps',
+        'Faig un comportament autònom (percepció → decisió → acció) i l’itero'
+      ]),
+      check('Checklist final: marca el que tens fet', [
+        'El rover és muntat i ha passat el test de fum',
+        'He adaptat el codi als pins del meu rover',
+        'El rover fa el quadrat amb el gir calibrat',
+        'El rover evita obstacles amb l’ultrasons',
+        'El rover segueix la línia i he cronometrat tres voltes',
+        'He enviat els formularis i les fotos de les Pràctiques 1, 2, 3 i 4',
+        'Tinc el full del quadern de cada sessió omplert'
+      ])
+    ]
+  },
+
+  // =========================================================================
+  'sa8-p1': {
+    ...SA8, titol: 'SA8 · Pràctica 1 · L’emissor', maxPoints: 33,
+    descripcioForm: descForm(1, 'telemetria: l’emissor'), descripcioTasca: descTasca(1),
+    materials: [pagina('sa8', '01-telemetria-emissor', 'Pràctica 1 · L’emissor (passos)')],
+    items: [
+      p('PREDIU: què veuràs a la pantalla de l’emissora? I si la receptora té un group diferent, què li arribarà?'),
+      s('Quines magnituds envies i cada quant?'),
+      p('Per què les dades s’envien etiquetades ("T:23;L:120") i no només el número?', QT)
+    ]
+  },
+  'sa8-p2': {
+    ...SA8, titol: 'SA8 · Pràctica 2 · El receptor', maxPoints: 33,
+    descripcioForm: descForm(2, 'telemetria: el receptor'), descripcioTasca: descTasca(2),
+    materials: [pagina('sa8', '02-telemetria-receptor', 'Pràctica 2 · El receptor (passos)')],
+    items: [
+      p('PREDIU: què mostrarà la pantalla si arriba "T:31;L:80"? I si arriba "hola"?'),
+      p('Què mostra el teu gràfic? Quan han canviat les dades i per què?'),
+      p('Quin LLINDAR_TEMP has triat i per què?'),
+      p('Quina meitat has escrit a full en blanc i què t’ha costat més?'),
+      p('Què és la telemetria? Posa’n un exemple real.', QT)
+    ]
+  },
+  'sa8-p3': {
+    ...SA8, titol: 'SA8 · Pràctica 3 · Auditoria d’un producte IoT', maxPoints: 33,
+    descripcioForm: descForm(3, 'l’informe d’auditoria'), descripcioTasca: descTasca(3),
+    materials: [paginaDoc('sa8', 'sa8-auditoria-iot', 'Pràctica 3 · Auditoria d’un producte IoT (passos)')],
+    items: [
+      s('El producte que audites i per a què serveix (1 línia)'),
+      p('Tres dades personals que recull el producte'),
+      p('Un risc tècnic: què pot fallar o ser interceptat, i on del diagrama'),
+      p('Un risc de privacitat: què pot saber algú que no hauria de saber-ho'),
+      p('Una recomanació al fabricant i una al comprador'),
+      p('Després de l’auditoria, què faràs diferent amb els aparells connectats de casa teva?', QT)
+    ]
+  },
+  'sa8-p4': {
+    ...SA8, titol: 'SA8 · Pràctica 4 · IA de gestos', maxPoints: 33,
+    descripcioForm: descForm(4, 'classificar amb regles'), descripcioTasca: descTasca(4),
+    materials: [pagina('sa8', '03-ia-gestos', 'Pràctica 4 · IA de gestos (passos)')],
+    items: [
+      p('PREDIU: amb la placa plana sobre la taula, quant valdran x, y i z? Quin gest dirà el programa?'),
+      p('Quins gestos classifica el programa, i quin llindar has canviat (abans i després)?'),
+      p('Per què importa l’ordre dels if al classificador?', QT)
+    ]
+  },
+  'sa8-p5': {
+    ...SA8, titol: 'SA8 · Pràctica 5 · Teachable Machine', maxPoints: 33,
+    descripcioForm: descForm(5, 'el producte: una IA que aprèn d’exemples'),
+    descripcioTasca: "Fes la Pràctica 5 (el producte) seguint els passos de la pàgina (enllaç a sota) i envia aquest formulari en acabar-la. S'avalua amb R1, R3 i R4. Després, fes l'Entrega final.",
+    materials: [paginaDoc('sa8', 'sa8-practica-teachable-machine', 'Pràctica 5 · Teachable Machine (passos)')],
+    items: [
+      p('El mode que tries i les teves classes'),
+      s('PREDIU: quants exemples creus que necessitaràs de cada classe?'),
+      p('Quan falla el teu model? Posa dos casos amb el percentatge de confiança.'),
+      p('Ha millorat? Què has après sobre quines dades calen?'),
+      p('Biaix: si l’has entrenat només amb les teves condicions, amb qui o quan fallaria?'),
+      p('Quina diferència hi ha entre el classificador per regles i aquest? Quan val més la pena cadascun?'),
+      p('Si el teu model classifiqués persones, què hauries de demanar abans?', QT)
+    ]
+  },
+  'sa8-final': {
+    ...SA8, titol: 'SA8 · Entrega final',
+    descripcioForm: "Tancament de la SA8: autoavaluació i checklist. Fes-la quan hagis acabat la Pràctica 5 (Teachable Machine).",
+    descripcioTasca: "Fes-la quan hagis acabat la Pràctica 5 i la demostració del classificador. No té nota pròpia: és la teva autoavaluació i el repàs final.",
+    materials: [{ link: { url: `${WEB_BASE}/sa8/index.html#entrega-final`, title: 'SA8 · Entrega final (portada de la SA)' } }],
+    items: [
+      t('Versió nucli', 'Per aprovar n’hi ha prou amb la telemetria funcionant entre dues plaques, l’informe d’auditoria amb diagrama, un risc i una recomanació, i el classificador entrenat amb la reflexió sobre el biaix.'),
+      autoaval([
+        'Envio i rebo dades de sensors per ràdio (telemetria)',
+        'Analitzo l’arquitectura i els riscos d’un producte IoT',
+        'Explico com classifica una IA i on pot fallar (biaix, dades)'
+      ]),
+      check('Checklist final: marca el que tens fet', [
+        'L’emissora envia dades etiquetades',
+        'La receptora les rep, avisa i les registra',
+        'He fet l’informe d’auditoria i el peritatge creuat',
+        'He ajustat les regles del classificador de gestos',
+        'He entrenat i provat un model amb Teachable Machine',
+        'He enviat els formularis i les fotos de les Pràctiques 1, 2, 3, 4 i 5',
+        'Tinc el full del quadern de cada sessió omplert'
+      ])
+    ]
+  },
+
+  // =========================================================================
+  'sa9-p1': {
+    ...SA9, titol: 'SA9 · Pràctica 1 · Idear', maxPoints: 33,
+    descripcioForm: descForm(1, 'idear: repte, requisits, disseny i fites'), descripcioTasca: descTasca(1),
+    materials: [paginaDoc('sa9', 'sa9-practica-1-idear', 'Pràctica 1 · Idear (passos)')],
+    items: [
+      p('El repte que tries i el problema real que resol'),
+      p('Els teus 3 requisits mínims'),
+      p('Els sensors (entrada), els actuadors (sortida) i el tipus de control'),
+      p('Les teves fites: què tindràs fet al final de la S2, de la S3 i de la S4'),
+      p('De les quatre feines, quina et costarà més i com evitaràs oblidar-la?', QT)
+    ]
+  },
+  'sa9-p2': {
+    ...SA9, titol: 'SA9 · Pràctica 2 · Prototipar', maxPoints: 33,
+    descripcioForm: descForm(2, 'el prototip mínim'), descripcioTasca: descTasca(2),
+    materials: [paginaDoc('sa9', 'sa9-practica-2-prototipar', 'Pràctica 2 · Prototipar (passos)')],
+    items: [
+      p('Quins mòduls (funcions) té el teu codi i què fa cadascun?'),
+      p('Quin mòdul ja funciona i quin encara no? Què hi falla?'),
+      p('Has arribat a la fita de la S2? Si no, què has replanificat?'),
+      p('Un error que has trobat i com l’has resolt', QT)
+    ]
+  },
+  'sa9-p3': {
+    ...SA9, titol: 'SA9 · Pràctica 3 · Provar', maxPoints: 33,
+    descripcioForm: descForm(3, 'proves, iteració i revisió creuada'), descripcioTasca: descTasca(3),
+    materials: [paginaDoc('sa9', 'sa9-practica-3-provar', 'Pràctica 3 · Provar (passos)')],
+    items: [
+      p('Versió 1: quins requisits es compleixen i què fallava?'),
+      p('Versió 2: què has canviat i quin ha estat el resultat?'),
+      p('La millora i el dubte que has donat al company'),
+      p('Què has après de la primera iteració?', QT)
+    ]
+  },
+  'sa9-p4': {
+    ...SA9, titol: 'SA9 · Pràctica 4 · Comunicar', maxPoints: 33,
+    descripcioForm: descForm(4, 'el producte: dossier, defensa i retrospectiva'),
+    descripcioTasca: "Fes la Pràctica 4 (el producte del curs) seguint els passos de la pàgina (enllaç a sota) i envia aquest formulari en acabar-la. S'avalua amb R1-R5. Després, fes l'Entrega final.",
+    materials: [paginaDoc('sa9', 'sa9-practica-4-comunicar', 'Pràctica 4 · Comunicar (passos)')],
+    items: [
+      p('L’ordre de la teva defensa, amb una frase per a cada part'),
+      p('Una alternativa que vas descartar i per què'),
+      p('L’impacte del teu sistema: una reflexió d’ètica o de sostenibilitat'),
+      p('Retrospectiva: què t’emportes d’aquest curs de robòtica?', QT)
+    ]
+  },
+  'sa9-final': {
+    ...SA9, titol: 'SA9 · Entrega final',
+    descripcioForm: "Tancament de la SA9 i del curs: autoavaluació i checklist. Fes-la quan hagis acabat la Pràctica 4 (la defensa).",
+    descripcioTasca: "Fes-la quan hagis acabat la Pràctica 4 i la defensa del projecte. No té nota pròpia: és la teva autoavaluació i el repàs final.",
+    materials: [{ link: { url: `${WEB_BASE}/sa9/index.html#entrega-final`, title: 'SA9 · Entrega final (portada de la SA)' } }],
+    items: [
+      t('Versió nucli', 'Per aprovar n’hi ha prou amb els requisits mínims complerts i demostrables en directe, amb el dossier a les seccions essencials.'),
+      autoaval([
+        'El meu sistema compleix els requisits mínims',
+        'He treballat amb planificació àgil i fites per sessió',
+        'He iterat (provar → millorar) i ho he documentat',
+        'He ajudat i he fet una revisió creuada útil (una millora i un dubte)'
+      ]),
+      check('Checklist final: marca el que tens fet', [
+        'Sistema funcional',
+        'Dossier tècnic complet',
+        'Codi comentat',
+        'Defensa oral individual feta',
+        'Revisió creuada del codi d’un company',
+        'He enviat els formularis i les fotos de les Pràctiques 1, 2, 3 i 4'
       ])
     ]
   },

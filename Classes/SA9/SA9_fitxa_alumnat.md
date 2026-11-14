@@ -35,11 +35,11 @@
 
 ## La meva fitxa · al Google Classroom
 
-Aquesta fitxa es respon **en línia**, a la tasca de Google Classroom (**una resposta per alumne/a**, val **10 punts**). **No cal respondre-la d'entrada**: cada apartat porta el seu **enunciat dins de la tasca**, i l'**itinerari de la portada de la SA** et diu què toca a cada sessió. Obre-la quan comencis i ves-la responent a mesura que el projecte avança:
+Les preguntes es responen a Classroom, **un formulari per pràctica**: l'enllaç és a l'últim pas de cada pràctica («📤 Respon i envia»), al costat de la tasca **Foto** on penges la foto de la pràctica. La [portada de la SA](README.md) té la ruta completa.
 
-> 👉 **[Obre la tasca: SA9 · Fitxa base (Google Classroom)](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODcwNTE3OTM1Nzkw/details)**
+> 👉 Comença per la **[Pràctica 1 · Idear](SA9_practica_1_idear.md)**.
 
-Si la tasca encara no t'apareix al Classroom, és que la SA encara no ha començat. En aquesta pàgina hi tens els **objectius i l'avaluació** (a dalt) i la rutina **DEPURA** (a sota).
+En aquesta pàgina hi tens els **objectius i l'avaluació** (a dalt) i la rutina **DEPURA** (a sota).
 
 <!-- web:only-github -->
 

@@ -1,20 +1,99 @@
 # Pràctica 1 · Telemetria, l'emissor: mesurar aquí, enviar allà
 
-**Quan es fa:** Sessió 1 (modelatge) · **Fitxer:** `01_telemetria_emissor.py` · **Muntatge:** [connexions i entorn](../SA8_connexions.md)
+<div class="cap-practica" markdown="1">
 
-> ✍️ **Kata primer!** No llegeixis encara el codi: obre el [kata d'aquesta pràctica](../SA8_katas.md) i tens **10 minuts** per escriure el teu bloc (individual, apunts permesos). Després torna aquí i **compara**.
+❓ **La pregunta:** Com envia dades un robot sense cap cable?
 
-## 🎯 Per què fem aquesta pràctica
+🎯 **Avui aconseguiràs:** que una micro:bit mesuri la temperatura i la llum i les enviï per ràdio, etiquetades, cada 2 segons.
 
-A la SA5 vas fer servir la ràdio de la micro:bit per enviar **missatges** («HOLA», un cor). Aquí la ràdio puja de nivell: envia **dades de sensors**. Mesurar en un lloc i transmetre-ho a un altre té nom — **telemetria** — i és la base de tot l'IoT: l'estació meteorològica del terrat, la polsera esportiva, el rover a Mart… i el **teu rover del trimestre**, que enviarà dades a la base.
+⏱️ La primera part de la sessió (després, la Pràctica 2)
 
-La telemetria sempre són **dues meitats**: una placa que **mesura i envia** (aquesta) i una que **rep i registra** (la [receptora](02_telemetria_receptor.py)). Cada meitat té el seu programa; aquí escrivim l'emissor. La decisió important del dia: les dades no s'envien «nues», s'envien **etiquetades** (`"T:23"`), perquè qui les rep sàpiga *què* està rebent.
+📦 Dues micro:bit amb el cable USB (avui fas servir la primera)
 
-## 🔮 Abans d'executar: prediu
+</div>
 
-Mira el codi complet (a baix de tot, plegat) **sense carregar-lo**. Què veuràs a la pantalla de l'emissora? Cada quant enviarà? I la pregunta clau: si la receptora té un `group` **diferent**, què li arribarà? Escriu la predicció a l'Activitat 1 de la [fitxa](../SA8_fitxa_alumnat.md) i després comprova-la.
+## 🚀 Pas a pas
 
-## 🧠 El codi, per blocs
+### Pas 1 · Tria el teu canal
+
+La ràdio de la micro:bit funciona per **canals** (`group`). Fes servir el **teu número de llista**: així no interferiràs els companys. La ràdio et sona llunyana? Repassa-la en 10' amb la targeta **[Repàs exprés de la ràdio](../../00_General/00_Repas_expres_Radio.md)**.
+
+![Telemetria: una placa mesura dades en un lloc i les transmet sense fils a una altra](../img/sa8-telemetria.svg)
+
+✅ **Comprova:** saps el teu número de `group` i és diferent del dels companys de taula.
+
+### Pas 2 · Endevina abans de provar
+
+Desplega el codi complet del pas 3 i mira la línia del `radio.send(...)`.
+
+✍️ **Apunta-ho:** PREDIU: què veuràs a la pantalla de l'emissora? I si la receptora té un `group` diferent, què li arribarà?
+
+### Pas 3 · Carrega el codi
+
+Prem **Copia**, enganxa'l a **[python.microbit.org](https://python.microbit.org)** i canvia el `group=10` pel teu número. Després, **Send to micro:bit** a la primera placa.
+
+<!-- codi-complet -->
+
+✅ **Comprova:** a la pantalla apareix una fletxa cada 2 segons: l'emissora és viva i enviant.
+
+✍️ **Apunta-ho:** quines magnituds envies i cada quant?
+
+### Pas 4 · Fes-la teva
+
+Canvia el ritme (`sleep`) o afegeix una tercera magnitud amb la seva etiqueta (per exemple, `"I:"` amb la inclinació `accelerometer.get_x()`).
+
+✍️ **Apunta-ho:** per què les dades s'envien **etiquetades** (`"T:23;L:120"`) i no només el número?
+
+### Pas 5 · Respon i envia
+
+📤 [Obre la tasca «SA8 · Pràctica 1» a Classroom i envia el formulari](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODk5NDU3OTEwMTA5/details)
+
+📷 [Penja la foto de la teva pràctica a la tasca «Foto · SA8 · Pràctica 1»](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODk5NDU3NjY1NzIy/details)
+
+Hi trobaràs les mateixes preguntes ✍️ que has anat apuntant. Envia'l ara i continua amb la **[Pràctica 2 · El receptor](02_telemetria_receptor_EXPLICACIO.md)**: sense receptora, ningú no escolta l'emissora.
+
+⭐ **Si acabes abans:** compara-ho amb l'[exemple resolt](../SA8_exemple_resolt.md) (el sensor de moviment sense fils). Més reptes a **[Reptes de la SA8](../../../Reptes/Reptes_SA8.md)**; quan el docent te'l validi, pinta l'estrella al [tauler de reptes](../../00_General/00_Tauler_reptes.md).
+
+<details markdown="1">
+<summary>🧗 Si t'encalles</summary>
+
+| Símptoma | Causa probable |
+|---|---|
+| La receptora no rep mai res | `group` **diferent** a cada placa: el mateix número a les dues. |
+| Error en executar `radio.send(...)` | Envies un **número**: converteix-lo a text amb `str(...)`. O falta `radio.on()` abans. |
+| Les dades arriben barrejades | Enviades **sense etiqueta**: posa `"T:"`, `"L:"`… i un separador (`;`). |
+| Tothom rep les dades de tothom | Tota l'aula amb el mateix `group`: cadascú el seu número. |
+
+**L'esquelet.** Si no et surt ni la primera dada, parteix d'aquest esquelet: la ràdio i el bucle ja hi són; tu omples els `# TODO:`.
+
+```python
+# SA8 - emissor de telemetria (esquelet per comencar)
+from microbit import *
+import radio
+
+GROUP = 10        # el teu numero de llista
+PERIODE = 2000    # ms entre enviaments
+
+radio.on()
+radio.config(group=GROUP)
+
+while True:
+    # TODO 1: mesura el sensor. Ex.: t = temperature()
+    valor = 0
+    # TODO 2: envia la dada ETIQUETADA. Ex.: radio.send("T:" + str(valor))
+    pass
+    display.show(Image.ARROW_N)
+    sleep(PERIODE)
+```
+
+</details>
+
+<details markdown="1">
+<summary>🧠 Vols saber per què funciona?</summary>
+
+### Per què fem aquesta pràctica
+
+A la SA5 vas enviar **missatges** per ràdio. Aquí la ràdio envia **dades de sensors**: mesurar en un lloc i transmetre-ho a un altre és la **telemetria**, la base de tot l'IoT. La telemetria sempre són **dues meitats**: una placa que mesura i envia (aquesta) i una que rep i registra (la Pràctica 2).
 
 ### Bloc 1 — Engegar la ràdio i sintonitzar el canal
 
@@ -23,95 +102,20 @@ radio.on()
 radio.config(group=10)   # emissor i receptor han de compartir group
 ```
 
-Les dues línies que preparen la ràdio (les de la targeta de repàs de la SA5): primer **engegar-la** (`radio.on()`, sempre abans de res) i després **triar el canal**. El `group` és com sintonitzar una emissora: emissor i receptor només es «senten» si tenen **exactament el mateix número**. I al revés: si cada alumne/a de l'aula tria un `group` **diferent** (el número de la taula, per exemple), ningú no interfereix ningú.
+El `group` és com sintonitzar una emissora: només es «senten» les plaques amb **el mateix número**.
 
-### Bloc 2 — Mesurar: els sensors de la placa
-
-```python
-    t = temperature()                 # graus C aprox.
-    llum = display.read_light_level()  # 0..255
-```
-
-Dues magnituds amb sensors **integrats** a la micro:bit: la temperatura (aproximada, del xip) i la llum (la mateixa pantalla de LED fa de sensor, 0–255). Fixa't que cada mesura es guarda en una **variable**: la necessitem al pas següent per empaquetar-la.
-
-### Bloc 3 — Enviar la dada etiquetada
+### Bloc 2 — Mesurar i enviar la dada etiquetada
 
 ```python
-    # Enviem dues magnituds etiquetades, separades per ;
+    t = temperature()
+    llum = display.read_light_level()
     radio.send("T:" + str(t) + ";L:" + str(llum))
 ```
 
-La línia clau de la pràctica, amb dues idees dins:
+`radio.send()` només accepta **text**: per això `str(t)`. I l'**etiqueta** (`T:`, `L:`) amb el separador `;` és el que permetrà a la receptora separar les dades amb `split()`.
 
-- `radio.send()` només accepta **text**. El número `23` s'ha de convertir amb `str(t)` abans de concatenar-lo; si envies el número directament, error.
-- **L'etiqueta**: en lloc d'enviar `"23"` pelat, enviem `"T:23;L:120"` — cada valor amb la seva etiqueta (`T:` temperatura, `L:` llum) i separats per `;`. Sense etiquetes, la receptora rebria `"23120"`… i no sabria on acaba una dada i on comença l'altra. **Etiquetar les dades** és el que fa possible separar-les després amb `split()`.
+### On ho aplicaràs
 
-### Bloc 4 — Indicador i ritme
-
-```python
-    display.show(Image.ARROW_N)        # indicador d'enviament
-    sleep(2000)                        # cada 2 segons
-```
-
-La fletxa és un **indicador visual**: et diu que l'emissora és viva i enviant (molt útil per saber quina meitat falla quan res no arriba). El `sleep(2000)` fixa el **ritme**: una mesura cada 2 segons. Vols més resolució al gràfic de després? Abaixa'l. Vols estalviar bateria? Apuja'l.
-
-## ⚠️ Errors que veuràs segur
-
-| Símptoma | Causa probable |
-|---|---|
-| La receptora no rep mai res | `group` **diferent** a cada placa: el mateix número a `radio.config(group=...)` de totes dues. |
-| Error en executar `radio.send(...)` | Envies un **número**: converteix-lo a text amb `str(...)`. O falta `radio.on()` abans. |
-| Les dades arriben barrejades o inservibles | Enviades **sense etiqueta**: posa `"T:"`, `"L:"`… i un separador (`;`). |
-| Tothom rep les dades de tothom | Tota l'aula amb el mateix `group`: cadascú el seu número. |
-
-## 🧗 Si t'encalles: l'esquelet de l'emissor
-
-Si no et surt ni la primera dada, no et quedis en blanc: parteix d'aquest esquelet. El patró difícil ja està muntat (la ràdio engegada, el `group` configurat i el bucle); tu només omples els `# TODO:` — mesurar el sensor i enviar la dada etiquetada. Tal qual ja s'executa (la fletxa apareix cada 2 segons), però no envia res útil fins que omplis els TODO.
-
-<details markdown="1">
-<summary>Desplega l'esquelet (còpia'l a un sketch nou)</summary>
-
-```python
-# SA8 - emissor de telemetria (esquelet per comencar)
-#
-# El patro dificil ja esta muntat: la radio engegada, el group configurat
-# i el bucle while True:. Tu nomes has d'OMPLIR els # TODO: mesurar el
-# sensor i enviar la dada ETIQUETADA (per exemple "T:23") per radio.
-#
-# Recorda: la placa RECEPTORA ha de tenir EXACTAMENT el mateix group.
-
-from microbit import *
-import radio
-
-GROUP = 10        # emissor i receptor: MATEIX numero (canvia'l pel de la teva taula)
-PERIODE = 2000    # ms entre enviaments (com mes petit el numero, mes sovint envia)
-
-radio.on()                    # SEMPRE primer: engega la radio
-radio.config(group=GROUP)     # tria el "canal" comu amb la receptora
-
-while True:
-    # TODO 1: mesura el sensor i guarda el valor en una variable.
-    #         Ex.: t = temperature()          -> graus C aprox.
-    #         Ex.: llum = display.read_light_level()   -> 0..255
-    valor = 0     # <-- substitueix aquest 0 per la teva mesura real
-
-    # TODO 2: envia la dada ETIQUETADA per radio (una etiqueta + el valor com a TEXT).
-    #         Ex.: radio.send("T:" + str(valor))
-    #         Pista: radio.send() nomes accepta TEXT -> converteix el numero amb str(...)
-    #         Pista: l'etiqueta ("T:", "L:", ...) permet a la receptora saber QUE rep.
-    pass          # <-- esborra aquest pass quan hi posis el teu radio.send(...)
-
-    display.show(Image.ARROW_N)   # indicador visual d'enviament (ja fet, no cal tocar-ho)
-    sleep(PERIODE)                # espera abans del proxim enviament (ja fet)
-```
+- **Cap al rover:** la micro:bit del **rover del trimestre** és aquest programa amb altres sensors: mesura a bord i envia a la base.
 
 </details>
-
-## 🔗 On ho aplicaràs
-
-- **Ara mateix:** aquesta és la meitat que **parla**; sense l'altra no veus res. Carrega la [receptora](02_telemetria_receptor.py) a la segona placa (mateix `group`!) i tanca el circuit.
-- **Repte de la S1:** tria les **teves** magnituds i el teu ritme; i si vas fort, que la receptora doni una **alerta per llindar**.
-- **Després del primer intent:** compara el teu raonament amb l'[exemple resolt](../SA8_exemple_resolt.md) (el sensor de moviment sense fils), el **bessó comentat** d'aquesta parella de pràctiques — mateix esquema emissor/receptor, una altra magnitud.
-- **Cap al rover:** la micro:bit del **rover del trimestre** és exactament aquest programa amb altres sensors — mesura a bord i envia a la base.
-
-> ⭐ **Has acabat abans?** Tria un repte a **[Reptes de la SA8](../../../Reptes/Reptes_SA8.md)** i, quan el docent te'l validi, pinta l'estrella al [tauler de reptes](../../00_General/00_Tauler_reptes.md).

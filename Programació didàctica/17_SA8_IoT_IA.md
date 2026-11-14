@@ -45,7 +45,7 @@
 Sistema connectat que recull i comunica dades (telemetria) o classifica un gest/patró amb IA senzilla, amb una reflexió escrita sobre ètica i privacitat.
 
 ## Avaluació
-- Instruments: producte + quadern (dades + reflexió ètica) + **peritatge creuat** de l'auditoria i **revisió creuada de codi** (evidència del CA5.3 → R5).
+- Instruments: producte + quadern (dades + reflexió ètica) + **peritatge creuat** de l'auditoria i **revisió creuada de codi** (evidència del CA5.3 → R5). El quadern tècnic són els **formularis de pràctica** de Classroom (Pràctiques 1-5, 33 punts cadascun), cadascun amb una pregunta de reflexió, més el **full imprès** de cada sessió. Cada pràctica té també una tasca **Foto** (sense nota) amb la foto de la pràctica funcionant. Tancament amb una **Entrega final** sense nota (autoavaluació + checklist).
 - Rúbriques: **R1**, **R3**, **R4**.
 
 ## Atenció a la diversitat

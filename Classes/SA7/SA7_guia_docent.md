@@ -5,6 +5,8 @@
 
 > 🧭 **Com s'usa aquesta guia.** **Abans de la SA:** objectius, material i codi de suport (la logística, al checklist docent). **A cada sessió:** la secció «SESSIÓ n» corresponent, amb el «Guió de modelatge» i els «Errors freqüents» a mà. **Durant tota la SA:** diversitat (DUA), cooperació entre iguals i pensament computacional. **En avaluar:** «Avaluació formativa (instruments)». **Per contextualitzar:** context real i ODS.
 
+> 🚩 **Format de passos (14-11-2026):** l'alumnat segueix la **ruta de pràctiques de la [portada](README.md)** al seu ritme: ⓪ muntatge del rover (Sessió 0, al dossier), ① moviment bàsic (S1), ② quadrat (S2), ③ evita-obstacles (S3) i ④ seguidor de línia + repte de pista (el producte, S4). Cada pràctica acaba enviant el seu formulari i la foto de la pràctica (tasques «Foto» de Classroom). Tu fas una **arrencada de 5-10'** amb la pràctica de la fita del dia (el guió de modelatge de cada sessió) i després circules. El **quadern imprès** es manté: el full de cada sessió s'omple en acabar.
+
 ## Objectius de la SA
 1. Programar el moviment d'un robot mòbil (endavant, gir, aturada) amb **control diferencial**.
 2. Dissenyar i programar **trajectòries** (quadrat, recorregut definit).
@@ -93,7 +95,7 @@ La **Imagina 3dBot** és Arduino-compatible, però **els pins dels motors depene
 - **Modelatge (25'):** `01_moviment_basic.ino`. Ajust dels pins; funcions de moviment; per què girar = rodes a velocitats/sentits diferents.
 - **Pràctica guiada (35'):** ajusten els pins, proven endavant/enrere/girs.
 - **Repte (40'):** seqüència de moviments (p. ex. "balla"); **+ repte:** ajustar velocitats per anar recte (compensar desviació).
-- **Tancament (10'):** quadern (taula de funcions i efecte).
+- **Tancament (10'):** formulari i foto de la Pràctica 1 i full del quadern imprès (taula de funcions i efecte).
 
 > ⏱️ **Marge:** el temps efectiu real és ~100' (arrencada + recollida), no 120'. Si vas just, retalla primer: **+ repte: ajustar velocitats per anar recte**.
 
@@ -106,7 +108,7 @@ La **Imagina 3dBot** és Arduino-compatible, però **els pins dels motors depene
 - **Modelatge (25'):** `02_trajectoria_quadrat.ino`. Trajectòria = seqüència de moviments + temps; **calibratge** del temps de gir de 90°.
 - **Pràctica guiada (35'):** recorren un quadrat; mesuren l'error i ajusten el temps de gir.
 - **Repte (40'):** recorregut amb forma definida (triangle, "L"); **+ repte:** tornar al punt de sortida.
-- **Tancament (10'):** quadern (temps de gir calibrat).
+- **Tancament (10'):** formulari i foto de la Pràctica 2 i full del quadern imprès (temps de gir calibrat).
 
 > ⏱️ **Marge:** el temps efectiu real és ~100' (arrencada + recollida), no 120'. Si vas just, retalla primer: **+ repte: tornar al punt de sortida**.
 
@@ -126,7 +128,7 @@ La **Imagina 3dBot** és Arduino-compatible, però **els pins dels motors depene
 - **Modelatge (25'):** `03_evita_obstacles.ino`. Bucle percepció→decisió→acció amb ultrasons; estratègia (si a prop → girar).
 - **Pràctica guiada (35'):** proven el robot en un recorregut amb obstacles.
 - **Repte (40'):** millorar l'estratègia (girar a un costat aleatori, retrocedir abans de girar); **+ repte:** combinar amb la distància (com més a prop, gir més tancat).
-- **Tancament (10'):** quadern (diagrama de la decisió).
+- **Tancament (10'):** formulari i foto de la Pràctica 3 i full del quadern imprès (diagrama de la decisió).
 
 > ⏱️ **Marge:** el temps efectiu real és ~100' (arrencada + recollida), no 120'. Si vas just, retalla primer: **+ repte: combinar amb la distància (gir més tancat)**.
 
@@ -153,7 +155,7 @@ La **Imagina 3dBot** és Arduino-compatible, però **els pins dels motors depene
 |---|---|---|---|
 | Demostració a la pista | Comportament autònom (trajectòria/línia/obstacles) | CA4.1 | R3 |
 | Codi del robot | Funcions de moviment, lògica de comportament | CA1.1, CA3.1 | R1, R3 |
-| Quadern (proves i iteracions) | Calibratge, mesura d'errors i millores documentades | CA4.1 | R4 |
+| Quadern tècnic (25 %) = **formularis de pràctica** (P1-P4, 33 punts cadascun a Classroom) + **full imprès** de cada sessió | Calibratge, mesura d'errors i millores documentades | CA4.1 | R4 |
 | Observació del procés | Ús segur del robot a la pista | CA4.1 | R4 |
 | Ajuda entre iguals i **revisió creuada** de codi | Cooperació sense producte compartit: línia d'ajuda del quadern + una millora concreta i un dubte al company | CA5.3 | **R5** |
 
@@ -173,7 +175,7 @@ La **Imagina 3dBot** és Arduino-compatible, però **els pins dels motors depene
 
 > Frases i preguntes clau per al **Modelatge** de cada sessió (què mirar, què preguntar abans d'executar, error a anticipar).
 
-> ✍️ **Katas:** en acabar el modelatge de cada sessió amb pràctica de codi, projecta el kata del sketch del dia ([SA7_katas.md](SA7_katas.md)): 10' d'escriptura individual **abans** de repartir/obrir el sketch. **Un sol kata per sessió**; el dia del mini-check (**S4** en aquesta SA) el mini-check el substitueix, i el kata `04_seguidor_linia` queda com a **repàs autònom** (marcat amb 🔁 al fitxer): recomana'l com a deures abans de tancar la SA. En aquest tram, projecta l'enunciat **abans** de modelar el bloc: primer escriuen, després el modelatge tanca. Per a la posada en comú (i com a guió del modelatge), tens la solució comentada de cada kata a [SA7_katas_solucions.md](SA7_katas_solucions.md).
+> ✍️ **Katas (arxivats el 14-11-2026):** ja no formen part de la ruta de l'alumnat. Els enunciats i les solucions són a `docs/arxiu/SA7_katas/`, com a **material d'ampliació per a alumnat avançat**: un kata de 10' per sketch, per escriure el bloc central abans d'obrir el codi.
 
 - **S1 · `01_moviment_basic` (cinemàtica diferencial):** **AVÍS previ:** ajusta els **pins del model** abans de pujar res. Explica el gir amb les mans (dues rodes): *mateixa velocitat = recte; diferent = gir*. Demana predir què fa amb una roda més ràpida. *Error a anticipar:* no va recte per motors desiguals (cal calibrar).
 - **S2 · `02_trajectoria_quadrat`:** el gir **per temps** és imprecís (depèn de bateria i superfície). Demana **mesurar l'error** del gir de 90° i calibrar. *Error a anticipar:* esperar precisió del control per temps.

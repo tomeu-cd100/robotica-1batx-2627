@@ -6,6 +6,7 @@
 //   node crear_tasques_foto.mjs sa4                    -> simulació
 //   node crear_tasques_foto.mjs sa4 --aplica           -> crea les tasques en DRAFT
 //   node crear_tasques_foto.mjs sa4 --aplica --publica -> crea-les ja PUBLICADES
+//   node crear_tasques_foto.mjs sa4 --actualitza       -> reescriu la descripció de les que ja existeixen
 // Idempotent per títol: si la tasca ja existeix, no se'n crea cap altra.
 // Resultats a resultats_tasques_foto.json ({ clau: { taskUrl, state } }).
 import fs from 'fs';
@@ -25,10 +26,11 @@ export const titolFoto = (def) => PREFIX + def.titol;
 export const descripcioFoto = (def) =>
   `Fes una foto de la teva pràctica funcionant (${def.titol.split(' · ').slice(1).join(' · ')}) ` +
   'i penja-la aquí: «Afegeix o crea» → «Fitxer» (o fes-la amb la càmera del mòbil des de l’app de Classroom). ' +
-  'Que es vegi sencer el muntatge i el braç, ben enfocat. Després, prem «Entrega».';
+  'Que es vegi sencer el que has fet (el muntatge, el robot o el teu informe), ben enfocat. Després, prem «Entrega».';
 
 const [prefix, ...flags] = process.argv.slice(2);
-const APLICA = flags.includes('--aplica');
+const ACTUALITZA = flags.includes('--actualitza');
+const APLICA = flags.includes('--aplica') || ACTUALITZA;
 const PUBLICA = flags.includes('--publica');
 const claus = Object.keys(PRACTIQUES).filter(k => prefix && k.startsWith(prefix) && /-p\d+$/.test(k));
 if (!claus.length) {
@@ -52,8 +54,17 @@ for (const k of claus) {
   const def = PRACTIQUES[k];
   const titol = titolFoto(def);
   let tasca = await trobaTascaPerTitol(classroom, titol);
-  if (tasca) {
+  if (tasca && ACTUALITZA) {
+    await ambReintents(() => classroom.courses.courseWork.patch({
+      courseId: COURSE_ID, id: tasca.id, updateMask: 'description',
+      requestBody: { description: descripcioFoto(def) }
+    }), 'actualitzar la descripció');
+    console.log(`~ Descripció actualitzada: ${titol}`);
+  } else if (tasca) {
     console.log(`= Ja existeix: ${titol}`);
+  } else if (ACTUALITZA) {
+    console.log(`! No existeix (no es crea amb --actualitza): ${titol}`);
+    continue;
   } else {
     const tema = temes.find(t => t.name && t.name.toUpperCase().startsWith(def.sa.toUpperCase()));
     const cw = await ambReintents(() => classroom.courses.courseWork.create({

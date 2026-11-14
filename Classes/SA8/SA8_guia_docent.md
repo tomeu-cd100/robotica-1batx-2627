@@ -7,6 +7,8 @@
 
 > 🧭 **Com s'usa aquesta guia.** **Abans de la SA:** objectius, material i codi de suport (la logística, al checklist docent). **A cada sessió:** la secció «SESSIÓ n» corresponent, amb el «Guió de modelatge» i els «Errors freqüents» a mà. **Durant tota la SA:** diversitat (DUA), cooperació entre iguals i pensament computacional. **En avaluar:** «Avaluació formativa (instruments)». **Per contextualitzar:** context real i ODS.
 
+> 🚩 **Format de passos (14-11-2026):** l'alumnat segueix la **ruta de pràctiques de la [portada](README.md)** al seu ritme: ① emissor i ② receptor (S1), ③ auditoria IoT (S2), ④ IA de gestos i ⑤ Teachable Machine (el producte, S3). Cada pràctica acaba enviant el seu formulari i la foto de la pràctica (tasques «Foto» de Classroom). Tu fas una **arrencada de 5-10'** amb la pràctica de la fita del dia (el guió de modelatge de cada sessió) i després circules. El **quadern imprès** es manté: el full de cada sessió s'omple en acabar.
+
 ## Objectius de la SA
 1. Enviar i monitorar **dades de sensors** entre dispositius (telemetria).
 2. Comprendre el concepte d'**Internet de les coses** i les seves aplicacions/riscos.
@@ -64,7 +66,7 @@
 - **Modelatge (25'):** [`01_telemetria_emissor.py`](codi/01_telemetria_emissor.py) + [`02_telemetria_receptor.py`](codi/02_telemetria_receptor.py). Enviar dades amb `radio.send()`; rebre-les i **registrar-les pel port sèrie** (per fer-ne després un gràfic/full de càlcul).
 - **Pràctica guiada (35'):** cadascú prepara les **dues** plaques: una mesura temperatura/llum i les envia; l'altra les mostra i registra. *(Si les plaques no arriben per a tothom, aplica una de les dues vies del bloc «Si no hi ha dues micro:bit per alumne/a».)*
 - **Repte (40'):** enviar dues magnituds amb etiqueta (p. ex. `"T:23"`, `"L:120"`); **+ repte:** alerta quan se supera un llindar.
-- **Tancament (10'):** quadern (mostra de dades registrades).
+- **Tancament (10'):** formularis i fotos de les Pràctiques 1 i 2 i full del quadern imprès (mostra de dades registrades).
 
 > ⏱️ **Marge:** el temps efectiu real és ~100' (arrencada + recollida), no 120'. Si vas just, retalla primer: **el «+ repte» (alerta per llindar) del Repte**.
 
@@ -112,7 +114,7 @@
 |---|---|---|---|
 | Producte (telemetria o IA de gestos) | Integrar tecnologia emergent (IoT/IA) en un sistema | CA4.2 | R3, R1 |
 | Informe d'auditoria IoT ([`SA8_auditoria_iot.md`](SA8_auditoria_iot.md)) | Arquitectura, riscos de privacitat/seguretat, impacte ètic | CA4.2, CA5.3 | R4 |
-| Quadern (dades + reflexió ètica) | Registre de dades i valoració ètica (ODS) | CA4.2 | R4 |
+| Quadern tècnic (25 %) = **formularis de pràctica** (P1-P5, 33 punts cadascun a Classroom) + **full imprès** de cada sessió | Registre de dades i valoració ètica (ODS) | CA4.2 | R4 |
 | Peritatge creuat i revisió creuada de codi | Ajuda entre iguals i decisions de disseny responsable | CA5.3 | **R5** |
 
 *(CA4.2 = integrar tecnologies emergents (IoT/telemetria/IA) en un sistema de control; CA5.3 = valorar l'impacte ètic/social i treballar cooperativament. Vegeu [`Programació didàctica/06_Avaluacio_criteris_qualificacio.md`](../../Programació%20didàctica/06_Avaluacio_criteris_qualificacio.md). Comparteix R1, R3 i R4 **abans** de començar.)*
@@ -147,7 +149,7 @@
 
 > Frases i preguntes clau per al **Modelatge** de cada sessió (què mirar, què preguntar abans d'executar, error a anticipar).
 
-> ✍️ **Katas:** en acabar el modelatge de cada sessió amb pràctica de codi, projecta el kata del sketch del dia ([SA8_katas.md](SA8_katas.md)): 10' d'escriptura individual **abans** de repartir/obrir el sketch. **Un sol kata per sessió**; el dia del mini-check (**S3** en aquesta SA) el mini-check el substitueix, i el kata `03_ia_gestos` queda com a **repàs autònom** (marcat amb 🔁 al fitxer): recomana'l com a deures abans de tancar la SA. En aquest tram, projecta l'enunciat **abans** de modelar el bloc: primer escriuen, després el modelatge tanca. Per a la posada en comú (i com a guió del modelatge), tens la solució comentada de cada kata a [SA8_katas_solucions.md](SA8_katas_solucions.md).
+> ✍️ **Katas (arxivats el 14-11-2026):** ja no formen part de la ruta de l'alumnat. Els enunciats i les solucions són a `docs/arxiu/SA8_katas/`, com a **material d'ampliació per a alumnat avançat**: un kata de 10' per sketch, per escriure el bloc central abans d'obrir el codi.
 
 - **S1 · `01/02_telemetria` (emissor/receptor):** mostra el parell `radio.send()` / `radio.receive()` i com **registrar pel port sèrie** (per fer-ne després un gràfic). Recalca el **mateix `group`** a les dues plaques. *Error a anticipar:* dades barrejades per no etiquetar-les (`"T:23"`).
 - **S2 · IoT (auditoria, sense codi):** dibuixa l'arquitectura **dispositiu → xarxa → núvol → app** sobre un producte concret de les [targetes](SA8_auditoria_iot.md), etiquetant fletxes amb el protocol. Pregunta pels **riscos**: *"qui té aquestes dades? què passa si algú les intercepta?"*. *Error a anticipar:* riscos genèrics («et poden hackejar») en lloc d'ubicats al diagrama; i veure l'IoT com a "màgia" sense riscos.

@@ -48,7 +48,7 @@ Amb PRIMM l'alumnat sempre parteix de **codi donat**; el projecte final (SA9) de
 
 > ✍️ **El kata segueix els mateixos trams:** **SA2-SA3**, el kata és la **rèplica** del que s'ha modelat (fixar sintaxi); **SA4-SA6**, és una **variació** del que s'ha modelat (transferir el patró amb valors o peça diferents); **SA7-SA8**, el kata es fa **abans** que el docent modeli el bloc (enunciat de comportament: primer escriuen, després el modelatge tanca). En cada sessió hi ha **un sol kata** (el del sketch nuclear); el dia de mini-check, el mini-check el substitueix (mateix múscul: escriptura individual).
 >
-> 🗄️ **Des del 14-11-2026**, els katas de SA2-SA6 són arxivats a `docs/arxiu/` (material d'ampliació per a alumnat avançat): a la ruta de l'alumnat només hi són a SA7-SA8.
+> 🗄️ **Des del 14-11-2026**, els katas de totes les SA (SA2-SA8) són arxivats a `docs/arxiu/` (material d'ampliació per a alumnat avançat): ja no formen part de la ruta de l'alumnat.
 
 **El pseudocodi, tal com el demanem** (paraules pròpies, sense sintaxi; una acció per línia):
 

@@ -4,35 +4,59 @@ Novena i última situació d'aprenentatge (**10 h · 5 sessions**, 3r trimestre)
 
 ![Mètode de projecte: analitzar, dissenyar, construir, provar i millorar de manera iterativa](img/sa9-metode-projecte.svg)
 
+En acabar aquesta SA podràs: 1) **gestionar un projecte sencer** (idear, prototipar, provar i comunicar); 2) **integrar** electrònica, programació i control en un sistema propi; 3) **documentar-lo** i **defensar-lo**.
+
+> 👤 **El projecte és individual:** el teu repte, el teu dossier i la teva defensa. Si voleu ajuntar-vos per a un repte més gros, proposeu-ho al docent: al dossier hi ha de constar **qui ha fet què** i **cadascú defensa tot el sistema** sol.
+
+## 🧭 La teva ruta
+
+Cada fase del projecte és una pràctica. Fes-les **en ordre**: cada una acaba enviant el seu formulari de Classroom i la foto del projecte. Les 🚩 et diuen on hauries de ser al final de cada sessió.
+
+- ① [Pràctica 1 · Idear](SA9_practica_1_idear.md) — el repte, els requisits mínims, el disseny i les fites.
+
+🚩 **Final de la Sessió 1:** formulari de la ① enviat, el taulell àgil omplert i el full del 📓 quadern de la sessió.
+
+- ② [Pràctica 2 · Prototipar](SA9_practica_2_prototipar.md) — el prototip mínim i el primer codi, mòdul a mòdul.
+
+🚩 **Final de la Sessió 2:** formulari de la ② enviat i el full del 📓 quadern omplert.
+
+- ③ [Pràctica 3 · Provar](SA9_practica_3_provar.md) — proves contra els requisits, primera iteració i revisió creuada.
+
+🚩 **Final de la Sessió 3:** formulari de la ③ enviat i el full del 📓 quadern omplert.
+
+- ④ [Pràctica 4 · Comunicar](SA9_practica_4_comunicar.md) — el producte: dossier, defensa a la mostra i retrospectiva del curs.
+
+🚩 **Final de la Sessió 4:** formulari de la ④ enviat i **Entrega final** feta.
+
+🚩 **Sessió 5 · Prova pràctica T3:** individual, per torns (el robot a la pista i la micro:bit a la taula). Comença per la Part B (MicroPython): repassa la [targeta exprés](../00_General/00_Repas_expres_MicroPython.md). Els últims 15' es desmunta i es retorna l'electrònica als kits.
+
+## 🏁 Entrega final
+
+**Quan hagis acabat la ④:**
+
+1. 🎤 **Defensa oral individual (5' + preguntes)** amb demostració, a la mostra de la S4. S'avalua amb **totes** les rúbriques (R1-R5).
+2. 📤 Respon i envia l'[Entrega final de la SA9](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODk5NDU4ODg0ODM0/details): autoavaluació i checklist final.
+
+> ✅ **Versió nucli** (per aprovar n'hi ha prou amb): els **requisits mínims** complerts i demostrables en directe, amb el dossier a les seccions essencials.
+
 ## 📦 Què has d'entregar
 
-| Quan | Lliurable | On es lliura |
+| Quan | Què | On |
 |---|---|---|
-| S1 | [Sessió 1 · Idear (el meu disseny)](SA9_fitxa_alumnat.md#3-disseny) | [Tasca de Classroom (una per alumne/a)](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODcwNTE3OTM1Nzkw/details) |
-| S2 | [Sessió 2 · Prototipar (planificació)](SA9_fitxa_alumnat.md#4-planificacio) | Mateixa tasca de Classroom |
-| S3 | [Sessió 3 · Provar (proves i iteracions)](SA9_fitxa_alumnat.md#5-proves-i-iteracions) | Mateixa tasca de Classroom |
-| S4 | [Sessió 4 · Comunicar (defensa)](SA9_fitxa_alumnat.md#6-defensa-s4) | Mateixa tasca de Classroom |
+| S1 | Formulari i foto de la Pràctica 1 (Idear) | Tasques de Classroom (enllaços a l'últim pas de cada pràctica) |
+| S2 | Formulari i foto de la Pràctica 2 (Prototipar) | Les tasques de Classroom de la pràctica |
+| S3 | Formulari i foto de la Pràctica 3 (Provar) | Les tasques de Classroom de la pràctica |
+| S4 | Formulari i foto de la Pràctica 4 + **el sistema funcional**, [dossier tècnic](plantilles/Dossier_tecnic_PLANTILLA.md) i defensa + **Entrega final** | A la mostra i a Classroom. S'avalua amb **R1-R5** |
 | S5 | **Prova pràctica T3 (individual, per estacions)** | A l'aula, sessió sencera |
-| ⭐ | [Repte final integrador](plantilles/Banc_de_reptes.md) | El docent el valida com a part del producte del projecte, a la defensa de la S4 |
+| ⭐ | [Repte final integrador](plantilles/Banc_de_reptes.md) | El docent el valida com a part del producte, a la defensa de la S4 |
 | 📓 | Full del quadern tècnic de cada sessió | En paper, en acabar la sessió |
-| 🤖 | El rover al repte final, demostrat a la **mostra** de la S4 | Es tanca al dossier del rover: [dossier del rover](../00_General/00_Projecte_T3_Rover.md) |
+| 🤖 | El rover al repte final, demostrat a la **mostra** de la S4 | Es tanca al [dossier del rover](../00_General/00_Projecte_T3_Rover.md) |
 
-## Itinerari per sessions (per fases)
+## 📚 Per repassar a casa
 
-> El projecte segueix el **mètode de projecte** del curs ([diagrama del mètode](SA9_diagrama_flux.md) — mira'l per saber sempre quin és el següent pas). La teva feina és a la **[fitxa base](SA9_fitxa_alumnat.md)** amb les [plantilles](plantilles/). Les respostes de la fitxa es lliuren a la **[tasca de Classroom](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODcwNTE3OTM1Nzkw/details)** (una per alumne/a).
-
-> 👤 **El projecte és individual:** el teu repte, el teu dossier i la teva defensa. Si tu i un company voleu ajuntar-vos per a un repte més gros, proposeu-ho al docent: al dossier hi ha de constar **qui ha fet què** i **cadascú defensa tot el sistema** ell sol.
-
-1. **Sessió 1 · Idear** — tria el teu repte al [banc de reptes](plantilles/Banc_de_reptes.md) i planifica amb el [taulell àgil](plantilles/Planificacio_agile_PLANTILLA.md); omple el [disseny de la fitxa](SA9_fitxa_alumnat.md#3-disseny). Amb el repte triat i abans d'omplir el taulell, mira l'[exemple resolt (el «robot repartidor»)](SA9_exemple_resolt.md): com es gestiona un projecte, no què s'ha de copiar.
-2. **Sessió 2 · Prototipar** — munta el prototip mínim viable i el primer codi (pots partir de l'[esquelet de codi modular](plantilles/Codi_base_PLANTILLA/Codi_base_PLANTILLA.ino)); segueix la [planificació](SA9_fitxa_alumnat.md#4-planificacio).
-3. **Sessió 3 · Provar** — proves sistemàtiques i **primera iteració** ([proves i iteracions](SA9_fitxa_alumnat.md#5-proves-i-iteracions)) + **revisió creuada** del codi d'un company. Si ja tens el prototip llest, potser defenses aquí (el docent avança 1-2 defenses).
-4. **Sessió 4 · Comunicar i tancar el curs** — acaba el que quedi de la segona iteració, tanca el [dossier tècnic](plantilles/Dossier_tecnic_PLANTILLA.md) i fes la [defensa oral individual](SA9_fitxa_alumnat.md#6-defensa-s4) amb demostració (s'avalua amb **totes** les rúbriques R1-R5). És una **mostra**: hi haurà els tres robots del curs a la vista. Al final, la **retrospectiva de curs** (10'): l'**última entrada del quadern tècnic**, que el tanca com el teu portfolio de l'any. També hi ha el «Python flash» de ràdio, per preparar la Part B de la prova.
-5. **Sessió 5 · Prova pràctica T3** — prova **individual, per torns** (sessió sencera; el projecte ja s'ha tancat a la S4). Els **últims 15'** es desmunta i es retorna l'electrònica als kits, entre tots. Tothom comença per la **Part B (micro:bit, MicroPython)**: si el teu projecte ha estat en C++, prepara-la abans amb la targeta de [repàs exprés de MicroPython](../00_General/00_Repas_expres_MicroPython.md) (10-15').
-6. **Abans d'entregar** — repassa [el meu checklist](SA9_checklist_alumnat.md).
-
-### Si vols més
-
-- [Fitxa ampliada](SA9_fitxa_ampliada.md) — guió complet i rutines.
+- [Banc de reptes](plantilles/Banc_de_reptes.md) · [Taulell àgil](plantilles/Planificacio_agile_PLANTILLA.md) · [Dossier tècnic](plantilles/Dossier_tecnic_PLANTILLA.md)
+- [Exemple resolt (el robot repartidor)](SA9_exemple_resolt.md) · [Diagrama del mètode](SA9_diagrama_flux.md) · [Qüestionari de conceptes](SA9_questionari_conceptes.md)
+- [Fitxa base](SA9_fitxa_alumnat.md) · [Fitxa ampliada](SA9_fitxa_ampliada.md)
 
 <!-- web:only-github -->
 ## Contingut

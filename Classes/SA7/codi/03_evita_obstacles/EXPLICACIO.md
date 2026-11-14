@@ -1,35 +1,153 @@
 # Pràctica 3 · Evita-obstacles: percepció, decisió, acció
 
-**Quan es fa:** Sessió 3 (modelatge) · **Fitxer:** `03_evita_obstacles.ino` · **Circuit:** [esquema de connexions](../../SA7_esquemes_connexions.md) (ultrasons frontal: TRIG=12, ECHO=11)
+<div class="cap-practica" markdown="1">
 
-> ✍️ **Kata primer!** No llegeixis encara el codi: obre el [kata d'aquesta pràctica](../../SA7_katas.md) i tens **10 minuts** per escriure el teu bloc (individual, apunts permesos). Després torna aquí i **compara**.
+❓ **La pregunta:** Com decideix sol un robot per on ha de passar?
 
-## 🎯 Per què fem aquesta pràctica
+🎯 **Avui aconseguiràs:** el primer comportament **autònom** del rover: avança i, quan l'ultrasons veu un obstacle, recula i busca via lliure.
 
-Fins ara el robot executava un pla cec: tants mil·lisegons endavant, tants de gir. Avui **percep l'entorn i decideix sol**: avança i, si l'ultrasons detecta un obstacle a prop, recula i gira per buscar via lliure. És el primer comportament **autònom** del rover, i és **control en llaç tancat** (SA6): el sensor mana sobre l'acció, no el rellotge.
+⏱️ La sessió
 
-El patró que aprens aquí té nom i el repetiràs sempre més: el cicle **percepció → decisió → acció**. Cada volta de `loop()`, el robot mesura (percepció), mira el valor amb un `if` (decisió) i crida una funció de moviment (acció). Un cotxe autònom de debò fa exactament aquest cicle — milers de vegades per segon i amb IA a la decisió. Tens el cicle dibuixat al [diagrama de flux](../../SA7_diagrama_flux.md).
+📦 El teu rover amb l'ultrasons HC-SR04 al davant, un regle i unes quantes capses per fer obstacles
 
-## 🔮 Abans d'executar: prediu
+</div>
 
-Sense carregar el codi: a quina **distància** deixarà d'avançar? Què farà exactament quan detecti l'obstacle (en quin **ordre**)? I si no hi ha res al davant de la paret més propera, què retornarà `distancia()`? Apunta-ho a l'Activitat 3 de la [fitxa](../../SA7_fitxa_alumnat.md) i comprova-ho.
+## 🚀 Pas a pas
 
-## 🧠 El codi, per blocs
+### Pas 1 · Comprova l'ultrasons
 
-### Bloc 1 — La percepció: `distancia()` amb ultrasons
+L'ultrasons va al davant del rover: **TRIG al D12** i **ECHO al D11**, VCC a 5V i GND a GND. El rover avança, **percep**, **decideix** i **actua**, una vegada i una altra:
+
+![Diagrama de flux del robot reactiu: mesura la distància, compara-la amb el llindar i, segons el resultat, avança o fa la maniobra d'evasió, i torna a començar](../../img/sa7-flux.svg)
+
+✅ **Comprova:** l'ultrasons mira endavant, recte, i no toca cap cable ni la roda.
+
+### Pas 2 · Endevina abans de provar
+
+Desplega el codi complet del pas 3 i busca `DIST_MIN` i la branca de l'`if`.
+
+✍️ **Apunta-ho:** PREDIU: a quina distància deixarà d'avançar? Què farà quan detecti l'obstacle, i en quin ordre?
+
+### Pas 3 · Carrega el codi
+
+Prem **Copia** i enganxa'l a l'Arduino IDE. Canvia el bloc de pins i `motors()` pel **bloc del rover** de la [Pràctica 1](../01_moviment_basic/EXPLICACIO.md) (pas 4). `TRIG` i `ECHO` ja són 12 i 11. Prem **→ Puja**.
+
+<!-- codi-complet -->
+
+✅ **Comprova:** a terra, el rover avança i, davant d'una capsa, s'atura, recula i gira.
+
+### Pas 4 · Calibra el llindar
+
+Posa una capsa davant del rover i mesura amb el regle a quina distància reacciona. Si toca la capsa abans d'aturar-se, apuja `DIST_MIN`; si «té por» de tot, abaixa'l.
+
+✍️ **Apunta-ho:** a quina distància gira el teu rover? Quin `DIST_MIN` has triat i per què?
+
+### Pas 5 · Millora l'estratègia
+
+Fes un petit laberint amb capses i mira on s'encalla. Canvia la maniobra: recular més, girar més, o girar a un costat aleatori amb `random(2)`.
+
+✍️ **Apunta-ho:** quina millora has fet a la maniobra i per què?
+
+✍️ **Apunta-ho:** què és el cicle percepció → decisió → acció? Explica'l amb el teu rover.
+
+### Pas 6 · Respon i envia
+
+📤 [Obre la tasca «SA7 · Pràctica 3» a Classroom i envia el formulari](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODk5NDU4MTk1MDE0/details)
+
+📷 [Penja la foto de la teva pràctica a la tasca «Foto · SA7 · Pràctica 3»](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODk5NDU4NTI1MDY0/details)
+
+Hi trobaràs les mateixes preguntes ✍️ que has anat apuntant. Envia'l ara. A la sessió següent: **[Pràctica 4 · Seguidor de línia](../04_seguidor_linia/EXPLICACIO.md)**.
+
+⭐ **Si acabes abans:** com més a prop és l'obstacle, gir més tancat. Compara el teu raonament amb l'[exemple resolt](../../SA7_exemple_resolt.md) (el robot «prudent»). Més reptes a **[Reptes de la SA7](../../../../Reptes/Reptes_SA7.md)**; quan el docent te'l validi, pinta l'estrella al [tauler de reptes](../../../00_General/00_Tauler_reptes.md).
+
+<details markdown="1">
+<summary>🧗 Si t'encalles</summary>
+
+| Símptoma | Causa probable |
+|---|---|
+| Sempre avança (i xoca) o sempre està evitant | `TRIG` i `ECHO` intercanviats, o falta `pinMode(ECHO, INPUT)`: `distancia()` retorna sempre 400 o sempre 0. |
+| Es queda encallat en una cantonada | Estratègia massa simple per a aquell racó: allarga el gir o recula més. És el repte del pas 5, no un error. |
+| Reacciona tard i toca l'obstacle | `DIST_MIN` massa petit per a la velocitat que porta: apuja el llindar o abaixa `VEL`. |
+| No detecta la pota de la cadira | L'ultrasons vol superfícies que tornin l'eco: objectes prims o en angle el despisten. Prova amb una capsa. |
+
+**L'esquelet.** Si el cicle no et surt, parteix d'aquest esquelet: les funcions de moviment i `distancia()` ja estan fetes; tu omples els `// TODO:` del `loop()`. Té **dos llindars** i una zona intermèdia, com l'[exemple resolt](../../SA7_exemple_resolt.md). Recorda canviar-hi el bloc de pins pel del rover.
 
 ```cpp
+/*
+  SA7 - robot reactiu (BASTIDA / esquelet per comencar)
+  Les funcions de MOVIMENT i de PERCEPCIO (distancia()) ja estan fetes.
+  Tu nomes has d'OMPLIR el loop(): PERCEPCIO -> DECISIO -> ACCIO.
+*/
+
+// === PINS (canvia'ls pel bloc del rover de la Practica 1) ===
+const int ESQ_DIR = 4;
+const int ESQ_VEL = 5;
+const int DRET_DIR = 7;
+const int DRET_VEL = 6;
+
+const int TRIG = 12;
+const int ECHO = 11;
+
+const int VEL = 180;
+const int A_PROP  = 12;   // cm: per sota, obstacle a prop
+const int A_LLUNY = 25;   // cm: per sobre, via lliure
+
+void motors(int dirEsq, int velEsq, int dirDret, int velDret) {
+  digitalWrite(ESQ_DIR, dirEsq);
+  analogWrite(ESQ_VEL, velEsq);
+  digitalWrite(DRET_DIR, dirDret);
+  analogWrite(DRET_VEL, velDret);
+}
+void endavant()      { motors(HIGH, VEL, HIGH, VEL); }
+void enrere()        { motors(LOW,  VEL, LOW,  VEL); }
+void gira_dreta()    { motors(HIGH, VEL, LOW,  VEL); }
+void gira_esquerra() { motors(LOW,  VEL, HIGH, VEL); }
+void atura()         { motors(HIGH, 0, HIGH, 0); }
+
 float distancia() {
   digitalWrite(TRIG, LOW);  delayMicroseconds(2);
   digitalWrite(TRIG, HIGH); delayMicroseconds(10);
   digitalWrite(TRIG, LOW);
   long t = pulseIn(ECHO, HIGH, 30000);   // timeout 30 ms
-  if (t == 0) return 400;                // res detectat -> lluny
+  if (t == 0) return 400;                // res detectat -> molt lluny
   return t * 0.034 / 2.0;
+}
+
+void setup() {
+  pinMode(ESQ_DIR, OUTPUT);  pinMode(ESQ_VEL, OUTPUT);
+  pinMode(DRET_DIR, OUTPUT); pinMode(DRET_VEL, OUTPUT);
+  pinMode(TRIG, OUTPUT);     pinMode(ECHO, INPUT);
+  atura();
+}
+
+void loop() {
+  float d = distancia();          // 1) PERCEPCIO
+  if (d < A_PROP) {
+    // TODO: obstacle a prop. Que fa el robot?
+    atura();
+  } else if (d > A_LLUNY) {
+    // TODO: via lliure. Que fa el robot?
+    atura();
+  } else {
+    // TODO: zona intermedia. Que decideixes aqui?
+    atura();
+  }
+  delay(30);                      // ritme del cicle: curt
 }
 ```
 
-El mateix sensor que a la SA3/SA4: un pols per `TRIG`, i `pulseIn` cronometra el retorn de l'eco per `ECHO`. Dos detalls que aquí són vitals perquè el robot **es mou**: el **timeout de 30 ms** (sense ell, `pulseIn` esperaria fins a 1 segon abans de plegar — una eternitat amb el robot en marxa cap a la paret) i el `return 400` (cap eco = «molt lluny», així el robot continua avançant en lloc de fer coses rares amb un 0).
+</details>
+
+<details markdown="1">
+<summary>🧠 Vols saber per què funciona?</summary>
+
+### Per què fem aquesta pràctica
+
+Fins ara el robot executava un pla cec. Avui **percep l'entorn i decideix sol**. És **control en llaç tancat** (SA6): el sensor mana sobre l'acció, no el rellotge. El patró **percepció → decisió → acció** és el que fa, milers de vegades per segon, un cotxe autònom.
+
+### Bloc 1 — La percepció: `distancia()`
+
+El **timeout de 30 ms** de `pulseIn` és vital amb el robot en marxa (sense ell, esperaria fins a 1 s). I el `return 400` vol dir «res al davant = molt lluny».
 
 ### Bloc 2 — La decisió: un llindar amb nom
 
@@ -37,141 +155,28 @@ El mateix sensor que a la SA3/SA4: un pols per `TRIG`, i `pulseIn` cronometra el
 const int DIST_MIN = 15;            // cm: per sota, evita
 ```
 
-Tota l'«intel·ligència» del robot és aquesta frontera: per sota de 15 cm, obstacle; per sobre, via lliure. És un valor per **calibrar** amb un regle a la teva pista: massa petit i el robot xoca abans de reaccionar (porta inèrcia!); massa gran i «té por» de tot.
+Tota l'«intel·ligència» del robot és aquesta frontera, i s'ha de **calibrar** a la teva pista.
 
-### Bloc 3 — El cicle reactiu i la maniobra d'evasió
+### Bloc 3 — El cicle i la maniobra
 
 ```cpp
-void loop() {
-  float d = distancia();
-
   if (d < DIST_MIN) {
-    // Obstacle a prop: maniobra d'evasio
     atura();        delay(150);
     enrere();       delay(400);
     atura();        delay(150);
-    gira_dreta();   delay(450);   // gir per buscar via lliure
+    gira_dreta();   delay(450);
     atura();        delay(150);
   } else {
     endavant();
   }
   delay(30);
-}
 ```
 
-Llegeix-lo com el cicle: **percebo** (`distancia()`), **decideixo** (`if`), **actuo** (branca). La maniobra no és només girar: primer **recula** (per fer-se lloc) i després gira — si només girés, amb el nas enganxat a l'obstacle es quedaria encallat fregant-lo. I el `delay(30)` final és el **ritme del cicle**: curt a consciència, perquè mentre hi ha un `delay` en marxa el robot **no mesura** — va cec. Per això la branca `else` és només `endavant()` sense espera: engega els motors i torna de seguida a mesurar.
+Primer **recula** (per fer-se lloc) i després gira. El `delay(30)` final és curt a consciència: mentre hi ha un `delay`, el robot **no mesura**.
 
-## ⚠️ Errors que veuràs segur
+### On ho aplicaràs
 
-| Símptoma | Causa probable |
-|---|---|
-| Sempre avança (i xoca) o sempre està evitant | `TRIG` i `ECHO` intercanviats, o falta `pinMode(ECHO, INPUT)`: `distancia()` retorna sempre 400 o sempre 0. |
-| Es queda encallat en una cantonada, gira-avança-gira sense sortir-ne | Estratègia massa simple per a aquell racó: allarga el `delay` del gir o recula més. És el repte de la sessió, no un bug. |
-| Reacciona tard i toca l'obstacle abans d'aturar-se | `DIST_MIN` massa petit per a la velocitat que porta: apuja el llindar o abaixa `VEL`. |
-| No detecta la cadira / la pota de la taula | L'ultrasons vol superfícies que tornin l'eco: objectes prims o en angle el despisten. Prova amb una capsa. |
-
-## 🧗 Si t'encalles: l'esquelet
-
-Si el cicle no et surt, no et quedis en blanc: parteix d'aquest esquelet. Les funcions de moviment i `distancia()` ja estan fetes i provades; tu només omples els `// TODO:` del `loop()` amb la teva decisió (fixa't que té **dos llindars** i una zona intermèdia, com l'[exemple resolt](../../SA7_exemple_resolt.md)). Compila tal qual; el robot queda aturat fins que hi posis les accions.
-
-<details markdown="1">
-<summary>Desplega l'esquelet (còpia'l a un sketch nou)</summary>
-
-```cpp
-/*
-  SA7 - robot reactiu (BASTIDA / esquelet per comencar)
-
-  El patro dificil ja esta muntat: les funcions de MOVIMENT (control diferencial)
-  i la de PERCEPCIO amb ultrasons (distancia()) estan completes i provades.
-  Tu nomes has d'OMPLIR el loop(): el cicle PERCEPCIO -> DECISIO -> ACCIO.
-
-  A cada volta el robot mesura una vegada la distancia i, segons el valor,
-  ha de decidir que fa. Escriu la DECISIO i l'ACCIO dins de cada // TODO:
-  cridant les funcions de moviment que ja tens (endavant, enrere,
-  gira_dreta, gira_esquerra, atura).
-
-  Munta: motors (2 pins per motor: DIRECCIO + VELOCITAT PWM) i un
-  ultrasons frontal (TRIG i ECHO). AJUSTA els pins al teu maquinari.
-*/
-
-// === PINS (AJUSTAR segons el manual de la teva placa) ===
-const int ESQ_DIR = 4;    // direccio motor esquerre   <-- AJUSTAR
-const int ESQ_VEL = 5;    // velocitat (PWM) esquerre  <-- AJUSTAR
-const int DRET_DIR = 7;   // direccio motor dret       <-- AJUSTAR
-const int DRET_VEL = 6;   // velocitat (PWM) dret      <-- AJUSTAR
-
-const int TRIG = 12;      // ultrasons: TRIG surt      <-- AJUSTAR
-const int ECHO = 11;      // ultrasons: ECHO entra     <-- AJUSTAR
-
-const int VEL = 180;      // velocitat de marxa (0-255)
-
-// Llindars de decisio en cm. Els has de CALIBRAR amb un regle.
-// Consell: fes servir DOS valors (a prop / lluny) i deixa una zona
-// intermedia, per evitar que el robot oscil-li just al limit.
-const int A_PROP  = 12;   // cm: per sota d'aixo, hi ha un obstacle a prop
-const int A_LLUNY = 25;   // cm: per sobre d'aixo, via lliure
-
-// --- Funcions de MOVIMENT (ja donades, control diferencial) ---
-void motors(int dirEsq, int velEsq, int dirDret, int velDret) {
-  digitalWrite(ESQ_DIR, dirEsq);
-  analogWrite(ESQ_VEL, velEsq);
-  digitalWrite(DRET_DIR, dirDret);
-  analogWrite(DRET_VEL, velDret);
-}
-void endavant()      { motors(HIGH, VEL, HIGH, VEL); }   // dues rodes igual = recte
-void enrere()        { motors(LOW,  VEL, LOW,  VEL); }
-void gira_dreta()    { motors(HIGH, VEL, LOW,  VEL); }   // esq endavant, dret enrere
-void gira_esquerra() { motors(LOW,  VEL, HIGH, VEL); }
-void atura()         { analogWrite(ESQ_VEL, 0); analogWrite(DRET_VEL, 0); }
-
-// --- Funcio de PERCEPCIO (ja donada): distancia a l'obstacle, en cm ---
-float distancia() {
-  digitalWrite(TRIG, LOW);  delayMicroseconds(2);
-  digitalWrite(TRIG, HIGH); delayMicroseconds(10);
-  digitalWrite(TRIG, LOW);
-  long t = pulseIn(ECHO, HIGH, 30000);   // timeout 30 ms (no bloqueja per sempre)
-  if (t == 0) return 400;                // res detectat -> molt lluny
-  return t * 0.034 / 2.0;                // temps (us) -> cm (anada i tornada)
-}
-
-void setup() {
-  pinMode(ESQ_DIR, OUTPUT);  pinMode(ESQ_VEL, OUTPUT);
-  pinMode(DRET_DIR, OUTPUT); pinMode(DRET_VEL, OUTPUT);
-  pinMode(TRIG, OUTPUT);     pinMode(ECHO, INPUT);   // TRIG surt, ECHO entra
-  atura();                   // arrenca aturat, per seguretat
-}
-
-void loop() {
-  // 1) PERCEPCIO: mesura la distancia una vegada per cicle.
-  float d = distancia();
-
-  // 2) DECISIO + 3) ACCIO: decideix segons "d" i crida una funcio de moviment.
-  if (d < A_PROP) {
-    // TODO: hi ha un obstacle a prop. Que ha de fer el robot?
-    // (p. ex. atura(); enrere() una mica; despres gira_dreta() per buscar sortida)
-    atura();   // <-- accio placeholder: substitueix-la per la teva decisio
-  } else if (d > A_LLUNY) {
-    // TODO: via lliure. Que fa el robot quan no te res al davant?
-    atura();   // <-- accio placeholder: substitueix-la per la teva decisio
-  } else {
-    // TODO: zona intermedia (entre A_PROP i A_LLUNY). Que decideixes aqui?
-    atura();   // <-- accio placeholder: substitueix-la per la teva decisio
-  }
-
-  // Ritme del cicle: prou curt per reaccionar de pressa. No hi posis
-  // esperes llargues, o el robot quedaria "cec" mentre es mou.
-  delay(30);
-}
-```
+- **Pràctica 4:** el seguidor de línia és el mateix cicle amb sensors IR.
+- **Robot del trimestre:** el comportament autònom estrella del teu **rover** ([dossier](../../../00_General/00_Projecte_T3_Rover.md)).
 
 </details>
-
-## 🔗 On ho aplicaràs
-
-- **Repte de la S3:** millorar l'estratègia (retrocedir més, gir a un costat aleatori); **+ repte:** com més a prop, gir més tancat.
-- **Després del primer intent:** compara el teu raonament amb l'[exemple resolt](../../SA7_exemple_resolt.md) (el robot «prudent» que manté la distància) — mateix cicle, decisió diferent.
-- **Inici de la S4:** el mini-check individual és escriure un `loop()` reactiu com aquest amb les funcions donades.
-- **Sessió 4:** el [seguidor de línia](../04_seguidor_linia/04_seguidor_linia.ino) és el mateix cicle percepció → decisió → acció, amb sensors IR en lloc d'ultrasons.
-- **Robot del trimestre:** aquest és el comportament autònom estrella del teu **rover** ([dossier](../../../00_General/00_Projecte_T3_Rover.md)).
-
-> ⭐ **Has acabat abans?** Tria un repte a **[Reptes de la SA7](../../../../Reptes/Reptes_SA7.md)** i, quan el docent te'l validi, pinta l'estrella al [tauler de reptes](../../../00_General/00_Tauler_reptes.md).

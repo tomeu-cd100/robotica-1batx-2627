@@ -46,7 +46,7 @@ Robòtica mòbil; xassís i rodes; **cinemàtica diferencial**; algorismes de co
 Robot mòbil que completa un repte autònom (seguir línia o evitar obstacles / recorregut) amb codi modular i registre d'iteracions de millora.
 
 ## Avaluació
-- Instruments: demostració a la pista + quadern (proves i millores) + observació.
+- Instruments: demostració a la pista + quadern (proves i millores) + observació. El quadern tècnic són els **formularis de pràctica** de Classroom (Pràctiques 1-4, 33 punts cadascun), cadascun amb una pregunta de reflexió, més el **full imprès** de cada sessió. Cada pràctica té també una tasca **Foto** (sense nota) amb la foto de la pràctica funcionant. Tancament amb una **Entrega final** sense nota (autoavaluació + checklist).
 - Rúbriques: **R1**, **R3** (robot/control), **R4**.
 
 ## Atenció a la diversitat

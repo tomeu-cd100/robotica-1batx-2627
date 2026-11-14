@@ -4,30 +4,56 @@ Vuitena situació d'aprenentatge (**6 h · 3 sessions**, 3r trimestre). El siste
 
 ![Telemetria: una placa mesura dades en un lloc i les transmet sense fils a una altra](img/sa8-telemetria.svg)
 
+En acabar aquesta SA podràs: 1) enviar i rebre **dades de sensors** per ràdio (telemetria); 2) analitzar els **riscos** d'un producte IoT real; 3) entendre com **classifica** una IA, amb regles i amb exemples, i on falla.
+
+> 💻 **Com carregar el codi d'una pràctica:** dins de la pràctica, al pas «Carrega el codi», prem **Copia** i enganxa'l a **[python.microbit.org](https://python.microbit.org)**.
+
+## 🧭 La teva ruta
+
+Fes les pràctiques **en ordre i al teu ritme**. Cada pràctica acaba enviant el seu formulari de Classroom i la foto de la pràctica. Les 🚩 et diuen on hauries de ser al final de cada sessió.
+
+- ① [Pràctica 1 · L'emissor](codi/01_telemetria_emissor_EXPLICACIO.md) — una micro:bit mesura i envia dades etiquetades.
+- ② [Pràctica 2 · El receptor](codi/02_telemetria_receptor_EXPLICACIO.md) — l'altra micro:bit les rep, avisa i les registra.
+
+🚩 **Final de la Sessió 1:** formularis de la ① i la ② enviats i el full del 📓 quadern de la sessió omplert.
+
+- ③ [Pràctica 3 · Auditoria d'un producte IoT](SA8_auditoria_iot.md) — fas d'auditor/a de privacitat d'un producte real.
+
+🚩 **Final de la Sessió 2:** formulari de la ③ enviat, l'informe guardat i el full del 📓 quadern omplert.
+
+- ④ [Pràctica 4 · IA de gestos](codi/03_ia_gestos_EXPLICACIO.md) — classificar amb regles fetes a mà.
+- ⑤ [Pràctica 5 · Teachable Machine](SA8_practica_teachable_machine.md) — el producte: una IA que aprèn d'exemples, i on falla.
+
+🚩 **Final de la Sessió 3:** formularis de la ④ i la ⑤ enviats, **Entrega final** feta i el full del 📓 quadern omplert.
+
+> ⭐ **Ampliació:** l'[ESP32 per WiFi](codi/04_esp32_telemetria/EXPLICACIO.md), el pas cap a l'IoT real.
+
+## 🏁 Entrega final
+
+**Quan hagis acabat la ⑤:**
+
+1. 🎤 **Demostració d'1-2'**: el teu classificador funcionant i on falla, amb una decisió sobre les dades. S'avalua amb **R1**, **R3** i **R4**.
+2. 📤 Respon i envia l'[Entrega final de la SA8](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODk5NDU3MTc5NjE4/details): autoavaluació i checklist final.
+
+> ✅ **Versió nucli** (per aprovar n'hi ha prou amb): la telemetria funcionant entre dues plaques, l'informe d'auditoria amb diagrama, un risc i una recomanació, i el classificador entrenat amb la reflexió sobre el biaix.
+
 ## 📦 Què has d'entregar
 
-| Quan | Lliurable | On es lliura |
+| Quan | Què | On |
 |---|---|---|
-| S1 | [Activitat 1 · Telemetria](SA8_fitxa_alumnat.md#1-telemetria-s1) | [Tasca de Classroom](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODcwNTE3MTIxMDY0/details) |
-| S2 | [Activitat 2 · Auditoria d'un producte IoT](SA8_fitxa_alumnat.md#2-auditoria-dun-producte-iot-s2) | Mateixa tasca de Classroom |
-| S3 | [Activitat 3 · Introducció a la IA](SA8_fitxa_alumnat.md#3-introduccio-a-la-ia-s3) | Mateixa tasca de Classroom |
+| S1 | Formularis i fotos de les Pràctiques 1 i 2 | Tasques de Classroom (enllaços a l'últim pas de cada pràctica) |
+| S2 | Formulari i foto de la Pràctica 3 (l'informe d'auditoria) | Les tasques de Classroom de la pràctica |
+| S3 | Formularis i fotos de les Pràctiques 4 i 5 + **el classificador** i demostració + **Entrega final** | A l'aula i a Classroom. S'avalua amb **R1**, **R3** i **R4** |
 | ⭐ | [Repte triat (A, B o C)](../../Reptes/Reptes_SA8.md) | El docent el valida i pinteu l'estrella al [tauler de reptes](../00_General/00_Tauler_reptes.md) |
 | 📓 | Full del quadern tècnic de cada sessió | En paper, en acabar la sessió |
-| 🤖 | La telemetria del rover (micro:bit al rover + base amb OLED) | Es registra al dossier del rover: [dossier del rover](../00_General/00_Projecte_T3_Rover.md) |
+| 🤖 | La telemetria del rover (micro:bit al rover + base amb OLED) | Es registra al [dossier del rover](../00_General/00_Projecte_T3_Rover.md) |
 
-## Itinerari per sessions
+## 📚 Per repassar a casa
 
-> La teva feina és a la **[fitxa base](SA8_fitxa_alumnat.md)**. Aquesta ruta et diu què toca fer a cada sessió i què necessites en aquell moment. Les respostes de la fitxa es lliuren a la **[tasca de Classroom](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODcwNTE3MTIxMDY0/details)**.
-
-1. **Sessió 1 · Telemetria** — fes l'[Activitat 1 de la fitxa](SA8_fitxa_alumnat.md#1-telemetria-s1), amb les [connexions](SA8_connexions.md), el [diagrama de flux de la telemetria](SA8_diagrama_flux.md) i el codi de l'[emissor](codi/01_telemetria_emissor_EXPLICACIO.md) i el [receptor](codi/02_telemetria_receptor_EXPLICACIO.md). Recorda: **una de les dues meitats** s'escriu ✏️ **a full en blanc** (editor buit, pseudocodi propi + xuleta de `radio`).
-2. **Sessió 2 · IoT: auditoria d'un producte real** — tria una targeta de [`SA8_auditoria_iot.md`](SA8_auditoria_iot.md) i omple l'informe (Activitat 2 de la [fitxa](SA8_fitxa_alumnat.md)).
-3. **Sessió 3 · Introducció a la IA** — fes l'[Activitat 3](SA8_fitxa_alumnat.md#3-introduccio-a-la-ia-s3), amb el [classificador de gestos](codi/03_ia_gestos_EXPLICACIO.md) i la [pràctica de Teachable Machine](SA8_practica_teachable_machine.md) (s'avalua amb R1, R3, R4).
-4. **Abans d'entregar** — repassa [el meu checklist](SA8_checklist_alumnat.md).
-
-### Si vols més
-
-- [Fitxa ampliada](SA8_fitxa_ampliada.md) — aprofundiment i ampliacions.
 - [Reptes de la SA8](../../Reptes/Reptes_SA8.md) — tria el teu context.
+- [Exemple resolt](SA8_exemple_resolt.md) · [Diagrama de flux](SA8_diagrama_flux.md) · [Qüestionari de conceptes](SA8_questionari_conceptes.md)
+- [Fitxa base](SA8_fitxa_alumnat.md) — objectius, com s'avalua i què fer si alguna cosa no funciona.
+- [Fitxa ampliada](SA8_fitxa_ampliada.md) · [Connexions i entorn](SA8_connexions.md)
 
 <!-- web:only-github -->
 ## Contingut
@@ -39,8 +65,6 @@ Vuitena situació d'aprenentatge (**6 h · 3 sessions**, 3r trimestre). El siste
 | [`SA8_fitxa_ampliada.md`](SA8_fitxa_ampliada.md) | **Versió ampliada** (aprofundiment): totes les rutines (ajuda entre iguals, revisió creuada, exit ticket, ODS, PC) i ampliacions. |
 | [`SA8_checklist_docent.md`](SA8_checklist_docent.md) | **Checklist docent** (una cara): logística prèvia, punts de control per sessió, avaluació i diversitat. |
 | [`SA8_checklist_alumnat.md`](SA8_checklist_alumnat.md) | **Checklist alumnat** (una cara): què he de fer/lliurar + autoavaluació amb semàfor. |
-| [`SA8_katas.md`](SA8_katas.md) | Katas d'escriptura (10'): un per sessió de codi, abans d'obrir el sketch; si ningú no el projecta, l'alumnat l'obre sol. |
-| [`SA8_katas_solucions.md`](SA8_katas_solucions.md) | **Solucions dels katas** (docent): codi resolt + comentaris per a la posada en comú i el modelatge. |
 | [`SA8_auditoria_iot.md`](SA8_auditoria_iot.md) | **Auditoria d'un producte IoT** (S2): 8 targetes de producte + informe d'auditoria + peritatge creuat. |
 | [`SA8_connexions.md`](SA8_connexions.md) | Connexions (micro:bit emissor/receptor, Micro:shield, ESP32 opcional). |
 | `codi/` | Programes MicroPython + un sketch ESP32 (vegeu la taula següent). |

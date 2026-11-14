@@ -6,34 +6,61 @@ Setena situació d'aprenentatge (**8 h · 4 sessions** + sessió 0 de muntatge, 
 
 ![Cinemàtica diferencial: variant la velocitat de cada roda el robot va recte o gira](img/sa7-cinematica-diferencial.svg)
 
+En acabar aquesta SA podràs: 1) moure el teu rover amb funcions pròpies (cinemàtica diferencial); 2) programar i **calibrar** una trajectòria; 3) fer-lo **autònom**: evitar obstacles i seguir una línia, iterant per millorar.
+
+> 💻 **Com carregar el codi d'una pràctica:** dins de la pràctica, al pas «Carrega el codi», prem **Copia**, enganxa'l a l'Arduino IDE, canvia-hi el **bloc de pins del rover** (Pràctica 1, pas 4) i prem **→ Puja**.
+
+## 🧭 La teva ruta
+
+Fes les pràctiques **en ordre i al teu ritme**. Cada pràctica acaba enviant el seu formulari de Classroom i la foto de la pràctica. Les 🚩 et diuen on hauries de ser al final de cada sessió.
+
+- ⓪ **Sessió 0 · Munta el teu rover** — peces, muntatge, cablatge i test de fum, al **[dossier del rover](../00_General/00_Projecte_T3_Rover.md)**.
+
+🚩 **Final de la Sessió 0:** el rover muntat, cablejat i amb el test de fum superat.
+
+- ① [Pràctica 1 · Moviment bàsic](codi/01_moviment_basic/EXPLICACIO.md) — cinc funcions per moure el rover, i el codi adaptat als seus pins.
+
+🚩 **Final de la Sessió 1:** formulari de la ① enviat i el full del 📓 quadern de la sessió omplert.
+
+- ② [Pràctica 2 · Trajectòria en quadrat](codi/02_trajectoria_quadrat/EXPLICACIO.md) — calcules i calibres el gir de 90°.
+
+🚩 **Final de la Sessió 2:** formulari de la ② enviat i el full del 📓 quadern omplert.
+
+- ③ [Pràctica 3 · Evita-obstacles](codi/03_evita_obstacles/EXPLICACIO.md) — el primer comportament autònom: percepció, decisió, acció.
+
+🚩 **Final de la Sessió 3:** formulari de la ③ enviat i el full del 📓 quadern omplert.
+
+- ④ [Pràctica 4 · Seguidor de línia](codi/04_seguidor_linia/EXPLICACIO.md) — el producte: el rover segueix la pista i en millores el temps de volta.
+
+🚩 **Final de la Sessió 4:** formulari de la ④ enviat, **Entrega final** feta i el full del 📓 quadern omplert.
+
+## 🏁 Entrega final
+
+**Quan hagis acabat la ④:**
+
+1. 🎤 **Demostració a la pista i defensa de 2'**: el rover seguint la línia, i una decisió tècnica (per què aquest llindar, aquesta velocitat). S'avalua amb **R1**, **R3** i **R4**.
+2. 📤 Respon i envia l'[Entrega final de la SA7](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODk5NDU4NTg5Nzkz/details): autoavaluació i checklist final.
+
+> ✅ **Versió nucli** (per aprovar n'hi ha prou amb): el rover es mou amb funcions pròpies, evita obstacles i fa almenys una volta a la pista seguint la línia, amb el registre d'iteracions.
+
 ## 📦 Què has d'entregar
 
-| Quan | Lliurable | On es lliura |
+| Quan | Què | On |
 |---|---|---|
-| S1 | [Activitat 1 · Moviment i cinemàtica](SA7_fitxa_alumnat.md#1-moviment-i-cinematica-s1) | [Tasca de Classroom](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODcwNTE4MDMwMTA4/details) |
-| S2 | [Activitat 2 · Trajectòries programades](SA7_fitxa_alumnat.md#2-trajectories-s2) | Mateixa tasca de Classroom |
-| S3 | [Activitat 3 · Evitar obstacles](SA7_fitxa_alumnat.md#3-evita-obstacles-s3) | Mateixa tasca de Classroom |
-| S4 | [Activitat 4 · Seguidor de línia + repte de pista](SA7_fitxa_alumnat.md#4-seguidor-de-linia-repte-de-pista-s4) | Mateixa tasca de Classroom |
+| S1 | Formulari i foto de la Pràctica 1 | Tasques de Classroom (enllaços a l'últim pas de cada pràctica) |
+| S2 | Formulari i foto de la Pràctica 2 | Les tasques de Classroom de la pràctica |
+| S3 | Formulari i foto de la Pràctica 3 | Les tasques de Classroom de la pràctica |
+| S4 | Formulari i foto de la Pràctica 4 + **el rover autònom**, demostració i defensa de 2' + **Entrega final** | A l'aula i a Classroom. S'avalua amb **R1**, **R3** i **R4** |
 | ⭐ | [Repte triat (A, B o C)](../../Reptes/Reptes_SA7.md) | El docent el valida i pinteu l'estrella al [tauler de reptes](../00_General/00_Tauler_reptes.md) |
 | 📓 | Full del quadern tècnic de cada sessió | En paper, en acabar la sessió |
 | 🤖 | El rover muntat i funcionant | És la plataforma de tota la SA: [dossier del rover](../00_General/00_Projecte_T3_Rover.md) |
 
-## Itinerari per sessions
+## 📚 Per repassar a casa
 
-> La teva feina és a la **[fitxa base](SA7_fitxa_alumnat.md)**. Aquesta ruta et diu què toca fer a cada sessió i què necessites en aquell moment. Les respostes de la fitxa es lliuren a la **[tasca de Classroom](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODcwNTE4MDMwMTA4/details)**.
-
-0. **Sessió 0 · Muntatge del rover** — abans de començar, construeixes el teu rover: peces, muntatge pas a pas, cablatge i test de fum al **[dossier del rover](../00_General/00_Projecte_T3_Rover.md)** (hi ha el pla de la sessió sencer).
-1. **Sessió 1 · Moviment i cinemàtica diferencial** — fes l'[Activitat 1 de la fitxa](SA7_fitxa_alumnat.md#1-moviment-i-cinematica-s1), amb els [esquemes de connexió](SA7_esquemes_connexions.md) i el [codi](codi/) (ajusta els pins del teu robot al bloc `// === PINS (AJUSTAR) ===` de cada `.ino`).
-2. **Sessió 2 · Trajectòries programades** — fes l'[Activitat 2](SA7_fitxa_alumnat.md#2-trajectories-s2), amb el [codi](codi/).
-3. **Sessió 3 · Evitar obstacles** — fes l'[Activitat 3](SA7_fitxa_alumnat.md#3-evita-obstacles-s3), amb els [esquemes de connexió](SA7_esquemes_connexions.md) i el [diagrama de flux percep → decideix → actua](SA7_diagrama_flux.md).
-4. **Sessió 4 · Seguidor de línia + repte de pista** — fes l'[Activitat 4](SA7_fitxa_alumnat.md#4-seguidor-de-linia-repte-de-pista-s4), amb el [codi](codi/) (s'avalua amb R1, R3, R4). Recorda: **un** dels reptes d'aquesta SA s'escriu ✏️ **a full en blanc** (editor buit, només pseudocodi + full-xuleta) — entrenament directe per a la SA9.
-5. **Abans d'entregar** — repassa [el meu checklist](SA7_checklist_alumnat.md).
-
-### Si vols més
-
-- [Fitxa ampliada](SA7_fitxa_ampliada.md) — aprofundiment i ampliacions.
-- [Recursos de vídeo](SA7_recursos_video_IA.md) — material de suport.
 - [Reptes de la SA7](../../Reptes/Reptes_SA7.md) — tria el teu context.
+- [Exemple resolt](SA7_exemple_resolt.md) · [Diagrama de flux](SA7_diagrama_flux.md) · [Qüestionari de conceptes](SA7_questionari_conceptes.md)
+- [Fitxa base](SA7_fitxa_alumnat.md) — objectius, com s'avalua i què fer si alguna cosa no funciona.
+- [Fitxa ampliada](SA7_fitxa_ampliada.md) · [Recursos de vídeo](SA7_recursos_video_IA.md) · [Esquemes i connexions](SA7_esquemes_connexions.md)
 
 <!-- web:only-github -->
 ## Contingut
@@ -45,8 +72,6 @@ Setena situació d'aprenentatge (**8 h · 4 sessions** + sessió 0 de muntatge, 
 | [`SA7_fitxa_ampliada.md`](SA7_fitxa_ampliada.md) | **Versió ampliada** (aprofundiment): totes les rutines (ajuda entre iguals, revisió creuada, exit ticket, ODS, PC) i ampliacions. |
 | [`SA7_checklist_docent.md`](SA7_checklist_docent.md) | **Checklist docent** (una cara): logística prèvia, punts de control per sessió, avaluació i diversitat. |
 | [`SA7_checklist_alumnat.md`](SA7_checklist_alumnat.md) | **Checklist alumnat** (una cara): què he de fer/lliurar + autoavaluació amb semàfor. |
-| [`SA7_katas.md`](SA7_katas.md) | Katas d'escriptura (10'): un per sessió de codi, abans d'obrir el sketch; si ningú no el projecta, l'alumnat l'obre sol. |
-| [`SA7_katas_solucions.md`](SA7_katas_solucions.md) | **Solucions dels katas** (docent): codi resolt + comentaris per a la posada en comú i el modelatge. |
 | [`SA7_esquemes_connexions.md`](SA7_esquemes_connexions.md) | Esquemes i connexions (motors, sensors de línia/distància). |
 | `codi/` | Sketches d'Arduino (vegeu la taula següent). |
 

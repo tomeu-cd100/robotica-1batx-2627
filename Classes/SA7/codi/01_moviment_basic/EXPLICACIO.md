@@ -1,66 +1,140 @@
 # Pràctica 1 · Moviment bàsic: funcions per moure el rover
 
-**Quan es fa:** Sessió 1 (modelatge) · **Fitxer:** `01_moviment_basic.ino` · **Circuit:** [esquema de connexions](../../SA7_esquemes_connexions.md)
+<div class="cap-practica" markdown="1">
 
-> ✍️ **Kata primer!** No llegeixis encara el codi: obre el [kata d'aquesta pràctica](../../SA7_katas.md) i tens **10 minuts** per escriure el teu bloc (individual, apunts permesos). Després torna aquí i **compara**.
+❓ **La pregunta:** Com gira un robot que no té volant?
 
-## 🎯 Per què fem aquesta pràctica
+🎯 **Avui aconseguiràs:** que el teu rover avanci, giri i s'aturi amb cinc funcions amb nom, i entendre per què gira quan les dues rodes fan coses diferents.
 
-El teu rover no té volant. Com gira, doncs? Amb **cinemàtica diferencial**: cada roda té el seu motor, i el que decideix la trajectòria és la **diferència** entre elles. Dues rodes a la mateixa velocitat = recte; velocitats o sentits diferents = gir. Tota la robòtica mòbil de la SA7 (i el rover del trimestre) penja d'aquesta idea.
+⏱️ La sessió (el rover ja és muntat de la Sessió 0)
 
-L'altra idea de la sessió és de programació: en lloc d'escampar `digitalWrite` i `analogWrite` pel `loop()`, empaquetes cada moviment en una **funció amb nom** (`endavant()`, `gira_dreta()`…). A partir d'avui, programar el robot serà **combinar aquestes crides**, no tornar a escriure pins cada vegada.
+📦 El teu rover amb el portapiles carregat, el cable USB i una capsa per aixecar-lo
 
-⚙️ **Abans de res:** ajusta el bloc `// === PINS (AJUSTAR) ===` amb els pins reals del teu robot (taula de cablatge del [dossier del rover](../../../00_General/00_Projecte_T3_Rover.md); si uses la 3dBot de reserva, el manual de la placa). Sense això, cap sketch de la SA no mou res.
+</div>
 
-## 🔮 Abans d'executar: prediu
+## 🚀 Pas a pas
 
-Mira el codi complet (a baix de tot, plegat) **sense carregar-lo**. Què farà `gira_dreta()` amb cada roda? Quina seqüència repetirà el robot al `loop()`, i cada quant? Escriu la predicció a l'Activitat 1 de la [fitxa](../../SA7_fitxa_alumnat.md) i després comprova-la.
+### Pas 1 · Endevina abans de provar
 
-## 🧠 El codi, per blocs
-
-### Bloc 1 — Els pins i la velocitat, amb nom
+El rover no té volant: cada roda té el seu motor. Mira aquestes funcions del codi.
 
 ```cpp
-const int ESQ_DIR = 4;    // direccio motor esquerre   <-- AJUSTAR
-const int ESQ_VEL = 5;    // velocitat (PWM) esquerre  <-- AJUSTAR
-const int DRET_DIR = 7;   // direccio motor dret       <-- AJUSTAR
-const int DRET_VEL = 6;   // velocitat (PWM) dret      <-- AJUSTAR
-
-const int VEL = 180;      // velocitat per defecte (0-255)
+void endavant()      { motors(HIGH, VEL, HIGH, VEL); }
+void gira_dreta()    { motors(HIGH, VEL, LOW,  VEL); }   // esq endavant, dret enrere
+void atura()         { motors(HIGH, 0, HIGH, 0); }
 ```
 
-Cada motor necessita **dos pins**: un de **direcció** (endavant o enrere, `digitalWrite`) i un de **velocitat** (com de ràpid, `analogWrite` — per això ha de ser un pin PWM `~`, com el fade de la SA2). `VEL` és la velocitat de creuer: si el robot va massa embalat per a la teva pista, la canvies en una sola línia.
+![Cinemàtica diferencial: si les dues rodes van igual el robot va recte; si l'esquerra va més ràpida gira a la dreta; si la dreta va més ràpida gira a l'esquerra; amb sentits oposats gira sobre si mateix](../../img/sa7-cinematica-diferencial.svg)
 
-### Bloc 2 — `motors()`: una funció que ho governa tot
+✍️ **Apunta-ho:** PREDIU: què farà el rover amb `gira_dreta()`? Què fa cada roda?
+
+### Pas 2 · Prepara el rover
+
+Posa el rover **sobre una capsa**, amb les rodes a l'aire: així no sortirà corrent de la taula mentre proves. Portapiles connectat i interruptor engegat.
+
+![Xassís del rover vist de dalt: HC-SR04 mirant endavant, dos motoreductors amb rodes, UNO amb breadboard, L298N i portapiles, i dos seguidors de línia sota el xassís](../../../00_General/img/rover-xassis.svg)
+
+✅ **Comprova:** el L298N té el LED encès i les rodes poden girar lliures.
+
+### Pas 3 · Copia el codi (encara no el pugis)
+
+Prem **Copia** i enganxa'l a l'Arduino IDE (esborra el que hi hagués). **No el pugis encara:** està escrit per a una altra placa i al pas següent l'adaptes al teu rover.
+
+<!-- codi-complet -->
+
+### Pas 4 · Adapta'l al teu rover
+
+El L298N del rover fa servir **dos pins de direcció per motor**. Al codi, esborra el bloc `// === PINS (AJUSTAR) ===` i la funció `motors()`, i enganxa-hi aquest bloc. Després, al `setup()`, canvia els `pinMode` dels motors per una sola línia: `setupMotors();`.
 
 ```cpp
+// === PINS DEL ROVER (L298N) ===
+const int ESQ_ENA = 5, ESQ_IN1 = 4, ESQ_IN2 = 3;   // motor esquerre
+const int DRET_ENB = 6, DRET_IN3 = 7, DRET_IN4 = 8; // motor dret
+const int VEL = 180;
+
 void motors(int dirEsq, int velEsq, int dirDret, int velDret) {
-  digitalWrite(ESQ_DIR, dirEsq);
-  analogWrite(ESQ_VEL, velEsq);
-  digitalWrite(DRET_DIR, dirDret);
-  analogWrite(DRET_VEL, velDret);
+  digitalWrite(ESQ_IN1, dirEsq);
+  digitalWrite(ESQ_IN2, !dirEsq);      // el contrari del primer
+  analogWrite(ESQ_ENA, velEsq);
+  digitalWrite(DRET_IN3, dirDret);
+  digitalWrite(DRET_IN4, !dirDret);
+  analogWrite(DRET_ENB, velDret);
+}
+
+void setupMotors() {   // crida-la des de setup()
+  pinMode(ESQ_ENA, OUTPUT);  pinMode(ESQ_IN1, OUTPUT);  pinMode(ESQ_IN2, OUTPUT);
+  pinMode(DRET_ENB, OUTPUT); pinMode(DRET_IN3, OUTPUT); pinMode(DRET_IN4, OUTPUT);
 }
 ```
 
-Tot el control del robot passa per aquí: direcció i velocitat de cada roda, en una sola crida. És l'única funció que toca pins; les altres només decideixen **quins valors** passar-li. Si algun dia canvies de xassís o de driver de motors, només reescrius aquesta.
+✅ **Comprova:** l'IDE **compila** sense errors (botó ✔).
 
-### Bloc 3 — El vocabulari de moviments
+✍️ **Apunta-ho:** pins dels motors del teu rover: esquerre (ENA, IN1, IN2) i dret (ENB, IN3, IN4).
+
+### Pas 5 · Puja-ho i prova-ho
+
+Prem **→ Puja** amb el rover sobre la capsa. Mira les rodes: endavant, aturat, gir. Després posa'l a terra.
+
+✅ **Comprova:** a terra, el rover avança una mica, s'atura i gira cap a la dreta, i ho repeteix. Si una roda gira al revés, intercanvia els dos cables d'aquell motor al L298N.
+
+✍️ **Apunta-ho:** per girar a la dreta, què ha de fer la roda esquerra respecte de la dreta?
+
+### Pas 6 · Fes el teu ball
+
+Canvia el `loop()` per una **seqüència de ball** teva: combina les cinc funcions amb els teus temps (`delay`).
+
+✍️ **Apunta-ho:** la teva seqüència de ball: quines funcions i quins temps?
+
+✍️ **Apunta-ho:** per què tot el moviment passa per una sola funció, `motors()`?
+
+### Pas 7 · Respon i envia
+
+📤 [Obre la tasca «SA7 · Pràctica 1» a Classroom i envia el formulari](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODk5NDU1ODk1NDU0/details)
+
+📷 [Penja la foto de la teva pràctica a la tasca «Foto · SA7 · Pràctica 1»](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODk5NDUyNjQ2NDYw/details)
+
+Hi trobaràs les mateixes preguntes ✍️ que has anat apuntant. Envia'l ara. A la sessió següent: **[Pràctica 2 · Trajectòria en quadrat](../02_trajectoria_quadrat/EXPLICACIO.md)**.
+
+⭐ **Si acabes abans:** fes que el rover vagi **recte de debò**: si es desvia, abaixa una mica la velocitat de la roda ràpida dins `endavant()`. Més reptes a **[Reptes de la SA7](../../../../Reptes/Reptes_SA7.md)**; quan el docent te'l validi, pinta l'estrella al [tauler de reptes](../../../00_General/00_Tauler_reptes.md).
+
+<details markdown="1">
+<summary>🧗 Si t'encalles</summary>
+
+| Símptoma | Causa probable |
+|---|---|
+| El robot no es mou gens | Pins que no són els del rover, o bateria descarregada (l'USB sol no alimenta els motors). |
+| No va recte: es desvia sempre cap a un costat | Motors desiguals (cap robot real és perfecte). Compensa: abaixa una mica la `VEL` de la roda ràpida dins `endavant()`. |
+| Un moviment surt al revés | Cables d'un motor invertits al L298N: intercanvia'ls (no toquis el codi). |
+| Error en compilar: `ESQ_DIR` no declarat | Has esborrat el bloc de pins però no els `pinMode` antics del `setup()`: canvia'ls per `setupMotors();`. |
+
+</details>
+
+<details markdown="1">
+<summary>🧠 Vols saber per què funciona?</summary>
+
+### Per què fem aquesta pràctica
+
+El teu rover gira amb **cinemàtica diferencial**: cada roda té el seu motor, i el que decideix la trajectòria és la **diferència** entre elles. Dues rodes a la mateixa velocitat = recte; velocitats o sentits diferents = gir. Tota la robòtica mòbil de la SA7 penja d'aquesta idea.
+
+L'altra idea és de programació: en lloc d'escampar `digitalWrite` i `analogWrite` pel `loop()`, empaquetes cada moviment en una **funció amb nom**. A partir d'avui, programar el robot és **combinar aquestes crides**.
+
+### Bloc 1 — `motors()`: una funció que ho governa tot
+
+Tot el control del robot passa per `motors()`: direcció i velocitat de cada roda, en una sola crida. És l'única funció que toca els pins dels motors. Per això adaptar el codi al rover ha costat **una sola funció**: les altres només decideixen quins valors passar-li.
+
+### Bloc 2 — El vocabulari de moviments
 
 ```cpp
 void endavant()      { motors(HIGH, VEL, HIGH, VEL); }
 void enrere()        { motors(LOW,  VEL, LOW,  VEL); }
 void gira_dreta()    { motors(HIGH, VEL, LOW,  VEL); }   // esq endavant, dret enrere
 void gira_esquerra() { motors(LOW,  VEL, HIGH, VEL); }
-void atura()         { motors(HIGH, 0, HIGH, 0); }   // tot el moviment passa per motors()
+void atura()         { motors(HIGH, 0, HIGH, 0); }
 ```
 
-Aquí hi ha la cinemàtica diferencial feta codi. Llegeix `gira_dreta()`: roda esquerra **endavant**, roda dreta **enrere** → el robot pivota sobre si mateix cap a la dreta. I `atura()` deixa la direcció on sigui i posa les dues velocitats a **0**: un motor amb velocitat 0 no gira, tant se val cap on apunti.
+`gira_dreta()`: roda esquerra **endavant**, roda dreta **enrere** → el robot pivota sobre si mateix. `atura()` posa les dues velocitats a **0**: un motor a velocitat 0 no gira, tant se val cap on apunti.
 
-Fixa't en una cosa que sembla un detall i no ho és: **les cinc funcions criden `motors()` i cap altra toca un pin directament**. `atura()` podria haver fet dos `analogWrite` i prou —seria igual de correcte avui—, però llavors hi hauria dos llocs del programa que sabrien a quins pins està connectat el motor. Amb aquesta versió n'hi ha **un de sol**. Ho notaràs de debò quan canviïs de robot: si un dia muntes aquest codi sobre una placa amb un altre pont H, només has de reescriure `motors()` i tot el que has construït a sobre continua funcionant.
-
-Aquestes cinc funcions són el **vocabulari** amb què escriuràs totes les trajectòries i comportaments de la SA.
-
-### Bloc 4 — Una seqüència de prova
+### Bloc 3 — Una seqüència de prova
 
 ```cpp
 void loop() {
@@ -71,20 +145,11 @@ void loop() {
 }
 ```
 
-Fixa't en el patró: una funció de moviment **engega** els motors i el `delay` decideix **quanta estona** duren. `endavant()` no fa avançar el robot 1,5 segons: el posa en marxa, i és el `delay(1500)` qui el deixa córrer. Aquest matís és clau per a la Pràctica 2.
+Una funció de moviment **engega** els motors i el `delay` decideix **quanta estona** duren. Aquest matís és clau per a la Pràctica 2.
 
-## ⚠️ Errors que veuràs segur
+### On ho aplicaràs
 
-| Símptoma | Causa probable |
-|---|---|
-| El robot no es mou gens | Pins del bloc `AJUSTAR` que no són els reals, o bateria descarregada (l'USB sol no alimenta els motors). |
-| No va recte: es desvia sempre cap a un costat | Motors desiguals (cap robot real és perfecte). Compensa: abaixa una mica la `VEL` de la roda ràpida dins `endavant()`. |
-| Un moviment surt al revés (endavant recula, o gira cap a l'altre costat) | Cablatge del motor invertit o `HIGH`/`LOW` de direcció al revés per a la teva placa: intercanvia'ls a `motors()` o al cable. |
-
-## 🔗 On ho aplicaràs
-
-- **Ara mateix:** el repte de la S1 (seqüència de «ball») és combinar aquestes cinc funcions amb els teus temps.
-- **Tota la SA:** el [quadrat](../02_trajectoria_quadrat/02_trajectoria_quadrat.ino) (S2), l'[evita-obstacles](../03_evita_obstacles/03_evita_obstacles.ino) (S3) i el [seguidor de línia](../04_seguidor_linia/04_seguidor_linia.ino) (S4) reutilitzen aquestes mateixes funcions: només canvia **qui decideix** quan cridar-les.
+- **Tota la SA:** el [quadrat](../02_trajectoria_quadrat/EXPLICACIO.md), l'[evita-obstacles](../03_evita_obstacles/EXPLICACIO.md) i el [seguidor de línia](../04_seguidor_linia/EXPLICACIO.md) reutilitzen aquestes mateixes funcions: només canvia **qui decideix** quan cridar-les.
 - **Robot del trimestre:** aquest sketch és la base de moviment del teu **rover** ([dossier](../../../00_General/00_Projecte_T3_Rover.md)).
 
-> ⭐ **Has acabat abans?** Tria un repte a **[Reptes de la SA7](../../../../Reptes/Reptes_SA7.md)** i, quan el docent te'l validi, pinta l'estrella al [tauler de reptes](../../../00_General/00_Tauler_reptes.md).
+</details>

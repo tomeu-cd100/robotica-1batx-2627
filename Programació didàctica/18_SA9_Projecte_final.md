@@ -39,7 +39,7 @@
 Sistema robòtic autònom funcional + **dossier tècnic** (anàlisi, esquemes, codi comentat, proves, millores, conclusions) + **defensa oral**.
 
 ## Avaluació
-- Instruments: producte final, dossier tècnic, defensa oral, observació del procés, **revisió creuada de codi** (evidència del CA5.3 → R5) i autoavaluació.
+- Instruments: producte final, dossier tècnic, defensa oral, observació del procés, **revisió creuada de codi** (evidència del CA5.3 → R5) i autoavaluació. El quadern tècnic són els **formularis de pràctica** de Classroom (una per fase del projecte, Pràctiques 1-4, 33 punts cadascun), cadascun amb una pregunta de reflexió, més el **full imprès** de cada sessió. Cada pràctica té també una tasca **Foto** (sense nota) amb la foto de la pràctica funcionant. Tancament amb una **Entrega final** sense nota (autoavaluació + checklist).
 - Rúbriques: **R1, R2, R3, R4, R5** (totes).
 - **Pes destacat** dins de la dimensió "Projectes i productes" del trimestre.
 - La **prova pràctica T3** (S5) és un instrument **separat**: puntua a «Proves pràctiques» (20 %) i no reavalua el projecte.

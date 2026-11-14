@@ -2,7 +2,8 @@
 
 **8 h (4 sessions) · Imagina 3dBot (Arduino) + sensors IR i ultrasons · Criteris CA1.1, CA3.1, CA4.1 · Rúbriques R1 (codi), R3 (robot/control), R4 (documentació)**
 
-> Eina d'acció d'una cara. Condensa la [`SA7_guia_docent.md`](SA7_guia_docent.md). Marca `[x]` a mesura que ho tinguis fet. **Quan s'usa:** imprimeix-lo en **preparar la SA** (§1) i tingues-lo **a taula a cada sessió** (§2–§4).
+> Eina d'acció d'una cara. Condensa la [`SA7_guia_docent.md`](SA7_guia_docent.md). Marca `[x]` a mesura que ho tinguis fet.
+ **Quan s'usa:** imprimeix-lo en **preparar la SA** (§1) i tingues-lo **a taula a cada sessió** (§2–§4).
 
 ## 🧰 1. Logística prèvia (preparar abans de començar la SA)
 - [ ] **Un robot per alumne/a** amb piles/bateria a punt i cable de programació:
@@ -21,22 +22,19 @@
 
 **Sessió 1 — Moviment i cinemàtica diferencial**
 - [ ] Referent (1') Ayanna Howard · **AVÍS: ajustar els pins del model abans de pujar res**
-- [ ] ✍️ **Kata** `01_moviment_basic` (10', abans de repartir el sketch) → [SA7_katas.md](SA7_katas.md)
 - [ ] `01_moviment_basic`: funcions de moviment; girar = rodes a velocitats/sentits diferents
 - ⚠️ *Error:* no va recte per motors desiguals (cal calibrar)
 
 **Sessió 2 — Trajectòries programades**
-- [ ] ✍️ **Kata** `02_trajectoria_quadrat` (10', abans de repartir el sketch) → [SA7_katas.md](SA7_katas.md)
 - [ ] `02_trajectoria_quadrat`: seqüència + temps; **calibrar el gir de 90°**
 - ⚠️ *Clau:* el control per temps és imprecís (depèn de bateria/superfície) → connexió realimentació SA6
 
 **Sessió 3 — Evitar obstacles (comportament reactiu)**
-- [ ] ✍️ **Kata** `03_evita_obstacles` (10', abans de repartir el sketch) → [SA7_katas.md](SA7_katas.md)
 - [ ] `03_evita_obstacles`: percepció→decisió→acció amb ultrasons (llaç tancat, SA6)
 - ⚠️ *Error:* estratègia massa simple → es queda encallat
 
 **Sessió 4 — Seguidor de línia + repte de pista**
-- [ ] **Mini-check individual** a l'inici (10', no qualifica): `loop()` reactiu amb funcions donades (substitueix la graella d'activació i el kata del dia)
+- [ ] **Mini-check individual** a l'inici (10', no qualifica): `loop()` reactiu amb funcions donades (substitueix la graella d'activació)
 - [ ] `04_seguidor_linia`: calibrar llindar IR; lògica de correcció
 - [ ] **Repte de pista:** completar el recorregut, **mesurar temps** i **iterar**
 - [ ] Autoavaluació

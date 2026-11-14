@@ -1,36 +1,31 @@
-# SA8 · Auditoria d'un producte IoT real (S2)
+# Pràctica 3 · Auditoria d'un producte IoT real
 
-**Durada:** 60' dins la S2 (40' auditoria + 20' peritatge) · **Maquinari:** cap — paper i bolígraf
+<div class="cap-practica" markdown="1">
 
-> Avui no programes: **audites**. Les empreses contracten **auditors de privacitat** perquè revisin els seus productes connectats abans (o després…) que surtin al mercat. Avui tu ets una d'aquestes auditores: rebràs **un producte IoT real** i n'hauràs de destapar què sap de l'usuari, per on viatgen les dades i què pot sortir malament.
+❓ **La pregunta:** Què sap de tu un aparell connectat?
 
-## Com funciona
+🎯 **Avui aconseguiràs:** fer d'**auditor/a de privacitat** d'un producte que existeix de debò: dibuixar per on viatgen les seves dades, trobar-ne els riscos i defensar el teu informe davant d'un company.
 
-1. **Tria (o rep) una targeta de producte** d'aquesta pàgina — una de diferent de la del veí. Cada targeta és un producte que existeix de debò al mercat, amb les especificacions simplificades.
-2. **Omple el teu informe d'auditoria** (a sota, 1 pàgina — també és l'activitat 2 de la fitxa). Tens 40 minuts. La secció **«Ètica de dades i IA»** que ha explicat el docent i la [fitxa base](SA8_fitxa_alumnat.md) són el teu material de consulta.
-3. **Peritatge creuat (20'):** presenta el teu informe en **90 segons** a un company o companya. Ell o ella fa d'**advocat/ada del fabricant**: ha de rebatre **un** dels teus riscos («això ja ho resolem amb…»). Tu defenses l'informe amb arguments tècnics. Després **es giren els papers**.
+⏱️ 60' de la Sessió 2 (40' d'auditoria + 20' de peritatge)
 
-> 🗣️ **Frases d'inici per a l'advocat del fabricant:** *«Aquest risc és teòric perquè…»* · *«Les dades es xifren quan…»* · *«L'usuari ho ha acceptat en instal·lar l'app perquè…»* — i qui audita respon amb el **diagrama** a la mà.
+📦 Paper i bolígraf (avui no programes: audites)
 
-## L'informe d'auditoria (1 pàgina)
+</div>
 
-| Secció | Què hi has de posar |
-|---|---|
-| **1 · Producte auditat** | Nom de la targeta i per a què serveix (1 línia). |
-| **2 · Diagrama de l'arquitectura** | Dibuixa **dispositiu → xarxa → núvol → app** per al TEU producte: quins sensors té, per on transmet (BLE/WiFi/ràdio), on es guarden les dades, qui les veu. Etiqueta les fletxes amb el protocol. |
-| **3 · Tres dades personals** | Tres dades **que identifiquen o descriuen una persona** que el producte recull (directament o que es poden deduir). |
-| **4 · Dos riscos concrets** | Un de **tècnic** (què pot fallar o ser interceptat, i **on** del diagrama) i un de **privacitat** (què pot saber algú que no hauria de saber-ho). Res de genèric: «et poden hackejar» no val; «el vídeo viatja sense xifrar del timbre al router i un veí amb la clau WiFi el pot veure» sí. |
-| **5 · Dues recomanacions** | Una al **fabricant** (què hauria de canviar del disseny) i una al **comprador** (què hauria de configurar o saber abans d'usar-lo). |
+## 🚀 Pas a pas
 
-> 🪜 **Versió nucli:** diagrama + 2 dades + 1 risc + 1 recomanació ja és un informe defensable. **Versió completa:** tot el quadre, amb el risc tècnic ubicat al diagrama.
+### Pas 1 · Tria el teu producte
 
----
+Tria una targeta de producte, **diferent de la del teu veí**. Cada targeta és un producte que existeix al mercat, amb les especificacions simplificades.
 
-## Targetes de producte
+✍️ **Apunta-ho:** el producte que audites i per a què serveix (1 línia).
+
+<details markdown="1">
+<summary>📇 Les 8 targetes de producte</summary>
 
 > Especificacions **simplificades però realistes**. Si el teu producte «amaga» informació (què fa exactament amb les dades), tracta-ho com ho faria un auditor: **suposa el pitjor cas raonable** i anota-ho com a risc.
 
-### 🏃 Targeta 1 · Polsera esportiva amb GPS
+#### 🏃 Targeta 1 · Polsera esportiva amb GPS
 
 | | |
 |---|---|
@@ -39,7 +34,7 @@
 | **On són les dades** | Servidors del fabricant (fora de la UE); l'app en mostra gràfics. |
 | **Lletra petita** | Les «estadístiques anònimes» es comparteixen amb empreses sòcies. Les rutes d'entrenament es poden fer públiques al perfil. |
 
-### 📷 Targeta 2 · Càmera de vigilància domèstica WiFi
+#### 📷 Targeta 2 · Càmera de vigilància domèstica WiFi
 
 | | |
 |---|---|
@@ -48,7 +43,7 @@
 | **On són les dades** | Núvol del fabricant; accessible des de l'app de qualsevol lloc. |
 | **Lletra petita** | La contrasenya per defecte és la mateixa a totes les càmeres del model. El micròfon capta converses de tota l'habitació. |
 
-### 🗣️ Targeta 3 · Altaveu amb assistent de veu
+#### 🗣️ Targeta 3 · Altaveu amb assistent de veu
 
 | | |
 |---|---|
@@ -57,7 +52,7 @@
 | **On són les dades** | Historial de veu al compte de l'usuari; revisors humans en poden escoltar mostres «per millorar el servei». |
 | **Lletra petita** | S'activa per error amb paraules semblants i grava sense que ningú ho demani. Sap quan hi ha algú a casa i què pregunta. |
 
-### 🚪 Targeta 4 · Timbre intel·ligent amb càmera
+#### 🚪 Targeta 4 · Timbre intel·ligent amb càmera
 
 | | |
 |---|---|
@@ -66,7 +61,7 @@
 | **On són les dades** | Núvol del fabricant; clips guardats 30 dies. |
 | **Lletra petita** | Grava **tothom** que passa per la vorera, no només qui truca. En alguns països el fabricant ha cedit vídeos a la policia sense ordre judicial. |
 
-### ⚖️ Targeta 5 · Bàscula connectada
+#### ⚖️ Targeta 5 · Bàscula connectada
 
 | | |
 |---|---|
@@ -75,7 +70,7 @@
 | **On són les dades** | Historial de salut de cada membre de la família al núvol; gràfics de tendència a l'app. |
 | **Lletra petita** | Les dades corporals són **dades de salut** (categoria especialment protegida pel RGPD). Qualsevol membre de la família amb l'app veu les dades de tots. |
 
-### 🐕 Targeta 6 · Collar localitzador de mascota
+#### 🐕 Targeta 6 · Collar localitzador de mascota
 
 | | |
 |---|---|
@@ -84,7 +79,7 @@
 | **On són les dades** | Posició en temps real i historial de rutes a l'app. |
 | **Lletra petita** | El gos surt a passejar sempre amb la mateixa persona: el collar **també traça la rutina de l'amo** (a quina hora surt, per on, quan no és a casa). |
 
-### 🌡️ Targeta 7 · Termòstat intel·ligent
+#### 🌡️ Targeta 7 · Termòstat intel·ligent
 
 | | |
 |---|---|
@@ -93,7 +88,7 @@
 | **On són les dades** | Núvol del fabricant: horaris de presència i hàbits d'ús, per «aprendre la teva rutina». |
 | **Lletra petita** | El seu registre diu **exactament quan la casa és buida**, cada dia. El fabricant pot compartir «patrons d'ús agregats» amb l'elèctrica. |
 
-### 🧸 Targeta 8 · Joguina connectada que conversa
+#### 🧸 Targeta 8 · Joguina connectada que conversa
 
 | | |
 |---|---|
@@ -102,13 +97,56 @@
 | **On són les dades** | Gravacions de veu d'infants als servidors del fabricant. |
 | **Lletra petita** | Els menors tenen **protecció reforçada** al RGPD i no poden consentir per si sols. En un cas real, un fabricant va patir una filtració amb milions de converses de nens. |
 
----
+</details>
 
-## Com s'avalua
+### Pas 2 · Dibuixa el diagrama
+
+Al full del quadern, dibuixa **dispositiu → xarxa → núvol → app** per al teu producte: quins sensors té, per on transmet (BLE, WiFi, ràdio), on es guarden les dades i qui les veu. Etiqueta cada fletxa amb el protocol.
+
+✅ **Comprova:** el teu diagrama té les quatre caixes i cada fletxa té el seu protocol.
+
+✍️ **Apunta-ho:** tres dades personals que recull el producte (que identifiquen o descriuen una persona).
+
+### Pas 3 · Troba els riscos
+
+Busca **dos riscos concrets**. Res de genèric: «et poden hackejar» no val; «el vídeo viatja sense xifrar del timbre al router i un veí amb la clau WiFi el pot veure» sí. Si la targeta amaga informació, suposa el pitjor cas raonable.
+
+✍️ **Apunta-ho:** un risc **tècnic**: què pot fallar o ser interceptat, i **on** del diagrama.
+
+✍️ **Apunta-ho:** un risc de **privacitat**: què pot saber algú que no hauria de saber-ho.
+
+### Pas 4 · Fes les recomanacions
+
+✍️ **Apunta-ho:** una recomanació al **fabricant** (què hauria de canviar del disseny) i una al **comprador** (què hauria de configurar o saber abans d'usar-lo).
+
+### Pas 5 · Peritatge creuat
+
+Presenta el teu informe en **90 segons** a un company o companya, que fa d'**advocat/ada del fabricant** i ha de rebatre un dels teus riscos. Tu el defenses amb el diagrama a la mà. Després gireu els papers.
+
+> 🗣️ **Frases per a l'advocat del fabricant:** *«Aquest risc és teòric perquè…»* · *«Les dades es xifren quan…»* · *«L'usuari ho ha acceptat en instal·lar l'app perquè…»*
+
+✅ **Comprova:** has defensat el teu informe i has fet d'advocat del producte d'un altre.
+
+✍️ **Apunta-ho:** després de l'auditoria, què faràs diferent amb els aparells connectats de casa teva?
+
+### Pas 6 · Respon i envia
+
+📤 [Obre la tasca «SA8 · Pràctica 3» a Classroom i envia el formulari](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODk5NDU3Njc5OTgz/details)
+
+📷 [Penja la foto de la teva pràctica a la tasca «Foto · SA8 · Pràctica 3»](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODk5NDU4OTI4ODU4/details)
+
+Hi trobaràs les mateixes preguntes ✍️ que has anat apuntant. Envia'l ara i **guarda l'informe**: a la S3 et preguntaràs què passa quan el teu producte, a més de recollir dades, **decideix** amb elles. A la sessió següent: **[Pràctica 4 · IA de gestos](codi/03_ia_gestos_EXPLICACIO.md)**.
+
+⭐ **Si acabes abans:** mira com és de debò el tram «dispositiu → xarxa» amb l'**[ESP32 per WiFi](codi/04_esp32_telemetria/EXPLICACIO.md)** (ampliació ⭐⭐⭐). Més reptes a **[Reptes de la SA8](../../Reptes/Reptes_SA8.md)**.
+
+<details markdown="1">
+<summary>🧠 Vols saber per què s'avalua així?</summary>
+
+> 🪜 **Versió nucli:** diagrama + 2 dades + 1 risc + 1 recomanació ja és un informe defensable. **Versió completa:** tot el quadre, amb el risc tècnic ubicat al diagrama.
 
 | Evidència | Criteri | Rúbrica |
 |---|---|---|
 | **Informe d'auditoria** (les 5 seccions) | CA4.2 (arquitectura IoT) i CA5.3 (impacte ètic/social) | **R4** |
 | **Peritatge creuat** (argumentar i rebatre amb vocabulari tècnic) | CA5.2, CA5.3 | R4 (comunicació) i **R5** (cooperació) |
 
-> ♻️ **Aquest producte torna a sortir:** a la **S3 (IA)** ens preguntarem què passa quan el teu producte, a més de recollir dades, **decideix** amb elles. Guarda l'informe.
+</details>

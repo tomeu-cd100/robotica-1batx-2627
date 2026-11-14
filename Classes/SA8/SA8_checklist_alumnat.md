@@ -16,6 +16,7 @@
 - [ ] **Entrenar un classificador** amb Teachable Machine i pensar-ne el **biaix**
 - [ ] ✏️ Escriure **un repte a full en blanc** (emissor o receptor des de l'editor buit)
 - [ ] Lliurar el **producte** (sistema connectat o classificador) + la **reflexió ètica** → *R1, R3, R4*
+- [ ] Haver enviat els **formularis de Classroom** i la **foto** de les Pràctiques 1, 2, 3, 4 i 5 (cadascun en acabar la seva pràctica) i l'**Entrega final**
 - [ ] Tenir el **quadern tècnic** al dia (què és la telemetria, per què les bones dades són clau, un error resolt) i, si he fet servir **IA**, declarar-ho
 - [ ] 🤖 Guardar el codi de telemetria: es connectarà al **rover** (el robot del trimestre) → [dossier](../00_General/00_Projecte_T3_Rover.md)
 

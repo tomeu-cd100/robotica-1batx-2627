@@ -1,74 +1,140 @@
 # Pràctica 4 · Seguidor de línia: dos sensors IR i correcció
 
-**Quan es fa:** Sessió 4 (modelatge i repte de pista) · **Fitxer:** `04_seguidor_linia.ino` · **Circuit:** [esquema de connexions](../../SA7_esquemes_connexions.md) (sensors IR sota el robot, mirant a terra)
+<div class="cap-practica" markdown="1">
 
-> ✍️ **Kata primer!** Si avui encara no has fet cap kata (ni el mini-check), obre el [kata d'aquesta pràctica](../../SA7_katas.md): 10 minuts per escriure el teu bloc abans de llegir aquest codi. Si ja l'has fet, endavant.
+❓ **La pregunta:** Com segueix un robot una línia pintada a terra?
 
-## 🎯 Per què fem aquesta pràctica
+🎯 **Avui aconseguiràs:** el **producte de la SA**: el rover segueix la línia de la pista tot sol, i tu en millores el temps de volta iterant.
 
-Als magatzems de logística hi ha robots (AGV) que es passen el dia seguint línies pintades a terra. Avui el teu rover fa el mateix: dos sensors **IR** sota el xassís miren el terra i distingeixen la línia negra (poc reflex) del fons clar (molt reflex). La lògica és de sentit comú: si **només un** sensor veu la línia, és que el robot s'ha desviat cap a l'altre costat → **corregeix** cap a la línia.
+⏱️ La sessió (és la sessió de producte: es tanca avui)
 
-És el mateix cicle percepció → decisió → acció de la Pràctica 3, amb un matís nou: aquí l'acció no és una maniobra sencera, sinó una **correcció contínua** — el robot es manté sobre la línia a base de petites frenades d'una roda. I el final de la sessió és el **repte de pista**: completar el recorregut, **cronometrar cada volta** i iterar per millorar el temps. El registre d'iteracions és part del producte.
+📦 El teu rover amb els dos seguidors de línia sota el xassís, la pista i un cronòmetre (el mòbil)
 
-## 🔮 Abans d'executar: prediu
+</div>
 
-Sense carregar el codi: què farà el robot si **només** el sensor esquerre veu la línia? I si **cap** dels dos no la veu (s'ha sortit de la pista o és en un encreuament)? Anirà fi i recte, o farà ziga-zaga? Apunta-ho i comprova-ho a la pista.
+## 🚀 Pas a pas
 
-## 🧠 El codi, per blocs
+### Pas 1 · Calibra els sensors
 
-### Bloc 1 — Llegir la línia: de reflex a `bool`
+Els dos seguidors de línia van a **A0** (esquerre) i **A1** (dret). Carrega aquest sketch curt, obre el **Monitor sèrie** (9600) i posa cada sensor sobre la **línia** i sobre el **fons**.
 
 ```cpp
-// Suposem lectura DIGITAL: LOW = linia negra detectada, HIGH = fons.
-// (Comprova-ho amb la teva placa; si cal, inverteix la logica.)
-
-  bool liniaEsq  = (digitalRead(S_ESQ) == LOW);
-  bool liniaDret = (digitalRead(S_DRET) == LOW);
+void setup() { Serial.begin(9600); }
+void loop() {
+  Serial.print(analogRead(A0));
+  Serial.print("  ");
+  Serial.println(analogRead(A1));
+  delay(200);
+}
 ```
 
-Cada sensor es tradueix a una pregunta de sí/no: *aquest costat veu la línia?* Compte amb el comentari: en **aquesta** placa suposem que línia = `LOW`, però hi ha mòduls que ho donen al revés, i d'altres que donen lectura **analògica** (llavors: `analogRead` + un llindar calibrat, com el llindar de la P3). El primer que has de fer a la pista és **comprovar-ho**: sensor sobre la línia, sensor sobre el fons, i mira què llegeix.
+![Seguidor de línia: els sensors infrarojos sota el robot miren el terra; el fons blanc reflecteix molt i la línia negra poc, i comparant els dos sensors el robot corregeix la direcció](../../img/sa7-seguidor-linia.svg)
 
-### Bloc 2 — Corregir = frenar una roda
+✅ **Comprova:** els números canvien clarament entre línia i fons. El **llindar** és el número del mig.
+
+✍️ **Apunta-ho:** el valor «línia» i el valor «fons» de cada sensor, i el llindar que tries.
+
+### Pas 2 · Endevina abans de provar
+
+Desplega el codi complet del pas 4 i mira la cadena `if / else if` del `loop()`.
+
+✍️ **Apunta-ho:** PREDIU: què farà el rover si **només** el sensor esquerre veu la línia? I si **cap** dels dos no la veu?
+
+### Pas 3 · Adapta'l al rover
+
+El codi està escrit per a sensors digitals als pins 2 i 3, i al rover el **D2 és el para-xocs** i el **D3 és un motor**. Fes aquests canvis:
+
+1. Canvia el bloc de pins i `motors()` pel **bloc del rover** de la [Pràctica 1](../01_moviment_basic/EXPLICACIO.md) (pas 4).
+2. Canvia els sensors i la manera de llegir-los, amb el teu llindar:
 
 ```cpp
-void endavant()      { motors(HIGH, VEL, HIGH, VEL); }
+const int S_ESQ = A0;
+const int S_DRET = A1;
+const int LLINDAR_LINIA = 500;   // <-- el teu llindar del pas 1
+
+  bool liniaEsq  = (analogRead(S_ESQ)  > LLINDAR_LINIA);
+  bool liniaDret = (analogRead(S_DRET) > LLINDAR_LINIA);
+```
+
+✅ **Comprova:** si al pas 1 la línia donava números **més petits** que el fons, canvia el `>` per `<`.
+
+### Pas 4 · Carrega el codi
+
+Prem **Copia**, enganxa'l a l'Arduino IDE, fes-hi els canvis del pas 3 i prem **→ Puja**.
+
+<!-- codi-complet -->
+
+✅ **Comprova:** posat sobre la línia, el rover la segueix i corregeix quan se'n desvia.
+
+### Pas 5 · Repte de pista
+
+Fes **tres voltes** a la pista i cronometra-les. Entre volta i volta, canvia **una sola cosa** (la `VEL`, el llindar, la correcció) i apunta què has canviat.
+
+✍️ **Apunta-ho:** temps de volta: intent 1, intent 2 i intent 3.
+
+✍️ **Apunta-ho:** quines millores has fet entre intents i quina ha funcionat millor?
+
+✍️ **Apunta-ho:** un error que has trobat i com l'has resolt.
+
+### Pas 6 · Respon i envia
+
+📤 [Obre la tasca «SA7 · Pràctica 4» a Classroom i envia el formulari](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODk5NDU3NDY4NjM5/details)
+
+📷 [Penja la foto de la teva pràctica a la tasca «Foto · SA7 · Pràctica 4»](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODk5NDU4MjAxNjAx/details)
+
+Hi trobaràs les mateixes preguntes ✍️ que has anat apuntant. Envia'l ara i passa a l'**[Entrega final](../../README.md#entrega-final)**: demostració a la pista i autoavaluació.
+
+⭐ **Si acabes abans:** correcció **proporcional**: com més desviat, més gir. És la resposta de veritat a la ziga-zaga (la idea de la SA6). I recorda que **un** dels reptes de la SA s'escriu ✏️ **a full en blanc**: editor buit, només el teu pseudocodi. Més reptes a **[Reptes de la SA7](../../../../Reptes/Reptes_SA7.md)**; quan el docent te'l validi, pinta l'estrella al [tauler de reptes](../../../00_General/00_Tauler_reptes.md).
+
+<details markdown="1">
+<summary>🧗 Si t'encalles</summary>
+
+| Símptoma | Causa probable |
+|---|---|
+| No detecta mai la línia | Llindar mal triat o sensors massa alts: els IR volen estar a pocs mil·límetres del terra. Torna al pas 1 amb la pista real (la llum de l'aula hi influeix). |
+| Fa just el contrari: fuig de la línia | Comparació al revés: canvia el `>` per `<` al pas 3. |
+| En llegir un sensor es mou un motor | Has deixat els pins 2 i 3 del sketch original: al rover són A0 i A1. |
+| Fa molta ziga-zaga | En part és normal: la correcció és tot o res. Abaixa `VEL`… o prova la correcció proporcional. |
+| Perd la línia a les corbes tancades | Va massa ràpid per a la corba: abaixa `VEL`. |
+
+</details>
+
+<details markdown="1">
+<summary>🧠 Vols saber per què funciona?</summary>
+
+### Per què fem aquesta pràctica
+
+Als magatzems hi ha robots (AGV) que es passen el dia seguint línies pintades a terra. Dos sensors **IR** miren el terra i distingeixen la línia negra (poc reflex) del fons clar (molt reflex). Si **només un** veu la línia, el robot s'ha desviat i **corregeix** cap a la línia.
+
+### Bloc 1 — Corregir = frenar una roda
+
+```cpp
 void corregeix_dreta(){ motors(HIGH, VEL, HIGH, 0); }   // frena roda dreta
 void corregeix_esq()  { motors(HIGH, 0,  HIGH, VEL); }  // frena roda esquerra
 ```
 
-Cinemàtica diferencial un altre cop, però en versió suau: per girar cap a la línia no cal posar una roda enrere (com el pivot de la P1) — n'hi ha prou de **frenar-ne una** (velocitat 0) i deixar que l'altra empenyi. El robot descriu una corba cap al costat frenat. Fixa't també que `VEL` aquí és 150, no 180: seguir línia demana més finesa que velocitat.
+No cal posar una roda enrere: n'hi ha prou de **frenar-ne una** i deixar que l'altra empenyi.
 
-### Bloc 3 — La decisió: quatre situacions, quatre respostes
+### Bloc 2 — Quatre situacions, quatre respostes
 
 ```cpp
   if (liniaEsq && liniaDret) {
-    endavant();                 // tots dos sobre la linia: recte
+    endavant();
   } else if (liniaEsq && !liniaDret) {
-    corregeix_esq();            // s'ha desviat: torna a l'esquerra
+    corregeix_esq();
   } else if (!liniaEsq && liniaDret) {
     corregeix_dreta();
   } else {
-    endavant();                 // cap sensor: continua (o busca la linia)
+    endavant();                 // cap sensor: continua
   }
   delay(10);
 ```
 
-Dos sensors amb dos valors cadascun = **4 combinacions**, i la cadena `if / else if / else` les cobreix totes: tots dos a la línia → recte; només un → corregeix cap a aquell costat; cap → aquí hi ha una **decisió de disseny**: aquest codi continua recte (aposta que la línia reapareixerà — funciona en encreuaments), però podries fer que busqués la línia o s'aturés. El `delay(10)` és encara més curt que a la P3: com més sovint mira, més fina és la correcció.
+Dos sensors amb dos valors = **4 combinacions**, i la cadena les cobreix totes. Quan cap sensor veu la línia, aquest codi continua recte: és una **decisió de disseny** (funciona als encreuaments).
 
-## ⚠️ Errors que veuràs segur
+### On ho aplicaràs
 
-| Símptoma | Causa probable |
-|---|---|
-| No detecta mai la línia | Llindar o alçada mal ajustats: els IR volen estar a pocs mil·límetres del terra. Calibra amb la pista real (la llum de l'aula hi influeix!). |
-| Fa just el contrari: fuig de la línia | Lògica invertida — el teu sensor dona `HIGH` sobre la línia. Inverteix les comparacions del Bloc 1. |
-| Fa molta ziga-zaga | En part és normal: la correcció és **tot o res** (recte o frenada seca). Per suavitzar-ho: abaixa `VEL`… o el «+ repte» de correcció proporcional. |
-| Perd la línia a les corbes tancades | Va massa ràpid per a la corba: abaixa `VEL` o fes la correcció més agressiva (roda frenada una mica enrere). |
+- **D'on ve:** el cicle reactiu de l'[evita-obstacles](../03_evita_obstacles/EXPLICACIO.md); aquí només canvia el sensor i la finor de l'acció.
+- **Robot del trimestre:** un dels comportaments de demostració del teu **rover** ([dossier](../../../00_General/00_Projecte_T3_Rover.md)).
 
-## 🔗 On ho aplicaràs
-
-- **Repte de pista (avui):** completar el recorregut autònom, **mesurar el temps de volta** i iterar — cada millora, apuntada a l'Activitat 4 de la [fitxa](../../SA7_fitxa_alumnat.md).
-- **+ Repte:** correcció **proporcional** (correcció = Kp·error): com més desviat, més gir; a prop del centre, correcció suau. És la resposta de veritat a la ziga-zaga (idea de la SA6).
-- **D'on ve:** el cicle reactiu el vas muntar a l'[evita-obstacles](../03_evita_obstacles/03_evita_obstacles.ino); aquí només canvia el sensor i la finor de l'acció.
-- **Robot del trimestre:** el seguidor de línia és un dels comportaments de demostració del teu **rover** ([dossier](../../../00_General/00_Projecte_T3_Rover.md)).
-
-> ⭐ **Has acabat abans?** Tria un repte a **[Reptes de la SA7](../../../../Reptes/Reptes_SA7.md)** i, quan el docent te'l validi, pinta l'estrella al [tauler de reptes](../../../00_General/00_Tauler_reptes.md).
+</details>

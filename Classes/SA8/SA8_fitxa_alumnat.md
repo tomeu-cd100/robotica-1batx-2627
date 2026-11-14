@@ -28,17 +28,15 @@
 
 > Escala de nota 0-10, rúbriques i tot el sistema: **[Com s'avalua la matèria](../00_General/00_Avaluacio_per_alumnat.md)**.
 
-> ✍️ **Rutina de la SA:** cada sessió amb pràctica comença amb un **kata de 10 minuts**: escriure de zero (individual, amb apunts) el bloc central del programa del dia, ABANS d'obrir el codi donat. Si ningú no el projecta, reclameu-lo! El dia del mini-check, el mini-check fa de kata.
-
 ---
 
 ## Les activitats · al Google Classroom
 
-Aquesta fitxa es respon **en línia**, a la tasca de Google Classroom (val **10 punts**). **No cal que la responguis d'entrada**: cada activitat porta el seu **enunciat dins de la tasca**, i l'**itinerari de la portada de la SA** et diu quina toca a cada sessió. Obre-la quan comencis a treballar-hi i ves-la responent a mesura que avances:
+Les preguntes es responen a Classroom, **un formulari per pràctica**: l'enllaç és a l'últim pas de cada pràctica («📤 Respon i envia»), al costat de la tasca **Foto** on penges la foto de la pràctica. La [portada de la SA](README.md) té la ruta completa.
 
-> 👉 **[Obre la tasca: SA8 · Fitxa base (Google Classroom)](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODcwNTE3MTIxMDY0/details)**
+> 👉 Comença per la **[Pràctica 1 · L'emissor](codi/01_telemetria_emissor_EXPLICACIO.md)**.
 
-Si la tasca encara no t'apareix al Classroom, és que la SA encara no ha començat. En aquesta pàgina hi tens els **objectius i l'avaluació** (a dalt) i la rutina **DEPURA** (a sota).
+En aquesta pàgina hi tens els **objectius i l'avaluació** (a dalt) i la rutina **DEPURA** (a sota).
 
 <!-- web:only-github -->
 
@@ -100,7 +98,7 @@ Tria: un **sistema connectat** (telemetria per ràdio) o un **classificador** (T
 
 ## Quadern tècnic
 
-> 📓 Escriu-ho a la teva entrada del **[quadern tècnic](../00_General/00_Quadern_tecnic.md)** (guia + plantilla; compta el 25 %).
+> 📓 Aquestes preguntes són dins dels **formularis de pràctica**, i el full imprès del **[quadern tècnic](../00_General/00_Quadern_tecnic.md)** de cada sessió continua (compta el 25 %).
 - **Què és la telemetria?** ___________________________________________
 - **Per què les "bones dades" són clau per a la IA?** _________________
 - **Un error i com l'he resolt:** _____________________________________
