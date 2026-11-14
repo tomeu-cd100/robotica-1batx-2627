@@ -2,6 +2,8 @@
 
 <div class="cap-practica" markdown="1">
 
+❓ **La pregunta:** Com sap el braç a quina distància és un objecte?
+
 🎯 **Avui aconseguiràs:** que el braç **decideixi sol**: quan poses un objecte a l'estació de recollida, la base s'hi gira i la pinça s'obre.
 
 ⏱️ La sessió (pràctica + torn de taller del bloc E)

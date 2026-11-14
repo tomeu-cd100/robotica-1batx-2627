@@ -2,6 +2,8 @@
 
 <div class="cap-practica" markdown="1">
 
+❓ **La pregunta:** Com dones ordres al braç sense cap cable?
+
 🎯 **Avui aconseguiràs:** moure el teu **MeArm sense fils**: inclines la micro:bit-comandament i la segona micro:bit (el pont) passa l'ordre a l'Arduino del braç. És el producte de la SA5.
 
 ⏱️ Tota la sessió (amb el torn de taller del pont)

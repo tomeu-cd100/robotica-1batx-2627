@@ -2,6 +2,8 @@
 
 <div class="cap-practica" markdown="1">
 
+❓ **La pregunta:** Com converteixes un gest de la mà en una ordre?
+
 🎯 **Avui aconseguiràs:** que la micro:bit **noti cap on la inclines** amb l'acceleròmetre, i convertir-ho en un gest del comandament.
 
 ⏱️ La primera part de la sessió (després, el taller de la Pràctica 3)

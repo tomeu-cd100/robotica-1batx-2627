@@ -2,6 +2,8 @@
 
 <div class="cap-practica" markdown="1">
 
+❓ **La pregunta:** Com fas girar un motor al revés?
+
 🎯 **Avui aconseguiràs:** que un motor DC giri **endavant i enrere** i a diferents velocitats, amb un pont H. És una pràctica curta, fora del braç.
 
 ⏱️ 40' de pràctica + el torn de taller (blocs C-D)

@@ -281,6 +281,39 @@ from generador.utils import (  # noqa: E402
     BODY_CERCA_MAX, apply_outside_code, detect_sa, first_h1, pdf_out_for,
     rel_url, slugify, strip_accents, text_pla_cerca,
 )
+from generador import atles_t2  # noqa: E402
+
+
+# --- Atles del T2: el braç com a mapa del trimestre (generador/atles_t2.py) ---
+def _preguntes_t2() -> dict[int, str | None]:
+    return {c["n"]: atles_t2.pregunta((ROOT / c["src"]).read_text(encoding="utf-8"))
+            for c in atles_t2.CAPITOLS}
+
+
+def atles_t2_portada(out_rel: str, body: str) -> str:
+    """Plànol del braç just després del títol: a la portada del projecte T2,
+    amb la llista de peces; a la portada de SA4-SA6, amb la SA ressaltada."""
+    if out_rel == "classes/projecte-t2/index.html":
+        extra = (atles_t2.mapa_html(out_rel)
+                 + atles_t2.llista_peces_html(out_rel, _preguntes_t2()))
+    else:
+        sa = next((n for n in (4, 5, 6) if out_rel == f"classes/sa{n}/index.html"), None)
+        if sa is None:
+            return body
+        extra = atles_t2.mapa_html(out_rel, sa=sa)
+    i = body.find("</h1>")
+    if i == -1:
+        return extra + body
+    return body[:i + 5] + extra + body[i + 5:]
+
+
+def atles_t2_practica(out_rel: str) -> str:
+    """A les pràctiques del T2, el plànol amb «Ets aquí», guardat en un
+    <template>: t2.js el mostra a l'escenari quan el pas no té dibuix."""
+    c = atles_t2.capitol_de(out_rel)
+    if not c:
+        return ""
+    return f'<template id="t2-mapa">{atles_t2.mapa_html(out_rel, actiu=c["n"])}</template>'
 
 
 def depth_prefix(out_rel: str) -> str:
@@ -1174,6 +1207,10 @@ def page_shell(*, out_rel, section_key, title, content_html, toc="",
     stepper = stepper_html(section_key, out_rel)
     pager_top = f'<div class="pager-top">{pager}</div>' if pager else ""
     has_sidebar = "amb-sidebar" if sidebar else "sense-sidebar"
+    # T2: estil de plànol tècnic i escenari de pràctica (assets/css/t2.css, js/t2.js)
+    t2_class = " t2" if tri == 2 else ""
+    t2_css = f'<link rel="stylesheet" href="{prefix}assets/css/t2.css">' if tri == 2 else ""
+    t2_js = f'<script src="{prefix}assets/js/t2.js"></script>' if tri == 2 else ""
     toc_block = toc or ""
     layout_class = "amb-toc" if toc_block else "sense-toc"
 
@@ -1185,10 +1222,10 @@ def page_shell(*, out_rel, section_key, title, content_html, toc="",
 <title>{html.escape(title)} · {html.escape(SITE_TITLE)}</title>
 <meta name="description" content="{html.escape(SITE_TAGLINE)}">
 {noindex}<link rel="stylesheet" href="{prefix}assets/css/estil.css">
-<link rel="stylesheet" href="{prefix}assets/css/pygments.css">
+<link rel="stylesheet" href="{prefix}assets/css/pygments.css">{t2_css}
 <script>(function(){{try{{var d=document.documentElement,t=localStorage.getItem('tema');if(t==='fosc'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches))d.setAttribute('data-tema','fosc');var m=localStorage.getItem('mida');if(m&&m!=='100')d.setAttribute('data-mida',m);if(localStorage.getItem('font')==='llegible')d.setAttribute('data-font','llegible');var v=localStorage.getItem('vista')||'alumnat';d.setAttribute('data-vista',v);}}catch(e){{}}}})();</script>
 </head>
-<body{accent_attr} data-public="{public}" class="{has_sidebar} {layout_class}">
+<body{accent_attr} data-public="{public}" class="{has_sidebar} {layout_class}{t2_class}">
 <a class="skip" href="#contingut">Salta al contingut</a>
 <header class="topbar">
   <button class="menu-btn" aria-label="Obre el menú" aria-expanded="false">☰</button>
@@ -1235,7 +1272,7 @@ def page_shell(*, out_rel, section_key, title, content_html, toc="",
   <p><a href="{REPO_URL}" target="_blank" rel="noopener">Repositori a GitHub</a> · web generat el {BUILD_DATE}.</p>
 </footer>
 <script src="{prefix}assets/js/cerca-index.js"></script>
-<script src="{prefix}assets/js/lloc.js"></script>
+<script src="{prefix}assets/js/lloc.js"></script>{t2_js}
 </body>
 </html>
 """
@@ -1407,6 +1444,7 @@ def render_practica_page(item: dict, group: dict, pages: list[Page], md_map: dic
         body += '\n<h2 id="codi-complet">El codi complet</h2>' + bloc_codi
     if extra_nav:
         body += "\n" + extra_nav
+    body += atles_t2_practica(item["page_out"])
     full = page_shell(out_rel=item["page_out"], section_key=group["section"],
                       title=item["title"], content_html=body, toc=toc,
                       tri=group["tri"], pages=pages, public="alumnat")
@@ -2694,6 +2732,7 @@ def main():
                 # contacte) i SA2 (programació de valent).
                 if p.section == "classes" and detect_sa(p.out_rel) in (1, 2):
                     extra += "\n" + impresos_card_html(p.out_rel)
+        body = atles_t2_portada(p.out_rel, body)
         content = (pre + "\n" if pre else "") + body + ("\n" + extra if extra else "")
         # Fil transversal de la SA + paginador d'itinerari (navegació pautada)
         sa = detect_sa(p.out_rel)

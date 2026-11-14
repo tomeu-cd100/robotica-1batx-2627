@@ -2,6 +2,8 @@
 
 <div class="cap-practica" markdown="1">
 
+❓ **La pregunta:** Com mous quatre articulacions sense forçar-ne cap?
+
 🎯 **Avui aconseguiràs:** moure el teu **MeArm** amb quatre potenciòmetres, cada servo dins del seu rang segur. És el producte de la SA4.
 
 ⏱️ Tota la sessió

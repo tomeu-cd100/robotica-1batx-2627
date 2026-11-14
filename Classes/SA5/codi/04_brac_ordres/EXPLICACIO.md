@@ -2,6 +2,8 @@
 
 <div class="cap-practica" markdown="1">
 
+❓ **La pregunta:** Com entén el braç una ordre escrita?
+
 🎯 **Avui aconseguiràs:** que l'Arduino del teu MeArm **obeeixi ordres escrites** (`B+`, `B-`, `P`…). És la meitat del comandament: a la Pràctica 4, aquestes ordres arribaran per ràdio.
 
 ⏱️ El torn de taller de la Sessió 2 (~20')

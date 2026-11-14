@@ -2,6 +2,8 @@
 
 <div class="cap-practica" markdown="1">
 
+❓ **La pregunta:** Com sap un motor on s'ha d'aturar?
+
 🎯 **Avui aconseguiràs:** que el servo de la **base del braç** segueixi el potenciòmetre, i deixar els quatre servos del MeArm a punt per muntar-los.
 
 ⏱️ La sessió (pràctica + torn de taller de 35')

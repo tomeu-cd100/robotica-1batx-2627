@@ -2,6 +2,8 @@
 
 <div class="cap-practica" markdown="1">
 
+❓ **La pregunta:** Com tries una articulació amb només dos botons?
+
 🎯 **Avui aconseguiràs:** el teu **primer programa en MicroPython**: la micro:bit tria quina articulació del braç mouràs, amb els botons A i B.
 
 ⏱️ La sessió
