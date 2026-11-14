@@ -5,6 +5,8 @@
 
 > 🧭 **Com s'usa aquesta guia.** **Abans de la SA:** objectius, material i codi de suport (la logística, al checklist docent). **A cada sessió:** la secció «SESSIÓ n» corresponent, amb el «Guió de modelatge» i els «Errors freqüents» a mà. **Durant tota la SA:** diversitat (DUA), ajuda i revisió entre iguals, i pensament computacional. **En avaluar:** «Avaluació formativa (instruments)». **Per contextualitzar:** context real i ODS.
 
+> 🚩 **Format de passos (14-11-2026):** l'alumnat segueix la **ruta de pràctiques de la [portada](README.md)** al seu ritme: ① homing (S1, amb el sensor de col·lisió al taller), ② pinça automàtica (S2, amb els angles límit al taller) i ③ màquina d'estats + comandament (el producte, S3). La S4 és la prova T2. Cada pràctica comença amb el kata (a la S3, el mini-check) i acaba enviant el seu formulari. Tu fas una **arrencada de 5-10'** amb la pràctica de la fita del dia (el guió de modelatge de cada sessió) i després circules. El `04_control_proporcional` queda com a ⭐ ampliació, fora de la ruta. El **quadern imprès** es manté: el full de cada sessió s'omple en acabar.
+
 > 🦾 **Fil conductor (des del 28-10-2026):** tots els sistemes de control de
 > la SA són **del braç MeArm**: el llaç tancat és el **homing** amb el final de
 > carrera, la histèresi és la **pinça automàtica** i la màquina d'estats és el
@@ -76,7 +78,7 @@
 - **Modelatge (20'):** conceptes: **consigna, sensor (realimentació), error, actuador**. **Llaç obert** (envia i confia) vs **llaç tancat** (comprova amb un sensor). **Diagrama de blocs**.
 - **Pràctica guiada (25'):** `01_llac_obert_vs_tancat.ino`: la base en mode obert vs **homing**; mouen el sensor de lloc i comparen què passa en cada mode.
 - **Repte (25'):** dibuixar el diagrama de blocs del braç (el replay és llaç obert, l'emergència i el homing són llaç tancat); identificar entrada/sortida/realimentació.
-- **Tancament (10'):** quadern (diagrama).
+- **Tancament (10'):** formulari de la Pràctica 1 i full del quadern imprès (diagrama de blocs).
 
 > ⏱️ **Marge:** el temps efectiu real és ~100' (arrencada + recollida), no 120'. Si vas just, retalla primer: **el repte** (el diagrama de blocs passa a deures). El taller no es retalla: la pràctica el necessita.
 
@@ -90,7 +92,7 @@
 - **Pràctica guiada (25'):** la pinça automàtica a l'estació de recollida; primer amb un sol llindar (veuen el clic-clic), després amb dos.
 - **Repte (20'):** ajustar la finestra d'histèresi i observar l'efecte; **+ repte:** indicador d'estat amb un LED.
 - 🔧 **Torn de taller del braç (20'):** trobar i anotar al quadern els **angles límit** definitius de cada servo, i deixar el cablatge **endreçat i etiquetat** (criteri R1 de la rúbrica del braç). Així la S3 queda només per a la màquina d'estats.
-- **Tancament (10'):** quadern (gràfic del comportament).
+- **Tancament (10'):** formulari de la Pràctica 2 i full del quadern imprès (gràfic del comportament).
 
 > ⏱️ **Marge:** el temps efectiu real és ~100' (arrencada + recollida), no 120'. Si vas just, retalla primer: **el «+ repte» (LED d'estat)**. Recorda repartir la **targeta de represa de MicroPython** com a deures (vegeu més avall).
 
@@ -107,7 +109,7 @@
 - **Modelatge (25'):** `03_maquina_estats.ino`. `enum` d'estats + `switch`; transicions per **esdeveniment** (polsadors, col·lisió) i per **temps** (`millis()` al replay); l'**emergència abans del `switch`**. Dibuixa el diagrama d'estats del braç.
 - **Pràctica guiada (30'):** carreguen la màquina d'estats al braç i la proven: gravar tres punts, reproduir-los, provocar l'emergència amb el dit.
 - **Producte (40'):** la mateixa màquina amb el **comandament per ràdio**: les ordres `A`, `R` i `G` arriben pel pont (codi de referència al [dossier](../00_General/00_Projecte_T2_Brac.md#la-màquina-destats-del-braç)); prova final: agafar un objecte i deixar-lo en un altre lloc. **Defenses individuals de 2-3' a peu de taula (amb 5 alumnes, ~15' en total, repartits mentre la resta treballa):** passa per cada lloc i escolta la defensa del seu producte (problema → solució → **una decisió tècnica justificada**: per què aquests llindars? per què aquests estats?). Valora amb els 3 indicadors de la **mini-rúbrica R4·DO** ([`07_Rubriques.md`](../../Programació%20didàctica/07_Rubriques.md)) — a aquestes altures del curs ja s'esperen tots tres.
-- **Tancament (10'):** quadern (diagrama d'estats + diagrama de blocs); autoavaluació amb rúbriques.
+- **Tancament (10'):** formulari de la Pràctica 3, **Entrega final** (autoavaluació + checklist) i full del quadern imprès (diagrama d'estats).
 
 > ⏱️ **Marge: aquesta sessió no hi cap sencera i cal decidir-ho abans d'entrar.** Sumada tal com està (10+5+25+30+40+10) fa 120' i el temps efectiu real és ~100': **és la sessió més carregada del trimestre** (mini-check + represa de Python + concepte nou + producte + defenses). Retalla **d'entrada, no sobre la marxa**: ① la integració amb la ràdio (el producte es pot defensar amb els polsadors) i ② la prova final d'agafar l'objecte (40' → 25'). Amb això queda en ~105' i és fer-ho. El mini-check, el modelatge de la màquina d'estats i les defenses a peu de taula **no es toquen**; el «Python flash» tampoc (la Part B de la prova T2 hi depèn).
 >
@@ -155,7 +157,7 @@
 |---|---|---|---|
 | Producte (màquina d'estats del braç, **S3**) + defensa individual de 2-3' | Implementar un sistema de control i explicar-lo | CA3.1 | R3 |
 | **Prova T2 (S4, individual)** | Control amb histèresi + programa micro:bit en solitari | CA1.1, CA1.2, CA3.1 | R1, R3, R4 |
-| Quadern (diagrama de blocs + anàlisi) | Consigna, error, realimentació; anàlisi de la resposta | CA3.1 | R4 |
+| Quadern tècnic (25 %) = **formularis de pràctica** (P1-P3, 33 punts cadascun a Classroom) + **full imprès** de cada sessió | Diagrama de blocs i d'estats, consigna, error, realimentació; preguntes de reflexió + errors | CA3.1 | R4 |
 | Observació + Serial Plotter | Histèresi de la pinça; (+ampliació) ajust de `K`, salt vs moviment proporcional | CA3.1 | R3 |
 | Ajuda entre iguals i **revisió creuada** de codi | Cooperació sense producte compartit: línia d'ajuda del quadern + una millora concreta i un dubte al company | CA5.3 | **R5** |
 

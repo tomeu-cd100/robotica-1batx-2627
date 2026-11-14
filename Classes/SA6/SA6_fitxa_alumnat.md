@@ -22,7 +22,7 @@
 |---|---|---|
 | **El braç amb màquina d'estats** (producte, **S3**) + defensa de 2-3' | **R1**, **R3** i **R4** | Projectes (45 %) |
 | **Prova T2** (individual, **la S4 sencera**; el nucli és la histèresi) | **R1, R3, R4** | Proves (20 %) |
-| **Quadern tècnic** (diagrama d'estats, diagrama de blocs, errors) | **R4** | Quadern tècnic i pràctiques (25 %) |
+| **Quadern tècnic** = formularis de pràctica (diagrama de blocs, diagrama d'estats, errors) + full imprès de cada sessió | **R4** | Quadern tècnic i pràctiques (25 %) |
 | Mini-check individual (inici S3) | semàfor | **No qualifica** (m'avisa abans de la prova) |
 
 > 🪜 **Versió nucli (ja és assoliment satisfactori):** pinça amb **histèresi** que funciona i màquina d'estats amb repòs, manual i emergència, documentades amb els diagrames. **Versió completa:** hi afegeix el replay no bloquejant (`millis()`) i el comandament per ràdio, amb llindars i estats justificats — i, si vols, el moviment proporcional.
@@ -35,11 +35,11 @@
 
 ## Les activitats · al Google Classroom
 
-Aquesta fitxa es respon **en línia**, a la tasca de Google Classroom (val **10 punts**). **No cal que la responguis d'entrada**: cada activitat porta el seu **enunciat dins de la tasca**, i l'**itinerari de la portada de la SA** et diu quina toca a cada sessió. Obre-la quan comencis a treballar-hi i ves-la responent a mesura que avances:
+Les preguntes es responen a Classroom, **un formulari per pràctica**: l'enllaç és a l'últim pas de cada pràctica («📤 Respon i envia»), i la [portada de la SA](README.md) té la ruta completa.
 
-> 👉 **[Obre la tasca: SA6 · Fitxa base (Google Classroom)](https://classroom.google.com/c/ODY4ODU4Njk0NTEy/a/ODcwNTE2NDU2MzYx/details)**
+> 👉 Comença per la **[Pràctica 1 · El homing del braç](codi/01_llac_obert_vs_tancat/EXPLICACIO.md)**.
 
-Si la tasca encara no t'apareix al Classroom, és que la SA encara no ha començat. En aquesta pàgina hi tens els **objectius i l'avaluació** (a dalt) i la rutina **DEPURA** (a sota).
+En aquesta pàgina hi tens els **objectius i l'avaluació** (a dalt) i la rutina **DEPURA** (a sota).
 
 <!-- web:only-github -->
 
@@ -103,7 +103,7 @@ Es **tanca a la S3**: el teu MeArm amb **màquina d'estats** (repòs, manual, re
 
 ## Quadern tècnic
 
-> 📓 Escriu-ho a la teva entrada del **[quadern tècnic](../00_General/00_Quadern_tecnic.md)** (guia + plantilla; compta el 25 %).
+> 📓 Aquestes preguntes són dins dels **formularis de pràctica**, i el full imprès del **[quadern tècnic](../00_General/00_Quadern_tecnic.md)** de cada sessió continua (compta el 25 %).
 - **Què és la realimentació en un sistema de control?** _________________
 - **Per què serveix la histèresi?** ___________________________________
 - **Un error i com l'he resolt:** _____________________________________

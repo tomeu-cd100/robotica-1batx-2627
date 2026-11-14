@@ -44,7 +44,7 @@ Sistema de control; **llaç obert vs llaç tancat**; realimentació, consigna i 
 El **braç MeArm amb màquina d'estats** (repòs, manual, replay, emergència) i comandament per ràdio, amb diagrama d'estats, diagrama de blocs i anàlisi de la resposta. **Es tanca a la S3**; la S4 és la prova T2 individual (pinça amb histèresi + comandament micro:bit).
 
 ## Avaluació
-- Instruments: producte (S3) + quadern (diagrama + anàlisi) + **prova pràctica T2** (S4, individual).
+- Instruments: producte (S3) + quadern tècnic + **prova pràctica T2** (S4, individual). El quadern tècnic són els **formularis de pràctica** de Classroom (Pràctiques 1-3, 33 punts cadascun), cadascun amb una pregunta de reflexió, més el **full imprès** de cada sessió (es manté al T2 i al T3). Tancament amb una **Entrega final** sense nota (autoavaluació + checklist).
 - Rúbriques: **R1**, **R3** (control), **R4** (documentació).
 
 ## Atenció a la diversitat

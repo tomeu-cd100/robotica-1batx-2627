@@ -19,6 +19,11 @@ const T2 = { id: GRADE_CATEGORIES.T2.id, name: GRADE_CATEGORIES.T2.name };
 const pagina = (sa, fitxer, titol) => ({
   link: { url: `${WEB_BASE}/${sa}/codi/${fitxer}.html`, title: titol }
 });
+const SA6 = {
+  sa: 'sa6',
+  topicName: 'SA6 · Sistemes de control',
+  gradeCategory: T2,
+};
 const SA5 = {
   sa: 'sa5',
   topicName: 'SA5 · micro:bit i MicroPython',
@@ -405,6 +410,84 @@ export const PRACTIQUES = {
         'He completat la taula comparativa C++ ↔ Python',
         'He enviat els formularis de les Pràctiques 1, 2, 3 i 4',
         'Tinc el full del quadern de cada sessió omplert'
+      ])
+    ]
+  },
+
+  // =========================================================================
+  'sa6-p1': {
+    ...SA6,
+    titol: 'SA6 · Pràctica 1 · El homing del braç',
+    descripcioForm: "Respostes de la Pràctica 1 (llaç obert vs llaç tancat: el homing de la base). Les preguntes són les mateixes que els ✍️ de la pàgina de la pràctica.",
+    descripcioTasca: "Fes la Pràctica 1 seguint els passos de la pàgina (enllaç a sota) i envia aquest formulari en acabar-la. Compta per al quadern tècnic (25 %).",
+    maxPoints: 33,  // com la resta de tasques de la SA a Classroom
+    materials: [pagina('sa6', '01-llac-obert-vs-tancat', 'Pràctica 1 · El homing del braç (passos)')],
+    items: [
+      p('PREDIU: si has muntat el final de carrera a 30°, en quin mode la base l’acabarà tocant? I si fos a 15°?'),
+      s('A quants graus ha tocat el final de carrera en mode tancat (el zero real de la teva base)?'),
+      p('Diferència principal entre llaç obert i llaç tancat'),
+      p('El diagrama de blocs del teu braç: quina és la consigna, quin l’actuador i quin el sensor?'),
+      p('Què és la realimentació en un sistema de control?', 'Pregunta del quadern tècnic.')
+    ]
+  },
+
+  'sa6-p2': {
+    ...SA6,
+    titol: 'SA6 · Pràctica 2 · La pinça automàtica',
+    descripcioForm: "Respostes de la Pràctica 2 (histèresi: la pinça automàtica). Les preguntes són les mateixes que els ✍️ de la pàgina de la pràctica.",
+    descripcioTasca: "Fes la Pràctica 2 seguint els passos de la pàgina (enllaç a sota) i envia aquest formulari en acabar-la. Compta per al quadern tècnic (25 %).",
+    maxPoints: 33,  // com la resta de tasques de la SA a Classroom
+    materials: [pagina('sa6', '02-pinca-histeresi', 'Pràctica 2 · La pinça automàtica (passos)')],
+    items: [
+      p('PREDIU: acostes la mà de 20 cm a 3 cm i després l’allunyes. A quina distància es tanca la pinça? A quina s’obre? I si deixes la mà quieta a 8 cm?'),
+      s('Llindars del codi: es tanca a ____ cm · s’obre a ____ cm'),
+      p('Què passaria sense histèresi (amb un sol llindar)?'),
+      s('Taller: angles límit definitius de cada servo (base · esquerre · dret · pinça)'),
+      pOpt('⭐ Repte: un LED que mostra si la pinça és tancada. Com ho has fet?'),
+      p('Per què serveix la histèresi?', 'Pregunta del quadern tècnic.')
+    ]
+  },
+
+  'sa6-p3': {
+    ...SA6,
+    titol: 'SA6 · Pràctica 3 · La màquina d’estats del braç',
+    descripcioForm: "Respostes de la Pràctica 3 (el producte de la SA6): la màquina d'estats del braç i el comandament. Les preguntes són les mateixes que els ✍️ de la pàgina de la pràctica.",
+    descripcioTasca: "Fes la Pràctica 3 (el producte) seguint els passos de la pàgina (enllaç a sota) i envia aquest formulari en acabar-la. S'avalua amb R1 (codi), R3 (control) i R4 (documentació). Després, fes l'Entrega final.",
+    maxPoints: 33,  // com la resta de tasques de la SA a Classroom
+    materials: [pagina('sa6', '03-maquina-estats', 'Pràctica 3 · La màquina d’estats del braç (passos)')],
+    items: [
+      p('El teu diagrama d’estats: escriu una línia per fletxa (ESTAT → ESTAT quan …)'),
+      p('PREDIU: si toques el sensor de col·lisió a mig replay, què fa el braç? I si després el deixes anar però no prems A?'),
+      p('Per què la comprovació de l’emergència va abans del switch i no dins d’un case?'),
+      p('Producte: quina ordre del comandament fa cada canvi d’estat? (A, R, G)'),
+      p('Un error que has trobat i com l’has resolt', 'Pregunta del quadern tècnic.')
+    ]
+  },
+
+  'sa6-final': {
+    ...SA6,
+    titol: 'SA6 · Entrega final',
+    descripcioForm: "Tancament de la SA6: autoavaluació i checklist. Fes-la quan hagis acabat la Pràctica 3 (la màquina d'estats del braç).",
+    descripcioTasca: "Fes-la quan hagis acabat la Pràctica 3 i la defensa de 2-3' del braç. No té nota pròpia: és la teva autoavaluació i el repàs final abans de la prova T2.",
+    materials: [{ link: { url: `${WEB_BASE}/sa6/index.html#entrega-final`, title: 'SA6 · Entrega final (portada de la SA)' } }],
+    items: [
+      t('Versió nucli',
+        'Per aprovar n’hi ha prou amb la pinça amb histèresi funcionant i la màquina d’estats amb repòs, manual i emergència, documentades amb els diagrames.'),
+      autoaval([
+        'Distingeixo llaç obert i llaç tancat',
+        'Implemento la histèresi de la pinça i la màquina d’estats del braç',
+        'Explico el diagrama de blocs i el diagrama d’estats del meu braç'
+      ]),
+      check('Checklist final: marca el que tens fet', [
+        'El sensor de col·lisió és muntat a la base i el homing troba el zero',
+        'He dibuixat el diagrama de blocs del braç',
+        'La pinça automàtica funciona amb histèresi, sense clic-clic',
+        'He anotat els angles límit i el cablatge és endreçat i etiquetat',
+        'La màquina d’estats funciona: repòs, manual, replay i emergència',
+        'El braç obeeix el comandament per ràdio (ordres A, R i G)',
+        'He enviat els formularis de les Pràctiques 1, 2 i 3',
+        'Tinc el full del quadern de cada sessió omplert',
+        'He repassat la targeta de MicroPython per a la prova T2'
       ])
     ]
   },
