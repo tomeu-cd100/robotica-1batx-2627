@@ -66,6 +66,11 @@ class Atles:
     teoria_extra: list[tuple[str, str]] = field(default_factory=list)    # (sufix, etiqueta)
 
     # --- dades ---------------------------------------------------------------
+    def num_local(self, c: dict) -> int:
+        """Número de la pràctica dins de la seva SA (el que diu el títol de la
+        pàgina); el número del globus (c["n"]) és el del plànol del trimestre."""
+        return [x["n"] for x in self.capitols if x["sa"] == c["sa"]].index(c["n"]) + 1
+
     def capitol_de(self, out_rel: str) -> dict | None:
         """El capítol que correspon a una pàgina generada, si n'és un."""
         return next((c for c in self.capitols if c["out"] == out_rel), None)
@@ -162,7 +167,8 @@ class Atles:
         if sa:
             base = f"classes/sa{sa}"
             ruta = [_li(out_rel, f"{base}/index.html", "Presentació i ruta")]
-            ruta += [_li(out_rel, c["out"], f'{c["n"]} · {c["nom"]}') for c in self.capitols if c["sa"] == sa]
+            ruta += [_li(out_rel, c["out"], f'Pràctica {self.num_local(c)} · {c["nom"]}')
+                     for c in self.capitols if c["sa"] == sa]
             teoria = []
             for suf, etiq in TEORIA + self.teoria_extra:
                 o = next((o for o in noms if o.startswith(base + "/") and o.endswith(f"{suf}.html")
@@ -193,7 +199,7 @@ class Atles:
 
         tri_nom = {1: "1r", 2: "2n", 3: "3r"}[self.tri] + " trimestre"
         if cap:
-            cap_pas = f'Pràctica {cap["n"]} · SA{cap["sa"]} {cap["ses"]}'
+            cap_pas = f'SA{cap["sa"]} · Pràctica {self.num_local(cap)} · {cap["ses"]}'
             cap_q = preguntes.get(cap["n"]) or cap["nom"]
         elif sa:
             cap_pas, cap_q = f"SA{sa} · {tri_nom}", titol_sa.get(sa, f"SA{sa}")

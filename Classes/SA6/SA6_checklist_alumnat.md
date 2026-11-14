@@ -15,7 +15,7 @@
 - [ ] Construir la **màquina d'estats del braç** que no es bloqueja (`millis()`) (S3)
 - [ ] *(Opcional +ampliació)* Provar el **moviment proporcional** i comparar-lo amb el salt (si acabo aviat)
 - [ ] **Dissenyar abans de codificar:** el diagrama d'estats és el pseudocodi (cap `case` fora del dibuix; al formulari de la Pràctica 3)
-- [ ] Haver enviat els **formularis de Classroom** de les Pràctiques 1, 2 i 3 (cadascun en acabar la seva pràctica) i l'**Entrega final**
+- [ ] Haver enviat els **formularis de Classroom** i la **foto** de les Pràctiques 1, 2 i 3 (cadascun en acabar la seva pràctica) i l'**Entrega final**
 - [ ] Lliurar **el braç amb màquina d'estats i comandament** i defensar-lo **2–3'** a peu de taula (una decisió tècnica justificada) → *R1, R3, R4* (S3)
 - [ ] Fer la **prova T2** (S4, individual — amb el quadern al dia com a material permès)
 - [ ] Tenir el **quadern tècnic** al dia (què és la realimentació, per què serveix la histèresi, un error resolt)

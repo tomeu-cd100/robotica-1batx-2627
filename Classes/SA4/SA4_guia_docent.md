@@ -5,7 +5,7 @@
 
 > 🧭 **Com s'usa aquesta guia.** **Abans de la SA:** objectius, material i codi de suport (la logística, al checklist docent). **A cada sessió:** la secció «SESSIÓ n» corresponent, amb el «Guió de modelatge» i els «Errors freqüents» a mà. **Durant tota la SA:** diversitat (DUA), ajuda i revisió entre iguals, i pensament computacional. **En avaluar:** «Avaluació formativa (instruments)». **Per contextualitzar:** context real i ODS.
 
-> 🚩 **Format de passos (3-11-2026):** l'alumnat segueix la **ruta de pràctiques de la [portada](README.md)** al seu ritme: cada pràctica té els passos i el torn de taller a dins i acaba enviant el seu formulari. Tu fas una **arrencada de 5-10'** amb la pràctica de la fita del dia (el guió de modelatge de cada sessió) i després circules. El **quadern imprès** es manté: el full de cada sessió s'omple en acabar.
+> 🚩 **Format de passos (3-11-2026):** l'alumnat segueix la **ruta de pràctiques de la [portada](README.md)** al seu ritme: cada pràctica té els passos i el torn de taller a dins i acaba enviant el seu formulari i la foto de la pràctica (tasques «Foto» de Classroom). Tu fas una **arrencada de 5-10'** amb la pràctica de la fita del dia (el guió de modelatge de cada sessió) i després circules. El **quadern imprès** es manté: el full de cada sessió s'omple en acabar.
 
 > 🦾 **Fil conductor (des del 28-10-2026):** totes les pràctiques de la SA es
 > fan **sobre el braç MeArm** de cada alumne/a, que es munta en torns de

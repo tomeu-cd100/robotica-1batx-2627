@@ -10,7 +10,7 @@ En acabar aquesta SA podràs: 1) controlar la **posició** d'un servo dins del s
 
 ## 🧭 La teva ruta
 
-Fes les pràctiques **en ordre i al teu ritme**. Cada pràctica acaba enviant el seu formulari de Classroom. Les 🚩 et diuen on hauries de ser al final de cada sessió.
+Fes les pràctiques **en ordre i al teu ritme**. Cada pràctica acaba enviant el seu formulari de Classroom i la foto de la pràctica. Les 🚩 et diuen on hauries de ser al final de cada sessió.
 
 - ① [Pràctica 1 · El servo amb potenciòmetre](codi/01_servo_potenciometre/EXPLICACIO.md) — el servo de la base segueix el potenciòmetre. **Taller:** pas 0 i blocs A-B del MeArm.
 
@@ -41,10 +41,10 @@ Fes les pràctiques **en ordre i al teu ritme**. Cada pràctica acaba enviant el
 
 | Quan | Què | On |
 |---|---|---|
-| S1 | Formulari de la Pràctica 1 | Una tasca de Classroom per pràctica (enllaç a l'últim pas de cada pràctica) |
-| S2 | Formulari de la Pràctica 2 | La tasca de Classroom de la pràctica |
-| S3 | Formulari de la Pràctica 3 | La tasca de Classroom de la pràctica |
-| S4 | Formulari de la Pràctica 4 + **el braç** i defensa d'1' + **Entrega final** | A l'aula i a Classroom. S'avalua amb **R1**, **R2** i **R3** |
+| S1 | Formulari i foto de la Pràctica 1 | Una tasca de Classroom per pràctica (enllaç a l'últim pas de cada pràctica) |
+| S2 | Formulari i foto de la Pràctica 2 | La tasca de Classroom de la pràctica |
+| S3 | Formulari i foto de la Pràctica 3 | La tasca de Classroom de la pràctica |
+| S4 | Formulari i foto de la Pràctica 4 + **el braç** i defensa d'1' + **Entrega final** | A l'aula i a Classroom. S'avalua amb **R1**, **R2** i **R3** |
 | ⭐ | [Repte triat (A, B o C)](../../Reptes/Reptes_SA4.md) | El docent el valida i pinteu l'estrella al [tauler de reptes](../00_General/00_Tauler_reptes.md) |
 | 📓 | Full del quadern tècnic de cada sessió | En paper, en acabar la sessió |
 | 🤖 | El MeArm muntat (blocs A-E) i cablejat amb els seus angles límit | Torns de taller de les S1-S4: [guia de muntatge](../00_General/00_Muntatge_brac_MeArm.md) i [dossier del braç](../00_General/00_Projecte_T2_Brac.md) |

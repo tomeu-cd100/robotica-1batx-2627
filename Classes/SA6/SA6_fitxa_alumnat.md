@@ -33,7 +33,7 @@
 
 ## Les activitats · al Google Classroom
 
-Les preguntes es responen a Classroom, **un formulari per pràctica**: l'enllaç és a l'últim pas de cada pràctica («📤 Respon i envia»), i la [portada de la SA](README.md) té la ruta completa.
+Les preguntes es responen a Classroom, **un formulari per pràctica**: l'enllaç és a l'últim pas de cada pràctica («📤 Respon i envia»), al costat de la tasca **Foto** on penges la foto de la pràctica, i la [portada de la SA](README.md) té la ruta completa.
 
 > 👉 Comença per la **[Pràctica 1 · El homing del braç](codi/01_llac_obert_vs_tancat/EXPLICACIO.md)**.
 

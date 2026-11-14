@@ -5,7 +5,7 @@
 
 > 🧭 **Com s'usa aquesta guia.** **Abans de la SA:** objectius, material i codi de suport (la logística, al checklist docent). **A cada sessió:** la secció «SESSIÓ n» corresponent, amb el «Guió de modelatge» i els «Errors freqüents» a mà. **Durant tota la SA:** diversitat (DUA), ajuda i revisió entre iguals, i pensament computacional. **En avaluar:** «Avaluació formativa (instruments)». **Per contextualitzar:** context real i ODS.
 
-> 🚩 **Format de passos (3-11-2026):** l'alumnat segueix la **ruta de pràctiques de la [portada](README.md)** al seu ritme: ① selector, ② inclinació, ③ el braç obeeix ordres (`04_brac_ordres`, el taller de la S2) i ④ ràdio + pont + comparació (el producte, S3). Cada pràctica acaba enviant el seu formulari. Tu fas una **arrencada de 5-10'** amb la pràctica de la fita del dia. El **quadern imprès** es manté (un full per sessió).
+> 🚩 **Format de passos (3-11-2026):** l'alumnat segueix la **ruta de pràctiques de la [portada](README.md)** al seu ritme: ① selector, ② inclinació, ③ el braç obeeix ordres (`04_brac_ordres`, el taller de la S2) i ④ ràdio + pont + comparació (el producte, S3). Cada pràctica acaba enviant el seu formulari i la foto de la pràctica (tasques «Foto» de Classroom). Tu fas una **arrencada de 5-10'** amb la pràctica de la fita del dia. El **quadern imprès** es manté (un full per sessió).
 
 > 🦾 **Fil conductor (des del 28-10-2026):** en aquesta SA es construeix el
 > **comandament sense fils del braç MeArm**. Cada pràctica n'és una peça:

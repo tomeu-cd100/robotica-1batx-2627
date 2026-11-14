@@ -17,7 +17,7 @@
 - [ ] Trobar i anotar els **angles límit** de cada servo
 - [ ] **Dissenyar abans de codificar:** pseudocodi del control d'una articulació (al formulari de la Pràctica 4)
 - [ ] Lliurar **el braç amb potenciòmetres** i defensar-lo 1' → *R1, R2 i R3* (S4)
-- [ ] Haver enviat els **formularis de Classroom** de les Pràctiques 1, 2, 3 i 4 (cadascun en acabar la seva pràctica) i l'**Entrega final**
+- [ ] Haver enviat els **formularis de Classroom** i la **foto** de les Pràctiques 1, 2, 3 i 4 (cadascun en acabar la seva pràctica) i l'**Entrega final**
 - [ ] Tenir el **quadern tècnic** al dia (per què cal un pont H, què és la massa comuna, angles límit, un error resolt)
 
 ## 🚦 Com vaig? (pinta el teu nivell)

@@ -10,7 +10,7 @@ En acabar aquesta SA podràs: 1) distingir **llaç obert** i **llaç tancat** i 
 
 ## 🧭 La teva ruta
 
-Fes les pràctiques **en ordre i al teu ritme**. Cada pràctica acaba enviant el seu formulari de Classroom. Les 🚩 et diuen on hauries de ser al final de cada sessió.
+Fes les pràctiques **en ordre i al teu ritme**. Cada pràctica acaba enviant el seu formulari de Classroom i la foto de la pràctica. Les 🚩 et diuen on hauries de ser al final de cada sessió.
 
 - ① [Pràctica 1 · El homing del braç](codi/01_llac_obert_vs_tancat/EXPLICACIO.md) — llaç obert vs llaç tancat: la base troba sola el seu zero. **Taller:** el sensor de col·lisió a la base.
 
@@ -41,9 +41,9 @@ Fes les pràctiques **en ordre i al teu ritme**. Cada pràctica acaba enviant el
 
 | Quan | Què | On |
 |---|---|---|
-| S1 | Formulari de la Pràctica 1 | Una tasca de Classroom per pràctica (enllaç a l'últim pas de cada pràctica) |
-| S2 | Formulari de la Pràctica 2 | La tasca de Classroom de la pràctica |
-| S3 | Formulari de la Pràctica 3 + **el braç amb màquina d'estats** i defensa de 2-3' + **Entrega final** | A l'aula i a Classroom. S'avalua amb **R1**, **R3** i **R4** |
+| S1 | Formulari i foto de la Pràctica 1 | Una tasca de Classroom per pràctica (enllaç a l'últim pas de cada pràctica) |
+| S2 | Formulari i foto de la Pràctica 2 | La tasca de Classroom de la pràctica |
+| S3 | Formulari i foto de la Pràctica 3 + **el braç amb màquina d'estats** i defensa de 2-3' + **Entrega final** | A l'aula i a Classroom. S'avalua amb **R1**, **R3** i **R4** |
 | S4 | **Prova pràctica T2 (individual)** | A l'aula, sessió sencera |
 | ⭐ | [Repte triat (A, B o C)](../../Reptes/Reptes_SA6.md) | El docent el valida i pinteu l'estrella al [tauler de reptes](../00_General/00_Tauler_reptes.md) |
 | 📓 | Full del quadern tècnic de cada sessió | En paper, en acabar la sessió |

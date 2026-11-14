@@ -12,7 +12,7 @@ En acabar aquesta SA podràs: 1) escriure programes en **MicroPython** ben inden
 
 ## 🧭 La teva ruta
 
-Fes les pràctiques **en ordre i al teu ritme**. Cada pràctica acaba enviant el seu formulari de Classroom. Les 🚩 et diuen on hauries de ser al final de cada sessió.
+Fes les pràctiques **en ordre i al teu ritme**. Cada pràctica acaba enviant el seu formulari de Classroom i la foto de la pràctica. Les 🚩 et diuen on hauries de ser al final de cada sessió.
 
 - ① [Pràctica 1 · El selector d'articulació](codi/01_selector_articulacio_EXPLICACIO.md) — el teu primer MicroPython: la micro:bit tria quina articulació mouràs.
 
@@ -42,9 +42,9 @@ Fes les pràctiques **en ordre i al teu ritme**. Cada pràctica acaba enviant el
 
 | Quan | Què | On |
 |---|---|---|
-| S1 | Formulari de la Pràctica 1 | Una tasca de Classroom per pràctica (enllaç a l'últim pas de cada pràctica) |
-| S2 | Formularis de les Pràctiques 2 i 3 | Les tasques de Classroom de les pràctiques |
-| S3 | Formulari de la Pràctica 4 + **el comandament** i defensa d'1' + **Entrega final** | A l'aula i a Classroom. S'avalua amb **R1** i **R4** |
+| S1 | Formulari i foto de la Pràctica 1 | Una tasca de Classroom per pràctica (enllaç a l'últim pas de cada pràctica) |
+| S2 | Formularis i fotos de les Pràctiques 2 i 3 | Les tasques de Classroom de les pràctiques |
+| S3 | Formulari i foto de la Pràctica 4 + **el comandament** i defensa d'1' + **Entrega final** | A l'aula i a Classroom. S'avalua amb **R1** i **R4** |
 | ⭐ | [Repte triat (A, B o C)](../../Reptes/Reptes_SA5.md) | El docent el valida i pinteu l'estrella al [tauler de reptes](../00_General/00_Tauler_reptes.md) |
 | 📓 | Full del quadern tècnic de cada sessió | En paper, en acabar la sessió |
 | 🤖 | El braç obeint ordres (S2) i movent-se amb el comandament per ràdio a través del pont (S3) | Torns de taller de les S2-S3: [dossier del braç](../00_General/00_Projecte_T2_Brac.md) |

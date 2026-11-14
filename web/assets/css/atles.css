@@ -116,6 +116,7 @@ html[data-tema="fosc"] .peca { border-top-color: #7fb2ff; }
 .esc-vista .codi-bloc { max-width: 100%; margin: 0; }
 .esc-vista .codi-cos { overflow-x: auto; }
 .esc-vista .highlight { max-height: 56vh; overflow: auto; }
+.esc-vista > .highlight { width: 100%; align-self: start; background: var(--bg); border-radius: var(--radi-s); padding: .6rem .8rem; font-size: .88rem; }
 .esc-vista .planol { margin: 0; padding: 0; box-shadow: none; background: none; width: 100%; }
 .esc-vista .planol svg { min-width: 0; }
 .esc-vista .planol figcaption { color: var(--pl-traç); }

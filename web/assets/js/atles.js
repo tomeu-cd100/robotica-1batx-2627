@@ -3,7 +3,7 @@
    Aquest script:
    - a les pàgines de teoria, en pantalla ampla, obre els blocs de l'índex;
    - a les pràctiques, en pantalla ampla, mostra al plànol el dibuix o el codi
-     del pas que llegeixes. Un pas sense dibuix hereta el de l'anterior; si
+     del pas que llegeixes (imatge, codi complet o el tros de codi del pas). Un pas sense dibuix hereta el de l'anterior; si
      encara no n'hi ha cap, s'hi veu el plànol amb «Ets aquí».
    Al mòbil el panell queda a dalt, amb l'índex plegat.
    Fitxer mantingut a mà; el carrega page_shell() a les pàgines dels trimestres amb atles. */
@@ -39,7 +39,8 @@
   // El dibuix de cada pas: la primera imatge o el codi complet. Sense, hereta.
   var darrer = null;
   var media = passos.map(function (p) {
-    var m = p.querySelector("img") || p.querySelector("#codi-complet");
+    // ordre: imatge, codi complet o, si no, el primer tros de codi del pas
+    var m = p.querySelector("img") || p.querySelector("#codi-complet") || p.querySelector(".highlight");
     if (m) darrer = m;
     if (m && m.tagName === "IMG") m.classList.add("a-escenari");
     return m || darrer;
@@ -76,9 +77,11 @@
       var d = m.querySelector("details");
       if (d) d.open = true;
     } else if (m) {
-      var img = m.cloneNode(true);
-      img.classList.remove("a-escenari");
-      vista.appendChild(img);
+      // imatge o tros de codi del pas: se'n mostra una còpia (el tros de codi
+      // també es queda al panell de text, on es pot copiar)
+      var copia = m.cloneNode(true);
+      copia.classList.remove("a-escenari");
+      vista.appendChild(copia);
     } else if (planol) {
       vista.appendChild(planol);
     }
