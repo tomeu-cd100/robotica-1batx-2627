@@ -60,6 +60,8 @@ Deixa muntat el sensor de llum de l'apartat 2 (punt d'unió a **A1**) i afegeix-
 | SCL | A5 |
 | SDA | A4 |
 
+![Connexions de la pantalla OLED: 5V a VCC, GND a GND, A5 a SCL i A4 a SDA; el sensor de llum continua a A1](img/sa3-oled-connexions.svg)
+
 > ⚠️ L'ordre dels 4 pins **canvia segons el model**: llegeix les lletres de la pantalla. Cal la llibreria **U8g2** (Eines → Gestiona les biblioteques).
 
 ## 4. El tamagotchi (Sessió 3)

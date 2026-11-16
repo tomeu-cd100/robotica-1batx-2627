@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 460" width="760" height="460" role="img" aria-labelledby="t d">
+  <title id="t">Connexions de la pantalla OLED</title>
+  <desc id="d">A dalt, la vora inferior de l'Arduino UNO amb els connectors POWER i ANALOG IN. A sota, la pantalla OLED de 0,96 polzades amb quatre pins: GND, VCC, SCL i SDA. El cable negre va de GND de l'Arduino a GND de la pantalla. El vermell va de 5V a VCC. El taronja va d'A5 a SCL. El blau va d'A4 a SDA. El sensor de llum de la Pràctica 2 continua connectat a A1. L'ordre dels pins de la pantalla pot canviar segons el model: cal llegir les lletres.</desc>
+  <style>
+    .fr{fill:#f6faf9;stroke:#d7e6e5;stroke-width:1.5}
+    .box{fill:#ffffff;stroke:#0e1b1c;stroke-width:2}
+    .mod{fill:#e8f1fb;stroke:#1d4ed8;stroke-width:2}
+    .w{fill:none;stroke-width:3.5;stroke-linecap:round;stroke-linejoin:round}
+    .v5{stroke:#dc2626}.gnd{stroke:#0e1b1c}.scl{stroke:#ea580c}.sda{stroke:#2563eb}.ld{stroke:#7c3aed}
+    .lbl{font:700 14px system-ui,'Segoe UI',sans-serif;fill:#0e1b1c}
+    .mut{font:600 12.5px system-ui,'Segoe UI',sans-serif;fill:#4f6d6e}
+    .pin{font:700 13px 'Consolas',monospace;fill:#0e1b1c}
+    .tit{font:800 13px system-ui,sans-serif;fill:#0c6e70;letter-spacing:.04em}
+    .scr{font:700 13px 'Consolas',monospace;fill:#7dd3fc}
+  </style>
+  <rect class="fr" x="1" y="1" width="758" height="458" rx="14"/>
+
+  <!-- Arduino UNO: només la vora de baix, amb els dos connectors -->
+  <rect class="box" x="40" y="24" width="680" height="154" rx="10"/>
+  <text class="lbl" x="380" y="56" text-anchor="middle">Arduino UNO</text>
+  <text class="mut" x="380" y="76" text-anchor="middle">(vora de baix, on hi ha els pins A0…A5)</text>
+
+  <text class="tit" x="208" y="122" text-anchor="middle">POWER</text>
+  <text class="pin" x="120" y="155" text-anchor="middle">3.3V</text>
+  <text class="pin" x="164" y="155" text-anchor="middle">5V</text>
+  <text class="pin" x="208" y="155" text-anchor="middle">GND</text>
+  <text class="pin" x="252" y="155" text-anchor="middle">GND</text>
+  <text class="pin" x="296" y="155" text-anchor="middle">Vin</text>
+
+  <text class="tit" x="514" y="122" text-anchor="middle">ANALOG IN</text>
+  <text class="pin" x="404" y="155" text-anchor="middle">A0</text>
+  <text class="pin" x="448" y="155" text-anchor="middle">A1</text>
+  <text class="pin" x="492" y="155" text-anchor="middle">A2</text>
+  <text class="pin" x="536" y="155" text-anchor="middle">A3</text>
+  <text class="pin" x="580" y="155" text-anchor="middle">A4</text>
+  <text class="pin" x="624" y="155" text-anchor="middle">A5</text>
+
+  <g fill="#0e1b1c">
+    <rect x="113" y="164" width="14" height="14" rx="2"/>
+    <rect x="157" y="164" width="14" height="14" rx="2"/>
+    <rect x="201" y="164" width="14" height="14" rx="2"/>
+    <rect x="245" y="164" width="14" height="14" rx="2"/>
+    <rect x="289" y="164" width="14" height="14" rx="2"/>
+    <rect x="397" y="164" width="14" height="14" rx="2"/>
+    <rect x="441" y="164" width="14" height="14" rx="2"/>
+    <rect x="485" y="164" width="14" height="14" rx="2"/>
+    <rect x="529" y="164" width="14" height="14" rx="2"/>
+    <rect x="573" y="164" width="14" height="14" rx="2"/>
+    <rect x="617" y="164" width="14" height="14" rx="2"/>
+  </g>
+
+  <!-- A1: el sensor de llum de la Pràctica 2 es queda -->
+  <line class="w ld" x1="448" y1="178" x2="448" y2="204" stroke-dasharray="5 4"/>
+  <text class="mut" x="438" y="206" text-anchor="end">sensor de llum (ja hi és)</text>
+
+  <!-- 5V -> VCC (vermell) -->
+  <polyline class="w v5" points="164,178 164,230 500,230 500,290"/>
+  <!-- GND -> GND (negre), salta per sobre del vermell -->
+  <path class="w gnd" d="M208,178 V222 a8,8 0 0 1 0,16 V256 H460 V290"/>
+  <!-- A4 -> SDA (blau) -->
+  <line class="w sda" x1="580" y1="178" x2="580" y2="290"/>
+  <!-- A5 -> SCL (taronja), salta per sobre del blau -->
+  <path class="w scl" d="M624,178 V256 H588 a8,8 0 0 0 -16,0 H540 V290"/>
+
+  <!-- Pantalla OLED -->
+  <rect class="mod" x="400" y="286" width="240" height="144" rx="10"/>
+  <g fill="#ffffff" stroke="#0e1b1c" stroke-width="2">
+    <circle cx="460" cy="298" r="6"/>
+    <circle cx="500" cy="298" r="6"/>
+    <circle cx="540" cy="298" r="6"/>
+    <circle cx="580" cy="298" r="6"/>
+  </g>
+  <text class="pin" x="460" y="322" text-anchor="middle">GND</text>
+  <text class="pin" x="500" y="322" text-anchor="middle">VCC</text>
+  <text class="pin" x="540" y="322" text-anchor="middle">SCL</text>
+  <text class="pin" x="580" y="322" text-anchor="middle">SDA</text>
+  <rect x="424" y="332" width="192" height="86" rx="4" fill="#0b1020"/>
+  <text class="scr" x="434" y="352">Hola!</text>
+  <circle cx="520" cy="374" r="17" fill="none" stroke="#7dd3fc" stroke-width="2"/>
+  <circle cx="514" cy="369" r="2.2" fill="#7dd3fc"/>
+  <circle cx="526" cy="369" r="2.2" fill="#7dd3fc"/>
+  <path d="M512,380 q8,7 16,0" fill="none" stroke="#7dd3fc" stroke-width="2"/>
+  <rect x="434" y="402" width="172" height="8" fill="none" stroke="#7dd3fc" stroke-width="1.5"/>
+  <rect x="434" y="402" width="100" height="8" fill="#7dd3fc"/>
+  <text class="lbl" x="520" y="450" text-anchor="middle">Pantalla OLED 0,96" (I²C)</text>
+
+  <!-- Llegenda i avisos -->
+  <g class="w"><line class="w v5" x1="40" y1="300" x2="70" y2="300"/></g>
+  <text class="lbl" x="80" y="305">5V → VCC</text>
+  <line class="w gnd" x1="40" y1="326" x2="70" y2="326"/>
+  <text class="lbl" x="80" y="331">GND → GND</text>
+  <line class="w scl" x1="40" y1="352" x2="70" y2="352"/>
+  <text class="lbl" x="80" y="357">A5 → SCL</text>
+  <line class="w sda" x1="40" y1="378" x2="70" y2="378"/>
+  <text class="lbl" x="80" y="383">A4 → SDA</text>
+
+  <text class="mut" x="40" y="414">⚠️ L'ordre dels pins canvia segons el model:</text>
+  <text class="mut" x="40" y="432">connecta per les lletres, no per la posició.</text>
+</svg>
