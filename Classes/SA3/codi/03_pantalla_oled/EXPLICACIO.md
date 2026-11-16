@@ -15,11 +15,14 @@
 
 ## 🚀 Pas a pas
 
-### Pas 1 · Instal·la la llibreria
+### Pas 1 · La llibreria de la pantalla
 
-A l'Arduino IDE: **Eines → Gestiona les biblioteques**, cerca **Adafruit SSD1306** i prem **Instal·la**. Quan et pregunti si vols instal·lar també les llibreries que necessita (Adafruit GFX i Adafruit BusIO), prem **Instal·la-ho tot**.
+El codi fa servir la llibreria **Adafruit SSD1306** (i les que necessita: Adafruit GFX i Adafruit BusIO).
 
-✅ **Comprova:** a la llista de biblioteques, Adafruit SSD1306 i Adafruit GFX diuen «Instal·lada».
+- **Chromebook (Web Editor):** no cal instal·lar res. El Web Editor ja té totes les llibreries al núvol i les troba soles quan el codi diu `#include <Adafruit_SSD1306.h>`.
+- **PC (Arduino IDE):** **Eines → Gestiona les biblioteques**, cerca **Adafruit SSD1306** i prem **Instal·la**. Quan et pregunti si vols instal·lar també les llibreries que necessita, prem **Instal·la-ho tot**.
+
+✅ **Comprova:** al Chromebook, passa al pas 2. Al PC, a la llista de biblioteques, Adafruit SSD1306 i Adafruit GFX diuen «Instal·lada».
 
 ### Pas 2 · Munta la pantalla
 
@@ -75,7 +78,7 @@ Hi trobaràs les mateixes preguntes ✍️ que has anat apuntant. Envia'l ara i 
 
 | Què passa | Per què | Com ho arreglo |
 |---|---|---|
-| No compila: `Adafruit_SSD1306.h` no trobat | Falta la llibreria. | Torna al pas 1. |
+| No compila: `Adafruit_SSD1306.h` no trobat | Al Chromebook: la línia `#include` està mal escrita. Al PC: falta la llibreria. | Chromebook: torna a copiar el codi sencer. PC: torna al pas 1. |
 | La pantalla no s'encén (el Monitor sèrie diu «La pantalla no arrenca») | SDA i SCL intercanviats, o VCC i GND al revés. | Mira les lletres de la pantalla i la taula del pas 2. |
 | La pantalla està negra però abans funcionava | Un cable fa mal contacte. | Prem bé els 4 cables a la protoboard. |
 | La barra no canvia mai | El sensor de llum no és a A1, o falta la resistència de 10 kΩ. | Revisa el muntatge de la [Pràctica 2](../02_potenciometre_ldr/EXPLICACIO.md). |

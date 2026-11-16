@@ -98,7 +98,7 @@
 
 > ⏱️ **Marge:** 10+25+55+10 = **100'**, just el temps efectiu. Si vas just: ① a la ③ n'hi ha prou amb veure la cara i la barra · ② la **versió nucli** (3 necessitats amb els 3 botons, la llum, contenta/trista) és el mínim; el micròfon i l'estat malalta són la versió completa. DORMIR ha de ser al nucli: la son baixa sola i, sense DORMIR, quedaria trista per sempre. **No retallis la fitxa de personalitat**: és la meitat de la R4 del robot.
 >
-> 🔧 **Logística:** les llibreries **Adafruit SSD1306** i **Adafruit GFX** han d'estar instal·lades als ordinadors **abans** de la sessió (si no, ni la ③ ni el tamagotchi compilen). Les carcasses (làser o 3D, una per alumne) han d'estar fetes de la SA2 S3; qui no la tingui, munta a la protoboard i hi passa el muntatge després.
+> 🔧 **Logística:** les llibreries **Adafruit SSD1306** i **Adafruit GFX** han d'estar instal·lades als PC amb Arduino IDE **abans** de la sessió (si no, ni la ③ ni el tamagotchi compilen). Als Chromebooks no cal: el Web Editor ja té totes les llibreries al núvol. Les carcasses (làser o 3D, una per alumne) han d'estar fetes de la SA2 S3; qui no la tingui, munta a la protoboard i hi passa el muntatge després.
 
 **Punt clau:** al tamagotchi, el temps es controla amb **`millis()`** (com l'antirebot), mai amb `delay()` llargs: així continua atent als botons. Cada sensor fa el mateix patró de la SA: **llegir → comparar amb un llindar → decidir**, i els estats són `const int` com a la SA2.
 

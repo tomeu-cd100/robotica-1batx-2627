@@ -10,7 +10,7 @@
 - [ ] Sensors: polsador, potenciòmetre, LDR + 10 kΩ, NTC + 10 kΩ, LED, piezo · **tamagotchi:** OLED KS0271 (SSD1306 0,96" I²C) + 3 polsadors per alumne/a
 - [ ] **Multímetres** per al racó de mesura del divisor de tensió
 - [ ] Sketches provats: `01_polsador_debounce` · `02_potenciometre_ldr` · `03_pantalla_oled` · `05_mascota` (esquelet del tamagotchi)
-- [ ] **Llibreries Adafruit SSD1306 i Adafruit GFX** instal·lades a tots els ordinadors (ni la ③ ni el tamagotchi compilen sense) · **carcasses** del tamagotchi fetes (làser o 3D, S3 de la SA2)
+- [ ] **Llibreries Adafruit SSD1306 i Adafruit GFX** instal·lades als PC amb Arduino IDE (ni la ③ ni el tamagotchi compilen sense); als Chromebooks el Web Editor ja les té · **carcasses** del tamagotchi fetes (làser o 3D, S3 de la SA2)
 - [ ] **Preparar la prova pràctica T1** ([`Avaluació/Prova_practica_T1.md`](../../Avaluació/Prova_practica_T1.md)) — ocupa la S4 sencera (individual; material per a cada alumne/a)
 - [ ] Compartir rúbriques **R1 i R2** amb l'alumnat *abans* del producte
 

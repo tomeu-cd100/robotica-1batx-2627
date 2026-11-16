@@ -62,7 +62,7 @@ Deixa muntat el sensor de llum de l'apartat 2 (punt d'unió a **A1**) i afegeix-
 
 ![Connexions de la pantalla OLED: 5V a VCC, GND a GND, A5 a SCL i A4 a SDA; el sensor de llum continua a A1](img/sa3-oled-connexions.svg)
 
-> ⚠️ L'ordre dels 4 pins **canvia segons el model**: llegeix les lletres de la pantalla. La pantalla del curs és la **KS0271**. Cal la llibreria **Adafruit SSD1306** (Eines → Gestiona les biblioteques → Instal·la-ho tot).
+> ⚠️ L'ordre dels 4 pins **canvia segons el model**: llegeix les lletres de la pantalla. La pantalla del curs és la **KS0271**. Fa servir la llibreria **Adafruit SSD1306**: al Chromebook (Web Editor) ja hi és; al PC (Arduino IDE), Eines → Gestiona les biblioteques → Instal·la-ho tot.
 
 ## 4. El tamagotchi (Sessió 3)
 
