@@ -1,6 +1,6 @@
 # Prova SA2-SA3 · Guia de correcció (docent)
 
-**Durada:** 60 min · **Individual**, en paper, sense apunts (amb calculadora) · **Models:** A i B (mateixa estructura, dades diferents) · **Dificultat:** alta, amb preguntes de transferència i trampes conegudes
+**Durada:** 60 min · **Individual**, en paper, amb el quadern de treball i calculadora · **Models:** A i B (mateixa estructura, dades diferents) · **Dificultat:** alta, amb preguntes de transferència i trampes conegudes
 
 > Enunciat per imprimir: [`Prova_SA2_SA3.md`](Prova_SA2_SA3.md). **Solucions explicades dels dos models:** [`Prova_SA2_SA3_correccio_comentada.md`](Prova_SA2_SA3_correccio_comentada.md), que és el full que es lliura a l'alumnat **en retornar la prova** (no abans).
 
@@ -16,7 +16,7 @@ Té la mateixa estructura que la SA1, però amb més nivell. Hi ha **15 pregunte
 
 - **Impressió:** obre la pàgina de la prova a la web (vista docent) i imprimeix-la amb el navegador (Ctrl+P, A4). El model B comença sempre en **pàgina nova**. Comprova el rang de pàgines a la previsualització i imprimeix la meitat de còpies de cada model.
 - **Models A/B:** reparteix-los **alternats per taules**.
-- **Calculadora sí, apunts no.** Els càlculs (P1, P3, P5, P7, P9, P11) són senzills, però amb calculadora el temps es gasta pensant i no multiplicant.
+- **Quadern de treball i calculadora, sí; ordinador i mòbil, no.** El quadern serveix per consultar, però no resol res: la prova demana **aplicar** (calcular, traçar, depurar, crear), i qui no ho entén no té temps de buscar-ho tot. Amb calculadora, el temps es gasta pensant i no multiplicant.
 - **Temps:** 60' justos per a una prova de nivell alt. Avisa als 15' («hauríeu de ser al Bloc 2») i als 40' («Bloc 3»).
 - **Retorn:** lliura la prova corregida **amb la correcció comentada** i deixa 20-30' de classe perquè cadascú la treballi i escrigui el pla de millora. Si es dona la correcció sense temps per fer-la servir, l'alumnat no l'aprofita.
 

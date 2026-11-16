@@ -1,6 +1,6 @@
 # Prova SA2-SA3 · Sortides, PWM, entrades i sensors (en paper)
 
-**Durada:** 60 min · **Material:** només bolígraf i calculadora (sense apunts, sense ordinador ni mòbil) · **Puntuació:** 10 punts (Bloc 1: 3 · Bloc 2: 4 · Bloc 3: 3)
+**Durada:** 60 min · **Material:** bolígraf, calculadora i el teu **quadern de treball** (sense ordinador ni mòbil) · **Puntuació:** 10 punts (Bloc 1: 3 · Bloc 2: 4 · Bloc 3: 3)
 
 <!-- web:only-github -->
 
