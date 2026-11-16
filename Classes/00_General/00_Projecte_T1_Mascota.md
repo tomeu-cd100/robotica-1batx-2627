@@ -5,7 +5,7 @@
 > hi aporta la carcassa, la llum i el so; la SA3, els botons, els sensors, la
 > pantalla i el programa.
 
-**Durada:** 1r trimestre (SA2-SA3) · **Maquinari:** UNO + mitja protoboard, pantalla OLED SSD1306 0,96" I²C, 3 polsadors, LED RGB, brunzidor, sensor de llum, micròfon, PIR (DHT11 opcional), carcassa en forma d'ou (DM 3 mm o impresa en 3D)
+**Durada:** 1r trimestre (SA2-SA3) · **Maquinari:** UNO + mitja protoboard, pantalla OLED KS0271 (SSD1306 0,96" I²C), 3 polsadors, LED RGB, brunzidor, sensor de llum, micròfon, PIR (DHT11 opcional), carcassa en forma d'ou (DM 3 mm o impresa en 3D)
 
 ## El robot
 
@@ -29,7 +29,7 @@ personatge del joguet comercial.
 |---|---|---|
 | Arduino UNO + cable USB | Kit de classe | 1 |
 | Mitja protoboard + cables | Kit de classe | 1 |
-| Pantalla OLED SSD1306 0,96" I²C (128×64) | **Compra nova** | 1 |
+| Pantalla OLED KS0271 (SSD1306 0,96" I²C, 128×64) | **Compra nova** | 1 |
 | Polsadors de 12 mm (o de 6 mm amb caputxó) | 1 del kit + **2 de compra nova** | 3 |
 | LED RGB + 3 resistències de 220 Ω | Kit de classe (SA2) | 1 |
 | Brunzidor piezo | Kit de classe (SA2) | 1 |
@@ -109,14 +109,14 @@ El programa es fa a la **[Pràctica 4 de la SA3 · El teu tamagotchi](../SA3/cod
 amb l'esquelet `05_mascota.ino`: la pantalla i la baixada de les necessitats ja
 hi són, i el botó MENJAR és l'exemple resolt. L'alumne/a hi programa els
 botons JUGAR i DORMIR, els sensors (llegir → comparar → decidir) i els estats.
-Cal la llibreria **U8g2**. La pantalla es fa servir abans a la
+Cal la llibreria **Adafruit SSD1306** (amb Adafruit GFX). La pantalla es fa servir abans a la
 [Pràctica 3 · La pantalla OLED](../SA3/codi/03_pantalla_oled/EXPLICACIO.md).
 
 ## Simular el tamagotchi a Wokwi
 
 [Wokwi](https://wokwi.com/) té l'Arduino UNO, la pantalla **SSD1306**, els
 polsadors, el LED RGB, el brunzidor, el PIR i un fotoresistor, i accepta la
-llibreria U8g2. Per provar el programa sense placa: crea un projecte nou
+llibreria Adafruit SSD1306. Per provar el programa sense placa: crea un projecte nou
 d'Arduino UNO, afegeix-hi els components amb el botó **+**, connecta'ls amb
 els pins de la taula de cablatge i enganxa-hi el codi. El micròfon no hi és:
 substitueix-lo per un **potenciòmetre** a A0 per simular el soroll.
@@ -149,7 +149,7 @@ pràctica **T1**.
 | Símptoma | Causa probable | Solució |
 |---|---|---|
 | La pantalla no s'encén | SDA i SCL intercanviats, o VCC i GND al revés. | Llegeix les lletres del mòdul: SDA a A4 i SCL a A5. |
-| No compila: `U8g2lib.h` | Falta la llibreria. | **Eines → Gestiona les biblioteques** → «U8g2». |
+| No compila: `Adafruit_SSD1306.h` | Falta la llibreria. | **Eines → Gestiona les biblioteques** → «Adafruit SSD1306» → **Instal·la-ho tot**. |
 | Un botó suma moltes vegades | Es compta mentre està premut. | Compara amb l'estat anterior (`ara == LOW && anterior == HIGH`). |
 | Una necessitat cau a 0 de cop | Es resta a cada volta del `loop()`. | Resta-la només amb `millis()`, dins de `baixaAmbElTemps()`. |
 | El PIR dispara sempre | Encara en el temps d'estabilització (30-60 s) o sensibilitat massa alta. | Espera i ajusta els potenciòmetres del mòdul. |

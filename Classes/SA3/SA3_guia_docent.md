@@ -1,6 +1,6 @@
 # SA3 · Guia docent — Entrades i sensors: el robot percep
 
-**Durada:** 8 h (4 sessions) · **Maquinari:** Arduino UNO + Keyestudio (polsador, potenciòmetre, LDR, NTC) + pantalla OLED SSD1306 0,96" i 3 polsadors per al tamagotchi · **Llenguatge:** C/C++
+**Durada:** 8 h (4 sessions) · **Maquinari:** Arduino UNO + Keyestudio (polsador, potenciòmetre, LDR, NTC) + pantalla OLED KS0271 (SSD1306 0,96") i 3 polsadors per al tamagotchi · **Llenguatge:** C/C++
 **Referència:** [`Programació didàctica/12_SA3_Entrades_sensors.md`](../../Programació%20didàctica/12_SA3_Entrades_sensors.md) · **Esquemes:** [`SA3_esquemes_connexions.md`](SA3_esquemes_connexions.md)
 
 ## ⚡ Xuleta de sessió (si només llegeixes una cosa, que sigui això)
@@ -13,7 +13,7 @@
 |---|---|---|---|
 | **S1** · Polsador | Amb `INPUT_PULLUP` el pin està «agafat» a HIGH i prémer l'estira a LOW: **al revés del que esperen**. Obre el **Monitor sèrie** (9600) en directe. | Polsador mal punxat (potes de dos en dos) · Monitor amb un *baud* diferent de 9600 | Comptador funcionant al Monitor · formulari de la ① enviat |
 | **S2** · Analògiques | `analogRead` dona **0 a 1023**; `analogWrite` vol **0 a 255** → `map()`. Mou el potenciòmetre en directe amb el Monitor obert. | LDR sense la resistència de 10 kΩ (llegeix sempre 0 o 1023) · **LDR i 10 kΩ intercanviades o mòdul de 3 potes invertit** (en tapar, el número puja) · **llindar 400 de Tinkercad sense recalibrar** (a l'aula la LDR tapada sovint no baixa de 400) · llindar comparat amb 255 | Llum automàtic funcionant · Racó de mesura fet · formulari de la ② enviat. **Deures:** nom i caràcter de la mascota |
-| **S3** · Tamagotchi | Mini-check (10'). Després, en 5': la pantalla és una quadrícula de 128×64 punts i es dibuixa **a trossos** (`firstPage`/`nextPage`); al tamagotchi, el temps es controla amb `millis()`, no amb `delay()`. | SDA/SCL intercanviats · botons que sumen mentre estan premuts (falta comparar amb l'estat anterior) · restar necessitats a cada volta del `loop()` · tamagotchis sense fitxa de personalitat | Tamagotchi amb la **versió nucli** com a mínim · fitxa de personalitat · defensa d'1' a peu de taula · formularis de la ③ i la ④ i **Entrega final** enviats · **full resum** per a la prova fet |
+| **S3** · Tamagotchi | Mini-check (10'). Després, en 5': la pantalla és una quadrícula de 128×64 punts i es dibuixa a la **memòria** i després s'envia (`clearDisplay`/`display`); al tamagotchi, el temps es controla amb `millis()`, no amb `delay()`. | SDA/SCL intercanviats · botons que sumen mentre estan premuts (falta comparar amb l'estat anterior) · restar necessitats a cada volta del `loop()` · tamagotchis sense fitxa de personalitat | Tamagotchi amb la **versió nucli** com a mínim · fitxa de personalitat · defensa d'1' a peu de taula · formularis de la ③ i la ④ i **Entrega final** enviats · **full resum** per a la prova fet |
 | **S4** · Prova T1 | Res: només les instruccions de la prova. | Incidències de material (no dubtes de contingut) | Proves recollides |
 
 > 🎯 **Prioritat si vas just de temps:** a la S3, el tamagotchi passa per davant de tot. Si l'OLED s'allarga, talla-la quan tothom vegi la cara a la pantalla. Els **ultrasons** ja no són a la SA3: es treballen a la SA4 (arxiu a [`docs/arxiu/SA3_ultrasons/`](../../docs/arxiu/SA3_ultrasons/README.md)). Els **katas** d'aquesta SA estan arxivats (18-10-2026, [`docs/arxiu/SA3_katas/`](../../docs/arxiu/SA3_katas/README.md)).
@@ -31,7 +31,7 @@
 ## Material per alumne/a
 - Arduino UNO + USB, protoboard, cables.
 - Polsador, potenciòmetre, LDR + resistència 10 kΩ, NTC + 10 kΩ, LED, brunzidor piezo.
-- **Tamagotchi (S3):** pantalla **OLED SSD1306 0,96" I²C**, **3 polsadors**, LED RGB, micròfon, PIR i la **carcassa en forma d'ou** fabricada a la SA2 S3 ([dossier](../00_General/00_Projecte_T1_Mascota.md)).
+- **Tamagotchi (S3):** pantalla **OLED KS0271 (SSD1306 0,96" I²C)**, **3 polsadors**, LED RGB, micròfon, PIR i la **carcassa en forma d'ou** fabricada a la SA2 S3 ([dossier](../00_General/00_Projecte_T1_Mascota.md)).
 
 ## Codi de suport (carpeta `codi/`)
 
@@ -41,7 +41,7 @@
 |---|---|
 | `01_polsador_debounce.ino` | Entrada digital amb *pull-up* i antirebot; comptador. |
 | `02_potenciometre_ldr.ino` | Entrades analògiques; `map()`; llum automàtic. |
-| `03_pantalla_oled.ino` | Pantalla OLED amb U8g2 en mode pàgina: text, barra i cara segons la llum. |
+| `03_pantalla_oled.ino` | Pantalla OLED amb Adafruit SSD1306: text, barra i cara segons la llum. |
 | `05_mascota.ino` | **Esquelet del tamagotchi** (producte): pantalla i baixada de les necessitats fetes; `// TODO` de botons, sensors i estats. |
 
 ## Mètode de projecte i continuïtat
@@ -89,7 +89,7 @@
 > El producte de la SA **es tanca en aquesta sessió** (la S4 és, sencera, la prova T1), i el producte és **el tamagotchi** del fil conductor ([`00_Fil_conductor_robots.md`](../00_General/00_Fil_conductor_robots.md) · [dossier](../00_General/00_Projecte_T1_Mascota.md)): la carcassa en forma d'ou fabricada a la SA2 S3 amb l'OLED, 3 botons i els sensors, i una mascota virtual que **es cuida**: necessitats que baixen amb el temps i amb els sensors, i estats contenta, trista i malalta (mai no es mor). Els **ultrasons** ja no són aquí: passen a la SA4.
 
 - **Mini-check individual (10', a l'inici, substitueix la graella):** `if/else` sobre una lectura analògica ([banc](../00_General/00_Mini_checks_individuals.md)).
-- **③ La pantalla OLED (25'):** [`03_pantalla_oled.ino`](codi/03_pantalla_oled/EXPLICACIO.md). La pantalla com a quadrícula de punts, `drawStr`, `drawCircle`, `drawBox` i el dibuix per pàgines (`firstPage`/`nextPage`, per la RAM del UNO). Talla quan tothom vegi la cara canviar amb la llum.
+- **③ La pantalla OLED (25'):** [`03_pantalla_oled.ino`](codi/03_pantalla_oled/EXPLICACIO.md). La pantalla com a quadrícula de punts, `setCursor` + `print`, `drawCircle`, `fillRect` i el dibuix a la memòria (`clearDisplay`/`display`: la còpia ocupa 1 KB dels 2 KB del UNO). Talla quan tothom vegi la cara canviar amb la llum.
 - **④ PRODUCTE: el tamagotchi (55'):**
   1. **Fitxa de personalitat (10'):** nom, caràcter i què fa cada botó i cada sensor. Si ho porten pensat de casa (deures de la S2), van més ràpid.
   2. **Muntatge i codi (45'):** [`05_mascota.ino`](codi/05_mascota/EXPLICACIO.md) a la carcassa. L'esquelet ja dibuixa la cara i les barres i fa baixar les necessitats amb `millis()`; el botó MENJAR és l'exemple resolt. Omplen JUGAR i DORMIR, la llum (`esFosc`), el soroll (amb temps d'espera) i `calculaEstat()`.
@@ -98,7 +98,7 @@
 
 > ⏱️ **Marge:** 10+25+55+10 = **100'**, just el temps efectiu. Si vas just: ① a la ③ n'hi ha prou amb veure la cara i la barra · ② la **versió nucli** (3 necessitats amb els 3 botons, la llum, contenta/trista) és el mínim; el micròfon i l'estat malalta són la versió completa. DORMIR ha de ser al nucli: la son baixa sola i, sense DORMIR, quedaria trista per sempre. **No retallis la fitxa de personalitat**: és la meitat de la R4 del robot.
 >
-> 🔧 **Logística:** la llibreria **U8g2** ha d'estar instal·lada als ordinadors **abans** de la sessió (si no, ni la ③ ni el tamagotchi compilen). Les carcasses (làser o 3D, una per alumne) han d'estar fetes de la SA2 S3; qui no la tingui, munta a la protoboard i hi passa el muntatge després.
+> 🔧 **Logística:** les llibreries **Adafruit SSD1306** i **Adafruit GFX** han d'estar instal·lades als ordinadors **abans** de la sessió (si no, ni la ③ ni el tamagotchi compilen). Les carcasses (làser o 3D, una per alumne) han d'estar fetes de la SA2 S3; qui no la tingui, munta a la protoboard i hi passa el muntatge després.
 
 **Punt clau:** al tamagotchi, el temps es controla amb **`millis()`** (com l'antirebot), mai amb `delay()` llargs: així continua atent als botons. Cada sensor fa el mateix patró de la SA: **llegir → comparar amb un llindar → decidir**, i els estats són `const int` com a la SA2.
 
@@ -147,7 +147,7 @@
 
 - **S1 · `01_polsador_debounce` (`INPUT_PULLUP`):** analogia — *el pin està "agafat" a HIGH i prémer l'estira a LOW* (lògica invertida). Pregunta: *"per què, sense antirebot, una sola premuda en compta diverses?"* *Error a anticipar:* sorpresa per la lògica invertida.
 - **S2 · `02_potenciometre_ldr` (`analogRead`, `map()`):** obre el **Monitor Sèrie** i mou el potenciòmetre **en directe** perquè vegin els 0–1023. Pregunta: *"com passo de 0–1023 a 0–255?"* → `map()`. *Errors a anticipar:* divisor de tensió de la LDR mal connectat (lectures 0 o 1023); LDR i 10 kΩ intercanviades (lògica invertida: en tapar, el número puja); i el llindar `400` copiat de Tinkercad, que a l'aula sovint queda per sota del valor «tapat». Fes que **apuntin els dos números abans de tocar el llindar**.
-- **S3 · `03_pantalla_oled` + tamagotchi:** modela la pantalla com una quadrícula (on és el punt (0, 0)?) i per què tot el dibuix va dins del `do { } while (nextPage())`. Al tamagotchi, llegeix el `loop()` en veu alta com una llista de feines (funcions) i mostra com el botó MENJAR (ja fet) és el patró que copiaran per a JUGAR i DORMIR. *Error a anticipar:* restar una necessitat a cada volta del `loop()`.
+- **S3 · `03_pantalla_oled` + tamagotchi:** modela la pantalla com una quadrícula (on és el punt (0, 0)?) i per què no es veu res fins al `display()`. Al tamagotchi, llegeix el `loop()` en veu alta com una llista de feines (funcions) i mostra com el botó MENJAR (ja fet) és el patró que copiaran per a JUGAR i DORMIR. *Error a anticipar:* restar una necessitat a cada volta del `loop()`.
 - **S4 (prova T1):** cap modelatge — sessió de prova individual.
 
 ## Atenció a la diversitat (DUA)

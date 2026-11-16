@@ -181,7 +181,7 @@ export const PRACTIQUES = {
     materials: [pagina('sa3', '03-pantalla-oled', 'Pràctica 3 · La pantalla OLED (passos)')],
     items: [
       p('Què fan la barra i la cara quan tapes el sensor de llum? Per què?'),
-      p('Has canviat el text: quina línia has tocat i què volen dir els números de drawStr(x, y, text)?'),
+      p('Has canviat el text: quines línies has tocat i què volen dir els números de setCursor(x, y)?'),
       p('El concepte nou més important d’aquesta pràctica', 'Pregunta del quadern tècnic.')
     ]
   },

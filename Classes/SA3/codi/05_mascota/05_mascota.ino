@@ -17,11 +17,13 @@
   Les // EXTRA son per a qui vulgui mes (PIR, DHT11, guardar a l'EEPROM).
 
   Compila tal qual: veuras la cara i les barres baixant a poc a poc.
-  Llibreria: U8g2. Cablatge: la taula de pins de sota (dossier del tamagotchi).
+  Llibreries: Adafruit SSD1306 i Adafruit GFX (pantalla KS0271). Cablatge: la taula de pins de sota (dossier del tamagotchi).
   Quan: S3 - producte (Practica 4 de la SA3)
 */
 
-#include <U8g2lib.h>
+#include <Wire.h>
+#include <Adafruit_GFX.h>
+#include <Adafruit_SSD1306.h>
 
 // --- Pins (taula del dossier: no els canviis) ---
 // OLED: SDA a A4, SCL a A5
@@ -41,7 +43,9 @@ const int LLINDAR_TRISTA = 30;          // una necessitat per sota = trista
 const unsigned long TEMPS_BAIXADA = 5000;  // cada 5 s baixen les necessitats
 const unsigned long ANTIREBOT = 40;     // ms (com a la Practica 1)
 
-U8G2_SSD1306_128X64_NONAME_1_HW_I2C pantalla(U8G2_R0, U8X8_PIN_NONE);
+// Pantalla KS0271: OLED SSD1306 de 128 x 64 punts, adreca I2C 0x3C.
+// La llibreria guarda la imatge sencera a la RAM: 1 KB dels 2 KB del UNO.
+Adafruit_SSD1306 pantalla(128, 64, &Wire, -1);
 
 // --- Necessitats (0 = fatal, 100 = perfecte) ---
 int gana = 80;        // 100 = ben alimentada
@@ -72,7 +76,11 @@ void setup() {
   pinMode(PIN_R, OUTPUT);
   pinMode(PIN_G, OUTPUT);
   pinMode(PIN_B, OUTPUT);
-  pantalla.begin();
+  if (!pantalla.begin(SSD1306_SWITCHCAPVCC, 0x3C)) {
+    Serial.println(F("La pantalla no arrenca: falta RAM o revisa els cables"));
+    while (true) {}            // s'atura aqui
+  }
+  pantalla.setTextColor(SSD1306_WHITE);
 }
 
 void loop() {
@@ -194,43 +202,43 @@ void so(int nota1, int nota2) {
 
 // ===================== PANTALLA =====================
 void barra(int y, const char *nom, int valor) {
-  pantalla.drawStr(0, y + 7, nom);
-  pantalla.drawFrame(28, y, 60, 7);
-  pantalla.drawBox(28, y, valor * 60 / 100, 7);
+  pantalla.setCursor(0, y);
+  pantalla.print(nom);
+  pantalla.drawRect(28, y, 60, 7, SSD1306_WHITE);
+  pantalla.fillRect(28, y, valor * 60 / 100, 7, SSD1306_WHITE);
 }
 
 void cara(int x, int y) {
-  pantalla.drawCircle(x, y, 13);
+  pantalla.drawCircle(x, y, 13, SSD1306_WHITE);
   if (estat == DORMINT) {
-    pantalla.drawLine(x - 8, y - 3, x - 3, y - 3);     // ulls tancats
-    pantalla.drawLine(x + 3, y - 3, x + 8, y - 3);
-    pantalla.drawStr(x + 14, y - 8, "z");
+    pantalla.drawLine(x - 8, y - 3, x - 3, y - 3, SSD1306_WHITE);     // ulls tancats
+    pantalla.drawLine(x + 3, y - 3, x + 8, y - 3, SSD1306_WHITE);
+    pantalla.setCursor(x + 14, y - 15);
+    pantalla.print("z");
     return;
   }
-  pantalla.drawDisc(x - 5, y - 4, 2);                  // ulls
-  pantalla.drawDisc(x + 5, y - 4, 2);
+  pantalla.fillCircle(x - 5, y - 4, 2, SSD1306_WHITE);                  // ulls
+  pantalla.fillCircle(x + 5, y - 4, 2, SSD1306_WHITE);
   if (estat == CONTENTA) {                              // boca
-    pantalla.drawLine(x - 6, y + 4, x - 2, y + 7);
-    pantalla.drawLine(x - 2, y + 7, x + 2, y + 7);
-    pantalla.drawLine(x + 2, y + 7, x + 6, y + 4);
+    pantalla.drawLine(x - 6, y + 4, x - 2, y + 7, SSD1306_WHITE);
+    pantalla.drawLine(x - 2, y + 7, x + 2, y + 7, SSD1306_WHITE);
+    pantalla.drawLine(x + 2, y + 7, x + 6, y + 4, SSD1306_WHITE);
   } else {
-    pantalla.drawLine(x - 6, y + 7, x - 2, y + 4);
-    pantalla.drawLine(x - 2, y + 4, x + 2, y + 4);
-    pantalla.drawLine(x + 2, y + 4, x + 6, y + 7);
+    pantalla.drawLine(x - 6, y + 7, x - 2, y + 4, SSD1306_WHITE);
+    pantalla.drawLine(x - 2, y + 4, x + 2, y + 4, SSD1306_WHITE);
+    pantalla.drawLine(x + 2, y + 4, x + 6, y + 7, SSD1306_WHITE);
   }
   if (estat == MALALTA) {                               // creu de malalta
-    pantalla.drawLine(x + 15, y - 10, x + 15, y - 4);
-    pantalla.drawLine(x + 12, y - 7, x + 18, y - 7);
+    pantalla.drawLine(x + 15, y - 10, x + 15, y - 4, SSD1306_WHITE);
+    pantalla.drawLine(x + 12, y - 7, x + 18, y - 7, SSD1306_WHITE);
   }
 }
 
 void dibuixa() {
-  pantalla.firstPage();
-  do {
-    pantalla.setFont(u8g2_font_5x7_tr);
-    cara(104, 32);
-    barra(4, "Gana", gana);
-    barra(28, "Son", son);
-    barra(52, "Feli", felicitat);
-  } while (pantalla.nextPage());
+  pantalla.clearDisplay();   // esborra la imatge (nomes a la RAM)
+  cara(104, 32);
+  barra(4, "Gana", gana);
+  barra(28, "Son", son);
+  barra(52, "Feli", felicitat);
+  pantalla.display();        // envia la imatge a la pantalla
 }

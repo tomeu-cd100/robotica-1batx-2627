@@ -30,7 +30,7 @@ Entrades digitals (`digitalRead`, *pull-up*, *debounce*); entrades analògiques 
 |---|---|
 | **1** | Polsador amb *pull-up* intern; `digitalRead`; **debounce**. Comptador de premudes (Serial Monitor). |
 | **2** | Entrades analògiques: potenciòmetre i **LDR**. `analogRead` (0-1023), `map()`. Llum automàtic (LDR→LED). |
-| **3** | **Pantalla OLED** (U8g2 en mode pàgina): text, barres i una cara. **Producte: el tamagotchi** del fil conductor (necessitats que baixen amb `millis()` i amb els sensors, 3 botons amb antirebot, estats contenta/trista/malalta que no moren mai + fitxa de personalitat) amb mini-defensa. |
+| **3** | **Pantalla OLED** KS0271 (Adafruit SSD1306): text, barres i una cara. **Producte: el tamagotchi** del fil conductor (necessitats que baixen amb `millis()` i amb els sensors, 3 botons amb antirebot, estats contenta/trista/malalta que no moren mai + fitxa de personalitat) amb mini-defensa. |
 | **4** | **Prova pràctica T1** (individual, sessió sencera — vegeu `Avaluació/Prova_practica_T1.md`). |
 
 ## Producte

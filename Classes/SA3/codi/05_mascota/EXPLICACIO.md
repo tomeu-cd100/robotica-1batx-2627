@@ -118,7 +118,8 @@ Hi trobaràs les mateixes preguntes ✍️ que has anat apuntant. Envia'l ara i,
 
 | Què passa | Per què | Com ho arreglo |
 |---|---|---|
-| No compila: `U8g2lib.h` no trobat | Falta la llibreria. | **Eines → Gestiona les biblioteques**, cerca «U8g2» i instal·la-la. |
+| No compila: `Adafruit_SSD1306.h` no trobat | Falta la llibreria. | **Eines → Gestiona les biblioteques**, cerca «Adafruit SSD1306» i prem **Instal·la-ho tot**. |
+| La pantalla es queda negra i el Monitor diu «La pantalla no arrenca» | Cables de la pantalla mal posats, o el programa gasta massa memòria. | Revisa SDA i SCL. Si has afegit textos al `Serial.print`, posa'ls dins de `F("...")`. |
 | Un botó suma moltes vegades si el mantens premut | No compares amb l'estat anterior del botó. | Mira com ho fa MENJAR: `ara == LOW && anterior == HIGH`, i al final `anterior = ara;`. |
 | La barra de la son baixa de cop | Restes la son a cada volta del `loop()`. | Al pas 5 només has de posar `esFosc`: qui resta la son és `baixaAmbElTemps()`. |
 | S'espanta tota l'estona | El llindar del soroll és massa baix. | Mira el número `soroll=` en silenci i posa el llindar una mica per sobre. |

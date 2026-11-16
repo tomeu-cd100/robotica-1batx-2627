@@ -82,7 +82,7 @@ Per preparar-la: repassa les pràctiques ①, ② i ③ i fes el [qüestionari d
 |---|---|
 | `01_polsador_debounce.ino` | Entrada digital amb `INPUT_PULLUP` i antirebot; comptador per sèrie. |
 | `02_potenciometre_ldr.ino` | Entrades analògiques (`analogRead`), `map()` i llum automàtic. |
-| `03_pantalla_oled.ino` | Pantalla OLED amb U8g2 (mode pàgina): text, barra i cara segons la llum. |
+| `03_pantalla_oled.ino` | Pantalla OLED KS0271 amb Adafruit SSD1306: text, barra i cara segons la llum. |
 | `05_mascota.ino` | **Producte:** l'esquelet del tamagotchi (Pràctica 4), amb els `// TODO` dels botons, els sensors i els estats. |
 
 Cada sketch té la seva **pàgina de pràctica** a la web (per què es fa + codi explicat per blocs); a GitHub, l'explicació és a l'`EXPLICACIO.md` de la carpeta del sketch.

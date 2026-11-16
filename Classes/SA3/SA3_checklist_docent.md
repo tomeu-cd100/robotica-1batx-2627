@@ -7,10 +7,10 @@
 
 ## 🧰 1. Logística prèvia (preparar abans de començar la SA)
 - [ ] Material per alumne/a: Arduino UNO + USB, protoboard, cables
-- [ ] Sensors: polsador, potenciòmetre, LDR + 10 kΩ, NTC + 10 kΩ, LED, piezo · **tamagotchi:** OLED SSD1306 0,96" I²C + 3 polsadors per alumne/a
+- [ ] Sensors: polsador, potenciòmetre, LDR + 10 kΩ, NTC + 10 kΩ, LED, piezo · **tamagotchi:** OLED KS0271 (SSD1306 0,96" I²C) + 3 polsadors per alumne/a
 - [ ] **Multímetres** per al racó de mesura del divisor de tensió
 - [ ] Sketches provats: `01_polsador_debounce` · `02_potenciometre_ldr` · `03_pantalla_oled` · `05_mascota` (esquelet del tamagotchi)
-- [ ] **Llibreria U8g2** instal·lada a tots els ordinadors (ni la ③ ni el tamagotchi compilen sense) · **carcasses** del tamagotchi fetes (làser o 3D, S3 de la SA2)
+- [ ] **Llibreries Adafruit SSD1306 i Adafruit GFX** instal·lades a tots els ordinadors (ni la ③ ni el tamagotchi compilen sense) · **carcasses** del tamagotchi fetes (làser o 3D, S3 de la SA2)
 - [ ] **Preparar la prova pràctica T1** ([`Avaluació/Prova_practica_T1.md`](../../Avaluació/Prova_practica_T1.md)) — ocupa la S4 sencera (individual; material per a cada alumne/a)
 - [ ] Compartir rúbriques **R1 i R2** amb l'alumnat *abans* del producte
 
@@ -29,10 +29,10 @@
 
 **Sessió 3 — Pantalla OLED + PRODUCTE: el tamagotchi**
 - [ ] **Mini-check individual** a l'inici (10', no qualifica): `if/else` sobre lectura analògica (substitueix la graella d'activació)
-- [ ] `03_pantalla_oled` (25'): text, barra i cara · dibuix per pàgines (`firstPage`/`nextPage`)
+- [ ] `03_pantalla_oled` (25'): text, barra i cara · dibuix a la memòria i enviament (`clearDisplay`/`display`)
 - [ ] **Tamagotchi** (55'): fitxa de personalitat (nom, caràcter, botons i sensors) · muntatge a la carcassa · esquelet `05_mascota` (MENJAR fet; omplen JUGAR, DORMIR, llum, soroll i estats) · **defensa d'1' a peu de taula**
 - [ ] Tancament: **full resum** per a la prova · formularis de la ③ i la ④ · **Entrega final** enviada
-- ⚠️ *Error:* SDA/SCL intercanviats · U8g2 sense instal·lar · necessitats restades a cada volta del `loop()` · PIR sense els 30-60 s d'estabilització
+- ⚠️ *Error:* SDA/SCL intercanviats · Adafruit SSD1306 sense instal·lar · necessitats restades a cada volta del `loop()` · PIR sense els 30-60 s d'estabilització
 
 **Sessió 4 — PROVA T1 (sessió sencera, individual)**
 - [ ] Instruccions (5-10') · prova (**~80-85' reals**; el nucli està calibrat per a ~60') · recollida (10')

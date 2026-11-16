@@ -57,7 +57,7 @@ Si la tasca encara no et surt a Classroom, és que la SA encara no ha començat.
 
 ### 3 · La pantalla OLED i el teu tamagotchi (Sessió 3)
 1. Munta la pantalla OLED (SDA a A4, SCL a A5) i carrega `03_pantalla_oled.ino`. Què fan la barra i la cara quan tapes el sensor? ______________________
-2. Què volen dir els números de `drawStr(x, y, text)`? ______________________
+2. Què volen dir els números de `setCursor(x, y)`? ______________________
 
 **El teu tamagotchi.** Abans de programar, omple la seva fitxa:
 

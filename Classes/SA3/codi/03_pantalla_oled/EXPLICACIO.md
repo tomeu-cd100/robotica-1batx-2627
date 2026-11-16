@@ -9,7 +9,7 @@
 
 ⏱️ 25 min
 
-📦 Pantalla OLED de 0,96" (I²C), el sensor de llum de la Pràctica 2 i 4 cables
+📦 Pantalla OLED KS0271 de 0,96" (I²C), el sensor de llum de la Pràctica 2 i 4 cables
 
 </div>
 
@@ -17,9 +17,9 @@
 
 ### Pas 1 · Instal·la la llibreria
 
-A l'Arduino IDE: **Eines → Gestiona les biblioteques**, cerca **U8g2** i prem **Instal·la**.
+A l'Arduino IDE: **Eines → Gestiona les biblioteques**, cerca **Adafruit SSD1306** i prem **Instal·la**. Quan et pregunti si vols instal·lar també les llibreries que necessita (Adafruit GFX i Adafruit BusIO), prem **Instal·la-ho tot**.
 
-✅ **Comprova:** a la llista de biblioteques, U8g2 diu «Instal·lada».
+✅ **Comprova:** a la llista de biblioteques, Adafruit SSD1306 i Adafruit GFX diuen «Instal·lada».
 
 ### Pas 2 · Munta la pantalla
 
@@ -52,11 +52,11 @@ Tapa el sensor amb la mà i destapa'l.
 
 ### Pas 5 · Canvia el text
 
-Busca la línia `pantalla.drawStr(0, 12, "Hola!");`. Posa-hi el **nom** que vols per al teu tamagotchi i prova de canviar el `0` i el `12`.
+Busca les línies `pantalla.setCursor(0, 0);` i `pantalla.print("Hola!");`. Posa-hi el **nom** que vols per al teu tamagotchi i prova de canviar els dos `0` del `setCursor`.
 
 ✅ **Comprova:** el teu text surt a la pantalla, al lloc on l'has posat.
 
-✍️ **Apunta-ho:** quina línia has tocat i què volen dir els números de `drawStr(x, y, text)`?
+✍️ **Apunta-ho:** quines línies has tocat i què volen dir els números de `setCursor(x, y)`?
 
 ### Pas 6 · Explica-ho amb les teves paraules
 
@@ -75,8 +75,8 @@ Hi trobaràs les mateixes preguntes ✍️ que has anat apuntant. Envia'l ara i 
 
 | Què passa | Per què | Com ho arreglo |
 |---|---|---|
-| No compila: `U8g2lib.h` no trobat | Falta la llibreria. | Torna al pas 1. |
-| La pantalla no s'encén | SDA i SCL intercanviats, o VCC i GND al revés. | Mira les lletres de la pantalla i la taula del pas 2. |
+| No compila: `Adafruit_SSD1306.h` no trobat | Falta la llibreria. | Torna al pas 1. |
+| La pantalla no s'encén (el Monitor sèrie diu «La pantalla no arrenca») | SDA i SCL intercanviats, o VCC i GND al revés. | Mira les lletres de la pantalla i la taula del pas 2. |
 | La pantalla està negra però abans funcionava | Un cable fa mal contacte. | Prem bé els 4 cables a la protoboard. |
 | La barra no canvia mai | El sensor de llum no és a A1, o falta la resistència de 10 kΩ. | Revisa el muntatge de la [Pràctica 2](../02_potenciometre_ldr/EXPLICACIO.md). |
 
@@ -90,10 +90,13 @@ Hi trobaràs les mateixes preguntes ✍️ que has anat apuntant. Envia'l ara i 
 La pantalla té **128 punts d'ample i 64 d'alt** (píxels). Cada punt es diu per la seva posició: **x** cap a la dreta (de 0 a 127) i **y** cap avall (de 0 a 63). El punt (0, 0) és a dalt a l'esquerra.
 
 ```cpp
-pantalla.drawStr(0, 12, "Hola!");   // text: x = 0, y = 12 (linia de base)
-pantalla.drawCircle(64, 34, 14);    // cercle: centre (64, 34), radi 14
-pantalla.drawBox(14, 54, amplada, 8);  // rectangle ple
+pantalla.setCursor(0, 0);                              // el text comenca a x = 0, y = 0
+pantalla.print("Hola!");                               // escriu el text
+pantalla.drawCircle(64, 34, 14, SSD1306_WHITE);        // cercle: centre (64, 34), radi 14
+pantalla.fillRect(14, 54, amplada, 8, SSD1306_WHITE);  // rectangle ple
 ```
+
+Les funcions que comencen per `draw` dibuixen només la vora, i les que comencen per `fill` dibuixen la figura plena. L'últim número, `SSD1306_WHITE`, és el color: la pantalla només té punts encesos (blanc) o apagats (negre).
 
 ### Tros 2 — La barra i la cara depenen de la llum
 
@@ -104,18 +107,19 @@ int amplada = map(llum, 0, 1023, 0, 100);  // 0 ... 100 punts
 
 És el `map()` de la Pràctica 2: converteix la lectura del sensor (0-1023) en l'amplada de la barra (0-100 punts). Si tapes el sensor, la lectura baixa, la barra s'escurça i, quan l'amplada és 30 o menys, l'`if` dibuixa la boca trista.
 
-### Tros 3 — Dibuixar a trossos: `firstPage` i `nextPage`
+### Tros 3 — Dibuixar a la memòria i enviar-ho: `clearDisplay` i `display`
 
-**Com a la vida real:** pintar una paret gran amb un pinzell petit, franja a franja.
+**Com a la vida real:** dibuixar en un full en blanc i, quan està acabat, ensenyar-lo.
 
 ```cpp
-pantalla.firstPage();
-do {
-  // ... tot el que es dibuixa ...
-} while (pantalla.nextPage());
+pantalla.clearDisplay();   // full en blanc (a la memoria de l'Arduino)
+// ... tot el que es dibuixa ...
+pantalla.display();        // ara si: envia el dibuix a la pantalla
 ```
 
-L'Arduino UNO només té **2 KB de memòria**, i la pantalla sencera n'ocuparia 1 KB. Per això la llibreria la dibuixa **a trossos** (pàgines): repeteix el que hi ha dins del `do { }` una vegada per a cada tros. Per això **tot** el que vols que surti ha d'anar dins del `do { }`.
+Les instruccions de dibuix no toquen la pantalla: pinten una còpia que hi ha a la **memòria** de l'Arduino. La pantalla només canvia quan fas `display()`. Si te l'oblides, no veuràs res; si treus el `clearDisplay()`, cada dibuix es pinta a sobre de l'anterior.
+
+Aquesta còpia ocupa **1 KB**, la meitat de tota la memòria de l'Arduino UNO (2 KB). Per això, si el programa fa massa coses, la pantalla pot no arrencar.
 
 ### On ho aplicaràs
 

@@ -30,8 +30,8 @@
 | Tapat (fosc) | |
 
 ## Activitat 3 · La pantalla OLED i el teu tamagotchi (Sessió 3)
-1. Munta la pantalla OLED (SDA a A4, SCL a A5) i carrega `03_pantalla_oled.ino`. Què volen dir els números de `drawStr(x, y, text)`? __________________________
-2. Per què **tot** el dibuix va dins del `do { … } while (pantalla.nextPage());`? __________________________
+1. Munta la pantalla OLED (SDA a A4, SCL a A5) i carrega `03_pantalla_oled.ino`. Què volen dir els números de `setCursor(x, y)`? __________________________
+2. Per què el dibuix no surt a la pantalla fins que fas `pantalla.display();`? __________________________
 3. **+ Repte:** dibuixa una segona barra amb el potenciòmetre (A0). Quina línia has afegit? ____________
 
 **La fitxa del teu tamagotchi:**
