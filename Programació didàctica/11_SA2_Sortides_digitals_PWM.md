@@ -4,7 +4,7 @@
 |---|---|
 | **Trimestre** | 1r |
 | **Durada** | 6 h (3 sessions) |
-| **Maquinari** | Arduino UNO + kit Keyestudio/BQ (LED, RGB, piezo, relé) |
+| **Maquinari** | Arduino UNO + kit Keyestudio/BQ (LED, RGB, piezo) |
 | **Llenguatge** | C/C++ |
 
 ## Vincle competencial
@@ -30,7 +30,7 @@ Estructura del sketch; variables, constants i operadors; `pinMode`, `digitalWrit
 |---|---|
 | **1** | **LED extern** amb resistència: **càlcul amb la llei d'Ohm** (R = (5−2) V / 20 mA → 220 Ω comercial) i **mesura amb el multímetre**. Estructures de control: `if` i **`switch`** (semàfor com a variable de fase — llavor de les màquines d'estats de la SA6). Repte **semàfor** (3 LED) amb temporització i fase nocturna. Antipatró `delay` vs `millis()` (introducció). |
 | **2** | **PWM** amb `analogWrite`: efecte *fade* i LED RGB (barreja de colors). Funció `map()` aplicada a nivells. |
-| **3** | Repte integrador: **"panell de senyalització"** (LED RGB + piezo + relé per a una càrrega). Documentació i mini-defensa. |
+| **3** | Repte integrador: **"panell de senyalització"** (LED RGB + piezo). Documentació i mini-defensa. |
 
 > 📝 **Per què 3 sessions (18-10-2026):** l'antiga sessió 1 (`Blink` amb constants i variables) repetia la S3 de la SA1. El que tenia de nou (LED extern, llei d'Ohm, multímetre) passa a la sessió 1, i la **Prova SA1** es fa a la **sessió de marge** entre la SA1 i la SA2 (vegeu [`08_Sequenciacio_temporal_anual.md`](08_Sequenciacio_temporal_anual.md)). El sketch `01_led_basic` queda com a bastida «comença per un sol LED».
 

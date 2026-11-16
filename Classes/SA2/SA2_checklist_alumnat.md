@@ -12,7 +12,7 @@
 - [ ] Fer funcionar el **semàfor** de 3 LED i provar el **mode nit** (Sessió 1)
 - [ ] Fer el **racó de mesura** amb el multímetre: els volts del LED + els de la resistència ≈ 5 V (Sessió 1)
 - [ ] Fer que un LED **respiri** i crear **colors** amb el LED RGB (Sessió 2)
-- [ ] Entregar el **panell de senyalització** (color + so + relé) i explicar-lo en 1 minut → *R1 i R2* (Sessió 3)
+- [ ] Entregar el **panell de senyalització** (color + so) i explicar-lo en 1 minut → *R1 i R2* (Sessió 3)
 - [ ] Haver enviat els **formularis de Classroom** de la Sessió 1 i de les Pràctiques 3, 4 i 5 (cadascun en acabar la seva pràctica)
 - [ ] Enviar l'**Entrega final** quan acabi la Pràctica 5
 - [ ] 🤖 Guardar el codi del panell: els seus colors i sons seran els del teu **tamagotchi** (el robot del trimestre) → [dossier](../00_General/00_Projecte_T1_Mascota.md)

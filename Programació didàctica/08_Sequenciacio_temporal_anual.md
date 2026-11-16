@@ -129,7 +129,7 @@ perquè no es descobreixi al març.
 ```
 Trimestre 1 — FONAMENTS
   SA1 ─ Context, mètode, entorns, seguretat, diagnòstic inicial
-  SA2 ─ Programació C/C++ + sortides (LED, PWM, so, relé)
+  SA2 ─ Programació C/C++ + sortides (LED, PWM, so)
   SA3 ─ Programació C/C++ + entrades (polsadors, sensors analògics)
         ▼ (l'alumnat ja controla E/S amb Arduino)
 Trimestre 2 — CONTROL I SENSORS

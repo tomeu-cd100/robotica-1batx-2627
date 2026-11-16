@@ -2,11 +2,12 @@
 
 **6 h (3 sessions) · Arduino UNO + kit Keyestudio/BQ · Criteris CA1.1, CA2.1, CA2.2 · Rúbriques R1 (codi), R2 (circuit), R4 (quadern)**
 
-> Eina d'acció d'una cara. Condensa la [`SA2_guia_docent.md`](SA2_guia_docent.md). Marca `[x]` a mesura que ho tinguis fet. **Quan s'usa:** imprimeix-lo en **preparar la SA** (§1) i tingues-lo **a taula a cada sessió** (§2–§4).
+> Eina d'acció d'una cara. Condensa la [`SA2_guia_docent.md`](SA2_guia_docent.md). Marca `[x]` a mesura que ho tinguis fet.
+ **Quan s'usa:** imprimeix-lo en **preparar la SA** (§1) i tingues-lo **a taula a cada sessió** (§2–§4).
 
 ## 🧰 1. Logística prèvia (preparar abans de començar la SA)
 - [ ] Material per alumne/a: Arduino UNO + USB, protoboard, cables dupont
-- [ ] Components: LED (vermell/groc/verd), 1 LED RGB (càtode comú), resistències **220 Ω**, brunzidor piezo, mòdul relé
+- [ ] Components: LED (vermell/groc/verd), 1 LED RGB (càtode comú), resistències **220 Ω**, brunzidor piezo
 - [ ] **2–3 multímetres** per al racó de mesura (o el teu per a demo projectada)
 - [ ] Sketches provats: `01_led_basic` · `02_semafor` (+ variant `02b_semafor_switch`) · `03_fade_pwm` · `04_rgb` · `05_panell_senyalitzacio`
 - [ ] Simulació **Wokwi** del semàfor a punt (representació múltiple)
@@ -30,7 +31,7 @@
 
 **Sessió 3 — Producte: panell de senyalització**
 - [ ] **Mini-check individual** a l'inici (10', no qualifica): escriure un Blink de memòria (substitueix la graella d'activació)
-- [ ] `05_panell_senyalitzacio`: integrar RGB (estat) + piezo (avís) + relé (càrrega)
+- [ ] `05_panell_senyalitzacio`: integrar RGB (estat) + piezo (avís)
 - [ ] Documentació + mini-defensa individual d'1' (~5-7' per a tot el grup) + autoavaluació + **enviar el formulari**
 
 ## 📊 3. Avaluació i evidències (a recollir)

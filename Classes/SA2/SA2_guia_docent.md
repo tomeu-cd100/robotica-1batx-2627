@@ -31,7 +31,7 @@
 
 ## Material per alumne/a
 - Arduino UNO + USB, protoboard, cables dupont.
-- LED (vermell, groc, verd), 1 LED RGB (càtode comú), resistències 220 Ω, brunzidor piezo, mòdul relé.
+- LED (vermell, groc, verd), 1 LED RGB (càtode comú), resistències 220 Ω, brunzidor piezo.
 
 ## Codi de suport (carpeta `codi/`)
 
@@ -44,7 +44,7 @@
 | `02b_semafor_switch.ino` | El mateix semàfor amb `switch` sobre una variable de fase (llavor de la SA6). |
 | `03_fade_pwm.ino` | Efecte *fade* amb PWM. |
 | `04_rgb.ino` | Barreja de colors amb LED RGB. |
-| `05_panell_senyalitzacio.ino` | Producte integrador (RGB + piezo + relé). |
+| `05_panell_senyalitzacio.ino` | Producte integrador (RGB + piezo). |
 
 ## Mètode de projecte i continuïtat
 - **Cicle de treball** (com a tot el curs): *analitzar → dissenyar → prototipar → provar → millorar* (vegeu SA1). El **producte** de la SA n'és el recorregut complet i el **quadern tècnic** el documenta.
@@ -89,7 +89,7 @@
 
 ## SESSIÓ 3 (2 h) — Producte: panell de senyalització
 - **Mini-check individual (10', substitueix l'activació):** escriu de memòria un Blink complet al pin 8 (detecta l'*efecte passatger*) — [`00_Mini_checks_individuals.md`](../00_General/00_Mini_checks_individuals.md). Aprofita el canvi de full per presentar en 1' el repte integrador.
-- **Pràctica (70'):** `05_panell_senyalitzacio.ino` com a base. Integren **LED RGB (estat) + piezo (avís) + relé (càrrega)**. Cada alumne/a personalitza estats i seqüència.
+- **Pràctica (70'):** `05_panell_senyalitzacio.ino` com a base. Integren **LED RGB (estat) + piezo (avís)**. Cada alumne/a personalitza estats i seqüència.
 - **Documentació + defensa (30'):** completen esquema i codi comentat; **mini-defensa individual d'1'** (amb 5 alumnes, ~5-7' en total, i queda temps per a la revisió creuada de codi) del seu panell amb la **mini-rúbrica de defensa oral R4·DO** ([`07_Rubriques.md`](../../Programació%20didàctica/07_Rubriques.md)) — és la **primera** defensa del curs: comparteix els 3 indicadors abans (claredat · decisió justificada · respondre preguntes) i exigeix sobretot el primer.
 - **Tancament (10'):** formulari de la Pràctica 5 i **Entrega final** (autoavaluació + checklist).
 
@@ -115,7 +115,6 @@
 | LED sempre encès o apagat | Pin equivocat o sense `pinMode OUTPUT` | Revisar número de pin i `setup()`. |
 | `analogWrite` no regula | Pin sense PWM | Usar pin amb `~` (3,5,6,9,10,11). |
 | RGB mostra colors estranys | Càtode/ànode comú confós | Verificar tipus de LED i pin comú a GND (càtode comú). |
-| El relé no commuta | Alimentació insuficient | Alimentar el mòdul correctament; revisar pin de senyal. |
 
 ---
 
@@ -125,7 +124,7 @@
 
 - **S1 · `02_semafor` (`if`/`switch`, seqüència):** recorda en 1' el que ja saben de la SA1 (`const int`, `pinMode`, `digitalWrite`, `delay`) i que ara hi ha **tres** constants de pin. Recorre el `loop()` en veu alta com una **recepta seqüencial**. Demana **predir l'ordre** d'encesa abans d'executar. Verbalitza: *`delay()` bloqueja — mentre espera, no passa res més*. En mostrar la variant amb `switch`, pregunta: *"quantes fases té el semàfor? i si n'hi afegim una quarta (nocturna), on aniria?"* *Error a anticipar:* esperar que els LED canviïn alhora; oblidar el `break` de cada `case`. **Analogia del `switch`** (la de la pràctica 2b): la parada del mercat amb números de torn — `fase` és la pantalla, cada `case` una finestreta, `fase = …;` canvia la pantalla i `break` és «te'n vas». ⚠️ **No demanis «esborra un `break` i mira què passa»:** en aquest semàfor el *fall-through* dona la mateixa seqüència i no es veu res. L'experiment visible és canviar `fase = 1;` per `fase = 2;` al `case 0` (se salta el verd); el `break` oblidat es nota quan hi ha el `case 3` nocturn.
 - **S2 · `03_fade_pwm` / `04_rgb` (PWM, `map()`):** contrasta `digitalWrite` (0/1) amb `analogWrite` (**0–255**). Demana predir què fa el valor **128**. Mantra: *PWM només als pins `~`*. *Error a anticipar:* barrejar el rang 0–1023 (lectura) amb 0–255 (PWM).
-- **S3 · `05_panell` (integració):** no facis codi nou; mostra'l com a **integració** i pregunta com combinarien estat (RGB) + avís (piezo) + càrrega (relé).
+- **S3 · `05_panell` (integració):** no facis codi nou; mostra'l com a **integració** i pregunta com combinarien estat (RGB) + avís (piezo).
 
 > 🤖 **Fil conductor de robots:** si el curs segueix el fil conductor
 > ([`00_Fil_conductor_robots.md`](../00_General/00_Fil_conductor_robots.md)),

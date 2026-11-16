@@ -101,9 +101,9 @@ export const PRACTIQUES = {
     maxPoints: 33,  // com la resta de tasques de la SA a Classroom
     materials: [pagina('sa2', '05-panell-senyalitzacio', 'Pràctica 5 · Panell de senyalització (passos)')],
     items: [
-      p('Estat «Tot correcte»: color RGB / so (piezo) / relé'),
-      p('Estat «Avís»: color RGB / so (piezo) / relé'),
-      p('Estat «Alarma»: color RGB / so (piezo) / relé'),
+      p('Estat «Tot correcte»: color RGB / so (piezo)'),
+      p('Estat «Avís»: color RGB / so (piezo)'),
+      p('Estat «Alarma»: color RGB / so (piezo)'),
       p('Un error que has trobat i com l’has resolt',
         'Pregunta del quadern tècnic.')
     ]

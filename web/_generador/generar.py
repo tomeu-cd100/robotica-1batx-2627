@@ -2538,7 +2538,7 @@ CALENDARI_SA_DATA = [
   {"title":"PWM: intensitat i color", "anchor":"sessio-2-2-h-pwm-intensitat-i-color",
    "tasks":["Modelatge de analogWrite i map() amb fade","Efecte fade al pin 9 i barreja RGB","Repte: crear 5 colors propis i transició suau"]},
   {"title":"Producte: panell de senyalització", "anchor":"sessio-3-2-h-producte-panell-de-senyalitzacio", "product":True,
-   "tasks":["Mini-check individual: Blink de memòria","Integren LED RGB + piezo + relé (panell personalitzat)","Documenten esquema i codi; mini-defensa d'1' (R4·DO)","Autoavaluació amb rúbriques R1/R2"]},
+   "tasks":["Mini-check individual: Blink de memòria","Integren LED RGB + piezo (panell personalitzat)","Documenten esquema i codi; mini-defensa d'1' (R4·DO)","Autoavaluació amb rúbriques R1/R2"]},
  ]},
 {"n":3, "trim":1, "title":"Entrades i sensors: el robot percep",
  "sessions":[

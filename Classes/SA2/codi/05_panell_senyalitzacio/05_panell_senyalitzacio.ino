@@ -1,15 +1,14 @@
 /*
   SA2 - 05_panell_senyalitzacio.ino  (PRODUCTE integrador)
-  Panell d'estats: combina LED RGB (color d'estat) + piezo (avis) + rele (carrega).
+  Panell d'estats: combina LED RGB (color d'estat) + piezo (avis sonor).
   Circuit: R=9, G=10, B=11 (220 ohm, catode comu a GND)
-           piezo (+)=6 ; rele IN=7
-  Estats: CORRECTE (verd), AVIS (groc + so curt), ALARMA (vermell + so llarg + rele ON)
+           piezo (+)=6, (-)=GND
+  Estats: CORRECTE (verd), AVIS (groc + so curt), ALARMA (vermell + so llarg)
   Quan: S3 - producte
 */
 
 const int R = 9, G = 10, B = 11;   // LED RGB
 const int PIEZO = 6;               // brunzidor
-const int RELE = 7;                // mòdul rele (carrega de baixa tensio)
 
 void color(int r, int g, int b) {
   analogWrite(R, r);
@@ -22,25 +21,21 @@ void setup() {
   pinMode(G, OUTPUT);
   pinMode(B, OUTPUT);
   pinMode(PIEZO, OUTPUT);
-  pinMode(RELE, OUTPUT);
 }
 
 void estatCorrecte() {
   color(0, 255, 0);          // verd
-  digitalWrite(RELE, LOW);   // carrega apagada
-  noTone(PIEZO);
+  noTone(PIEZO);             // en silenci
 }
 
 void estatAvis() {
   color(255, 180, 0);        // groc
   tone(PIEZO, 1000, 150);    // bip curt (1 kHz, 150 ms)
-  digitalWrite(RELE, LOW);
 }
 
 void estatAlarma() {
   color(255, 0, 0);          // vermell
-  tone(PIEZO, 2000, 500);    // bip llarg
-  digitalWrite(RELE, HIGH);  // activa la carrega
+  tone(PIEZO, 2000, 500);    // bip llarg i mes agut (2 kHz, 500 ms)
 }
 
 void loop() {

@@ -95,7 +95,7 @@ Aporta **comunicació, actuadors i sensors avançats** per a control, IoT i IA.
 **On s'utilitza:**
 | SA | Ús del Kit 3 |
 |---|---|
-| SA2 | Relé, LED RGB, LEDs, brunzidor (sortides i commutació). |
+| SA2 | LED RGB, LEDs, brunzidor (sortides). |
 | SA3 | Sensor de so, polsador, DHT11 (entrades). |
 | SA6 | Relé + DHT11 per a control (termòstat, commutació d'actuadors). |
 | SA8 | **MPU6050** (gestos/IA), BMP280, CCS811, DHT11 (telemetria); comunicació **IR** com a enllaç de curt abast. |
@@ -122,7 +122,7 @@ Aporta **comunicació, actuadors i sensors avançats** per a control, IoT i IA.
 | SA | Material principal | Procedència | Estat |
 |---|---|---|---|
 | **SA1** Introducció | UNO + LED + breadboard | Kit 1 | ✅ |
-| **SA2** Sortides/PWM | LED/RGB, PWM, brunzidor, relé, NeoPixel | Kit 1 + 2 + 3 | ✅ |
+| **SA2** Sortides/PWM | LED/RGB, PWM, brunzidor, NeoPixel | Kit 1 + 2 + 3 | ✅ |
 | **SA3** Sensors | polsador, potenciòmetre, LDR/TEMT6000, NTC/LM35, DHT11, ultrasò, so, PIR | Kit 1 + 2 + 3 | ✅ (ric) |
 | **SA4** Moviment | braç MeArm (servos, 4 potenciòmetres, ultrasons), motor DC, **pont H L298N** | Kit 1 + 2 + *compra* | 🟡 falten L298N i 2 MG90S/alumne |
 | **SA5** micro:bit | 2 micro:bit (comandament + pont del braç) | micro:bit | 🟡 cal la 2a micro:bit per alumne |

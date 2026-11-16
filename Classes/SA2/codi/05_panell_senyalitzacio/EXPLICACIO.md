@@ -5,11 +5,11 @@
 
 ❓ **La pregunta:** Com explica una màquina el seu estat amb llum i so?
 
-🎯 **Avui aconseguiràs:** un **panell d'avisos** amb els teus estats (color + so + relé) i defensar-lo en 1 minut. És el producte de la SA2.
+🎯 **Avui aconseguiràs:** un **panell d'avisos** amb els teus estats (color + so) i defensar-lo en 1 minut. És el producte de la SA2.
 
 ⏱️ Tota la sessió
 
-📦 Mòdul RGB, brunzidor (piezo), mòdul relé, 1 LED, 1 resistència de 220 Ω, cables i un tornavís petit
+📦 Mòdul RGB, brunzidor (piezo) i cables
 
 </div>
 
@@ -19,7 +19,7 @@ Un panell com el de les màquines de veritat. Aquest és l'exemple d'una caldera
 |---|---|---|
 | ✅ Tot correcte | Va bé. | Llum verda. |
 | ⚠️ Avís | S'està escalfant massa. | Llum groga + un bip curt. |
-| 🚨 Alarma | S'ha passat de temperatura. | Llum vermella + un bip llarg + engega un ventilador (el relé). |
+| 🚨 Alarma | S'ha passat de temperatura. | Llum vermella + un bip llarg i més agut. |
 
 El codi ja funciona. **La teva feina és fer-lo teu:** decidir els teus estats, colors i sons. Això és el que s'avalua (R1 codi + R2 circuit).
 
@@ -33,13 +33,13 @@ El docent et dona un full: escriu **de memòria** un programa que faci parpellej
 
 ### Pas 2 · Dissenya abans de programar
 
-Decideix com serà cada estat: quin color, quin so i si el relé s'engega o no.
+Decideix com serà cada estat: quin color i quin so (agut o greu, curt o llarg, o cap).
 
-✍️ **Apunta-ho:** estat «Tot correcte»: color RGB / so (piezo) / relé.
+✍️ **Apunta-ho:** estat «Tot correcte»: color RGB / so (piezo).
 
-✍️ **Apunta-ho:** estat «Avís»: color RGB / so (piezo) / relé.
+✍️ **Apunta-ho:** estat «Avís»: color RGB / so (piezo).
 
-✍️ **Apunta-ho:** estat «Alarma»: color RGB / so (piezo) / relé.
+✍️ **Apunta-ho:** estat «Alarma»: color RGB / so (piezo).
 
 ### Pas 3 · Munta el circuit
 
@@ -47,41 +47,12 @@ Decideix com serà cada estat: quin color, quin so i si el relé s'engega o no.
 |---|---|
 | Mòdul RGB | R → 9 · G → 10 · B → 11 · − → GND (com a la Pràctica 4) |
 | Brunzidor (piezo) | + → pin 6 · − → GND |
-| Mòdul relé | (mira el pas 3b) |
 
-![Muntatge del panell: RGB, brunzidor i relé](../../img/sa2-tinkercad-panell.png)
+![Connexions del panell: pins 9, 10 i 11 a R, G i B del mòdul RGB; pin 6 a la pota + del brunzidor; les potes − a GND](../../img/sa2-panell-connexions.svg)
 
-> 💡 A Tinkercad surt un relé «sol» (la peça negra). A l'aula fas servir el **mòdul relé**, que ja porta a dins tot el que el relé necessita. Munta'l com diu el pas 3b.
+> ⚠️ El brunzidor va **directe al pin 6**. És un brunzidor *passiu*: només sona amb el senyal que fa `tone()` pel pin (s'encén i s'apaga mil vegades per segon). Si li arriben 5 V fixos, no fa cap so.
 
-### Pas 3b · Munta el mòdul relé
-
-El relé és un **interruptor que mou l'Arduino**. Per això té **dues bandes**, i cadascuna es connecta a una cosa diferent:
-
-![Connexions del mòdul relé: a l'esquerra el control (pin 7, 5 V i GND de l'Arduino); a la dreta l'interruptor (COM a 5 V, NO a una resistència de 220 Ω i un LED cap a GND, NC lliure)](../../img/sa2-modul-rele.svg)
-
-**1. Banda de control (les 3 potes de pins):** és per on l'Arduino li diu «engega't».
-
-| Pota del mòdul (llegeix les lletres) | Va a… |
-|---|---|
-| **S** o **IN** | pin **7** |
-| **+** o **VCC** | **5 V** (fila vermella +) |
-| **−** o **GND** | **GND** (fila blava −) |
-
-**2. Banda de càrrega (els 3 forats amb cargol):** és l'interruptor. El que hi connectis s'engegarà quan el relé faci «clic».
-
-| Born de cargol | Què vol dir | Va a… |
-|---|---|---|
-| **COM** | comú: el que entra a l'interruptor | **5 V** (fila vermella +) |
-| **NO** | *normalment obert*: només connecta amb COM quan el relé s'activa | resistència de **220 Ω** → **LED** (pota llarga) → la pota curta a **GND** |
-| **NC** | *normalment tancat*: connecta amb COM quan el relé està en repòs | res (queda lliure) |
-
-Per posar un cable a un born: afluixa el cargol amb el tornavís, fica-hi la punta pelada del cable i torna a collar. Estira suaument per comprovar que no surt.
-
-Aquest LED fa de «ventilador» de la caldera: és la **càrrega** que el relé engega en l'estat d'alarma.
-
-> ⚠️ **Seguretat:** al relé només s'hi connecten coses petites de **5 V** (un LED, un motor petit). **Mai** l'endoll de casa (230 V), encara que el relé digui «250 VAC».
-
-✅ **Comprova:** amb el codi carregat (pas 4), quan arriba l'alarma el relé fa «clic», s'encén el llumet del mòdul i s'encén el LED de la càrrega.
+✅ **Comprova:** el brunzidor té la pota + al pin 6 i la − a GND, i el mòdul RGB té els cables als pins 9, 10 i 11.
 
 ### Pas 4 · Carrega el codi
 
@@ -89,14 +60,14 @@ Prem **Copia**, enganxa'l a l'Arduino IDE (esborra el que hi hagués) i prem **�
 
 <!-- codi-complet -->
 
-✅ **Comprova:** fa els tres estats, 2 segons cadascun, sense parar. Quan arriba a l'alarma, el relé fa «clic».
+✅ **Comprova:** fa els tres estats, 2 segons cadascun, sense parar: verd en silenci, groc amb un bip curt i vermell amb un bip llarg i agut.
 
 ### Pas 5 · Fes-lo teu
 
 Canvia els colors i els sons de cada estat perquè siguin els del teu disseny del pas 2. A «🧠 Vols saber per què funciona?», tros 3, tens què has de tocar.
 
 - **Mínim:** 2 estats que es distingeixin bé (amb color **i** so).
-- **Complet:** 3 estats + relé, cadascun en la seva funció.
+- **Complet:** 3 estats, cadascun en la seva funció, que es reconeguin pel color i pel so.
 
 ✅ **Comprova:** el panell fa els estats que vas dissenyar.
 
@@ -123,10 +94,8 @@ Hi trobaràs les mateixes preguntes ✍️ que has anat apuntant. Envia'l ara i,
 
 | Què passa | Per què | Com ho arreglo |
 |---|---|---|
-| El relé no fa «clic» | Falta + (VCC) o − (GND) del mòdul, o S (IN) no és al pin 7. | Revisa la banda de control del pas 3b. |
-| El relé fa «clic» però el LED de la càrrega no s'encén | Falta el 5 V a COM, el LED és al revés o el cable del born no està collat. | COM → 5 V, NO → 220 Ω → LED → GND. Estira els cables dels borns. |
-| El LED de la càrrega fa **el contrari** (encès en «Tot correcte», apagat en «Alarma») | Has fet servir NC en lloc de NO, o el teu mòdul s'activa amb `LOW`. | Passa el cable de NC a NO. Si ja és a NO, al codi canvia els `HIGH` del relé per `LOW` i a l'inrevés. |
-| El brunzidor no sona | Està al revés o en un altre pin. | + al pin 6, − a GND. |
+| El brunzidor no sona | Està al revés, en un altre pin o connectat a 5 V en lloc del pin 6. | + al pin 6, − a GND. |
+| Un color amb blau surt estrany després del primer bip | `tone()` i el pin 11 (el blau) fan servir el mateix rellotge intern de l'Arduino. | Per al blau, fes servir només 0 o 255. |
 | Colors estranys | Cables del RGB canviats de lloc. | Mira la Pràctica 4. |
 | L'IDE marca un error en vermell després de canviar-lo | Falta un `;` o un parèntesi. | Mira la línia que marca l'IDE i la de just abans. |
 
@@ -142,13 +111,9 @@ Aquí no hi ha res nou de programació: hi ha **tot el que ja saps, junt**. El m
 ```cpp
 const int R = 9, G = 10, B = 11;   // LED RGB
 const int PIEZO = 6;               // brunzidor
-const int RELE = 7;                // mòdul rele (carrega de baixa tensio)
 ```
 
-Tres components diferents, cadascun amb el seu nom. Dues novetats de maquinari:
-
-- **Brunzidor (piezo):** fa so. Més endavant tens la instrucció per fer-lo sonar.
-- **Relé:** **com a la vida real**, és com un dit petit que prem l'interruptor d'una cosa més gran. L'Arduino no té prou força per engegar un ventilador, però sí per «prémer» el relé, i el relé l'engega. Quan canvia, fa «clic».
+Dos components, cadascun amb el seu nom. La novetat de maquinari és el **brunzidor (piezo)**: fa so. **Com a la vida real**, és com la pell d'un tambor: l'Arduino l'estira i l'amolla moltes vegades per segon, i com més vegades per segon, més agut sona. Més endavant tens la instrucció per fer-lo sonar.
 
 ### Tros 2 — `color()`: la mateixa de la Pràctica 4
 
@@ -170,7 +135,6 @@ void color(int r, int g, int b) {
 void estatAvis() {
   color(255, 180, 0);        // groc
   tone(PIEZO, 1000, 150);    // bip curt (1 kHz, 150 ms)
-  digitalWrite(RELE, LOW);
 }
 ```
 
@@ -181,7 +145,6 @@ Cada estat és una **funció amb nom** (`estatCorrecte()`, `estatAvis()`, `estat
 | `color(255, 180, 0);` | Posa el llum groc. | Els tres números: el color. |
 | `tone(PIEZO, 1000, 150);` | Fa un bip de 1000 Hz durant 150 ms. | 1000 → més agut o més greu (prova 500 o 2000). 150 → més curt o més llarg. |
 | `noTone(PIEZO);` | Fa callar el brunzidor (és a `estatCorrecte`). | — |
-| `digitalWrite(RELE, LOW);` | Relé apagat (`HIGH` l'engega: fa «clic» i uneix COM amb NO). | `HIGH` o `LOW`. |
 
 ### Tros 4 — El `loop()`: passar pels estats
 

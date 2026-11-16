@@ -31,9 +31,9 @@
 3. **Repte:** fes que un color canviï a poc a poc cap a un altre. Quins? __________ → __________
 
 ## Activitat 3 · El panell de senyalització (Sessió 3)
-Dissenya un panell que avisi de 3 **estats** amb color + so + relé.
+Dissenya un panell que avisi de 3 **estats** amb color + so.
 
-| Estat | Color | So (brunzidor) | Relé (engegat o apagat) |
+| Estat | Color | So (brunzidor) |
 |---|---|---|---|
 | Tot correcte | | | |
 | Avís | | | |

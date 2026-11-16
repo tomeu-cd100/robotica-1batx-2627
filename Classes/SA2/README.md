@@ -24,7 +24,7 @@ Fes les pràctiques **en ordre i al teu ritme**. Cada pràctica acaba enviant el
 
 🚩 **Final de la Sessió 2:** hauries d'haver enviat els formularis de la ③ i de la ④.
 
-- ⑤ [Pràctica 5 · Panell de senyalització](codi/05_panell_senyalitzacio/EXPLICACIO.md) — el producte: els teus estats amb color, so i relé.
+- ⑤ [Pràctica 5 · Panell de senyalització](codi/05_panell_senyalitzacio/EXPLICACIO.md) — el producte: els teus estats amb color i so.
 
 🚩 **Final de la Sessió 3:** formulari de la ⑤ enviat i **Entrega final** feta.
 
@@ -81,7 +81,7 @@ Fes les pràctiques **en ordre i al teu ritme**. Cada pràctica acaba enviant el
 | `02b_semafor_switch.ino` | El mateix semàfor amb `switch` sobre una variable de fase (llavor de la SA6). |
 | `03_fade_pwm.ino` | PWM amb `analogWrite` i funció `map()`. |
 | `04_rgb.ino` | Barreja de colors amb LED RGB. |
-| `05_panell_senyalitzacio.ino` | Producte: RGB (estat) + piezo (avís) + relé (càrrega). |
+| `05_panell_senyalitzacio.ino` | Producte: RGB (estat) + piezo (avís). |
 
 Cada sketch té la seva **pàgina de pràctica** a la web (per què es fa + codi explicat per blocs); a GitHub, l'explicació és a l'`EXPLICACIO.md` de la carpeta del sketch.
 

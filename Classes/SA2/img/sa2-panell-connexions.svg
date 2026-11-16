@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 380" width="760" height="380" role="img" aria-labelledby="t d">
+  <title id="t">Connexions del panell de senyalització</title>
+  <desc id="d">A l'esquerra, l'Arduino UNO. Els pins 9, 10 i 11 van a les potes R, G i B del mòdul LED RGB. El pin 6 va a la pota més del brunzidor. La pota menys del mòdul RGB i la pota menys del brunzidor van totes dues a GND de l'Arduino.</desc>
+  <style>
+    .fr{fill:#f6faf9;stroke:#d7e6e5;stroke-width:1.5}
+    .box{fill:#ffffff;stroke:#0e1b1c;stroke-width:2}
+    .mod{fill:#e8f1fb;stroke:#1d4ed8;stroke-width:2}
+    .w{fill:none;stroke-width:3.5;stroke-linecap:round;stroke-linejoin:round}
+    .gnd{stroke:#0e1b1c}.sig{stroke:#7c3aed}
+    .r{stroke:#e11d48}.g{stroke:#16a34a}.b{stroke:#2563eb}
+    .lbl{font:700 14px system-ui,'Segoe UI',sans-serif;fill:#0e1b1c}
+    .mut{font:600 12.5px system-ui,'Segoe UI',sans-serif;fill:#4f6d6e}
+    .pin{font:700 13px 'Consolas',monospace;fill:#0e1b1c}
+  </style>
+  <rect class="fr" x="1" y="1" width="758" height="378" rx="14"/>
+
+  <!-- Arduino -->
+  <rect class="box" x="40" y="30" width="140" height="290" rx="10"/>
+  <text class="lbl" x="100" y="56" text-anchor="middle">Arduino UNO</text>
+  <g class="pin" text-anchor="end">
+    <text x="170" y="85">9</text>
+    <text x="170" y="115">10</text>
+    <text x="170" y="145">11</text>
+    <text x="170" y="215">6</text>
+    <text x="170" y="295">GND</text>
+  </g>
+
+  <!-- RGB: pins 9, 10, 11 -->
+  <line class="w r" x1="180" y1="80"  x2="330" y2="80"/>
+  <line class="w g" x1="180" y1="110" x2="330" y2="110"/>
+  <line class="w b" x1="180" y1="140" x2="330" y2="140"/>
+  <rect class="mod" x="330" y="56" width="230" height="108" rx="10"/>
+  <text class="pin" x="340" y="85">R</text>
+  <text class="pin" x="340" y="115">G</text>
+  <text class="pin" x="340" y="145">B</text>
+  <circle cx="445" cy="98" r="15" fill="#ffffff" stroke="#0e1b1c" stroke-width="2"/>
+  <circle cx="440" cy="94" r="5" fill="#e11d48" opacity=".8"/>
+  <circle cx="450" cy="94" r="5" fill="#16a34a" opacity=".8"/>
+  <circle cx="445" cy="103" r="5" fill="#2563eb" opacity=".8"/>
+  <text class="lbl" x="445" y="136" text-anchor="middle">Mòdul LED RGB</text>
+  <text class="pin" x="550" y="115" text-anchor="end">−</text>
+
+  <!-- Brunzidor: pin 6 -->
+  <line class="w sig" x1="180" y1="210" x2="356" y2="210"/>
+  <circle cx="380" cy="210" r="24" fill="#ffffff" stroke="#0e1b1c" stroke-width="2.2"/>
+  <circle cx="380" cy="210" r="8" fill="#0e1b1c"/>
+  <text class="pin" x="350" y="196" text-anchor="end">+</text>
+  <text class="pin" x="410" y="196">−</text>
+  <text class="lbl" x="380" y="256" text-anchor="middle">Brunzidor (piezo)</text>
+
+  <!-- GND comú -->
+  <polyline class="w gnd" points="560,110 640,110 640,290 180,290"/>
+  <line class="w gnd" x1="404" y1="210" x2="640" y2="210"/>
+  <circle cx="640" cy="210" r="5" fill="#0e1b1c"/>
+  <text class="mut" x="652" y="204">GND</text>
+
+  <text class="mut" x="40" y="346">Si és un LED RGB solt (no un mòdul), posa una resistència de 220 Ω a R, a G i a B.</text>
+  <text class="mut" x="40" y="366">El brunzidor va directe al pin 6: només sona amb el senyal de tone() que surt del pin.</text>
+</svg>

@@ -21,7 +21,7 @@
 | **Quadern tècnic** (dibuixos, mesures, errors) | **R4** | Quadern tècnic i pràctiques (25 %) |
 | Mini-check (inici de la Sessió 3) | — | **No compta per a nota**: només et diu com vas |
 
-> 🪜 **Per aprovar n'hi ha prou amb:** un panell amb **2 estats** que es distingeixin bé (color i so). **Per treure més nota:** 3 estats + relé, i el codi ordenat (una funció per a cada estat).
+> 🪜 **Per aprovar n'hi ha prou amb:** un panell amb **2 estats** que es distingeixin bé (color i so). **Per treure més nota:** 3 estats, i el codi ordenat (una funció per a cada estat).
 
 > Com es posa la nota (de 0 a 10) i totes les rúbriques: **[Com s'avalua la matèria](../00_General/00_Avaluacio_per_alumnat.md)**.
 
@@ -53,9 +53,9 @@ En aquesta pàgina hi tens el que et pot fer falta mentre treballes: què aprend
 3. **Repte:** fes que un color canviï a poc a poc cap a un altre: __________ → __________
 
 ### 3 · El panell de senyalització (Sessió 3)
-Dissenya un panell que avisi de 3 **estats** amb color + so + relé:
+Dissenya un panell que avisi de 3 **estats** amb color + so:
 
-| Estat | Color | So (brunzidor) | Relé (engegat o apagat) |
+| Estat | Color | So (brunzidor) |
 |---|---|---|---|
 | Tot correcte | | | |
 | Avís | | | |
@@ -66,7 +66,7 @@ Dissenya un panell que avisi de 3 **estats** amb color + so + relé:
 <!-- /web:only-github -->
 
 ## El producte · Panell de senyalització
-Es fa a la **Sessió 3**: un panell que avisa de **3 estats** (tot correcte / avís / alarma) amb **color (LED RGB) + so (brunzidor) + relé**. Al final l'expliques en **1 minut**: què fa i una millora possible. Es corregeix amb **R1** (codi) i **R2** (circuit).
+Es fa a la **Sessió 3**: un panell que avisa de **3 estats** (tot correcte / avís / alarma) amb **color (LED RGB) + so (brunzidor)**. Al final l'expliques en **1 minut**: què fa i una millora possible. Es corregeix amb **R1** (codi) i **R2** (circuit).
 
 ## Si alguna cosa no funciona (DEPURA)
 > **D**igues què esperaves i què passa · **E**xamina (el LED, el missatge d'error) · **P**rova **un sol canvi** cada vegada · **U**bica on és el problema · **R**epara-ho · **A**punta-ho. Mira sempre primer la **resistència** i que la **pota llarga** vagi al pin. Encara no ho trobes? **[Targeta de rescat](../00_General/00_Targetes_rescat.md)** (comença per la 🟢).
