@@ -81,6 +81,10 @@ Primer, prepara les dues files llargues de la protoboard: un cable del **5V** de
 | Sensor de moviment (PIR) | 2 | Versió completa. Tarda **30-60 segons** a funcionar bé. |
 | Sensor de temperatura (DHT11) | 4 | Ampliació. |
 
+![Connexions del tamagotchi: cada component al seu pin i l'alimentació a les files + i − de la protoboard](img/sa3-tamagotchi-connexions.svg)
+
+El DHT11 (pin 4) és una ampliació i no surt a l'esquema.
+
 > ⚠️ Als mòduls de 3 potes (PIR, micròfon, sensor de llum), **l'ordre de les potes canvia segons el fabricant**: llegeix les lletres del mòdul (VCC, GND, OUT o S), no et fiïs de la posició.
 
 Tots els detalls de la carcassa en forma d'ou i el muntatge són al **[dossier del tamagotchi](../00_General/00_Projecte_T1_Mascota.md)**.

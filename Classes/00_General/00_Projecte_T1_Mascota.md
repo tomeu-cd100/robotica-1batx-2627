@@ -99,6 +99,10 @@ del pin **5V** del UNO al carril vermell (+) i un del **GND** al carril blau
 | DHT11 (opcional) | D4 | Cal la llibreria `DHT`. |
 | NeoPixel (ampliació) | D6 | Només si hi cap a la memòria. |
 
+![Connexions del tamagotchi: cada component al seu pin i l'alimentació a les files + i − de la protoboard](../SA3/img/sa3-tamagotchi-connexions.svg)
+
+L'esquema mostra la versió completa, sense les ampliacions (DHT11 i NeoPixel).
+
 ## El programa
 
 El programa es fa a la **[Pràctica 4 de la SA3 · El teu tamagotchi](../SA3/codi/05_mascota/EXPLICACIO.md)**,

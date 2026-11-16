@@ -39,6 +39,8 @@ Fes un cable del **5V** a la fila vermella (+) i un del **GND** a la fila blava 
 | Micròfon | A0 | Mesura el soroll. |
 | Sensor de moviment (PIR) | 2 | Versió completa. Tarda **30-60 segons** a funcionar en endollar-lo. |
 
+![Connexions del tamagotchi: cada component al seu pin i l'alimentació a les files + i − de la protoboard](../../img/sa3-tamagotchi-connexions.svg)
+
 ✅ **Comprova:** els tres botons queden als forats de sota la pantalla, i els mòduls de 3 potes (micròfon, PIR, sensor de llum) tenen les lletres (VCC, GND, OUT o S) on toca.
 
 ### Pas 3 · Carrega l'esquelet
