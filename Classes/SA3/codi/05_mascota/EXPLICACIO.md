@@ -119,6 +119,7 @@ Hi trobaràs les mateixes preguntes ✍️ que has anat apuntant. Envia'l ara i,
 | Què passa | Per què | Com ho arreglo |
 |---|---|---|
 | No compila: `Adafruit_SSD1306.h` no trobat | Al Chromebook: la línia `#include` està mal escrita. Al PC: falta la llibreria. | Chromebook: comprova que dalt de tot hi hagi `#include <Adafruit_SSD1306.h>`. PC: **Eines → Gestiona les biblioteques**, cerca «Adafruit SSD1306» i prem **Instal·la-ho tot**. |
+| No compila: `no matching function for call to 'TwoWire::begin(uint8_t&, uint8_t&)'` i el nom `Adafruit_SSD1306_72x40` | Al teu compte del Web Editor hi ha una llibreria extra (`Adafruit_SSD1306_72x40`) feta per a una altra placa (ESP32). El Web Editor la fa servir en lloc de la bona, i l'Arduino UNO no l'entén. | Web Editor → **Libraries** → pestanya **Custom** → esborra `Adafruit_SSD1306_72x40` (i qualsevol altra que no hagis posat tu). Torna a compilar. Els avisos `Multiple libraries were found` no són errors: ignora'ls. |
 | La pantalla es queda negra i el Monitor diu «La pantalla no arrenca» | Cables de la pantalla mal posats, o el programa gasta massa memòria. | Revisa SDA i SCL. Si has afegit textos al `Serial.print`, posa'ls dins de `F("...")`. |
 | Un botó suma moltes vegades si el mantens premut | No compares amb l'estat anterior del botó. | Mira com ho fa MENJAR: `ara == LOW && anterior == HIGH`, i al final `anterior = ara;`. |
 | La barra de la son baixa de cop | Restes la son a cada volta del `loop()`. | Al pas 5 només has de posar `esFosc`: qui resta la son és `baixaAmbElTemps()`. |
