@@ -8,6 +8,9 @@
   Quan: S3 - primera part (~25')
 */
 
+// Aquesta linia ha d'anar la PRIMERA: obliga el Web Editor a fer servir les
+// llibreries bones d'Adafruit (sense ella, a vegades n'agafa una altra i no compila).
+#include <Adafruit_BusIO_Register.h>
 #include <Wire.h>
 #include <Adafruit_GFX.h>
 #include <Adafruit_SSD1306.h>

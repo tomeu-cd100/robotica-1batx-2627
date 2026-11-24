@@ -20,10 +20,10 @@
 El codi fa servir la llibreria **Adafruit SSD1306** (i les que necessita: Adafruit GFX i Adafruit BusIO).
 
 - **Chromebook (Web Editor):** no cal instal·lar res. El Web Editor ja té totes les llibreries al núvol i les troba soles quan el codi diu `#include <Adafruit_SSD1306.h>`.
-  ⚠️ **No importis cap llibreria** (ni ZIP ni botó *Import*): al Web Editor, «instal·lar» vol dir posar-ne una còpia a la pestanya **Custom**, i aquesta còpia **substitueix** la bona del núvol. Si està incompleta o és d'una altra placa, el programa deixa de compilar. Obre **Libraries → Custom**: ha d'estar **buida**. Si hi ha alguna cosa, esborra-la.
+  ⚠️ La primera línia `#include` del codi, `#include <Adafruit_BusIO_Register.h>`, **no l'esborris**: obliga el Web Editor a triar les llibreries d'Adafruit i no unes altres que s'hi assemblen. Tampoc no importis cap llibreria (pestanya **Custom**): no cal, i pot fer que deixi de compilar.
 - **PC (Arduino IDE):** **Eines → Gestiona les biblioteques**, cerca **Adafruit SSD1306** i prem **Instal·la**. Quan et pregunti si vols instal·lar també les llibreries que necessita, prem **Instal·la-ho tot**.
 
-✅ **Comprova:** al Chromebook, la pestanya **Libraries → Custom** està buida. Al PC, a la llista de biblioteques, Adafruit SSD1306 i Adafruit GFX diuen «Instal·lada».
+✅ **Comprova:** al Chromebook, passa al pas 2. Al PC, a la llista de biblioteques, Adafruit SSD1306 i Adafruit GFX diuen «Instal·lada».
 
 ### Pas 2 · Munta la pantalla
 
@@ -80,8 +80,7 @@ Hi trobaràs les mateixes preguntes ✍️ que has anat apuntant. Envia'l ara i 
 | Què passa | Per què | Com ho arreglo |
 |---|---|---|
 | No compila: `Adafruit_SSD1306.h` no trobat | Al Chromebook: la línia `#include` està mal escrita. Al PC: falta la llibreria. | Chromebook: torna a copiar el codi sencer. PC: torna al pas 1. |
-| Al Chromebook no compila: `No such file or directory` amb el nom d'una llibreria (`Adafruit_GFX.h`, `Adafruit_I2CDevice.h`, `Adafruit_SSD1306.h`…) **i tu dius que ja l'has instal·lada** | Precisament perquè l'has «instal·lada»: al Web Editor això vol dir importar-ne una còpia a **Custom**. Aquesta còpia passa al davant de la bona del núvol, i sovint li falten les llibreries que necessita (Adafruit BusIO). | Web Editor → **Libraries** → pestanya **Custom** → esborra **totes** les llibreries que hi hagi. No en tornis a instal·lar cap: el Web Editor ja les té. Comprova també que la placa triada sigui **Arduino UNO**. Si continua fallant, copia el missatge d'error **sencer** i ensenya'l al docent. Mentrestant, pots compilar en un PC amb l'Arduino IDE. |
-| No compila: centenars de línies `multiple definition of Adafruit_GFX::...` i la paraula `EIS` | Al teu compte del Web Editor hi ha una llibreria extra (`EIS`) que porta la seva pròpia còpia d'Adafruit GFX. Les dues còpies xoquen. | Web Editor → **Libraries** → pestanya **Custom** → esborra `EIS` (i qualsevol altra que no hagis posat tu). Torna a compilar. |
+| No compila al Chromebook: centenars de línies `multiple definition of Adafruit_GFX::...` amb la paraula `EIS`, o `No such file or directory` amb el nom d'una llibreria Adafruit, encara que diguis que la tens | No és culpa teva. Al núvol hi ha llibreries d'altres marques (`EIS`) que porten còpies de les d'Adafruit, i de vegades el Web Editor tria la dolenta. A l'Arduino IDE no passa. | Comprova que la **primera** línia `#include` del codi sigui `#include <Adafruit_BusIO_Register.h>`. Si no hi és, torna a copiar el codi sencer de la pràctica. Torna a compilar. Si encara falla, ensenya l'error sencer al docent. |
 | No compila: `no matching function for call to 'TwoWire::begin(uint8_t&, uint8_t&)'` i el nom `Adafruit_SSD1306_72x40` | Al teu compte del Web Editor hi ha una llibreria extra (`Adafruit_SSD1306_72x40`) feta per a una altra placa (ESP32). El Web Editor la fa servir en lloc de la bona, i l'Arduino UNO no l'entén. | Web Editor → **Libraries** → pestanya **Custom** → esborra `Adafruit_SSD1306_72x40` (i qualsevol altra que no hagis posat tu). Torna a compilar. Els avisos `Multiple libraries were found` no són errors: ignora'ls. |
 | La pantalla no s'encén (el Monitor sèrie diu «La pantalla no arrenca») | SDA i SCL intercanviats, o VCC i GND al revés. | Mira les lletres de la pantalla i la taula del pas 2. |
 | La pantalla està negra però abans funcionava | Un cable fa mal contacte. | Prem bé els 4 cables a la protoboard. |

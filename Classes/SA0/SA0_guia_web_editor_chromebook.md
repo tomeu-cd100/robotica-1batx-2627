@@ -77,7 +77,7 @@ del navegador (funcionen igual de bé al Chromebook):
 | No entra al web editor | Sessió del compte Arduino caducada | Torna a iniciar sessió a `arduino.cc` |
 | El cable connecta però no carrega | Cable **només d'alimentació** (sense dades) | Fes servir un cable USB **de dades** |
 | El LED no s'encén | Polaritat, sense resistència, pin equivocat | Revisa muntatge i el número de pin del codi |
-| Errors de llibreria (`No such file or directory`, `multiple definition`, `no matching function`) en un programa que a l'Arduino IDE compila | Hi ha llibreries importades a **Libraries → Custom**. Aquestes còpies passen al davant de les del núvol i sovint estan incompletes o són per a una altra placa. | Esborra **tot** el que hi hagi a **Custom**. Al Web Editor **no s'instal·la cap llibreria**: ja hi són totes. |
+| Errors de llibreria (`No such file or directory`, `multiple definition`, `no matching function`) en un programa que a l'Arduino IDE compila | El Web Editor té al núvol llibreries de moltes marques, i de vegades en tria una que s'assembla a la bona però no és la mateixa. També pot passar per una llibreria importada a **Custom**. | Copia el codi sencer de la pràctica: hi ha `#include` posats a propòsit perquè triï la bona. Mira que **Libraries → Custom** estigui buida. Si encara falla, ensenya l'error sencer al docent. |
 
 ---
 
